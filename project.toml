@@ -1,0 +1,41 @@
+# Steam's tomb3.exe, linked 1998-12-02.
+[game]
+name = "tomb3"
+title = "Tomb Raider III"
+window_title = "Tomb Raider III"
+dir = "orig/tomb3"
+exe = "tomb3.exe"
+checksums = "orig/tomb3.sha1"
+original = "build/orig/tomb3.exe"
+game_end = 0x4b4cbf
+
+[ghidra]
+project = "tomb3"
+search = ["~/data.local/work/ghidra_*", "~/opt/ghidra_*"]
+functions = "build/functions_tomb3.csv"
+
+[build]
+cflags = ["/G5", "/Zp1", "/W3", "/O2", "/DNDEBUG", "/DWIN32", "/D_WINDOWS"]
+crlf = true
+bin = 'C:\msvc5sp3\bin'
+include = ['C:\dx5\include', 'C:\msvc5sp3\include']
+lib = ['C:\dx5\lib', 'C:\msvc5sp3\lib']
+
+[symbols]
+manifest = "refs/trx/docs/symbols/tr3.txt"
+
+[reference]
+source = "refs/core"
+prefer = ["GAME"]
+skip = ["GAME/GAMEBAK", "GAME/GAMEBAK2"]
+layout = { GAME = "", BACKUP = "", SPECIFIC = "specific", "3DSYSTEM" = "3dsystem" }
+dsp = "TOMBRAID.DSP"
+dsp_config = "TombRaid - Win32 Release"
+defines = ["/DCODER=0"]
+probe = "build/core_probe.csv"
+
+[hooks]
+progress = false
+compare = false
+one_function = false
+no_comments = false
