@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="81.38" height="12" x="0" y="0" class="named"><title>257 · 17.39%</title></rect>
-<rect width="386.62" height="12" x="81.38" y="0" class="todo"><title>1221 · 82.61%</title></rect>
+<rect width="81.69" height="12" x="0" y="0" class="named"><title>258 · 17.46%</title></rect>
+<rect width="386.31" height="12" x="81.69" y="0" class="todo"><title>1220 · 82.54%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">17.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">257</tspan> · <tspan class="todo">1221</tspan></text>
+<text text-anchor="end" x="648" y="7.50">17.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">258</tspan> · <tspan class="todo">1220</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.82" height="12" x="0" y="0" class="named"><title>13 KB · 1.88%</title></rect>
-<rect width="459.18" height="12" x="8.82" y="0" class="todo"><title>651 KB · 98.12%</title></rect>
+<rect width="8.86" height="12" x="0" y="0" class="named"><title>13 KB · 1.89%</title></rect>
+<rect width="459.14" height="12" x="8.86" y="0" class="todo"><title>651 KB · 98.11%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
@@ -1079,7 +1079,7 @@
 <rect width="12" height="12" x="210" y="300" class="todo"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="todo"><title>0x0046e890 FallingBlock (276 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="300" class="todo"><title>0x0046e9b0 FallingBlockFloor (72 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="300" class="todo"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="300" class="named"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="300" class="todo"><title>0x0046ea50 TeethTrap (200 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="300" class="todo"><title>0x0046eb20 FallingCeiling (238 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="300" class="todo"><title>0x0046ec10 DartEmitterControl (445 bytes)</title></rect>
@@ -2640,7 +2640,7 @@
 <rect width="4.79" height="5.09" x="695.84" y="316.89" class="todo"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="703.63" y="316.89" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="711.42" y="316.89" class="todo"><title>0x0042e270 Richochet (68 bytes)</title></rect>
-<rect width="4.72" height="5.09" x="719.13" y="316.89" class="todo"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
+<rect width="4.72" height="5.09" x="719.13" y="316.89" class="named"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="726.85" y="316.89" class="todo"><title>0x00484250 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="734.57" y="316.89" class="todo"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="742.28" y="316.89" class="todo"><title>0x0048a9b0 S_LightRoom (68 bytes)</title></rect>
