@@ -77,6 +77,22 @@ void OpenThatDoor(DOORPOS_DATA *d)
     }
 }
 
+void DrawBridgeFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    if (item->current_anim_state == DOOR_OPEN)
+    {
+        if (!OnDrawBridge(item, z, x))
+            return;
+        if (y <= item->pos.y_pos)
+        {
+            OnObject = 1;
+            *height = item->pos.y_pos;
+            if (item == lara_item)
+                lara_item->item_flags[0] = 1;
+        }
+    }
+}
+
 void DrawBridgeCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     if (item->current_anim_state == DOOR_OPEN)
