@@ -193,3 +193,20 @@ void QuadStop(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void QuadFinished(ITEM_INFO *item)
+{
+    if (lara.skidoo != NO_ITEM)
+    {
+        if (assault_timer_active)
+        {
+            if (savegame.timer > MAX_TIME_ALLOWED)
+                savegame.timer = MAX_TIME_ALLOWED;
+            QuadbikeLapTime = savegame.timer;
+            QuadbikeLapTimeDisplayTimer = 10 * 30;
+            AddQuadbikeTime(QuadbikeLapTime);
+            assault_timer_active = 0;
+        }
+    }
+    flipeffect = -1;
+}
