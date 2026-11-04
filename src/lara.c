@@ -7,6 +7,10 @@
 #define STEPUP_HEIGHT ((STEP_L * 3) / 2)
 #define CAM_A_HANG 0
 #define CAM_E_HANG (-60 * ONE_DEGREE)
+extern sint32 wibble;
+
+sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+void TriggerWaterfallMist(sint32 x, sint32 y, sint32 z, sint32 angle);
 sint16 TestMonkeyLeft(ITEM_INFO *item, COLL_INFO *coll);
 sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 
@@ -300,6 +304,38 @@ void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->fallspeed > LARA_FASTFALL_SPEED)
         item->goal_anim_state = AS_FASTFALL;
+}
+
+void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+    if (input & IN_LEFT)
+    {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_SLOW_TURN)
+            lara.turn_rate = -LARA_SLOW_TURN;
+    }
+    else if (input & IN_RIGHT)
+    {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_SLOW_TURN)
+            lara.turn_rate = LARA_SLOW_TURN;
+    }
+    if (input & IN_FORWARD)
+    {
+        if (lara.water_status == LARA_WADE)
+            item->goal_anim_state = AS_WADE;
+        else if (!(input & IN_SLOW))
+            item->goal_anim_state = AS_RUN;
+        else
+            item->goal_anim_state = AS_WALK;
+    }
+    else
+        item->goal_anim_state = AS_STOP;
 }
 
 void lara_as_fastback(ITEM_INFO *item, COLL_INFO *coll)

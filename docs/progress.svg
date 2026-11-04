@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="125.39" height="12" x="0" y="0" class="named"><title>396 · 26.79%</title></rect>
-<rect width="342.61" height="12" x="125.39" y="0" class="todo"><title>1082 · 73.21%</title></rect>
+<rect width="125.71" height="12" x="0" y="0" class="named"><title>397 · 26.86%</title></rect>
+<rect width="342.29" height="12" x="125.71" y="0" class="todo"><title>1081 · 73.14%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">26.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">396</tspan> · <tspan class="todo">1082</tspan></text>
+<text text-anchor="end" x="648" y="7.50">26.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">397</tspan> · <tspan class="todo">1081</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="18.32" height="12" x="0" y="0" class="named"><title>26 KB · 3.92%</title></rect>
-<rect width="449.68" height="12" x="18.32" y="0" class="todo"><title>638 KB · 96.08%</title></rect>
+<rect width="18.42" height="12" x="0" y="0" class="named"><title>26 KB · 3.94%</title></rect>
+<rect width="449.58" height="12" x="18.42" y="0" class="todo"><title>638 KB · 96.06%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">26 KB</tspan> · <tspan class="todo">638 KB</tspan></text>
@@ -631,7 +631,7 @@
 <rect width="12" height="12" x="240" y="165" class="todo"><title>0x00440a40 lara_col_upjump (335 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="165" class="todo"><title>0x00440b90 LaraTestHangJumpUp (542 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="165" class="todo"><title>0x00440db0 lara_as_forwardjump (211 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="165" class="todo"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="165" class="named"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="165" class="todo"><title>0x00440f20 lara_as_run (373 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="165" class="named"><title>0x004410a0 lara_as_fastback (87 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="165" class="todo"><title>0x00441100 lara_as_turn_r (158 bytes)</title></rect>
@@ -2378,7 +2378,7 @@
 <rect width="7.12" height="6.94" x="554.49" y="274.60" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="7.12" height="6.94" x="554.49" y="284.55" class="todo"><title>0x00487750 do_inventory_options (140 bytes)</title></rect>
 <rect width="7.12" height="6.94" x="554.49" y="294.49" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
-<rect width="7.12" height="6.89" x="554.49" y="304.43" class="todo"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
+<rect width="7.12" height="6.89" x="554.49" y="304.43" class="named"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
 <rect width="7.12" height="6.84" x="554.49" y="314.33" class="todo"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
 <rect width="7.12" height="6.79" x="554.49" y="324.17" class="todo"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="7.12" height="6.79" x="554.49" y="333.97" class="todo"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
