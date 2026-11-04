@@ -227,6 +227,33 @@ void Inv_RingMotionItemDeselect(RING_INFO *ring, INVENTORY_ITEM *inv_item)
 extern uint32 RequesterFlags1[];
 extern uint32 RequesterFlags2[];
 
+void Init_Requester(REQUEST_INFO *req)
+{
+    int n;
+
+    req->items = 0;
+    req->heading1text = NULL;
+    req->heading2text = NULL;
+    req->heading1_flags = 0;
+    req->heading2_flags = 0;
+    req->backgroundtext = NULL;
+    req->background_flags = 1;
+    req->moreuptext = NULL;
+    req->moreup_flags = 1;
+    req->moredowntext = NULL;
+    req->moredown_flags = 1;
+    for (n = 0; n < MAX_REQLINES; n++) {
+        req->texts1[n] = NULL;
+        req->texts1_flags[n] = 0;
+        req->texts2[n] = NULL;
+        req->texts2_flags[n] = 0;
+    }
+    req->itemtexts1_flags = RequesterFlags1;
+    req->itemtexts2_flags = RequesterFlags2;
+    req->original_render_width = GetRenderWidth();
+    req->original_render_height = GetRenderHeight();
+}
+
 void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
 {
     if (txt)
