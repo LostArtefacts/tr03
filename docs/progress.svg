@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="85.81" height="12" x="0" y="0" class="named"><title>271 · 18.34%</title></rect>
-<rect width="382.19" height="12" x="85.81" y="0" class="todo"><title>1207 · 81.66%</title></rect>
+<rect width="86.13" height="12" x="0" y="0" class="named"><title>272 · 18.40%</title></rect>
+<rect width="381.87" height="12" x="86.13" y="0" class="todo"><title>1206 · 81.60%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">18.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">271</tspan> · <tspan class="todo">1207</tspan></text>
+<text text-anchor="end" x="648" y="7.50">18.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">272</tspan> · <tspan class="todo">1206</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.53" height="12" x="0" y="0" class="named"><title>14 KB · 2.04%</title></rect>
-<rect width="458.47" height="12" x="9.53" y="0" class="todo"><title>650 KB · 97.96%</title></rect>
+<rect width="9.59" height="12" x="0" y="0" class="named"><title>14 KB · 2.05%</title></rect>
+<rect width="458.41" height="12" x="9.59" y="0" class="todo"><title>650 KB · 97.95%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">14 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
@@ -1105,7 +1105,7 @@
 <rect width="12" height="12" x="600" y="300" class="todo"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="300" class="todo"><title>0x00471bd0 ExplodeTribeBoss (598 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="300" class="todo"><title>0x00471e30 TriggerSummonSmoke (381 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="300" class="todo"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="300" class="named"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="300" class="todo"><title>0x00472000 WillBossControl (3077 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="named"><title>0x00472ce0 S_DrawWillBoss (58 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="300" class="named"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
@@ -2615,7 +2615,7 @@
 <rect width="5.44" height="4.86" x="625.50" y="309.03" class="todo"><title>0x004b2dc0 WinCreateWindow (75 bytes)</title></rect>
 <rect width="5.37" height="4.86" x="633.94" y="309.03" class="named"><title>0x00441660 lara_as_backjump (74 bytes)</title></rect>
 <rect width="5.37" height="4.86" x="642.32" y="309.03" class="named"><title>0x004685c0 SubInitialise (74 bytes)</title></rect>
-<rect width="5.37" height="4.86" x="650.69" y="309.03" class="todo"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
+<rect width="5.37" height="4.86" x="650.69" y="309.03" class="named"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="659.06" y="309.03" class="todo"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="667.36" y="309.03" class="named"><title>0x00443290 lara_default_col (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="675.66" y="309.03" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
