@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="2.46" height="12" x="130" y="1.50" class="named"/>
-<rect width="199.54" height="12" x="132.46" y="1.50" class="todo"/>
+<rect width="2.60" height="12" x="130" y="1.50" class="named"/>
+<rect width="199.40" height="12" x="132.60" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">1.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">18/1478</text>
-<rect width="0.11" height="12" x="130" y="18.50" class="named"/>
-<rect width="201.89" height="12" x="130.11" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">1.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">19/1478</text>
+<rect width="0.12" height="12" x="130" y="18.50" class="named"/>
+<rect width="201.88" height="12" x="130.12" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">0k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.22% (18)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.78% (1460)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.29% (19)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.71% (1459)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="9.10" height="6" x="0" y="0" class="named"/>
-<rect width="737.90" height="6" x="9.10" y="0" class="todo"/>
+<rect width="9.60" height="6" x="0" y="0" class="named"/>
+<rect width="737.40" height="6" x="9.60" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -403,7 +403,7 @@
 <rect width="12" height="12" x="555" y="90" class="named"><title>0x0042ef30 PistonFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="90" class="named"><title>0x0042ef50 CurtainFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="90" class="named"><title>0x0042ef70 StatueFX (28 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="90" class="todo"><title>0x0042ef90 SetChangeFX (28 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="90" class="named"><title>0x0042ef90 SetChangeFX (28 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="90" class="todo"><title>0x0042efb0 ControlDingDong (65 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="90" class="todo"><title>0x0042f000 ControlLaraAlarm (59 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="90" class="todo"><title>0x0042f040 ControlBirdTweeter (97 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.05%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.95%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.06%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.94%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="0.41" height="6" x="0" y="0" class="named"/>
-<rect width="746.59" height="6" x="0.41" y="0" class="todo"/>
+<rect width="0.44" height="6" x="0" y="0" class="named"/>
+<rect width="746.56" height="6" x="0.44" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2913,7 +2913,7 @@
 <rect width="0.65" height="0.92" x="714.49" y="437.31" class="named"><title>0x0042ef30 PistonFX (28 bytes)</title></rect>
 <rect width="0.65" height="0.92" x="714.49" y="441.23" class="named"><title>0x0042ef50 CurtainFX (28 bytes)</title></rect>
 <rect width="0.65" height="0.92" x="714.49" y="445.16" class="named"><title>0x0042ef70 StatueFX (28 bytes)</title></rect>
-<rect width="0.65" height="0.92" x="714.49" y="449.08" class="todo"><title>0x0042ef90 SetChangeFX (28 bytes)</title></rect>
+<rect width="0.65" height="0.92" x="714.49" y="449.08" class="named"><title>0x0042ef90 SetChangeFX (28 bytes)</title></rect>
 <rect width="0.56" height="1.03" x="718.15" y="421.20" class="named"><title>0x0042f400 invisibility_off (28 bytes)</title></rect>
 <rect width="0.56" height="1.03" x="718.15" y="425.23" class="todo"><title>0x0042fa70 RumbleNoShake (28 bytes)</title></rect>
 <rect width="0.56" height="1.03" x="718.15" y="429.26" class="todo"><title>0x00441310 lara_as_reach (28 bytes)</title></rect>
