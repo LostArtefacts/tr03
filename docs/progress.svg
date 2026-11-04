@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="87.39" height="12" x="0" y="0" class="named"><title>276 · 18.67%</title></rect>
-<rect width="380.61" height="12" x="87.39" y="0" class="todo"><title>1202 · 81.33%</title></rect>
+<rect width="87.71" height="12" x="0" y="0" class="named"><title>277 · 18.74%</title></rect>
+<rect width="380.29" height="12" x="87.71" y="0" class="todo"><title>1201 · 81.26%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">18.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">276</tspan> · <tspan class="todo">1202</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">277</tspan> · <tspan class="todo">1201</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.80" height="12" x="0" y="0" class="named"><title>14 KB · 2.09%</title></rect>
-<rect width="458.20" height="12" x="9.80" y="0" class="todo"><title>650 KB · 97.91%</title></rect>
+<rect width="9.86" height="12" x="0" y="0" class="named"><title>14 KB · 2.11%</title></rect>
+<rect width="458.14" height="12" x="9.86" y="0" class="todo"><title>650 KB · 97.89%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">14 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
@@ -881,7 +881,7 @@
 <rect width="12" height="12" x="240" y="240" class="todo"><title>0x00456f40 MovableBlockCollision (636 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="240" class="todo"><title>0x004571e0 TestBlockPush (299 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="240" class="todo"><title>0x0045730b Func45730b (120 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="240" class="todo"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="240" class="named"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="240" class="todo"><title>0x004573f0 TestBlockPull (655 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="todo"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="240" class="named"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
@@ -2592,7 +2592,7 @@
 <rect width="5.36" height="5.27" x="600.62" y="409.16" class="todo"><title>0x0048e8a0 Func48e8a0 (80 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="417.44" class="named"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="425.58" class="todo"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
-<rect width="5.36" height="5.14" x="600.62" y="433.72" class="todo"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
+<rect width="5.36" height="5.14" x="600.62" y="433.72" class="named"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="441.86" class="todo"><title>0x00484eb0 HWR_BeginScene (78 bytes)</title></rect>
 <rect width="5.07" height="5.43" x="608.98" y="309.03" class="todo"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
 <rect width="5.07" height="5.43" x="608.98" y="317.46" class="todo"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
