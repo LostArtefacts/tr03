@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="126.02" height="12" x="0" y="0" class="named"><title>398 · 26.93%</title></rect>
-<rect width="341.98" height="12" x="126.02" y="0" class="todo"><title>1080 · 73.07%</title></rect>
+<rect width="126.34" height="12" x="0" y="0" class="named"><title>399 · 27%</title></rect>
+<rect width="341.66" height="12" x="126.34" y="0" class="todo"><title>1079 · 73%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">26.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">398</tspan> · <tspan class="todo">1080</tspan></text>
+<text text-anchor="end" x="648" y="7.50">27.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">399</tspan> · <tspan class="todo">1079</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="18.52" height="12" x="0" y="0" class="named"><title>26 KB · 3.96%</title></rect>
-<rect width="449.48" height="12" x="18.52" y="0" class="todo"><title>638 KB · 96.04%</title></rect>
+<rect width="18.62" height="12" x="0" y="0" class="named"><title>26 KB · 3.98%</title></rect>
+<rect width="449.38" height="12" x="18.62" y="0" class="todo"><title>637 KB · 96.02%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">26 KB</tspan> · <tspan class="todo">638 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">26 KB</tspan> · <tspan class="todo">637 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -674,7 +674,7 @@
 <rect width="12" height="12" x="135" y="180" class="named"><title>0x00441dd0 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="180" class="named"><title>0x00441e30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="180" class="named"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="180" class="todo"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="180" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="180" class="todo"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="180" class="todo"><title>0x00442140 lara_col_run (393 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="180" class="todo"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
@@ -2382,7 +2382,7 @@
 <rect width="7.12" height="6.84" x="554.49" y="314.33" class="todo"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
 <rect width="7.12" height="6.79" x="554.49" y="324.17" class="todo"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="7.12" height="6.79" x="554.49" y="333.97" class="todo"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
-<rect width="7.12" height="6.74" x="554.49" y="343.76" class="todo"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
+<rect width="7.12" height="6.74" x="554.49" y="343.76" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
 <rect width="7.12" height="6.74" x="554.49" y="353.51" class="todo"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
 <rect width="7.12" height="6.69" x="554.49" y="363.25" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
 <rect width="7.12" height="6.69" x="554.49" y="372.94" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>

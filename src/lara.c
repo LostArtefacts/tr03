@@ -747,6 +747,23 @@ void extra_as_trainkill(ITEM_INFO *item, COLL_INFO *coll)
     item->hit_points = -1;
 }
 
+void extra_as_rapidsdrown(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint32 h;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    GetLaraCollisionInfo(item, coll);
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    h = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    item->pos.y_pos = h + 384;
+    item->pos.y_rot += 1024;
+    lara.death_count++;
+    if ((wibble & 3) == 0)
+        TriggerWaterfallMist(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, GetRandomControl() & 4095);
+}
+
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_turn_r(item, coll);
