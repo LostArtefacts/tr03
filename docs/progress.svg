@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="27.74" height="12" x="0" y="0" class="named"><title>203 · 13.73%</title></rect>
-<rect width="174.26" height="12" x="27.74" y="0" class="todo"><title>1275 · 86.27%</title></rect>
+<rect width="27.88" height="12" x="0" y="0" class="named"><title>204 · 13.80%</title></rect>
+<rect width="174.12" height="12" x="27.88" y="0" class="todo"><title>1274 · 86.20%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">13.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">203</tspan> · <tspan class="todo">1275</tspan></text>
+<text text-anchor="end" x="382" y="7.50">13.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">204</tspan> · <tspan class="todo">1274</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.87" height="12" x="0" y="0" class="named"><title>9 KB · 1.42%</title></rect>
-<rect width="199.13" height="12" x="2.87" y="0" class="todo"><title>654 KB · 98.58%</title></rect>
+<rect width="2.88" height="12" x="0" y="0" class="named"><title>9 KB · 1.43%</title></rect>
+<rect width="199.12" height="12" x="2.88" y="0" class="todo"><title>654 KB · 98.57%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">9 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -1000,7 +1000,7 @@
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x00467840 SoundEffect (1200 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="270" class="todo"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="todo"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="270" class="todo"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="270" class="named"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="todo"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="270" class="todo"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="270" class="todo"><title>0x00467f70 GetSpheres (733 bytes)</title></rect>
@@ -2855,7 +2855,7 @@
 <rect width="3.69" height="3.45" x="743.31" y="368.50" class="named"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="3.87" height="3.28" x="675.06" y="374.95" class="named"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="3.87" height="3.28" x="681.93" y="374.95" class="named"><title>0x0044d8a0 InitialiseLaraLoad (36 bytes)</title></rect>
-<rect width="3.87" height="3.28" x="688.80" y="374.95" class="todo"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
+<rect width="3.87" height="3.28" x="688.80" y="374.95" class="named"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
 <rect width="3.87" height="3.28" x="695.67" y="374.95" class="named"><title>0x0046b0c0 T_GetStringLen (36 bytes)</title></rect>
 <rect width="3.87" height="3.28" x="702.54" y="374.95" class="todo"><title>0x00480d10 DS_Finish (36 bytes)</title></rect>
 <rect width="3.77" height="3.28" x="709.41" y="374.95" class="named"><title>0x0042eea0 RubbleFX (35 bytes)</title></rect>
