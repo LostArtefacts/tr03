@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="139.32" height="12" x="0" y="0" class="named"><title>440 · 29.77%</title></rect>
-<rect width="328.68" height="12" x="139.32" y="0" class="todo"><title>1038 · 70.23%</title></rect>
+<rect width="139.64" height="12" x="0" y="0" class="named"><title>441 · 29.84%</title></rect>
+<rect width="328.36" height="12" x="139.64" y="0" class="todo"><title>1037 · 70.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">29.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">440</tspan> · <tspan class="todo">1038</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">441</tspan> · <tspan class="todo">1037</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="23.31" height="12" x="0" y="0" class="named"><title>33 KB · 4.98%</title></rect>
-<rect width="444.69" height="12" x="23.31" y="0" class="todo"><title>631 KB · 95.02%</title></rect>
+<rect width="23.45" height="12" x="0" y="0" class="named"><title>33 KB · 5.01%</title></rect>
+<rect width="444.55" height="12" x="23.45" y="0" class="todo"><title>631 KB · 94.99%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">33 KB</tspan> · <tspan class="todo">631 KB</tspan></text>
@@ -701,7 +701,7 @@
 <rect width="12" height="12" x="540" y="180" class="named"><title>0x00442e10 lara_col_slideback (35 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="180" class="named"><title>0x00442e40 lara_col_pushblock (19 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="180" class="named"><title>0x00442e60 lara_col_roll (151 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="180" class="todo"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="180" class="named"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="180" class="named"><title>0x00442fd0 lara_col_swandive (108 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="180" class="named"><title>0x00443040 lara_col_fastdive (124 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="180" class="todo"><title>0x004430c0 lara_col_wade (452 bytes)</title></rect>
@@ -2225,7 +2225,7 @@
 <rect width="8.67" height="8.39" x="511.22" y="325.94" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="8.67" height="8.35" x="511.22" y="337.34" class="todo"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="8.67" height="8.35" x="511.22" y="348.69" class="todo"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
-<rect width="8.67" height="8.31" x="511.22" y="360.04" class="todo"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
+<rect width="8.67" height="8.31" x="511.22" y="360.04" class="named"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="371.35" class="todo"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="382.66" class="todo"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="8.67" height="8.27" x="511.22" y="393.98" class="todo"><title>0x0041f0e0 TestBoundsCollide (203 bytes)</title></rect>
