@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="27.88" height="12" x="0" y="0" class="named"><title>204 · 13.80%</title></rect>
-<rect width="174.12" height="12" x="27.88" y="0" class="todo"><title>1274 · 86.20%</title></rect>
+<rect width="28.02" height="12" x="0" y="0" class="named"><title>205 · 13.87%</title></rect>
+<rect width="173.98" height="12" x="28.02" y="0" class="todo"><title>1273 · 86.13%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">13.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">204</tspan> · <tspan class="todo">1274</tspan></text>
+<text text-anchor="end" x="382" y="7.50">13.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">205</tspan> · <tspan class="todo">1273</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.88" height="12" x="0" y="0" class="named"><title>9 KB · 1.43%</title></rect>
-<rect width="199.12" height="12" x="2.88" y="0" class="todo"><title>654 KB · 98.57%</title></rect>
+<rect width="2.89" height="12" x="0" y="0" class="named"><title>10 KB · 1.43%</title></rect>
+<rect width="199.11" height="12" x="2.89" y="0" class="todo"><title>654 KB · 98.57%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">9 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1001,7 +1001,7 @@
 <rect width="12" height="12" x="540" y="270" class="todo"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="todo"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="named"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="270" class="todo"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="270" class="named"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="270" class="todo"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="270" class="todo"><title>0x00467f70 GetSpheres (733 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="270" class="todo"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
@@ -2881,7 +2881,7 @@
 <rect width="3.30" height="3.53" x="700.69" y="381.23" class="todo"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
 <rect width="3.20" height="3.53" x="706.99" y="381.23" class="named"><title>0x00439060 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="3.20" height="3.53" x="713.20" y="381.23" class="named"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
-<rect width="3.20" height="3.53" x="719.40" y="381.23" class="todo"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
+<rect width="3.20" height="3.53" x="719.40" y="381.23" class="named"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
 <rect width="3.10" height="3.53" x="725.60" y="381.23" class="named"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
 <rect width="3.10" height="3.53" x="731.70" y="381.23" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="3.10" height="3.53" x="737.80" y="381.23" class="named"><title>0x0044d880 ControlLaraExtra (31 bytes)</title></rect>
