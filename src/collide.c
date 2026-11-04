@@ -391,3 +391,42 @@ void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll)
 }
 
 int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
+
+void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (!TestBoundsCollide(item, laraitem, coll->radius))
+        return;
+    if (!TestCollision(item, laraitem))
+        return;
+
+    if (lara.water_status != LARA_UNDERWATER && !lara.water_status != LARA_SURFACE) {
+        if (coll->enable_baddie_push) {
+            ItemPushLara(item, laraitem, coll, coll->enable_hit, 0);
+        } else if (coll->enable_hit) {
+            sint16 *bounds;
+            int x, z, rx, rz, c, s;
+
+            x = laraitem->pos.x_pos - item->pos.x_pos;
+            z = laraitem->pos.z_pos - item->pos.z_pos;
+            c = phd_cos(item->pos.y_rot);
+            s = phd_sin(item->pos.y_rot);
+            bounds = GetBestFrame(item);
+            rx = (bounds[0] + bounds[1]) / 2;
+            rz = (bounds[4] + bounds[5]) / 2;
+            x -= (c * rx + s * rz) >> W2V_SHIFT;
+            z -= (c * rz - s * rx) >> W2V_SHIFT;
+            if (bounds[3] - bounds[2] > STEP_L) {
+                PHD_ANGLE hitang;
+
+                hitang = laraitem->pos.y_rot - (32768 + phd_atan(z, x));
+                lara.hit_direction = (uint16)(hitang + 0x2000) / 0x4000;
+                lara.hit_frame++;
+                if (lara.hit_frame > 30)
+                    lara.hit_frame = 30;
+            }
+        }
+    }
+}
