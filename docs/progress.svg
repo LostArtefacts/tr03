@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="127.29" height="12" x="0" y="0" class="named"><title>402 · 27.20%</title></rect>
-<rect width="340.71" height="12" x="127.29" y="0" class="todo"><title>1076 · 72.80%</title></rect>
+<rect width="127.61" height="12" x="0" y="0" class="named"><title>403 · 27.27%</title></rect>
+<rect width="340.39" height="12" x="127.61" y="0" class="todo"><title>1075 · 72.73%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">27.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">402</tspan> · <tspan class="todo">1076</tspan></text>
+<text text-anchor="end" x="648" y="7.50">27.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">403</tspan> · <tspan class="todo">1075</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="18.96" height="12" x="0" y="0" class="named"><title>27 KB · 4.05%</title></rect>
-<rect width="449.04" height="12" x="18.96" y="0" class="todo"><title>637 KB · 95.95%</title></rect>
+<rect width="19.07" height="12" x="0" y="0" class="named"><title>27 KB · 4.07%</title></rect>
+<rect width="448.93" height="12" x="19.07" y="0" class="todo"><title>637 KB · 95.93%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">27 KB</tspan> · <tspan class="todo">637 KB</tspan></text>
@@ -666,7 +666,7 @@
 <rect width="12" height="12" x="15" y="180" class="named"><title>0x00441a50 lara_as_gymnast (14 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="180" class="named"><title>0x00441a60 lara_as_waterout (24 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="180" class="todo"><title>0x00441a80 lara_as_wade (380 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="180" class="todo"><title>0x00441c00 lara_as_deathslide (153 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="180" class="named"><title>0x00441c00 lara_as_deathslide (153 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="180" class="named"><title>0x00441ca0 extra_as_breath (76 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="180" class="named"><title>0x00441cf0 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="180" class="named"><title>0x00441d90 extra_as_airlock (19 bytes)</title></rect>
@@ -2339,7 +2339,7 @@
 <rect width="7.40" height="7.36" x="575.49" y="243.96" class="todo"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
 <rect width="7.35" height="7.36" x="585.89" y="243.96" class="todo"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
 <rect width="7.35" height="7.36" x="596.24" y="243.96" class="named"><title>0x00440400 lara_col_hangturnlr (153 bytes)</title></rect>
-<rect width="7.35" height="7.36" x="606.59" y="243.96" class="todo"><title>0x00441c00 lara_as_deathslide (153 bytes)</title></rect>
+<rect width="7.35" height="7.36" x="606.59" y="243.96" class="named"><title>0x00441c00 lara_as_deathslide (153 bytes)</title></rect>
 <rect width="7.30" height="7.36" x="616.94" y="243.96" class="todo"><title>0x00453890 GetCollision (152 bytes)</title></rect>
 <rect width="7.30" height="7.36" x="627.24" y="243.96" class="todo"><title>0x0046db30 BladeControl (152 bytes)</title></rect>
 <rect width="7.30" height="7.36" x="637.54" y="243.96" class="todo"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
