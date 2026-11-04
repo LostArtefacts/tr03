@@ -11,6 +11,7 @@ extern sint32 wibble;
 
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void TriggerWaterfallMist(sint32 x, sint32 y, sint32 z, sint32 angle);
+void AnimateLara(ITEM_INFO *item);
 sint16 TestMonkeyLeft(ITEM_INFO *item, COLL_INFO *coll);
 sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 
@@ -24,6 +25,8 @@ sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 #define MAX_HEAD_TILT (30 * ONE_DEGREE)
 #define MIN_HEAD_TILT (-35 * ONE_DEGREE)
 #define MAX_HEAD_ROTATION (44 * ONE_DEGREE)
+#define HANG_HEIGHT 600
+#define NO_BAD_NEG NO_HEIGHT
 
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -119,6 +122,31 @@ void lara_as_all4turnr(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_rot += ONE_DEGREE + ONE_DEGREE / 2;
     if (!(input & IN_RIGHT))
         item->goal_anim_state = AS_ALL4S;
+}
+
+void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll)
+{
+    switch (coll->old_anim_state)
+    {
+    case AS_STOP:
+    case AS_TURN_L:
+    case AS_TURN_R:
+    case AS_FASTTURN:
+        item->current_anim_state = coll->old_anim_state;
+        item->anim_number = coll->old_anim_number;
+        item->frame_number = coll->old_frame_number;
+        if (input & IN_LEFT)
+            item->goal_anim_state = AS_TURN_L;
+        else if (input & IN_RIGHT)
+            item->goal_anim_state = AS_TURN_R;
+        else
+            item->goal_anim_state = AS_STOP;
+        AnimateLara(item);
+        break;
+    default:
+        item->anim_number = STOP_A;
+        item->frame_number = STOP_F;
+    }
 }
 
 void lara_as_dashdive(ITEM_INFO *item, COLL_INFO *coll)
