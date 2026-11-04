@@ -7,6 +7,11 @@ extern int IM_rate, IM_frac;
 extern sint32 *IMptr;
 extern sint32 IMstack[];
 
+void DrawRooms(sint16 current_room);
+void DrawGameInfo(int timed);
+void S_OutputPolyList(void);
+int S_DumpScreen(void);
+void S_AnimateTextures(int nframes);
 void phd_PushMatrix(void);
 void phd_RotX(sint16 rx);
 void phd_RotY(sint16 ry);
@@ -17,6 +22,16 @@ void phd_PutPolygons(sint16 *objptr, int clip);
 void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 void InterpolateMatrix(void);
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+
+sint32 DrawPhaseGame(void)
+{
+    DrawRooms(camera.pos.room_number);
+    DrawGameInfo(1);
+    S_OutputPolyList();
+    camera.number_frames = S_DumpScreen();
+    S_AnimateTextures(camera.number_frames);
+    return camera.number_frames;
+}
 
 void InitInterpolate(int frac, int rate)
 {
