@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="21.05" height="12" x="130" y="1.50" class="named"/>
-<rect width="180.95" height="12" x="151.05" y="1.50" class="todo"/>
+<rect width="21.18" height="12" x="130" y="1.50" class="named"/>
+<rect width="180.82" height="12" x="151.18" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">10.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">154/1478</text>
-<rect width="1.83" height="12" x="130" y="18.50" class="named"/>
-<rect width="200.17" height="12" x="131.83" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">10.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">155/1478</text>
+<rect width="1.85" height="12" x="130" y="18.50" class="named"/>
+<rect width="200.15" height="12" x="131.85" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">6k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">10.42% (154)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.58% (1324)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">10.49% (155)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.51% (1323)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="77.83" height="6" x="0" y="0" class="named"/>
-<rect width="669.17" height="6" x="77.83" y="0" class="todo"/>
+<rect width="78.34" height="6" x="0" y="0" class="named"/>
+<rect width="668.66" height="6" x="78.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -411,7 +411,7 @@
 <rect width="12" height="12" x="675" y="90" class="named"><title>0x0042f110 ControlClockChimes (111 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="90" class="named"><title>0x0042f180 lara_hands_free (10 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="90" class="named"><title>0x0042f190 flip_map_effect (5 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="90" class="todo"><title>0x0042f1a0 draw_right_gun (67 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="90" class="named"><title>0x0042f1a0 draw_right_gun (67 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="90" class="todo"><title>0x0042f1f0 draw_left_gun (67 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="105" class="named"><title>0x0042f240 shoot_right_gun (10 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="105" class="named"><title>0x0042f250 shoot_left_gun (10 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.91%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.09%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.92%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.08%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="6.76" height="6" x="0" y="0" class="named"/>
-<rect width="740.24" height="6" x="6.76" y="0" class="todo"/>
+<rect width="6.84" height="6" x="0" y="0" class="named"/>
+<rect width="740.16" height="6" x="6.84" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2650,7 +2650,7 @@
 <rect width="2.67" height="3.14" x="660.73" y="374.59" class="todo"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
 <rect width="2.67" height="3.14" x="660.73" y="380.73" class="todo"><title>0x0048a9b0 S_LightRoom (68 bytes)</title></rect>
 <rect width="2.67" height="3.14" x="660.73" y="386.88" class="todo"><title>0x004b3950 DD_CreateSurface (68 bytes)</title></rect>
-<rect width="2.67" height="3.05" x="660.73" y="393.02" class="todo"><title>0x0042f1a0 draw_right_gun (67 bytes)</title></rect>
+<rect width="2.67" height="3.05" x="660.73" y="393.02" class="named"><title>0x0042f1a0 draw_right_gun (67 bytes)</title></rect>
 <rect width="2.67" height="3.05" x="660.73" y="399.07" class="todo"><title>0x0042f1f0 draw_left_gun (67 bytes)</title></rect>
 <rect width="2.67" height="3.05" x="660.73" y="405.12" class="todo"><title>0x0044af50 WeaponObject (67 bytes)</title></rect>
 <rect width="2.67" height="3.05" x="660.73" y="411.18" class="todo"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
