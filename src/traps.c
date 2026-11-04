@@ -51,6 +51,24 @@ void InitialiseBlade(sint16 item_number)
     item->current_anim_state = STATUE_STOP;
 }
 
+void BladeControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (TriggerActive(item) && item->current_anim_state == STATUE_STOP)
+        item->goal_anim_state = STATUE_CUT;
+    else
+        item->goal_anim_state = STATUE_STOP;
+    if ((item->touch_bits & 2) && item->current_anim_state == STATUE_CUT)
+    {
+        lara_item->hit_status = 1;
+        lara_item->hit_points -= BLADE_DAMAGE;
+        DoLotsOfBlood(lara_item->pos.x_pos, item->pos.y_pos - STEP_L, lara_item->pos.z_pos, lara_item->speed, lara_item->pos.y_rot, lara_item->room_number, 2);
+    }
+    AnimateItem(item);
+}
+
 void InitialiseKillerStatue(sint16 item_number)
 {
     ITEM_INFO *item;
