@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="135.21" height="12" x="0" y="0" class="named"><title>427 · 28.89%</title></rect>
-<rect width="332.79" height="12" x="135.21" y="0" class="todo"><title>1051 · 71.11%</title></rect>
+<rect width="135.52" height="12" x="0" y="0" class="named"><title>428 · 28.96%</title></rect>
+<rect width="332.48" height="12" x="135.52" y="0" class="todo"><title>1050 · 71.04%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">28.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">427</tspan> · <tspan class="todo">1051</tspan></text>
+<text text-anchor="end" x="648" y="7.50">29.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">428</tspan> · <tspan class="todo">1050</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="21.74" height="12" x="0" y="0" class="named"><title>31 KB · 4.64%</title></rect>
-<rect width="446.26" height="12" x="21.74" y="0" class="todo"><title>633 KB · 95.36%</title></rect>
+<rect width="21.85" height="12" x="0" y="0" class="named"><title>31 KB · 4.67%</title></rect>
+<rect width="446.15" height="12" x="21.85" y="0" class="todo"><title>633 KB · 95.33%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">4.6%</text>
+<text text-anchor="end" x="648" y="24.50">4.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">31 KB</tspan> · <tspan class="todo">633 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -932,7 +932,7 @@
 <rect width="12" height="12" x="255" y="255" class="todo"><title>0x0045b610 Targetable (210 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="255" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="255" class="todo"><title>0x0045b700 GunHit (185 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="255" class="todo"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="255" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="255" class="todo"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="todo"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
@@ -2298,7 +2298,7 @@
 <rect width="7.96" height="7.45" x="555.60" y="233.52" class="todo"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
 <rect width="7.96" height="7.45" x="566.56" y="233.52" class="todo"><title>0x0046ef40 SideFlameEmitterControl (168 bytes)</title></rect>
 <rect width="7.92" height="7.45" x="577.53" y="233.52" class="named"><title>0x004552c0 ShootAtLara (167 bytes)</title></rect>
-<rect width="7.92" height="7.45" x="588.44" y="233.52" class="todo"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
+<rect width="7.92" height="7.45" x="588.44" y="233.52" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
 <rect width="7.87" height="7.45" x="599.36" y="233.52" class="todo"><title>0x00413ff0 BoomuteControl (166 bytes)</title></rect>
 <rect width="7.87" height="7.45" x="610.23" y="233.52" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
 <rect width="7.82" height="7.45" x="621.10" y="233.52" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
