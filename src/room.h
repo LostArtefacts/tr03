@@ -110,7 +110,6 @@ typedef struct room_info {
     uint16 flags;
 } ROOM_INFO;
 
-extern ROOM_INFO *room;
 extern sint16 number_rooms;
 extern BOX_INFO *boxes;
 

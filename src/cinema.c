@@ -31,6 +31,25 @@ void InitialiseGenPlayer(sint16 item_num)
     items[item_num].dynamic_light = 0;
 }
 
+extern sint16 draw_rooms[];
+extern int number_draw_rooms;
+
+void InitCinematicRooms(void)
+{
+    int i;
+
+    for (i = 0; i < number_rooms; i++) {
+        if (room[i].flipped_room >= 0)
+            room[room[i].flipped_room].bound_active = 1;
+        room[i].flags |= 8;
+    }
+    number_draw_rooms = 0;
+    for (i = 0; i < number_rooms; i++) {
+        if (!room[i].bound_active)
+            draw_rooms[number_draw_rooms++] = i;
+    }
+}
+
 int GetCinematicRoom(sint32 x, sint32 y, sint32 z)
 {
     int i;
