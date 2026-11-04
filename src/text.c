@@ -47,3 +47,18 @@ void T_ChangeText(TEXTSTRING *textString, char *string)
         memcpy(textString->string, string, MAX_STRING_SIZE);
     }
 }
+
+void T_FlashText(TEXTSTRING *textString, sint16 ok, sint16 rate)
+{
+    if (textString == NULL)
+        return;
+
+    if (ok)
+    {
+        textString->flags |= T_FLASH;
+        textString->flashRate = rate;
+        textString->flashCount = rate;
+    }
+    else
+        textString->flags &= ~T_FLASH;
+}
