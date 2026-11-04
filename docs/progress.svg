@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="183.97" height="12" x="0" y="0" class="named"><title>581 · 39.31%</title></rect>
-<rect width="284.03" height="12" x="183.97" y="0" class="todo"><title>897 · 60.69%</title></rect>
+<rect width="184.29" height="12" x="0" y="0" class="named"><title>582 · 39.38%</title></rect>
+<rect width="283.71" height="12" x="184.29" y="0" class="todo"><title>896 · 60.62%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">39.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">581</tspan> · <tspan class="todo">897</tspan></text>
+<text text-anchor="end" x="648" y="7.50">39.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">582</tspan> · <tspan class="todo">896</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="53.33" height="12" x="0" y="0" class="named"><title>76 KB · 11.39%</title></rect>
-<rect width="414.67" height="12" x="53.33" y="0" class="todo"><title>589 KB · 88.61%</title></rect>
+<rect width="53.60" height="12" x="0" y="0" class="named"><title>76 KB · 11.45%</title></rect>
+<rect width="414.40" height="12" x="53.60" y="0" class="todo"><title>589 KB · 88.55%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">11.4%</text>
+<text text-anchor="end" x="648" y="24.50">11.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">76 KB</tspan> · <tspan class="todo">589 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -204,7 +204,7 @@
 <rect width="12" height="12" x="585" y="30" class="named"><title>0x00416620 CreatureUnderwater (80 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="30" class="named"><title>0x00416670 CreatureEffect (92 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="30" class="named"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="30" class="todo"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="30" class="named"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="30" class="named"><title>0x004169c0 AlertAllGuards (97 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="30" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="30" class="named"><title>0x00416ac0 AIGuard (149 bytes)</title></rect>
@@ -1995,7 +1995,7 @@
 <rect width="11.82" height="11.52" x="431.45" y="277.39" class="todo"><title>0x00425d10 DrawEffect (386 bytes)</title></rect>
 <rect width="11.82" height="11.46" x="431.45" y="291.91" class="todo"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
 <rect width="11.82" height="11.46" x="431.45" y="306.37" class="todo"><title>0x004920a0 Func4920a0 (384 bytes)</title></rect>
-<rect width="11.82" height="11.43" x="431.45" y="320.82" class="todo"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
+<rect width="11.82" height="11.43" x="431.45" y="320.82" class="named"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
 <rect width="11.82" height="11.43" x="431.45" y="335.25" class="todo"><title>0x00449a30 UpdateElectricityPoints (383 bytes)</title></rect>
 <rect width="11.82" height="11.40" x="431.45" y="349.68" class="todo"><title>0x004426b0 lara_col_hang (382 bytes)</title></rect>
 <rect width="11.82" height="11.37" x="431.45" y="364.08" class="todo"><title>0x00471e30 TriggerSummonSmoke (381 bytes)</title></rect>
