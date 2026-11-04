@@ -71,3 +71,22 @@ int PickupTrigger(sint16 item_num)
     }
     return 0;
 }
+
+void BossDropIcon(sint16 item_number)
+{
+    sint16 pickup_number;
+    ITEM_INFO *item, *pickup;
+
+    item = &items[item_number];
+    pickup_number = item->carried_item;
+    while (pickup_number != NO_ITEM) {
+        pickup = &items[pickup_number];
+        pickup->pos.x_pos = item->pos.x_pos;
+        pickup->pos.y_pos = item->pos.y_pos;
+        pickup->pos.z_pos = item->pos.z_pos;
+        ItemNewRoom(pickup_number, item->room_number);
+        AddActiveItem(pickup_number);
+        item->status = ACTIVE;
+        pickup_number = pickup->carried_item;
+    }
+}

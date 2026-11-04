@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="143.44" height="12" x="0" y="0" class="named"><title>453 · 30.65%</title></rect>
-<rect width="324.56" height="12" x="143.44" y="0" class="todo"><title>1025 · 69.35%</title></rect>
+<rect width="143.76" height="12" x="0" y="0" class="named"><title>454 · 30.72%</title></rect>
+<rect width="324.24" height="12" x="143.76" y="0" class="todo"><title>1024 · 69.28%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">30.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">453</tspan> · <tspan class="todo">1025</tspan></text>
+<text text-anchor="end" x="648" y="7.50">30.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">454</tspan> · <tspan class="todo">1024</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="24.58" height="12" x="0" y="0" class="named"><title>35 KB · 5.25%</title></rect>
-<rect width="443.42" height="12" x="24.58" y="0" class="todo"><title>629 KB · 94.75%</title></rect>
+<rect width="24.67" height="12" x="0" y="0" class="named"><title>35 KB · 5.27%</title></rect>
+<rect width="443.33" height="12" x="24.67" y="0" class="todo"><title>629 KB · 94.73%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">35 KB</tspan> · <tspan class="todo">629 KB</tspan></text>
@@ -944,7 +944,7 @@
 <rect width="12" height="12" x="435" y="255" class="named"><title>0x0045ccb0 SwitchTrigger (150 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="255" class="named"><title>0x0045cd50 KeyTrigger (72 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="255" class="named"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="255" class="todo"><title>0x0045cde0 BossDropIcon (132 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="255" class="named"><title>0x0045cde0 BossDropIcon (132 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="255" class="todo"><title>0x0045ce70 AnimatingPickUp (379 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="255" class="named"><title>0x0045cff0 InitialisePrisoner (82 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="255" class="todo"><title>0x0045d050 PrisonerControl (2859 bytes)</title></rect>
@@ -2396,7 +2396,7 @@
 <rect width="6.88" height="6.78" x="574.34" y="254.32" class="named"><title>0x00441450 lara_as_back (132 bytes)</title></rect>
 <rect width="6.88" height="6.78" x="584.22" y="254.32" class="named"><title>0x004446e0 LookUpDown (132 bytes)</title></rect>
 <rect width="6.88" height="6.78" x="594.10" y="254.32" class="named"><title>0x00459c00 ControlPulseLight (132 bytes)</title></rect>
-<rect width="6.88" height="6.78" x="603.98" y="254.32" class="todo"><title>0x0045cde0 BossDropIcon (132 bytes)</title></rect>
+<rect width="6.88" height="6.78" x="603.98" y="254.32" class="named"><title>0x0045cde0 BossDropIcon (132 bytes)</title></rect>
 <rect width="6.83" height="6.78" x="613.86" y="254.32" class="named"><title>0x00443c10 AddJointPos (131 bytes)</title></rect>
 <rect width="6.83" height="6.78" x="623.69" y="254.32" class="named"><title>0x00458b90 InitialiseWindow (131 bytes)</title></rect>
 <rect width="6.78" height="6.78" x="633.52" y="254.32" class="named"><title>0x0042e460 DoLotsOfBloodD (130 bytes)</title></rect>
