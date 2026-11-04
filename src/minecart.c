@@ -44,6 +44,59 @@ void MineCartInitialise(sint16 item_number)
 int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
 int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
 
+int GetInMineCart(ITEM_INFO *v, ITEM_INFO *l, COLL_INFO *coll);
+void CreateFlare(int thrown);
+sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
+void S_CDPlay(sint32 track, int mode);
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
+void MineCartCollision(sint16 item_number, ITEM_INFO *l, COLL_INFO *coll)
+{
+    int geton;
+    ITEM_INFO *v;
+
+    if (l->hit_points < 0 || lara.skidoo != NO_ITEM)
+        return;
+
+    v = &items[item_number];
+    if ((geton = GetInMineCart(v, l, coll))) {
+        sint16 ang;
+        CARTINFO *cart;
+
+        lara.skidoo = item_number;
+        if (lara.gun_type == LG_FLARE) {
+            CreateFlare(0);
+            undraw_flare_meshes();
+            lara.flare_control_left = 0;
+            lara.request_gun_type = lara.gun_type = LG_ARMLESS;
+        }
+        lara.gun_status = LG_HANDSBUSY;
+
+        ang = (sint16)mGetAngle(v->pos.x_pos, v->pos.z_pos, l->pos.x_pos, l->pos.z_pos) - v->pos.y_rot;
+        if (ang > -(ONE_DEGREE * 45) && ang < ONE_DEGREE * 135)
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 46;
+        else
+            l->anim_number = objects[VEHICLE_ANIM].anim_index;
+        l->frame_number = anims[l->anim_number].frame_base;
+        l->current_anim_state = l->goal_anim_state = 0;
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.x_rot = v->pos.x_rot;
+        l->pos.y_rot = v->pos.y_rot;
+        l->pos.z_rot = v->pos.z_rot;
+
+        cart = (CARTINFO *)v->data;
+        cart->Flags = 0;
+        cart->Speed = 0;
+        cart->YVel = 0;
+        cart->Gradient = 0;
+        S_CDPlay(12, 0);
+    } else {
+        ObjectCollision(item_number, l, coll);
+    }
+}
+
 int GetInMineCart(ITEM_INFO *v, ITEM_INFO *l, COLL_INFO *coll)
 {
     int dist;
@@ -68,3 +121,6 @@ int GetInMineCart(ITEM_INFO *v, ITEM_INFO *l, COLL_INFO *coll)
         return 0;
     return 1;
 }
+
+void DoUserInput(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart);
+void MoveCart(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart);

@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="198.22" height="12" x="0" y="0" class="named"><title>626 · 42.35%</title></rect>
-<rect width="269.78" height="12" x="198.22" y="0" class="todo"><title>852 · 57.65%</title></rect>
+<rect width="198.54" height="12" x="0" y="0" class="named"><title>627 · 42.42%</title></rect>
+<rect width="269.46" height="12" x="198.54" y="0" class="todo"><title>851 · 57.58%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">42.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">626</tspan> · <tspan class="todo">852</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">627</tspan> · <tspan class="todo">851</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="63.79" height="12" x="0" y="0" class="named"><title>91 KB · 13.63%</title></rect>
-<rect width="404.21" height="12" x="63.79" y="0" class="todo"><title>574 KB · 86.37%</title></rect>
+<rect width="64.02" height="12" x="0" y="0" class="named"><title>91 KB · 13.68%</title></rect>
+<rect width="403.98" height="12" x="64.02" y="0" class="todo"><title>574 KB · 86.32%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">13.6%</text>
+<text text-anchor="end" x="648" y="24.50">13.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">91 KB</tspan> · <tspan class="todo">574 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -860,7 +860,7 @@
 <rect width="12" height="12" x="675" y="225" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="225" class="named"><title>0x00453890 GetCollision (152 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="225" class="todo"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="225" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="named"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="240" class="todo"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="240" class="todo"><title>0x00453ca0 MoveCart (1323 bytes)</title></rect>
@@ -2052,7 +2052,7 @@
 <rect width="10.96" height="10.78" x="516.20" y="160.08" class="todo"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
 <rect width="10.93" height="10.78" x="530.16" y="160.08" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="10.90" height="10.78" x="544.09" y="160.08" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
-<rect width="10.90" height="10.78" x="557.98" y="160.08" class="todo"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
+<rect width="10.90" height="10.78" x="557.98" y="160.08" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="10.86" height="10.78" x="571.88" y="160.08" class="todo"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
 <rect width="10.86" height="10.78" x="585.74" y="160.08" class="todo"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
 <rect width="10.83" height="10.78" x="599.61" y="160.08" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
