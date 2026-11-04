@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="167.19" height="12" x="0" y="0" class="named"><title>528 · 35.72%</title></rect>
-<rect width="300.81" height="12" x="167.19" y="0" class="todo"><title>950 · 64.28%</title></rect>
+<rect width="167.50" height="12" x="0" y="0" class="named"><title>529 · 35.79%</title></rect>
+<rect width="300.50" height="12" x="167.50" y="0" class="todo"><title>949 · 64.21%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">35.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">528</tspan> · <tspan class="todo">950</tspan></text>
+<text text-anchor="end" x="648" y="7.50">35.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">529</tspan> · <tspan class="todo">949</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="34.55" height="12" x="0" y="0" class="named"><title>49 KB · 7.38%</title></rect>
-<rect width="433.45" height="12" x="34.55" y="0" class="todo"><title>615 KB · 92.62%</title></rect>
+<rect width="34.71" height="12" x="0" y="0" class="named"><title>49 KB · 7.42%</title></rect>
+<rect width="433.29" height="12" x="34.71" y="0" class="todo"><title>615 KB · 92.58%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">7.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">49 KB</tspan> · <tspan class="todo">615 KB</tspan></text>
@@ -1066,7 +1066,7 @@
 <rect width="12" height="12" x="15" y="300" class="named"><title>0x0046daf0 InitialiseBlade (64 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="300" class="named"><title>0x0046db30 BladeControl (152 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="300" class="named"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="300" class="todo"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="300" class="named"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="300" class="named"><title>0x0046dd10 InitialiseRollingBall (64 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="300" class="todo"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="300" class="todo"><title>0x0046e0e0 RollingBallCollision (601 bytes)</title></rect>
@@ -2188,7 +2188,7 @@
 <rect width="9.15" height="8.76" x="499.01" y="379.70" class="named"><title>0x0043dfc0 LaraSlideEdgeJump (227 bytes)</title></rect>
 <rect width="9.15" height="8.72" x="499.01" y="391.45" class="todo"><title>0x00413f00 BoatSplash (226 bytes)</title></rect>
 <rect width="9.15" height="8.72" x="499.01" y="403.17" class="todo"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
-<rect width="9.15" height="8.72" x="499.01" y="414.89" class="todo"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
+<rect width="9.15" height="8.72" x="499.01" y="414.89" class="named"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
 <rect width="9.15" height="8.72" x="499.01" y="426.60" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="9.15" height="8.68" x="499.01" y="438.32" class="todo"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="9.22" height="8.62" x="511.16" y="199.33" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>

@@ -82,6 +82,27 @@ void InitialiseKillerStatue(sint16 item_number)
     item->current_anim_state = STATUE_STOP;
 }
 
+void SpringBoardControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->current_anim_state == 0 && lara_item->pos.y_pos == item->pos.y_pos && (lara_item->pos.x_pos >> WALL_SHIFT) == (item->pos.x_pos >> WALL_SHIFT) && (lara_item->pos.z_pos >> WALL_SHIFT) == (item->pos.z_pos >> WALL_SHIFT)) {
+        if (lara_item->hit_points <= 0)
+            return;
+        if (lara_item->current_anim_state == AS_BACK || lara_item->current_anim_state == AS_FASTBACK)
+            lara_item->speed = -lara_item->speed;
+        lara_item->fallspeed = -240;
+        lara_item->gravity_status = 1;
+        lara_item->anim_number = FALLDOWN_A;
+        lara_item->frame_number = FALLDOWN_F;
+        lara_item->current_anim_state = AS_FORWARDJUMP;
+        lara_item->goal_anim_state = AS_FORWARDJUMP;
+        item->goal_anim_state = 1;
+    }
+    AnimateItem(item);
+}
+
 void InitialiseRollingBall(sint16 item_number)
 {
     ITEM_INFO *item;
