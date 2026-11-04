@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="88.34" height="12" x="0" y="0" class="named"><title>279 · 18.88%</title></rect>
-<rect width="379.66" height="12" x="88.34" y="0" class="todo"><title>1199 · 81.12%</title></rect>
+<rect width="88.66" height="12" x="0" y="0" class="named"><title>280 · 18.94%</title></rect>
+<rect width="379.34" height="12" x="88.66" y="0" class="todo"><title>1198 · 81.06%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">18.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">279</tspan> · <tspan class="todo">1199</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">280</tspan> · <tspan class="todo">1198</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.96" height="12" x="0" y="0" class="named"><title>14 KB · 2.13%</title></rect>
-<rect width="458.04" height="12" x="9.96" y="0" class="todo"><title>650 KB · 97.87%</title></rect>
+<rect width="10.02" height="12" x="0" y="0" class="named"><title>14 KB · 2.14%</title></rect>
+<rect width="457.98" height="12" x="10.02" y="0" class="todo"><title>650 KB · 97.86%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">14 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
@@ -136,7 +136,7 @@
 <rect width="12" height="12" x="315" y="15" class="todo"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="15" class="todo"><title>0x0040d1c0 S_DrawScreenSprite2d (338 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="15" class="todo"><title>0x0040d320 S_DrawScreenSprite (163 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="15" class="todo"><title>0x0040d5f0 InitialiseBaton (82 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="15" class="named"><title>0x0040d5f0 InitialiseBaton (82 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="15" class="todo"><title>0x0040d650 BatonControl (3238 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="15" class="todo"><title>0x0040e350 InitialiseCivvy (82 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="15" class="todo"><title>0x0040e3b0 CivvyControl (2208 bytes)</title></rect>
@@ -2569,7 +2569,7 @@
 <rect width="5.32" height="5.52" x="659.10" y="300.51" class="todo"><title>0x0044edd0 lara_as_uwdeath (83 bytes)</title></rect>
 <rect width="5.32" height="5.52" x="667.41" y="300.51" class="todo"><title>0x0046e530 TrapDoorControl (83 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="675.73" y="300.51" class="todo"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
-<rect width="5.25" height="5.52" x="683.98" y="300.51" class="todo"><title>0x0040d5f0 InitialiseBaton (82 bytes)</title></rect>
+<rect width="5.25" height="5.52" x="683.98" y="300.51" class="named"><title>0x0040d5f0 InitialiseBaton (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="692.24" y="300.51" class="todo"><title>0x0040e350 InitialiseCivvy (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="700.49" y="300.51" class="todo"><title>0x0040fef0 InitialiseArmySMG (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="708.74" y="300.51" class="todo"><title>0x00410e60 CanUseGun (82 bytes)</title></rect>
