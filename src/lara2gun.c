@@ -1,5 +1,34 @@
 #include "game.h"
 
+typedef struct {
+    sint16 ObjectNum;
+    sint8 Draw1Anim2;
+    sint8 Draw1Anim;
+    sint8 Draw2Anim;
+    sint8 RecoilAnim;
+} PISTOL_DEF;
+
+extern PISTOL_DEF PistolTable[4];
+
+void set_arm_info(LARA_ARM *arm, int frame)
+{
+    int anim_base;
+    PISTOL_DEF *p;
+
+    p = &PistolTable[lara.gun_type];
+    anim_base = objects[p->ObjectNum].anim_index;
+    if (frame < p->Draw1Anim)
+        arm->anim_number = anim_base;
+    else if (frame < p->Draw2Anim)
+        arm->anim_number = anim_base + 1;
+    else if (frame < p->RecoilAnim)
+        arm->anim_number = anim_base + 2;
+    else
+        arm->anim_number = anim_base + 3;
+    arm->frame_base = anims[arm->anim_number].frame_ptr;
+    arm->frame_number = frame;
+}
+
 void ready_pistols(int weapon_type)
 {
     lara.gun_status = LG_READY;

@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="115.26" height="12" x="0" y="0" class="named"><title>364 · 24.63%</title></rect>
-<rect width="352.74" height="12" x="115.26" y="0" class="todo"><title>1114 · 75.37%</title></rect>
+<rect width="115.58" height="12" x="0" y="0" class="named"><title>365 · 24.70%</title></rect>
+<rect width="352.42" height="12" x="115.58" y="0" class="todo"><title>1113 · 75.30%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">24.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">364</tspan> · <tspan class="todo">1114</tspan></text>
+<text text-anchor="end" x="648" y="7.50">24.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">365</tspan> · <tspan class="todo">1113</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="15.65" height="12" x="0" y="0" class="named"><title>22 KB · 3.34%</title></rect>
-<rect width="452.35" height="12" x="15.65" y="0" class="todo"><title>642 KB · 96.66%</title></rect>
+<rect width="15.73" height="12" x="0" y="0" class="named"><title>22 KB · 3.36%</title></rect>
+<rect width="452.27" height="12" x="15.73" y="0" class="todo"><title>642 KB · 96.64%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">3.3%</text>
+<text text-anchor="end" x="648" y="24.50">3.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">22 KB</tspan> · <tspan class="todo">642 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -740,7 +740,7 @@
 <rect width="12" height="12" x="375" y="195" class="todo"><title>0x00447880 AnimateShotgun (1255 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="195" class="todo"><title>0x00447d90 TriggerUnderwaterExplosion (402 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="195" class="todo"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="195" class="todo"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="195" class="named"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="195" class="named"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="195" class="named"><title>0x00448350 draw_pistol_meshes (89 bytes)</title></rect>
@@ -2434,7 +2434,7 @@
 <rect width="6.63" height="6.44" x="564.61" y="273.84" class="todo"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="6.63" height="6.39" x="564.61" y="283.28" class="todo"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="6.63" height="6.39" x="564.61" y="292.67" class="named"><title>0x0043fb90 lara_as_hang2 (120 bytes)</title></rect>
-<rect width="6.63" height="6.39" x="564.61" y="302.06" class="todo"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>
+<rect width="6.63" height="6.39" x="564.61" y="302.06" class="named"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>
 <rect width="6.63" height="6.39" x="564.61" y="311.45" class="named"><title>0x004491c0 lara_as_climbstnc (120 bytes)</title></rect>
 <rect width="6.63" height="6.39" x="564.61" y="320.84" class="todo"><title>0x0045730b Func45730b (120 bytes)</title></rect>
 <rect width="6.63" height="6.34" x="564.61" y="330.23" class="todo"><title>0x00438380 Inv_RequestItem (119 bytes)</title></rect>
