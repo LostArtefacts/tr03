@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="141.54" height="12" x="0" y="0" class="named"><title>447 · 30.24%</title></rect>
-<rect width="326.46" height="12" x="141.54" y="0" class="todo"><title>1031 · 69.76%</title></rect>
+<rect width="141.86" height="12" x="0" y="0" class="named"><title>448 · 30.31%</title></rect>
+<rect width="326.14" height="12" x="141.86" y="0" class="todo"><title>1030 · 69.69%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">30.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">447</tspan> · <tspan class="todo">1031</tspan></text>
+<text text-anchor="end" x="648" y="7.50">30.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">448</tspan> · <tspan class="todo">1030</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="24.02" height="12" x="0" y="0" class="named"><title>34 KB · 5.13%</title></rect>
-<rect width="443.98" height="12" x="24.02" y="0" class="todo"><title>630 KB · 94.87%</title></rect>
+<rect width="24.12" height="12" x="0" y="0" class="named"><title>34 KB · 5.15%</title></rect>
+<rect width="443.88" height="12" x="24.12" y="0" class="todo"><title>630 KB · 94.85%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">5.1%</text>
+<text text-anchor="end" x="648" y="24.50">5.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">34 KB</tspan> · <tspan class="todo">630 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -493,7 +493,7 @@
 <rect width="12" height="12" x="420" y="120" class="todo"><title>0x00434e60 HybridControl (1393 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="120" class="todo"><title>0x00435400 Display_Inventory (4978 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="120" class="todo"><title>0x00436840 Construct_Inventory (377 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="120" class="todo"><title>0x004369c0 SelectMeshes (143 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="120" class="named"><title>0x004369c0 SelectMeshes (143 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="120" class="todo"><title>0x00436a50 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="120" class="todo"><title>0x00436ae0 DrawInventoryItem (1200 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="120" class="todo"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
@@ -2367,7 +2367,7 @@
 <rect width="6.98" height="7.29" x="544.30" y="368.25" class="todo"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
 <rect width="6.98" height="7.24" x="544.30" y="378.54" class="todo"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>
 <rect width="6.98" height="7.24" x="544.30" y="388.77" class="todo"><title>0x00411450 InitialiseVulture (143 bytes)</title></rect>
-<rect width="6.98" height="7.24" x="544.30" y="399.01" class="todo"><title>0x004369c0 SelectMeshes (143 bytes)</title></rect>
+<rect width="6.98" height="7.24" x="544.30" y="399.01" class="named"><title>0x004369c0 SelectMeshes (143 bytes)</title></rect>
 <rect width="6.98" height="7.24" x="544.30" y="409.25" class="todo"><title>0x00496b20 MMXBlit32to24 (143 bytes)</title></rect>
 <rect width="6.98" height="7.19" x="544.30" y="419.49" class="todo"><title>0x0041aa40 InitCinematicRooms (142 bytes)</title></rect>
 <rect width="6.98" height="7.19" x="544.30" y="429.68" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
