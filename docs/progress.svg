@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="28.02" height="12" x="0" y="0" class="named"><title>205 · 13.87%</title></rect>
-<rect width="173.98" height="12" x="28.02" y="0" class="todo"><title>1273 · 86.13%</title></rect>
+<rect width="28.15" height="12" x="0" y="0" class="named"><title>206 · 13.94%</title></rect>
+<rect width="173.85" height="12" x="28.15" y="0" class="todo"><title>1272 · 86.06%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">13.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">205</tspan> · <tspan class="todo">1273</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">206</tspan> · <tspan class="todo">1272</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.89" height="12" x="0" y="0" class="named"><title>10 KB · 1.43%</title></rect>
-<rect width="199.11" height="12" x="2.89" y="0" class="todo"><title>654 KB · 98.57%</title></rect>
+<rect width="2.90" height="12" x="0" y="0" class="named"><title>10 KB · 1.44%</title></rect>
+<rect width="199.10" height="12" x="2.90" y="0" class="todo"><title>654 KB · 98.56%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -1343,7 +1343,7 @@
 <rect width="12" height="12" x="420" y="375" class="todo"><title>0x0048bf40 S_FadeToBlack (197 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="375" class="todo"><title>0x0048c010 DrawMonoScreen (22 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="375" class="todo"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="375" class="todo"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="375" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="375" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="375" class="todo"><title>0x0048c150 GameMain (704 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="375" class="todo"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
@@ -2872,7 +2872,7 @@
 <rect width="3.72" height="3.23" x="675.06" y="412.84" class="named"><title>0x00429390 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="3.72" height="3.23" x="675.06" y="419.07" class="named"><title>0x00439000 Inv_RingMotionRotation (34 bytes)</title></rect>
 <rect width="3.72" height="3.23" x="675.06" y="425.29" class="todo"><title>0x00475400 DI_Create (34 bytes)</title></rect>
-<rect width="3.72" height="3.23" x="675.06" y="431.52" class="todo"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
+<rect width="3.72" height="3.23" x="675.06" y="431.52" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
 <rect width="3.72" height="3.13" x="675.06" y="437.75" class="named"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
 <rect width="3.72" height="3.13" x="675.06" y="443.87" class="named"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
 <rect width="3.30" height="3.53" x="681.77" y="381.23" class="todo"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
