@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="156.42" height="12" x="0" y="0" class="named"><title>494 · 33.42%</title></rect>
-<rect width="311.58" height="12" x="156.42" y="0" class="todo"><title>984 · 66.58%</title></rect>
+<rect width="156.74" height="12" x="0" y="0" class="named"><title>495 · 33.49%</title></rect>
+<rect width="311.26" height="12" x="156.74" y="0" class="todo"><title>983 · 66.51%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">33.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">494</tspan> · <tspan class="todo">984</tspan></text>
+<text text-anchor="end" x="648" y="7.50">33.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">495</tspan> · <tspan class="todo">983</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="29.33" height="12" x="0" y="0" class="named"><title>42 KB · 6.27%</title></rect>
-<rect width="438.67" height="12" x="29.33" y="0" class="todo"><title>622 KB · 93.73%</title></rect>
+<rect width="29.47" height="12" x="0" y="0" class="named"><title>42 KB · 6.30%</title></rect>
+<rect width="438.53" height="12" x="29.47" y="0" class="todo"><title>622 KB · 93.70%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">42 KB</tspan> · <tspan class="todo">622 KB</tspan></text>
@@ -586,7 +586,7 @@
 <rect width="12" height="12" x="315" y="150" class="todo"><title>0x0043e0b0 LaraTestHangOnClimbWall (245 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="150" class="todo"><title>0x0043e1c0 LaraHangTest (768 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="150" class="todo"><title>0x0043e4e0 LaraTestHangJump (586 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="150" class="todo"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="150" class="named"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="150" class="todo"><title>0x0043e800 LaraAboveWater (530 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="150" class="todo"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="150" class="todo"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
@@ -2249,7 +2249,7 @@
 <rect width="8.30" height="8.30" x="671.42" y="211.36" class="todo"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
 <rect width="8.26" height="8.30" x="682.72" y="211.36" class="todo"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="693.98" y="211.36" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
-<rect width="8.21" height="8.30" x="705.19" y="211.36" class="todo"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
+<rect width="8.21" height="8.30" x="705.19" y="211.36" class="named"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="716.40" y="211.36" class="todo"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="727.62" y="211.36" class="todo"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
 <rect width="8.17" height="8.30" x="738.83" y="211.36" class="todo"><title>0x00439c50 ChangeRequesterItem (192 bytes)</title></rect>

@@ -35,6 +35,8 @@ sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 #define FALLBACK_F GF(FALLBACK_A, 0)
 #define SWAMP_GRAVITY 2
 
+int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
+
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->facing = lara.move_angle;
@@ -68,6 +70,41 @@ void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
     default:
         break;
     }
+}
+
+int TestHangSwingIn(ITEM_INFO *item, PHD_ANGLE angle)
+{
+    int x, y, z;
+    int h, c;
+    FLOOR_INFO *floor;
+    sint16 room_num;
+
+    x = item->pos.x_pos;
+    y = item->pos.y_pos;
+    z = item->pos.z_pos;
+    room_num = item->room_number;
+    switch (angle) {
+    case 0:
+        z += 256;
+        break;
+    case 16384:
+        x += 256;
+        break;
+    case -16384:
+        x -= 256;
+        break;
+    case -32768:
+        z -= 256;
+        break;
+    }
+    floor = GetFloor(x, y, z, &room_num);
+    h = GetHeight(floor, x, y, z);
+    c = GetCeiling(floor, x, y, z);
+    if (h != NO_HEIGHT) {
+        if (h - y > 0 && c - y < -400 && y - 819 - c > -72)
+            return 1;
+    }
+    return 0;
 }
 
 void lara_as_all4s(ITEM_INFO *item, COLL_INFO *coll)
