@@ -55,6 +55,39 @@ void LaraCheat(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+#define SWIMGLIDE_A 87
+#define SWIMGLIDE_F GF(SWIMGLIDE_A, 0)
+
+void LaraCheatyBits(void)
+{
+    if (!gameflow.cheat_enable && !gameflow.dozy_cheat_enabled)
+        return;
+
+    if (input & IN_D) {
+        LaraCheatGetStuff();
+        lara_item->hit_points = 1000;
+    }
+
+    if (input & IN_C) {
+        lara_item->pos.y_pos -= STEP_L / 2;
+        if (lara.water_status != LARA_CHEAT) {
+            lara.water_status = LARA_CHEAT;
+            lara_item->frame_number = SWIMGLIDE_F;
+            lara_item->anim_number = SWIMGLIDE_A;
+            lara_item->current_anim_state = AS_SWIM;
+            lara_item->goal_anim_state = AS_SWIM;
+            lara_item->gravity_status = 0;
+            lara_item->pos.x_rot = 30 * ONE_DEGREE;
+            lara_item->fallspeed = 30;
+            lara.air = 1800;
+            lara.death_count = 0;
+            lara.torso_x_rot = lara.torso_y_rot = 0;
+            lara.head_x_rot = lara.head_y_rot = 0;
+            cheat_hit_points = lara_item->hit_points;
+        }
+    }
+}
+
 void ControlLaraExtra(sint16 item_num)
 {
     AnimateItem(&items[item_num]);
