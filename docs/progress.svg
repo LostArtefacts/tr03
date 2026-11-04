@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.32" height="12" x="0" y="0" class="named"><title>620 · 41.95%</title></rect>
-<rect width="271.68" height="12" x="196.32" y="0" class="todo"><title>858 · 58.05%</title></rect>
+<rect width="196.64" height="12" x="0" y="0" class="named"><title>621 · 42.02%</title></rect>
+<rect width="271.36" height="12" x="196.64" y="0" class="todo"><title>857 · 57.98%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">41.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">620</tspan> · <tspan class="todo">858</tspan></text>
+<text text-anchor="end" x="648" y="7.50">42.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">621</tspan> · <tspan class="todo">857</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="62.66" height="12" x="0" y="0" class="named"><title>89 KB · 13.39%</title></rect>
-<rect width="405.34" height="12" x="62.66" y="0" class="todo"><title>576 KB · 86.61%</title></rect>
+<rect width="62.81" height="12" x="0" y="0" class="named"><title>89 KB · 13.42%</title></rect>
+<rect width="405.19" height="12" x="62.81" y="0" class="todo"><title>576 KB · 86.58%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">89 KB</tspan> · <tspan class="todo">576 KB</tspan></text>
@@ -175,7 +175,7 @@
 <rect width="12" height="12" x="150" y="30" class="todo"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="30" class="todo"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="30" class="todo"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="30" class="todo"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="30" class="named"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="30" class="named"><title>0x00413cf0 DrawBoat (39 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="30" class="todo"><title>0x00413d20 TriggerBoatMist (471 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="30" class="todo"><title>0x00413f00 BoatSplash (226 bytes)</title></rect>
@@ -2213,7 +2213,7 @@
 <rect width="8.57" height="8.69" x="511.09" y="210.59" class="named"><title>0x00440db0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="8.53" height="8.69" x="522.66" y="210.59" class="todo"><title>0x00402640 gen_x (210 bytes)</title></rect>
 <rect width="8.53" height="8.69" x="534.19" y="210.59" class="named"><title>0x0045b610 Targetable (210 bytes)</title></rect>
-<rect width="8.49" height="8.69" x="545.72" y="210.59" class="todo"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
+<rect width="8.49" height="8.69" x="545.72" y="210.59" class="named"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
 <rect width="8.49" height="8.69" x="557.21" y="210.59" class="named"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
 <rect width="8.49" height="8.69" x="568.70" y="210.59" class="named"><title>0x0044efc0 LaraTestWaterDepth (209 bytes)</title></rect>
 <rect width="8.45" height="8.69" x="580.19" y="210.59" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>

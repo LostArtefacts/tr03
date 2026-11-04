@@ -71,6 +71,29 @@ int DoBoatDynamics(int height, int fallspeed, int *y)
     return fallspeed;
 }
 
+void DoBoatShift(int boat_number)
+{
+    ITEM_INFO *item, *boat;
+    int item_number, distance, x, z;
+
+    boat = &items[boat_number];
+    item_number = room[boat->room_number].item_number;
+    while (item_number != NO_ITEM) {
+        item = &items[item_number];
+        if (item->object_number == 15 && item_number != boat_number && lara.skidoo != item_number) {
+            x = item->pos.x_pos - boat->pos.x_pos;
+            z = item->pos.z_pos - boat->pos.z_pos;
+            distance = x * x + z * z;
+            if (distance < 1000 * 1000) {
+                boat->pos.x_pos = item->pos.x_pos - x * (1000 * 1000) / distance;
+                boat->pos.z_pos = item->pos.z_pos - z * (1000 * 1000) / distance;
+            }
+            return;
+        }
+        item_number = item->next_item;
+    }
+}
+
 void DrawBoat(ITEM_INFO *item)
 {
     BOAT_INFO *b;
@@ -81,3 +104,31 @@ void DrawBoat(ITEM_INFO *item)
     item->data = b;
     S_DrawWakeFX(item);
 }
+
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint16 InnerXZoff;
+    sint16 InnerXZsize;
+    sint16 InnerYsize;
+    sint16 InnerXZvel;
+    sint16 InnerYvel;
+    sint16 InnerGravity;
+    sint16 InnerFriction;
+    sint16 MiddleXZoff;
+    sint16 MiddleXZsize;
+    sint16 MiddleYsize;
+    sint16 MiddleXZvel;
+    sint16 MiddleYvel;
+    sint16 MiddleGravity;
+    sint16 MiddleFriction;
+    sint16 OuterXZoff;
+    sint16 OuterXZsize;
+    sint16 OuterXZvel;
+    sint16 OuterFriction;
+} SPLASH_SETUP;
+
+extern SPLASH_SETUP splash_setup;
+extern sint32 SplashCount;
+void SetupSplash(SPLASH_SETUP *spl);
