@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="18.18" height="12" x="130" y="1.50" class="named"/>
-<rect width="183.82" height="12" x="148.18" y="1.50" class="todo"/>
+<rect width="18.31" height="12" x="130" y="1.50" class="named"/>
+<rect width="183.69" height="12" x="148.31" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">9.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">133/1478</text>
-<rect width="1.41" height="12" x="130" y="18.50" class="named"/>
-<rect width="200.59" height="12" x="131.41" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">9.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">134/1478</text>
+<rect width="1.42" height="12" x="130" y="18.50" class="named"/>
+<rect width="200.58" height="12" x="131.42" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">5k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">9% (133)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91% (1345)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">9.07% (134)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.93% (1344)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="67.22" height="6" x="0" y="0" class="named"/>
-<rect width="679.78" height="6" x="67.22" y="0" class="todo"/>
+<rect width="67.73" height="6" x="0" y="0" class="named"/>
+<rect width="679.27" height="6" x="67.73" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -286,7 +286,7 @@
 <rect width="12" height="12" x="300" y="60" class="todo"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="60" class="todo"><title>0x00423000 RemoveRoomFlipItems (156 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="60" class="todo"><title>0x004230a0 AddRoomFlipItems (97 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="60" class="todo"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="60" class="named"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="60" class="todo"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="60" class="todo"><title>0x004231f0 CheckNoColFloorTriangle (187 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="60" class="todo"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.70%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.30%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="5.20" height="6" x="0" y="0" class="named"/>
-<rect width="741.80" height="6" x="5.20" y="0" class="todo"/>
+<rect width="5.24" height="6" x="0" y="0" class="named"/>
+<rect width="741.76" height="6" x="5.24" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2858,7 +2858,7 @@
 <rect width="1.35" height="1.35" x="732.71" y="404.82" class="named"><title>0x0046b090 T_RemovePrint (37 bytes)</title></rect>
 <rect width="1.35" height="1.35" x="737.06" y="404.82" class="todo"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
 <rect width="1.35" height="1.35" x="741.41" y="404.82" class="todo"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
-<rect width="1.24" height="1.35" x="745.76" y="404.82" class="todo"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
+<rect width="1.24" height="1.35" x="745.76" y="404.82" class="named"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="1.44" height="1.15" x="706.24" y="409.17" class="todo"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="1.44" height="1.15" x="710.68" y="409.17" class="todo"><title>0x0044d8a0 InitialiseLaraLoad (36 bytes)</title></rect>
 <rect width="1.44" height="1.15" x="715.11" y="409.17" class="todo"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
