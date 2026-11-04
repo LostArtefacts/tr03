@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="8.34" height="12" x="130" y="1.50" class="named"/>
-<rect width="193.66" height="12" x="138.34" y="1.50" class="todo"/>
+<rect width="8.47" height="12" x="130" y="1.50" class="named"/>
+<rect width="193.53" height="12" x="138.47" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">4.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">61/1478</text>
-<rect width="0.64" height="12" x="130" y="18.50" class="named"/>
-<rect width="201.36" height="12" x="130.64" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">4.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">62/1478</text>
+<rect width="0.65" height="12" x="130" y="18.50" class="named"/>
+<rect width="201.35" height="12" x="130.65" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">2k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">4.13% (61)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.87% (1417)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">4.19% (62)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">95.81% (1416)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="30.83" height="6" x="0" y="0" class="named"/>
-<rect width="716.17" height="6" x="30.83" y="0" class="todo"/>
+<rect width="31.34" height="6" x="0" y="0" class="named"/>
+<rect width="715.66" height="6" x="31.34" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -613,7 +613,7 @@
 <rect width="12" height="12" x="705" y="150" class="todo"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="150" class="todo"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="150" class="todo"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="165" class="todo"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="165" class="named"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="165" class="todo"><title>0x0043ffd0 TestMonkeyRight (201 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="165" class="todo"><title>0x004400a0 lara_as_monkeyswing (146 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="165" class="todo"><title>0x00440140 lara_col_monkeyswing (222 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.68%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.38" height="6" x="0" y="0" class="named"/>
-<rect width="744.62" height="6" x="2.38" y="0" class="todo"/>
+<rect width="2.42" height="6" x="0" y="0" class="named"/>
+<rect width="744.58" height="6" x="2.42" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2886,7 +2886,7 @@
 <rect width="1.23" height="0.99" x="710.26" y="433.40" class="todo"><title>0x0048ab20 S_SetupAboveWater (33 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="437.39" class="todo"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
 <rect width="1.23" height="0.87" x="710.26" y="441.39" class="todo"><title>0x00439060 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
-<rect width="1.23" height="0.87" x="710.26" y="445.26" class="todo"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
+<rect width="1.23" height="0.87" x="710.26" y="445.26" class="named"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
 <rect width="1.23" height="0.87" x="710.26" y="449.13" class="todo"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
 <rect width="0.96" height="1.01" x="714.49" y="413.32" class="named"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
 <rect width="0.96" height="1.01" x="718.45" y="413.32" class="todo"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>

@@ -27,3 +27,11 @@ void lara_as_dashdive(ITEM_INFO *item, COLL_INFO *coll)
             item->goal_anim_state = AS_FASTFALL;
     }
 }
+
+sint16 GetDirOctant(sint32 rot)
+{
+    if (abs(rot) < 8192 || abs(rot) > 24576)
+        return 0;
+    else
+        return 1;
+}
