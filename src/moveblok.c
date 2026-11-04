@@ -3,6 +3,9 @@
 void ClearMovableBlockSplitters(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void AlterFloorHeight(ITEM_INFO *item, int height);
 
+extern sint32 phd_left, phd_right, phd_top, phd_bottom;
+extern sint16 phd_winxmax, phd_winymax;
+
 void InitialiseMovingBlock(sint16 item_num)
 {
     ITEM_INFO *item;
@@ -33,4 +36,22 @@ void DrawMovableBlock(ITEM_INFO *item)
         DrawAnimatingItem(item);
     else
         DrawUnclippedItem(item);
+}
+
+void DrawUnclippedItem(ITEM_INFO *item)
+{
+    sint32 left, right, top, bottom;
+
+    left = phd_left;
+    right = phd_right;
+    top = phd_top;
+    bottom = phd_bottom;
+    phd_left = phd_top = 0;
+    phd_bottom = phd_winymax;
+    phd_right = phd_winxmax;
+    DrawAnimatingItem(item);
+    phd_left = left;
+    phd_right = right;
+    phd_top = top;
+    phd_bottom = bottom;
 }

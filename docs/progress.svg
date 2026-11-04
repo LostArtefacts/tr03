@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="118.74" height="12" x="0" y="0" class="named"><title>375 · 25.37%</title></rect>
-<rect width="349.26" height="12" x="118.74" y="0" class="todo"><title>1103 · 74.63%</title></rect>
+<rect width="119.06" height="12" x="0" y="0" class="named"><title>376 · 25.44%</title></rect>
+<rect width="348.94" height="12" x="119.06" y="0" class="todo"><title>1102 · 74.56%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">25.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">375</tspan> · <tspan class="todo">1103</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">376</tspan> · <tspan class="todo">1102</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="16.65" height="12" x="0" y="0" class="named"><title>24 KB · 3.56%</title></rect>
-<rect width="451.35" height="12" x="16.65" y="0" class="todo"><title>640 KB · 96.44%</title></rect>
+<rect width="16.72" height="12" x="0" y="0" class="named"><title>24 KB · 3.57%</title></rect>
+<rect width="451.28" height="12" x="16.72" y="0" class="todo"><title>640 KB · 96.43%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
@@ -885,7 +885,7 @@
 <rect width="12" height="12" x="300" y="240" class="todo"><title>0x004573f0 TestBlockPull (655 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="todo"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="240" class="named"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="240" class="todo"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="240" class="named"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="240" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="240" class="todo"><title>0x00457a40 MPGunControl (3027 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="240" class="todo"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
@@ -2473,7 +2473,7 @@
 <rect width="5.94" height="6.42" x="574.24" y="292.58" class="named"><title>0x004428e0 lara_col_splat (108 bytes)</title></rect>
 <rect width="5.94" height="6.42" x="574.24" y="302" class="named"><title>0x00442fd0 lara_col_swandive (108 bytes)</title></rect>
 <rect width="5.94" height="6.36" x="574.24" y="311.42" class="named"><title>0x0044eba0 lara_as_swim (107 bytes)</title></rect>
-<rect width="5.94" height="6.36" x="574.24" y="320.78" class="todo"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
+<rect width="5.94" height="6.36" x="574.24" y="320.78" class="named"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
 <rect width="5.94" height="6.30" x="574.24" y="330.14" class="named"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
 <rect width="5.94" height="6.30" x="574.24" y="339.44" class="named"><title>0x0044aee0 SmashItem (106 bytes)</title></rect>
 <rect width="5.94" height="6.30" x="574.24" y="348.74" class="todo"><title>0x004b2180 DXTextureCleanup (106 bytes)</title></rect>
