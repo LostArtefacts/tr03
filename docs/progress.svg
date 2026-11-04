@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="31.30" height="12" x="0" y="0" class="named"><title>229 · 15.49%</title></rect>
-<rect width="170.70" height="12" x="31.30" y="0" class="todo"><title>1249 · 84.51%</title></rect>
+<rect width="31.43" height="12" x="0" y="0" class="named"><title>230 · 15.56%</title></rect>
+<rect width="170.57" height="12" x="31.43" y="0" class="todo"><title>1248 · 84.44%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">15.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">229</tspan> · <tspan class="todo">1249</tspan></text>
+<text text-anchor="end" x="382" y="7.50">15.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">230</tspan> · <tspan class="todo">1248</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.22" height="12" x="0" y="0" class="named"><title>11 KB · 1.59%</title></rect>
-<rect width="198.78" height="12" x="3.22" y="0" class="todo"><title>653 KB · 98.41%</title></rect>
+<rect width="3.23" height="12" x="0" y="0" class="named"><title>11 KB · 1.60%</title></rect>
+<rect width="198.77" height="12" x="3.23" y="0" class="todo"><title>653 KB · 98.40%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">11 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
@@ -1108,7 +1108,7 @@
 <rect width="12" height="12" x="645" y="300" class="todo"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="300" class="todo"><title>0x00472000 WillBossControl (3077 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="todo"><title>0x00472ce0 S_DrawWillBoss (58 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="300" class="todo"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="300" class="named"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="300" class="todo"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="300" class="todo"><title>0x00472fe0 TriggerPlasma_willboss (455 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="300" class="todo"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
@@ -2733,7 +2733,7 @@
 <rect width="4.32" height="4.34" x="698.84" y="340.02" class="named"><title>0x004597a0 LiftCeiling (53 bytes)</title></rect>
 <rect width="4.32" height="4.34" x="706.16" y="340.02" class="named"><title>0x004598e0 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="4.32" height="4.34" x="713.48" y="340.02" class="named"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
-<rect width="4.32" height="4.34" x="720.80" y="340.02" class="todo"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
+<rect width="4.32" height="4.34" x="720.80" y="340.02" class="named"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
 <rect width="4.32" height="4.34" x="728.12" y="340.02" class="todo"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="4.32" height="4.34" x="735.44" y="340.02" class="todo"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
 <rect width="4.24" height="4.34" x="742.76" y="340.02" class="named"><title>0x00429350 InitInterpolate (52 bytes)</title></rect>
