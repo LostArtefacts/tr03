@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="137.11" height="12" x="0" y="0" class="named"><title>433 · 29.30%</title></rect>
-<rect width="330.89" height="12" x="137.11" y="0" class="todo"><title>1045 · 70.70%</title></rect>
+<rect width="137.42" height="12" x="0" y="0" class="named"><title>434 · 29.36%</title></rect>
+<rect width="330.58" height="12" x="137.42" y="0" class="todo"><title>1044 · 70.64%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">29.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">433</tspan> · <tspan class="todo">1045</tspan></text>
+<text text-anchor="end" x="648" y="7.50">29.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">434</tspan> · <tspan class="todo">1044</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="22.42" height="12" x="0" y="0" class="named"><title>32 KB · 4.79%</title></rect>
-<rect width="445.58" height="12" x="22.42" y="0" class="todo"><title>632 KB · 95.21%</title></rect>
+<rect width="22.53" height="12" x="0" y="0" class="named"><title>32 KB · 4.81%</title></rect>
+<rect width="445.47" height="12" x="22.53" y="0" class="todo"><title>632 KB · 95.19%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">32 KB</tspan> · <tspan class="todo">632 KB</tspan></text>
@@ -941,7 +941,7 @@
 <rect width="12" height="12" x="390" y="255" class="todo"><title>0x0045c6b0 KeyHoleCollision (574 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="255" class="todo"><title>0x0045c900 PuzzleHoleCollision (818 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="255" class="named"><title>0x0045cc60 SwitchControl (75 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="255" class="todo"><title>0x0045ccb0 SwitchTrigger (150 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="255" class="named"><title>0x0045ccb0 SwitchTrigger (150 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="255" class="named"><title>0x0045cd50 KeyTrigger (72 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="255" class="named"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="255" class="todo"><title>0x0045cde0 BossDropIcon (132 bytes)</title></rect>
@@ -2347,7 +2347,7 @@
 <rect width="7.25" height="7.35" x="658.10" y="243.97" class="named"><title>0x00444800 ResetLook (151 bytes)</title></rect>
 <rect width="7.25" height="7.35" x="668.35" y="243.97" class="todo"><title>0x00483540 FMV_PlayIntro (151 bytes)</title></rect>
 <rect width="7.25" height="7.35" x="678.61" y="243.97" class="todo"><title>0x0048ac20 mCalcPoint (151 bytes)</title></rect>
-<rect width="7.21" height="7.35" x="688.86" y="243.97" class="todo"><title>0x0045ccb0 SwitchTrigger (150 bytes)</title></rect>
+<rect width="7.21" height="7.35" x="688.86" y="243.97" class="named"><title>0x0045ccb0 SwitchTrigger (150 bytes)</title></rect>
 <rect width="7.21" height="7.35" x="699.07" y="243.97" class="named"><title>0x0046fb30 LavaBurn (150 bytes)</title></rect>
 <rect width="7.21" height="7.35" x="709.27" y="243.97" class="todo"><title>0x004846a0 S_LoadGame (150 bytes)</title></rect>
 <rect width="7.21" height="7.35" x="719.48" y="243.97" class="todo"><title>0x0048a100 S_ChangeCtrlText (150 bytes)</title></rect>
