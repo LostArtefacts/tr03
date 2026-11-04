@@ -132,3 +132,30 @@ typedef struct {
 extern SPLASH_SETUP splash_setup;
 extern sint32 SplashCount;
 void SetupSplash(SPLASH_SETUP *spl);
+
+void BoatSplash(ITEM_INFO *item, sint32 fallspeed, sint32 water)
+{
+    splash_setup.x = item->pos.x_pos;
+    splash_setup.y = water;
+    splash_setup.z = item->pos.z_pos;
+    splash_setup.InnerXZoff = 16 << 2;
+    splash_setup.InnerXZsize = 12 << 2;
+    splash_setup.InnerYsize = -96 << 2;
+    splash_setup.InnerXZvel = 0xa0;
+    splash_setup.InnerYvel = -fallspeed << 7;
+    splash_setup.InnerGravity = 0x80;
+    splash_setup.InnerFriction = 7;
+    splash_setup.MiddleXZoff = 24 << 2;
+    splash_setup.MiddleXZsize = 24 << 2;
+    splash_setup.MiddleYsize = -64 << 2;
+    splash_setup.MiddleXZvel = 0xe0;
+    splash_setup.MiddleYvel = -fallspeed << 6;
+    splash_setup.MiddleGravity = 0x48;
+    splash_setup.MiddleFriction = 8;
+    splash_setup.OuterXZoff = 32 << 2;
+    splash_setup.OuterXZsize = 32 << 2;
+    splash_setup.OuterXZvel = 0x110;
+    splash_setup.OuterFriction = 9;
+    SetupSplash(&splash_setup);
+    SplashCount = 16;
+}
