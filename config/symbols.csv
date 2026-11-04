@@ -1913,6 +1913,8 @@ address,size,name,symbol
 0x004c70ac,2,Option_SFX_Volume,_Option_SFX_Volume
 0x004c70b0,2,Option_Music_Volume,_Option_Music_Volume
 0x004c70b8,42,LevelSecrets,_LevelSecrets
+0x004c7238,24,DeathSlideBounds,_DeathSlideBounds
+0x004c7250,12,DeathSlidePosition,_DeathSlidePosition
 0x004c7268,24,PistolTable,_PistolTable
 0x004c7280,,weapons,_weapons
 0x004c7428,,HoldStates,_HoldStates

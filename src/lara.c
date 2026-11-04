@@ -1560,6 +1560,36 @@ void ResetLook(void)
     }
 }
 
+extern sint16 DeathSlideBounds[];
+extern PHD_VECTOR DeathSlidePosition;
+
+int TestLaraPosition(sint16 *bounds, ITEM_INFO *item, ITEM_INFO *laraitem);
+void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
+
+void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    if (!(input & IN_ACTION) || laraitem->gravity_status || lara.gun_status != LG_ARMLESS || laraitem->current_anim_state != AS_STOP)
+        return;
+    item = &items[item_number];
+    if (item->status != NOT_ACTIVE)
+        return;
+    if (TestLaraPosition(DeathSlideBounds, item, laraitem))
+    {
+        AlignLaraPosition(&DeathSlidePosition, item, laraitem);
+        lara.gun_status = LG_HANDSBUSY;
+        laraitem->goal_anim_state = AS_DEATHSLIDE;
+        do
+            AnimateItem(laraitem);
+        while (laraitem->current_anim_state != AS_NULL);
+        if (!item->active)
+            AddActiveItem(item_number);
+        item->status = ACTIVE;
+        item->flags |= ONESHOT;
+    }
+}
+
 int LaraHitCeiling(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->coll_type == COLL_TOP || coll->coll_type == COLL_CLAMP)

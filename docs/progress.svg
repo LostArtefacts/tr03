@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="163.07" height="12" x="0" y="0" class="named"><title>515 · 34.84%</title></rect>
-<rect width="304.93" height="12" x="163.07" y="0" class="todo"><title>963 · 65.16%</title></rect>
+<rect width="163.39" height="12" x="0" y="0" class="named"><title>516 · 34.91%</title></rect>
+<rect width="304.61" height="12" x="163.39" y="0" class="todo"><title>962 · 65.09%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">34.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">515</tspan> · <tspan class="todo">963</tspan></text>
+<text text-anchor="end" x="648" y="7.50">34.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">516</tspan> · <tspan class="todo">962</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="32.29" height="12" x="0" y="0" class="named"><title>46 KB · 6.90%</title></rect>
-<rect width="435.71" height="12" x="32.29" y="0" class="todo"><title>618 KB · 93.10%</title></rect>
+<rect width="32.44" height="12" x="0" y="0" class="named"><title>46 KB · 6.93%</title></rect>
+<rect width="435.56" height="12" x="32.44" y="0" class="todo"><title>618 KB · 93.07%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">46 KB</tspan> · <tspan class="todo">618 KB</tspan></text>
@@ -713,7 +713,7 @@
 <rect width="12" height="12" x="720" y="180" class="named"><title>0x004446e0 LookUpDown (132 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="180" class="named"><title>0x00444770 LookLeftRight (134 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="195" class="named"><title>0x00444800 ResetLook (151 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="195" class="todo"><title>0x004448a0 DeathSlideCollision (212 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="195" class="named"><title>0x004448a0 DeathSlideCollision (212 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="195" class="todo"><title>0x00444980 ControlDeathSlide (671 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="195" class="todo"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="195" class="named"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
@@ -2208,7 +2208,7 @@
 <rect width="8.60" height="8.84" x="499.62" y="367.93" class="todo"><title>0x004664b0 GetCarriedItems (215 bytes)</title></rect>
 <rect width="8.60" height="8.80" x="499.62" y="379.76" class="todo"><title>0x00475160 ACMSetupNotifications (214 bytes)</title></rect>
 <rect width="8.60" height="8.71" x="499.62" y="391.56" class="todo"><title>0x00442b50 lara_col_stepright (212 bytes)</title></rect>
-<rect width="8.60" height="8.71" x="499.62" y="403.27" class="todo"><title>0x004448a0 DeathSlideCollision (212 bytes)</title></rect>
+<rect width="8.60" height="8.71" x="499.62" y="403.27" class="named"><title>0x004448a0 DeathSlideCollision (212 bytes)</title></rect>
 <rect width="8.60" height="8.71" x="499.62" y="414.98" class="todo"><title>0x004953b0 DrawSpansAlpha (212 bytes)</title></rect>
 <rect width="8.60" height="8.67" x="499.62" y="426.70" class="named"><title>0x00440db0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="8.60" height="8.63" x="499.62" y="438.37" class="todo"><title>0x00402640 gen_x (210 bytes)</title></rect>
