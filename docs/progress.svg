@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="100.38" height="12" x="0" y="0" class="named"><title>317 · 21.45%</title></rect>
-<rect width="367.62" height="12" x="100.38" y="0" class="todo"><title>1161 · 78.55%</title></rect>
+<rect width="100.69" height="12" x="0" y="0" class="named"><title>318 · 21.52%</title></rect>
+<rect width="367.31" height="12" x="100.69" y="0" class="todo"><title>1160 · 78.48%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">21.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">317</tspan> · <tspan class="todo">1161</tspan></text>
+<text text-anchor="end" x="648" y="7.50">21.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">318</tspan> · <tspan class="todo">1160</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="12.23" height="12" x="0" y="0" class="named"><title>17 KB · 2.61%</title></rect>
-<rect width="455.77" height="12" x="12.23" y="0" class="todo"><title>647 KB · 97.39%</title></rect>
+<rect width="12.29" height="12" x="0" y="0" class="named"><title>17 KB · 2.63%</title></rect>
+<rect width="455.71" height="12" x="12.29" y="0" class="todo"><title>646 KB · 97.37%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">646 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -827,7 +827,7 @@
 <rect width="12" height="12" x="180" y="225" class="named"><title>0x0044f0a0 lara_col_glide (19 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="225" class="named"><title>0x0044f0c0 lara_col_tread (19 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="225" class="named"><title>0x0044f0e0 lara_col_dive (19 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="225" class="todo"><title>0x0044f100 lara_col_uwdeath (91 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="225" class="named"><title>0x0044f100 lara_col_uwdeath (91 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="225" class="named"><title>0x0044f160 lara_col_waterroll (19 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="225" class="todo"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="225" class="todo"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
@@ -2537,7 +2537,7 @@
 <rect width="5.61" height="5.74" x="592.02" y="380.43" class="named"><title>0x0041a890 DrawPhaseCinematic (91 bytes)</title></rect>
 <rect width="5.61" height="5.74" x="592.02" y="389.16" class="named"><title>0x0043b330 ClearBodyBag (91 bytes)</title></rect>
 <rect width="5.61" height="5.74" x="592.02" y="397.90" class="named"><title>0x004418b0 lara_as_pickupflare (91 bytes)</title></rect>
-<rect width="5.61" height="5.74" x="592.02" y="406.64" class="todo"><title>0x0044f100 lara_col_uwdeath (91 bytes)</title></rect>
+<rect width="5.61" height="5.74" x="592.02" y="406.64" class="named"><title>0x0044f100 lara_col_uwdeath (91 bytes)</title></rect>
 <rect width="5.61" height="5.67" x="592.02" y="415.37" class="named"><title>0x004419f0 lara_as_fastdive (90 bytes)</title></rect>
 <rect width="5.61" height="5.67" x="592.02" y="424.04" class="todo"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
 <rect width="5.61" height="5.67" x="592.02" y="432.72" class="todo"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
