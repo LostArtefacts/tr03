@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="94.99" height="12" x="0" y="0" class="named"><title>300 · 20.30%</title></rect>
-<rect width="373.01" height="12" x="94.99" y="0" class="todo"><title>1178 · 79.70%</title></rect>
+<rect width="95.31" height="12" x="0" y="0" class="named"><title>301 · 20.37%</title></rect>
+<rect width="372.69" height="12" x="95.31" y="0" class="todo"><title>1177 · 79.63%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">20.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">300</tspan> · <tspan class="todo">1178</tspan></text>
+<text text-anchor="end" x="648" y="7.50">20.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">301</tspan> · <tspan class="todo">1177</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.18" height="12" x="0" y="0" class="named"><title>16 KB · 2.39%</title></rect>
-<rect width="456.82" height="12" x="11.18" y="0" class="todo"><title>648 KB · 97.61%</title></rect>
+<rect width="11.24" height="12" x="0" y="0" class="named"><title>16 KB · 2.40%</title></rect>
+<rect width="456.76" height="12" x="11.24" y="0" class="todo"><title>648 KB · 97.60%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">16 KB</tspan> · <tspan class="todo">648 KB</tspan></text>
@@ -925,7 +925,7 @@
 <rect width="12" height="12" x="150" y="255" class="todo"><title>0x00459ce0 ControlElectricalLight (266 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="255" class="todo"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="255" class="todo"><title>0x00459e70 OilRedControl (2869 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="255" class="todo"><title>0x0045aa00 InitialiseOilSMG (82 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="255" class="named"><title>0x0045aa00 InitialiseOilSMG (82 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="255" class="todo"><title>0x0045aa60 OilSMGControl (1992 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="255" class="todo"><title>0x0045b260 OrcaControl (732 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="255" class="todo"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
@@ -2577,7 +2577,7 @@
 <rect width="5.25" height="5.52" x="725.24" y="300.51" class="named"><title>0x004559b0 InitialiseMonkey (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="733.50" y="300.51" class="named"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="741.75" y="300.51" class="named"><title>0x00459880 BridgeTilt1Floor (82 bytes)</title></rect>
-<rect width="5.36" height="5.41" x="600.62" y="309.03" class="todo"><title>0x0045aa00 InitialiseOilSMG (82 bytes)</title></rect>
+<rect width="5.36" height="5.41" x="600.62" y="309.03" class="named"><title>0x0045aa00 InitialiseOilSMG (82 bytes)</title></rect>
 <rect width="5.36" height="5.41" x="600.62" y="317.43" class="todo"><title>0x0045cff0 InitialisePrisoner (82 bytes)</title></rect>
 <rect width="5.36" height="5.41" x="600.62" y="325.84" class="todo"><title>0x0045dbd0 InitialisePunk (82 bytes)</title></rect>
 <rect width="5.36" height="5.34" x="600.62" y="334.24" class="named"><title>0x00416510 CreatureJoint (81 bytes)</title></rect>
