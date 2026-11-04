@@ -172,3 +172,34 @@ void AlertNearbyGuards(ITEM_INFO *item)
             cinfo->alerted = 1;
     }
 }
+
+sint16 AIGuard(CREATURE_INFO *creature)
+{
+    int random;
+
+    if (items[creature->item_num].ai_bits & MODIFY)
+        return 0;
+    random = GetRandomControl();
+    if (random < 0x100)
+    {
+        creature->head_left = 1;
+        creature->head_right = 1;
+    }
+    else if (random < 0x180)
+    {
+        creature->head_left = 1;
+        creature->head_right = 0;
+    }
+    else if (random < 0x200)
+    {
+        creature->head_left = 0;
+        creature->head_right = 1;
+    }
+    if (creature->head_left && creature->head_right)
+        return 0;
+    else if (creature->head_left)
+        return -0x4000;
+    else if (creature->head_right)
+        return 0x4000;
+    return 0;
+}
