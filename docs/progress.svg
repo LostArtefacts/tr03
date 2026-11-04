@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="94.68" height="12" x="0" y="0" class="named"><title>299 · 20.23%</title></rect>
-<rect width="373.32" height="12" x="94.68" y="0" class="todo"><title>1179 · 79.77%</title></rect>
+<rect width="94.99" height="12" x="0" y="0" class="named"><title>300 · 20.30%</title></rect>
+<rect width="373.01" height="12" x="94.99" y="0" class="todo"><title>1178 · 79.70%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">20.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">299</tspan> · <tspan class="todo">1179</tspan></text>
+<text text-anchor="end" x="648" y="7.50">20.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">300</tspan> · <tspan class="todo">1178</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.12" height="12" x="0" y="0" class="named"><title>16 KB · 2.38%</title></rect>
-<rect width="456.88" height="12" x="11.12" y="0" class="todo"><title>648 KB · 97.62%</title></rect>
+<rect width="11.18" height="12" x="0" y="0" class="named"><title>16 KB · 2.39%</title></rect>
+<rect width="456.82" height="12" x="11.18" y="0" class="todo"><title>648 KB · 97.61%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">16 KB</tspan> · <tspan class="todo">648 KB</tspan></text>
@@ -912,7 +912,7 @@
 <rect width="12" height="12" x="705" y="240" class="named"><title>0x004597e0 BridgeFlatFloor (56 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="240" class="named"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="240" class="named"><title>0x00459840 GetOffset (59 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="255" class="todo"><title>0x00459880 BridgeTilt1Floor (82 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="255" class="named"><title>0x00459880 BridgeTilt1Floor (82 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="255" class="named"><title>0x004598e0 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="255" class="named"><title>0x00459920 BridgeTilt2Floor (81 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="255" class="named"><title>0x00459980 BridgeTilt2Ceiling (52 bytes)</title></rect>
@@ -2576,7 +2576,7 @@
 <rect width="5.25" height="5.52" x="716.99" y="300.51" class="named"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="725.24" y="300.51" class="named"><title>0x004559b0 InitialiseMonkey (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="733.50" y="300.51" class="named"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
-<rect width="5.25" height="5.52" x="741.75" y="300.51" class="todo"><title>0x00459880 BridgeTilt1Floor (82 bytes)</title></rect>
+<rect width="5.25" height="5.52" x="741.75" y="300.51" class="named"><title>0x00459880 BridgeTilt1Floor (82 bytes)</title></rect>
 <rect width="5.36" height="5.41" x="600.62" y="309.03" class="todo"><title>0x0045aa00 InitialiseOilSMG (82 bytes)</title></rect>
 <rect width="5.36" height="5.41" x="600.62" y="317.43" class="todo"><title>0x0045cff0 InitialisePrisoner (82 bytes)</title></rect>
 <rect width="5.36" height="5.41" x="600.62" y="325.84" class="todo"><title>0x0045dbd0 InitialisePunk (82 bytes)</title></rect>
