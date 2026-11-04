@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="160.86" height="12" x="0" y="0" class="named"><title>508 · 34.37%</title></rect>
-<rect width="307.14" height="12" x="160.86" y="0" class="todo"><title>970 · 65.63%</title></rect>
+<rect width="161.17" height="12" x="0" y="0" class="named"><title>509 · 34.44%</title></rect>
+<rect width="306.83" height="12" x="161.17" y="0" class="todo"><title>969 · 65.56%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">34.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">508</tspan> · <tspan class="todo">970</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">509</tspan> · <tspan class="todo">969</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="31.27" height="12" x="0" y="0" class="named"><title>44 KB · 6.68%</title></rect>
-<rect width="436.73" height="12" x="31.27" y="0" class="todo"><title>620 KB · 93.32%</title></rect>
+<rect width="31.42" height="12" x="0" y="0" class="named"><title>45 KB · 6.71%</title></rect>
+<rect width="436.58" height="12" x="31.42" y="0" class="todo"><title>619 KB · 93.29%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">44 KB</tspan> · <tspan class="todo">620 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">45 KB</tspan> · <tspan class="todo">619 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -592,7 +592,7 @@
 <rect width="12" height="12" x="405" y="150" class="todo"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="150" class="named"><title>0x0043eba0 lara_as_all4s (122 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="150" class="todo"><title>0x0043ec20 lara_col_all4s (728 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="150" class="todo"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="150" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="150" class="todo"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="150" class="named"><title>0x0043f0d0 LaraDeflectEdgeDuck (117 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="150" class="named"><title>0x0043f150 lara_as_all4turnl (100 bytes)</title></rect>
@@ -2219,7 +2219,7 @@
 <rect width="8.67" height="8.48" x="511.22" y="257.46" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
 <rect width="8.67" height="8.43" x="511.22" y="268.94" class="todo"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="280.37" class="todo"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
-<rect width="8.67" height="8.39" x="511.22" y="291.76" class="todo"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
+<rect width="8.67" height="8.39" x="511.22" y="291.76" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="303.16" class="todo"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="314.55" class="todo"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="325.94" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
