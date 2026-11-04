@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="180.17" height="12" x="0" y="0" class="named"><title>569 · 38.50%</title></rect>
-<rect width="287.83" height="12" x="180.17" y="0" class="todo"><title>909 · 61.50%</title></rect>
+<rect width="180.49" height="12" x="0" y="0" class="named"><title>570 · 38.57%</title></rect>
+<rect width="287.51" height="12" x="180.49" y="0" class="todo"><title>908 · 61.43%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">38.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">569</tspan> · <tspan class="todo">909</tspan></text>
+<text text-anchor="end" x="648" y="7.50">38.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">570</tspan> · <tspan class="todo">908</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="50.11" height="12" x="0" y="0" class="named"><title>71 KB · 10.71%</title></rect>
-<rect width="417.89" height="12" x="50.11" y="0" class="todo"><title>593 KB · 89.29%</title></rect>
+<rect width="50.39" height="12" x="0" y="0" class="named"><title>72 KB · 10.77%</title></rect>
+<rect width="417.61" height="12" x="50.39" y="0" class="todo"><title>593 KB · 89.23%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">10.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">71 KB</tspan> · <tspan class="todo">593 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">10.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">72 KB</tspan> · <tspan class="todo">593 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -260,7 +260,7 @@
 <rect width="12" height="12" x="675" y="45" class="named"><title>0x0041f0e0 TestBoundsCollide (203 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="45" class="named"><title>0x0041f1b0 TestLaraPosition (312 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="45" class="named"><title>0x0041f2f0 AlignLaraPosition (313 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="45" class="todo"><title>0x0041f430 MoveLaraPosition (395 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="45" class="named"><title>0x0041f430 MoveLaraPosition (395 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="45" class="todo"><title>0x0041f5c0 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="60" class="named"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="60" class="todo"><title>0x0041f750 CompyControl (1489 bytes)</title></rect>
@@ -1982,7 +1982,7 @@
 <rect width="11.93" height="11.81" x="690.48" y="130.90" class="todo"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
 <rect width="11.93" height="11.81" x="705.41" y="130.90" class="todo"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="11.84" height="11.81" x="720.34" y="130.90" class="todo"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
-<rect width="11.81" height="11.81" x="735.19" y="130.90" class="todo"><title>0x0041f430 MoveLaraPosition (395 bytes)</title></rect>
+<rect width="11.81" height="11.81" x="735.19" y="130.90" class="named"><title>0x0041f430 MoveLaraPosition (395 bytes)</title></rect>
 <rect width="11.80" height="11.81" x="431.56" y="145.70" class="todo"><title>0x00431a80 TriggerPilotFlame (395 bytes)</title></rect>
 <rect width="11.80" height="11.75" x="431.56" y="160.52" class="todo"><title>0x00442140 lara_col_run (393 bytes)</title></rect>
 <rect width="11.80" height="11.63" x="431.56" y="175.27" class="todo"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
