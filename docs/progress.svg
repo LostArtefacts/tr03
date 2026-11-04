@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.27" height="12" x="0" y="0" class="named"><title>623 · 42.15%</title></rect>
-<rect width="270.73" height="12" x="197.27" y="0" class="todo"><title>855 · 57.85%</title></rect>
+<rect width="197.59" height="12" x="0" y="0" class="named"><title>624 · 42.22%</title></rect>
+<rect width="270.41" height="12" x="197.59" y="0" class="todo"><title>854 · 57.78%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">42.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">623</tspan> · <tspan class="todo">855</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">624</tspan> · <tspan class="todo">854</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="63.15" height="12" x="0" y="0" class="named"><title>90 KB · 13.49%</title></rect>
-<rect width="404.85" height="12" x="63.15" y="0" class="todo"><title>575 KB · 86.51%</title></rect>
+<rect width="63.31" height="12" x="0" y="0" class="named"><title>90 KB · 13.53%</title></rect>
+<rect width="404.69" height="12" x="63.31" y="0" class="todo"><title>575 KB · 86.47%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">90 KB</tspan> · <tspan class="todo">575 KB</tspan></text>
@@ -564,7 +564,7 @@
 <rect width="12" height="12" x="735" y="135" class="todo"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="todo"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="150" class="todo"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="150" class="todo"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="150" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="150" class="todo"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="150" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
@@ -2190,7 +2190,7 @@
 <rect width="9.15" height="8.71" x="498.94" y="414.87" class="named"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
 <rect width="9.15" height="8.71" x="498.94" y="426.58" class="named"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
 <rect width="9.15" height="8.71" x="498.94" y="438.29" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
-<rect width="9.19" height="8.63" x="511.09" y="198.95" class="todo"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
+<rect width="9.19" height="8.63" x="511.09" y="198.95" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="9.19" height="8.63" x="523.28" y="198.95" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="9.15" height="8.63" x="535.47" y="198.95" class="todo"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="9.11" height="8.63" x="547.62" y="198.95" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>

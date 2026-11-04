@@ -108,7 +108,32 @@ extern SPLASH_SETUP splash_setup;
 extern sint32 SplashCount;
 void SetupSplash(SPLASH_SETUP *spl);
 
-void KayakSplash(ITEM_INFO *, sint32, sint32);
+void KayakSplash(ITEM_INFO *item, sint32 fallspeed, sint32 water)
+{
+    splash_setup.x = item->pos.x_pos;
+    splash_setup.y = water;
+    splash_setup.z = item->pos.z_pos;
+    splash_setup.InnerXZoff = 16 << 3;
+    splash_setup.InnerXZsize = 12 << 2;
+    splash_setup.InnerYsize = -96 << 2;
+    splash_setup.InnerXZvel = 0xa0;
+    splash_setup.InnerYvel = -fallspeed << 5;
+    splash_setup.InnerGravity = 0x80;
+    splash_setup.InnerFriction = 7;
+    splash_setup.MiddleXZoff = 24 << 3;
+    splash_setup.MiddleXZsize = 24 << 2;
+    splash_setup.MiddleYsize = -64 << 2;
+    splash_setup.MiddleXZvel = 0xe0;
+    splash_setup.MiddleYvel = -fallspeed << 4;
+    splash_setup.MiddleGravity = 0x48;
+    splash_setup.MiddleFriction = 8;
+    splash_setup.OuterXZoff = 32 << 3;
+    splash_setup.OuterXZsize = 32 << 2;
+    splash_setup.OuterXZvel = 0x110;
+    splash_setup.OuterFriction = -9;
+    SetupSplash(&splash_setup);
+    SplashCount = 16;
+}
 
 int GetInKayak(sint16 item_number, COLL_INFO *coll)
 {
