@@ -790,11 +790,11 @@ address,size,name,symbol
 0x00452f10,124,InitialiseLOTarray,_InitialiseLOTarray
 0x00452f90,104,DisableBaddieAI,_DisableBaddieAI
 0x00453000,494,EnableBaddieAI,_EnableBaddieAI
-0x004531f0,312,InitialiseSlot,_InitialiseSlot
+0x004531f0,613,InitialiseSlot,_InitialiseSlot
 0x00453460,247,CreateZone,_CreateZone
 0x00453560,75,ClearLOT,_ClearLOT
 0x004535b0,387,EnableNonLotAI,_EnableNonLotAI
-0x00453740,248,InitialiseNonLotAI,_InitialiseNonLotAI
+0x00453740,333,InitialiseNonLotAI,_InitialiseNonLotAI
 0x00453890,152,GetCollision,_GetCollision
 0x00453930,39,MineCartInitialise,_MineCartInitialise
 0x00453960,333,MineCartCollision,_MineCartCollision
