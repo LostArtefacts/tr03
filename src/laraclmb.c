@@ -147,6 +147,49 @@ int LaraCheckForLetGo(ITEM_INFO *item, COLL_INFO *coll)
     return 0;
 }
 
+void AnimateLara(ITEM_INFO *item);
+
+void LaraDoClimbLeftRight(ITEM_INFO *item, COLL_INFO *coll, int result, int shift)
+{
+    if (result == 1)
+    {
+        if (input & IN_LEFT)
+            item->goal_anim_state = AS_CLIMBLEFT;
+        else if (input & IN_RIGHT)
+            item->goal_anim_state = AS_CLIMBRIGHT;
+        else
+            item->goal_anim_state = AS_CLIMBSTNC;
+        item->pos.y_pos += shift;
+    }
+    else if (!result)
+    {
+        item->pos.x_pos = coll->old.x;
+        item->pos.z_pos = coll->old.z;
+        item->goal_anim_state = AS_CLIMBSTNC;
+        item->current_anim_state = AS_CLIMBSTNC;
+        if (coll->old_anim_state != AS_CLIMBSTNC)
+        {
+            item->frame_number = GF(164, 0);
+            item->anim_number = 164;
+        }
+        else
+        {
+            item->frame_number = coll->old_frame_number;
+            item->anim_number = coll->old_anim_number;
+            AnimateLara(item);
+        }
+    }
+    else
+    {
+        item->goal_anim_state = AS_HANG;
+        do
+            AnimateItem(item);
+        while (item->current_anim_state != AS_HANG);
+        item->pos.x_pos = coll->old.x;
+        item->pos.z_pos = coll->old.z;
+    }
+}
+
 void lara_col_climbright(ITEM_INFO *item, COLL_INFO *coll)
 {
     int result, shift;
