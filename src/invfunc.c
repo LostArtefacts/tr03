@@ -341,6 +341,26 @@ void RemoveAllReqItems(REQUEST_INFO *req)
     req->selected = 0;
 }
 
+void ChangeRequesterItem(REQUEST_INFO *req, int item, char *text1, uint32 flags1, char *text2, uint32 flags2)
+{
+    T_RemovePrint(req->texts1[item]);
+    req->texts1[item] = NULL;
+    T_RemovePrint(req->texts2[item]);
+    req->texts2[item] = NULL;
+    if (text1) {
+        sprintf(req->itemtexts1 + item * req->itemtextlen, text1);
+        req->itemtexts1_flags[item] = flags1 | 1;
+    } else {
+        req->itemtexts1_flags[item] = 0;
+    }
+    if (text2) {
+        sprintf(req->itemtexts2 + item * req->itemtextlen, text2);
+        req->itemtexts2_flags[item] = flags2 | 1;
+    } else {
+        req->itemtexts2_flags[item] = 0;
+    }
+}
+
 void AddRequesterItem(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2)
 {
     req->itemtexts1_flags = RequesterFlags1;
