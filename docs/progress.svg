@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="79.79" height="12" x="0" y="0" class="named"><title>252 · 17.05%</title></rect>
-<rect width="388.21" height="12" x="79.79" y="0" class="todo"><title>1226 · 82.95%</title></rect>
+<rect width="80.11" height="12" x="0" y="0" class="named"><title>253 · 17.12%</title></rect>
+<rect width="387.89" height="12" x="80.11" y="0" class="todo"><title>1225 · 82.88%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">17.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">252</tspan> · <tspan class="todo">1226</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">253</tspan> · <tspan class="todo">1225</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.59" height="12" x="0" y="0" class="named"><title>12 KB · 1.83%</title></rect>
-<rect width="459.41" height="12" x="8.59" y="0" class="todo"><title>652 KB · 98.17%</title></rect>
+<rect width="8.63" height="12" x="0" y="0" class="named"><title>12 KB · 1.84%</title></rect>
+<rect width="459.37" height="12" x="8.63" y="0" class="todo"><title>652 KB · 98.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">12 KB</tspan> · <tspan class="todo">652 KB</tspan></text>
@@ -1046,7 +1046,7 @@
 <rect width="12" height="12" x="465" y="285" class="named"><title>0x0046b720 GetTextScaleV (42 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="285" class="todo"><title>0x0046b750 TigerControl (752 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="285" class="todo"><title>0x0046ba60 TonyBossControl (1539 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="285" class="todo"><title>0x0046c080 S_DrawTonyBoss (65 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="285" class="named"><title>0x0046c080 S_DrawTonyBoss (65 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="285" class="todo"><title>0x0046c0d0 TonyBossDie (66 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="285" class="todo"><title>0x0046c120 InitialiseTonyBoss (157 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="285" class="todo"><title>0x0046c1c0 ExplodeTonyBoss (663 bytes)</title></rect>
@@ -2659,7 +2659,7 @@
 <rect width="4.84" height="4.75" x="617.06" y="419.02" class="named"><title>0x0042efb0 ControlDingDong (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="426.76" class="named"><title>0x004483b0 undraw_pistol_mesh_left (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="434.51" class="named"><title>0x00459c90 ControlOnOffLight (65 bytes)</title></rect>
-<rect width="4.84" height="4.75" x="617.06" y="442.25" class="todo"><title>0x0046c080 S_DrawTonyBoss (65 bytes)</title></rect>
+<rect width="4.84" height="4.75" x="617.06" y="442.25" class="named"><title>0x0046c080 S_DrawTonyBoss (65 bytes)</title></rect>
 <rect width="4.65" height="4.94" x="624.90" y="324.98" class="todo"><title>0x0048d5e0 TIME_Init (65 bytes)</title></rect>
 <rect width="4.65" height="4.86" x="624.90" y="332.92" class="named"><title>0x0042eda0 lara_normal_effect (64 bytes)</title></rect>
 <rect width="4.65" height="4.86" x="624.90" y="340.78" class="named"><title>0x00441260 lara_as_fastfall (64 bytes)</title></rect>
