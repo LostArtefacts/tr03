@@ -1015,3 +1015,75 @@ sint32 CameraCollisionBounds(GAME_VECTOR *ideal, sint32 push, sint32 yfirst)
     ideal->z = wz;
     return 0;
 }
+
+sint32 mgLOS(GAME_VECTOR *start, GAME_VECTOR *target, sint32 push)
+{
+    FLOOR_INFO *floor;
+    sint32 x, y, z, h, c, cdiff, hdiff;
+    sint32 dx, dy, dz, lp, clipped, nc;
+    sint16 room_number, room_number2;
+
+    dx = (target->x - start->x) >> 3;
+    dy = (target->y - start->y) >> 3;
+    dz = (target->z - start->z) >> 3;
+    x = start->x;
+    y = start->y;
+    z = start->z;
+    room_number = room_number2 = start->room_number;
+    clipped = nc = 0;
+    for (lp = 0; lp < 8; lp++) {
+        room_number = room_number2;
+        floor = GetFloor(x, y, z, &room_number2);
+        if (room[room_number2].flags & 0x80) {
+            clipped = 1;
+            break;
+        }
+        h = GetHeight(floor, x, y, z);
+        c = GetCeiling(floor, x, y, z);
+        if (h == NO_HEIGHT || c == NO_HEIGHT || c >= h) {
+            if (!nc) {
+                x += dx;
+                y += dy;
+                z += dz;
+                continue;
+            }
+            clipped = 1;
+            break;
+        }
+        if (y > h) {
+            hdiff = y - h;
+            if (hdiff < push) {
+                y = h;
+            } else {
+                clipped = 1;
+                break;
+            }
+        }
+        if (y < c) {
+            cdiff = c - y;
+            if (cdiff < push) {
+                y = c;
+            } else {
+                clipped = 1;
+                break;
+            }
+        }
+        nc = 1;
+        x += dx;
+        y += dy;
+        z += dz;
+    }
+
+    if (lp) {
+        x -= dx;
+        y -= dy;
+        z -= dz;
+    }
+
+    target->x = x;
+    target->y = y;
+    target->z = z;
+    GetFloor(target->x, target->y, target->z, &room_number);
+    target->room_number = room_number;
+    return !clipped;
+}
