@@ -117,3 +117,14 @@ void RemoveAllReqItems(REQUEST_INFO *req)
     req->line_offset = 0;
     req->selected = 0;
 }
+
+void SetPCRequesterSize(REQUEST_INFO *req, int maxlines, int ypos)
+{
+    int height = GetRenderHeight();
+    int lines = (height / 2) / (TEXT_HEIGHT + 7);
+
+    if (lines > maxlines)
+        lines = maxlines;
+    req->ypos = ypos;
+    req->vis_lines = lines;
+}

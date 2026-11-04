@@ -9,6 +9,7 @@ extern "C" {
 
 #define MAX_TEXT_STRINGS 64
 #define MAX_STRING_SIZE 64
+#define TEXT_HEIGHT 11
 
 typedef struct {
     uint32 clr[4][4];
