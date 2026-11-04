@@ -24,6 +24,29 @@ void InitialiseSparks(void)
         bats[lp].flags = 0;
 }
 
+void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size)
+{
+    RIPPLE_STRUCT *rptr;
+    sint32 lp;
+
+    rptr = &ripples[0];
+    for (lp = 0; lp < MAX_RIPPLES; lp++)
+    {
+        if (!(rptr->flags & SPL_ON))
+        {
+            rptr->flags = SPL_ON | SPL_TRANS | SPL_MORETRANS | SPL_BLOOD;
+            rptr->life = 240 + (GetRandomControl() & 7);
+            rptr->init = 1;
+            rptr->size = size;
+            rptr->x = x + (GetRandomControl() & 63) - 32;
+            rptr->y = y;
+            rptr->z = z + (GetRandomControl() & 63) - 32;
+            break;
+        }
+        rptr++;
+    }
+}
+
 void BatEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;
