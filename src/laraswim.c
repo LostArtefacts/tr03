@@ -2,6 +2,33 @@
 
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void LaraSwimCollision(ITEM_INFO *item, COLL_INFO *coll);
+void SwimTurn(ITEM_INFO *item);
+
+#define UW_MAXSPEED 200
+#define WATERROLL_A 203
+#define WATERROLL_F GF(WATERROLL_A, 0)
+
+void lara_as_swim(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_UWDEATH;
+        return;
+    }
+    if (input & IN_ROLL)
+    {
+        item->current_anim_state = AS_WATERROLL;
+        item->anim_number = WATERROLL_A;
+        item->frame_number = WATERROLL_F;
+        return;
+    }
+    SwimTurn(item);
+    item->fallspeed += 2 * 4;
+    if (item->fallspeed > UW_MAXSPEED)
+        item->fallspeed = UW_MAXSPEED;
+    if (!(input & IN_JUMP))
+        item->goal_anim_state = AS_GLIDE;
+}
 
 void lara_as_dive(ITEM_INFO *item, COLL_INFO *coll)
 {

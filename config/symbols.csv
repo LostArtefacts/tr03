@@ -2031,6 +2031,7 @@ address,size,name,symbol
 0x006261c0,4,assault_timer_active,_assault_timer_active
 0x006261c4,4,assault_penalties,_assault_penalties
 0x006261c8,4,assault_penalty_display_timer,_assault_penalty_display_timer
+0x006261cc,4,assault_targets_reset,_assault_targets_reset
 0x006261d0,4,QuadbikeLapTime,_QuadbikeLapTime
 0x006261d4,4,QuadbikeLapTimeDisplayTimer,_QuadbikeLapTimeDisplayTimer
 0x006261d8,4,PirahnaHitWait,_PirahnaHitWait
