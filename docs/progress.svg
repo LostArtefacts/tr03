@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="97.84" height="12" x="0" y="0" class="named"><title>309 · 20.91%</title></rect>
-<rect width="370.16" height="12" x="97.84" y="0" class="todo"><title>1169 · 79.09%</title></rect>
+<rect width="98.16" height="12" x="0" y="0" class="named"><title>310 · 20.97%</title></rect>
+<rect width="369.84" height="12" x="98.16" y="0" class="todo"><title>1168 · 79.03%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">20.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">309</tspan> · <tspan class="todo">1169</tspan></text>
+<text text-anchor="end" x="648" y="7.50">21.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">310</tspan> · <tspan class="todo">1168</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.73" height="12" x="0" y="0" class="named"><title>17 KB · 2.51%</title></rect>
-<rect width="456.27" height="12" x="11.73" y="0" class="todo"><title>647 KB · 97.49%</title></rect>
+<rect width="11.79" height="12" x="0" y="0" class="named"><title>17 KB · 2.52%</title></rect>
+<rect width="456.21" height="12" x="11.79" y="0" class="todo"><title>647 KB · 97.48%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
@@ -274,7 +274,7 @@
 <rect width="12" height="12" x="135" y="60" class="todo"><title>0x00420e10 GetHeight (1300 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="60" class="todo"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="60" class="todo"><title>0x00421460 TestTriggers (2247 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="60" class="todo"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="60" class="named"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="60" class="todo"><title>0x00421de0 GetCeiling (1183 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="60" class="todo"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="60" class="todo"><title>0x00422370 LOS (159 bytes)</title></rect>
@@ -2557,7 +2557,7 @@
 <rect width="5.71" height="5.32" x="706.63" y="292.20" class="todo"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
 <rect width="5.71" height="5.32" x="715.34" y="292.20" class="named"><title>0x004402f0 lara_as_monkeyr (86 bytes)</title></rect>
 <rect width="5.65" height="5.32" x="724.06" y="292.20" class="named"><title>0x0041e630 GetNewRoom (85 bytes)</title></rect>
-<rect width="5.65" height="5.32" x="732.70" y="292.20" class="todo"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
+<rect width="5.65" height="5.32" x="732.70" y="292.20" class="named"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
 <rect width="5.65" height="5.32" x="741.35" y="292.20" class="todo"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="600.62" y="300.51" class="named"><title>0x00411fe0 InitialiseBoat (84 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="609.01" y="300.51" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
