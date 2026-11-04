@@ -13,9 +13,28 @@ enum height_types { WALL, SMALL_SLOPE, BIG_SLOPE, DIAGONAL, SPLIT_TRI };
 
 extern int height_type;
 extern int OnObject;
+extern sint16 final_boss_active, final_boss_count, final_level_count;
+extern sint32 level_items;
 
 int OnDrawBridge(ITEM_INFO *item, sint32 z, sint32 x);
 void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
+
+void InitialiseFinalLevel(void)
+{
+    int i;
+    ITEM_INFO *item;
+
+    final_level_count = final_boss_count = final_boss_active = 0;
+    for (i = 0, item = items; i < level_items; i++, item++)
+    {
+        switch (item->object_number)
+        {
+        case DOG:
+            final_level_count++;
+            break;
+        }
+    }
+}
 
 void OpenThatDoor(DOORPOS_DATA *d)
 {
