@@ -93,6 +93,31 @@ void lara_as_dashdive(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_as_hang2(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    lara.torso_x_rot = lara.torso_y_rot = 0;
+    if (lara.CanMonkeySwing)
+    {
+        if (!(input & IN_ACTION) || item->hit_points <= 0)
+        {
+            MonkeySwingFall(item);
+            return;
+        }
+        camera.target_angle = CAM_A_HANG;
+        camera.target_elevation = CAM_E_HANG;
+    }
+    else if (input & IN_LOOK)
+        LookUpDown();
+}
+
 sint16 GetDirOctant(sint32 rot)
 {
     if (abs(rot) < 8192 || abs(rot) > 24576)
