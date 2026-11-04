@@ -128,6 +128,42 @@ void lara_col_surfswim(ITEM_INFO *item, COLL_INFO *coll)
 
 void UpdateLaraRoom(ITEM_INFO *item, int height);
 
+sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+int LaraTestWaterStepOut(ITEM_INFO *item, COLL_INFO *coll);
+
+void LaraSurfaceCollision(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int wh;
+
+    coll->facing = lara.move_angle;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos + 700, item->pos.z_pos, item->room_number, 800);
+    ShiftItem(item, coll);
+    if ((coll->coll_type & (COLL_FRONT | COLL_TOP | COLL_CLAMP | COLL_TOPFRONT))
+        || (coll->mid_floor < 0 && (coll->mid_type == 2 || coll->mid_type == 3))) {
+        item->fallspeed = 0;
+        item->pos.x_pos = coll->old.x;
+        item->pos.y_pos = coll->old.y;
+        item->pos.z_pos = coll->old.z;
+    } else if (coll->coll_type == COLL_LEFT) {
+        item->pos.y_rot += 5 * ONE_DEGREE;
+    } else if (coll->coll_type == COLL_RIGHT) {
+        item->pos.y_rot -= 5 * ONE_DEGREE;
+    }
+
+    wh = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    if (wh - item->pos.y_pos <= -100) {
+        item->goal_anim_state = AS_SWIM;
+        item->current_anim_state = AS_DIVE;
+        item->anim_number = SURFDIVE_A;
+        item->frame_number = SURFDIVE_F;
+        item->pos.x_rot = -45 * ONE_DEGREE;
+        item->fallspeed = 20 * 4;
+        lara.water_status = LARA_UNDERWATER;
+        return;
+    }
+    LaraTestWaterStepOut(item, coll);
+}
+
 int LaraTestWaterStepOut(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->coll_type == COLL_FRONT || coll->mid_type == 2 || coll->mid_type == 3 || coll->mid_floor >= 0)
