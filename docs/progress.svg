@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="133.31" height="12" x="0" y="0" class="named"><title>421 · 28.48%</title></rect>
-<rect width="334.69" height="12" x="133.31" y="0" class="todo"><title>1057 · 71.52%</title></rect>
+<rect width="133.62" height="12" x="0" y="0" class="named"><title>422 · 28.55%</title></rect>
+<rect width="334.38" height="12" x="133.62" y="0" class="todo"><title>1056 · 71.45%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">28.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">421</tspan> · <tspan class="todo">1057</tspan></text>
+<text text-anchor="end" x="648" y="7.50">28.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">422</tspan> · <tspan class="todo">1056</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="21.04" height="12" x="0" y="0" class="named"><title>30 KB · 4.50%</title></rect>
-<rect width="446.96" height="12" x="21.04" y="0" class="todo"><title>634 KB · 95.50%</title></rect>
+<rect width="21.16" height="12" x="0" y="0" class="named"><title>30 KB · 4.52%</title></rect>
+<rect width="446.84" height="12" x="21.16" y="0" class="todo"><title>634 KB · 95.48%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">30 KB</tspan> · <tspan class="todo">634 KB</tspan></text>
@@ -546,7 +546,7 @@
 <rect width="12" height="12" x="465" y="135" class="todo"><title>0x0043aa90 KillItem (327 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="135" class="named"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="135" class="todo"><title>0x0043ac30 InitialiseItem (513 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="135" class="todo"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="135" class="named"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="135" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="135" class="named"><title>0x0043af60 AddActiveItem (105 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="135" class="todo"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
@@ -2314,7 +2314,7 @@
 <rect width="7.68" height="7.45" x="728.68" y="233.52" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="7.64" height="7.45" x="739.36" y="233.52" class="todo"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="7.63" height="7.45" x="533.67" y="243.97" class="named"><title>0x0042f340 swap_meshes_with_meshswap3 (161 bytes)</title></rect>
-<rect width="7.63" height="7.41" x="533.67" y="254.42" class="todo"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
+<rect width="7.63" height="7.41" x="533.67" y="254.42" class="named"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
 <rect width="7.63" height="7.36" x="533.67" y="264.83" class="todo"><title>0x00422370 LOS (159 bytes)</title></rect>
 <rect width="7.63" height="7.36" x="533.67" y="275.19" class="todo"><title>0x00429fe0 GetFreeSpark (159 bytes)</title></rect>
 <rect width="7.63" height="7.36" x="533.67" y="285.55" class="named"><title>0x00442610 lara_col_fastfall (159 bytes)</title></rect>
