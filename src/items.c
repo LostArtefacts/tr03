@@ -1,6 +1,26 @@
 #include "game.h"
 
 extern sint16 body_bag;
+extern sint16 next_item_free, next_item_active;
+extern sint32 level_items;
+
+void InitialiseItemArray(int numitems)
+{
+    int i;
+    ITEM_INFO *item;
+
+    body_bag = NO_ITEM;
+    next_item_active = NO_ITEM;
+    next_item_free = level_items;
+    item = &items[level_items];
+    for (i = level_items + 1; i < numitems; i++, item++)
+    {
+        item->next_item = i;
+        item->active = 0;
+        item->il.init = 0;
+    }
+    item->next_item = NO_ITEM;
+}
 
 void InitialiseFXArray(void)
 {
