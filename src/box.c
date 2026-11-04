@@ -4,6 +4,7 @@
 #define MAX_JOINT_CHANGE (ONE_DEGREE * 5)
 #define JOINT_ARC 0x3000
 
+int SearchLOT(LOT_INFO *LOT, int expansion);
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 
 void InitialiseCreature(sint16 item_number)
@@ -29,6 +30,27 @@ int CreatureActive(sint16 item_number)
         item->status = ACTIVE;
     }
     return item->data != NULL;
+}
+
+int UpdateLOT(LOT_INFO *LOT, int expansion)
+{
+    BOX_NODE *expand;
+
+    if (LOT->required_box != NO_BOX && LOT->required_box != LOT->target_box)
+    {
+        LOT->target_box = LOT->required_box;
+        expand = &LOT->node[LOT->target_box];
+        if (expand->next_expansion == NO_BOX && LOT->tail != LOT->target_box)
+        {
+            expand->next_expansion = LOT->head;
+            if (LOT->head == NO_BOX)
+                LOT->tail = LOT->target_box;
+            LOT->head = LOT->target_box;
+        }
+        expand->search_number = ++LOT->search_number;
+        expand->exit_box = NO_BOX;
+    }
+    return SearchLOT(LOT, expansion);
 }
 
 void CreatureTilt(ITEM_INFO *item, sint16 angle)
