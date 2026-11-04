@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="119.37" height="12" x="0" y="0" class="named"><title>377 · 25.51%</title></rect>
-<rect width="348.63" height="12" x="119.37" y="0" class="todo"><title>1101 · 74.49%</title></rect>
+<rect width="119.69" height="12" x="0" y="0" class="named"><title>378 · 25.58%</title></rect>
+<rect width="348.31" height="12" x="119.69" y="0" class="todo"><title>1100 · 74.42%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">25.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">377</tspan> · <tspan class="todo">1101</tspan></text>
+<text text-anchor="end" x="648" y="7.50">25.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">378</tspan> · <tspan class="todo">1100</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="16.81" height="12" x="0" y="0" class="named"><title>24 KB · 3.59%</title></rect>
-<rect width="451.19" height="12" x="16.81" y="0" class="todo"><title>640 KB · 96.41%</title></rect>
+<rect width="16.90" height="12" x="0" y="0" class="named"><title>24 KB · 3.61%</title></rect>
+<rect width="451.10" height="12" x="16.90" y="0" class="todo"><title>640 KB · 96.39%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
@@ -226,7 +226,7 @@
 <rect width="12" height="12" x="165" y="45" class="todo"><title>0x0041aa40 InitCinematicRooms (142 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="45" class="todo"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="45" class="todo"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="45" class="todo"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="45" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="45" class="todo"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="45" class="todo"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="45" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
@@ -2409,7 +2409,7 @@
 <rect width="6.68" height="6.77" x="692.13" y="254.61" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
 <rect width="6.68" height="6.77" x="701.81" y="254.61" class="todo"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
 <rect width="6.68" height="6.77" x="711.49" y="254.61" class="todo"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
-<rect width="6.63" height="6.77" x="721.17" y="254.61" class="todo"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
+<rect width="6.63" height="6.77" x="721.17" y="254.61" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="6.63" height="6.77" x="730.80" y="254.61" class="todo"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="6.58" height="6.77" x="740.42" y="254.61" class="todo"><title>0x0041ec90 DoorCollision (126 bytes)</title></rect>
 <rect width="6.90" height="6.45" x="564.61" y="264.38" class="todo"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
