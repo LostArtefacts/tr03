@@ -5,6 +5,8 @@
 
 #define NUM_SLOTS 5
 #define NUM_NONLOT_SLOTS 12
+#define BOX_NUMBER 0x7ff
+#define NO_FLYING 0
 
 typedef struct {
     sint32 x;

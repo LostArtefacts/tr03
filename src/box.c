@@ -4,6 +4,7 @@
 #define MAX_JOINT_CHANGE (ONE_DEGREE * 5)
 #define JOINT_ARC 0x3000
 #define GUNFIRE_ALERT_RADIUS 8000
+#define MODIFY 8
 
 int SearchLOT(LOT_INFO *LOT, int expansion);
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
@@ -52,6 +53,21 @@ int UpdateLOT(LOT_INFO *LOT, int expansion)
         expand->exit_box = NO_BOX;
     }
     return SearchLOT(LOT, expansion);
+}
+
+void TargetBox(LOT_INFO *LOT, sint16 box_number)
+{
+    BOX_INFO *box;
+
+    box_number &= BOX_NUMBER;
+    box = &boxes[box_number];
+    LOT->target.z = ((uint32)box->left << WALL_SHIFT) + GetRandomControl() * (((uint32)box->right - (uint32)box->left - 1) >> (15 - WALL_SHIFT)) + WALL_L / 2;
+    LOT->target.x = ((uint32)box->top << WALL_SHIFT) + GetRandomControl() * (((uint32)box->bottom - (uint32)box->top - 1) >> (15 - WALL_SHIFT)) + WALL_L / 2;
+    LOT->required_box = box_number;
+    if (LOT->fly == NO_FLYING)
+        LOT->target.y = box->height;
+    else
+        LOT->target.y = box->height - STEP_L * 3 / 2;
 }
 
 void CreatureTilt(ITEM_INFO *item, sint16 angle)
