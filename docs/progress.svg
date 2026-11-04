@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="121.91" height="12" x="0" y="0" class="named"><title>385 · 26.05%</title></rect>
-<rect width="346.09" height="12" x="121.91" y="0" class="todo"><title>1093 · 73.95%</title></rect>
+<rect width="122.22" height="12" x="0" y="0" class="named"><title>386 · 26.12%</title></rect>
+<rect width="345.78" height="12" x="122.22" y="0" class="todo"><title>1092 · 73.88%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">26.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">385</tspan> · <tspan class="todo">1093</tspan></text>
+<text text-anchor="end" x="648" y="7.50">26.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">386</tspan> · <tspan class="todo">1092</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="17.34" height="12" x="0" y="0" class="named"><title>25 KB · 3.71%</title></rect>
-<rect width="450.66" height="12" x="17.34" y="0" class="todo"><title>639 KB · 96.29%</title></rect>
+<rect width="17.42" height="12" x="0" y="0" class="named"><title>25 KB · 3.72%</title></rect>
+<rect width="450.58" height="12" x="17.42" y="0" class="todo"><title>639 KB · 96.28%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">25 KB</tspan> · <tspan class="todo">639 KB</tspan></text>
@@ -461,7 +461,7 @@
 <rect width="12" height="12" x="690" y="105" class="todo"><title>0x00430050 SetupShoal (593 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="105" class="todo"><title>0x004302b0 SetupFish (303 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="105" class="todo"><title>0x004303e0 ControlFish (2372 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="105" class="todo"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="105" class="named"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="120" class="todo"><title>0x00430db0 FlamerControl (2162 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="120" class="todo"><title>0x00431650 TriggerFlameThrower (564 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="120" class="todo"><title>0x00431890 TriggerFlamethrowerFlame (487 bytes)</title></rect>
@@ -2449,7 +2449,7 @@
 <rect width="6.63" height="6.12" x="564.61" y="413.62" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="6.63" height="6.12" x="564.61" y="422.74" class="todo"><title>0x004838e0 SortOutAdventureSave (115 bytes)</title></rect>
 <rect width="6.63" height="6.07" x="564.61" y="431.86" class="named"><title>0x00414780 UpdateLOT (114 bytes)</title></rect>
-<rect width="6.63" height="6.07" x="564.61" y="440.93" class="todo"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
+<rect width="6.63" height="6.07" x="564.61" y="440.93" class="named"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
 <rect width="6.37" height="6.33" x="574.24" y="273.84" class="todo"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
 <rect width="6.37" height="6.33" x="583.61" y="273.84" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="592.98" y="273.84" class="named"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>

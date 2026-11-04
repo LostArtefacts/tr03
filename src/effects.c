@@ -1,8 +1,10 @@
 #include "game.h"
+#include <stdlib.h>
 
 #define FLIPFLAG 64
 #define UNFLIPFLAG 128
 #define LARA_HEAD 4
+#define SQUARE(A) ((A) * (A))
 
 
 extern OBJECT_VECTOR *sound_effects;
@@ -687,4 +689,20 @@ void BaddieBiteEffect(ITEM_INFO *item, BITE_INFO *bite)
     pos.z = bite->z;
     GetJointAbsPosition(item, &pos, bite->mesh_num);
     DoBloodSplat(pos.x, pos.y, pos.z, item->speed, item->pos.y_rot, item->room_number);
+}
+
+int FishNearLara(PHD_3DPOS *pos, sint32 distance, ITEM_INFO *item)
+{
+    sint32 x, y, z;
+
+    x = pos->x_pos - item->pos.x_pos;
+    y = abs(pos->y_pos - item->pos.y_pos);
+    z = pos->z_pos - item->pos.z_pos;
+    if (x < -distance || x > distance || z < -distance || z > distance || y < -WALL_L * 3 || y > WALL_L * 3)
+        return 0;
+    if (x * x + z * z > SQUARE(distance))
+        return 0;
+    if (y > distance)
+        return 0;
+    return 1;
 }
