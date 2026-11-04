@@ -6,6 +6,7 @@
 extern int IM_rate, IM_frac;
 extern sint32 *IMptr;
 extern sint32 IMstack[];
+extern sint16 interpolated_bounds[6];
 
 void DrawRooms(sint16 current_room);
 void DrawGameInfo(int timed);
@@ -137,6 +138,20 @@ void phd_PutPolygons_I(sint16 *ptr, int clip)
     InterpolateMatrix();
     phd_PutPolygons(ptr, clip);
     phd_PopMatrix();
+}
+
+sint16 *GetBoundsAccurate(ITEM_INFO *item)
+{
+    int i, frac, rate;
+    sint16 *bptr, *frmptr[2];
+
+    frac = GetFrames(item, frmptr, &rate);
+    if (frac == 0)
+        return frmptr[0];
+    bptr = interpolated_bounds;
+    for (i = 0; i < 6; i++, bptr++, frmptr[0]++, frmptr[1]++)
+        *bptr = *frmptr[0] + ((*frmptr[1] - *frmptr[0]) * frac) / rate;
+    return interpolated_bounds;
 }
 
 sint16 *GetBestFrame(ITEM_INFO *item)

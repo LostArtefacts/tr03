@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="118.42" height="12" x="0" y="0" class="named"><title>374 · 25.30%</title></rect>
-<rect width="349.58" height="12" x="118.42" y="0" class="todo"><title>1104 · 74.70%</title></rect>
+<rect width="118.74" height="12" x="0" y="0" class="named"><title>375 · 25.37%</title></rect>
+<rect width="349.26" height="12" x="118.74" y="0" class="todo"><title>1103 · 74.63%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">25.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">374</tspan> · <tspan class="todo">1104</tspan></text>
+<text text-anchor="end" x="648" y="7.50">25.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">375</tspan> · <tspan class="todo">1103</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="16.56" height="12" x="0" y="0" class="named"><title>23 KB · 3.54%</title></rect>
-<rect width="451.44" height="12" x="16.56" y="0" class="todo"><title>640 KB · 96.46%</title></rect>
+<rect width="16.65" height="12" x="0" y="0" class="named"><title>24 KB · 3.56%</title></rect>
+<rect width="451.35" height="12" x="16.65" y="0" class="todo"><title>640 KB · 96.44%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">3.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">23 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">3.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -333,7 +333,7 @@
 <rect width="12" height="12" x="270" y="75" class="todo"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="75" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="75" class="todo"><title>0x00429db0 GetFrames (146 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="75" class="todo"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="75" class="named"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="75" class="named"><title>0x00429ed0 GetBestFrame (48 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="75" class="todo"><title>0x00429f00 DetatchSpark (217 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="75" class="todo"><title>0x00429fe0 GetFreeSpark (159 bytes)</title></rect>
@@ -2417,7 +2417,7 @@
 <rect width="6.90" height="6.45" x="584.40" y="264.38" class="todo"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
 <rect width="6.90" height="6.45" x="594.30" y="264.38" class="todo"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
 <rect width="6.84" height="6.45" x="604.20" y="264.38" class="todo"><title>0x00482910 S_LoadLevelFile (125 bytes)</title></rect>
-<rect width="6.79" height="6.45" x="614.04" y="264.38" class="todo"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>
+<rect width="6.79" height="6.45" x="614.04" y="264.38" class="named"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="6.79" height="6.45" x="623.83" y="264.38" class="named"><title>0x00441530 lara_as_stepright (124 bytes)</title></rect>
 <rect width="6.79" height="6.45" x="633.62" y="264.38" class="named"><title>0x004415b0 lara_as_stepleft (124 bytes)</title></rect>
 <rect width="6.79" height="6.45" x="643.41" y="264.38" class="named"><title>0x00443040 lara_col_fastdive (124 bytes)</title></rect>
