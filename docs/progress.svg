@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="190.30" height="12" x="0" y="0" class="named"><title>601 · 40.66%</title></rect>
-<rect width="277.70" height="12" x="190.30" y="0" class="todo"><title>877 · 59.34%</title></rect>
+<rect width="190.62" height="12" x="0" y="0" class="named"><title>602 · 40.73%</title></rect>
+<rect width="277.38" height="12" x="190.62" y="0" class="todo"><title>876 · 59.27%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">40.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">601</tspan> · <tspan class="todo">877</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">602</tspan> · <tspan class="todo">876</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="58.27" height="12" x="0" y="0" class="named"><title>83 KB · 12.45%</title></rect>
-<rect width="409.73" height="12" x="58.27" y="0" class="todo"><title>582 KB · 87.55%</title></rect>
+<rect width="58.47" height="12" x="0" y="0" class="named"><title>83 KB · 12.49%</title></rect>
+<rect width="409.53" height="12" x="58.47" y="0" class="todo"><title>582 KB · 87.51%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">12.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">83 KB</tspan> · <tspan class="todo">582 KB</tspan></text>
@@ -1062,7 +1062,7 @@
 <rect width="12" height="12" x="705" y="285" class="named"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="285" class="named"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="285" class="named"><title>0x0046d850 SpinningBlade (367 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="300" class="todo"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="300" class="named"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="300" class="named"><title>0x0046daf0 InitialiseBlade (64 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="300" class="named"><title>0x0046db30 BladeControl (152 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="300" class="named"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
@@ -2095,7 +2095,7 @@
 <rect width="10.08" height="10.36" x="473.28" y="254.45" class="todo"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
 <rect width="10.08" height="10.36" x="473.28" y="267.81" class="todo"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="10.08" height="10.18" x="473.28" y="281.16" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
-<rect width="10.08" height="10.18" x="473.28" y="294.35" class="todo"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
+<rect width="10.08" height="10.18" x="473.28" y="294.35" class="named"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
 <rect width="10.08" height="10.15" x="473.28" y="307.53" class="todo"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="10.08" height="10.11" x="473.28" y="320.67" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
 <rect width="10.08" height="10.08" x="473.28" y="333.78" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>

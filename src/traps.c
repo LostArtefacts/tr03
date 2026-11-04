@@ -156,6 +156,56 @@ void SpinningBlade(sint16 item_number)
         item->pos.y_rot += -0x8000;
 }
 
+void IcicleControl(sint16 item_number)
+{
+    sint16 room_number;
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+    switch (item->current_anim_state) {
+    case 1:
+        item->goal_anim_state = 2;
+        break;
+
+    case 2:
+        if (item->gravity_status == 0) {
+            item->fallspeed = 50;
+            item->gravity_status = 1;
+        }
+        if (item->touch_bits) {
+            lara_item->hit_points -= 200;
+            lara_item->hit_status = 1;
+        }
+        break;
+
+    case 3:
+        item->gravity_status = 0;
+        break;
+    }
+
+    AnimateItem(item);
+    if (item->status == DEACTIVATED) {
+        RemoveActiveItem(item_number);
+        return;
+    }
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+    if (item->current_anim_state == 2 && item->pos.y_pos >= item->floor) {
+        item->goal_anim_state = 3;
+        item->pos.y_pos = item->floor;
+        item->fallspeed = 0;
+        item->gravity_status = 0;
+        item->mesh_bits = 0x2b;
+        SoundEffect(69, &item->pos, 0);
+    }
+}
+
 void InitialiseBlade(sint16 item_number)
 {
     ITEM_INFO *item;
