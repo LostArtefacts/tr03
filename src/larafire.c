@@ -39,6 +39,52 @@ void find_target_point(ITEM_INFO *item, GAME_VECTOR *target)
     target->room_number = item->room_number;
 }
 
+typedef struct {
+    sint16 lock_angles[4];
+    sint16 left_angles[4];
+    sint16 right_angles[4];
+    sint16 aim_speed;
+    sint16 shot_accuracy;
+    sint16 gun_height;
+    sint16 target_dist;
+    char damage;
+    char recoil_frame;
+    char flash_time;
+    char draw_frame;
+    sint16 sample_num;
+} WEAPON_INFO;
+
+void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm)
+{
+    PHD_ANGLE curr, speed;
+    PHD_ANGLE destx, desty;
+
+    speed = winfo->aim_speed;
+    if (arm->lock) {
+        desty = lara.target_angles[0];
+        destx = lara.target_angles[1];
+    } else {
+        desty = destx = 0;
+    }
+    curr = arm->y_rot;
+    if (curr >= desty - speed && curr <= desty + speed)
+        curr = desty;
+    else if (curr < desty)
+        curr += speed;
+    else
+        curr -= speed;
+    arm->y_rot = curr;
+    curr = arm->x_rot;
+    if (curr >= destx - speed && curr <= destx + speed)
+        curr = destx;
+    else if (curr < destx)
+        curr += speed;
+    else
+        curr -= speed;
+    arm->x_rot = curr;
+    arm->z_rot = 0;
+}
+
 void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, int size);
 sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
 

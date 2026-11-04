@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="162.12" height="12" x="0" y="0" class="named"><title>512 · 34.64%</title></rect>
-<rect width="305.88" height="12" x="162.12" y="0" class="todo"><title>966 · 65.36%</title></rect>
+<rect width="162.44" height="12" x="0" y="0" class="named"><title>513 · 34.71%</title></rect>
+<rect width="305.56" height="12" x="162.44" y="0" class="todo"><title>965 · 65.29%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">34.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">512</tspan> · <tspan class="todo">966</tspan></text>
+<text text-anchor="end" x="648" y="7.50">34.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">513</tspan> · <tspan class="todo">965</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="31.85" height="12" x="0" y="0" class="named"><title>45 KB · 6.81%</title></rect>
-<rect width="436.15" height="12" x="31.85" y="0" class="todo"><title>619 KB · 93.19%</title></rect>
+<rect width="32" height="12" x="0" y="0" class="named"><title>45 KB · 6.84%</title></rect>
+<rect width="436" height="12" x="32" y="0" class="todo"><title>619 KB · 93.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">45 KB</tspan> · <tspan class="todo">619 KB</tspan></text>
@@ -771,7 +771,7 @@
 <rect width="12" height="12" x="90" y="210" class="todo"><title>0x0044a330 LaraTargetInfo (404 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="210" class="todo"><title>0x0044a4d0 LaraGetNewTarget (557 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="210" class="named"><title>0x0044a700 find_target_point (170 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="210" class="todo"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="210" class="named"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="210" class="todo"><title>0x0044a890 FireWeapon (1394 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="210" class="named"><title>0x0044ae20 HitTarget (185 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="210" class="named"><title>0x0044aee0 SmashItem (106 bytes)</title></rect>
@@ -2214,7 +2214,7 @@
 <rect width="8.60" height="8.63" x="499.62" y="438.37" class="todo"><title>0x00402640 gen_x (210 bytes)</title></rect>
 <rect width="8.67" height="8.56" x="511.22" y="211.36" class="todo"><title>0x0045b610 Targetable (210 bytes)</title></rect>
 <rect width="8.67" height="8.52" x="511.22" y="222.91" class="todo"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
-<rect width="8.67" height="8.52" x="511.22" y="234.43" class="todo"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
+<rect width="8.67" height="8.52" x="511.22" y="234.43" class="named"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
 <rect width="8.67" height="8.52" x="511.22" y="245.95" class="todo"><title>0x0044efc0 LaraTestWaterDepth (209 bytes)</title></rect>
 <rect width="8.67" height="8.48" x="511.22" y="257.46" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
 <rect width="8.67" height="8.43" x="511.22" y="268.94" class="todo"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
