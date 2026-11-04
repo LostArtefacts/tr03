@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="147.87" height="12" x="0" y="0" class="named"><title>467 · 31.60%</title></rect>
-<rect width="320.13" height="12" x="147.87" y="0" class="todo"><title>1011 · 68.40%</title></rect>
+<rect width="148.19" height="12" x="0" y="0" class="named"><title>468 · 31.66%</title></rect>
+<rect width="319.81" height="12" x="148.19" y="0" class="todo"><title>1010 · 68.34%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">31.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">467</tspan> · <tspan class="todo">1011</tspan></text>
+<text text-anchor="end" x="648" y="7.50">31.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">468</tspan> · <tspan class="todo">1010</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="26.03" height="12" x="0" y="0" class="named"><title>37 KB · 5.56%</title></rect>
-<rect width="441.97" height="12" x="26.03" y="0" class="todo"><title>627 KB · 94.44%</title></rect>
+<rect width="26.14" height="12" x="0" y="0" class="named"><title>37 KB · 5.59%</title></rect>
+<rect width="441.86" height="12" x="26.14" y="0" class="todo"><title>627 KB · 94.41%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">37 KB</tspan> · <tspan class="todo">627 KB</tspan></text>
@@ -224,7 +224,7 @@
 <rect width="12" height="12" x="135" y="45" class="named"><title>0x0041a8f0 InitialiseGenPlayer (58 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="45" class="todo"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="45" class="named"><title>0x0041aa40 InitCinematicRooms (142 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="45" class="todo"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="45" class="named"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="45" class="named"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="45" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="45" class="todo"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
@@ -1233,7 +1233,7 @@
 <rect width="12" height="12" x="270" y="345" class="todo"><title>0x00483650 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="345" class="todo"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="345" class="todo"><title>0x004837b0 S_FinishInventory (15 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="345" class="todo"><title>0x004837c0 Func4837c0 (1 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="345" class="todo"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="345" class="todo"><title>0x004837d0 S_Wait (87 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="345" class="todo"><title>0x00483830 S_PlayFMV (14 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="345" class="todo"><title>0x00483840 S_IntroFMV (19 bytes)</title></rect>
@@ -2307,7 +2307,7 @@
 <rect width="7.78" height="7.45" x="653.48" y="233.52" class="named"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="664.26" y="233.52" class="todo"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="675.03" y="233.52" class="todo"><title>0x0040d320 S_DrawScreenSprite (163 bytes)</title></rect>
-<rect width="7.73" height="7.45" x="685.76" y="233.52" class="todo"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
+<rect width="7.73" height="7.45" x="685.76" y="233.52" class="named"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="696.49" y="233.52" class="todo"><title>0x0042bda0 TriggerAlertLight (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="707.22" y="233.52" class="todo"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="717.95" y="233.52" class="named"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
@@ -3022,7 +3022,7 @@
 <rect width="1" height="2.19" x="746" y="438.17" class="todo"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
 <rect width="2.27" height="1" x="742.78" y="443.36" class="todo"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
 <rect width="2.27" height="1" x="742.78" y="446" class="todo"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
-<rect width="1" height="3.64" x="746" y="443.36" class="todo"><title>0x004837c0 Func4837c0 (1 bytes)</title></rect>
+<rect width="1" height="3.64" x="746" y="443.36" class="todo"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
 </g>
 </g>
 <g transform="translate(0 1036)">

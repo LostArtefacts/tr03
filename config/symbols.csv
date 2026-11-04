@@ -1170,7 +1170,7 @@ address,size,name,symbol
 0x00483650,278,S_DrawScreenBox,_S_DrawScreenBox
 0x00483770,61,S_DrawScreenFBox,_S_DrawScreenFBox
 0x004837b0,15,S_FinishInventory,_S_FinishInventory
-0x004837c0,1,Func4837c0,
+0x004837c0,1,DrawDummyItem,_DrawDummyItem
 0x004837d0,87,S_Wait,_S_Wait
 0x00483830,14,S_PlayFMV,_S_PlayFMV
 0x00483840,19,S_IntroFMV,_S_IntroFMV
@@ -1920,6 +1920,8 @@ address,size,name,symbol
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
 0x004c7c78,110,T_textSpacing,_T_textSpacing
 0x004c7ce8,95,T_remapASCII,_T_remapASCII
+0x004c7d58,20,TonyBossRadii,_TonyBossRadii
+0x004c7d70,20,TonyBossHeights,_TonyBossHeights
 0x004c7ef0,32,lizman_summon_coords,_lizman_summon_coords
 0x004c7f10,,tribeboss_hit,_tribeboss_hit
 0x004c7fb4,4,closest_ai_path,_closest_ai_path
@@ -2015,6 +2017,7 @@ address,size,name,symbol
 0x00625f3c,1,camerasnaps,_camerasnaps
 0x00625f40,2,cinematic_level,_cinematic_level
 0x00625f44,4,actual_current_frame,_actual_current_frame
+0x00625f48,4,original_room,_original_room
 0x00625f60,4,noinput_count,_noinput_count
 0x00625f64,4,reset_flag,_reset_flag
 0x00625f68,4,fliptimer,_fliptimer

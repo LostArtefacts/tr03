@@ -50,6 +50,35 @@ void InitCinematicRooms(void)
     }
 }
 
+extern sint32 original_room;
+
+void DrawDummyItem(ITEM_INFO *item);
+void LaraControlCinematic(sint16 item_num);
+
+void InitialisePlayer1(sint16 item_num)
+{
+    ITEM_INFO *item;
+    OBJECT_INFO *obj;
+
+    obj = &objects[LARA];
+    obj->draw_routine = DrawDummyItem;
+    obj->control = LaraControlCinematic;
+    obj->shadow_size = 0;
+    AddActiveItem(item_num);
+    lara_item = item = &items[item_num];
+    camera.pos.x = item->pos.x_pos;
+    camera.pos.y = item->pos.y_pos;
+    camera.pos.z = item->pos.z_pos;
+    camera.target_angle = item->pos.y_rot = 0;
+    original_room = camera.pos.room_number = item->room_number;
+    item->goal_anim_state = 0;
+    item->current_anim_state = 0;
+    item->frame_number = 0;
+    item->anim_number = 0;
+    item->dynamic_light = 0;
+    lara.hit_direction = -1;
+}
+
 int GetCinematicRoom(sint32 x, sint32 y, sint32 z);
 void AnimateLara(ITEM_INFO *item);
 
