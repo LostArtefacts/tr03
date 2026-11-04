@@ -107,3 +107,15 @@ void reset_hair(ITEM_INFO *item)
 {
     InitialiseHair();
 }
+
+void AssaultStart(ITEM_INFO *item)
+{
+    savegame.timer = 0;
+    assault_timer_active = 1;
+    assault_timer_display = 1;
+    assault_penalties = 0;
+    assault_penalty_display_timer = 0;
+    assault_targets = 7;
+    ResetTargets();
+    flipeffect = -1;
+}

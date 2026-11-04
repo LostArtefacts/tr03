@@ -14,6 +14,14 @@ enum lara_gun_states {
     LG_SPECIAL
 };
 
+enum lara_water_states {
+    LARA_ABOVEWATER,
+    LARA_UNDERWATER,
+    LARA_SURFACE,
+    LARA_CHEAT,
+    LARA_WADE
+};
+
 typedef struct lara_info {
     sint16 item_number;
     sint16 gun_status;

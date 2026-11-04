@@ -2020,7 +2020,7 @@ address,size,name,symbol
 0x006261a8,4,wibble,_wibble
 0x006261ac,4,KillEverythingFlag,_KillEverythingFlag
 0x006261b4,4,SplashCount,_SplashCount
-0x006261b8,4,ExerciseNumber,_ExerciseNumber
+0x006261b8,1,ExerciseNumber,_ExerciseNumber
 0x006261bc,4,assault_timer_display,_assault_timer_display
 0x006261c0,4,assault_timer_active,_assault_timer_active
 0x006261c4,4,assault_penalties,_assault_penalties
