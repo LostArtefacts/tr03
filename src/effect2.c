@@ -4,6 +4,26 @@ extern sint32 BatsTriggered;
 
 void TriggerBats(sint32 x, sint32 y, sint32 z, sint32 angle);
 
+void InitialiseSparks(void)
+{
+    sint32 lp;
+    SPARKS *sptr;
+
+    sptr = &sparks[0];
+    for (lp = 0; lp < MAX_SPARKS; lp++)
+    {
+        sptr->On = 0;
+        sptr->Dynamic = -1;
+        sptr++;
+    }
+    for (lp = 0; lp < MAX_SPLASHES; lp++)
+        splashes[lp].flags = 0;
+    for (lp = 0; lp < MAX_RIPPLES; lp++)
+        ripples[lp].flags = 0;
+    for (lp = 0; lp < MAX_BATS; lp++)
+        bats[lp].flags = 0;
+}
+
 void BatEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;

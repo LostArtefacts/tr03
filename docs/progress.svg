@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="109.24" height="12" x="0" y="0" class="named"><title>345 · 23.34%</title></rect>
-<rect width="358.76" height="12" x="109.24" y="0" class="todo"><title>1133 · 76.66%</title></rect>
+<rect width="109.56" height="12" x="0" y="0" class="named"><title>346 · 23.41%</title></rect>
+<rect width="358.44" height="12" x="109.56" y="0" class="todo"><title>1132 · 76.59%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">23.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">345</tspan> · <tspan class="todo">1133</tspan></text>
+<text text-anchor="end" x="648" y="7.50">23.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">346</tspan> · <tspan class="todo">1132</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="14.18" height="12" x="0" y="0" class="named"><title>20 KB · 3.03%</title></rect>
-<rect width="453.82" height="12" x="14.18" y="0" class="todo"><title>644 KB · 96.97%</title></rect>
+<rect width="14.23" height="12" x="0" y="0" class="named"><title>20 KB · 3.04%</title></rect>
+<rect width="453.77" height="12" x="14.23" y="0" class="todo"><title>644 KB · 96.96%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">20 KB</tspan> · <tspan class="todo">644 KB</tspan></text>
@@ -337,7 +337,7 @@
 <rect width="12" height="12" x="330" y="75" class="named"><title>0x00429ed0 GetBestFrame (48 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="75" class="todo"><title>0x00429f00 DetatchSpark (217 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="75" class="todo"><title>0x00429fe0 GetFreeSpark (159 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="75" class="todo"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="75" class="named"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="75" class="todo"><title>0x0042a0d0 UpdateSparks (1442 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="75" class="todo"><title>0x0042a680 TriggerRicochetSpark (547 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="75" class="todo"><title>0x0042a8b0 TriggerFlareSparks (705 bytes)</title></rect>
@@ -2591,7 +2591,7 @@
 <rect width="5.36" height="5.27" x="600.62" y="400.89" class="named"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
 <rect width="5.36" height="5.27" x="600.62" y="409.16" class="todo"><title>0x0048e8a0 Func48e8a0 (80 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="417.44" class="named"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
-<rect width="5.36" height="5.14" x="600.62" y="425.58" class="todo"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
+<rect width="5.36" height="5.14" x="600.62" y="425.58" class="named"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="433.72" class="named"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="441.86" class="todo"><title>0x00484eb0 HWR_BeginScene (78 bytes)</title></rect>
 <rect width="5.07" height="5.43" x="608.98" y="309.03" class="todo"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
