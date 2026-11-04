@@ -62,6 +62,41 @@ void ControlSpikeWall(sint16 item_number)
     }
 }
 
+void ControlCeilingSpikes(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint32 y;
+    sint16 room_number;
+
+    item = &items[item_number];
+    if (TriggerActive(item) && item->status != DEACTIVATED) {
+        y = item->pos.y_pos + ((item->item_flags[0] == 1) ? 10 : 5);
+        room_number = item->room_number;
+        floor = GetFloor(item->pos.x_pos, y, item->pos.z_pos, &room_number);
+        if (GetHeight(floor, item->pos.x_pos, y, item->pos.z_pos) < y + WALL_L) {
+            item->status = DEACTIVATED;
+            StopSoundEffect(147);
+        } else {
+            item->pos.y_pos = y;
+            if (room_number != item->room_number)
+                ItemNewRoom(item_number, room_number);
+            SoundEffect(147, &item->pos, 0);
+        }
+    }
+
+    if (item->touch_bits) {
+        lara_item->hit_points -= 20;
+        lara_item->hit_status = 1;
+        DoLotsOfBlood(lara_item->pos.x_pos, item->pos.y_pos + WALL_L * 3 / 4, lara_item->pos.z_pos, 1, item->pos.y_rot, lara_item->room_number, 3);
+        item->touch_bits = 0;
+        SoundEffect(56, &item->pos, 0);
+    }
+
+    if (TriggerActive(item) && item->status != DEACTIVATED && item->item_flags[0] == 1)
+        AnimateItem(item);
+}
+
 void HookControl(sint16 item_number)
 {
     ITEM_INFO *item;
