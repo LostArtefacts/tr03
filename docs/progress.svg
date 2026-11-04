@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="29.66" height="12" x="0" y="0" class="named"><title>217 · 14.68%</title></rect>
-<rect width="172.34" height="12" x="29.66" y="0" class="todo"><title>1261 · 85.32%</title></rect>
+<rect width="29.79" height="12" x="0" y="0" class="named"><title>218 · 14.75%</title></rect>
+<rect width="172.21" height="12" x="29.79" y="0" class="todo"><title>1260 · 85.25%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">14.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">217</tspan> · <tspan class="todo">1261</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">218</tspan> · <tspan class="todo">1260</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.04" height="12" x="0" y="0" class="named"><title>10 KB · 1.50%</title></rect>
-<rect width="198.96" height="12" x="3.04" y="0" class="todo"><title>654 KB · 98.50%</title></rect>
+<rect width="3.05" height="12" x="0" y="0" class="named"><title>10 KB · 1.51%</title></rect>
+<rect width="198.95" height="12" x="3.05" y="0" class="todo"><title>654 KB · 98.49%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -516,7 +516,7 @@
 <rect width="12" height="12" x="15" y="135" class="todo"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="135" class="named"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="135" class="todo"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="135" class="todo"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="135" class="named"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="135" class="todo"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="135" class="todo"><title>0x00438f30 Inv_RingMotionInit (99 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="135" class="todo"><title>0x00438fa0 Inv_RingMotionSetup (44 bytes)</title></rect>
@@ -2774,7 +2774,7 @@
 <rect width="4.37" height="3.87" x="698.85" y="347.35" class="named"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
 <rect width="4.37" height="3.87" x="706.22" y="347.35" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="713.59" y="347.35" class="named"><title>0x0041e140 FindGridShift (47 bytes)</title></rect>
-<rect width="4.28" height="3.87" x="720.87" y="347.35" class="todo"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
+<rect width="4.28" height="3.87" x="720.87" y="347.35" class="named"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="728.15" y="347.35" class="todo"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="735.44" y="347.35" class="todo"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="742.72" y="347.35" class="todo"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>

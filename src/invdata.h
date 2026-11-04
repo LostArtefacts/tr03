@@ -9,6 +9,7 @@ extern "C" {
 #include "3dglodef.h"
 
 #define MAX_REQLINES 24
+#define ROTATE_DURATION 24
 
 enum {
     IT_NAME,
