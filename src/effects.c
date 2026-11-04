@@ -409,3 +409,9 @@ void ResetExercises(ITEM_INFO *item)
     ExerciseNumber = 0;
     flipeffect = -1;
 }
+
+void TubeTrain(ITEM_INFO *item)
+{
+    camera.bounce = -350;
+    flipeffect = -1;
+}
