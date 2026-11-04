@@ -12,6 +12,8 @@
 #define BLOCKED 0x4000
 #define NO_ROOM 0xff
 
+#define UNDERWATER 1
+
 typedef struct floor_info {
     uint16 index;
     uint16 fx:4;

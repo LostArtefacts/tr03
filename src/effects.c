@@ -2,6 +2,7 @@
 
 #define FLIPFLAG 64
 #define UNFLIPFLAG 128
+#define LARA_HEAD 4
 
 
 extern OBJECT_VECTOR *sound_effects;
@@ -12,6 +13,12 @@ void SOUND_EndScene(void);
 sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
 void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, int size);
 sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+void TriggerBlood(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 num);
+void TriggerBloodD(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 num);
+void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size);
+void TriggerUnderwaterBloodD(sint32 x, sint32 y, sint32 z, sint32 size);
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, sint32 lr);
 
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance)
 {
@@ -62,6 +69,15 @@ void Richochet(GAME_VECTOR *pos)
     angle = (mGetAngle(pos->z, pos->x, lara_item->pos.z_pos, lara_item->pos.x_pos) >> 4) & 4095;
     TriggerRicochetSpark(pos, angle, 16);
     SoundEffect(10, (PHD_3DPOS *)pos, 0);
+}
+
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num)
+{
+    if (room[room_num].flags & UNDERWATER)
+        TriggerUnderwaterBlood(x, y, z, GetRandomControl() & 7);
+    else
+        TriggerBlood(x, y, z, direction >> 4, (GetRandomControl() & 7) + 6);
+    return NO_ITEM;
 }
 
 void finish_level_effect(ITEM_INFO *item)

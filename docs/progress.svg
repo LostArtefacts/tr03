@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="114.31" height="12" x="0" y="0" class="named"><title>361 · 24.42%</title></rect>
-<rect width="353.69" height="12" x="114.31" y="0" class="todo"><title>1117 · 75.58%</title></rect>
+<rect width="114.63" height="12" x="0" y="0" class="named"><title>362 · 24.49%</title></rect>
+<rect width="353.37" height="12" x="114.63" y="0" class="todo"><title>1116 · 75.51%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">24.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">361</tspan> · <tspan class="todo">1117</tspan></text>
+<text text-anchor="end" x="648" y="7.50">24.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">362</tspan> · <tspan class="todo">1116</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="15.41" height="12" x="0" y="0" class="named"><title>22 KB · 3.29%</title></rect>
-<rect width="452.59" height="12" x="15.41" y="0" class="todo"><title>642 KB · 96.71%</title></rect>
+<rect width="15.49" height="12" x="0" y="0" class="named"><title>22 KB · 3.31%</title></rect>
+<rect width="452.51" height="12" x="15.49" y="0" class="todo"><title>642 KB · 96.69%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">22 KB</tspan> · <tspan class="todo">642 KB</tspan></text>
@@ -379,7 +379,7 @@
 <rect width="12" height="12" x="210" y="90" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="90" class="named"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="90" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="90" class="todo"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="90" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="90" class="todo"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="90" class="todo"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="todo"><title>0x0042e460 DoLotsOfBloodD (130 bytes)</title></rect>
@@ -2465,7 +2465,7 @@
 <rect width="6.26" height="6.33" x="685.82" y="273.84" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
 <rect width="6.20" height="6.33" x="695.08" y="273.84" class="named"><title>0x0042f110 ControlClockChimes (111 bytes)</title></rect>
 <rect width="6.20" height="6.33" x="704.28" y="273.84" class="todo"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
-<rect width="6.14" height="6.33" x="713.48" y="273.84" class="todo"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
+<rect width="6.14" height="6.33" x="713.48" y="273.84" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
 <rect width="6.14" height="6.33" x="722.62" y="273.84" class="todo"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
 <rect width="6.14" height="6.33" x="731.77" y="273.84" class="todo"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
 <rect width="6.09" height="6.33" x="740.91" y="273.84" class="todo"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
