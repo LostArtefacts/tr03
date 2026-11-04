@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="25.97" height="12" x="130" y="1.50" class="named"/>
-<rect width="176.03" height="12" x="155.97" y="1.50" class="todo"/>
+<rect width="26.10" height="12" x="130" y="1.50" class="named"/>
+<rect width="175.90" height="12" x="156.10" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">12.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">190/1478</text>
-<rect width="2.76" height="12" x="130" y="18.50" class="named"/>
-<rect width="199.24" height="12" x="132.76" y="18.50" class="todo"/>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">191/1478</text>
+<rect width="2.77" height="12" x="130" y="18.50" class="named"/>
+<rect width="199.23" height="12" x="132.77" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">9k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.86% (190)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.14% (1288)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.92% (191)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.08% (1287)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="96.03" height="6" x="0" y="0" class="named"/>
-<rect width="650.97" height="6" x="96.03" y="0" class="todo"/>
+<rect width="96.53" height="6" x="0" y="0" class="named"/>
+<rect width="650.47" height="6" x="96.53" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1247,7 +1247,7 @@
 <rect width="12" height="12" x="465" y="345" class="todo"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="345" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="345" class="todo"><title>0x00484010 GameStats (468 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="345" class="todo"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="345" class="named"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="345" class="todo"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="345" class="todo"><title>0x00484220 GetRandomDraw (30 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="345" class="todo"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.63%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.22" height="6" x="0" y="0" class="named"/>
-<rect width="736.78" height="6" x="10.22" y="0" class="todo"/>
+<rect width="10.26" height="6" x="0" y="0" class="named"/>
+<rect width="736.74" height="6" x="10.26" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2902,7 +2902,7 @@
 <rect width="0.96" height="0.88" x="722.41" y="417.33" class="named"><title>0x0046af00 T_CentreV (30 bytes)</title></rect>
 <rect width="0.96" height="0.88" x="726.37" y="417.33" class="named"><title>0x0046af20 T_RightAlign (30 bytes)</title></rect>
 <rect width="0.96" height="0.88" x="730.33" y="417.33" class="named"><title>0x0046af40 T_BottomAlign (30 bytes)</title></rect>
-<rect width="0.96" height="0.88" x="734.29" y="417.33" class="todo"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
+<rect width="0.96" height="0.88" x="734.29" y="417.33" class="named"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
 <rect width="0.96" height="0.88" x="738.25" y="417.33" class="todo"><title>0x00484220 GetRandomDraw (30 bytes)</title></rect>
 <rect width="0.96" height="0.88" x="742.21" y="417.33" class="todo"><title>0x004b4280 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="0.83" height="0.88" x="746.17" y="417.33" class="named"><title>0x0042de60 ClearDynamics (29 bytes)</title></rect>
