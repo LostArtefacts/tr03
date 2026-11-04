@@ -44,11 +44,11 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="12.57" height="12" x="130" y="1.50" class="named"/>
-<rect width="189.43" height="12" x="142.57" y="1.50" class="todo"/>
+<rect width="12.71" height="12" x="130" y="1.50" class="named"/>
+<rect width="189.29" height="12" x="142.71" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">6.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">92/1478</text>
+<text text-anchor="end" x="382" y="7.50">6.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">93/1478</text>
 <rect width="1.01" height="12" x="130" y="18.50" class="named"/>
 <rect width="200.99" height="12" x="131.01" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
@@ -57,10 +57,10 @@
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">6.22% (92)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.78% (1386)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">6.29% (93)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.71% (1385)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="46.50" height="6" x="0" y="0" class="named"/>
-<rect width="700.50" height="6" x="46.50" y="0" class="todo"/>
+<rect width="47" height="6" x="0" y="0" class="named"/>
+<rect width="700" height="6" x="47" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -691,7 +691,7 @@
 <rect width="12" height="12" x="375" y="180" class="todo"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="180" class="todo"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="todo"><title>0x00442b50 lara_col_stepright (212 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="180" class="todo"><title>0x00442c30 lara_col_stepleft (19 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="180" class="named"><title>0x00442c30 lara_col_stepleft (19 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="180" class="todo"><title>0x00442c50 lara_col_slide (30 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="180" class="todo"><title>0x00442c70 lara_col_backjump (35 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="180" class="todo"><title>0x00442ca0 lara_col_rightjump (35 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.50%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.50%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="3.73" height="6" x="0" y="0" class="named"/>
-<rect width="743.27" height="6" x="3.73" y="0" class="todo"/>
+<rect width="3.75" height="6" x="0" y="0" class="named"/>
+<rect width="743.25" height="6" x="3.75" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2962,7 +2962,7 @@
 <rect width="0.20" height="0.10" x="728.50" y="431.75" class="named"><title>0x00441d90 extra_as_airlock (19 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="728.50" y="434.78" class="named"><title>0x00442580 lara_col_turn_l (19 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="728.50" y="437.82" class="named"><title>0x00442950 lara_col_land (19 bytes)</title></rect>
-<rect width="0.20" height="0.10" x="728.50" y="440.85" class="todo"><title>0x00442c30 lara_col_stepleft (19 bytes)</title></rect>
+<rect width="0.20" height="0.10" x="728.50" y="440.85" class="named"><title>0x00442c30 lara_col_stepleft (19 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="728.50" y="443.89" class="todo"><title>0x00442e40 lara_col_pushblock (19 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="728.50" y="446.93" class="todo"><title>0x0044ee40 lara_col_swim (19 bytes)</title></rect>
 <rect width="0.20" height="0.10" x="728.50" y="449.96" class="todo"><title>0x0044f0a0 lara_col_glide (19 bytes)</title></rect>
