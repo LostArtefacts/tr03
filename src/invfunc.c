@@ -209,3 +209,25 @@ int AddAssaultTime(uint32 time)
     }
     return 0;
 }
+
+int AddQuadbikeTime(uint32 time)
+{
+    int i, j, insert = 0;
+
+    for (i = 0; i < NUM_ASS_TIMES; i++)
+    {
+        if (savegame.best_quadbike_times[i] == 0 || time < savegame.best_quadbike_times[i])
+        {
+            insert = 1;
+            break;
+        }
+    }
+    if (insert)
+    {
+        for (j = NUM_ASS_TIMES - 1; j > i; j--)
+            savegame.best_quadbike_times[j] = savegame.best_quadbike_times[j - 1];
+        savegame.best_quadbike_times[i] = time;
+        return 1;
+    }
+    return 0;
+}
