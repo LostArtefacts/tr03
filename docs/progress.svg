@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="138.37" height="12" x="0" y="0" class="named"><title>437 · 29.57%</title></rect>
-<rect width="329.63" height="12" x="138.37" y="0" class="todo"><title>1041 · 70.43%</title></rect>
+<rect width="138.69" height="12" x="0" y="0" class="named"><title>438 · 29.63%</title></rect>
+<rect width="329.31" height="12" x="138.69" y="0" class="todo"><title>1040 · 70.37%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">29.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">437</tspan> · <tspan class="todo">1041</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">438</tspan> · <tspan class="todo">1040</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="22.89" height="12" x="0" y="0" class="named"><title>32 KB · 4.89%</title></rect>
-<rect width="445.11" height="12" x="22.89" y="0" class="todo"><title>631 KB · 95.11%</title></rect>
+<rect width="23.03" height="12" x="0" y="0" class="named"><title>33 KB · 4.92%</title></rect>
+<rect width="444.97" height="12" x="23.03" y="0" class="todo"><title>631 KB · 95.08%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">32 KB</tspan> · <tspan class="todo">631 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">33 KB</tspan> · <tspan class="todo">631 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -626,7 +626,7 @@
 <rect width="12" height="12" x="165" y="165" class="named"><title>0x004404e0 lara_as_monkey180 (24 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="165" class="named"><title>0x00440500 lara_col_monkey180 (19 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="165" class="todo"><title>0x00440520 lara_as_stop (1088 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="165" class="todo"><title>0x00440960 lara_col_stop (191 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="165" class="named"><title>0x00440960 lara_col_stop (191 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="165" class="named"><title>0x00440a20 lara_as_upjump (19 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="165" class="todo"><title>0x00440a40 lara_col_upjump (335 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="165" class="todo"><title>0x00440b90 LaraTestHangJumpUp (542 bytes)</title></rect>
@@ -2257,7 +2257,7 @@
 <rect width="8.63" height="7.86" x="534.52" y="222.66" class="todo"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
 <rect width="8.63" height="7.86" x="546.14" y="222.66" class="todo"><title>0x0048aa00 AnimateTextures (192 bytes)</title></rect>
 <rect width="8.58" height="7.86" x="557.77" y="222.66" class="named"><title>0x0043f980 LaraCollideStop (191 bytes)</title></rect>
-<rect width="8.58" height="7.86" x="569.35" y="222.66" class="todo"><title>0x00440960 lara_col_stop (191 bytes)</title></rect>
+<rect width="8.58" height="7.86" x="569.35" y="222.66" class="named"><title>0x00440960 lara_col_stop (191 bytes)</title></rect>
 <rect width="8.58" height="7.86" x="580.94" y="222.66" class="todo"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
 <rect width="8.54" height="7.86" x="592.52" y="222.66" class="todo"><title>0x0041a000 FixedCamera (190 bytes)</title></rect>
 <rect width="8.54" height="7.86" x="604.06" y="222.66" class="todo"><title>0x0043d8c0 LaraTestClimbStance (190 bytes)</title></rect>
