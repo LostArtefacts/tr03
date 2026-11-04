@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="174.79" height="12" x="0" y="0" class="named"><title>552 · 37.35%</title></rect>
-<rect width="293.21" height="12" x="174.79" y="0" class="todo"><title>926 · 62.65%</title></rect>
+<rect width="175.10" height="12" x="0" y="0" class="named"><title>553 · 37.42%</title></rect>
+<rect width="292.90" height="12" x="175.10" y="0" class="todo"><title>925 · 62.58%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">37.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">552</tspan> · <tspan class="todo">926</tspan></text>
+<text text-anchor="end" x="648" y="7.50">37.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">553</tspan> · <tspan class="todo">925</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="46.77" height="12" x="0" y="0" class="named"><title>66 KB · 9.99%</title></rect>
-<rect width="421.23" height="12" x="46.77" y="0" class="todo"><title>598 KB · 90.01%</title></rect>
+<rect width="46.94" height="12" x="0" y="0" class="named"><title>67 KB · 10.03%</title></rect>
+<rect width="421.06" height="12" x="46.94" y="0" class="todo"><title>598 KB · 89.97%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">10.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">66 KB</tspan> · <tspan class="todo">598 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">67 KB</tspan> · <tspan class="todo">598 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -272,7 +272,7 @@
 <rect width="12" height="12" x="105" y="60" class="todo"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="60" class="todo"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="60" class="todo"><title>0x00420e10 GetHeight (1300 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="60" class="todo"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="60" class="named"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="60" class="todo"><title>0x00421460 TestTriggers (2247 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="60" class="named"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="60" class="todo"><title>0x00421de0 GetCeiling (1183 bytes)</title></rect>
@@ -2170,7 +2170,7 @@
 <rect width="9.04" height="9.34" x="486.96" y="412.99" class="named"><title>0x004493e0 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="9.04" height="9.34" x="486.96" y="425.33" class="named"><title>0x0044e770 LaraTestWaterStepOut (239 bytes)</title></rect>
 <rect width="9.04" height="9.34" x="486.96" y="437.66" class="todo"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
-<rect width="9.15" height="9.18" x="499" y="199.34" class="todo"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
+<rect width="9.15" height="9.18" x="499" y="199.34" class="named"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
 <rect width="9.15" height="9.18" x="499" y="211.52" class="named"><title>0x0043b1a0 KillEffect (238 bytes)</title></rect>
 <rect width="9.15" height="9.18" x="499" y="223.70" class="named"><title>0x0046eb20 FallingCeiling (238 bytes)</title></rect>
 <rect width="9.15" height="9.14" x="499" y="235.88" class="todo"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>

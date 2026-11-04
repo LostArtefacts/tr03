@@ -54,6 +54,46 @@ int GetChange(ITEM_INFO *item, ANIM_STRUCT *anim)
     return 0;
 }
 
+void RefreshCamera(sint16 type, sint16 *data)
+{
+    sint16 trigger, value, target_ok;
+
+    target_ok = 2;
+    do {
+        trigger = *(data++);
+        value = trigger & 0x3ff;
+        switch ((trigger & 0x3fff) >> 10) {
+        case 1:
+            data++;
+            if (value == camera.last) {
+                camera.number = value;
+                if (camera.timer < 0 || camera.type == LOOK_CAMERA || camera.type == COMBAT_CAMERA) {
+                    camera.timer = -1;
+                    target_ok = 0;
+                    break;
+                }
+                camera.type = FIXED_CAMERA;
+                target_ok = 1;
+            } else {
+                target_ok = 0;
+            }
+            break;
+        case 6:
+            if (camera.type == LOOK_CAMERA || camera.type == COMBAT_CAMERA)
+                break;
+            camera.item = &items[value];
+            break;
+        }
+    } while (!(trigger & 0x8000));
+
+    if (camera.item)
+        if (!target_ok || (target_ok == 2 && camera.item->looked_at && camera.item != camera.last_item))
+            camera.item = NULL;
+
+    if (camera.number == -1 && camera.timer > 0)
+        camera.timer = -1;
+}
+
 int TriggerActive(ITEM_INFO *item)
 {
     int ok;
