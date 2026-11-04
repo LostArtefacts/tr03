@@ -139,6 +139,52 @@ int GetInKayak(sint16 item_number, COLL_INFO *coll);
 void CreateFlare(int thrown);
 void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 
+void KayakCollision(sint16 item_number, ITEM_INFO *l, COLL_INFO *coll)
+{
+    int geton;
+
+    if (l->hit_points < 0 || lara.skidoo != NO_ITEM)
+        return;
+
+    if ((geton = GetInKayak(item_number, coll))) {
+        KAYAKINFO *Kayak;
+        ITEM_INFO *v = &items[item_number];
+
+        lara.skidoo = item_number;
+        if (lara.gun_type == LG_FLARE) {
+            CreateFlare(0);
+            undraw_flare_meshes();
+            lara.flare_control_left = 0;
+            lara.request_gun_type = lara.gun_type = LG_ARMLESS;
+        }
+
+        if (geton > 0)
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 3;
+        else
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 28;
+        l->frame_number = anims[l->anim_number].frame_base;
+        l->current_anim_state = l->goal_anim_state = 4;
+        lara.water_status = LARA_ABOVEWATER;
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.y_rot = v->pos.y_rot;
+        l->pos.x_rot = l->pos.z_rot = 0;
+        l->gravity_status = 0;
+        l->speed = 0;
+        l->fallspeed = 0;
+        if (l->room_number != v->room_number)
+            ItemNewRoom(lara.item_number, v->room_number);
+        AnimateItem(l);
+        Kayak = (KAYAKINFO *)v->data;
+        Kayak->Water = v->pos.y_pos;
+        Kayak->Flags = 0;
+    } else {
+        coll->enable_baddie_push = 1;
+        ObjectCollision(item_number, l, coll);
+    }
+}
+
 int GetInKayak(sint16 item_number, COLL_INFO *coll)
 {
     int dist;

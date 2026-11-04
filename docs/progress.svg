@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.90" height="12" x="0" y="0" class="named"><title>625 · 42.29%</title></rect>
-<rect width="270.10" height="12" x="197.90" y="0" class="todo"><title>853 · 57.71%</title></rect>
+<rect width="198.22" height="12" x="0" y="0" class="named"><title>626 · 42.35%</title></rect>
+<rect width="269.78" height="12" x="198.22" y="0" class="todo"><title>852 · 57.65%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">42.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">625</tspan> · <tspan class="todo">853</tspan></text>
+<text text-anchor="end" x="648" y="7.50">42.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">626</tspan> · <tspan class="todo">852</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="63.54" height="12" x="0" y="0" class="named"><title>90 KB · 13.58%</title></rect>
-<rect width="404.46" height="12" x="63.54" y="0" class="todo"><title>575 KB · 86.42%</title></rect>
+<rect width="63.79" height="12" x="0" y="0" class="named"><title>91 KB · 13.63%</title></rect>
+<rect width="404.21" height="12" x="63.79" y="0" class="todo"><title>574 KB · 86.37%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">90 KB</tspan> · <tspan class="todo">575 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">91 KB</tspan> · <tspan class="todo">574 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -559,7 +559,7 @@
 <rect width="12" height="12" x="660" y="135" class="named"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="135" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="135" class="todo"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="135" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="135" class="todo"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="todo"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>
@@ -2042,7 +2042,7 @@
 <rect width="10.80" height="11.39" x="446.29" y="364.42" class="todo"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="10.80" height="11.36" x="446.29" y="378.81" class="todo"><title>0x0044ee60 LaraSwimCollision (348 bytes)</title></rect>
 <rect width="10.80" height="11.30" x="446.29" y="393.17" class="todo"><title>0x00495490 Func495490 (346 bytes)</title></rect>
-<rect width="10.80" height="11.26" x="446.29" y="407.47" class="todo"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
+<rect width="10.80" height="11.26" x="446.29" y="407.47" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="10.80" height="11.13" x="446.29" y="421.73" class="todo"><title>0x0042c510 TriggerRocketFlame (341 bytes)</title></rect>
 <rect width="10.80" height="11.13" x="446.29" y="435.87" class="todo"><title>0x00495b90 Func495b90 (341 bytes)</title></rect>
 <rect width="11.09" height="10.78" x="460.10" y="160.08" class="todo"><title>0x00485350 HWR_DrawRoutinesNoAlpha (339 bytes)</title></rect>
