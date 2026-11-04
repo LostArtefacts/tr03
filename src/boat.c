@@ -1,5 +1,7 @@
 #include "game.h"
 
+#define GRAVITY 6
+
 typedef struct {
     sint32 boat_turn;
     sint32 left_fallspeed;
@@ -10,6 +12,30 @@ typedef struct {
     sint32 pitch;
     sint16 prop_rot;
 } BOAT_INFO;
+
+int DoBoatDynamics(int height, int fallspeed, int *y)
+{
+    if (height > *y)
+    {
+        *y += fallspeed;
+        if (*y > height)
+        {
+            *y = height;
+            fallspeed = 0;
+        }
+        else
+            fallspeed += GRAVITY;
+    }
+    else
+    {
+        fallspeed += (height - *y - fallspeed) >> 3;
+        if (fallspeed < -20)
+            fallspeed = -20;
+        if (*y > height)
+            *y = height;
+    }
+    return fallspeed;
+}
 
 void DrawBoat(ITEM_INFO *item)
 {
