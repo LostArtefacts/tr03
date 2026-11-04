@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="84.86" height="12" x="0" y="0" class="named"><title>268 · 18.13%</title></rect>
-<rect width="383.14" height="12" x="84.86" y="0" class="todo"><title>1210 · 81.87%</title></rect>
+<rect width="85.18" height="12" x="0" y="0" class="named"><title>269 · 18.20%</title></rect>
+<rect width="382.82" height="12" x="85.18" y="0" class="todo"><title>1209 · 81.80%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">18.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">268</tspan> · <tspan class="todo">1210</tspan></text>
+<text text-anchor="end" x="648" y="7.50">18.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">269</tspan> · <tspan class="todo">1209</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.38" height="12" x="0" y="0" class="named"><title>13 KB · 2%</title></rect>
-<rect width="458.62" height="12" x="9.38" y="0" class="todo"><title>651 KB · 98%</title></rect>
+<rect width="9.43" height="12" x="0" y="0" class="named"><title>13 KB · 2.02%</title></rect>
+<rect width="458.57" height="12" x="9.43" y="0" class="todo"><title>650 KB · 97.98%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1006,7 +1006,7 @@
 <rect width="12" height="12" x="615" y="270" class="todo"><title>0x00467f70 GetSpheres (733 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="270" class="todo"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="270" class="named"><title>0x00468580 InitInterpolate2 (52 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="270" class="todo"><title>0x004685c0 SubInitialise (74 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="270" class="named"><title>0x004685c0 SubInitialise (74 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="270" class="todo"><title>0x00468610 SubCollision (354 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="270" class="todo"><title>0x00468780 GetOnSub (200 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="270" class="todo"><title>0x00468850 SubDraw (958 bytes)</title></rect>
@@ -2614,7 +2614,7 @@
 <rect width="5.44" height="4.86" x="617.06" y="309.03" class="todo"><title>0x004b2230 DXRestoreSurfaceIfLost (75 bytes)</title></rect>
 <rect width="5.44" height="4.86" x="625.50" y="309.03" class="todo"><title>0x004b2dc0 WinCreateWindow (75 bytes)</title></rect>
 <rect width="5.37" height="4.86" x="633.94" y="309.03" class="named"><title>0x00441660 lara_as_backjump (74 bytes)</title></rect>
-<rect width="5.37" height="4.86" x="642.32" y="309.03" class="todo"><title>0x004685c0 SubInitialise (74 bytes)</title></rect>
+<rect width="5.37" height="4.86" x="642.32" y="309.03" class="named"><title>0x004685c0 SubInitialise (74 bytes)</title></rect>
 <rect width="5.37" height="4.86" x="650.69" y="309.03" class="todo"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="659.06" y="309.03" class="todo"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="667.36" y="309.03" class="named"><title>0x00443290 lara_default_col (73 bytes)</title></rect>
