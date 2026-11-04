@@ -44,11 +44,11 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="15.17" height="12" x="130" y="1.50" class="named"/>
-<rect width="186.83" height="12" x="145.17" y="1.50" class="todo"/>
+<rect width="15.31" height="12" x="130" y="1.50" class="named"/>
+<rect width="186.69" height="12" x="145.31" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">7.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">111/1478</text>
+<text text-anchor="end" x="382" y="7.50">7.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">112/1478</text>
 <rect width="1.20" height="12" x="130" y="18.50" class="named"/>
 <rect width="200.80" height="12" x="131.20" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
@@ -57,10 +57,10 @@
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">7.51% (111)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.49% (1367)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">7.58% (112)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.42% (1366)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="56.10" height="6" x="0" y="0" class="named"/>
-<rect width="690.90" height="6" x="56.10" y="0" class="todo"/>
+<rect width="56.61" height="6" x="0" y="0" class="named"/>
+<rect width="690.39" height="6" x="56.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -821,7 +821,7 @@
 <rect width="12" height="12" x="75" y="225" class="todo"><title>0x0044ed20 lara_as_tread (133 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="225" class="named"><title>0x0044edb0 lara_as_dive (20 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="225" class="todo"><title>0x0044edd0 lara_as_uwdeath (83 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="225" class="todo"><title>0x0044ee30 lara_as_waterroll (11 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="225" class="named"><title>0x0044ee30 lara_as_waterroll (11 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="225" class="todo"><title>0x0044ee40 lara_col_swim (19 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="225" class="todo"><title>0x0044ee60 LaraSwimCollision (348 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="225" class="todo"><title>0x0044efc0 LaraTestWaterDepth (209 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.59%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.41%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.60%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.40%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="4.44" height="6" x="0" y="0" class="named"/>
-<rect width="742.56" height="6" x="4.44" y="0" class="todo"/>
+<rect width="4.45" height="6" x="0" y="0" class="named"/>
+<rect width="742.55" height="6" x="4.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -3002,7 +3002,7 @@
 <rect width="0.10" height="0.10" x="737.57" y="443.12" class="todo"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="737.57" y="445.75" class="named"><title>0x0042d990 KillAllCurrentItems (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="737.57" y="448.17" class="named"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="737.57" y="450.58" class="todo"><title>0x0044ee30 lara_as_waterroll (11 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="737.57" y="450.58" class="named"><title>0x0044ee30 lara_as_waterroll (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.90" y="443.12" class="todo"><title>0x00484a10 HWR_ResetCurrentTexture (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.90" y="445.64" class="todo"><title>0x00485a80 Func485a80 (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.90" y="448.17" class="todo"><title>0x0048a320 S_ClearScreen (11 bytes)</title></rect>
