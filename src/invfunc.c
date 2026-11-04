@@ -5,6 +5,29 @@
 
 void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
 
+extern TEXTSTRING *Inv_ringText;
+extern TEXTSTRING *Inv_tagText;
+extern TEXTSTRING *Inv_upArrow1;
+extern TEXTSTRING *Inv_upArrow2;
+extern TEXTSTRING *Inv_downArrow1;
+extern TEXTSTRING *Inv_downArrow2;
+
+void RingIsNotOpen(RING_INFO *ring)
+{
+    T_RemovePrint(Inv_tagText);
+    Inv_tagText = NULL;
+    T_RemovePrint(Inv_ringText);
+    Inv_ringText = NULL;
+    T_RemovePrint(Inv_upArrow1);
+    Inv_upArrow1 = NULL;
+    T_RemovePrint(Inv_upArrow2);
+    Inv_upArrow2 = NULL;
+    T_RemovePrint(Inv_downArrow1);
+    Inv_downArrow1 = NULL;
+    T_RemovePrint(Inv_downArrow2);
+    Inv_downArrow2 = NULL;
+}
+
 void RingActive(void)
 {
     T_RemovePrint(Inv_itemText[IT_NAME]);
@@ -200,6 +223,9 @@ void Inv_RingMotionItemDeselect(RING_INFO *ring, INVENTORY_ITEM *inv_item)
     imo->item_ztrans_target = 0;
     imo->item_ztrans_rate = 0 - inv_item->ztrans_sel / imo->count;
 }
+
+extern uint32 RequesterFlags1[];
+extern uint32 RequesterFlags2[];
 
 void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
 {
