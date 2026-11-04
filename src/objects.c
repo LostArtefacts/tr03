@@ -51,6 +51,21 @@ void InitialiseFinalLevel(void)
     }
 }
 
+void InitialiseWindow(sint16 item_number)
+{
+    ITEM_INFO *item;
+    ROOM_INFO *r;
+    FLOOR_INFO *floor;
+
+    item = &items[item_number];
+    item->flags = 0;
+    item->mesh_bits = 1;
+    r = &room[item->room_number];
+    floor = &r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size];
+    if (boxes[floor->box].overlap_index & 0x8000)
+        boxes[floor->box].overlap_index |= BLOCKED;
+}
+
 void ShutThatDoor(DOORPOS_DATA *d)
 {
     FLOOR_INFO *floor;
