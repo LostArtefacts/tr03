@@ -4,10 +4,6 @@
 #define MAX_JOINT_CHANGE (ONE_DEGREE * 5)
 #define JOINT_ARC 0x3000
 
-typedef struct {
-    sint16 joint_rotation[4];
-} CREATURE_INFO;
-
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 
 void InitialiseCreature(sint16 item_number)

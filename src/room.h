@@ -38,6 +38,78 @@ typedef struct doorpos_data {
     sint16 block;
 } DOORPOS_DATA;
 
+typedef struct {
+    sint16 nx;
+    sint16 ny;
+    sint16 nz;
+    sint16 pad;
+} SUNLIGHT;
+
+typedef struct {
+    sint32 intensity;
+    sint32 falloff;
+} SPOTLIGHT;
+
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    uint8 r;
+    uint8 g;
+    uint8 b;
+    uint8 type;
+    union {
+        SUNLIGHT sun;
+        SPOTLIGHT spot;
+    } l;
+} LIGHT_INFO;
+
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint16 y_rot;
+    sint16 shade;
+    sint16 shadeB;
+    sint16 static_number;
+} MESH_INFO;
+
+typedef struct room_info {
+    sint16 *data;
+    sint16 *door;
+    FLOOR_INFO *floor;
+    LIGHT_INFO *light;
+    MESH_INFO *mesh;
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint32 minfloor;
+    sint32 maxceiling;
+    sint16 x_size;
+    sint16 y_size;
+    sint16 ambient;
+    sint16 lighting;
+    sint16 num_lights;
+    sint16 num_meshes;
+    sint16 ReverbType;
+    char MeshEffect;
+    char bound_active;
+    sint16 left;
+    sint16 right;
+    sint16 top;
+    sint16 bottom;
+    sint16 test_left;
+    sint16 test_right;
+    sint16 test_top;
+    sint16 test_bottom;
+    sint16 item_number;
+    sint16 fx_number;
+    sint16 flipped_room;
+    uint16 flags;
+} ROOM_INFO;
+
+extern ROOM_INFO *room;
+extern sint16 number_rooms;
 extern BOX_INFO *boxes;
 
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
