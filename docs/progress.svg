@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="98.79" height="12" x="0" y="0" class="named"><title>312 · 21.11%</title></rect>
-<rect width="369.21" height="12" x="98.79" y="0" class="todo"><title>1166 · 78.89%</title></rect>
+<rect width="99.11" height="12" x="0" y="0" class="named"><title>313 · 21.18%</title></rect>
+<rect width="368.89" height="12" x="99.11" y="0" class="todo"><title>1165 · 78.82%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">21.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">312</tspan> · <tspan class="todo">1166</tspan></text>
+<text text-anchor="end" x="648" y="7.50">21.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">313</tspan> · <tspan class="todo">1165</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.91" height="12" x="0" y="0" class="named"><title>17 KB · 2.55%</title></rect>
-<rect width="456.09" height="12" x="11.91" y="0" class="todo"><title>647 KB · 97.45%</title></rect>
+<rect width="11.98" height="12" x="0" y="0" class="named"><title>17 KB · 2.56%</title></rect>
+<rect width="456.02" height="12" x="11.98" y="0" class="todo"><title>647 KB · 97.44%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">2.5%</text>
+<text text-anchor="end" x="648" y="24.50">2.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -530,7 +530,7 @@
 <rect width="12" height="12" x="225" y="135" class="todo"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="135" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="135" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="135" class="todo"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="135" class="named"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="135" class="todo"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="135" class="todo"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="135" class="named"><title>0x00439c30 RemoveAllReqItems (19 bytes)</title></rect>
@@ -2554,7 +2554,7 @@
 <rect width="5.78" height="5.32" x="680.36" y="292.20" class="todo"><title>0x004837d0 S_Wait (87 bytes)</title></rect>
 <rect width="5.78" height="5.32" x="689.14" y="292.20" class="todo"><title>0x0048fe40 DXCreateDirectDraw (87 bytes)</title></rect>
 <rect width="5.71" height="5.32" x="697.91" y="292.20" class="named"><title>0x0042f630 QuadFinished (86 bytes)</title></rect>
-<rect width="5.71" height="5.32" x="706.63" y="292.20" class="todo"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
+<rect width="5.71" height="5.32" x="706.63" y="292.20" class="named"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
 <rect width="5.71" height="5.32" x="715.34" y="292.20" class="named"><title>0x004402f0 lara_as_monkeyr (86 bytes)</title></rect>
 <rect width="5.65" height="5.32" x="724.06" y="292.20" class="named"><title>0x0041e630 GetNewRoom (85 bytes)</title></rect>
 <rect width="5.65" height="5.32" x="732.70" y="292.20" class="named"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
