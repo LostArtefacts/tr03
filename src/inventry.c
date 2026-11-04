@@ -61,6 +61,25 @@ sint32 AnimateInventoryItem(INVENTORY_ITEM *inv_item)
     return 0;
 }
 
+extern uint8 GlobeLevelComplete[];
+extern sint16 GlobeLevel;
+
+void GetGlobeMeshFlags(void)
+{
+    GlobeLevelComplete[0] = savegame.IndiaComplete;
+    GlobeLevelComplete[1] = savegame.SPacificComplete;
+    GlobeLevelComplete[2] = savegame.NevadaComplete;
+    GlobeLevelComplete[3] = 255;
+    GlobeLevelComplete[4] = savegame.LondonComplete;
+    if (savegame.IndiaComplete && savegame.SPacificComplete && savegame.NevadaComplete && savegame.LondonComplete)
+        GlobeLevelComplete[5] = savegame.AntarcticaComplete;
+    else
+        GlobeLevelComplete[5] = 255;
+    GlobeLevel = 0;
+    while (GlobeLevelComplete[GlobeLevel])
+        GlobeLevel++;
+}
+
 void DoInventoryPicture(void)
 {
     HWR_EnableZBuffer(0, 0);

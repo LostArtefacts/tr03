@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="144.39" height="12" x="0" y="0" class="named"><title>456 · 30.85%</title></rect>
-<rect width="323.61" height="12" x="144.39" y="0" class="todo"><title>1022 · 69.15%</title></rect>
+<rect width="144.71" height="12" x="0" y="0" class="named"><title>457 · 30.92%</title></rect>
+<rect width="323.29" height="12" x="144.71" y="0" class="todo"><title>1021 · 69.08%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">30.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">456</tspan> · <tspan class="todo">1022</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">457</tspan> · <tspan class="todo">1021</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="24.86" height="12" x="0" y="0" class="named"><title>35 KB · 5.31%</title></rect>
-<rect width="443.14" height="12" x="24.86" y="0" class="todo"><title>629 KB · 94.69%</title></rect>
+<rect width="24.96" height="12" x="0" y="0" class="named"><title>35 KB · 5.33%</title></rect>
+<rect width="443.04" height="12" x="24.96" y="0" class="todo"><title>629 KB · 94.67%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">35 KB</tspan> · <tspan class="todo">629 KB</tspan></text>
@@ -497,7 +497,7 @@
 <rect width="12" height="12" x="480" y="120" class="named"><title>0x00436a50 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="120" class="todo"><title>0x00436ae0 DrawInventoryItem (1200 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="120" class="todo"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="120" class="todo"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="120" class="named"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="120" class="todo"><title>0x00437050 InitColours (266 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="120" class="todo"><title>0x00437160 RingIsOpen (375 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="120" class="named"><title>0x004372f0 RingIsNotOpen (129 bytes)</title></rect>
@@ -2373,7 +2373,7 @@
 <rect width="6.98" height="7.19" x="544.30" y="429.68" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="6.98" height="7.14" x="544.30" y="439.86" class="todo"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
 <rect width="7.13" height="6.99" x="554.28" y="254.32" class="named"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
-<rect width="7.13" height="6.99" x="554.28" y="264.31" class="todo"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
+<rect width="7.13" height="6.99" x="554.28" y="264.31" class="named"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
 <rect width="7.13" height="6.99" x="554.28" y="274.30" class="named"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
 <rect width="7.13" height="6.94" x="554.28" y="284.29" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="7.13" height="6.94" x="554.28" y="294.23" class="todo"><title>0x00487750 do_inventory_options (140 bytes)</title></rect>
