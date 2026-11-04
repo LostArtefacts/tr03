@@ -5,6 +5,7 @@
 #define UNFLIPFLAG 128
 #define LARA_HEAD 4
 #define SQUARE(A) ((A) * (A))
+#define BLOOD_RADIUS 256
 
 
 extern OBJECT_VECTOR *sound_effects;
@@ -15,6 +16,7 @@ void SOUND_EndScene(void);
 sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
 void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, int size);
 sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+sint16 DoBloodSplatD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
 void TriggerBlood(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 num);
 void TriggerBloodD(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 num);
 void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size);
@@ -89,6 +91,12 @@ sint16 DoBloodSplatD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 directio
     else
         TriggerBloodD(x, y, z, direction >> 4, (GetRandomDraw() & 7) + 6);
     return NO_ITEM;
+}
+
+void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number)
+{
+    for (; number > 0; number--)
+        DoBloodSplatD(x + BLOOD_RADIUS - (GetRandomDraw() * BLOOD_RADIUS * 2 / 0x8000), y, z + BLOOD_RADIUS - (GetRandomDraw() * BLOOD_RADIUS * 2 / 0x8000), speed, direction, room_num);
 }
 
 void LaraBubbles(ITEM_INFO *item)
