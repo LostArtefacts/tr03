@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="113.36" height="12" x="0" y="0" class="named"><title>358 · 24.22%</title></rect>
-<rect width="354.64" height="12" x="113.36" y="0" class="todo"><title>1120 · 75.78%</title></rect>
+<rect width="113.68" height="12" x="0" y="0" class="named"><title>359 · 24.29%</title></rect>
+<rect width="354.32" height="12" x="113.68" y="0" class="todo"><title>1119 · 75.71%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">24.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">358</tspan> · <tspan class="todo">1120</tspan></text>
+<text text-anchor="end" x="648" y="7.50">24.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">359</tspan> · <tspan class="todo">1119</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="15.19" height="12" x="0" y="0" class="named"><title>22 KB · 3.25%</title></rect>
-<rect width="452.81" height="12" x="15.19" y="0" class="todo"><title>642 KB · 96.75%</title></rect>
+<rect width="15.27" height="12" x="0" y="0" class="named"><title>22 KB · 3.26%</title></rect>
+<rect width="452.73" height="12" x="15.27" y="0" class="todo"><title>642 KB · 96.74%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">3.2%</text>
+<text text-anchor="end" x="648" y="24.50">3.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">22 KB</tspan> · <tspan class="todo">642 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -557,7 +557,7 @@
 <rect width="12" height="12" x="630" y="135" class="todo"><title>0x0043b290 EffectNewRoom (147 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="135" class="named"><title>0x0043b330 ClearBodyBag (91 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="135" class="todo"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="135" class="todo"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="135" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="todo"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="todo"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
@@ -2446,7 +2446,7 @@
 <rect width="6.63" height="6.23" x="564.61" y="386.04" class="named"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>
 <rect width="6.63" height="6.18" x="564.61" y="395.27" class="todo"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
 <rect width="6.63" height="6.18" x="564.61" y="404.45" class="todo"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
-<rect width="6.63" height="6.12" x="564.61" y="413.62" class="todo"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
+<rect width="6.63" height="6.12" x="564.61" y="413.62" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="6.63" height="6.12" x="564.61" y="422.74" class="todo"><title>0x004838e0 SortOutAdventureSave (115 bytes)</title></rect>
 <rect width="6.63" height="6.07" x="564.61" y="431.86" class="named"><title>0x00414780 UpdateLOT (114 bytes)</title></rect>
 <rect width="6.63" height="6.07" x="564.61" y="440.93" class="todo"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
