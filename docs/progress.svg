@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="30.07" height="12" x="0" y="0" class="named"><title>220 · 14.88%</title></rect>
-<rect width="171.93" height="12" x="30.07" y="0" class="todo"><title>1258 · 85.12%</title></rect>
+<rect width="30.20" height="12" x="0" y="0" class="named"><title>221 · 14.95%</title></rect>
+<rect width="171.80" height="12" x="30.20" y="0" class="todo"><title>1257 · 85.05%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">14.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">220</tspan> · <tspan class="todo">1258</tspan></text>
+<text text-anchor="end" x="382" y="7.50">15.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">221</tspan> · <tspan class="todo">1257</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.08" height="12" x="0" y="0" class="named"><title>10 KB · 1.53%</title></rect>
-<rect width="198.92" height="12" x="3.08" y="0" class="todo"><title>654 KB · 98.47%</title></rect>
+<rect width="3.09" height="12" x="0" y="0" class="named"><title>10 KB · 1.53%</title></rect>
+<rect width="198.91" height="12" x="3.09" y="0" class="todo"><title>654 KB · 98.47%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -724,7 +724,7 @@
 <rect width="12" height="12" x="135" y="195" class="todo"><title>0x00444f90 LaraDeflectEdge (130 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="195" class="todo"><title>0x00445020 GetStaticObjects (546 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="195" class="todo"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="195" class="todo"><title>0x00445290 undraw_shotgun_meshes (43 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="195" class="named"><title>0x00445290 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="195" class="todo"><title>0x004452c0 ready_shotgun (113 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="195" class="todo"><title>0x00445340 RifleHandler (532 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="195" class="todo"><title>0x00445560 FireShotgun (507 bytes)</title></rect>
@@ -2820,7 +2820,7 @@
 <rect width="3.81" height="4.08" x="743.19" y="361.42" class="todo"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="3.94" height="3.94" x="661.43" y="368.50" class="todo"><title>0x004b4c93 phd_sqrt (44 bytes)</title></rect>
 <rect width="3.94" height="3.85" x="661.43" y="375.44" class="named"><title>0x00441630 lara_as_slide (43 bytes)</title></rect>
-<rect width="3.94" height="3.85" x="661.43" y="382.29" class="todo"><title>0x00445290 undraw_shotgun_meshes (43 bytes)</title></rect>
+<rect width="3.94" height="3.85" x="661.43" y="382.29" class="named"><title>0x00445290 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="3.94" height="3.85" x="661.43" y="389.14" class="named"><title>0x0046add0 T_FlashText (43 bytes)</title></rect>
 <rect width="3.94" height="3.76" x="661.43" y="396" class="named"><title>0x00429690 phd_PutPolygons_I (42 bytes)</title></rect>
 <rect width="3.94" height="3.76" x="661.43" y="402.76" class="named"><title>0x00441840 lara_as_ppready (42 bytes)</title></rect>

@@ -18,4 +18,6 @@ typedef struct ammo_info {
     sint32 ammo;
 } AMMO_INFO;
 
+int WeaponObject(int weapon_type);
+
 #endif
