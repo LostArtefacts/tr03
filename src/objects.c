@@ -79,3 +79,12 @@ void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
     if (y > level)
         *height = level + STEP_L;
 }
+
+void ControlAnimating_1_4(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (TriggerActive(item))
+        AnimateItem(item);
+}

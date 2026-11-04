@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="30.20" height="12" x="0" y="0" class="named"><title>221 · 14.95%</title></rect>
-<rect width="171.80" height="12" x="30.20" y="0" class="todo"><title>1257 · 85.05%</title></rect>
+<rect width="30.34" height="12" x="0" y="0" class="named"><title>222 · 15.02%</title></rect>
+<rect width="171.66" height="12" x="30.34" y="0" class="todo"><title>1256 · 84.98%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">15.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">221</tspan> · <tspan class="todo">1257</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">222</tspan> · <tspan class="todo">1256</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.09" height="12" x="0" y="0" class="named"><title>10 KB · 1.53%</title></rect>
-<rect width="198.91" height="12" x="3.09" y="0" class="todo"><title>654 KB · 98.47%</title></rect>
+<rect width="3.11" height="12" x="0" y="0" class="named"><title>10 KB · 1.54%</title></rect>
+<rect width="198.89" height="12" x="3.11" y="0" class="todo"><title>654 KB · 98.46%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -918,7 +918,7 @@
 <rect width="12" height="12" x="45" y="255" class="named"><title>0x00459980 BridgeTilt2Ceiling (52 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="255" class="todo"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="255" class="todo"><title>0x00459a50 DetonatorControl (113 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="255" class="todo"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="255" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="255" class="todo"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="255" class="todo"><title>0x00459c00 ControlPulseLight (132 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="255" class="todo"><title>0x00459c90 ControlOnOffLight (65 bytes)</title></rect>
@@ -2779,7 +2779,7 @@
 <rect width="4.28" height="3.87" x="735.44" y="347.35" class="todo"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="742.72" y="347.35" class="todo"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
 <rect width="3.96" height="4.19" x="654.36" y="354.23" class="todo"><title>0x0048e830 Func48e830 (47 bytes)</title></rect>
-<rect width="3.87" height="4.19" x="661.32" y="354.23" class="todo"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
+<rect width="3.87" height="4.19" x="661.32" y="354.23" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
 <rect width="3.87" height="4.19" x="668.19" y="354.23" class="todo"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="3.87" height="4.19" x="675.07" y="354.23" class="todo"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
 <rect width="3.87" height="4.19" x="681.94" y="354.23" class="todo"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>

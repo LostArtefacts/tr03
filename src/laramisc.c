@@ -1,6 +1,5 @@
 #include "game.h"
 
-void AnimateItem(ITEM_INFO *item);
 
 void InitialiseLaraLoad(sint16 item_num)
 {

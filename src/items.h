@@ -70,6 +70,8 @@ typedef struct item_info {
 extern ITEM_INFO *items;
 
 void RemoveActiveItem(sint16 item_num);
+void AnimateItem(ITEM_INFO *item);
+int TriggerActive(ITEM_INFO *item);
 
 #define NO_ITEM -1
 #define NUM_EFFECTS 50
