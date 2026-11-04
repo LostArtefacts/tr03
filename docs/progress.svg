@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="181.75" height="12" x="0" y="0" class="named"><title>574 · 38.84%</title></rect>
-<rect width="286.25" height="12" x="181.75" y="0" class="todo"><title>904 · 61.16%</title></rect>
+<rect width="182.07" height="12" x="0" y="0" class="named"><title>575 · 38.90%</title></rect>
+<rect width="285.93" height="12" x="182.07" y="0" class="todo"><title>903 · 61.10%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">38.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">574</tspan> · <tspan class="todo">904</tspan></text>
+<text text-anchor="end" x="648" y="7.50">38.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">575</tspan> · <tspan class="todo">903</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="51.56" height="12" x="0" y="0" class="named"><title>73 KB · 11.02%</title></rect>
-<rect width="416.44" height="12" x="51.56" y="0" class="todo"><title>592 KB · 88.98%</title></rect>
+<rect width="51.99" height="12" x="0" y="0" class="named"><title>74 KB · 11.11%</title></rect>
+<rect width="416.01" height="12" x="51.99" y="0" class="todo"><title>591 KB · 88.89%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">11.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">73 KB</tspan> · <tspan class="todo">592 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">11.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">74 KB</tspan> · <tspan class="todo">591 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -853,7 +853,7 @@
 <rect width="12" height="12" x="570" y="225" class="named"><title>0x00452f10 InitialiseLOTarray (124 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="225" class="named"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="225" class="named"><title>0x00453000 EnableBaddieAI (494 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="225" class="todo"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="225" class="named"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="225" class="todo"><title>0x00453460 CreateZone (247 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="225" class="named"><title>0x00453560 ClearLOT (75 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="todo"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
@@ -1816,7 +1816,7 @@
 <rect width="14.96" height="14.58" x="714.10" y="64.53" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="14.94" height="14.58" x="732.06" y="64.53" class="todo"><title>0x0044c150 undraw_flare (617 bytes)</title></rect>
 <rect width="14.54" height="14.90" x="365.16" y="82.11" class="todo"><title>0x00493530 MMXSetRenderState (614 bytes)</title></rect>
-<rect width="14.54" height="14.88" x="365.16" y="100.01" class="todo"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>
+<rect width="14.54" height="14.88" x="365.16" y="100.01" class="named"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>
 <rect width="14.54" height="14.88" x="365.16" y="117.89" class="todo"><title>0x004822f0 LoadSamples (613 bytes)</title></rect>
 <rect width="14.54" height="14.78" x="365.16" y="135.77" class="todo"><title>0x00476a30 S_DrawDarts (609 bytes)</title></rect>
 <rect width="14.54" height="14.76" x="365.16" y="153.55" class="todo"><title>0x0041d290 CobraControl (608 bytes)</title></rect>
