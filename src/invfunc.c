@@ -16,3 +16,10 @@ void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
         txt->bgndOffX = 0;
     }
 }
+
+void RemoveAllReqItems(REQUEST_INFO *req)
+{
+    req->items = 0;
+    req->line_offset = 0;
+    req->selected = 0;
+}
