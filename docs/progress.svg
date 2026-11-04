@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="98.16" height="12" x="0" y="0" class="named"><title>310 · 20.97%</title></rect>
-<rect width="369.84" height="12" x="98.16" y="0" class="todo"><title>1168 · 79.03%</title></rect>
+<rect width="98.48" height="12" x="0" y="0" class="named"><title>311 · 21.04%</title></rect>
+<rect width="369.52" height="12" x="98.48" y="0" class="todo"><title>1167 · 78.96%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">21.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">310</tspan> · <tspan class="todo">1168</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">311</tspan> · <tspan class="todo">1167</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.79" height="12" x="0" y="0" class="named"><title>17 KB · 2.52%</title></rect>
-<rect width="456.21" height="12" x="11.79" y="0" class="todo"><title>647 KB · 97.48%</title></rect>
+<rect width="11.85" height="12" x="0" y="0" class="named"><title>17 KB · 2.53%</title></rect>
+<rect width="456.15" height="12" x="11.85" y="0" class="todo"><title>647 KB · 97.47%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
@@ -291,7 +291,7 @@
 <rect width="12" height="12" x="390" y="60" class="todo"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="60" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="60" class="todo"><title>0x004234f0 CrocControl (438 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="60" class="todo"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="60" class="named"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="60" class="todo"><title>0x00423710 StartDemo (386 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="60" class="todo"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="60" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
@@ -2541,7 +2541,7 @@
 <rect width="5.61" height="5.67" x="592.02" y="415.37" class="named"><title>0x004419f0 lara_as_fastdive (90 bytes)</title></rect>
 <rect width="5.61" height="5.67" x="592.02" y="424.04" class="todo"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
 <rect width="5.61" height="5.67" x="592.02" y="432.72" class="todo"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
-<rect width="5.61" height="5.61" x="592.02" y="441.39" class="todo"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
+<rect width="5.61" height="5.61" x="592.02" y="441.39" class="named"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="600.62" y="292.20" class="named"><title>0x0042f0b0 DoChimeSound (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="609.53" y="292.20" class="todo"><title>0x00448350 draw_pistol_meshes (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="618.44" y="292.20" class="todo"><title>0x004494d0 lara_col_climbright (89 bytes)</title></rect>
