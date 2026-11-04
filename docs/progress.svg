@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="125.07" height="12" x="0" y="0" class="named"><title>395 · 26.73%</title></rect>
-<rect width="342.93" height="12" x="125.07" y="0" class="todo"><title>1083 · 73.27%</title></rect>
+<rect width="125.39" height="12" x="0" y="0" class="named"><title>396 · 26.79%</title></rect>
+<rect width="342.61" height="12" x="125.39" y="0" class="todo"><title>1082 · 73.21%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">26.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">395</tspan> · <tspan class="todo">1083</tspan></text>
+<text text-anchor="end" x="648" y="7.50">26.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">396</tspan> · <tspan class="todo">1082</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="18.22" height="12" x="0" y="0" class="named"><title>26 KB · 3.89%</title></rect>
-<rect width="449.78" height="12" x="18.22" y="0" class="todo"><title>638 KB · 96.11%</title></rect>
+<rect width="18.32" height="12" x="0" y="0" class="named"><title>26 KB · 3.92%</title></rect>
+<rect width="449.68" height="12" x="18.32" y="0" class="todo"><title>638 KB · 96.08%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">26 KB</tspan> · <tspan class="todo">638 KB</tspan></text>
@@ -255,7 +255,7 @@
 <rect width="12" height="12" x="600" y="45" class="named"><title>0x0041ebd0 ObjectCollision (92 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="45" class="named"><title>0x0041ec30 ObjectCollisionSub (83 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="45" class="named"><title>0x0041ec90 DoorCollision (126 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="45" class="todo"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="45" class="named"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="45" class="todo"><title>0x0041eda0 ItemPushLara (822 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="45" class="todo"><title>0x0041f0e0 TestBoundsCollide (203 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="45" class="todo"><title>0x0041f1b0 TestLaraPosition (312 bytes)</title></rect>
@@ -2372,7 +2372,7 @@
 <rect width="7.20" height="6.97" x="709.31" y="244.64" class="todo"><title>0x0041aa40 InitCinematicRooms (142 bytes)</title></rect>
 <rect width="7.20" height="6.97" x="719.51" y="244.64" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="7.15" height="6.97" x="729.71" y="244.64" class="todo"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
-<rect width="7.15" height="6.97" x="739.85" y="244.64" class="todo"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
+<rect width="7.15" height="6.97" x="739.85" y="244.64" class="named"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
 <rect width="7.12" height="6.99" x="554.49" y="254.61" class="todo"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
 <rect width="7.12" height="6.99" x="554.49" y="264.61" class="todo"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
 <rect width="7.12" height="6.94" x="554.49" y="274.60" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>

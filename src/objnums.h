@@ -36,6 +36,7 @@ enum object_types {
     SMASH_OBJECT2,
     SMASH_OBJECT3,
     BLADE = 111,
+    FAN = 119,
     MESHSWAP1 = 122,
     MESHSWAP2,
     MESHSWAP3,
