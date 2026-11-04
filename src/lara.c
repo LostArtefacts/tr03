@@ -1106,6 +1106,48 @@ void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
 
 int LaraTestHangJumpUp(ITEM_INFO *item, COLL_INFO *coll);
 
+void lara_col_upjump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0) {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = BAD_JUMP_CEILING;
+    coll->facing = (item->speed < 0) ? lara.move_angle - 32768 : lara.move_angle;
+    coll->hit_ceiling = 0;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, 870);
+
+    if (LaraTestHangJumpUp(item, coll))
+        return;
+
+    ShiftItem(item, coll);
+    if (coll->coll_type == COLL_CLAMP || coll->coll_type == COLL_TOP || coll->coll_type == COLL_TOPFRONT || coll->hit_ceiling)
+        item->fallspeed = 1;
+
+    if (coll->coll_type) {
+        item->speed = (item->speed > 0) ? 2 : -2;
+    } else if (item->fallspeed < -70) {
+        if ((input & IN_FORWARD) && item->speed < 5)
+            item->speed++;
+        else if ((input & IN_BACK) && item->speed > -5)
+            item->speed -= 2;
+    }
+
+    if (item->fallspeed > 0 && coll->mid_floor <= 0) {
+        if (LaraLandedBad(item, coll))
+            item->goal_anim_state = AS_DEATH;
+        else
+            item->goal_anim_state = AS_STOP;
+        item->fallspeed = 0;
+        item->pos.y_pos += coll->mid_floor;
+        item->gravity_status = 0;
+    }
+}
+
 void lara_as_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->goal_anim_state == AS_SWANDIVE || item->goal_anim_state == AS_REACH)
