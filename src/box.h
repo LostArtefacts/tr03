@@ -4,6 +4,7 @@
 #include "items.h"
 
 #define NUM_SLOTS 5
+#define NUM_NONLOT_SLOTS 12
 
 typedef struct {
     sint32 x;
