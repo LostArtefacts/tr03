@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="161.17" height="12" x="0" y="0" class="named"><title>509 · 34.44%</title></rect>
-<rect width="306.83" height="12" x="161.17" y="0" class="todo"><title>969 · 65.56%</title></rect>
+<rect width="161.49" height="12" x="0" y="0" class="named"><title>510 · 34.51%</title></rect>
+<rect width="306.51" height="12" x="161.49" y="0" class="todo"><title>968 · 65.49%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">34.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">509</tspan> · <tspan class="todo">969</tspan></text>
+<text text-anchor="end" x="648" y="7.50">34.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">510</tspan> · <tspan class="todo">968</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="31.42" height="12" x="0" y="0" class="named"><title>45 KB · 6.71%</title></rect>
-<rect width="436.58" height="12" x="31.42" y="0" class="todo"><title>619 KB · 93.29%</title></rect>
+<rect width="31.56" height="12" x="0" y="0" class="named"><title>45 KB · 6.74%</title></rect>
+<rect width="436.44" height="12" x="31.56" y="0" class="todo"><title>619 KB · 93.26%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">45 KB</tspan> · <tspan class="todo">619 KB</tspan></text>
@@ -899,7 +899,7 @@
 <rect width="12" height="12" x="510" y="240" class="named"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="240" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="240" class="todo"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="240" class="todo"><title>0x00459260 DoorControl (204 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="240" class="named"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="240" class="named"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="240" class="named"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="240" class="named"><title>0x00459450 DrawBridgeCeiling (59 bytes)</title></rect>
@@ -2227,7 +2227,7 @@
 <rect width="8.67" height="8.35" x="511.22" y="348.69" class="named"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="360.04" class="named"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="371.35" class="named"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
-<rect width="8.67" height="8.31" x="511.22" y="382.66" class="todo"><title>0x00459260 DoorControl (204 bytes)</title></rect>
+<rect width="8.67" height="8.31" x="511.22" y="382.66" class="named"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="8.67" height="8.27" x="511.22" y="393.98" class="todo"><title>0x0041f0e0 TestBoundsCollide (203 bytes)</title></rect>
 <rect width="8.67" height="8.23" x="511.22" y="405.25" class="todo"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
 <rect width="8.67" height="8.19" x="511.22" y="416.48" class="named"><title>0x0043ffd0 TestMonkeyRight (201 bytes)</title></rect>
