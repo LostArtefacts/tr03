@@ -36,11 +36,31 @@ extern char ExerciseNumber;
 
 extern int flip_status;
 
+typedef struct {
+    sint16 attack_count;
+    sint16 death_count;
+    uint8 attack_flag;
+    uint8 attack_type;
+    uint8 attack_head_count;
+    uint8 ring_count;
+    sint16 explode_count;
+    sint16 LizmanItem;
+    sint16 LizmanRoom;
+    sint16 hp_counter;
+    sint16 dropped_icon;
+    uint8 charged;
+    uint8 dead;
+    PHD_VECTOR BeamTarget;
+} BOSS_STRUCT;
+
+extern BOSS_STRUCT bossdata;
+
 void FlipMap(void);
 sint16 *GetBoundsAccurate(ITEM_INFO *item);
 void DrawAnimatingItem(ITEM_INFO *item);
 void DrawUnclippedItem(ITEM_INFO *item);
 void S_DrawWakeFX(ITEM_INFO *item);
+void DrawExplosionRings(void);
 void InitialiseHair(void);
 void ResetTargets(void);
 

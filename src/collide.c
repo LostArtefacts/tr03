@@ -4,6 +4,7 @@ extern sint16 draw_rooms[];
 extern int number_draw_rooms;
 
 void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number);
+int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite);
 
 sint32 FindGridShift(sint32 src, sint32 dst)
 {

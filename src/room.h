@@ -10,6 +10,7 @@
 
 #define NO_BOX 0x7ff
 #define BLOCKED 0x4000
+#define NO_ROOM 0xff
 
 typedef struct floor_info {
     uint16 index;
@@ -40,5 +41,6 @@ typedef struct doorpos_data {
 extern BOX_INFO *boxes;
 
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
 
 #endif

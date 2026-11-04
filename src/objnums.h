@@ -13,9 +13,15 @@ enum object_types {
     GRENADE_GUN,
     HARPOON_GUN,
     FLARE,
+    DOG = 22,
+    FALLING_PLANK = 85,
+    BLADE = 111,
     MESHSWAP1 = 122,
     MESHSWAP2,
     MESHSWAP3,
+    SECRET_ITEM1 = 221,
+    SECRET_ITEM2,
+    SECRET_ITEM3,
     BIRD_TWEETER = 289,
     CLOCK_CHIMES
 };

@@ -8,6 +8,7 @@
 #define DEACTIVATED 2
 #define INVISIBLE 3
 #define ONESHOT 0x100
+#define DONT_TARGET (-16384)
 
 typedef struct item_light {
     PHD_VECTOR sun;
@@ -71,6 +72,7 @@ extern ITEM_INFO *items;
 
 void RemoveActiveItem(sint16 item_num);
 void AddActiveItem(sint16 item_num);
+void KillItem(sint16 item_num);
 void AnimateItem(ITEM_INFO *item);
 int TriggerActive(ITEM_INFO *item);
 

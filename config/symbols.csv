@@ -712,7 +712,7 @@ address,size,name,symbol
 0x0044a890,1394,FireWeapon,_FireWeapon
 0x0044ae20,185,HitTarget,_HitTarget
 0x0044aee0,106,SmashItem,_SmashItem
-0x0044af50,67,WeaponObject,_WeaponObject
+0x0044af50,96,WeaponObject,_WeaponObject
 0x0044afb0,2444,DoProperDetection,_DoProperDetection
 0x0044b940,431,DoFlareLight,_DoFlareLight
 0x0044baf0,218,DoFlareInHand,_DoFlareInHand
@@ -2254,6 +2254,9 @@ address,size,name,symbol
 0x006d2268,4,SGpoint,_SGpoint
 0x006d2280,,savegame,_savegame
 0x006d588c,4,SGcount,_SGcount
+0x006d5890,2,final_boss_active,_final_boss_active
+0x006d58aa,2,final_level_count,_final_level_count
+0x006d58ac,2,final_boss_count,_final_boss_count
 0x006d58b0,4,baddie_slots,_baddie_slots
 0x006d58b4,4,non_lot_slots,_non_lot_slots
 0x006d58c0,,KBRings,_KBRings
@@ -2398,6 +2401,7 @@ address,size,name,symbol
 0x006e2a14,,LaraOnPad,_LaraOnPad
 0x006e2a18,4,compy_scared_timer,_compy_scared_timer
 0x006e2a1c,4,items,_items
+0x006e2a20,4,CeilingObject,_CeilingObject
 0x006e2a24,4,height_type,_height_type
 0x006e2a28,1,IsAtmospherePlaying,_IsAtmospherePlaying
 0x006e2a40,1458,OutsideRoomOffsets,_OutsideRoomOffsets
