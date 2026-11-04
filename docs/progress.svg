@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="137.42" height="12" x="0" y="0" class="named"><title>434 · 29.36%</title></rect>
-<rect width="330.58" height="12" x="137.42" y="0" class="todo"><title>1044 · 70.64%</title></rect>
+<rect width="137.74" height="12" x="0" y="0" class="named"><title>435 · 29.43%</title></rect>
+<rect width="330.26" height="12" x="137.74" y="0" class="todo"><title>1043 · 70.57%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">29.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">434</tspan> · <tspan class="todo">1044</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">435</tspan> · <tspan class="todo">1043</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="22.53" height="12" x="0" y="0" class="named"><title>32 KB · 4.81%</title></rect>
-<rect width="445.47" height="12" x="22.53" y="0" class="todo"><title>632 KB · 95.19%</title></rect>
+<rect width="22.64" height="12" x="0" y="0" class="named"><title>32 KB · 4.84%</title></rect>
+<rect width="445.36" height="12" x="22.64" y="0" class="todo"><title>632 KB · 95.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">32 KB</tspan> · <tspan class="todo">632 KB</tspan></text>
@@ -739,7 +739,7 @@
 <rect width="12" height="12" x="360" y="195" class="todo"><title>0x00447770 undraw_shotgun (265 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="195" class="todo"><title>0x00447880 AnimateShotgun (1255 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="195" class="todo"><title>0x00447d90 TriggerUnderwaterExplosion (402 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="195" class="todo"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="195" class="named"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="195" class="named"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="195" class="named"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
@@ -2323,7 +2323,7 @@
 <rect width="7.63" height="7.31" x="533.67" y="316.63" class="todo"><title>0x00402030 AlterFOV (158 bytes)</title></rect>
 <rect width="7.63" height="7.31" x="533.67" y="326.94" class="named"><title>0x00441100 lara_as_turn_r (158 bytes)</title></rect>
 <rect width="7.63" height="7.31" x="533.67" y="337.25" class="named"><title>0x004411a0 lara_as_turn_l (158 bytes)</title></rect>
-<rect width="7.63" height="7.31" x="533.67" y="347.57" class="todo"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
+<rect width="7.63" height="7.31" x="533.67" y="347.57" class="named"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
 <rect width="7.63" height="7.27" x="533.67" y="357.88" class="todo"><title>0x0046c120 InitialiseTonyBoss (157 bytes)</title></rect>
 <rect width="7.63" height="7.27" x="533.67" y="368.15" class="todo"><title>0x0048acc0 ProjectPCoord (157 bytes)</title></rect>
 <rect width="7.63" height="7.27" x="533.67" y="378.41" class="todo"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
