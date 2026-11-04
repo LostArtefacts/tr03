@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="81.69" height="12" x="0" y="0" class="named"><title>258 · 17.46%</title></rect>
-<rect width="386.31" height="12" x="81.69" y="0" class="todo"><title>1220 · 82.54%</title></rect>
+<rect width="82.01" height="12" x="0" y="0" class="named"><title>259 · 17.52%</title></rect>
+<rect width="385.99" height="12" x="82.01" y="0" class="todo"><title>1219 · 82.48%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">17.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">258</tspan> · <tspan class="todo">1220</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">259</tspan> · <tspan class="todo">1219</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.86" height="12" x="0" y="0" class="named"><title>13 KB · 1.89%</title></rect>
-<rect width="459.14" height="12" x="8.86" y="0" class="todo"><title>651 KB · 98.11%</title></rect>
+<rect width="8.91" height="12" x="0" y="0" class="named"><title>13 KB · 1.90%</title></rect>
+<rect width="459.09" height="12" x="8.91" y="0" class="todo"><title>651 KB · 98.10%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
@@ -1098,7 +1098,7 @@
 <rect width="12" height="12" x="495" y="300" class="todo"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="300" class="todo"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="300" class="todo"><title>0x00471350 TriggerElectricSparks_triboss (453 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="300" class="todo"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="300" class="named"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="300" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="300" class="todo"><title>0x00471680 FindClosestShieldPoint (689 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="300" class="todo"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
@@ -2653,7 +2653,7 @@
 <rect width="4.84" height="4.82" x="617.06" y="372.26" class="todo"><title>0x0043d550 CanGetOut_kayak (66 bytes)</title></rect>
 <rect width="4.84" height="4.82" x="617.06" y="380.08" class="named"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
 <rect width="4.84" height="4.82" x="617.06" y="387.89" class="named"><title>0x0046c0d0 TonyBossDie (66 bytes)</title></rect>
-<rect width="4.84" height="4.82" x="617.06" y="395.71" class="todo"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
+<rect width="4.84" height="4.82" x="617.06" y="395.71" class="named"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="403.53" class="named"><title>0x004294b0 phd_TranslateRel_I (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="411.27" class="named"><title>0x00429550 phd_RotYXZ_I (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="419.02" class="named"><title>0x0042efb0 ControlDingDong (65 bytes)</title></rect>
