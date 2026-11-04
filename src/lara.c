@@ -271,3 +271,8 @@ void extra_as_gongbong(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = -20 * ONE_DEGREE;
     camera.target_distance = WALL_L * 3;
 }
+
+void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara_col_turn_r(item, coll);
+}
