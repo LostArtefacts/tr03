@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="122.54" height="12" x="0" y="0" class="named"><title>387 · 26.18%</title></rect>
-<rect width="345.46" height="12" x="122.54" y="0" class="todo"><title>1091 · 73.82%</title></rect>
+<rect width="122.86" height="12" x="0" y="0" class="named"><title>388 · 26.25%</title></rect>
+<rect width="345.14" height="12" x="122.86" y="0" class="todo"><title>1090 · 73.75%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">26.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">387</tspan> · <tspan class="todo">1091</tspan></text>
+<text text-anchor="end" x="648" y="7.50">26.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">388</tspan> · <tspan class="todo">1090</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="17.50" height="12" x="0" y="0" class="named"><title>25 KB · 3.74%</title></rect>
-<rect width="450.50" height="12" x="17.50" y="0" class="todo"><title>639 KB · 96.26%</title></rect>
+<rect width="17.59" height="12" x="0" y="0" class="named"><title>25 KB · 3.76%</title></rect>
+<rect width="450.41" height="12" x="17.59" y="0" class="todo"><title>639 KB · 96.24%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">3.7%</text>
+<text text-anchor="end" x="648" y="24.50">3.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">25 KB</tspan> · <tspan class="todo">639 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -474,7 +474,7 @@
 <rect width="12" height="12" x="135" y="120" class="named"><title>0x004322a0 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="120" class="todo"><title>0x00432310 GF_InterpretSequence (1372 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="120" class="todo"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="120" class="todo"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="120" class="named"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="120" class="todo"><title>0x00433810 HairControl (2748 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="120" class="todo"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="120" class="named"><title>0x00434360 FlashIt (45 bytes)</title></rect>
@@ -2444,7 +2444,7 @@
 <rect width="6.63" height="6.28" x="564.61" y="367.53" class="named"><title>0x0044eca0 lara_as_glide (118 bytes)</title></rect>
 <rect width="6.63" height="6.23" x="564.61" y="376.81" class="named"><title>0x0043f0d0 LaraDeflectEdgeDuck (117 bytes)</title></rect>
 <rect width="6.63" height="6.23" x="564.61" y="386.04" class="named"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>
-<rect width="6.63" height="6.18" x="564.61" y="395.27" class="todo"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
+<rect width="6.63" height="6.18" x="564.61" y="395.27" class="named"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
 <rect width="6.63" height="6.18" x="564.61" y="404.45" class="todo"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
 <rect width="6.63" height="6.12" x="564.61" y="413.62" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="6.63" height="6.12" x="564.61" y="422.74" class="todo"><title>0x004838e0 SortOutAdventureSave (115 bytes)</title></rect>

@@ -2050,8 +2050,8 @@ address,size,name,symbol
 0x00626208,4,GF_BonusLevelEnabled,_GF_BonusLevelEnabled
 0x00626210,256,GF_Description,_GF_Description
 0x00626310,4,first_hair,_first_hair
-0x00626318,,hvel,_hvel
-0x00626370,,hair,_hair
+0x00626318,84,hvel,_hvel
+0x00626370,126,hair,_hair
 0x006263f0,4,wind,_wind
 0x006263f4,,pickups,_pickups
 0x006263f8,4,ammotext,_ammotext
