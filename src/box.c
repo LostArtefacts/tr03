@@ -87,3 +87,22 @@ sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint3
     GetJointAbsPosition(item, &pos, bite->mesh_num);
     return (*generate)(pos.x, pos.y, pos.z, item->speed, item->pos.y_rot, item->room_number);
 }
+
+void AlertAllGuards(sint16 item_number)
+{
+    int slot;
+    CREATURE_INFO *cinfo;
+    ITEM_INFO *target;
+    sint16 obj_number;
+
+    cinfo = baddie_slots;
+    obj_number = items[item_number].object_number;
+    for (slot = 0; slot < NUM_SLOTS; slot++, cinfo++)
+    {
+        if (cinfo->item_num == NO_ITEM)
+            continue;
+        target = &items[cinfo->item_num];
+        if (obj_number == target->object_number && target->status == ACTIVE)
+            cinfo->alerted = 1;
+    }
+}
