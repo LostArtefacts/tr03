@@ -36,6 +36,22 @@ void InitialiseFinalLevel(void)
     }
 }
 
+void ShutThatDoor(DOORPOS_DATA *d)
+{
+    FLOOR_INFO *floor;
+
+    if (d->floor)
+    {
+        floor = d->floor;
+        floor->index = 0;
+        floor->box = NO_BOX;
+        floor->floor = floor->ceiling = NO_HEIGHT >> 8;
+        floor->pit_room = floor->sky_room = NO_ROOM;
+        if (d->block != NO_BOX)
+            boxes[d->block].overlap_index |= BLOCKED;
+    }
+}
+
 void OpenThatDoor(DOORPOS_DATA *d)
 {
     if (d->floor)

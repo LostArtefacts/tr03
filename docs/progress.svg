@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="78.53" height="12" x="0" y="0" class="named"><title>248 · 16.78%</title></rect>
-<rect width="389.47" height="12" x="78.53" y="0" class="todo"><title>1230 · 83.22%</title></rect>
+<rect width="78.84" height="12" x="0" y="0" class="named"><title>249 · 16.85%</title></rect>
+<rect width="389.16" height="12" x="78.84" y="0" class="todo"><title>1229 · 83.15%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">16.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">248</tspan> · <tspan class="todo">1230</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">249</tspan> · <tspan class="todo">1229</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.40" height="12" x="0" y="0" class="named"><title>12 KB · 1.79%</title></rect>
-<rect width="459.60" height="12" x="8.40" y="0" class="todo"><title>652 KB · 98.21%</title></rect>
+<rect width="8.45" height="12" x="0" y="0" class="named"><title>12 KB · 1.80%</title></rect>
+<rect width="459.55" height="12" x="8.45" y="0" class="todo"><title>652 KB · 98.20%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">12 KB</tspan> · <tspan class="todo">652 KB</tspan></text>
@@ -896,7 +896,7 @@
 <rect width="12" height="12" x="465" y="240" class="todo"><title>0x00458b90 InitialiseWindow (131 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="240" class="todo"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="240" class="todo"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="240" class="todo"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="240" class="named"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="240" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="240" class="todo"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="240" class="todo"><title>0x00459260 DoorControl (204 bytes)</title></rect>
@@ -2651,7 +2651,7 @@
 <rect width="4.84" height="4.82" x="617.06" y="356.62" class="todo"><title>0x00402130 SetZNear (66 bytes)</title></rect>
 <rect width="4.84" height="4.82" x="617.06" y="364.44" class="named"><title>0x00410d00 BigGunInitialise (66 bytes)</title></rect>
 <rect width="4.84" height="4.82" x="617.06" y="372.26" class="todo"><title>0x0043d550 CanGetOut_kayak (66 bytes)</title></rect>
-<rect width="4.84" height="4.82" x="617.06" y="380.08" class="todo"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
+<rect width="4.84" height="4.82" x="617.06" y="380.08" class="named"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
 <rect width="4.84" height="4.82" x="617.06" y="387.89" class="todo"><title>0x0046c0d0 TonyBossDie (66 bytes)</title></rect>
 <rect width="4.84" height="4.82" x="617.06" y="395.71" class="todo"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="403.53" class="named"><title>0x004294b0 phd_TranslateRel_I (65 bytes)</title></rect>
