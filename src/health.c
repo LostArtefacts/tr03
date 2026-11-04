@@ -27,6 +27,46 @@ int FlashIt(void)
     return flash_state;
 }
 
+extern int overlay_flag;
+extern uint16 DashTimer;
+extern sint16 ExposureMeter;
+
+void DrawAmmoInfo(void);
+void DrawModeInfo(void);
+void DrawAssaultTimer(void);
+void DrawAssaultPenalties(int type);
+void DrawQuadbikeLapTime(void);
+void DrawHealthBar(int flash_state);
+void DrawAirBar(int flash_state);
+void S_DrawDashBar(int percent);
+void S_DrawColdBar(int percent);
+
+void DrawGameInfo(int timed)
+{
+    int flash_state;
+
+    DrawAmmoInfo();
+    DrawModeInfo();
+    if (overlay_flag > 0) {
+        flash_state = FlashIt();
+        DrawAssaultTimer();
+        DrawAssaultPenalties(0);
+        DrawAssaultPenalties(1);
+        DrawQuadbikeLapTime();
+        DrawHealthBar(flash_state);
+        DrawAirBar(flash_state);
+        if (DashTimer < 120)
+            S_DrawDashBar(DashTimer * 100 / 120);
+        if (ExposureMeter < 600) {
+            if (ExposureMeter < 0)
+                S_DrawColdBar(0);
+            else if (!(ExposureMeter < 150 && flash_state))
+                S_DrawColdBar(ExposureMeter * 100 / 600);
+        }
+    }
+    T_DrawText();
+}
+
 extern int old_hitpoints;
 extern int health_bar_timer;
 extern char PoisonFlag;

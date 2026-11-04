@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="166.87" height="12" x="0" y="0" class="named"><title>527 · 35.66%</title></rect>
-<rect width="301.13" height="12" x="166.87" y="0" class="todo"><title>951 · 64.34%</title></rect>
+<rect width="167.19" height="12" x="0" y="0" class="named"><title>528 · 35.72%</title></rect>
+<rect width="300.81" height="12" x="167.19" y="0" class="todo"><title>950 · 64.28%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">35.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">527</tspan> · <tspan class="todo">951</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">528</tspan> · <tspan class="todo">950</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="34.39" height="12" x="0" y="0" class="named"><title>49 KB · 7.35%</title></rect>
-<rect width="433.61" height="12" x="34.39" y="0" class="todo"><title>616 KB · 92.65%</title></rect>
+<rect width="34.55" height="12" x="0" y="0" class="named"><title>49 KB · 7.38%</title></rect>
+<rect width="433.45" height="12" x="34.55" y="0" class="todo"><title>615 KB · 92.62%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">7.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">49 KB</tspan> · <tspan class="todo">616 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">7.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">49 KB</tspan> · <tspan class="todo">615 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -481,7 +481,7 @@
 <rect width="12" height="12" x="240" y="120" class="todo"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="120" class="todo"><title>0x00434510 DrawAssaultPenalties (598 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="120" class="todo"><title>0x00434770 DrawQuadbikeLapTime (438 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="120" class="todo"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="120" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="120" class="named"><title>0x00434a10 DrawHealthBar (200 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="120" class="todo"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="120" class="named"><title>0x00434bd0 RemoveAmmoText (29 bytes)</title></rect>
@@ -2193,7 +2193,7 @@
 <rect width="9.15" height="8.68" x="499.01" y="438.32" class="todo"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="9.22" height="8.62" x="511.16" y="199.33" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="9.18" height="8.62" x="523.38" y="199.33" class="todo"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
-<rect width="9.14" height="8.62" x="535.55" y="199.33" class="todo"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
+<rect width="9.14" height="8.62" x="535.55" y="199.33" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
 <rect width="9.14" height="8.62" x="547.69" y="199.33" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
 <rect width="9.14" height="8.62" x="559.83" y="199.33" class="todo"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
 <rect width="9.09" height="8.62" x="571.96" y="199.33" class="named"><title>0x00440140 lara_col_monkeyswing (222 bytes)</title></rect>
