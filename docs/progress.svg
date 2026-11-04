@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="77.89" height="12" x="0" y="0" class="named"><title>246 · 16.64%</title></rect>
-<rect width="390.11" height="12" x="77.89" y="0" class="todo"><title>1232 · 83.36%</title></rect>
+<rect width="78.21" height="12" x="0" y="0" class="named"><title>247 · 16.71%</title></rect>
+<rect width="389.79" height="12" x="78.21" y="0" class="todo"><title>1231 · 83.29%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">16.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">246</tspan> · <tspan class="todo">1232</tspan></text>
+<text text-anchor="end" x="648" y="7.50">16.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">247</tspan> · <tspan class="todo">1231</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.31" height="12" x="0" y="0" class="named"><title>12 KB · 1.78%</title></rect>
-<rect width="459.69" height="12" x="8.31" y="0" class="todo"><title>652 KB · 98.22%</title></rect>
+<rect width="8.35" height="12" x="0" y="0" class="named"><title>12 KB · 1.79%</title></rect>
+<rect width="459.65" height="12" x="8.35" y="0" class="todo"><title>652 KB · 98.21%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">12 KB</tspan> · <tspan class="todo">652 KB</tspan></text>
@@ -786,7 +786,7 @@
 <rect width="12" height="12" x="315" y="210" class="todo"><title>0x0044c150 undraw_flare (617 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="210" class="named"><title>0x0044c3c0 draw_flare_meshes (24 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="210" class="named"><title>0x0044c3e0 undraw_flare_meshes (24 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="210" class="todo"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="210" class="named"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="210" class="todo"><title>0x0044c440 FlareControl (485 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="210" class="todo"><title>0x0044c630 LaraCheatGetStuff (183 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="210" class="todo"><title>0x0044c6f0 LaraControl (2212 bytes)</title></rect>
@@ -2674,7 +2674,7 @@
 <rect width="4.65" height="4.79" x="624.90" y="411.30" class="todo"><title>0x00484bf0 HWR_EnableAlphaBlend (63 bytes)</title></rect>
 <rect width="4.65" height="4.79" x="624.90" y="419.09" class="todo"><title>0x00484de0 HWR_EnableColorKey (63 bytes)</title></rect>
 <rect width="4.65" height="4.71" x="624.90" y="426.87" class="named"><title>0x00430010 ControlRotateyThing (62 bytes)</title></rect>
-<rect width="4.65" height="4.71" x="624.90" y="434.58" class="todo"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
+<rect width="4.65" height="4.71" x="624.90" y="434.58" class="named"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
 <rect width="4.65" height="4.71" x="624.90" y="442.29" class="todo"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
 <rect width="4.99" height="4.39" x="632.55" y="324.98" class="todo"><title>0x0048e860 Func48e860 (62 bytes)</title></rect>
 <rect width="4.91" height="4.39" x="640.54" y="324.98" class="todo"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
