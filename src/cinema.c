@@ -24,6 +24,13 @@ sint32 DrawPhaseCinematic(void)
     return camera.number_frames;
 }
 
+void InitialiseGenPlayer(sint16 item_num)
+{
+    AddActiveItem(item_num);
+    items[item_num].pos.y_rot = 0;
+    items[item_num].dynamic_light = 0;
+}
+
 int GetCinematicRoom(sint32 x, sint32 y, sint32 z)
 {
     int i;
