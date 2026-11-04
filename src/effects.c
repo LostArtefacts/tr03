@@ -145,6 +145,15 @@ void ControlDingDong(sint16 item_number)
     }
 }
 
+void ControlLaraAlarm(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if ((item->flags & CODE_BITS) == CODE_BITS)
+        SoundEffect(335, &item->pos, 0);
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
