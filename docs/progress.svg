@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="132.36" height="12" x="0" y="0" class="named"><title>418 · 28.28%</title></rect>
-<rect width="335.64" height="12" x="132.36" y="0" class="todo"><title>1060 · 71.72%</title></rect>
+<rect width="132.67" height="12" x="0" y="0" class="named"><title>419 · 28.35%</title></rect>
+<rect width="335.33" height="12" x="132.67" y="0" class="todo"><title>1059 · 71.65%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">28.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">418</tspan> · <tspan class="todo">1060</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">419</tspan> · <tspan class="todo">1059</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="20.70" height="12" x="0" y="0" class="named"><title>29 KB · 4.42%</title></rect>
-<rect width="447.30" height="12" x="20.70" y="0" class="todo"><title>635 KB · 95.58%</title></rect>
+<rect width="20.81" height="12" x="0" y="0" class="named"><title>30 KB · 4.45%</title></rect>
+<rect width="447.19" height="12" x="20.81" y="0" class="todo"><title>634 KB · 95.55%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">29 KB</tspan> · <tspan class="todo">635 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">30 KB</tspan> · <tspan class="todo">634 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -635,7 +635,7 @@
 <rect width="12" height="12" x="300" y="165" class="todo"><title>0x00440f20 lara_as_run (373 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="165" class="named"><title>0x004410a0 lara_as_fastback (87 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="165" class="named"><title>0x00441100 lara_as_turn_r (158 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="165" class="todo"><title>0x004411a0 lara_as_turn_l (158 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="165" class="named"><title>0x004411a0 lara_as_turn_l (158 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="165" class="named"><title>0x00441240 lara_as_death (23 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="165" class="named"><title>0x00441260 lara_as_fastfall (64 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="165" class="named"><title>0x004412a0 lara_as_hang (101 bytes)</title></rect>
@@ -2322,7 +2322,7 @@
 <rect width="7.63" height="7.36" x="533.67" y="306.27" class="todo"><title>0x0046d150 TestHeight_train (159 bytes)</title></rect>
 <rect width="7.63" height="7.31" x="533.67" y="316.63" class="todo"><title>0x00402030 AlterFOV (158 bytes)</title></rect>
 <rect width="7.63" height="7.31" x="533.67" y="326.94" class="named"><title>0x00441100 lara_as_turn_r (158 bytes)</title></rect>
-<rect width="7.63" height="7.31" x="533.67" y="337.25" class="todo"><title>0x004411a0 lara_as_turn_l (158 bytes)</title></rect>
+<rect width="7.63" height="7.31" x="533.67" y="337.25" class="named"><title>0x004411a0 lara_as_turn_l (158 bytes)</title></rect>
 <rect width="7.63" height="7.31" x="533.67" y="347.57" class="todo"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
 <rect width="7.63" height="7.27" x="533.67" y="357.88" class="todo"><title>0x0046c120 InitialiseTonyBoss (157 bytes)</title></rect>
 <rect width="7.63" height="7.27" x="533.67" y="368.15" class="todo"><title>0x0048acc0 ProjectPCoord (157 bytes)</title></rect>
