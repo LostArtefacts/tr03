@@ -101,6 +101,29 @@ RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 mor
     return rptr;
 }
 
+extern sint16 rcossin_tbl[];
+
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+
+void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 b, sint32 angle, sint16 room_no)
+{
+    sint32 sin, cos;
+    GAME_VECTOR src, target;
+
+    src.x = x;
+    src.y = y;
+    src.z = z;
+    GetFloor(x, y, z, &room_no);
+    src.room_number = room_no;
+    sin = ((sint16)rcossin_tbl[angle << 1]) << 1;
+    cos = ((sint16)rcossin_tbl[(angle << 1) + 1]) << 1;
+    target.x = x + sin;
+    target.y = y;
+    target.z = z + cos;
+    if (!LOS(&src, &target))
+        TriggerDynamic(target.x, target.y, target.z, 8, r, g, b);
+}
+
 void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size)
 {
     RIPPLE_STRUCT *rptr;
