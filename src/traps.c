@@ -214,6 +214,33 @@ void FallingBlockCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *
 
 void KillEffect(sint16 fx_num);
 
+extern BITE_INFO teeth1a, teeth1b, teeth2a, teeth2b, teeth3a, teeth3b;
+
+void BaddieBiteEffect(ITEM_INFO *item, BITE_INFO *bite);
+
+void TeethTrap(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (TriggerActive(item)) {
+        item->goal_anim_state = 1;
+        if (item->touch_bits && item->current_anim_state == 1) {
+            lara_item->hit_points -= 400;
+            lara_item->hit_status = 1;
+            BaddieBiteEffect(item, &teeth1a);
+            BaddieBiteEffect(item, &teeth1b);
+            BaddieBiteEffect(item, &teeth2a);
+            BaddieBiteEffect(item, &teeth2b);
+            BaddieBiteEffect(item, &teeth3a);
+            BaddieBiteEffect(item, &teeth3b);
+        }
+    } else {
+        item->goal_anim_state = 0;
+    }
+    AnimateItem(item);
+}
+
 void SideFlameEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;
