@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="28.43" height="12" x="0" y="0" class="named"><title>208 · 14.07%</title></rect>
-<rect width="173.57" height="12" x="28.43" y="0" class="todo"><title>1270 · 85.93%</title></rect>
+<rect width="28.56" height="12" x="0" y="0" class="named"><title>209 · 14.14%</title></rect>
+<rect width="173.44" height="12" x="28.56" y="0" class="todo"><title>1269 · 85.86%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">14.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">208</tspan> · <tspan class="todo">1270</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">209</tspan> · <tspan class="todo">1269</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.93" height="12" x="0" y="0" class="named"><title>10 KB · 1.45%</title></rect>
-<rect width="199.07" height="12" x="2.93" y="0" class="todo"><title>654 KB · 98.55%</title></rect>
+<rect width="2.94" height="12" x="0" y="0" class="named"><title>10 KB · 1.45%</title></rect>
+<rect width="199.06" height="12" x="2.94" y="0" class="todo"><title>654 KB · 98.55%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="24.50">1.4%</text>
+<text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -859,7 +859,7 @@
 <rect width="12" height="12" x="660" y="225" class="todo"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="225" class="todo"><title>0x00453740 InitialiseNonLotAI (248 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="225" class="todo"><title>0x00453890 GetCollision (152 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="225" class="todo"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="225" class="named"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="225" class="todo"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="todo"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="240" class="todo"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
@@ -2838,7 +2838,7 @@
 <rect width="3.68" height="3.74" x="668.38" y="402.89" class="named"><title>0x00413cf0 DrawBoat (39 bytes)</title></rect>
 <rect width="3.68" height="3.74" x="668.38" y="409.63" class="named"><title>0x004293c0 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="3.68" height="3.74" x="668.38" y="416.37" class="named"><title>0x0042fa00 Exercise8_87 (39 bytes)</title></rect>
-<rect width="3.68" height="3.74" x="668.38" y="423.12" class="todo"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
+<rect width="3.68" height="3.74" x="668.38" y="423.12" class="named"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
 <rect width="3.68" height="3.74" x="668.38" y="429.86" class="named"><title>0x0046b0f0 T_DrawText (39 bytes)</title></rect>
 <rect width="3.68" height="3.74" x="668.38" y="436.61" class="todo"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="3.68" height="3.65" x="668.38" y="443.35" class="named"><title>0x0042f600 QuadStop (38 bytes)</title></rect>

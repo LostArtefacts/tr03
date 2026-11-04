@@ -13,6 +13,9 @@ sint32 GetRandomControl(void);
 void SeedRandomControl(sint32 seed);
 sint32 GetRandomDraw(void);
 void SeedRandomDraw(sint32 seed);
+void *game_malloc(int size, int type);
+int GetRenderWidth(void);
+int GetRenderHeight(void);
 
 #ifdef __cplusplus
 }
