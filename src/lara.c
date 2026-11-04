@@ -566,6 +566,51 @@ void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll);
 #define LARA_DASH_TURN_RATE ((ONE_DEGREE / 4) + LARA_TURN_UNDO)
 #define LARA_DASH_TURN_MAX ((ONE_DEGREE * 2) + LARA_TURN_UNDO)
 
+void lara_as_dash(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0) {
+        item->goal_anim_state = AS_RUN;
+        return;
+    }
+
+    if (!DashTimer || !(input & IN_DASH) || lara.water_status == LARA_WADE) {
+        item->goal_anim_state = AS_RUN;
+        return;
+    }
+    DashTimer--;
+
+    if ((input & IN_DUCK) && lara.water_status != LARA_WADE) {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    if (input & IN_LEFT) {
+        lara.turn_rate -= LARA_DASH_TURN_RATE;
+        if (lara.turn_rate < -LARA_DASH_TURN_MAX)
+            lara.turn_rate = -LARA_DASH_TURN_MAX;
+        item->pos.z_rot -= LARA_DASH_LEAN_RATE;
+        if (item->pos.z_rot < -LARA_DASH_LEAN_MAX)
+            item->pos.z_rot = -LARA_DASH_LEAN_MAX;
+    } else if (input & IN_RIGHT) {
+        lara.turn_rate += LARA_DASH_TURN_RATE;
+        if (lara.turn_rate > LARA_DASH_TURN_MAX)
+            lara.turn_rate = LARA_DASH_TURN_MAX;
+        item->pos.z_rot += LARA_DASH_LEAN_RATE;
+        if (item->pos.z_rot > LARA_DASH_LEAN_MAX)
+            item->pos.z_rot = LARA_DASH_LEAN_MAX;
+    }
+
+    if ((input & IN_JUMP) && !item->gravity_status)
+        item->goal_anim_state = AS_DASHDIVE;
+    else if (input & IN_FORWARD) {
+        if (input & IN_SLOW)
+            item->goal_anim_state = AS_WALK;
+        else
+            item->goal_anim_state = AS_DASH;
+    } else if (!(input & (IN_LEFT | IN_RIGHT)))
+        item->goal_anim_state = AS_STOP;
+}
+
 int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down)
 {
     int x, y, z;
