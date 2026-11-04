@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="97.21" height="12" x="0" y="0" class="named"><title>307 · 20.77%</title></rect>
-<rect width="370.79" height="12" x="97.21" y="0" class="todo"><title>1171 · 79.23%</title></rect>
+<rect width="97.53" height="12" x="0" y="0" class="named"><title>308 · 20.84%</title></rect>
+<rect width="370.47" height="12" x="97.53" y="0" class="todo"><title>1170 · 79.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">20.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">307</tspan> · <tspan class="todo">1171</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">308</tspan> · <tspan class="todo">1170</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.60" height="12" x="0" y="0" class="named"><title>16 KB · 2.48%</title></rect>
-<rect width="456.40" height="12" x="11.60" y="0" class="todo"><title>647 KB · 97.52%</title></rect>
+<rect width="11.67" height="12" x="0" y="0" class="named"><title>17 KB · 2.49%</title></rect>
+<rect width="456.33" height="12" x="11.67" y="0" class="todo"><title>647 KB · 97.51%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">16 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -248,7 +248,7 @@
 <rect width="12" height="12" x="495" y="45" class="named"><title>0x0041e560 GetNearByRooms (200 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="45" class="named"><title>0x0041e630 GetNewRoom (85 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="45" class="named"><title>0x0041e690 ShiftItem (55 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="45" class="todo"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="45" class="named"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="45" class="todo"><title>0x0041e730 GetTiltType (410 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="45" class="todo"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="45" class="todo"><title>0x0041ea60 CreatureCollision (368 bytes)</title></rect>
@@ -2522,7 +2522,7 @@
 <rect width="5.83" height="5.70" x="583.19" y="406.64" class="todo"><title>0x0044e230 lara_as_surfback (94 bytes)</title></rect>
 <rect width="5.83" height="5.70" x="583.19" y="415.34" class="todo"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
 <rect width="5.83" height="5.70" x="583.19" y="424.03" class="todo"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
-<rect width="5.83" height="5.64" x="583.19" y="432.73" class="todo"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
+<rect width="5.83" height="5.64" x="583.19" y="432.73" class="named"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
 <rect width="5.83" height="5.64" x="583.19" y="441.36" class="named"><title>0x0042fa90 BaddieBiteEffect (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="292.20" class="todo"><title>0x00439080 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="301.06" class="todo"><title>0x004492b0 lara_col_climbleft (93 bytes)</title></rect>
