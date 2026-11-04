@@ -119,3 +119,10 @@ void AssaultStart(ITEM_INFO *item)
     ResetTargets();
     flipeffect = -1;
 }
+
+void AssaultStop(ITEM_INFO *item)
+{
+    assault_timer_active = 0;
+    assault_timer_display = 1;
+    flipeffect = -1;
+}

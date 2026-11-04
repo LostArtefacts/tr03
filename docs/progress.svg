@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="2.73" height="12" x="130" y="1.50" class="named"/>
-<rect width="199.27" height="12" x="132.73" y="1.50" class="todo"/>
+<rect width="2.87" height="12" x="130" y="1.50" class="named"/>
+<rect width="199.13" height="12" x="132.87" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">1.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">20/1478</text>
-<rect width="0.14" height="12" x="130" y="18.50" class="named"/>
-<rect width="201.86" height="12" x="130.14" y="18.50" class="todo"/>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">21/1478</text>
+<rect width="0.15" height="12" x="130" y="18.50" class="named"/>
+<rect width="201.85" height="12" x="130.15" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">0k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.35% (20)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.65% (1458)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.42% (21)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.58% (1457)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.11" height="6" x="0" y="0" class="named"/>
-<rect width="736.89" height="6" x="10.11" y="0" class="todo"/>
+<rect width="10.61" height="6" x="0" y="0" class="named"/>
+<rect width="736.39" height="6" x="10.61" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -424,7 +424,7 @@
 <rect width="12" height="12" x="120" y="105" class="named"><title>0x0042f430 dynamic_light_off (14 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="105" class="named"><title>0x0042f440 reset_hair (5 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="105" class="named"><title>0x0042f450 AssaultStart (60 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="105" class="todo"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="105" class="named"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="105" class="todo"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="105" class="todo"><title>0x0042f4e0 AssaultPenalty4 (45 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="105" class="todo"><title>0x0042f510 AssaultPenalty30 (45 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.93%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="0.51" height="6" x="0" y="0" class="named"/>
-<rect width="746.49" height="6" x="0.51" y="0" class="todo"/>
+<rect width="0.54" height="6" x="0" y="0" class="named"/>
+<rect width="746.46" height="6" x="0.54" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2888,7 +2888,7 @@
 <rect width="1.23" height="0.87" x="710.26" y="441.39" class="todo"><title>0x00439060 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="1.23" height="0.87" x="710.26" y="445.26" class="todo"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
 <rect width="1.23" height="0.87" x="710.26" y="449.13" class="todo"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
-<rect width="0.96" height="1.01" x="714.49" y="413.32" class="todo"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
+<rect width="0.96" height="1.01" x="714.49" y="413.32" class="named"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
 <rect width="0.96" height="1.01" x="718.45" y="413.32" class="todo"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="0.96" height="1.01" x="722.41" y="413.32" class="todo"><title>0x0044d880 ControlLaraExtra (31 bytes)</title></rect>
 <rect width="0.96" height="1.01" x="726.37" y="413.32" class="todo"><title>0x0044f810 LaserControl (31 bytes)</title></rect>
