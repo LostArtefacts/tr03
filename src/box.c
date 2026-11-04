@@ -6,6 +6,7 @@
 #define GUNFIRE_ALERT_RADIUS 8000
 #define MODIFY 8
 #define ESCAPE_DIST (WALL_L * 5)
+#define ZONE(A) (((A) >> (WALL_SHIFT - 2)) - 1)
 
 int SearchLOT(LOT_INFO *LOT, int expansion);
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
@@ -82,6 +83,34 @@ int EscapeBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
     if (x > -ESCAPE_DIST && x < ESCAPE_DIST && z > -ESCAPE_DIST && z < ESCAPE_DIST)
         return 0;
     if (((z > 0) ^ (item->pos.z_pos > enemy->pos.z_pos)) && ((x > 0) ^ (item->pos.x_pos > enemy->pos.x_pos)))
+        return 0;
+    return 1;
+}
+
+extern sint16 *ground_zone[4][2];
+
+int StalkBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number);
+sint16 SameZone(CREATURE_INFO *creature, ITEM_INFO *target_item);
+void GetAITarget(CREATURE_INFO *creature);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+
+int ValidBox(ITEM_INFO *item, sint16 zone_number, sint16 box_number)
+{
+    BOX_INFO *box;
+    CREATURE_INFO *creature;
+    sint16 *zone;
+
+    creature = (CREATURE_INFO *)item->data;
+    if (creature->LOT.fly == NO_FLYING)
+        zone = ground_zone[ZONE(creature->LOT.step)][flip_status];
+    else
+        zone = ground_zone[ZONE(1)][0];
+    if (creature->LOT.fly == NO_FLYING && zone[box_number] != zone_number)
+        return 0;
+    box = &boxes[box_number];
+    if (box->overlap_index & creature->LOT.block_mask)
+        return 0;
+    if (item->pos.z_pos > ((sint32)box->left << WALL_SHIFT) && item->pos.z_pos < ((sint32)box->right << WALL_SHIFT) && item->pos.x_pos > ((sint32)box->top << WALL_SHIFT) && item->pos.x_pos < ((sint32)box->bottom << WALL_SHIFT))
         return 0;
     return 1;
 }

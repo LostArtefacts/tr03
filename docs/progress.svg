@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="137.74" height="12" x="0" y="0" class="named"><title>435 · 29.43%</title></rect>
-<rect width="330.26" height="12" x="137.74" y="0" class="todo"><title>1043 · 70.57%</title></rect>
+<rect width="138.06" height="12" x="0" y="0" class="named"><title>436 · 29.50%</title></rect>
+<rect width="329.94" height="12" x="138.06" y="0" class="todo"><title>1042 · 70.50%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">29.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">435</tspan> · <tspan class="todo">1043</tspan></text>
+<text text-anchor="end" x="648" y="7.50">29.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">436</tspan> · <tspan class="todo">1042</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="22.64" height="12" x="0" y="0" class="named"><title>32 KB · 4.84%</title></rect>
-<rect width="445.36" height="12" x="22.64" y="0" class="todo"><title>632 KB · 95.16%</title></rect>
+<rect width="22.76" height="12" x="0" y="0" class="named"><title>32 KB · 4.86%</title></rect>
+<rect width="445.24" height="12" x="22.76" y="0" class="todo"><title>632 KB · 95.14%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">4.8%</text>
+<text text-anchor="end" x="648" y="24.50">4.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">32 KB</tspan> · <tspan class="todo">632 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -188,7 +188,7 @@
 <rect width="12" height="12" x="345" y="30" class="todo"><title>0x00414800 SearchLOT (520 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="30" class="named"><title>0x00414a10 TargetBox (149 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="30" class="named"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="30" class="todo"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="30" class="named"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="30" class="todo"><title>0x00414c10 GetCreatureMood (534 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="30" class="todo"><title>0x00414e50 CreatureMood (598 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="30" class="todo"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
@@ -2276,7 +2276,7 @@
 <rect width="7.78" height="8.04" x="522.89" y="233.52" class="todo"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="7.78" height="8.04" x="522.89" y="244.56" class="todo"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
 <rect width="7.78" height="8" x="522.89" y="255.60" class="todo"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>
-<rect width="7.78" height="7.95" x="522.89" y="266.60" class="todo"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
+<rect width="7.78" height="7.95" x="522.89" y="266.60" class="named"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
 <rect width="7.78" height="7.91" x="522.89" y="277.55" class="todo"><title>0x00416570 CreatureFloat (174 bytes)</title></rect>
 <rect width="7.78" height="7.91" x="522.89" y="288.45" class="todo"><title>0x0046f130 FlameEmitter3Control (174 bytes)</title></rect>
 <rect width="7.78" height="7.86" x="522.89" y="299.36" class="todo"><title>0x00444ee0 LaraTestEdgeCatch (173 bytes)</title></rect>
