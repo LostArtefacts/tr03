@@ -57,6 +57,8 @@ void T_CentreV(TEXTSTRING *textString, sint16 ok);
 void T_RightAlign(TEXTSTRING *textString, sint16 ok);
 void T_BottomAlign(TEXTSTRING *textString, sint16 ok);
 int T_RemovePrint(TEXTSTRING *textString);
+sint32 T_GetTextWidth(TEXTSTRING *textString);
+uint32 GetTextScaleH(uint32 scaleH);
 sint16 T_GetStringLen(char *string);
 void T_DrawText(void);
 

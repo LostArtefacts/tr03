@@ -23,6 +23,7 @@ extern DYNAMIC dynamics[];
 extern int number_dynamics;
 
 void KillAllCurrentItems(sint16 item_number);
+void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b);
 void ClearDynamics(void);
 
 #endif
