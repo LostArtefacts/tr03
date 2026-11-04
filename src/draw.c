@@ -123,3 +123,15 @@ void phd_PutPolygons_I(sint16 *ptr, int clip)
     phd_PutPolygons(ptr, clip);
     phd_PopMatrix();
 }
+
+sint16 *GetBestFrame(ITEM_INFO *item)
+{
+    int frac, rate;
+    sint16 *frmptr[2];
+
+    frac = GetFrames(item, frmptr, &rate);
+    if (frac <= (rate >> 1))
+        return frmptr[0];
+    else
+        return frmptr[1];
+}
