@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="30.89" height="12" x="0" y="0" class="named"><title>226 · 15.29%</title></rect>
-<rect width="171.11" height="12" x="30.89" y="0" class="todo"><title>1252 · 84.71%</title></rect>
+<rect width="31.02" height="12" x="0" y="0" class="named"><title>227 · 15.36%</title></rect>
+<rect width="170.98" height="12" x="31.02" y="0" class="todo"><title>1251 · 84.64%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">15.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">226</tspan> · <tspan class="todo">1252</tspan></text>
+<text text-anchor="end" x="382" y="7.50">15.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">227</tspan> · <tspan class="todo">1251</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.17" height="12" x="0" y="0" class="named"><title>10 KB · 1.57%</title></rect>
-<rect width="198.83" height="12" x="3.17" y="0" class="todo"><title>653 KB · 98.43%</title></rect>
+<rect width="3.19" height="12" x="0" y="0" class="named"><title>10 KB · 1.58%</title></rect>
+<rect width="198.81" height="12" x="3.19" y="0" class="todo"><title>653 KB · 98.42%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
@@ -897,7 +897,7 @@
 <rect width="12" height="12" x="480" y="240" class="todo"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="240" class="todo"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="240" class="todo"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="240" class="todo"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="240" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="240" class="todo"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="240" class="todo"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="240" class="todo"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
@@ -2760,7 +2760,7 @@
 <rect width="4.10" height="4.31" x="647.26" y="391.62" class="named"><title>0x00437870 RingActive (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="398.93" class="named"><title>0x0043de00 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="406.24" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
-<rect width="4.10" height="4.31" x="647.26" y="413.55" class="todo"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
+<rect width="4.10" height="4.31" x="647.26" y="413.55" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="420.86" class="todo"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="428.16" class="todo"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="435.47" class="todo"><title>0x0048e8f0 Func48e8f0 (50 bytes)</title></rect>

@@ -1,4 +1,7 @@
 #include "game.h"
+#include <string.h>
+
+#define DOOR_CLOSED 0
 
 typedef struct {
     sint32 start_height;
@@ -11,6 +14,16 @@ extern int height_type;
 extern int OnObject;
 
 void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
+
+void OpenThatDoor(DOORPOS_DATA *d)
+{
+    if (d->floor)
+    {
+        memcpy(d->floor, &d->data, sizeof(FLOOR_INFO));
+        if (d->block != NO_BOX)
+            boxes[d->block].overlap_index &= ~BLOCKED;
+    }
+}
 
 void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
