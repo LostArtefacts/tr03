@@ -230,3 +230,10 @@ void lara_as_usekey(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = -25 * ONE_DEGREE;
     camera.target_distance = WALL_L;
 }
+
+void lara_as_special(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.flags = FOLLOW_CENTRE;
+    camera.target_angle = 170 * ONE_DEGREE;
+    camera.target_elevation = -25 * ONE_DEGREE;
+}
