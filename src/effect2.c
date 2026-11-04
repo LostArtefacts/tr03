@@ -341,6 +341,35 @@ extern LEADER_INFO lead_info[];
 extern sint16 next_item_active;
 void KillEffect(sint16 fx_num);
 
+void KillEverything(void)
+{
+    sint16 item_num, nex, obj_num;
+
+    item_num = next_item_active;
+    while (item_num != NO_ITEM) {
+        nex = items[item_num].next_active;
+        obj_num = items[item_num].object_number;
+        if (obj_num != LARA && obj_num != FLARE && (obj_num < 131 || obj_num > 138) && items[item_num].active
+            && !(items[item_num].flags & REVERSE))
+            KillItem(item_num);
+        item_num = nex;
+    }
+
+    item_num = next_fx_active;
+    while (item_num != NO_ITEM) {
+        nex = effects[item_num].next_active;
+        if (objects[effects[item_num].object_number].control
+            && !(effects[item_num].object_number == 329 && effects[item_num].counter < 0))
+            KillEffect(item_num);
+        item_num = nex;
+    }
+
+    for (item_num = 0; item_num < 8; item_num++)
+        lead_info[item_num].on = 0;
+
+    KillEverythingFlag = 0;
+}
+
 void CreateBubble(PHD_3DPOS *pos, sint16 room_number, int size, int sizerange);
 
 void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b)
