@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="162.76" height="12" x="0" y="0" class="named"><title>514 · 34.78%</title></rect>
-<rect width="305.24" height="12" x="162.76" y="0" class="todo"><title>964 · 65.22%</title></rect>
+<rect width="163.07" height="12" x="0" y="0" class="named"><title>515 · 34.84%</title></rect>
+<rect width="304.93" height="12" x="163.07" y="0" class="todo"><title>963 · 65.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">34.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">514</tspan> · <tspan class="todo">964</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">515</tspan> · <tspan class="todo">963</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="32.14" height="12" x="0" y="0" class="named"><title>46 KB · 6.87%</title></rect>
-<rect width="435.86" height="12" x="32.14" y="0" class="todo"><title>618 KB · 93.13%</title></rect>
+<rect width="32.29" height="12" x="0" y="0" class="named"><title>46 KB · 6.90%</title></rect>
+<rect width="435.71" height="12" x="32.29" y="0" class="todo"><title>618 KB · 93.10%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">46 KB</tspan> · <tspan class="todo">618 KB</tspan></text>
@@ -929,7 +929,7 @@
 <rect width="12" height="12" x="210" y="255" class="todo"><title>0x0045aa60 OilSMGControl (1992 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="255" class="todo"><title>0x0045b260 OrcaControl (732 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="255" class="todo"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="255" class="todo"><title>0x0045b610 Targetable (210 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="255" class="named"><title>0x0045b610 Targetable (210 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="255" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="255" class="named"><title>0x0045b700 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="255" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
@@ -2212,7 +2212,7 @@
 <rect width="8.60" height="8.71" x="499.62" y="414.98" class="todo"><title>0x004953b0 DrawSpansAlpha (212 bytes)</title></rect>
 <rect width="8.60" height="8.67" x="499.62" y="426.70" class="named"><title>0x00440db0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="8.60" height="8.63" x="499.62" y="438.37" class="todo"><title>0x00402640 gen_x (210 bytes)</title></rect>
-<rect width="8.67" height="8.56" x="511.22" y="211.36" class="todo"><title>0x0045b610 Targetable (210 bytes)</title></rect>
+<rect width="8.67" height="8.56" x="511.22" y="211.36" class="named"><title>0x0045b610 Targetable (210 bytes)</title></rect>
 <rect width="8.67" height="8.52" x="511.22" y="222.91" class="todo"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
 <rect width="8.67" height="8.52" x="511.22" y="234.43" class="named"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
 <rect width="8.67" height="8.52" x="511.22" y="245.95" class="named"><title>0x0044efc0 LaraTestWaterDepth (209 bytes)</title></rect>
