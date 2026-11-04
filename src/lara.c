@@ -64,6 +64,26 @@ void lara_col_all4turnl(ITEM_INFO *item, COLL_INFO *coll)
     GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_DUCK_HEIGHT);
 }
 
+void lara_as_all4turnr(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_ALL4S;
+        return;
+    }
+
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 1;
+    lara.torso_x_rot = lara.torso_y_rot = 0;
+    camera.target_elevation = -23 * ONE_DEGREE;
+    if (TestLaraSlide(item, coll))
+        return;
+
+    item->pos.y_rot += ONE_DEGREE + ONE_DEGREE / 2;
+    if (!(input & IN_RIGHT))
+        item->goal_anim_state = AS_ALL4S;
+}
+
 void lara_as_dashdive(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->goal_anim_state != AS_DEATH && item->goal_anim_state != AS_STOP && item->goal_anim_state != AS_RUN)
