@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="30.61" height="12" x="0" y="0" class="named"><title>224 · 15.16%</title></rect>
-<rect width="171.39" height="12" x="30.61" y="0" class="todo"><title>1254 · 84.84%</title></rect>
+<rect width="30.75" height="12" x="0" y="0" class="named"><title>225 · 15.22%</title></rect>
+<rect width="171.25" height="12" x="30.75" y="0" class="todo"><title>1253 · 84.78%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">15.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">224</tspan> · <tspan class="todo">1254</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">225</tspan> · <tspan class="todo">1253</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.14" height="12" x="0" y="0" class="named"><title>10 KB · 1.55%</title></rect>
-<rect width="198.86" height="12" x="3.14" y="0" class="todo"><title>654 KB · 98.45%</title></rect>
+<rect width="3.16" height="12" x="0" y="0" class="named"><title>10 KB · 1.56%</title></rect>
+<rect width="198.84" height="12" x="3.16" y="0" class="todo"><title>653 KB · 98.44%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -723,7 +723,7 @@
 <rect width="12" height="12" x="120" y="195" class="todo"><title>0x00444ee0 LaraTestEdgeCatch (173 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="195" class="todo"><title>0x00444f90 LaraDeflectEdge (130 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="195" class="todo"><title>0x00445020 GetStaticObjects (546 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="195" class="todo"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="195" class="named"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="195" class="named"><title>0x00445290 undraw_shotgun_meshes (43 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="195" class="todo"><title>0x004452c0 ready_shotgun (113 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="195" class="todo"><title>0x00445340 RifleHandler (532 bytes)</title></rect>
@@ -2737,7 +2737,7 @@
 <rect width="4.32" height="4.34" x="728.12" y="340.02" class="todo"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="4.32" height="4.34" x="735.44" y="340.02" class="todo"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
 <rect width="4.24" height="4.34" x="742.76" y="340.02" class="named"><title>0x00429350 InitInterpolate (52 bytes)</title></rect>
-<rect width="4.22" height="4.36" x="640.04" y="347.35" class="todo"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
+<rect width="4.22" height="4.36" x="640.04" y="347.35" class="named"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
 <rect width="4.22" height="4.36" x="640.04" y="354.71" class="named"><title>0x00459980 BridgeTilt2Ceiling (52 bytes)</title></rect>
 <rect width="4.22" height="4.36" x="640.04" y="362.06" class="todo"><title>0x00468580 InitInterpolate2 (52 bytes)</title></rect>
 <rect width="4.22" height="4.36" x="640.04" y="369.42" class="todo"><title>0x00475910 TempVideoAdjust (52 bytes)</title></rect>
