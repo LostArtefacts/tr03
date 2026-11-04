@@ -1916,6 +1916,7 @@ address,size,name,symbol
 0x004c7238,24,DeathSlideBounds,_DeathSlideBounds
 0x004c7250,12,DeathSlidePosition,_DeathSlidePosition
 0x004c725c,2,old_ang,_old_ang
+0x004c7260,4,jump_ok,_jump_ok
 0x004c7268,24,PistolTable,_PistolTable
 0x004c7280,,weapons,_weapons
 0x004c7428,,HoldStates,_HoldStates

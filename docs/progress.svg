@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="193.15" height="12" x="0" y="0" class="named"><title>610 · 41.27%</title></rect>
-<rect width="274.85" height="12" x="193.15" y="0" class="todo"><title>868 · 58.73%</title></rect>
+<rect width="193.47" height="12" x="0" y="0" class="named"><title>611 · 41.34%</title></rect>
+<rect width="274.53" height="12" x="193.47" y="0" class="todo"><title>867 · 58.66%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">41.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">610</tspan> · <tspan class="todo">868</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">611</tspan> · <tspan class="todo">867</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="60.20" height="12" x="0" y="0" class="named"><title>86 KB · 12.86%</title></rect>
-<rect width="407.80" height="12" x="60.20" y="0" class="todo"><title>579 KB · 87.14%</title></rect>
+<rect width="60.46" height="12" x="0" y="0" class="named"><title>86 KB · 12.92%</title></rect>
+<rect width="407.54" height="12" x="60.46" y="0" class="todo"><title>579 KB · 87.08%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">12.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">86 KB</tspan> · <tspan class="todo">579 KB</tspan></text>
@@ -632,7 +632,7 @@
 <rect width="12" height="12" x="255" y="165" class="todo"><title>0x00440b90 LaraTestHangJumpUp (542 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="165" class="named"><title>0x00440db0 lara_as_forwardjump (211 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="165" class="named"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="165" class="todo"><title>0x00440f20 lara_as_run (373 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="165" class="named"><title>0x00440f20 lara_as_run (373 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="165" class="named"><title>0x004410a0 lara_as_fastback (87 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="165" class="named"><title>0x00441100 lara_as_turn_r (158 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="165" class="named"><title>0x004411a0 lara_as_turn_l (158 bytes)</title></rect>
@@ -2009,7 +2009,7 @@
 <rect width="11.69" height="11.38" x="475.66" y="145.70" class="named"><title>0x004595e0 LiftFloorCeiling (377 bytes)</title></rect>
 <rect width="11.66" height="11.38" x="490.35" y="145.70" class="todo"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
 <rect width="11.63" height="11.38" x="505.01" y="145.70" class="todo"><title>0x00437160 RingIsOpen (375 bytes)</title></rect>
-<rect width="11.56" height="11.38" x="519.63" y="145.70" class="todo"><title>0x00440f20 lara_as_run (373 bytes)</title></rect>
+<rect width="11.56" height="11.38" x="519.63" y="145.70" class="named"><title>0x00440f20 lara_as_run (373 bytes)</title></rect>
 <rect width="11.56" height="11.38" x="534.20" y="145.70" class="todo"><title>0x0044bfd0 draw_flare (373 bytes)</title></rect>
 <rect width="11.53" height="11.38" x="548.76" y="145.70" class="named"><title>0x0043de40 LaraDeflectEdgeJump (372 bytes)</title></rect>
 <rect width="11.41" height="11.38" x="563.29" y="145.70" class="todo"><title>0x0041ea60 CreatureCollision (368 bytes)</title></rect>

@@ -1209,6 +1209,76 @@ void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_STOP;
 }
 
+#define ROLL_A 146
+#define ROLL_F GF(ROLL_A, 2)
+#define LARA_LEAN_MAX ((10 * ONE_DEGREE) + LARA_LEAN_UNDO)
+
+extern int jump_ok;
+
+void lara_as_run(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0) {
+        item->goal_anim_state = AS_DEATH;
+        return;
+    }
+
+    if (input & IN_ROLL) {
+        item->anim_number = ROLL_A;
+        item->frame_number = ROLL_F;
+        item->current_anim_state = AS_ROLL;
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    if ((input & IN_DASH) && DashTimer == 120) {
+        item->goal_anim_state = AS_DASH;
+        return;
+    }
+
+    if ((input & IN_DUCK) && lara.water_status != LARA_WADE) {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    if (input & IN_LEFT) {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_FAST_TURN)
+            lara.turn_rate = -LARA_FAST_TURN;
+        item->pos.z_rot -= LARA_LEAN_RATE;
+        if (item->pos.z_rot < -LARA_LEAN_MAX)
+            item->pos.z_rot = -LARA_LEAN_MAX;
+    } else if (input & IN_RIGHT) {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_FAST_TURN)
+            lara.turn_rate = LARA_FAST_TURN;
+        item->pos.z_rot += LARA_LEAN_RATE;
+        if (item->pos.z_rot > LARA_LEAN_MAX)
+            item->pos.z_rot = LARA_LEAN_MAX;
+    }
+
+    if (item->anim_number == 6) {
+        jump_ok = 0;
+    } else if (item->anim_number == 0) {
+        if (item->frame_number == 4)
+            jump_ok = 1;
+    } else {
+        jump_ok = 1;
+    }
+
+    if ((input & IN_JUMP) && jump_ok && !item->gravity_status) {
+        item->goal_anim_state = AS_FORWARDJUMP;
+    } else if (input & IN_FORWARD) {
+        if (lara.water_status == LARA_WADE)
+            item->goal_anim_state = AS_WADE;
+        else if (input & IN_SLOW)
+            item->goal_anim_state = AS_WALK;
+        else
+            item->goal_anim_state = AS_RUN;
+    } else {
+        item->goal_anim_state = AS_STOP;
+    }
+}
+
 void lara_as_fastback(ITEM_INFO *item, COLL_INFO *coll)
 {
     item->goal_anim_state = AS_STOP;
@@ -1739,6 +1809,21 @@ void extra_as_rapidsdrown(ITEM_INFO *item, COLL_INFO *coll)
     if ((wibble & 3) == 0)
         TriggerWaterfallMist(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, GetRandomControl() & 4095);
 }
+
+#define STOP_LEFT_A 2
+#define STOP_LEFT_F GF(STOP_LEFT_A, 0)
+#define STOP_RIGHT_A 3
+#define STOP_RIGHT_F GF(STOP_RIGHT_A, 0)
+#define WALKSTEPD_LEFT_A 60
+#define WALKSTEPD_LEFT_F GF(WALKSTEPD_LEFT_A, 0)
+#define WALKSTEPD_RIGHT_A 59
+#define WALKSTEPD_RIGHT_F GF(WALKSTEPD_RIGHT_A, 0)
+#define WALKSTEPUP_LEFT_A 57
+#define WALKSTEPUP_LEFT_F GF(WALKSTEPUP_LEFT_A, 0)
+#define WALKSTEPUP_RIGHT_A 58
+#define WALKSTEPUP_RIGHT_F GF(WALKSTEPUP_RIGHT_A, 0)
+#define HITWALLRIGHT_A 54
+#define HITWALLRIGHT_F GF(HITWALLRIGHT_A, 0)
 
 void lara_col_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
