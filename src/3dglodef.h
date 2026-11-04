@@ -13,6 +13,8 @@ typedef sint16 PHD_ANGLE;
 
 #define W2V_SHIFT 14
 
+#define ABS(x) (((x) < 0) ? (-(x)) : (x))
+
 sint32 __fastcall phd_sin(sint32 angle);
 sint32 __fastcall phd_cos(sint32 angle);
 sint32 __fastcall phd_atan(sint32 x, sint32 y);

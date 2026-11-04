@@ -66,6 +66,30 @@ void InitialiseWindow(sint16 item_number)
         boxes[floor->box].overlap_index |= BLOCKED;
 }
 
+int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
+void SmashWindow(sint16 item_number);
+
+void WindowControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint32 speed;
+
+    item = &items[item_number];
+    if (item->flags & ONESHOT)
+        return;
+    if (lara.skidoo == NO_ITEM) {
+        if (!item->touch_bits)
+            return;
+        item->touch_bits = 0;
+        speed = lara_item->speed * phd_cos((sint16)(lara_item->pos.y_rot - item->pos.y_rot)) >> W2V_SHIFT;
+        if (ABS(speed) < 50)
+            return;
+    } else if (!ItemNearLara(&item->pos, WALL_L / 2)) {
+        return;
+    }
+    SmashWindow(item_number);
+}
+
 void ShutThatDoor(DOORPOS_DATA *d)
 {
     FLOOR_INFO *floor;

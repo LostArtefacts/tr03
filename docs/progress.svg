@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="146.29" height="12" x="0" y="0" class="named"><title>462 · 31.26%</title></rect>
-<rect width="321.71" height="12" x="146.29" y="0" class="todo"><title>1016 · 68.74%</title></rect>
+<rect width="146.61" height="12" x="0" y="0" class="named"><title>463 · 31.33%</title></rect>
+<rect width="321.39" height="12" x="146.61" y="0" class="todo"><title>1015 · 68.67%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">31.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">462</tspan> · <tspan class="todo">1016</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">463</tspan> · <tspan class="todo">1015</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="25.48" height="12" x="0" y="0" class="named"><title>36 KB · 5.44%</title></rect>
-<rect width="442.52" height="12" x="25.48" y="0" class="todo"><title>628 KB · 94.56%</title></rect>
+<rect width="25.59" height="12" x="0" y="0" class="named"><title>36 KB · 5.47%</title></rect>
+<rect width="442.41" height="12" x="25.59" y="0" class="todo"><title>628 KB · 94.53%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">5.4%</text>
+<text text-anchor="end" x="648" y="24.50">5.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">36 KB</tspan> · <tspan class="todo">628 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -895,7 +895,7 @@
 <rect width="12" height="12" x="450" y="240" class="todo"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="240" class="named"><title>0x00458b90 InitialiseWindow (131 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="240" class="todo"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="240" class="todo"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="240" class="named"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="240" class="named"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="240" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="240" class="todo"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
@@ -2334,7 +2334,7 @@
 <rect width="7.63" height="7.22" x="533.67" y="429.56" class="todo"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="439.78" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="7.40" height="7.35" x="544.30" y="243.97" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
-<rect width="7.40" height="7.35" x="554.70" y="243.97" class="todo"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
+<rect width="7.40" height="7.35" x="554.70" y="243.97" class="named"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
 <rect width="7.40" height="7.35" x="565.09" y="243.97" class="todo"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
 <rect width="7.40" height="7.35" x="575.49" y="243.97" class="todo"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
 <rect width="7.35" height="7.35" x="585.89" y="243.97" class="named"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
