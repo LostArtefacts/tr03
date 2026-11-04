@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="29.11" height="12" x="0" y="0" class="named"><title>213 · 14.41%</title></rect>
-<rect width="172.89" height="12" x="29.11" y="0" class="todo"><title>1265 · 85.59%</title></rect>
+<rect width="29.25" height="12" x="0" y="0" class="named"><title>214 · 14.48%</title></rect>
+<rect width="172.75" height="12" x="29.25" y="0" class="todo"><title>1264 · 85.52%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">14.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">213</tspan> · <tspan class="todo">1265</tspan></text>
+<text text-anchor="end" x="382" y="7.50">14.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">214</tspan> · <tspan class="todo">1264</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.99" height="12" x="0" y="0" class="named"><title>10 KB · 1.48%</title></rect>
-<rect width="199.01" height="12" x="2.99" y="0" class="todo"><title>654 KB · 98.52%</title></rect>
+<rect width="3" height="12" x="0" y="0" class="named"><title>10 KB · 1.48%</title></rect>
+<rect width="199" height="12" x="3" y="0" class="todo"><title>654 KB · 98.52%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -294,7 +294,7 @@
 <rect width="12" height="12" x="435" y="60" class="todo"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="60" class="todo"><title>0x00423710 StartDemo (386 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="60" class="todo"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="60" class="todo"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="60" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="todo"><title>0x004239a0 DiverControl (813 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="60" class="todo"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="60" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
@@ -2784,7 +2784,7 @@
 <rect width="3.87" height="4.19" x="675.07" y="354.23" class="todo"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
 <rect width="3.87" height="4.19" x="681.94" y="354.23" class="todo"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
 <rect width="3.87" height="4.19" x="688.82" y="354.23" class="todo"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
-<rect width="3.79" height="4.19" x="695.69" y="354.23" class="todo"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
+<rect width="3.79" height="4.19" x="695.69" y="354.23" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
 <rect width="3.79" height="4.19" x="702.48" y="354.23" class="named"><title>0x0042f4e0 AssaultPenalty4 (45 bytes)</title></rect>
 <rect width="3.79" height="4.19" x="709.27" y="354.23" class="named"><title>0x0042f510 AssaultPenalty30 (45 bytes)</title></rect>
 <rect width="3.79" height="4.19" x="716.06" y="354.23" class="todo"><title>0x00434360 FlashIt (45 bytes)</title></rect>
