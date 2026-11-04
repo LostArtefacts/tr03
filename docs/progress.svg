@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="170.04" height="12" x="0" y="0" class="named"><title>537 · 36.33%</title></rect>
-<rect width="297.96" height="12" x="170.04" y="0" class="todo"><title>941 · 63.67%</title></rect>
+<rect width="170.35" height="12" x="0" y="0" class="named"><title>538 · 36.40%</title></rect>
+<rect width="297.65" height="12" x="170.35" y="0" class="todo"><title>940 · 63.60%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">36.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">537</tspan> · <tspan class="todo">941</tspan></text>
+<text text-anchor="end" x="648" y="7.50">36.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">538</tspan> · <tspan class="todo">940</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="36.04" height="12" x="0" y="0" class="named"><title>51 KB · 7.70%</title></rect>
-<rect width="431.96" height="12" x="36.04" y="0" class="todo"><title>613 KB · 92.30%</title></rect>
+<rect width="36.21" height="12" x="0" y="0" class="named"><title>51 KB · 7.74%</title></rect>
+<rect width="431.79" height="12" x="36.21" y="0" class="todo"><title>613 KB · 92.26%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">7.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">51 KB</tspan> · <tspan class="todo">613 KB</tspan></text>
@@ -589,7 +589,7 @@
 <rect width="12" height="12" x="360" y="150" class="named"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="150" class="todo"><title>0x0043e800 LaraAboveWater (530 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="150" class="todo"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="150" class="todo"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="150" class="named"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="150" class="named"><title>0x0043eba0 lara_as_all4s (122 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="150" class="todo"><title>0x0043ec20 lara_col_all4s (728 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="150" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
@@ -2163,7 +2163,7 @@
 <rect width="9.03" height="9.58" x="486.98" y="325.79" class="todo"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
 <rect width="9.03" height="9.54" x="486.98" y="338.37" class="todo"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
 <rect width="9.03" height="9.50" x="486.98" y="350.91" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
-<rect width="9.03" height="9.46" x="486.98" y="363.42" class="todo"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
+<rect width="9.03" height="9.46" x="486.98" y="363.42" class="named"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
 <rect width="9.03" height="9.39" x="486.98" y="375.88" class="todo"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="9.03" height="9.35" x="486.98" y="388.27" class="todo"><title>0x0042dab0 TriggerBubble (239 bytes)</title></rect>
 <rect width="9.03" height="9.35" x="486.98" y="400.61" class="named"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>

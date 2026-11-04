@@ -133,6 +133,31 @@ int TestHangSwingIn(ITEM_INFO *item, PHD_ANGLE angle)
     return 0;
 }
 
+void lara_col_duck(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    coll->facing = lara.move_angle = item->pos.y_rot;
+    coll->radius = LARA_RAD * 2;
+    coll->bad_pos = STEPUP_HEIGHT;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_walls = 1;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_DUCK_HEIGHT);
+    if (LaraFallen(item, coll))
+    {
+        lara.gun_status = LG_ARMLESS;
+        return;
+    }
+    if (coll->mid_ceiling >= -(LARA_HITE - LARA_DUCK_HEIGHT))
+        lara.keep_ducked = 1;
+    else
+        lara.keep_ducked = 0;
+    ShiftItem(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+    if ((!(input & IN_DUCK) || lara.water_status == LARA_WADE) && !lara.keep_ducked && item->anim_number == 222)
+        item->goal_anim_state = AS_STOP;
+}
+
 void lara_as_all4s(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
