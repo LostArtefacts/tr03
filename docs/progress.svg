@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="195.05" height="12" x="0" y="0" class="named"><title>616 · 41.68%</title></rect>
-<rect width="272.95" height="12" x="195.05" y="0" class="todo"><title>862 · 58.32%</title></rect>
+<rect width="195.37" height="12" x="0" y="0" class="named"><title>617 · 41.75%</title></rect>
+<rect width="272.63" height="12" x="195.37" y="0" class="todo"><title>861 · 58.25%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">41.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">616</tspan> · <tspan class="todo">862</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">617</tspan> · <tspan class="todo">861</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="61.78" height="12" x="0" y="0" class="named"><title>88 KB · 13.20%</title></rect>
-<rect width="406.22" height="12" x="61.78" y="0" class="todo"><title>577 KB · 86.80%</title></rect>
+<rect width="61.97" height="12" x="0" y="0" class="named"><title>88 KB · 13.24%</title></rect>
+<rect width="406.03" height="12" x="61.97" y="0" class="todo"><title>577 KB · 86.76%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">88 KB</tspan> · <tspan class="todo">577 KB</tspan></text>
@@ -507,7 +507,7 @@
 <rect width="12" height="12" x="630" y="120" class="named"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="120" class="named"><title>0x00438380 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="120" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="120" class="todo"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="120" class="named"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="120" class="named"><title>0x00438530 Inv_GetItemOption (576 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="120" class="named"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="120" class="todo"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
@@ -2118,7 +2118,7 @@
 <rect width="9.61" height="10.05" x="588.04" y="173.86" class="todo"><title>0x004842f0 DisplayCredits (274 bytes)</title></rect>
 <rect width="9.54" height="10.05" x="600.65" y="173.86" class="todo"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
 <rect width="9.54" height="10.05" x="613.20" y="173.86" class="todo"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
-<rect width="9.54" height="10.05" x="625.74" y="173.86" class="todo"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
+<rect width="9.54" height="10.05" x="625.74" y="173.86" class="named"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="9.51" height="10.05" x="638.28" y="173.86" class="todo"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="9.47" height="10.05" x="650.79" y="173.86" class="todo"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
 <rect width="9.47" height="10.05" x="663.26" y="173.86" class="todo"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
