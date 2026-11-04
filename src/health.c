@@ -9,3 +9,12 @@ typedef struct {
 
 extern DISPLAYPU pickups[NUM_PU];
 extern TEXTSTRING *ammotext;
+
+void RemoveAmmoText(void)
+{
+    if (ammotext)
+    {
+        T_RemovePrint(ammotext);
+        ammotext = NULL;
+    }
+}
