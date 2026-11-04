@@ -520,7 +520,7 @@ address,size,name,symbol
 0x0043de00,50,GetLaraCollisionInfo,_GetLaraCollisionInfo
 0x0043de40,310,LaraDeflectEdgeJump,_LaraDeflectEdgeJump
 0x0043dfc0,227,LaraSlideEdgeJump,_LaraSlideEdgeJump
-0x0043e0b0,245,LaraTestHangOnClimbWall,_LaraTestHangOnClimbWall
+0x0043e0b0,264,LaraTestHangOnClimbWall,_LaraTestHangOnClimbWall
 0x0043e1c0,768,LaraHangTest,_LaraHangTest
 0x0043e4e0,586,LaraTestHangJump,_LaraTestHangJump
 0x0043e730,193,TestHangSwingIn,_TestHangSwingIn
