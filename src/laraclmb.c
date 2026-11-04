@@ -17,6 +17,16 @@ void lara_as_climbleft(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_CLIMBSTNC;
 }
 
+void lara_as_climbright(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_hit = 0;
+    coll->enable_baddie_push = 0;
+    camera.target_angle = CAM_A_CLIMBR;
+    camera.target_elevation = CAM_E_CLIMBR;
+    if (!(input & IN_RIGHT) && !(input & IN_STEPR))
+        item->goal_anim_state = AS_CLIMBSTNC;
+}
+
 void lara_as_climbing(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->enable_hit = 0;
