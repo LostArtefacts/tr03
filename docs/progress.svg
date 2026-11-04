@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="185.24" height="12" x="0" y="0" class="named"><title>585 · 39.58%</title></rect>
-<rect width="282.76" height="12" x="185.24" y="0" class="todo"><title>893 · 60.42%</title></rect>
+<rect width="185.55" height="12" x="0" y="0" class="named"><title>586 · 39.65%</title></rect>
+<rect width="282.45" height="12" x="185.55" y="0" class="todo"><title>892 · 60.35%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">39.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">585</tspan> · <tspan class="todo">893</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">586</tspan> · <tspan class="todo">892</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="54.64" height="12" x="0" y="0" class="named"><title>78 KB · 11.68%</title></rect>
-<rect width="413.36" height="12" x="54.64" y="0" class="todo"><title>587 KB · 88.32%</title></rect>
+<rect width="54.83" height="12" x="0" y="0" class="named"><title>78 KB · 11.72%</title></rect>
+<rect width="413.17" height="12" x="54.83" y="0" class="todo"><title>587 KB · 88.28%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">11.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">78 KB</tspan> · <tspan class="todo">587 KB</tspan></text>
@@ -365,7 +365,7 @@
 <rect width="12" height="12" x="0" y="90" class="named"><title>0x0042d3d0 UpdateBats (309 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="90" class="named"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="90" class="named"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="90" class="todo"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="90" class="named"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="90" class="todo"><title>0x0042d750 TriggerDartSmoke (564 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="90" class="named"><title>0x0042d990 KillAllCurrentItems (11 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="90" class="todo"><title>0x0042d9a0 KillEverything (269 bytes)</title></rect>
@@ -2125,7 +2125,7 @@
 <rect width="9.44" height="10.05" x="675.73" y="173.86" class="todo"><title>0x0042d9a0 KillEverything (269 bytes)</title></rect>
 <rect width="9.40" height="10.05" x="688.17" y="173.86" class="named"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>
 <rect width="9.40" height="10.05" x="700.57" y="173.86" class="todo"><title>0x00475800 setup_screen_size (268 bytes)</title></rect>
-<rect width="9.37" height="10.05" x="712.97" y="173.86" class="todo"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
+<rect width="9.37" height="10.05" x="712.97" y="173.86" class="named"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
 <rect width="9.33" height="10.05" x="725.34" y="173.86" class="todo"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
 <rect width="9.33" height="10.05" x="737.67" y="173.86" class="todo"><title>0x00437050 InitColours (266 bytes)</title></rect>
 <rect width="9.57" height="9.81" x="486.36" y="186.92" class="todo"><title>0x00459ce0 ControlElectricalLight (266 bytes)</title></rect>

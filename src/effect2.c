@@ -287,6 +287,40 @@ void TriggerBats(sint32 x, sint32 y, sint32 z, sint32 angle)
     }
 }
 
+void TriggerStaticFlame(sint32 x, sint32 y, sint32 z, sint32 size)
+{
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = sptr->dR = 192 + (GetRandomControl() & 63);
+    sptr->sG = sptr->dG = 128 + (GetRandomControl() & 63);
+    sptr->sB = sptr->dB = 64;
+    sptr->ColFadeSpeed = 1;
+    sptr->FadeToBlack = 0;
+    sptr->sLife = sptr->Life = 2;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 7) - 4);
+    sptr->y = y;
+    sptr->z = z + ((GetRandomControl() & 7) - 4);
+    sptr->Xvel = sptr->Yvel = sptr->Zvel = sptr->Friction = sptr->Gravity = sptr->MaxYvel = 0;
+    sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 2;
+    sptr->Width = sptr->sWidth = size;
+    sptr->dWidth = size;
+    sptr->Height = sptr->sHeight = size;
+    sptr->dHeight = size;
+}
+
 void KillAllCurrentItems(sint16 item_number)
 {
     KillEverythingFlag = 1;
