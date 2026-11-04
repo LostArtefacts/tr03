@@ -302,3 +302,62 @@ int EnableNonLotAI(sint16 item_number, int Always)
     }
     return 0;
 }
+
+void InitialiseNonLotAI(sint16 item_number, int slot)
+{
+    CREATURE_INFO *creature;
+    ITEM_INFO *item;
+    int i;
+
+    creature = &non_lot_slots[slot];
+    item = &items[item_number];
+    if (item_number == lara.item_number)
+        lara.creature = creature;
+    else
+        item->data = (void *)creature;
+
+    creature->item_num = item_number;
+    creature->mood = BORED_MOOD;
+    for (i = 0; i < 4; i++)
+        creature->joint_rotation[i] = 0;
+    creature->maximum_turn = ONE_DEGREE;
+    creature->flags = 0;
+    creature->enemy = NULL;
+    creature->alerted = 0;
+    creature->head_left = 0;
+    creature->head_right = 0;
+    creature->reached_goal = 0;
+    creature->hurt_by_lara = 0;
+    creature->patrol2 = 0;
+    creature->LOT.step = STEP_L;
+    creature->LOT.drop = -STEP_L * 2;
+    creature->LOT.block_mask = BLOCKED;
+    creature->LOT.fly = NO_FLYING;
+
+    switch (item->object_number) {
+    case 0:
+        creature->LOT.step = WALL_L * 20;
+        creature->LOT.drop = -WALL_L * 20;
+        creature->LOT.fly = STEP_L;
+        break;
+
+    case 25:
+    case 26:
+    case 27:
+    case 29:
+        creature->LOT.step = WALL_L * 20;
+        creature->LOT.drop = -WALL_L * 20;
+        creature->LOT.fly = STEP_L / 16;
+        if (item->object_number == 25)
+            creature->LOT.block_mask = BLOCKABLE;
+        break;
+
+    case 35:
+    case 60:
+        creature->LOT.step = WALL_L;
+        creature->LOT.drop = -WALL_L;
+        break;
+    }
+
+    nonlot_slots_used++;
+}
