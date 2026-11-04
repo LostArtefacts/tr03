@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="191.25" height="12" x="0" y="0" class="named"><title>604 · 40.87%</title></rect>
-<rect width="276.75" height="12" x="191.25" y="0" class="todo"><title>874 · 59.13%</title></rect>
+<rect width="191.57" height="12" x="0" y="0" class="named"><title>605 · 40.93%</title></rect>
+<rect width="276.43" height="12" x="191.57" y="0" class="todo"><title>873 · 59.07%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">40.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">604</tspan> · <tspan class="todo">874</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">605</tspan> · <tspan class="todo">873</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="59.04" height="12" x="0" y="0" class="named"><title>84 KB · 12.61%</title></rect>
-<rect width="408.96" height="12" x="59.04" y="0" class="todo"><title>581 KB · 87.39%</title></rect>
+<rect width="59.21" height="12" x="0" y="0" class="named"><title>84 KB · 12.65%</title></rect>
+<rect width="408.79" height="12" x="59.21" y="0" class="todo"><title>581 KB · 87.35%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">12.6%</text>
+<text text-anchor="end" x="648" y="24.50">12.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">84 KB</tspan> · <tspan class="todo">581 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -894,7 +894,7 @@
 <rect width="12" height="12" x="435" y="240" class="todo"><title>0x00458880 FinalLevelCounter (545 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="240" class="named"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="240" class="named"><title>0x00458b90 InitialiseWindow (131 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="240" class="todo"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="240" class="named"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="240" class="named"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="240" class="named"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="240" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
@@ -2149,7 +2149,7 @@
 <rect width="9.57" height="9.25" x="486.36" y="413.31" class="todo"><title>0x0048ece0 DXEnumDirectInput (251 bytes)</title></rect>
 <rect width="9.57" height="9.22" x="486.36" y="425.57" class="todo"><title>0x00413290 TestWaterHeight (250 bytes)</title></rect>
 <rect width="9.57" height="9.22" x="486.36" y="437.78" class="todo"><title>0x0044e670 LaraSurfaceCollision (250 bytes)</title></rect>
-<rect width="9.76" height="9.03" x="498.93" y="186.92" class="todo"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
+<rect width="9.76" height="9.03" x="498.93" y="186.92" class="named"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
 <rect width="9.76" height="9.03" x="511.69" y="186.92" class="todo"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
 <rect width="9.76" height="9.03" x="524.45" y="186.92" class="todo"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="9.72" height="9.03" x="537.21" y="186.92" class="todo"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>

@@ -90,6 +90,36 @@ void InitialiseWindow(sint16 item_number)
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
 void SmashWindow(sint16 item_number);
 
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+
+void SmashWindow(sint16 item_number)
+{
+    ROOM_INFO *r;
+    FLOOR_INFO *floor;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    r = &room[item->room_number];
+    floor = &r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size];
+    if (boxes[floor->box].overlap_index & 0x8000)
+        boxes[floor->box].overlap_index &= ~BLOCKED;
+
+    if (item->object_number == SMASH_WINDOW) {
+        SoundEffect(214, &item->pos, 0);
+    } else {
+        SoundEffect(105, &item->pos, 0);
+        SoundEffect(106, &item->pos, 0);
+    }
+
+    item->mesh_bits = 0x0fffe;
+    item->collidable = 0;
+    ExplodingDeath(item_number, 0x0fefe, 0);
+    item->flags |= ONESHOT;
+    if (item->status == ACTIVE)
+        RemoveActiveItem(item_number);
+    item->status = DEACTIVATED;
+}
+
 void WindowControl(sint16 item_number)
 {
     ITEM_INFO *item;
