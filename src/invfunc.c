@@ -28,6 +28,15 @@ void Inv_RingMotionRadius(RING_INFO *ring, sint16 target)
     imo->radius_rate = (target - ring->radius) / imo->count;
 }
 
+void Inv_RingMotionRotation(RING_INFO *ring, sint16 rotation, sint16 target)
+{
+    IMOTION_INFO *imo;
+
+    imo = ring->imo;
+    imo->rotate_rate = rotation / imo->count;
+    imo->rotate_target = target;
+}
+
 void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
 {
     if (txt)
