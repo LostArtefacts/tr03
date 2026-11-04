@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="30.75" height="12" x="0" y="0" class="named"><title>225 · 15.22%</title></rect>
-<rect width="171.25" height="12" x="30.75" y="0" class="todo"><title>1253 · 84.78%</title></rect>
+<rect width="30.89" height="12" x="0" y="0" class="named"><title>226 · 15.29%</title></rect>
+<rect width="171.11" height="12" x="30.89" y="0" class="todo"><title>1252 · 84.71%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">15.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">225</tspan> · <tspan class="todo">1253</tspan></text>
+<text text-anchor="end" x="382" y="7.50">15.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">226</tspan> · <tspan class="todo">1252</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.16" height="12" x="0" y="0" class="named"><title>10 KB · 1.56%</title></rect>
-<rect width="198.84" height="12" x="3.16" y="0" class="todo"><title>653 KB · 98.44%</title></rect>
+<rect width="3.17" height="12" x="0" y="0" class="named"><title>10 KB · 1.57%</title></rect>
+<rect width="198.83" height="12" x="3.17" y="0" class="todo"><title>653 KB · 98.43%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
@@ -805,7 +805,7 @@
 <rect width="12" height="12" x="600" y="210" class="todo"><title>0x0044e290 lara_as_surfleft (96 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="210" class="todo"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="210" class="todo"><title>0x0044e350 lara_as_surftread (185 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="210" class="todo"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="210" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="210" class="todo"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="210" class="todo"><title>0x0044e670 LaraSurfaceCollision (250 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="210" class="todo"><title>0x0044e770 LaraTestWaterStepOut (239 bytes)</title></rect>
@@ -2759,7 +2759,7 @@
 <rect width="4.10" height="4.31" x="647.26" y="384.32" class="todo"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="391.62" class="named"><title>0x00437870 RingActive (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="398.93" class="named"><title>0x0043de00 GetLaraCollisionInfo (50 bytes)</title></rect>
-<rect width="4.10" height="4.31" x="647.26" y="406.24" class="todo"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
+<rect width="4.10" height="4.31" x="647.26" y="406.24" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="413.55" class="todo"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="420.86" class="todo"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
 <rect width="4.10" height="4.31" x="647.26" y="428.16" class="todo"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>

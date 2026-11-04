@@ -10,6 +10,7 @@
 #define LARA_HITE 762
 #define LARA_DUCK_HEIGHT 400
 #define LARA_RAD 100
+#define STEPUP_HEIGHT ((STEP_L * 3) / 2)
 
 enum lara_gun_states {
     LG_ARMLESS,

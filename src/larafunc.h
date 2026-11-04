@@ -78,6 +78,7 @@ void lara_col_slideback(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_pushblock(ITEM_INFO *item, COLL_INFO *coll);
 void lara_default_col(ITEM_INFO *item, COLL_INFO *coll);
 void LaraSurfaceCollision(ITEM_INFO *item, COLL_INFO *coll);
+int LaraTestWaterClimbOut(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_surfback(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_surfleft(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_surfright(ITEM_INFO *item, COLL_INFO *coll);
