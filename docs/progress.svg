@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="174.47" height="12" x="0" y="0" class="named"><title>551 · 37.28%</title></rect>
-<rect width="293.53" height="12" x="174.47" y="0" class="todo"><title>927 · 62.72%</title></rect>
+<rect width="174.79" height="12" x="0" y="0" class="named"><title>552 · 37.35%</title></rect>
+<rect width="293.21" height="12" x="174.79" y="0" class="todo"><title>926 · 62.65%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">37.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">551</tspan> · <tspan class="todo">927</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">552</tspan> · <tspan class="todo">926</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="46.60" height="12" x="0" y="0" class="named"><title>66 KB · 9.96%</title></rect>
-<rect width="421.40" height="12" x="46.60" y="0" class="todo"><title>598 KB · 90.04%</title></rect>
+<rect width="46.77" height="12" x="0" y="0" class="named"><title>66 KB · 9.99%</title></rect>
+<rect width="421.23" height="12" x="46.77" y="0" class="todo"><title>598 KB · 90.01%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">10.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">66 KB</tspan> · <tspan class="todo">598 KB</tspan></text>
@@ -972,7 +972,7 @@
 <rect width="12" height="12" x="105" y="270" class="todo"><title>0x00461040 RaptorControl (1758 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="270" class="todo"><title>0x00461740 MouseControl (501 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="270" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="270" class="todo"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="270" class="named"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="270" class="todo"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="270" class="todo"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="270" class="todo"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
@@ -2164,7 +2164,7 @@
 <rect width="9.04" height="9.53" x="486.96" y="338.46" class="named"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
 <rect width="9.04" height="9.49" x="486.96" y="350.99" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="9.04" height="9.45" x="486.96" y="363.49" class="named"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
-<rect width="9.04" height="9.38" x="486.96" y="375.94" class="todo"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
+<rect width="9.04" height="9.38" x="486.96" y="375.94" class="named"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="9.04" height="9.34" x="486.96" y="388.32" class="todo"><title>0x0042dab0 TriggerBubble (239 bytes)</title></rect>
 <rect width="9.04" height="9.34" x="486.96" y="400.65" class="named"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
 <rect width="9.04" height="9.34" x="486.96" y="412.99" class="named"><title>0x004493e0 LaraDoClimbLeftRight (239 bytes)</title></rect>
