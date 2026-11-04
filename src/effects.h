@@ -4,6 +4,16 @@
 #include "items.h"
 
 void finish_level_effect(ITEM_INFO *item);
+void lara_normal_effect(ITEM_INFO *item);
+void ControlDingDong(sint16 item_number);
+void ControlLaraAlarm(sint16 item_number);
+void ControlBirdTweeter(sint16 item_number);
+void DoChimeSound(ITEM_INFO *item);
+void draw_right_gun(ITEM_INFO *item);
+void draw_left_gun(ITEM_INFO *item);
+void swap_meshes_with_meshswap1(ITEM_INFO *item);
+void swap_meshes_with_meshswap2(ITEM_INFO *item);
+void swap_meshes_with_meshswap3(ITEM_INFO *item);
 void turn180_effect(ITEM_INFO *item);
 void BoilerFX(ITEM_INFO *item);
 void RubbleFX(ITEM_INFO *item);

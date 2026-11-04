@@ -2,6 +2,7 @@
 #define COLLIDE_H
 
 #include "3dglodef.h"
+#include "items.h"
 
 #define COLL_NONE 0
 #define COLL_FRONT 1
@@ -52,6 +53,8 @@ typedef struct {
     uint16 enable_spaz:1;
     uint16 hit_ceiling:1;
 } COLL_INFO;
+
+void ShiftItem(ITEM_INFO *item, COLL_INFO *coll);
 
 void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, sint16 room_number, sint32 objheight);
 

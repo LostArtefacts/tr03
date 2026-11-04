@@ -4,6 +4,19 @@
 #include "types.h"
 
 #define LARA_FASTFALL_SPEED (FASTFALL_SPEED + 3)
+#define GF(a, b) (anims[a].frame_base + b)
+
+#define STOP_A 11
+#define STOP_F GF(STOP_A, 0)
+#define BREATH_A 103
+#define BREATH_F GF(BREATH_A, 0)
+
+#define LARA_TURN_UNDO (2 * ONE_DEGREE)
+#define LARA_TURN_RATE ((ONE_DEGREE / 4) + LARA_TURN_UNDO)
+#define LARA_JUMP_TURN ((ONE_DEGREE * 1) + LARA_TURN_UNDO)
+#define LARA_SLOW_TURN ((ONE_DEGREE * 2) + LARA_TURN_UNDO)
+#define LARA_MED_TURN ((ONE_DEGREE * 4) + LARA_TURN_UNDO)
+#define LARA_FAST_TURN ((ONE_DEGREE * 6) + LARA_TURN_UNDO)
 
 enum lara_meshes {
     HIPS,

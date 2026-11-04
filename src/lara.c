@@ -7,6 +7,8 @@
 #define STEPUP_HEIGHT ((STEP_L * 3) / 2)
 #define CAM_A_HANG 0
 #define CAM_E_HANG (-60 * ONE_DEGREE)
+#define BAD_JUMP_CEILING ((STEP_L * 3) / 4)
+#define NO_BAD_POS (-NO_HEIGHT)
 
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
 {

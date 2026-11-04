@@ -71,6 +71,10 @@ typedef struct savegame_info {
 
 extern SAVEGAME_INFO savegame;
 
+void ResetSG(void);
+void WriteSG(void *pointer, int size);
+void ReadSG(void *pointer, int size);
+
 sint32 AddAssaultTime(uint32 time);
 sint32 AddQuadbikeTime(uint32 time);
 

@@ -12,7 +12,12 @@ enum object_types {
     ROCKET_GUN,
     GRENADE_GUN,
     HARPOON_GUN,
-    FLARE
+    FLARE,
+    MESHSWAP1 = 122,
+    MESHSWAP2,
+    MESHSWAP3,
+    BIRD_TWEETER = 289,
+    CLOCK_CHIMES
 };
 
 #endif

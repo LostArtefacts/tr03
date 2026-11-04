@@ -69,7 +69,10 @@ typedef struct item_info {
 
 extern ITEM_INFO *items;
 
+void RemoveActiveItem(sint16 item_num);
+
 #define NO_ITEM -1
+#define NUM_EFFECTS 50
 
 typedef struct fx_info {
     PHD_3DPOS pos;
@@ -85,5 +88,11 @@ typedef struct fx_info {
     sint16 flag1;
     sint16 flag2;
 } FX_INFO;
+
+extern FX_INFO *effects;
+extern sint16 next_fx_active;
+extern sint16 next_fx_free;
+
+void InitialiseFXArray(void);
 
 #endif

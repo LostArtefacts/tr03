@@ -1,5 +1,23 @@
 #include "game.h"
 
+#define FLIPFLAG 64
+#define UNFLIPFLAG 128
+
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint32 mesh_num;
+} BITE_INFO;
+
+extern OBJECT_VECTOR *sound_effects;
+extern sint32 number_sound_effects;
+extern void (*effect_routines[])(ITEM_INFO *item);
+
+void SOUND_EndScene(void);
+void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *pos, int joint);
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;

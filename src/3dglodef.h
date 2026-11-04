@@ -11,6 +11,12 @@ typedef struct phd_vector {
 
 typedef sint16 PHD_ANGLE;
 
+#define phd_PopMatrix() phd_mxptr -= 12
+
+extern sint32 *phd_mxptr;
+
+void AlterFOV(sint16 fov);
+
 typedef struct phd_3dpos {
     sint32 x_pos;
     sint32 y_pos;

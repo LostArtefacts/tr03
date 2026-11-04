@@ -31,7 +31,10 @@ extern int assault_target_penalties, assault_targets;
 extern int QuadbikeLapTime, QuadbikeLapTimeDisplayTimer;
 extern char ExerciseNumber;
 
+extern int flip_status;
+
 void FlipMap(void);
+sint16 *GetBoundsAccurate(ITEM_INFO *item);
 void InitialiseHair(void);
 void ResetTargets(void);
 

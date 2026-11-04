@@ -6,5 +6,6 @@
 #define WALL_L 1024
 #define NO_HEIGHT (-0x7f00)
 #define STEP_L (WALL_L / 4)
+#define WALL_SHIFT 10
 
 #endif

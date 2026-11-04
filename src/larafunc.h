@@ -4,6 +4,28 @@
 #include "items.h"
 #include "collide.h"
 
+int TestLaraSlide(ITEM_INFO *item, COLL_INFO *coll);
+void LookUpDown(void);
+void MonkeySwingFall(ITEM_INFO *item);
+void LaraDeflectEdgeJump(ITEM_INFO *item, COLL_INFO *coll);
+int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_all4s(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_all4turnl(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_all4turnr(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_hang2(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_monkeyl(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_monkeyr(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_fastback(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_hang(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_stepright(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_stepleft(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_fastdive(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_death(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_splat(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_swandive(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_fastdive(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_pickupflare(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll);
 void lara_slide_slope(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_monkeyswing(ITEM_INFO *item, COLL_INFO *coll);
 void lara_col_stop(ITEM_INFO *item, COLL_INFO *coll);
