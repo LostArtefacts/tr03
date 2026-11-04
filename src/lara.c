@@ -7,6 +7,11 @@
 #define STEPUP_HEIGHT ((STEP_L * 3) / 2)
 #define CAM_A_HANG 0
 #define CAM_E_HANG (-60 * ONE_DEGREE)
+sint16 TestMonkeyLeft(ITEM_INFO *item, COLL_INFO *coll);
+sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
+
+#define MONKEYHANG_A 234
+#define MONKEYHANG_F GF(MONKEYHANG_A, 0)
 #define BAD_JUMP_CEILING ((STEP_L * 3) / 4)
 #define NO_BAD_POS (-NO_HEIGHT)
 
@@ -165,6 +170,24 @@ void lara_as_monkeyl(ITEM_INFO *item, COLL_INFO *coll)
     else
         item->goal_anim_state = AS_HANG2;
     camera.target_elevation = 10 * ONE_DEGREE;
+}
+
+void lara_col_monkeyl(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (!(input & IN_ACTION) || !lara.CanMonkeySwing)
+    {
+        MonkeySwingFall(item);
+        return;
+    }
+    if (!TestMonkeyLeft(item, coll))
+    {
+        item->current_anim_state = AS_HANG2;
+        item->goal_anim_state = AS_HANG2;
+        item->anim_number = MONKEYHANG_A;
+        item->frame_number = MONKEYHANG_F;
+    }
+    else
+        MonkeySwingSnap(item, coll);
 }
 
 void lara_as_monkeyr(ITEM_INFO *item, COLL_INFO *coll)
