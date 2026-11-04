@@ -3,6 +3,36 @@
 
 extern sint16 rcossin_tbl[];
 
+extern uint32 CurrentLevel;
+extern sint32 wibble;
+
+void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 b, sint32 angle, sint16 room_no);
+
+void ControlStrobeLight(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint32 angle, sin, cos;
+
+    item = &items[item_number];
+    if (TriggerActive(item)) {
+        if (CurrentLevel == 15 && !item->really_active)
+            return;
+        item->pos.y_rot += ONE_DEGREE << 4;
+        angle = ((item->pos.y_rot + 0x5800) >> 4) & 4095;
+        TriggerAlertLight(item->pos.x_pos, item->pos.y_pos - 512, item->pos.z_pos, 31, 8, 0, angle, item->room_number);
+        sin = ((sint16)rcossin_tbl[angle << 1]) >> 4;
+        cos = ((sint16)rcossin_tbl[(angle << 1) + 1]) >> 4;
+        TriggerDynamic(item->pos.x_pos + sin, item->pos.y_pos - 768, item->pos.z_pos + cos, 6, 31, 12, 0);
+        if ((wibble & 127) == 0)
+            SoundEffect(208, &item->pos, 0);
+        item->item_flags[0]++;
+        if (item->item_flags[0] > 1800) {
+            item->really_active = 0;
+            item->item_flags[0] = 0;
+        }
+    }
+}
+
 void ControlPulseLight(sint16 item_number)
 {
     ITEM_INFO *item;

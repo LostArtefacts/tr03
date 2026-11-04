@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="170.67" height="12" x="0" y="0" class="named"><title>539 · 36.47%</title></rect>
-<rect width="297.33" height="12" x="170.67" y="0" class="todo"><title>939 · 63.53%</title></rect>
+<rect width="170.99" height="12" x="0" y="0" class="named"><title>540 · 36.54%</title></rect>
+<rect width="297.01" height="12" x="170.99" y="0" class="todo"><title>938 · 63.46%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">36.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">539</tspan> · <tspan class="todo">939</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">540</tspan> · <tspan class="todo">938</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="36.38" height="12" x="0" y="0" class="named"><title>52 KB · 7.77%</title></rect>
-<rect width="431.62" height="12" x="36.38" y="0" class="todo"><title>613 KB · 92.23%</title></rect>
+<rect width="36.55" height="12" x="0" y="0" class="named"><title>52 KB · 7.81%</title></rect>
+<rect width="431.45" height="12" x="36.55" y="0" class="todo"><title>612 KB · 92.19%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">7.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">52 KB</tspan> · <tspan class="todo">613 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">52 KB</tspan> · <tspan class="todo">612 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -919,7 +919,7 @@
 <rect width="12" height="12" x="60" y="255" class="named"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="255" class="named"><title>0x00459a50 DetonatorControl (113 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="255" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="255" class="todo"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="255" class="named"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="255" class="named"><title>0x00459c00 ControlPulseLight (132 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="255" class="named"><title>0x00459c90 ControlOnOffLight (65 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="255" class="todo"><title>0x00459ce0 ControlElectricalLight (266 bytes)</title></rect>
@@ -2161,7 +2161,7 @@
 <rect width="9.03" height="9.58" x="486.98" y="300.63" class="todo"><title>0x0043e0b0 LaraTestHangOnClimbWall (245 bytes)</title></rect>
 <rect width="9.03" height="9.58" x="486.98" y="313.21" class="named"><title>0x0043f330 lara_col_crawlb (245 bytes)</title></rect>
 <rect width="9.03" height="9.58" x="486.98" y="325.79" class="todo"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
-<rect width="9.03" height="9.54" x="486.98" y="338.37" class="todo"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
+<rect width="9.03" height="9.54" x="486.98" y="338.37" class="named"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
 <rect width="9.03" height="9.50" x="486.98" y="350.91" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="9.03" height="9.46" x="486.98" y="363.42" class="named"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
 <rect width="9.03" height="9.39" x="486.98" y="375.88" class="todo"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
