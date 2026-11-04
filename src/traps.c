@@ -136,6 +136,54 @@ void SpikeControl(sint16 item_number)
     }
 }
 
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+
+#define SPIKE_DEATH_A 149
+#define SPIKE_DEATH_F GF(SPIKE_DEATH_A, 0)
+
+void SpikeCollision(sint16 item_num, ITEM_INFO *litem, COLL_INFO *coll)
+{
+    int x, y, z, num;
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (litem->hit_points < 0)
+        return;
+    if (!TestBoundsCollide(item, litem, coll->radius))
+        return;
+    if (!TestCollision(item, litem))
+        return;
+
+    num = GetRandomControl() / 24576;
+    if (litem->gravity_status) {
+        if (litem->fallspeed > 6) {
+            litem->hit_points = -1;
+            num = 20;
+        }
+    } else if (litem->speed < 30) {
+        return;
+    }
+
+    litem->hit_points -= 15;
+    for (; num > 0; num--) {
+        x = litem->pos.x_pos + (GetRandomControl() - 16384) / 256;
+        z = litem->pos.z_pos + (GetRandomControl() - 16384) / 256;
+        y = litem->pos.y_pos - GetRandomControl() / 64;
+        DoBloodSplat(x, y, z, 20, (sint16)GetRandomControl(), item->room_number);
+    }
+
+    if (litem->hit_points <= 0) {
+        litem->anim_number = SPIKE_DEATH_A;
+        litem->frame_number = SPIKE_DEATH_F;
+        litem->current_anim_state = AS_DEATH;
+        litem->goal_anim_state = AS_DEATH;
+        litem->pos.y_pos = item->pos.y_pos;
+        litem->gravity_status = 0;
+    }
+}
+
 void TrapDoorControl(sint16 item_number)
 {
     ITEM_INFO *item;
@@ -203,6 +251,12 @@ int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z)
         return 1;
     return 0;
 }
+
+#define TRAP_WORKING 2
+#define TRAP_FINISHED 3
+
+void TriggerPendulumFlame(sint16 item_number);
+void LaraBurn(void);
 
 void FallingBlockFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {

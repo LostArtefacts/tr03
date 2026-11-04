@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="188.40" height="12" x="0" y="0" class="named"><title>595 · 40.26%</title></rect>
-<rect width="279.60" height="12" x="188.40" y="0" class="todo"><title>883 · 59.74%</title></rect>
+<rect width="188.72" height="12" x="0" y="0" class="named"><title>596 · 40.32%</title></rect>
+<rect width="279.28" height="12" x="188.72" y="0" class="todo"><title>882 · 59.68%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">40.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">595</tspan> · <tspan class="todo">883</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">596</tspan> · <tspan class="todo">882</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="56.79" height="12" x="0" y="0" class="named"><title>81 KB · 12.13%</title></rect>
-<rect width="411.21" height="12" x="56.79" y="0" class="todo"><title>584 KB · 87.87%</title></rect>
+<rect width="57.03" height="12" x="0" y="0" class="named"><title>81 KB · 12.19%</title></rect>
+<rect width="410.97" height="12" x="57.03" y="0" class="todo"><title>584 KB · 87.81%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">12.1%</text>
+<text text-anchor="end" x="648" y="24.50">12.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">81 KB</tspan> · <tspan class="todo">584 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1071,7 +1071,7 @@
 <rect width="12" height="12" x="90" y="300" class="todo"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="300" class="todo"><title>0x0046e0e0 RollingBallCollision (601 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="300" class="named"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="300" class="todo"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="300" class="named"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="300" class="named"><title>0x0046e530 TrapDoorControl (83 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="300" class="named"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="300" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
@@ -2038,7 +2038,7 @@
 <rect width="10.81" height="11.49" x="446.28" y="306.58" class="todo"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
 <rect width="10.81" height="11.49" x="446.28" y="321.07" class="todo"><title>0x004b446f Func4b446f (352 bytes)</title></rect>
 <rect width="10.81" height="11.43" x="446.28" y="335.56" class="todo"><title>0x0041d0b0 TriggerElectricSparks_cleaner (350 bytes)</title></rect>
-<rect width="10.81" height="11.43" x="446.28" y="349.99" class="todo"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
+<rect width="10.81" height="11.43" x="446.28" y="349.99" class="named"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
 <rect width="10.81" height="11.39" x="446.28" y="364.42" class="todo"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="10.81" height="11.36" x="446.28" y="378.81" class="todo"><title>0x0044ee60 LaraSwimCollision (348 bytes)</title></rect>
 <rect width="10.81" height="11.30" x="446.28" y="393.17" class="todo"><title>0x00495490 Func495490 (346 bytes)</title></rect>
