@@ -44,11 +44,11 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="26.38" height="12" x="130" y="1.50" class="named"/>
-<rect width="175.62" height="12" x="156.38" y="1.50" class="todo"/>
+<rect width="26.51" height="12" x="130" y="1.50" class="named"/>
+<rect width="175.49" height="12" x="156.51" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">13.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">193/1478</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">194/1478</text>
 <rect width="2.79" height="12" x="130" y="18.50" class="named"/>
 <rect width="199.21" height="12" x="132.79" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
@@ -57,10 +57,10 @@
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">13.06% (193)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.94% (1285)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">13.13% (194)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">86.87% (1284)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="97.54" height="6" x="0" y="0" class="named"/>
-<rect width="649.46" height="6" x="97.54" y="0" class="todo"/>
+<rect width="98.05" height="6" x="0" y="0" class="named"/>
+<rect width="648.95" height="6" x="98.05" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1250,7 +1250,7 @@
 <rect width="12" height="12" x="510" y="345" class="named"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="345" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="345" class="named"><title>0x00484220 GetRandomDraw (30 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="345" class="todo"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="345" class="named"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="345" class="todo"><title>0x00484250 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="345" class="todo"><title>0x004842a0 GetSavedGamesList (76 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="345" class="todo"><title>0x004842f0 DisplayCredits (274 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.38%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.62%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.30" height="6" x="0" y="0" class="named"/>
-<rect width="736.70" height="6" x="10.30" y="0" class="todo"/>
+<rect width="10.31" height="6" x="0" y="0" class="named"/>
+<rect width="736.69" height="6" x="10.31" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -3012,7 +3012,7 @@
 <rect width="0.10" height="0.10" x="746.06" y="443.12" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="748.03" y="443.12" class="named"><title>0x00441330 lara_as_splat (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="742.13" y="445.72" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="742.13" y="448.14" class="todo"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="742.13" y="448.14" class="named"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="742.13" y="450.57" class="todo"><title>0x0048d200 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="744.24" y="445.72" class="todo"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="746.64" y="445.72" class="named"><title>0x0040fe90 InitialiseArea51Struts (8 bytes)</title></rect>
