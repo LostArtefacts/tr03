@@ -51,3 +51,18 @@ void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required)
     else if (creature->joint_rotation[joint] < -JOINT_ARC)
         creature->joint_rotation[joint] = -JOINT_ARC;
 }
+
+void CreatureUnderwater(ITEM_INFO *item, sint32 depth)
+{
+    sint32 water_level;
+
+    water_level = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    if (item->pos.y_pos < water_level + depth)
+    {
+        item->pos.y_pos = water_level + depth;
+        if (item->pos.x_rot > 2 * ONE_DEGREE)
+            item->pos.x_rot -= 2 * ONE_DEGREE;
+        else if (item->pos.x_rot > 0)
+            item->pos.x_rot = 0;
+    }
+}
