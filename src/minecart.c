@@ -14,6 +14,25 @@ typedef struct {
     char StopDelay;
 } CARTINFO;
 
+sint16 GetCollision(ITEM_INFO *v, sint16 ang, sint32 dist, sint16 *ceiling)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, height, cheight;
+
+    x = v->pos.x_pos + ((phd_sin(ang) * dist) >> W2V_SHIFT);
+    y = v->pos.y_pos - LARA_HITE;
+    z = v->pos.z_pos + ((phd_cos(ang) * dist) >> W2V_SHIFT);
+    room_number = v->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    height = GetHeight(floor, x, y, z);
+    cheight = GetCeiling(floor, x, y, z);
+    *ceiling = (sint16)cheight;
+    if (height != NO_HEIGHT)
+        height -= v->pos.y_pos;
+    return (sint16)height;
+}
+
 void MineCartInitialise(sint16 item_number)
 {
     ITEM_INFO *v;

@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="145.34" height="12" x="0" y="0" class="named"><title>459 · 31.06%</title></rect>
-<rect width="322.66" height="12" x="145.34" y="0" class="todo"><title>1019 · 68.94%</title></rect>
+<rect width="145.66" height="12" x="0" y="0" class="named"><title>460 · 31.12%</title></rect>
+<rect width="322.34" height="12" x="145.66" y="0" class="todo"><title>1018 · 68.88%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">31.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">459</tspan> · <tspan class="todo">1019</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">460</tspan> · <tspan class="todo">1018</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="25.16" height="12" x="0" y="0" class="named"><title>36 KB · 5.38%</title></rect>
-<rect width="442.84" height="12" x="25.16" y="0" class="todo"><title>628 KB · 94.62%</title></rect>
+<rect width="25.27" height="12" x="0" y="0" class="named"><title>36 KB · 5.40%</title></rect>
+<rect width="442.73" height="12" x="25.27" y="0" class="todo"><title>628 KB · 94.60%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">36 KB</tspan> · <tspan class="todo">628 KB</tspan></text>
@@ -858,7 +858,7 @@
 <rect width="12" height="12" x="645" y="225" class="named"><title>0x00453560 ClearLOT (75 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="todo"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="225" class="todo"><title>0x00453740 InitialiseNonLotAI (248 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="225" class="todo"><title>0x00453890 GetCollision (152 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="225" class="named"><title>0x00453890 GetCollision (152 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="225" class="todo"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="todo"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
@@ -2340,7 +2340,7 @@
 <rect width="7.35" height="7.35" x="585.89" y="243.97" class="todo"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
 <rect width="7.35" height="7.35" x="596.24" y="243.97" class="named"><title>0x00440400 lara_col_hangturnlr (153 bytes)</title></rect>
 <rect width="7.35" height="7.35" x="606.59" y="243.97" class="named"><title>0x00441c00 lara_as_deathslide (153 bytes)</title></rect>
-<rect width="7.30" height="7.35" x="616.94" y="243.97" class="todo"><title>0x00453890 GetCollision (152 bytes)</title></rect>
+<rect width="7.30" height="7.35" x="616.94" y="243.97" class="named"><title>0x00453890 GetCollision (152 bytes)</title></rect>
 <rect width="7.30" height="7.35" x="627.24" y="243.97" class="named"><title>0x0046db30 BladeControl (152 bytes)</title></rect>
 <rect width="7.30" height="7.35" x="637.54" y="243.97" class="todo"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
 <rect width="7.25" height="7.35" x="647.85" y="243.97" class="named"><title>0x00442e60 lara_col_roll (151 bytes)</title></rect>
