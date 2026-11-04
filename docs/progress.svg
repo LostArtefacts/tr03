@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="167.50" height="12" x="0" y="0" class="named"><title>529 · 35.79%</title></rect>
-<rect width="300.50" height="12" x="167.50" y="0" class="todo"><title>949 · 64.21%</title></rect>
+<rect width="167.82" height="12" x="0" y="0" class="named"><title>530 · 35.86%</title></rect>
+<rect width="300.18" height="12" x="167.82" y="0" class="todo"><title>948 · 64.14%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">35.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">529</tspan> · <tspan class="todo">949</tspan></text>
+<text text-anchor="end" x="648" y="7.50">35.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">530</tspan> · <tspan class="todo">948</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="34.71" height="12" x="0" y="0" class="named"><title>49 KB · 7.42%</title></rect>
-<rect width="433.29" height="12" x="34.71" y="0" class="todo"><title>615 KB · 92.58%</title></rect>
+<rect width="34.87" height="12" x="0" y="0" class="named"><title>49 KB · 7.45%</title></rect>
+<rect width="433.13" height="12" x="34.87" y="0" class="todo"><title>615 KB · 92.55%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">7.4%</text>
+<text text-anchor="end" x="648" y="24.50">7.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">49 KB</tspan> · <tspan class="todo">615 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1025,7 +1025,7 @@
 <rect width="12" height="12" x="150" y="285" class="todo"><title>0x0046a960 TargetControl (649 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="285" class="named"><title>0x0046ac00 ResetTargets (98 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="285" class="named"><title>0x0046ac70 T_InitPrint (44 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="285" class="todo"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="285" class="named"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="285" class="named"><title>0x0046ad90 T_ChangeText (55 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="285" class="named"><title>0x0046add0 T_FlashText (43 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="285" class="todo"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
@@ -2187,7 +2187,7 @@
 <rect width="9.15" height="8.87" x="499.01" y="367.82" class="todo"><title>0x00417210 AdjustStopperFlag (230 bytes)</title></rect>
 <rect width="9.15" height="8.76" x="499.01" y="379.70" class="named"><title>0x0043dfc0 LaraSlideEdgeJump (227 bytes)</title></rect>
 <rect width="9.15" height="8.72" x="499.01" y="391.45" class="todo"><title>0x00413f00 BoatSplash (226 bytes)</title></rect>
-<rect width="9.15" height="8.72" x="499.01" y="403.17" class="todo"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
+<rect width="9.15" height="8.72" x="499.01" y="403.17" class="named"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
 <rect width="9.15" height="8.72" x="499.01" y="414.89" class="named"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
 <rect width="9.15" height="8.72" x="499.01" y="426.60" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="9.15" height="8.68" x="499.01" y="438.32" class="todo"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
