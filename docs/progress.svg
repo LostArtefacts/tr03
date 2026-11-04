@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="124.76" height="12" x="0" y="0" class="named"><title>394 · 26.66%</title></rect>
-<rect width="343.24" height="12" x="124.76" y="0" class="todo"><title>1084 · 73.34%</title></rect>
+<rect width="125.07" height="12" x="0" y="0" class="named"><title>395 · 26.73%</title></rect>
+<rect width="342.93" height="12" x="125.07" y="0" class="todo"><title>1083 · 73.27%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">26.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">394</tspan> · <tspan class="todo">1084</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">395</tspan> · <tspan class="todo">1083</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="18.13" height="12" x="0" y="0" class="named"><title>26 KB · 3.87%</title></rect>
-<rect width="449.87" height="12" x="18.13" y="0" class="todo"><title>638 KB · 96.13%</title></rect>
+<rect width="18.22" height="12" x="0" y="0" class="named"><title>26 KB · 3.89%</title></rect>
+<rect width="449.78" height="12" x="18.22" y="0" class="todo"><title>638 KB · 96.11%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">26 KB</tspan> · <tspan class="todo">638 KB</tspan></text>
@@ -206,7 +206,7 @@
 <rect width="12" height="12" x="615" y="30" class="todo"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="30" class="todo"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="30" class="named"><title>0x004169c0 AlertAllGuards (97 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="30" class="todo"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="30" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="30" class="todo"><title>0x00416ac0 AIGuard (149 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="30" class="todo"><title>0x00416b60 GetAITarget (1451 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="30" class="todo"><title>0x00417110 SameZone (245 bytes)</title></rect>
@@ -2384,7 +2384,7 @@
 <rect width="7.12" height="6.79" x="554.49" y="333.97" class="todo"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
 <rect width="7.12" height="6.74" x="554.49" y="343.76" class="todo"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
 <rect width="7.12" height="6.74" x="554.49" y="353.51" class="todo"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
-<rect width="7.12" height="6.69" x="554.49" y="363.25" class="todo"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
+<rect width="7.12" height="6.69" x="554.49" y="363.25" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
 <rect width="7.12" height="6.69" x="554.49" y="372.94" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
 <rect width="7.12" height="6.64" x="554.49" y="382.64" class="named"><title>0x00442d00 lara_col_fallback (134 bytes)</title></rect>
 <rect width="7.12" height="6.64" x="554.49" y="392.28" class="named"><title>0x00444770 LookLeftRight (134 bytes)</title></rect>

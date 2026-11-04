@@ -3,6 +3,7 @@
 #define MAX_TILT (ONE_DEGREE * 3)
 #define MAX_JOINT_CHANGE (ONE_DEGREE * 5)
 #define JOINT_ARC 0x3000
+#define GUNFIRE_ALERT_RADIUS 8000
 
 int SearchLOT(LOT_INFO *LOT, int expansion);
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
@@ -125,6 +126,33 @@ void AlertAllGuards(sint16 item_number)
             continue;
         target = &items[cinfo->item_num];
         if (obj_number == target->object_number && target->status == ACTIVE)
+            cinfo->alerted = 1;
+    }
+}
+
+void AlertNearbyGuards(ITEM_INFO *item)
+{
+    int slot;
+    CREATURE_INFO *cinfo;
+    ITEM_INFO *target;
+    sint32 x, y, z, distance;
+
+    cinfo = baddie_slots;
+    for (slot = 0; slot < NUM_SLOTS; slot++, cinfo++)
+    {
+        if (cinfo->item_num == NO_ITEM)
+            continue;
+        target = &items[cinfo->item_num];
+        if (target->room_number == item->room_number)
+        {
+            cinfo->alerted = 1;
+            continue;
+        }
+        x = (target->pos.x_pos - item->pos.x_pos) >> 6;
+        y = (target->pos.y_pos - item->pos.y_pos) >> 6;
+        z = (target->pos.z_pos - item->pos.z_pos) >> 6;
+        distance = x * x + y * y + z * z;
+        if (distance < GUNFIRE_ALERT_RADIUS)
             cinfo->alerted = 1;
     }
 }
