@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="179.22" height="12" x="0" y="0" class="named"><title>566 · 38.29%</title></rect>
-<rect width="288.78" height="12" x="179.22" y="0" class="todo"><title>912 · 61.71%</title></rect>
+<rect width="179.54" height="12" x="0" y="0" class="named"><title>567 · 38.36%</title></rect>
+<rect width="288.46" height="12" x="179.54" y="0" class="todo"><title>911 · 61.64%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">38.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">566</tspan> · <tspan class="todo">912</tspan></text>
+<text text-anchor="end" x="648" y="7.50">38.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">567</tspan> · <tspan class="todo">911</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="49.45" height="12" x="0" y="0" class="named"><title>70 KB · 10.57%</title></rect>
-<rect width="418.55" height="12" x="49.45" y="0" class="todo"><title>594 KB · 89.43%</title></rect>
+<rect width="49.67" height="12" x="0" y="0" class="named"><title>71 KB · 10.61%</title></rect>
+<rect width="418.33" height="12" x="49.67" y="0" class="todo"><title>594 KB · 89.39%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">10.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">70 KB</tspan> · <tspan class="todo">594 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">71 KB</tspan> · <tspan class="todo">594 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -688,7 +688,7 @@
 <rect width="12" height="12" x="345" y="180" class="named"><title>0x004428e0 lara_col_splat (108 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="180" class="named"><title>0x00442950 lara_col_land (19 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="180" class="named"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="180" class="todo"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="180" class="named"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="named"><title>0x00442b50 lara_col_stepright (212 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="180" class="named"><title>0x00442c30 lara_col_stepleft (19 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="180" class="named"><title>0x00442c50 lara_col_slide (30 bytes)</title></rect>
@@ -2068,7 +2068,7 @@
 <rect width="10.49" height="10.74" x="736.51" y="160.07" class="todo"><title>0x00483960 StartGame (319 bytes)</title></rect>
 <rect width="10.15" height="11.05" x="460.14" y="173.81" class="todo"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="10.15" height="11.05" x="460.14" y="187.87" class="todo"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>
-<rect width="10.15" height="11.02" x="460.14" y="201.92" class="todo"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
+<rect width="10.15" height="11.02" x="460.14" y="201.92" class="named"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
 <rect width="10.15" height="11.02" x="460.14" y="215.94" class="todo"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="10.15" height="10.99" x="460.14" y="229.96" class="named"><title>0x00417300 InitialiseCamera (316 bytes)</title></rect>
 <rect width="10.15" height="10.92" x="460.14" y="243.95" class="todo"><title>0x004b4335 Func4b4335 (314 bytes)</title></rect>

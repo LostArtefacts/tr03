@@ -1949,6 +1949,48 @@ void lara_col_compress(ITEM_INFO *item, COLL_INFO *coll)
 #define BACKSTEPD_RIGHT_A 62
 #define BACKSTEPD_RIGHT_F GF(BACKSTEPD_RIGHT_A, 0)
 
+void lara_col_back(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot - 32768;
+    if (lara.water_status == LARA_WADE)
+        coll->bad_pos = NO_BAD_POS;
+    else
+        coll->bad_pos = STEPUP_HEIGHT;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_pits = 1;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+
+    if (LaraHitCeiling(item, coll))
+        return;
+
+    if (LaraDeflectEdge(item, coll))
+        LaraCollideStop(item, coll);
+
+    if (LaraFallen(item, coll))
+        return;
+
+    if (coll->mid_floor > STEP_L / 2 && coll->mid_floor < (STEP_L * 3) / 2) {
+        if (item->frame_number >= 964 && item->frame_number <= 993) {
+            item->anim_number = BACKSTEPD_RIGHT_A;
+            item->frame_number = BACKSTEPD_RIGHT_F;
+        } else {
+            item->anim_number = BACKSTEPD_LEFT_A;
+            item->frame_number = BACKSTEPD_LEFT_F;
+        }
+    }
+
+    if (TestLaraSlide(item, coll))
+        return;
+
+    if (!(room[item->room_number].flags & SWAMP) || coll->mid_floor < 0)
+        item->pos.y_pos += coll->mid_floor;
+    else if ((room[item->room_number].flags & SWAMP) && coll->mid_floor)
+        item->pos.y_pos += SWAMP_GRAVITY;
+}
+
 void lara_col_stepright(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->current_anim_state == AS_STEPRIGHT)
