@@ -5,8 +5,10 @@
 #define TRAP_ACTIVATE 1
 #define STATUE_STOP 1
 #define ROLLINGBALL_STUFF 38
+#define SMALL_FIRE 1
 
 extern ITEM_INFO *CeilingObject;
+extern int OnObject;
 
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 
@@ -45,6 +47,22 @@ void TrapDoorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *heig
             CeilingObject = item;
         }
     }
+}
+
+void FallingBlockFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    sint32 origin;
+
+    if (item->object_number == FALLING_PLANK)
+        origin = WALL_L;
+    else
+        origin = STEP_L * 2;
+    if (y <= item->pos.y_pos - origin)
+        if (item->current_anim_state == TRAP_SET || item->current_anim_state == TRAP_ACTIVATE)
+        {
+            *height = item->pos.y_pos - origin;
+            OnObject = 1;
+        }
 }
 
 void FallingBlockCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
