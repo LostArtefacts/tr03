@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="83.91" height="12" x="0" y="0" class="named"><title>265 · 17.93%</title></rect>
-<rect width="384.09" height="12" x="83.91" y="0" class="todo"><title>1213 · 82.07%</title></rect>
+<rect width="84.23" height="12" x="0" y="0" class="named"><title>266 · 18%</title></rect>
+<rect width="383.77" height="12" x="84.23" y="0" class="todo"><title>1212 · 82%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">17.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">265</tspan> · <tspan class="todo">1213</tspan></text>
+<text text-anchor="end" x="648" y="7.50">18.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">266</tspan> · <tspan class="todo">1212</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.22" height="12" x="0" y="0" class="named"><title>13 KB · 1.97%</title></rect>
-<rect width="458.78" height="12" x="9.22" y="0" class="todo"><title>651 KB · 98.03%</title></rect>
+<rect width="9.28" height="12" x="0" y="0" class="named"><title>13 KB · 1.98%</title></rect>
+<rect width="458.72" height="12" x="9.28" y="0" class="todo"><title>651 KB · 98.02%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
@@ -889,7 +889,7 @@
 <rect width="12" height="12" x="360" y="240" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="240" class="todo"><title>0x00457a40 MPGunControl (3027 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="240" class="todo"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="240" class="todo"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="240" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="240" class="named"><title>0x00458840 InitialiseFinalLevel (63 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="240" class="todo"><title>0x00458880 FinalLevelCounter (545 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="240" class="todo"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
@@ -2618,7 +2618,7 @@
 <rect width="5.37" height="4.86" x="650.69" y="309.03" class="todo"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="659.06" y="309.03" class="todo"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="667.36" y="309.03" class="named"><title>0x00443290 lara_default_col (73 bytes)</title></rect>
-<rect width="5.30" height="4.86" x="675.66" y="309.03" class="todo"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
+<rect width="5.30" height="4.86" x="675.66" y="309.03" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="683.96" y="309.03" class="todo"><title>0x00463b70 InitialiseLevelFlags (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="692.26" y="309.03" class="todo"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="700.56" y="309.03" class="todo"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>

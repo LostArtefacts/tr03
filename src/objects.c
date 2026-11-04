@@ -3,6 +3,7 @@
 
 #define DOOR_CLOSED 0
 #define DOOR_OPEN 1
+#define FINAL_COUNTDOWN 150
 
 typedef struct {
     sint32 start_height;
@@ -18,6 +19,20 @@ extern sint32 level_items;
 
 int OnDrawBridge(ITEM_INFO *item, sint32 z, sint32 x);
 void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
+
+void ControlCutShotgun(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (final_boss_active >= FINAL_COUNTDOWN)
+    {
+        item->status = ACTIVE;
+        AnimateItem(item);
+    }
+    else
+        item->status = INVISIBLE;
+}
 
 void InitialiseFinalLevel(void)
 {
