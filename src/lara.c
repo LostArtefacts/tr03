@@ -1825,6 +1825,64 @@ void extra_as_rapidsdrown(ITEM_INFO *item, COLL_INFO *coll)
 #define HITWALLRIGHT_A 54
 #define HITWALLRIGHT_F GF(HITWALLRIGHT_A, 0)
 
+void lara_col_walk(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = STEPUP_HEIGHT;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_walls = 1;
+    coll->slopes_are_pits = 1;
+    coll->lava_is_pit = 1;
+    GetLaraCollisionInfo(item, coll);
+
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (TestLaraVault(item, coll))
+        return;
+
+    if (LaraDeflectEdge(item, coll)) {
+        if (item->frame_number >= 22 + 7 && item->frame_number <= 22 + 25) {
+            item->anim_number = STOP_RIGHT_A;
+            item->frame_number = STOP_RIGHT_F;
+        } else if ((item->frame_number >= 22 && item->frame_number <= 22 + 6)
+                   || (item->frame_number >= 22 + 26 && item->frame_number <= 22 + 35)) {
+            item->anim_number = STOP_LEFT_A;
+            item->frame_number = STOP_LEFT_F;
+        } else {
+            LaraCollideStop(item, coll);
+        }
+    }
+
+    if (LaraFallen(item, coll))
+        return;
+
+    if (coll->mid_floor > STEP_L / 2) {
+        if (item->frame_number >= 28 && item->frame_number <= 45) {
+            item->anim_number = WALKSTEPD_RIGHT_A;
+            item->frame_number = WALKSTEPD_RIGHT_F;
+        } else {
+            item->anim_number = WALKSTEPD_LEFT_A;
+            item->frame_number = WALKSTEPD_LEFT_F;
+        }
+    }
+    if (coll->mid_floor >= -STEPUP_HEIGHT && coll->mid_floor < -STEP_L / 2) {
+        if (item->frame_number >= 27 && item->frame_number <= 44) {
+            item->anim_number = WALKSTEPUP_RIGHT_A;
+            item->frame_number = WALKSTEPUP_RIGHT_F;
+        } else {
+            item->anim_number = WALKSTEPUP_LEFT_A;
+            item->frame_number = WALKSTEPUP_LEFT_F;
+        }
+    }
+
+    if (TestLaraSlide(item, coll))
+        return;
+
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->speed >= 0)

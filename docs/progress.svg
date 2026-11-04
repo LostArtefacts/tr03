@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="193.47" height="12" x="0" y="0" class="named"><title>611 · 41.34%</title></rect>
-<rect width="274.53" height="12" x="193.47" y="0" class="todo"><title>867 · 58.66%</title></rect>
+<rect width="193.79" height="12" x="0" y="0" class="named"><title>612 · 41.41%</title></rect>
+<rect width="274.21" height="12" x="193.79" y="0" class="todo"><title>866 · 58.59%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">41.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">611</tspan> · <tspan class="todo">867</tspan></text>
+<text text-anchor="end" x="648" y="7.50">41.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">612</tspan> · <tspan class="todo">866</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="60.46" height="12" x="0" y="0" class="named"><title>86 KB · 12.92%</title></rect>
-<rect width="407.54" height="12" x="60.46" y="0" class="todo"><title>579 KB · 87.08%</title></rect>
+<rect width="60.76" height="12" x="0" y="0" class="named"><title>86 KB · 12.98%</title></rect>
+<rect width="407.24" height="12" x="60.76" y="0" class="todo"><title>579 KB · 87.02%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">12.9%</text>
+<text text-anchor="end" x="648" y="24.50">13.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">86 KB</tspan> · <tspan class="todo">579 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -675,7 +675,7 @@
 <rect width="12" height="12" x="150" y="180" class="named"><title>0x00441e30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="180" class="named"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="180" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="180" class="todo"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="180" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="180" class="todo"><title>0x00442140 lara_col_run (393 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="180" class="named"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="180" class="named"><title>0x004423b0 lara_col_fastback (218 bytes)</title></rect>
@@ -1961,7 +1961,7 @@
 <rect width="12.68" height="11.90" x="415.78" y="390.72" class="todo"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>
 <rect width="12.68" height="11.82" x="415.78" y="405.62" class="todo"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
 <rect width="12.68" height="11.79" x="415.78" y="420.44" class="todo"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
-<rect width="12.68" height="11.76" x="415.78" y="435.24" class="todo"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
+<rect width="12.68" height="11.76" x="415.78" y="435.24" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12.58" height="11.83" x="431.46" y="130.87" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12.46" height="11.83" x="447.04" y="130.87" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="12.43" height="11.83" x="462.51" y="130.87" class="todo"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
