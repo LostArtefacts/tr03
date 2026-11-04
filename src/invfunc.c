@@ -111,6 +111,19 @@ void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
     }
 }
 
+void ReqItemLeftalign(REQUEST_INFO *req, TEXTSTRING *txt)
+{
+    int x;
+    uint32 scaleH = GetTextScaleH(txt->scaleH);
+
+    if (txt)
+    {
+        x = (((req->pixwidth * scaleH) >> 16) / 2 - T_GetTextWidth(txt) / 2) - ((8 * scaleH) >> 16);
+        txt->xpos = req->xpos - x;
+        txt->bgndOffX = x;
+    }
+}
+
 void RemoveAllReqItems(REQUEST_INFO *req)
 {
     req->items = 0;
