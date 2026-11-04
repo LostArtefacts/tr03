@@ -1312,6 +1312,24 @@ void lara_col_jumper(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+extern char GotJointPos[];
+extern char IsJointUnderwater[];
+
+void AddJointPos(ITEM_INFO *item, int mesh)
+{
+    sint16 room_num;
+
+    room_num = item->room_number;
+    GetFloor((phd_mxptr[3] >> W2V_SHIFT) + item->pos.x_pos,
+             (phd_mxptr[7] >> W2V_SHIFT) + item->pos.y_pos,
+             (phd_mxptr[11] >> W2V_SHIFT) + item->pos.z_pos, &room_num);
+    if (room[room_num].flags & UNDERWATER)
+        IsJointUnderwater[mesh] = 1;
+    else
+        IsJointUnderwater[mesh] = 0;
+    GotJointPos[mesh] = 1;
+}
+
 void LookUpDown(void)
 {
     camera.type = LOOK_CAMERA;
