@@ -208,6 +208,24 @@ void lara_as_monkeyr(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = 10 * ONE_DEGREE;
 }
 
+void lara_col_monkeyr(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (!(input & IN_ACTION) || !lara.CanMonkeySwing)
+    {
+        MonkeySwingFall(item);
+        return;
+    }
+    if (!TestMonkeyRight(item, coll))
+    {
+        item->current_anim_state = AS_HANG2;
+        item->goal_anim_state = AS_HANG2;
+        item->anim_number = MONKEYHANG_A;
+        item->frame_number = MONKEYHANG_F;
+    }
+    else
+        MonkeySwingSnap(item, coll);
+}
+
 void lara_as_hangturnl(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
