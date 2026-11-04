@@ -216,6 +216,48 @@ void InitialiseLift(sint16 item_number)
     lift->wait_time = 0;
 }
 
+void LiftControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    LIFT_INFO *lift;
+    sint16 room_number;
+
+    item = &items[item_number];
+    lift = (LIFT_INFO *)item->data;
+    if (TriggerActive(item)) {
+        if (item->pos.y_pos < lift->start_height + STEP_L * 22 - 16) {
+            if (lift->wait_time < 90) {
+                item->goal_anim_state = DOOR_OPEN;
+                lift->wait_time++;
+            } else {
+                item->goal_anim_state = DOOR_CLOSED;
+                item->pos.y_pos += 16;
+            }
+        } else {
+            item->goal_anim_state = DOOR_OPEN;
+            lift->wait_time = 0;
+        }
+    } else {
+        if (item->pos.y_pos > lift->start_height + 16) {
+            if (lift->wait_time < 90) {
+                item->goal_anim_state = DOOR_OPEN;
+                lift->wait_time++;
+            } else {
+                item->goal_anim_state = DOOR_CLOSED;
+                item->pos.y_pos -= 16;
+            }
+        } else {
+            item->goal_anim_state = DOOR_OPEN;
+            lift->wait_time = 0;
+        }
+    }
+    AnimateItem(item);
+    room_number = item->room_number;
+    GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+}
+
 void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 floor, ceiling;
