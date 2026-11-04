@@ -15,6 +15,7 @@ sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 #define BAD_JUMP_CEILING ((STEP_L * 3) / 4)
 #define NO_BAD_POS (-NO_HEIGHT)
 #define LARA_DUCK_DEFLECT (2 * ONE_DEGREE)
+#define LARA_DEF_ADD_EDGE (5 * ONE_DEGREE)
 
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -845,6 +846,23 @@ sint16 LaraFloorFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist)
     height = GetHeight(floor, x, y, z);
     if (height != NO_HEIGHT)
         height -= item->pos.y_pos;
+    return (sint16)height;
+}
+
+sint16 LaraCeilingFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist)
+{
+    sint16 room_num;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, height;
+
+    x = item->pos.x_pos + ((phd_sin(ang) * dist) >> W2V_SHIFT);
+    y = item->pos.y_pos - LARA_HITE;
+    z = item->pos.z_pos + ((phd_cos(ang) * dist) >> W2V_SHIFT);
+    room_num = item->room_number;
+    floor = GetFloor(x, y, z, &room_num);
+    height = GetCeiling(floor, x, y, z);
+    if (height != NO_HEIGHT)
+        height -= item->pos.y_pos - LARA_HITE;
     return (sint16)height;
 }
 
