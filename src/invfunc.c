@@ -1,5 +1,10 @@
 #include "game.h"
 
+#define CAMERA_YOFFSET -96
+#define NUM_ASS_TIMES 10
+
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+
 void RingActive(void)
 {
     T_RemovePrint(Inv_itemText[IT_NAME]);
@@ -25,6 +30,19 @@ void RemoveInventoryText(void)
         T_RemovePrint(Inv_itemText[n]);
         Inv_itemText[n] = NULL;
     }
+}
+
+void Inv_RingGetView(RING_INFO *ring, PHD_3DPOS *viewer)
+{
+    PHD_ANGLE angles[2];
+
+    phd_GetVectorAngles(0 - ring->camerapos.x_pos, CAMERA_YOFFSET - ring->camerapos.y_pos, ring->radius - ring->camerapos.z_pos, angles);
+    viewer->x_pos = ring->camerapos.x_pos;
+    viewer->y_pos = ring->camerapos.y_pos;
+    viewer->z_pos = ring->camerapos.z_pos;
+    viewer->x_rot = angles[1] + ring->camera_pitch;
+    viewer->y_rot = angles[0];
+    viewer->z_rot = 0;
 }
 
 void Inv_RingCalcAdders(RING_INFO *ring, sint16 rotation_duration)
