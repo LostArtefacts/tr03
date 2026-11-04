@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="166.55" height="12" x="0" y="0" class="named"><title>526 · 35.59%</title></rect>
-<rect width="301.45" height="12" x="166.55" y="0" class="todo"><title>952 · 64.41%</title></rect>
+<rect width="166.87" height="12" x="0" y="0" class="named"><title>527 · 35.66%</title></rect>
+<rect width="301.13" height="12" x="166.87" y="0" class="todo"><title>951 · 64.34%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">35.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">526</tspan> · <tspan class="todo">952</tspan></text>
+<text text-anchor="end" x="648" y="7.50">35.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">527</tspan> · <tspan class="todo">951</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="34.23" height="12" x="0" y="0" class="named"><title>49 KB · 7.32%</title></rect>
-<rect width="433.77" height="12" x="34.23" y="0" class="todo"><title>616 KB · 92.68%</title></rect>
+<rect width="34.39" height="12" x="0" y="0" class="named"><title>49 KB · 7.35%</title></rect>
+<rect width="433.61" height="12" x="34.39" y="0" class="todo"><title>616 KB · 92.65%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">7.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">49 KB</tspan> · <tspan class="todo">616 KB</tspan></text>
@@ -892,7 +892,7 @@
 <rect width="12" height="12" x="405" y="240" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="240" class="named"><title>0x00458840 InitialiseFinalLevel (63 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="240" class="todo"><title>0x00458880 FinalLevelCounter (545 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="240" class="todo"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="240" class="named"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="240" class="named"><title>0x00458b90 InitialiseWindow (131 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="240" class="todo"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="240" class="named"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
@@ -2197,7 +2197,7 @@
 <rect width="9.14" height="8.62" x="547.69" y="199.33" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
 <rect width="9.14" height="8.62" x="559.83" y="199.33" class="todo"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
 <rect width="9.09" height="8.62" x="571.96" y="199.33" class="named"><title>0x00440140 lara_col_monkeyswing (222 bytes)</title></rect>
-<rect width="9.09" height="8.62" x="584.06" y="199.33" class="todo"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
+<rect width="9.09" height="8.62" x="584.06" y="199.33" class="named"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
 <rect width="9.09" height="8.62" x="596.15" y="199.33" class="todo"><title>0x0048be60 CreateMonoScreen (222 bytes)</title></rect>
 <rect width="8.93" height="8.62" x="608.25" y="199.33" class="named"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
 <rect width="8.93" height="8.62" x="620.18" y="199.33" class="named"><title>0x004423b0 lara_col_fastback (218 bytes)</title></rect>
