@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="177.64" height="12" x="0" y="0" class="named"><title>561 · 37.96%</title></rect>
-<rect width="290.36" height="12" x="177.64" y="0" class="todo"><title>917 · 62.04%</title></rect>
+<rect width="177.95" height="12" x="0" y="0" class="named"><title>562 · 38.02%</title></rect>
+<rect width="290.05" height="12" x="177.95" y="0" class="todo"><title>916 · 61.98%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">38.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">561</tspan> · <tspan class="todo">917</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">562</tspan> · <tspan class="todo">916</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="48.40" height="12" x="0" y="0" class="named"><title>69 KB · 10.34%</title></rect>
-<rect width="419.60" height="12" x="48.40" y="0" class="todo"><title>596 KB · 89.66%</title></rect>
+<rect width="48.59" height="12" x="0" y="0" class="named"><title>69 KB · 10.38%</title></rect>
+<rect width="419.41" height="12" x="48.59" y="0" class="todo"><title>595 KB · 89.62%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">10.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">69 KB</tspan> · <tspan class="todo">596 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">10.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">69 KB</tspan> · <tspan class="todo">595 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -641,7 +641,7 @@
 <rect width="12" height="12" x="390" y="165" class="named"><title>0x004412a0 lara_as_hang (101 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="165" class="named"><title>0x00441310 lara_as_reach (28 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="165" class="named"><title>0x00441330 lara_as_splat (10 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="165" class="todo"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="165" class="named"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="165" class="named"><title>0x00441450 lara_as_back (132 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="165" class="named"><title>0x004414e0 lara_as_fastturn (75 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="165" class="named"><title>0x00441530 lara_as_stepright (124 bytes)</title></rect>
@@ -2122,7 +2122,7 @@
 <rect width="9.49" height="10.04" x="638.26" y="173.81" class="todo"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
 <rect width="9.49" height="10.04" x="650.75" y="173.81" class="todo"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
 <rect width="9.46" height="10.04" x="663.25" y="173.81" class="todo"><title>0x0042d9a0 KillEverything (269 bytes)</title></rect>
-<rect width="9.42" height="10.04" x="675.70" y="173.81" class="todo"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>
+<rect width="9.42" height="10.04" x="675.70" y="173.81" class="named"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>
 <rect width="9.42" height="10.04" x="688.13" y="173.81" class="todo"><title>0x00475800 setup_screen_size (268 bytes)</title></rect>
 <rect width="9.39" height="10.04" x="700.55" y="173.81" class="todo"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
 <rect width="9.35" height="10.04" x="712.94" y="173.81" class="todo"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
