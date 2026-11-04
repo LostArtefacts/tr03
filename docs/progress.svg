@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="29.52" height="12" x="0" y="0" class="named"><title>216 · 14.61%</title></rect>
-<rect width="172.48" height="12" x="29.52" y="0" class="todo"><title>1262 · 85.39%</title></rect>
+<rect width="29.66" height="12" x="0" y="0" class="named"><title>217 · 14.68%</title></rect>
+<rect width="172.34" height="12" x="29.66" y="0" class="todo"><title>1261 · 85.32%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">14.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">216</tspan> · <tspan class="todo">1262</tspan></text>
+<text text-anchor="end" x="382" y="7.50">14.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">217</tspan> · <tspan class="todo">1261</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.03" height="12" x="0" y="0" class="named"><title>10 KB · 1.50%</title></rect>
-<rect width="198.97" height="12" x="3.03" y="0" class="todo"><title>654 KB · 98.50%</title></rect>
+<rect width="3.04" height="12" x="0" y="0" class="named"><title>10 KB · 1.50%</title></rect>
+<rect width="198.96" height="12" x="3.04" y="0" class="todo"><title>654 KB · 98.50%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -514,7 +514,7 @@
 <rect width="12" height="12" x="735" y="120" class="todo"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="135" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="135" class="todo"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="135" class="todo"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="135" class="named"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="135" class="todo"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="135" class="todo"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="135" class="todo"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
@@ -2812,7 +2812,7 @@
 <rect width="3.81" height="4.08" x="688.68" y="361.42" class="named"><title>0x0042f960 Exercise7_86 (44 bytes)</title></rect>
 <rect width="3.81" height="4.08" x="695.50" y="361.42" class="named"><title>0x0042f990 Exercise8_93 (44 bytes)</title></rect>
 <rect width="3.81" height="4.08" x="702.31" y="361.42" class="named"><title>0x00434e30 DrawModeInfo (44 bytes)</title></rect>
-<rect width="3.81" height="4.08" x="709.12" y="361.42" class="todo"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
+<rect width="3.81" height="4.08" x="709.12" y="361.42" class="named"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="3.81" height="4.08" x="715.94" y="361.42" class="todo"><title>0x00438fa0 Inv_RingMotionSetup (44 bytes)</title></rect>
 <rect width="3.81" height="4.08" x="722.75" y="361.42" class="named"><title>0x00441730 lara_as_fallback (44 bytes)</title></rect>
 <rect width="3.81" height="4.08" x="729.56" y="361.42" class="named"><title>0x0046ac70 T_InitPrint (44 bytes)</title></rect>
