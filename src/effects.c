@@ -135,3 +135,13 @@ void AssaultReset(ITEM_INFO *item)
     assault_penalty_display_timer = 0;
     flipeffect = -1;
 }
+
+void AssaultPenalty4(ITEM_INFO *item)
+{
+    if (assault_timer_active)
+    {
+        assault_penalties += 60 * 4;
+        assault_penalty_display_timer = 4 * 30;
+    }
+    flipeffect = -1;
+}
