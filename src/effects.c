@@ -18,6 +18,27 @@ void SOUND_EndScene(void);
 void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *pos, int joint);
 sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
 
+int ItemNearLara(PHD_3DPOS *pos, sint32 distance)
+{
+    sint32 x, y, z;
+    sint16 *bounds;
+
+    x = pos->x_pos - lara_item->pos.x_pos;
+    y = pos->y_pos - lara_item->pos.y_pos;
+    z = pos->z_pos - lara_item->pos.z_pos;
+    if (x < -distance || x > distance || z < -distance || z > distance || y < -WALL_L * 3 || y > WALL_L * 3)
+        return 0;
+
+    if (x * x + z * z > distance * distance)
+        return 0;
+
+    bounds = GetBoundsAccurate(lara_item);
+    if (y < bounds[2] || y > bounds[3] + 100)
+        return 0;
+
+    return 1;
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;

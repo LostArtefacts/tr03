@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="19.95" height="12" x="130" y="1.50" class="named"/>
-<rect width="182.05" height="12" x="149.95" y="1.50" class="todo"/>
+<rect width="20.09" height="12" x="130" y="1.50" class="named"/>
+<rect width="181.91" height="12" x="150.09" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">9.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">146/1478</text>
-<rect width="1.61" height="12" x="130" y="18.50" class="named"/>
-<rect width="200.39" height="12" x="131.61" y="18.50" class="todo"/>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">147/1478</text>
+<rect width="1.65" height="12" x="130" y="18.50" class="named"/>
+<rect width="200.35" height="12" x="131.65" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">5k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">9.88% (146)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.12% (1332)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">9.95% (147)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.05% (1331)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="73.79" height="6" x="0" y="0" class="named"/>
-<rect width="673.21" height="6" x="73.79" y="0" class="todo"/>
+<rect width="74.30" height="6" x="0" y="0" class="named"/>
+<rect width="672.70" height="6" x="74.30" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -377,7 +377,7 @@
 <rect width="12" height="12" x="165" y="90" class="named"><title>0x0042de60 ClearDynamics (29 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="90" class="todo"><title>0x0042de80 ControlSmokeEmitter (567 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="90" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="90" class="todo"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="90" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="90" class="todo"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="90" class="todo"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="90" class="todo"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.80%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.20%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.82%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.18%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="5.94" height="6" x="0" y="0" class="named"/>
-<rect width="741.06" height="6" x="5.94" y="0" class="todo"/>
+<rect width="6.10" height="6" x="0" y="0" class="named"/>
+<rect width="740.90" height="6" x="6.10" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2381,7 +2381,7 @@
 <rect width="5.64" height="5.35" x="656.19" y="304.35" class="todo"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
 <rect width="5.64" height="5.35" x="664.84" y="304.35" class="todo"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
 <rect width="5.64" height="5.35" x="673.48" y="304.35" class="todo"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
-<rect width="5.58" height="5.35" x="682.13" y="304.35" class="todo"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
+<rect width="5.58" height="5.35" x="682.13" y="304.35" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="5.58" height="5.35" x="690.71" y="304.35" class="todo"><title>0x00487750 do_inventory_options (140 bytes)</title></rect>
 <rect width="5.58" height="5.35" x="699.30" y="304.35" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
 <rect width="5.52" height="5.35" x="707.88" y="304.35" class="todo"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
