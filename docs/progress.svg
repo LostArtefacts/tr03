@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="104.81" height="12" x="0" y="0" class="named"><title>331 · 22.40%</title></rect>
-<rect width="363.19" height="12" x="104.81" y="0" class="todo"><title>1147 · 77.60%</title></rect>
+<rect width="105.13" height="12" x="0" y="0" class="named"><title>332 · 22.46%</title></rect>
+<rect width="362.87" height="12" x="105.13" y="0" class="todo"><title>1146 · 77.54%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">22.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">331</tspan> · <tspan class="todo">1147</tspan></text>
+<text text-anchor="end" x="648" y="7.50">22.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">332</tspan> · <tspan class="todo">1146</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="13.16" height="12" x="0" y="0" class="named"><title>19 KB · 2.81%</title></rect>
-<rect width="454.84" height="12" x="13.16" y="0" class="todo"><title>645 KB · 97.19%</title></rect>
+<rect width="13.22" height="12" x="0" y="0" class="named"><title>19 KB · 2.83%</title></rect>
+<rect width="454.78" height="12" x="13.22" y="0" class="todo"><title>645 KB · 97.17%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">19 KB</tspan> · <tspan class="todo">645 KB</tspan></text>
@@ -1096,7 +1096,7 @@
 <rect width="12" height="12" x="465" y="300" class="todo"><title>0x0046fd80 DinoControl (1916 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="300" class="todo"><title>0x00470530 TribeAxeControl (1552 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="300" class="todo"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="300" class="todo"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="300" class="named"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="300" class="todo"><title>0x00471350 TriggerElectricSparks_triboss (453 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="300" class="named"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="300" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
@@ -2527,7 +2527,7 @@
 <rect width="5.61" height="5.86" x="592.02" y="292.20" class="named"><title>0x00439080 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="301.06" class="named"><title>0x004492b0 lara_col_climbleft (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="309.92" class="named"><title>0x00469f80 InitialiseSwat (93 bytes)</title></rect>
-<rect width="5.61" height="5.86" x="592.02" y="318.78" class="todo"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
+<rect width="5.61" height="5.86" x="592.02" y="318.78" class="named"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
 <rect width="5.61" height="5.80" x="592.02" y="327.64" class="named"><title>0x00416670 CreatureEffect (92 bytes)</title></rect>
 <rect width="5.61" height="5.80" x="592.02" y="336.44" class="named"><title>0x0041ebd0 ObjectCollision (92 bytes)</title></rect>
 <rect width="5.61" height="5.80" x="592.02" y="345.24" class="todo"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>

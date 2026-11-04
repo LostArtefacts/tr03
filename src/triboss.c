@@ -1,6 +1,28 @@
 #include "game.h"
 
 extern sint32 level_items;
+extern PHD_VECTOR TrigDynamics[3];
+
+void UpdateElectricityPoints(void);
+void TriggerTribeBossHeadElectricity(ITEM_INFO *item, sint32 copy);
+void DrawTribeBossShield(ITEM_INFO *item);
+
+void S_DrawTribeBoss(ITEM_INFO *item)
+{
+    DrawAnimatingItem(item);
+    UpdateElectricityPoints();
+    TrigDynamics[0].x = 0;
+    TrigDynamics[1].x = 0;
+    TrigDynamics[2].x = 0;
+    if (!bossdata.explode_count)
+    {
+        TriggerTribeBossHeadElectricity(item, 0);
+        TriggerTribeBossHeadElectricity(item, 1);
+    }
+    else
+        DrawExplosionRings();
+    DrawTribeBossShield(item);
+}
 
 void TribeBossDie(sint16 item_number)
 {
