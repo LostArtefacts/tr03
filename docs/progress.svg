@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="82.01" height="12" x="0" y="0" class="named"><title>259 · 17.52%</title></rect>
-<rect width="385.99" height="12" x="82.01" y="0" class="todo"><title>1219 · 82.48%</title></rect>
+<rect width="82.33" height="12" x="0" y="0" class="named"><title>260 · 17.59%</title></rect>
+<rect width="385.67" height="12" x="82.33" y="0" class="todo"><title>1218 · 82.41%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">17.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">259</tspan> · <tspan class="todo">1219</tspan></text>
+<text text-anchor="end" x="648" y="7.50">17.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">260</tspan> · <tspan class="todo">1218</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.91" height="12" x="0" y="0" class="named"><title>13 KB · 1.90%</title></rect>
-<rect width="459.09" height="12" x="8.91" y="0" class="todo"><title>651 KB · 98.10%</title></rect>
+<rect width="8.96" height="12" x="0" y="0" class="named"><title>13 KB · 1.91%</title></rect>
+<rect width="459.04" height="12" x="8.96" y="0" class="todo"><title>651 KB · 98.09%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
@@ -378,7 +378,7 @@
 <rect width="12" height="12" x="195" y="90" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="90" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="90" class="named"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="90" class="todo"><title>0x0042e270 Richochet (68 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="90" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="90" class="todo"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="90" class="todo"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="90" class="todo"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
@@ -2639,7 +2639,7 @@
 <rect width="4.79" height="5.09" x="688.05" y="316.89" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="695.84" y="316.89" class="todo"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="703.63" y="316.89" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
-<rect width="4.72" height="5.09" x="711.42" y="316.89" class="todo"><title>0x0042e270 Richochet (68 bytes)</title></rect>
+<rect width="4.72" height="5.09" x="711.42" y="316.89" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="719.13" y="316.89" class="named"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="726.85" y="316.89" class="todo"><title>0x00484250 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="734.57" y="316.89" class="todo"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>

@@ -15,6 +15,8 @@ extern sint32 number_sound_effects;
 extern void (*effect_routines[])(ITEM_INFO *item);
 
 void SOUND_EndScene(void);
+sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
+void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, int size);
 void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *pos, int joint);
 sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
 
@@ -58,6 +60,15 @@ void SoundEffects(void)
         (*effect_routines[flipeffect])(NULL);
 
     SOUND_EndScene();
+}
+
+void Richochet(GAME_VECTOR *pos)
+{
+    sint32 angle;
+
+    angle = (mGetAngle(pos->z, pos->x, lara_item->pos.z_pos, lara_item->pos.x_pos) >> 4) & 4095;
+    TriggerRicochetSpark(pos, angle, 16);
+    SoundEffect(10, (PHD_3DPOS *)pos, 0);
 }
 
 void finish_level_effect(ITEM_INFO *item)
