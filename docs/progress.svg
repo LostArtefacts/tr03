@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="2.87" height="12" x="130" y="1.50" class="named"/>
-<rect width="199.13" height="12" x="132.87" y="1.50" class="todo"/>
+<rect width="3.01" height="12" x="130" y="1.50" class="named"/>
+<rect width="198.99" height="12" x="133.01" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">1.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">21/1478</text>
-<rect width="0.15" height="12" x="130" y="18.50" class="named"/>
-<rect width="201.85" height="12" x="130.15" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">1.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">22/1478</text>
+<rect width="0.16" height="12" x="130" y="18.50" class="named"/>
+<rect width="201.84" height="12" x="130.16" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">0k/664k</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">1k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.42% (21)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.58% (1457)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.49% (22)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.51% (1456)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.61" height="6" x="0" y="0" class="named"/>
-<rect width="736.39" height="6" x="10.61" y="0" class="todo"/>
+<rect width="11.12" height="6" x="0" y="0" class="named"/>
+<rect width="735.88" height="6" x="11.12" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -425,7 +425,7 @@
 <rect width="12" height="12" x="135" y="105" class="named"><title>0x0042f440 reset_hair (5 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="105" class="named"><title>0x0042f450 AssaultStart (60 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="105" class="named"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="105" class="todo"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="105" class="named"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="105" class="todo"><title>0x0042f4e0 AssaultPenalty4 (45 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="105" class="todo"><title>0x0042f510 AssaultPenalty30 (45 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="105" class="todo"><title>0x0042f540 AssaultFinished (133 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.07%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.93%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.08%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.92%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="0.54" height="6" x="0" y="0" class="named"/>
-<rect width="746.46" height="6" x="0.54" y="0" class="todo"/>
+<rect width="0.58" height="6" x="0" y="0" class="named"/>
+<rect width="746.42" height="6" x="0.58" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2879,7 +2879,7 @@
 <rect width="1.02" height="1.32" x="706.24" y="444.35" class="todo"><title>0x00439000 Inv_RingMotionRotation (34 bytes)</title></rect>
 <rect width="1.02" height="1.32" x="706.24" y="448.68" class="todo"><title>0x00475400 DI_Create (34 bytes)</title></rect>
 <rect width="1.23" height="1.11" x="710.26" y="413.32" class="todo"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
-<rect width="1.23" height="0.99" x="710.26" y="417.43" class="todo"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
+<rect width="1.23" height="0.99" x="710.26" y="417.43" class="named"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="421.42" class="todo"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="425.42" class="todo"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="429.41" class="todo"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>

@@ -24,5 +24,6 @@ void dynamic_light_off(ITEM_INFO *item);
 void reset_hair(ITEM_INFO *item);
 void AssaultStart(ITEM_INFO *item);
 void AssaultStop(ITEM_INFO *item);
+void AssaultReset(ITEM_INFO *item);
 
 #endif
