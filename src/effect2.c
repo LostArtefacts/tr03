@@ -1,5 +1,22 @@
 #include "game.h"
 
+extern sint32 BatsTriggered;
+
+void TriggerBats(sint32 x, sint32 y, sint32 z, sint32 angle);
+
+void BatEmitterControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->active)
+    {
+        TriggerBats(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->pos.y_rot >> 4);
+        KillItem(item_number);
+        BatsTriggered = 1;
+    }
+}
+
 void KillAllCurrentItems(sint16 item_number)
 {
     KillEverythingFlag = 1;

@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="98.48" height="12" x="0" y="0" class="named"><title>311 · 21.04%</title></rect>
-<rect width="369.52" height="12" x="98.48" y="0" class="todo"><title>1167 · 78.96%</title></rect>
+<rect width="98.79" height="12" x="0" y="0" class="named"><title>312 · 21.11%</title></rect>
+<rect width="369.21" height="12" x="98.79" y="0" class="todo"><title>1166 · 78.89%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">21.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">311</tspan> · <tspan class="todo">1167</tspan></text>
+<text text-anchor="end" x="648" y="7.50">21.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">312</tspan> · <tspan class="todo">1166</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.85" height="12" x="0" y="0" class="named"><title>17 KB · 2.53%</title></rect>
-<rect width="456.15" height="12" x="11.85" y="0" class="todo"><title>647 KB · 97.47%</title></rect>
+<rect width="11.91" height="12" x="0" y="0" class="named"><title>17 KB · 2.55%</title></rect>
+<rect width="456.09" height="12" x="11.91" y="0" class="todo"><title>647 KB · 97.45%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
@@ -363,7 +363,7 @@
 <rect width="12" height="12" x="720" y="75" class="todo"><title>0x0042d180 TriggerUnderwaterBloodD (101 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="75" class="todo"><title>0x0042d1f0 TriggerWaterfallMist (471 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="90" class="todo"><title>0x0042d3d0 UpdateBats (309 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="90" class="todo"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="90" class="named"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="90" class="todo"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="90" class="todo"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="90" class="todo"><title>0x0042d750 TriggerDartSmoke (564 bytes)</title></rect>
@@ -2558,7 +2558,7 @@
 <rect width="5.71" height="5.32" x="715.34" y="292.20" class="named"><title>0x004402f0 lara_as_monkeyr (86 bytes)</title></rect>
 <rect width="5.65" height="5.32" x="724.06" y="292.20" class="named"><title>0x0041e630 GetNewRoom (85 bytes)</title></rect>
 <rect width="5.65" height="5.32" x="732.70" y="292.20" class="named"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
-<rect width="5.65" height="5.32" x="741.35" y="292.20" class="todo"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
+<rect width="5.65" height="5.32" x="741.35" y="292.20" class="named"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="600.62" y="300.51" class="named"><title>0x00411fe0 InitialiseBoat (84 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="609.01" y="300.51" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="617.39" y="300.51" class="named"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
