@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="126.97" height="12" x="0" y="0" class="named"><title>401 · 27.13%</title></rect>
-<rect width="341.03" height="12" x="126.97" y="0" class="todo"><title>1077 · 72.87%</title></rect>
+<rect width="127.29" height="12" x="0" y="0" class="named"><title>402 · 27.20%</title></rect>
+<rect width="340.71" height="12" x="127.29" y="0" class="todo"><title>1076 · 72.80%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">27.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">401</tspan> · <tspan class="todo">1077</tspan></text>
+<text text-anchor="end" x="648" y="7.50">27.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">402</tspan> · <tspan class="todo">1076</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="18.86" height="12" x="0" y="0" class="named"><title>27 KB · 4.03%</title></rect>
-<rect width="449.14" height="12" x="18.86" y="0" class="todo"><title>637 KB · 95.97%</title></rect>
+<rect width="18.96" height="12" x="0" y="0" class="named"><title>27 KB · 4.05%</title></rect>
+<rect width="449.04" height="12" x="18.96" y="0" class="todo"><title>637 KB · 95.95%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">4.0%</text>
+<text text-anchor="end" x="648" y="24.50">4.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">27 KB</tspan> · <tspan class="todo">637 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -621,7 +621,7 @@
 <rect width="12" height="12" x="90" y="165" class="named"><title>0x004402f0 lara_as_monkeyr (86 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="165" class="named"><title>0x00440350 lara_col_monkeyr (112 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="165" class="named"><title>0x004403c0 lara_as_hangturnl (57 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="165" class="todo"><title>0x00440400 lara_col_hangturnlr (153 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="165" class="named"><title>0x00440400 lara_col_hangturnlr (153 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="165" class="named"><title>0x004404a0 lara_as_hangturnr (57 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="165" class="named"><title>0x004404e0 lara_as_monkey180 (24 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="165" class="named"><title>0x00440500 lara_col_monkey180 (19 bytes)</title></rect>
@@ -2338,7 +2338,7 @@
 <rect width="7.40" height="7.36" x="565.09" y="243.96" class="todo"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
 <rect width="7.40" height="7.36" x="575.49" y="243.96" class="todo"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
 <rect width="7.35" height="7.36" x="585.89" y="243.96" class="todo"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
-<rect width="7.35" height="7.36" x="596.24" y="243.96" class="todo"><title>0x00440400 lara_col_hangturnlr (153 bytes)</title></rect>
+<rect width="7.35" height="7.36" x="596.24" y="243.96" class="named"><title>0x00440400 lara_col_hangturnlr (153 bytes)</title></rect>
 <rect width="7.35" height="7.36" x="606.59" y="243.96" class="todo"><title>0x00441c00 lara_as_deathslide (153 bytes)</title></rect>
 <rect width="7.30" height="7.36" x="616.94" y="243.96" class="todo"><title>0x00453890 GetCollision (152 bytes)</title></rect>
 <rect width="7.30" height="7.36" x="627.24" y="243.96" class="todo"><title>0x0046db30 BladeControl (152 bytes)</title></rect>
