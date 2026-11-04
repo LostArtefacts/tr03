@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="24.87" height="12" x="130" y="1.50" class="named"/>
-<rect width="177.13" height="12" x="154.87" y="1.50" class="todo"/>
+<rect width="25.01" height="12" x="130" y="1.50" class="named"/>
+<rect width="176.99" height="12" x="155.01" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">12.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">182/1478</text>
-<rect width="2.63" height="12" x="130" y="18.50" class="named"/>
-<rect width="199.37" height="12" x="132.63" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">12.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">183/1478</text>
+<rect width="2.65" height="12" x="130" y="18.50" class="named"/>
+<rect width="199.35" height="12" x="132.65" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">1.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">9k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.31% (182)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.69% (1296)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.38% (183)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.62% (1295)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="91.99" height="6" x="0" y="0" class="named"/>
-<rect width="655.01" height="6" x="91.99" y="0" class="todo"/>
+<rect width="92.49" height="6" x="0" y="0" class="named"/>
+<rect width="654.51" height="6" x="92.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -909,7 +909,7 @@
 <rect width="12" height="12" x="645" y="240" class="todo"><title>0x00459500 LiftControl (216 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="240" class="todo"><title>0x004595e0 LiftFloorCeiling (377 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="240" class="named"><title>0x00459760 LiftFloor (63 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="240" class="todo"><title>0x004597a0 LiftCeiling (53 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="240" class="named"><title>0x004597a0 LiftCeiling (53 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="240" class="todo"><title>0x004597e0 BridgeFlatFloor (56 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="240" class="todo"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="240" class="todo"><title>0x00459840 GetOffset (59 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.30%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.70%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.31%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.69%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="9.74" height="6" x="0" y="0" class="named"/>
-<rect width="737.26" height="6" x="9.74" y="0" class="todo"/>
+<rect width="9.80" height="6" x="0" y="0" class="named"/>
+<rect width="737.20" height="6" x="9.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2736,7 +2736,7 @@
 <rect width="2.18" height="2.23" x="677.54" y="395.62" class="todo"><title>0x00402580 draw_poly_gouraud (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="400.86" class="named"><title>0x004164d0 CreatureTilt (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="406.09" class="named"><title>0x004419b0 lara_as_swandive (53 bytes)</title></rect>
-<rect width="2.18" height="2.23" x="677.54" y="411.32" class="todo"><title>0x004597a0 LiftCeiling (53 bytes)</title></rect>
+<rect width="2.18" height="2.23" x="677.54" y="411.32" class="named"><title>0x004597a0 LiftCeiling (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="416.56" class="todo"><title>0x004598e0 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="421.79" class="todo"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="427.03" class="todo"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
