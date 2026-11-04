@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="184.60" height="12" x="0" y="0" class="named"><title>583 · 39.45%</title></rect>
-<rect width="283.40" height="12" x="184.60" y="0" class="todo"><title>895 · 60.55%</title></rect>
+<rect width="184.92" height="12" x="0" y="0" class="named"><title>584 · 39.51%</title></rect>
+<rect width="283.08" height="12" x="184.92" y="0" class="todo"><title>894 · 60.49%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">39.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">583</tspan> · <tspan class="todo">895</tspan></text>
+<text text-anchor="end" x="648" y="7.50">39.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">584</tspan> · <tspan class="todo">894</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="53.99" height="12" x="0" y="0" class="named"><title>77 KB · 11.54%</title></rect>
-<rect width="414.01" height="12" x="53.99" y="0" class="todo"><title>588 KB · 88.46%</title></rect>
+<rect width="54.42" height="12" x="0" y="0" class="named"><title>77 KB · 11.63%</title></rect>
+<rect width="413.58" height="12" x="54.42" y="0" class="todo"><title>588 KB · 88.37%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">11.5%</text>
+<text text-anchor="end" x="648" y="24.50">11.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">77 KB</tspan> · <tspan class="todo">588 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -190,7 +190,7 @@
 <rect width="12" height="12" x="375" y="30" class="named"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="30" class="named"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="30" class="named"><title>0x00414c10 GetCreatureMood (568 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="30" class="todo"><title>0x00414e50 CreatureMood (616 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="30" class="named"><title>0x00414e50 CreatureMood (616 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="30" class="named"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="todo"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="30" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
@@ -1815,7 +1815,7 @@
 <rect width="14.96" height="14.57" x="696.14" y="64.52" class="todo"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
 <rect width="14.96" height="14.57" x="714.10" y="64.52" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="14.94" height="14.57" x="732.06" y="64.52" class="todo"><title>0x0044c150 undraw_flare (617 bytes)</title></rect>
-<rect width="14.56" height="14.93" x="365.13" y="82.10" class="todo"><title>0x00414e50 CreatureMood (616 bytes)</title></rect>
+<rect width="14.56" height="14.93" x="365.13" y="82.10" class="named"><title>0x00414e50 CreatureMood (616 bytes)</title></rect>
 <rect width="14.56" height="14.88" x="365.13" y="100.03" class="todo"><title>0x00493530 MMXSetRenderState (614 bytes)</title></rect>
 <rect width="14.56" height="14.86" x="365.13" y="117.91" class="named"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>
 <rect width="14.56" height="14.86" x="365.13" y="135.77" class="todo"><title>0x004822f0 LoadSamples (613 bytes)</title></rect>
