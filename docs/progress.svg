@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="154.84" height="12" x="0" y="0" class="named"><title>489 · 33.09%</title></rect>
-<rect width="313.16" height="12" x="154.84" y="0" class="todo"><title>989 · 66.91%</title></rect>
+<rect width="155.16" height="12" x="0" y="0" class="named"><title>490 · 33.15%</title></rect>
+<rect width="312.84" height="12" x="155.16" y="0" class="todo"><title>988 · 66.85%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">33.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">489</tspan> · <tspan class="todo">989</tspan></text>
+<text text-anchor="end" x="648" y="7.50">33.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">490</tspan> · <tspan class="todo">988</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="28.68" height="12" x="0" y="0" class="named"><title>41 KB · 6.13%</title></rect>
-<rect width="439.32" height="12" x="28.68" y="0" class="todo"><title>623 KB · 93.87%</title></rect>
+<rect width="28.81" height="12" x="0" y="0" class="named"><title>41 KB · 6.16%</title></rect>
+<rect width="439.19" height="12" x="28.81" y="0" class="todo"><title>623 KB · 93.84%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">6.1%</text>
+<text text-anchor="end" x="648" y="24.50">6.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">41 KB</tspan> · <tspan class="todo">623 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -306,7 +306,7 @@
 <rect width="12" height="12" x="615" y="60" class="todo"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="60" class="named"><title>0x00424c20 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="60" class="todo"><title>0x00424c60 DrawRooms (887 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="60" class="todo"><title>0x00424fe0 PrintRooms (185 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="60" class="named"><title>0x00424fe0 PrintRooms (185 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="60" class="todo"><title>0x004250a0 PrintObjects (787 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="60" class="todo"><title>0x004253c0 GetRoomBounds (458 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="60" class="todo"><title>0x00425590 SetRoomBounds (885 bytes)</title></rect>
@@ -2262,7 +2262,7 @@
 <rect width="8.54" height="7.86" x="592.52" y="222.66" class="todo"><title>0x0041a000 FixedCamera (190 bytes)</title></rect>
 <rect width="8.54" height="7.86" x="604.06" y="222.66" class="todo"><title>0x0043d8c0 LaraTestClimbStance (190 bytes)</title></rect>
 <rect width="8.40" height="7.86" x="615.60" y="222.66" class="todo"><title>0x004231f0 CheckNoColFloorTriangle (187 bytes)</title></rect>
-<rect width="8.32" height="7.86" x="627" y="222.66" class="todo"><title>0x00424fe0 PrintRooms (185 bytes)</title></rect>
+<rect width="8.32" height="7.86" x="627" y="222.66" class="named"><title>0x00424fe0 PrintRooms (185 bytes)</title></rect>
 <rect width="8.32" height="7.86" x="638.32" y="222.66" class="todo"><title>0x0044ae20 HitTarget (185 bytes)</title></rect>
 <rect width="8.32" height="7.86" x="649.63" y="222.66" class="named"><title>0x0044e350 lara_as_surftread (185 bytes)</title></rect>
 <rect width="8.32" height="7.86" x="660.95" y="222.66" class="todo"><title>0x0045b700 GunHit (185 bytes)</title></rect>

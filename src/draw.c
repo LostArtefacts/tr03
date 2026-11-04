@@ -34,6 +34,43 @@ sint32 DrawPhaseGame(void)
     return camera.number_frames;
 }
 
+extern int CurrentRoom;
+extern int camera_underwater;
+extern sint32 outside;
+extern sint32 phd_left, phd_right, phd_top, phd_bottom;
+
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void S_SetupBelowWater(int underwater);
+void S_SetupAboveWater(int underwater);
+void S_LightRoom(ROOM_INFO *r);
+void S_InsertRoom(sint16 *objptr, int outside);
+void ClipRoom(ROOM_INFO *r);
+
+void PrintRooms(sint16 room_number)
+{
+    ROOM_INFO *r;
+
+    CurrentRoom = room_number;
+    r = &room[room_number];
+    if (r->flags & UNDERWATER)
+        S_SetupBelowWater(camera_underwater);
+    else
+        S_SetupAboveWater(camera_underwater);
+    phd_TranslateAbs(r->x, r->y, r->z);
+    phd_left = r->left;
+    phd_right = r->right;
+    phd_top = r->top;
+    phd_bottom = r->bottom;
+    S_LightRoom(r);
+    if (outside > 0 && !(r->flags & 64)) {
+        S_InsertRoom(r->data, 1);
+    } else {
+        if (outside >= 0)
+            ClipRoom(r);
+        S_InsertRoom(r->data, 0);
+    }
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;
