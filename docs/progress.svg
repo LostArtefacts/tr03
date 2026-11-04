@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="23.78" height="12" x="130" y="1.50" class="named"/>
-<rect width="178.22" height="12" x="153.78" y="1.50" class="todo"/>
+<rect width="23.92" height="12" x="130" y="1.50" class="named"/>
+<rect width="178.08" height="12" x="153.92" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">11.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">174/1478</text>
-<rect width="2.42" height="12" x="130" y="18.50" class="named"/>
-<rect width="199.58" height="12" x="132.42" y="18.50" class="todo"/>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">175/1478</text>
+<rect width="2.46" height="12" x="130" y="18.50" class="named"/>
+<rect width="199.54" height="12" x="132.46" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">1.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">8k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">11.77% (174)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.23% (1304)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">11.84% (175)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">88.16% (1303)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="87.94" height="6" x="0" y="0" class="named"/>
-<rect width="659.06" height="6" x="87.94" y="0" class="todo"/>
+<rect width="88.45" height="6" x="0" y="0" class="named"/>
+<rect width="658.55" height="6" x="88.45" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -682,7 +682,7 @@
 <rect width="12" height="12" x="240" y="180" class="todo"><title>0x004423b0 lara_col_fastback (218 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="180" class="todo"><title>0x00442490 lara_col_turn_r (235 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="180" class="named"><title>0x00442580 lara_col_turn_l (19 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="180" class="todo"><title>0x004425a0 lara_col_death (104 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="180" class="named"><title>0x004425a0 lara_col_death (104 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="180" class="todo"><title>0x00442610 lara_col_fastfall (159 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="180" class="todo"><title>0x004426b0 lara_col_hang (382 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="180" class="todo"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.20%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.80%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.22%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.78%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="8.96" height="6" x="0" y="0" class="named"/>
-<rect width="738.04" height="6" x="8.96" y="0" class="todo"/>
+<rect width="9.08" height="6" x="0" y="0" class="named"/>
+<rect width="737.92" height="6" x="9.08" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2489,7 +2489,7 @@
 <rect width="4.12" height="4.55" x="721.73" y="328.59" class="todo"><title>0x0048d630 Sync (105 bytes)</title></rect>
 <rect width="4.05" height="4.55" x="728.85" y="328.59" class="todo"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
 <rect width="4.05" height="4.55" x="735.90" y="328.59" class="named"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
-<rect width="4.05" height="4.55" x="742.95" y="328.59" class="todo"><title>0x004425a0 lara_col_death (104 bytes)</title></rect>
+<rect width="4.05" height="4.55" x="742.95" y="328.59" class="named"><title>0x004425a0 lara_col_death (104 bytes)</title></rect>
 <rect width="4.02" height="4.58" x="627.50" y="336.14" class="todo"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
 <rect width="4.02" height="4.58" x="627.50" y="343.73" class="todo"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
 <rect width="4.02" height="4.44" x="627.50" y="351.31" class="todo"><title>0x004322a0 GF_DoLevelSequence (102 bytes)</title></rect>
