@@ -62,3 +62,9 @@ void T_FlashText(TEXTSTRING *textString, sint16 ok, sint16 rate)
     else
         textString->flags &= ~T_FLASH;
 }
+
+void T_RemoveBackground(TEXTSTRING *textString)
+{
+    if (textString)
+        textString->flags &= ~T_ADDBACKGROUND;
+}
