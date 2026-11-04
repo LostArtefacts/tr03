@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="21.87" height="12" x="130" y="1.50" class="named"/>
-<rect width="180.13" height="12" x="151.87" y="1.50" class="todo"/>
+<rect width="22" height="12" x="130" y="1.50" class="named"/>
+<rect width="180" height="12" x="152" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">10.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">160/1478</text>
-<rect width="2.01" height="12" x="130" y="18.50" class="named"/>
-<rect width="199.99" height="12" x="132.01" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">10.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">161/1478</text>
+<rect width="2.03" height="12" x="130" y="18.50" class="named"/>
+<rect width="199.97" height="12" x="132.03" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">1.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">7k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">10.83% (160)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.17% (1318)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">10.89% (161)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">89.11% (1317)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="80.87" height="6" x="0" y="0" class="named"/>
-<rect width="666.13" height="6" x="80.87" y="0" class="todo"/>
+<rect width="81.37" height="6" x="0" y="0" class="named"/>
+<rect width="665.63" height="6" x="81.37" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -552,7 +552,7 @@
 <rect width="12" height="12" x="540" y="135" class="todo"><title>0x0043af60 AddActiveItem (105 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="135" class="todo"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="135" class="todo"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="135" class="todo"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="135" class="named"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="135" class="todo"><title>0x0043b130 CreateEffect (108 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="135" class="todo"><title>0x0043b1a0 KillEffect (238 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="135" class="todo"><title>0x0043b290 EffectNewRoom (147 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="7.43" height="6" x="0" y="0" class="named"/>
-<rect width="739.57" height="6" x="7.43" y="0" class="todo"/>
+<rect width="7.49" height="6" x="0" y="0" class="named"/>
+<rect width="739.51" height="6" x="7.49" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2777,7 +2777,7 @@
 <rect width="1.77" height="2.15" x="712.12" y="390.26" class="todo"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
 <rect width="1.77" height="2.15" x="716.89" y="390.26" class="todo"><title>0x00406780 GETG (48 bytes)</title></rect>
 <rect width="1.77" height="2.15" x="721.66" y="390.26" class="named"><title>0x00429ed0 GetBestFrame (48 bytes)</title></rect>
-<rect width="1.77" height="2.15" x="726.43" y="390.26" class="todo"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
+<rect width="1.77" height="2.15" x="726.43" y="390.26" class="named"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
 <rect width="1.77" height="2.15" x="731.21" y="390.26" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
 <rect width="1.67" height="2.15" x="735.98" y="390.26" class="named"><title>0x0041e140 FindGridShift (47 bytes)</title></rect>
 <rect width="1.67" height="2.15" x="740.65" y="390.26" class="todo"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
