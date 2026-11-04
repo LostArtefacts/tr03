@@ -341,6 +341,25 @@ void RemoveAllReqItems(REQUEST_INFO *req)
     req->selected = 0;
 }
 
+void AddRequesterItem(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2)
+{
+    req->itemtexts1_flags = RequesterFlags1;
+    req->itemtexts2_flags = RequesterFlags2;
+    if (text1) {
+        sprintf(req->itemtexts1 + req->items * req->itemtextlen, text1);
+        req->itemtexts1_flags[req->items] = flags1 | 1;
+    } else {
+        req->itemtexts1_flags[req->items] = 0;
+    }
+    if (text2) {
+        sprintf(req->itemtexts2 + req->items * req->itemtextlen, text2);
+        req->itemtexts2_flags[req->items] = flags2 | 1;
+    } else {
+        req->itemtexts2_flags[req->items] = 0;
+    }
+    req->items++;
+}
+
 void SetPCRequesterSize(REQUEST_INFO *req, int maxlines, int ypos)
 {
     int height = GetRenderHeight();

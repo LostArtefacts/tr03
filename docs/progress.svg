@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="149.46" height="12" x="0" y="0" class="named"><title>472 · 31.94%</title></rect>
-<rect width="318.54" height="12" x="149.46" y="0" class="todo"><title>1006 · 68.06%</title></rect>
+<rect width="149.77" height="12" x="0" y="0" class="named"><title>473 · 32%</title></rect>
+<rect width="318.23" height="12" x="149.77" y="0" class="todo"><title>1005 · 68%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">31.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">472</tspan> · <tspan class="todo">1006</tspan></text>
+<text text-anchor="end" x="648" y="7.50">32.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">473</tspan> · <tspan class="todo">1005</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="26.60" height="12" x="0" y="0" class="named"><title>38 KB · 5.68%</title></rect>
-<rect width="441.40" height="12" x="26.60" y="0" class="todo"><title>626 KB · 94.32%</title></rect>
+<rect width="26.72" height="12" x="0" y="0" class="named"><title>38 KB · 5.71%</title></rect>
+<rect width="441.28" height="12" x="26.72" y="0" class="todo"><title>626 KB · 94.29%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">38 KB</tspan> · <tspan class="todo">626 KB</tspan></text>
@@ -535,7 +535,7 @@
 <rect width="12" height="12" x="300" y="135" class="named"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="135" class="named"><title>0x00439c30 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="135" class="todo"><title>0x00439c50 ChangeRequesterItem (192 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="135" class="todo"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="135" class="named"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="135" class="named"><title>0x00439dc0 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="135" class="named"><title>0x00439e00 AddAssaultTime (95 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="135" class="named"><title>0x00439e60 AddQuadbikeTime (95 bytes)</title></rect>
@@ -2282,7 +2282,7 @@
 <rect width="7.78" height="7.86" x="522.89" y="299.36" class="todo"><title>0x00444ee0 LaraTestEdgeCatch (173 bytes)</title></rect>
 <rect width="7.78" height="7.86" x="522.89" y="310.22" class="todo"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
 <rect width="7.78" height="7.82" x="522.89" y="321.08" class="todo"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
-<rect width="7.78" height="7.82" x="522.89" y="331.90" class="todo"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
+<rect width="7.78" height="7.82" x="522.89" y="331.90" class="named"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="342.71" class="todo"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="353.48" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="364.25" class="todo"><title>0x0048ab50 S_AnimateTextures (171 bytes)</title></rect>
