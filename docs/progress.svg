@@ -46,11 +46,11 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="26.51" height="12" x="0" y="0" class="named"><title>194 · 13.13%</title></rect>
-<rect width="175.49" height="12" x="26.51" y="0" class="todo"><title>1284 · 86.87%</title></rect>
+<rect width="26.65" height="12" x="0" y="0" class="named"><title>195 · 13.19%</title></rect>
+<rect width="175.35" height="12" x="26.65" y="0" class="todo"><title>1283 · 86.81%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">13.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">194</tspan> · <tspan class="todo">1284</tspan></text>
+<text text-anchor="end" x="382" y="7.50">13.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">195</tspan> · <tspan class="todo">1283</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="2.79" height="12" x="0" y="0" class="named"><title>9 KB · 1.38%</title></rect>
@@ -930,7 +930,7 @@
 <rect width="12" height="12" x="225" y="255" class="todo"><title>0x0045b260 OrcaControl (732 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="255" class="todo"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="255" class="todo"><title>0x0045b610 Targetable (210 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="255" class="todo"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="255" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="255" class="todo"><title>0x0045b700 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="255" class="todo"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
@@ -3017,7 +3017,7 @@
 <rect width="1.97" height="1" x="733.21" y="446" class="todo"><title>0x004b4c58 phd_cos (6 bytes)</title></rect>
 <rect width="1" height="1.76" x="738.18" y="438.02" class="named"><title>0x0042f190 flip_map_effect (5 bytes)</title></rect>
 <rect width="1" height="1.76" x="742.12" y="438.02" class="named"><title>0x0042f440 reset_hair (5 bytes)</title></rect>
-<rect width="1" height="1.76" x="746" y="438.02" class="todo"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
+<rect width="1" height="1.76" x="746" y="438.02" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
 <rect width="2.19" height="1" x="738.18" y="442.78" class="todo"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="2.19" height="1" x="738.18" y="446" class="todo"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
 <rect width="1" height="2.28" x="743.37" y="442.78" class="todo"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
