@@ -6,6 +6,7 @@
 #define LARA_HEAD 4
 #define SQUARE(A) ((A) * (A))
 #define BLOOD_RADIUS 256
+#define BUBBLES1 297
 #define MAX_BOUNCE 100
 #define ABS(x) (((x) < 0) ? (-(x)) : (x))
 
@@ -24,6 +25,7 @@ void TriggerBloodD(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 num);
 void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size);
 void TriggerUnderwaterBloodD(sint32 x, sint32 y, sint32 z, sint32 size);
 void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
+void TriggerBubble(sint32 x, sint32 y, sint32 z, sint32 size, sint32 sizerange, sint16 fxNum);
 void GetLaraHandAbsPosition(PHD_VECTOR *vec, sint32 lr);
 
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance)
@@ -105,6 +107,32 @@ void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction
 {
     for (; number > 0; number--)
         DoBloodSplatD(x + BLOOD_RADIUS - (GetRandomDraw() * BLOOD_RADIUS * 2 / 0x8000), y, z + BLOOD_RADIUS - (GetRandomDraw() * BLOOD_RADIUS * 2 / 0x8000), speed, direction, room_num);
+}
+
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange)
+{
+    sint16 fx_number, roomnum;
+    FLOOR_INFO *floor;
+    FX_INFO *fx;
+
+    roomnum = room_number;
+    floor = GetFloor(pos->x_pos, pos->y_pos, pos->z_pos, &roomnum);
+    if (!(room[roomnum].flags & UNDERWATER))
+        return;
+    fx_number = CreateEffect(room_number);
+    if (fx_number != NO_ITEM)
+    {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = pos->x_pos;
+        fx->pos.y_pos = pos->y_pos;
+        fx->pos.z_pos = pos->z_pos;
+        fx->speed = 64 + (GetRandomControl() & 255);
+        fx->flag1 = (GetRandomControl() & 31) + 32;
+        fx->flag2 = 0;
+        fx->frame_number = 0;
+        fx->object_number = BUBBLES1;
+        TriggerBubble(pos->x_pos, pos->y_pos, pos->z_pos, size, sizerange, fx_number);
+    }
 }
 
 void LaraBubbles(ITEM_INFO *item)

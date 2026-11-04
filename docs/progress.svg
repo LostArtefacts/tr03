@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="138.69" height="12" x="0" y="0" class="named"><title>438 · 29.63%</title></rect>
-<rect width="329.31" height="12" x="138.69" y="0" class="todo"><title>1040 · 70.37%</title></rect>
+<rect width="139.01" height="12" x="0" y="0" class="named"><title>439 · 29.70%</title></rect>
+<rect width="328.99" height="12" x="139.01" y="0" class="todo"><title>1039 · 70.30%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">29.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">438</tspan> · <tspan class="todo">1040</tspan></text>
+<text text-anchor="end" x="648" y="7.50">29.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">439</tspan> · <tspan class="todo">1039</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="23.03" height="12" x="0" y="0" class="named"><title>33 KB · 4.92%</title></rect>
-<rect width="444.97" height="12" x="23.03" y="0" class="todo"><title>631 KB · 95.08%</title></rect>
+<rect width="23.16" height="12" x="0" y="0" class="named"><title>33 KB · 4.95%</title></rect>
+<rect width="444.84" height="12" x="23.16" y="0" class="todo"><title>631 KB · 95.05%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">33 KB</tspan> · <tspan class="todo">631 KB</tspan></text>
@@ -383,7 +383,7 @@
 <rect width="12" height="12" x="270" y="90" class="named"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="90" class="named"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="named"><title>0x0042e460 DoLotsOfBloodD (130 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="90" class="todo"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="90" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="90" class="named"><title>0x0042e5c0 LaraBubbles (112 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="90" class="todo"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="90" class="todo"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
@@ -2248,7 +2248,7 @@
 <rect width="8.34" height="8.30" x="660.08" y="211.36" class="todo"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
 <rect width="8.30" height="8.30" x="671.42" y="211.36" class="todo"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
 <rect width="8.26" height="8.30" x="682.72" y="211.36" class="todo"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>
-<rect width="8.21" height="8.30" x="693.98" y="211.36" class="todo"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
+<rect width="8.21" height="8.30" x="693.98" y="211.36" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="705.19" y="211.36" class="todo"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="716.40" y="211.36" class="todo"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="727.62" y="211.36" class="todo"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
