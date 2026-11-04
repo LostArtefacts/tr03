@@ -5,6 +5,7 @@
 #define CAM_A_CLIMBR (30 * ONE_DEGREE)
 #define CAM_E_CLIMBR (-15 * ONE_DEGREE)
 #define CLIMB_WIDTHR 120
+#define CLIMB_WIDTHL 120
 #define CLIMB_HITE 512
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
@@ -54,6 +55,17 @@ void lara_as_climbdown(ITEM_INFO *item, COLL_INFO *coll)
     coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_elevation = CAM_E_CLIMBD;
+}
+
+void lara_col_climbleft(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int result, shift;
+
+    if (LaraCheckForLetGo(item, coll))
+        return;
+    lara.move_angle = item->pos.y_rot - 16384;
+    result = LaraTestClimbPos(item, coll->radius, -(coll->radius + CLIMB_WIDTHL), -CLIMB_HITE, CLIMB_HITE, &shift);
+    LaraDoClimbLeftRight(item, coll, result, shift);
 }
 
 void lara_col_climbright(ITEM_INFO *item, COLL_INFO *coll)
