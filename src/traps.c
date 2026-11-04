@@ -2,6 +2,7 @@
 
 #define DOOR_CLOSED 0
 #define DOOR_OPEN 1
+#define WALL 0
 #define TRAP_SET 0
 #define TRAP_ACTIVATE 1
 #define STATUE_STOP 1
@@ -10,6 +11,7 @@
 
 extern ITEM_INFO *CeilingObject;
 extern int OnObject;
+extern int height_type;
 
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 
@@ -62,6 +64,23 @@ void TrapDoorControl(sint16 item_number)
             item->goal_anim_state = DOOR_CLOSED;
     }
     AnimateItem(item);
+}
+
+void TrapDoorFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    if (!OnTrapDoor(item, x, z))
+        return;
+    if (y <= item->pos.y_pos)
+    {
+        if (item->current_anim_state == DOOR_CLOSED && item->pos.y_pos < *height)
+        {
+            *height = item->pos.y_pos;
+            OnObject = 1;
+            height_type = WALL;
+            if (item == lara_item)
+                lara_item->item_flags[0] = 1;
+        }
+    }
 }
 
 void TrapDoorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
