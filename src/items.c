@@ -22,6 +22,30 @@ void InitialiseItemArray(int numitems)
     item->next_item = NO_ITEM;
 }
 
+void RemoveDrawnItem(sint16 item_num)
+{
+    sint16 linknum;
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    linknum = room[item->room_number].item_number;
+    if (linknum == item_num)
+    {
+        room[item->room_number].item_number = item->next_item;
+    }
+    else
+    {
+        for (; linknum != NO_ITEM; linknum = items[linknum].next_item)
+        {
+            if (items[linknum].next_item == item_num)
+            {
+                items[linknum].next_item = item->next_item;
+                return;
+            }
+        }
+    }
+}
+
 void AddActiveItem(sint16 item_num)
 {
     ITEM_INFO *item;

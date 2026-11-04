@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="119.06" height="12" x="0" y="0" class="named"><title>376 · 25.44%</title></rect>
-<rect width="348.94" height="12" x="119.06" y="0" class="todo"><title>1102 · 74.56%</title></rect>
+<rect width="119.37" height="12" x="0" y="0" class="named"><title>377 · 25.51%</title></rect>
+<rect width="348.63" height="12" x="119.37" y="0" class="todo"><title>1101 · 74.49%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">25.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">376</tspan> · <tspan class="todo">1102</tspan></text>
+<text text-anchor="end" x="648" y="7.50">25.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">377</tspan> · <tspan class="todo">1101</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="16.72" height="12" x="0" y="0" class="named"><title>24 KB · 3.57%</title></rect>
-<rect width="451.28" height="12" x="16.72" y="0" class="todo"><title>640 KB · 96.43%</title></rect>
+<rect width="16.81" height="12" x="0" y="0" class="named"><title>24 KB · 3.59%</title></rect>
+<rect width="451.19" height="12" x="16.81" y="0" class="todo"><title>640 KB · 96.41%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
@@ -547,7 +547,7 @@
 <rect width="12" height="12" x="480" y="135" class="todo"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="135" class="todo"><title>0x0043ac30 InitialiseItem (513 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="135" class="todo"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="135" class="todo"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="135" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="135" class="named"><title>0x0043af60 AddActiveItem (105 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="135" class="todo"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="135" class="todo"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
@@ -2406,7 +2406,7 @@
 <rect width="6.73" height="6.77" x="662.98" y="254.61" class="todo"><title>0x00436a50 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="6.73" height="6.77" x="672.71" y="254.61" class="todo"><title>0x004372f0 RingIsNotOpen (129 bytes)</title></rect>
 <rect width="6.68" height="6.77" x="682.45" y="254.61" class="todo"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
-<rect width="6.68" height="6.77" x="692.13" y="254.61" class="todo"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
+<rect width="6.68" height="6.77" x="692.13" y="254.61" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
 <rect width="6.68" height="6.77" x="701.81" y="254.61" class="todo"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
 <rect width="6.68" height="6.77" x="711.49" y="254.61" class="todo"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
 <rect width="6.63" height="6.77" x="721.17" y="254.61" class="todo"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
