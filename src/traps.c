@@ -32,3 +32,17 @@ void InitialiseRollingBall(sint16 item_number)
     old->z = item->pos.z_pos;
     old->room_number = item->room_number;
 }
+
+void TrapDoorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    if (!OnTrapDoor(item, x, z))
+        return;
+    if (y > item->pos.y_pos)
+    {
+        if (item->current_anim_state == DOOR_CLOSED && item->pos.y_pos > *height)
+        {
+            *height = item->pos.y_pos + STEP_L;
+            CeilingObject = item;
+        }
+    }
+}

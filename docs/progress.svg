@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="81.06" height="12" x="0" y="0" class="named"><title>256 · 17.32%</title></rect>
-<rect width="386.94" height="12" x="81.06" y="0" class="todo"><title>1222 · 82.68%</title></rect>
+<rect width="81.38" height="12" x="0" y="0" class="named"><title>257 · 17.39%</title></rect>
+<rect width="386.62" height="12" x="81.38" y="0" class="todo"><title>1221 · 82.61%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">17.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">256</tspan> · <tspan class="todo">1222</tspan></text>
+<text text-anchor="end" x="648" y="7.50">17.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">257</tspan> · <tspan class="todo">1221</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.77" height="12" x="0" y="0" class="named"><title>12 KB · 1.87%</title></rect>
-<rect width="459.23" height="12" x="8.77" y="0" class="todo"><title>651 KB · 98.13%</title></rect>
+<rect width="8.82" height="12" x="0" y="0" class="named"><title>13 KB · 1.88%</title></rect>
+<rect width="459.18" height="12" x="8.82" y="0" class="todo"><title>651 KB · 98.12%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">12 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1074,7 +1074,7 @@
 <rect width="12" height="12" x="135" y="300" class="todo"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="300" class="todo"><title>0x0046e530 TrapDoorControl (83 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="300" class="todo"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="300" class="todo"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="300" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="300" class="todo"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="300" class="todo"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="todo"><title>0x0046e890 FallingBlock (276 bytes)</title></rect>
@@ -2636,7 +2636,7 @@
 <rect width="4.86" height="5.09" x="664.55" y="316.89" class="todo"><title>0x0048fdb0 BPPToDDBD (70 bytes)</title></rect>
 <rect width="4.86" height="5.09" x="672.41" y="316.89" class="todo"><title>0x004b39a0 DD_EnsureSurfaceAvailable (70 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="680.27" y="316.89" class="named"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
-<rect width="4.79" height="5.09" x="688.05" y="316.89" class="todo"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
+<rect width="4.79" height="5.09" x="688.05" y="316.89" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="695.84" y="316.89" class="todo"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="703.63" y="316.89" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
 <rect width="4.72" height="5.09" x="711.42" y="316.89" class="todo"><title>0x0042e270 Richochet (68 bytes)</title></rect>
