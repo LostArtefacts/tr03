@@ -155,3 +155,20 @@ void AssaultPenalty30(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void AssaultFinished(ITEM_INFO *item)
+{
+    if (assault_timer_active)
+    {
+        assault_target_penalties = assault_targets * 10 * 30;
+        assault_penalty_display_timer = 10 * 30;
+        savegame.timer += assault_target_penalties + assault_penalties;
+        if (savegame.timer > MAX_TIME_ALLOWED)
+            savegame.timer = MAX_TIME_ALLOWED;
+        AddAssaultTime(savegame.timer);
+        assault_timer_active = 0;
+        if (savegame.timer < 3 * 60 * 30)
+            S_CDPlay(95, 0);
+    }
+    flipeffect = -1;
+}
