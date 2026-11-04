@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="141.22" height="12" x="0" y="0" class="named"><title>446 · 30.18%</title></rect>
-<rect width="326.78" height="12" x="141.22" y="0" class="todo"><title>1032 · 69.82%</title></rect>
+<rect width="141.54" height="12" x="0" y="0" class="named"><title>447 · 30.24%</title></rect>
+<rect width="326.46" height="12" x="141.54" y="0" class="todo"><title>1031 · 69.76%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">30.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">446</tspan> · <tspan class="todo">1032</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">447</tspan> · <tspan class="todo">1031</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="23.93" height="12" x="0" y="0" class="named"><title>34 KB · 5.11%</title></rect>
-<rect width="444.07" height="12" x="23.93" y="0" class="todo"><title>630 KB · 94.89%</title></rect>
+<rect width="24.02" height="12" x="0" y="0" class="named"><title>34 KB · 5.13%</title></rect>
+<rect width="443.98" height="12" x="24.02" y="0" class="todo"><title>630 KB · 94.87%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">34 KB</tspan> · <tspan class="todo">630 KB</tspan></text>
@@ -143,7 +143,7 @@
 <rect width="12" height="12" x="420" y="15" class="todo"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="15" class="todo"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="15" class="todo"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="15" class="todo"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="15" class="named"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="15" class="todo"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="15" class="todo"><title>0x0040faf0 Trigger51RocketSmoke (450 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="15" class="todo"><title>0x0040fcc0 Trigger51BlastFire (464 bytes)</title></rect>
@@ -2405,7 +2405,7 @@
 <rect width="6.78" height="6.78" x="662.85" y="254.32" class="todo"><title>0x00484e20 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="6.72" height="6.78" x="672.62" y="254.32" class="todo"><title>0x00436a50 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="6.72" height="6.78" x="682.35" y="254.32" class="todo"><title>0x004372f0 RingIsNotOpen (129 bytes)</title></rect>
-<rect width="6.67" height="6.78" x="692.07" y="254.32" class="todo"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
+<rect width="6.67" height="6.78" x="692.07" y="254.32" class="named"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
 <rect width="6.67" height="6.78" x="701.74" y="254.32" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
 <rect width="6.67" height="6.78" x="711.42" y="254.32" class="named"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
 <rect width="6.67" height="6.78" x="721.09" y="254.32" class="todo"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
