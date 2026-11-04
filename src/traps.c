@@ -214,6 +214,34 @@ void FallingBlockCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *
 
 void KillEffect(sint16 fx_num);
 
+void SideFlameEmitterControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FX_INFO *fx;
+    sint16 fx_number;
+
+    item = &items[item_number];
+    if (TriggerActive(item)) {
+        if (item->data == NULL) {
+            fx_number = CreateEffect(item->room_number);
+            if (fx_number != NO_ITEM) {
+                fx = &effects[fx_number];
+                fx->pos.x_pos = item->pos.x_pos;
+                fx->pos.y_pos = item->pos.y_pos;
+                fx->pos.z_pos = item->pos.z_pos;
+                fx->pos.y_rot = item->pos.y_rot;
+                fx->frame_number = 3;
+                fx->object_number = FLAME;
+                fx->counter = fx->flag1 = fx->flag2 = 0;
+            }
+            item->data = (void *)(fx_number + 1);
+        }
+    } else if (item->data) {
+        KillEffect((sint16)((int)item->data - 1));
+        item->data = NULL;
+    }
+}
+
 void FlameEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;
