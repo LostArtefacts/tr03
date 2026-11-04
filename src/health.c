@@ -11,6 +11,8 @@ extern DISPLAYPU pickups[NUM_PU];
 extern TEXTSTRING *ammotext;
 extern TEXTSTRING *LpModeTS;
 extern int LnModeTSLife;
+
+void S_CDPlay(sint32 track, int mode);
 extern int flash_state, flash_count;
 
 int FlashIt(void)

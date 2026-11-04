@@ -7,7 +7,8 @@ extern "C" {
 
 #include "../types.h"
 
-void S_CDPlay(sint32 track, int mode);
+void S_SoundSetPitch(int nHandle, int nPitch);
+
 void S_ExitSystem(char *message);
 sint32 GetRandomControl(void);
 void SeedRandomControl(sint32 seed);

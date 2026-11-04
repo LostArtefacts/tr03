@@ -130,3 +130,34 @@ void TriggerCDTrack(sint16 value, sint16 flags, sint16 type)
         return;
     TriggerNormalCDTrack(value, flags, type);
 }
+
+extern char cd_flags[];
+extern uint8 CurrentAtmosphere;
+extern uint8 IsAtmospherePlaying;
+extern uint32 CurrentLevel;
+
+int printf(const char *format, ...);
+void S_CDPlay(sint16 track, int mode);
+
+void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type)
+{
+    int code;
+
+    if ((value >= 26 && value <= 36) || (value >= 73 && value <= 78) || value == 117) {
+        if (CurrentAtmosphere != value) {
+            CurrentAtmosphere = (uint8)value;
+            if (IsAtmospherePlaying)
+                S_CDPlay(value, 1);
+            printf("Got new atmosphere %d\n", value);
+        }
+    } else {
+        if (value != 2 || CurrentLevel != 0) {
+            code = (flags & (CODE_BITS | ONESHOT)) >> 8;
+            if ((cd_flags[value] & code) == code)
+                return;
+            cd_flags[value] |= code;
+        }
+        S_CDPlay(value, 0);
+        IsAtmospherePlaying = 0;
+    }
+}

@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="151.36" height="12" x="0" y="0" class="named"><title>478 · 32.34%</title></rect>
-<rect width="316.64" height="12" x="151.36" y="0" class="todo"><title>1000 · 67.66%</title></rect>
+<rect width="151.67" height="12" x="0" y="0" class="named"><title>479 · 32.41%</title></rect>
+<rect width="316.33" height="12" x="151.67" y="0" class="todo"><title>999 · 67.59%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">32.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">478</tspan> · <tspan class="todo">1000</tspan></text>
+<text text-anchor="end" x="648" y="7.50">32.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">479</tspan> · <tspan class="todo">999</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="27.32" height="12" x="0" y="0" class="named"><title>39 KB · 5.84%</title></rect>
-<rect width="440.68" height="12" x="27.32" y="0" class="todo"><title>625 KB · 94.16%</title></rect>
+<rect width="27.44" height="12" x="0" y="0" class="named"><title>39 KB · 5.86%</title></rect>
+<rect width="440.56" height="12" x="27.44" y="0" class="todo"><title>625 KB · 94.14%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">5.8%</text>
+<text text-anchor="end" x="648" y="24.50">5.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">39 KB</tspan> · <tspan class="todo">625 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -286,7 +286,7 @@
 <rect width="12" height="12" x="315" y="60" class="named"><title>0x00423000 RemoveRoomFlipItems (156 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="60" class="named"><title>0x004230a0 AddRoomFlipItems (97 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="60" class="named"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="60" class="todo"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="60" class="named"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="60" class="todo"><title>0x004231f0 CheckNoColFloorTriangle (187 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="60" class="todo"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="60" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
@@ -2281,7 +2281,7 @@
 <rect width="7.78" height="7.91" x="522.89" y="288.45" class="named"><title>0x0046f130 FlameEmitter3Control (174 bytes)</title></rect>
 <rect width="7.78" height="7.86" x="522.89" y="299.36" class="todo"><title>0x00444ee0 LaraTestEdgeCatch (173 bytes)</title></rect>
 <rect width="7.78" height="7.86" x="522.89" y="310.22" class="todo"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
-<rect width="7.78" height="7.82" x="522.89" y="321.08" class="todo"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
+<rect width="7.78" height="7.82" x="522.89" y="321.08" class="named"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
 <rect width="7.78" height="7.82" x="522.89" y="331.90" class="named"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="342.71" class="todo"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="353.48" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>

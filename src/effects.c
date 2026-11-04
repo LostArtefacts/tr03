@@ -10,6 +10,8 @@
 #define MAX_BOUNCE 100
 #define ABS(x) (((x) < 0) ? (-(x)) : (x))
 
+void S_CDPlay(sint32 track, int mode);
+
 
 extern OBJECT_VECTOR *sound_effects;
 extern sint32 number_sound_effects;
