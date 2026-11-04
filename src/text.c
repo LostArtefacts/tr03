@@ -167,3 +167,15 @@ void T_DrawText(void)
         textString++;
     }
 }
+
+uint32 GetTextScaleH(uint32 scaleH)
+{
+    uint32 scale;
+    int width;
+
+    width = GetRenderWidth();
+    if (width < 640)
+        width = 640;
+    scale = (width << 16) / width;
+    return (scaleH >> 8) * (scale >> 8);
+}
