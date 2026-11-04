@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="158.01" height="12" x="0" y="0" class="named"><title>499 · 33.76%</title></rect>
-<rect width="309.99" height="12" x="158.01" y="0" class="todo"><title>979 · 66.24%</title></rect>
+<rect width="158.32" height="12" x="0" y="0" class="named"><title>500 · 33.83%</title></rect>
+<rect width="309.68" height="12" x="158.32" y="0" class="todo"><title>978 · 66.17%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">33.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">499</tspan> · <tspan class="todo">979</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">500</tspan> · <tspan class="todo">978</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="30.01" height="12" x="0" y="0" class="named"><title>43 KB · 6.41%</title></rect>
-<rect width="437.99" height="12" x="30.01" y="0" class="todo"><title>621 KB · 93.59%</title></rect>
+<rect width="30.15" height="12" x="0" y="0" class="named"><title>43 KB · 6.44%</title></rect>
+<rect width="437.85" height="12" x="30.15" y="0" class="todo"><title>621 KB · 93.56%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">43 KB</tspan> · <tspan class="todo">621 KB</tspan></text>
@@ -598,7 +598,7 @@
 <rect width="12" height="12" x="495" y="150" class="named"><title>0x0043f150 lara_as_all4turnl (100 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="150" class="named"><title>0x0043f1c0 lara_col_all4turnl (40 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="150" class="named"><title>0x0043f1f0 lara_as_all4turnr (100 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="150" class="todo"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="150" class="named"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="150" class="todo"><title>0x0043f330 lara_col_crawlb (245 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="150" class="todo"><title>0x0043f430 lara_col_crawl2hang (462 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="150" class="todo"><title>0x0043f600 lara_as_dash (281 bytes)</title></rect>
@@ -2247,7 +2247,7 @@
 <rect width="8.34" height="8.30" x="648.74" y="211.36" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
 <rect width="8.34" height="8.30" x="660.08" y="211.36" class="todo"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
 <rect width="8.30" height="8.30" x="671.42" y="211.36" class="todo"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
-<rect width="8.26" height="8.30" x="682.72" y="211.36" class="todo"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>
+<rect width="8.26" height="8.30" x="682.72" y="211.36" class="named"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="693.98" y="211.36" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="705.19" y="211.36" class="named"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="716.40" y="211.36" class="named"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>

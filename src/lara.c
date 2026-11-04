@@ -223,6 +223,39 @@ void lara_as_all4turnr(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_ALL4S;
 }
 
+void lara_as_crawlb(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_ALL4S;
+        return;
+    }
+
+    if (input & IN_LOOK)
+        LookUpDown();
+    coll->enable_hit = 0;
+    coll->enable_baddie_push = 1;
+    lara.torso_x_rot = lara.torso_y_rot = 0;
+    camera.target_elevation = -23 * ONE_DEGREE;
+    if (TestLaraSlide(item, coll))
+        return;
+
+    if (!(input & IN_BACK))
+        item->goal_anim_state = AS_ALL4S;
+    else if (input & IN_RIGHT)
+    {
+        lara.turn_rate -= LARA_TURN_RATE;
+        if (lara.turn_rate < -LARA_JUMP_TURN)
+            lara.turn_rate = -LARA_JUMP_TURN;
+    }
+    else if (input & IN_LEFT)
+    {
+        lara.turn_rate += LARA_TURN_RATE;
+        if (lara.turn_rate > LARA_JUMP_TURN)
+            lara.turn_rate = LARA_JUMP_TURN;
+    }
+}
+
 void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll)
 {
     switch (coll->old_anim_state)
