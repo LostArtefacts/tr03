@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="111.46" height="12" x="0" y="0" class="named"><title>352 · 23.82%</title></rect>
-<rect width="356.54" height="12" x="111.46" y="0" class="todo"><title>1126 · 76.18%</title></rect>
+<rect width="111.78" height="12" x="0" y="0" class="named"><title>353 · 23.88%</title></rect>
+<rect width="356.22" height="12" x="111.78" y="0" class="todo"><title>1125 · 76.12%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">23.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">352</tspan> · <tspan class="todo">1126</tspan></text>
+<text text-anchor="end" x="648" y="7.50">23.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">353</tspan> · <tspan class="todo">1125</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="14.70" height="12" x="0" y="0" class="named"><title>21 KB · 3.14%</title></rect>
-<rect width="453.30" height="12" x="14.70" y="0" class="todo"><title>643 KB · 96.86%</title></rect>
+<rect width="14.78" height="12" x="0" y="0" class="named"><title>21 KB · 3.16%</title></rect>
+<rect width="453.22" height="12" x="14.78" y="0" class="todo"><title>643 KB · 96.84%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">3.1%</text>
+<text text-anchor="end" x="648" y="24.50">3.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">21 KB</tspan> · <tspan class="todo">643 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -816,7 +816,7 @@
 <rect width="12" height="12" x="15" y="225" class="todo"><title>0x0044e950 LaraUnderWater (587 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="225" class="named"><title>0x0044eba0 lara_as_swim (107 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="225" class="todo"><title>0x0044ec10 SwimTurn (134 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="225" class="todo"><title>0x0044eca0 lara_as_glide (118 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="225" class="named"><title>0x0044eca0 lara_as_glide (118 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="225" class="todo"><title>0x0044ed20 lara_as_tread (133 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="225" class="named"><title>0x0044edb0 lara_as_dive (20 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="225" class="named"><title>0x0044edd0 lara_as_uwdeath (83 bytes)</title></rect>
@@ -2441,7 +2441,7 @@
 <rect width="6.63" height="6.34" x="564.61" y="339.57" class="named"><title>0x004432e0 lara_col_jumper (119 bytes)</title></rect>
 <rect width="6.63" height="6.34" x="564.61" y="348.91" class="todo"><title>0x00490700 CloseDrawPrimitive (119 bytes)</title></rect>
 <rect width="6.63" height="6.28" x="564.61" y="358.24" class="todo"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
-<rect width="6.63" height="6.28" x="564.61" y="367.53" class="todo"><title>0x0044eca0 lara_as_glide (118 bytes)</title></rect>
+<rect width="6.63" height="6.28" x="564.61" y="367.53" class="named"><title>0x0044eca0 lara_as_glide (118 bytes)</title></rect>
 <rect width="6.63" height="6.23" x="564.61" y="376.81" class="named"><title>0x0043f0d0 LaraDeflectEdgeDuck (117 bytes)</title></rect>
 <rect width="6.63" height="6.23" x="564.61" y="386.04" class="named"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>
 <rect width="6.63" height="6.18" x="564.61" y="395.27" class="todo"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
