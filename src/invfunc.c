@@ -13,6 +13,60 @@ extern TEXTSTRING *Inv_upArrow2;
 extern TEXTSTRING *Inv_downArrow1;
 extern TEXTSTRING *Inv_downArrow2;
 
+TEXTSTRING *T_Print(sint32 xpos, sint32 ypos, sint32 zpos, char *string);
+
+extern sint32 Inventory_Mode;
+extern char **GF_GameStrings;
+extern sint16 inv_keys_objects;
+
+void RingIsOpen(RING_INFO *ring)
+{
+    if (Inventory_Mode == 1)
+        return;
+
+    if (!Inv_ringText) {
+        switch (ring->type) {
+        case 0:
+            Inv_ringText = T_Print(0, 26, 5, GF_GameStrings[0]);
+            break;
+        case 1:
+            if (Inventory_Mode == 5)
+                Inv_ringText = T_Print(0, 26, 5, GF_GameStrings[3]);
+            else
+                Inv_ringText = T_Print(0, 26, 5, GF_GameStrings[1]);
+            break;
+        case 2:
+            Inv_ringText = T_Print(0, 26, 5, GF_GameStrings[2]);
+            break;
+        case 3:
+            Inv_ringText = T_Print(0, 26, 5, GF_GameStrings[90]);
+            break;
+        }
+        T_CentreH(Inv_ringText, 1);
+    }
+
+    if (Inventory_Mode == 2 || Inventory_Mode == 5)
+        return;
+
+    if (!Inv_upArrow1) {
+        if (ring->type == 1 || (ring->type == 0 && inv_keys_objects)) {
+            Inv_upArrow1 = T_Print(20, 28, 2, "[");
+            Inv_upArrow2 = T_Print(-20, 28, 2, "[");
+            T_RightAlign(Inv_upArrow2, 1);
+        }
+    }
+
+    if (!Inv_downArrow1) {
+        if ((ring->type == 0 && !gameflow.lockout_optionring) || ring->type == 2) {
+            Inv_downArrow1 = T_Print(20, -15, 2, "]");
+            T_BottomAlign(Inv_downArrow1, 1);
+            Inv_downArrow2 = T_Print(-20, -15, 2, "]");
+            T_BottomAlign(Inv_downArrow2, 1);
+            T_RightAlign(Inv_downArrow2, 1);
+        }
+    }
+}
+
 void RingIsNotOpen(RING_INFO *ring)
 {
     T_RemovePrint(Inv_tagText);

@@ -436,7 +436,7 @@ address,size,name,symbol
 0x00436fa0,25,GetDebouncedInput,_GetDebouncedInput
 0x00436fc0,141,GetGlobeMeshFlags,_GetGlobeMeshFlags
 0x00437050,266,InitColours,_InitColours
-0x00437160,375,RingIsOpen,_RingIsOpen
+0x00437160,392,RingIsOpen,_RingIsOpen
 0x004372f0,129,RingIsNotOpen,_RingIsNotOpen
 0x00437380,970,RingNotActive,_RingNotActive
 0x00437870,50,RingActive,_RingActive
