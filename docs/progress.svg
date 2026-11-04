@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="174.15" height="12" x="0" y="0" class="named"><title>550 · 37.21%</title></rect>
-<rect width="293.85" height="12" x="174.15" y="0" class="todo"><title>928 · 62.79%</title></rect>
+<rect width="174.47" height="12" x="0" y="0" class="named"><title>551 · 37.28%</title></rect>
+<rect width="293.53" height="12" x="174.47" y="0" class="todo"><title>927 · 62.72%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">37.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">550</tspan> · <tspan class="todo">928</tspan></text>
+<text text-anchor="end" x="648" y="7.50">37.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">551</tspan> · <tspan class="todo">927</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="46.42" height="12" x="0" y="0" class="named"><title>66 KB · 9.92%</title></rect>
-<rect width="421.58" height="12" x="46.42" y="0" class="todo"><title>598 KB · 90.08%</title></rect>
+<rect width="46.60" height="12" x="0" y="0" class="named"><title>66 KB · 9.96%</title></rect>
+<rect width="421.40" height="12" x="46.60" y="0" class="todo"><title>598 KB · 90.04%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">9.9%</text>
+<text text-anchor="end" x="648" y="24.50">10.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">66 KB</tspan> · <tspan class="todo">598 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -971,7 +971,7 @@
 <rect width="12" height="12" x="90" y="270" class="named"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="270" class="todo"><title>0x00461040 RaptorControl (1758 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="270" class="todo"><title>0x00461740 MouseControl (501 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="270" class="todo"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="270" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="270" class="todo"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="270" class="todo"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="270" class="todo"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
@@ -2138,7 +2138,7 @@
 <rect width="9.68" height="9.52" x="563.51" y="186.82" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="9.64" height="9.52" x="576.19" y="186.82" class="named"><title>0x0043f870 TestWall (260 bytes)</title></rect>
 <rect width="9.60" height="9.52" x="588.83" y="186.82" class="todo"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
-<rect width="9.57" height="9.52" x="601.43" y="186.82" class="todo"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
+<rect width="9.57" height="9.52" x="601.43" y="186.82" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
 <rect width="9.53" height="9.52" x="614" y="186.82" class="todo"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="9.49" height="9.52" x="626.53" y="186.82" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
 <rect width="9.46" height="9.52" x="639.02" y="186.82" class="todo"><title>0x0044d1a0 LaraCheatyBits (255 bytes)</title></rect>

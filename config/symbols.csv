@@ -1516,9 +1516,9 @@ address,size,name,symbol
 0x004b5e50,61,printf,_printf
 0x004b5e90,104,sprintf,_sprintf
 0x004b5f00,56,_strncmp,
-0x004b5f40,316,Func4b5f40,
+0x004b5f40,316,fread,_fread
 0x004b6080,35,Func4b6080,
-0x004b60b0,21,Func4b60b0,
+0x004b60b0,21,fopen,_fopen
 0x004b60d0,14,Func4b60d0,
 0x004b60e0,16,Func4b60e0,
 0x004b60f0,126,Func4b60f0,
