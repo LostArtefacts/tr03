@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="175.74" height="12" x="0" y="0" class="named"><title>555 · 37.55%</title></rect>
-<rect width="292.26" height="12" x="175.74" y="0" class="todo"><title>923 · 62.45%</title></rect>
+<rect width="176.05" height="12" x="0" y="0" class="named"><title>556 · 37.62%</title></rect>
+<rect width="291.95" height="12" x="176.05" y="0" class="todo"><title>922 · 62.38%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">37.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">555</tspan> · <tspan class="todo">923</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">556</tspan> · <tspan class="todo">922</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="47.26" height="12" x="0" y="0" class="named"><title>67 KB · 10.10%</title></rect>
-<rect width="420.74" height="12" x="47.26" y="0" class="todo"><title>597 KB · 89.90%</title></rect>
+<rect width="47.43" height="12" x="0" y="0" class="named"><title>67 KB · 10.14%</title></rect>
+<rect width="420.57" height="12" x="47.43" y="0" class="todo"><title>597 KB · 89.86%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">10.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">67 KB</tspan> · <tspan class="todo">597 KB</tspan></text>
@@ -209,7 +209,7 @@
 <rect width="12" height="12" x="660" y="30" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="30" class="named"><title>0x00416ac0 AIGuard (149 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="30" class="todo"><title>0x00416b60 GetAITarget (1451 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="30" class="todo"><title>0x00417110 SameZone (245 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="30" class="named"><title>0x00417110 SameZone (245 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="30" class="todo"><title>0x00417210 AdjustStopperFlag (230 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="30" class="named"><title>0x00417300 InitialiseCamera (316 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="45" class="named"><title>0x0041743c MoveCamera (2151 bytes)</title></rect>
@@ -2158,7 +2158,7 @@
 <rect width="9.04" height="9.65" x="486.96" y="262.85" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="9.04" height="9.65" x="486.96" y="275.50" class="todo"><title>0x00453460 CreateZone (247 bytes)</title></rect>
 <rect width="9.04" height="9.61" x="486.96" y="288.15" class="todo"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
-<rect width="9.04" height="9.57" x="486.96" y="300.75" class="todo"><title>0x00417110 SameZone (245 bytes)</title></rect>
+<rect width="9.04" height="9.57" x="486.96" y="300.75" class="named"><title>0x00417110 SameZone (245 bytes)</title></rect>
 <rect width="9.04" height="9.57" x="486.96" y="313.32" class="named"><title>0x0043f330 lara_col_crawlb (245 bytes)</title></rect>
 <rect width="9.04" height="9.57" x="486.96" y="325.89" class="todo"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
 <rect width="9.04" height="9.53" x="486.96" y="338.46" class="named"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
