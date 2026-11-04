@@ -6,6 +6,8 @@
 #define LARA_HEAD 4
 #define SQUARE(A) ((A) * (A))
 #define BLOOD_RADIUS 256
+#define MAX_BOUNCE 100
+#define ABS(x) (((x) < 0) ? (-(x)) : (x))
 
 
 extern OBJECT_VECTOR *sound_effects;
@@ -122,6 +124,17 @@ void turn180_effect(ITEM_INFO *item)
 {
     item->pos.y_rot += -0x8000;
     item->pos.x_rot = -item->pos.x_rot;
+}
+
+void floor_shake_effect(ITEM_INFO *item)
+{
+    sint32 x, y, z;
+
+    x = item->pos.x_pos - camera.pos.x;
+    y = item->pos.y_pos - camera.pos.y;
+    z = item->pos.z_pos - camera.pos.z;
+    if (ABS(x) < 16 * WALL_L && ABS(y) < 16 * WALL_L && ABS(z) < 16 * WALL_L)
+        camera.bounce = MAX_BOUNCE * ((SQUARE(x) + SQUARE(y) + SQUARE(z)) / 256 - WALL_L * WALL_L) / (WALL_L * WALL_L);
 }
 
 void lara_normal_effect(ITEM_INFO *item)
