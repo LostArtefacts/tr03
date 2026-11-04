@@ -42,6 +42,14 @@ void InitialisePickUpDisplay(void)
         pickups[i].duration = 0;
 }
 
+void AddDisplayPickup(sint16 objnum)
+{
+    if (objnum == SECRET_ITEM1 || objnum == SECRET_ITEM2 || objnum == SECRET_ITEM3)
+        S_CDPlay(gameflow.secret_track, 0);
+    pickups[0].duration = 75;
+    pickups[0].sprnum = objnum;
+}
+
 void DrawModeInfo(void)
 {
     if (LpModeTS && --LnModeTSLife == 0)

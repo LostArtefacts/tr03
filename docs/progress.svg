@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="76.94" height="12" x="0" y="0" class="named"><title>243 · 16.44%</title></rect>
-<rect width="391.06" height="12" x="76.94" y="0" class="todo"><title>1235 · 83.56%</title></rect>
+<rect width="77.26" height="12" x="0" y="0" class="named"><title>244 · 16.51%</title></rect>
+<rect width="390.74" height="12" x="77.26" y="0" class="todo"><title>1234 · 83.49%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">16.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">243</tspan> · <tspan class="todo">1235</tspan></text>
+<text text-anchor="end" x="648" y="7.50">16.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">244</tspan> · <tspan class="todo">1234</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.15" height="12" x="0" y="0" class="named"><title>12 KB · 1.74%</title></rect>
-<rect width="459.85" height="12" x="8.15" y="0" class="todo"><title>652 KB · 98.26%</title></rect>
+<rect width="8.19" height="12" x="0" y="0" class="named"><title>12 KB · 1.75%</title></rect>
+<rect width="459.81" height="12" x="8.19" y="0" class="todo"><title>652 KB · 98.25%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">1.7%</text>
+<text text-anchor="end" x="648" y="24.50">1.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">12 KB</tspan> · <tspan class="todo">652 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -487,7 +487,7 @@
 <rect width="12" height="12" x="330" y="120" class="named"><title>0x00434bd0 RemoveAmmoText (29 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="120" class="todo"><title>0x00434bf0 DrawAmmoInfo (305 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="120" class="named"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="120" class="todo"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="120" class="named"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="120" class="todo"><title>0x00434db0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="120" class="named"><title>0x00434e30 DrawModeInfo (44 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="120" class="todo"><title>0x00434e60 HybridControl (1393 bytes)</title></rect>
@@ -2668,7 +2668,7 @@
 <rect width="4.65" height="4.86" x="624.90" y="364.36" class="todo"><title>0x00484a40 HWR_ResetZBuffer (64 bytes)</title></rect>
 <rect width="4.65" height="4.86" x="624.90" y="372.22" class="todo"><title>0x00489510 DefaultConflict (64 bytes)</title></rect>
 <rect width="4.65" height="4.86" x="624.90" y="380.08" class="todo"><title>0x00491020 Func491020 (64 bytes)</title></rect>
-<rect width="4.65" height="4.79" x="624.90" y="387.94" class="todo"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
+<rect width="4.65" height="4.79" x="624.90" y="387.94" class="named"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
 <rect width="4.65" height="4.79" x="624.90" y="395.73" class="todo"><title>0x00458840 InitialiseFinalLevel (63 bytes)</title></rect>
 <rect width="4.65" height="4.79" x="624.90" y="403.52" class="named"><title>0x00459760 LiftFloor (63 bytes)</title></rect>
 <rect width="4.65" height="4.79" x="624.90" y="411.30" class="todo"><title>0x00484bf0 HWR_EnableAlphaBlend (63 bytes)</title></rect>
