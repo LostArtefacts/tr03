@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="132.99" height="12" x="0" y="0" class="named"><title>420 · 28.42%</title></rect>
-<rect width="335.01" height="12" x="132.99" y="0" class="todo"><title>1058 · 71.58%</title></rect>
+<rect width="133.31" height="12" x="0" y="0" class="named"><title>421 · 28.48%</title></rect>
+<rect width="334.69" height="12" x="133.31" y="0" class="todo"><title>1057 · 71.52%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">28.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">420</tspan> · <tspan class="todo">1058</tspan></text>
+<text text-anchor="end" x="648" y="7.50">28.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">421</tspan> · <tspan class="todo">1057</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="20.92" height="12" x="0" y="0" class="named"><title>30 KB · 4.47%</title></rect>
-<rect width="447.08" height="12" x="20.92" y="0" class="todo"><title>634 KB · 95.53%</title></rect>
+<rect width="21.04" height="12" x="0" y="0" class="named"><title>30 KB · 4.50%</title></rect>
+<rect width="446.96" height="12" x="21.04" y="0" class="todo"><title>634 KB · 95.50%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">30 KB</tspan> · <tspan class="todo">634 KB</tspan></text>
@@ -684,7 +684,7 @@
 <rect width="12" height="12" x="285" y="180" class="named"><title>0x004425a0 lara_col_death (104 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="180" class="named"><title>0x00442610 lara_col_fastfall (159 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="180" class="todo"><title>0x004426b0 lara_col_hang (382 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="180" class="todo"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="180" class="named"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="180" class="named"><title>0x004428e0 lara_col_splat (108 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="180" class="named"><title>0x00442950 lara_col_land (19 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="180" class="named"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
@@ -2289,7 +2289,7 @@
 <rect width="7.78" height="7.72" x="522.89" y="375.02" class="todo"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="385.75" class="todo"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="396.47" class="todo"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
-<rect width="7.78" height="7.72" x="522.89" y="407.19" class="todo"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
+<rect width="7.78" height="7.72" x="522.89" y="407.19" class="named"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="417.92" class="todo"><title>0x0044a700 find_target_point (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="428.64" class="todo"><title>0x00496a70 MMXBlit32to16 (170 bytes)</title></rect>
 <rect width="7.78" height="7.63" x="522.89" y="439.37" class="todo"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
