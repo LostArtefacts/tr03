@@ -518,7 +518,7 @@ address,size,name,symbol
 0x0043d980,878,TestLaraVault,_TestLaraVault
 0x0043dcf0,261,lara_slide_slope,_lara_slide_slope
 0x0043de00,50,GetLaraCollisionInfo,_GetLaraCollisionInfo
-0x0043de40,310,LaraDeflectEdgeJump,_LaraDeflectEdgeJump
+0x0043de40,372,LaraDeflectEdgeJump,_LaraDeflectEdgeJump
 0x0043dfc0,227,LaraSlideEdgeJump,_LaraSlideEdgeJump
 0x0043e0b0,264,LaraTestHangOnClimbWall,_LaraTestHangOnClimbWall
 0x0043e1c0,768,LaraHangTest,_LaraHangTest
@@ -1915,6 +1915,7 @@ address,size,name,symbol
 0x004c70b8,42,LevelSecrets,_LevelSecrets
 0x004c7238,24,DeathSlideBounds,_DeathSlideBounds
 0x004c7250,12,DeathSlidePosition,_DeathSlidePosition
+0x004c725c,2,old_ang,_old_ang
 0x004c7268,24,PistolTable,_PistolTable
 0x004c7280,,weapons,_weapons
 0x004c7428,,HoldStates,_HoldStates

@@ -11,7 +11,6 @@ extern sint32 wibble;
 
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void TriggerWaterfallMist(sint32 x, sint32 y, sint32 z, sint32 angle);
-void AnimateLara(ITEM_INFO *item);
 int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll);
 sint16 TestMonkeyLeft(ITEM_INFO *item, COLL_INFO *coll);
 sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
@@ -36,6 +35,56 @@ sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 #define SWAMP_GRAVITY 2
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
+
+#define SLIDE_A 70
+#define SLIDE_F GF(SLIDE_A, 0)
+#define SLIDEBACK_A 104
+#define SLIDEBACK_F GF(SLIDEBACK_A, 0)
+
+extern PHD_ANGLE old_ang;
+
+int TestLaraSlide(ITEM_INFO *item, COLL_INFO *coll)
+{
+    PHD_ANGLE adif, ang;
+
+    if (ABS(coll->tilt_x) <= 2 && ABS(coll->tilt_z) <= 2)
+        return 0;
+
+    ang = 0;
+    if (coll->tilt_x > 2)
+        ang = -16384;
+    else if (coll->tilt_x < -2)
+        ang = 16384;
+    if (coll->tilt_z > 2 && coll->tilt_z > ABS(coll->tilt_x))
+        ang = -32768;
+    else if (coll->tilt_z < -2 && -coll->tilt_z > ABS(coll->tilt_x))
+        ang = 0;
+
+    adif = ang - item->pos.y_rot;
+    ShiftItem(item, coll);
+    if (adif >= -16384 && adif <= 16384) {
+        if (item->current_anim_state != AS_SLIDE || old_ang != ang) {
+            item->anim_number = SLIDE_A;
+            item->frame_number = SLIDE_F;
+            item->goal_anim_state = AS_SLIDE;
+            item->current_anim_state = AS_SLIDE;
+            item->pos.y_rot = ang;
+            lara.move_angle = ang;
+            old_ang = ang;
+        }
+    } else {
+        if (item->current_anim_state != AS_SLIDEBACK || old_ang != ang) {
+            item->anim_number = SLIDEBACK_A;
+            item->frame_number = SLIDEBACK_F;
+            item->goal_anim_state = AS_SLIDEBACK;
+            item->current_anim_state = AS_SLIDEBACK;
+            item->pos.y_rot = ang - 32768;
+            lara.move_angle = ang;
+            old_ang = ang;
+        }
+    }
+    return 1;
+}
 
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -63,11 +112,18 @@ int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
     return 1;
 }
 
+void AnimateLara(ITEM_INFO *item);
+
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->facing = lara.move_angle;
     GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_HITE);
 }
+
+#define FASTSPLAT_A 32
+#define FASTSPLAT_F GF(FASTSPLAT_A, 1)
+#define LAND_A 31
+#define LAND_F GF(LAND_A, 0)
 
 void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -407,6 +463,22 @@ void lara_col_crawlb(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_pos += coll->mid_floor;
     lara.move_angle = item->pos.y_rot;
 }
+
+extern uint16 DashTimer;
+int TestLaraVault(ITEM_INFO *item, COLL_INFO *coll);
+int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down);
+void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll);
+
+#define HITWALLLEFT_A 53
+#define HITWALLLEFT_F GF(HITWALLLEFT_A, 0)
+#define RUNSTEPUP_LEFT_A 56
+#define RUNSTEPUP_LEFT_F GF(RUNSTEPUP_LEFT_A, 0)
+#define RUNSTEPUP_RIGHT_A 55
+#define RUNSTEPUP_RIGHT_F GF(RUNSTEPUP_RIGHT_A, 0)
+#define LARA_DASH_LEAN_RATE ((ONE_DEGREE / 2) + LARA_LEAN_UNDO)
+#define LARA_DASH_LEAN_MAX ((ONE_DEGREE * 15) + LARA_LEAN_UNDO)
+#define LARA_DASH_TURN_RATE ((ONE_DEGREE / 4) + LARA_TURN_UNDO)
+#define LARA_DASH_TURN_MAX ((ONE_DEGREE * 2) + LARA_TURN_UNDO)
 
 int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down)
 {
@@ -812,6 +884,8 @@ void lara_as_upjump(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_FASTFALL;
 }
 
+int LaraTestHangJumpUp(ITEM_INFO *item, COLL_INFO *coll);
+
 void lara_as_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->goal_anim_state == AS_SWANDIVE || item->goal_anim_state == AS_REACH)
@@ -996,6 +1070,8 @@ void lara_as_splat(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
 }
+
+sint16 LaraFloorFront(ITEM_INFO *item, PHD_ANGLE ang, sint32 dist);
 
 void lara_as_back(ITEM_INFO *item, COLL_INFO *coll)
 {
@@ -1583,6 +1659,11 @@ void lara_col_compress(ITEM_INFO *item, COLL_INFO *coll)
     if (coll->mid_floor > -STEP_L && coll->mid_floor < STEP_L)
         item->pos.y_pos += coll->mid_floor;
 }
+
+#define BACKSTEPD_LEFT_A 61
+#define BACKSTEPD_LEFT_F GF(BACKSTEPD_LEFT_A, 0)
+#define BACKSTEPD_RIGHT_A 62
+#define BACKSTEPD_RIGHT_F GF(BACKSTEPD_RIGHT_A, 0)
 
 void lara_col_stepright(ITEM_INFO *item, COLL_INFO *coll)
 {
