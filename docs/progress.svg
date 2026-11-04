@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="143.76" height="12" x="0" y="0" class="named"><title>454 · 30.72%</title></rect>
-<rect width="324.24" height="12" x="143.76" y="0" class="todo"><title>1024 · 69.28%</title></rect>
+<rect width="144.07" height="12" x="0" y="0" class="named"><title>455 · 30.78%</title></rect>
+<rect width="323.93" height="12" x="144.07" y="0" class="todo"><title>1023 · 69.22%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">30.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">454</tspan> · <tspan class="todo">1024</tspan></text>
+<text text-anchor="end" x="648" y="7.50">30.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">455</tspan> · <tspan class="todo">1023</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="24.67" height="12" x="0" y="0" class="named"><title>35 KB · 5.27%</title></rect>
-<rect width="443.33" height="12" x="24.67" y="0" class="todo"><title>629 KB · 94.73%</title></rect>
+<rect width="24.76" height="12" x="0" y="0" class="named"><title>35 KB · 5.29%</title></rect>
+<rect width="443.24" height="12" x="24.76" y="0" class="todo"><title>629 KB · 94.71%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">35 KB</tspan> · <tspan class="todo">629 KB</tspan></text>
@@ -999,7 +999,7 @@
 <rect width="12" height="12" x="510" y="270" class="todo"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x00467840 SoundEffect (1200 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="270" class="named"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="270" class="todo"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="270" class="named"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="named"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="named"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="270" class="todo"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
@@ -2389,7 +2389,7 @@
 <rect width="7.13" height="6.64" x="554.28" y="392.27" class="named"><title>0x00442d00 lara_col_fallback (134 bytes)</title></rect>
 <rect width="7.13" height="6.64" x="554.28" y="401.91" class="named"><title>0x00444770 LookLeftRight (134 bytes)</title></rect>
 <rect width="7.13" height="6.64" x="554.28" y="411.54" class="named"><title>0x0044ec10 SwimTurn (134 bytes)</title></rect>
-<rect width="7.13" height="6.64" x="554.28" y="421.18" class="todo"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
+<rect width="7.13" height="6.64" x="554.28" y="421.18" class="named"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
 <rect width="7.13" height="6.59" x="554.28" y="430.82" class="named"><title>0x0042d080 SetupRipple (133 bytes)</title></rect>
 <rect width="7.13" height="6.59" x="554.28" y="440.41" class="named"><title>0x0042f540 AssaultFinished (133 bytes)</title></rect>
 <rect width="6.93" height="6.78" x="564.41" y="254.32" class="named"><title>0x0044ed20 lara_as_tread (133 bytes)</title></rect>

@@ -48,6 +48,40 @@ void StopSoundEffect(int nSFX)
     }
 }
 
+void S_SoundSetPanAndVolume(int nHandle, sint16 nPan, uint16 nVolume);
+void S_SoundSetPitch(int nHandle, int nPitch);
+int S_SoundSampleIsPlaying(int nHandle);
+
+void SOUND_EndScene(void)
+{
+    int nSlot;
+
+    if (!sound_active)
+        return;
+    for (nSlot = 0; nSlot < ArraySize(LaSlot); nSlot++)
+    {
+        if (LaSlot[nSlot].nSampleInfo >= 0)
+        {
+            if ((sample_infos[LaSlot[nSlot].nSampleInfo].flags & 3) == 3)
+            {
+                if (LaSlot[nSlot].nVolume)
+                {
+                    S_SoundSetPanAndVolume(nSlot, (sint16)LaSlot[nSlot].nPan, (uint16)LaSlot[nSlot].nVolume);
+                    S_SoundSetPitch(nSlot, LaSlot[nSlot].nPitch);
+                    LaSlot[nSlot].nVolume = 0;
+                }
+                else
+                {
+                    S_SoundStopSample(nSlot);
+                    LaSlot[nSlot].nSampleInfo = -1;
+                }
+            }
+            else if (!S_SoundSampleIsPlaying(nSlot))
+                LaSlot[nSlot].nSampleInfo = -1;
+        }
+    }
+}
+
 void SOUND_Stop(void)
 {
     int nSlot;
