@@ -237,3 +237,11 @@ void lara_as_special(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_angle = 170 * ONE_DEGREE;
     camera.target_elevation = -25 * ONE_DEGREE;
 }
+
+void lara_as_swandive(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 1;
+    if (item->fallspeed > LARA_FASTFALL_SPEED && item->goal_anim_state != AS_DIVE)
+        item->goal_anim_state = AS_FASTDIVE;
+}
