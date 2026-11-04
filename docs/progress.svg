@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="0.27" height="12" x="130" y="1.50" class="named"/>
-<rect width="201.73" height="12" x="130.27" y="1.50" class="todo"/>
+<rect width="0.41" height="12" x="130" y="1.50" class="named"/>
+<rect width="201.59" height="12" x="130.41" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">0.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">2/1478</text>
+<text text-anchor="end" x="382" y="7.50">0.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">3/1478</text>
 <rect width="0.10" height="12" x="130" y="18.50" class="named"/>
-<rect width="202" height="12" x="130" y="18.50" class="todo"/>
+<rect width="201.99" height="12" x="130.01" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">0k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.14% (2)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">99.86% (1476)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.20% (3)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">99.80% (1475)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.01" height="6" x="0" y="0" class="named"/>
-<rect width="745.99" height="6" x="1.01" y="0" class="todo"/>
+<rect width="1.52" height="6" x="0" y="0" class="named"/>
+<rect width="745.48" height="6" x="1.52" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -391,7 +391,7 @@
 <rect width="12" height="12" x="375" y="90" class="todo"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="90" class="todo"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="90" class="todo"><title>0x0042ebb0 WaterFall (279 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="90" class="todo"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="90" class="named"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="90" class="todo"><title>0x0042ece0 turn180_effect (22 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="90" class="todo"><title>0x0042ed00 floor_shake_effect (148 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="90" class="todo"><title>0x0042eda0 lara_normal_effect (64 bytes)</title></rect>
@@ -1548,7 +1548,7 @@
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">100%</tspan></text>
 <g transform="translate(0 20)">
 <rect width="0.10" height="6" x="0" y="0" class="named"/>
-<rect width="746.98" height="6" x="0.02" y="0" class="todo"/>
+<rect width="746.97" height="6" x="0.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -3001,7 +3001,7 @@
 <rect width="0.10" height="0.10" x="747.63" y="440.52" class="todo"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="737.57" y="443.12" class="todo"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="737.57" y="445.75" class="todo"><title>0x0042d990 KillAllCurrentItems (11 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="737.57" y="448.17" class="todo"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="737.57" y="448.17" class="named"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="737.57" y="450.58" class="todo"><title>0x0044ee30 lara_as_waterroll (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.90" y="443.12" class="todo"><title>0x00484a10 HWR_ResetCurrentTexture (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.90" y="445.64" class="todo"><title>0x00485a80 Func485a80 (11 bytes)</title></rect>
