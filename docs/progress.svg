@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="14.08" height="12" x="130" y="1.50" class="named"/>
-<rect width="187.92" height="12" x="144.08" y="1.50" class="todo"/>
+<rect width="14.21" height="12" x="130" y="1.50" class="named"/>
+<rect width="187.79" height="12" x="144.21" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">7.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">103/1478</text>
-<rect width="1.13" height="12" x="130" y="18.50" class="named"/>
-<rect width="200.87" height="12" x="131.13" y="18.50" class="todo"/>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">104/1478</text>
+<rect width="1.14" height="12" x="130" y="18.50" class="named"/>
+<rect width="200.86" height="12" x="131.14" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">4k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">6.97% (103)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">93.03% (1375)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">7.04% (104)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">92.96% (1374)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="52.06" height="6" x="0" y="0" class="named"/>
-<rect width="694.94" height="6" x="52.06" y="0" class="todo"/>
+<rect width="52.56" height="6" x="0" y="0" class="named"/>
+<rect width="694.44" height="6" x="52.56" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -756,7 +756,7 @@
 <rect width="12" height="12" x="600" y="195" class="todo"><title>0x00449180 lara_as_climbright (56 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="195" class="todo"><title>0x004491c0 lara_as_climbstnc (120 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="195" class="named"><title>0x00449240 lara_as_climbing (23 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="195" class="todo"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="195" class="named"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="195" class="todo"><title>0x00449290 lara_as_climbdown (23 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="195" class="todo"><title>0x004492b0 lara_col_climbleft (93 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="195" class="todo"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.56%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.44%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="4.18" height="6" x="0" y="0" class="named"/>
-<rect width="742.82" height="6" x="4.18" y="0" class="todo"/>
+<rect width="4.22" height="6" x="0" y="0" class="named"/>
+<rect width="742.78" height="6" x="4.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2880,7 +2880,7 @@
 <rect width="1.02" height="1.32" x="706.24" y="448.68" class="todo"><title>0x00475400 DI_Create (34 bytes)</title></rect>
 <rect width="1.23" height="1.11" x="710.26" y="413.32" class="todo"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="417.43" class="named"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
-<rect width="1.23" height="0.99" x="710.26" y="421.42" class="todo"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
+<rect width="1.23" height="0.99" x="710.26" y="421.42" class="named"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="425.42" class="todo"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="429.41" class="todo"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
 <rect width="1.23" height="0.99" x="710.26" y="433.40" class="todo"><title>0x0048ab20 S_SetupAboveWater (33 bytes)</title></rect>
