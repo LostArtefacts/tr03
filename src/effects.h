@@ -37,5 +37,6 @@ void Exercise2_112(ITEM_INFO *item);
 void Exercise2_83(ITEM_INFO *item);
 void Exercise3_115(ITEM_INFO *item);
 void Exercise3_107(ITEM_INFO *item);
+void Exercise3_79(ITEM_INFO *item);
 
 #endif

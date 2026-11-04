@@ -270,3 +270,13 @@ void Exercise3_107(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void Exercise3_79(ITEM_INFO *item)
+{
+    if (ExerciseNumber == 6)
+    {
+        S_CDPlay(79 + 3, 0);
+        ExerciseNumber++;
+    }
+    flipeffect = -1;
+}
