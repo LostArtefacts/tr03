@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="109.88" height="12" x="0" y="0" class="named"><title>347 · 23.48%</title></rect>
-<rect width="358.12" height="12" x="109.88" y="0" class="todo"><title>1131 · 76.52%</title></rect>
+<rect width="110.19" height="12" x="0" y="0" class="named"><title>348 · 23.55%</title></rect>
+<rect width="357.81" height="12" x="110.19" y="0" class="todo"><title>1130 · 76.45%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">23.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">347</tspan> · <tspan class="todo">1131</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">348</tspan> · <tspan class="todo">1130</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="14.31" height="12" x="0" y="0" class="named"><title>20 KB · 3.06%</title></rect>
-<rect width="453.69" height="12" x="14.31" y="0" class="todo"><title>644 KB · 96.94%</title></rect>
+<rect width="14.38" height="12" x="0" y="0" class="named"><title>20 KB · 3.07%</title></rect>
+<rect width="453.62" height="12" x="14.38" y="0" class="todo"><title>643 KB · 96.93%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">20 KB</tspan> · <tspan class="todo">644 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">20 KB</tspan> · <tspan class="todo">643 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -851,7 +851,7 @@
 <rect width="12" height="12" x="540" y="225" class="todo"><title>0x00452240 KnockBackCollision (378 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="225" class="todo"><title>0x004523c0 LondSecControl (2811 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="225" class="todo"><title>0x00452f10 InitialiseLOTarray (124 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="225" class="todo"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="225" class="named"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="225" class="todo"><title>0x00453000 EnableBaddieAI (494 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="225" class="todo"><title>0x004531f0 InitialiseSlot (312 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="225" class="todo"><title>0x00453460 CreateZone (247 bytes)</title></rect>
@@ -2484,7 +2484,7 @@
 <rect width="5.94" height="6.18" x="574.24" y="395.02" class="todo"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
 <rect width="5.94" height="6.18" x="574.24" y="404.20" class="named"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
 <rect width="5.94" height="6.18" x="574.24" y="413.38" class="named"><title>0x004425a0 lara_col_death (104 bytes)</title></rect>
-<rect width="5.94" height="6.18" x="574.24" y="422.57" class="todo"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
+<rect width="5.94" height="6.18" x="574.24" y="422.57" class="named"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
 <rect width="5.94" height="6.18" x="574.24" y="431.75" class="todo"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
 <rect width="5.94" height="6.07" x="574.24" y="440.93" class="named"><title>0x004322a0 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="5.92" height="6.03" x="583.19" y="283.16" class="todo"><title>0x0042d110 TriggerUnderwaterBlood (101 bytes)</title></rect>
