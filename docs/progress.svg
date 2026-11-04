@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="32.25" height="12" x="0" y="0" class="named"><title>236 · 15.97%</title></rect>
-<rect width="169.75" height="12" x="32.25" y="0" class="todo"><title>1242 · 84.03%</title></rect>
+<rect width="32.39" height="12" x="0" y="0" class="named"><title>237 · 16.04%</title></rect>
+<rect width="169.61" height="12" x="32.39" y="0" class="todo"><title>1241 · 83.96%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">16.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">236</tspan> · <tspan class="todo">1242</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">237</tspan> · <tspan class="todo">1241</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.39" height="12" x="0" y="0" class="named"><title>11 KB · 1.68%</title></rect>
-<rect width="198.61" height="12" x="3.39" y="0" class="todo"><title>653 KB · 98.32%</title></rect>
+<rect width="3.41" height="12" x="0" y="0" class="named"><title>11 KB · 1.69%</title></rect>
+<rect width="198.59" height="12" x="3.41" y="0" class="todo"><title>653 KB · 98.31%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">11 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
@@ -751,7 +751,7 @@
 <rect width="12" height="12" x="540" y="195" class="todo"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="195" class="todo"><title>0x00448e60 LaraTestClimbUpPos (553 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="195" class="todo"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="195" class="todo"><title>0x00449140 lara_as_climbleft (56 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="195" class="named"><title>0x00449140 lara_as_climbleft (56 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="195" class="todo"><title>0x00449180 lara_as_climbright (56 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="195" class="todo"><title>0x004491c0 lara_as_climbstnc (120 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="195" class="named"><title>0x00449240 lara_as_climbing (23 bytes)</title></rect>
@@ -2707,7 +2707,7 @@
 <rect width="4.33" height="4.65" x="728.18" y="332.36" class="todo"><title>0x0048d1a0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
 <rect width="4.25" height="4.65" x="735.50" y="332.36" class="named"><title>0x00441760 lara_as_hangleft (56 bytes)</title></rect>
 <rect width="4.25" height="4.65" x="742.75" y="332.36" class="named"><title>0x004417a0 lara_as_hangright (56 bytes)</title></rect>
-<rect width="4.49" height="4.41" x="632.55" y="340.02" class="todo"><title>0x00449140 lara_as_climbleft (56 bytes)</title></rect>
+<rect width="4.49" height="4.41" x="632.55" y="340.02" class="named"><title>0x00449140 lara_as_climbleft (56 bytes)</title></rect>
 <rect width="4.49" height="4.41" x="632.55" y="347.43" class="todo"><title>0x00449180 lara_as_climbright (56 bytes)</title></rect>
 <rect width="4.49" height="4.41" x="632.55" y="354.84" class="named"><title>0x004597e0 BridgeFlatFloor (56 bytes)</title></rect>
 <rect width="4.49" height="4.33" x="632.55" y="362.25" class="todo"><title>0x004051a0 Func4051a0 (55 bytes)</title></rect>
