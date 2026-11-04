@@ -1295,6 +1295,33 @@ void lara_col_compress(ITEM_INFO *item, COLL_INFO *coll)
         item->pos.y_pos += coll->mid_floor;
 }
 
+void lara_col_stepright(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->current_anim_state == AS_STEPRIGHT)
+        lara.move_angle = item->pos.y_rot + 16384;
+    else
+        lara.move_angle = item->pos.y_rot - 16384;
+    item->gravity_status = item->fallspeed = 0;
+    if (lara.water_status == LARA_WADE)
+        coll->bad_pos = NO_BAD_POS;
+    else
+        coll->bad_pos = STEP_L / 2;
+    coll->bad_neg = -STEP_L / 2;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_pits = 1;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (LaraDeflectEdge(item, coll))
+        LaraCollideStop(item, coll);
+    if (LaraFallen(item, coll))
+        return;
+    if (TestLaraSlide(item, coll))
+        return;
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_stepleft(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_stepright(item, coll);
