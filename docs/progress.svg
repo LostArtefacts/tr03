@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="31.98" height="12" x="0" y="0" class="named"><title>234 · 15.83%</title></rect>
-<rect width="170.02" height="12" x="31.98" y="0" class="todo"><title>1244 · 84.17%</title></rect>
+<rect width="32.12" height="12" x="0" y="0" class="named"><title>235 · 15.90%</title></rect>
+<rect width="169.88" height="12" x="32.12" y="0" class="todo"><title>1243 · 84.10%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">15.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">234</tspan> · <tspan class="todo">1244</tspan></text>
+<text text-anchor="end" x="382" y="7.50">15.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">235</tspan> · <tspan class="todo">1243</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.35" height="12" x="0" y="0" class="named"><title>11 KB · 1.66%</title></rect>
-<rect width="198.65" height="12" x="3.35" y="0" class="todo"><title>653 KB · 98.34%</title></rect>
+<rect width="3.37" height="12" x="0" y="0" class="named"><title>11 KB · 1.67%</title></rect>
+<rect width="198.63" height="12" x="3.37" y="0" class="todo"><title>653 KB · 98.33%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">11 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
@@ -744,7 +744,7 @@
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="195" class="todo"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="195" class="todo"><title>0x00448350 draw_pistol_meshes (89 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="195" class="todo"><title>0x004483b0 undraw_pistol_mesh_left (65 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="195" class="named"><title>0x004483b0 undraw_pistol_mesh_left (65 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="195" class="todo"><title>0x00448400 undraw_pistol_mesh_right (59 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="195" class="todo"><title>0x00448440 PistolHandler (517 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="195" class="todo"><title>0x00448650 AnimatePistols (1410 bytes)</title></rect>
@@ -2657,7 +2657,7 @@
 <rect width="4.84" height="4.75" x="617.06" y="403.50" class="named"><title>0x004294b0 phd_TranslateRel_I (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="411.25" class="named"><title>0x00429550 phd_RotYXZ_I (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="419" class="named"><title>0x0042efb0 ControlDingDong (65 bytes)</title></rect>
-<rect width="4.84" height="4.75" x="617.06" y="426.75" class="todo"><title>0x004483b0 undraw_pistol_mesh_left (65 bytes)</title></rect>
+<rect width="4.84" height="4.75" x="617.06" y="426.75" class="named"><title>0x004483b0 undraw_pistol_mesh_left (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="434.50" class="todo"><title>0x00459c90 ControlOnOffLight (65 bytes)</title></rect>
 <rect width="4.84" height="4.75" x="617.06" y="442.25" class="todo"><title>0x0046c080 S_DrawTonyBoss (65 bytes)</title></rect>
 <rect width="4.65" height="4.94" x="624.90" y="324.98" class="todo"><title>0x0048d5e0 TIME_Init (65 bytes)</title></rect>

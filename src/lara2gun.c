@@ -1,0 +1,13 @@
+#include "game.h"
+
+void undraw_pistol_mesh_left(int weapon_type)
+{
+    if (weapon_type != LG_MAGNUMS)
+    {
+        int obj;
+
+        obj = WeaponObject(weapon_type);
+        lara.mesh_ptrs[THIGH_L] = meshes[objects[obj].mesh_index + THIGH_L];
+        lara.mesh_ptrs[HAND_L] = meshes[objects[LARA].mesh_index + HAND_L];
+    }
+}
