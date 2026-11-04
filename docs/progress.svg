@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="149.14" height="12" x="0" y="0" class="named"><title>471 · 31.87%</title></rect>
-<rect width="318.86" height="12" x="149.14" y="0" class="todo"><title>1007 · 68.13%</title></rect>
+<rect width="149.46" height="12" x="0" y="0" class="named"><title>472 · 31.94%</title></rect>
+<rect width="318.54" height="12" x="149.46" y="0" class="todo"><title>1006 · 68.06%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">31.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">471</tspan> · <tspan class="todo">1007</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">472</tspan> · <tspan class="todo">1006</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="26.49" height="12" x="0" y="0" class="named"><title>38 KB · 5.66%</title></rect>
-<rect width="441.51" height="12" x="26.49" y="0" class="todo"><title>626 KB · 94.34%</title></rect>
+<rect width="26.60" height="12" x="0" y="0" class="named"><title>38 KB · 5.68%</title></rect>
+<rect width="441.40" height="12" x="26.60" y="0" class="todo"><title>626 KB · 94.32%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">38 KB</tspan> · <tspan class="todo">626 KB</tspan></text>
@@ -527,7 +527,7 @@
 <rect width="12" height="12" x="180" y="135" class="named"><title>0x00439080 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="135" class="named"><title>0x004390e0 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="135" class="named"><title>0x00439150 Init_Requester (130 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="135" class="todo"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="135" class="named"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="135" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="135" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="135" class="named"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
@@ -2309,7 +2309,7 @@
 <rect width="7.73" height="7.45" x="675.03" y="233.52" class="todo"><title>0x0040d320 S_DrawScreenSprite (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="685.76" y="233.52" class="named"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="696.49" y="233.52" class="named"><title>0x0042bda0 TriggerAlertLight (163 bytes)</title></rect>
-<rect width="7.73" height="7.45" x="707.22" y="233.52" class="todo"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
+<rect width="7.73" height="7.45" x="707.22" y="233.52" class="named"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="717.95" y="233.52" class="named"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
 <rect width="7.68" height="7.45" x="728.68" y="233.52" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="7.64" height="7.45" x="739.36" y="233.52" class="todo"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
