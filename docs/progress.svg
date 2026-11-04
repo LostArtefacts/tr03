@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="161.81" height="12" x="0" y="0" class="named"><title>511 · 34.57%</title></rect>
-<rect width="306.19" height="12" x="161.81" y="0" class="todo"><title>967 · 65.43%</title></rect>
+<rect width="162.12" height="12" x="0" y="0" class="named"><title>512 · 34.64%</title></rect>
+<rect width="305.88" height="12" x="162.12" y="0" class="todo"><title>966 · 65.36%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">34.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">511</tspan> · <tspan class="todo">967</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">512</tspan> · <tspan class="todo">966</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="31.70" height="12" x="0" y="0" class="named"><title>45 KB · 6.77%</title></rect>
-<rect width="436.30" height="12" x="31.70" y="0" class="todo"><title>619 KB · 93.23%</title></rect>
+<rect width="31.85" height="12" x="0" y="0" class="named"><title>45 KB · 6.81%</title></rect>
+<rect width="436.15" height="12" x="31.85" y="0" class="todo"><title>619 KB · 93.19%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">45 KB</tspan> · <tspan class="todo">619 KB</tspan></text>
@@ -956,7 +956,7 @@
 <rect width="12" height="12" x="615" y="255" class="todo"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="255" class="todo"><title>0x0045eb20 QuadBikeDraw (753 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="255" class="todo"><title>0x0045ee20 QuadBikeControl (1409 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="255" class="todo"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="255" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="255" class="todo"><title>0x0045f490 SkidooCheckGetOff (431 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="255" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="255" class="todo"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
@@ -2220,7 +2220,7 @@
 <rect width="8.67" height="8.43" x="511.22" y="268.94" class="todo"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="280.37" class="todo"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="291.76" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
-<rect width="8.67" height="8.39" x="511.22" y="303.16" class="todo"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
+<rect width="8.67" height="8.39" x="511.22" y="303.16" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="314.55" class="todo"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="325.94" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="8.67" height="8.35" x="511.22" y="337.34" class="named"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>

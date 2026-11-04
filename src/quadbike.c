@@ -32,3 +32,26 @@ void InitialiseQuadBike(sint16 item_number)
     bike->pitch = 0;
     bike->Flags = 0;
 }
+
+void TriggerUnderwaterExplosion(ITEM_INFO *item);
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+
+void QuadbikeExplode(ITEM_INFO *v)
+{
+    sint32 lp;
+
+    if (room[v->room_number].flags & UNDERWATER) {
+        TriggerUnderwaterExplosion(v);
+    } else {
+        TriggerExplosionSparks(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, 3, -2, 0, v->room_number);
+        for (lp = 0; lp < 3; lp++)
+            TriggerExplosionSparks(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, 3, -1, 0, v->room_number);
+    }
+    ExplodingDeath(lara.skidoo, 0xfffffffe, 1);
+    KillItem(lara.skidoo);
+    v->status = DEACTIVATED;
+    SoundEffect(105, NULL, 0);
+    SoundEffect(106, NULL, 0);
+    lara.skidoo = NO_ITEM;
+}
