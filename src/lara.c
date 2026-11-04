@@ -45,6 +45,28 @@ void lara_as_all4s(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_elevation = -23 * ONE_DEGREE;
 }
 
+int LaraDeflectEdgeDuck(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (coll->coll_type == COLL_FRONT || coll->coll_type == COLL_TOPFRONT)
+    {
+        ShiftItem(item, coll);
+        item->gravity_status = 0;
+        item->speed = 0;
+        return 1;
+    }
+    else if (coll->coll_type == COLL_LEFT)
+    {
+        ShiftItem(item, coll);
+        item->pos.y_rot += LARA_DUCK_DEFLECT;
+    }
+    else if (coll->coll_type == COLL_RIGHT)
+    {
+        ShiftItem(item, coll);
+        item->pos.y_rot -= LARA_DUCK_DEFLECT;
+    }
+    return 0;
+}
+
 void lara_as_all4turnl(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
