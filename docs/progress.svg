@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="28.29" height="12" x="0" y="0" class="named"><title>207 · 14.01%</title></rect>
-<rect width="173.71" height="12" x="28.29" y="0" class="todo"><title>1271 · 85.99%</title></rect>
+<rect width="28.43" height="12" x="0" y="0" class="named"><title>208 · 14.07%</title></rect>
+<rect width="173.57" height="12" x="28.43" y="0" class="todo"><title>1270 · 85.93%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">14.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">207</tspan> · <tspan class="todo">1271</tspan></text>
+<text text-anchor="end" x="382" y="7.50">14.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">208</tspan> · <tspan class="todo">1270</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.91" height="12" x="0" y="0" class="named"><title>10 KB · 1.44%</title></rect>
-<rect width="199.09" height="12" x="2.91" y="0" class="todo"><title>654 KB · 98.56%</title></rect>
+<rect width="2.93" height="12" x="0" y="0" class="named"><title>10 KB · 1.45%</title></rect>
+<rect width="199.07" height="12" x="2.93" y="0" class="todo"><title>654 KB · 98.55%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -558,7 +558,7 @@
 <rect width="12" height="12" x="645" y="135" class="todo"><title>0x0043b330 ClearBodyBag (91 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="135" class="todo"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="135" class="todo"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="135" class="todo"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="135" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="todo"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="todo"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="135" class="todo"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
@@ -2843,7 +2843,7 @@
 <rect width="3.68" height="3.74" x="668.38" y="436.61" class="todo"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="3.68" height="3.65" x="668.38" y="443.35" class="named"><title>0x0042f600 QuadStop (38 bytes)</title></rect>
 <rect width="3.89" height="3.45" x="675.06" y="368.50" class="named"><title>0x00438fd0 Inv_RingMotionRadius (38 bytes)</title></rect>
-<rect width="3.89" height="3.45" x="681.94" y="368.50" class="todo"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
+<rect width="3.89" height="3.45" x="681.94" y="368.50" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="3.89" height="3.45" x="688.83" y="368.50" class="todo"><title>0x004825a0 GetFullPath (38 bytes)</title></rect>
 <rect width="3.89" height="3.45" x="695.72" y="368.50" class="todo"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="702.60" y="368.50" class="named"><title>0x00439030 Inv_RingMotionCameraPos (37 bytes)</title></rect>
