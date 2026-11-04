@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="194.74" height="12" x="0" y="0" class="named"><title>615 · 41.61%</title></rect>
-<rect width="273.26" height="12" x="194.74" y="0" class="todo"><title>863 · 58.39%</title></rect>
+<rect width="195.05" height="12" x="0" y="0" class="named"><title>616 · 41.68%</title></rect>
+<rect width="272.95" height="12" x="195.05" y="0" class="todo"><title>862 · 58.32%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">41.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">615</tspan> · <tspan class="todo">863</tspan></text>
+<text text-anchor="end" x="648" y="7.50">41.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">616</tspan> · <tspan class="todo">862</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="61.57" height="12" x="0" y="0" class="named"><title>87 KB · 13.16%</title></rect>
-<rect width="406.43" height="12" x="61.57" y="0" class="todo"><title>577 KB · 86.84%</title></rect>
+<rect width="61.78" height="12" x="0" y="0" class="named"><title>88 KB · 13.20%</title></rect>
+<rect width="406.22" height="12" x="61.78" y="0" class="todo"><title>577 KB · 86.80%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">87 KB</tspan> · <tspan class="todo">577 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">88 KB</tspan> · <tspan class="todo">577 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -504,7 +504,7 @@
 <rect width="12" height="12" x="585" y="120" class="todo"><title>0x00437380 RingNotActive (970 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="120" class="named"><title>0x00437870 RingActive (50 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="120" class="todo"><title>0x004378b0 Inv_AddItem (2065 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="120" class="todo"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="120" class="named"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="120" class="named"><title>0x00438380 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="120" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="120" class="todo"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
@@ -2089,7 +2089,7 @@
 <rect width="10.08" height="10.56" x="473.28" y="173.86" class="todo"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
 <rect width="10.08" height="10.46" x="473.28" y="187.43" class="todo"><title>0x004571e0 TestBlockPush (299 bytes)</title></rect>
 <rect width="10.08" height="10.39" x="473.28" y="200.89" class="named"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
-<rect width="10.08" height="10.39" x="473.28" y="214.28" class="todo"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
+<rect width="10.08" height="10.39" x="473.28" y="214.28" class="named"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="10.08" height="10.39" x="473.28" y="227.67" class="todo"><title>0x0044d060 LaraInitialiseMeshes (297 bytes)</title></rect>
 <rect width="10.08" height="10.39" x="473.28" y="241.06" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
 <rect width="10.08" height="10.36" x="473.28" y="254.45" class="todo"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
