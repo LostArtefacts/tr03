@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="160.22" height="12" x="0" y="0" class="named"><title>506 · 34.24%</title></rect>
-<rect width="307.78" height="12" x="160.22" y="0" class="todo"><title>972 · 65.76%</title></rect>
+<rect width="160.54" height="12" x="0" y="0" class="named"><title>507 · 34.30%</title></rect>
+<rect width="307.46" height="12" x="160.54" y="0" class="todo"><title>971 · 65.70%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">34.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">506</tspan> · <tspan class="todo">972</tspan></text>
+<text text-anchor="end" x="648" y="7.50">34.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">507</tspan> · <tspan class="todo">971</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="30.98" height="12" x="0" y="0" class="named"><title>44 KB · 6.62%</title></rect>
-<rect width="437.02" height="12" x="30.98" y="0" class="todo"><title>620 KB · 93.38%</title></rect>
+<rect width="31.13" height="12" x="0" y="0" class="named"><title>44 KB · 6.65%</title></rect>
+<rect width="436.87" height="12" x="31.13" y="0" class="todo"><title>620 KB · 93.35%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">6.6%</text>
+<text text-anchor="end" x="648" y="24.50">6.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">44 KB</tspan> · <tspan class="todo">620 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -611,7 +611,7 @@
 <rect width="12" height="12" x="690" y="150" class="named"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="150" class="todo"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="150" class="named"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="150" class="todo"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="150" class="named"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="165" class="named"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="165" class="todo"><title>0x0043ffd0 TestMonkeyRight (201 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="165" class="named"><title>0x004400a0 lara_as_monkeyswing (146 bytes)</title></rect>
@@ -2224,7 +2224,7 @@
 <rect width="8.67" height="8.39" x="511.22" y="314.55" class="todo"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="325.94" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="8.67" height="8.35" x="511.22" y="337.34" class="todo"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
-<rect width="8.67" height="8.35" x="511.22" y="348.69" class="todo"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
+<rect width="8.67" height="8.35" x="511.22" y="348.69" class="named"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="360.04" class="named"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="371.35" class="named"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="382.66" class="todo"><title>0x00459260 DoorControl (204 bytes)</title></rect>

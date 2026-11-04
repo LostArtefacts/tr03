@@ -338,6 +338,28 @@ void MonkeySwingSnap(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_pos = GetCeiling(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos) + (768 - 64);
 }
 
+sint16 TestMonkeyLeft(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint16 oct;
+
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = NO_BAD_NEG;
+    coll->bad_ceiling = 0;
+    coll->facing = lara.move_angle = item->pos.y_rot - 16384;
+    coll->radius = LARA_RAD;
+    coll->slopes_are_walls = 0;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, HANG_HEIGHT);
+    if (abs(coll->mid_ceiling - coll->front_ceiling) > 50)
+        return 0;
+    if (coll->coll_type)
+    {
+        oct = GetDirOctant(item->pos.y_rot);
+        if ((oct == 0 && coll->coll_type == COLL_FRONT) || (oct == 0 && coll->coll_type == COLL_LEFT) || (oct == 1 && coll->coll_type == COLL_RIGHT) || (oct == 1 && coll->coll_type == COLL_LEFT))
+            return 0;
+    }
+    return 1;
+}
+
 sint16 GetDirOctant(sint32 rot)
 {
     if (abs(rot) < 8192 || abs(rot) > 24576)
