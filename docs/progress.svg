@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="136.79" height="12" x="0" y="0" class="named"><title>432 · 29.23%</title></rect>
-<rect width="331.21" height="12" x="136.79" y="0" class="todo"><title>1046 · 70.77%</title></rect>
+<rect width="137.11" height="12" x="0" y="0" class="named"><title>433 · 29.30%</title></rect>
+<rect width="330.89" height="12" x="137.11" y="0" class="todo"><title>1045 · 70.70%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">29.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">432</tspan> · <tspan class="todo">1046</tspan></text>
+<text text-anchor="end" x="648" y="7.50">29.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">433</tspan> · <tspan class="todo">1045</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="22.31" height="12" x="0" y="0" class="named"><title>32 KB · 4.77%</title></rect>
-<rect width="445.69" height="12" x="22.31" y="0" class="todo"><title>632 KB · 95.23%</title></rect>
+<rect width="22.42" height="12" x="0" y="0" class="named"><title>32 KB · 4.79%</title></rect>
+<rect width="445.58" height="12" x="22.42" y="0" class="todo"><title>632 KB · 95.21%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">32 KB</tspan> · <tspan class="todo">632 KB</tspan></text>
@@ -1075,7 +1075,7 @@
 <rect width="12" height="12" x="150" y="300" class="named"><title>0x0046e530 TrapDoorControl (83 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="300" class="named"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="300" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="300" class="todo"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="300" class="named"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="300" class="todo"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="todo"><title>0x0046e890 FallingBlock (276 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="300" class="named"><title>0x0046e9b0 FallingBlockFloor (72 bytes)</title></rect>
@@ -2310,7 +2310,7 @@
 <rect width="7.73" height="7.45" x="685.76" y="233.52" class="todo"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="696.49" y="233.52" class="todo"><title>0x0042bda0 TriggerAlertLight (163 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="707.22" y="233.52" class="todo"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
-<rect width="7.73" height="7.45" x="717.95" y="233.52" class="todo"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
+<rect width="7.73" height="7.45" x="717.95" y="233.52" class="named"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
 <rect width="7.68" height="7.45" x="728.68" y="233.52" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="7.64" height="7.45" x="739.36" y="233.52" class="todo"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="7.63" height="7.45" x="533.67" y="243.97" class="named"><title>0x0042f340 swap_meshes_with_meshswap3 (161 bytes)</title></rect>
