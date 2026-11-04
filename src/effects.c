@@ -44,3 +44,8 @@ void dynamic_light_off(ITEM_INFO *item)
 {
     item->dynamic_light = 0;
 }
+
+void reset_hair(ITEM_INFO *item)
+{
+    InitialiseHair();
+}
