@@ -610,6 +610,72 @@ sint16 CreateItem(void);
 void InitialiseItem(sint16 item_num);
 void TriggerDartSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 zv, int hit);
 
+void DartEmitterControl(sint16 item_num)
+{
+    ITEM_INFO *item, *dart;
+    sint16 dart_num;
+    sint32 x, z, lp, xand, zand;
+
+    item = &items[item_num];
+    if (item->active) {
+        if (item->timer <= 0) {
+            item->timer = 24;
+        } else {
+            item->timer--;
+            return;
+        }
+    }
+
+    dart_num = CreateItem();
+    if (dart_num != NO_ITEM) {
+        dart = &items[dart_num];
+        dart->object_number = 90;
+        dart->room_number = item->room_number;
+
+        x = z = 0;
+        switch (item->pos.y_rot) {
+        case 0:
+            z = WALL_L / 2;
+            break;
+
+        case 16384:
+            x = WALL_L / 2;
+            break;
+
+        case -32768:
+            z = -WALL_L / 2;
+            break;
+
+        case -16384:
+            x = -WALL_L / 2;
+            break;
+        }
+        dart->pos.x_pos = item->pos.x_pos + x;
+        dart->pos.y_pos = item->pos.y_pos - WALL_L / 2;
+        dart->pos.z_pos = item->pos.z_pos + z;
+        InitialiseItem(dart_num);
+        dart->pos.x_rot = 0;
+        dart->pos.y_rot = item->pos.y_rot + 0x8000;
+        dart->speed = 256;
+
+        xand = zand = 0;
+        if (x)
+            xand = abs(x << 1) - 1;
+        else
+            zand = abs(z << 1) - 1;
+
+        for (lp = 0; lp < 5; lp++) {
+            sint32 rnd;
+
+            rnd = -GetRandomControl();
+            TriggerDartSmoke(dart->pos.x_pos, dart->pos.y_pos, dart->pos.z_pos, (x < 0) ? -(rnd & xand) : (rnd & xand), (z < 0) ? -(rnd & zand) : (rnd & zand), 0);
+        }
+        AddActiveItem(dart_num);
+        dart->status = ACTIVE;
+        SoundEffect(247, &dart->pos, 0);
+    }
+}
+
 void SideFlameEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;
