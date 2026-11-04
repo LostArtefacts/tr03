@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="177" height="12" x="0" y="0" class="named"><title>559 · 37.82%</title></rect>
-<rect width="291" height="12" x="177" y="0" class="todo"><title>919 · 62.18%</title></rect>
+<rect width="177.32" height="12" x="0" y="0" class="named"><title>560 · 37.89%</title></rect>
+<rect width="290.68" height="12" x="177.32" y="0" class="todo"><title>918 · 62.11%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">37.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">559</tspan> · <tspan class="todo">919</tspan></text>
+<text text-anchor="end" x="648" y="7.50">37.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">560</tspan> · <tspan class="todo">918</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="47.95" height="12" x="0" y="0" class="named"><title>68 KB · 10.25%</title></rect>
-<rect width="420.05" height="12" x="47.95" y="0" class="todo"><title>596 KB · 89.75%</title></rect>
+<rect width="48.14" height="12" x="0" y="0" class="named"><title>68 KB · 10.29%</title></rect>
+<rect width="419.86" height="12" x="48.14" y="0" class="todo"><title>596 KB · 89.71%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">10.2%</text>
+<text text-anchor="end" x="648" y="24.50">10.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">68 KB</tspan> · <tspan class="todo">596 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -579,7 +579,7 @@
 <rect width="12" height="12" x="210" y="150" class="named"><title>0x0043d780 TestLaraSlide (313 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="150" class="named"><title>0x0043d8c0 LaraTestClimbStance (190 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="150" class="todo"><title>0x0043d980 TestLaraVault (878 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="150" class="todo"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="150" class="named"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="150" class="named"><title>0x0043de00 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="150" class="todo"><title>0x0043de40 LaraDeflectEdgeJump (372 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="150" class="named"><title>0x0043dfc0 LaraSlideEdgeJump (227 bytes)</title></rect>
@@ -2134,7 +2134,7 @@
 <rect width="9.54" height="9.77" x="486.34" y="225.26" class="named"><title>0x0043e0b0 LaraTestHangOnClimbWall (264 bytes)</title></rect>
 <rect width="9.54" height="9.73" x="486.34" y="238.02" class="todo"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
 <rect width="9.54" height="9.69" x="486.34" y="250.75" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
-<rect width="9.54" height="9.65" x="486.34" y="263.44" class="todo"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
+<rect width="9.54" height="9.65" x="486.34" y="263.44" class="named"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
 <rect width="9.54" height="9.65" x="486.34" y="276.09" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="9.54" height="9.62" x="486.34" y="288.75" class="named"><title>0x0043f870 TestWall (260 bytes)</title></rect>
 <rect width="9.54" height="9.58" x="486.34" y="301.37" class="todo"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
