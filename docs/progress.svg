@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="182.07" height="12" x="0" y="0" class="named"><title>575 · 38.90%</title></rect>
-<rect width="285.93" height="12" x="182.07" y="0" class="todo"><title>903 · 61.10%</title></rect>
+<rect width="182.39" height="12" x="0" y="0" class="named"><title>576 · 38.97%</title></rect>
+<rect width="285.61" height="12" x="182.39" y="0" class="todo"><title>902 · 61.03%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">38.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">575</tspan> · <tspan class="todo">903</tspan></text>
+<text text-anchor="end" x="648" y="7.50">39.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">576</tspan> · <tspan class="todo">902</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="51.99" height="12" x="0" y="0" class="named"><title>74 KB · 11.11%</title></rect>
-<rect width="416.01" height="12" x="51.99" y="0" class="todo"><title>591 KB · 88.89%</title></rect>
+<rect width="52.16" height="12" x="0" y="0" class="named"><title>74 KB · 11.15%</title></rect>
+<rect width="415.84" height="12" x="52.16" y="0" class="todo"><title>591 KB · 88.85%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">11.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">74 KB</tspan> · <tspan class="todo">591 KB</tspan></text>
@@ -854,7 +854,7 @@
 <rect width="12" height="12" x="585" y="225" class="named"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="225" class="named"><title>0x00453000 EnableBaddieAI (494 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="225" class="named"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="225" class="todo"><title>0x00453460 CreateZone (247 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="225" class="named"><title>0x00453460 CreateZone (247 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="225" class="named"><title>0x00453560 ClearLOT (75 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="225" class="todo"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="225" class="todo"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
@@ -2156,7 +2156,7 @@
 <rect width="9.04" height="9.68" x="486.91" y="249.92" class="todo"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
 <rect width="9.04" height="9.64" x="486.91" y="262.60" class="todo"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
 <rect width="9.04" height="9.64" x="486.91" y="275.24" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
-<rect width="9.04" height="9.64" x="486.91" y="287.89" class="todo"><title>0x00453460 CreateZone (247 bytes)</title></rect>
+<rect width="9.04" height="9.64" x="486.91" y="287.89" class="named"><title>0x00453460 CreateZone (247 bytes)</title></rect>
 <rect width="9.04" height="9.60" x="486.91" y="300.53" class="todo"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
 <rect width="9.04" height="9.57" x="486.91" y="313.13" class="named"><title>0x00417110 SameZone (245 bytes)</title></rect>
 <rect width="9.04" height="9.57" x="486.91" y="325.70" class="named"><title>0x0043f330 lara_col_crawlb (245 bytes)</title></rect>
