@@ -19,6 +19,15 @@ void RemoveInventoryText(void)
     }
 }
 
+void Inv_RingMotionRadius(RING_INFO *ring, sint16 target)
+{
+    IMOTION_INFO *imo;
+
+    imo = ring->imo;
+    imo->radius_target = target;
+    imo->radius_rate = (target - ring->radius) / imo->count;
+}
+
 void ReqItemCentreAlign(REQUEST_INFO *req, TEXTSTRING *txt)
 {
     if (txt)
