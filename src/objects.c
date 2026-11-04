@@ -156,6 +156,21 @@ void BridgeTilt1Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
         *height = level + STEP_L;
 }
 
+void BridgeTilt2Floor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    sint32 level;
+
+    level = item->pos.y_pos + (GetOffset(item, x, z) >> 1);
+    if (y <= level)
+    {
+        *height = level;
+        height_type = WALL;
+        OnObject = 1;
+        if (item == lara_item)
+            lara_item->item_flags[0] = 1;
+    }
+}
+
 void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 level;
