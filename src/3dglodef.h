@@ -17,7 +17,7 @@ typedef sint16 PHD_ANGLE;
 
 sint32 __fastcall phd_sin(sint32 angle);
 sint32 __fastcall phd_cos(sint32 angle);
-sint32 __fastcall phd_atan(sint32 x, sint32 y);
+sint16 __fastcall phd_atan(sint32 x, sint32 y);
 sint32 __fastcall phd_sqrt(sint32 n);
 
 #define phd_PopMatrix() phd_mxptr -= 12

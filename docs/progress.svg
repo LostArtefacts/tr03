@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="175.10" height="12" x="0" y="0" class="named"><title>553 · 37.42%</title></rect>
-<rect width="292.90" height="12" x="175.10" y="0" class="todo"><title>925 · 62.58%</title></rect>
+<rect width="175.42" height="12" x="0" y="0" class="named"><title>554 · 37.48%</title></rect>
+<rect width="292.58" height="12" x="175.42" y="0" class="todo"><title>924 · 62.52%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">37.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">553</tspan> · <tspan class="todo">925</tspan></text>
+<text text-anchor="end" x="648" y="7.50">37.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">554</tspan> · <tspan class="todo">924</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="46.94" height="12" x="0" y="0" class="named"><title>67 KB · 10.03%</title></rect>
-<rect width="421.06" height="12" x="46.94" y="0" class="todo"><title>598 KB · 89.97%</title></rect>
+<rect width="47.08" height="12" x="0" y="0" class="named"><title>67 KB · 10.06%</title></rect>
+<rect width="420.92" height="12" x="47.08" y="0" class="todo"><title>598 KB · 89.94%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">10.0%</text>
+<text text-anchor="end" x="648" y="24.50">10.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">67 KB</tspan> · <tspan class="todo">598 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -197,7 +197,7 @@
 <rect width="12" height="12" x="480" y="30" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="todo"><title>0x00415820 CreatureDie (275 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="30" class="todo"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="30" class="todo"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="30" class="named"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="30" class="named"><title>0x004164d0 CreatureTilt (53 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="30" class="named"><title>0x00416510 CreatureJoint (81 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="30" class="named"><title>0x00416570 CreatureFloat (174 bytes)</title></rect>
@@ -2229,7 +2229,7 @@
 <rect width="8.30" height="8.68" x="682.56" y="210.96" class="named"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
 <rect width="8.30" height="8.68" x="693.86" y="210.96" class="named"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="8.26" height="8.68" x="705.16" y="210.96" class="todo"><title>0x0041f0e0 TestBoundsCollide (203 bytes)</title></rect>
-<rect width="8.22" height="8.68" x="716.42" y="210.96" class="todo"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
+<rect width="8.22" height="8.68" x="716.42" y="210.96" class="named"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
 <rect width="8.18" height="8.68" x="727.64" y="210.96" class="named"><title>0x0043ffd0 TestMonkeyRight (201 bytes)</title></rect>
 <rect width="8.18" height="8.68" x="738.82" y="210.96" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
 <rect width="8.30" height="8.51" x="511.15" y="222.63" class="named"><title>0x0041e560 GetNearByRooms (200 bytes)</title></rect>

@@ -802,7 +802,7 @@ void CalculateCamera(void)
     if (camera.item && !fixed_camera) {
         shift = phd_sqrt((camera.item->pos.z_pos - item->pos.z_pos) * (camera.item->pos.z_pos - item->pos.z_pos)
                          + (camera.item->pos.x_pos - item->pos.x_pos) * (camera.item->pos.x_pos - item->pos.x_pos));
-        angle = (sint16)phd_atan(camera.item->pos.z_pos - item->pos.z_pos, camera.item->pos.x_pos - item->pos.x_pos) - item->pos.y_rot;
+        angle = phd_atan(camera.item->pos.z_pos - item->pos.z_pos, camera.item->pos.x_pos - item->pos.x_pos) - item->pos.y_rot;
         bounds = GetBoundsAccurate(camera.item);
         tilt = phd_atan(shift, y - (camera.item->pos.y_pos + (bounds[2] + bounds[3]) / 2));
         angle >>= 1;
