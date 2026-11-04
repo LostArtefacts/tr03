@@ -69,7 +69,7 @@ typedef struct item_info {
     uint16 really_active:1;
 } ITEM_INFO;
 
-extern ITEM_INFO *items;
+
 
 void RemoveActiveItem(sint16 item_num);
 void AddActiveItem(sint16 item_num);

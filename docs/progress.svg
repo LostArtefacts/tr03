@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="119.69" height="12" x="0" y="0" class="named"><title>378 · 25.58%</title></rect>
-<rect width="348.31" height="12" x="119.69" y="0" class="todo"><title>1100 · 74.42%</title></rect>
+<rect width="120.01" height="12" x="0" y="0" class="named"><title>379 · 25.64%</title></rect>
+<rect width="347.99" height="12" x="120.01" y="0" class="todo"><title>1099 · 74.36%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">25.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">378</tspan> · <tspan class="todo">1100</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">379</tspan> · <tspan class="todo">1099</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="16.90" height="12" x="0" y="0" class="named"><title>24 KB · 3.61%</title></rect>
-<rect width="451.10" height="12" x="16.90" y="0" class="todo"><title>640 KB · 96.39%</title></rect>
+<rect width="16.95" height="12" x="0" y="0" class="named"><title>24 KB · 3.62%</title></rect>
+<rect width="451.05" height="12" x="16.95" y="0" class="todo"><title>640 KB · 96.38%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
@@ -544,7 +544,7 @@
 <rect width="12" height="12" x="435" y="135" class="todo"><title>0x0043a5b0 ShowEndStatsText (1123 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="135" class="named"><title>0x0043aa20 InitialiseItemArray (98 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="135" class="todo"><title>0x0043aa90 KillItem (327 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="135" class="todo"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="135" class="named"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="135" class="todo"><title>0x0043ac30 InitialiseItem (513 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="135" class="todo"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="135" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
@@ -2616,7 +2616,7 @@
 <rect width="5.37" height="4.86" x="633.94" y="309.03" class="named"><title>0x00441660 lara_as_backjump (74 bytes)</title></rect>
 <rect width="5.37" height="4.86" x="642.32" y="309.03" class="named"><title>0x004685c0 SubInitialise (74 bytes)</title></rect>
 <rect width="5.37" height="4.86" x="650.69" y="309.03" class="named"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
-<rect width="5.30" height="4.86" x="659.06" y="309.03" class="todo"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
+<rect width="5.30" height="4.86" x="659.06" y="309.03" class="named"><title>0x0043abe0 CreateItem (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="667.36" y="309.03" class="named"><title>0x00443290 lara_default_col (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="675.66" y="309.03" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="683.96" y="309.03" class="named"><title>0x00463b70 InitialiseLevelFlags (73 bytes)</title></rect>

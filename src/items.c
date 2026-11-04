@@ -22,6 +22,19 @@ void InitialiseItemArray(int numitems)
     item->next_item = NO_ITEM;
 }
 
+sint16 CreateItem(void)
+{
+    sint16 item_num;
+
+    item_num = next_item_free;
+    if (item_num == NO_ITEM)
+        return item_num;
+    items[item_num].flags = 0;
+    items[item_num].il.init = 0;
+    next_item_free = items[item_num].next_item;
+    return item_num;
+}
+
 void RemoveDrawnItem(sint16 item_num)
 {
     sint16 linknum;
