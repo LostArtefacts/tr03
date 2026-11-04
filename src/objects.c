@@ -25,6 +25,15 @@ void OpenThatDoor(DOORPOS_DATA *d)
     }
 }
 
+void DrawBridgeCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (item->current_anim_state == DOOR_CLOSED)
+        DoorCollision(item_num, laraitem, coll);
+}
+
 void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 floor, ceiling;

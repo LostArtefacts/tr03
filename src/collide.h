@@ -55,6 +55,7 @@ typedef struct {
 } COLL_INFO;
 
 void ShiftItem(ITEM_INFO *item, COLL_INFO *coll);
+void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 
 void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, sint16 room_number, sint32 objheight);
 

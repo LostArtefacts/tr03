@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="31.02" height="12" x="0" y="0" class="named"><title>227 · 15.36%</title></rect>
-<rect width="170.98" height="12" x="31.02" y="0" class="todo"><title>1251 · 84.64%</title></rect>
+<rect width="31.16" height="12" x="0" y="0" class="named"><title>228 · 15.43%</title></rect>
+<rect width="170.84" height="12" x="31.16" y="0" class="todo"><title>1250 · 84.57%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">15.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">227</tspan> · <tspan class="todo">1251</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">228</tspan> · <tspan class="todo">1250</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.19" height="12" x="0" y="0" class="named"><title>10 KB · 1.58%</title></rect>
-<rect width="198.81" height="12" x="3.19" y="0" class="todo"><title>653 KB · 98.42%</title></rect>
+<rect width="3.20" height="12" x="0" y="0" class="named"><title>11 KB · 1.58%</title></rect>
+<rect width="198.80" height="12" x="3.20" y="0" class="todo"><title>653 KB · 98.42%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">11 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -903,7 +903,7 @@
 <rect width="12" height="12" x="570" y="240" class="todo"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="240" class="todo"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="240" class="todo"><title>0x00459450 DrawBridgeCeiling (59 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="240" class="todo"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="240" class="named"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="240" class="todo"><title>0x004594c0 InitialiseLift (57 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="240" class="todo"><title>0x00459500 LiftControl (216 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="240" class="todo"><title>0x004595e0 LiftFloorCeiling (377 bytes)</title></rect>
@@ -2776,7 +2776,7 @@
 <rect width="4.28" height="3.87" x="713.59" y="347.35" class="named"><title>0x0041e140 FindGridShift (47 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="720.87" y="347.35" class="named"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="728.15" y="347.35" class="named"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
-<rect width="4.28" height="3.87" x="735.44" y="347.35" class="todo"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
+<rect width="4.28" height="3.87" x="735.44" y="347.35" class="named"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
 <rect width="4.28" height="3.87" x="742.72" y="347.35" class="todo"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
 <rect width="3.96" height="4.19" x="654.36" y="354.23" class="todo"><title>0x0048e830 Func48e830 (47 bytes)</title></rect>
 <rect width="3.87" height="4.19" x="661.32" y="354.23" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
