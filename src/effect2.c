@@ -5,6 +5,42 @@ extern sint32 next_spark;
 
 void TriggerBats(sint32 x, sint32 y, sint32 z, sint32 angle);
 
+void DetatchSpark(sint32 num, sint32 type)
+{
+    sint32 lp;
+    SPARKS *sptr;
+    FX_INFO *fx;
+    ITEM_INFO *item;
+
+    sptr = &sparks[0];
+    for (lp = 0; lp < MAX_SPARKS; lp++) {
+        if (sptr->On && (sptr->Flags & type) && sptr->FxObj == num) {
+            if (type == 64) {
+                if (sptr->Flags & 1024) {
+                    sptr->On = 0;
+                } else {
+                    fx = &effects[num];
+                    sptr->x += fx->pos.x_pos;
+                    sptr->y += fx->pos.y_pos;
+                    sptr->z += fx->pos.z_pos;
+                    sptr->Flags &= ~64;
+                }
+            } else if (type == 128) {
+                if (sptr->Flags & 1024) {
+                    sptr->On = 0;
+                } else {
+                    item = &items[num];
+                    sptr->x += item->pos.x_pos;
+                    sptr->y += item->pos.y_pos;
+                    sptr->z += item->pos.z_pos;
+                    sptr->Flags &= ~128;
+                }
+            }
+        }
+        sptr++;
+    }
+}
+
 sint32 GetFreeSpark(void)
 {
     sint32 lp, eldest, free;
