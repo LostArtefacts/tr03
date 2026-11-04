@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="25.83" height="12" x="130" y="1.50" class="named"/>
-<rect width="176.17" height="12" x="155.83" y="1.50" class="todo"/>
+<rect width="25.97" height="12" x="130" y="1.50" class="named"/>
+<rect width="176.03" height="12" x="155.97" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">12.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">189/1478</text>
-<rect width="2.75" height="12" x="130" y="18.50" class="named"/>
-<rect width="199.25" height="12" x="132.75" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">12.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">190/1478</text>
+<rect width="2.76" height="12" x="130" y="18.50" class="named"/>
+<rect width="199.24" height="12" x="132.76" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">9k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.79% (189)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.21% (1289)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.86% (190)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.14% (1288)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="95.52" height="6" x="0" y="0" class="named"/>
-<rect width="651.48" height="6" x="95.52" y="0" class="todo"/>
+<rect width="96.03" height="6" x="0" y="0" class="named"/>
+<rect width="650.97" height="6" x="96.03" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -979,7 +979,7 @@
 <rect width="12" height="12" x="195" y="270" class="todo"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="270" class="named"><title>0x00462df0 ResetSG (21 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="270" class="named"><title>0x00462e10 WriteSG (76 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="270" class="todo"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="270" class="named"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="270" class="todo"><title>0x00462ea0 SealmuteControl (1555 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="270" class="todo"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="270" class="todo"><title>0x00463700 TriggerSealmuteGas (487 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.36%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.64%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.63%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.16" height="6" x="0" y="0" class="named"/>
-<rect width="736.84" height="6" x="10.16" y="0" class="todo"/>
+<rect width="10.22" height="6" x="0" y="0" class="named"/>
+<rect width="736.78" height="6" x="10.22" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2738,7 +2738,7 @@
 <rect width="2.18" height="2.23" x="677.54" y="406.09" class="named"><title>0x004419b0 lara_as_swandive (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="411.32" class="named"><title>0x004597a0 LiftCeiling (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="416.56" class="named"><title>0x004598e0 BridgeTilt1Ceiling (53 bytes)</title></rect>
-<rect width="2.18" height="2.23" x="677.54" y="421.79" class="todo"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
+<rect width="2.18" height="2.23" x="677.54" y="421.79" class="named"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="427.03" class="todo"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="432.26" class="todo"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="2.18" height="2.23" x="677.54" y="437.49" class="todo"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
