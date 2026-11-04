@@ -183,3 +183,13 @@ void QuadStart(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void QuadStop(ITEM_INFO *item)
+{
+    if (lara.skidoo != NO_ITEM)
+    {
+        assault_timer_active = 0;
+        assault_timer_display = 1;
+    }
+    flipeffect = -1;
+}
