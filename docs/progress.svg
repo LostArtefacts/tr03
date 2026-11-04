@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="187.77" height="12" x="0" y="0" class="named"><title>593 · 40.12%</title></rect>
-<rect width="280.23" height="12" x="187.77" y="0" class="todo"><title>885 · 59.88%</title></rect>
+<rect width="188.09" height="12" x="0" y="0" class="named"><title>594 · 40.19%</title></rect>
+<rect width="279.91" height="12" x="188.09" y="0" class="todo"><title>884 · 59.81%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">40.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">593</tspan> · <tspan class="todo">885</tspan></text>
+<text text-anchor="end" x="648" y="7.50">40.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">594</tspan> · <tspan class="todo">884</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="56.28" height="12" x="0" y="0" class="named"><title>80 KB · 12.02%</title></rect>
-<rect width="411.72" height="12" x="56.28" y="0" class="todo"><title>585 KB · 87.98%</title></rect>
+<rect width="56.59" height="12" x="0" y="0" class="named"><title>80 KB · 12.09%</title></rect>
+<rect width="411.41" height="12" x="56.59" y="0" class="todo"><title>584 KB · 87.91%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">12.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">80 KB</tspan> · <tspan class="todo">585 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">12.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">80 KB</tspan> · <tspan class="todo">584 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -388,7 +388,7 @@
 <rect width="12" height="12" x="345" y="90" class="named"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="90" class="named"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="90" class="named"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="90" class="todo"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="90" class="named"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="90" class="todo"><title>0x0042ebb0 WaterFall (279 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="90" class="named"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="90" class="named"><title>0x0042ece0 turn180_effect (22 bytes)</title></rect>
@@ -1946,7 +1946,7 @@
 <rect width="12.68" height="12.52" x="415.78" y="161.96" class="todo"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
 <rect width="12.68" height="12.49" x="415.78" y="177.48" class="todo"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
 <rect width="12.68" height="12.43" x="415.78" y="192.97" class="todo"><title>0x0041bbe0 TriggerPlasma_clawmute (447 bytes)</title></rect>
-<rect width="12.68" height="12.38" x="415.78" y="208.41" class="todo"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
+<rect width="12.68" height="12.38" x="415.78" y="208.41" class="named"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
 <rect width="12.68" height="12.38" x="415.78" y="223.79" class="todo"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
 <rect width="12.68" height="12.38" x="415.78" y="239.16" class="todo"><title>0x0046ec10 DartEmitterControl (445 bytes)</title></rect>
 <rect width="12.68" height="12.24" x="415.78" y="254.54" class="todo"><title>0x0044bbd0 DrawFlareInAir (440 bytes)</title></rect>

@@ -299,6 +299,51 @@ void Splash(ITEM_INFO *item)
 extern sint32 SplashCount;
 sint16 *GetBestFrame(ITEM_INFO *item);
 
+void WadeSplash(ITEM_INFO *item, int water, int waterdepth)
+{
+    sint16 *bounds, room_number;
+
+    room_number = item->room_number;
+    GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (!(room[room_number].flags & UNDERWATER))
+        return;
+
+    bounds = GetBestFrame(item);
+    if (item->pos.y_pos + bounds[2] > water || item->pos.y_pos + bounds[3] < water)
+        return;
+
+    if (item->fallspeed > 0 && waterdepth < 730 - STEP_L && SplashCount == 0) {
+        splash_setup.x = item->pos.x_pos;
+        splash_setup.y = water;
+        splash_setup.z = item->pos.z_pos;
+        splash_setup.InnerXZoff = 16;
+        splash_setup.InnerXZsize = 12;
+        splash_setup.InnerYsize = -96;
+        splash_setup.InnerXZvel = 0xa0;
+        splash_setup.InnerYvel = -item->fallspeed * 72;
+        splash_setup.InnerGravity = 0x80;
+        splash_setup.InnerFriction = 7;
+        splash_setup.MiddleXZoff = 24;
+        splash_setup.MiddleXZsize = 24;
+        splash_setup.MiddleYsize = -64;
+        splash_setup.MiddleXZvel = 0xe0;
+        splash_setup.MiddleYvel = -item->fallspeed * 36;
+        splash_setup.MiddleGravity = 0x48;
+        splash_setup.MiddleFriction = 8;
+        splash_setup.OuterXZoff = 32;
+        splash_setup.OuterXZsize = 32;
+        splash_setup.OuterXZvel = 0x110;
+        splash_setup.OuterFriction = 9;
+        SetupSplash(&splash_setup);
+        SplashCount = 16;
+    } else if ((wibble & 15) == 0 && ((GetRandomControl() & 15) == 0 || item->current_anim_state != AS_STOP)) {
+        if (item->current_anim_state != AS_STOP)
+            SetupRipple(item->pos.x_pos, water, item->pos.z_pos, -16 - (GetRandomControl() & 15), 0);
+        else
+            SetupRipple(item->pos.x_pos, water, item->pos.z_pos, -16 - (GetRandomControl() & 15), 1);
+    }
+}
+
 extern sint16 rcossin_tbl[];
 void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint32 room_number, ITEM_LIGHT *il);
 void TriggerWaterfallMist(sint32 x, sint32 y, sint32 z, sint32 angle);
