@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="108.29" height="12" x="0" y="0" class="named"><title>342 · 23.14%</title></rect>
-<rect width="359.71" height="12" x="108.29" y="0" class="todo"><title>1136 · 76.86%</title></rect>
+<rect width="108.61" height="12" x="0" y="0" class="named"><title>343 · 23.21%</title></rect>
+<rect width="359.39" height="12" x="108.61" y="0" class="todo"><title>1135 · 76.79%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">23.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">342</tspan> · <tspan class="todo">1136</tspan></text>
+<text text-anchor="end" x="648" y="7.50">23.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">343</tspan> · <tspan class="todo">1135</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="13.95" height="12" x="0" y="0" class="named"><title>20 KB · 2.98%</title></rect>
-<rect width="454.05" height="12" x="13.95" y="0" class="todo"><title>644 KB · 97.02%</title></rect>
+<rect width="14.03" height="12" x="0" y="0" class="named"><title>20 KB · 3%</title></rect>
+<rect width="453.97" height="12" x="14.03" y="0" class="todo"><title>644 KB · 97%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">20 KB</tspan> · <tspan class="todo">644 KB</tspan></text>
@@ -742,7 +742,7 @@
 <rect width="12" height="12" x="405" y="195" class="todo"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="195" class="todo"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="195" class="todo"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="195" class="todo"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="195" class="named"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="195" class="named"><title>0x00448350 draw_pistol_meshes (89 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="195" class="named"><title>0x004483b0 undraw_pistol_mesh_left (65 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="195" class="named"><title>0x00448400 undraw_pistol_mesh_right (59 bytes)</title></rect>
@@ -2455,7 +2455,7 @@
 <rect width="6.31" height="6.33" x="592.98" y="273.84" class="todo"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="602.29" y="273.84" class="todo"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="611.60" y="273.84" class="named"><title>0x004452c0 ready_shotgun (113 bytes)</title></rect>
-<rect width="6.31" height="6.33" x="620.92" y="273.84" class="todo"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
+<rect width="6.31" height="6.33" x="620.92" y="273.84" class="named"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="630.23" y="273.84" class="todo"><title>0x00459a50 DetonatorControl (113 bytes)</title></rect>
 <rect width="6.26" height="6.33" x="639.54" y="273.84" class="todo"><title>0x0042e5c0 LaraBubbles (112 bytes)</title></rect>
 <rect width="6.26" height="6.33" x="648.80" y="273.84" class="named"><title>0x00440280 lara_col_monkeyl (112 bytes)</title></rect>
