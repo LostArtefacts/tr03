@@ -403,3 +403,9 @@ void Exercise8_87(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void ResetExercises(ITEM_INFO *item)
+{
+    ExerciseNumber = 0;
+    flipeffect = -1;
+}
