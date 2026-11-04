@@ -99,5 +99,6 @@ extern sint16 next_fx_active;
 extern sint16 next_fx_free;
 
 void InitialiseFXArray(void);
+sint16 CreateEffect(sint16 room_num);
 
 #endif

@@ -14,6 +14,8 @@ enum object_types {
     HARPOON_GUN,
     FLARE,
     DOG = 22,
+    LIZARD_MAN = 35,
+    ROBOT_SENTRY_GUN = 64,
     FALLING_PLANK = 85,
     BLADE = 111,
     MESHSWAP1 = 122,
@@ -22,6 +24,7 @@ enum object_types {
     SECRET_ITEM1 = 221,
     SECRET_ITEM2,
     SECRET_ITEM3,
+    FLAME = 329,
     BIRD_TWEETER = 289,
     CLOCK_CHIMES
 };

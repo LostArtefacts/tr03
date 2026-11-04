@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="82.33" height="12" x="0" y="0" class="named"><title>260 · 17.59%</title></rect>
-<rect width="385.67" height="12" x="82.33" y="0" class="todo"><title>1218 · 82.41%</title></rect>
+<rect width="82.64" height="12" x="0" y="0" class="named"><title>261 · 17.66%</title></rect>
+<rect width="385.36" height="12" x="82.64" y="0" class="todo"><title>1217 · 82.34%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">17.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">260</tspan> · <tspan class="todo">1218</tspan></text>
+<text text-anchor="end" x="648" y="7.50">17.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">261</tspan> · <tspan class="todo">1217</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.96" height="12" x="0" y="0" class="named"><title>13 KB · 1.91%</title></rect>
-<rect width="459.04" height="12" x="8.96" y="0" class="todo"><title>651 KB · 98.09%</title></rect>
+<rect width="9.01" height="12" x="0" y="0" class="named"><title>13 KB · 1.93%</title></rect>
+<rect width="458.99" height="12" x="9.01" y="0" class="todo"><title>651 KB · 98.07%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">651 KB</tspan></text>
@@ -151,7 +151,7 @@
 <rect width="12" height="12" x="540" y="15" class="todo"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="15" class="todo"><title>0x0040fef0 InitialiseArmySMG (82 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="15" class="todo"><title>0x0040ff50 ArmySMGControl (1994 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="15" class="todo"><title>0x00410750 InitialiseAutogun (75 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="15" class="named"><title>0x00410750 InitialiseAutogun (75 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="15" class="todo"><title>0x004107a0 AutogunControl (837 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="15" class="todo"><title>0x00410af0 FireBigGun (522 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="15" class="named"><title>0x00410d00 BigGunInitialise (66 bytes)</title></rect>
@@ -2604,7 +2604,7 @@
 <rect width="5.07" height="5.29" x="608.98" y="367.56" class="named"><title>0x00462e10 WriteSG (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="375.85" class="todo"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="384.14" class="todo"><title>0x004842a0 GetSavedGamesList (76 bytes)</title></rect>
-<rect width="5.07" height="5.22" x="608.98" y="392.44" class="todo"><title>0x00410750 InitialiseAutogun (75 bytes)</title></rect>
+<rect width="5.07" height="5.22" x="608.98" y="392.44" class="named"><title>0x00410750 InitialiseAutogun (75 bytes)</title></rect>
 <rect width="5.07" height="5.22" x="608.98" y="400.66" class="todo"><title>0x00413390 DoBoatDynamics (75 bytes)</title></rect>
 <rect width="5.07" height="5.22" x="608.98" y="408.88" class="todo"><title>0x004414e0 lara_as_fastturn (75 bytes)</title></rect>
 <rect width="5.07" height="5.22" x="608.98" y="417.11" class="todo"><title>0x0044bf80 set_flare_arm (75 bytes)</title></rect>
