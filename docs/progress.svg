@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="7.52" height="12" x="130" y="1.50" class="named"/>
-<rect width="194.48" height="12" x="137.52" y="1.50" class="todo"/>
+<rect width="7.65" height="12" x="130" y="1.50" class="named"/>
+<rect width="194.35" height="12" x="137.65" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">3.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">55/1478</text>
-<rect width="0.58" height="12" x="130" y="18.50" class="named"/>
-<rect width="201.42" height="12" x="130.58" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">3.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">56/1478</text>
+<rect width="0.59" height="12" x="130" y="18.50" class="named"/>
+<rect width="201.41" height="12" x="130.59" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">2k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">3.72% (55)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.28% (1423)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">3.79% (56)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.21% (1422)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="27.80" height="6" x="0" y="0" class="named"/>
-<rect width="719.20" height="6" x="27.80" y="0" class="todo"/>
+<rect width="28.30" height="6" x="0" y="0" class="named"/>
+<rect width="718.70" height="6" x="28.30" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -507,7 +507,7 @@
 <rect width="12" height="12" x="615" y="120" class="todo"><title>0x004378b0 Inv_AddItem (2065 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="120" class="todo"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="120" class="todo"><title>0x00438380 Inv_RequestItem (119 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="120" class="todo"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="120" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="120" class="todo"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="120" class="todo"><title>0x00438530 Inv_GetItemOption (221 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="120" class="todo"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.71%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.15" height="6" x="0" y="0" class="named"/>
-<rect width="744.85" height="6" x="2.15" y="0" class="todo"/>
+<rect width="2.18" height="6" x="0" y="0" class="named"/>
+<rect width="744.82" height="6" x="2.18" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2919,7 +2919,7 @@
 <rect width="0.56" height="1.03" x="718.15" y="429.26" class="todo"><title>0x00441310 lara_as_reach (28 bytes)</title></rect>
 <rect width="0.56" height="1.03" x="718.15" y="433.29" class="todo"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
 <rect width="0.56" height="1.03" x="718.15" y="437.32" class="todo"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
-<rect width="0.56" height="0.88" x="718.15" y="441.35" class="todo"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
+<rect width="0.56" height="0.88" x="718.15" y="441.35" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="0.56" height="0.88" x="718.15" y="445.23" class="todo"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="0.56" height="0.88" x="718.15" y="449.12" class="todo"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="0.60" height="0.83" x="721.70" y="421.20" class="todo"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
