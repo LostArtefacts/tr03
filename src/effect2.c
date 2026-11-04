@@ -206,6 +206,53 @@ void TriggerUnderwaterBloodD(sint32 x, sint32 y, sint32 z, sint32 size)
     }
 }
 
+extern sint32 wibble;
+
+void UpdateBats(void)
+{
+    sint32 lp;
+    BAT_STRUCT *bptr;
+
+    bptr = &bats[0];
+    for (lp = 0; lp < MAX_BATS; lp++) {
+        if (bptr->flags & 1) {
+            if ((lp & 3) == 0 && (GetRandomControl() & 7) == 0) {
+                PHD_3DPOS bpos;
+
+                bpos.x_pos = bptr->x;
+                bpos.y_pos = bptr->y;
+                bpos.z_pos = bptr->z;
+                SoundEffect(157, &bpos, 0);
+            }
+
+            bptr->x -= (rcossin_tbl[(bptr->angle << 1) + 1] * bptr->speed) >> 14;
+            bptr->y -= GetRandomControl() & 3;
+            bptr->z += (rcossin_tbl[bptr->angle << 1] * bptr->speed) >> 14;
+            bptr->WingYoff += 11;
+            bptr->WingYoff &= 63;
+            if (bptr->life < 128) {
+                bptr->y -= (lp >> 1) + 4;
+                if ((GetRandomControl() & 3) == 0) {
+                    bptr->angle += (GetRandomControl() & 255) - 128;
+                    bptr->angle &= 4095;
+                    bptr->speed += GetRandomControl() & 3;
+                }
+            }
+
+            bptr->speed += 12;
+            if (bptr->speed > 300)
+                bptr->speed = 300;
+
+            if (bptr->life && (wibble & 4)) {
+                bptr->life--;
+                if (!bptr->life)
+                    bptr->flags = 0;
+            }
+        }
+        bptr++;
+    }
+}
+
 void BatEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;
@@ -244,6 +291,23 @@ void KillAllCurrentItems(sint16 item_number)
 {
     KillEverythingFlag = 1;
 }
+
+typedef struct {
+    sint16 angle;
+    uint8 speed;
+    uint8 on;
+    sint16 angle_time;
+    sint16 speed_time;
+    sint16 Xrange;
+    sint16 Zrange;
+    sint16 Yrange;
+} LEADER_INFO;
+
+extern LEADER_INFO lead_info[];
+extern sint16 next_item_active;
+void KillEffect(sint16 fx_num);
+
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number, int size, int sizerange);
 
 void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b)
 {
