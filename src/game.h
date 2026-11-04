@@ -21,6 +21,9 @@
 #include "invdata.h"
 #include "sound.h"
 #include "savegame.h"
+#include "box.h"
+#include "title.h"
+#include "gameflow.h"
 #include "specific/specific.h"
 
 extern int level_complete;

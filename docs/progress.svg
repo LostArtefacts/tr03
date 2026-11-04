@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="26.65" height="12" x="0" y="0" class="named"><title>195 · 13.19%</title></rect>
-<rect width="175.35" height="12" x="26.65" y="0" class="todo"><title>1283 · 86.81%</title></rect>
+<rect width="26.79" height="12" x="0" y="0" class="named"><title>196 · 13.26%</title></rect>
+<rect width="175.21" height="12" x="26.79" y="0" class="todo"><title>1282 · 86.74%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">13.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">195</tspan> · <tspan class="todo">1283</tspan></text>
+<text text-anchor="end" x="382" y="7.50">13.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">196</tspan> · <tspan class="todo">1282</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.79" height="12" x="0" y="0" class="named"><title>9 KB · 1.38%</title></rect>
-<rect width="199.21" height="12" x="2.79" y="0" class="todo"><title>655 KB · 98.62%</title></rect>
+<rect width="2.80" height="12" x="0" y="0" class="named"><title>9 KB · 1.39%</title></rect>
+<rect width="199.20" height="12" x="2.80" y="0" class="todo"><title>655 KB · 98.61%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">9 KB</tspan> · <tspan class="todo">655 KB</tspan></text>
@@ -262,7 +262,7 @@
 <rect width="12" height="12" x="705" y="45" class="todo"><title>0x0041f2f0 AlignLaraPosition (313 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="45" class="todo"><title>0x0041f430 MoveLaraPosition (395 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="45" class="todo"><title>0x0041f5c0 Move3DPosTo3DPos (366 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="60" class="todo"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="60" class="named"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="60" class="todo"><title>0x0041f750 CompyControl (1489 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="60" class="todo"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="60" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
@@ -2929,7 +2929,7 @@
 <rect width="2.65" height="3.31" x="694.15" y="412.64" class="todo"><title>0x00474d50 ACMEmulateCDStop (25 bytes)</title></rect>
 <rect width="2.65" height="3.31" x="694.15" y="418.95" class="todo"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
 <rect width="2.65" height="3.19" x="694.15" y="425.26" class="todo"><title>0x00402180 SetZFar (24 bytes)</title></rect>
-<rect width="2.65" height="3.19" x="694.15" y="431.44" class="todo"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
+<rect width="2.65" height="3.19" x="694.15" y="431.44" class="named"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
 <rect width="2.65" height="3.19" x="694.15" y="437.63" class="named"><title>0x004404e0 lara_as_monkey180 (24 bytes)</title></rect>
 <rect width="2.65" height="3.19" x="694.15" y="443.81" class="named"><title>0x004417e0 lara_as_slideback (24 bytes)</title></rect>
 <rect width="3.18" height="2.66" x="699.80" y="399.89" class="named"><title>0x00441a60 lara_as_waterout (24 bytes)</title></rect>
