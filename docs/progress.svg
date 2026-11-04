@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="167.82" height="12" x="0" y="0" class="named"><title>530 · 35.86%</title></rect>
-<rect width="300.18" height="12" x="167.82" y="0" class="todo"><title>948 · 64.14%</title></rect>
+<rect width="168.14" height="12" x="0" y="0" class="named"><title>531 · 35.93%</title></rect>
+<rect width="299.86" height="12" x="168.14" y="0" class="todo"><title>947 · 64.07%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">35.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">530</tspan> · <tspan class="todo">948</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">531</tspan> · <tspan class="todo">947</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="34.87" height="12" x="0" y="0" class="named"><title>49 KB · 7.45%</title></rect>
-<rect width="433.13" height="12" x="34.87" y="0" class="todo"><title>615 KB · 92.55%</title></rect>
+<rect width="35.03" height="12" x="0" y="0" class="named"><title>50 KB · 7.48%</title></rect>
+<rect width="432.97" height="12" x="35.03" y="0" class="todo"><title>615 KB · 92.52%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">7.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">49 KB</tspan> · <tspan class="todo">615 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">50 KB</tspan> · <tspan class="todo">615 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -483,7 +483,7 @@
 <rect width="12" height="12" x="270" y="120" class="todo"><title>0x00434770 DrawQuadbikeLapTime (438 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="120" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="120" class="named"><title>0x00434a10 DrawHealthBar (200 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="120" class="todo"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="120" class="named"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="120" class="named"><title>0x00434bd0 RemoveAmmoText (29 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="120" class="todo"><title>0x00434bf0 DrawAmmoInfo (305 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="120" class="named"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
@@ -2181,7 +2181,7 @@
 <rect width="9.15" height="8.95" x="499.01" y="296.28" class="todo"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="9.15" height="8.95" x="499.01" y="308.23" class="todo"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>
 <rect width="9.15" height="8.91" x="499.01" y="320.18" class="todo"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
-<rect width="9.15" height="8.91" x="499.01" y="332.09" class="todo"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
+<rect width="9.15" height="8.91" x="499.01" y="332.09" class="named"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
 <rect width="9.15" height="8.91" x="499.01" y="344" class="todo"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
 <rect width="9.15" height="8.91" x="499.01" y="355.91" class="todo"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
 <rect width="9.15" height="8.87" x="499.01" y="367.82" class="todo"><title>0x00417210 AdjustStopperFlag (230 bytes)</title></rect>

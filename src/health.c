@@ -107,6 +107,29 @@ void DrawHealthBar(int flash_state)
         PoisonFlag--;
 }
 
+void S_DrawAirBar(int percent);
+
+void DrawAirBar(int flash_state)
+{
+    int air;
+
+    if ((lara.skidoo == NO_ITEM || items[lara.skidoo].object_number != 19) && lara.water_status != LARA_UNDERWATER && lara.water_status != LARA_SURFACE && !((room[lara_item->room_number].flags & 128) && lara.water_surface_dist < -775))
+        return;
+    air = lara.air;
+    if (air < 0)
+        air = 0;
+    else if (air > 1800)
+        air = 1800;
+    if (air <= 450) {
+        if (flash_state)
+            S_DrawAirBar(air * 100 / 1800);
+        else
+            S_DrawAirBar(0);
+    } else {
+        S_DrawAirBar(air * 100 / 1800);
+    }
+}
+
 void RemoveAmmoText(void)
 {
     if (ammotext)
