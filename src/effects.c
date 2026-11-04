@@ -380,3 +380,16 @@ void Exercise8_93(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void Exercise8_109Sp(ITEM_INFO *item)
+{
+    if (ExerciseNumber == 17)
+    {
+        if (lara.water_status == LARA_SURFACE)
+        {
+            S_CDPlay(109 + 3, 0);
+            ExerciseNumber++;
+        }
+    }
+    flipeffect = -1;
+}
