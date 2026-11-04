@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="153.89" height="12" x="0" y="0" class="named"><title>486 · 32.88%</title></rect>
-<rect width="314.11" height="12" x="153.89" y="0" class="todo"><title>992 · 67.12%</title></rect>
+<rect width="154.21" height="12" x="0" y="0" class="named"><title>487 · 32.95%</title></rect>
+<rect width="313.79" height="12" x="154.21" y="0" class="todo"><title>991 · 67.05%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">32.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">486</tspan> · <tspan class="todo">992</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">487</tspan> · <tspan class="todo">991</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="28.29" height="12" x="0" y="0" class="named"><title>40 KB · 6.05%</title></rect>
-<rect width="439.71" height="12" x="28.29" y="0" class="todo"><title>624 KB · 93.95%</title></rect>
+<rect width="28.42" height="12" x="0" y="0" class="named"><title>40 KB · 6.07%</title></rect>
+<rect width="439.58" height="12" x="28.42" y="0" class="todo"><title>624 KB · 93.93%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">6.0%</text>
+<text text-anchor="end" x="648" y="24.50">6.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">40 KB</tspan> · <tspan class="todo">624 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -282,7 +282,7 @@
 <rect width="12" height="12" x="255" y="60" class="todo"><title>0x00422700 xLOS (748 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="60" class="todo"><title>0x004229f0 ClipTarget (576 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="60" class="todo"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="60" class="todo"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="60" class="named"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="60" class="named"><title>0x00423000 RemoveRoomFlipItems (156 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="60" class="named"><title>0x004230a0 AddRoomFlipItems (97 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="60" class="named"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
@@ -2269,7 +2269,7 @@
 <rect width="8.27" height="7.86" x="672.26" y="222.66" class="todo"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="8.23" height="7.86" x="683.54" y="222.66" class="todo"><title>0x0044c630 LaraCheatGetStuff (183 bytes)</title></rect>
 <rect width="8.09" height="7.86" x="694.76" y="222.66" class="todo"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
-<rect width="8.05" height="7.86" x="705.85" y="222.66" class="todo"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
+<rect width="8.05" height="7.86" x="705.85" y="222.66" class="named"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
 <rect width="8.05" height="7.86" x="716.90" y="222.66" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
 <rect width="8.05" height="7.86" x="727.95" y="222.66" class="todo"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
 <rect width="8" height="7.86" x="739" y="222.66" class="named"><title>0x004222b0 GetDoor (178 bytes)</title></rect>

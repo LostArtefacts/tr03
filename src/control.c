@@ -142,6 +142,28 @@ int LOS(GAME_VECTOR *start, GAME_VECTOR *target)
 void RemoveRoomFlipItems(ROOM_INFO *r);
 void AddRoomFlipItems(ROOM_INFO *r);
 
+void FlipMap(void)
+{
+    int i;
+    ROOM_INFO *r, *flipped, temp;
+
+    for (i = 0, r = room; i < number_rooms; i++, r++) {
+        if (r->flipped_room < 0)
+            continue;
+        RemoveRoomFlipItems(r);
+        flipped = &room[r->flipped_room];
+        memcpy(&temp, r, sizeof(ROOM_INFO));
+        memcpy(r, flipped, sizeof(ROOM_INFO));
+        memcpy(flipped, &temp, sizeof(ROOM_INFO));
+        r->flipped_room = flipped->flipped_room;
+        flipped->flipped_room = -1;
+        r->item_number = flipped->item_number;
+        r->fx_number = flipped->fx_number;
+        AddRoomFlipItems(r);
+    }
+    flip_status = !flip_status;
+}
+
 void RemoveRoomFlipItems(ROOM_INFO *r)
 {
     ITEM_INFO *item;
