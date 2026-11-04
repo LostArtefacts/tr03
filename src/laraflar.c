@@ -5,6 +5,33 @@
 #define FL_IGNITE_F 72
 #define FL_2HOLD_F 95
 
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+int DoFlareLight(PHD_VECTOR *pos, int flare_age);
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
+
+void DoFlareInHand(int flare_age)
+{
+    PHD_VECTOR pos;
+
+    pos.x = 11;
+    pos.y = 32;
+    pos.z = 41;
+    GetLaraHandAbsPosition(&pos, 0);
+    lara.left_arm.flash_gun = DoFlareLight(&pos, flare_age);
+    if (lara.flare_age < 900) {
+        lara.flare_age++;
+        if (room[lara_item->room_number].flags & UNDERWATER) {
+            SoundEffect(12, &lara_item->pos, 1);
+            if (GetRandomControl() < 0x4000)
+                CreateBubble((PHD_3DPOS *)&pos, lara_item->room_number, 8, 8);
+        } else {
+            SoundEffect(12, &lara_item->pos, 0x2000004);
+        }
+    } else if (lara.gun_status == LG_ARMLESS) {
+        lara.gun_status = LG_UNDRAW;
+    }
+}
+
 void set_flare_arm(int frame)
 {
     int anim_base;
