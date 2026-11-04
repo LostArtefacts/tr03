@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="93.09" height="12" x="0" y="0" class="named"><title>294 · 19.89%</title></rect>
-<rect width="374.91" height="12" x="93.09" y="0" class="todo"><title>1184 · 80.11%</title></rect>
+<rect width="93.41" height="12" x="0" y="0" class="named"><title>295 · 19.96%</title></rect>
+<rect width="374.59" height="12" x="93.41" y="0" class="todo"><title>1183 · 80.04%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">19.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">294</tspan> · <tspan class="todo">1184</tspan></text>
+<text text-anchor="end" x="648" y="7.50">20.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">295</tspan> · <tspan class="todo">1183</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="10.83" height="12" x="0" y="0" class="named"><title>15 KB · 2.31%</title></rect>
-<rect width="457.17" height="12" x="10.83" y="0" class="todo"><title>649 KB · 97.69%</title></rect>
+<rect width="10.89" height="12" x="0" y="0" class="named"><title>15 KB · 2.33%</title></rect>
+<rect width="457.11" height="12" x="10.89" y="0" class="todo"><title>648 KB · 97.67%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">15 KB</tspan> · <tspan class="todo">649 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">15 KB</tspan> · <tspan class="todo">648 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -608,7 +608,7 @@
 <rect width="12" height="12" x="645" y="150" class="named"><title>0x0043fa40 lara_as_dashdive (41 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="150" class="todo"><title>0x0043fa70 lara_col_dashdive (277 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="150" class="named"><title>0x0043fb90 lara_as_hang2 (120 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="150" class="todo"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="150" class="named"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="150" class="todo"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="150" class="named"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="150" class="todo"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
@@ -2565,7 +2565,7 @@
 <rect width="5.38" height="5.52" x="625.77" y="300.51" class="todo"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
 <rect width="5.32" height="5.52" x="634.15" y="300.51" class="todo"><title>0x004020d0 Func4020d0 (83 bytes)</title></rect>
 <rect width="5.32" height="5.52" x="642.46" y="300.51" class="named"><title>0x0041ec30 ObjectCollisionSub (83 bytes)</title></rect>
-<rect width="5.32" height="5.52" x="650.78" y="300.51" class="todo"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
+<rect width="5.32" height="5.52" x="650.78" y="300.51" class="named"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
 <rect width="5.32" height="5.52" x="659.10" y="300.51" class="todo"><title>0x0044edd0 lara_as_uwdeath (83 bytes)</title></rect>
 <rect width="5.32" height="5.52" x="667.41" y="300.51" class="todo"><title>0x0046e530 TrapDoorControl (83 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="675.73" y="300.51" class="todo"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>

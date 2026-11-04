@@ -118,6 +118,19 @@ void lara_as_hang2(ITEM_INFO *item, COLL_INFO *coll)
         LookUpDown();
 }
 
+void MonkeySwingFall(ITEM_INFO *item)
+{
+    item->goal_anim_state = AS_UPJUMP;
+    item->current_anim_state = AS_UPJUMP;
+    item->anim_number = STOPHANG_A;
+    item->frame_number = STOPHANG_F;
+    item->gravity_status = 1;
+    item->speed = 2;
+    item->fallspeed = 1;
+    item->pos.y_pos += 256;
+    lara.gun_status = LG_ARMLESS;
+}
+
 void MonkeySwingSnap(ITEM_INFO *item, COLL_INFO *coll)
 {
     sint16 room_num;
