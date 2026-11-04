@@ -310,3 +310,10 @@ void lara_col_leftjump(ITEM_INFO *item, COLL_INFO *coll)
     lara.move_angle = item->pos.y_rot - 16384;
     lara_col_jumper(item, coll);
 }
+
+void lara_col_hangleft(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot - 16384;
+    LaraHangTest(item, coll);
+    lara.move_angle = item->pos.y_rot - 16384;
+}
