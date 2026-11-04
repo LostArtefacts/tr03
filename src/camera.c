@@ -4,7 +4,35 @@
 extern GAME_VECTOR ForcedFixedCamera;
 extern char UseForcedFixedCamera;
 
+extern GAME_VECTOR last_target;
+
 void MoveCamera(GAME_VECTOR *ideal, int speed);
+void CalculateCamera(void);
+
+void InitialiseCamera(void)
+{
+    camera.target.x = last_target.x = lara_item->pos.x_pos;
+    camera.target.y = last_target.y = camera.shift = lara_item->pos.y_pos - 1024;
+    camera.target.z = last_target.z = lara_item->pos.z_pos;
+    camera.target.room_number = last_target.room_number = lara_item->room_number;
+    camera.pos.x = camera.target.x;
+    camera.pos.y = camera.target.y;
+    camera.pos.z = camera.target.z - 100;
+    camera.pos.room_number = camera.target.room_number;
+    camera.target_distance = 1536;
+    camera.item = NULL;
+    camera.number_frames = 1;
+    if (!lara.extra_anim)
+        camera.type = CHASE_CAMERA;
+    camera.speed = 1;
+    camera.flags = 0;
+    camera.bounce = 0;
+    camera.number = -1;
+    camera.fixed_camera = 0;
+    AlterFOV(GAME_FOV * 182);
+    UseForcedFixedCamera = 0;
+    CalculateCamera();
+}
 
 void FixedCamera(void)
 {
