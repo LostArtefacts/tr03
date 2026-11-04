@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="28.56" height="12" x="0" y="0" class="named"><title>209 · 14.14%</title></rect>
-<rect width="173.44" height="12" x="28.56" y="0" class="todo"><title>1269 · 85.86%</title></rect>
+<rect width="28.70" height="12" x="0" y="0" class="named"><title>210 · 14.21%</title></rect>
+<rect width="173.30" height="12" x="28.70" y="0" class="todo"><title>1268 · 85.79%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">14.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">209</tspan> · <tspan class="todo">1269</tspan></text>
+<text text-anchor="end" x="382" y="7.50">14.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">210</tspan> · <tspan class="todo">1268</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.94" height="12" x="0" y="0" class="named"><title>10 KB · 1.45%</title></rect>
-<rect width="199.06" height="12" x="2.94" y="0" class="todo"><title>654 KB · 98.55%</title></rect>
+<rect width="2.95" height="12" x="0" y="0" class="named"><title>10 KB · 1.46%</title></rect>
+<rect width="199.05" height="12" x="2.95" y="0" class="todo"><title>654 KB · 98.54%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -884,7 +884,7 @@
 <rect width="12" height="12" x="285" y="240" class="todo"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="240" class="todo"><title>0x004573f0 TestBlockPull (655 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="todo"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="240" class="todo"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="240" class="named"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="240" class="todo"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="240" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="240" class="todo"><title>0x00457a40 MPGunControl (3027 bytes)</title></rect>
@@ -2847,7 +2847,7 @@
 <rect width="3.89" height="3.45" x="688.83" y="368.50" class="todo"><title>0x004825a0 GetFullPath (38 bytes)</title></rect>
 <rect width="3.89" height="3.45" x="695.72" y="368.50" class="todo"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="702.60" y="368.50" class="named"><title>0x00439030 Inv_RingMotionCameraPos (37 bytes)</title></rect>
-<rect width="3.79" height="3.45" x="709.39" y="368.50" class="todo"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
+<rect width="3.79" height="3.45" x="709.39" y="368.50" class="named"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="716.17" y="368.50" class="todo"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="722.96" y="368.50" class="named"><title>0x0046b090 T_RemovePrint (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="729.74" y="368.50" class="todo"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
