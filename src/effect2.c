@@ -370,6 +370,50 @@ void KillEverything(void)
     KillEverythingFlag = 0;
 }
 
+void TriggerBubble(sint32 x, sint32 y, sint32 z, sint32 size, sint32 sizerange, sint16 itemnum)
+{
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    sptr->dR = 144;
+    sptr->dG = 144;
+    sptr->dB = 144;
+    sptr->ColFadeSpeed = 4;
+    sptr->FadeToBlack = 2;
+    sptr->sLife = sptr->Life = 128;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = 0;
+    sptr->y = 0;
+    sptr->z = 0;
+    sptr->Xvel = 0;
+    sptr->Yvel = 0;
+    sptr->Zvel = 0;
+    sptr->Friction = 0;
+    sptr->Flags = 2 | 8 | 1024 | 64;
+    sptr->FxObj = itemnum;
+    sptr->Def = objects[297].mesh_index;
+    sptr->Scalar = 0;
+    sptr->Gravity = 0;
+    sptr->MaxYvel = 0;
+    size += GetRandomControl() % sizerange;
+    sptr->Width = sptr->sWidth = size;
+    sptr->dWidth = size << 3;
+    sptr->Height = sptr->sHeight = size;
+    sptr->dHeight = size << 3;
+}
+
 void CreateBubble(PHD_3DPOS *pos, sint16 room_number, int size, int sizerange);
 
 void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b)
