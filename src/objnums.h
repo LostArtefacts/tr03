@@ -18,6 +18,7 @@ enum object_types {
     LIZARD_MAN = 35,
     STHPAC_MERCENARY = 37,
     WHITE_SOLDIER = 40,
+    MUTANT1 = 44,
     PUNK1 = 53,
     ELECTRIC_CLEANER = 58,
     MP1 = 60,

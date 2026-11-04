@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="105.13" height="12" x="0" y="0" class="named"><title>332 · 22.46%</title></rect>
-<rect width="362.87" height="12" x="105.13" y="0" class="todo"><title>1146 · 77.54%</title></rect>
+<rect width="105.44" height="12" x="0" y="0" class="named"><title>333 · 22.53%</title></rect>
+<rect width="362.56" height="12" x="105.44" y="0" class="todo"><title>1145 · 77.47%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">22.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">332</tspan> · <tspan class="todo">1146</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">333</tspan> · <tspan class="todo">1145</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="13.22" height="12" x="0" y="0" class="named"><title>19 KB · 2.83%</title></rect>
-<rect width="454.78" height="12" x="13.22" y="0" class="todo"><title>645 KB · 97.17%</title></rect>
+<rect width="13.29" height="12" x="0" y="0" class="named"><title>19 KB · 2.84%</title></rect>
+<rect width="454.71" height="12" x="13.29" y="0" class="todo"><title>645 KB · 97.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">19 KB</tspan> · <tspan class="todo">645 KB</tspan></text>
@@ -1114,7 +1114,7 @@
 <rect width="12" height="12" x="735" y="300" class="todo"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="315" class="todo"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="315" class="todo"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="315" class="todo"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="315" class="named"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="315" class="todo"><title>0x004737e0 WingmuteControl (925 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="315" class="todo"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="315" class="todo"><title>0x00473d10 WinstonControl (941 bytes)</title></rect>
@@ -2521,7 +2521,7 @@
 <rect width="5.83" height="5.76" x="583.19" y="397.88" class="named"><title>0x00467010 InitialiseShiva (95 bytes)</title></rect>
 <rect width="5.83" height="5.70" x="583.19" y="406.64" class="named"><title>0x0044e230 lara_as_surfback (94 bytes)</title></rect>
 <rect width="5.83" height="5.70" x="583.19" y="415.34" class="named"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
-<rect width="5.83" height="5.70" x="583.19" y="424.03" class="todo"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
+<rect width="5.83" height="5.70" x="583.19" y="424.03" class="named"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
 <rect width="5.83" height="5.64" x="583.19" y="432.73" class="named"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
 <rect width="5.83" height="5.64" x="583.19" y="441.36" class="named"><title>0x0042fa90 BaddieBiteEffect (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="292.20" class="named"><title>0x00439080 Inv_RingMotionItemSelect (93 bytes)</title></rect>
