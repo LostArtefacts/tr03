@@ -113,3 +113,21 @@ void ObjectCollisionSub(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
         return;
     ItemPushLara(item, laraitem, coll, 0, 0);
 }
+
+void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (!TestBoundsCollide(item, laraitem, coll->radius))
+        return;
+    if (!TestCollision(item, laraitem))
+        return;
+    if (coll->enable_baddie_push)
+    {
+        if (item->current_anim_state != item->goal_anim_state)
+            ItemPushLara(item, laraitem, coll, coll->enable_hit, 1);
+        else
+            ItemPushLara(item, laraitem, coll, 0, 1);
+    }
+}
