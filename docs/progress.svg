@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="145.02" height="12" x="0" y="0" class="named"><title>458 · 30.99%</title></rect>
-<rect width="322.98" height="12" x="145.02" y="0" class="todo"><title>1020 · 69.01%</title></rect>
+<rect width="145.34" height="12" x="0" y="0" class="named"><title>459 · 31.06%</title></rect>
+<rect width="322.66" height="12" x="145.34" y="0" class="todo"><title>1019 · 68.94%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">31.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">458</tspan> · <tspan class="todo">1020</tspan></text>
+<text text-anchor="end" x="648" y="7.50">31.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">459</tspan> · <tspan class="todo">1019</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="25.06" height="12" x="0" y="0" class="named"><title>36 KB · 5.35%</title></rect>
-<rect width="442.94" height="12" x="25.06" y="0" class="todo"><title>628 KB · 94.65%</title></rect>
+<rect width="25.16" height="12" x="0" y="0" class="named"><title>36 KB · 5.38%</title></rect>
+<rect width="442.84" height="12" x="25.16" y="0" class="todo"><title>628 KB · 94.62%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">36 KB</tspan> · <tspan class="todo">628 KB</tspan></text>
@@ -916,7 +916,7 @@
 <rect width="12" height="12" x="15" y="255" class="named"><title>0x004598e0 BridgeTilt1Ceiling (53 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="255" class="named"><title>0x00459920 BridgeTilt2Floor (81 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="255" class="named"><title>0x00459980 BridgeTilt2Ceiling (52 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="255" class="todo"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="255" class="named"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="255" class="named"><title>0x00459a50 DetonatorControl (113 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="255" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="255" class="todo"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
@@ -2361,7 +2361,7 @@
 <rect width="6.98" height="7.34" x="544.30" y="306.42" class="named"><title>0x00441cf0 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="6.98" height="7.34" x="544.30" y="316.76" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
 <rect width="6.98" height="7.29" x="544.30" y="327.09" class="todo"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
-<rect width="6.98" height="7.29" x="544.30" y="337.38" class="todo"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
+<rect width="6.98" height="7.29" x="544.30" y="337.38" class="named"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
 <rect width="6.98" height="7.29" x="544.30" y="347.67" class="todo"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
 <rect width="6.98" height="7.29" x="544.30" y="357.96" class="todo"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
 <rect width="6.98" height="7.29" x="544.30" y="368.25" class="todo"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>

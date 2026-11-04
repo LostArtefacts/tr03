@@ -235,6 +235,27 @@ void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
         *height = level + STEP_L;
 }
 
+void GeneralControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint16 room_number;
+
+    item = &items[item_number];
+    if (TriggerActive(item))
+        item->goal_anim_state = DOOR_OPEN;
+    else
+        item->goal_anim_state = DOOR_CLOSED;
+    AnimateItem(item);
+    room_number = item->room_number;
+    GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (room_number != item->room_number)
+        ItemNewRoom(item_number, room_number);
+    if (item->status == DEACTIVATED) {
+        RemoveActiveItem(item_number);
+        item->flags |= ONESHOT;
+    }
+}
+
 void DetonatorControl(sint16 item_number)
 {
     int frame_number;
