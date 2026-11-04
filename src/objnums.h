@@ -17,6 +17,7 @@ enum object_types {
     TARGETS = 30,
     LIZARD_MAN = 35,
     STHPAC_MERCENARY = 37,
+    CARCASS,
     WHITE_SOLDIER = 40,
     MUTANT1 = 44,
     PUNK1 = 53,
@@ -25,9 +26,14 @@ enum object_types {
     BOB = 62,
     ROBOT_SENTRY_GUN = 64,
     CIVVIE = 65,
-    SHIVA = 70,
+    COBRA = 69,
+    SHIVA,
     MONKEY,
     FALLING_PLANK = 85,
+    SMASH_WINDOW = 101,
+    SMASH_OBJECT1,
+    SMASH_OBJECT2,
+    SMASH_OBJECT3,
     BLADE = 111,
     MESHSWAP1 = 122,
     MESHSWAP2,
@@ -37,7 +43,8 @@ enum object_types {
     SECRET_ITEM3,
     FLAME = 329,
     BIRD_TWEETER = 289,
-    CLOCK_CHIMES
+    CLOCK_CHIMES,
+    EXTRAFX6 = 373
 };
 
 #define NUMBER_OBJECTS 376

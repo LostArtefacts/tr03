@@ -2,6 +2,8 @@
 
 extern sint16 HoldStates[14];
 
+void SmashWindow(sint16 item_number);
+
 int CheckForHoldingState(int state)
 {
     sint16 *holds = HoldStates;
@@ -16,6 +18,30 @@ int CheckForHoldingState(int state)
         holds++;
     }
     return 0;
+}
+
+void SmashItem(sint16 item_number, int weapon_type)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    switch (item->object_number)
+    {
+    case SMASH_WINDOW:
+    case SMASH_OBJECT1:
+    case SMASH_OBJECT2:
+    case SMASH_OBJECT3:
+        SmashWindow(item_number);
+        break;
+    case CARCASS:
+    case EXTRAFX6:
+        if (item->status != ACTIVE)
+        {
+            item->status = ACTIVE;
+            AddActiveItem(item_number);
+        }
+        break;
+    }
 }
 
 int WeaponObject(int weapon_type)
