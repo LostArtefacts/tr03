@@ -44,3 +44,34 @@ void InitialiseLevelFlags(void)
     compys_attack_lara = 0;
     CarcassItem = -1;
 }
+
+void BaddyObjects(void);
+void TrapObjects(void);
+void ObjectObjects(void);
+void InitialiseSparks(void);
+
+void InitialiseObjects(void)
+{
+    int i;
+    OBJECT_INFO *obj;
+
+    for (i = 0, obj = objects; i < NUMBER_OBJECTS; i++, obj++) {
+        obj->initialise = NULL;
+        obj->collision = NULL;
+        obj->control = NULL;
+        obj->draw_routine = DrawAnimatingItem;
+        obj->floor = obj->ceiling = NULL;
+        obj->pivot_length = 0;
+        obj->radius = 10;
+        obj->shadow_size = 0;
+        obj->hit_points = DONT_TARGET;
+        obj->intelligent = obj->water_creature = 0;
+        obj->save_position = obj->save_hitpoints = obj->save_flags = obj->save_anim = 0;
+    }
+
+    BaddyObjects();
+    TrapObjects();
+    ObjectObjects();
+    InitialiseHair();
+    InitialiseSparks();
+}

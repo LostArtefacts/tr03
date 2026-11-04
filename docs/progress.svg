@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="139.96" height="12" x="0" y="0" class="named"><title>442 · 29.91%</title></rect>
-<rect width="328.04" height="12" x="139.96" y="0" class="todo"><title>1036 · 70.09%</title></rect>
+<rect width="140.27" height="12" x="0" y="0" class="named"><title>443 · 29.97%</title></rect>
+<rect width="327.73" height="12" x="140.27" y="0" class="todo"><title>1035 · 70.03%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">29.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">442</tspan> · <tspan class="todo">1036</tspan></text>
+<text text-anchor="end" x="648" y="7.50">30.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">443</tspan> · <tspan class="todo">1035</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="23.60" height="12" x="0" y="0" class="named"><title>33 KB · 5.04%</title></rect>
-<rect width="444.40" height="12" x="23.60" y="0" class="todo"><title>630 KB · 94.96%</title></rect>
+<rect width="23.67" height="12" x="0" y="0" class="named"><title>34 KB · 5.06%</title></rect>
+<rect width="444.33" height="12" x="23.67" y="0" class="todo"><title>630 KB · 94.94%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">5.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">33 KB</tspan> · <tspan class="todo">630 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">5.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">34 KB</tspan> · <tspan class="todo">630 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -985,7 +985,7 @@
 <rect width="12" height="12" x="300" y="270" class="todo"><title>0x004638f0 InitialiseLevel (522 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="270" class="named"><title>0x00463b00 InitialiseGameFlags (101 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="270" class="named"><title>0x00463b70 InitialiseLevelFlags (73 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="270" class="todo"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="270" class="named"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="270" class="todo"><title>0x00463c30 BaddyObjects (5643 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="270" class="todo"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="270" class="todo"><title>0x00465820 ObjectObjects (3209 bytes)</title></rect>
@@ -2468,7 +2468,7 @@
 <rect width="6.14" height="6.33" x="722.58" y="273.56" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
 <rect width="6.14" height="6.33" x="731.72" y="273.56" class="todo"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
 <rect width="6.14" height="6.33" x="740.86" y="273.56" class="todo"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
-<rect width="5.95" height="6.47" x="574.04" y="282.89" class="todo"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
+<rect width="5.95" height="6.47" x="574.04" y="282.89" class="named"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
 <rect width="5.95" height="6.41" x="574.04" y="292.36" class="named"><title>0x0043b130 CreateEffect (108 bytes)</title></rect>
 <rect width="5.95" height="6.41" x="574.04" y="301.77" class="named"><title>0x004428e0 lara_col_splat (108 bytes)</title></rect>
 <rect width="5.95" height="6.41" x="574.04" y="311.18" class="named"><title>0x00442fd0 lara_col_swandive (108 bytes)</title></rect>
