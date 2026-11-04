@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="32.66" height="12" x="0" y="0" class="named"><title>239 · 16.17%</title></rect>
-<rect width="169.34" height="12" x="32.66" y="0" class="todo"><title>1239 · 83.83%</title></rect>
+<rect width="32.80" height="12" x="0" y="0" class="named"><title>240 · 16.24%</title></rect>
+<rect width="169.20" height="12" x="32.80" y="0" class="todo"><title>1238 · 83.76%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">16.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">239</tspan> · <tspan class="todo">1239</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">240</tspan> · <tspan class="todo">1238</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.44" height="12" x="0" y="0" class="named"><title>11 KB · 1.70%</title></rect>
-<rect width="198.56" height="12" x="3.44" y="0" class="todo"><title>653 KB · 98.30%</title></rect>
+<rect width="3.46" height="12" x="0" y="0" class="named"><title>11 KB · 1.71%</title></rect>
+<rect width="198.54" height="12" x="3.46" y="0" class="todo"><title>652 KB · 98.29%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">11 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">11 KB</tspan> · <tspan class="todo">652 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -902,7 +902,7 @@
 <rect width="12" height="12" x="555" y="240" class="todo"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="240" class="todo"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="240" class="todo"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="240" class="todo"><title>0x00459450 DrawBridgeCeiling (59 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="240" class="named"><title>0x00459450 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="240" class="named"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="240" class="todo"><title>0x004594c0 InitialiseLift (57 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="240" class="todo"><title>0x00459500 LiftControl (216 bytes)</title></rect>
@@ -2689,7 +2689,7 @@
 <rect width="4.75" height="4.39" x="711.25" y="324.98" class="named"><title>0x0042f000 ControlLaraAlarm (59 bytes)</title></rect>
 <rect width="4.75" height="4.39" x="719" y="324.98" class="named"><title>0x00448400 undraw_pistol_mesh_right (59 bytes)</title></rect>
 <rect width="4.75" height="4.39" x="726.75" y="324.98" class="named"><title>0x0044a1a0 CheckForHoldingState (59 bytes)</title></rect>
-<rect width="4.75" height="4.39" x="734.50" y="324.98" class="todo"><title>0x00459450 DrawBridgeCeiling (59 bytes)</title></rect>
+<rect width="4.75" height="4.39" x="734.50" y="324.98" class="named"><title>0x00459450 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="4.75" height="4.39" x="742.25" y="324.98" class="named"><title>0x00459840 GetOffset (59 bytes)</title></rect>
 <rect width="4.48" height="4.65" x="632.55" y="332.36" class="todo"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
 <rect width="4.40" height="4.65" x="640.03" y="332.36" class="todo"><title>0x0041a8f0 InitialiseGenPlayer (58 bytes)</title></rect>

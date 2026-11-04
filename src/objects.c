@@ -2,6 +2,7 @@
 #include <string.h>
 
 #define DOOR_CLOSED 0
+#define DOOR_OPEN 1
 
 typedef struct {
     sint32 start_height;
@@ -13,6 +14,7 @@ enum height_types { WALL, SMALL_SLOPE, BIG_SLOPE, DIAGONAL, SPLIT_TRI };
 extern int height_type;
 extern int OnObject;
 
+int OnDrawBridge(ITEM_INFO *item, sint32 z, sint32 x);
 void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
 
 void OpenThatDoor(DOORPOS_DATA *d)
@@ -22,6 +24,17 @@ void OpenThatDoor(DOORPOS_DATA *d)
         memcpy(d->floor, &d->data, sizeof(FLOOR_INFO));
         if (d->block != NO_BOX)
             boxes[d->block].overlap_index &= ~BLOCKED;
+    }
+}
+
+void DrawBridgeCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    if (item->current_anim_state == DOOR_OPEN)
+    {
+        if (!OnDrawBridge(item, z, x))
+            return;
+        if (y > item->pos.y_pos)
+            *height = item->pos.y_pos + STEP_L;
     }
 }
 
