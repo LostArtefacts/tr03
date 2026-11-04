@@ -478,6 +478,278 @@ void CombatCamera(ITEM_INFO *item)
     MoveCamera(&ideal, camera.speed);
 }
 
+void LookCamera(ITEM_INFO *item)
+{
+    GAME_VECTOR oldt, oldp, ideal;
+    PHD_VECTOR pos1, pos2, pos3;
+    FLOOR_INFO *floor;
+    sint32 shake, lp;
+    sint16 room_number, room_number2;
+    sint32 dx, dy, dz, wx, wy, wz, clipped, h, c, hxrot, txrot, hyrot, tyrot, speed;
+
+    hxrot = lara.head_x_rot;
+    hyrot = lara.head_y_rot;
+    txrot = lara.torso_x_rot;
+    tyrot = lara.torso_y_rot;
+    lara.torso_x_rot = 0;
+    lara.torso_y_rot = 0;
+    lara.head_x_rot <<= 1;
+    lara.head_y_rot <<= 1;
+
+    if (lara.head_x_rot > 55 * 182)
+        lara.head_x_rot = 55 * 182;
+    else if (lara.head_x_rot < -75 * 182)
+        lara.head_x_rot = -75 * 182;
+    if (lara.head_y_rot < -80 * 182)
+        lara.head_y_rot = -80 * 182;
+    else if (lara.head_y_rot > 80 * 182)
+        lara.head_y_rot = 80 * 182;
+
+    pos1.x = 0;
+    pos1.y = 16;
+    pos1.z = 64;
+    GetLaraHandAbsPosition(&pos1, 4);
+
+    clipped = 0;
+    room_number = lara_item->room_number;
+    floor = GetFloor(pos1.x, pos1.y + 256, pos1.z, &room_number);
+    if (room[room_number].flags & 0x80) {
+        pos1.y = room[room_number].maxceiling - 256;
+        floor = GetFloor(pos1.x, pos1.y, pos1.z, &room_number);
+    } else {
+        floor = GetFloor(pos1.x, pos1.y, pos1.z, &room_number);
+    }
+    h = GetHeight(floor, pos1.x, pos1.y, pos1.z);
+    c = GetCeiling(floor, pos1.x, pos1.y, pos1.z);
+    if (h == NO_HEIGHT || c == NO_HEIGHT || c >= h || pos1.y > h || pos1.y < c)
+        clipped = 1;
+
+    if (clipped) {
+        pos1.x = 0;
+        pos1.y = 16;
+        pos1.z = 0;
+        GetLaraHandAbsPosition(&pos1, 4);
+
+        clipped = 0;
+        room_number = lara_item->room_number;
+        floor = GetFloor(pos1.x, pos1.y + 256, pos1.z, &room_number);
+        if (room[room_number].flags & 0x80) {
+            pos1.y = room[room_number].maxceiling - 256;
+            floor = GetFloor(pos1.x, pos1.y, pos1.z, &room_number);
+        } else {
+            floor = GetFloor(pos1.x, pos1.y, pos1.z, &room_number);
+        }
+        h = GetHeight(floor, pos1.x, pos1.y, pos1.z);
+        c = GetCeiling(floor, pos1.x, pos1.y, pos1.z);
+        if (h == NO_HEIGHT || c == NO_HEIGHT || c >= h || pos1.y > h || pos1.y < c)
+            clipped = 1;
+
+        if (clipped) {
+            pos1.x = 0;
+            pos1.y = 16;
+            pos1.z = -64;
+            GetLaraHandAbsPosition(&pos1, 4);
+        }
+    }
+
+    pos2.x = 0;
+    pos2.y = 0;
+    pos2.z = -1024;
+    GetLaraHandAbsPosition(&pos2, 4);
+    pos3.x = 0;
+    pos3.y = 0;
+    pos3.z = 2048;
+    GetLaraHandAbsPosition(&pos3, 4);
+
+    dx = (pos2.x - pos1.x) >> 3;
+    dy = (pos2.y - pos1.y) >> 3;
+    dz = (pos2.z - pos1.z) >> 3;
+    wx = pos1.x;
+    wy = pos1.y;
+    wz = pos1.z;
+
+    room_number = room_number2 = lara_item->room_number;
+    for (lp = 0; lp < 8; lp++) {
+        room_number = room_number2;
+        floor = GetFloor(wx, wy + 256, wz, &room_number2);
+        if (room[room_number2].flags & 0x80) {
+            wy = room[room_number2].maxceiling - 256;
+            break;
+        } else {
+            floor = GetFloor(wx, wy, wz, &room_number2);
+        }
+        h = GetHeight(floor, wx, wy, wz);
+        c = GetCeiling(floor, wx, wy, wz);
+        if (h == NO_HEIGHT || c == NO_HEIGHT || c >= h || wy > h || wy < c)
+            break;
+        wx += dx;
+        wy += dy;
+        wz += dz;
+    }
+
+    if (lp) {
+        wx -= dx;
+        wy -= dy;
+        wz -= dz;
+    }
+
+    ideal.x = wx;
+    ideal.y = wy;
+    ideal.z = wz;
+    ideal.room_number = room_number;
+
+    if (old_cam.pos.x_rot == lara.head_x_rot
+        && old_cam.pos.y_rot == lara.head_y_rot
+        && old_cam.pos.x_pos == lara_item->pos.x_pos
+        && old_cam.pos.y_pos == lara_item->pos.y_pos
+        && old_cam.pos.z_pos == lara_item->pos.z_pos
+        && old_cam.current_anim_state == lara_item->current_anim_state
+        && old_cam.goal_anim_state == lara_item->goal_anim_state
+        && camera.old_type == LOOK_CAMERA) {
+        ideal.x = static_lookcamp.x;
+        ideal.y = static_lookcamp.y;
+        ideal.z = static_lookcamp.z;
+        ideal.room_number = static_lookcamp.room_number;
+        pos3.x = static_lookcamt.x;
+        pos3.y = static_lookcamt.y;
+        pos3.z = static_lookcamt.z;
+    } else {
+        old_cam.pos.x_rot = lara.head_x_rot;
+        old_cam.pos.y_rot = lara.head_y_rot;
+        old_cam.pos.x_pos = lara_item->pos.x_pos;
+        old_cam.pos.y_pos = lara_item->pos.y_pos;
+        old_cam.pos.z_pos = lara_item->pos.z_pos;
+        old_cam.current_anim_state = lara_item->current_anim_state;
+        old_cam.goal_anim_state = lara_item->goal_anim_state;
+        static_lookcamp.x = ideal.x;
+        static_lookcamp.y = ideal.y;
+        static_lookcamp.z = ideal.z;
+        static_lookcamp.room_number = ideal.room_number;
+        static_lookcamt.x = pos3.x;
+        static_lookcamt.y = pos3.y;
+        static_lookcamt.z = pos3.z;
+    }
+
+    CameraCollisionBounds(&ideal, 224, 1);
+
+    if (camera.old_type == FIXED_CAMERA) {
+        camera.pos.x = ideal.x;
+        camera.pos.y = ideal.y;
+        camera.pos.z = ideal.z;
+        camera.target.x = pos3.x;
+        camera.target.y = pos3.y;
+        camera.target.z = pos3.z;
+        camera.target.room_number = lara_item->room_number;
+    } else {
+        camera.pos.x += (ideal.x - camera.pos.x) >> 2;
+        camera.pos.y += (ideal.y - camera.pos.y) >> 2;
+        camera.pos.z += (ideal.z - camera.pos.z) >> 2;
+        camera.target.x += (pos3.x - camera.target.x) >> 2;
+        camera.target.y += (pos3.y - camera.target.y) >> 2;
+        camera.target.z += (pos3.z - camera.target.z) >> 2;
+        camera.target.room_number = lara_item->room_number;
+    }
+
+    if (camera.bounce && camera.type == camera.old_type) {
+        if (camera.bounce > 0) {
+            camera.pos.y += camera.bounce;
+            camera.target.y += camera.bounce;
+            camera.bounce = 0;
+        } else {
+            shake = ((GetRandomControl() - 0x4000) * camera.bounce) >> 15;
+            camera.pos.x += shake;
+            camera.target.y += shake;
+            shake = ((GetRandomControl() - 0x4000) * camera.bounce) >> 15;
+            camera.pos.y += shake;
+            camera.target.y += shake;
+            shake = ((GetRandomControl() - 0x4000) * camera.bounce) >> 15;
+            camera.pos.z += shake;
+            camera.target.z += shake;
+            camera.bounce += 5;
+        }
+    }
+
+    GetFloor(camera.pos.x, camera.pos.y, camera.pos.z, &camera.pos.room_number);
+
+    {
+        sint16 room_number;
+        sint32 wx, wy, wz;
+
+        wx = camera.pos.x;
+        wy = camera.pos.y;
+        wz = camera.pos.z;
+        room_number = camera.pos.room_number;
+        floor = GetFloor(wx, wy, wz, &room_number);
+        h = GetHeight(floor, wx, wy, wz);
+        c = GetCeiling(floor, wx, wy, wz);
+        if (wy - 255 < c && wy + 255 > h && c < h && c != NO_HEIGHT && h != NO_HEIGHT)
+            camera.pos.y = (h + c) >> 1;
+        else if (wy + 255 > h && c < h && c != NO_HEIGHT && h != NO_HEIGHT)
+            camera.pos.y = h - 255;
+        else if (wy - 255 < c && c < h && c != NO_HEIGHT && h != NO_HEIGHT)
+            camera.pos.y = c + 255;
+    }
+
+    {
+        sint16 room_number;
+        sint32 wx, wy, wz;
+
+        wx = camera.pos.x;
+        wy = camera.pos.y;
+        wz = camera.pos.z;
+        room_number = camera.pos.room_number;
+        floor = GetFloor(wx, wy, wz, &room_number);
+        h = GetHeight(floor, wx, wy, wz);
+        c = GetCeiling(floor, wx, wy, wz);
+        if (room[room_number].flags & 0x80)
+            camera.pos.y = room[room_number].y - 256;
+        else if (wy < c || wy > h || c >= h || h == NO_HEIGHT || c == NO_HEIGHT)
+            mgLOS(&camera.target, &camera.pos, 0);
+    }
+
+    {
+        sint16 room_number;
+        sint32 wx, wy, wz;
+
+        wx = camera.pos.x;
+        wy = camera.pos.y;
+        wz = camera.pos.z;
+        room_number = camera.pos.room_number;
+        floor = GetFloor(wx, wy, wz, &room_number);
+        h = GetHeight(floor, wx, wy, wz);
+        c = GetCeiling(floor, wx, wy, wz);
+        if (wy < c || wy > h || c >= h || h == NO_HEIGHT || c == NO_HEIGHT
+            || (room[room_number].flags & 0x80)) {
+            camera.pos.x = pos1.x;
+            camera.pos.y = pos1.y;
+            camera.pos.z = pos1.z;
+            camera.pos.room_number = lara_item->room_number;
+        }
+    }
+
+    GetFloor(camera.pos.x, camera.pos.y, camera.pos.z, &camera.pos.room_number);
+    phd_LookAt(camera.pos.x, camera.pos.y, camera.pos.z, camera.target.x,
+               camera.target.y, camera.target.z, 0);
+
+    if (camera.mike_at_lara) {
+        camera.actual_angle = lara_item->pos.y_rot + lara.head_y_rot + lara.torso_y_rot;
+        camera.mike_pos.x = lara_item->pos.x_pos;
+        camera.mike_pos.y = lara_item->pos.y_pos;
+        camera.mike_pos.z = lara_item->pos.z_pos;
+    } else {
+        camera.actual_angle = phd_atan(camera.target.z - camera.pos.z, camera.target.x - camera.pos.x);
+        camera.mike_pos.x = camera.pos.x + ((phd_persp * phd_sin(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.z = camera.pos.z + ((phd_persp * phd_cos(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.y = camera.pos.y;
+    }
+
+    camera.old_type = camera.type;
+    lara.head_x_rot = hxrot;
+    lara.head_y_rot = hyrot;
+    lara.torso_x_rot = txrot;
+    lara.torso_y_rot = tyrot;
+}
+
 void FixedCamera(void)
 {
     GAME_VECTOR ideal;

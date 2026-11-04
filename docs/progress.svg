@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="172.89" height="12" x="0" y="0" class="named"><title>546 · 36.94%</title></rect>
-<rect width="295.11" height="12" x="172.89" y="0" class="todo"><title>932 · 63.06%</title></rect>
+<rect width="173.20" height="12" x="0" y="0" class="named"><title>547 · 37.01%</title></rect>
+<rect width="294.80" height="12" x="173.20" y="0" class="todo"><title>931 · 62.99%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">36.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">546</tspan> · <tspan class="todo">932</tspan></text>
+<text text-anchor="end" x="648" y="7.50">37.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">547</tspan> · <tspan class="todo">931</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="41.11" height="12" x="0" y="0" class="named"><title>58 KB · 8.78%</title></rect>
-<rect width="426.89" height="12" x="41.11" y="0" class="todo"><title>606 KB · 91.22%</title></rect>
+<rect width="43.75" height="12" x="0" y="0" class="named"><title>62 KB · 9.35%</title></rect>
+<rect width="424.25" height="12" x="43.75" y="0" class="todo"><title>602 KB · 90.65%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">8.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">58 KB</tspan> · <tspan class="todo">606 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">9.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">62 KB</tspan> · <tspan class="todo">602 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -215,7 +215,7 @@
 <rect width="12" height="12" x="0" y="45" class="named"><title>0x0041743c MoveCamera (2151 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="45" class="named"><title>0x00417ca3 ChaseCamera (1721 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="45" class="named"><title>0x0041835c CombatCamera (1786 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="45" class="todo"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="45" class="named"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="45" class="todo"><title>0x004198fc CalculateCamera (1796 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="45" class="named"><title>0x0041a000 FixedCamera (190 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="45" class="todo"><title>0x0041a0be CameraCollisionBounds (1411 bytes)</title></rect>
@@ -1559,7 +1559,7 @@
 <rect width="39.26" height="37.12" x="51.10" y="96.18" class="todo"><title>0x004b0b50 Func4b0b50 (4127 bytes)</title></rect>
 <rect width="39.26" height="36.05" x="51.10" y="136.30" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="39.26" height="33.88" x="51.10" y="175.34" class="todo"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
-<rect width="39.26" height="33.71" x="51.10" y="212.22" class="todo"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
+<rect width="39.26" height="33.71" x="51.10" y="212.22" class="named"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
 <rect width="39.26" height="33.59" x="51.10" y="248.93" class="todo"><title>0x004a4fb0 Func4a4fb0 (3736 bytes)</title></rect>
 <rect width="39.26" height="32.13" x="51.10" y="285.52" class="todo"><title>0x00450800 LondonBossControl (3575 bytes)</title></rect>
 <rect width="39.26" height="29.45" x="51.10" y="320.65" class="todo"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
