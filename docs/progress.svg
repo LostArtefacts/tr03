@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="86.76" height="12" x="0" y="0" class="named"><title>274 · 18.54%</title></rect>
-<rect width="381.24" height="12" x="86.76" y="0" class="todo"><title>1204 · 81.46%</title></rect>
+<rect width="87.08" height="12" x="0" y="0" class="named"><title>275 · 18.61%</title></rect>
+<rect width="380.92" height="12" x="87.08" y="0" class="todo"><title>1203 · 81.39%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">18.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">274</tspan> · <tspan class="todo">1204</tspan></text>
+<text text-anchor="end" x="648" y="7.50">18.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">275</tspan> · <tspan class="todo">1203</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.70" height="12" x="0" y="0" class="named"><title>14 KB · 2.07%</title></rect>
-<rect width="458.30" height="12" x="9.70" y="0" class="todo"><title>650 KB · 97.93%</title></rect>
+<rect width="9.75" height="12" x="0" y="0" class="named"><title>14 KB · 2.08%</title></rect>
+<rect width="458.25" height="12" x="9.75" y="0" class="todo"><title>650 KB · 97.92%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">14 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
@@ -299,7 +299,7 @@
 <rect width="12" height="12" x="510" y="60" class="todo"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="60" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="60" class="todo"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="60" class="todo"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="60" class="named"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x004240c0 DogControl (1382 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="60" class="todo"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="60" class="todo"><title>0x00424830 TriggerFlamethrowerHitFlame (475 bytes)</title></rect>
@@ -2599,7 +2599,7 @@
 <rect width="5.07" height="5.36" x="608.98" y="325.89" class="named"><title>0x004142e0 InitialiseCreature (77 bytes)</title></rect>
 <rect width="5.07" height="5.36" x="608.98" y="334.25" class="todo"><title>0x00441e30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="5.07" height="5.36" x="608.98" y="342.61" class="todo"><title>0x004b39f0 DD_ClearSurface (77 bytes)</title></rect>
-<rect width="5.07" height="5.29" x="608.98" y="350.97" class="todo"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
+<rect width="5.07" height="5.29" x="608.98" y="350.97" class="named"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="359.27" class="named"><title>0x00441ca0 extra_as_breath (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="367.56" class="named"><title>0x00462e10 WriteSG (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="375.85" class="todo"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
