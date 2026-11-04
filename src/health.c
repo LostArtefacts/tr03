@@ -50,6 +50,25 @@ void AddDisplayPickup(sint16 objnum)
     pickups[0].sprnum = objnum;
 }
 
+TEXTSTRING *T_Print(sint32 xpos, sint32 ypos, sint32 zpos, char *string);
+
+void DisplayModeInfo(char *string)
+{
+    if (!string) {
+        T_RemovePrint(LpModeTS);
+        LpModeTS = NULL;
+        return;
+    }
+    if (LpModeTS) {
+        T_ChangeText(LpModeTS, string);
+    } else {
+        LpModeTS = T_Print(-16, -16, 0, string);
+        T_RightAlign(LpModeTS, 1);
+        T_BottomAlign(LpModeTS, 1);
+    }
+    LnModeTSLife = 75;
+}
+
 void DrawModeInfo(void)
 {
     if (LpModeTS && --LnModeTSLife == 0)

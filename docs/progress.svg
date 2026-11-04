@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="140.91" height="12" x="0" y="0" class="named"><title>445 · 30.11%</title></rect>
-<rect width="327.09" height="12" x="140.91" y="0" class="todo"><title>1033 · 69.89%</title></rect>
+<rect width="141.22" height="12" x="0" y="0" class="named"><title>446 · 30.18%</title></rect>
+<rect width="326.78" height="12" x="141.22" y="0" class="todo"><title>1032 · 69.82%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">30.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">445</tspan> · <tspan class="todo">1033</tspan></text>
+<text text-anchor="end" x="648" y="7.50">30.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">446</tspan> · <tspan class="todo">1032</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="23.84" height="12" x="0" y="0" class="named"><title>34 KB · 5.09%</title></rect>
-<rect width="444.16" height="12" x="23.84" y="0" class="todo"><title>630 KB · 94.91%</title></rect>
+<rect width="23.93" height="12" x="0" y="0" class="named"><title>34 KB · 5.11%</title></rect>
+<rect width="444.07" height="12" x="23.93" y="0" class="todo"><title>630 KB · 94.89%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">34 KB</tspan> · <tspan class="todo">630 KB</tspan></text>
@@ -488,7 +488,7 @@
 <rect width="12" height="12" x="345" y="120" class="todo"><title>0x00434bf0 DrawAmmoInfo (305 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="120" class="named"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="120" class="named"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="120" class="todo"><title>0x00434db0 DisplayModeInfo (122 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="120" class="named"><title>0x00434db0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="120" class="named"><title>0x00434e30 DrawModeInfo (44 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="120" class="todo"><title>0x00434e60 HybridControl (1393 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="120" class="todo"><title>0x00435400 Display_Inventory (4978 bytes)</title></rect>
@@ -2424,7 +2424,7 @@
 <rect width="6.79" height="6.46" x="662.86" y="264.10" class="named"><title>0x00452f10 InitialiseLOTarray (124 bytes)</title></rect>
 <rect width="6.68" height="6.46" x="672.64" y="264.10" class="todo"><title>0x00401a70 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="6.68" height="6.46" x="682.32" y="264.10" class="named"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
-<rect width="6.68" height="6.46" x="691.99" y="264.10" class="todo"><title>0x00434db0 DisplayModeInfo (122 bytes)</title></rect>
+<rect width="6.68" height="6.46" x="691.99" y="264.10" class="named"><title>0x00434db0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="6.68" height="6.46" x="701.67" y="264.10" class="named"><title>0x0043eba0 lara_as_all4s (122 bytes)</title></rect>
 <rect width="6.68" height="6.46" x="711.35" y="264.10" class="todo"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
 <rect width="6.68" height="6.46" x="721.02" y="264.10" class="todo"><title>0x004834c0 FMV_Play (122 bytes)</title></rect>
