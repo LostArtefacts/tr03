@@ -84,6 +84,67 @@ sint16 CreateItem(void)
 
 extern int DemoPlay;
 
+void InitialiseItem(sint16 item_num)
+{
+    ITEM_INFO *item;
+    ROOM_INFO *r;
+    FLOOR_INFO *floor;
+
+    item = &items[item_num];
+    item->anim_number = objects[item->object_number].anim_index;
+    item->frame_number = anims[item->anim_number].frame_base;
+    item->current_anim_state = item->goal_anim_state = anims[item->anim_number].current_anim_state;
+    item->required_anim_state = 0;
+    item->pos.x_rot = item->pos.z_rot = 0;
+    item->speed = item->fallspeed = 0;
+    item->status = NOT_ACTIVE;
+    item->active = 0;
+    item->gravity_status = item->hit_status = item->looked_at = item->really_active = item->ai_bits = item->dynamic_light = 0;
+    item->item_flags[0] = item->item_flags[1] = item->item_flags[2] = item->item_flags[3] = 0;
+    item->hit_points = objects[item->object_number].hit_points;
+    item->collidable = 1;
+    item->clear_body = 0;
+    item->timer = 0;
+    item->mesh_bits = 0xffffffff;
+    item->touch_bits = 0;
+    item->after_death = 0;
+    item->il.init = 0;
+    item->fired_weapon = 0;
+    item->data = NULL;
+
+    if (item->flags & ONESHOT) {
+        item->status = INVISIBLE;
+        item->flags -= ONESHOT;
+    } else if (objects[item->object_number].intelligent) {
+        item->status = INVISIBLE;
+    }
+
+    if (item->flags & -0x8000) {
+        item->clear_body = 1;
+        item->flags -= -0x8000;
+    }
+
+    if ((item->flags & CODE_BITS) == CODE_BITS) {
+        item->flags -= CODE_BITS;
+        item->flags |= REVERSE;
+        AddActiveItem(item_num);
+        item->status = ACTIVE;
+    }
+
+    r = &room[item->room_number];
+    item->next_item = r->item_number;
+    r->item_number = item_num;
+    floor = &r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size];
+    item->floor = floor->floor << 8;
+    item->box_number = floor->box;
+
+    if (savegame.bonus_flag && !DemoPlay)
+        item->hit_points *= 2;
+
+    if (objects[item->object_number].initialise)
+        (*objects[item->object_number].initialise)(item_num);
+}
+
 void RemoveActiveItem(sint16 item_num)
 {
     sint16 linknum;
