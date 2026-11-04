@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="183.02" height="12" x="0" y="0" class="named"><title>578 · 39.11%</title></rect>
-<rect width="284.98" height="12" x="183.02" y="0" class="todo"><title>900 · 60.89%</title></rect>
+<rect width="183.34" height="12" x="0" y="0" class="named"><title>579 · 39.17%</title></rect>
+<rect width="284.66" height="12" x="183.34" y="0" class="todo"><title>899 · 60.83%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">39.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">578</tspan> · <tspan class="todo">900</tspan></text>
+<text text-anchor="end" x="648" y="7.50">39.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">579</tspan> · <tspan class="todo">899</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="52.67" height="12" x="0" y="0" class="named"><title>75 KB · 11.25%</title></rect>
-<rect width="415.33" height="12" x="52.67" y="0" class="todo"><title>590 KB · 88.75%</title></rect>
+<rect width="52.88" height="12" x="0" y="0" class="named"><title>75 KB · 11.30%</title></rect>
+<rect width="415.12" height="12" x="52.88" y="0" class="todo"><title>590 KB · 88.70%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">11.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">75 KB</tspan> · <tspan class="todo">590 KB</tspan></text>
@@ -193,7 +193,7 @@
 <rect width="12" height="12" x="420" y="30" class="todo"><title>0x00414e50 CreatureMood (598 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="30" class="named"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="todo"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="30" class="todo"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="30" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="30" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="todo"><title>0x00415820 CreatureDie (275 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="30" class="todo"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
@@ -2094,7 +2094,7 @@
 <rect width="10.39" height="10.08" x="541.06" y="173.26" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
 <rect width="10.36" height="10.08" x="554.45" y="173.26" class="todo"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
 <rect width="10.36" height="10.08" x="567.81" y="173.26" class="todo"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
-<rect width="10.18" height="10.08" x="581.16" y="173.26" class="todo"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
+<rect width="10.18" height="10.08" x="581.16" y="173.26" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="10.18" height="10.08" x="594.34" y="173.26" class="todo"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
 <rect width="10.15" height="10.08" x="607.52" y="173.26" class="todo"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="10.11" height="10.08" x="620.67" y="173.26" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>

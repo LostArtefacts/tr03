@@ -152,6 +152,46 @@ int StalkBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
     return 1;
 }
 
+int CreatureCreature(sint16 item_number)
+{
+    sint16 link, angle;
+    sint32 x, y, z, y_rot, xdistance, zdistance, distance, radius;
+    ROOM_INFO *r;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    x = item->pos.x_pos;
+    y = item->pos.y_pos;
+    z = item->pos.z_pos;
+    y_rot = item->pos.y_rot;
+    radius = objects[item->object_number].radius;
+
+    r = &room[item->room_number];
+    link = r->item_number;
+    do {
+        item = &items[link];
+        if (link == item_number)
+            return 0;
+
+        if (item != lara_item && item->status == ACTIVE && item->hit_points > 0) {
+            xdistance = abs(item->pos.x_pos - x);
+            zdistance = abs(item->pos.z_pos - z);
+            if (xdistance > zdistance)
+                distance = xdistance + (zdistance >> 1);
+            else
+                distance = zdistance + (xdistance >> 1);
+
+            if (distance < radius + objects[item->object_number].radius) {
+                angle = phd_atan(item->pos.z_pos - z, item->pos.x_pos - x) - y_rot;
+                return angle;
+            }
+        }
+        link = item->next_item;
+    } while (link != NO_ITEM);
+
+    return 0;
+}
+
 int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height, sint16 room_number, LOT_INFO *LOT)
 {
     sint32 height;
@@ -171,6 +211,9 @@ int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height
         return 1;
     return 0;
 }
+
+extern sint16 body_bag;
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
 
 sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn)
 {
@@ -279,6 +322,8 @@ sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint3
     GetJointAbsPosition(item, &pos, bite->mesh_num);
     return (*generate)(pos.x, pos.y, pos.z, item->speed, item->pos.y_rot, item->room_number);
 }
+
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
 
 void AlertAllGuards(sint16 item_number)
 {
