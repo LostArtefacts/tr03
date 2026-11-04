@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="182.39" height="12" x="0" y="0" class="named"><title>576 · 38.97%</title></rect>
-<rect width="285.61" height="12" x="182.39" y="0" class="todo"><title>902 · 61.03%</title></rect>
+<rect width="182.70" height="12" x="0" y="0" class="named"><title>577 · 39.04%</title></rect>
+<rect width="285.30" height="12" x="182.70" y="0" class="todo"><title>901 · 60.96%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">39.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">576</tspan> · <tspan class="todo">902</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">577</tspan> · <tspan class="todo">901</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="52.16" height="12" x="0" y="0" class="named"><title>74 KB · 11.15%</title></rect>
-<rect width="415.84" height="12" x="52.16" y="0" class="todo"><title>591 KB · 88.85%</title></rect>
+<rect width="52.44" height="12" x="0" y="0" class="named"><title>74 KB · 11.20%</title></rect>
+<rect width="415.56" height="12" x="52.44" y="0" class="todo"><title>590 KB · 88.80%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">11.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">74 KB</tspan> · <tspan class="todo">591 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">11.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">74 KB</tspan> · <tspan class="todo">590 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -856,7 +856,7 @@
 <rect width="12" height="12" x="615" y="225" class="named"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="225" class="named"><title>0x00453460 CreateZone (247 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="225" class="named"><title>0x00453560 ClearLOT (75 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="225" class="todo"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="225" class="named"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="225" class="todo"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="225" class="named"><title>0x00453890 GetCollision (152 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
@@ -1989,7 +1989,7 @@
 <rect width="11.82" height="11.61" x="431.45" y="190" class="todo"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
 <rect width="11.82" height="11.61" x="431.45" y="204.61" class="todo"><title>0x00474110 OldWinstonControl (389 bytes)</title></rect>
 <rect width="11.82" height="11.55" x="431.45" y="219.22" class="todo"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
-<rect width="11.82" height="11.55" x="431.45" y="233.77" class="todo"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
+<rect width="11.82" height="11.55" x="431.45" y="233.77" class="named"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
 <rect width="11.82" height="11.55" x="431.45" y="248.32" class="todo"><title>0x0046f1e0 SideFlameDetection (387 bytes)</title></rect>
 <rect width="11.82" height="11.52" x="431.45" y="262.87" class="todo"><title>0x00423710 StartDemo (386 bytes)</title></rect>
 <rect width="11.82" height="11.52" x="431.45" y="277.39" class="todo"><title>0x00425d10 DrawEffect (386 bytes)</title></rect>
