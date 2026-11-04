@@ -1122,6 +1122,25 @@ void LookLeftRight(void)
         lara.torso_y_rot = lara.head_y_rot;
 }
 
+void ResetLook(void)
+{
+    if (camera.type == LOOK_CAMERA)
+        return;
+    if (lara.head_x_rot > -HEAD_TURN && lara.head_x_rot < HEAD_TURN)
+        lara.head_x_rot = 0;
+    else
+        lara.head_x_rot -= lara.head_x_rot / 8;
+    if (lara.head_y_rot > -HEAD_TURN && lara.head_y_rot < HEAD_TURN)
+        lara.head_y_rot = 0;
+    else
+        lara.head_y_rot -= lara.head_y_rot / 8;
+    if (lara.gun_status != LG_HANDSBUSY && lara.skidoo == NO_ITEM)
+    {
+        lara.torso_x_rot = lara.head_x_rot;
+        lara.torso_y_rot = lara.head_y_rot;
+    }
+}
+
 int LaraHitCeiling(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->coll_type == COLL_TOP || coll->coll_type == COLL_CLAMP)
