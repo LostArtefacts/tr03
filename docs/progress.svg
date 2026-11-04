@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="27.47" height="12" x="0" y="0" class="named"><title>201 · 13.60%</title></rect>
-<rect width="174.53" height="12" x="27.47" y="0" class="todo"><title>1277 · 86.40%</title></rect>
+<rect width="27.61" height="12" x="0" y="0" class="named"><title>202 · 13.67%</title></rect>
+<rect width="174.39" height="12" x="27.61" y="0" class="todo"><title>1276 · 86.33%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">13.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">201</tspan> · <tspan class="todo">1277</tspan></text>
+<text text-anchor="end" x="382" y="7.50">13.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">202</tspan> · <tspan class="todo">1276</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.85" height="12" x="0" y="0" class="named"><title>9 KB · 1.41%</title></rect>
-<rect width="199.15" height="12" x="2.85" y="0" class="todo"><title>654 KB · 98.59%</title></rect>
+<rect width="2.86" height="12" x="0" y="0" class="named"><title>9 KB · 1.42%</title></rect>
+<rect width="199.14" height="12" x="2.86" y="0" class="todo"><title>654 KB · 98.58%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">9 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -522,7 +522,7 @@
 <rect width="12" height="12" x="105" y="135" class="todo"><title>0x00438fa0 Inv_RingMotionSetup (44 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="135" class="named"><title>0x00438fd0 Inv_RingMotionRadius (38 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="135" class="named"><title>0x00439000 Inv_RingMotionRotation (34 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="135" class="todo"><title>0x00439030 Inv_RingMotionCameraPos (37 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="135" class="named"><title>0x00439030 Inv_RingMotionCameraPos (37 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="135" class="todo"><title>0x00439060 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="135" class="todo"><title>0x00439080 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="135" class="todo"><title>0x004390e0 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
@@ -2846,7 +2846,7 @@
 <rect width="3.89" height="3.45" x="681.94" y="368.50" class="todo"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="3.89" height="3.45" x="688.83" y="368.50" class="todo"><title>0x004825a0 GetFullPath (38 bytes)</title></rect>
 <rect width="3.89" height="3.45" x="695.72" y="368.50" class="todo"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
-<rect width="3.79" height="3.45" x="702.60" y="368.50" class="todo"><title>0x00439030 Inv_RingMotionCameraPos (37 bytes)</title></rect>
+<rect width="3.79" height="3.45" x="702.60" y="368.50" class="named"><title>0x00439030 Inv_RingMotionCameraPos (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="709.39" y="368.50" class="todo"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="716.17" y="368.50" class="todo"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="722.96" y="368.50" class="named"><title>0x0046b090 T_RemovePrint (37 bytes)</title></rect>
