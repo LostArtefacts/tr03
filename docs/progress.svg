@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="111.14" height="12" x="0" y="0" class="named"><title>351 · 23.75%</title></rect>
-<rect width="356.86" height="12" x="111.14" y="0" class="todo"><title>1127 · 76.25%</title></rect>
+<rect width="111.46" height="12" x="0" y="0" class="named"><title>352 · 23.82%</title></rect>
+<rect width="356.54" height="12" x="111.46" y="0" class="todo"><title>1126 · 76.18%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">23.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">351</tspan> · <tspan class="todo">1127</tspan></text>
+<text text-anchor="end" x="648" y="7.50">23.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">352</tspan> · <tspan class="todo">1126</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="14.62" height="12" x="0" y="0" class="named"><title>21 KB · 3.12%</title></rect>
-<rect width="453.38" height="12" x="14.62" y="0" class="todo"><title>643 KB · 96.88%</title></rect>
+<rect width="14.70" height="12" x="0" y="0" class="named"><title>21 KB · 3.14%</title></rect>
+<rect width="453.30" height="12" x="14.70" y="0" class="todo"><title>643 KB · 96.86%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">21 KB</tspan> · <tspan class="todo">643 KB</tspan></text>
@@ -800,7 +800,7 @@
 <rect width="12" height="12" x="525" y="210" class="todo"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="210" class="todo"><title>0x0044dc00 InitialiseLaraInventory (1091 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="210" class="todo"><title>0x0044e050 LaraSurface (368 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="210" class="todo"><title>0x0044e1c0 lara_as_surfswim (112 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="210" class="named"><title>0x0044e1c0 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="210" class="named"><title>0x0044e230 lara_as_surfback (94 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="210" class="named"><title>0x0044e290 lara_as_surfleft (96 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="210" class="named"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
@@ -2460,7 +2460,7 @@
 <rect width="6.26" height="6.33" x="639.54" y="273.84" class="todo"><title>0x0042e5c0 LaraBubbles (112 bytes)</title></rect>
 <rect width="6.26" height="6.33" x="648.80" y="273.84" class="named"><title>0x00440280 lara_col_monkeyl (112 bytes)</title></rect>
 <rect width="6.26" height="6.33" x="658.05" y="273.84" class="named"><title>0x00440350 lara_col_monkeyr (112 bytes)</title></rect>
-<rect width="6.26" height="6.33" x="667.31" y="273.84" class="todo"><title>0x0044e1c0 lara_as_surfswim (112 bytes)</title></rect>
+<rect width="6.26" height="6.33" x="667.31" y="273.84" class="named"><title>0x0044e1c0 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="6.26" height="6.33" x="676.57" y="273.84" class="todo"><title>0x004b1b80 DXTextureNewPalette (112 bytes)</title></rect>
 <rect width="6.26" height="6.33" x="685.82" y="273.84" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
 <rect width="6.20" height="6.33" x="695.08" y="273.84" class="named"><title>0x0042f110 ControlClockChimes (111 bytes)</title></rect>
