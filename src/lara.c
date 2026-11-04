@@ -7,3 +7,9 @@
 #define STEPUP_HEIGHT ((STEP_L * 3) / 2)
 #define CAM_A_HANG 0
 #define CAM_E_HANG (-60 * ONE_DEGREE)
+
+void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->facing = lara.move_angle;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_HITE);
+}
