@@ -28,6 +28,40 @@ void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction,
 
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 
+void ControlSpikeWall(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint32 x, z;
+    sint16 room_number;
+
+    item = &items[item_number];
+    if (TriggerActive(item) && item->status != DEACTIVATED) {
+        z = item->pos.z_pos + (phd_cos(item->pos.y_rot) >> WALL_SHIFT);
+        x = item->pos.x_pos + (phd_sin(item->pos.y_rot) >> WALL_SHIFT);
+        room_number = item->room_number;
+        floor = GetFloor(x, item->pos.y_pos, z, &room_number);
+        if (GetHeight(floor, x, item->pos.y_pos, z) != item->pos.y_pos) {
+            item->status = DEACTIVATED;
+            StopSoundEffect(147);
+        } else {
+            item->pos.z_pos = z;
+            item->pos.x_pos = x;
+            if (room_number != item->room_number)
+                ItemNewRoom(item_number, room_number);
+            SoundEffect(147, &item->pos, 0);
+        }
+    }
+
+    if (item->touch_bits) {
+        lara_item->hit_points -= 20;
+        lara_item->hit_status = 1;
+        DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos, 1, item->pos.y_rot, lara_item->room_number, 3);
+        item->touch_bits = 0;
+        SoundEffect(56, &item->pos, 0);
+    }
+}
+
 void HookControl(sint16 item_number)
 {
     ITEM_INFO *item;
@@ -443,6 +477,10 @@ void FallingCeiling(sint16 item_number)
         item->gravity_status = 0;
     }
 }
+
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+void TriggerDartSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 zv, int hit);
 
 void SideFlameEmitterControl(sint16 item_number)
 {

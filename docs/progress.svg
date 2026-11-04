@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="189.35" height="12" x="0" y="0" class="named"><title>598 · 40.46%</title></rect>
-<rect width="278.65" height="12" x="189.35" y="0" class="todo"><title>880 · 59.54%</title></rect>
+<rect width="189.67" height="12" x="0" y="0" class="named"><title>599 · 40.53%</title></rect>
+<rect width="278.33" height="12" x="189.67" y="0" class="todo"><title>879 · 59.47%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">40.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">598</tspan> · <tspan class="todo">880</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">599</tspan> · <tspan class="todo">879</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="57.52" height="12" x="0" y="0" class="named"><title>82 KB · 12.29%</title></rect>
-<rect width="410.48" height="12" x="57.52" y="0" class="todo"><title>583 KB · 87.71%</title></rect>
+<rect width="57.76" height="12" x="0" y="0" class="named"><title>82 KB · 12.34%</title></rect>
+<rect width="410.24" height="12" x="57.76" y="0" class="todo"><title>583 KB · 87.66%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">12.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">82 KB</tspan> · <tspan class="todo">583 KB</tspan></text>
@@ -1058,7 +1058,7 @@
 <rect width="12" height="12" x="645" y="285" class="todo"><title>0x0046d150 TestHeight_train (159 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="285" class="todo"><title>0x0046d1f0 TrainCollision (327 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="285" class="todo"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="285" class="todo"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="285" class="named"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="285" class="todo"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="285" class="named"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="285" class="todo"><title>0x0046d850 SpinningBlade (367 bytes)</title></rect>
@@ -2047,7 +2047,7 @@
 <rect width="10.81" height="11.13" x="446.28" y="435.87" class="todo"><title>0x00495b90 Func495b90 (341 bytes)</title></rect>
 <rect width="11.09" height="10.78" x="460.09" y="160.08" class="todo"><title>0x00485350 HWR_DrawRoutinesNoAlpha (339 bytes)</title></rect>
 <rect width="11.06" height="10.78" x="474.18" y="160.08" class="todo"><title>0x0040d1c0 S_DrawScreenSprite2d (338 bytes)</title></rect>
-<rect width="10.99" height="10.78" x="488.24" y="160.08" class="todo"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
+<rect width="10.99" height="10.78" x="488.24" y="160.08" class="named"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="10.96" height="10.78" x="502.23" y="160.08" class="named"><title>0x00440a40 lara_col_upjump (335 bytes)</title></rect>
 <rect width="10.96" height="10.78" x="516.19" y="160.08" class="todo"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
 <rect width="10.93" height="10.78" x="530.16" y="160.08" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
