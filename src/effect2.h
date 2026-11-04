@@ -23,6 +23,8 @@ typedef struct {
 #define MAX_RIPPLES 16
 #define MAX_BATS 32
 
+#define SP_BLOOD 4
+
 #define SPL_ON 1
 #define SPL_TRANS 2
 #define SPL_MORETRANS 16

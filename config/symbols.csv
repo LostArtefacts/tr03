@@ -2026,6 +2026,7 @@ address,size,name,symbol
 0x0062618c,4,bound_end,_bound_end
 0x006261a8,4,wibble,_wibble
 0x006261ac,4,KillEverythingFlag,_KillEverythingFlag
+0x006261b0,4,next_spark,_next_spark
 0x006261b4,4,SplashCount,_SplashCount
 0x006261b8,1,ExerciseNumber,_ExerciseNumber
 0x006261bc,4,assault_timer_display,_assault_timer_display

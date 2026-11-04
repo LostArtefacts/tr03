@@ -1,8 +1,52 @@
 #include "game.h"
 
 extern sint32 BatsTriggered;
+extern sint32 next_spark;
 
 void TriggerBats(sint32 x, sint32 y, sint32 z, sint32 angle);
+
+sint32 GetFreeSpark(void)
+{
+    sint32 lp, eldest, free;
+    SPARKS *sptr;
+
+    sptr = &sparks[next_spark];
+    for (free = next_spark, lp = 0; lp < MAX_SPARKS; lp++)
+    {
+        if (sptr->On == 0)
+        {
+            next_spark = (free + 1) & (MAX_SPARKS - 1);
+            return free;
+        }
+        if (free == MAX_SPARKS - 1)
+        {
+            sptr = &sparks[0];
+            free = 0;
+        }
+        else
+        {
+            free++;
+            sptr++;
+        }
+    }
+    eldest = 0xfff;
+    free = 0;
+    sptr = &sparks[0];
+    for (lp = 0; lp < MAX_SPARKS; lp++)
+    {
+        if (sptr->Life < eldest && sptr->Dynamic == -1)
+        {
+            if (!(sptr->Flags & SP_BLOOD) || (lp & 1))
+            {
+                free = lp;
+                eldest = sptr->Life;
+            }
+        }
+        sptr++;
+    }
+    next_spark = (free + 1) & (MAX_SPARKS - 1);
+    return free;
+}
 
 void InitialiseSparks(void)
 {
