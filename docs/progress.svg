@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="120.32" height="12" x="0" y="0" class="named"><title>380 · 25.71%</title></rect>
-<rect width="347.68" height="12" x="120.32" y="0" class="todo"><title>1098 · 74.29%</title></rect>
+<rect width="120.64" height="12" x="0" y="0" class="named"><title>381 · 25.78%</title></rect>
+<rect width="347.36" height="12" x="120.64" y="0" class="todo"><title>1097 · 74.22%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">25.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">380</tspan> · <tspan class="todo">1098</tspan></text>
+<text text-anchor="end" x="648" y="7.50">25.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">381</tspan> · <tspan class="todo">1097</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="17.05" height="12" x="0" y="0" class="named"><title>24 KB · 3.64%</title></rect>
-<rect width="450.95" height="12" x="17.05" y="0" class="todo"><title>640 KB · 96.36%</title></rect>
+<rect width="17.09" height="12" x="0" y="0" class="named"><title>24 KB · 3.65%</title></rect>
+<rect width="450.91" height="12" x="17.09" y="0" class="todo"><title>640 KB · 96.35%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">3.6%</text>
+<text text-anchor="end" x="648" y="24.50">3.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -904,7 +904,7 @@
 <rect width="12" height="12" x="585" y="240" class="named"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="240" class="named"><title>0x00459450 DrawBridgeCeiling (59 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="240" class="named"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="240" class="todo"><title>0x004594c0 InitialiseLift (57 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="240" class="named"><title>0x004594c0 InitialiseLift (57 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="240" class="todo"><title>0x00459500 LiftControl (216 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="240" class="todo"><title>0x004595e0 LiftFloorCeiling (377 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="240" class="named"><title>0x00459760 LiftFloor (63 bytes)</title></rect>
@@ -2698,7 +2698,7 @@
 <rect width="4.33" height="4.65" x="662.24" y="332.37" class="named"><title>0x00439dc0 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="4.33" height="4.65" x="669.57" y="332.37" class="named"><title>0x004403c0 lara_as_hangturnl (57 bytes)</title></rect>
 <rect width="4.33" height="4.65" x="676.89" y="332.37" class="named"><title>0x004404a0 lara_as_hangturnr (57 bytes)</title></rect>
-<rect width="4.33" height="4.65" x="684.22" y="332.37" class="todo"><title>0x004594c0 InitialiseLift (57 bytes)</title></rect>
+<rect width="4.33" height="4.65" x="684.22" y="332.37" class="named"><title>0x004594c0 InitialiseLift (57 bytes)</title></rect>
 <rect width="4.33" height="4.65" x="691.54" y="332.37" class="todo"><title>0x00475380 Func475380 (57 bytes)</title></rect>
 <rect width="4.33" height="4.65" x="698.87" y="332.37" class="todo"><title>0x00475950 TempVideoRemove (57 bytes)</title></rect>
 <rect width="4.33" height="4.65" x="706.20" y="332.37" class="todo"><title>0x00480580 Func480580 (57 bytes)</title></rect>
