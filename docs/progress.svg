@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="175.42" height="12" x="0" y="0" class="named"><title>554 · 37.48%</title></rect>
-<rect width="292.58" height="12" x="175.42" y="0" class="todo"><title>924 · 62.52%</title></rect>
+<rect width="175.74" height="12" x="0" y="0" class="named"><title>555 · 37.55%</title></rect>
+<rect width="292.26" height="12" x="175.74" y="0" class="todo"><title>923 · 62.45%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">37.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">554</tspan> · <tspan class="todo">924</tspan></text>
+<text text-anchor="end" x="648" y="7.50">37.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">555</tspan> · <tspan class="todo">923</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="47.08" height="12" x="0" y="0" class="named"><title>67 KB · 10.06%</title></rect>
-<rect width="420.92" height="12" x="47.08" y="0" class="todo"><title>598 KB · 89.94%</title></rect>
+<rect width="47.26" height="12" x="0" y="0" class="named"><title>67 KB · 10.10%</title></rect>
+<rect width="420.74" height="12" x="47.26" y="0" class="todo"><title>597 KB · 89.90%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">10.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">67 KB</tspan> · <tspan class="todo">598 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">67 KB</tspan> · <tspan class="todo">597 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -191,7 +191,7 @@
 <rect width="12" height="12" x="390" y="30" class="named"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="30" class="todo"><title>0x00414c10 GetCreatureMood (534 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="30" class="todo"><title>0x00414e50 CreatureMood (598 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="30" class="todo"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="30" class="named"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="todo"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="30" class="todo"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="30" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
@@ -2144,7 +2144,7 @@
 <rect width="9.46" height="9.52" x="639.02" y="186.82" class="todo"><title>0x0044d1a0 LaraCheatyBits (255 bytes)</title></rect>
 <rect width="9.42" height="9.52" x="651.47" y="186.82" class="todo"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
 <rect width="9.38" height="9.52" x="663.89" y="186.82" class="todo"><title>0x00405980 HWI_InsertGT3_Sorted (253 bytes)</title></rect>
-<rect width="9.34" height="9.52" x="676.27" y="186.82" class="todo"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
+<rect width="9.34" height="9.52" x="676.27" y="186.82" class="named"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
 <rect width="9.31" height="9.52" x="688.62" y="186.82" class="todo"><title>0x0048ece0 DXEnumDirectInput (251 bytes)</title></rect>
 <rect width="9.27" height="9.52" x="700.92" y="186.82" class="todo"><title>0x00413290 TestWaterHeight (250 bytes)</title></rect>
 <rect width="9.27" height="9.52" x="713.19" y="186.82" class="todo"><title>0x0044e670 LaraSurfaceCollision (250 bytes)</title></rect>

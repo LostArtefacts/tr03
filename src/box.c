@@ -115,6 +115,43 @@ int ValidBox(ITEM_INFO *item, sint16 zone_number, sint16 box_number)
     return 1;
 }
 
+int StalkBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
+{
+    BOX_INFO *box;
+    int baddie_quad, box_quad, enemy_quad;
+    sint32 x, z, xrange, zrange;
+
+    if (enemy == NULL)
+        return 0;
+
+    box = &boxes[box_number];
+    z = (((uint32)box->left + (uint32)box->right) << (WALL_SHIFT - 1)) - enemy->pos.z_pos;
+    x = (((uint32)box->top + (uint32)box->bottom) << (WALL_SHIFT - 1)) - enemy->pos.x_pos;
+    zrange = 3072 + (((uint32)box->right - (uint32)box->left) << WALL_SHIFT);
+    xrange = 3072 + (((uint32)box->bottom - (uint32)box->top) << WALL_SHIFT);
+    if (x > xrange || x < -xrange || z > zrange || z < -zrange)
+        return 0;
+
+    enemy_quad = (enemy->pos.y_rot >> 14) + 2;
+    if (z > 0)
+        box_quad = (x > 0) ? 2 : 1;
+    else
+        box_quad = (x > 0) ? 3 : 0;
+
+    if (enemy_quad == box_quad)
+        return 0;
+
+    if (item->pos.z_pos > enemy->pos.z_pos)
+        baddie_quad = (item->pos.x_pos > enemy->pos.x_pos) ? 2 : 1;
+    else
+        baddie_quad = (item->pos.x_pos > enemy->pos.x_pos) ? 3 : 0;
+
+    if (enemy_quad == baddie_quad && abs(enemy_quad - box_quad) == 2)
+        return 0;
+
+    return 1;
+}
+
 int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height, sint16 room_number, LOT_INFO *LOT)
 {
     sint32 height;
