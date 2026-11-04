@@ -140,6 +140,30 @@ void phd_PutPolygons_I(sint16 *ptr, int clip)
     phd_PopMatrix();
 }
 
+extern int GnGameMode;
+
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint32 room_number, ITEM_LIGHT *il);
+
+void CalculateObjectLightingLara(void)
+{
+    sint16 room_no;
+    PHD_VECTOR pos;
+
+    pos.x = 0;
+    pos.y = 0;
+    pos.z = 0;
+    if (GnGameMode == 3) {
+        GetJointAbsPosition(lara_item, &pos, 7);
+        room_no = lara_item->room_number;
+    } else {
+        GetLaraHandAbsPosition(&pos, 3);
+        room_no = lara_item->room_number;
+        GetFloor(pos.x, pos.y, pos.z, &room_no);
+    }
+    S_CalculateLight(pos.x, pos.y, pos.z, room_no, &lara_item->il);
+}
+
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate)
 {
     ANIM_STRUCT *anim;

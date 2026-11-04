@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="151.04" height="12" x="0" y="0" class="named"><title>477 · 32.27%</title></rect>
-<rect width="316.96" height="12" x="151.04" y="0" class="todo"><title>1001 · 67.73%</title></rect>
+<rect width="151.36" height="12" x="0" y="0" class="named"><title>478 · 32.34%</title></rect>
+<rect width="316.64" height="12" x="151.36" y="0" class="todo"><title>1000 · 67.66%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">32.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">477</tspan> · <tspan class="todo">1001</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">478</tspan> · <tspan class="todo">1000</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="27.20" height="12" x="0" y="0" class="named"><title>39 KB · 5.81%</title></rect>
-<rect width="440.80" height="12" x="27.20" y="0" class="todo"><title>625 KB · 94.19%</title></rect>
+<rect width="27.32" height="12" x="0" y="0" class="named"><title>39 KB · 5.84%</title></rect>
+<rect width="440.68" height="12" x="27.32" y="0" class="todo"><title>625 KB · 94.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">39 KB</tspan> · <tspan class="todo">625 KB</tspan></text>
@@ -331,7 +331,7 @@
 <rect width="12" height="12" x="240" y="75" class="todo"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="75" class="todo"><title>0x00429a30 DrawGunFlash (321 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="75" class="todo"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="75" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="75" class="named"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="75" class="named"><title>0x00429db0 GetFrames (146 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="75" class="named"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="75" class="named"><title>0x00429ed0 GetBestFrame (48 bytes)</title></rect>
@@ -2300,7 +2300,7 @@
 <rect width="7.92" height="7.45" x="577.53" y="233.52" class="named"><title>0x004552c0 ShootAtLara (167 bytes)</title></rect>
 <rect width="7.92" height="7.45" x="588.44" y="233.52" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
 <rect width="7.87" height="7.45" x="599.36" y="233.52" class="named"><title>0x00413ff0 BoomuteControl (166 bytes)</title></rect>
-<rect width="7.87" height="7.45" x="610.23" y="233.52" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
+<rect width="7.87" height="7.45" x="610.23" y="233.52" class="named"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
 <rect width="7.82" height="7.45" x="621.10" y="233.52" class="named"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="631.93" y="233.52" class="named"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="642.70" y="233.52" class="named"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
