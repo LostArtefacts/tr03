@@ -140,6 +140,32 @@ void phd_PutPolygons_I(sint16 *ptr, int clip)
     phd_PopMatrix();
 }
 
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate)
+{
+    ANIM_STRUCT *anim;
+    int frm;
+    int first, second;
+    int frame_size;
+    int interp, rat;
+
+    frm = item->frame_number;
+    anim = &anims[item->anim_number];
+    frmptr[0] = frmptr[1] = anim->frame_ptr;
+    rat = *rate = anim->interpolation & 0xff;
+    frame_size = anim->interpolation >> 8;
+    frm -= anim->frame_base;
+    first = frm / rat;
+    interp = frm % rat;
+    frmptr[0] += first * frame_size;
+    frmptr[1] = frmptr[0] + frame_size;
+    if (interp == 0)
+        return 0;
+    second = first * rat + rat;
+    if (second > anim->frame_end)
+        *rate = anim->frame_end - (second - rat);
+    return interp;
+}
+
 sint16 *GetBoundsAccurate(ITEM_INFO *item)
 {
     int i, frac, rate;

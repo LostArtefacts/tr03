@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="130.14" height="12" x="0" y="0" class="named"><title>411 · 27.81%</title></rect>
-<rect width="337.86" height="12" x="130.14" y="0" class="todo"><title>1067 · 72.19%</title></rect>
+<rect width="130.46" height="12" x="0" y="0" class="named"><title>412 · 27.88%</title></rect>
+<rect width="337.54" height="12" x="130.46" y="0" class="todo"><title>1066 · 72.12%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">27.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">411</tspan> · <tspan class="todo">1067</tspan></text>
+<text text-anchor="end" x="648" y="7.50">27.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">412</tspan> · <tspan class="todo">1066</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="19.90" height="12" x="0" y="0" class="named"><title>28 KB · 4.25%</title></rect>
-<rect width="448.10" height="12" x="19.90" y="0" class="todo"><title>636 KB · 95.75%</title></rect>
+<rect width="20.01" height="12" x="0" y="0" class="named"><title>28 KB · 4.28%</title></rect>
+<rect width="447.99" height="12" x="20.01" y="0" class="todo"><title>636 KB · 95.72%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">28 KB</tspan> · <tspan class="todo">636 KB</tspan></text>
@@ -332,7 +332,7 @@
 <rect width="12" height="12" x="255" y="75" class="todo"><title>0x00429a30 DrawGunFlash (321 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="75" class="todo"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="75" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="75" class="todo"><title>0x00429db0 GetFrames (146 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="75" class="named"><title>0x00429db0 GetFrames (146 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="75" class="named"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="75" class="named"><title>0x00429ed0 GetBestFrame (48 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="75" class="todo"><title>0x00429f00 DetatchSpark (217 bytes)</title></rect>
@@ -2355,7 +2355,7 @@
 <rect width="7.16" height="7.36" x="739.84" y="243.96" class="todo"><title>0x00416ac0 AIGuard (149 bytes)</title></rect>
 <rect width="6.98" height="7.49" x="544.30" y="254.31" class="named"><title>0x0042ed00 floor_shake_effect (148 bytes)</title></rect>
 <rect width="6.98" height="7.44" x="544.30" y="264.80" class="todo"><title>0x0043b290 EffectNewRoom (147 bytes)</title></rect>
-<rect width="6.98" height="7.39" x="544.30" y="275.24" class="todo"><title>0x00429db0 GetFrames (146 bytes)</title></rect>
+<rect width="6.98" height="7.39" x="544.30" y="275.24" class="named"><title>0x00429db0 GetFrames (146 bytes)</title></rect>
 <rect width="6.98" height="7.39" x="544.30" y="285.63" class="named"><title>0x0042ee00 FloodFX (146 bytes)</title></rect>
 <rect width="6.98" height="7.39" x="544.30" y="296.02" class="named"><title>0x004400a0 lara_as_monkeyswing (146 bytes)</title></rect>
 <rect width="6.98" height="7.34" x="544.30" y="306.41" class="named"><title>0x00441cf0 extra_as_sharkkill (145 bytes)</title></rect>
