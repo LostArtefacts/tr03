@@ -151,6 +151,79 @@ void LaraBubbles(ITEM_INFO *item)
         CreateBubble((PHD_3DPOS *)&offset, item->room_number, 8, 8);
 }
 
+#define DUCKBREATHE_A 222
+#define DUCKBREATHE_F GF(DUCKBREATHE_A, 0)
+
+extern sint32 wibble;
+void TriggerBreath(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv);
+
+void LaraBreath(ITEM_INFO *item)
+{
+    PHD_VECTOR offset, offsetv;
+
+    if (lara.water_status == LARA_UNDERWATER || lara_item->hit_points <= 0)
+        return;
+
+    if (lara_item->current_anim_state == AS_STOP) {
+        if (lara_item->frame_number < BREATH_F + 30)
+            return;
+    } else if (lara_item->current_anim_state == AS_DUCK) {
+        if (lara_item->frame_number < DUCKBREATHE_F + 30)
+            return;
+    } else if (wibble < 0x80 || wibble > 0xc0) {
+        return;
+    }
+
+    offset.x = 0;
+    offset.y = -4;
+    offset.z = 64;
+    GetLaraHandAbsPosition(&offset, LARA_HEAD);
+    offsetv.x = (GetRandomControl() & 7) - 4;
+    offsetv.y = -8 + (GetRandomControl() & 7);
+    offsetv.z = 64 + (GetRandomControl() & 127);
+    GetLaraHandAbsPosition(&offsetv, LARA_HEAD);
+    TriggerBreath(offset.x, offset.y, offset.z, offsetv.x - offset.x, offsetv.y - offset.y, offsetv.z - offset.z);
+}
+
+void KillEffect(sint16 fx_num);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 moretrans);
+
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint16 InnerXZoff;
+    sint16 InnerXZsize;
+    sint16 InnerYsize;
+    sint16 InnerXZvel;
+    sint16 InnerYvel;
+    sint16 InnerGravity;
+    sint16 InnerFriction;
+    sint16 MiddleXZoff;
+    sint16 MiddleXZsize;
+    sint16 MiddleYsize;
+    sint16 MiddleXZvel;
+    sint16 MiddleYvel;
+    sint16 MiddleGravity;
+    sint16 MiddleFriction;
+    sint16 OuterXZoff;
+    sint16 OuterXZsize;
+    sint16 OuterXZvel;
+    sint16 OuterFriction;
+} SPLASH_SETUP;
+
+extern SPLASH_SETUP splash_setup;
+sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+void SetupSplash(SPLASH_SETUP *spl);
+
+extern sint32 SplashCount;
+sint16 *GetBestFrame(ITEM_INFO *item);
+
+extern sint16 rcossin_tbl[];
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint32 room_number, ITEM_LIGHT *il);
+void TriggerWaterfallMist(sint32 x, sint32 y, sint32 z, sint32 angle);
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;

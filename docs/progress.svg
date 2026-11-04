@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="186.82" height="12" x="0" y="0" class="named"><title>590 · 39.92%</title></rect>
-<rect width="281.18" height="12" x="186.82" y="0" class="todo"><title>888 · 60.08%</title></rect>
+<rect width="187.14" height="12" x="0" y="0" class="named"><title>591 · 39.99%</title></rect>
+<rect width="280.86" height="12" x="187.14" y="0" class="todo"><title>887 · 60.01%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">39.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">590</tspan> · <tspan class="todo">888</tspan></text>
+<text text-anchor="end" x="648" y="7.50">40.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">591</tspan> · <tspan class="todo">887</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="55.61" height="12" x="0" y="0" class="named"><title>79 KB · 11.88%</title></rect>
-<rect width="412.39" height="12" x="55.61" y="0" class="todo"><title>586 KB · 88.12%</title></rect>
+<rect width="55.81" height="12" x="0" y="0" class="named"><title>79 KB · 11.93%</title></rect>
+<rect width="412.19" height="12" x="55.81" y="0" class="todo"><title>586 KB · 88.07%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">11.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">79 KB</tspan> · <tspan class="todo">586 KB</tspan></text>
@@ -385,7 +385,7 @@
 <rect width="12" height="12" x="300" y="90" class="named"><title>0x0042e460 DoLotsOfBloodD (130 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="90" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="90" class="named"><title>0x0042e5c0 LaraBubbles (112 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="90" class="todo"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="90" class="named"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="90" class="todo"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="90" class="todo"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="90" class="todo"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
@@ -2099,7 +2099,7 @@
 <rect width="10.08" height="10.15" x="473.28" y="307.53" class="todo"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="10.08" height="10.11" x="473.28" y="320.67" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
 <rect width="10.08" height="10.08" x="473.28" y="333.78" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>
-<rect width="10.08" height="9.97" x="473.28" y="346.86" class="todo"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
+<rect width="10.08" height="9.97" x="473.28" y="346.86" class="named"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
 <rect width="10.08" height="9.97" x="473.28" y="359.83" class="todo"><title>0x0044a1e0 InitialiseNewWeapon (285 bytes)</title></rect>
 <rect width="10.08" height="9.97" x="473.28" y="372.80" class="todo"><title>0x00480790 DS_StartSample (285 bytes)</title></rect>
 <rect width="10.08" height="9.94" x="473.28" y="385.77" class="todo"><title>0x00482020 LoadAnimatedTextures (284 bytes)</title></rect>
