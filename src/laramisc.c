@@ -2,6 +2,12 @@
 
 void AnimateItem(ITEM_INFO *item);
 
+void InitialiseLaraLoad(sint16 item_num)
+{
+    lara.item_number = item_num;
+    lara_item = &items[item_num];
+}
+
 void ControlLaraExtra(sint16 item_num)
 {
     AnimateItem(&items[item_num]);
