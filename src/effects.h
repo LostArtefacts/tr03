@@ -34,5 +34,6 @@ void QuadFinished(ITEM_INFO *item);
 void Exercise1_105(ITEM_INFO *item);
 void Exercise1_104(ITEM_INFO *item);
 void Exercise2_112(ITEM_INFO *item);
+void Exercise2_83(ITEM_INFO *item);
 
 #endif
