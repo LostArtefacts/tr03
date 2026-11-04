@@ -2,6 +2,8 @@
 
 #define KAYAK_DRAW_SHIFT 32
 #define NUM_WAKE_SPRITES 32
+#define KAYAK_DROWN_A 25
+#define EXTRA_RAPIDSDROWN 12
 
 typedef struct {
     sint32 Vel;
@@ -28,6 +30,26 @@ typedef struct {
 } WAKE_PTS;
 
 extern WAKE_PTS WakePts[NUM_WAKE_SPRITES][2];
+
+void LaraRapidsDrown(void)
+{
+    ITEM_INFO *l;
+
+    l = lara_item;
+    l->anim_number = objects[VEHICLE_ANIM].anim_index + KAYAK_DROWN_A;
+    l->frame_number = anims[l->anim_number].frame_base;
+    l->current_anim_state = EXTRA_RAPIDSDROWN;
+    l->goal_anim_state = EXTRA_RAPIDSDROWN;
+    l->hit_points = 0;
+    l->fallspeed = 0;
+    l->gravity_status = 0;
+    l->speed = 0;
+    AnimateItem(l);
+    lara.extra_anim = 1;
+    lara.gun_status = LG_HANDSBUSY;
+    lara.gun_type = LG_UNARMED;
+    lara.hit_direction = -1;
+}
 
 void KayakInitialise(sint16 item_number)
 {

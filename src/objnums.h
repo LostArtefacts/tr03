@@ -13,6 +13,7 @@ enum object_types {
     GRENADE_GUN,
     HARPOON_GUN,
     FLARE,
+    VEHICLE_ANIM,
     DOG = 22,
     TARGETS = 30,
     LIZARD_MAN = 35,

@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="115.58" height="12" x="0" y="0" class="named"><title>365 · 24.70%</title></rect>
-<rect width="352.42" height="12" x="115.58" y="0" class="todo"><title>1113 · 75.30%</title></rect>
+<rect width="115.89" height="12" x="0" y="0" class="named"><title>366 · 24.76%</title></rect>
+<rect width="352.11" height="12" x="115.89" y="0" class="todo"><title>1112 · 75.24%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">24.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">365</tspan> · <tspan class="todo">1113</tspan></text>
+<text text-anchor="end" x="648" y="7.50">24.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">366</tspan> · <tspan class="todo">1112</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="15.73" height="12" x="0" y="0" class="named"><title>22 KB · 3.36%</title></rect>
-<rect width="452.27" height="12" x="15.73" y="0" class="todo"><title>642 KB · 96.64%</title></rect>
+<rect width="15.82" height="12" x="0" y="0" class="named"><title>22 KB · 3.38%</title></rect>
+<rect width="452.18" height="12" x="15.82" y="0" class="todo"><title>641 KB · 96.62%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">22 KB</tspan> · <tspan class="todo">642 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">22 KB</tspan> · <tspan class="todo">641 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -556,7 +556,7 @@
 <rect width="12" height="12" x="615" y="135" class="todo"><title>0x0043b1a0 KillEffect (238 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="135" class="todo"><title>0x0043b290 EffectNewRoom (147 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="135" class="named"><title>0x0043b330 ClearBodyBag (91 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="135" class="todo"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="135" class="named"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="135" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="todo"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
@@ -2429,7 +2429,7 @@
 <rect width="6.68" height="6.45" x="701.71" y="264.38" class="todo"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
 <rect width="6.68" height="6.45" x="711.39" y="264.38" class="todo"><title>0x004834c0 FMV_Play (122 bytes)</title></rect>
 <rect width="6.68" height="6.45" x="721.07" y="264.38" class="todo"><title>0x00483860 mGetAngle (122 bytes)</title></rect>
-<rect width="6.63" height="6.45" x="730.75" y="264.38" class="todo"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
+<rect width="6.63" height="6.45" x="730.75" y="264.38" class="named"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
 <rect width="6.63" height="6.45" x="740.37" y="264.38" class="todo"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
 <rect width="6.63" height="6.44" x="564.61" y="273.84" class="todo"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="6.63" height="6.39" x="564.61" y="283.28" class="todo"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
