@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="183.65" height="12" x="0" y="0" class="named"><title>580 · 39.24%</title></rect>
-<rect width="284.35" height="12" x="183.65" y="0" class="todo"><title>898 · 60.76%</title></rect>
+<rect width="183.97" height="12" x="0" y="0" class="named"><title>581 · 39.31%</title></rect>
+<rect width="284.03" height="12" x="183.97" y="0" class="todo"><title>897 · 60.69%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">39.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">580</tspan> · <tspan class="todo">898</tspan></text>
+<text text-anchor="end" x="648" y="7.50">39.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">581</tspan> · <tspan class="todo">897</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="53.07" height="12" x="0" y="0" class="named"><title>75 KB · 11.34%</title></rect>
-<rect width="414.93" height="12" x="53.07" y="0" class="todo"><title>589 KB · 88.66%</title></rect>
+<rect width="53.33" height="12" x="0" y="0" class="named"><title>76 KB · 11.39%</title></rect>
+<rect width="414.67" height="12" x="53.33" y="0" class="todo"><title>589 KB · 88.61%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">11.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">75 KB</tspan> · <tspan class="todo">589 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">11.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">76 KB</tspan> · <tspan class="todo">589 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -203,7 +203,7 @@
 <rect width="12" height="12" x="570" y="30" class="named"><title>0x00416570 CreatureFloat (174 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="30" class="named"><title>0x00416620 CreatureUnderwater (80 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="30" class="named"><title>0x00416670 CreatureEffect (92 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="30" class="todo"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="30" class="named"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="30" class="todo"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="30" class="named"><title>0x004169c0 AlertAllGuards (97 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="30" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
@@ -2023,7 +2023,7 @@
 <rect width="11.35" height="11.38" x="678.35" y="145.70" class="todo"><title>0x0042c7e0 TriggerBlood (366 bytes)</title></rect>
 <rect width="11.35" height="11.38" x="692.70" y="145.70" class="todo"><title>0x0042c950 TriggerBloodD (366 bytes)</title></rect>
 <rect width="11.35" height="11.38" x="707.05" y="145.70" class="todo"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
-<rect width="11.32" height="11.38" x="721.40" y="145.70" class="todo"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
+<rect width="11.32" height="11.38" x="721.40" y="145.70" class="named"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
 <rect width="11.29" height="11.38" x="735.71" y="145.70" class="todo"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="10.81" height="11.82" x="446.27" y="160.08" class="todo"><title>0x00412040 BoatCheckGeton (362 bytes)</title></rect>
 <rect width="10.81" height="11.78" x="446.27" y="174.89" class="todo"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
