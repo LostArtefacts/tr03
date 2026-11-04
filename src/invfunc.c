@@ -1,4 +1,5 @@
 #include "game.h"
+#include <stdio.h>
 
 #define CAMERA_YOFFSET -96
 #define NUM_ASS_TIMES 10
@@ -286,6 +287,28 @@ void ReqItemRightalign(REQUEST_INFO *req, TEXTSTRING *txt)
         x = (((req->pixwidth * scaleH) >> 16) / 2 - T_GetTextWidth(txt) / 2) - ((8 * scaleH) >> 16);
         txt->xpos = req->xpos + x;
         txt->bgndOffX = -x;
+    }
+}
+
+void SetRequesterHeading(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2)
+{
+    T_RemovePrint(req->heading1text);
+    req->heading1text = NULL;
+    T_RemovePrint(req->heading2text);
+    req->heading2text = NULL;
+    if (text1) {
+        sprintf(req->heading1_str, text1);
+        req->heading1_flags = flags1 | 1;
+    } else {
+        sprintf(req->heading1_str, "u");
+        req->heading1_flags = 0;
+    }
+    if (text2) {
+        sprintf(req->heading2_str, text2);
+        req->heading2_flags = flags2 | 1;
+    } else {
+        sprintf(req->heading2_str, "u");
+        req->heading2_flags = 0;
     }
 }
 

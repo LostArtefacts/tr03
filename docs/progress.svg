@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="148.82" height="12" x="0" y="0" class="named"><title>470 · 31.80%</title></rect>
-<rect width="319.18" height="12" x="148.82" y="0" class="todo"><title>1008 · 68.20%</title></rect>
+<rect width="149.14" height="12" x="0" y="0" class="named"><title>471 · 31.87%</title></rect>
+<rect width="318.86" height="12" x="149.14" y="0" class="todo"><title>1007 · 68.13%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">31.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">470</tspan> · <tspan class="todo">1008</tspan></text>
+<text text-anchor="end" x="648" y="7.50">31.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">471</tspan> · <tspan class="todo">1007</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="26.37" height="12" x="0" y="0" class="named"><title>37 KB · 5.63%</title></rect>
-<rect width="441.63" height="12" x="26.37" y="0" class="todo"><title>627 KB · 94.37%</title></rect>
+<rect width="26.49" height="12" x="0" y="0" class="named"><title>38 KB · 5.66%</title></rect>
+<rect width="441.51" height="12" x="26.49" y="0" class="todo"><title>626 KB · 94.34%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">5.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">37 KB</tspan> · <tspan class="todo">627 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">5.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">38 KB</tspan> · <tspan class="todo">626 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -532,7 +532,7 @@
 <rect width="12" height="12" x="255" y="135" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="135" class="named"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="135" class="todo"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="135" class="todo"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="135" class="named"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="135" class="named"><title>0x00439c30 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="135" class="todo"><title>0x00439c50 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="135" class="todo"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
@@ -2287,7 +2287,7 @@
 <rect width="7.78" height="7.77" x="522.89" y="353.48" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="364.25" class="todo"><title>0x0048ab50 S_AnimateTextures (171 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="375.02" class="todo"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
-<rect width="7.78" height="7.72" x="522.89" y="385.75" class="todo"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
+<rect width="7.78" height="7.72" x="522.89" y="385.75" class="named"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="396.47" class="named"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="407.19" class="named"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="417.92" class="todo"><title>0x0044a700 find_target_point (170 bytes)</title></rect>

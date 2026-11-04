@@ -1514,7 +1514,7 @@ address,size,name,symbol
 0x004b5e10,39,__ftol,
 0x004b5e40,11,Func4b5e40,
 0x004b5e50,61,Func4b5e50,
-0x004b5e90,104,Func4b5e90,
+0x004b5e90,104,sprintf,_sprintf
 0x004b5f00,56,_strncmp,
 0x004b5f40,316,Func4b5f40,
 0x004b6080,35,Func4b6080,
