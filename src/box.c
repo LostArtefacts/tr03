@@ -115,6 +115,20 @@ int ValidBox(ITEM_INFO *item, sint16 zone_number, sint16 box_number)
     return 1;
 }
 
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+sint16 *GetBestFrame(ITEM_INFO *item);
+int CalculateTarget(PHD_VECTOR *target, ITEM_INFO *item, LOT_INFO *LOT);
+
 int StalkBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
 {
     BOX_INFO *box;
@@ -277,6 +291,96 @@ sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn)
 
     item->pos.y_rot += angle;
     return angle;
+}
+
+void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent)
+{
+    CREATURE_INFO *creature;
+    MOOD_TYPE mood;
+    LOT_INFO *LOT;
+    ITEM_INFO *enemy;
+
+    if (item->data == NULL)
+        return;
+
+    creature = (CREATURE_INFO *)item->data;
+    enemy = creature->enemy;
+    LOT = &creature->LOT;
+
+    if (LOT->node[item->box_number].search_number == (LOT->search_number | 0x8000))
+        LOT->required_box = NO_BOX;
+
+    if (creature->mood != ATTACK_MOOD && LOT->required_box != NO_BOX) {
+        if (!ValidBox(item, info->zone_number, LOT->target_box)) {
+            if (info->zone_number == info->enemy_zone)
+                creature->mood = BORED_MOOD;
+            LOT->required_box = NO_BOX;
+        }
+    }
+
+    mood = creature->mood;
+
+    if (!enemy) {
+        creature->mood = BORED_MOOD;
+        enemy = lara_item;
+    } else if (enemy->hit_points <= 0 && enemy == lara_item) {
+        creature->mood = BORED_MOOD;
+    } else if (violent) {
+        switch (creature->mood) {
+        case ATTACK_MOOD:
+            if (info->zone_number != info->enemy_zone)
+                creature->mood = BORED_MOOD;
+            break;
+
+        case BORED_MOOD:
+        case STALK_MOOD:
+            if (info->zone_number == info->enemy_zone)
+                creature->mood = ATTACK_MOOD;
+            else if (item->hit_status)
+                creature->mood = ESCAPE_MOOD;
+            break;
+
+        case ESCAPE_MOOD:
+            if (info->zone_number == info->enemy_zone)
+                creature->mood = ATTACK_MOOD;
+            break;
+        }
+    } else {
+        switch (creature->mood) {
+        case ATTACK_MOOD:
+            if (item->hit_status && (GetRandomControl() < 0x800 || info->zone_number != info->enemy_zone))
+                creature->mood = STALK_MOOD;
+            else if (info->zone_number != info->enemy_zone && info->distance > WALL_L * 6)
+                creature->mood = BORED_MOOD;
+            break;
+
+        case BORED_MOOD:
+        case STALK_MOOD:
+            if (creature->alerted && info->zone_number != info->enemy_zone) {
+                if (info->distance > WALL_L * 3)
+                    creature->mood = STALK_MOOD;
+                else
+                    creature->mood = BORED_MOOD;
+            } else if (info->zone_number == info->enemy_zone) {
+                if (info->distance < (WALL_L * 3) * (WALL_L * 3) || (creature->mood == STALK_MOOD && LOT->required_box == NO_BOX))
+                    creature->mood = ATTACK_MOOD;
+                else
+                    creature->mood = STALK_MOOD;
+            }
+            break;
+
+        case ESCAPE_MOOD:
+            if (info->zone_number == info->enemy_zone && GetRandomControl() < 0x100)
+                creature->mood = STALK_MOOD;
+            break;
+        }
+    }
+
+    if (mood != creature->mood) {
+        if (mood == ATTACK_MOOD)
+            TargetBox(LOT, LOT->target_box);
+        LOT->required_box = NO_BOX;
+    }
 }
 
 void CreatureTilt(ITEM_INFO *item, sint16 angle)

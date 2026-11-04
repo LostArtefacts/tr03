@@ -126,8 +126,8 @@ address,size,name,symbol
 0x00414a10,149,TargetBox,_TargetBox
 0x00414ab0,164,EscapeBox,_EscapeBox
 0x00414b60,175,ValidBox,_ValidBox
-0x00414c10,534,GetCreatureMood,_GetCreatureMood
-0x00414e50,598,CreatureMood,_CreatureMood
+0x00414c10,568,GetCreatureMood,_GetCreatureMood
+0x00414e50,616,CreatureMood,_CreatureMood
 0x004150c0,252,StalkBox,_StalkBox
 0x004151c0,1156,CalculateTarget,_CalculateTarget
 0x00415650,291,CreatureCreature,_CreatureCreature
