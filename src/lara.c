@@ -507,6 +507,32 @@ void lara_as_monkeyswing(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_monkeyswing(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (!(input & IN_ACTION) || !lara.CanMonkeySwing)
+    {
+        MonkeySwingFall(item);
+        return;
+    }
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = NO_BAD_NEG;
+    coll->bad_ceiling = 0;
+    coll->facing = lara.move_angle = item->pos.y_rot;
+    coll->radius = LARA_RAD;
+    coll->slopes_are_walls = 0;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, HANG_HEIGHT);
+    if (coll->coll_type == COLL_FRONT || abs(coll->mid_ceiling - coll->front_ceiling) > 50)
+    {
+        item->current_anim_state = AS_HANG2;
+        item->goal_anim_state = AS_HANG2;
+        item->anim_number = MONKEYHANG_A;
+        item->frame_number = MONKEYHANG_F;
+        return;
+    }
+    camera.target_elevation = 10 * ONE_DEGREE;
+    MonkeySwingSnap(item, coll);
+}
+
 void lara_as_monkeyl(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
