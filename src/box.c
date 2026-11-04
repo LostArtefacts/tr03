@@ -21,6 +21,20 @@ void InitialiseCreature(sint16 item_number)
     item->data = NULL;
 }
 
+int CreatureActive(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->status == INVISIBLE)
+    {
+        if (!EnableBaddieAI(item_number, 0))
+            return 0;
+        item->status = ACTIVE;
+    }
+    return item->data != NULL;
+}
+
 void CreatureTilt(ITEM_INFO *item, sint16 angle)
 {
     angle = (angle << 2) - item->pos.z_rot;

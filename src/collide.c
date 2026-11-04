@@ -12,6 +12,10 @@ void ItemPushLara(ITEM_INFO *item, ITEM_INFO *laraitem, COLL_INFO *coll, int spa
 sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
 void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll);
 void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void TrapCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+int TestLaraPosition(sint16 *bounds, ITEM_INFO *item, ITEM_INFO *laraitem);
+void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
+int MoveLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
 
 sint32 FindGridShift(sint32 src, sint32 dst)
 {

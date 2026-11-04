@@ -61,6 +61,7 @@ void DrawAnimatingItem(ITEM_INFO *item);
 void DrawUnclippedItem(ITEM_INFO *item);
 void S_DrawWakeFX(ITEM_INFO *item);
 void DrawExplosionRings(void);
+void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *pos, int joint);
 void InitialiseHair(void);
 void ResetTargets(void);
 

@@ -3,12 +3,6 @@
 #define FLIPFLAG 64
 #define UNFLIPFLAG 128
 
-typedef struct {
-    sint32 x;
-    sint32 y;
-    sint32 z;
-    sint32 mesh_num;
-} BITE_INFO;
 
 extern OBJECT_VECTOR *sound_effects;
 extern sint32 number_sound_effects;
@@ -17,7 +11,6 @@ extern void (*effect_routines[])(ITEM_INFO *item);
 void SOUND_EndScene(void);
 sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
 void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, int size);
-void GetJointAbsPosition(ITEM_INFO *item, PHD_VECTOR *pos, int joint);
 sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
 
 int ItemNearLara(PHD_3DPOS *pos, sint32 distance)

@@ -55,6 +55,9 @@ typedef struct gameflow_info {
 
 extern GAMEFLOW_INFO gameflow;
 extern sint16 *GF_frontendSequence;
+extern sint16 GF_valid_demos[];
+
+sint32 GF_DoLevelSequence(int level, int type);
 
 sint32 GF_InterpretSequence(sint16 *ptr, int type, int seq_type);
 

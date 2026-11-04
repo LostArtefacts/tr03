@@ -8,6 +8,7 @@
 #define DEACTIVATED 2
 #define INVISIBLE 3
 #define ONESHOT 0x100
+#define REVERSE 0x4000
 #define DONT_TARGET (-16384)
 
 typedef struct item_light {
@@ -73,6 +74,7 @@ extern ITEM_INFO *items;
 void RemoveActiveItem(sint16 item_num);
 void AddActiveItem(sint16 item_num);
 void KillItem(sint16 item_num);
+void ItemNewRoom(sint16 item_num, sint16 room_number);
 void AnimateItem(ITEM_INFO *item);
 int TriggerActive(ITEM_INFO *item);
 

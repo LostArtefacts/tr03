@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="96.26" height="12" x="0" y="0" class="named"><title>304 · 20.57%</title></rect>
-<rect width="371.74" height="12" x="96.26" y="0" class="todo"><title>1174 · 79.43%</title></rect>
+<rect width="96.58" height="12" x="0" y="0" class="named"><title>305 · 20.64%</title></rect>
+<rect width="371.42" height="12" x="96.58" y="0" class="todo"><title>1173 · 79.36%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">20.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">304</tspan> · <tspan class="todo">1174</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">305</tspan> · <tspan class="todo">1173</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="11.41" height="12" x="0" y="0" class="named"><title>16 KB · 2.44%</title></rect>
-<rect width="456.59" height="12" x="11.41" y="0" class="todo"><title>648 KB · 97.56%</title></rect>
+<rect width="11.47" height="12" x="0" y="0" class="named"><title>16 KB · 2.45%</title></rect>
+<rect width="456.53" height="12" x="11.47" y="0" class="todo"><title>648 KB · 97.55%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">2.4%</text>
+<text text-anchor="end" x="648" y="24.50">2.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">16 KB</tspan> · <tspan class="todo">648 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -182,7 +182,7 @@
 <rect width="12" height="12" x="255" y="30" class="todo"><title>0x00413ff0 BoomuteControl (166 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="30" class="todo"><title>0x004140a0 TriggerSealmuteGasThrower_boomute (575 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="30" class="named"><title>0x004142e0 InitialiseCreature (77 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="30" class="todo"><title>0x00414330 CreatureActive (88 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="30" class="named"><title>0x00414330 CreatureActive (88 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="30" class="todo"><title>0x00414390 CreatureAIInfo (1002 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="30" class="todo"><title>0x00414780 UpdateLOT (114 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="30" class="todo"><title>0x00414800 SearchLOT (520 bytes)</title></rect>
@@ -2546,7 +2546,7 @@
 <rect width="5.91" height="5.32" x="609.53" y="292.20" class="todo"><title>0x00448350 draw_pistol_meshes (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="618.44" y="292.20" class="todo"><title>0x004494d0 lara_col_climbright (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="627.35" y="292.20" class="todo"><title>0x00484a80 HWR_EnableColorAddition (89 bytes)</title></rect>
-<rect width="5.84" height="5.32" x="636.26" y="292.20" class="todo"><title>0x00414330 CreatureActive (88 bytes)</title></rect>
+<rect width="5.84" height="5.32" x="636.26" y="292.20" class="named"><title>0x00414330 CreatureActive (88 bytes)</title></rect>
 <rect width="5.84" height="5.32" x="645.11" y="292.20" class="named"><title>0x00440220 lara_as_monkeyl (88 bytes)</title></rect>
 <rect width="5.84" height="5.32" x="653.95" y="292.20" class="todo"><title>0x00490b40 Func490b40 (88 bytes)</title></rect>
 <rect width="5.78" height="5.32" x="662.80" y="292.20" class="named"><title>0x004410a0 lara_as_fastback (87 bytes)</title></rect>
