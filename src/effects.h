@@ -32,5 +32,6 @@ void QuadStart(ITEM_INFO *item);
 void QuadStop(ITEM_INFO *item);
 void QuadFinished(ITEM_INFO *item);
 void Exercise1_105(ITEM_INFO *item);
+void Exercise1_104(ITEM_INFO *item);
 
 #endif
