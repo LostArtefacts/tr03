@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="120.96" height="12" x="0" y="0" class="named"><title>382 · 25.85%</title></rect>
-<rect width="347.04" height="12" x="120.96" y="0" class="todo"><title>1096 · 74.15%</title></rect>
+<rect width="121.27" height="12" x="0" y="0" class="named"><title>383 · 25.91%</title></rect>
+<rect width="346.73" height="12" x="121.27" y="0" class="todo"><title>1095 · 74.09%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">25.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">382</tspan> · <tspan class="todo">1096</tspan></text>
+<text text-anchor="end" x="648" y="7.50">25.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">383</tspan> · <tspan class="todo">1095</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="17.13" height="12" x="0" y="0" class="named"><title>24 KB · 3.66%</title></rect>
-<rect width="450.87" height="12" x="17.13" y="0" class="todo"><title>640 KB · 96.34%</title></rect>
+<rect width="17.20" height="12" x="0" y="0" class="named"><title>24 KB · 3.67%</title></rect>
+<rect width="450.80" height="12" x="17.20" y="0" class="todo"><title>639 KB · 96.33%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">640 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">24 KB</tspan> · <tspan class="todo">639 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1023,7 +1023,7 @@
 <rect width="12" height="12" x="120" y="285" class="todo"><title>0x00469fe0 SwatControl (2205 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="285" class="todo"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="285" class="todo"><title>0x0046a960 TargetControl (649 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="285" class="todo"><title>0x0046ac00 ResetTargets (98 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="285" class="named"><title>0x0046ac00 ResetTargets (98 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="285" class="named"><title>0x0046ac70 T_InitPrint (44 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="285" class="todo"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="285" class="named"><title>0x0046ad90 T_ChangeText (55 bytes)</title></rect>
@@ -2497,7 +2497,7 @@
 <rect width="5.80" height="6.03" x="645.36" y="283.16" class="named"><title>0x004390e0 Inv_RingMotionItemDeselect (99 bytes)</title></rect>
 <rect width="5.80" height="6.03" x="654.16" y="283.16" class="todo"><title>0x0044f7a0 UpdateLaserShades (99 bytes)</title></rect>
 <rect width="5.74" height="6.03" x="662.96" y="283.16" class="named"><title>0x0043aa20 InitialiseItemArray (98 bytes)</title></rect>
-<rect width="5.74" height="6.03" x="671.70" y="283.16" class="todo"><title>0x0046ac00 ResetTargets (98 bytes)</title></rect>
+<rect width="5.74" height="6.03" x="671.70" y="283.16" class="named"><title>0x0046ac00 ResetTargets (98 bytes)</title></rect>
 <rect width="5.74" height="6.03" x="680.44" y="283.16" class="todo"><title>0x00475720 IncreaseScreenSize (98 bytes)</title></rect>
 <rect width="5.74" height="6.03" x="689.18" y="283.16" class="todo"><title>0x00475790 DecreaseScreenSize (98 bytes)</title></rect>
 <rect width="5.68" height="6.03" x="697.92" y="283.16" class="named"><title>0x004169c0 AlertAllGuards (97 bytes)</title></rect>
