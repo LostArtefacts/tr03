@@ -1512,7 +1512,7 @@ address,size,name,symbol
 0x004b5db0,23,__fpmath,
 0x004b5dd0,56,Func4b5dd0,
 0x004b5e10,39,__ftol,
-0x004b5e40,11,Func4b5e40,
+0x004b5e40,11,abs,_abs
 0x004b5e50,61,printf,_printf
 0x004b5e90,104,sprintf,_sprintf
 0x004b5f00,56,_strncmp,
