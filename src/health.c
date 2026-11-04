@@ -18,3 +18,11 @@ void RemoveAmmoText(void)
         ammotext = NULL;
     }
 }
+
+void InitialisePickUpDisplay(void)
+{
+    int i;
+
+    for (i = 0; i < NUM_PU; i++)
+        pickups[i].duration = 0;
+}

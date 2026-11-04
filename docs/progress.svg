@@ -44,11 +44,11 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="7.38" height="12" x="130" y="1.50" class="named"/>
-<rect width="194.62" height="12" x="137.38" y="1.50" class="todo"/>
+<rect width="7.52" height="12" x="130" y="1.50" class="named"/>
+<rect width="194.48" height="12" x="137.52" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">3.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">54/1478</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">55/1478</text>
 <rect width="0.58" height="12" x="130" y="18.50" class="named"/>
 <rect width="201.42" height="12" x="130.58" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
@@ -57,10 +57,10 @@
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">3.65% (54)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.35% (1424)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">3.72% (55)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">96.28% (1423)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="27.29" height="6" x="0" y="0" class="named"/>
-<rect width="719.71" height="6" x="27.29" y="0" class="todo"/>
+<rect width="27.80" height="6" x="0" y="0" class="named"/>
+<rect width="719.20" height="6" x="27.80" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -487,7 +487,7 @@
 <rect width="12" height="12" x="315" y="120" class="todo"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="120" class="named"><title>0x00434bd0 RemoveAmmoText (29 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="120" class="todo"><title>0x00434bf0 DrawAmmoInfo (305 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="120" class="todo"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="120" class="named"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="120" class="todo"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="120" class="todo"><title>0x00434db0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="120" class="todo"><title>0x00434e30 DrawModeInfo (44 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.29%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.71%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="2.13" height="6" x="0" y="0" class="named"/>
-<rect width="744.87" height="6" x="2.13" y="0" class="todo"/>
+<rect width="2.15" height="6" x="0" y="0" class="named"/>
+<rect width="744.85" height="6" x="2.15" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2951,7 +2951,7 @@
 <rect width="0.19" height="0.53" x="725.31" y="439.19" class="todo"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
 <rect width="0.19" height="0.53" x="725.31" y="442.73" class="todo"><title>0x004b3930 DD_UnlockSurface (22 bytes)</title></rect>
 <rect width="0.19" height="0.37" x="725.31" y="446.26" class="named"><title>0x0042fa50 TubeTrain (21 bytes)</title></rect>
-<rect width="0.19" height="0.37" x="725.31" y="449.63" class="todo"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
+<rect width="0.19" height="0.37" x="725.31" y="449.63" class="named"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="0.25" height="0.31" x="728.50" y="428.44" class="todo"><title>0x00462df0 ResetSG (21 bytes)</title></rect>
 <rect width="0.25" height="0.31" x="731.75" y="428.44" class="todo"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
 <rect width="0.10" height="0.31" x="734.99" y="428.44" class="todo"><title>0x0044edb0 lara_as_dive (20 bytes)</title></rect>
