@@ -34,3 +34,16 @@ void T_InitPrint(void)
     }
     T_numStrings = 0;
 }
+
+void T_ChangeText(TEXTSTRING *textString, char *string)
+{
+    if (string == NULL || textString == NULL)
+        return;
+
+    if (textString->flags & T_ACTIVE)
+    {
+        if (T_GetStringLen(string) > MAX_STRING_SIZE)
+            string[MAX_STRING_SIZE - 1] = 0;
+        memcpy(textString->string, string, MAX_STRING_SIZE);
+    }
+}
