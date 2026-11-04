@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="188.72" height="12" x="0" y="0" class="named"><title>596 · 40.32%</title></rect>
-<rect width="279.28" height="12" x="188.72" y="0" class="todo"><title>882 · 59.68%</title></rect>
+<rect width="189.04" height="12" x="0" y="0" class="named"><title>597 · 40.39%</title></rect>
+<rect width="278.96" height="12" x="189.04" y="0" class="todo"><title>881 · 59.61%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">40.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">596</tspan> · <tspan class="todo">882</tspan></text>
+<text text-anchor="end" x="648" y="7.50">40.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">597</tspan> · <tspan class="todo">881</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="57.03" height="12" x="0" y="0" class="named"><title>81 KB · 12.19%</title></rect>
-<rect width="410.97" height="12" x="57.03" y="0" class="todo"><title>584 KB · 87.81%</title></rect>
+<rect width="57.32" height="12" x="0" y="0" class="named"><title>81 KB · 12.25%</title></rect>
+<rect width="410.68" height="12" x="57.32" y="0" class="todo"><title>583 KB · 87.75%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">12.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">81 KB</tspan> · <tspan class="todo">584 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">81 KB</tspan> · <tspan class="todo">583 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1076,7 +1076,7 @@
 <rect width="12" height="12" x="165" y="300" class="named"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="300" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="300" class="named"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="300" class="todo"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="300" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="300" class="todo"><title>0x0046e890 FallingBlock (276 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="300" class="named"><title>0x0046e9b0 FallingBlockFloor (72 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="300" class="named"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
@@ -1965,7 +1965,7 @@
 <rect width="12.58" height="11.83" x="431.46" y="130.87" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12.46" height="11.83" x="447.04" y="130.87" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="12.43" height="11.83" x="462.51" y="130.87" class="todo"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
-<rect width="12.40" height="11.83" x="477.94" y="130.87" class="todo"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
+<rect width="12.40" height="11.83" x="477.94" y="130.87" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="12.38" height="11.83" x="493.35" y="130.87" class="todo"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="12.38" height="11.83" x="508.72" y="130.87" class="todo"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
 <rect width="12.32" height="11.83" x="524.10" y="130.87" class="todo"><title>0x00449890 lara_col_climbdown (413 bytes)</title></rect>

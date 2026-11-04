@@ -258,6 +258,46 @@ int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z)
 void TriggerPendulumFlame(sint16 item_number);
 void LaraBurn(void);
 
+void Pendulum(sint16 item_number)
+{
+    int x, y, z;
+    sint16 d;
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    PHD_VECTOR pos;
+
+    item = &items[item_number];
+    if (!TriggerActive(item))
+        return;
+
+    if (item->touch_bits) {
+        lara_item->hit_points -= 50;
+        lara_item->hit_status = 1;
+        if (item->item_flags[0] == 0) {
+            x = lara_item->pos.x_pos + (GetRandomControl() - 16384) / 256;
+            z = lara_item->pos.z_pos + (GetRandomControl() - 16384) / 256;
+            y = lara_item->pos.y_pos - GetRandomControl() / 44;
+            d = (GetRandomControl() - 16384) / 8 + lara_item->pos.y_rot;
+            DoBloodSplat(x, y, z, lara_item->speed, d, lara_item->room_number);
+        } else {
+            LaraBurn();
+        }
+    }
+
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &item->room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+    if (item->item_flags[0]) {
+        TriggerPendulumFlame(item_number);
+        pos.x = pos.z = 0;
+        pos.y = -512;
+        GetJointAbsPosition(item, &pos, 5);
+        TriggerDynamic(pos.x, pos.y, pos.z, 11, 24 + (GetRandomControl() & 7), 12 + (GetRandomControl() & 3), 0);
+    }
+
+    AnimateItem(item);
+}
+
 void FallingBlockFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
 {
     sint32 origin;
