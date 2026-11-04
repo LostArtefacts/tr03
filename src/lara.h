@@ -5,6 +5,11 @@
 #include "items.h"
 #include "larafire.h"
 
+#define ONE_DEGREE 182
+#define FASTFALL_SPEED 128
+#define LARA_HITE 762
+#define LARA_DUCK_HEIGHT 400
+
 enum lara_gun_states {
     LG_ARMLESS,
     LG_HANDSBUSY,

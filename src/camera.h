@@ -6,6 +6,10 @@
 
 #define GAME_FOV 80
 
+#define FOLLOW_CENTRE 1
+#define NO_CHUNKY 2
+#define CHASE_OBJECT 3
+
 typedef enum camera_type {
     CHASE_CAMERA,
     FIXED_CAMERA,

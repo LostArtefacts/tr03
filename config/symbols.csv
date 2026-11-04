@@ -1925,6 +1925,8 @@ address,size,name,symbol
 0x004c805c,4,BarsWidth,_BarsWidth
 0x004c8848,,rcossin_tbl,_rcossin_tbl
 0x004cd878,48,saved_levels,_saved_levels
+0x004cd8a8,4,rand_1,_rand_1
+0x004cd8ac,4,rand_2,_rand_2
 0x004cd8f4,4,GammaOption,_GammaOption
 0x004cd8fc,2,DumpX,_DumpX
 0x004cd8fe,2,DumpY,_DumpY
@@ -2004,6 +2006,7 @@ address,size,name,symbol
 0x00625450,,G_GouraudPalette,_G_GouraudPalette
 0x00625850,,v_buffer,_v_buffer
 0x00625df0,4,GlobalAlpha,_GlobalAlpha
+0x00625f1c,1,strut_fall,_strut_fall
 0x00625f3c,1,camerasnaps,_camerasnaps
 0x00625f40,2,cinematic_level,_cinematic_level
 0x00625f44,4,actual_current_frame,_actual_current_frame
@@ -2061,6 +2064,7 @@ address,size,name,symbol
 0x0062643c,4,Inv_downArrow1,_Inv_downArrow1
 0x00626440,4,Inv_downArrow2,_Inv_downArrow2
 0x00626444,4,inputDB,_inputDB
+0x00626448,4,oldInputDB,_oldInputDB
 0x00626450,1,bInvItemsOff,_bInvItemsOff
 0x00626454,2,Inventory_Displaying,_Inventory_Displaying
 0x00626458,32,Inventory_ExtraData,_Inventory_ExtraData

@@ -8,6 +8,10 @@ extern "C" {
 #include "../types.h"
 
 void S_CDPlay(sint16 track, int mode);
+sint32 GetRandomControl(void);
+void SeedRandomControl(sint32 seed);
+sint32 GetRandomDraw(void);
+void SeedRandomDraw(sint32 seed);
 
 #ifdef __cplusplus
 }
