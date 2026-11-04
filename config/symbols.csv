@@ -1913,6 +1913,7 @@ address,size,name,symbol
 0x004c70b0,2,Option_Music_Volume,_Option_Music_Volume
 0x004c70b8,42,LevelSecrets,_LevelSecrets
 0x004c7280,,weapons,_weapons
+0x004c7428,,HoldStates,_HoldStates
 0x004c7448,4,mycoll,_mycoll
 0x004c7c78,110,T_textSpacing,_T_textSpacing
 0x004c7ce8,95,T_remapASCII,_T_remapASCII
