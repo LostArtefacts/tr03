@@ -382,3 +382,22 @@ sint16 SameZone(CREATURE_INFO *creature, ITEM_INFO *target_item)
     else
         return 0;
 }
+
+void AdjustStopperFlag(ITEM_INFO *item, sint32 dir, sint32 set)
+{
+    ROOM_INFO *r;
+    sint16 room_number;
+    sint32 x, z;
+
+    x = item->pos.x_pos;
+    z = item->pos.z_pos;
+    r = &room[item->room_number];
+    r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size].stopper = set;
+
+    x = item->pos.x_pos + ((1024 * phd_sin(dir)) >> W2V_SHIFT);
+    z = item->pos.z_pos + ((1024 * phd_cos(dir)) >> W2V_SHIFT);
+    room_number = item->room_number;
+    GetFloor(x, item->pos.y_pos, z, &room_number);
+    r = &room[room_number];
+    r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size].stopper = set;
+}
