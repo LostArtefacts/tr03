@@ -13,3 +13,8 @@ void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
     coll->facing = lara.move_angle;
     GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_HITE);
 }
+
+void lara_col_all4turnl(ITEM_INFO *item, COLL_INFO *coll)
+{
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_DUCK_HEIGHT);
+}
