@@ -321,6 +321,38 @@ void lara_as_crawlb(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_crawlb(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    coll->radius = 250;
+    coll->bad_pos = STEP_L - 1;
+    coll->bad_neg = -(STEP_L - 1);
+    coll->bad_ceiling = LARA_DUCK_HEIGHT;
+    coll->slopes_are_walls = 1;
+    coll->slopes_are_pits = 1;
+    coll->facing = lara.move_angle = item->pos.y_rot - 32768;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_DUCK_HEIGHT);
+    if (LaraDeflectEdgeDuck(item, coll))
+    {
+        item->current_anim_state = AS_ALL4S;
+        item->goal_anim_state = AS_ALL4S;
+        if (item->anim_number != 263)
+        {
+            item->anim_number = 263;
+            item->frame_number = GF(263, 0);
+        }
+        return;
+    }
+    if (LaraFallen(item, coll))
+    {
+        lara.gun_status = LG_ARMLESS;
+        return;
+    }
+    ShiftItem(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+    lara.move_angle = item->pos.y_rot;
+}
+
 int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down)
 {
     int x, y, z;
