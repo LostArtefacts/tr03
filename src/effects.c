@@ -154,6 +154,20 @@ void ControlLaraAlarm(sint16 item_number)
         SoundEffect(335, &item->pos, 0);
 }
 
+void ControlBirdTweeter(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->object_number == BIRD_TWEETER)
+    {
+        if (GetRandomControl() < 0x400)
+            SoundEffect(316, &item->pos, 0);
+    }
+    else if (GetRandomControl() < 0x100)
+        SoundEffect(329, &item->pos, 0);
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
