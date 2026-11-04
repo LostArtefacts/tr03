@@ -49,5 +49,6 @@ void Exercise7_106(ITEM_INFO *item);
 void Exercise7_86(ITEM_INFO *item);
 void Exercise8_93(ITEM_INFO *item);
 void Exercise8_109Sp(ITEM_INFO *item);
+void Exercise8_87(ITEM_INFO *item);
 
 #endif
