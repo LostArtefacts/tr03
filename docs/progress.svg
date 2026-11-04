@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="133.62" height="12" x="0" y="0" class="named"><title>422 · 28.55%</title></rect>
-<rect width="334.38" height="12" x="133.62" y="0" class="todo"><title>1056 · 71.45%</title></rect>
+<rect width="133.94" height="12" x="0" y="0" class="named"><title>423 · 28.62%</title></rect>
+<rect width="334.06" height="12" x="133.94" y="0" class="todo"><title>1055 · 71.38%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">28.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">422</tspan> · <tspan class="todo">1056</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">423</tspan> · <tspan class="todo">1055</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="21.16" height="12" x="0" y="0" class="named"><title>30 KB · 4.52%</title></rect>
-<rect width="446.84" height="12" x="21.16" y="0" class="todo"><title>634 KB · 95.48%</title></rect>
+<rect width="21.28" height="12" x="0" y="0" class="named"><title>30 KB · 4.55%</title></rect>
+<rect width="446.72" height="12" x="21.28" y="0" class="todo"><title>634 KB · 95.45%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">30 KB</tspan> · <tspan class="todo">634 KB</tspan></text>
@@ -549,7 +549,7 @@
 <rect width="12" height="12" x="510" y="135" class="named"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="135" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="135" class="named"><title>0x0043af60 AddActiveItem (105 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="135" class="todo"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="135" class="named"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="135" class="named"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="135" class="named"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="135" class="named"><title>0x0043b130 CreateEffect (108 bytes)</title></rect>
@@ -2288,7 +2288,7 @@
 <rect width="7.78" height="7.77" x="522.89" y="364.25" class="todo"><title>0x0048ab50 S_AnimateTextures (171 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="375.02" class="todo"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="385.75" class="todo"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
-<rect width="7.78" height="7.72" x="522.89" y="396.47" class="todo"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
+<rect width="7.78" height="7.72" x="522.89" y="396.47" class="named"><title>0x0043afd0 ItemNewRoom (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="407.19" class="named"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="417.92" class="todo"><title>0x0044a700 find_target_point (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="428.64" class="todo"><title>0x00496a70 MMXBlit32to16 (170 bytes)</title></rect>
