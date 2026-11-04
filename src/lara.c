@@ -109,3 +109,11 @@ void lara_as_splat(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
 }
+
+void lara_as_slide(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.flags = NO_CHUNKY;
+    camera.target_elevation = -45 * ONE_DEGREE;
+    if ((input & IN_JUMP) && !(input & IN_BACK))
+        item->goal_anim_state = AS_FORWARDJUMP;
+}
