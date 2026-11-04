@@ -251,3 +251,10 @@ void lara_as_gymnast(ITEM_INFO *item, COLL_INFO *coll)
     coll->enable_spaz = 0;
     coll->enable_baddie_push = 0;
 }
+
+void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.flags = FOLLOW_CENTRE;
+}
