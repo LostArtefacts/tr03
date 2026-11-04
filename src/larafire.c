@@ -20,6 +20,25 @@ int CheckForHoldingState(int state)
     return 0;
 }
 
+sint16 *GetBestFrame(ITEM_INFO *item);
+
+void find_target_point(ITEM_INFO *item, GAME_VECTOR *target)
+{
+    sint16 *bounds;
+    sint32 x, y, z, c, s;
+
+    bounds = GetBestFrame(item);
+    x = (sint32)((bounds[0] + bounds[1]) / 2);
+    y = (sint32)(bounds[2] + (bounds[3] - bounds[2]) / 3);
+    z = (sint32)((bounds[4] + bounds[5]) / 2);
+    c = phd_cos(item->pos.y_rot);
+    s = phd_sin(item->pos.y_rot);
+    target->x = item->pos.x_pos + ((c * x + s * z) >> W2V_SHIFT);
+    target->y = item->pos.y_pos + y;
+    target->z = item->pos.z_pos + ((c * z - s * x) >> W2V_SHIFT);
+    target->room_number = item->room_number;
+}
+
 void SmashItem(sint16 item_number, int weapon_type)
 {
     ITEM_INFO *item;
