@@ -210,3 +210,13 @@ void QuadFinished(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void Exercise1_105(ITEM_INFO *item)
+{
+    if (ExerciseNumber == 0)
+    {
+        S_CDPlay(105 + 3, 0);
+        ExerciseNumber++;
+    }
+    flipeffect = -1;
+}

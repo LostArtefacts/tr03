@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="3.83" height="12" x="130" y="1.50" class="named"/>
-<rect width="198.17" height="12" x="133.83" y="1.50" class="todo"/>
+<rect width="3.96" height="12" x="130" y="1.50" class="named"/>
+<rect width="198.04" height="12" x="133.96" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">1.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">28/1478</text>
-<rect width="0.28" height="12" x="130" y="18.50" class="named"/>
-<rect width="201.72" height="12" x="130.28" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">2.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">29/1478</text>
+<rect width="0.29" height="12" x="130" y="18.50" class="named"/>
+<rect width="201.71" height="12" x="130.29" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">1k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.89% (28)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.11% (1450)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.96% (29)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">98.04% (1449)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="14.15" height="6" x="0" y="0" class="named"/>
-<rect width="732.85" height="6" x="14.15" y="0" class="todo"/>
+<rect width="14.66" height="6" x="0" y="0" class="named"/>
+<rect width="732.34" height="6" x="14.66" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -432,7 +432,7 @@
 <rect width="12" height="12" x="240" y="105" class="named"><title>0x0042f5d0 QuadStart (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="105" class="named"><title>0x0042f600 QuadStop (38 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="105" class="named"><title>0x0042f630 QuadFinished (86 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="105" class="todo"><title>0x0042f690 Exercise1_105 (44 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="105" class="named"><title>0x0042f690 Exercise1_105 (44 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="105" class="todo"><title>0x0042f6c0 Exercise1_104 (44 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="105" class="todo"><title>0x0042f6f0 Exercise2_112 (44 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="105" class="todo"><title>0x0042f720 Exercise2_83 (44 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.14%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.86%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.02" height="6" x="0" y="0" class="named"/>
-<rect width="745.98" height="6" x="1.02" y="0" class="todo"/>
+<rect width="1.07" height="6" x="0" y="0" class="named"/>
+<rect width="745.93" height="6" x="1.07" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2800,7 +2800,7 @@
 <rect width="1.86" height="1.74" x="707.13" y="395.41" class="todo"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="711.99" y="395.41" class="named"><title>0x0042eed0 ChandelierFX (44 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="716.74" y="395.41" class="named"><title>0x0042f5d0 QuadStart (44 bytes)</title></rect>
-<rect width="1.75" height="1.74" x="721.49" y="395.41" class="todo"><title>0x0042f690 Exercise1_105 (44 bytes)</title></rect>
+<rect width="1.75" height="1.74" x="721.49" y="395.41" class="named"><title>0x0042f690 Exercise1_105 (44 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="726.24" y="395.41" class="todo"><title>0x0042f6c0 Exercise1_104 (44 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="731" y="395.41" class="todo"><title>0x0042f6f0 Exercise2_112 (44 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="735.75" y="395.41" class="todo"><title>0x0042f720 Exercise2_83 (44 bytes)</title></rect>
