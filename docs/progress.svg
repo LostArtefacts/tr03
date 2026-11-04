@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="27.06" height="12" x="0" y="0" class="named"><title>198 · 13.40%</title></rect>
-<rect width="174.94" height="12" x="27.06" y="0" class="todo"><title>1280 · 86.60%</title></rect>
+<rect width="27.20" height="12" x="0" y="0" class="named"><title>199 · 13.46%</title></rect>
+<rect width="174.80" height="12" x="27.20" y="0" class="todo"><title>1279 · 86.54%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">13.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">198</tspan> · <tspan class="todo">1280</tspan></text>
+<text text-anchor="end" x="382" y="7.50">13.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">199</tspan> · <tspan class="todo">1279</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.82" height="12" x="0" y="0" class="named"><title>9 KB · 1.39%</title></rect>
-<rect width="199.18" height="12" x="2.82" y="0" class="todo"><title>655 KB · 98.61%</title></rect>
+<rect width="2.83" height="12" x="0" y="0" class="named"><title>9 KB · 1.40%</title></rect>
+<rect width="199.17" height="12" x="2.83" y="0" class="todo"><title>655 KB · 98.60%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">9 KB</tspan> · <tspan class="todo">655 KB</tspan></text>
@@ -509,7 +509,7 @@
 <rect width="12" height="12" x="660" y="120" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="120" class="todo"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="120" class="todo"><title>0x00438530 Inv_GetItemOption (221 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="120" class="todo"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="120" class="named"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="120" class="todo"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="120" class="todo"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="135" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
@@ -2853,7 +2853,7 @@
 <rect width="3.79" height="3.45" x="729.74" y="368.50" class="todo"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="736.53" y="368.50" class="todo"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
 <rect width="3.69" height="3.45" x="743.31" y="368.50" class="named"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
-<rect width="3.87" height="3.28" x="675.06" y="374.95" class="todo"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
+<rect width="3.87" height="3.28" x="675.06" y="374.95" class="named"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="3.87" height="3.28" x="681.93" y="374.95" class="named"><title>0x0044d8a0 InitialiseLaraLoad (36 bytes)</title></rect>
 <rect width="3.87" height="3.28" x="688.80" y="374.95" class="todo"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
 <rect width="3.87" height="3.28" x="695.67" y="374.95" class="named"><title>0x0046b0c0 T_GetStringLen (36 bytes)</title></rect>
