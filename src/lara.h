@@ -12,6 +12,21 @@
 #define LARA_RAD 100
 #define STEPUP_HEIGHT ((STEP_L * 3) / 2)
 
+enum lara_gun_types {
+    LG_UNARMED,
+    LG_PISTOLS,
+    LG_MAGNUMS,
+    LG_UZIS,
+    LG_SHOTGUN,
+    LG_M16,
+    LG_ROCKET,
+    LG_GRENADE,
+    LG_HARPOON,
+    LG_FLARE,
+    LG_SKIDOO,
+    NUM_WEAPONS
+};
+
 enum lara_gun_states {
     LG_ARMLESS,
     LG_HANDSBUSY,
