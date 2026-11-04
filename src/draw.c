@@ -17,3 +17,11 @@ void phd_PutPolygons(sint16 *objptr, int clip);
 void gar_RotYXZsuperpack(sint16 **pprot, int skip);
 void InterpolateMatrix(void);
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+
+void InitInterpolate(int frac, int rate)
+{
+    IM_frac = frac;
+    IM_rate = rate;
+    IMptr = IMstack;
+    S_LongMemCpy(IMstack, phd_mxptr, 12);
+}
