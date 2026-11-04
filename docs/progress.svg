@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="135.84" height="12" x="0" y="0" class="named"><title>429 · 29.03%</title></rect>
-<rect width="332.16" height="12" x="135.84" y="0" class="todo"><title>1049 · 70.97%</title></rect>
+<rect width="136.16" height="12" x="0" y="0" class="named"><title>430 · 29.09%</title></rect>
+<rect width="331.84" height="12" x="136.16" y="0" class="todo"><title>1048 · 70.91%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">29.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">429</tspan> · <tspan class="todo">1049</tspan></text>
+<text text-anchor="end" x="648" y="7.50">29.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">430</tspan> · <tspan class="todo">1048</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="21.97" height="12" x="0" y="0" class="named"><title>31 KB · 4.69%</title></rect>
-<rect width="446.03" height="12" x="21.97" y="0" class="todo"><title>633 KB · 95.31%</title></rect>
+<rect width="22.09" height="12" x="0" y="0" class="named"><title>31 KB · 4.72%</title></rect>
+<rect width="445.91" height="12" x="22.09" y="0" class="todo"><title>633 KB · 95.28%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">31 KB</tspan> · <tspan class="todo">633 KB</tspan></text>
@@ -267,7 +267,7 @@
 <rect width="12" height="12" x="30" y="60" class="todo"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="60" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="60" class="todo"><title>0x00420590 AnimateItem (931 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="60" class="todo"><title>0x00420970 GetChange (171 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="60" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="60" class="todo"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="60" class="todo"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="60" class="todo"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
@@ -2284,7 +2284,7 @@
 <rect width="7.78" height="7.82" x="522.89" y="321.08" class="todo"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
 <rect width="7.78" height="7.82" x="522.89" y="331.90" class="todo"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="342.71" class="todo"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
-<rect width="7.78" height="7.77" x="522.89" y="353.48" class="todo"><title>0x00420970 GetChange (171 bytes)</title></rect>
+<rect width="7.78" height="7.77" x="522.89" y="353.48" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="7.78" height="7.77" x="522.89" y="364.25" class="todo"><title>0x0048ab50 S_AnimateTextures (171 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="375.02" class="todo"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
 <rect width="7.78" height="7.72" x="522.89" y="385.75" class="todo"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
