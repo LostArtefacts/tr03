@@ -68,3 +68,14 @@ void T_RemoveBackground(TEXTSTRING *textString)
     if (textString)
         textString->flags &= ~T_ADDBACKGROUND;
 }
+
+void T_AddOutline(TEXTSTRING *textString, sint16 ok, sint16 colour, GOURAUD_OUTLINE *gourptr, uint16 flags)
+{
+    if (textString)
+    {
+        textString->flags |= T_ADDOUTLINE;
+        textString->outlColour = colour;
+        textString->outlGour = gourptr;
+        textString->outlflags = flags;
+    }
+}

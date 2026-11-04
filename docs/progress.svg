@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="16.67" height="12" x="130" y="1.50" class="named"/>
-<rect width="185.33" height="12" x="146.67" y="1.50" class="todo"/>
+<rect width="16.81" height="12" x="130" y="1.50" class="named"/>
+<rect width="185.19" height="12" x="146.81" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">8.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">122/1478</text>
-<rect width="1.29" height="12" x="130" y="18.50" class="named"/>
-<rect width="200.71" height="12" x="131.29" y="18.50" class="todo"/>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">123/1478</text>
+<rect width="1.30" height="12" x="130" y="18.50" class="named"/>
+<rect width="200.70" height="12" x="131.30" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">4k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">8.25% (122)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.75% (1356)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">8.32% (123)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.68% (1355)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="61.66" height="6" x="0" y="0" class="named"/>
-<rect width="685.34" height="6" x="61.66" y="0" class="todo"/>
+<rect width="62.17" height="6" x="0" y="0" class="named"/>
+<rect width="684.83" height="6" x="62.17" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1031,7 +1031,7 @@
 <rect width="12" height="12" x="225" y="285" class="named"><title>0x0046add0 T_FlashText (43 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="285" class="todo"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="285" class="named"><title>0x0046ae90 T_RemoveBackground (16 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="285" class="todo"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="285" class="named"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="285" class="todo"><title>0x0046aed0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="285" class="todo"><title>0x0046aee0 T_CentreH (30 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="285" class="todo"><title>0x0046af00 T_CentreV (30 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.64%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.36%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="4.76" height="6" x="0" y="0" class="named"/>
-<rect width="742.24" height="6" x="4.76" y="0" class="todo"/>
+<rect width="4.81" height="6" x="0" y="0" class="named"/>
+<rect width="742.19" height="6" x="4.81" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2836,7 +2836,7 @@
 <rect width="1.43" height="1.85" x="697.24" y="429.08" class="todo"><title>0x00482990 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="1.43" height="1.85" x="697.24" y="433.93" class="todo"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
 <rect width="1.43" height="1.74" x="697.24" y="438.79" class="named"><title>0x0043fa40 lara_as_dashdive (41 bytes)</title></rect>
-<rect width="1.43" height="1.74" x="697.24" y="443.53" class="todo"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
+<rect width="1.43" height="1.74" x="697.24" y="443.53" class="named"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
 <rect width="1.43" height="1.74" x="697.24" y="448.26" class="todo"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
 <rect width="1.57" height="1.59" x="701.67" y="404.82" class="todo"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
 <rect width="1.57" height="1.48" x="701.67" y="409.41" class="named"><title>0x0043f1c0 lara_col_all4turnl (40 bytes)</title></rect>
