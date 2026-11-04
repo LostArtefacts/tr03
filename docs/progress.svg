@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="112.41" height="12" x="0" y="0" class="named"><title>355 · 24.02%</title></rect>
-<rect width="355.59" height="12" x="112.41" y="0" class="todo"><title>1123 · 75.98%</title></rect>
+<rect width="112.73" height="12" x="0" y="0" class="named"><title>356 · 24.09%</title></rect>
+<rect width="355.27" height="12" x="112.73" y="0" class="todo"><title>1122 · 75.91%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">24.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">355</tspan> · <tspan class="todo">1123</tspan></text>
+<text text-anchor="end" x="648" y="7.50">24.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">356</tspan> · <tspan class="todo">1122</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="14.94" height="12" x="0" y="0" class="named"><title>21 KB · 3.19%</title></rect>
-<rect width="453.06" height="12" x="14.94" y="0" class="todo"><title>643 KB · 96.81%</title></rect>
+<rect width="15.02" height="12" x="0" y="0" class="named"><title>21 KB · 3.21%</title></rect>
+<rect width="452.98" height="12" x="15.02" y="0" class="todo"><title>643 KB · 96.79%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">21 KB</tspan> · <tspan class="todo">643 KB</tspan></text>
@@ -240,7 +240,7 @@
 <rect width="12" height="12" x="375" y="45" class="named"><title>0x0041c3e0 InitialiseCleaner (81 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="45" class="todo"><title>0x0041c440 CleanerControl (3171 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="45" class="todo"><title>0x0041d0b0 TriggerElectricSparks_cleaner (350 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="45" class="todo"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="45" class="named"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="45" class="todo"><title>0x0041d290 CobraControl (608 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="45" class="todo"><title>0x0041d500 GetCollisionInfo (3061 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="45" class="named"><title>0x0041e140 FindGridShift (47 bytes)</title></rect>
@@ -2452,7 +2452,7 @@
 <rect width="6.63" height="6.07" x="564.61" y="440.93" class="todo"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
 <rect width="6.37" height="6.33" x="574.24" y="273.84" class="todo"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
 <rect width="6.37" height="6.33" x="583.61" y="273.84" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
-<rect width="6.31" height="6.33" x="592.98" y="273.84" class="todo"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
+<rect width="6.31" height="6.33" x="592.98" y="273.84" class="named"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="602.29" y="273.84" class="todo"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="611.60" y="273.84" class="named"><title>0x004452c0 ready_shotgun (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="620.92" y="273.84" class="named"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
