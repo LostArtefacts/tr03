@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="103.23" height="12" x="0" y="0" class="named"><title>326 · 22.06%</title></rect>
-<rect width="364.77" height="12" x="103.23" y="0" class="todo"><title>1152 · 77.94%</title></rect>
+<rect width="103.54" height="12" x="0" y="0" class="named"><title>327 · 22.12%</title></rect>
+<rect width="364.46" height="12" x="103.54" y="0" class="todo"><title>1151 · 77.88%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">22.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">326</tspan> · <tspan class="todo">1152</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">327</tspan> · <tspan class="todo">1151</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="12.82" height="12" x="0" y="0" class="named"><title>18 KB · 2.74%</title></rect>
-<rect width="455.18" height="12" x="12.82" y="0" class="todo"><title>646 KB · 97.26%</title></rect>
+<rect width="12.89" height="12" x="0" y="0" class="named"><title>18 KB · 2.75%</title></rect>
+<rect width="455.11" height="12" x="12.89" y="0" class="todo"><title>646 KB · 97.25%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">2.7%</text>
+<text text-anchor="end" x="648" y="24.50">2.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">18 KB</tspan> · <tspan class="todo">646 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -803,7 +803,7 @@
 <rect width="12" height="12" x="570" y="210" class="todo"><title>0x0044e1c0 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="210" class="named"><title>0x0044e230 lara_as_surfback (94 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="210" class="named"><title>0x0044e290 lara_as_surfleft (96 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="210" class="todo"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="210" class="named"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="210" class="todo"><title>0x0044e350 lara_as_surftread (185 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="210" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="210" class="todo"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
@@ -2510,7 +2510,7 @@
 <rect width="5.83" height="5.82" x="583.19" y="301.07" class="named"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="309.89" class="named"><title>0x0044af50 WeaponObject (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="318.71" class="named"><title>0x0044e290 lara_as_surfleft (96 bytes)</title></rect>
-<rect width="5.83" height="5.82" x="583.19" y="327.53" class="todo"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
+<rect width="5.83" height="5.82" x="583.19" y="327.53" class="named"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="336.34" class="todo"><title>0x00451640 S_DrawLondonBoss (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="345.16" class="todo"><title>0x00481d50 LoadCameras (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="353.98" class="todo"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
