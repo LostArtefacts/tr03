@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="77.58" height="12" x="0" y="0" class="named"><title>245 · 16.58%</title></rect>
-<rect width="390.42" height="12" x="77.58" y="0" class="todo"><title>1233 · 83.42%</title></rect>
+<rect width="77.89" height="12" x="0" y="0" class="named"><title>246 · 16.64%</title></rect>
+<rect width="390.11" height="12" x="77.89" y="0" class="todo"><title>1232 · 83.36%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">16.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">245</tspan> · <tspan class="todo">1233</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">246</tspan> · <tspan class="todo">1232</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.24" height="12" x="0" y="0" class="named"><title>12 KB · 1.76%</title></rect>
-<rect width="459.76" height="12" x="8.24" y="0" class="todo"><title>652 KB · 98.24%</title></rect>
+<rect width="8.31" height="12" x="0" y="0" class="named"><title>12 KB · 1.78%</title></rect>
+<rect width="459.69" height="12" x="8.31" y="0" class="todo"><title>652 KB · 98.22%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">12 KB</tspan> · <tspan class="todo">652 KB</tspan></text>
@@ -775,7 +775,7 @@
 <rect width="12" height="12" x="150" y="210" class="todo"><title>0x0044a890 FireWeapon (1394 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="210" class="todo"><title>0x0044ae20 HitTarget (185 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="210" class="todo"><title>0x0044aee0 SmashItem (106 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="210" class="todo"><title>0x0044af50 WeaponObject (96 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="210" class="named"><title>0x0044af50 WeaponObject (96 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="210" class="todo"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="210" class="todo"><title>0x0044b940 DoFlareLight (431 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="210" class="todo"><title>0x0044baf0 DoFlareInHand (218 bytes)</title></rect>
@@ -2508,7 +2508,7 @@
 <rect width="5.68" height="6.03" x="741.32" y="283.16" class="todo"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="5.83" height="5.88" x="583.19" y="292.20" class="todo"><title>0x004b42d4 Func4b42d4 (97 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="301.07" class="todo"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
-<rect width="5.83" height="5.82" x="583.19" y="309.89" class="todo"><title>0x0044af50 WeaponObject (96 bytes)</title></rect>
+<rect width="5.83" height="5.82" x="583.19" y="309.89" class="named"><title>0x0044af50 WeaponObject (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="318.71" class="todo"><title>0x0044e290 lara_as_surfleft (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="327.53" class="todo"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="5.83" height="5.82" x="583.19" y="336.34" class="todo"><title>0x00451640 S_DrawLondonBoss (96 bytes)</title></rect>
