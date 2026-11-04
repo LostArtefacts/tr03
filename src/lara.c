@@ -496,6 +496,17 @@ void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
     camera.flags = FOLLOW_CENTRE;
 }
 
+void extra_as_breath(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->anim_number = BREATH_A;
+    item->frame_number = BREATH_F;
+    item->current_anim_state = item->goal_anim_state = AS_STOP;
+    lara.gun_status = LG_ARMLESS;
+    camera.type = CHASE_CAMERA;
+    AlterFOV(GAME_FOV * ONE_DEGREE);
+    lara.extra_anim = 0;
+}
+
 void extra_as_airlock(ITEM_INFO *item, COLL_INFO *coll)
 {
     camera.target_angle = 80 * ONE_DEGREE;
