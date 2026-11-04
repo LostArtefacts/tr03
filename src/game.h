@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <stddef.h>
+
 #include "types.h"
 #include "items.h"
 #include "lara.h"

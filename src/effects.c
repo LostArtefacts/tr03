@@ -11,6 +11,12 @@ void turn180_effect(ITEM_INFO *item)
     item->pos.x_rot = -item->pos.x_rot;
 }
 
+void BoilerFX(ITEM_INFO *item)
+{
+    SoundEffect(338, NULL, 0);
+    flipeffect = -1;
+}
+
 void lara_hands_free(ITEM_INFO *item)
 {
     lara.gun_status = LG_ARMLESS;
