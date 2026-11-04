@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="158.96" height="12" x="0" y="0" class="named"><title>502 · 33.96%</title></rect>
-<rect width="309.04" height="12" x="158.96" y="0" class="todo"><title>976 · 66.04%</title></rect>
+<rect width="159.27" height="12" x="0" y="0" class="named"><title>503 · 34.03%</title></rect>
+<rect width="308.73" height="12" x="159.27" y="0" class="todo"><title>975 · 65.97%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">34.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">502</tspan> · <tspan class="todo">976</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">503</tspan> · <tspan class="todo">975</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="30.42" height="12" x="0" y="0" class="named"><title>43 KB · 6.50%</title></rect>
-<rect width="437.58" height="12" x="30.42" y="0" class="todo"><title>621 KB · 93.50%</title></rect>
+<rect width="30.56" height="12" x="0" y="0" class="named"><title>43 KB · 6.53%</title></rect>
+<rect width="437.44" height="12" x="30.56" y="0" class="todo"><title>621 KB · 93.47%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">43 KB</tspan> · <tspan class="todo">621 KB</tspan></text>
@@ -230,7 +230,7 @@
 <rect width="12" height="12" x="225" y="45" class="todo"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="45" class="todo"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="45" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="45" class="todo"><title>0x0041b1d0 ControlCinematicPlayer (199 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="45" class="named"><title>0x0041b1d0 ControlCinematicPlayer (199 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="45" class="todo"><title>0x0041b2a0 InGameCinematicCamera (582 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="45" class="todo"><title>0x0041b4f0 ClawmuteControl (1727 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="45" class="todo"><title>0x0041bbe0 TriggerPlasma_clawmute (447 bytes)</title></rect>
@@ -2237,7 +2237,7 @@
 <rect width="8.51" height="8.30" x="534.40" y="211.36" class="todo"><title>0x00468780 GetOnSub (200 bytes)</title></rect>
 <rect width="8.51" height="8.30" x="545.91" y="211.36" class="todo"><title>0x0046ea50 TeethTrap (200 bytes)</title></rect>
 <rect width="8.51" height="8.30" x="557.42" y="211.36" class="todo"><title>0x0048d500 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
-<rect width="8.47" height="8.30" x="568.93" y="211.36" class="todo"><title>0x0041b1d0 ControlCinematicPlayer (199 bytes)</title></rect>
+<rect width="8.47" height="8.30" x="568.93" y="211.36" class="named"><title>0x0041b1d0 ControlCinematicPlayer (199 bytes)</title></rect>
 <rect width="8.43" height="8.30" x="580.40" y="211.36" class="todo"><title>0x004829c0 Read_Strings (198 bytes)</title></rect>
 <rect width="8.38" height="8.30" x="591.83" y="211.36" class="named"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
 <rect width="8.38" height="8.30" x="603.21" y="211.36" class="todo"><title>0x0048bf40 S_FadeToBlack (197 bytes)</title></rect>
