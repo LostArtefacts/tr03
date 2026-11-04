@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="168.45" height="12" x="0" y="0" class="named"><title>532 · 35.99%</title></rect>
-<rect width="299.55" height="12" x="168.45" y="0" class="todo"><title>946 · 64.01%</title></rect>
+<rect width="168.77" height="12" x="0" y="0" class="named"><title>533 · 36.06%</title></rect>
+<rect width="299.23" height="12" x="168.77" y="0" class="todo"><title>945 · 63.94%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">36.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">532</tspan> · <tspan class="todo">946</tspan></text>
+<text text-anchor="end" x="648" y="7.50">36.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">533</tspan> · <tspan class="todo">945</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="35.19" height="12" x="0" y="0" class="named"><title>50 KB · 7.52%</title></rect>
-<rect width="432.81" height="12" x="35.19" y="0" class="todo"><title>614 KB · 92.48%</title></rect>
+<rect width="35.36" height="12" x="0" y="0" class="named"><title>50 KB · 7.56%</title></rect>
+<rect width="432.64" height="12" x="35.36" y="0" class="todo"><title>614 KB · 92.44%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">7.5%</text>
+<text text-anchor="end" x="648" y="24.50">7.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">50 KB</tspan> · <tspan class="todo">614 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -715,7 +715,7 @@
 <rect width="12" height="12" x="0" y="195" class="named"><title>0x00444800 ResetLook (151 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="195" class="named"><title>0x004448a0 DeathSlideCollision (212 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="195" class="todo"><title>0x00444980 ControlDeathSlide (671 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="195" class="todo"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="195" class="named"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="195" class="named"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="195" class="named"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="195" class="named"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>
@@ -2176,7 +2176,7 @@
 <rect width="9.15" height="9.14" x="499.01" y="235.87" class="todo"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>
 <rect width="9.15" height="9.10" x="499.01" y="248.02" class="todo"><title>0x004854c0 HWR_DrawPolyList (236 bytes)</title></rect>
 <rect width="9.15" height="9.07" x="499.01" y="260.12" class="named"><title>0x00442490 lara_col_turn_r (235 bytes)</title></rect>
-<rect width="9.15" height="9.07" x="499.01" y="272.19" class="todo"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
+<rect width="9.15" height="9.07" x="499.01" y="272.19" class="named"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
 <rect width="9.15" height="9.03" x="499.01" y="284.25" class="todo"><title>0x004825d0 FindCDDrive (234 bytes)</title></rect>
 <rect width="9.15" height="8.95" x="499.01" y="296.28" class="todo"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="9.15" height="8.95" x="499.01" y="308.23" class="todo"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>

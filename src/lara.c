@@ -1789,6 +1789,35 @@ void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *col
 
 extern char LaraOnPad;
 
+int LaraLandedBad(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int landspeed, oy;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    oy = item->pos.y_pos;
+    item->floor = item->pos.y_pos = GetHeight(floor, item->pos.x_pos, item->pos.y_pos - LARA_HITE, item->pos.z_pos);
+    if (abs(oy - item->pos.y_pos) > 256)
+        item->pos.y_pos = oy;
+    LaraOnPad = 0;
+    TestTriggers(trigger_index, 0);
+    if (!LaraOnPad)
+        lara_item->item_flags[1] = 0;
+    item->pos.y_pos = oy;
+    landspeed = item->fallspeed - DAMAGE_START;
+    if (landspeed <= 0)
+        return 0;
+    else if (landspeed > DAMAGE_LENGTH)
+        item->hit_points = -1;
+    else
+        item->hit_points -= landspeed * landspeed * 1000 / (DAMAGE_LENGTH * DAMAGE_LENGTH);
+    if (item->hit_points <= 0)
+        return 1;
+    return 0;
+}
+
 int LaraHitCeiling(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->coll_type == COLL_TOP || coll->coll_type == COLL_CLAMP)
