@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="116.21" height="12" x="0" y="0" class="named"><title>367 · 24.83%</title></rect>
-<rect width="351.79" height="12" x="116.21" y="0" class="todo"><title>1111 · 75.17%</title></rect>
+<rect width="116.53" height="12" x="0" y="0" class="named"><title>368 · 24.90%</title></rect>
+<rect width="351.47" height="12" x="116.53" y="0" class="todo"><title>1110 · 75.10%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">24.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">367</tspan> · <tspan class="todo">1111</tspan></text>
+<text text-anchor="end" x="648" y="7.50">24.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">368</tspan> · <tspan class="todo">1110</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="15.91" height="12" x="0" y="0" class="named"><title>23 KB · 3.40%</title></rect>
-<rect width="452.09" height="12" x="15.91" y="0" class="todo"><title>641 KB · 96.60%</title></rect>
+<rect width="16" height="12" x="0" y="0" class="named"><title>23 KB · 3.42%</title></rect>
+<rect width="452" height="12" x="16" y="0" class="todo"><title>641 KB · 96.58%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">23 KB</tspan> · <tspan class="todo">641 KB</tspan></text>
@@ -721,7 +721,7 @@
 <rect width="12" height="12" x="90" y="195" class="named"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="195" class="named"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="195" class="todo"><title>0x00444ee0 LaraTestEdgeCatch (173 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="195" class="todo"><title>0x00444f90 LaraDeflectEdge (130 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="195" class="named"><title>0x00444f90 LaraDeflectEdge (130 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="195" class="todo"><title>0x00445020 GetStaticObjects (546 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="195" class="named"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="195" class="named"><title>0x00445290 undraw_shotgun_meshes (43 bytes)</title></rect>
@@ -2401,7 +2401,7 @@
 <rect width="6.84" height="6.77" x="614" y="254.61" class="todo"><title>0x00458b90 InitialiseWindow (131 bytes)</title></rect>
 <rect width="6.78" height="6.77" x="623.84" y="254.61" class="todo"><title>0x0042e460 DoLotsOfBloodD (130 bytes)</title></rect>
 <rect width="6.78" height="6.77" x="633.63" y="254.61" class="todo"><title>0x00439150 Init_Requester (130 bytes)</title></rect>
-<rect width="6.78" height="6.77" x="643.41" y="254.61" class="todo"><title>0x00444f90 LaraDeflectEdge (130 bytes)</title></rect>
+<rect width="6.78" height="6.77" x="643.41" y="254.61" class="named"><title>0x00444f90 LaraDeflectEdge (130 bytes)</title></rect>
 <rect width="6.78" height="6.77" x="653.20" y="254.61" class="todo"><title>0x00484e20 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="6.73" height="6.77" x="662.98" y="254.61" class="todo"><title>0x00436a50 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="6.73" height="6.77" x="672.71" y="254.61" class="todo"><title>0x004372f0 RingIsNotOpen (129 bytes)</title></rect>
