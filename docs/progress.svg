@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="104.49" height="12" x="0" y="0" class="named"><title>330 · 22.33%</title></rect>
-<rect width="363.51" height="12" x="104.49" y="0" class="todo"><title>1148 · 77.67%</title></rect>
+<rect width="104.81" height="12" x="0" y="0" class="named"><title>331 · 22.40%</title></rect>
+<rect width="363.19" height="12" x="104.81" y="0" class="todo"><title>1147 · 77.60%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">22.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">330</tspan> · <tspan class="todo">1148</tspan></text>
+<text text-anchor="end" x="648" y="7.50">22.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">331</tspan> · <tspan class="todo">1147</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="13.09" height="12" x="0" y="0" class="named"><title>19 KB · 2.80%</title></rect>
-<rect width="454.91" height="12" x="13.09" y="0" class="todo"><title>645 KB · 97.20%</title></rect>
+<rect width="13.16" height="12" x="0" y="0" class="named"><title>19 KB · 2.81%</title></rect>
+<rect width="454.84" height="12" x="13.16" y="0" class="todo"><title>645 KB · 97.19%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">19 KB</tspan> · <tspan class="todo">645 KB</tspan></text>
@@ -1019,7 +1019,7 @@
 <rect width="12" height="12" x="60" y="285" class="todo"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="285" class="todo"><title>0x00469de0 UpdateWakeFX_sub (42 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="285" class="todo"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="285" class="todo"><title>0x00469f80 InitialiseSwat (93 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="285" class="named"><title>0x00469f80 InitialiseSwat (93 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="285" class="todo"><title>0x00469fe0 SwatControl (2205 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="285" class="todo"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="285" class="todo"><title>0x0046a960 TargetControl (649 bytes)</title></rect>
@@ -2526,7 +2526,7 @@
 <rect width="5.83" height="5.64" x="583.19" y="441.36" class="named"><title>0x0042fa90 BaddieBiteEffect (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="292.20" class="named"><title>0x00439080 Inv_RingMotionItemSelect (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="301.06" class="named"><title>0x004492b0 lara_col_climbleft (93 bytes)</title></rect>
-<rect width="5.61" height="5.86" x="592.02" y="309.92" class="todo"><title>0x00469f80 InitialiseSwat (93 bytes)</title></rect>
+<rect width="5.61" height="5.86" x="592.02" y="309.92" class="named"><title>0x00469f80 InitialiseSwat (93 bytes)</title></rect>
 <rect width="5.61" height="5.86" x="592.02" y="318.78" class="todo"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
 <rect width="5.61" height="5.80" x="592.02" y="327.64" class="named"><title>0x00416670 CreatureEffect (92 bytes)</title></rect>
 <rect width="5.61" height="5.80" x="592.02" y="336.44" class="named"><title>0x0041ebd0 ObjectCollision (92 bytes)</title></rect>
