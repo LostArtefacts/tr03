@@ -215,3 +215,16 @@ void ClearDynamics(void)
     for (lp = 0; lp < MAX_DYNAMICS; lp++)
         dynamics[lp].on = 0;
 }
+
+void ControlColouredLights(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint32 itemnum;
+    uint8 cols[5][3] = { { 31, 0, 0 }, { 0, 31, 0 }, { 0, 0, 31 }, { 31, 24, 0 }, { 28, 28, 31 } };
+
+    item = &items[item_number];
+    if (TriggerActive(item)) {
+        itemnum = item->object_number - 324;
+        TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 24, cols[itemnum][0], cols[itemnum][1], cols[itemnum][2]);
+    }
+}

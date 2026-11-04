@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="150.41" height="12" x="0" y="0" class="named"><title>475 · 32.14%</title></rect>
-<rect width="317.59" height="12" x="150.41" y="0" class="todo"><title>1003 · 67.86%</title></rect>
+<rect width="150.72" height="12" x="0" y="0" class="named"><title>476 · 32.21%</title></rect>
+<rect width="317.28" height="12" x="150.72" y="0" class="todo"><title>1002 · 67.79%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">32.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">475</tspan> · <tspan class="todo">1003</tspan></text>
+<text text-anchor="end" x="648" y="7.50">32.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">476</tspan> · <tspan class="todo">1002</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="26.97" height="12" x="0" y="0" class="named"><title>38 KB · 5.76%</title></rect>
-<rect width="441.03" height="12" x="26.97" y="0" class="todo"><title>626 KB · 94.24%</title></rect>
+<rect width="27.08" height="12" x="0" y="0" class="named"><title>38 KB · 5.79%</title></rect>
+<rect width="440.92" height="12" x="27.08" y="0" class="todo"><title>626 KB · 94.21%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">38 KB</tspan> · <tspan class="todo">626 KB</tspan></text>
@@ -375,7 +375,7 @@
 <rect width="12" height="12" x="150" y="90" class="named"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="90" class="named"><title>0x0042de60 ClearDynamics (29 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="90" class="todo"><title>0x0042de80 ControlSmokeEmitter (567 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="90" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="90" class="named"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="90" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="90" class="named"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="90" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
@@ -2301,7 +2301,7 @@
 <rect width="7.92" height="7.45" x="588.44" y="233.52" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
 <rect width="7.87" height="7.45" x="599.36" y="233.52" class="todo"><title>0x00413ff0 BoomuteControl (166 bytes)</title></rect>
 <rect width="7.87" height="7.45" x="610.23" y="233.52" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
-<rect width="7.82" height="7.45" x="621.10" y="233.52" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
+<rect width="7.82" height="7.45" x="621.10" y="233.52" class="named"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="631.93" y="233.52" class="named"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="642.70" y="233.52" class="named"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="653.48" y="233.52" class="named"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
