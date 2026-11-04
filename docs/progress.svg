@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="157.06" height="12" x="0" y="0" class="named"><title>496 · 33.56%</title></rect>
-<rect width="310.94" height="12" x="157.06" y="0" class="todo"><title>982 · 66.44%</title></rect>
+<rect width="157.37" height="12" x="0" y="0" class="named"><title>497 · 33.63%</title></rect>
+<rect width="310.63" height="12" x="157.37" y="0" class="todo"><title>981 · 66.37%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">33.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">496</tspan> · <tspan class="todo">982</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">497</tspan> · <tspan class="todo">981</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="29.60" height="12" x="0" y="0" class="named"><title>42 KB · 6.33%</title></rect>
-<rect width="438.40" height="12" x="29.60" y="0" class="todo"><title>622 KB · 93.67%</title></rect>
+<rect width="29.74" height="12" x="0" y="0" class="named"><title>42 KB · 6.35%</title></rect>
+<rect width="438.26" height="12" x="29.74" y="0" class="todo"><title>622 KB · 93.65%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">6.3%</text>
+<text text-anchor="end" x="648" y="24.50">6.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">42 KB</tspan> · <tspan class="todo">622 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -728,7 +728,7 @@
 <rect width="12" height="12" x="195" y="195" class="named"><title>0x004452c0 ready_shotgun (113 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="195" class="todo"><title>0x00445340 RifleHandler (532 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="195" class="todo"><title>0x00445560 FireShotgun (507 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="195" class="todo"><title>0x00445760 FireM16 (192 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="195" class="named"><title>0x00445760 FireM16 (192 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="195" class="todo"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="195" class="todo"><title>0x004459b0 ControlHarpoonBolt (1429 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="195" class="todo"><title>0x00445f50 FireRocket (651 bytes)</title></rect>
@@ -2253,7 +2253,7 @@
 <rect width="8.21" height="8.30" x="716.40" y="211.36" class="todo"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="727.62" y="211.36" class="todo"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
 <rect width="8.17" height="8.30" x="738.83" y="211.36" class="named"><title>0x00439c50 ChangeRequesterItem (192 bytes)</title></rect>
-<rect width="8.63" height="7.86" x="522.89" y="222.66" class="todo"><title>0x00445760 FireM16 (192 bytes)</title></rect>
+<rect width="8.63" height="7.86" x="522.89" y="222.66" class="named"><title>0x00445760 FireM16 (192 bytes)</title></rect>
 <rect width="8.63" height="7.86" x="534.52" y="222.66" class="todo"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
 <rect width="8.63" height="7.86" x="546.14" y="222.66" class="todo"><title>0x0048aa00 AnimateTextures (192 bytes)</title></rect>
 <rect width="8.58" height="7.86" x="557.77" y="222.66" class="named"><title>0x0043f980 LaraCollideStop (191 bytes)</title></rect>

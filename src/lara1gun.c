@@ -28,3 +28,50 @@ void ready_shotgun(int weapon_type)
     lara.target = NULL;
     lara.left_arm.frame_base = lara.right_arm.frame_base = objects[WeaponObject(weapon_type)].frame_base;
 }
+
+typedef struct {
+    sint16 lock_angles[4];
+    sint16 left_angles[4];
+    sint16 right_angles[4];
+    sint16 aim_speed;
+    sint16 shot_accuracy;
+    sint16 gun_height;
+    sint16 target_dist;
+    char damage;
+    char recoil_frame;
+    char flash_time;
+    char draw_frame;
+    sint16 sample_num;
+} WEAPON_INFO;
+
+extern WEAPON_INFO weapons[];
+extern sint32 SmokeCountL;
+extern sint32 SmokeWeapon;
+
+int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles);
+void TriggerGunShell(sint16 leftright, sint32 type, sint32 weapon);
+
+void FireM16(int running)
+{
+    PHD_ANGLE angles[2];
+
+    angles[0] = lara.left_arm.y_rot + lara_item->pos.y_rot;
+    angles[1] = lara.left_arm.x_rot;
+    if (!lara.left_arm.lock) {
+        angles[0] += lara.torso_y_rot;
+        angles[1] += lara.torso_x_rot;
+    }
+    if (running) {
+        weapons[M16].shot_accuracy = ONE_DEGREE * 12;
+        weapons[M16].damage = 1;
+    } else {
+        weapons[M16].shot_accuracy = ONE_DEGREE * 4;
+        weapons[M16].damage = 3;
+    }
+    if (FireWeapon(LG_M16, lara.target, lara_item, angles)) {
+        SmokeCountL = 24;
+        SmokeWeapon = LG_M16;
+        TriggerGunShell(1, 366, LG_M16);
+        lara.right_arm.flash_gun = weapons[LG_M16].flash_time;
+    }
+}
