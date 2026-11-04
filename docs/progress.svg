@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="85.49" height="12" x="0" y="0" class="named"><title>270 · 18.27%</title></rect>
-<rect width="382.51" height="12" x="85.49" y="0" class="todo"><title>1208 · 81.73%</title></rect>
+<rect width="85.81" height="12" x="0" y="0" class="named"><title>271 · 18.34%</title></rect>
+<rect width="382.19" height="12" x="85.81" y="0" class="todo"><title>1207 · 81.66%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">18.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">270</tspan> · <tspan class="todo">1208</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">271</tspan> · <tspan class="todo">1207</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.48" height="12" x="0" y="0" class="named"><title>13 KB · 2.03%</title></rect>
-<rect width="458.52" height="12" x="9.48" y="0" class="todo"><title>650 KB · 97.97%</title></rect>
+<rect width="9.53" height="12" x="0" y="0" class="named"><title>14 KB · 2.04%</title></rect>
+<rect width="458.47" height="12" x="9.53" y="0" class="todo"><title>650 KB · 97.96%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">13 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">14 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1090,7 +1090,7 @@
 <rect width="12" height="12" x="375" y="300" class="todo"><title>0x0046f130 FlameEmitter3Control (174 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="300" class="todo"><title>0x0046f1e0 SideFlameDetection (387 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="300" class="todo"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="300" class="todo"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="300" class="named"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="300" class="todo"><title>0x0046fb30 LavaBurn (150 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="300" class="todo"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="300" class="todo"><title>0x0046fd80 DinoControl (1916 bytes)</title></rect>
@@ -2620,7 +2620,7 @@
 <rect width="5.30" height="4.86" x="667.36" y="309.03" class="named"><title>0x00443290 lara_default_col (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="675.66" y="309.03" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="683.96" y="309.03" class="named"><title>0x00463b70 InitialiseLevelFlags (73 bytes)</title></rect>
-<rect width="5.30" height="4.86" x="692.26" y="309.03" class="todo"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
+<rect width="5.30" height="4.86" x="692.26" y="309.03" class="named"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
 <rect width="5.30" height="4.86" x="700.56" y="309.03" class="todo"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>
 <rect width="5.23" height="4.86" x="708.86" y="309.03" class="named"><title>0x0045cd50 KeyTrigger (72 bytes)</title></rect>
 <rect width="5.23" height="4.86" x="717.09" y="309.03" class="named"><title>0x0046e9b0 FallingBlockFloor (72 bytes)</title></rect>
