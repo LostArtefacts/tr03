@@ -8,12 +8,38 @@
 #define STATUE_STOP 1
 #define ROLLINGBALL_STUFF 38
 #define SMALL_FIRE 1
+#define STATUE_CUT 2
+#define HOOK_DAMAGE 50
+#define BLADE_DAMAGE 100
+#define SFX_ALWAYS 2
+#define LV_SHORE 5
+#define LV_RAPIDS 7
 
 extern ITEM_INFO *CeilingObject;
 extern int OnObject;
 extern int height_type;
+extern int clonked;
+extern uint32 CurrentLevel;
+
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
 
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
+
+void HookControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (item->touch_bits && !clonked)
+    {
+        lara_item->hit_points -= HOOK_DAMAGE;
+        lara_item->hit_status = 1;
+        DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - WALL_L / 2, lara_item->pos.z_pos, lara_item->speed, lara_item->pos.y_rot, lara_item->room_number, 3);
+    }
+    else
+        clonked = 0;
+    AnimateItem(item);
+}
 
 void InitialiseBlade(sint16 item_number)
 {

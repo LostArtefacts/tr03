@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="128.56" height="12" x="0" y="0" class="named"><title>406 · 27.47%</title></rect>
-<rect width="339.44" height="12" x="128.56" y="0" class="todo"><title>1072 · 72.53%</title></rect>
+<rect width="128.87" height="12" x="0" y="0" class="named"><title>407 · 27.54%</title></rect>
+<rect width="339.13" height="12" x="128.87" y="0" class="todo"><title>1071 · 72.46%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">27.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">406</tspan> · <tspan class="todo">1072</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">407</tspan> · <tspan class="todo">1071</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="19.39" height="12" x="0" y="0" class="named"><title>28 KB · 4.14%</title></rect>
-<rect width="448.61" height="12" x="19.39" y="0" class="todo"><title>636 KB · 95.86%</title></rect>
+<rect width="19.49" height="12" x="0" y="0" class="named"><title>28 KB · 4.17%</title></rect>
+<rect width="448.51" height="12" x="19.49" y="0" class="todo"><title>636 KB · 95.83%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">4.1%</text>
+<text text-anchor="end" x="648" y="24.50">4.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">28 KB</tspan> · <tspan class="todo">636 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1060,7 +1060,7 @@
 <rect width="12" height="12" x="675" y="285" class="todo"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="285" class="todo"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="285" class="todo"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="285" class="todo"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="285" class="named"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="285" class="todo"><title>0x0046d850 SpinningBlade (367 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="300" class="todo"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="300" class="named"><title>0x0046daf0 InitialiseBlade (64 bytes)</title></rect>
@@ -2374,7 +2374,7 @@
 <rect width="6.98" height="7.14" x="544.30" y="439.86" class="todo"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
 <rect width="7.13" height="6.99" x="554.28" y="254.31" class="named"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
 <rect width="7.13" height="6.99" x="554.28" y="264.30" class="todo"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
-<rect width="7.13" height="6.99" x="554.28" y="274.29" class="todo"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
+<rect width="7.13" height="6.99" x="554.28" y="274.29" class="named"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
 <rect width="7.13" height="6.94" x="554.28" y="284.28" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
 <rect width="7.13" height="6.94" x="554.28" y="294.22" class="todo"><title>0x00487750 do_inventory_options (140 bytes)</title></rect>
 <rect width="7.13" height="6.94" x="554.28" y="304.16" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
