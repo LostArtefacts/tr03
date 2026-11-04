@@ -676,6 +676,43 @@ void DartEmitterControl(sint16 item_num)
     }
 }
 
+void DartsControl(sint16 item_num)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+    sint32 lp, ox, oz;
+    sint32 speed;
+
+    item = &items[item_num];
+    if (item->touch_bits) {
+        lara_item->hit_points -= 25;
+        lara_item->hit_status = 1;
+        lara.poisoned += 160;
+        DoBloodSplat(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, lara_item->speed, lara_item->pos.y_rot, lara_item->room_number);
+        KillItem(item_num);
+        return;
+    }
+
+    ox = item->pos.x_pos;
+    oz = item->pos.z_pos;
+    speed = (item->speed * phd_cos(item->pos.x_rot)) >> W2V_SHIFT;
+    item->pos.z_pos += (speed * phd_cos(item->pos.y_rot)) >> W2V_SHIFT;
+    item->pos.x_pos += (speed * phd_sin(item->pos.y_rot)) >> W2V_SHIFT;
+    item->pos.y_pos += -((item->speed * phd_sin(item->pos.x_rot)) >> W2V_SHIFT);
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_num, room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (item->pos.y_pos >= item->floor) {
+        for (lp = 0; lp < 4; lp++)
+            TriggerDartSmoke(ox, item->pos.y_pos, oz, 0, 0, 1);
+        KillItem(item_num);
+    }
+}
+
 void SideFlameEmitterControl(sint16 item_number)
 {
     ITEM_INFO *item;

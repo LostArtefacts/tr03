@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="190.94" height="12" x="0" y="0" class="named"><title>603 · 40.80%</title></rect>
-<rect width="277.06" height="12" x="190.94" y="0" class="todo"><title>875 · 59.20%</title></rect>
+<rect width="191.25" height="12" x="0" y="0" class="named"><title>604 · 40.87%</title></rect>
+<rect width="276.75" height="12" x="191.25" y="0" class="todo"><title>874 · 59.13%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">40.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">603</tspan> · <tspan class="todo">875</tspan></text>
+<text text-anchor="end" x="648" y="7.50">40.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">604</tspan> · <tspan class="todo">874</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="58.79" height="12" x="0" y="0" class="named"><title>84 KB · 12.56%</title></rect>
-<rect width="409.21" height="12" x="58.79" y="0" class="todo"><title>581 KB · 87.44%</title></rect>
+<rect width="59.04" height="12" x="0" y="0" class="named"><title>84 KB · 12.61%</title></rect>
+<rect width="408.96" height="12" x="59.04" y="0" class="todo"><title>581 KB · 87.39%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">12.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">84 KB</tspan> · <tspan class="todo">581 KB</tspan></text>
@@ -1083,7 +1083,7 @@
 <rect width="12" height="12" x="270" y="300" class="named"><title>0x0046ea50 TeethTrap (200 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="300" class="named"><title>0x0046eb20 FallingCeiling (238 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="300" class="named"><title>0x0046ec10 DartEmitterControl (445 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="300" class="todo"><title>0x0046edd0 DartsControl (358 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="300" class="named"><title>0x0046edd0 DartsControl (358 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="300" class="named"><title>0x0046ef40 SideFlameEmitterControl (168 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="300" class="named"><title>0x0046eff0 FlameEmitterControl (156 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="300" class="named"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
@@ -2028,7 +2028,7 @@
 <rect width="10.81" height="11.82" x="446.28" y="160.08" class="todo"><title>0x00412040 BoatCheckGeton (362 bytes)</title></rect>
 <rect width="10.81" height="11.78" x="446.28" y="174.90" class="named"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
 <rect width="10.81" height="11.75" x="446.28" y="189.68" class="todo"><title>0x00495a20 Func495a20 (360 bytes)</title></rect>
-<rect width="10.81" height="11.69" x="446.28" y="204.43" class="todo"><title>0x0046edd0 DartsControl (358 bytes)</title></rect>
+<rect width="10.81" height="11.69" x="446.28" y="204.43" class="named"><title>0x0046edd0 DartsControl (358 bytes)</title></rect>
 <rect width="10.81" height="11.65" x="446.28" y="219.12" class="todo"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="10.81" height="11.62" x="446.28" y="233.77" class="todo"><title>0x0044d690 UseItem (356 bytes)</title></rect>
 <rect width="10.81" height="11.59" x="446.28" y="248.39" class="todo"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
