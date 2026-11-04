@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="135.52" height="12" x="0" y="0" class="named"><title>428 · 28.96%</title></rect>
-<rect width="332.48" height="12" x="135.52" y="0" class="todo"><title>1050 · 71.04%</title></rect>
+<rect width="135.84" height="12" x="0" y="0" class="named"><title>429 · 29.03%</title></rect>
+<rect width="332.16" height="12" x="135.84" y="0" class="todo"><title>1049 · 70.97%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">29.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">428</tspan> · <tspan class="todo">1050</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">429</tspan> · <tspan class="todo">1049</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="21.85" height="12" x="0" y="0" class="named"><title>31 KB · 4.67%</title></rect>
-<rect width="446.15" height="12" x="21.85" y="0" class="todo"><title>633 KB · 95.33%</title></rect>
+<rect width="21.97" height="12" x="0" y="0" class="named"><title>31 KB · 4.69%</title></rect>
+<rect width="446.03" height="12" x="21.97" y="0" class="todo"><title>633 KB · 95.31%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">31 KB</tspan> · <tspan class="todo">633 KB</tspan></text>
@@ -187,7 +187,7 @@
 <rect width="12" height="12" x="330" y="30" class="named"><title>0x00414780 UpdateLOT (114 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="30" class="todo"><title>0x00414800 SearchLOT (520 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="30" class="named"><title>0x00414a10 TargetBox (149 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="30" class="todo"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="30" class="named"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="30" class="todo"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="30" class="todo"><title>0x00414c10 GetCreatureMood (534 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="30" class="todo"><title>0x00414e50 CreatureMood (598 bytes)</title></rect>
@@ -2302,7 +2302,7 @@
 <rect width="7.87" height="7.45" x="599.36" y="233.52" class="todo"><title>0x00413ff0 BoomuteControl (166 bytes)</title></rect>
 <rect width="7.87" height="7.45" x="610.23" y="233.52" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
 <rect width="7.82" height="7.45" x="621.10" y="233.52" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
-<rect width="7.78" height="7.45" x="631.93" y="233.52" class="todo"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
+<rect width="7.78" height="7.45" x="631.93" y="233.52" class="named"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="642.70" y="233.52" class="named"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="653.48" y="233.52" class="named"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="664.26" y="233.52" class="todo"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
