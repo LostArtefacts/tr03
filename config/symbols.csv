@@ -2053,6 +2053,8 @@ address,size,name,symbol
 0x006263f8,4,ammotext,_ammotext
 0x006263fc,4,LpModeTS,_LpModeTS
 0x00626400,4,LnModeTSLife,_LnModeTSLife
+0x00626404,4,flash_state,_flash_state
+0x00626408,4,flash_count,_flash_count
 0x00626410,2,inv_main_current,_inv_main_current
 0x00626414,2,inv_keys_objects,_inv_keys_objects
 0x00626418,2,inv_keys_current,_inv_keys_current
