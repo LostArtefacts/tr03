@@ -40,4 +40,6 @@ enum object_types {
     CLOCK_CHIMES
 };
 
+#define NUMBER_OBJECTS 376
+
 #endif
