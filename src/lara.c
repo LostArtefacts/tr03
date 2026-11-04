@@ -245,3 +245,9 @@ void lara_as_swandive(ITEM_INFO *item, COLL_INFO *coll)
     if (item->fallspeed > LARA_FASTFALL_SPEED && item->goal_anim_state != AS_DIVE)
         item->goal_anim_state = AS_FASTDIVE;
 }
+
+void lara_as_gymnast(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+}
