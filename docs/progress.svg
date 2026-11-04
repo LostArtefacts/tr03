@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="25.15" height="12" x="130" y="1.50" class="named"/>
-<rect width="176.85" height="12" x="155.15" y="1.50" class="todo"/>
+<rect width="25.28" height="12" x="130" y="1.50" class="named"/>
+<rect width="176.72" height="12" x="155.28" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">12.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">184/1478</text>
-<rect width="2.67" height="12" x="130" y="18.50" class="named"/>
-<rect width="199.33" height="12" x="132.67" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">12.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">185/1478</text>
+<rect width="2.68" height="12" x="130" y="18.50" class="named"/>
+<rect width="199.32" height="12" x="132.68" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">1.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">9k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.45% (184)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.55% (1294)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.52% (185)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.48% (1293)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="93" height="6" x="0" y="0" class="named"/>
-<rect width="654" height="6" x="93" y="0" class="todo"/>
+<rect width="93.50" height="6" x="0" y="0" class="named"/>
+<rect width="653.50" height="6" x="93.50" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -911,7 +911,7 @@
 <rect width="12" height="12" x="675" y="240" class="named"><title>0x00459760 LiftFloor (63 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="240" class="named"><title>0x004597a0 LiftCeiling (53 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="240" class="named"><title>0x004597e0 BridgeFlatFloor (56 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="240" class="todo"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="240" class="named"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="240" class="todo"><title>0x00459840 GetOffset (59 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="255" class="todo"><title>0x00459880 BridgeTilt1Floor (82 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="255" class="todo"><title>0x004598e0 BridgeTilt1Ceiling (53 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.32%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.68%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="9.86" height="6" x="0" y="0" class="named"/>
-<rect width="737.14" height="6" x="9.86" y="0" class="todo"/>
+<rect width="9.89" height="6" x="0" y="0" class="named"/>
+<rect width="737.11" height="6" x="9.89" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2921,7 +2921,7 @@
 <rect width="0.56" height="1.03" x="718.15" y="437.32" class="todo"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="0.56" height="0.88" x="718.15" y="441.35" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="0.56" height="0.88" x="718.15" y="445.23" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
-<rect width="0.56" height="0.88" x="718.15" y="449.12" class="todo"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
+<rect width="0.56" height="0.88" x="718.15" y="449.12" class="named"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="0.60" height="0.83" x="721.70" y="421.20" class="todo"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
 <rect width="0.60" height="0.83" x="725.31" y="421.20" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
 <rect width="0.60" height="0.83" x="728.91" y="421.20" class="todo"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
