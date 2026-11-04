@@ -28,5 +28,6 @@ void AssaultReset(ITEM_INFO *item);
 void AssaultPenalty4(ITEM_INFO *item);
 void AssaultPenalty30(ITEM_INFO *item);
 void AssaultFinished(ITEM_INFO *item);
+void QuadStart(ITEM_INFO *item);
 
 #endif

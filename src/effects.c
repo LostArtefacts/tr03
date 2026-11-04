@@ -172,3 +172,14 @@ void AssaultFinished(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void QuadStart(ITEM_INFO *item)
+{
+    if (lara.skidoo != NO_ITEM)
+    {
+        savegame.timer = 0;
+        assault_timer_active = 1;
+        assault_timer_display = 1;
+    }
+    flipeffect = -1;
+}
