@@ -220,6 +220,23 @@ void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *h
         *height = level + STEP_L;
 }
 
+void DetonatorControl(sint16 item_number)
+{
+    int frame_number;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    AnimateItem(item);
+    frame_number = item->frame_number - anims[item->anim_number].frame_base;
+    if (frame_number == 80)
+    {
+        camera.bounce = -150;
+        SoundEffect(105, NULL, 0);
+    }
+    if (item->status == DEACTIVATED)
+        RemoveActiveItem(item_number);
+}
+
 void ControlAnimating_1_4(sint16 item_number)
 {
     ITEM_INFO *item;
