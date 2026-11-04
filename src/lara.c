@@ -861,6 +861,25 @@ void LookUpDown(void)
         lara.torso_x_rot = lara.head_x_rot;
 }
 
+void LookLeftRight(void)
+{
+    camera.type = LOOK_CAMERA;
+    if (input & IN_LEFT)
+    {
+        input -= IN_LEFT;
+        if (lara.head_y_rot > -MAX_HEAD_ROTATION)
+            lara.head_y_rot -= HEAD_TURN;
+    }
+    else if (input & IN_RIGHT)
+    {
+        input -= IN_RIGHT;
+        if (lara.head_y_rot < MAX_HEAD_ROTATION)
+            lara.head_y_rot += HEAD_TURN;
+    }
+    if (lara.gun_status != LG_HANDSBUSY && lara.skidoo == NO_ITEM && lara.left_arm.lock == 0 && lara.right_arm.lock == 0)
+        lara.torso_y_rot = lara.head_y_rot;
+}
+
 int LaraHitCeiling(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (coll->coll_type == COLL_TOP || coll->coll_type == COLL_CLAMP)
