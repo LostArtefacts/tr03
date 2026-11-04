@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="107.03" height="12" x="0" y="0" class="named"><title>338 · 22.87%</title></rect>
-<rect width="360.97" height="12" x="107.03" y="0" class="todo"><title>1140 · 77.13%</title></rect>
+<rect width="107.34" height="12" x="0" y="0" class="named"><title>339 · 22.94%</title></rect>
+<rect width="360.66" height="12" x="107.34" y="0" class="todo"><title>1139 · 77.06%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">22.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">338</tspan> · <tspan class="todo">1140</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">339</tspan> · <tspan class="todo">1139</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="13.64" height="12" x="0" y="0" class="named"><title>19 KB · 2.92%</title></rect>
-<rect width="454.36" height="12" x="13.64" y="0" class="todo"><title>645 KB · 97.08%</title></rect>
+<rect width="13.72" height="12" x="0" y="0" class="named"><title>19 KB · 2.93%</title></rect>
+<rect width="454.28" height="12" x="13.72" y="0" class="todo"><title>644 KB · 97.07%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">19 KB</tspan> · <tspan class="todo">645 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">19 KB</tspan> · <tspan class="todo">644 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -716,7 +716,7 @@
 <rect width="12" height="12" x="15" y="195" class="todo"><title>0x004448a0 DeathSlideCollision (212 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="195" class="todo"><title>0x00444980 ControlDeathSlide (671 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="195" class="todo"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="195" class="todo"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="195" class="named"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="195" class="todo"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="195" class="todo"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="195" class="named"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
@@ -2474,7 +2474,7 @@
 <rect width="5.94" height="6.42" x="574.24" y="302" class="named"><title>0x00442fd0 lara_col_swandive (108 bytes)</title></rect>
 <rect width="5.94" height="6.36" x="574.24" y="311.42" class="todo"><title>0x0044eba0 lara_as_swim (107 bytes)</title></rect>
 <rect width="5.94" height="6.36" x="574.24" y="320.78" class="todo"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
-<rect width="5.94" height="6.30" x="574.24" y="330.14" class="todo"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
+<rect width="5.94" height="6.30" x="574.24" y="330.14" class="named"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
 <rect width="5.94" height="6.30" x="574.24" y="339.44" class="todo"><title>0x0044aee0 SmashItem (106 bytes)</title></rect>
 <rect width="5.94" height="6.30" x="574.24" y="348.74" class="todo"><title>0x004b2180 DXTextureCleanup (106 bytes)</title></rect>
 <rect width="5.94" height="6.24" x="574.24" y="358.05" class="named"><title>0x0042f260 swap_meshes_with_meshswap1 (105 bytes)</title></rect>
