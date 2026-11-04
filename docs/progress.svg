@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="186.19" height="12" x="0" y="0" class="named"><title>588 · 39.78%</title></rect>
-<rect width="281.81" height="12" x="186.19" y="0" class="todo"><title>890 · 60.22%</title></rect>
+<rect width="186.50" height="12" x="0" y="0" class="named"><title>589 · 39.85%</title></rect>
+<rect width="281.50" height="12" x="186.50" y="0" class="todo"><title>889 · 60.15%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">39.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">588</tspan> · <tspan class="todo">890</tspan></text>
+<text text-anchor="end" x="648" y="7.50">39.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">589</tspan> · <tspan class="todo">889</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="55.19" height="12" x="0" y="0" class="named"><title>78 KB · 11.79%</title></rect>
-<rect width="412.81" height="12" x="55.19" y="0" class="todo"><title>586 KB · 88.21%</title></rect>
+<rect width="55.42" height="12" x="0" y="0" class="named"><title>79 KB · 11.84%</title></rect>
+<rect width="412.58" height="12" x="55.42" y="0" class="todo"><title>586 KB · 88.16%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">11.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">78 KB</tspan> · <tspan class="todo">586 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">79 KB</tspan> · <tspan class="todo">586 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -370,7 +370,7 @@
 <rect width="12" height="12" x="75" y="90" class="named"><title>0x0042d990 KillAllCurrentItems (11 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="90" class="named"><title>0x0042d9a0 KillEverything (269 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="90" class="named"><title>0x0042dab0 TriggerBubble (239 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="90" class="todo"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="90" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="90" class="todo"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="90" class="named"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="90" class="named"><title>0x0042de60 ClearDynamics (29 bytes)</title></rect>
@@ -2050,7 +2050,7 @@
 <rect width="10.99" height="10.78" x="488.24" y="160.08" class="todo"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="10.96" height="10.78" x="502.23" y="160.08" class="named"><title>0x00440a40 lara_col_upjump (335 bytes)</title></rect>
 <rect width="10.96" height="10.78" x="516.19" y="160.08" class="todo"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
-<rect width="10.93" height="10.78" x="530.16" y="160.08" class="todo"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
+<rect width="10.93" height="10.78" x="530.16" y="160.08" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="10.90" height="10.78" x="544.08" y="160.08" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="10.90" height="10.78" x="557.98" y="160.08" class="todo"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="10.86" height="10.78" x="571.88" y="160.08" class="todo"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
