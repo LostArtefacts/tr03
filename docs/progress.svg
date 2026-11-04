@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="26.10" height="12" x="130" y="1.50" class="named"/>
-<rect width="175.90" height="12" x="156.10" y="1.50" class="todo"/>
+<rect width="26.24" height="12" x="130" y="1.50" class="named"/>
+<rect width="175.76" height="12" x="156.24" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">12.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">191/1478</text>
-<rect width="2.77" height="12" x="130" y="18.50" class="named"/>
-<rect width="199.23" height="12" x="132.77" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">13.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">192/1478</text>
+<rect width="2.78" height="12" x="130" y="18.50" class="named"/>
+<rect width="199.22" height="12" x="132.78" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">9k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.92% (191)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.08% (1287)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">12.99% (192)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">87.01% (1286)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="96.53" height="6" x="0" y="0" class="named"/>
-<rect width="650.47" height="6" x="96.53" y="0" class="todo"/>
+<rect width="97.04" height="6" x="0" y="0" class="named"/>
+<rect width="649.96" height="6" x="97.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1248,7 +1248,7 @@
 <rect width="12" height="12" x="480" y="345" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="345" class="todo"><title>0x00484010 GameStats (468 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="345" class="named"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="345" class="todo"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="345" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="345" class="todo"><title>0x00484220 GetRandomDraw (30 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="345" class="todo"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="345" class="todo"><title>0x00484250 GetValidLevelsList (68 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">1.37%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">98.63%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="10.26" height="6" x="0" y="0" class="named"/>
-<rect width="736.74" height="6" x="10.26" y="0" class="todo"/>
+<rect width="10.27" height="6" x="0" y="0" class="named"/>
+<rect width="736.73" height="6" x="10.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -3011,7 +3011,7 @@
 <rect width="0.10" height="0.10" x="744.10" y="443.12" class="named"><title>0x0042f250 shoot_left_gun (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="746.06" y="443.12" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="748.03" y="443.12" class="named"><title>0x00441330 lara_as_splat (10 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="742.13" y="445.72" class="todo"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="742.13" y="445.72" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="742.13" y="448.14" class="todo"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="742.13" y="450.57" class="todo"><title>0x0048d200 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="744.24" y="445.72" class="todo"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
