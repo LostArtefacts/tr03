@@ -80,6 +80,15 @@ sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction
     return NO_ITEM;
 }
 
+sint16 DoBloodSplatD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num)
+{
+    if (room[room_num].flags & UNDERWATER)
+        TriggerUnderwaterBloodD(x, y + 64, z, GetRandomDraw() & 7);
+    else
+        TriggerBloodD(x, y, z, direction >> 4, (GetRandomDraw() & 7) + 6);
+    return NO_ITEM;
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;

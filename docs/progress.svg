@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="114.63" height="12" x="0" y="0" class="named"><title>362 · 24.49%</title></rect>
-<rect width="353.37" height="12" x="114.63" y="0" class="todo"><title>1116 · 75.51%</title></rect>
+<rect width="114.94" height="12" x="0" y="0" class="named"><title>363 · 24.56%</title></rect>
+<rect width="353.06" height="12" x="114.94" y="0" class="todo"><title>1115 · 75.44%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">24.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">362</tspan> · <tspan class="todo">1116</tspan></text>
+<text text-anchor="end" x="648" y="7.50">24.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">363</tspan> · <tspan class="todo">1115</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="15.49" height="12" x="0" y="0" class="named"><title>22 KB · 3.31%</title></rect>
-<rect width="452.51" height="12" x="15.49" y="0" class="todo"><title>642 KB · 96.69%</title></rect>
+<rect width="15.57" height="12" x="0" y="0" class="named"><title>22 KB · 3.33%</title></rect>
+<rect width="452.43" height="12" x="15.57" y="0" class="todo"><title>642 KB · 96.67%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">22 KB</tspan> · <tspan class="todo">642 KB</tspan></text>
@@ -380,7 +380,7 @@
 <rect width="12" height="12" x="225" y="90" class="named"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="90" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="90" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="90" class="todo"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="90" class="named"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="90" class="todo"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="todo"><title>0x0042e460 DoLotsOfBloodD (130 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="90" class="todo"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
@@ -2453,7 +2453,7 @@
 <rect width="6.37" height="6.33" x="574.24" y="273.84" class="todo"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
 <rect width="6.37" height="6.33" x="583.61" y="273.84" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="592.98" y="273.84" class="named"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
-<rect width="6.31" height="6.33" x="602.29" y="273.84" class="todo"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
+<rect width="6.31" height="6.33" x="602.29" y="273.84" class="named"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="611.60" y="273.84" class="named"><title>0x004452c0 ready_shotgun (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="620.92" y="273.84" class="named"><title>0x004482d0 ready_pistols (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="630.23" y="273.84" class="todo"><title>0x00459a50 DetonatorControl (113 bytes)</title></rect>
