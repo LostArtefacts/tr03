@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="28.97" height="12" x="0" y="0" class="named"><title>212 · 14.34%</title></rect>
-<rect width="173.03" height="12" x="28.97" y="0" class="todo"><title>1266 · 85.66%</title></rect>
+<rect width="29.11" height="12" x="0" y="0" class="named"><title>213 · 14.41%</title></rect>
+<rect width="172.89" height="12" x="29.11" y="0" class="todo"><title>1265 · 85.59%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">14.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">212</tspan> · <tspan class="todo">1266</tspan></text>
+<text text-anchor="end" x="382" y="7.50">14.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">213</tspan> · <tspan class="todo">1265</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.97" height="12" x="0" y="0" class="named"><title>10 KB · 1.47%</title></rect>
-<rect width="199.03" height="12" x="2.97" y="0" class="todo"><title>654 KB · 98.53%</title></rect>
+<rect width="2.99" height="12" x="0" y="0" class="named"><title>10 KB · 1.48%</title></rect>
+<rect width="199.01" height="12" x="2.99" y="0" class="todo"><title>654 KB · 98.52%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -1043,7 +1043,7 @@
 <rect width="12" height="12" x="420" y="285" class="todo"><title>0x0046b120 draw_border (543 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="285" class="todo"><title>0x0046b340 T_DrawThisText (934 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="285" class="named"><title>0x0046b6f0 GetTextScaleH (42 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="285" class="todo"><title>0x0046b720 GetTextScaleV (42 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="285" class="named"><title>0x0046b720 GetTextScaleV (42 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="285" class="todo"><title>0x0046b750 TigerControl (752 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="285" class="todo"><title>0x0046ba60 TonyBossControl (1539 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="285" class="todo"><title>0x0046c080 S_DrawTonyBoss (65 bytes)</title></rect>
@@ -2826,7 +2826,7 @@
 <rect width="3.94" height="3.76" x="661.43" y="402.76" class="named"><title>0x00441840 lara_as_ppready (42 bytes)</title></rect>
 <rect width="3.94" height="3.76" x="661.43" y="409.52" class="todo"><title>0x00469de0 UpdateWakeFX_sub (42 bytes)</title></rect>
 <rect width="3.94" height="3.76" x="661.43" y="416.28" class="named"><title>0x0046b6f0 GetTextScaleH (42 bytes)</title></rect>
-<rect width="3.94" height="3.76" x="661.43" y="423.04" class="todo"><title>0x0046b720 GetTextScaleV (42 bytes)</title></rect>
+<rect width="3.94" height="3.76" x="661.43" y="423.04" class="named"><title>0x0046b720 GetTextScaleV (42 bytes)</title></rect>
 <rect width="3.94" height="3.76" x="661.43" y="429.81" class="todo"><title>0x00482990 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="3.94" height="3.76" x="661.43" y="436.57" class="todo"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
 <rect width="3.94" height="3.67" x="661.43" y="443.33" class="named"><title>0x0043fa40 lara_as_dashdive (41 bytes)</title></rect>
