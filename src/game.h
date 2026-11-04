@@ -38,6 +38,9 @@ extern int flip_status;
 
 void FlipMap(void);
 sint16 *GetBoundsAccurate(ITEM_INFO *item);
+void DrawAnimatingItem(ITEM_INFO *item);
+void DrawUnclippedItem(ITEM_INFO *item);
+void S_DrawWakeFX(ITEM_INFO *item);
 void InitialiseHair(void);
 void ResetTargets(void);
 
