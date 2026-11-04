@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="19" height="12" x="130" y="1.50" class="named"/>
-<rect width="183" height="12" x="149" y="1.50" class="todo"/>
+<rect width="19.13" height="12" x="130" y="1.50" class="named"/>
+<rect width="182.87" height="12" x="149.13" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">9.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">139/1478</text>
-<rect width="1.48" height="12" x="130" y="18.50" class="named"/>
-<rect width="200.52" height="12" x="131.48" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">9.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">140/1478</text>
+<rect width="1.50" height="12" x="130" y="18.50" class="named"/>
+<rect width="200.50" height="12" x="131.50" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">5k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">9.40% (139)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.60% (1339)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">9.47% (140)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">90.53% (1338)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="70.25" height="6" x="0" y="0" class="named"/>
-<rect width="676.75" height="6" x="70.25" y="0" class="todo"/>
+<rect width="70.76" height="6" x="0" y="0" class="named"/>
+<rect width="676.24" height="6" x="70.76" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -321,7 +321,7 @@
 <rect width="12" height="12" x="75" y="75" class="named"><title>0x004293c0 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="75" class="named"><title>0x004293f0 phd_RotY_I (49 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="75" class="named"><title>0x00429430 phd_RotX_I (49 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="75" class="todo"><title>0x00429470 phd_RotZ_I (49 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="75" class="named"><title>0x00429470 phd_RotZ_I (49 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="75" class="todo"><title>0x004294b0 phd_TranslateRel_I (65 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="75" class="todo"><title>0x00429500 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="75" class="todo"><title>0x00429550 phd_RotYXZ_I (65 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.73%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.27%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.74%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.26%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="5.49" height="6" x="0" y="0" class="named"/>
-<rect width="741.51" height="6" x="5.49" y="0" class="todo"/>
+<rect width="5.55" height="6" x="0" y="0" class="named"/>
+<rect width="741.45" height="6" x="5.55" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2772,7 +2772,7 @@
 <rect width="1.97" height="2.15" x="687.66" y="390.26" class="todo"><title>0x0048e8f0 Func48e8f0 (50 bytes)</title></rect>
 <rect width="1.87" height="2.15" x="692.63" y="390.26" class="named"><title>0x004293f0 phd_RotY_I (49 bytes)</title></rect>
 <rect width="1.87" height="2.15" x="697.50" y="390.26" class="named"><title>0x00429430 phd_RotX_I (49 bytes)</title></rect>
-<rect width="1.87" height="2.15" x="702.37" y="390.26" class="todo"><title>0x00429470 phd_RotZ_I (49 bytes)</title></rect>
+<rect width="1.87" height="2.15" x="702.37" y="390.26" class="named"><title>0x00429470 phd_RotZ_I (49 bytes)</title></rect>
 <rect width="1.87" height="2.15" x="707.24" y="390.26" class="todo"><title>0x00480920 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="1.77" height="2.15" x="712.12" y="390.26" class="todo"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
 <rect width="1.77" height="2.15" x="716.89" y="390.26" class="todo"><title>0x00406780 GETG (48 bytes)</title></rect>
