@@ -38,3 +38,14 @@ void phd_PushMatrix_I(void)
     S_LongMemCpy(IMptr + 12, IMptr, 12);
     IMptr += 12;
 }
+
+void phd_RotY_I(sint16 ang)
+{
+    sint32 *oldm;
+
+    phd_RotY(ang);
+    oldm = phd_mxptr;
+    phd_mxptr = IMptr;
+    phd_RotY(ang);
+    phd_mxptr = oldm;
+}
