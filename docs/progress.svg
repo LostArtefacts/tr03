@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="4.37" height="12" x="130" y="1.50" class="named"/>
-<rect width="197.63" height="12" x="134.37" y="1.50" class="todo"/>
+<rect width="4.51" height="12" x="130" y="1.50" class="named"/>
+<rect width="197.49" height="12" x="134.51" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <text text-anchor="end" x="382" y="7.50">2.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">32/1478</text>
-<rect width="0.33" height="12" x="130" y="18.50" class="named"/>
-<rect width="201.67" height="12" x="130.33" y="18.50" class="todo"/>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">33/1478</text>
+<rect width="0.34" height="12" x="130" y="18.50" class="named"/>
+<rect width="201.66" height="12" x="130.34" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">1k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">2.17% (32)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.83% (1446)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">2.23% (33)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">97.77% (1445)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="16.17" height="6" x="0" y="0" class="named"/>
-<rect width="730.83" height="6" x="16.17" y="0" class="todo"/>
+<rect width="16.68" height="6" x="0" y="0" class="named"/>
+<rect width="730.32" height="6" x="16.68" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -436,7 +436,7 @@
 <rect width="12" height="12" x="300" y="105" class="named"><title>0x0042f6c0 Exercise1_104 (44 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="105" class="named"><title>0x0042f6f0 Exercise2_112 (44 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="105" class="named"><title>0x0042f720 Exercise2_83 (44 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="105" class="todo"><title>0x0042f750 Exercise3_115 (44 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="105" class="named"><title>0x0042f750 Exercise3_115 (44 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="105" class="todo"><title>0x0042f780 Exercise3_107 (44 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="105" class="todo"><title>0x0042f7b0 Exercise3_79 (44 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="105" class="todo"><title>0x0042f7e0 Exercise4_110 (44 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.16%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.84%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.17%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.83%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.22" height="6" x="0" y="0" class="named"/>
-<rect width="745.78" height="6" x="1.22" y="0" class="todo"/>
+<rect width="1.27" height="6" x="0" y="0" class="named"/>
+<rect width="745.73" height="6" x="1.27" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2804,7 +2804,7 @@
 <rect width="1.75" height="1.74" x="726.24" y="395.41" class="named"><title>0x0042f6c0 Exercise1_104 (44 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="731" y="395.41" class="named"><title>0x0042f6f0 Exercise2_112 (44 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="735.75" y="395.41" class="named"><title>0x0042f720 Exercise2_83 (44 bytes)</title></rect>
-<rect width="1.75" height="1.74" x="740.50" y="395.41" class="todo"><title>0x0042f750 Exercise3_115 (44 bytes)</title></rect>
+<rect width="1.75" height="1.74" x="740.50" y="395.41" class="named"><title>0x0042f750 Exercise3_115 (44 bytes)</title></rect>
 <rect width="1.75" height="1.74" x="745.25" y="395.41" class="todo"><title>0x0042f780 Exercise3_107 (44 bytes)</title></rect>
 <rect width="1.69" height="1.80" x="692.55" y="400.15" class="todo"><title>0x0042f7b0 Exercise3_79 (44 bytes)</title></rect>
 <rect width="1.69" height="1.80" x="692.55" y="404.96" class="todo"><title>0x0042f7e0 Exercise4_110 (44 bytes)</title></rect>
