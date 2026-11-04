@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="133.94" height="12" x="0" y="0" class="named"><title>423 · 28.62%</title></rect>
-<rect width="334.06" height="12" x="133.94" y="0" class="todo"><title>1055 · 71.38%</title></rect>
+<rect width="134.26" height="12" x="0" y="0" class="named"><title>424 · 28.69%</title></rect>
+<rect width="333.74" height="12" x="134.26" y="0" class="todo"><title>1054 · 71.31%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">28.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">423</tspan> · <tspan class="todo">1055</tspan></text>
+<text text-anchor="end" x="648" y="7.50">28.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">424</tspan> · <tspan class="todo">1054</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="21.28" height="12" x="0" y="0" class="named"><title>30 KB · 4.55%</title></rect>
-<rect width="446.72" height="12" x="21.28" y="0" class="todo"><title>634 KB · 95.45%</title></rect>
+<rect width="21.39" height="12" x="0" y="0" class="named"><title>30 KB · 4.57%</title></rect>
+<rect width="446.61" height="12" x="21.39" y="0" class="todo"><title>634 KB · 95.43%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">4.5%</text>
+<text text-anchor="end" x="648" y="24.50">4.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">30 KB</tspan> · <tspan class="todo">634 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -381,7 +381,7 @@
 <rect width="12" height="12" x="240" y="90" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="90" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="90" class="named"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="90" class="todo"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="90" class="named"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="90" class="named"><title>0x0042e460 DoLotsOfBloodD (130 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="90" class="todo"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="90" class="named"><title>0x0042e5c0 LaraBubbles (112 bytes)</title></rect>
@@ -2303,7 +2303,7 @@
 <rect width="7.87" height="7.45" x="610.23" y="233.52" class="todo"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
 <rect width="7.82" height="7.45" x="621.10" y="233.52" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="631.93" y="233.52" class="todo"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
-<rect width="7.78" height="7.45" x="642.70" y="233.52" class="todo"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
+<rect width="7.78" height="7.45" x="642.70" y="233.52" class="named"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="653.48" y="233.52" class="todo"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
 <rect width="7.78" height="7.45" x="664.26" y="233.52" class="todo"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="675.03" y="233.52" class="todo"><title>0x0040d320 S_DrawScreenSprite (163 bytes)</title></rect>

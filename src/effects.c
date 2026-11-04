@@ -95,6 +95,12 @@ sint16 DoBloodSplatD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 directio
     return NO_ITEM;
 }
 
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number)
+{
+    for (; number > 0; number--)
+        DoBloodSplat(x + BLOOD_RADIUS - (GetRandomControl() * BLOOD_RADIUS * 2 / 0x8000), y + BLOOD_RADIUS - (GetRandomControl() * BLOOD_RADIUS * 2 / 0x8000), z + BLOOD_RADIUS - (GetRandomControl() * BLOOD_RADIUS * 2 / 0x8000), speed, direction, room_num);
+}
+
 void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number)
 {
     for (; number > 0; number--)
