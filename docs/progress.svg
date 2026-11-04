@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="86.13" height="12" x="0" y="0" class="named"><title>272 · 18.40%</title></rect>
-<rect width="381.87" height="12" x="86.13" y="0" class="todo"><title>1206 · 81.60%</title></rect>
+<rect width="86.44" height="12" x="0" y="0" class="named"><title>273 · 18.47%</title></rect>
+<rect width="381.56" height="12" x="86.44" y="0" class="todo"><title>1205 · 81.53%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">18.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">272</tspan> · <tspan class="todo">1206</tspan></text>
+<text text-anchor="end" x="648" y="7.50">18.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">273</tspan> · <tspan class="todo">1205</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.59" height="12" x="0" y="0" class="named"><title>14 KB · 2.05%</title></rect>
-<rect width="458.41" height="12" x="9.59" y="0" class="todo"><title>650 KB · 97.95%</title></rect>
+<rect width="9.64" height="12" x="0" y="0" class="named"><title>14 KB · 2.06%</title></rect>
+<rect width="458.36" height="12" x="9.64" y="0" class="todo"><title>650 KB · 97.94%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">2.0%</text>
+<text text-anchor="end" x="648" y="24.50">2.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">14 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -148,7 +148,7 @@
 <rect width="12" height="12" x="495" y="15" class="todo"><title>0x0040faf0 Trigger51RocketSmoke (450 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="15" class="todo"><title>0x0040fcc0 Trigger51BlastFire (464 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="15" class="named"><title>0x0040fe90 InitialiseArea51Struts (8 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="15" class="todo"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="15" class="named"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="15" class="todo"><title>0x0040fef0 InitialiseArmySMG (82 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="15" class="todo"><title>0x0040ff50 ArmySMGControl (1994 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="15" class="named"><title>0x00410750 InitialiseAutogun (75 bytes)</title></rect>
@@ -2590,7 +2590,7 @@
 <rect width="5.36" height="5.27" x="600.62" y="392.62" class="todo"><title>0x00416620 CreatureUnderwater (80 bytes)</title></rect>
 <rect width="5.36" height="5.27" x="600.62" y="400.89" class="todo"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
 <rect width="5.36" height="5.27" x="600.62" y="409.16" class="todo"><title>0x0048e8a0 Func48e8a0 (80 bytes)</title></rect>
-<rect width="5.36" height="5.14" x="600.62" y="417.44" class="todo"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
+<rect width="5.36" height="5.14" x="600.62" y="417.44" class="named"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="425.58" class="todo"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="433.72" class="todo"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="441.86" class="todo"><title>0x00484eb0 HWR_BeginScene (78 bytes)</title></rect>
