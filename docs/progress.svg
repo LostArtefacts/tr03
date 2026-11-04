@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="92.46" height="12" x="0" y="0" class="named"><title>292 · 19.76%</title></rect>
-<rect width="375.54" height="12" x="92.46" y="0" class="todo"><title>1186 · 80.24%</title></rect>
+<rect width="92.78" height="12" x="0" y="0" class="named"><title>293 · 19.82%</title></rect>
+<rect width="375.22" height="12" x="92.78" y="0" class="todo"><title>1185 · 80.18%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">19.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">292</tspan> · <tspan class="todo">1186</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">293</tspan> · <tspan class="todo">1185</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="10.71" height="12" x="0" y="0" class="named"><title>15 KB · 2.29%</title></rect>
-<rect width="457.29" height="12" x="10.71" y="0" class="todo"><title>649 KB · 97.71%</title></rect>
+<rect width="10.77" height="12" x="0" y="0" class="named"><title>15 KB · 2.30%</title></rect>
+<rect width="457.23" height="12" x="10.77" y="0" class="todo"><title>649 KB · 97.70%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">15 KB</tspan> · <tspan class="todo">649 KB</tspan></text>
@@ -372,7 +372,7 @@
 <rect width="12" height="12" x="105" y="90" class="todo"><title>0x0042dab0 TriggerBubble (239 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="90" class="todo"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="90" class="todo"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="90" class="todo"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="90" class="named"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="90" class="named"><title>0x0042de60 ClearDynamics (29 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="90" class="todo"><title>0x0042de80 ControlSmokeEmitter (567 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="90" class="todo"><title>0x0042e0c0 ControlColouredLights (165 bytes)</title></rect>
@@ -2573,7 +2573,7 @@
 <rect width="5.25" height="5.52" x="692.24" y="300.51" class="named"><title>0x0040e350 InitialiseCivvy (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="700.49" y="300.51" class="named"><title>0x0040fef0 InitialiseArmySMG (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="708.74" y="300.51" class="named"><title>0x00410e60 CanUseGun (82 bytes)</title></rect>
-<rect width="5.25" height="5.52" x="716.99" y="300.51" class="todo"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
+<rect width="5.25" height="5.52" x="716.99" y="300.51" class="named"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="725.24" y="300.51" class="todo"><title>0x004559b0 InitialiseMonkey (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="733.50" y="300.51" class="todo"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
 <rect width="5.25" height="5.52" x="741.75" y="300.51" class="todo"><title>0x00459880 BridgeTilt1Floor (82 bytes)</title></rect>
