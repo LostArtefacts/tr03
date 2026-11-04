@@ -298,6 +298,34 @@ void FlameEmitter2Control(sint16 item_number)
     }
 }
 
+void FlameEmitter3Control(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FX_INFO *fx;
+    sint16 fx_number;
+
+    item = &items[item_number];
+    if (TriggerActive(item)) {
+        if (item->data == NULL) {
+            fx_number = CreateEffect(item->room_number);
+            if (fx_number != NO_ITEM) {
+                fx = &effects[fx_number];
+                fx->pos.x_pos = item->pos.x_pos;
+                fx->pos.y_pos = item->pos.y_pos;
+                fx->pos.z_pos = item->pos.z_pos;
+                fx->frame_number = 2;
+                fx->object_number = FLAME;
+                fx->counter = fx->flag1 = 0;
+                fx->flag2 = GetRandomControl() & 63;
+            }
+            item->data = (void *)(fx_number + 1);
+        }
+    } else if (item->data) {
+        KillEffect((sint16)((int)item->data - 1));
+        item->data = NULL;
+    }
+}
+
 void LaraBurn(void)
 {
     sint16 fx_number;
