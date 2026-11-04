@@ -16,6 +16,10 @@ void TrapCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 int TestLaraPosition(sint16 *bounds, ITEM_INFO *item, ITEM_INFO *laraitem);
 void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
 int MoveLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DoorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void ObjectCollisionSub(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+int Move3DPosTo3DPos(PHD_3DPOS *src, PHD_3DPOS *dest, int velocity, PHD_ANGLE angadd);
 
 sint32 FindGridShift(sint32 src, sint32 dst)
 {
