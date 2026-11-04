@@ -37,6 +37,32 @@ sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 
 int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift);
 
+int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int shift_l, result_r, shift_r, result_l;
+
+    result_r = LaraTestClimbPos(item, coll->radius, coll->radius + 120, -700, STEP_L * 2, &shift_r);
+    if (result_r != 1)
+        return 0;
+    result_l = LaraTestClimbPos(item, coll->radius, -(coll->radius + 120), -700, STEP_L * 2, &shift_l);
+    if (result_l != 1)
+        return 0;
+    if (shift_r) {
+        if (shift_l) {
+            if ((shift_l < 0) ^ (shift_r < 0))
+                return 0;
+            if (shift_r < 0 && shift_l < shift_r)
+                shift_r = shift_l;
+            else if (shift_r > 0 && shift_l > shift_r)
+                shift_r = shift_l;
+        }
+        item->pos.y_pos += shift_r;
+    } else if (shift_l) {
+        item->pos.y_pos += shift_l;
+    }
+    return 1;
+}
+
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->facing = lara.move_angle;
