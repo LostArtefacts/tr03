@@ -39,6 +39,30 @@ void find_target_point(ITEM_INFO *item, GAME_VECTOR *target)
     target->room_number = item->room_number;
 }
 
+void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, int size);
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+
+void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage)
+{
+    sint32 lp;
+
+    if (item->hit_points > 0 && item->hit_points <= damage)
+        savegame.kills++;
+    item->hit_points -= damage;
+    item->hit_status = 1;
+    if (item->data != NULL)
+        ((CREATURE_INFO *)item->data)->hurt_by_lara = 1;
+    if (hitpos) {
+        if (item->object_number != 36 && item->object_number != ROBOT_SENTRY_GUN && item->object_number != TARGETS) {
+            DoBloodSplat(hitpos->x, hitpos->y, hitpos->z, item->speed, item->pos.y_rot, item->room_number);
+        } else if (item->object_number == ROBOT_SENTRY_GUN) {
+            for (lp = 0; lp < 3; lp++)
+                TriggerRicochetSpark(hitpos, GetRandomControl() & 4095, 0);
+            SoundEffect(10, &item->pos, 0);
+        }
+    }
+}
+
 void SmashItem(sint16 item_number, int weapon_type)
 {
     ITEM_INFO *item;
