@@ -11,3 +11,15 @@ extern int height_type;
 extern int OnObject;
 
 void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
+
+void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height)
+{
+    sint32 floor, ceiling;
+
+    LiftFloorCeiling(item, x, y, z, &floor, &ceiling);
+    if (floor < *height)
+    {
+        OnObject = 1;
+        *height = floor;
+    }
+}
