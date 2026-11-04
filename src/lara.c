@@ -679,6 +679,21 @@ void extra_as_startanim(ITEM_INFO *item, COLL_INFO *coll)
     TestTriggers(trigger_index, 0);
 }
 
+void extra_as_trainkill(ITEM_INFO *item, COLL_INFO *coll)
+{
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    lara.hit_direction = -1;
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->pos.y_pos = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (item->frame_number < anims[item->anim_number].frame_end - 30)
+        lara.death_count = 1;
+    item->gravity_status = 0;
+    item->hit_points = -1;
+}
+
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_turn_r(item, coll);

@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="123.49" height="12" x="0" y="0" class="named"><title>390 · 26.39%</title></rect>
-<rect width="344.51" height="12" x="123.49" y="0" class="todo"><title>1088 · 73.61%</title></rect>
+<rect width="123.81" height="12" x="0" y="0" class="named"><title>391 · 26.45%</title></rect>
+<rect width="344.19" height="12" x="123.81" y="0" class="todo"><title>1087 · 73.55%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">26.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">390</tspan> · <tspan class="todo">1088</tspan></text>
+<text text-anchor="end" x="648" y="7.50">26.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">391</tspan> · <tspan class="todo">1087</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="17.76" height="12" x="0" y="0" class="named"><title>25 KB · 3.80%</title></rect>
-<rect width="450.24" height="12" x="17.76" y="0" class="todo"><title>639 KB · 96.20%</title></rect>
+<rect width="17.85" height="12" x="0" y="0" class="named"><title>25 KB · 3.81%</title></rect>
+<rect width="450.15" height="12" x="17.85" y="0" class="todo"><title>639 KB · 96.19%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">25 KB</tspan> · <tspan class="todo">639 KB</tspan></text>
@@ -673,7 +673,7 @@
 <rect width="12" height="12" x="120" y="180" class="named"><title>0x00441db0 extra_as_gongbong (29 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="180" class="named"><title>0x00441dd0 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="180" class="named"><title>0x00441e30 extra_as_startanim (77 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="180" class="todo"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="180" class="named"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="180" class="todo"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="180" class="todo"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="180" class="todo"><title>0x00442140 lara_col_run (393 bytes)</title></rect>
@@ -2412,7 +2412,7 @@
 <rect width="6.63" height="6.77" x="721.17" y="254.61" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="6.63" height="6.77" x="730.80" y="254.61" class="todo"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="6.58" height="6.77" x="740.42" y="254.61" class="named"><title>0x0041ec90 DoorCollision (126 bytes)</title></rect>
-<rect width="6.90" height="6.45" x="564.61" y="264.38" class="todo"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
+<rect width="6.90" height="6.45" x="564.61" y="264.38" class="named"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
 <rect width="6.90" height="6.45" x="574.51" y="264.38" class="named"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>
 <rect width="6.90" height="6.45" x="584.40" y="264.38" class="todo"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
 <rect width="6.90" height="6.45" x="594.30" y="264.38" class="todo"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
