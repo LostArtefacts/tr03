@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="152.94" height="12" x="0" y="0" class="named"><title>483 · 32.68%</title></rect>
-<rect width="315.06" height="12" x="152.94" y="0" class="todo"><title>995 · 67.32%</title></rect>
+<rect width="153.26" height="12" x="0" y="0" class="named"><title>484 · 32.75%</title></rect>
+<rect width="314.74" height="12" x="153.26" y="0" class="todo"><title>994 · 67.25%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">32.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">483</tspan> · <tspan class="todo">995</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">484</tspan> · <tspan class="todo">994</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="27.92" height="12" x="0" y="0" class="named"><title>40 KB · 5.97%</title></rect>
-<rect width="440.08" height="12" x="27.92" y="0" class="todo"><title>624 KB · 94.03%</title></rect>
+<rect width="28.04" height="12" x="0" y="0" class="named"><title>40 KB · 5.99%</title></rect>
+<rect width="439.96" height="12" x="28.04" y="0" class="todo"><title>624 KB · 94.01%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">40 KB</tspan> · <tspan class="todo">624 KB</tspan></text>
@@ -750,7 +750,7 @@
 <rect width="12" height="12" x="525" y="195" class="todo"><title>0x00448650 AnimatePistols (1410 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="195" class="todo"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="195" class="todo"><title>0x00448e60 LaraTestClimbUpPos (553 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="195" class="todo"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="195" class="named"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="195" class="named"><title>0x00449140 lara_as_climbleft (56 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="195" class="named"><title>0x00449180 lara_as_climbright (56 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="195" class="named"><title>0x004491c0 lara_as_climbstnc (120 bytes)</title></rect>
@@ -2275,7 +2275,7 @@
 <rect width="8" height="7.86" x="739" y="222.66" class="todo"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="7.78" height="8.04" x="522.89" y="233.52" class="todo"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="7.78" height="8.04" x="522.89" y="244.56" class="todo"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
-<rect width="7.78" height="8" x="522.89" y="255.60" class="todo"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>
+<rect width="7.78" height="8" x="522.89" y="255.60" class="named"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>
 <rect width="7.78" height="7.95" x="522.89" y="266.60" class="named"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
 <rect width="7.78" height="7.91" x="522.89" y="277.55" class="named"><title>0x00416570 CreatureFloat (174 bytes)</title></rect>
 <rect width="7.78" height="7.91" x="522.89" y="288.45" class="named"><title>0x0046f130 FlameEmitter3Control (174 bytes)</title></rect>

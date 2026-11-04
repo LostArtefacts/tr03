@@ -16,6 +16,39 @@ void LaraDoClimbLeftRight(ITEM_INFO *item, COLL_INFO *coll, int result, int shif
 #define CAM_E_CLIMBU (30 * ONE_DEGREE)
 #define CAM_E_CLIMBD (-45 * ONE_DEGREE)
 
+int LaraTestClimb(int x, int y, int z, int xfront, int zfront, int item_height, sint16 item_room, int *shift);
+
+int LaraTestClimbPos(ITEM_INFO *item, int front, int right, int origin, int height, int *shift)
+{
+    int angle, x, z;
+    int xfront = 0, zfront = 0;
+
+    angle = (uint16)(item->pos.y_rot + 0x2000) / 0x4000;
+    switch (angle) {
+    case 0:
+        z = item->pos.z_pos + front;
+        x = item->pos.x_pos + right;
+        zfront = 4;
+        break;
+    case 1:
+        x = item->pos.x_pos + front;
+        z = item->pos.z_pos - right;
+        xfront = 4;
+        break;
+    case 2:
+        z = item->pos.z_pos - front;
+        x = item->pos.x_pos - right;
+        zfront = -4;
+        break;
+    default:
+        x = item->pos.x_pos - front;
+        z = item->pos.z_pos + right;
+        xfront = -4;
+        break;
+    }
+    return LaraTestClimb(x, item->pos.y_pos + origin, z, xfront, zfront, height, item->room_number, shift);
+}
+
 void lara_as_climbleft(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->enable_hit = 0;
