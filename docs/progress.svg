@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="140.27" height="12" x="0" y="0" class="named"><title>443 · 29.97%</title></rect>
-<rect width="327.73" height="12" x="140.27" y="0" class="todo"><title>1035 · 70.03%</title></rect>
+<rect width="140.59" height="12" x="0" y="0" class="named"><title>444 · 30.04%</title></rect>
+<rect width="327.41" height="12" x="140.59" y="0" class="todo"><title>1034 · 69.96%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">30.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">443</tspan> · <tspan class="todo">1035</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">444</tspan> · <tspan class="todo">1034</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="23.67" height="12" x="0" y="0" class="named"><title>34 KB · 5.06%</title></rect>
-<rect width="444.33" height="12" x="23.67" y="0" class="todo"><title>630 KB · 94.94%</title></rect>
+<rect width="23.76" height="12" x="0" y="0" class="named"><title>34 KB · 5.08%</title></rect>
+<rect width="444.24" height="12" x="23.76" y="0" class="todo"><title>630 KB · 94.92%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">34 KB</tspan> · <tspan class="todo">630 KB</tspan></text>
@@ -476,7 +476,7 @@
 <rect width="12" height="12" x="165" y="120" class="todo"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="120" class="named"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="120" class="todo"><title>0x00433810 HairControl (2748 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="120" class="todo"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="120" class="named"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="120" class="named"><title>0x00434360 FlashIt (45 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="120" class="todo"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="120" class="todo"><title>0x00434510 DrawAssaultPenalties (598 bytes)</title></rect>
@@ -2440,7 +2440,7 @@
 <rect width="6.64" height="6.33" x="564.41" y="339.36" class="todo"><title>0x00438380 Inv_RequestItem (119 bytes)</title></rect>
 <rect width="6.64" height="6.33" x="564.41" y="348.69" class="named"><title>0x004432e0 lara_col_jumper (119 bytes)</title></rect>
 <rect width="6.64" height="6.33" x="564.41" y="358.02" class="todo"><title>0x00490700 CloseDrawPrimitive (119 bytes)</title></rect>
-<rect width="6.64" height="6.28" x="564.41" y="367.36" class="todo"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
+<rect width="6.64" height="6.28" x="564.41" y="367.36" class="named"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
 <rect width="6.64" height="6.28" x="564.41" y="376.64" class="named"><title>0x0044eca0 lara_as_glide (118 bytes)</title></rect>
 <rect width="6.64" height="6.22" x="564.41" y="385.91" class="named"><title>0x0043f0d0 LaraDeflectEdgeDuck (117 bytes)</title></rect>
 <rect width="6.64" height="6.22" x="564.41" y="395.14" class="named"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>

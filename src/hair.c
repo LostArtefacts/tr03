@@ -26,3 +26,27 @@ void InitialiseHair(void)
         hvel[i].x = hvel[i].y = hvel[i].z = 0;
     }
 }
+
+void phd_PushMatrix(void);
+void phd_RotX(sint16 rx);
+void phd_RotY(sint16 ry);
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void phd_PutPolygons(sint16 *objptr, int clip);
+
+void DrawHair(void)
+{
+    int i;
+    OBJECT_INFO *object;
+    sint16 **mesh;
+
+    object = &objects[HAIR];
+    mesh = &meshes[object->mesh_index];
+    for (i = 0; i < HAIR_SEGMENTS; i++) {
+        phd_PushMatrix();
+        phd_TranslateAbs(hair[i].x_pos, hair[i].y_pos, hair[i].z_pos);
+        phd_RotY(hair[i].y_rot);
+        phd_RotX(hair[i].x_rot);
+        phd_PutPolygons(*mesh++, 1);
+        phd_PopMatrix();
+    }
+}
