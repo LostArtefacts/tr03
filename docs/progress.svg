@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="158.64" height="12" x="0" y="0" class="named"><title>501 · 33.90%</title></rect>
-<rect width="309.36" height="12" x="158.64" y="0" class="todo"><title>977 · 66.10%</title></rect>
+<rect width="158.96" height="12" x="0" y="0" class="named"><title>502 · 33.96%</title></rect>
+<rect width="309.04" height="12" x="158.96" y="0" class="todo"><title>976 · 66.04%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">33.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">501</tspan> · <tspan class="todo">977</tspan></text>
+<text text-anchor="end" x="648" y="7.50">34.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">502</tspan> · <tspan class="todo">976</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="30.29" height="12" x="0" y="0" class="named"><title>43 KB · 6.47%</title></rect>
-<rect width="437.71" height="12" x="30.29" y="0" class="todo"><title>621 KB · 93.53%</title></rect>
+<rect width="30.42" height="12" x="0" y="0" class="named"><title>43 KB · 6.50%</title></rect>
+<rect width="437.58" height="12" x="30.42" y="0" class="todo"><title>621 KB · 93.50%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">43 KB</tspan> · <tspan class="todo">621 KB</tspan></text>
@@ -1101,7 +1101,7 @@
 <rect width="12" height="12" x="540" y="300" class="named"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="300" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="300" class="todo"><title>0x00471680 FindClosestShieldPoint (689 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="300" class="todo"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="300" class="named"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="300" class="todo"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="300" class="todo"><title>0x00471bd0 ExplodeTribeBoss (598 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="300" class="todo"><title>0x00471e30 TriggerSummonSmoke (381 bytes)</title></rect>
@@ -2251,7 +2251,7 @@
 <rect width="8.21" height="8.30" x="693.98" y="211.36" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="705.19" y="211.36" class="named"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
 <rect width="8.21" height="8.30" x="716.40" y="211.36" class="named"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
-<rect width="8.21" height="8.30" x="727.62" y="211.36" class="todo"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
+<rect width="8.21" height="8.30" x="727.62" y="211.36" class="named"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
 <rect width="8.17" height="8.30" x="738.83" y="211.36" class="named"><title>0x00439c50 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="8.63" height="7.86" x="522.89" y="222.66" class="named"><title>0x00445760 FireM16 (192 bytes)</title></rect>
 <rect width="8.63" height="7.86" x="534.52" y="222.66" class="todo"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
