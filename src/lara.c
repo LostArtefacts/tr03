@@ -118,6 +118,16 @@ void lara_as_hang2(ITEM_INFO *item, COLL_INFO *coll)
         LookUpDown();
 }
 
+void MonkeySwingSnap(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint16 room_num;
+    FLOOR_INFO *floor;
+
+    room_num = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_num);
+    item->pos.y_pos = GetCeiling(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos) + (768 - 64);
+}
+
 sint16 GetDirOctant(sint32 rot)
 {
     if (abs(rot) < 8192 || abs(rot) > 24576)

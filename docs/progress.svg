@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="77.26" height="12" x="0" y="0" class="named"><title>244 · 16.51%</title></rect>
-<rect width="390.74" height="12" x="77.26" y="0" class="todo"><title>1234 · 83.49%</title></rect>
+<rect width="77.58" height="12" x="0" y="0" class="named"><title>245 · 16.58%</title></rect>
+<rect width="390.42" height="12" x="77.58" y="0" class="todo"><title>1233 · 83.42%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">16.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">244</tspan> · <tspan class="todo">1234</tspan></text>
+<text text-anchor="end" x="648" y="7.50">16.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">245</tspan> · <tspan class="todo">1233</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="8.19" height="12" x="0" y="0" class="named"><title>12 KB · 1.75%</title></rect>
-<rect width="459.81" height="12" x="8.19" y="0" class="todo"><title>652 KB · 98.25%</title></rect>
+<rect width="8.24" height="12" x="0" y="0" class="named"><title>12 KB · 1.76%</title></rect>
+<rect width="459.76" height="12" x="8.24" y="0" class="todo"><title>652 KB · 98.24%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">1.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">12 KB</tspan> · <tspan class="todo">652 KB</tspan></text>
@@ -610,7 +610,7 @@
 <rect width="12" height="12" x="675" y="150" class="named"><title>0x0043fb90 lara_as_hang2 (120 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="150" class="todo"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="150" class="todo"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="150" class="todo"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="150" class="named"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="150" class="todo"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="165" class="named"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="165" class="todo"><title>0x0043ffd0 TestMonkeyRight (201 bytes)</title></rect>
@@ -2635,7 +2635,7 @@
 <rect width="4.86" height="5.09" x="656.69" y="316.89" class="todo"><title>0x0048d150 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="4.86" height="5.09" x="664.55" y="316.89" class="todo"><title>0x0048fdb0 BPPToDDBD (70 bytes)</title></rect>
 <rect width="4.86" height="5.09" x="672.41" y="316.89" class="todo"><title>0x004b39a0 DD_EnsureSurfaceAvailable (70 bytes)</title></rect>
-<rect width="4.79" height="5.09" x="680.27" y="316.89" class="todo"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
+<rect width="4.79" height="5.09" x="680.27" y="316.89" class="named"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="688.05" y="316.89" class="todo"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="695.84" y="316.89" class="todo"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="4.79" height="5.09" x="703.63" y="316.89" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
