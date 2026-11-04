@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="31.43" height="12" x="0" y="0" class="named"><title>230 · 15.56%</title></rect>
-<rect width="170.57" height="12" x="31.43" y="0" class="todo"><title>1248 · 84.44%</title></rect>
+<rect width="31.57" height="12" x="0" y="0" class="named"><title>231 · 15.63%</title></rect>
+<rect width="170.43" height="12" x="31.57" y="0" class="todo"><title>1247 · 84.37%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">15.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">230</tspan> · <tspan class="todo">1248</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">231</tspan> · <tspan class="todo">1247</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="3.23" height="12" x="0" y="0" class="named"><title>11 KB · 1.60%</title></rect>
-<rect width="198.77" height="12" x="3.23" y="0" class="todo"><title>653 KB · 98.40%</title></rect>
+<rect width="3.29" height="12" x="0" y="0" class="named"><title>11 KB · 1.63%</title></rect>
+<rect width="198.71" height="12" x="3.29" y="0" class="todo"><title>653 KB · 98.37%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">11 KB</tspan> · <tspan class="todo">653 KB</tspan></text>
@@ -245,7 +245,7 @@
 <rect width="12" height="12" x="450" y="45" class="todo"><title>0x0041d500 GetCollisionInfo (3061 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="45" class="named"><title>0x0041e140 FindGridShift (47 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="45" class="todo"><title>0x0041e170 CollideStaticObjects (987 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="45" class="todo"><title>0x0041e560 GetNearByRooms (200 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="45" class="named"><title>0x0041e560 GetNearByRooms (200 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="45" class="todo"><title>0x0041e630 GetNewRoom (85 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="45" class="todo"><title>0x0041e690 ShiftItem (55 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="45" class="todo"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
@@ -2231,7 +2231,7 @@
 <rect width="8.66" height="8.24" x="511.32" y="394.02" class="todo"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
 <rect width="8.66" height="8.20" x="511.32" y="405.27" class="todo"><title>0x0043ffd0 TestMonkeyRight (201 bytes)</title></rect>
 <rect width="8.66" height="8.20" x="511.32" y="416.47" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
-<rect width="8.66" height="8.16" x="511.32" y="427.68" class="todo"><title>0x0041e560 GetNearByRooms (200 bytes)</title></rect>
+<rect width="8.66" height="8.16" x="511.32" y="427.68" class="named"><title>0x0041e560 GetNearByRooms (200 bytes)</title></rect>
 <rect width="8.66" height="8.16" x="511.32" y="438.84" class="todo"><title>0x00434a10 DrawHealthBar (200 bytes)</title></rect>
 <rect width="8.52" height="8.29" x="522.98" y="211.44" class="todo"><title>0x00468780 GetOnSub (200 bytes)</title></rect>
 <rect width="8.52" height="8.29" x="534.50" y="211.44" class="todo"><title>0x0046ea50 TeethTrap (200 bytes)</title></rect>

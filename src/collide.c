@@ -1,5 +1,10 @@
 #include "game.h"
 
+extern sint16 draw_rooms[];
+extern int number_draw_rooms;
+
+void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number);
+
 sint32 FindGridShift(sint32 src, sint32 dst)
 {
     sint32 srcw, dstw;
@@ -14,4 +19,18 @@ sint32 FindGridShift(sint32 src, sint32 dst)
         return WALL_L - (src - 1);
     else
         return -(src + 1);
+}
+
+void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number)
+{
+    draw_rooms[0] = room_number;
+    number_draw_rooms = 1;
+    GetNewRoom(x + r, y, z + r, room_number);
+    GetNewRoom(x - r, y, z + r, room_number);
+    GetNewRoom(x + r, y, z - r, room_number);
+    GetNewRoom(x - r, y, z - r, room_number);
+    GetNewRoom(x + r, y - h, z + r, room_number);
+    GetNewRoom(x - r, y - h, z + r, room_number);
+    GetNewRoom(x + r, y - h, z - r, room_number);
+    GetNewRoom(x - r, y - h, z - r, room_number);
 }
