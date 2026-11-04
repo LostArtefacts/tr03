@@ -747,3 +747,18 @@ void lara_col_jumper(ITEM_INFO *item, COLL_INFO *coll)
         }
     }
 }
+
+int LaraFallen(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (coll->mid_floor > STEPUP_HEIGHT && lara.water_status != LARA_WADE)
+    {
+        item->anim_number = FALLDOWN_A;
+        item->frame_number = FALLDOWN_F;
+        item->current_anim_state = AS_FORWARDJUMP;
+        item->goal_anim_state = AS_FORWARDJUMP;
+        item->fallspeed = 0;
+        item->gravity_status = 1;
+        return 1;
+    }
+    return 0;
+}

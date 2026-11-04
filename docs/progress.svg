@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="93.41" height="12" x="0" y="0" class="named"><title>295 · 19.96%</title></rect>
-<rect width="374.59" height="12" x="93.41" y="0" class="todo"><title>1183 · 80.04%</title></rect>
+<rect width="93.73" height="12" x="0" y="0" class="named"><title>296 · 20.03%</title></rect>
+<rect width="374.27" height="12" x="93.73" y="0" class="todo"><title>1182 · 79.97%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">20.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">295</tspan> · <tspan class="todo">1183</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">296</tspan> · <tspan class="todo">1182</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="10.89" height="12" x="0" y="0" class="named"><title>15 KB · 2.33%</title></rect>
-<rect width="457.11" height="12" x="10.89" y="0" class="todo"><title>648 KB · 97.67%</title></rect>
+<rect width="10.95" height="12" x="0" y="0" class="named"><title>16 KB · 2.34%</title></rect>
+<rect width="457.05" height="12" x="10.95" y="0" class="todo"><title>648 KB · 97.66%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">15 KB</tspan> · <tspan class="todo">648 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">16 KB</tspan> · <tspan class="todo">648 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -719,7 +719,7 @@
 <rect width="12" height="12" x="60" y="195" class="todo"><title>0x00444d10 LaraHitCeiling (106 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="195" class="todo"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="195" class="todo"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="195" class="todo"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="195" class="named"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="195" class="todo"><title>0x00444ee0 LaraTestEdgeCatch (173 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="195" class="todo"><title>0x00444f90 LaraDeflectEdge (130 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="195" class="todo"><title>0x00445020 GetStaticObjects (546 bytes)</title></rect>
@@ -2561,7 +2561,7 @@
 <rect width="5.65" height="5.32" x="741.35" y="292.20" class="todo"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="600.62" y="300.51" class="named"><title>0x00411fe0 InitialiseBoat (84 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="609.01" y="300.51" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
-<rect width="5.38" height="5.52" x="617.39" y="300.51" class="todo"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
+<rect width="5.38" height="5.52" x="617.39" y="300.51" class="named"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
 <rect width="5.38" height="5.52" x="625.77" y="300.51" class="todo"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
 <rect width="5.32" height="5.52" x="634.15" y="300.51" class="todo"><title>0x004020d0 Func4020d0 (83 bytes)</title></rect>
 <rect width="5.32" height="5.52" x="642.46" y="300.51" class="named"><title>0x0041ec30 ObjectCollisionSub (83 bytes)</title></rect>
