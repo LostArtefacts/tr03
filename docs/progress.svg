@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="178.59" height="12" x="0" y="0" class="named"><title>564 · 38.16%</title></rect>
-<rect width="289.41" height="12" x="178.59" y="0" class="todo"><title>914 · 61.84%</title></rect>
+<rect width="178.90" height="12" x="0" y="0" class="named"><title>565 · 38.23%</title></rect>
+<rect width="289.10" height="12" x="178.90" y="0" class="todo"><title>913 · 61.77%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">38.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">564</tspan> · <tspan class="todo">914</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">565</tspan> · <tspan class="todo">913</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="49.02" height="12" x="0" y="0" class="named"><title>70 KB · 10.47%</title></rect>
-<rect width="418.98" height="12" x="49.02" y="0" class="todo"><title>595 KB · 89.53%</title></rect>
+<rect width="49.21" height="12" x="0" y="0" class="named"><title>70 KB · 10.52%</title></rect>
+<rect width="418.79" height="12" x="49.21" y="0" class="todo"><title>595 KB · 89.48%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">10.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">70 KB</tspan> · <tspan class="todo">595 KB</tspan></text>
@@ -606,7 +606,7 @@
 <rect width="12" height="12" x="615" y="150" class="named"><title>0x0043f870 TestWall (260 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="150" class="named"><title>0x0043f980 LaraCollideStop (191 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="150" class="named"><title>0x0043fa40 lara_as_dashdive (41 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="150" class="todo"><title>0x0043fa70 lara_col_dashdive (277 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="150" class="named"><title>0x0043fa70 lara_col_dashdive (277 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="150" class="named"><title>0x0043fb90 lara_as_hang2 (120 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="150" class="named"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="150" class="todo"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
@@ -2109,7 +2109,7 @@
 <rect width="10.05" height="9.80" x="473.29" y="437.20" class="todo"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
 <rect width="9.78" height="10.04" x="486.34" y="173.81" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
 <rect width="9.78" height="10.04" x="499.12" y="173.81" class="todo"><title>0x00483650 S_DrawScreenBox (278 bytes)</title></rect>
-<rect width="9.74" height="10.04" x="511.89" y="173.81" class="todo"><title>0x0043fa70 lara_col_dashdive (277 bytes)</title></rect>
+<rect width="9.74" height="10.04" x="511.89" y="173.81" class="named"><title>0x0043fa70 lara_col_dashdive (277 bytes)</title></rect>
 <rect width="9.71" height="10.04" x="524.64" y="173.81" class="todo"><title>0x0046e890 FallingBlock (276 bytes)</title></rect>
 <rect width="9.71" height="10.04" x="537.34" y="173.81" class="todo"><title>0x00484580 S_SaveGame (276 bytes)</title></rect>
 <rect width="9.67" height="10.04" x="550.05" y="173.81" class="todo"><title>0x00415820 CreatureDie (275 bytes)</title></rect>

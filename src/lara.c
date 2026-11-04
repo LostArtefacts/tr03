@@ -749,6 +749,47 @@ void lara_as_dashdive(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_dashdive(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->speed >= 0)
+        lara.move_angle = item->pos.y_rot;
+    else
+        lara.move_angle = item->pos.y_rot - 0x8000;
+
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEP_L;
+    coll->slopes_are_walls = 1;
+    coll->bad_ceiling = BAD_JUMP_CEILING;
+    GetLaraCollisionInfo(item, coll);
+    LaraDeflectEdgeJump(item, coll);
+
+    if (LaraFallen(item, coll))
+        return;
+
+    if (item->speed < 0)
+        lara.move_angle = item->pos.y_rot;
+
+    if (coll->mid_floor <= 0 && item->fallspeed > 0) {
+        if (LaraLandedBad(item, coll)) {
+            item->goal_anim_state = AS_DEATH;
+        } else if (lara.water_status == LARA_WADE) {
+            item->goal_anim_state = AS_STOP;
+        } else if ((input & IN_FORWARD) && !(input & IN_SLOW)) {
+            item->goal_anim_state = AS_RUN;
+        } else {
+            item->goal_anim_state = AS_STOP;
+        }
+        item->fallspeed = 0;
+        item->pos.y_pos += coll->mid_floor;
+        item->gravity_status = 0;
+        item->speed = 0;
+        AnimateLara(item);
+    }
+
+    ShiftItem(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_as_hang2(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
