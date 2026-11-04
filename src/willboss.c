@@ -22,6 +22,18 @@ typedef struct {
 extern BOSS_STRUCT bossdata;
 extern sint32 closest_ai_path;
 
+void DrawExplosionRings(void);
+void DrawWillBossShield(ITEM_INFO *item);
+
+void S_DrawWillBoss(ITEM_INFO *item)
+{
+    DrawAnimatingItem(item);
+    if (bossdata.explode_count)
+        DrawExplosionRings();
+    if (bossdata.explode_count && bossdata.explode_count <= 64)
+        DrawWillBossShield(item);
+}
+
 void InitialiseWillBoss(sint16 item_number)
 {
     closest_ai_path = NO_AI_PATH;
