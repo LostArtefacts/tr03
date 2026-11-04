@@ -1925,6 +1925,12 @@ address,size,name,symbol
 0x004c7ce8,95,T_remapASCII,_T_remapASCII
 0x004c7d58,20,TonyBossRadii,_TonyBossRadii
 0x004c7d70,20,TonyBossHeights,_TonyBossHeights
+0x004c7dd0,16,teeth1a,_teeth1a
+0x004c7de0,16,teeth1b,_teeth1b
+0x004c7df0,16,teeth2a,_teeth2a
+0x004c7e00,16,teeth2b,_teeth2b
+0x004c7e10,16,teeth3a,_teeth3a
+0x004c7e20,16,teeth3b,_teeth3b
 0x004c7ef0,32,lizman_summon_coords,_lizman_summon_coords
 0x004c7f10,,tribeboss_hit,_tribeboss_hit
 0x004c7fb4,4,closest_ai_path,_closest_ai_path
@@ -2068,6 +2074,7 @@ address,size,name,symbol
 0x00626400,4,LnModeTSLife,_LnModeTSLife
 0x00626404,4,flash_state,_flash_state
 0x00626408,4,flash_count,_flash_count
+0x0062640c,4,old_hitpoints,_old_hitpoints
 0x00626410,2,inv_main_current,_inv_main_current
 0x00626414,2,inv_keys_objects,_inv_keys_objects
 0x00626418,2,inv_keys_current,_inv_keys_current
