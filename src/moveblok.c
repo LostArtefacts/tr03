@@ -1,5 +1,18 @@
 #include "game.h"
 
+void ClearMovableBlockSplitters(sint32 x, sint32 y, sint32 z, sint16 room_number);
+void AlterFloorHeight(ITEM_INFO *item, int height);
+
+void InitialiseMovingBlock(sint16 item_num)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    ClearMovableBlockSplitters(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    if (item->status != INVISIBLE)
+        AlterFloorHeight(item, -1024);
+}
+
 int TestBlockMovable(ITEM_INFO *item, int blokhite)
 {
     sint16 room_number;

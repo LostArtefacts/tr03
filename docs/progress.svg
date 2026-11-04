@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="91.19" height="12" x="0" y="0" class="named"><title>288 · 19.49%</title></rect>
-<rect width="376.81" height="12" x="91.19" y="0" class="todo"><title>1190 · 80.51%</title></rect>
+<rect width="91.51" height="12" x="0" y="0" class="named"><title>289 · 19.55%</title></rect>
+<rect width="376.49" height="12" x="91.51" y="0" class="todo"><title>1189 · 80.45%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">19.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">288</tspan> · <tspan class="todo">1190</tspan></text>
+<text text-anchor="end" x="648" y="7.50">19.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">289</tspan> · <tspan class="todo">1189</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="10.48" height="12" x="0" y="0" class="named"><title>15 KB · 2.24%</title></rect>
-<rect width="457.52" height="12" x="10.48" y="0" class="todo"><title>649 KB · 97.76%</title></rect>
+<rect width="10.54" height="12" x="0" y="0" class="named"><title>15 KB · 2.25%</title></rect>
+<rect width="457.46" height="12" x="10.54" y="0" class="todo"><title>649 KB · 97.75%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">2.2%</text>
+<text text-anchor="end" x="648" y="24.50">2.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">15 KB</tspan> · <tspan class="todo">649 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -875,7 +875,7 @@
 <rect width="12" height="12" x="150" y="240" class="todo"><title>0x004559b0 InitialiseMonkey (82 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="240" class="todo"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="240" class="todo"><title>0x00455e30 MonkeyControl (3257 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="240" class="todo"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="240" class="named"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="240" class="todo"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="240" class="todo"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="240" class="todo"><title>0x00456f40 MovableBlockCollision (636 bytes)</title></rect>
@@ -2588,7 +2588,7 @@
 <rect width="5.36" height="5.34" x="600.62" y="375.94" class="todo"><title>0x00459920 BridgeTilt2Floor (81 bytes)</title></rect>
 <rect width="5.36" height="5.34" x="600.62" y="384.28" class="todo"><title>0x0048aac0 S_SetupBelowWater (81 bytes)</title></rect>
 <rect width="5.36" height="5.27" x="600.62" y="392.62" class="named"><title>0x00416620 CreatureUnderwater (80 bytes)</title></rect>
-<rect width="5.36" height="5.27" x="600.62" y="400.89" class="todo"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
+<rect width="5.36" height="5.27" x="600.62" y="400.89" class="named"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
 <rect width="5.36" height="5.27" x="600.62" y="409.16" class="todo"><title>0x0048e8a0 Func48e8a0 (80 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="417.44" class="named"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
 <rect width="5.36" height="5.14" x="600.62" y="425.58" class="todo"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
