@@ -135,6 +135,10 @@ void KayakSplash(ITEM_INFO *item, sint32 fallspeed, sint32 water)
     SplashCount = 16;
 }
 
+int GetInKayak(sint16 item_number, COLL_INFO *coll);
+void CreateFlare(int thrown);
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
 int GetInKayak(sint16 item_number, COLL_INFO *coll)
 {
     int dist;
@@ -172,6 +176,55 @@ int GetInKayak(sint16 item_number, COLL_INFO *coll)
         }
     }
     return 0;
+}
+
+sint32 GetFreeSpark(void);
+
+void TriggerRapidsMist(sint32 x, sint32 y, sint32 z)
+{
+    SPARKS *sptr;
+    sint32 xsize;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 128;
+    sptr->sG = 128;
+    sptr->sB = 128;
+    sptr->dR = 192;
+    sptr->dG = 192;
+    sptr->dB = 192;
+    sptr->ColFadeSpeed = 2;
+    sptr->FadeToBlack = 4;
+    sptr->sLife = sptr->Life = 6 + (GetRandomControl() & 3);
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 15) - 8);
+    sptr->y = y + ((GetRandomControl() & 15) - 8);
+    sptr->z = z + ((GetRandomControl() & 15) - 8);
+    sptr->Xvel = (GetRandomControl() & 255) - 128;
+    sptr->Zvel = (GetRandomControl() & 255) - 128;
+    sptr->Yvel = (GetRandomControl() & 255) - 128;
+    sptr->Friction = 3;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else {
+        sptr->Flags = 2 | 8 | 512;
+    }
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 4;
+    sptr->Gravity = 0;
+    sptr->MaxYvel = 0;
+    xsize = (GetRandomControl() & 7) + 16;
+    sptr->Width = sptr->sWidth = xsize >> 1;
+    sptr->dWidth = xsize;
+    sptr->Height = sptr->sHeight = xsize >> 1;
+    sptr->dHeight = xsize;
 }
 
 void DoRipple(ITEM_INFO *v, sint16 xoff, sint16 zoff)

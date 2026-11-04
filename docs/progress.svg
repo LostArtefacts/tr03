@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.59" height="12" x="0" y="0" class="named"><title>624 · 42.22%</title></rect>
-<rect width="270.41" height="12" x="197.59" y="0" class="todo"><title>854 · 57.78%</title></rect>
+<rect width="197.90" height="12" x="0" y="0" class="named"><title>625 · 42.29%</title></rect>
+<rect width="270.10" height="12" x="197.90" y="0" class="todo"><title>853 · 57.71%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">42.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">624</tspan> · <tspan class="todo">854</tspan></text>
+<text text-anchor="end" x="648" y="7.50">42.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">625</tspan> · <tspan class="todo">853</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="63.31" height="12" x="0" y="0" class="named"><title>90 KB · 13.53%</title></rect>
-<rect width="404.69" height="12" x="63.31" y="0" class="todo"><title>575 KB · 86.47%</title></rect>
+<rect width="63.54" height="12" x="0" y="0" class="named"><title>90 KB · 13.58%</title></rect>
+<rect width="404.46" height="12" x="63.54" y="0" class="todo"><title>575 KB · 86.42%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">13.5%</text>
+<text text-anchor="end" x="648" y="24.50">13.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">90 KB</tspan> · <tspan class="todo">575 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -565,7 +565,7 @@
 <rect width="12" height="12" x="0" y="150" class="todo"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="150" class="todo"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="150" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="150" class="todo"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="150" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="150" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="150" class="todo"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
@@ -2055,7 +2055,7 @@
 <rect width="10.90" height="10.78" x="557.98" y="160.08" class="todo"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="10.86" height="10.78" x="571.88" y="160.08" class="todo"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
 <rect width="10.86" height="10.78" x="585.74" y="160.08" class="todo"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
-<rect width="10.83" height="10.78" x="599.61" y="160.08" class="todo"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
+<rect width="10.83" height="10.78" x="599.61" y="160.08" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="10.80" height="10.78" x="613.44" y="160.08" class="todo"><title>0x004086b0 HWI_InsertObjectGT4_Sorted (330 bytes)</title></rect>
 <rect width="10.80" height="10.78" x="627.23" y="160.08" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
 <rect width="10.76" height="10.78" x="641.03" y="160.08" class="named"><title>0x0043f720 lara_col_dash (329 bytes)</title></rect>
