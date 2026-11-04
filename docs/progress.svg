@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="154.21" height="12" x="0" y="0" class="named"><title>487 · 32.95%</title></rect>
-<rect width="313.79" height="12" x="154.21" y="0" class="todo"><title>991 · 67.05%</title></rect>
+<rect width="154.52" height="12" x="0" y="0" class="named"><title>488 · 33.02%</title></rect>
+<rect width="313.48" height="12" x="154.52" y="0" class="todo"><title>990 · 66.98%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">32.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">487</tspan> · <tspan class="todo">991</tspan></text>
+<text text-anchor="end" x="648" y="7.50">33.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">488</tspan> · <tspan class="todo">990</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="28.42" height="12" x="0" y="0" class="named"><title>40 KB · 6.07%</title></rect>
-<rect width="439.58" height="12" x="28.42" y="0" class="todo"><title>624 KB · 93.93%</title></rect>
+<rect width="28.55" height="12" x="0" y="0" class="named"><title>41 KB · 6.10%</title></rect>
+<rect width="439.45" height="12" x="28.55" y="0" class="todo"><title>623 KB · 93.90%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">40 KB</tspan> · <tspan class="todo">624 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">41 KB</tspan> · <tspan class="todo">623 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -996,7 +996,7 @@
 <rect width="12" height="12" x="465" y="270" class="todo"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="270" class="named"><title>0x00467010 InitialiseShiva (95 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="270" class="todo"><title>0x00467070 ShivaControl (1758 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="270" class="todo"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="270" class="named"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x00467840 SoundEffect (1200 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="270" class="named"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="named"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
@@ -2268,7 +2268,7 @@
 <rect width="8.32" height="7.86" x="660.95" y="222.66" class="todo"><title>0x0045b700 GunHit (185 bytes)</title></rect>
 <rect width="8.27" height="7.86" x="672.26" y="222.66" class="todo"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="8.23" height="7.86" x="683.54" y="222.66" class="todo"><title>0x0044c630 LaraCheatGetStuff (183 bytes)</title></rect>
-<rect width="8.09" height="7.86" x="694.76" y="222.66" class="todo"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
+<rect width="8.09" height="7.86" x="694.76" y="222.66" class="named"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
 <rect width="8.05" height="7.86" x="705.85" y="222.66" class="named"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
 <rect width="8.05" height="7.86" x="716.90" y="222.66" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
 <rect width="8.05" height="7.86" x="727.95" y="222.66" class="todo"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
