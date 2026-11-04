@@ -1321,6 +1321,34 @@ void lara_col_fastback(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_pos += coll->mid_floor;
 }
 
+void lara_col_turn_r(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = STEPUP_HEIGHT;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_pits = 1;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+    if (coll->mid_floor > 100 && !(room[item->room_number].flags & SWAMP))
+    {
+        item->anim_number = FALLDOWN_A;
+        item->frame_number = FALLDOWN_F;
+        item->current_anim_state = AS_FORWARDJUMP;
+        item->goal_anim_state = AS_FORWARDJUMP;
+        item->fallspeed = 0;
+        item->gravity_status = 1;
+        return;
+    }
+    if (TestLaraSlide(item, coll))
+        return;
+    if (!(room[item->room_number].flags & SWAMP) || coll->mid_floor < 0)
+        item->pos.y_pos += coll->mid_floor;
+    else if ((room[item->room_number].flags & SWAMP) && coll->mid_floor)
+        item->pos.y_pos += SWAMP_GRAVITY;
+}
+
 void lara_col_turn_l(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara_col_turn_r(item, coll);
@@ -1758,6 +1786,8 @@ void DeathSlideCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *col
         item->flags |= ONESHOT;
     }
 }
+
+extern char LaraOnPad;
 
 int LaraHitCeiling(ITEM_INFO *item, COLL_INFO *coll)
 {
