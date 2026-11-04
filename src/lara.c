@@ -460,6 +460,36 @@ void lara_as_fastback(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_as_turn_r(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+    lara.turn_rate += LARA_TURN_RATE;
+    if (lara.gun_status == LG_READY && lara.water_status != LARA_WADE)
+        item->goal_anim_state = AS_FASTTURN;
+    else if (lara.turn_rate > LARA_SLOW_TURN)
+    {
+        if (!(input & IN_SLOW) && lara.water_status != LARA_WADE)
+            item->goal_anim_state = AS_FASTTURN;
+        else
+            lara.turn_rate = LARA_SLOW_TURN;
+    }
+    if (input & IN_FORWARD)
+    {
+        if (lara.water_status == LARA_WADE)
+            item->goal_anim_state = AS_WADE;
+        else if (input & IN_SLOW)
+            item->goal_anim_state = AS_WALK;
+        else
+            item->goal_anim_state = AS_RUN;
+    }
+    else if (!(input & IN_RIGHT))
+        item->goal_anim_state = AS_STOP;
+}
+
 void lara_as_death(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
