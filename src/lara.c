@@ -264,3 +264,10 @@ void extra_as_airlock(ITEM_INFO *item, COLL_INFO *coll)
     camera.target_angle = 80 * ONE_DEGREE;
     camera.target_elevation = -25 * ONE_DEGREE;
 }
+
+void extra_as_gongbong(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.target_angle = -25 * ONE_DEGREE;
+    camera.target_elevation = -20 * ONE_DEGREE;
+    camera.target_distance = WALL_L * 3;
+}
