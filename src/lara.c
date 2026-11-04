@@ -258,3 +258,9 @@ void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
     coll->enable_baddie_push = 0;
     camera.flags = FOLLOW_CENTRE;
 }
+
+void extra_as_airlock(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.target_angle = 80 * ONE_DEGREE;
+    camera.target_elevation = -25 * ONE_DEGREE;
+}
