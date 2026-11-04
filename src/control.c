@@ -70,6 +70,29 @@ int TriggerActive(ITEM_INFO *item)
     return ok;
 }
 
+int xLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+int zLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+int ClipTarget(GAME_VECTOR *start, GAME_VECTOR *target);
+
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target)
+{
+    int los1, los2;
+
+    if (ABS(target->z - start->z) > ABS(target->x - start->x)) {
+        los1 = xLOS(start, target);
+        los2 = zLOS(start, target);
+    } else {
+        los1 = zLOS(start, target);
+        los2 = xLOS(start, target);
+    }
+    if (!los2)
+        return 0;
+    GetFloor(target->x, target->y, target->z, &target->room_number);
+    if (!ClipTarget(start, target) || los1 != 1 || los2 != 1)
+        return 0;
+    return 1;
+}
+
 void RemoveRoomFlipItems(ROOM_INFO *r)
 {
     ITEM_INFO *item;
