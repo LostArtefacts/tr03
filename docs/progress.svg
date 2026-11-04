@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="28.70" height="12" x="0" y="0" class="named"><title>210 · 14.21%</title></rect>
-<rect width="173.30" height="12" x="28.70" y="0" class="todo"><title>1268 · 85.79%</title></rect>
+<rect width="28.84" height="12" x="0" y="0" class="named"><title>211 · 14.28%</title></rect>
+<rect width="173.16" height="12" x="28.84" y="0" class="todo"><title>1267 · 85.72%</title></rect>
 </g>
-<text text-anchor="end" x="382" y="7.50">14.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">210</tspan> · <tspan class="todo">1268</tspan></text>
+<text text-anchor="end" x="382" y="7.50">14.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">211</tspan> · <tspan class="todo">1267</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.95" height="12" x="0" y="0" class="named"><title>10 KB · 1.46%</title></rect>
-<rect width="199.05" height="12" x="2.95" y="0" class="todo"><title>654 KB · 98.54%</title></rect>
+<rect width="2.96" height="12" x="0" y="0" class="named"><title>10 KB · 1.47%</title></rect>
+<rect width="199.04" height="12" x="2.96" y="0" class="todo"><title>654 KB · 98.53%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">10 KB</tspan> · <tspan class="todo">654 KB</tspan></text>
@@ -968,7 +968,7 @@
 <rect width="12" height="12" x="45" y="270" class="todo"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="270" class="todo"><title>0x00460bd0 TriggerExhaustSmoke (455 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="270" class="todo"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="270" class="todo"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="270" class="named"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="270" class="todo"><title>0x00461040 RaptorControl (1758 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="270" class="todo"><title>0x00461740 MouseControl (501 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="270" class="todo"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
@@ -2848,7 +2848,7 @@
 <rect width="3.89" height="3.45" x="695.72" y="368.50" class="todo"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="702.60" y="368.50" class="named"><title>0x00439030 Inv_RingMotionCameraPos (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="709.39" y="368.50" class="named"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
-<rect width="3.79" height="3.45" x="716.17" y="368.50" class="todo"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
+<rect width="3.79" height="3.45" x="716.17" y="368.50" class="named"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="722.96" y="368.50" class="named"><title>0x0046b090 T_RemovePrint (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="729.74" y="368.50" class="todo"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
 <rect width="3.79" height="3.45" x="736.53" y="368.50" class="todo"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
