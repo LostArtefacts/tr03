@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="164.65" height="12" x="0" y="0" class="named"><title>520 · 35.18%</title></rect>
-<rect width="303.35" height="12" x="164.65" y="0" class="todo"><title>958 · 64.82%</title></rect>
+<rect width="164.97" height="12" x="0" y="0" class="named"><title>521 · 35.25%</title></rect>
+<rect width="303.03" height="12" x="164.97" y="0" class="todo"><title>957 · 64.75%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">35.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">520</tspan> · <tspan class="todo">958</tspan></text>
+<text text-anchor="end" x="648" y="7.50">35.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">521</tspan> · <tspan class="todo">957</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="33.05" height="12" x="0" y="0" class="named"><title>47 KB · 7.06%</title></rect>
-<rect width="434.95" height="12" x="33.05" y="0" class="todo"><title>617 KB · 92.94%</title></rect>
+<rect width="33.20" height="12" x="0" y="0" class="named"><title>47 KB · 7.09%</title></rect>
+<rect width="434.80" height="12" x="33.20" y="0" class="todo"><title>617 KB · 92.91%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">7.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">47 KB</tspan> · <tspan class="todo">617 KB</tspan></text>
@@ -677,7 +677,7 @@
 <rect width="12" height="12" x="180" y="180" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="180" class="todo"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="180" class="todo"><title>0x00442140 lara_col_run (393 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="180" class="todo"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="180" class="named"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="180" class="todo"><title>0x004423b0 lara_col_fastback (218 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="180" class="todo"><title>0x00442490 lara_col_turn_r (235 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="180" class="named"><title>0x00442580 lara_col_turn_l (19 bytes)</title></rect>
@@ -2199,7 +2199,7 @@
 <rect width="8.60" height="9.12" x="499.62" y="259.97" class="todo"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
 <rect width="8.60" height="9.12" x="499.62" y="272.09" class="todo"><title>0x0048be60 CreateMonoScreen (222 bytes)</title></rect>
 <rect width="8.60" height="9.08" x="499.62" y="284.21" class="todo"><title>0x00438530 Inv_GetItemOption (221 bytes)</title></rect>
-<rect width="8.60" height="8.96" x="499.62" y="296.29" class="todo"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
+<rect width="8.60" height="8.96" x="499.62" y="296.29" class="named"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
 <rect width="8.60" height="8.96" x="499.62" y="308.25" class="todo"><title>0x004423b0 lara_col_fastback (218 bytes)</title></rect>
 <rect width="8.60" height="8.96" x="499.62" y="320.21" class="todo"><title>0x0044baf0 DoFlareInHand (218 bytes)</title></rect>
 <rect width="8.60" height="8.96" x="499.62" y="332.17" class="todo"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
