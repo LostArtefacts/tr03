@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="122.86" height="12" x="0" y="0" class="named"><title>388 · 26.25%</title></rect>
-<rect width="345.14" height="12" x="122.86" y="0" class="todo"><title>1090 · 73.75%</title></rect>
+<rect width="123.17" height="12" x="0" y="0" class="named"><title>389 · 26.32%</title></rect>
+<rect width="344.83" height="12" x="123.17" y="0" class="todo"><title>1089 · 73.68%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">26.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">388</tspan> · <tspan class="todo">1090</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">389</tspan> · <tspan class="todo">1089</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="17.59" height="12" x="0" y="0" class="named"><title>25 KB · 3.76%</title></rect>
-<rect width="450.41" height="12" x="17.59" y="0" class="todo"><title>639 KB · 96.24%</title></rect>
+<rect width="17.67" height="12" x="0" y="0" class="named"><title>25 KB · 3.78%</title></rect>
+<rect width="450.33" height="12" x="17.67" y="0" class="todo"><title>639 KB · 96.22%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">25 KB</tspan> · <tspan class="todo">639 KB</tspan></text>
@@ -296,7 +296,7 @@
 <rect width="12" height="12" x="465" y="60" class="todo"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="60" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="todo"><title>0x004239a0 DiverControl (813 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="60" class="todo"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="60" class="named"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="60" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="60" class="todo"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="60" class="named"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
@@ -2423,7 +2423,7 @@
 <rect width="6.79" height="6.45" x="643.41" y="264.38" class="named"><title>0x00443040 lara_col_fastdive (124 bytes)</title></rect>
 <rect width="6.79" height="6.45" x="653.20" y="264.38" class="named"><title>0x00452f10 InitialiseLOTarray (124 bytes)</title></rect>
 <rect width="6.68" height="6.45" x="662.99" y="264.38" class="todo"><title>0x00401a70 phd_TranslateAbs (122 bytes)</title></rect>
-<rect width="6.68" height="6.45" x="672.67" y="264.38" class="todo"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
+<rect width="6.68" height="6.45" x="672.67" y="264.38" class="named"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
 <rect width="6.68" height="6.45" x="682.35" y="264.38" class="todo"><title>0x00434db0 DisplayModeInfo (122 bytes)</title></rect>
 <rect width="6.68" height="6.45" x="692.03" y="264.38" class="named"><title>0x0043eba0 lara_as_all4s (122 bytes)</title></rect>
 <rect width="6.68" height="6.45" x="701.71" y="264.38" class="todo"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
