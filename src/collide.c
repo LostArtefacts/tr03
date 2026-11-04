@@ -64,3 +64,15 @@ void ShiftItem(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.z_pos += coll->shift.z;
     coll->shift.x = coll->shift.y = coll->shift.z = 0;
 }
+
+void ObjectCollisionSub(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+    if (!TestBoundsCollide(item, laraitem, coll->radius))
+        return;
+    if (!TestCollision(item, laraitem))
+        return;
+    ItemPushLara(item, laraitem, coll, 0, 0);
+}
