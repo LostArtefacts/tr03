@@ -76,3 +76,25 @@ void KayakDraw(ITEM_INFO *v)
     v->pos.y_pos -= KAYAK_DRAW_SHIFT;
     S_DrawWakeFX(v);
 }
+
+sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 moretrans);
+
+void DoRipple(ITEM_INFO *v, sint16 xoff, sint16 zoff)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+    RIPPLE_STRUCT *r;
+    sint32 s, c, x, z;
+
+    c = phd_cos(v->pos.y_rot);
+    s = phd_sin(v->pos.y_rot);
+    x = v->pos.x_pos + ((s * zoff + c * xoff) >> W2V_SHIFT);
+    z = v->pos.z_pos + ((c * zoff - s * xoff) >> W2V_SHIFT);
+    room_number = v->room_number;
+    floor = GetFloor(x, v->pos.y_pos, z, &room_number);
+    if (GetWaterHeight(x, v->pos.y_pos, z, room_number) != NO_HEIGHT) {
+        r = SetupRipple(x, v->pos.y_pos, z, -2 - (GetRandomControl() & 1), 0);
+        r->init = 0;
+    }
+}

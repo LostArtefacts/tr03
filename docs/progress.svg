@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="151.67" height="12" x="0" y="0" class="named"><title>479 · 32.41%</title></rect>
-<rect width="316.33" height="12" x="151.67" y="0" class="todo"><title>999 · 67.59%</title></rect>
+<rect width="151.99" height="12" x="0" y="0" class="named"><title>480 · 32.48%</title></rect>
+<rect width="316.01" height="12" x="151.99" y="0" class="todo"><title>998 · 67.52%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">32.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">479</tspan> · <tspan class="todo">999</tspan></text>
+<text text-anchor="end" x="648" y="7.50">32.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">480</tspan> · <tspan class="todo">998</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="27.44" height="12" x="0" y="0" class="named"><title>39 KB · 5.86%</title></rect>
-<rect width="440.56" height="12" x="27.44" y="0" class="todo"><title>625 KB · 94.14%</title></rect>
+<rect width="27.56" height="12" x="0" y="0" class="named"><title>39 KB · 5.89%</title></rect>
+<rect width="440.44" height="12" x="27.56" y="0" class="todo"><title>625 KB · 94.11%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">39 KB</tspan> · <tspan class="todo">625 KB</tspan></text>
@@ -573,7 +573,7 @@
 <rect width="12" height="12" x="120" y="150" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="150" class="todo"><title>0x0043c960 DoShift_kayak (672 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="150" class="todo"><title>0x0043cc00 KayakUserInput (2137 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="150" class="todo"><title>0x0043d4a0 DoRipple (168 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="150" class="named"><title>0x0043d4a0 DoRipple (168 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="150" class="todo"><title>0x0043d550 CanGetOut_kayak (66 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="150" class="todo"><title>0x0043d5a0 KayakToBaddieCollision (469 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="150" class="todo"><title>0x0043d780 TestLaraSlide (313 bytes)</title></rect>
@@ -2294,7 +2294,7 @@
 <rect width="7.78" height="7.72" x="522.89" y="428.64" class="todo"><title>0x00496a70 MMXBlit32to16 (170 bytes)</title></rect>
 <rect width="7.78" height="7.63" x="522.89" y="439.37" class="todo"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
 <rect width="7.96" height="7.45" x="533.67" y="233.52" class="todo"><title>0x00401540 phd_RotZ (168 bytes)</title></rect>
-<rect width="7.96" height="7.45" x="544.63" y="233.52" class="todo"><title>0x0043d4a0 DoRipple (168 bytes)</title></rect>
+<rect width="7.96" height="7.45" x="544.63" y="233.52" class="named"><title>0x0043d4a0 DoRipple (168 bytes)</title></rect>
 <rect width="7.96" height="7.45" x="555.60" y="233.52" class="todo"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
 <rect width="7.96" height="7.45" x="566.56" y="233.52" class="named"><title>0x0046ef40 SideFlameEmitterControl (168 bytes)</title></rect>
 <rect width="7.92" height="7.45" x="577.53" y="233.52" class="named"><title>0x004552c0 ShootAtLara (167 bytes)</title></rect>
