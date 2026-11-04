@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="153.57" height="12" x="0" y="0" class="named"><title>485 · 32.81%</title></rect>
-<rect width="314.43" height="12" x="153.57" y="0" class="todo"><title>993 · 67.19%</title></rect>
+<rect width="153.89" height="12" x="0" y="0" class="named"><title>486 · 32.88%</title></rect>
+<rect width="314.11" height="12" x="153.89" y="0" class="todo"><title>992 · 67.12%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">32.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">485</tspan> · <tspan class="todo">993</tspan></text>
+<text text-anchor="end" x="648" y="7.50">32.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">486</tspan> · <tspan class="todo">992</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="28.17" height="12" x="0" y="0" class="named"><title>40 KB · 6.02%</title></rect>
-<rect width="439.83" height="12" x="28.17" y="0" class="todo"><title>624 KB · 93.98%</title></rect>
+<rect width="28.29" height="12" x="0" y="0" class="named"><title>40 KB · 6.05%</title></rect>
+<rect width="439.71" height="12" x="28.29" y="0" class="todo"><title>624 KB · 93.95%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">6.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">40 KB</tspan> · <tspan class="todo">624 KB</tspan></text>
@@ -276,7 +276,7 @@
 <rect width="12" height="12" x="165" y="60" class="todo"><title>0x00421460 TestTriggers (2247 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="60" class="named"><title>0x00421d80 TriggerActive (85 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="60" class="todo"><title>0x00421de0 GetCeiling (1183 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="60" class="todo"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="60" class="named"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="60" class="named"><title>0x00422370 LOS (159 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="60" class="todo"><title>0x00422410 zLOS (747 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="60" class="todo"><title>0x00422700 xLOS (748 bytes)</title></rect>
@@ -2272,7 +2272,7 @@
 <rect width="8.05" height="7.86" x="705.85" y="222.66" class="todo"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
 <rect width="8.05" height="7.86" x="716.90" y="222.66" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
 <rect width="8.05" height="7.86" x="727.95" y="222.66" class="todo"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
-<rect width="8" height="7.86" x="739" y="222.66" class="todo"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
+<rect width="8" height="7.86" x="739" y="222.66" class="named"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="7.78" height="8.04" x="522.89" y="233.52" class="named"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="7.78" height="8.04" x="522.89" y="244.56" class="todo"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
 <rect width="7.78" height="8" x="522.89" y="255.60" class="named"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>

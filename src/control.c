@@ -1,4 +1,5 @@
 #include "game.h"
+#include <string.h>
 
 #define MAX_CD_TRACKS 128
 
@@ -70,6 +71,51 @@ int TriggerActive(ITEM_INFO *item)
     return ok;
 }
 
+#define DATA_TYPE 0x1f
+#define END_BIT 0x8000
+#define DOOR_TYPE 1
+#define TILT_TYPE 2
+#define ROOF_TYPE 3
+#define SPLIT1 7
+#define SPLIT2 8
+#define SPLIT3 9
+#define SPLIT4 10
+#define NOCOLF1T 11
+#define NOCOLF1B 12
+#define NOCOLF2T 13
+#define NOCOLF2B 14
+#define NOCOLC1T 15
+#define NOCOLC1B 16
+#define NOCOLC2T 17
+#define NOCOLC2B 18
+
+extern sint16 *floor_data;
+
+sint16 GetDoor(FLOOR_INFO *floor)
+{
+    sint16 *data, type;
+
+    if (!floor->index)
+        return NO_ROOM;
+    data = &floor_data[floor->index];
+    type = *data++;
+    if ((type & DATA_TYPE) == TILT_TYPE || (type & DATA_TYPE) == SPLIT1 || (type & DATA_TYPE) == SPLIT2 || (type & DATA_TYPE) == NOCOLF1B || (type & DATA_TYPE) == NOCOLF1T || (type & DATA_TYPE) == NOCOLF2B || (type & DATA_TYPE) == NOCOLF2T) {
+        if (type & END_BIT)
+            return NO_ROOM;
+        data++;
+        type = *data++;
+    }
+    if ((type & DATA_TYPE) == ROOF_TYPE || (type & DATA_TYPE) == SPLIT3 || (type & DATA_TYPE) == SPLIT4 || (type & DATA_TYPE) == NOCOLC1B || (type & DATA_TYPE) == NOCOLC1T || (type & DATA_TYPE) == NOCOLC2B || (type & DATA_TYPE) == NOCOLC2T) {
+        if (type & END_BIT)
+            return NO_ROOM;
+        data++;
+        type = *data++;
+    }
+    if ((type & DATA_TYPE) == DOOR_TYPE)
+        return *data;
+    return NO_ROOM;
+}
+
 int xLOS(GAME_VECTOR *start, GAME_VECTOR *target);
 int zLOS(GAME_VECTOR *start, GAME_VECTOR *target);
 int ClipTarget(GAME_VECTOR *start, GAME_VECTOR *target);
@@ -92,6 +138,9 @@ int LOS(GAME_VECTOR *start, GAME_VECTOR *target)
         return 0;
     return 1;
 }
+
+void RemoveRoomFlipItems(ROOM_INFO *r);
+void AddRoomFlipItems(ROOM_INFO *r);
 
 void RemoveRoomFlipItems(ROOM_INFO *r)
 {
