@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="129.19" height="12" x="0" y="0" class="named"><title>408 · 27.60%</title></rect>
-<rect width="338.81" height="12" x="129.19" y="0" class="todo"><title>1070 · 72.40%</title></rect>
+<rect width="129.51" height="12" x="0" y="0" class="named"><title>409 · 27.67%</title></rect>
+<rect width="338.49" height="12" x="129.51" y="0" class="todo"><title>1069 · 72.33%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">27.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">408</tspan> · <tspan class="todo">1070</tspan></text>
+<text text-anchor="end" x="648" y="7.50">27.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">409</tspan> · <tspan class="todo">1069</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="19.60" height="12" x="0" y="0" class="named"><title>28 KB · 4.19%</title></rect>
-<rect width="448.40" height="12" x="19.60" y="0" class="todo"><title>636 KB · 95.81%</title></rect>
+<rect width="19.70" height="12" x="0" y="0" class="named"><title>28 KB · 4.21%</title></rect>
+<rect width="448.30" height="12" x="19.70" y="0" class="todo"><title>636 KB · 95.79%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">28 KB</tspan> · <tspan class="todo">636 KB</tspan></text>
@@ -1070,7 +1070,7 @@
 <rect width="12" height="12" x="75" y="300" class="named"><title>0x0046dd10 InitialiseRollingBall (64 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="300" class="todo"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="300" class="todo"><title>0x0046e0e0 RollingBallCollision (601 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="300" class="todo"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="300" class="named"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="300" class="todo"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="300" class="named"><title>0x0046e530 TrapDoorControl (83 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="300" class="named"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
@@ -2381,7 +2381,7 @@
 <rect width="7.13" height="6.89" x="554.28" y="314.10" class="named"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
 <rect width="7.13" height="6.84" x="554.28" y="323.99" class="todo"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
 <rect width="7.13" height="6.79" x="554.28" y="333.82" class="todo"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
-<rect width="7.13" height="6.79" x="554.28" y="343.61" class="todo"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
+<rect width="7.13" height="6.79" x="554.28" y="343.61" class="named"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
 <rect width="7.13" height="6.74" x="554.28" y="353.40" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
 <rect width="7.13" height="6.74" x="554.28" y="363.14" class="todo"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
 <rect width="7.13" height="6.69" x="554.28" y="372.88" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>

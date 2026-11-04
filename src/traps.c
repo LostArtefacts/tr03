@@ -92,6 +92,26 @@ void InitialiseRollingBall(sint16 item_number)
     old->room_number = item->room_number;
 }
 
+void SpikeControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (!TriggerActive(item))
+        return;
+    if (CurrentLevel == LV_SHORE || CurrentLevel == LV_RAPIDS)
+    {
+        if (item->frame_number == anims[item->anim_number].frame_base)
+        {
+            if (CurrentLevel == LV_SHORE)
+                SoundEffect(259, &item->pos, SFX_ALWAYS);
+            else
+                SoundEffect(34, &item->pos, SFX_ALWAYS);
+        }
+        AnimateItem(item);
+    }
+}
+
 void TrapDoorControl(sint16 item_number)
 {
     ITEM_INFO *item;
