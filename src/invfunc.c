@@ -1,5 +1,13 @@
 #include "game.h"
 
+void RingActive(void)
+{
+    T_RemovePrint(Inv_itemText[IT_NAME]);
+    Inv_itemText[IT_NAME] = NULL;
+    T_RemovePrint(Inv_itemText[IT_QTY]);
+    Inv_itemText[IT_QTY] = NULL;
+}
+
 void Inv_RemoveAllItems(void)
 {
     inv_main_objects = 0;
