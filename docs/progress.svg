@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="99.74" height="12" x="0" y="0" class="named"><title>315 · 21.31%</title></rect>
-<rect width="368.26" height="12" x="99.74" y="0" class="todo"><title>1163 · 78.69%</title></rect>
+<rect width="100.06" height="12" x="0" y="0" class="named"><title>316 · 21.38%</title></rect>
+<rect width="367.94" height="12" x="100.06" y="0" class="todo"><title>1162 · 78.62%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">21.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">315</tspan> · <tspan class="todo">1163</tspan></text>
+<text text-anchor="end" x="648" y="7.50">21.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">316</tspan> · <tspan class="todo">1162</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="12.10" height="12" x="0" y="0" class="named"><title>17 KB · 2.59%</title></rect>
-<rect width="455.90" height="12" x="12.10" y="0" class="todo"><title>647 KB · 97.41%</title></rect>
+<rect width="12.16" height="12" x="0" y="0" class="named"><title>17 KB · 2.60%</title></rect>
+<rect width="455.84" height="12" x="12.16" y="0" class="todo"><title>647 KB · 97.40%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">17 KB</tspan> · <tspan class="todo">647 KB</tspan></text>
@@ -760,7 +760,7 @@
 <rect width="12" height="12" x="675" y="195" class="todo"><title>0x004492b0 lara_col_climbleft (93 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="195" class="todo"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="195" class="todo"><title>0x004493e0 LaraDoClimbLeftRight (239 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="195" class="todo"><title>0x004494d0 lara_col_climbright (89 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="195" class="named"><title>0x004494d0 lara_col_climbright (89 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="195" class="todo"><title>0x00449530 lara_col_climbstnc (525 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="210" class="todo"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="210" class="todo"><title>0x00449890 lara_col_climbdown (413 bytes)</title></rect>
@@ -2544,7 +2544,7 @@
 <rect width="5.61" height="5.61" x="592.02" y="441.39" class="named"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="600.62" y="292.20" class="named"><title>0x0042f0b0 DoChimeSound (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="609.53" y="292.20" class="named"><title>0x00448350 draw_pistol_meshes (89 bytes)</title></rect>
-<rect width="5.91" height="5.32" x="618.44" y="292.20" class="todo"><title>0x004494d0 lara_col_climbright (89 bytes)</title></rect>
+<rect width="5.91" height="5.32" x="618.44" y="292.20" class="named"><title>0x004494d0 lara_col_climbright (89 bytes)</title></rect>
 <rect width="5.91" height="5.32" x="627.35" y="292.20" class="todo"><title>0x00484a80 HWR_EnableColorAddition (89 bytes)</title></rect>
 <rect width="5.84" height="5.32" x="636.26" y="292.20" class="named"><title>0x00414330 CreatureActive (88 bytes)</title></rect>
 <rect width="5.84" height="5.32" x="645.11" y="292.20" class="named"><title>0x00440220 lara_as_monkeyl (88 bytes)</title></rect>
