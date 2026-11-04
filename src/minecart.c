@@ -40,3 +40,31 @@ void MineCartInitialise(sint16 item_number)
     v = &items[item_number];
     v->data = game_malloc(sizeof(CARTINFO), 0);
 }
+
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
+
+int GetInMineCart(ITEM_INFO *v, ITEM_INFO *l, COLL_INFO *coll)
+{
+    int dist;
+    sint32 x, z;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    if (!(input & IN_ACTION) || lara.gun_status != LG_ARMLESS || l->gravity_status)
+        return 0;
+    if (!TestBoundsCollide(v, l, coll->radius))
+        return 0;
+    if (!TestCollision(v, l))
+        return 0;
+    x = l->pos.x_pos - v->pos.x_pos;
+    z = l->pos.z_pos - v->pos.z_pos;
+    dist = x * x + z * z;
+    if (dist > 200000)
+        return 0;
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    if (GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos) < -32000)
+        return 0;
+    return 1;
+}
