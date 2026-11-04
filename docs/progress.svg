@@ -44,23 +44,23 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="17.77" height="12" x="130" y="1.50" class="named"/>
-<rect width="184.23" height="12" x="147.77" y="1.50" class="todo"/>
+<rect width="17.90" height="12" x="130" y="1.50" class="named"/>
+<rect width="184.10" height="12" x="147.90" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">8.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">130/1478</text>
-<rect width="1.36" height="12" x="130" y="18.50" class="named"/>
-<rect width="200.64" height="12" x="131.36" y="18.50" class="todo"/>
+<text text-anchor="end" x="382" y="7.50">8.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">131/1478</text>
+<rect width="1.38" height="12" x="130" y="18.50" class="named"/>
+<rect width="200.62" height="12" x="131.38" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <text text-anchor="end" x="382" y="24.50">0.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">4k/664k</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24">5k/664k</text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">8.80% (130)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.20% (1348)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">8.86% (131)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">91.14% (1347)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="65.70" height="6" x="0" y="0" class="named"/>
-<rect width="681.30" height="6" x="65.70" y="0" class="todo"/>
+<rect width="66.21" height="6" x="0" y="0" class="named"/>
+<rect width="680.79" height="6" x="66.21" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -1040,7 +1040,7 @@
 <rect width="12" height="12" x="360" y="285" class="todo"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="285" class="named"><title>0x0046b090 T_RemovePrint (37 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="285" class="named"><title>0x0046b0c0 T_GetStringLen (36 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="285" class="todo"><title>0x0046b0f0 T_DrawText (39 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="285" class="named"><title>0x0046b0f0 T_DrawText (39 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="285" class="todo"><title>0x0046b120 draw_border (543 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="285" class="todo"><title>0x0046b340 T_DrawThisText (934 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="285" class="todo"><title>0x0046b6f0 GetTextScaleH (42 bytes)</title></rect>
@@ -1547,8 +1547,8 @@
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.68%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.32%</tspan></text>
 <g transform="translate(0 20)">
-<rect width="5.04" height="6" x="0" y="0" class="named"/>
-<rect width="741.96" height="6" x="5.04" y="0" class="todo"/>
+<rect width="5.09" height="6" x="0" y="0" class="named"/>
+<rect width="741.91" height="6" x="5.09" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -2845,7 +2845,7 @@
 <rect width="1.57" height="1.37" x="701.67" y="422.63" class="todo"><title>0x004293c0 phd_PushMatrix_I (39 bytes)</title></rect>
 <rect width="1.57" height="1.37" x="701.67" y="427" class="named"><title>0x0042fa00 Exercise8_87 (39 bytes)</title></rect>
 <rect width="1.57" height="1.37" x="701.67" y="431.37" class="todo"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
-<rect width="1.57" height="1.37" x="701.67" y="435.74" class="todo"><title>0x0046b0f0 T_DrawText (39 bytes)</title></rect>
+<rect width="1.57" height="1.37" x="701.67" y="435.74" class="named"><title>0x0046b0f0 T_DrawText (39 bytes)</title></rect>
 <rect width="1.57" height="1.37" x="701.67" y="440.11" class="todo"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="1.57" height="1.26" x="701.67" y="444.48" class="named"><title>0x0042f600 QuadStop (38 bytes)</title></rect>
 <rect width="1.57" height="1.26" x="701.67" y="448.74" class="todo"><title>0x00438fd0 Inv_RingMotionRadius (38 bytes)</title></rect>

@@ -151,3 +151,19 @@ sint16 T_GetStringLen(char *string)
     }
     return len;
 }
+
+void T_DrawText(void)
+{
+    int n;
+    TEXTSTRING *textString = T_textStrings;
+
+    for (n = 0; n < MAX_TEXT_STRINGS; n++)
+    {
+        if (textString)
+        {
+            if (textString->flags & T_ACTIVE)
+                T_DrawThisText(textString);
+        }
+        textString++;
+    }
+}
