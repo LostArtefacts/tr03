@@ -69,6 +69,110 @@ void Inv_RemoveAllItems(void)
     inv_keys_current = 0;
 }
 
+int Inv_GetItemOption(int item_num)
+{
+    switch (item_num) {
+    case 160:
+    case 185:
+        return 185;
+    case 178:
+    case 179:
+    case 203:
+        return 203;
+    case 161:
+    case 186:
+        return 186;
+    case 162:
+    case 187:
+        return 187;
+    case 163:
+    case 188:
+        return 188;
+    case 165:
+    case 190:
+        return 190;
+    case 166:
+    case 191:
+        return 191;
+    case 167:
+    case 192:
+        return 192;
+    case 164:
+    case 189:
+        return 189;
+    case 169:
+    case 194:
+        return 194;
+    case 170:
+    case 195:
+        return 195;
+    case 172:
+    case 197:
+        return 197;
+    case 173:
+    case 198:
+        return 198;
+    case 174:
+    case 199:
+        return 199;
+    case 175:
+    case 200:
+        return 200;
+    case 171:
+    case 196:
+        return 196;
+    case 176:
+    case 201:
+        return 201;
+    case 177:
+    case 202:
+        return 202;
+    case 205:
+    case 209:
+        return 209;
+    case 206:
+    case 210:
+        return 210;
+    case 207:
+    case 211:
+        return 211;
+    case 208:
+    case 212:
+        return 212;
+    case 236:
+    case 238:
+        return 238;
+    case 237:
+    case 239:
+        return 239;
+    case 224:
+    case 228:
+        return 228;
+    case 225:
+    case 229:
+        return 229;
+    case 226:
+    case 230:
+        return 230;
+    case 227:
+    case 231:
+        return 231;
+    case 240:
+    case 244:
+        return 244;
+    case 241:
+    case 245:
+        return 245;
+    case 242:
+    case 246:
+        return 246;
+    case 243:
+    case 247:
+        return 247;
+    }
+    return -1;
+}
+
 void RemoveInventoryText(void)
 {
     int n;

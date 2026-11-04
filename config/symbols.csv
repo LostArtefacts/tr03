@@ -445,7 +445,7 @@ address,size,name,symbol
 0x00438380,119,Inv_RequestItem,_Inv_RequestItem
 0x00438400,27,Inv_RemoveAllItems,_Inv_RemoveAllItems
 0x00438420,272,Inv_RemoveItem,_Inv_RemoveItem
-0x00438530,221,Inv_GetItemOption,_Inv_GetItemOption
+0x00438530,576,Inv_GetItemOption,_Inv_GetItemOption
 0x00438770,36,RemoveInventoryText,_RemoveInventoryText
 0x004387a0,271,Inv_RingInit,_Inv_RingInit
 0x004388b0,96,Inv_RingGetView,_Inv_RingGetView
