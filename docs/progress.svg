@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="144.07" height="12" x="0" y="0" class="named"><title>455 · 30.78%</title></rect>
-<rect width="323.93" height="12" x="144.07" y="0" class="todo"><title>1023 · 69.22%</title></rect>
+<rect width="144.39" height="12" x="0" y="0" class="named"><title>456 · 30.85%</title></rect>
+<rect width="323.61" height="12" x="144.39" y="0" class="todo"><title>1022 · 69.15%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">30.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">455</tspan> · <tspan class="todo">1023</tspan></text>
+<text text-anchor="end" x="648" y="7.50">30.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">456</tspan> · <tspan class="todo">1022</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="24.76" height="12" x="0" y="0" class="named"><title>35 KB · 5.29%</title></rect>
-<rect width="443.24" height="12" x="24.76" y="0" class="todo"><title>629 KB · 94.71%</title></rect>
+<rect width="24.86" height="12" x="0" y="0" class="named"><title>35 KB · 5.31%</title></rect>
+<rect width="443.14" height="12" x="24.86" y="0" class="todo"><title>629 KB · 94.69%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">35 KB</tspan> · <tspan class="todo">629 KB</tspan></text>
@@ -841,7 +841,7 @@
 <rect width="12" height="12" x="390" y="225" class="todo"><title>0x00450620 TriggerLizmanGas (469 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="225" class="todo"><title>0x00450800 LondonBossControl (3575 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="225" class="named"><title>0x00451640 S_DrawLondonBoss (96 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="225" class="todo"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="225" class="named"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="225" class="todo"><title>0x00451730 ExplodeLondonBoss (591 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="225" class="todo"><title>0x00451980 TriggerLaserBolt (302 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="225" class="todo"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
@@ -2380,7 +2380,7 @@
 <rect width="7.13" height="6.94" x="554.28" y="304.16" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
 <rect width="7.13" height="6.89" x="554.28" y="314.10" class="named"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
 <rect width="7.13" height="6.84" x="554.28" y="323.99" class="todo"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
-<rect width="7.13" height="6.79" x="554.28" y="333.83" class="todo"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
+<rect width="7.13" height="6.79" x="554.28" y="333.83" class="named"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="7.13" height="6.79" x="554.28" y="343.62" class="named"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
 <rect width="7.13" height="6.74" x="554.28" y="353.41" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
 <rect width="7.13" height="6.74" x="554.28" y="363.15" class="todo"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
