@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="146.61" height="12" x="0" y="0" class="named"><title>463 · 31.33%</title></rect>
-<rect width="321.39" height="12" x="146.61" y="0" class="todo"><title>1015 · 68.67%</title></rect>
+<rect width="146.92" height="12" x="0" y="0" class="named"><title>464 · 31.39%</title></rect>
+<rect width="321.08" height="12" x="146.92" y="0" class="todo"><title>1014 · 68.61%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">31.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">463</tspan> · <tspan class="todo">1015</tspan></text>
+<text text-anchor="end" x="648" y="7.50">31.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">464</tspan> · <tspan class="todo">1014</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="25.59" height="12" x="0" y="0" class="named"><title>36 KB · 5.47%</title></rect>
-<rect width="442.41" height="12" x="25.59" y="0" class="todo"><title>628 KB · 94.53%</title></rect>
+<rect width="25.70" height="12" x="0" y="0" class="named"><title>36 KB · 5.49%</title></rect>
+<rect width="442.30" height="12" x="25.70" y="0" class="todo"><title>628 KB · 94.51%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">36 KB</tspan> · <tspan class="todo">628 KB</tspan></text>
@@ -790,7 +790,7 @@
 <rect width="12" height="12" x="375" y="210" class="todo"><title>0x0044c440 FlareControl (485 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="210" class="todo"><title>0x0044c630 LaraCheatGetStuff (183 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="210" class="todo"><title>0x0044c6f0 LaraControl (2212 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="210" class="todo"><title>0x0044cfc0 LaraCheat (156 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="210" class="named"><title>0x0044cfc0 LaraCheat (156 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="210" class="todo"><title>0x0044d060 LaraInitialiseMeshes (297 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="210" class="todo"><title>0x0044d1a0 LaraCheatyBits (255 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="210" class="todo"><title>0x0044d2a0 AnimateLara (945 bytes)</title></rect>
@@ -2329,7 +2329,7 @@
 <rect width="7.63" height="7.27" x="533.67" y="378.41" class="todo"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="388.68" class="named"><title>0x00423000 RemoveRoomFlipItems (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="398.90" class="named"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
-<rect width="7.63" height="7.22" x="533.67" y="409.12" class="todo"><title>0x0044cfc0 LaraCheat (156 bytes)</title></rect>
+<rect width="7.63" height="7.22" x="533.67" y="409.12" class="named"><title>0x0044cfc0 LaraCheat (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="419.34" class="todo"><title>0x0046eff0 FlameEmitterControl (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="429.56" class="todo"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="439.78" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
