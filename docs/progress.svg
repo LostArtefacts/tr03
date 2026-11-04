@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.95" height="12" x="0" y="0" class="named"><title>622 · 42.08%</title></rect>
-<rect width="271.05" height="12" x="196.95" y="0" class="todo"><title>856 · 57.92%</title></rect>
+<rect width="197.27" height="12" x="0" y="0" class="named"><title>623 · 42.15%</title></rect>
+<rect width="270.73" height="12" x="197.27" y="0" class="todo"><title>855 · 57.85%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">42.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">622</tspan> · <tspan class="todo">856</tspan></text>
+<text text-anchor="end" x="648" y="7.50">42.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">623</tspan> · <tspan class="todo">855</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="62.97" height="12" x="0" y="0" class="named"><title>89 KB · 13.45%</title></rect>
-<rect width="405.03" height="12" x="62.97" y="0" class="todo"><title>575 KB · 86.55%</title></rect>
+<rect width="63.15" height="12" x="0" y="0" class="named"><title>90 KB · 13.49%</title></rect>
+<rect width="404.85" height="12" x="63.15" y="0" class="todo"><title>575 KB · 86.51%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">89 KB</tspan> · <tspan class="todo">575 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">90 KB</tspan> · <tspan class="todo">575 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -560,7 +560,7 @@
 <rect width="12" height="12" x="675" y="135" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="todo"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="135" class="todo"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="135" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="135" class="todo"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="todo"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="150" class="todo"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
@@ -2131,7 +2131,7 @@
 <rect width="9.57" height="9.81" x="486.37" y="186.92" class="named"><title>0x00459ce0 ControlElectricalLight (266 bytes)</title></rect>
 <rect width="9.57" height="9.81" x="486.37" y="199.72" class="todo"><title>0x00498750 Func498750 (266 bytes)</title></rect>
 <rect width="9.57" height="9.77" x="486.37" y="212.53" class="todo"><title>0x00447770 undraw_shotgun (265 bytes)</title></rect>
-<rect width="9.57" height="9.73" x="486.37" y="225.30" class="todo"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
+<rect width="9.57" height="9.73" x="486.37" y="225.30" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="9.57" height="9.73" x="486.37" y="238.03" class="named"><title>0x0043e0b0 LaraTestHangOnClimbWall (264 bytes)</title></rect>
 <rect width="9.57" height="9.70" x="486.37" y="250.77" class="todo"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
 <rect width="9.57" height="9.66" x="486.37" y="263.46" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>

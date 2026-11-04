@@ -80,6 +80,75 @@ void KayakDraw(ITEM_INFO *v)
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 moretrans);
 
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint16 InnerXZoff;
+    sint16 InnerXZsize;
+    sint16 InnerYsize;
+    sint16 InnerXZvel;
+    sint16 InnerYvel;
+    sint16 InnerGravity;
+    sint16 InnerFriction;
+    sint16 MiddleXZoff;
+    sint16 MiddleXZsize;
+    sint16 MiddleYsize;
+    sint16 MiddleXZvel;
+    sint16 MiddleYvel;
+    sint16 MiddleGravity;
+    sint16 MiddleFriction;
+    sint16 OuterXZoff;
+    sint16 OuterXZsize;
+    sint16 OuterXZvel;
+    sint16 OuterFriction;
+} SPLASH_SETUP;
+
+extern SPLASH_SETUP splash_setup;
+extern sint32 SplashCount;
+void SetupSplash(SPLASH_SETUP *spl);
+
+void KayakSplash(ITEM_INFO *, sint32, sint32);
+
+int GetInKayak(sint16 item_number, COLL_INFO *coll)
+{
+    int dist;
+    sint32 x, z;
+    ITEM_INFO *v, *l;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    l = lara_item;
+    if (!(input & IN_ACTION) || lara.gun_status != LG_ARMLESS || l->gravity_status)
+        return 0;
+
+    v = &items[item_number];
+    x = l->pos.x_pos - v->pos.x_pos;
+    z = l->pos.z_pos - v->pos.z_pos;
+    dist = x * x + z * z;
+    if (dist > 130000)
+        return 0;
+
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    if (GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos) > -32000) {
+        sint16 ang;
+        uint16 tempang;
+
+        ang = phd_atan(v->pos.z_pos - l->pos.z_pos, v->pos.x_pos - l->pos.x_pos);
+        ang -= v->pos.y_rot;
+        tempang = l->pos.y_rot - v->pos.y_rot;
+        if (ang > -(ONE_DEGREE * 45) && ang < ONE_DEGREE * 135) {
+            if (tempang > 45 * ONE_DEGREE && tempang < 135 * ONE_DEGREE)
+                return -1;
+        } else {
+            if (tempang > 225 * ONE_DEGREE && tempang < 315 * ONE_DEGREE)
+                return 1;
+        }
+    }
+    return 0;
+}
+
 void DoRipple(ITEM_INFO *v, sint16 xoff, sint16 zoff)
 {
     sint16 room_number;
