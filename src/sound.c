@@ -15,6 +15,38 @@ extern SOUND_SLOT LaSlot[MAX_SLOTS];
 extern int sound_active;
 
 void S_SoundStopAllSamples(void);
+void S_SoundStopSample(int nHandle);
+
+typedef struct {
+    sint16 number;
+    uint8 volume;
+    sint8 radius;
+    sint8 randomness;
+    sint8 pitch;
+    sint16 flags;
+} SAMPLE_INFO;
+
+extern sint16 sample_lut[];
+extern SAMPLE_INFO *sample_infos;
+
+void StopSoundEffect(int nSFX)
+{
+    int nSlot;
+    int nStartSampleInfo, nEndSampleInfo;
+
+    if (!sound_active)
+        return;
+    nStartSampleInfo = sample_lut[nSFX];
+    nEndSampleInfo = nStartSampleInfo + ((sample_infos[nStartSampleInfo].flags >> 2) & 15);
+    for (nSlot = 0; nSlot < ArraySize(LaSlot); nSlot++)
+    {
+        if (LaSlot[nSlot].nSampleInfo >= nStartSampleInfo && LaSlot[nSlot].nSampleInfo < nEndSampleInfo)
+        {
+            S_SoundStopSample(nSlot);
+            LaSlot[nSlot].nSampleInfo = -1;
+        }
+    }
+}
 
 void SOUND_Stop(void)
 {

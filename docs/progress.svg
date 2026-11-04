@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="104.18" height="12" x="0" y="0" class="named"><title>329 · 22.26%</title></rect>
-<rect width="363.82" height="12" x="104.18" y="0" class="todo"><title>1149 · 77.74%</title></rect>
+<rect width="104.49" height="12" x="0" y="0" class="named"><title>330 · 22.33%</title></rect>
+<rect width="363.51" height="12" x="104.49" y="0" class="todo"><title>1148 · 77.67%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">22.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">329</tspan> · <tspan class="todo">1149</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">330</tspan> · <tspan class="todo">1148</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="13.02" height="12" x="0" y="0" class="named"><title>18 KB · 2.78%</title></rect>
-<rect width="454.98" height="12" x="13.02" y="0" class="todo"><title>645 KB · 97.22%</title></rect>
+<rect width="13.09" height="12" x="0" y="0" class="named"><title>19 KB · 2.80%</title></rect>
+<rect width="454.91" height="12" x="13.09" y="0" class="todo"><title>645 KB · 97.20%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">18 KB</tspan> · <tspan class="todo">645 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">19 KB</tspan> · <tspan class="todo">645 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -998,7 +998,7 @@
 <rect width="12" height="12" x="495" y="270" class="todo"><title>0x00467070 ShivaControl (1758 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="270" class="todo"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="270" class="todo"><title>0x00467840 SoundEffect (1200 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="270" class="todo"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="270" class="named"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="270" class="todo"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="named"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="named"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
@@ -2520,7 +2520,7 @@
 <rect width="5.83" height="5.76" x="583.19" y="389.13" class="named"><title>0x00439e60 AddQuadbikeTime (95 bytes)</title></rect>
 <rect width="5.83" height="5.76" x="583.19" y="397.88" class="named"><title>0x00467010 InitialiseShiva (95 bytes)</title></rect>
 <rect width="5.83" height="5.70" x="583.19" y="406.64" class="named"><title>0x0044e230 lara_as_surfback (94 bytes)</title></rect>
-<rect width="5.83" height="5.70" x="583.19" y="415.34" class="todo"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
+<rect width="5.83" height="5.70" x="583.19" y="415.34" class="named"><title>0x00467d00 StopSoundEffect (94 bytes)</title></rect>
 <rect width="5.83" height="5.70" x="583.19" y="424.03" class="todo"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
 <rect width="5.83" height="5.64" x="583.19" y="432.73" class="named"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
 <rect width="5.83" height="5.64" x="583.19" y="441.36" class="named"><title>0x0042fa90 BaddieBiteEffect (93 bytes)</title></rect>
