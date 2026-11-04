@@ -241,6 +241,27 @@ void lara_as_fastfall(ITEM_INFO *item, COLL_INFO *coll)
         SoundEffect(30, &item->pos, 0);
 }
 
+void lara_as_hang(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    if (input & IN_LOOK)
+        LookUpDown();
+
+    coll->enable_spaz = 0;
+    coll->enable_baddie_push = 0;
+    camera.target_angle = CAM_A_HANG;
+    camera.target_elevation = CAM_E_HANG;
+    if (input & (IN_LEFT | IN_STEPL))
+        item->goal_anim_state = AS_HANGLEFT;
+    else if (input & (IN_RIGHT | IN_STEPR))
+        item->goal_anim_state = AS_HANGRIGHT;
+}
+
 void lara_as_reach(ITEM_INFO *item, COLL_INFO *coll)
 {
     camera.target_angle = 85 * ONE_DEGREE;
