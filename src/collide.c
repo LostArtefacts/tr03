@@ -340,3 +340,54 @@ int Move3DPosTo3DPos(PHD_3DPOS *srcpos, PHD_3DPOS *destpos, int velocity, PHD_AN
     else
         return 0;
 }
+
+extern sint16 Inventory_Chosen;
+
+void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    int i, x, y, z;
+    ITEM_INFO *item;
+    OBJECT_INFO *object;
+    sint16 roomies[20], numroom, *door;
+    sint16 item_num, nex;
+
+    laraitem->hit_status = 0;
+    lara.hit_direction = -1;
+    if (laraitem->hit_points <= 0)
+        return;
+
+    numroom = 1;
+    roomies[0] = laraitem->room_number;
+    door = room[laraitem->room_number].door;
+    if (door) {
+        for (i = (int)*(door++); i > 0; i--) {
+            roomies[numroom++] = *door;
+            door += 16;
+        }
+    }
+
+    for (i = 0; i < numroom; i++) {
+        item_num = room[roomies[i]].item_number;
+        while (item_num != NO_ITEM) {
+            item = &items[item_num];
+            nex = item->next_item;
+            if (item->collidable && item->status != INVISIBLE) {
+                object = &objects[item->object_number];
+                if (object->collision) {
+                    x = laraitem->pos.x_pos - item->pos.x_pos;
+                    y = laraitem->pos.y_pos - item->pos.y_pos;
+                    z = laraitem->pos.z_pos - item->pos.z_pos;
+                    if (x > -4096 && x < 4096 && z > -4096 && z < 4096 && y > -4096 && y < 4096)
+                        (*object->collision)(item_num, laraitem, coll);
+                }
+            }
+            item_num = nex;
+        }
+    }
+
+    if (lara.hit_direction == -1)
+        lara.hit_frame = 0;
+    Inventory_Chosen = -1;
+}
+
+int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);

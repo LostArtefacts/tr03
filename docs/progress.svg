@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="194.10" height="12" x="0" y="0" class="named"><title>613 · 41.47%</title></rect>
-<rect width="273.90" height="12" x="194.10" y="0" class="todo"><title>865 · 58.53%</title></rect>
+<rect width="194.42" height="12" x="0" y="0" class="named"><title>614 · 41.54%</title></rect>
+<rect width="273.58" height="12" x="194.42" y="0" class="todo"><title>864 · 58.46%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">41.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">613</tspan> · <tspan class="todo">865</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">614</tspan> · <tspan class="todo">864</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="61.03" height="12" x="0" y="0" class="named"><title>87 KB · 13.04%</title></rect>
-<rect width="406.97" height="12" x="61.03" y="0" class="todo"><title>578 KB · 86.96%</title></rect>
+<rect width="61.31" height="12" x="0" y="0" class="named"><title>87 KB · 13.10%</title></rect>
+<rect width="406.69" height="12" x="61.31" y="0" class="todo"><title>578 KB · 86.90%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">13.0%</text>
+<text text-anchor="end" x="648" y="24.50">13.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">87 KB</tspan> · <tspan class="todo">578 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -250,7 +250,7 @@
 <rect width="12" height="12" x="525" y="45" class="named"><title>0x0041e690 ShiftItem (55 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="45" class="named"><title>0x0041e6d0 UpdateLaraRoom (93 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="45" class="todo"><title>0x0041e730 GetTiltType (410 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="45" class="todo"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="45" class="named"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="45" class="todo"><title>0x0041ea60 CreatureCollision (368 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="45" class="named"><title>0x0041ebd0 ObjectCollision (92 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="45" class="named"><title>0x0041ec30 ObjectCollisionSub (83 bytes)</title></rect>
@@ -1982,7 +1982,7 @@
 <rect width="11.93" height="11.83" x="690.46" y="130.87" class="todo"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
 <rect width="11.90" height="11.83" x="705.39" y="130.87" class="todo"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
 <rect width="11.90" height="11.83" x="720.29" y="130.87" class="todo"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
-<rect width="11.81" height="11.83" x="735.19" y="130.87" class="todo"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
+<rect width="11.81" height="11.83" x="735.19" y="130.87" class="named"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
 <rect width="11.82" height="11.79" x="431.46" y="145.70" class="named"><title>0x0041f430 MoveLaraPosition (395 bytes)</title></rect>
 <rect width="11.82" height="11.79" x="431.46" y="160.49" class="todo"><title>0x00431a80 TriggerPilotFlame (395 bytes)</title></rect>
 <rect width="11.82" height="11.73" x="431.46" y="175.28" class="named"><title>0x00442140 lara_col_run (393 bytes)</title></rect>
