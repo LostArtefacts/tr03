@@ -71,6 +71,16 @@ void turn180_effect(ITEM_INFO *item)
     item->pos.x_rot = -item->pos.x_rot;
 }
 
+void lara_normal_effect(ITEM_INFO *item)
+{
+    item->current_anim_state = AS_STOP;
+    item->goal_anim_state = AS_STOP;
+    item->frame_number = STOP_F;
+    item->anim_number = STOP_A;
+    camera.type = CHASE_CAMERA;
+    AlterFOV(GAME_FOV * ONE_DEGREE);
+}
+
 void BoilerFX(ITEM_INFO *item)
 {
     SoundEffect(338, NULL, 0);
