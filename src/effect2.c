@@ -183,6 +183,27 @@ void BatEmitterControl(sint16 item_number)
     }
 }
 
+void TriggerBats(sint32 x, sint32 y, sint32 z, sint32 angle)
+{
+    sint32 lp;
+    BAT_STRUCT *bptr;
+
+    angle -= 0x400;
+    angle &= 4095;
+    bptr = &bats[0];
+    for (lp = 0; lp < MAX_BATS; lp++) {
+        bptr->x = x + (GetRandomControl() & 511) - 256;
+        bptr->y = y + 256 - (GetRandomControl() & 255);
+        bptr->z = z + (GetRandomControl() & 511) - 256;
+        bptr->angle = (angle + (GetRandomControl() & 127) - 64) & 4095;
+        bptr->speed = (GetRandomControl() & 31) + 64;
+        bptr->WingYoff = GetRandomControl() & 63;
+        bptr->flags |= 1;
+        bptr->life = 144 + (GetRandomControl() & 7);
+        bptr++;
+    }
+}
+
 void KillAllCurrentItems(sint16 item_number)
 {
     KillEverythingFlag = 1;

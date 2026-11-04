@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="158.32" height="12" x="0" y="0" class="named"><title>500 · 33.83%</title></rect>
-<rect width="309.68" height="12" x="158.32" y="0" class="todo"><title>978 · 66.17%</title></rect>
+<rect width="158.64" height="12" x="0" y="0" class="named"><title>501 · 33.90%</title></rect>
+<rect width="309.36" height="12" x="158.64" y="0" class="todo"><title>977 · 66.10%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">33.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">500</tspan> · <tspan class="todo">978</tspan></text>
+<text text-anchor="end" x="648" y="7.50">33.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">501</tspan> · <tspan class="todo">977</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="30.15" height="12" x="0" y="0" class="named"><title>43 KB · 6.44%</title></rect>
-<rect width="437.85" height="12" x="30.15" y="0" class="todo"><title>621 KB · 93.56%</title></rect>
+<rect width="30.29" height="12" x="0" y="0" class="named"><title>43 KB · 6.47%</title></rect>
+<rect width="437.71" height="12" x="30.29" y="0" class="todo"><title>621 KB · 93.53%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">6.4%</text>
+<text text-anchor="end" x="648" y="24.50">6.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">43 KB</tspan> · <tspan class="todo">621 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -364,7 +364,7 @@
 <rect width="12" height="12" x="735" y="75" class="todo"><title>0x0042d1f0 TriggerWaterfallMist (471 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="90" class="todo"><title>0x0042d3d0 UpdateBats (309 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="90" class="named"><title>0x0042d510 BatEmitterControl (85 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="90" class="todo"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="90" class="named"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="90" class="todo"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="90" class="todo"><title>0x0042d750 TriggerDartSmoke (564 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="90" class="named"><title>0x0042d990 KillAllCurrentItems (11 bytes)</title></rect>
@@ -2239,7 +2239,7 @@
 <rect width="8.51" height="8.30" x="557.42" y="211.36" class="todo"><title>0x0048d500 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="8.47" height="8.30" x="568.93" y="211.36" class="todo"><title>0x0041b1d0 ControlCinematicPlayer (199 bytes)</title></rect>
 <rect width="8.43" height="8.30" x="580.40" y="211.36" class="todo"><title>0x004829c0 Read_Strings (198 bytes)</title></rect>
-<rect width="8.38" height="8.30" x="591.83" y="211.36" class="todo"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
+<rect width="8.38" height="8.30" x="591.83" y="211.36" class="named"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
 <rect width="8.38" height="8.30" x="603.21" y="211.36" class="todo"><title>0x0048bf40 S_FadeToBlack (197 bytes)</title></rect>
 <rect width="8.38" height="8.30" x="614.59" y="211.36" class="todo"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
 <rect width="8.38" height="8.30" x="625.98" y="211.36" class="todo"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
