@@ -89,6 +89,20 @@ sint16 DoBloodSplatD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 directio
     return NO_ITEM;
 }
 
+void LaraBubbles(ITEM_INFO *item)
+{
+    PHD_VECTOR offset;
+    int i;
+
+    SoundEffect(37, &item->pos, UNDERWATER);
+    offset.x = 0;
+    offset.y = -4;
+    offset.z = 64;
+    GetLaraHandAbsPosition(&offset, LARA_HEAD);
+    for (i = (GetRandomControl() & 3) + 2; i > 0; i--)
+        CreateBubble((PHD_3DPOS *)&offset, item->room_number, 8, 8);
+}
+
 void finish_level_effect(ITEM_INFO *item)
 {
     level_complete = 1;
