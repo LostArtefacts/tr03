@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="122.22" height="12" x="0" y="0" class="named"><title>386 · 26.12%</title></rect>
-<rect width="345.78" height="12" x="122.22" y="0" class="todo"><title>1092 · 73.88%</title></rect>
+<rect width="122.54" height="12" x="0" y="0" class="named"><title>387 · 26.18%</title></rect>
+<rect width="345.46" height="12" x="122.54" y="0" class="todo"><title>1091 · 73.82%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">26.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">386</tspan> · <tspan class="todo">1092</tspan></text>
+<text text-anchor="end" x="648" y="7.50">26.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">387</tspan> · <tspan class="todo">1091</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="17.42" height="12" x="0" y="0" class="named"><title>25 KB · 3.72%</title></rect>
-<rect width="450.58" height="12" x="17.42" y="0" class="todo"><title>639 KB · 96.28%</title></rect>
+<rect width="17.50" height="12" x="0" y="0" class="named"><title>25 KB · 3.74%</title></rect>
+<rect width="450.50" height="12" x="17.50" y="0" class="todo"><title>639 KB · 96.26%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">3.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">25 KB</tspan> · <tspan class="todo">639 KB</tspan></text>
@@ -923,7 +923,7 @@
 <rect width="12" height="12" x="120" y="255" class="todo"><title>0x00459c00 ControlPulseLight (132 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="255" class="named"><title>0x00459c90 ControlOnOffLight (65 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="255" class="todo"><title>0x00459ce0 ControlElectricalLight (266 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="255" class="todo"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="255" class="named"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="255" class="todo"><title>0x00459e70 OilRedControl (2869 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="255" class="named"><title>0x0045aa00 InitialiseOilSMG (82 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="255" class="todo"><title>0x0045aa60 OilSMGControl (1992 bytes)</title></rect>
@@ -2450,7 +2450,7 @@
 <rect width="6.63" height="6.12" x="564.61" y="422.74" class="todo"><title>0x004838e0 SortOutAdventureSave (115 bytes)</title></rect>
 <rect width="6.63" height="6.07" x="564.61" y="431.86" class="named"><title>0x00414780 UpdateLOT (114 bytes)</title></rect>
 <rect width="6.63" height="6.07" x="564.61" y="440.93" class="named"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
-<rect width="6.37" height="6.33" x="574.24" y="273.84" class="todo"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
+<rect width="6.37" height="6.33" x="574.24" y="273.84" class="named"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
 <rect width="6.37" height="6.33" x="583.61" y="273.84" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="592.98" y="273.84" class="named"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
 <rect width="6.31" height="6.33" x="602.29" y="273.84" class="named"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
