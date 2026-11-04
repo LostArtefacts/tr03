@@ -1883,6 +1883,61 @@ void lara_col_walk(ITEM_INFO *item, COLL_INFO *coll)
     item->pos.y_pos += coll->mid_floor;
 }
 
+void lara_col_run(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (TestLaraVault(item, coll))
+        return;
+
+    if (LaraDeflectEdge(item, coll)) {
+        item->pos.z_rot = 0;
+        if (item->anim_number != 6 && TestWall(item, 256, 0, -640)) {
+            item->current_anim_state = AS_SPLAT;
+            if (item->frame_number >= 0 && item->frame_number <= 9) {
+                item->anim_number = HITWALLLEFT_A;
+                item->frame_number = HITWALLLEFT_F;
+                return;
+            }
+            if (item->frame_number >= 10 && item->frame_number <= 21) {
+                item->anim_number = HITWALLRIGHT_A;
+                item->frame_number = HITWALLRIGHT_F;
+                return;
+            }
+        }
+        LaraCollideStop(item, coll);
+    }
+
+    if (LaraFallen(item, coll))
+        return;
+
+    if (coll->mid_floor >= -STEPUP_HEIGHT && coll->mid_floor < -STEP_L / 2) {
+        if (item->frame_number >= 3 && item->frame_number <= 14) {
+            item->anim_number = RUNSTEPUP_LEFT_A;
+            item->frame_number = RUNSTEPUP_LEFT_F;
+        } else {
+            item->anim_number = RUNSTEPUP_RIGHT_A;
+            item->frame_number = RUNSTEPUP_RIGHT_F;
+        }
+    }
+
+    if (TestLaraSlide(item, coll))
+        return;
+
+    if (coll->mid_floor >= 50) {
+        item->pos.y_pos += 50;
+        return;
+    }
+    item->pos.y_pos += coll->mid_floor;
+}
+
 void lara_col_forwardjump(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->speed >= 0)
