@@ -5,6 +5,10 @@ extern int number_draw_rooms;
 
 void GetNewRoom(sint32 x, sint32 y, sint32 z, sint16 room_number);
 int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite);
+void UpdateLaraRoom(ITEM_INFO *item, int height);
+sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll);
+void CreatureCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
 
 sint32 FindGridShift(sint32 src, sint32 dst)
 {
