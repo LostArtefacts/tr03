@@ -50,7 +50,7 @@ typedef struct {
     uint16 slopes_are_pits:1;
     uint16 lava_is_pit:1;
     uint16 enable_baddie_push:1;
-    uint16 enable_spaz:1;
+    uint16 enable_hit:1;
     uint16 hit_ceiling:1;
 } COLL_INFO;
 

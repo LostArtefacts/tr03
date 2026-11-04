@@ -47,7 +47,7 @@ typedef struct lara_info {
     sint16 current_xvel;
     sint16 current_yvel;
     sint16 current_zvel;
-    sint16 spaz_effect_count;
+    sint16 hit_effect_count;
     sint16 flare_age;
     sint16 skidoo;
     sint16 weapon_item;
@@ -69,7 +69,7 @@ typedef struct lara_info {
     uint16 has_fired:1;
     sint32 water_surface_dist;
     PHD_VECTOR last_pos;
-    struct fx_info *spaz_effect;
+    struct fx_info *hit_effect;
     sint32 mesh_effects;
     sint16 *mesh_ptrs[15];
     ITEM_INFO *target;

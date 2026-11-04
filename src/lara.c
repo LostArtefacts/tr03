@@ -28,7 +28,7 @@ void lara_as_all4s(ITEM_INFO *item, COLL_INFO *coll)
         LookUpDown();
 
     lara.torso_x_rot = lara.torso_y_rot = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 1;
     if (item->anim_number == 258)
         lara.gun_status = LG_HANDSBUSY;
@@ -47,7 +47,7 @@ void lara_as_all4turnl(ITEM_INFO *item, COLL_INFO *coll)
         return;
     }
 
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 1;
     lara.torso_x_rot = lara.torso_y_rot = 0;
     camera.target_elevation = -23 * ONE_DEGREE;
@@ -72,7 +72,7 @@ void lara_as_all4turnr(ITEM_INFO *item, COLL_INFO *coll)
         return;
     }
 
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 1;
     lara.torso_x_rot = lara.torso_y_rot = 0;
     camera.target_elevation = -23 * ONE_DEGREE;
@@ -101,7 +101,7 @@ void lara_as_hang2(ITEM_INFO *item, COLL_INFO *coll)
         return;
     }
 
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     lara.torso_x_rot = lara.torso_y_rot = 0;
     if (lara.CanMonkeySwing)
@@ -134,7 +134,7 @@ void lara_as_monkeyl(ITEM_INFO *item, COLL_INFO *coll)
         return;
     }
 
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     lara.torso_x_rot = lara.torso_y_rot = 0;
     if (input & IN_STEPL)
@@ -153,7 +153,7 @@ void lara_as_monkeyr(ITEM_INFO *item, COLL_INFO *coll)
     }
 
     lara.torso_x_rot = lara.torso_y_rot = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     if (input & IN_STEPR)
         item->goal_anim_state = AS_MONKEYR;
@@ -194,7 +194,7 @@ void lara_as_hangturnr(ITEM_INFO *item, COLL_INFO *coll)
 
 void lara_as_monkey180(ITEM_INFO *item, COLL_INFO *coll)
 {
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     item->goal_anim_state = AS_HANG2;
 }
@@ -230,7 +230,7 @@ void lara_as_fastback(ITEM_INFO *item, COLL_INFO *coll)
 void lara_as_death(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
 }
 
@@ -252,7 +252,7 @@ void lara_as_hang(ITEM_INFO *item, COLL_INFO *coll)
     if (input & IN_LOOK)
         LookUpDown();
 
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = CAM_A_HANG;
     camera.target_elevation = CAM_E_HANG;
@@ -373,7 +373,7 @@ void lara_as_fallback(ITEM_INFO *item, COLL_INFO *coll)
 
 void lara_as_hangleft(ITEM_INFO *item, COLL_INFO *coll)
 {
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = CAM_A_HANG;
     camera.target_elevation = CAM_E_HANG;
@@ -383,7 +383,7 @@ void lara_as_hangleft(ITEM_INFO *item, COLL_INFO *coll)
 
 void lara_as_hangright(ITEM_INFO *item, COLL_INFO *coll)
 {
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = CAM_A_HANG;
     camera.target_elevation = CAM_E_HANG;
@@ -400,7 +400,7 @@ void lara_as_slideback(ITEM_INFO *item, COLL_INFO *coll)
 void lara_as_pushblock(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.flags = FOLLOW_CENTRE;
     camera.target_angle = 35 * ONE_DEGREE;
@@ -409,7 +409,7 @@ void lara_as_pushblock(ITEM_INFO *item, COLL_INFO *coll)
 
 void lara_as_ppready(ITEM_INFO *item, COLL_INFO *coll)
 {
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = 75 * ONE_DEGREE;
     if (!(input & IN_ACTION))
@@ -419,7 +419,7 @@ void lara_as_ppready(ITEM_INFO *item, COLL_INFO *coll)
 void lara_as_pickup(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = -130 * ONE_DEGREE;
     camera.target_elevation = -15 * ONE_DEGREE;
@@ -429,7 +429,7 @@ void lara_as_pickup(ITEM_INFO *item, COLL_INFO *coll)
 void lara_as_pickupflare(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = 130 * ONE_DEGREE;
     camera.target_elevation = -15 * ONE_DEGREE;
@@ -441,7 +441,7 @@ void lara_as_pickupflare(ITEM_INFO *item, COLL_INFO *coll)
 void lara_as_switchon(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = 80 * ONE_DEGREE;
     camera.target_elevation = -25 * ONE_DEGREE;
@@ -452,7 +452,7 @@ void lara_as_switchon(ITEM_INFO *item, COLL_INFO *coll)
 void lara_as_usekey(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.look = 0;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.target_angle = -80 * ONE_DEGREE;
     camera.target_elevation = -25 * ONE_DEGREE;
@@ -468,7 +468,7 @@ void lara_as_special(ITEM_INFO *item, COLL_INFO *coll)
 
 void lara_as_swandive(ITEM_INFO *item, COLL_INFO *coll)
 {
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 1;
     if (item->fallspeed > LARA_FASTFALL_SPEED && item->goal_anim_state != AS_DIVE)
         item->goal_anim_state = AS_FASTDIVE;
@@ -478,20 +478,20 @@ void lara_as_fastdive(ITEM_INFO *item, COLL_INFO *coll)
 {
     if ((input & IN_ROLL) && item->goal_anim_state == AS_FASTDIVE)
         item->goal_anim_state = AS_TWIST;
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 1;
     FASTFALL_FRICTION;
 }
 
 void lara_as_gymnast(ITEM_INFO *item, COLL_INFO *coll)
 {
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
 }
 
 void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
 {
-    coll->enable_spaz = 0;
+    coll->enable_hit = 0;
     coll->enable_baddie_push = 0;
     camera.flags = FOLLOW_CENTRE;
 }
