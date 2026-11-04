@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="161.49" height="12" x="0" y="0" class="named"><title>510 · 34.51%</title></rect>
-<rect width="306.51" height="12" x="161.49" y="0" class="todo"><title>968 · 65.49%</title></rect>
+<rect width="161.81" height="12" x="0" y="0" class="named"><title>511 · 34.57%</title></rect>
+<rect width="306.19" height="12" x="161.81" y="0" class="todo"><title>967 · 65.43%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">34.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">510</tspan> · <tspan class="todo">968</tspan></text>
+<text text-anchor="end" x="648" y="7.50">34.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">511</tspan> · <tspan class="todo">967</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="31.56" height="12" x="0" y="0" class="named"><title>45 KB · 6.74%</title></rect>
-<rect width="436.44" height="12" x="31.56" y="0" class="todo"><title>619 KB · 93.26%</title></rect>
+<rect width="31.70" height="12" x="0" y="0" class="named"><title>45 KB · 6.77%</title></rect>
+<rect width="436.30" height="12" x="31.70" y="0" class="todo"><title>619 KB · 93.23%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">6.7%</text>
+<text text-anchor="end" x="648" y="24.50">6.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">45 KB</tspan> · <tspan class="todo">619 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -293,7 +293,7 @@
 <rect width="12" height="12" x="420" y="60" class="todo"><title>0x004234f0 CrocControl (438 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="60" class="named"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="60" class="todo"><title>0x00423710 StartDemo (386 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="60" class="todo"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="60" class="named"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="60" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="todo"><title>0x004239a0 DiverControl (813 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="60" class="named"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
@@ -2223,7 +2223,7 @@
 <rect width="8.67" height="8.39" x="511.22" y="303.16" class="todo"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="314.55" class="todo"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="8.67" height="8.39" x="511.22" y="325.94" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
-<rect width="8.67" height="8.35" x="511.22" y="337.34" class="todo"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
+<rect width="8.67" height="8.35" x="511.22" y="337.34" class="named"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="8.67" height="8.35" x="511.22" y="348.69" class="named"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="360.04" class="named"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
 <rect width="8.67" height="8.31" x="511.22" y="371.35" class="named"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
