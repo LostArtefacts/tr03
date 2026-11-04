@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="186.50" height="12" x="0" y="0" class="named"><title>589 · 39.85%</title></rect>
-<rect width="281.50" height="12" x="186.50" y="0" class="todo"><title>889 · 60.15%</title></rect>
+<rect width="186.82" height="12" x="0" y="0" class="named"><title>590 · 39.92%</title></rect>
+<rect width="281.18" height="12" x="186.82" y="0" class="todo"><title>888 · 60.08%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">39.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">589</tspan> · <tspan class="todo">889</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">590</tspan> · <tspan class="todo">888</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="55.42" height="12" x="0" y="0" class="named"><title>79 KB · 11.84%</title></rect>
-<rect width="412.58" height="12" x="55.42" y="0" class="todo"><title>586 KB · 88.16%</title></rect>
+<rect width="55.61" height="12" x="0" y="0" class="named"><title>79 KB · 11.88%</title></rect>
+<rect width="412.39" height="12" x="55.61" y="0" class="todo"><title>586 KB · 88.12%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">11.8%</text>
+<text text-anchor="end" x="648" y="24.50">11.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">79 KB</tspan> · <tspan class="todo">586 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -371,7 +371,7 @@
 <rect width="12" height="12" x="90" y="90" class="named"><title>0x0042d9a0 KillEverything (269 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="90" class="named"><title>0x0042dab0 TriggerBubble (239 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="90" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="90" class="todo"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="90" class="named"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="90" class="named"><title>0x0042de00 TriggerDynamic (82 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="90" class="named"><title>0x0042de60 ClearDynamics (29 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="90" class="todo"><title>0x0042de80 ControlSmokeEmitter (567 bytes)</title></rect>
@@ -2126,7 +2126,7 @@
 <rect width="9.40" height="10.05" x="688.17" y="173.86" class="named"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>
 <rect width="9.40" height="10.05" x="700.57" y="173.86" class="todo"><title>0x00475800 setup_screen_size (268 bytes)</title></rect>
 <rect width="9.37" height="10.05" x="712.97" y="173.86" class="named"><title>0x0042d640 TriggerStaticFlame (267 bytes)</title></rect>
-<rect width="9.33" height="10.05" x="725.34" y="173.86" class="todo"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
+<rect width="9.33" height="10.05" x="725.34" y="173.86" class="named"><title>0x0042dcf0 TriggerBreath (266 bytes)</title></rect>
 <rect width="9.33" height="10.05" x="737.67" y="173.86" class="todo"><title>0x00437050 InitColours (266 bytes)</title></rect>
 <rect width="9.57" height="9.81" x="486.36" y="186.92" class="todo"><title>0x00459ce0 ControlElectricalLight (266 bytes)</title></rect>
 <rect width="9.57" height="9.81" x="486.36" y="199.73" class="todo"><title>0x00498750 Func498750 (266 bytes)</title></rect>

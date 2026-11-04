@@ -468,6 +468,47 @@ void TriggerExplosionBubble(sint32 x, sint32 y, sint32 z, sint16 roomnum)
     }
 }
 
+void TriggerBreath(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv)
+{
+    sint32 size;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    sptr->dR = 32;
+    sptr->dG = 32;
+    sptr->dB = 32;
+    sptr->ColFadeSpeed = 4;
+    sptr->FadeToBlack = 32;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 37;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 15) - 8);
+    sptr->y = y + ((GetRandomControl() & 15) - 8);
+    sptr->z = z + ((GetRandomControl() & 15) - 8);
+    sptr->Xvel = xv;
+    sptr->Yvel = yv;
+    sptr->Zvel = zv;
+    sptr->Friction = 0;
+    if (room[lara_item->room_number].flags & 32)
+        sptr->Flags = 2 | 8 | 512 | 256;
+    else
+        sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = 0;
+    sptr->MaxYvel = 0;
+    size = (GetRandomControl() & 7) + 32;
+    sptr->Width = sptr->sWidth = size >> 3;
+    sptr->dWidth = size;
+    sptr->Height = sptr->sHeight = size >> 3;
+    sptr->dHeight = size;
+}
+
 void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b)
 {
     DYNAMIC *dlptr;
