@@ -44,11 +44,11 @@
     </style>
 <text style="font-size: 20px; " text-anchor="start" x="0" y="10">Tomb Raider III · tomb3.exe</text>
 <g transform="translate(0 30)">
-<rect width="0.41" height="12" x="130" y="1.50" class="named"/>
-<rect width="201.59" height="12" x="130.41" y="1.50" class="todo"/>
+<rect width="0.55" height="12" x="130" y="1.50" class="named"/>
+<rect width="201.45" height="12" x="130.55" y="1.50" class="todo"/>
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
-<text text-anchor="end" x="382" y="7.50">0.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">3/1478</text>
+<text text-anchor="end" x="382" y="7.50">0.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7">4/1478</text>
 <rect width="0.10" height="12" x="130" y="18.50" class="named"/>
 <rect width="201.99" height="12" x="130.01" y="18.50" class="todo"/>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
@@ -57,10 +57,10 @@
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.20% (3)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">99.80% (1475)</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.27% (4)</tspan> · <tspan class="decompiled">0% (0)</tspan> · <tspan class="nonmatching">0% (0)</tspan> · <tspan class="todo">99.73% (1474)</tspan></text>
 <g transform="translate(0 20)">
-<rect width="1.52" height="6" x="0" y="0" class="named"/>
-<rect width="745.48" height="6" x="1.52" y="0" class="todo"/>
+<rect width="2.02" height="6" x="0" y="0" class="named"/>
+<rect width="744.98" height="6" x="2.02" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
@@ -413,7 +413,7 @@
 <rect width="12" height="12" x="705" y="90" class="named"><title>0x0042f190 flip_map_effect (5 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="90" class="todo"><title>0x0042f1a0 draw_right_gun (67 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="90" class="todo"><title>0x0042f1f0 draw_left_gun (67 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="105" class="todo"><title>0x0042f240 shoot_right_gun (10 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="105" class="named"><title>0x0042f240 shoot_right_gun (10 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="105" class="todo"><title>0x0042f250 shoot_left_gun (10 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="105" class="todo"><title>0x0042f260 swap_meshes_with_meshswap1 (105 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="105" class="todo"><title>0x0042f2d0 swap_meshes_with_meshswap2 (105 bytes)</title></rect>
@@ -1545,10 +1545,10 @@
 </g>
 <g transform="translate(0 582)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
-<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">100%</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="end" x="747" y="9"><tspan class="named">0.01%</tspan> · <tspan class="decompiled">0%</tspan> · <tspan class="nonmatching">0%</tspan> · <tspan class="todo">99.99%</tspan></text>
 <g transform="translate(0 20)">
 <rect width="0.10" height="6" x="0" y="0" class="named"/>
-<rect width="746.97" height="6" x="0.03" y="0" class="todo"/>
+<rect width="746.96" height="6" x="0.04" y="0" class="todo"/>
 </g>
 <g transform="translate(0 31)">
 <rect width="56.18" height="82.74" x="0" y="0" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
@@ -3007,7 +3007,7 @@
 <rect width="0.10" height="0.10" x="739.90" y="445.64" class="todo"><title>0x00485a80 Func485a80 (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.90" y="448.17" class="todo"><title>0x0048a320 S_ClearScreen (11 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="739.90" y="450.70" class="named"><title>0x0042f180 lara_hands_free (10 bytes)</title></rect>
-<rect width="0.10" height="0.10" x="742.13" y="443.12" class="todo"><title>0x0042f240 shoot_right_gun (10 bytes)</title></rect>
+<rect width="0.10" height="0.10" x="742.13" y="443.12" class="named"><title>0x0042f240 shoot_right_gun (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="744.10" y="443.12" class="todo"><title>0x0042f250 shoot_left_gun (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="746.06" y="443.12" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="0.10" height="0.10" x="748.03" y="443.12" class="todo"><title>0x00441330 lara_as_splat (10 bytes)</title></rect>

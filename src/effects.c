@@ -14,3 +14,8 @@ void flip_map_effect(ITEM_INFO *item)
 {
     FlipMap();
 }
+
+void shoot_right_gun(ITEM_INFO *item)
+{
+    lara.right_arm.flash_gun = 3;
+}
