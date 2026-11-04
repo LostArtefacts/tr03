@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="187.14" height="12" x="0" y="0" class="named"><title>591 · 39.99%</title></rect>
-<rect width="280.86" height="12" x="187.14" y="0" class="todo"><title>887 · 60.01%</title></rect>
+<rect width="187.45" height="12" x="0" y="0" class="named"><title>592 · 40.05%</title></rect>
+<rect width="280.55" height="12" x="187.45" y="0" class="todo"><title>886 · 59.95%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">40.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">591</tspan> · <tspan class="todo">887</tspan></text>
+<text text-anchor="end" x="648" y="7.50">40.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">592</tspan> · <tspan class="todo">886</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="55.81" height="12" x="0" y="0" class="named"><title>79 KB · 11.93%</title></rect>
-<rect width="412.19" height="12" x="55.81" y="0" class="todo"><title>586 KB · 88.07%</title></rect>
+<rect width="56.07" height="12" x="0" y="0" class="named"><title>80 KB · 11.98%</title></rect>
+<rect width="411.93" height="12" x="56.07" y="0" class="todo"><title>585 KB · 88.02%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">11.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">79 KB</tspan> · <tspan class="todo">586 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">12.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">80 KB</tspan> · <tspan class="todo">585 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -386,7 +386,7 @@
 <rect width="12" height="12" x="315" y="90" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="90" class="named"><title>0x0042e5c0 LaraBubbles (112 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="90" class="named"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="90" class="todo"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="90" class="named"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="90" class="todo"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="90" class="todo"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="90" class="todo"><title>0x0042ebb0 WaterFall (279 bytes)</title></rect>
@@ -2024,7 +2024,7 @@
 <rect width="11.35" height="11.38" x="692.70" y="145.70" class="todo"><title>0x0042c950 TriggerBloodD (366 bytes)</title></rect>
 <rect width="11.35" height="11.38" x="707.05" y="145.70" class="todo"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
 <rect width="11.32" height="11.38" x="721.40" y="145.70" class="named"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
-<rect width="11.29" height="11.38" x="735.71" y="145.70" class="todo"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
+<rect width="11.29" height="11.38" x="735.71" y="145.70" class="named"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="10.81" height="11.82" x="446.28" y="160.08" class="todo"><title>0x00412040 BoatCheckGeton (362 bytes)</title></rect>
 <rect width="10.81" height="11.78" x="446.28" y="174.90" class="todo"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
 <rect width="10.81" height="11.75" x="446.28" y="189.68" class="todo"><title>0x00495a20 Func495a20 (360 bytes)</title></rect>

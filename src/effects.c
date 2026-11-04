@@ -189,6 +189,50 @@ void KillEffect(sint16 fx_num);
 void EffectNewRoom(sint16 fx_num, sint16 room_number);
 RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 moretrans);
 
+void ControlBubble1(sint16 fx_num)
+{
+    FX_INFO *fx;
+    OBJECT_INFO *object;
+    FLOOR_INFO *floor;
+    sint32 x, y, z, h;
+    sint16 roomy;
+
+    fx = &effects[fx_num];
+    object = &objects[fx->object_number];
+    fx->pos.y_rot += 9 * ONE_DEGREE;
+    fx->pos.x_rot += 13 * ONE_DEGREE;
+    fx->speed += fx->flag1;
+    x = fx->pos.x_pos + ((phd_sin(fx->pos.y_rot) * 3) >> W2V_SHIFT);
+    y = fx->pos.y_pos - (fx->speed >> 8);
+    z = fx->pos.z_pos + ((phd_cos(fx->pos.x_rot) * 1) >> W2V_SHIFT);
+    roomy = fx->room_number;
+    floor = GetFloor(x, y, z, &roomy);
+    h = GetHeight(floor, x, y, z);
+    if (y > h) {
+        KillEffect(fx_num);
+        return;
+    }
+
+    if (!floor || !(room[roomy].flags & UNDERWATER)) {
+        if (floor)
+            SetupRipple(fx->pos.x_pos, room[fx->room_number].maxceiling, fx->pos.z_pos, -2 - (GetRandomControl() & 1), 1);
+        KillEffect(fx_num);
+        return;
+    }
+
+    h = GetCeiling(floor, x, y, z);
+    if (h == NO_HEIGHT || y <= h) {
+        KillEffect(fx_num);
+        return;
+    }
+
+    if (fx->room_number != roomy)
+        EffectNewRoom(fx_num, roomy);
+    fx->pos.x_pos = x;
+    fx->pos.y_pos = y;
+    fx->pos.z_pos = z;
+}
+
 typedef struct {
     sint32 x;
     sint32 y;
