@@ -52,5 +52,6 @@ void Exercise8_109Sp(ITEM_INFO *item);
 void Exercise8_87(ITEM_INFO *item);
 void ResetExercises(ITEM_INFO *item);
 void TubeTrain(ITEM_INFO *item);
+void RumbleNoShake(ITEM_INFO *item);
 
 #endif

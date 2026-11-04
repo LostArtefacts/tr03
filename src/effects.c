@@ -415,3 +415,9 @@ void TubeTrain(ITEM_INFO *item)
     camera.bounce = -350;
     flipeffect = -1;
 }
+
+void RumbleNoShake(ITEM_INFO *item)
+{
+    SoundEffect(149, NULL, 0);
+    flipeffect = -1;
+}
