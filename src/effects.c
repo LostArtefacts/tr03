@@ -261,6 +261,41 @@ extern SPLASH_SETUP splash_setup;
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void SetupSplash(SPLASH_SETUP *spl);
 
+void Splash(ITEM_INFO *item)
+{
+    sint32 height;
+    sint16 room_number;
+
+    room_number = item->room_number;
+    GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (!(room[room_number].flags & UNDERWATER))
+        return;
+
+    height = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, room_number);
+    splash_setup.x = item->pos.x_pos;
+    splash_setup.y = height;
+    splash_setup.z = item->pos.z_pos;
+    splash_setup.InnerXZoff = 32;
+    splash_setup.InnerXZsize = 8;
+    splash_setup.InnerYsize = -128;
+    splash_setup.InnerXZvel = 0x140;
+    splash_setup.InnerYvel = -item->fallspeed * 40;
+    splash_setup.InnerGravity = 0xa0;
+    splash_setup.InnerFriction = 7;
+    splash_setup.MiddleXZoff = 48;
+    splash_setup.MiddleXZsize = 32;
+    splash_setup.MiddleYsize = -64;
+    splash_setup.MiddleXZvel = 0x1e0;
+    splash_setup.MiddleYvel = -item->fallspeed * 20;
+    splash_setup.MiddleGravity = 0x60;
+    splash_setup.MiddleFriction = 8;
+    splash_setup.OuterXZoff = 32;
+    splash_setup.OuterXZsize = 128;
+    splash_setup.OuterXZvel = 0x220;
+    splash_setup.OuterFriction = 9;
+    SetupSplash(&splash_setup);
+}
+
 extern sint32 SplashCount;
 sint16 *GetBestFrame(ITEM_INFO *item);
 
