@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="136.47" height="12" x="0" y="0" class="named"><title>431 · 29.16%</title></rect>
-<rect width="331.53" height="12" x="136.47" y="0" class="todo"><title>1047 · 70.84%</title></rect>
+<rect width="136.79" height="12" x="0" y="0" class="named"><title>432 · 29.23%</title></rect>
+<rect width="331.21" height="12" x="136.79" y="0" class="todo"><title>1046 · 70.77%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">29.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">431</tspan> · <tspan class="todo">1047</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">432</tspan> · <tspan class="todo">1046</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="22.20" height="12" x="0" y="0" class="named"><title>31 KB · 4.74%</title></rect>
-<rect width="445.80" height="12" x="22.20" y="0" class="todo"><title>632 KB · 95.26%</title></rect>
+<rect width="22.31" height="12" x="0" y="0" class="named"><title>32 KB · 4.77%</title></rect>
+<rect width="445.69" height="12" x="22.31" y="0" class="todo"><title>632 KB · 95.23%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">4.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">31 KB</tspan> · <tspan class="todo">632 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">4.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">32 KB</tspan> · <tspan class="todo">632 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -194,7 +194,7 @@
 <rect width="12" height="12" x="435" y="30" class="todo"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="30" class="todo"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="30" class="todo"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="30" class="todo"><title>0x00415780 BadFloor (154 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="30" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="todo"><title>0x00415820 CreatureDie (275 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="30" class="todo"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="30" class="todo"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
@@ -2333,7 +2333,7 @@
 <rect width="7.63" height="7.22" x="533.67" y="419.34" class="todo"><title>0x0046eff0 FlameEmitterControl (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="429.56" class="todo"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.67" y="439.78" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
-<rect width="7.40" height="7.35" x="544.30" y="243.97" class="todo"><title>0x00415780 BadFloor (154 bytes)</title></rect>
+<rect width="7.40" height="7.35" x="544.30" y="243.97" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="7.40" height="7.35" x="554.70" y="243.97" class="todo"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
 <rect width="7.40" height="7.35" x="565.09" y="243.97" class="todo"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
 <rect width="7.40" height="7.35" x="575.49" y="243.97" class="todo"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
