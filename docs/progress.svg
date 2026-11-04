@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="127.61" height="12" x="0" y="0" class="named"><title>403 · 27.27%</title></rect>
-<rect width="340.39" height="12" x="127.61" y="0" class="todo"><title>1075 · 72.73%</title></rect>
+<rect width="127.92" height="12" x="0" y="0" class="named"><title>404 · 27.33%</title></rect>
+<rect width="340.08" height="12" x="127.92" y="0" class="todo"><title>1074 · 72.67%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">27.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">403</tspan> · <tspan class="todo">1075</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">404</tspan> · <tspan class="todo">1074</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="19.07" height="12" x="0" y="0" class="named"><title>27 KB · 4.07%</title></rect>
-<rect width="448.93" height="12" x="19.07" y="0" class="todo"><title>637 KB · 95.93%</title></rect>
+<rect width="19.18" height="12" x="0" y="0" class="named"><title>27 KB · 4.10%</title></rect>
+<rect width="448.82" height="12" x="19.18" y="0" class="todo"><title>637 KB · 95.90%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">4.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">27 KB</tspan> · <tspan class="todo">637 KB</tspan></text>
@@ -687,7 +687,7 @@
 <rect width="12" height="12" x="330" y="180" class="todo"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="180" class="named"><title>0x004428e0 lara_col_splat (108 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="180" class="named"><title>0x00442950 lara_col_land (19 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="180" class="todo"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="180" class="named"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="180" class="todo"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="180" class="todo"><title>0x00442b50 lara_col_stepright (212 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="180" class="named"><title>0x00442c30 lara_col_stepleft (19 bytes)</title></rect>
@@ -2328,7 +2328,7 @@
 <rect width="7.63" height="7.27" x="533.66" y="368.14" class="todo"><title>0x0048acc0 ProjectPCoord (157 bytes)</title></rect>
 <rect width="7.63" height="7.27" x="533.66" y="378.41" class="todo"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.66" y="388.68" class="todo"><title>0x00423000 RemoveRoomFlipItems (156 bytes)</title></rect>
-<rect width="7.63" height="7.22" x="533.66" y="398.90" class="todo"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
+<rect width="7.63" height="7.22" x="533.66" y="398.90" class="named"><title>0x00442970 lara_col_compress (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.66" y="409.12" class="todo"><title>0x0044cfc0 LaraCheat (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.66" y="419.34" class="todo"><title>0x0046eff0 FlameEmitterControl (156 bytes)</title></rect>
 <rect width="7.63" height="7.22" x="533.66" y="429.56" class="todo"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
