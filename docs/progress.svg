@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196" height="12" x="0" y="0" class="named"><title>619 · 41.88%</title></rect>
-<rect width="272" height="12" x="196" y="0" class="todo"><title>859 · 58.12%</title></rect>
+<rect width="196.32" height="12" x="0" y="0" class="named"><title>620 · 41.95%</title></rect>
+<rect width="271.68" height="12" x="196.32" y="0" class="todo"><title>858 · 58.05%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">41.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">619</tspan> · <tspan class="todo">859</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">620</tspan> · <tspan class="todo">858</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="62.44" height="12" x="0" y="0" class="named"><title>89 KB · 13.34%</title></rect>
-<rect width="405.56" height="12" x="62.44" y="0" class="todo"><title>576 KB · 86.66%</title></rect>
+<rect width="62.66" height="12" x="0" y="0" class="named"><title>89 KB · 13.39%</title></rect>
+<rect width="405.34" height="12" x="62.66" y="0" class="todo"><title>576 KB · 86.61%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">13.3%</text>
+<text text-anchor="end" x="648" y="24.50">13.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">89 KB</tspan> · <tspan class="todo">576 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -515,7 +515,7 @@
 <rect width="12" height="12" x="0" y="135" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="135" class="todo"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="135" class="named"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="135" class="todo"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="135" class="named"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="135" class="named"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="135" class="named"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="135" class="named"><title>0x00438f30 Inv_RingMotionInit (99 bytes)</title></rect>
@@ -2068,7 +2068,7 @@
 <rect width="10.47" height="10.78" x="736.53" y="160.08" class="todo"><title>0x00406fa0 HWI_InsertGT4_Sorted (320 bytes)</title></rect>
 <rect width="10.19" height="11.04" x="460.10" y="173.86" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
 <rect width="10.19" height="11.04" x="460.10" y="187.91" class="todo"><title>0x00483960 StartGame (319 bytes)</title></rect>
-<rect width="10.19" height="11.01" x="460.10" y="201.95" class="todo"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
+<rect width="10.19" height="11.01" x="460.10" y="201.95" class="named"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="10.19" height="11.01" x="460.10" y="215.96" class="todo"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>
 <rect width="10.19" height="10.98" x="460.10" y="229.97" class="named"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
 <rect width="10.19" height="10.98" x="460.10" y="243.95" class="todo"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
