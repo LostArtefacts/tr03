@@ -12,6 +12,7 @@ extern sint32 wibble;
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 void TriggerWaterfallMist(sint32 x, sint32 y, sint32 z, sint32 angle);
 void AnimateLara(ITEM_INFO *item);
+int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll);
 sint16 TestMonkeyLeft(ITEM_INFO *item, COLL_INFO *coll);
 sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 
@@ -27,11 +28,42 @@ sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 #define MAX_HEAD_ROTATION (44 * ONE_DEGREE)
 #define HANG_HEIGHT 600
 #define NO_BAD_NEG NO_HEIGHT
+#define LANDFAR_A 24
+#define LANDFAR_F GF(LANDFAR_A, 0)
 
 void GetLaraCollisionInfo(ITEM_INFO *item, COLL_INFO *coll)
 {
     coll->facing = lara.move_angle;
     GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_HITE);
+}
+
+void LaraSlideEdgeJump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    ShiftItem(item, coll);
+    switch (coll->coll_type)
+    {
+    case COLL_LEFT:
+        item->pos.y_rot += LARA_DEF_ADD_EDGE;
+        break;
+    case COLL_RIGHT:
+        item->pos.y_rot -= LARA_DEF_ADD_EDGE;
+        break;
+    case COLL_TOP:
+    case COLL_TOPFRONT:
+        if (item->fallspeed <= 0)
+            item->fallspeed = 1;
+        break;
+    case COLL_CLAMP:
+        item->pos.z_pos -= (phd_cos(coll->facing) * 100) >> W2V_SHIFT;
+        item->pos.x_pos -= (phd_sin(coll->facing) * 100) >> W2V_SHIFT;
+        item->speed = 0;
+        coll->mid_floor = 0;
+        if (item->fallspeed <= 0)
+            item->fallspeed = 16;
+        break;
+    default:
+        break;
+    }
 }
 
 void lara_as_all4s(ITEM_INFO *item, COLL_INFO *coll)
