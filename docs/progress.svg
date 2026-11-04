@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="26.79" height="12" x="0" y="0" class="named"><title>196 · 13.26%</title></rect>
-<rect width="175.21" height="12" x="26.79" y="0" class="todo"><title>1282 · 86.74%</title></rect>
+<rect width="26.92" height="12" x="0" y="0" class="named"><title>197 · 13.33%</title></rect>
+<rect width="175.08" height="12" x="26.92" y="0" class="todo"><title>1281 · 86.67%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="7.50">13.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">196</tspan> · <tspan class="todo">1282</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="7"><tspan class="named">197</tspan> · <tspan class="todo">1281</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="2.80" height="12" x="0" y="0" class="named"><title>9 KB · 1.39%</title></rect>
-<rect width="199.20" height="12" x="2.80" y="0" class="todo"><title>655 KB · 98.61%</title></rect>
+<rect width="2.81" height="12" x="0" y="0" class="named"><title>9 KB · 1.39%</title></rect>
+<rect width="199.19" height="12" x="2.81" y="0" class="todo"><title>655 KB · 98.61%</title></rect>
 </g>
 <text text-anchor="end" x="382" y="24.50">1.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="397" y="24"><tspan class="named">9 KB</tspan> · <tspan class="todo">655 KB</tspan></text>
@@ -470,7 +470,7 @@
 <rect width="12" height="12" x="75" y="120" class="todo"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="120" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="120" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="120" class="todo"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="120" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="120" class="todo"><title>0x004322a0 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="120" class="todo"><title>0x00432310 GF_InterpretSequence (1372 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="120" class="todo"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
@@ -2883,7 +2883,7 @@
 <rect width="3.20" height="3.53" x="713.20" y="381.23" class="named"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
 <rect width="3.20" height="3.53" x="719.40" y="381.23" class="todo"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
 <rect width="3.10" height="3.53" x="725.60" y="381.23" class="named"><title>0x0042f490 AssaultStop (31 bytes)</title></rect>
-<rect width="3.10" height="3.53" x="731.70" y="381.23" class="todo"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
+<rect width="3.10" height="3.53" x="731.70" y="381.23" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="3.10" height="3.53" x="737.80" y="381.23" class="named"><title>0x0044d880 ControlLaraExtra (31 bytes)</title></rect>
 <rect width="3.10" height="3.53" x="743.90" y="381.23" class="todo"><title>0x0044f810 LaserControl (31 bytes)</title></rect>
 <rect width="3.33" height="3.29" x="681.77" y="387.75" class="todo"><title>0x00475700 Func475700 (31 bytes)</title></rect>
