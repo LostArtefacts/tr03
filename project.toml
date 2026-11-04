@@ -35,7 +35,7 @@ defines = ["/DCODER=0"]
 probe = "build/core_probe.csv"
 
 [hooks]
-progress = false
-compare = false
-one_function = false
-no_comments = false
+progress = true  # every commit redraws docs/progress.svg
+compare = true  # every compiled function matches the original
+one_function = true  # one newly matching function per commit
+no_comments = true  # no comments, tabs or CRs in src/
