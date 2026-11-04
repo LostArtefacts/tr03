@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="145.66" height="12" x="0" y="0" class="named"><title>460 · 31.12%</title></rect>
-<rect width="322.34" height="12" x="145.66" y="0" class="todo"><title>1018 · 68.88%</title></rect>
+<rect width="145.97" height="12" x="0" y="0" class="named"><title>461 · 31.19%</title></rect>
+<rect width="322.03" height="12" x="145.97" y="0" class="todo"><title>1017 · 68.81%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">31.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">460</tspan> · <tspan class="todo">1018</tspan></text>
+<text text-anchor="end" x="648" y="7.50">31.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">461</tspan> · <tspan class="todo">1017</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="25.27" height="12" x="0" y="0" class="named"><title>36 KB · 5.40%</title></rect>
-<rect width="442.73" height="12" x="25.27" y="0" class="todo"><title>628 KB · 94.60%</title></rect>
+<rect width="25.37" height="12" x="0" y="0" class="named"><title>36 KB · 5.42%</title></rect>
+<rect width="442.63" height="12" x="25.37" y="0" class="todo"><title>628 KB · 94.58%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">5.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">36 KB</tspan> · <tspan class="todo">628 KB</tspan></text>
@@ -159,7 +159,7 @@
 <rect width="12" height="12" x="660" y="15" class="named"><title>0x00410e60 CanUseGun (82 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="15" class="todo"><title>0x00410ec0 BigGunDraw (570 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="15" class="todo"><title>0x00411100 BigGunControl (845 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="15" class="todo"><title>0x00411450 InitialiseVulture (143 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="15" class="named"><title>0x00411450 InitialiseVulture (143 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="15" class="todo"><title>0x004114e0 VultureControl (531 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="15" class="todo"><title>0x00411710 BlowpipeControl (2203 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="30" class="named"><title>0x00411fe0 InitialiseBoat (84 bytes)</title></rect>
@@ -2366,7 +2366,7 @@
 <rect width="6.98" height="7.29" x="544.30" y="357.96" class="todo"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
 <rect width="6.98" height="7.29" x="544.30" y="368.25" class="todo"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
 <rect width="6.98" height="7.24" x="544.30" y="378.54" class="todo"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>
-<rect width="6.98" height="7.24" x="544.30" y="388.77" class="todo"><title>0x00411450 InitialiseVulture (143 bytes)</title></rect>
+<rect width="6.98" height="7.24" x="544.30" y="388.77" class="named"><title>0x00411450 InitialiseVulture (143 bytes)</title></rect>
 <rect width="6.98" height="7.24" x="544.30" y="399.01" class="named"><title>0x004369c0 SelectMeshes (143 bytes)</title></rect>
 <rect width="6.98" height="7.24" x="544.30" y="409.25" class="todo"><title>0x00496b20 MMXBlit32to24 (143 bytes)</title></rect>
 <rect width="6.98" height="7.19" x="544.30" y="419.49" class="named"><title>0x0041aa40 InitCinematicRooms (142 bytes)</title></rect>
