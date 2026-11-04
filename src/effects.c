@@ -145,3 +145,13 @@ void AssaultPenalty4(ITEM_INFO *item)
     }
     flipeffect = -1;
 }
+
+void AssaultPenalty30(ITEM_INFO *item)
+{
+    if (assault_timer_active)
+    {
+        assault_penalties += 30 * 30;
+        assault_penalty_display_timer = 4 * 30;
+    }
+    flipeffect = -1;
+}
