@@ -41,3 +41,12 @@ void InitialisePickUpDisplay(void)
     for (i = 0; i < NUM_PU; i++)
         pickups[i].duration = 0;
 }
+
+void DrawModeInfo(void)
+{
+    if (LpModeTS && --LnModeTSLife == 0)
+    {
+        T_RemovePrint(LpModeTS);
+        LpModeTS = NULL;
+    }
+}
