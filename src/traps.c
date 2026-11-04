@@ -14,6 +14,8 @@
 #define SFX_ALWAYS 2
 #define LV_SHORE 5
 #define LV_RAPIDS 7
+#define LV_OFFICE 12
+#define LV_AREA51 15
 
 extern ITEM_INFO *CeilingObject;
 extern int OnObject;
@@ -21,6 +23,7 @@ extern int height_type;
 extern int clonked;
 extern uint32 CurrentLevel;
 
+void LaraRapidsDrown(void);
 void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
 
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
@@ -206,5 +209,31 @@ void LaraBurn(void)
         fx->object_number = FLAME;
         fx->counter = -1;
         lara.burn = 1;
+    }
+}
+
+void LavaBurn(ITEM_INFO *item)
+{
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    if (item->hit_points < 0 || lara.water_status == LARA_CHEAT)
+        return;
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, 32000, item->pos.z_pos, &room_number);
+    if (item->floor != GetHeight(floor, item->pos.x_pos, 32000, item->pos.z_pos))
+        return;
+    if (CurrentLevel == LV_RAPIDS)
+    {
+        LaraRapidsDrown();
+    }
+    else
+    {
+        item->hit_status = 1;
+        item->hit_points = -1;
+        if (CurrentLevel == LV_AREA51 || CurrentLevel == LV_OFFICE)
+            lara.electric = 1;
+        else
+            LaraBurn();
     }
 }
