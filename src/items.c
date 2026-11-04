@@ -22,6 +22,53 @@ void InitialiseItemArray(int numitems)
     item->next_item = NO_ITEM;
 }
 
+void DetatchSpark(sint32 num, sint32 type);
+
+void KillItem(sint16 item_num)
+{
+    sint16 linknum;
+    ITEM_INFO *item;
+
+    DetatchSpark(item_num, 128);
+    item = &items[item_num];
+    item->really_active = 0;
+    item->active = 0;
+    linknum = next_item_active;
+    if (linknum == item_num) {
+        next_item_active = item->next_active;
+    } else {
+        for (; linknum != NO_ITEM; linknum = items[linknum].next_active) {
+            if (items[linknum].next_active == item_num) {
+                items[linknum].next_active = item->next_active;
+                break;
+            }
+        }
+    }
+
+    if (item->room_number != 255) {
+        linknum = room[item->room_number].item_number;
+        if (linknum == item_num) {
+            room[item->room_number].item_number = item->next_item;
+        } else {
+            for (; linknum != NO_ITEM; linknum = items[linknum].next_item) {
+                if (items[linknum].next_item == item_num) {
+                    items[linknum].next_item = item->next_item;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (item == lara.target)
+        lara.target = NULL;
+    if (item_num < level_items) {
+        item->flags |= -0x8000;
+    } else {
+        item->next_item = next_item_free;
+        next_item_free = item_num;
+    }
+}
+
 sint16 CreateItem(void)
 {
     sint16 item_num;
@@ -34,6 +81,8 @@ sint16 CreateItem(void)
     next_item_free = items[item_num].next_item;
     return item_num;
 }
+
+extern int DemoPlay;
 
 void RemoveActiveItem(sint16 item_num)
 {
@@ -188,7 +237,6 @@ sint16 CreateEffect(sint16 room_num)
     return fx_num;
 }
 
-void DetatchSpark(sint32 num, sint32 type);
 
 void KillEffect(sint16 fx_num)
 {
