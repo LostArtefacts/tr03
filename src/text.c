@@ -19,3 +19,18 @@ extern char T_theStrings[MAX_TEXT_STRINGS * MAX_STRING_SIZE];
 
 void DisplayModeInfo(char *string);
 void T_DrawThisText(TEXTSTRING *textString);
+
+void T_InitPrint(void)
+{
+    int n;
+    TEXTSTRING *textString = T_textStrings;
+
+    DisplayModeInfo(0);
+
+    for (n = 0; n < MAX_TEXT_STRINGS; n++)
+    {
+        textString->flags = 0;
+        textString++;
+    }
+    T_numStrings = 0;
+}
