@@ -90,3 +90,10 @@ void lara_as_death(ITEM_INFO *item, COLL_INFO *coll)
     coll->enable_spaz = 0;
     coll->enable_baddie_push = 0;
 }
+
+void lara_as_fastfall(ITEM_INFO *item, COLL_INFO *coll)
+{
+    FASTFALL_FRICTION;
+    if (item->fallspeed == DAMAGE_START + DAMAGE_LENGTH)
+        SoundEffect(30, &item->pos, 0);
+}
