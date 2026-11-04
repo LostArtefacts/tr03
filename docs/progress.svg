@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="169.40" height="12" x="0" y="0" class="named"><title>535 · 36.20%</title></rect>
-<rect width="298.60" height="12" x="169.40" y="0" class="todo"><title>943 · 63.80%</title></rect>
+<rect width="169.72" height="12" x="0" y="0" class="named"><title>536 · 36.27%</title></rect>
+<rect width="298.28" height="12" x="169.72" y="0" class="todo"><title>942 · 63.73%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">36.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">535</tspan> · <tspan class="todo">943</tspan></text>
+<text text-anchor="end" x="648" y="7.50">36.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">536</tspan> · <tspan class="todo">942</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="35.70" height="12" x="0" y="0" class="named"><title>51 KB · 7.63%</title></rect>
-<rect width="432.30" height="12" x="35.70" y="0" class="todo"><title>614 KB · 92.37%</title></rect>
+<rect width="35.86" height="12" x="0" y="0" class="named"><title>51 KB · 7.66%</title></rect>
+<rect width="432.14" height="12" x="35.86" y="0" class="todo"><title>613 KB · 92.34%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">7.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">51 KB</tspan> · <tspan class="todo">614 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">7.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">51 KB</tspan> · <tspan class="todo">613 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -593,7 +593,7 @@
 <rect width="12" height="12" x="420" y="150" class="named"><title>0x0043eba0 lara_as_all4s (122 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="150" class="todo"><title>0x0043ec20 lara_col_all4s (728 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="150" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="150" class="todo"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="150" class="named"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="150" class="named"><title>0x0043f0d0 LaraDeflectEdgeDuck (117 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="150" class="named"><title>0x0043f150 lara_as_all4turnl (100 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="150" class="named"><title>0x0043f1c0 lara_col_all4turnl (40 bytes)</title></rect>
@@ -2166,7 +2166,7 @@
 <rect width="9.03" height="9.46" x="486.98" y="363.42" class="todo"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
 <rect width="9.03" height="9.39" x="486.98" y="375.88" class="todo"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="9.03" height="9.35" x="486.98" y="388.27" class="todo"><title>0x0042dab0 TriggerBubble (239 bytes)</title></rect>
-<rect width="9.03" height="9.35" x="486.98" y="400.61" class="todo"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
+<rect width="9.03" height="9.35" x="486.98" y="400.61" class="named"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
 <rect width="9.03" height="9.35" x="486.98" y="412.96" class="todo"><title>0x004493e0 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="9.03" height="9.35" x="486.98" y="425.31" class="todo"><title>0x0044e770 LaraTestWaterStepOut (239 bytes)</title></rect>
 <rect width="9.03" height="9.35" x="486.98" y="437.65" class="todo"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
