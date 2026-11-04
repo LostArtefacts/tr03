@@ -13,6 +13,30 @@ void RingActive(void)
     Inv_itemText[IT_QTY] = NULL;
 }
 
+extern INVENTORY_ITEM *inv_main_list[];
+extern sint16 inv_main_qtys[];
+extern INVENTORY_ITEM *inv_keys_list[];
+extern sint16 inv_keys_qtys[];
+
+int Inv_GetItemOption(int item_num);
+
+int Inv_RequestItem(int item_num)
+{
+    int n;
+    int option;
+
+    option = Inv_GetItemOption(item_num);
+    for (n = 0; n < inv_main_objects; n++) {
+        if (inv_main_list[n]->object_number == option)
+            return inv_main_qtys[n];
+    }
+    for (n = 0; n < inv_keys_objects; n++) {
+        if (inv_keys_list[n]->object_number == option)
+            return inv_keys_qtys[n];
+    }
+    return 0;
+}
+
 void Inv_RemoveAllItems(void)
 {
     inv_main_objects = 0;
