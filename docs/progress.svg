@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="88.03" height="12" x="0" y="0" class="named"><title>278 · 18.81%</title></rect>
-<rect width="379.97" height="12" x="88.03" y="0" class="todo"><title>1200 · 81.19%</title></rect>
+<rect width="88.34" height="12" x="0" y="0" class="named"><title>279 · 18.88%</title></rect>
+<rect width="379.66" height="12" x="88.34" y="0" class="todo"><title>1199 · 81.12%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">18.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">278</tspan> · <tspan class="todo">1200</tspan></text>
+<text text-anchor="end" x="648" y="7.50">18.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">279</tspan> · <tspan class="todo">1199</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="9.91" height="12" x="0" y="0" class="named"><title>14 KB · 2.12%</title></rect>
-<rect width="458.09" height="12" x="9.91" y="0" class="todo"><title>650 KB · 97.88%</title></rect>
+<rect width="9.96" height="12" x="0" y="0" class="named"><title>14 KB · 2.13%</title></rect>
+<rect width="458.04" height="12" x="9.96" y="0" class="todo"><title>650 KB · 97.87%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">2.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">14 KB</tspan> · <tspan class="todo">650 KB</tspan></text>
@@ -1065,7 +1065,7 @@
 <rect width="12" height="12" x="0" y="300" class="todo"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="300" class="named"><title>0x0046daf0 InitialiseBlade (64 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="300" class="todo"><title>0x0046db30 BladeControl (152 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="300" class="todo"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="300" class="named"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="300" class="todo"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="300" class="named"><title>0x0046dd10 InitialiseRollingBall (64 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="300" class="todo"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
@@ -2602,7 +2602,7 @@
 <rect width="5.07" height="5.29" x="608.98" y="350.97" class="named"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="359.27" class="named"><title>0x00441ca0 extra_as_breath (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="367.56" class="named"><title>0x00462e10 WriteSG (76 bytes)</title></rect>
-<rect width="5.07" height="5.29" x="608.98" y="375.85" class="todo"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
+<rect width="5.07" height="5.29" x="608.98" y="375.85" class="named"><title>0x0046dbd0 InitialiseKillerStatue (76 bytes)</title></rect>
 <rect width="5.07" height="5.29" x="608.98" y="384.14" class="todo"><title>0x004842a0 GetSavedGamesList (76 bytes)</title></rect>
 <rect width="5.07" height="5.22" x="608.98" y="392.44" class="named"><title>0x00410750 InitialiseAutogun (75 bytes)</title></rect>
 <rect width="5.07" height="5.22" x="608.98" y="400.66" class="named"><title>0x00413390 DoBoatDynamics (75 bytes)</title></rect>
