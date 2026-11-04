@@ -4,6 +4,9 @@
 
 void MovableBlock(sint16 item_number);
 void AlterFloorHeight(ITEM_INFO *item, int height);
+#define KILLED_ITEM (-0x8000)
+
+void RemoveDrawnItem(sint16 item_num);
 void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type);
 
 int TriggerActive(ITEM_INFO *item)
@@ -21,6 +24,24 @@ int TriggerActive(ITEM_INFO *item)
     if (!item->timer)
         item->timer = -1;
     return ok;
+}
+
+void RemoveRoomFlipItems(ROOM_INFO *r)
+{
+    ITEM_INFO *item;
+    sint16 item_num;
+
+    for (item_num = r->item_number; item_num != NO_ITEM; item_num = items[item_num].next_item)
+    {
+        item = &items[item_num];
+        if (objects[item->object_number].control == MovableBlock)
+            AlterFloorHeight(item, 1024);
+        else if ((item->flags & ONESHOT) && objects[item->object_number].intelligent && item->hit_points <= 0)
+        {
+            RemoveDrawnItem(item_num);
+            item->flags |= KILLED_ITEM;
+        }
+    }
 }
 
 void AddRoomFlipItems(ROOM_INFO *r)
