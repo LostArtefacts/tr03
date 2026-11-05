@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="255.55" height="12" x="0" y="0" class="named"><title>817 · 55.31%</title></rect>
-<rect width="206.45" height="12" x="255.55" y="0" class="todo"><title>660 · 44.69%</title></rect>
+<rect width="255.87" height="12" x="0" y="0" class="named"><title>818 · 55.38%</title></rect>
+<rect width="206.13" height="12" x="255.87" y="0" class="todo"><title>659 · 44.62%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">55.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">817</tspan> · <tspan class="todo">660</tspan></text>
+<text text-anchor="end" x="642" y="7.50">55.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">818</tspan> · <tspan class="todo">659</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="133.01" height="12" x="0" y="0" class="named"><title>192 KB · 28.79%</title></rect>
-<rect width="328.99" height="12" x="133.01" y="0" class="todo"><title>474 KB · 71.21%</title></rect>
+<rect width="133.19" height="12" x="0" y="0" class="named"><title>192 KB · 28.83%</title></rect>
+<rect width="328.81" height="12" x="133.19" y="0" class="todo"><title>474 KB · 71.17%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">28.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">192 KB</tspan> · <tspan class="todo">474 KB</tspan></text>
@@ -328,7 +328,7 @@
 <rect width="12" height="12" x="195" y="75" class="todo"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="75" class="named"><title>0x00429690 phd_PutPolygons_I (42 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="75" class="named"><title>0x004296c0 InterpolateMatrix (621 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="75" class="todo"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="75" class="named"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="75" class="named"><title>0x00429a30 DrawGunFlash (356 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="75" class="named"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="75" class="named"><title>0x00429d00 CalculateObjectLightingLara (166 bytes)</title></rect>
@@ -2152,7 +2152,7 @@
 <rect width="9.74" height="9.04" x="512" y="187.16" class="todo"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
 <rect width="9.74" height="9.04" x="524.74" y="187.16" class="todo"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="9.70" height="9.04" x="537.48" y="187.16" class="named"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
-<rect width="9.67" height="9.04" x="550.18" y="187.16" class="todo"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
+<rect width="9.67" height="9.04" x="550.18" y="187.16" class="named"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
 <rect width="9.63" height="9.04" x="562.85" y="187.16" class="todo"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
 <rect width="9.63" height="9.04" x="575.48" y="187.16" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="9.63" height="9.04" x="588.10" y="187.16" class="named"><title>0x00453460 CreateZone (247 bytes)</title></rect>

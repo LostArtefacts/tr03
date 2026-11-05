@@ -293,6 +293,41 @@ void InterpolateMatrix(void)
     }
 }
 
+void InterpolateArmMatrix(void)
+{
+    sint32 *mptr, *iptr;
+    sint32 frac, rate;
+
+    mptr = phd_mxptr;
+    iptr = IMptr;
+    frac = IM_frac;
+    rate = IM_rate;
+
+    mptr[0] = mptr[0 - 24];
+    mptr[1] = mptr[1 - 24];
+    mptr[2] = mptr[2 - 24];
+    mptr[4] = mptr[4 - 24];
+    mptr[5] = mptr[5 - 24];
+    mptr[6] = mptr[6 - 24];
+    mptr[8] = mptr[8 - 24];
+    mptr[9] = mptr[9 - 24];
+    mptr[10] = mptr[10 - 24];
+
+    if (rate == 2 || (frac == 2 && rate == 4)) {
+        mptr[3] = (iptr[3] + mptr[3]) >> 1;
+        mptr[7] = (iptr[7] + mptr[7]) >> 1;
+        mptr[11] = (iptr[11] + mptr[11]) >> 1;
+    } else if (frac == 1) {
+        mptr[3] += (iptr[3] - mptr[3]) >> 2;
+        mptr[7] += (iptr[7] - mptr[7]) >> 2;
+        mptr[11] += (iptr[11] - mptr[11]) >> 2;
+    } else {
+        mptr[3] = iptr[3] - ((iptr[3] - mptr[3]) >> 2);
+        mptr[7] = iptr[7] - ((iptr[7] - mptr[7]) >> 2);
+        mptr[11] = iptr[11] - ((iptr[11] - mptr[11]) >> 2);
+    }
+}
+
 extern sint32 wibble;
 
 void S_CalculateStaticLight(sint16 adder);
