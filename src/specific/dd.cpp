@@ -19,4 +19,16 @@ HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd)
 
 bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, DWORD dwColour);
 
+HRESULT DD_CreateSurface(DDSURFACEDESC &ddsd, LPDIRECTDRAWSURFACE3 &lpSurface)
+{
+    HRESULT hr;
+    LPDIRECTDRAWSURFACE lps;
+
+    if (DX_TRY(hr = App.lpDD->CreateSurface(&ddsd, &lps, 0)))
+        return hr;
+    hr = lps->QueryInterface(IID_IDirectDrawSurface3, (LPVOID *)&lpSurface);
+    lps->Release();
+    return hr;
+}
+
 }
