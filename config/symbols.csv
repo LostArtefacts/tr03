@@ -2325,6 +2325,7 @@ address,size,name,symbol
 0x006d2280,,savegame,_savegame
 0x006d588c,4,SGcount,_SGcount
 0x006d5890,2,final_boss_active,_final_boss_active
+0x006d58a0,10,final_boss,_final_boss
 0x006d58aa,2,final_level_count,_final_level_count
 0x006d58ac,2,final_boss_count,_final_boss_count
 0x006d58b0,4,baddie_slots,_baddie_slots
