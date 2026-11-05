@@ -135,6 +135,38 @@ bool DS_Create(LPGUID lpGuid)
     return true;
 }
 
+bool DS_SetOutputFormat(void)
+{
+    DSBUFFERDESC dsbd;
+    LPDIRECTSOUNDBUFFER pPrimary;
+    WAVEFORMATEX wf;
+
+    memset(&dsbd, 0, sizeof(dsbd));
+    dsbd.dwSize = sizeof(dsbd);
+    dsbd.dwFlags = DSBCAPS_PRIMARYBUFFER;
+    if (DX_TRY(lpDirectSound->CreateSoundBuffer(&dsbd, &pPrimary, 0)))
+        return false;
+    memset(&wf, 0, sizeof(wf));
+    wf.wFormatTag = WAVE_FORMAT_PCM;
+    wf.nChannels = 2;
+    wf.nSamplesPerSec = 22050;
+    wf.nAvgBytesPerSec = 22050 * 2 * 2;
+    wf.nBlockAlign = 4;
+    wf.wBitsPerSample = 16;
+    if (DX_TRY(pPrimary->SetFormat(&wf))) {
+        if (pPrimary) {
+            pPrimary->Release();
+            pPrimary = 0;
+        }
+        return false;
+    }
+    if (pPrimary) {
+        pPrimary->Release();
+        pPrimary = 0;
+    }
+    return true;
+}
+
 void DS_Release(void)
 {
     if (lpDirectSound) {

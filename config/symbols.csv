@@ -1447,7 +1447,7 @@ address,size,name,symbol
 0x004b2c60,223,WinFreeDX,_WinFreeDX
 0x004b2d40,116,WinRegisterWindow,_WinRegisterWindow
 0x004b2dc0,75,WinCreateWindow,_WinCreateWindow
-0x004b2e10,112,WinAppProc,_WinAppProc
+0x004b2e10,112,WinAppProc,_WinAppProc@16
 0x004b2e80,250,DXCreateZBuffer,_DXCreateZBuffer
 0x004b2f80,1359,WinDXInit,_WinDXInit
 0x004b34d0,127,WinFrameRate,_WinFrameRate
@@ -2381,6 +2381,9 @@ address,size,name,symbol
 0x006ca0a4,4,m13,_m13
 0x006ca0a8,4,m20,_m20
 0x006ca0ac,4,m21,_m21
+0x006ca0b0,8,period,_period
+0x006ca0b8,8,start_us,_start_us
+0x006ca0c0,4,start,_start
 0x006ca0f4,4,G_hwnd,_G_hwnd
 0x006ca0f8,,G_ddraw,_G_ddraw
 0x006ca100,,G_d3d,_G_d3d
@@ -2405,7 +2408,9 @@ address,size,name,symbol
 0x006cf248,4,framedump,_framedump
 0x006cf250,4,farz,_farz
 0x006cf25c,4,G_lpCmdLine,_G_lpCmdLine
+0x006cf264,1,LtWM_QUIT,_LtWM_QUIT
 0x006cf268,1,GtWindowClosed,_GtWindowClosed
+0x006cf274,4,nReEntry,_nReEntry
 0x006cf800,,CamPos,_CamPos
 0x006cf810,,CamRot,_CamRot
 0x006cf820,,WillBossShield,_WillBossShield

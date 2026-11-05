@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="286.73" height="12" x="0" y="0" class="named"><title>1009 · 68.27%</title></rect>
-<rect width="1.42" height="12" x="286.73" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="131.85" height="12" x="288.15" y="0" class="todo"><title>464 · 31.39%</title></rect>
+<rect width="287.01" height="12" x="0" y="0" class="named"><title>1010 · 68.34%</title></rect>
+<rect width="1.42" height="12" x="287.01" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="131.57" height="12" x="288.43" y="0" class="todo"><title>463 · 31.33%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">68.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1009</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">464</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1010</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">463</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.74" height="12" x="0" y="0" class="named"><title>300 KB · 44.94%</title></rect>
-<rect width="3.69" height="12" x="188.74" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.57" height="12" x="192.43" y="0" class="todo"><title>362 KB · 54.18%</title></rect>
+<rect width="188.87" height="12" x="0" y="0" class="named"><title>300 KB · 44.97%</title></rect>
+<rect width="3.69" height="12" x="188.87" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.44" height="12" x="192.56" y="0" class="todo"><title>362 KB · 54.15%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">44.9%</text>
+<text text-anchor="end" x="600" y="24.50">45.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1197,7 +1197,7 @@
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="330" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="330" class="named"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="330" class="todo"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="330" class="named"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="330" class="named"><title>0x00480d10 DS_Finish (16 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="330" class="named"><title>0x00480d20 DS_Release (26 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="330" class="named"><title>0x00480d40 DS_IsSoundEnabled (14 bytes)</title></rect>
@@ -2223,7 +2223,7 @@
 <rect width="8.66" height="8.36" x="511.12" y="303.19" class="todo"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="8.66" height="8.36" x="511.12" y="314.55" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
 <rect width="8.66" height="8.36" x="511.12" y="325.90" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
-<rect width="8.66" height="8.36" x="511.12" y="337.26" class="todo"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
+<rect width="8.66" height="8.36" x="511.12" y="337.26" class="named"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="8.66" height="8.36" x="511.12" y="348.61" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="8.66" height="8.32" x="511.12" y="359.97" class="named"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="8.66" height="8.32" x="511.12" y="371.28" class="named"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
