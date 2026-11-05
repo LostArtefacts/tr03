@@ -824,3 +824,170 @@ int SearchLOT(LOT_INFO *LOT, int expansion)
     }
     return 1;
 }
+
+int CalculateTarget(PHD_VECTOR *target, ITEM_INFO *item, LOT_INFO *LOT)
+{
+    int box_number, prime_free;
+    BOX_INFO *box;
+    sint32 left, right, top, bottom;
+    sint32 box_left, box_right, box_top, box_bottom;
+
+    UpdateLOT(LOT, 5);
+    target->x = item->pos.x_pos;
+    target->y = item->pos.y_pos;
+    target->z = item->pos.z_pos;
+    box_number = item->box_number;
+    if (box_number == NO_BOX)
+        return 0;
+
+    box = &boxes[box_number];
+    box_left = (sint32)box->left << WALL_SHIFT;
+    box_right = ((sint32)box->right << WALL_SHIFT) - 1;
+    box_top = (sint32)box->top << WALL_SHIFT;
+    box_bottom = ((sint32)box->bottom << WALL_SHIFT) - 1;
+    left = box_left;
+    right = box_right;
+    top = box_top;
+    bottom = box_bottom;
+    prime_free = 15;
+    do {
+        box = &boxes[box_number];
+        if (LOT->fly == NO_FLYING) {
+            if (target->y > box->height)
+                target->y = box->height;
+        } else {
+            if (target->y > box->height - WALL_L)
+                target->y = box->height - WALL_L;
+        }
+        box_left = (sint32)box->left << WALL_SHIFT;
+        box_right = ((sint32)box->right << WALL_SHIFT) - 1;
+        box_top = (sint32)box->top << WALL_SHIFT;
+        box_bottom = ((sint32)box->bottom << WALL_SHIFT) - 1;
+        if (item->pos.z_pos >= box_left && item->pos.z_pos <= box_right && item->pos.x_pos >= box_top && item->pos.x_pos <= box_bottom) {
+            left = box_left;
+            right = box_right;
+            top = box_top;
+            bottom = box_bottom;
+        } else {
+            if (item->pos.z_pos < box_left) {
+                if ((prime_free & 1) && item->pos.x_pos >= box_top && item->pos.x_pos <= box_bottom) {
+                    if (target->z < box_left + 512)
+                        target->z = box_left + 512;
+                    if (prime_free & 16)
+                        return 2;
+                    if (box_top > top)
+                        top = box_top;
+                    if (box_bottom < bottom)
+                        bottom = box_bottom;
+                    prime_free = 1;
+                } else if (prime_free != 1) {
+                    target->z = right - 512;
+                    if (prime_free != 15)
+                        return 2;
+                    prime_free |= 16;
+                }
+            } else if (item->pos.z_pos > box_right) {
+                if ((prime_free & 2) && item->pos.x_pos >= box_top && item->pos.x_pos <= box_bottom) {
+                    if (target->z > box_right - 512)
+                        target->z = box_right - 512;
+                    if (prime_free & 16)
+                        return 2;
+                    if (box_top > top)
+                        top = box_top;
+                    if (box_bottom < bottom)
+                        bottom = box_bottom;
+                    prime_free = 2;
+                } else if (prime_free != 2) {
+                    target->z = left + 512;
+                    if (prime_free != 15)
+                        return 2;
+                    prime_free |= 16;
+                }
+            }
+
+            if (item->pos.x_pos < box_top) {
+                if ((prime_free & 4) && item->pos.z_pos >= box_left && item->pos.z_pos <= box_right) {
+                    if (target->x < box_top + 512)
+                        target->x = box_top + 512;
+                    if (prime_free & 16)
+                        return 2;
+                    if (box_left > left)
+                        left = box_left;
+                    if (box_right < right)
+                        right = box_right;
+                    prime_free = 4;
+                } else if (prime_free != 4) {
+                    target->x = bottom - 512;
+                    if (prime_free != 15)
+                        return 2;
+                    prime_free |= 16;
+                }
+            } else if (item->pos.x_pos > box_bottom) {
+                if ((prime_free & 8) && item->pos.z_pos >= box_left && item->pos.z_pos <= box_right) {
+                    if (target->x > box_bottom - 512)
+                        target->x = box_bottom - 512;
+                    if (prime_free & 16)
+                        return 2;
+                    if (box_left > left)
+                        left = box_left;
+                    if (box_right < right)
+                        right = box_right;
+                    prime_free = 8;
+                } else if (prime_free != 8) {
+                    target->x = top + 512;
+                    if (prime_free != 15)
+                        return 2;
+                    prime_free |= 16;
+                }
+            }
+        }
+
+        if (box_number == LOT->target_box) {
+            if (prime_free & (1 | 2))
+                target->z = LOT->target.z;
+            else if (!(prime_free & 16)) {
+                if (target->z < box_left + 512)
+                    target->z = box_left + 512;
+                else if (target->z > box_right - 512)
+                    target->z = box_right - 512;
+            }
+            if (prime_free & (4 | 8))
+                target->x = LOT->target.x;
+            else if (!(prime_free & 16)) {
+                if (target->x < box_top + 512)
+                    target->x = box_top + 512;
+                else if (target->x > box_bottom - 512)
+                    target->x = box_bottom - 512;
+            }
+            target->y = LOT->target.y;
+            return 1;
+        }
+
+        box_number = LOT->node[box_number].exit_box;
+        if (box_number != NO_BOX && (boxes[box_number].overlap_index & LOT->block_mask))
+            break;
+    } while (box_number != NO_BOX);
+
+    if (prime_free & (1 | 2))
+        target->z = box_left + WALL_L / 2 + (GetRandomControl() * (box_right - box_left - WALL_L) >> 15);
+    else if (!(prime_free & 16)) {
+        if (target->z < box_left + 512)
+            target->z = box_left + 512;
+        else if (target->z > box_right - 512)
+            target->z = box_right - 512;
+    }
+    if (prime_free & (4 | 8))
+        target->x = box_top + WALL_L / 2 + (GetRandomControl() * (box_bottom - box_top - WALL_L) >> 15);
+    else if (!(prime_free & 16)) {
+        if (target->x < box_top + 512)
+            target->x = box_top + 512;
+        else if (target->x > box_bottom - 512)
+            target->x = box_bottom - 512;
+    }
+
+    if (LOT->fly == NO_FLYING)
+        target->y = box->height;
+    else
+        target->y = box->height - STEP_L * 3 / 2;
+    return 0;
+}

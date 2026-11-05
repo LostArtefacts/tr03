@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="267.44" height="12" x="0" y="0" class="named"><title>855 · 57.89%</title></rect>
-<rect width="194.56" height="12" x="267.44" y="0" class="todo"><title>622 · 42.11%</title></rect>
+<rect width="267.75" height="12" x="0" y="0" class="named"><title>856 · 57.96%</title></rect>
+<rect width="194.25" height="12" x="267.75" y="0" class="todo"><title>621 · 42.04%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">57.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">855</tspan> · <tspan class="todo">622</tspan></text>
+<text text-anchor="end" x="642" y="7.50">58.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">856</tspan> · <tspan class="todo">621</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="156.47" height="12" x="0" y="0" class="named"><title>226 KB · 33.87%</title></rect>
-<rect width="305.53" height="12" x="156.47" y="0" class="todo"><title>440 KB · 66.13%</title></rect>
+<rect width="157.27" height="12" x="0" y="0" class="named"><title>227 KB · 34.04%</title></rect>
+<rect width="304.73" height="12" x="157.27" y="0" class="todo"><title>439 KB · 65.96%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">33.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">226 KB</tspan> · <tspan class="todo">440 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">34.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">227 KB</tspan> · <tspan class="todo">439 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -192,7 +192,7 @@
 <rect width="12" height="12" x="405" y="30" class="named"><title>0x00414c10 GetCreatureMood (568 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="30" class="named"><title>0x00414e50 CreatureMood (616 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="30" class="named"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="30" class="todo"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="30" class="named"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="30" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="30" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="named"><title>0x00415820 CreatureDie (275 bytes)</title></rect>
@@ -1687,7 +1687,7 @@
 <rect width="20.24" height="20.56" x="568.05" y="0" class="todo"><title>0x00488f30 do_sound_option (1181 bytes)</title></rect>
 <rect width="19.98" height="20.56" x="591.28" y="0" class="todo"><title>0x00494e30 MMXDrawTriangleFog (1166 bytes)</title></rect>
 <rect width="19.96" height="20.56" x="614.26" y="0" class="todo"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
-<rect width="19.81" height="20.56" x="637.22" y="0" class="todo"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
+<rect width="19.81" height="20.56" x="637.22" y="0" class="named"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
 <rect width="19.65" height="20.56" x="660.03" y="0" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="19.63" height="20.56" x="682.68" y="0" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
 <rect width="19.36" height="20.56" x="705.31" y="0" class="named"><title>0x00460230 AnimateQuadBike (1130 bytes)</title></rect>
