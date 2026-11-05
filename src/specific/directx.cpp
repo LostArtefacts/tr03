@@ -27,4 +27,14 @@ bool DXCreateDirect3D(LPDIRECTDRAW2 lpDD2, LPDIRECT3D2 *lpD3D2)
     return true;
 }
 
+bool DXSetCooperativeLevel(LPDIRECTDRAW2 lpDD2, HWND WindowHandle, int Flags)
+{
+    int RetVal;
+
+    RetVal = lpDD2->SetCooperativeLevel(WindowHandle, Flags);
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 }

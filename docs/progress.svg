@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="267.97" height="12" x="0" y="0" class="named"><title>943 · 63.80%</title></rect>
-<rect width="1.42" height="12" x="267.97" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="150.61" height="12" x="269.39" y="0" class="todo"><title>530 · 35.86%</title></rect>
+<rect width="268.25" height="12" x="0" y="0" class="named"><title>944 · 63.87%</title></rect>
+<rect width="1.42" height="12" x="268.25" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="150.32" height="12" x="269.68" y="0" class="todo"><title>529 · 35.79%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">63.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">943</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">530</tspan></text>
+<text text-anchor="end" x="600" y="7.50">63.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">944</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">529</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.64" height="12" x="0" y="0" class="named"><title>297 KB · 44.44%</title></rect>
-<rect width="3.69" height="12" x="186.64" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.68" height="12" x="190.32" y="0" class="todo"><title>365 KB · 54.68%</title></rect>
+<rect width="186.66" height="12" x="0" y="0" class="named"><title>297 KB · 44.44%</title></rect>
+<rect width="3.69" height="12" x="186.66" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.66" height="12" x="190.34" y="0" class="todo"><title>365 KB · 54.68%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1411,7 +1411,7 @@
 <rect width="12" height="12" x="660" y="390" class="todo"><title>0x0048fdb0 BPPToDDBD (70 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="390" class="todo"><title>0x0048fe40 DXCreateDirectDraw (87 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="390" class="named"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="390" class="todo"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="390" class="named"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="390" class="todo"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="390" class="todo"><title>0x0048ff10 DXCreateSurface (72 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="405" class="todo"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>
@@ -2923,7 +2923,7 @@
 <rect width="3.15" height="2.90" x="713.10" y="394.11" class="todo"><title>0x00475430 Func475430 (26 bytes)</title></rect>
 <rect width="3.15" height="2.90" x="719.25" y="394.11" class="todo"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="3.15" height="2.90" x="725.40" y="394.11" class="named"><title>0x00480d20 DS_Release (26 bytes)</title></rect>
-<rect width="3.15" height="2.90" x="731.55" y="394.11" class="todo"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
+<rect width="3.15" height="2.90" x="731.55" y="394.11" class="named"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
 <rect width="3.15" height="2.90" x="737.70" y="394.11" class="todo"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>
 <rect width="3.15" height="2.90" x="743.85" y="394.11" class="todo"><title>0x004b4c79 Func4b4c79 (26 bytes)</title></rect>
 <rect width="2.62" height="3.33" x="694.30" y="400.01" class="todo"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
