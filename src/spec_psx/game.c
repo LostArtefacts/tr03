@@ -1,5 +1,19 @@
 #include "../game.h"
 
+void SortOutAdventureSave(int world)
+{
+    if (savegame.WorldRequired == 1)
+        savegame.AfterIndia = world;
+    if (savegame.WorldRequired == 2)
+        savegame.AfterSPacific = world;
+    if (savegame.WorldRequired == 3)
+        savegame.AfterLondon = world;
+    if (savegame.WorldRequired == 4)
+        savegame.AfterNevada = world;
+    savegame.AfterAdventureSave = 0;
+    savegame.WorldRequired = 0;
+}
+
 int Level2World(int level)
 {
     if (level <= 4)
