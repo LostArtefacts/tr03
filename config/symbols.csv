@@ -2363,6 +2363,7 @@ address,size,name,symbol
 0x006a1b98,20,CurPicTexIndices,_CurPicTexIndices
 0x006a1bac,4,nLoadedPictures,_nLoadedPictures
 0x006a1bb0,1,forceFadeDown,_forceFadeDown
+0x006a1bb4,1,pictureCrossFaded,_pictureCrossFaded
 0x006a1bd0,4,FinishLevelCheat,_FinishLevelCheat
 0x006a1bd8,128,exit_message,_exit_message
 0x006a1c58,4,title_loaded,_title_loaded
