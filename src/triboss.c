@@ -4,6 +4,25 @@
 extern sint32 level_items;
 extern PHD_VECTOR TrigDynamics[3];
 
+typedef struct {
+    sint16 x;
+    sint16 y;
+    sint16 z;
+    uint8 rsub;
+    uint8 gsub;
+    uint8 bsub;
+    uint8 pad[3];
+    sint32 rgb;
+} SHIELD_POINTS;
+
+extern sint16 rcossin_tbl[];
+extern sint32 TribeBossRadii[5];
+extern sint32 TribeBossHeights[5];
+extern SHIELD_POINTS TribeBossShield[40];
+extern char TribeBossShieldOn;
+extern char lizard_man_active;
+extern char shield_active;
+
 void UpdateElectricityPoints(void);
 void TriggerTribeBossHeadElectricity(ITEM_INFO *item, sint32 copy);
 void DrawTribeBossShield(ITEM_INFO *item);
@@ -35,6 +54,35 @@ void TribeBossDie(sint16 item_number)
     KillItem(item_number);
     DisableBaddieAI(item_number);
     item->flags |= ONESHOT;
+}
+
+sint16 FindLizardManItemNumber(sint16 room_number);
+
+void InitialiseTribeBoss(sint16 item_number)
+{
+    SHIELD_POINTS *shptr;
+    sint32 lp, lp1, angle, y;
+
+    bossdata.LizmanItem = FindLizardManItemNumber(items[item_number].room_number);
+    bossdata.LizmanRoom = items[bossdata.LizmanItem].room_number;
+    for (lp = 0; lp < 3; lp++)
+        TrigDynamics[lp].x = 0;
+    bossdata.attack_count = bossdata.attack_flag = bossdata.death_count = bossdata.attack_head_count =
+        lizard_man_active = TribeBossShieldOn = shield_active = bossdata.explode_count =
+        bossdata.ring_count = bossdata.dead = bossdata.dropped_icon = 0;
+    shptr = &TribeBossShield[0];
+    for (lp = 0; lp < 5; lp++) {
+        y = TribeBossHeights[lp];
+        angle = 0;
+        for (lp1 = 0; lp1 < 8; lp1++) {
+            shptr->x = (rcossin_tbl[angle << 1] * TribeBossRadii[lp]) >> 11;
+            shptr->y = y;
+            shptr->z = (rcossin_tbl[(angle << 1) + 1] * TribeBossRadii[lp]) >> 11;
+            shptr->rgb = 0;
+            angle += 512;
+            shptr++;
+        }
+    }
 }
 
 void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);

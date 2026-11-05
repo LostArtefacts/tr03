@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="200.75" height="12" x="0" y="0" class="named"><title>634 · 42.90%</title></rect>
-<rect width="267.25" height="12" x="200.75" y="0" class="todo"><title>844 · 57.10%</title></rect>
+<rect width="201.07" height="12" x="0" y="0" class="named"><title>635 · 42.96%</title></rect>
+<rect width="266.93" height="12" x="201.07" y="0" class="todo"><title>843 · 57.04%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">42.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">634</tspan> · <tspan class="todo">844</tspan></text>
+<text text-anchor="end" x="648" y="7.50">43.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">635</tspan> · <tspan class="todo">843</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="65.69" height="12" x="0" y="0" class="named"><title>93 KB · 14.04%</title></rect>
-<rect width="402.31" height="12" x="65.69" y="0" class="todo"><title>572 KB · 85.96%</title></rect>
+<rect width="65.87" height="12" x="0" y="0" class="named"><title>94 KB · 14.08%</title></rect>
+<rect width="402.13" height="12" x="65.87" y="0" class="todo"><title>571 KB · 85.92%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">14.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">93 KB</tspan> · <tspan class="todo">572 KB</tspan></text>
+<text text-anchor="end" x="648" y="24.50">14.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">94 KB</tspan> · <tspan class="todo">571 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1099,7 +1099,7 @@
 <rect width="12" height="12" x="510" y="300" class="named"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="300" class="todo"><title>0x00471350 TriggerElectricSparks_triboss (453 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="300" class="named"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="300" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="300" class="named"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="300" class="todo"><title>0x00471680 FindClosestShieldPoint (689 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="300" class="named"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="300" class="todo"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
@@ -2136,7 +2136,7 @@
 <rect width="9.57" height="9.70" x="486.37" y="250.77" class="todo"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
 <rect width="9.57" height="9.66" x="486.37" y="263.46" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="9.57" height="9.62" x="486.37" y="276.12" class="named"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
-<rect width="9.57" height="9.62" x="486.37" y="288.75" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
+<rect width="9.57" height="9.62" x="486.37" y="288.75" class="named"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="9.57" height="9.59" x="486.37" y="301.37" class="named"><title>0x0043f870 TestWall (260 bytes)</title></rect>
 <rect width="9.57" height="9.55" x="486.37" y="313.95" class="named"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
 <rect width="9.57" height="9.51" x="486.37" y="326.50" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>

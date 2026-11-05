@@ -1936,6 +1936,8 @@ address,size,name,symbol
 0x004c7e00,16,teeth2b,_teeth2b
 0x004c7e10,16,teeth3a,_teeth3a
 0x004c7e20,16,teeth3b,_teeth3b
+0x004c7e78,20,TribeBossRadii,_TribeBossRadii
+0x004c7e90,20,TribeBossHeights,_TribeBossHeights
 0x004c7ef0,32,lizman_summon_coords,_lizman_summon_coords
 0x004c7f10,,tribeboss_hit,_tribeboss_hit
 0x004c7fb4,4,closest_ai_path,_closest_ai_path
