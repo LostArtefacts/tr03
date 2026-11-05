@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="219.90" height="12" x="0" y="0" class="named"><title>703 · 47.60%</title></rect>
-<rect width="242.10" height="12" x="219.90" y="0" class="todo"><title>774 · 52.40%</title></rect>
+<rect width="220.21" height="12" x="0" y="0" class="named"><title>704 · 47.66%</title></rect>
+<rect width="241.79" height="12" x="220.21" y="0" class="todo"><title>773 · 52.34%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">47.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">703</tspan> · <tspan class="todo">774</tspan></text>
+<text text-anchor="end" x="642" y="7.50">47.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">704</tspan> · <tspan class="todo">773</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="85.14" height="12" x="0" y="0" class="named"><title>123 KB · 18.43%</title></rect>
-<rect width="376.86" height="12" x="85.14" y="0" class="todo"><title>543 KB · 81.57%</title></rect>
+<rect width="85.55" height="12" x="0" y="0" class="named"><title>123 KB · 18.52%</title></rect>
+<rect width="376.45" height="12" x="85.55" y="0" class="todo"><title>542 KB · 81.48%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">18.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">123 KB</tspan> · <tspan class="todo">543 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">18.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">123 KB</tspan> · <tspan class="todo">542 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -264,7 +264,7 @@
 <rect width="12" height="12" x="735" y="45" class="named"><title>0x0041f5c0 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="60" class="named"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="60" class="named"><title>0x0041f750 CompyControl (1524 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="60" class="todo"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="60" class="named"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="60" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="60" class="todo"><title>0x00420590 AnimateItem (931 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="60" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
@@ -1831,7 +1831,7 @@
 <rect width="14.56" height="14.34" x="364.97" y="329.27" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
 <rect width="14.56" height="14.31" x="364.97" y="346.61" class="todo"><title>0x00451730 ExplodeLondonBoss (591 bytes)</title></rect>
 <rect width="14.56" height="14.29" x="364.97" y="363.92" class="todo"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>
-<rect width="14.56" height="14.22" x="364.97" y="381.21" class="todo"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
+<rect width="14.56" height="14.22" x="364.97" y="381.21" class="named"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
 <rect width="14.56" height="14.22" x="364.97" y="398.43" class="todo"><title>0x0044e950 LaraUnderWater (587 bytes)</title></rect>
 <rect width="14.56" height="14.19" x="364.97" y="415.64" class="todo"><title>0x0043e4e0 LaraTestHangJump (586 bytes)</title></rect>
 <rect width="14.56" height="14.17" x="364.97" y="432.83" class="named"><title>0x0041a641 mgLOS (585 bytes)</title></rect>

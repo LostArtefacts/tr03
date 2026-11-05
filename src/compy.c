@@ -223,3 +223,63 @@ extern SPLASH_SETUP splash_setup;
 extern sint16 CarcassItem;
 
 void SetupSplash(SPLASH_SETUP *spl);
+
+void CarcassControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    FLOOR_INFO *floor;
+    sint16 room_number, old_room, maxfs;
+    sint32 h;
+
+    item = &items[item_number];
+    if (item->status != ACTIVE)
+        return;
+    old_room = item->room_number;
+    item->pos.y_pos += item->fallspeed;
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    h = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+    if (item->pos.y_pos >= h) {
+        item->pos.y_pos = h;
+        item->fallspeed = 0;
+        item->pos.z_rot = 0x4000;
+        return;
+    }
+    item->pos.z_rot += item->fallspeed;
+    item->fallspeed += (room[room_number].flags & UNDERWATER) ? 1 : 8;
+    maxfs = (room[old_room].flags & UNDERWATER) ? 64 : 512;
+    if (item->fallspeed > maxfs)
+        item->fallspeed = maxfs;
+    if ((room[room_number].flags & UNDERWATER) && !(room[old_room].flags & UNDERWATER)) {
+        splash_setup.x = item->pos.x_pos;
+        splash_setup.y = room[room_number].maxceiling;
+        splash_setup.z = item->pos.z_pos;
+        splash_setup.InnerXZoff = 16;
+        splash_setup.InnerXZsize = 16;
+        splash_setup.InnerYsize = -96;
+        splash_setup.InnerXZvel = 0xa0;
+        splash_setup.InnerYvel = -item->fallspeed * 72;
+        splash_setup.InnerGravity = 0x80;
+        splash_setup.InnerFriction = 7;
+        splash_setup.MiddleXZoff = 24;
+        splash_setup.MiddleXZsize = 32;
+        splash_setup.MiddleYsize = -64;
+        splash_setup.MiddleXZvel = 0xe0;
+        splash_setup.MiddleYvel = -item->fallspeed * 36;
+        splash_setup.MiddleGravity = 0x48;
+        splash_setup.MiddleFriction = 8;
+        splash_setup.OuterXZoff = 32;
+        splash_setup.OuterXZsize = 32;
+        splash_setup.OuterXZvel = 0x110;
+        splash_setup.OuterFriction = 9;
+        SetupSplash(&splash_setup);
+        item->fallspeed = 16;
+        item->pos.y_pos = room[room_number].maxceiling + 1;
+    }
+    if (room[item->room_number].flags & UNDERWATER)
+        CarcassItem = item_number;
+    else
+        CarcassItem = -1;
+}
