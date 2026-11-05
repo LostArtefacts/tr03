@@ -1,4 +1,5 @@
 #include "specific/standard.h"
+#include <io.h>
 #include "game.h"
 
 typedef struct {
@@ -342,6 +343,305 @@ void MoveCart(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart)
             v->pos.z_rot = ((16384 - val) * v->speed) >> 9;
     } else
         v->pos.z_rot -= v->pos.z_rot >> 3;
+}
+
+#define CART_GETIN 0
+#define CART_GETOUT 1
+#define CART_GETOUTL 2
+#define CART_GETOUTR 3
+#define CART_STILL 4
+#define CART_DUCK 5
+#define CART_MOVE 6
+#define CART_RIGHT 7
+#define CART_LEFT 9
+#define CART_BRAKE 11
+#define CART_FWD 12
+#define CART_BACK 13
+#define CART_TURNDEATH 14
+#define CART_WALLDEATH 16
+#define CART_HIT 17
+#define CART_USE 18
+#define CART_BRAKING 19
+#define CF_MESH 1
+#define CF_RDIR 8
+#define CF_NOANIM 64
+#define CF_DEAD 128
+
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite);
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+void CartToBaddieCollision(ITEM_INFO *v);
+int CanGetOut_minecart(int direction);
+extern sint32 wibble;
+
+void DoUserInput(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart)
+{
+    sint16 fh, ch;
+
+    switch (l->current_anim_state) {
+    case CART_MOVE:
+        if (input & IN_ACTION)
+            l->goal_anim_state = CART_USE;
+        else if (input & IN_DUCK)
+            l->goal_anim_state = CART_DUCK;
+        else if (input & IN_JUMP)
+            l->goal_anim_state = CART_BRAKE;
+        else if (cart->Speed == 32 || (cart->Flags & CF_STOPPED))
+            l->goal_anim_state = CART_STILL;
+        else if (cart->Gradient < -128)
+            l->goal_anim_state = CART_FWD;
+        else if (cart->Gradient > 128)
+            l->goal_anim_state = CART_BACK;
+        else if (input & IN_LEFT)
+            l->goal_anim_state = CART_LEFT;
+        else if (input & IN_RIGHT)
+            l->goal_anim_state = CART_RIGHT;
+        break;
+
+    case CART_FWD:
+        if (input & IN_ACTION)
+            l->goal_anim_state = CART_USE;
+        else if (input & IN_DUCK)
+            l->goal_anim_state = CART_DUCK;
+        else if (input & IN_JUMP)
+            l->goal_anim_state = CART_BRAKE;
+        else if (cart->Gradient > -128)
+            l->goal_anim_state = CART_MOVE;
+        break;
+
+    case CART_BACK:
+        if (input & IN_ACTION)
+            l->goal_anim_state = CART_USE;
+        else if (input & IN_DUCK)
+            l->goal_anim_state = CART_DUCK;
+        else if (input & IN_JUMP)
+            l->goal_anim_state = CART_BRAKE;
+        else if (cart->Gradient < 128)
+            l->goal_anim_state = CART_MOVE;
+        break;
+
+    case CART_LEFT:
+        if (input & IN_ACTION)
+            l->goal_anim_state = CART_USE;
+        else if (input & IN_DUCK)
+            l->goal_anim_state = CART_DUCK;
+        else if (input & IN_JUMP)
+            l->goal_anim_state = CART_BRAKE;
+        if (!(input & IN_LEFT))
+            l->goal_anim_state = CART_MOVE;
+        break;
+
+    case CART_RIGHT:
+        if (input & IN_ACTION)
+            l->goal_anim_state = CART_USE;
+        else if (input & IN_DUCK)
+            l->goal_anim_state = CART_DUCK;
+        else if (input & IN_JUMP)
+            l->goal_anim_state = CART_BRAKE;
+        if (!(input & IN_RIGHT))
+            l->goal_anim_state = CART_MOVE;
+        break;
+
+    case CART_STILL:
+        if (!(cart->Flags & CF_CONTROL)) {
+            SoundEffect(211, &v->pos, 2);
+            cart->Flags |= CF_CONTROL;
+            cart->StopDelay = 64;
+        }
+        if ((input & IN_ROLL) && (cart->Flags & CF_STOPPED)) {
+            if ((input & IN_LEFT) && CanGetOut_minecart(-1)) {
+                l->goal_anim_state = CART_GETOUT;
+                cart->Flags &= ~CF_RDIR;
+            } else if ((input & IN_RIGHT) && CanGetOut_minecart(1)) {
+                l->goal_anim_state = CART_GETOUT;
+                cart->Flags |= CF_RDIR;
+            }
+        }
+        if (input & IN_DUCK)
+            l->goal_anim_state = CART_DUCK;
+        else if (cart->Speed > 32)
+            l->goal_anim_state = CART_MOVE;
+        break;
+
+    case CART_DUCK:
+        if (input & IN_ACTION)
+            l->goal_anim_state = CART_USE;
+        else if (input & IN_JUMP)
+            l->goal_anim_state = CART_BRAKE;
+        else if (!(input & IN_DUCK))
+            l->goal_anim_state = CART_STILL;
+        break;
+
+    case CART_USE:
+        l->goal_anim_state = CART_MOVE;
+        break;
+
+    case CART_BRAKING:
+        if (input & IN_DUCK) {
+            l->goal_anim_state = CART_DUCK;
+            StopSoundEffect(219);
+        } else if (!(input & IN_JUMP) || (cart->Flags & CF_STOPPED)) {
+            l->goal_anim_state = CART_MOVE;
+            StopSoundEffect(219);
+        } else {
+            cart->Speed += -0x600;
+            SoundEffect(219, &l->pos, 2);
+        }
+        break;
+
+    case CART_BRAKE:
+        l->goal_anim_state = CART_BRAKING;
+        break;
+
+    case CART_GETOUT:
+        if (l->anim_number == objects[11].anim_index + 7) {
+            if (l->frame_number == anims[objects[11].anim_index + 7].frame_base + 20 && (cart->Flags & CF_MESH)) {
+                sint16 *tmp;
+
+                tmp = lara.mesh_ptrs[HAND_R];
+                lara.mesh_ptrs[HAND_R] = meshes[objects[11].mesh_index + HAND_R];
+                meshes[objects[11].mesh_index + HAND_R] = tmp;
+                cart->Flags &= ~CF_MESH;
+            }
+            if (cart->Flags & CF_RDIR)
+                l->goal_anim_state = CART_GETOUTR;
+            else
+                l->goal_anim_state = CART_GETOUTL;
+        }
+        break;
+
+    case CART_GETOUTL:
+        if (l->anim_number == objects[11].anim_index + 1 && l->frame_number == anims[l->anim_number].frame_end) {
+            PHD_VECTOR vec = {0, 640, 0};
+
+            GetLaraHandAbsPosition(&vec, 2);
+            l->pos.x_pos = vec.x;
+            l->pos.y_pos = vec.y;
+            l->pos.z_pos = vec.z;
+            l->pos.x_rot = 0;
+            l->pos.y_rot = v->pos.y_rot + 0x4000;
+            l->pos.z_rot = 0;
+            l->anim_number = 11;
+            l->frame_number = anims[11].frame_base;
+            l->current_anim_state = l->goal_anim_state = 2;
+            lara.skidoo = NO_ITEM;
+            lara.gun_status = LG_ARMLESS;
+        }
+        break;
+
+    case CART_GETOUTR:
+        if (l->anim_number == objects[11].anim_index + 47 && l->frame_number == anims[l->anim_number].frame_end) {
+            PHD_VECTOR vec = {0, 640, 0};
+
+            GetLaraHandAbsPosition(&vec, 2);
+            l->pos.x_pos = vec.x;
+            l->pos.y_pos = vec.y;
+            l->pos.z_pos = vec.z;
+            l->pos.x_rot = 0;
+            l->pos.y_rot = v->pos.y_rot - 0x4000;
+            l->pos.z_rot = 0;
+            l->anim_number = 11;
+            l->frame_number = anims[11].frame_base;
+            l->current_anim_state = l->goal_anim_state = 2;
+            lara.skidoo = NO_ITEM;
+            lara.gun_status = LG_ARMLESS;
+        }
+        break;
+
+    case CART_GETIN:
+        if (l->anim_number == objects[11].anim_index + 5 &&
+            l->frame_number == anims[objects[11].anim_index + 5].frame_base + 20 && (!cart->Flags & CF_MESH)) {
+            sint16 *tmp;
+
+            tmp = lara.mesh_ptrs[HAND_R];
+            lara.mesh_ptrs[HAND_R] = meshes[objects[11].mesh_index + HAND_R];
+            meshes[objects[11].mesh_index + HAND_R] = tmp;
+            cart->Flags |= CF_MESH;
+        }
+        break;
+
+    case CART_WALLDEATH:
+        camera.target_elevation = -25 * ONE_DEGREE;
+        camera.target_distance = WALL_L * 4;
+        break;
+
+    case CART_TURNDEATH:
+        camera.target_elevation = -45 * ONE_DEGREE;
+        camera.target_distance = WALL_L * 2;
+        fh = GetCollision(v, v->pos.y_rot, 512, &ch);
+        if (fh > -STEP_L && fh < STEP_L) {
+            if ((wibble & 7) == 0)
+                SoundEffect(202, &v->pos, 2);
+            v->pos.x_pos += (128 * phd_sin(v->pos.y_rot)) >> W2V_SHIFT;
+            v->pos.z_pos += (128 * phd_cos(v->pos.y_rot)) >> W2V_SHIFT;
+        } else {
+            if (l->anim_number == objects[11].anim_index + 30) {
+                cart->Flags |= CF_NOANIM;
+                l->hit_points = -1;
+            }
+        }
+        break;
+
+    case CART_HIT:
+        if (l->hit_points <= 0 && l->frame_number == anims[objects[11].anim_index + 34].frame_base + 28) {
+            l->frame_number = anims[objects[11].anim_index + 34].frame_base + 28;
+            cart->Flags = (cart->Flags & ~CF_CONTROL) | CF_NOANIM;
+            cart->Speed = v->speed = 0;
+        }
+        break;
+    }
+
+    if (lara.skidoo != NO_ITEM && !(cart->Flags & CF_NOANIM)) {
+        AnimateItem(l);
+        v->anim_number = objects[17].anim_index + (l->anim_number - objects[11].anim_index);
+        v->frame_number = l->frame_number + anims[v->anim_number].frame_base - anims[l->anim_number].frame_base;
+    }
+
+    if (l->current_anim_state != CART_TURNDEATH && l->current_anim_state != CART_WALLDEATH && l->hit_points > 0) {
+        if (v->pos.z_rot > 4096 || v->pos.z_rot < -4096) {
+            l->anim_number = objects[11].anim_index + 31;
+            l->frame_number = anims[l->anim_number].frame_base;
+            l->current_anim_state = l->goal_anim_state = CART_TURNDEATH;
+            cart->Flags = (cart->Flags & ~CF_CONTROL) | CF_STOPPED | CF_DEAD;
+            cart->Speed = v->speed = 0;
+            return;
+        }
+
+        fh = GetCollision(v, v->pos.y_rot, 512, &ch);
+        if (fh < -(STEP_L * 2)) {
+            l->anim_number = objects[11].anim_index + 23;
+            l->frame_number = anims[l->anim_number].frame_base;
+            l->current_anim_state = l->goal_anim_state = CART_WALLDEATH;
+            cart->Flags = (cart->Flags & ~CF_CONTROL) | (CF_STOPPED | CF_DEAD);
+            cart->Speed = v->speed = 0;
+            l->hit_points = -1;
+            return;
+        }
+
+        if (l->current_anim_state != CART_DUCK && l->current_anim_state != CART_HIT) {
+            COLL_INFO coll;
+
+            coll.quadrant = (uint16)(v->pos.y_rot + 0x2000) / 0x4000;
+            coll.radius = 100;
+            if (CollideStaticObjects(&coll, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, v->room_number, 768)) {
+                int hits;
+
+                l->anim_number = objects[11].anim_index + 34;
+                l->frame_number = anims[l->anim_number].frame_base;
+                l->current_anim_state = l->goal_anim_state = CART_HIT;
+                DoLotsOfBlood(l->pos.x_pos, l->pos.y_pos - 768, l->pos.z_pos, v->speed, v->pos.y_rot,
+                              l->room_number, 3);
+                if ((hits = 25 * (((uint16)cart->Speed) >> 11)) < 20)
+                    hits = 20;
+                l->hit_points -= hits;
+                return;
+            }
+        }
+
+        if (fh > 512 + 64 && !cart->YVel)
+            cart->YVel = 0xfc00;
+        CartToBaddieCollision(v);
+    }
 }
 
 extern int height_type;

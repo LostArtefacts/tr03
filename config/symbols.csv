@@ -802,7 +802,7 @@ address,size,name,symbol
 0x00453b80,279,MineCartControl,_MineCartControl
 0x00453ca0,1356,MoveCart,_MoveCart
 0x004541f0,168,TestHeight_minecart,_TestHeight_minecart
-0x004542a0,2307,DoUserInput,_DoUserInput
+0x004542a0,2388,DoUserInput,_DoUserInput
 0x00454c00,270,CanGetOut_minecart,_CanGetOut_minecart
 0x00454d10,658,CartToBaddieCollision,_CartToBaddieCollision
 0x00454fb0,776,ControlMissile,_ControlMissile
