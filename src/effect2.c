@@ -404,6 +404,69 @@ void TriggerExplosionSmoke(sint32 x, sint32 y, sint32 z, sint32 uw)
     sptr->dHeight = size;
 }
 
+void TriggerFireSmoke(sint32 x, sint32 y, sint32 z, sint32 body_part, sint32 type)
+{
+    sint32 size;
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    sptr->dR = 32;
+    sptr->dG = 32;
+    sptr->dB = 32;
+    if (body_part != -1) {
+        sptr->ColFadeSpeed = 4 + (GetRandomControl() & 3);
+        sptr->FadeToBlack = 12;
+        sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 20;
+    } else {
+        if (type == 255) {
+            sptr->ColFadeSpeed = 16 + (GetRandomControl() & 3);
+            sptr->FadeToBlack = 8;
+            sptr->sLife = sptr->Life = (GetRandomControl() & 7) + 28;
+        } else {
+            sptr->ColFadeSpeed = 32 + (GetRandomControl() & 7);
+            sptr->FadeToBlack = 16;
+            sptr->sLife = sptr->Life = (GetRandomControl() & 15) + 57;
+        }
+    }
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 15) - 8);
+    sptr->y = y - (GetRandomControl() & 127) - 256;
+    sptr->z = z + ((GetRandomControl() & 15) - 8);
+    sptr->Xvel = (GetRandomControl() & 255) - 128;
+    sptr->Yvel = -(GetRandomControl() & 15) - 16;
+    sptr->Zvel = (GetRandomControl() & 255) - 128;
+    sptr->Friction = 4;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else
+        sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = -(GetRandomControl() & 15) - 16;
+    sptr->MaxYvel = -(GetRandomControl() & 7) - 8;
+    size = (GetRandomControl() & 63) + 64;
+    sptr->Width = sptr->sWidth = size >> 2;
+    sptr->dWidth = size;
+    sptr->Height = sptr->sHeight = size >> 2;
+    sptr->dHeight = size;
+}
+
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 
 void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 b, sint32 angle, sint16 room_no)
