@@ -1,4 +1,5 @@
 #include "specific/standard.h"
+#include <commctrl.h>
 #include "game.h"
 
 void draw_shotgun_meshes(int weapon_type)
@@ -746,5 +747,244 @@ void TriggerUnderwaterExplosion(ITEM_INFO *item)
             splash_setup.OuterFriction = 9;
             SetupSplash(&splash_setup);
         }
+    }
+}
+
+#define M03 3
+#define M13 7
+#define M23 11
+
+extern sint16 draw_rooms[];
+extern int number_draw_rooms;
+extern char lizard_man_active;
+extern sint16 item_after_projectile;
+
+FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
+void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number);
+void AlertNearbyGuards(ITEM_INFO *item);
+void CreatureDie(sint16 item_number, int explode);
+int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
+
+void ControlRocket(sint16 item_number)
+{
+    sint16 *bounds;
+    FLOOR_INFO *floor;
+    sint32 wx, wy, wz, xv, yv, zv, lp;
+    ITEM_INFO *item, *target;
+    sint32 old_x, old_y, old_z;
+    sint16 room_number, target_number, oldroom;
+    sint32 speed, c, s, x, z, rx, rz, ox, oz, sx, sz, explode, radius, abovewater;
+
+    item = &items[item_number];
+
+    oldroom = item->room_number;
+    old_x = item->pos.x_pos;
+    old_y = item->pos.y_pos;
+    old_z = item->pos.z_pos;
+
+    if (room[item->room_number].flags & UNDERWATER) {
+        if (item->speed > 512 >> 2)
+            item->speed -= item->speed >> 2;
+        else {
+            item->speed += (item->speed >> 2) + 4;
+            if (item->speed > 512 >> 2)
+                item->speed = 512 >> 2;
+        }
+        item->pos.z_rot += ((item->speed >> 3) + 3) * ONE_DEGREE;
+        abovewater = 0;
+    } else {
+        if (item->speed < 512)
+            item->speed += (item->speed >> 2) + 4;
+        item->pos.z_rot += ((item->speed >> 2) + 7) * ONE_DEGREE;
+        abovewater = 1;
+    }
+
+    item->shade = 0x4210 | 0x8000;
+
+    phd_PushUnitMatrix();
+    *(phd_mxptr + M03) = 0;
+    *(phd_mxptr + M13) = 0;
+    *(phd_mxptr + M23) = 0;
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    phd_PushMatrix();
+    phd_TranslateRel(0, 0, -128);
+    wx = *(phd_mxptr + M03) >> W2V_SHIFT;
+    wy = *(phd_mxptr + M13) >> W2V_SHIFT;
+    wz = *(phd_mxptr + M23) >> W2V_SHIFT;
+    phd_PopMatrix();
+    phd_TranslateRel(0, 0, -1536 - (GetRandomControl() & 511));
+    xv = *(phd_mxptr + M03) >> W2V_SHIFT;
+    yv = *(phd_mxptr + M13) >> W2V_SHIFT;
+    zv = *(phd_mxptr + M23) >> W2V_SHIFT;
+    phd_PopMatrix();
+    if (wibble & 4)
+        TriggerRocketFlame(wx, wy, wz, xv - wx, yv - wy, zv - wz, item_number);
+    TriggerRocketSmoke(wx + item->pos.x_pos, wy + item->pos.y_pos, wz + item->pos.z_pos, -1);
+    if (room[item->room_number].flags & UNDERWATER) {
+        PHD_3DPOS pos;
+
+        pos.x_pos = wx + item->pos.x_pos;
+        pos.y_pos = wy + item->pos.y_pos;
+        pos.z_pos = wz + item->pos.z_pos;
+        CreateBubble(&pos, item->room_number, 4, 8);
+    }
+    TriggerDynamic(wx + item->pos.x_pos + (GetRandomControl() & 15) - 8,
+                   wy + item->pos.y_pos + (GetRandomControl() & 15) - 8,
+                   wz + item->pos.z_pos + (GetRandomControl() & 15) - 8, 14,
+                   28 + (GetRandomControl() & 3), 16 + (GetRandomControl() & 7), GetRandomControl() & 7);
+
+    speed = (item->speed * phd_cos(item->pos.x_rot)) >> W2V_SHIFT;
+    item->pos.z_pos += (speed * phd_cos(item->pos.y_rot)) >> W2V_SHIFT;
+    item->pos.x_pos += (speed * phd_sin(item->pos.y_rot)) >> W2V_SHIFT;
+    item->pos.y_pos += -((item->speed * phd_sin(item->pos.x_rot)) >> W2V_SHIFT);
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+
+    if (item->pos.y_pos >= item->floor ||
+        item->pos.y_pos <= GetCeiling(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos)) {
+        radius = WALL_L << item->item_flags[0];
+        explode = 1;
+    } else
+        radius = explode = 0;
+
+    if (room[item->room_number].flags & UNDERWATER && abovewater) {
+        splash_setup.x = item->pos.x_pos;
+        splash_setup.y = room[item->room_number].maxceiling;
+        splash_setup.z = item->pos.z_pos;
+        splash_setup.InnerXZoff = 16;
+        splash_setup.InnerXZsize = 12;
+        splash_setup.InnerYsize = -96;
+        splash_setup.InnerXZvel = 0xa0;
+        splash_setup.InnerYvel = -(128 << 7);
+        splash_setup.InnerGravity = 0x80;
+        splash_setup.InnerFriction = 7;
+        splash_setup.MiddleXZoff = 24;
+        splash_setup.MiddleXZsize = 24;
+        splash_setup.MiddleYsize = -64;
+        splash_setup.MiddleXZvel = 0xe0;
+        splash_setup.MiddleYvel = -(128 << 6);
+        splash_setup.MiddleGravity = 0x48;
+        splash_setup.MiddleFriction = 8;
+        splash_setup.OuterXZoff = 32;
+        splash_setup.OuterXZsize = 32;
+        splash_setup.OuterXZvel = 0x110;
+        splash_setup.OuterFriction = 9;
+        SetupSplash(&splash_setup);
+    }
+
+    GetNearByRooms(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, radius << 2, radius << 2, item->room_number);
+
+    for (lp = 0; lp < number_draw_rooms; lp++) {
+        for (target_number = room[draw_rooms[lp]].item_number; target_number != NO_ITEM;
+             target_number = target->next_item) {
+            target = &items[target_number];
+            if (target == lara_item || !target->collidable)
+                continue;
+
+            if (target->object_number == 101 || target->object_number == 102 || target->object_number == 103 ||
+                target->object_number == 104 || target->object_number == 38 || target->object_number == 373 ||
+                target->object_number == 47 ||
+                (objects[target->object_number].intelligent && target->status != INVISIBLE &&
+                 objects[target->object_number].collision)) {
+                bounds = GetBestFrame(target);
+                if (item->pos.y_pos + radius < target->pos.y_pos + bounds[2] ||
+                    item->pos.y_pos - radius > target->pos.y_pos + bounds[3])
+                    continue;
+
+                c = phd_cos(target->pos.y_rot);
+                s = phd_sin(target->pos.y_rot);
+
+                x = item->pos.x_pos - target->pos.x_pos;
+                z = item->pos.z_pos - target->pos.z_pos;
+                rx = (c * x - s * z) >> W2V_SHIFT;
+
+                ox = old_x - target->pos.x_pos;
+                oz = old_z - target->pos.z_pos;
+                sx = (c * ox - s * oz) >> W2V_SHIFT;
+
+                if ((rx + radius < bounds[0] && sx + radius < bounds[0]) ||
+                    (rx - radius > bounds[1] && sx - radius > bounds[1]))
+                    continue;
+
+                rz = (c * z + s * x) >> W2V_SHIFT;
+                sz = (c * oz + s * ox) >> W2V_SHIFT;
+
+                if ((rz + radius < bounds[4] && sz + radius < bounds[4]) ||
+                    (rz - radius > bounds[5] && sz - radius > bounds[5]))
+                    continue;
+
+                if (target->object_number == 102 && CurrentLevel == 6) {
+                    if (item->item_flags[0] == 1)
+                        SmashWindow(target_number);
+                    if (explode == 0) {
+                        explode = 1;
+                        radius = WALL_L << item->item_flags[0];
+                        lp = -1;
+                        break;
+                    }
+                } else if (target->object_number == 102 && CurrentLevel != 6) {
+                    SmashWindow(target_number);
+                } else if (target->object_number == 101 || target->object_number == 103 ||
+                           target->object_number == 104) {
+                    SmashWindow(target_number);
+                } else if (target->object_number == 38 || target->object_number == 373) {
+                    if (item->status != ACTIVE) {
+                        item->status = ACTIVE;
+                        AddActiveItem(target_number);
+                    }
+                } else if (target->object_number != 102) {
+                    if (target->object_number != 36 || !TribeBossShieldOn)
+                        HitTarget(target, NULL, 30 << item->item_flags[0]);
+                    else
+                        FindClosestShieldPoint(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, target);
+
+                    savegame.ammo_hit++;
+
+                    if (target->hit_points <= 0) {
+                        savegame.kills++;
+                        if (target->object_number != 36 && target->object_number != 49 &&
+                            target->object_number != 73 && target->object_number != 57 &&
+                            target->object_number != 58 && target->object_number != 25 &&
+                            target->object_number != 47) {
+                            if (target->object_number == 35 && lizard_man_active)
+                                lizard_man_active = 0;
+                            item_after_projectile = items[target_number].next_active;
+                            CreatureDie(target_number, 1);
+                        }
+                    }
+
+                    if (explode == 0) {
+                        explode = 1;
+                        radius = WALL_L << item->item_flags[0];
+                        lp = -1;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    if (explode) {
+        if (room[oldroom].flags & UNDERWATER) {
+            item->pos.x_pos = old_x;
+            item->pos.y_pos = old_y;
+            item->pos.z_pos = old_z;
+            ItemNewRoom(item_number, oldroom);
+            TriggerUnderwaterExplosion(item);
+        } else {
+            TriggerExplosionSparks(old_x, old_y, old_z, 3, -2, 0, item->room_number);
+            for (x = 0; x < 2; x++)
+                TriggerExplosionSparks(old_x, old_y, old_z, 3, -1, 0, item->room_number);
+        }
+
+        AlertNearbyGuards(item);
+        SoundEffect(105, &item->pos, 4 | 0x1800000);
+        SoundEffect(106, &item->pos, 0);
+        KillItem(item_number);
     }
 }

@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="256.21" height="12" x="0" y="0" class="named"><title>901 · 61%</title></rect>
-<rect width="0.85" height="12" x="256.21" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
-<rect width="162.94" height="12" x="257.06" y="0" class="todo"><title>573 · 38.79%</title></rect>
+<rect width="256.49" height="12" x="0" y="0" class="named"><title>902 · 61.07%</title></rect>
+<rect width="0.85" height="12" x="256.49" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
+<rect width="162.65" height="12" x="257.35" y="0" class="todo"><title>572 · 38.73%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">61.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">901</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">573</tspan></text>
+<text text-anchor="end" x="600" y="7.50">61.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">902</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">572</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="180.67" height="12" x="0" y="0" class="named"><title>287 KB · 43.02%</title></rect>
-<rect width="1.51" height="12" x="180.67" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
-<rect width="237.82" height="12" x="182.18" y="0" class="todo"><title>378 KB · 56.62%</title></rect>
+<rect width="182.23" height="12" x="0" y="0" class="named"><title>290 KB · 43.39%</title></rect>
+<rect width="1.51" height="12" x="182.23" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
+<rect width="236.26" height="12" x="183.74" y="0" class="todo"><title>375 KB · 56.25%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">43.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">287 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">378 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">43.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">290 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">375 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -734,7 +734,7 @@
 <rect width="12" height="12" x="255" y="195" class="named"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="195" class="named"><title>0x004459b0 ControlHarpoonBolt (1429 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="195" class="named"><title>0x00445f50 FireRocket (651 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="195" class="todo"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="195" class="named"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="195" class="named"><title>0x00446ba0 FireGrenade (560 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="195" class="todo"><title>0x00446dd0 ControlGrenade (2040 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="195" class="named"><title>0x004475d0 draw_shotgun (408 bytes)</title></rect>
@@ -1585,7 +1585,7 @@
 <rect width="29.93" height="30.03" x="129.66" y="68.73" class="todo"><title>0x00443ca0 GetLHAInt (2557 bytes)</title></rect>
 <rect width="29.93" height="29.90" x="129.66" y="101.76" class="todo"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
 <rect width="29.93" height="29.43" x="129.66" y="134.66" class="todo"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
-<rect width="29.93" height="29.16" x="129.66" y="167.09" class="todo"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
+<rect width="29.93" height="29.16" x="129.66" y="167.09" class="named"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
 <rect width="29.93" height="29.13" x="129.66" y="199.26" class="named"><title>0x0045dc30 PunkControl (2480 bytes)</title></rect>
 <rect width="29.93" height="29.06" x="129.66" y="231.38" class="todo"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
 <rect width="29.93" height="28.88" x="129.66" y="263.44" class="todo"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
