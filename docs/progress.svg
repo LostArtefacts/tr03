@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="229.59" height="12" x="0" y="0" class="named"><title>734 · 49.70%</title></rect>
-<rect width="232.41" height="12" x="229.59" y="0" class="todo"><title>743 · 50.30%</title></rect>
+<rect width="229.91" height="12" x="0" y="0" class="named"><title>735 · 49.76%</title></rect>
+<rect width="232.09" height="12" x="229.91" y="0" class="todo"><title>742 · 50.24%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">49.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">734</tspan> · <tspan class="todo">743</tspan></text>
+<text text-anchor="end" x="642" y="7.50">49.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">735</tspan> · <tspan class="todo">742</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="97.29" height="12" x="0" y="0" class="named"><title>140 KB · 21.06%</title></rect>
-<rect width="364.71" height="12" x="97.29" y="0" class="todo"><title>525 KB · 78.94%</title></rect>
+<rect width="97.64" height="12" x="0" y="0" class="named"><title>141 KB · 21.14%</title></rect>
+<rect width="364.36" height="12" x="97.64" y="0" class="todo"><title>525 KB · 78.86%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">21.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">140 KB</tspan> · <tspan class="todo">525 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">141 KB</tspan> · <tspan class="todo">525 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -992,7 +992,7 @@
 <rect width="12" height="12" x="405" y="270" class="named"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="270" class="todo"><title>0x004666c0 BuildOutsideTable (716 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="270" class="todo"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="270" class="todo"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="270" class="named"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="270" class="named"><title>0x00467010 InitialiseShiva (95 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="270" class="todo"><title>0x00467070 ShivaControl (1758 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="270" class="named"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
@@ -1888,7 +1888,7 @@
 <rect width="13.76" height="13.25" x="534.59" y="98.99" class="todo"><title>0x00448440 PistolHandler (517 bytes)</title></rect>
 <rect width="13.73" height="13.25" x="551.34" y="98.99" class="named"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
 <rect width="13.71" height="13.25" x="568.08" y="98.99" class="named"><title>0x0042af20 TriggerExplosionSmokeEnd (515 bytes)</title></rect>
-<rect width="13.71" height="13.25" x="584.78" y="98.99" class="todo"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
+<rect width="13.71" height="13.25" x="584.78" y="98.99" class="named"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
 <rect width="13.65" height="13.25" x="601.49" y="98.99" class="named"><title>0x0043ac30 InitialiseItem (513 bytes)</title></rect>
 <rect width="13.63" height="13.25" x="618.14" y="98.99" class="todo"><title>0x00485130 HWR_DrawRoutinesStippledAlpha (512 bytes)</title></rect>
 <rect width="13.57" height="13.25" x="634.76" y="98.99" class="todo"><title>0x00412500 BoatAnimation (510 bytes)</title></rect>
