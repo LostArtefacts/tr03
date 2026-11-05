@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="229.28" height="12" x="0" y="0" class="named"><title>733 · 49.63%</title></rect>
-<rect width="232.72" height="12" x="229.28" y="0" class="todo"><title>744 · 50.37%</title></rect>
+<rect width="229.59" height="12" x="0" y="0" class="named"><title>734 · 49.70%</title></rect>
+<rect width="232.41" height="12" x="229.59" y="0" class="todo"><title>743 · 50.30%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">49.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">733</tspan> · <tspan class="todo">744</tspan></text>
+<text text-anchor="end" x="642" y="7.50">49.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">734</tspan> · <tspan class="todo">743</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="96.94" height="12" x="0" y="0" class="named"><title>140 KB · 20.98%</title></rect>
-<rect width="365.06" height="12" x="96.94" y="0" class="todo"><title>526 KB · 79.02%</title></rect>
+<rect width="97.29" height="12" x="0" y="0" class="named"><title>140 KB · 21.06%</title></rect>
+<rect width="364.71" height="12" x="97.29" y="0" class="todo"><title>525 KB · 78.94%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">21.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">140 KB</tspan> · <tspan class="todo">526 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">21.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">140 KB</tspan> · <tspan class="todo">525 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -949,7 +949,7 @@
 <rect width="12" height="12" x="510" y="255" class="todo"><title>0x0045d050 PrisonerControl (2859 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="255" class="named"><title>0x0045dbd0 InitialisePunk (82 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="255" class="todo"><title>0x0045dc30 PunkControl (2401 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="255" class="todo"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="255" class="named"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="255" class="named"><title>0x0045e7e0 InitialiseQuadBike (75 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="255" class="named"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="255" class="named"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>
@@ -1899,7 +1899,7 @@
 <rect width="13.39" height="13.25" x="717.33" y="98.99" class="todo"><title>0x004960c0 Func4960c0 (503 bytes)</title></rect>
 <rect width="13.28" height="13.25" x="733.72" y="98.99" class="todo"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
 <rect width="13.23" height="13.29" x="399.43" y="115.24" class="todo"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
-<rect width="13.23" height="13.24" x="399.43" y="131.53" class="todo"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
+<rect width="13.23" height="13.24" x="399.43" y="131.53" class="named"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
 <rect width="13.23" height="13.21" x="399.43" y="147.77" class="todo"><title>0x0048efd0 DXEnumDirectDraw (496 bytes)</title></rect>
 <rect width="13.23" height="13.16" x="399.43" y="163.99" class="named"><title>0x00453000 EnableBaddieAI (494 bytes)</title></rect>
 <rect width="13.23" height="13.13" x="399.43" y="180.15" class="todo"><title>0x00485ab0 init_water_table (493 bytes)</title></rect>
