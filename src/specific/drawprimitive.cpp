@@ -18,4 +18,9 @@ HRESULT HWEndScene(void)
     return D3DDev->EndScene();
 }
 
+HRESULT HWSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState)
+{
+    return D3DDev->SetRenderState(dwRenderStateType, dwRenderState);
+}
+
 }

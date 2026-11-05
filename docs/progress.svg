@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="266.83" height="12" x="0" y="0" class="named"><title>939 · 63.53%</title></rect>
-<rect width="1.42" height="12" x="266.83" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="151.75" height="12" x="268.25" y="0" class="todo"><title>534 · 36.13%</title></rect>
+<rect width="267.12" height="12" x="0" y="0" class="named"><title>940 · 63.60%</title></rect>
+<rect width="1.42" height="12" x="267.12" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="151.46" height="12" x="268.54" y="0" class="todo"><title>533 · 36.06%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">63.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">939</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">534</tspan></text>
+<text text-anchor="end" x="600" y="7.50">63.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">940</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">533</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.56" height="12" x="0" y="0" class="named"><title>297 KB · 44.42%</title></rect>
-<rect width="3.69" height="12" x="186.56" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.76" height="12" x="190.24" y="0" class="todo"><title>365 KB · 54.70%</title></rect>
+<rect width="186.57" height="12" x="0" y="0" class="named"><title>297 KB · 44.42%</title></rect>
+<rect width="3.69" height="12" x="186.57" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.74" height="12" x="190.26" y="0" class="todo"><title>365 KB · 54.70%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1426,7 +1426,7 @@
 <rect width="12" height="12" x="135" y="405" class="todo"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="405" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="405" class="named"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="405" class="todo"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="405" class="named"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="405" class="todo"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="405" class="todo"><title>0x00490b40 Func490b40 (88 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="405" class="todo"><title>0x00490ba0 Func490ba0 (857 bytes)</title></rect>
@@ -2943,7 +2943,7 @@
 <rect width="3.15" height="2.56" x="699.92" y="433.57" class="todo"><title>0x004934b0 Func4934b0 (23 bytes)</title></rect>
 <rect width="3.15" height="2.44" x="699.92" y="439.13" class="named"><title>0x0042ece0 turn180_effect (22 bytes)</title></rect>
 <rect width="3.15" height="2.44" x="699.92" y="444.56" class="todo"><title>0x0048c010 DrawMonoScreen (22 bytes)</title></rect>
-<rect width="2.62" height="2.95" x="706.07" y="400.01" class="todo"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
+<rect width="2.62" height="2.95" x="706.07" y="400.01" class="named"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
 <rect width="2.62" height="2.95" x="711.68" y="400.01" class="todo"><title>0x004b3930 DD_UnlockSurface (22 bytes)</title></rect>
 <rect width="2.49" height="2.95" x="717.30" y="400.01" class="named"><title>0x0042fa50 TubeTrain (21 bytes)</title></rect>
 <rect width="2.49" height="2.95" x="722.79" y="400.01" class="named"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
