@@ -33,4 +33,20 @@ void WinStopFMV(bool play)
         Player_ReturnPlaybackMode();
 }
 
+int FMV_Play(char *name)
+{
+    fmv_playing = 1;
+    S_CDStop();
+    ShowCursor(0);
+    WinFreeDX(false);
+    name = (char *)GetFullPath(name);
+    WinPlayFMV(name, true);
+    WinStopFMV(true);
+    fmv_playing = 0;
+    if (!GtWindowClosed)
+        WinDXInit(&App.DeviceInfo, &App.DXConfig, false);
+    ShowCursor(1);
+    return GtWindowClosed;
+}
+
 }
