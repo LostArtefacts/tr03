@@ -50,6 +50,47 @@ void set_flare_arm(int frame)
     lara.left_arm.frame_base = anims[lara.left_arm.anim_number].frame_ptr;
 }
 
+void ready_flare(void);
+int Inv_RemoveItem(int item_num);
+
+void draw_flare(void)
+{
+    sint16 ani;
+
+    if (lara_item->current_anim_state == AS_FLAREPICKUP || lara_item->current_anim_state == AS_PICKUP) {
+        DoFlareInHand(lara.flare_age);
+        lara.flare_control_left = 0;
+        lara.left_arm.frame_number = FL_2HOLD_F - 2;
+        set_flare_arm(lara.left_arm.frame_number);
+        return;
+    }
+    ani = lara.left_arm.frame_number;
+    ani++;
+    lara.flare_control_left = 1;
+    if (ani < FL_DRAW_F || ani > FL_2HOLD_F - 1)
+        ani = FL_DRAW_F;
+    else if (ani == 46) {
+        draw_flare_meshes();
+        if (!savegame.bonus_flag)
+            Inv_RemoveItem(178);
+    } else if (ani >= FL_IGNITE_F && ani <= FL_2HOLD_F - 2) {
+        if (ani == FL_IGNITE_F) {
+            if (room[lara_item->room_number].flags & UNDERWATER)
+                SoundEffect(11, &lara_item->pos, UNDERWATER);
+            else
+                SoundEffect(11, &lara_item->pos, 0);
+            lara.flare_age = 0;
+        }
+        DoFlareInHand(lara.flare_age);
+    } else if (ani == FL_2HOLD_F - 1) {
+        ready_flare();
+        ani = 0;
+        DoFlareInHand(lara.flare_age);
+    }
+    lara.left_arm.frame_number = ani;
+    set_flare_arm(lara.left_arm.frame_number);
+}
+
 void draw_flare_meshes(void)
 {
     lara.mesh_ptrs[HAND_L] = meshes[objects[FLARE].mesh_index + HAND_L];
