@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="286.44" height="12" x="0" y="0" class="named"><title>1008 · 68.20%</title></rect>
-<rect width="1.42" height="12" x="286.44" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="132.14" height="12" x="287.86" y="0" class="todo"><title>465 · 31.46%</title></rect>
+<rect width="286.73" height="12" x="0" y="0" class="named"><title>1009 · 68.27%</title></rect>
+<rect width="1.42" height="12" x="286.73" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="131.85" height="12" x="288.15" y="0" class="todo"><title>464 · 31.39%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">68.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1008</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">465</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1009</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">464</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.67" height="12" x="0" y="0" class="named"><title>300 KB · 44.92%</title></rect>
-<rect width="3.69" height="12" x="188.67" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.64" height="12" x="192.36" y="0" class="todo"><title>362 KB · 54.20%</title></rect>
+<rect width="188.74" height="12" x="0" y="0" class="named"><title>300 KB · 44.94%</title></rect>
+<rect width="3.69" height="12" x="188.74" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.57" height="12" x="192.43" y="0" class="todo"><title>362 KB · 54.18%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
@@ -1379,7 +1379,7 @@
 <rect width="12" height="12" x="180" y="390" class="todo"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="390" class="todo"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="390" class="todo"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="390" class="todo"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="390" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="390" class="todo"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="390" class="todo"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
@@ -2466,7 +2466,7 @@
 <rect width="6.23" height="6.31" x="704.06" y="273.50" class="todo"><title>0x004b1b80 DXTextureNewPalette (112 bytes)</title></rect>
 <rect width="6.23" height="6.31" x="713.30" y="273.50" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
 <rect width="6.18" height="6.31" x="722.53" y="273.50" class="named"><title>0x0042f110 ControlClockChimes (111 bytes)</title></rect>
-<rect width="6.18" height="6.31" x="731.70" y="273.50" class="todo"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
+<rect width="6.18" height="6.31" x="731.70" y="273.50" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="6.12" height="6.31" x="740.88" y="273.50" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
 <rect width="5.95" height="6.49" x="573.93" y="282.82" class="todo"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
 <rect width="5.95" height="6.49" x="573.93" y="292.31" class="todo"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
