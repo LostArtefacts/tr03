@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="241.17" height="12" x="0" y="0" class="named"><title>771 · 52.20%</title></rect>
-<rect width="220.83" height="12" x="241.17" y="0" class="todo"><title>706 · 47.80%</title></rect>
+<rect width="241.48" height="12" x="0" y="0" class="named"><title>772 · 52.27%</title></rect>
+<rect width="220.52" height="12" x="241.48" y="0" class="todo"><title>705 · 47.73%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">52.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">771</tspan> · <tspan class="todo">706</tspan></text>
+<text text-anchor="end" x="642" y="7.50">52.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">772</tspan> · <tspan class="todo">705</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="111.09" height="12" x="0" y="0" class="named"><title>160 KB · 24.05%</title></rect>
-<rect width="350.91" height="12" x="111.09" y="0" class="todo"><title>505 KB · 75.95%</title></rect>
+<rect width="111.43" height="12" x="0" y="0" class="named"><title>161 KB · 24.12%</title></rect>
+<rect width="350.57" height="12" x="111.43" y="0" class="todo"><title>505 KB · 75.88%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">24.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">160 KB</tspan> · <tspan class="todo">505 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">24.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">161 KB</tspan> · <tspan class="todo">505 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -236,7 +236,7 @@
 <rect width="12" height="12" x="315" y="45" class="named"><title>0x0041bbe0 TriggerPlasma_clawmute (447 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="45" class="named"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="45" class="todo"><title>0x0041bed0 ControlClawmutePlasmaBall (785 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="45" class="todo"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="45" class="named"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="45" class="named"><title>0x0041c3e0 InitialiseCleaner (81 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="45" class="todo"><title>0x0041c440 CleanerControl (3171 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="45" class="todo"><title>0x0041d0b0 TriggerElectricSparks_cleaner (350 bytes)</title></rect>
@@ -1910,7 +1910,7 @@
 <rect width="13.23" height="12.97" x="399.44" y="260.35" class="named"><title>0x00463700 TriggerSealmuteGas (487 bytes)</title></rect>
 <rect width="13.23" height="12.92" x="399.44" y="276.33" class="named"><title>0x0044c440 FlareControl (485 bytes)</title></rect>
 <rect width="13.23" height="12.87" x="399.44" y="292.25" class="todo"><title>0x00495ed0 Func495ed0 (483 bytes)</title></rect>
-<rect width="13.23" height="12.84" x="399.44" y="308.11" class="todo"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
+<rect width="13.23" height="12.84" x="399.44" y="308.11" class="named"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
 <rect width="13.23" height="12.84" x="399.44" y="323.95" class="named"><title>0x0044bd90 CreateFlare (482 bytes)</title></rect>
 <rect width="13.23" height="12.81" x="399.44" y="339.79" class="named"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="13.23" height="12.81" x="399.44" y="355.60" class="named"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
