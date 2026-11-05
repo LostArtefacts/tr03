@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="205.82" height="12" x="0" y="0" class="named"><title>658 · 44.55%</title></rect>
-<rect width="256.18" height="12" x="205.82" y="0" class="todo"><title>819 · 55.45%</title></rect>
+<rect width="206.13" height="12" x="0" y="0" class="named"><title>659 · 44.62%</title></rect>
+<rect width="255.87" height="12" x="206.13" y="0" class="todo"><title>818 · 55.38%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">44.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">658</tspan> · <tspan class="todo">819</tspan></text>
+<text text-anchor="end" x="642" y="7.50">44.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">659</tspan> · <tspan class="todo">818</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="70.21" height="12" x="0" y="0" class="named"><title>101 KB · 15.20%</title></rect>
-<rect width="391.79" height="12" x="70.21" y="0" class="todo"><title>564 KB · 84.80%</title></rect>
+<rect width="70.46" height="12" x="0" y="0" class="named"><title>101 KB · 15.25%</title></rect>
+<rect width="391.54" height="12" x="70.46" y="0" class="todo"><title>564 KB · 84.75%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">15.2%</text>
+<text text-anchor="end" x="642" y="24.50">15.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">101 KB</tspan> · <tspan class="todo">564 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1115,7 +1115,7 @@
 <rect width="12" height="12" x="0" y="315" class="todo"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="315" class="named"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="315" class="todo"><title>0x004737e0 WingmuteControl (925 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="315" class="todo"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="315" class="named"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="315" class="todo"><title>0x00473d10 WinstonControl (941 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="315" class="todo"><title>0x00474110 OldWinstonControl (389 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="315" class="todo"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
@@ -2032,7 +2032,7 @@
 <rect width="10.86" height="11.59" x="446.30" y="233.70" class="todo"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="10.86" height="11.56" x="446.30" y="248.29" class="named"><title>0x00429a30 DrawGunFlash (356 bytes)</title></rect>
 <rect width="10.86" height="11.56" x="446.30" y="262.85" class="todo"><title>0x0044d690 UseItem (356 bytes)</title></rect>
-<rect width="10.86" height="11.53" x="446.30" y="277.41" class="todo"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
+<rect width="10.86" height="11.53" x="446.30" y="277.41" class="named"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
 <rect width="10.86" height="11.49" x="446.30" y="291.93" class="todo"><title>0x00468610 SubCollision (354 bytes)</title></rect>
 <rect width="10.86" height="11.49" x="446.30" y="306.43" class="todo"><title>0x004955f0 Func4955f0 (354 bytes)</title></rect>
 <rect width="10.86" height="11.43" x="446.30" y="320.92" class="todo"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
