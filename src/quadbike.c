@@ -168,3 +168,60 @@ void QuadbikeExplode(ITEM_INFO *v)
     SoundEffect(106, NULL, 0);
     lara.skidoo = NO_ITEM;
 }
+
+sint32 GetFreeSpark(void);
+
+void TriggerExhaustSmoke(sint32 x, sint32 y, sint32 z, sint16 angle, sint32 speed, sint32 moving)
+{
+    sint32 size, xv, zv;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    sptr->dR = 96;
+    sptr->dG = 96;
+    sptr->dB = 128;
+    if (moving) {
+        sptr->dR = (sptr->dR * speed) >> 5;
+        sptr->dG = (sptr->dG * speed) >> 5;
+        sptr->dB = (sptr->dB * speed) >> 5;
+    }
+    sptr->ColFadeSpeed = 4;
+    sptr->FadeToBlack = 4;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 20 - (speed >> 12);
+    if (sptr->sLife < 9)
+        sptr->sLife = sptr->Life = 9;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 15) - 8);
+    sptr->y = y + ((GetRandomControl() & 15) - 8);
+    sptr->z = z + ((GetRandomControl() & 15) - 8);
+    zv = (speed * phd_cos(angle)) >> (W2V_SHIFT + 2);
+    xv = (speed * phd_sin(angle)) >> (W2V_SHIFT + 2);
+    sptr->Xvel = xv + ((GetRandomControl() & 255) - 128);
+    sptr->Yvel = -(GetRandomControl() & 7) - 8;
+    sptr->Zvel = zv + ((GetRandomControl() & 255) - 128);
+    sptr->Friction = 4;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 7) - 24;
+        else
+            sptr->RotAdd = (GetRandomControl() & 7) + 24;
+    } else
+        sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 2;
+    sptr->Gravity = -(GetRandomControl() & 3) - 4;
+    sptr->MaxYvel = -(GetRandomControl() & 7) - 8;
+    size = (GetRandomControl() & 7) + 32 + (speed >> 7);
+    sptr->Width = sptr->sWidth = size >> 1;
+    sptr->dWidth = size;
+    sptr->Height = sptr->sHeight = size >> 1;
+    sptr->dHeight = size;
+}

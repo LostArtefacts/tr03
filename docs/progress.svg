@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="226.78" height="12" x="0" y="0" class="named"><title>725 · 49.09%</title></rect>
-<rect width="235.22" height="12" x="226.78" y="0" class="todo"><title>752 · 50.91%</title></rect>
+<rect width="227.09" height="12" x="0" y="0" class="named"><title>726 · 49.15%</title></rect>
+<rect width="234.91" height="12" x="227.09" y="0" class="todo"><title>751 · 50.85%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">49.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">725</tspan> · <tspan class="todo">752</tspan></text>
+<text text-anchor="end" x="642" y="7.50">49.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">726</tspan> · <tspan class="todo">751</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="94.31" height="12" x="0" y="0" class="named"><title>136 KB · 20.41%</title></rect>
-<rect width="367.69" height="12" x="94.31" y="0" class="todo"><title>530 KB · 79.59%</title></rect>
+<rect width="94.63" height="12" x="0" y="0" class="named"><title>136 KB · 20.48%</title></rect>
+<rect width="367.37" height="12" x="94.63" y="0" class="todo"><title>529 KB · 79.52%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">20.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">136 KB</tspan> · <tspan class="todo">530 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">20.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">136 KB</tspan> · <tspan class="todo">529 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -965,7 +965,7 @@
 <rect width="12" height="12" x="0" y="270" class="todo"><title>0x00460230 AnimateQuadBike (1072 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="270" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="270" class="todo"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="270" class="todo"><title>0x00460bd0 TriggerExhaustSmoke (455 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="270" class="named"><title>0x00460bd0 TriggerExhaustSmoke (455 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="270" class="todo"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="270" class="named"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="270" class="todo"><title>0x00461040 RaptorControl (1758 bytes)</title></rect>
@@ -1938,7 +1938,7 @@
 <rect width="12.73" height="12.68" x="671.60" y="115.24" class="todo"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
 <rect width="12.73" height="12.68" x="687.33" y="115.24" class="todo"><title>0x004253c0 GetRoomBounds (458 bytes)</title></rect>
 <rect width="12.65" height="12.68" x="703.06" y="115.24" class="todo"><title>0x00412330 BoatUserControl (455 bytes)</title></rect>
-<rect width="12.65" height="12.68" x="718.71" y="115.24" class="todo"><title>0x00460bd0 TriggerExhaustSmoke (455 bytes)</title></rect>
+<rect width="12.65" height="12.68" x="718.71" y="115.24" class="named"><title>0x00460bd0 TriggerExhaustSmoke (455 bytes)</title></rect>
 <rect width="12.65" height="12.68" x="734.35" y="115.24" class="todo"><title>0x00472fe0 TriggerPlasma_willboss (455 bytes)</title></rect>
 <rect width="12.73" height="12.54" x="415.67" y="130.92" class="todo"><title>0x00471350 TriggerElectricSparks_triboss (453 bytes)</title></rect>
 <rect width="12.73" height="12.51" x="415.67" y="146.47" class="named"><title>0x004430c0 lara_col_wade (452 bytes)</title></rect>
