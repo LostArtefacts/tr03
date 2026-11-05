@@ -72,3 +72,21 @@ void TrainControl(sint16 train_number)
         SoundEffect(148, &t->pos, 2);
     }
 }
+
+sint32 TestHeight_train(ITEM_INFO *item, sint32 x, sint32 z, sint16 *room_number)
+{
+    sint32 s, c;
+    PHD_VECTOR pos;
+    FLOOR_INFO *floor;
+
+    c = phd_cos(item->pos.y_rot);
+    s = phd_sin(item->pos.y_rot);
+
+    pos.x = item->pos.x_pos + ((z * s + x * c) >> W2V_SHIFT);
+    pos.y = item->pos.y_pos - (z * phd_sin(item->pos.x_rot) >> W2V_SHIFT) + (x * phd_sin(item->pos.z_rot) >> W2V_SHIFT);
+    pos.z = item->pos.z_pos + ((z * c - x * s) >> W2V_SHIFT);
+
+    *room_number = item->room_number;
+    floor = GetFloor(pos.x, pos.y, pos.z, room_number);
+    return GetHeight(floor, pos.x, pos.y, pos.z);
+}

@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="249.61" height="12" x="0" y="0" class="named"><title>798 · 54.03%</title></rect>
-<rect width="212.39" height="12" x="249.61" y="0" class="todo"><title>679 · 45.97%</title></rect>
+<rect width="249.92" height="12" x="0" y="0" class="named"><title>799 · 54.10%</title></rect>
+<rect width="212.08" height="12" x="249.92" y="0" class="todo"><title>678 · 45.90%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">54.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">798</tspan> · <tspan class="todo">679</tspan></text>
+<text text-anchor="end" x="642" y="7.50">54.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">799</tspan> · <tspan class="todo">678</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="125.69" height="12" x="0" y="0" class="named"><title>181 KB · 27.20%</title></rect>
-<rect width="336.31" height="12" x="125.69" y="0" class="todo"><title>485 KB · 72.80%</title></rect>
+<rect width="125.80" height="12" x="0" y="0" class="named"><title>181 KB · 27.23%</title></rect>
+<rect width="336.20" height="12" x="125.80" y="0" class="todo"><title>485 KB · 72.77%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">27.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">181 KB</tspan> · <tspan class="todo">485 KB</tspan></text>
@@ -1054,7 +1054,7 @@
 <rect width="12" height="12" x="585" y="285" class="named"><title>0x0046c860 ControlTonyFireBall (1182 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="285" class="named"><title>0x0046cd00 TriggerFireBallFlame (569 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="285" class="named"><title>0x0046cf40 TrainControl (527 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="285" class="todo"><title>0x0046d150 TestHeight_train (159 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="285" class="named"><title>0x0046d150 TestHeight_train (159 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="285" class="todo"><title>0x0046d1f0 TrainCollision (327 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="285" class="named"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="285" class="named"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
@@ -2318,7 +2318,7 @@
 <rect width="7.63" height="7.34" x="533.46" y="295.96" class="named"><title>0x00429fe0 GetFreeSpark (159 bytes)</title></rect>
 <rect width="7.63" height="7.34" x="533.46" y="306.30" class="named"><title>0x00442610 lara_col_fastfall (159 bytes)</title></rect>
 <rect width="7.63" height="7.34" x="533.46" y="316.64" class="todo"><title>0x00451de0 TriggerPlasmaBall_londboss (159 bytes)</title></rect>
-<rect width="7.63" height="7.34" x="533.46" y="326.97" class="todo"><title>0x0046d150 TestHeight_train (159 bytes)</title></rect>
+<rect width="7.63" height="7.34" x="533.46" y="326.97" class="named"><title>0x0046d150 TestHeight_train (159 bytes)</title></rect>
 <rect width="7.63" height="7.29" x="533.46" y="337.31" class="todo"><title>0x00402030 AlterFOV (158 bytes)</title></rect>
 <rect width="7.63" height="7.29" x="533.46" y="347.60" class="named"><title>0x00441100 lara_as_turn_r (158 bytes)</title></rect>
 <rect width="7.63" height="7.29" x="533.46" y="357.89" class="named"><title>0x004411a0 lara_as_turn_l (158 bytes)</title></rect>
