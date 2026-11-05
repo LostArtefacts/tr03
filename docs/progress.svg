@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="213.95" height="12" x="0" y="0" class="named"><title>684 · 46.31%</title></rect>
-<rect width="248.05" height="12" x="213.95" y="0" class="todo"><title>793 · 53.69%</title></rect>
+<rect width="214.27" height="12" x="0" y="0" class="named"><title>685 · 46.38%</title></rect>
+<rect width="247.73" height="12" x="214.27" y="0" class="todo"><title>792 · 53.62%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">46.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">684</tspan> · <tspan class="todo">793</tspan></text>
+<text text-anchor="end" x="642" y="7.50">46.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">685</tspan> · <tspan class="todo">792</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="77.07" height="12" x="0" y="0" class="named"><title>111 KB · 16.68%</title></rect>
-<rect width="384.93" height="12" x="77.07" y="0" class="todo"><title>554 KB · 83.32%</title></rect>
+<rect width="77.35" height="12" x="0" y="0" class="named"><title>111 KB · 16.74%</title></rect>
+<rect width="384.65" height="12" x="77.35" y="0" class="todo"><title>554 KB · 83.26%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">16.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">111 KB</tspan> · <tspan class="todo">554 KB</tspan></text>
@@ -270,7 +270,7 @@
 <rect width="12" height="12" x="75" y="60" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="60" class="todo"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="60" class="todo"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="60" class="todo"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="60" class="named"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="60" class="todo"><title>0x00420e10 GetHeight (1300 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="60" class="named"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="60" class="todo"><title>0x00421460 TestTriggers (2247 bytes)</title></rect>
@@ -1977,7 +1977,7 @@
 <rect width="12.01" height="11.89" x="630.65" y="130.82" class="todo"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
 <rect width="11.98" height="11.89" x="645.66" y="130.82" class="todo"><title>0x0044a330 LaraTargetInfo (404 bytes)</title></rect>
 <rect width="11.95" height="11.89" x="660.63" y="130.82" class="todo"><title>0x0048d2e0 CD_Init (403 bytes)</title></rect>
-<rect width="11.92" height="11.89" x="675.58" y="130.82" class="todo"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
+<rect width="11.92" height="11.89" x="675.58" y="130.82" class="named"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
 <rect width="11.92" height="11.89" x="690.50" y="130.82" class="todo"><title>0x00447d90 TriggerUnderwaterExplosion (402 bytes)</title></rect>
 <rect width="11.89" height="11.89" x="705.42" y="130.82" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
 <rect width="11.86" height="11.89" x="720.31" y="130.82" class="todo"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
