@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="210.51" height="12" x="0" y="0" class="named"><title>673 · 45.57%</title></rect>
-<rect width="251.49" height="12" x="210.51" y="0" class="todo"><title>804 · 54.43%</title></rect>
+<rect width="210.82" height="12" x="0" y="0" class="named"><title>674 · 45.63%</title></rect>
+<rect width="251.18" height="12" x="210.82" y="0" class="todo"><title>803 · 54.37%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">45.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">673</tspan> · <tspan class="todo">804</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">674</tspan> · <tspan class="todo">803</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="74.12" height="12" x="0" y="0" class="named"><title>107 KB · 16.04%</title></rect>
-<rect width="387.88" height="12" x="74.12" y="0" class="todo"><title>558 KB · 83.96%</title></rect>
+<rect width="74.38" height="12" x="0" y="0" class="named"><title>107 KB · 16.10%</title></rect>
+<rect width="387.62" height="12" x="74.38" y="0" class="todo"><title>558 KB · 83.90%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">16.0%</text>
+<text text-anchor="end" x="642" y="24.50">16.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">107 KB</tspan> · <tspan class="todo">558 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -164,7 +164,7 @@
 <rect width="12" height="12" x="735" y="15" class="todo"><title>0x00411710 BlowpipeControl (2203 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="30" class="named"><title>0x00411fe0 InitialiseBoat (84 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="30" class="todo"><title>0x00412040 BoatCheckGeton (362 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="30" class="todo"><title>0x004121b0 BoatCollision (380 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="30" class="named"><title>0x004121b0 BoatCollision (380 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="30" class="todo"><title>0x00412330 BoatUserControl (455 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="30" class="todo"><title>0x00412500 BoatAnimation (510 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="30" class="todo"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>
@@ -2001,7 +2001,7 @@
 <rect width="11.89" height="11.36" x="431.41" y="378.49" class="todo"><title>0x00449a30 UpdateElectricityPoints (383 bytes)</title></rect>
 <rect width="11.89" height="11.33" x="431.41" y="392.85" class="todo"><title>0x004426b0 lara_col_hang (382 bytes)</title></rect>
 <rect width="11.89" height="11.30" x="431.41" y="407.17" class="todo"><title>0x00471e30 TriggerSummonSmoke (381 bytes)</title></rect>
-<rect width="11.89" height="11.27" x="431.41" y="421.47" class="todo"><title>0x004121b0 BoatCollision (380 bytes)</title></rect>
+<rect width="11.89" height="11.27" x="431.41" y="421.47" class="named"><title>0x004121b0 BoatCollision (380 bytes)</title></rect>
 <rect width="11.89" height="11.27" x="431.41" y="435.73" class="named"><title>0x00441a80 lara_as_wade (380 bytes)</title></rect>
 <rect width="11.70" height="11.42" x="446.30" y="145.72" class="named"><title>0x0045ce70 AnimatingPickUp (379 bytes)</title></rect>
 <rect width="11.67" height="11.42" x="461" y="145.72" class="named"><title>0x00452240 KnockBackCollision (378 bytes)</title></rect>
