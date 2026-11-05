@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="212.39" height="12" x="0" y="0" class="named"><title>679 · 45.97%</title></rect>
-<rect width="249.61" height="12" x="212.39" y="0" class="todo"><title>798 · 54.03%</title></rect>
+<rect width="212.70" height="12" x="0" y="0" class="named"><title>680 · 46.04%</title></rect>
+<rect width="249.30" height="12" x="212.70" y="0" class="todo"><title>797 · 53.96%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">46.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">679</tspan> · <tspan class="todo">798</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">680</tspan> · <tspan class="todo">797</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="75.71" height="12" x="0" y="0" class="named"><title>109 KB · 16.39%</title></rect>
-<rect width="386.29" height="12" x="75.71" y="0" class="todo"><title>556 KB · 83.61%</title></rect>
+<rect width="75.98" height="12" x="0" y="0" class="named"><title>109 KB · 16.45%</title></rect>
+<rect width="386.02" height="12" x="75.98" y="0" class="todo"><title>556 KB · 83.55%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">16.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">109 KB</tspan> · <tspan class="todo">556 KB</tspan></text>
@@ -569,7 +569,7 @@
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="150" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="150" class="todo"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="150" class="todo"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="150" class="named"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="150" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="150" class="todo"><title>0x0043c960 DoShift_kayak (672 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="150" class="todo"><title>0x0043cc00 KayakUserInput (2137 bytes)</title></rect>
@@ -1990,7 +1990,7 @@
 <rect width="11.89" height="11.62" x="431.41" y="219.37" class="named"><title>0x00437160 RingIsOpen (392 bytes)</title></rect>
 <rect width="11.89" height="11.53" x="431.41" y="233.99" class="todo"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
 <rect width="11.89" height="11.53" x="431.41" y="248.52" class="todo"><title>0x00474110 OldWinstonControl (389 bytes)</title></rect>
-<rect width="11.89" height="11.47" x="431.41" y="263.06" class="todo"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
+<rect width="11.89" height="11.47" x="431.41" y="263.06" class="named"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
 <rect width="11.89" height="11.47" x="431.41" y="277.53" class="named"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>
 <rect width="11.89" height="11.47" x="431.41" y="292" class="todo"><title>0x0046f1e0 SideFlameDetection (387 bytes)</title></rect>
 <rect width="11.89" height="11.44" x="431.41" y="306.48" class="named"><title>0x00423710 StartDemo (386 bytes)</title></rect>

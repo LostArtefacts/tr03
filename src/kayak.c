@@ -291,3 +291,59 @@ void DoRipple(ITEM_INFO *v, sint16 xoff, sint16 zoff)
         r->init = 0;
     }
 }
+
+extern sint16 rcossin_tbl[];
+
+sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
+int abs(int x);
+#pragma intrinsic(abs)
+
+void DoCurrent(ITEM_INFO *item)
+{
+    ROOM_INFO *r;
+    PHD_VECTOR target;
+    sint32 shifter, absvel;
+    sint32 angle, dx, dz, speed, sinkval;
+
+    r = &room[item->room_number];
+    if (!lara.current_active) {
+        absvel = abs(lara.current_xvel);
+        if (absvel > 16)
+            shifter = 4;
+        else if (absvel > 8)
+            shifter = 3;
+        else
+            shifter = 2;
+        lara.current_xvel -= lara.current_xvel >> shifter;
+        if (abs(lara.current_xvel) < 4)
+            lara.current_xvel = 0;
+        absvel = abs(lara.current_zvel);
+        if (absvel > 16)
+            shifter = 4;
+        else if (absvel > 8)
+            shifter = 3;
+        else
+            shifter = 2;
+        lara.current_zvel -= lara.current_zvel >> shifter;
+        if (abs(lara.current_zvel) < 4)
+            lara.current_zvel = 0;
+        if (lara.current_xvel == 0 && lara.current_zvel == 0)
+            return;
+    } else {
+        sinkval = lara.current_active - 1;
+        target.x = camera.fixed[sinkval].x;
+        target.y = camera.fixed[sinkval].y;
+        target.z = camera.fixed[sinkval].z;
+        angle = ((mGetAngle(target.x, target.z, lara_item->pos.x_pos, lara_item->pos.z_pos) - 0x4000) >> 4) & 4095;
+        dx = target.x - lara_item->pos.x_pos;
+        dz = target.z - lara_item->pos.z_pos;
+        speed = camera.fixed[sinkval].data;
+        dx = (rcossin_tbl[angle << 1] * speed) >> 2;
+        dz = (rcossin_tbl[(angle << 1) + 1] * speed) >> 2;
+        lara.current_xvel += (dx - lara.current_xvel) >> 4;
+        lara.current_zvel += (dz - lara.current_zvel) >> 4;
+    }
+    item->pos.x_pos += lara.current_xvel >> 8;
+    item->pos.z_pos += lara.current_zvel >> 8;
+    lara.current_active = 0;
+}
