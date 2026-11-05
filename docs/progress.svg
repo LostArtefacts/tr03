@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="304.06" height="12" x="0" y="0" class="named"><title>1070 · 72.40%</title></rect>
-<rect width="1.99" height="12" x="304.06" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="113.95" height="12" x="306.05" y="0" class="todo"><title>401 · 27.13%</title></rect>
+<rect width="304.34" height="12" x="0" y="0" class="named"><title>1071 · 72.46%</title></rect>
+<rect width="1.99" height="12" x="304.34" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="113.67" height="12" x="306.33" y="0" class="todo"><title>400 · 27.06%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">72.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1070</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">401</tspan></text>
+<text text-anchor="end" x="600" y="7.50">72.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1071</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">400</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="193.28" height="12" x="0" y="0" class="named"><title>307 KB · 46.02%</title></rect>
-<rect width="3.79" height="12" x="193.28" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="222.92" height="12" x="197.08" y="0" class="todo"><title>355 KB · 53.08%</title></rect>
+<rect width="193.36" height="12" x="0" y="0" class="named"><title>307 KB · 46.04%</title></rect>
+<rect width="3.79" height="12" x="193.36" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="222.85" height="12" x="197.15" y="0" class="todo"><title>354 KB · 53.06%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">307 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">307 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">354 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1302,7 +1302,7 @@
 <rect width="12" height="12" x="525" y="360" class="todo"><title>0x00488260 do_detail_option (3247 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="360" class="todo"><title>0x00488f30 do_sound_option (1181 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="360" class="named"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="360" class="todo"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="360" class="named"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="360" class="todo"><title>0x00489510 DefaultConflict (64 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="360" class="todo"><title>0x00489550 do_control_option (1798 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="360" class="todo"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
@@ -2417,7 +2417,7 @@
 <rect width="6.85" height="6.46" x="594.06" y="264.06" class="named"><title>0x0041ec90 DoorCollision (126 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="603.91" y="264.06" class="named"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="613.76" y="264.06" class="named"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>
-<rect width="6.85" height="6.46" x="623.61" y="264.06" class="todo"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
+<rect width="6.85" height="6.46" x="623.61" y="264.06" class="named"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="633.46" y="264.06" class="todo"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
 <rect width="6.80" height="6.46" x="643.31" y="264.06" class="todo"><title>0x00482910 S_LoadLevelFile (125 bytes)</title></rect>
 <rect width="6.74" height="6.46" x="653.11" y="264.06" class="named"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>

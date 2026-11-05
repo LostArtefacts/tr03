@@ -117,3 +117,21 @@ void do_compass_option(INVENTORY_ITEM *inv_item)
     }
     SoundEffect(113, 0, 2);
 }
+
+void FlashConflicts(void)
+{
+    int i;
+    int j;
+    sint16 key;
+
+    for (i = 0; i < 14; i++) {
+        key = layout[iconfig][i];
+        T_FlashText(btext[i], 0, 0);
+        for (j = 0; j < 14; j++) {
+            if (i != j && key == layout[iconfig][j]) {
+                T_FlashText(btext[i], 1, 20);
+                break;
+            }
+        }
+    }
+}
