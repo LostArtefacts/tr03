@@ -153,3 +153,22 @@ void DefaultConflict(void)
         }
     }
 }
+
+void S_ChangeCtrlText(void)
+{
+    int i;
+    char str[40];
+
+    if (iconfig) {
+        wsprintfA(str, GF_PCStrings[6], iconfig);
+        T_ChangeText(ctrltext[0], str);
+    } else {
+        T_ChangeText(ctrltext[0], GF_PCStrings[19]);
+    }
+    for (i = 0; i < 14; i++) {
+        if (kname[layout[iconfig][i]])
+            T_ChangeText(btext[i], kname[layout[iconfig][i]]);
+        else
+            T_ChangeText(btext[i], "BAD");
+    }
+}
