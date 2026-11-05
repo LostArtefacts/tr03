@@ -1,4 +1,5 @@
 // cflags: -/O2 /Od
+#include "specific/standard.h"
 #include "game.h"
 
 extern GAME_VECTOR ForcedFixedCamera;

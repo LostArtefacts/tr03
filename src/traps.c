@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 #define DOOR_CLOSED 0

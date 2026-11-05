@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 #define DEMOCOUNT_MAX 3608

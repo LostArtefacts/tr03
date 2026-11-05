@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 void draw_shotgun_meshes(int weapon_type)

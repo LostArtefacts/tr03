@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 extern sint16 electricity_points[32][6];

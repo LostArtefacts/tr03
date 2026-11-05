@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);

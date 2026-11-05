@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 #define FIREHEAD_REAR 1

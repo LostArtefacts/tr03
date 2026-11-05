@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 #define MAX_SLOTS 32
