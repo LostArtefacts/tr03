@@ -149,4 +149,9 @@ void DS_Finish(void)
     DS_Release();
 }
 
+bool DS_IsSoundEnabled(void)
+{
+    return App.DXConfig.sound;
+}
+
 }
