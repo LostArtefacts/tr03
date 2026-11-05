@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="262.44" height="12" x="0" y="0" class="named"><title>839 · 56.80%</title></rect>
-<rect width="199.56" height="12" x="262.44" y="0" class="todo"><title>638 · 43.20%</title></rect>
+<rect width="262.75" height="12" x="0" y="0" class="named"><title>840 · 56.87%</title></rect>
+<rect width="199.25" height="12" x="262.75" y="0" class="todo"><title>637 · 43.13%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">56.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">839</tspan> · <tspan class="todo">638</tspan></text>
+<text text-anchor="end" x="642" y="7.50">56.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">840</tspan> · <tspan class="todo">637</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="144.56" height="12" x="0" y="0" class="named"><title>208 KB · 31.29%</title></rect>
-<rect width="317.44" height="12" x="144.56" y="0" class="todo"><title>458 KB · 68.71%</title></rect>
+<rect width="145.32" height="12" x="0" y="0" class="named"><title>209 KB · 31.45%</title></rect>
+<rect width="316.68" height="12" x="145.32" y="0" class="todo"><title>456 KB · 68.55%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">31.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">208 KB</tspan> · <tspan class="todo">458 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">31.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">209 KB</tspan> · <tspan class="todo">456 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -798,7 +798,7 @@
 <rect width="12" height="12" x="495" y="210" class="named"><title>0x0044d880 ControlLaraExtra (31 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="210" class="named"><title>0x0044d8a0 InitialiseLaraLoad (36 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="210" class="named"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="210" class="todo"><title>0x0044dc00 InitialiseLaraInventory (1091 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="210" class="named"><title>0x0044dc00 InitialiseLaraInventory (1091 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="210" class="named"><title>0x0044e050 LaraSurface (368 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="210" class="named"><title>0x0044e1c0 lara_as_surfswim (112 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="210" class="named"><title>0x0044e230 lara_as_surfback (94 bytes)</title></rect>
@@ -1694,7 +1694,7 @@
 <rect width="19.27" height="20.52" x="727.73" y="0" class="todo"><title>0x0043a5b0 ShowEndStatsText (1123 bytes)</title></rect>
 <rect width="19.16" height="20.52" x="303.56" y="23.52" class="todo"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
 <rect width="19.16" height="20.15" x="303.56" y="47.04" class="todo"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
-<rect width="19.16" height="20.06" x="303.56" y="70.19" class="todo"><title>0x0044dc00 InitialiseLaraInventory (1091 bytes)</title></rect>
+<rect width="19.16" height="20.06" x="303.56" y="70.19" class="named"><title>0x0044dc00 InitialiseLaraInventory (1091 bytes)</title></rect>
 <rect width="19.16" height="20" x="303.56" y="93.25" class="named"><title>0x00440520 lara_as_stop (1088 bytes)</title></rect>
 <rect width="19.16" height="19.86" x="303.56" y="116.25" class="named"><title>0x0042b780 TriggerFireFlame (1080 bytes)</title></rect>
 <rect width="19.16" height="19.80" x="303.56" y="139.11" class="todo"><title>0x00483b60 LevelStats (1077 bytes)</title></rect>
