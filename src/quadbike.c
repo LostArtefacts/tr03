@@ -150,6 +150,102 @@ void TriggerUnderwaterExplosion(ITEM_INFO *item);
 void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
 int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
 
+extern sint32 *bones;
+
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+void phd_PushMatrix(void);
+void phd_RotX(sint16 rx);
+void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
+void phd_PutPolygons(sint16 *objptr, int clip);
+
+void QuadBikeDraw(ITEM_INFO *item)
+{
+    sint16 *frmptr[2];
+    int clip, rate, frac;
+
+    frac = GetFrames(item, frmptr, &rate);
+
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+
+    if ((clip = S_GetObjectBounds(frmptr[0]))) {
+        sint32 *bone;
+        QUADINFO *bike;
+        sint16 **meshpp;
+        sint16 *rotation;
+        OBJECT_INFO *object;
+
+        CalculateObjectLighting(item, frmptr[0]);
+
+        object = &objects[item->object_number];
+        meshpp = &meshes[object->mesh_index];
+        bone = bones + object->bone_index;
+
+        bike = (QUADINFO *)item->data;
+
+        phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
+        rotation = frmptr[0] + 9;
+        gar_RotYXZsuperpack(&rotation, 0);
+
+        phd_PutPolygons(*meshpp++, clip);
+
+        phd_PushMatrix();
+        phd_TranslateRel(*(bone + 1), *(bone + 2), *(bone + 3));
+        gar_RotYXZsuperpack(&rotation, 0);
+        phd_PutPolygons(*meshpp++, clip);
+        phd_PopMatrix();
+
+        phd_PushMatrix();
+        phd_TranslateRel(*(bone + 1 + 4), *(bone + 2 + 4), *(bone + 3 + 4));
+        gar_RotYXZsuperpack(&rotation, 0);
+        phd_PutPolygons(*meshpp++, clip);
+
+        phd_PushMatrix();
+        phd_TranslateRel(*(bone + 1 + 8), *(bone + 2 + 8), *(bone + 3 + 8));
+        gar_RotYXZsuperpack(&rotation, 0);
+        phd_RotX(bike->RearRot);
+        phd_PutPolygons(*meshpp++, clip);
+        phd_PopMatrix();
+
+        phd_PushMatrix();
+        phd_TranslateRel(*(bone + 1 + 12), *(bone + 2 + 12), *(bone + 3 + 12));
+        gar_RotYXZsuperpack(&rotation, 0);
+        phd_RotX(bike->RearRot);
+        phd_PutPolygons(*meshpp++, clip);
+        phd_PopMatrix();
+
+        phd_PopMatrix();
+
+        phd_PushMatrix();
+        phd_TranslateRel(*(bone + 1 + 16), *(bone + 2 + 16), *(bone + 3 + 16));
+        gar_RotYXZsuperpack(&rotation, 0);
+        phd_PutPolygons(*meshpp++, clip);
+
+        phd_PushMatrix();
+        phd_TranslateRel(*(bone + 1 + 20), *(bone + 2 + 20), *(bone + 3 + 20));
+        gar_RotYXZsuperpack(&rotation, 0);
+        phd_RotX(bike->FrontRot);
+        phd_PutPolygons(*meshpp++, clip);
+        phd_PopMatrix();
+
+        phd_PushMatrix();
+        phd_TranslateRel(*(bone + 1 + 24), *(bone + 2 + 24), *(bone + 3 + 24));
+        gar_RotYXZsuperpack(&rotation, 0);
+        phd_RotX(bike->FrontRot);
+        phd_PutPolygons(*meshpp++, clip);
+        phd_PopMatrix();
+        phd_PopMatrix();
+    }
+
+    phd_PopMatrix();
+}
+
 void QuadbikeExplode(ITEM_INFO *v)
 {
     sint32 lp;
