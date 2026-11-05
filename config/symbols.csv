@@ -906,7 +906,7 @@ address,size,name,symbol
 0x00460da0,619,RaptorEmitterControl,_RaptorEmitterControl
 0x00461010,37,InitialiseRaptorEmitter,_InitialiseRaptorEmitter
 0x00461040,1758,RaptorControl,_RaptorControl
-0x00461740,501,MouseControl,_MouseControl
+0x00461740,524,MouseControl,_MouseControl
 0x00461950,258,InitialiseStartInfo,_InitialiseStartInfo
 0x00461a60,240,ModifyStartInfo,_ModifyStartInfo
 0x00461b50,634,CreateStartInfo,_CreateStartInfo
@@ -1843,6 +1843,7 @@ address,size,name,symbol
 0x004c51b4,4,cine_delay,_cine_delay
 0x004c51f8,2,cdtrack,_cdtrack
 0x004c5200,4,flipeffect,_flipeffect
+0x004c5258,16,croc_bite,_croc_bite
 0x004c52b0,,lara_meshes,_lara_meshes
 0x004c52d0,,lara_last_points,_lara_last_points
 0x004c52e0,,lara_line_counts,_lara_line_counts
@@ -1926,9 +1927,11 @@ address,size,name,symbol
 0x004c75f0,416,lara_collision_routines,_lara_collision_routines
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
+0x004c7908,24,PickUpBounds,_PickUpBounds
 0x004c79a0,24,Switch2Bounds,_Switch2Bounds
 0x004c79b8,12,Switch2Position,_Switch2Position
 0x004c7a98,4,tunes,_tunes
+0x004c7ab8,16,mouse_bite,_mouse_bite
 0x004c7be0,16,shiva_left,_shiva_left
 0x004c7bf0,16,shiva_right,_shiva_right
 0x004c7c78,110,T_textSpacing,_T_textSpacing
@@ -2116,6 +2119,7 @@ address,size,name,symbol
 0x006266c8,4,health_bar_timer,_health_bar_timer
 0x00626794,4,slots_used,_slots_used
 0x00626798,4,nonlot_slots_used,_nonlot_slots_used
+0x006267b0,12,DetonatorPosition,_DetonatorPosition
 0x006267bc,1,dont_exit_quad,_dont_exit_quad
 0x006267c8,1,HandbrakeStarting,_HandbrakeStarting
 0x006267d0,4,number_cameras,_number_cameras
