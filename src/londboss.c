@@ -128,6 +128,61 @@ typedef struct {
     EXPLOSION_VERTS verts[16];
 } EXPLOSION_RING;
 
+int abs(int x);
+#pragma intrinsic(abs)
+extern sint32 wibble;
+void TriggerPlasmaBallFlame_londboss(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv);
+int ItemNearLara(PHD_3DPOS *pos, sint32 radius);
+void KillEffect(sint16 fx_num);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+
+void ControlLondBossPlasmaBall(sint16 fx_number)
+{
+    FX_INFO *fx;
+    FLOOR_INFO *floor;
+    sint32 speed;
+    sint32 rnd, r, g, b, old_y;
+    uint8 radtab[2] = {13, 7};
+    sint16 room_number;
+
+    fx = &effects[fx_number];
+    old_y = fx->pos.y_pos;
+    fx->fallspeed++;
+    if (fx->speed > 8)
+        fx->speed -= 2;
+    if (fx->pos.x_rot > -0x3c00)
+        fx->pos.x_rot -= 0x100;
+    speed = (fx->speed * phd_cos(fx->pos.x_rot)) >> W2V_SHIFT;
+    fx->pos.z_pos += (speed * phd_cos(fx->pos.y_rot)) >> W2V_SHIFT;
+    fx->pos.x_pos += (speed * phd_sin(fx->pos.y_rot)) >> W2V_SHIFT;
+    fx->pos.y_pos += -((fx->speed * phd_sin(fx->pos.x_rot)) >> W2V_SHIFT) + fx->fallspeed;
+    if (!(wibble & 15))
+        TriggerPlasmaBallFlame_londboss(fx_number, 0, 0, abs(old_y - fx->pos.y_pos) << 3, 0);
+    room_number = fx->room_number;
+    floor = GetFloor(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, &room_number);
+    if (fx->pos.y_pos >= GetHeight(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos) || fx->pos.y_pos < GetCeiling(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos)) {
+        KillEffect(fx_number);
+        return;
+    }
+    if (room[room_number].flags & UNDERWATER) {
+        KillEffect(fx_number);
+        return;
+    }
+    if (!fx->flag2 && ItemNearLara(&fx->pos, 200)) {
+        lara_item->hit_points -= 25;
+        lara_item->hit_status = 1;
+        KillEffect(fx_number);
+        return;
+    }
+    if (room_number != fx->room_number)
+        EffectNewRoom(fx_number, lara_item->room_number);
+    rnd = GetRandomControl();
+    g = 31 - ((rnd >> 4) & 3);
+    b = 24 - ((rnd >> 6) & 3);
+    r = rnd & 7;
+    TriggerDynamic(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, radtab[fx->flag1], r, g, b);
+}
+
 void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
 void TriggerPlasmaBall_londboss(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos, sint16 room_number, sint16 angle);
 
