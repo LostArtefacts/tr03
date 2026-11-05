@@ -228,6 +228,49 @@ void InitialiseShiva(sint16 item_number)
     item->mesh_bits = 0;
 }
 
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+#define SHIVA_WAIT 0
+#define SHIVA_WALK 1
+#define SHIVA_WAIT_DEF 2
+#define SHIVA_WALK_DEF 3
+#define SHIVA_PINCER 5
+#define SHIVA_KILL 6
+#define SHIVA_CHOPPER 7
+#define SHIVA_WALKBACK 8
+#define SHIVA_DEATH 9
+
+#define SHIVA_WALK_TURN (ONE_DEGREE * 4)
+#define SHIVA_WALK_CHANCE 0x400
+#define SHIVA_PINCER_RANGE SQUARE(WALL_L * 5 / 4)
+#define SHIVA_CHOPPER_RANGE SQUARE(WALL_L * 4 / 3)
+#define SHIVA_DIE_ANIM 22
+#define SHIVA_KILL_ANIM 18
+#define SHIVA_HURT_FLAG 4
+#define SHIVA_PINCER_DAMAGE 150
+#define SHIVA_CHOPPER_DAMAGE 180
+#define SQUARE(x) ((x) * (x))
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);
+void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_state);
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+void ShivaDamage(ITEM_INFO *item, CREATURE_INFO *shiva, int damage);
+
 #define SHIVA_TOUCHL 0x2400
 #define SHIVA_TOUCHR 0x2400000
 
@@ -236,6 +279,198 @@ extern BITE_INFO shiva_right;
 
 sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number));
 sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+
+void ShivaControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *shiva;
+    sint16 angle, head_x, head_y, torso_x, torso_y, tilt, room_number;
+    sint32 x, z;
+    int random, lara_alive;
+    AI_INFO info;
+    PHD_VECTOR pos;
+    FLOOR_INFO *floor;
+
+    if (!CreatureActive(item_number))
+        return;
+    item = &items[item_number];
+    shiva = (CREATURE_INFO *)item->data;
+    head_x = head_y = torso_x = torso_y = angle = tilt = 0;
+    lara_alive = (lara_item->hit_points > 0);
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != SHIVA_DEATH) {
+            item->anim_number = objects[item->object_number].anim_index + SHIVA_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = SHIVA_DEATH;
+        }
+    } else {
+        CreatureAIInfo(item, &info);
+        GetCreatureMood(item, &info, 1);
+        CreatureMood(item, &info, 1);
+        if (shiva->mood == ESCAPE_MOOD) {
+            shiva->target.x = lara_item->pos.x_pos;
+            shiva->target.z = lara_item->pos.z_pos;
+        }
+        angle = CreatureTurn(item, shiva->maximum_turn);
+        if (item->current_anim_state != SHIVA_START)
+            item->mesh_bits = 0xffffffff;
+        switch (item->current_anim_state) {
+        case SHIVA_START:
+            shiva->maximum_turn = 0;
+            if (!shiva->flags) {
+                if (item->mesh_bits == 0)
+                    effect_mesh = 0;
+                item->mesh_bits = (item->mesh_bits << 1) + 1;
+                shiva->flags = 1;
+                pos.x = 0;
+                pos.y = 0;
+                pos.z = 256;
+                GetJointAbsPosition(item, &pos, effect_mesh++);
+                TriggerExplosionSparks(pos.x, pos.y, pos.z, 2, 0, 0, item->room_number);
+                TriggerShivaSmoke(pos.x, pos.y, pos.z, 1);
+            } else
+                shiva->flags--;
+            if (item->mesh_bits == 0x7fffffff) {
+                item->goal_anim_state = SHIVA_WAIT;
+                effect_mesh = 0;
+                shiva->flags = -45;
+            }
+            break;
+        case SHIVA_WAIT:
+            if (info.ahead)
+                head_y = info.angle;
+            if (shiva->flags < 0) {
+                shiva->flags++;
+                TriggerShivaSmoke(item->pos.x_pos + (GetRandomControl() & 0x5ff) - 0x300,
+                                  pos.y - (GetRandomControl() & 0x5ff),
+                                  item->pos.z_pos + (GetRandomControl() & 0x5ff) - 0x300, 1);
+                break;
+            }
+            if (shiva->flags == 1)
+                shiva->flags = 0;
+            shiva->maximum_turn = 0;
+            if (shiva->mood == ESCAPE_MOOD) {
+                room_number = item->room_number;
+                x = item->pos.x_pos + (WALL_L * phd_sin(item->pos.y_rot + 0x8000) >> W2V_SHIFT);
+                z = item->pos.z_pos + (WALL_L * phd_cos(item->pos.y_rot + 0x8000) >> W2V_SHIFT);
+                floor = GetFloor(x, item->pos.y_pos, z, &room_number);
+                if (!shiva->flags && floor->box != NO_BOX && !(boxes[floor->box].overlap_index & 0x8000))
+                    item->goal_anim_state = SHIVA_WALKBACK;
+                else
+                    item->goal_anim_state = SHIVA_WAIT_DEF;
+            } else if (shiva->mood == BORED_MOOD) {
+                random = GetRandomControl();
+                if (random < SHIVA_WALK_CHANCE)
+                    item->goal_anim_state = SHIVA_WALK;
+            } else if (info.bite && info.distance < SHIVA_PINCER_RANGE) {
+                item->goal_anim_state = SHIVA_PINCER;
+                shiva->flags = 0;
+            } else if (info.bite && info.distance < SHIVA_CHOPPER_RANGE) {
+                item->goal_anim_state = SHIVA_CHOPPER;
+                shiva->flags = 0;
+            } else if (item->hit_status && info.ahead) {
+                shiva->flags = SHIVA_HURT_FLAG;
+                item->goal_anim_state = SHIVA_WAIT_DEF;
+            } else
+                item->goal_anim_state = SHIVA_WALK;
+            break;
+        case SHIVA_WAIT_DEF:
+            if (info.ahead)
+                head_y = info.angle;
+            shiva->maximum_turn = 0;
+            if (item->hit_status || shiva->mood == ESCAPE_MOOD)
+                shiva->flags = SHIVA_HURT_FLAG;
+            if ((info.bite && info.distance < SHIVA_CHOPPER_RANGE)
+                || (item->frame_number == anims[item->anim_number].frame_base && !shiva->flags) || !info.ahead) {
+                item->goal_anim_state = SHIVA_WAIT;
+                shiva->flags = 0;
+            } else if (shiva->flags)
+                item->goal_anim_state = SHIVA_WAIT_DEF;
+            if (item->frame_number == anims[item->anim_number].frame_base && shiva->flags > 1)
+                shiva->flags -= 2;
+            break;
+        case SHIVA_WALK:
+            if (info.ahead)
+                head_y = info.angle;
+            shiva->maximum_turn = SHIVA_WALK_TURN;
+            if (shiva->mood == ESCAPE_MOOD)
+                item->goal_anim_state = SHIVA_WAIT;
+            else if (shiva->mood == BORED_MOOD)
+                item->goal_anim_state = SHIVA_WAIT;
+            else if (info.bite && info.distance < SHIVA_CHOPPER_RANGE) {
+                item->goal_anim_state = SHIVA_WAIT;
+                shiva->flags = 0;
+            } else if (item->hit_status) {
+                shiva->flags = SHIVA_HURT_FLAG;
+                item->goal_anim_state = SHIVA_WALK_DEF;
+            }
+            break;
+        case SHIVA_WALK_DEF:
+            if (info.ahead)
+                head_y = info.angle;
+            shiva->maximum_turn = SHIVA_WALK_TURN;
+            if (item->hit_status)
+                shiva->flags = SHIVA_HURT_FLAG;
+            if ((info.bite && info.distance < SHIVA_PINCER_RANGE)
+                || (item->frame_number == anims[item->anim_number].frame_base && !shiva->flags)) {
+                item->goal_anim_state = SHIVA_WALK;
+                shiva->flags = 0;
+            } else if (shiva->flags)
+                item->goal_anim_state = SHIVA_WALK_DEF;
+            if (item->frame_number == anims[item->anim_number].frame_base)
+                shiva->flags = 0;
+            break;
+        case SHIVA_WALKBACK:
+            if (info.ahead)
+                head_y = info.angle;
+            shiva->maximum_turn = SHIVA_WALK_TURN;
+            if ((info.ahead && info.distance < SHIVA_CHOPPER_RANGE)
+                || (item->frame_number == anims[item->anim_number].frame_base && !shiva->flags))
+                item->goal_anim_state = SHIVA_WAIT;
+            else if (item->hit_status) {
+                shiva->flags = SHIVA_HURT_FLAG;
+                item->goal_anim_state = SHIVA_WAIT;
+            }
+            break;
+        case SHIVA_PINCER:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+                head_y = info.angle;
+            }
+            shiva->maximum_turn = SHIVA_WALK_TURN;
+            ShivaDamage(item, shiva, SHIVA_PINCER_DAMAGE);
+            break;
+        case SHIVA_CHOPPER:
+            torso_y = info.angle;
+            head_y = info.angle;
+            if (info.x_angle > 0)
+                torso_x = info.x_angle;
+            shiva->maximum_turn = SHIVA_WALK_TURN;
+            ShivaDamage(item, shiva, SHIVA_CHOPPER_DAMAGE);
+            break;
+        case SHIVA_KILL:
+            torso_y = torso_x = head_x = head_y = shiva->maximum_turn = 0;
+            if (item->frame_number == anims[item->anim_number].frame_base + 10
+                || item->frame_number == anims[item->anim_number].frame_base + 21
+                || item->frame_number == anims[item->anim_number].frame_base + 33) {
+                CreatureEffect(item, &shiva_right, DoBloodSplat);
+                CreatureEffect(item, &shiva_left, DoBloodSplat);
+            }
+        }
+    }
+    if (lara_alive && lara_item->hit_points <= 0) {
+        CreatureKill(item, SHIVA_KILL_ANIM, SHIVA_KILL, 2);
+        return;
+    }
+    CreatureTilt(item, tilt);
+    head_y -= torso_y;
+    CreatureJoint(item, 0, torso_y);
+    CreatureJoint(item, 1, torso_x);
+    CreatureJoint(item, 2, head_y);
+    CreatureJoint(item, 3, head_x);
+    CreatureAnimation(item_number, angle, 0);
+}
 
 void ShivaDamage(ITEM_INFO *item, CREATURE_INFO *shiva, int damage)
 {

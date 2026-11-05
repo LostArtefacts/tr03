@@ -931,7 +931,7 @@ address,size,name,symbol
 0x00466990,1128,DrawShiva,_DrawShiva
 0x00466e00,515,TriggerShivaSmoke,_TriggerShivaSmoke
 0x00467010,95,InitialiseShiva,_InitialiseShiva
-0x00467070,1758,ShivaControl,_ShivaControl
+0x00467070,1796,ShivaControl,_ShivaControl
 0x00467780,180,ShivaDamage,_ShivaDamage
 0x00467840,1200,SoundEffect,_SoundEffect
 0x00467d00,94,StopSoundEffect,_StopSoundEffect
