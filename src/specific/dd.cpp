@@ -46,4 +46,16 @@ HRESULT DD_EnsureSurfaceAvailable(LPDIRECTDRAWSURFACE3 lpSurface, LPDIRECTDRAWSU
     return hr;
 }
 
+bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, DWORD dwColour)
+{
+    DDBLTFX bltfx;
+
+    memset(&bltfx, 0, sizeof(bltfx));
+    bltfx.dwSize = sizeof(bltfx);
+    bltfx.dwFillColor = dwColour;
+    if (DX_TRY(lpSurface->Blt(lpRect, 0, 0, DDBLT_WAIT | DDBLT_COLORFILL, &bltfx)))
+        return false;
+    return true;
+}
+
 }
