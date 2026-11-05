@@ -24,4 +24,9 @@ void HWR_ResetColorKey(void)
     HWR_EnableColorAddition(false);
 }
 
+void HWR_EndScene(void)
+{
+    EndScene();
+}
+
 }
