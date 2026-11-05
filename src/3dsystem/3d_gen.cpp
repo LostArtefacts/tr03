@@ -130,4 +130,21 @@ void phd_SortPolyList(int number, sint32 buffer[][3])
     }
 }
 
+void AlterFOV(PHD_ANGLE fov)
+{
+    float fAspect;
+    float fDesiredAspect;
+
+    fov /= 2;
+    phd_persp = ((phd_winwidth / 2) * phd_cos(fov)) / phd_sin(fov);
+    phd_oopersp = sint32(one) / phd_persp;
+    f_persp = float(phd_persp);
+    f_oneopersp = one / f_persp;
+    f_perspoznear = f_persp / f_znear;
+    fAspect = float(phd_winwidth) / float(phd_winheight);
+    fDesiredAspect = 4.0f / 3.0f;
+    LfAspectCorrection = fDesiredAspect / fAspect;
+    InitZTable();
+}
+
 }
