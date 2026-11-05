@@ -17,4 +17,11 @@ void HWR_ResetCurrentTexture(void)
     HWR_SetCurrentTexture(0);
 }
 
+void HWR_ResetColorKey(void)
+{
+    HWR_EnableAlphaBlend(false);
+    HWR_EnableColorKey(false);
+    HWR_EnableColorAddition(false);
+}
+
 }
