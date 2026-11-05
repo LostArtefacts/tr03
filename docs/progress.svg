@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="200.44" height="12" x="0" y="0" class="named"><title>633 · 42.83%</title></rect>
-<rect width="267.56" height="12" x="200.44" y="0" class="todo"><title>845 · 57.17%</title></rect>
+<rect width="200.75" height="12" x="0" y="0" class="named"><title>634 · 42.90%</title></rect>
+<rect width="267.25" height="12" x="200.75" y="0" class="todo"><title>844 · 57.10%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">42.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">633</tspan> · <tspan class="todo">845</tspan></text>
+<text text-anchor="end" x="648" y="7.50">42.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">634</tspan> · <tspan class="todo">844</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="65.51" height="12" x="0" y="0" class="named"><title>93 KB · 14%</title></rect>
-<rect width="402.49" height="12" x="65.51" y="0" class="todo"><title>572 KB · 86%</title></rect>
+<rect width="65.69" height="12" x="0" y="0" class="named"><title>93 KB · 14.04%</title></rect>
+<rect width="402.31" height="12" x="65.69" y="0" class="todo"><title>572 KB · 85.96%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">93 KB</tspan> · <tspan class="todo">572 KB</tspan></text>
@@ -155,7 +155,7 @@
 <rect width="12" height="12" x="600" y="15" class="todo"><title>0x004107a0 AutogunControl (837 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="15" class="todo"><title>0x00410af0 FireBigGun (522 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="15" class="named"><title>0x00410d00 BigGunInitialise (66 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="15" class="todo"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="15" class="named"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="15" class="named"><title>0x00410e60 CanUseGun (82 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="15" class="todo"><title>0x00410ec0 BigGunDraw (570 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="15" class="todo"><title>0x00411100 BigGunControl (845 bytes)</title></rect>
@@ -2138,7 +2138,7 @@
 <rect width="9.57" height="9.62" x="486.37" y="276.12" class="named"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
 <rect width="9.57" height="9.62" x="486.37" y="288.75" class="todo"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="9.57" height="9.59" x="486.37" y="301.37" class="named"><title>0x0043f870 TestWall (260 bytes)</title></rect>
-<rect width="9.57" height="9.55" x="486.37" y="313.95" class="todo"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
+<rect width="9.57" height="9.55" x="486.37" y="313.95" class="named"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
 <rect width="9.57" height="9.51" x="486.37" y="326.50" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
 <rect width="9.57" height="9.48" x="486.37" y="339.02" class="named"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="9.57" height="9.44" x="486.37" y="351.49" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
