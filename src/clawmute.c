@@ -54,3 +54,45 @@ void TriggerPlasma_clawmute(sint16 item_number)
     sptr->dWidth = size >> 2;
     sptr->dHeight = size >> 2;
 }
+
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+sint16 CreateEffect(sint16 room_num);
+
+void TriggerPlasmaBall_clawmute(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos1, sint16 room_number, sint16 angle)
+{
+    FX_INFO *fx;
+    PHD_VECTOR pos;
+    sint16 fx_number;
+    PHD_ANGLE angles[2];
+    sint32 speed;
+
+    if (type == 0) {
+        pos.x = -32;
+        pos.y = -16;
+        pos.z = -192;
+        GetJointAbsPosition(item, &pos, 13);
+        speed = (GetRandomControl() & 7) + 8;
+        phd_GetVectorAngles(lara_item->pos.x_pos - pos.x, lara_item->pos.y_pos - pos.y - 256, lara_item->pos.z_pos - pos.z, angles);
+        angles[0] = item->pos.y_rot;
+    } else {
+        pos.x = pos1->x;
+        pos.y = pos1->y;
+        pos.z = pos1->z;
+        speed = (GetRandomControl() & 15) + 16;
+        angles[0] = GetRandomControl() << 1;
+        angles[1] = 0x2000;
+    }
+    fx_number = CreateEffect(room_number);
+    if (fx_number != NO_ITEM) {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = pos.x;
+        fx->pos.y_pos = pos.y;
+        fx->pos.z_pos = pos.z;
+        fx->pos.y_rot = angles[0];
+        fx->pos.x_rot = angles[1];
+        fx->object_number = 368;
+        fx->speed = speed;
+        fx->fallspeed = 0;
+        fx->flag1 = type;
+    }
+}

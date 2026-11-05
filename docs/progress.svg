@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="240.85" height="12" x="0" y="0" class="named"><title>770 · 52.13%</title></rect>
-<rect width="221.15" height="12" x="240.85" y="0" class="todo"><title>707 · 47.87%</title></rect>
+<rect width="241.17" height="12" x="0" y="0" class="named"><title>771 · 52.20%</title></rect>
+<rect width="220.83" height="12" x="241.17" y="0" class="todo"><title>706 · 47.80%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">52.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">770</tspan> · <tspan class="todo">707</tspan></text>
+<text text-anchor="end" x="642" y="7.50">52.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">771</tspan> · <tspan class="todo">706</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="110.89" height="12" x="0" y="0" class="named"><title>160 KB · 24%</title></rect>
-<rect width="351.11" height="12" x="110.89" y="0" class="todo"><title>506 KB · 76%</title></rect>
+<rect width="111.09" height="12" x="0" y="0" class="named"><title>160 KB · 24.05%</title></rect>
+<rect width="350.91" height="12" x="111.09" y="0" class="todo"><title>505 KB · 75.95%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">24.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">160 KB</tspan> · <tspan class="todo">506 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">160 KB</tspan> · <tspan class="todo">505 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -234,7 +234,7 @@
 <rect width="12" height="12" x="285" y="45" class="todo"><title>0x0041b2a0 InGameCinematicCamera (582 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="45" class="todo"><title>0x0041b4f0 ClawmuteControl (1727 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="45" class="named"><title>0x0041bbe0 TriggerPlasma_clawmute (447 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="45" class="todo"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="45" class="named"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="45" class="todo"><title>0x0041bed0 ControlClawmutePlasmaBall (785 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="45" class="todo"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="45" class="named"><title>0x0041c3e0 InitialiseCleaner (81 bytes)</title></rect>
@@ -2096,7 +2096,7 @@
 <rect width="10.30" height="10.13" x="581.53" y="173.53" class="named"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="10.12" height="10.13" x="594.83" y="173.53" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="10.12" height="10.13" x="607.95" y="173.53" class="named"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
-<rect width="10.09" height="10.13" x="621.07" y="173.53" class="todo"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
+<rect width="10.09" height="10.13" x="621.07" y="173.53" class="named"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="10.05" height="10.13" x="634.16" y="173.53" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
 <rect width="10.02" height="10.13" x="647.21" y="173.53" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>
 <rect width="9.91" height="10.13" x="660.23" y="173.53" class="named"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
