@@ -25,4 +25,9 @@ void DrawDummyItem(struct item_info *item)
 {
 }
 
+int S_PlayFMV(char *fname, int sequence)
+{
+    return FMV_Play(fname);
+}
+
 }
