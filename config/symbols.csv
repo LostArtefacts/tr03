@@ -899,7 +899,7 @@ address,size,name,symbol
 0x0045f780,2094,SkidooDynamics,_SkidooDynamics
 0x0045ffb0,489,SkidooBaddieCollision,_SkidooBaddieCollision
 0x004601a0,144,GetCollisionAnim_quadbike,_GetCollisionAnim_quadbike
-0x00460230,1072,AnimateQuadBike,_AnimateQuadBike
+0x00460230,1130,AnimateQuadBike,_AnimateQuadBike
 0x004606a0,256,CanGetOff_quadbike,_CanGetOff_quadbike
 0x004607a0,1065,UserControl,_UserControl
 0x00460bd0,455,TriggerExhaustSmoke,_TriggerExhaustSmoke
@@ -2174,6 +2174,7 @@ address,size,name,symbol
 0x006267a8,4,pup_z,_pup_z
 0x006267b0,12,DetonatorPosition,_DetonatorPosition
 0x006267bc,1,dont_exit_quad,_dont_exit_quad
+0x006267c0,1,quad_slowdamp,_quad_slowdamp
 0x006267c8,1,HandbrakeStarting,_HandbrakeStarting
 0x006267cc,1,CanHandbrakeStart,_CanHandbrakeStart
 0x006267d0,4,number_cameras,_number_cameras

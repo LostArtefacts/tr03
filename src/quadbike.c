@@ -426,7 +426,136 @@ int SkidooCheckGetOff(void)
     return 1;
 }
 
+extern char quad_slowdamp;
+extern char dont_exit_quad;
 extern char HandbrakeStarting;
+
+int CanGetOff_quadbike(int direction);
+
+void AnimateQuadBike(ITEM_INFO *v, int collide, int dead)
+{
+    ITEM_INFO *l;
+    QUADINFO *bike;
+
+    l = lara_item;
+    bike = (QUADINFO *)v->data;
+    if (v->pos.y_pos != v->floor && l->current_anim_state != 8 && l->current_anim_state != 17
+        && l->current_anim_state != 20 && !dead) {
+        if (bike->Velocity < 0)
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 6;
+        else
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 25;
+        l->frame_number = anims[l->anim_number].frame_base;
+        l->current_anim_state = l->goal_anim_state = 8;
+    } else if (collide && l->current_anim_state != 12 && l->current_anim_state != 11 && l->current_anim_state != 13
+               && l->current_anim_state != 14 && l->current_anim_state != 20 && bike->Velocity > 0xa000 / 3 && !dead) {
+        if (collide == 13) {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 12;
+            l->current_anim_state = l->goal_anim_state = 12;
+        } else if (collide == 14) {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 11;
+            l->current_anim_state = l->goal_anim_state = 11;
+        } else if (collide == 11) {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 14;
+            l->current_anim_state = l->goal_anim_state = 13;
+        } else {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 13;
+            l->current_anim_state = l->goal_anim_state = 14;
+        }
+        l->frame_number = anims[l->anim_number].frame_base;
+        SoundEffect(202, &v->pos, 0);
+    } else
+        switch (l->current_anim_state) {
+        case 15:
+            if (dead)
+                l->goal_anim_state = 7;
+            else if ((input & 0x1000) && bike->Velocity == 0 && !dont_exit_quad) {
+                if ((input & IN_RIGHT) && CanGetOff_quadbike(1))
+                    l->goal_anim_state = 10;
+                else if ((input & IN_LEFT) && CanGetOff_quadbike(-1))
+                    l->goal_anim_state = 24;
+            } else if (input & (IN_ACTION | IN_JUMP)) {
+                l->goal_anim_state = 1;
+                quad_slowdamp = 0;
+            }
+            break;
+        case 1:
+            if (dead) {
+                if (bike->Velocity > 0xa000 / 2)
+                    l->goal_anim_state = 19;
+                else
+                    l->goal_anim_state = 7;
+            } else if ((bike->Velocity >> 8) == 0 && !(input & (IN_ACTION | IN_JUMP)))
+                l->goal_anim_state = 15;
+            else if ((input & IN_LEFT) && !HandbrakeStarting)
+                l->goal_anim_state = 2;
+            else if ((input & IN_RIGHT) && !HandbrakeStarting)
+                l->goal_anim_state = 22;
+            else if (input & IN_JUMP) {
+                if (bike->Velocity > (0xa000 / 3) * 2)
+                    l->goal_anim_state = 6;
+                else
+                    l->goal_anim_state = 5;
+            }
+            break;
+        case 6:
+        case 5:
+        case 18:
+            if ((bike->Velocity >> 8) == 0)
+                l->goal_anim_state = 15;
+            else if (input & IN_LEFT)
+                l->goal_anim_state = 2;
+            else if (input & IN_RIGHT)
+                l->goal_anim_state = 22;
+            break;
+        case 2:
+            if ((bike->Velocity >> 8) == 0)
+                l->goal_anim_state = 15;
+            else if (input & IN_RIGHT) {
+                l->anim_number = objects[VEHICLE_ANIM].anim_index + 20;
+                l->frame_number = anims[l->anim_number].frame_base;
+                l->current_anim_state = l->goal_anim_state = 22;
+            } else if (!(input & IN_LEFT)) {
+                l->goal_anim_state = 1;
+                quad_slowdamp = 0;
+            }
+            break;
+        case 22:
+            if ((bike->Velocity >> 8) == 0)
+                l->goal_anim_state = 15;
+            else if (input & IN_LEFT) {
+                l->anim_number = objects[VEHICLE_ANIM].anim_index + 3;
+                l->frame_number = anims[l->anim_number].frame_base;
+                l->current_anim_state = l->goal_anim_state = 2;
+            } else if (!(input & IN_RIGHT)) {
+                l->goal_anim_state = 1;
+                quad_slowdamp = 0;
+            }
+            break;
+        case 8:
+            if (v->pos.y_pos == v->floor)
+                l->goal_anim_state = 17;
+            else if (v->fallspeed > 240 && CurrentLevel != 0)
+                bike->Flags |= 0x40;
+            break;
+        case 20:
+            break;
+        case 12:
+        case 11:
+        case 13:
+        case 14:
+            if (input & (IN_ACTION | IN_JUMP))
+                l->goal_anim_state = 1;
+            break;
+        }
+
+    if (room[v->room_number].flags & (UNDERWATER | 128)) {
+        l->goal_anim_state = 20;
+        l->hit_points = 0;
+        QuadbikeExplode(v);
+    }
+}
+
 extern char CanHandbrakeStart;
 
 int abs(int x);
