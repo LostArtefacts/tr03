@@ -46,16 +46,16 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="276.50" height="12" x="0" y="0" class="named"><title>973 · 65.83%</title></rect>
-<rect width="1.42" height="12" x="276.50" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="142.08" height="12" x="277.92" y="0" class="todo"><title>500 · 33.83%</title></rect>
+<rect width="276.78" height="12" x="0" y="0" class="named"><title>974 · 65.90%</title></rect>
+<rect width="1.42" height="12" x="276.78" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="141.80" height="12" x="278.20" y="0" class="todo"><title>499 · 33.76%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">65.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">973</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">500</tspan></text>
+<text text-anchor="end" x="600" y="7.50">65.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">974</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">499</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.32" height="12" x="0" y="0" class="named"><title>298 KB · 44.60%</title></rect>
-<rect width="3.69" height="12" x="187.32" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="187.33" height="12" x="0" y="0" class="named"><title>298 KB · 44.60%</title></rect>
+<rect width="3.69" height="12" x="187.33" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
 <rect width="228.99" height="12" x="191.01" y="0" class="todo"><title>364 KB · 54.52%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.6%</text>
@@ -1491,7 +1491,7 @@
 <rect width="12" height="12" x="360" y="420" class="todo"><title>0x004a98e0 Func4a98e0 (5693 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="420" class="todo"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="420" class="todo"><title>0x004b0b50 Func4b0b50 (4127 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="420" class="todo"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="420" class="named"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="420" class="todo"><title>0x004b1b80 DXTextureNewPalette (112 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="420" class="todo"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="420" class="todo"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
@@ -3010,7 +3010,7 @@
 <rect width="1.26" height="2.58" x="737.22" y="427.64" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
 <rect width="1.26" height="2.58" x="741.48" y="427.64" class="named"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
 <rect width="1.26" height="2.58" x="745.74" y="427.64" class="named"><title>0x0048d200 S_SoundSetMasterVolume (10 bytes)</title></rect>
-<rect width="2.08" height="1.68" x="732.95" y="433.22" class="todo"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
+<rect width="2.08" height="1.68" x="732.95" y="433.22" class="named"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
 <rect width="2.08" height="1.30" x="732.95" y="437.89" class="named"><title>0x0040fe90 InitialiseArea51Struts (8 bytes)</title></rect>
 <rect width="2.08" height="1" x="732.95" y="442.20" class="named"><title>0x00483b50 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="2.08" height="1" x="732.95" y="446" class="named"><title>0x00484f00 HWR_EndScene (6 bytes)</title></rect>
