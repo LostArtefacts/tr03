@@ -59,4 +59,22 @@ void S_DrawScreenSprite2d(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 
     }
 }
 
+void S_DrawScreenSprite(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags)
+{
+    PHDSPRITESTRUCT *sptr;
+    sint32 x1;
+    sint32 y1;
+    sint32 x2;
+    sint32 y2;
+
+    sptr = &phdspriteinfo[sprnum];
+    x1 = (((sptr->x1 >> 3) * scaleH) >> 16) + sx;
+    x2 = (((sptr->x2 >> 3) * scaleH) >> 16) + sx;
+    y1 = (((sptr->y1 >> 3) * scaleV) >> 16) + sy;
+    y2 = (((sptr->y2 >> 3) * scaleV) >> 16) + sy;
+    if (x2 < 0 || y2 < 0 || x1 >= phd_winwidth || y1 >= phd_winheight)
+        return;
+    InsertSprite(z << 3, x1, y1, x2, y2, sprnum, shade, -1, 10, 0);
+}
+
 }
