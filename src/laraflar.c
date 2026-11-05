@@ -164,3 +164,53 @@ void ready_flare(void)
     lara.left_arm.lock = lara.right_arm.lock = 0;
     lara.target = NULL;
 }
+
+void DoProperDetection(sint16 item_number, sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv);
+
+void FlareControl(sint16 item_number)
+{
+    ITEM_INFO *flare;
+    sint32 x, y, z, flare_age, xv, yv, zv;
+
+    flare = &items[item_number];
+    if (room[flare->room_number].flags & 0x80) {
+        KillItem(item_number);
+        return;
+    }
+    if (flare->fallspeed) {
+        flare->pos.x_rot += 182 * 3;
+        flare->pos.z_rot += 182 * 5;
+    } else {
+        flare->pos.x_rot = 0;
+        flare->pos.z_rot = 0;
+    }
+    x = flare->pos.x_pos;
+    y = flare->pos.y_pos;
+    z = flare->pos.z_pos;
+    flare->pos.x_pos += (xv = flare->speed * phd_sin(flare->pos.y_rot) >> W2V_SHIFT);
+    flare->pos.z_pos += (zv = flare->speed * phd_cos(flare->pos.y_rot) >> W2V_SHIFT);
+    if (room[flare->room_number].flags & UNDERWATER) {
+        flare->fallspeed += (5 - flare->fallspeed) / 2;
+        flare->speed += (5 - flare->speed) / 2;
+    } else
+        flare->fallspeed += 6;
+    flare->pos.y_pos += (yv = flare->fallspeed);
+    DoProperDetection(item_number, x, y, z, xv, yv, zv);
+    flare_age = (sint32)flare->data & 0x7fff;
+    if (flare_age < 900)
+        flare_age++;
+    else if (flare->fallspeed == 0 && flare->speed == 0) {
+        KillItem(item_number);
+        return;
+    }
+    if (DoFlareLight((PHD_VECTOR *)&flare->pos, flare_age)) {
+        flare_age |= 0x8000;
+        if (room[flare->room_number].flags & UNDERWATER) {
+            SoundEffect(12, &flare->pos, 1);
+            if (GetRandomControl() < 0x4000)
+                CreateBubble((PHD_3DPOS *)&flare->pos, flare->room_number, 8, 8);
+        } else
+            SoundEffect(12, &flare->pos, 4 + 0x2000000);
+    }
+    flare->data = (void *)flare_age;
+}
