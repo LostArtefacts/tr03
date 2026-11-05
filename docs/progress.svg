@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="299.23" height="12" x="0" y="0" class="named"><title>1053 · 71.24%</title></rect>
-<rect width="1.99" height="12" x="299.23" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="118.78" height="12" x="301.22" y="0" class="todo"><title>418 · 28.28%</title></rect>
+<rect width="299.51" height="12" x="0" y="0" class="named"><title>1054 · 71.31%</title></rect>
+<rect width="1.99" height="12" x="299.51" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="118.50" height="12" x="301.50" y="0" class="todo"><title>417 · 28.21%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">71.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1053</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">418</tspan></text>
+<text text-anchor="end" x="600" y="7.50">71.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1054</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">417</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.34" height="12" x="0" y="0" class="named"><title>306 KB · 45.80%</title></rect>
-<rect width="3.79" height="12" x="192.34" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.86" height="12" x="196.14" y="0" class="todo"><title>356 KB · 53.30%</title></rect>
+<rect width="192.37" height="12" x="0" y="0" class="named"><title>306 KB · 45.80%</title></rect>
+<rect width="3.79" height="12" x="192.37" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.84" height="12" x="196.16" y="0" class="todo"><title>356 KB · 53.29%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
@@ -1524,7 +1524,7 @@
 <rect width="12" height="12" x="105" y="435" class="named"><title>0x004b3950 DD_CreateSurface (68 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="435" class="named"><title>0x004b39a0 DD_EnsureSurfaceAvailable (70 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="435" class="named"><title>0x004b39f0 DD_ClearSurface (77 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="435" class="todo"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="435" class="named"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="435" class="todo"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="435" class="todo"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="435" class="todo"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
@@ -2833,7 +2833,7 @@
 <rect width="3.94" height="3.65" x="668.15" y="368.12" class="named"><title>0x0043fa40 lara_as_dashdive (41 bytes)</title></rect>
 <rect width="3.94" height="3.65" x="675.09" y="368.12" class="named"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
 <rect width="3.94" height="3.65" x="682.03" y="368.12" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
-<rect width="3.94" height="3.65" x="688.97" y="368.12" class="todo"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
+<rect width="3.94" height="3.65" x="688.97" y="368.12" class="named"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
 <rect width="3.84" height="3.65" x="695.91" y="368.12" class="named"><title>0x0043f1c0 lara_col_all4turnl (40 bytes)</title></rect>
 <rect width="3.75" height="3.65" x="702.76" y="368.12" class="named"><title>0x00406750 GETR (39 bytes)</title></rect>
 <rect width="3.75" height="3.65" x="709.50" y="368.12" class="named"><title>0x00413cf0 DrawBoat (39 bytes)</title></rect>

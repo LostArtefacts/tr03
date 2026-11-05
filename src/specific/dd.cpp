@@ -58,4 +58,10 @@ bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, DWORD dwColo
     return true;
 }
 
+void DXDoFlipWait(void)
+{
+    while (App.lpFrontBuffer->GetFlipStatus(DDGFS_ISFLIPDONE) == DDERR_WASSTILLDRAWING)
+        ;
+}
+
 }
