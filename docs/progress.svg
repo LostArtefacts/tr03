@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="269.11" height="12" x="0" y="0" class="named"><title>947 · 64.07%</title></rect>
-<rect width="1.42" height="12" x="269.11" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="149.47" height="12" x="270.53" y="0" class="todo"><title>526 · 35.59%</title></rect>
+<rect width="269.39" height="12" x="0" y="0" class="named"><title>948 · 64.14%</title></rect>
+<rect width="1.42" height="12" x="269.39" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="149.19" height="12" x="270.81" y="0" class="todo"><title>525 · 35.52%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">64.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">947</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">526</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">948</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">525</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.74" height="12" x="0" y="0" class="named"><title>297 KB · 44.46%</title></rect>
-<rect width="3.69" height="12" x="186.74" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.58" height="12" x="190.42" y="0" class="todo"><title>365 KB · 54.66%</title></rect>
+<rect width="186.75" height="12" x="0" y="0" class="named"><title>297 KB · 44.46%</title></rect>
+<rect width="3.69" height="12" x="186.75" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.56" height="12" x="190.44" y="0" class="todo"><title>365 KB · 54.66%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1415,7 +1415,7 @@
 <rect width="12" height="12" x="720" y="390" class="named"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="390" class="named"><title>0x0048ff10 DXCreateSurface (72 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="405" class="named"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="405" class="todo"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="405" class="named"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="405" class="todo"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="405" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="405" class="todo"><title>0x004900b0 DXGetSurfaceDesc (16 bytes)</title></rect>
@@ -2948,7 +2948,7 @@
 <rect width="2.49" height="2.95" x="717.30" y="400.01" class="named"><title>0x0042fa50 TubeTrain (21 bytes)</title></rect>
 <rect width="2.49" height="2.95" x="722.79" y="400.01" class="named"><title>0x00434d50 InitialisePickUpDisplay (21 bytes)</title></rect>
 <rect width="2.49" height="2.95" x="728.28" y="400.01" class="named"><title>0x00462df0 ResetSG (21 bytes)</title></rect>
-<rect width="2.49" height="2.95" x="733.77" y="400.01" class="todo"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
+<rect width="2.49" height="2.95" x="733.77" y="400.01" class="named"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
 <rect width="2.37" height="2.95" x="739.27" y="400.01" class="named"><title>0x0044edb0 lara_as_dive (20 bytes)</title></rect>
 <rect width="2.37" height="2.95" x="744.63" y="400.01" class="named"><title>0x0048d480 S_CDPlay (20 bytes)</title></rect>
 <rect width="2.49" height="2.68" x="706.07" y="405.96" class="named"><title>0x00439c30 RemoveAllReqItems (19 bytes)</title></rect>

@@ -75,4 +75,14 @@ bool DXGetAttachedSurface(LPDIRECTDRAWSURFACE3 lpPrimary, DDSCAPS *ddscaps, LPDI
     return true;
 }
 
+bool DXAddAttachedSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPDIRECTDRAWSURFACE3 lpAddSurface)
+{
+    int RetVal;
+
+    RetVal = lpSurface->AddAttachedSurface(lpAddSurface);
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 }
