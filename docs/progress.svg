@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="291.84" height="12" x="0" y="0" class="named"><title>1027 · 69.49%</title></rect>
-<rect width="1.42" height="12" x="291.84" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="126.74" height="12" x="293.26" y="0" class="todo"><title>446 · 30.18%</title></rect>
+<rect width="292.12" height="12" x="0" y="0" class="named"><title>1028 · 69.55%</title></rect>
+<rect width="1.42" height="12" x="292.12" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="126.45" height="12" x="293.55" y="0" class="todo"><title>445 · 30.11%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">69.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1027</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">446</tspan></text>
+<text text-anchor="end" x="600" y="7.50">69.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1028</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">445</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.89" height="12" x="0" y="0" class="named"><title>302 KB · 45.21%</title></rect>
-<rect width="3.69" height="12" x="189.89" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="226.42" height="12" x="193.58" y="0" class="todo"><title>360 KB · 53.91%</title></rect>
+<rect width="189.92" height="12" x="0" y="0" class="named"><title>302 KB · 45.22%</title></rect>
+<rect width="3.69" height="12" x="189.92" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="226.39" height="12" x="193.61" y="0" class="todo"><title>360 KB · 53.90%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">360 KB</tspan></text>
@@ -1245,7 +1245,7 @@
 <rect width="12" height="12" x="420" y="345" class="todo"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="345" class="named"><title>0x00483b50 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="345" class="todo"><title>0x00483b60 LevelStats (1077 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="345" class="todo"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="345" class="named"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="345" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="345" class="todo"><title>0x00484010 GameStats (468 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="345" class="named"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
@@ -2755,7 +2755,7 @@
 <rect width="4.40" height="4.07" x="654.50" y="347.10" class="named"><title>0x00441950 lara_as_usekey (51 bytes)</title></rect>
 <rect width="4.40" height="4.07" x="661.90" y="347.10" class="named"><title>0x00442d90 lara_col_hangleft (51 bytes)</title></rect>
 <rect width="4.40" height="4.07" x="669.30" y="347.10" class="named"><title>0x00442dd0 lara_col_hangright (51 bytes)</title></rect>
-<rect width="4.40" height="4.07" x="676.69" y="347.10" class="todo"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
+<rect width="4.40" height="4.07" x="676.69" y="347.10" class="named"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
 <rect width="4.40" height="4.07" x="684.09" y="347.10" class="todo"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="691.49" y="347.10" class="todo"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="698.81" y="347.10" class="named"><title>0x00437870 RingActive (50 bytes)</title></rect>
