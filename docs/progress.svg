@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="280.47" height="12" x="0" y="0" class="named"><title>987 · 66.78%</title></rect>
-<rect width="1.42" height="12" x="280.47" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="138.11" height="12" x="281.89" y="0" class="todo"><title>486 · 32.88%</title></rect>
+<rect width="280.76" height="12" x="0" y="0" class="named"><title>988 · 66.85%</title></rect>
+<rect width="1.42" height="12" x="280.76" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="137.82" height="12" x="282.18" y="0" class="todo"><title>485 · 32.81%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">66.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">987</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">486</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">988</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">485</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.70" height="12" x="0" y="0" class="named"><title>298 KB · 44.69%</title></rect>
-<rect width="3.69" height="12" x="187.70" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.62" height="12" x="191.38" y="0" class="todo"><title>363 KB · 54.43%</title></rect>
+<rect width="187.73" height="12" x="0" y="0" class="named"><title>298 KB · 44.70%</title></rect>
+<rect width="3.69" height="12" x="187.73" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.59" height="12" x="191.41" y="0" class="todo"><title>363 KB · 54.43%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">363 KB</tspan></text>
@@ -1293,7 +1293,7 @@
 <rect width="12" height="12" x="390" y="360" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="360" class="todo"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="360" class="todo"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="360" class="todo"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="360" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="360" class="todo"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="360" class="todo"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="360" class="todo"><title>0x00487750 do_inventory_options (140 bytes)</title></rect>
@@ -2763,7 +2763,7 @@
 <rect width="4.09" height="4.30" x="647.56" y="399.08" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="4.09" height="4.30" x="647.56" y="406.38" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="4.09" height="4.30" x="647.56" y="413.68" class="todo"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
-<rect width="4.09" height="4.30" x="647.56" y="420.98" class="todo"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
+<rect width="4.09" height="4.30" x="647.56" y="420.98" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
 <rect width="4.09" height="4.30" x="647.56" y="428.27" class="todo"><title>0x0048e8f0 Func48e8f0 (50 bytes)</title></rect>
 <rect width="4.09" height="4.21" x="647.56" y="435.57" class="named"><title>0x004293f0 phd_RotY_I (49 bytes)</title></rect>
 <rect width="4.09" height="4.21" x="647.56" y="442.79" class="named"><title>0x00429430 phd_RotX_I (49 bytes)</title></rect>
