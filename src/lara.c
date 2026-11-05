@@ -26,6 +26,7 @@ sint16 TestMonkeyRight(ITEM_INFO *item, COLL_INFO *coll);
 #define MIN_HEAD_TILT (-35 * ONE_DEGREE)
 #define MAX_HEAD_ROTATION (44 * ONE_DEGREE)
 #define HANG_HEIGHT 600
+#define HANG_ANGLE (35 * ONE_DEGREE)
 #define NO_BAD_NEG NO_HEIGHT
 #define LANDFAR_A 24
 #define LANDFAR_F GF(LANDFAR_A, 0)
@@ -2802,4 +2803,62 @@ int LaraDeflectEdge(ITEM_INFO *item, COLL_INFO *coll)
         item->pos.y_rot -= LARA_DEF_ADD_EDGE;
     }
     return 0;
+}
+
+void lara_col_crawl2hang(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->anim_number == 302) {
+        int edge_catch;
+        PHD_ANGLE angle;
+        sint16 *bounds;
+        sint32 edge;
+
+        item->fallspeed = 512;
+        item->pos.y_pos |= STEP_L - 1;
+        coll->bad_pos = NO_BAD_POS;
+        coll->bad_neg = -STEPUP_HEIGHT;
+        coll->bad_ceiling = BAD_JUMP_CEILING;
+        coll->facing = lara.move_angle = item->pos.y_rot;
+        GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, 870);
+        if (!(edge_catch = LaraTestEdgeCatch(item, coll, &edge)))
+            return;
+        if (edge_catch < 0 && !LaraTestHangOnClimbWall(item, coll))
+            return;
+        angle = item->pos.y_rot;
+        if (angle >= -HANG_ANGLE && angle <= HANG_ANGLE)
+            angle = 0;
+        else if (angle >= 16384 - HANG_ANGLE && angle <= 16384 + HANG_ANGLE)
+            angle = 16384;
+        else if (angle >= 32767 - HANG_ANGLE || angle <= -32767 + HANG_ANGLE)
+            angle = -32768;
+        else if (angle >= -16384 - HANG_ANGLE && angle <= -16384 + HANG_ANGLE)
+            angle = -16384;
+        if (angle & 0x3fff)
+            return;
+        if (TestHangSwingIn(item, angle)) {
+            lara.head_x_rot = lara.head_y_rot = 0;
+            lara.torso_x_rot = lara.torso_y_rot = 0;
+            item->anim_number = 150;
+            item->frame_number = GF(150, 0);
+            item->current_anim_state = AS_HANG2;
+            item->goal_anim_state = AS_HANG2;
+        } else {
+            item->anim_number = 96;
+            item->frame_number = GF(96, 0);
+            item->current_anim_state = AS_HANG;
+            item->goal_anim_state = AS_HANG;
+        }
+        bounds = GetBoundsAccurate(item);
+        if (edge_catch > 0) {
+            item->pos.y_pos += coll->front_floor - bounds[2];
+            item->pos.x_pos += coll->shift.x;
+            item->pos.z_pos += coll->shift.z;
+        } else
+            item->pos.y_pos = edge - bounds[2];
+        item->pos.y_rot = angle;
+        item->gravity_status = 1;
+        item->speed = 2;
+        item->fallspeed = 1;
+        lara.gun_status = LG_HANDSBUSY;
+    }
 }
