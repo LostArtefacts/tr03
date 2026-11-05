@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="276.78" height="12" x="0" y="0" class="named"><title>974 · 65.90%</title></rect>
-<rect width="1.42" height="12" x="276.78" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="141.80" height="12" x="278.20" y="0" class="todo"><title>499 · 33.76%</title></rect>
+<rect width="277.06" height="12" x="0" y="0" class="named"><title>975 · 65.97%</title></rect>
+<rect width="1.42" height="12" x="277.06" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="141.52" height="12" x="278.48" y="0" class="todo"><title>498 · 33.69%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">65.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">974</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">499</tspan></text>
+<text text-anchor="end" x="600" y="7.50">66.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">975</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">498</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.33" height="12" x="0" y="0" class="named"><title>298 KB · 44.60%</title></rect>
-<rect width="3.69" height="12" x="187.33" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.99" height="12" x="191.01" y="0" class="todo"><title>364 KB · 54.52%</title></rect>
+<rect width="187.35" height="12" x="0" y="0" class="named"><title>298 KB · 44.61%</title></rect>
+<rect width="3.69" height="12" x="187.35" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.96" height="12" x="191.04" y="0" class="todo"><title>364 KB · 54.52%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
@@ -1497,7 +1497,7 @@
 <rect width="12" height="12" x="450" y="420" class="todo"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="420" class="todo"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="420" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="420" class="todo"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="420" class="named"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="420" class="todo"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="420" class="todo"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="420" class="todo"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
@@ -2852,7 +2852,7 @@
 <rect width="3.78" height="3.43" x="709.51" y="368.76" class="named"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="3.78" height="3.43" x="716.29" y="368.76" class="named"><title>0x0046b090 T_RemovePrint (37 bytes)</title></rect>
 <rect width="3.78" height="3.43" x="723.07" y="368.76" class="named"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
-<rect width="3.78" height="3.43" x="729.85" y="368.76" class="todo"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
+<rect width="3.78" height="3.43" x="729.85" y="368.76" class="named"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
 <rect width="3.68" height="3.43" x="736.64" y="368.76" class="named"><title>0x00423110 TriggerCDTrack (36 bytes)</title></rect>
 <rect width="3.68" height="3.43" x="743.32" y="368.76" class="named"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="3.87" height="3.26" x="675.30" y="375.19" class="named"><title>0x0044d8a0 InitialiseLaraLoad (36 bytes)</title></rect>

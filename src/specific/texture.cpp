@@ -22,4 +22,13 @@ void DXTextureSetGreyScale(bool set)
     bMakeGrey = set;
 }
 
+LPDIRECT3DTEXTURE2 DXTextureGetInterface(LPDIRECTDRAWSURFACE3 lpSurface)
+{
+    LPDIRECT3DTEXTURE2 lpTexture;
+
+    if (DX_TRY(lpSurface->QueryInterface(IID_IDirect3DTexture2, (LPVOID *)&lpTexture)))
+        return 0;
+    return lpTexture;
+}
+
 }
