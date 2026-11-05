@@ -178,7 +178,7 @@ address,size,name,symbol
 0x0041c440,3171,CleanerControl,_CleanerControl
 0x0041d0b0,350,TriggerElectricSparks_cleaner,_TriggerElectricSparks_cleaner
 0x0041d210,113,InitialiseCobra,_InitialiseCobra
-0x0041d290,608,CobraControl,_CobraControl
+0x0041d290,624,CobraControl,_CobraControl
 0x0041d500,3061,GetCollisionInfo,_GetCollisionInfo
 0x0041e140,47,FindGridShift,_FindGridShift
 0x0041e170,987,CollideStaticObjects,_CollideStaticObjects
@@ -980,7 +980,7 @@ address,size,name,symbol
 0x0046b340,934,T_DrawThisText,_T_DrawThisText
 0x0046b6f0,42,GetTextScaleH,_GetTextScaleH
 0x0046b720,42,GetTextScaleV,_GetTextScaleV
-0x0046b750,752,TigerControl,_TigerControl
+0x0046b750,784,TigerControl,_TigerControl
 0x0046ba60,1539,TonyBossControl,_TonyBossControl
 0x0046c080,65,S_DrawTonyBoss,_S_DrawTonyBoss
 0x0046c0d0,66,TonyBossDie,_TonyBossDie
@@ -1841,6 +1841,7 @@ address,size,name,symbol
 0x004c5084,4,one,_one
 0x004c51a0,16,seal_gas_boomute,_seal_gas_boomute
 0x004c51b4,4,cine_delay,_cine_delay
+0x004c51d8,16,cobra_hit,_cobra_hit
 0x004c51f8,2,cdtrack,_cdtrack
 0x004c5200,4,flipeffect,_flipeffect
 0x004c5258,16,croc_bite,_croc_bite
@@ -1936,6 +1937,7 @@ address,size,name,symbol
 0x004c7bf0,16,shiva_right,_shiva_right
 0x004c7c78,110,T_textSpacing,_T_textSpacing
 0x004c7ce8,95,T_remapASCII,_T_remapASCII
+0x004c7d48,16,tiger_bite,_tiger_bite
 0x004c7d58,20,TonyBossRadii,_TonyBossRadii
 0x004c7d70,20,TonyBossHeights,_TonyBossHeights
 0x004c7dd0,16,teeth1a,_teeth1a
@@ -2043,6 +2045,9 @@ address,size,name,symbol
 0x00625f44,4,actual_current_frame,_actual_current_frame
 0x00625f48,4,original_room,_original_room
 0x00625f4c,4,cine_framecount,_cine_framecount
+0x00625f54,4,snake_inner_radius,_snake_inner_radius
+0x00625f58,4,snake_forget_radius,_snake_forget_radius
+0x00625f5c,4,snake_outer_radius,_snake_outer_radius
 0x00625f60,4,noinput_count,_noinput_count
 0x00625f64,4,reset_flag,_reset_flag
 0x00625f68,4,fliptimer,_fliptimer
