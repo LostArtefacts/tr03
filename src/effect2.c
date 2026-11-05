@@ -352,6 +352,102 @@ void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 
     }
 }
 
+void TriggerFlareSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 smoke)
+{
+    SPARKS *sptr;
+    SPARKS *sptr1;
+    sint32 size;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 255;
+    sptr->sG = 255;
+    sptr->sB = 255;
+    sptr->dR = 255;
+    sptr->dG = (GetRandomDraw() & 127) + 64;
+    sptr->dB = 192 - sptr->dG;
+    sptr->ColFadeSpeed = 3;
+    sptr->FadeToBlack = 5;
+    sptr->sLife = sptr->Life = 10;
+    sptr->TransType = 2;
+    sptr->Dynamic = -1;
+    sptr->x = x + (GetRandomDraw() & 7) - 3;
+    sptr->y = y + (GetRandomDraw() & 7) - 3;
+    sptr->z = z + (GetRandomDraw() & 7) - 3;
+    sptr->Xvel = xv + ((GetRandomDraw() & 255) - 128);
+    sptr->Yvel = yv + ((GetRandomDraw() & 255) - 128);
+    sptr->Zvel = zv + ((GetRandomDraw() & 255) - 128);
+    sptr->Friction = 2 | (2 << 4);
+    sptr->Scalar = 1;
+    sptr->Width = sptr->sWidth = (GetRandomDraw() & 3) + 4;
+    sptr->dWidth = (GetRandomDraw() & 1) + 1;
+    sptr->Height = sptr->sHeight = (GetRandomDraw() & 3) + 4;
+    sptr->dHeight = (GetRandomDraw() & 1) + 1;
+    sptr->Gravity = sptr->MaxYvel = 0;
+    sptr->Flags = 2;
+    if (smoke) {
+        sptr1 = &sparks[GetFreeSpark()];
+        sptr1->On = 1;
+        sptr1->sR = sptr->dR >> 1;
+        sptr1->sG = sptr->dG >> 1;
+        sptr1->sB = sptr->dB >> 1;
+        sptr1->dR = 32;
+        sptr1->dG = 32;
+        sptr1->dB = 32;
+        sptr1->ColFadeSpeed = 8 + (GetRandomDraw() & 3);
+        sptr1->FadeToBlack = 4;
+        sptr1->sLife = sptr1->Life = (GetRandomDraw() & 7) + 13;
+        sptr1->TransType = 2;
+        sptr1->extras = 0;
+        sptr1->Dynamic = -1;
+        sptr1->x = x + (xv >> 5);
+        sptr1->y = y + (yv >> 5);
+        sptr1->z = z + (zv >> 5);
+        sptr1->Xvel = xv + ((GetRandomDraw() & 63) - 32);
+        sptr1->Yvel = yv;
+        sptr1->Zvel = zv + ((GetRandomDraw() & 63) - 32);
+        sptr1->Friction = 4;
+        if (GetRandomDraw() & 1) {
+            sptr1->Flags = 2 | 8 | 16 | 512;
+            sptr1->RotAng = GetRandomDraw() & 4095;
+            if (GetRandomDraw() & 1)
+                sptr1->RotAdd = -(GetRandomDraw() & 15) - 16;
+            else
+                sptr1->RotAdd = (GetRandomDraw() & 15) + 16;
+        } else
+            sptr1->Flags = 2 | 8 | 512;
+        sptr1->Def = objects[296].mesh_index;
+        sptr1->Scalar = 2;
+        sptr1->Gravity = -(GetRandomDraw() & 3) - 8;
+        sptr1->MaxYvel = -(GetRandomDraw() & 3) - 4;
+        size = 24 + (GetRandomDraw() & 15);
+        sptr1->Width = sptr1->sWidth = size >> 3;
+        sptr1->dWidth = size;
+        sptr1->Height = sptr1->sHeight = size >> 3;
+        sptr1->dHeight = size;
+    }
+}
+
+typedef struct {
+    uint8 On;
+    uint8 Falloff;
+    uint8 R;
+    uint8 G;
+    uint8 B;
+    uint8 Flags;
+    uint8 Pad[2];
+} SP_DYNAMIC;
+
+extern SP_DYNAMIC spark_dynamics[32];
+
+void TriggerExplosionSmokeEnd(sint32 x, sint32 y, sint32 z, sint32 uw);
+void TriggerExplosionSmoke(sint32 x, sint32 y, sint32 z, sint32 uw);
+
 void TriggerExplosionSmokeEnd(sint32 x, sint32 y, sint32 z, sint32 uw)
 {
     sint32 size;
