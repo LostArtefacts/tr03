@@ -135,6 +135,29 @@ void ConvertSurfaceToTextures(LPDIRECTDRAWSURFACE3 surf)
     ConvertSurfaceToTextures16Bit(surf);
 }
 
+void FadePictureUp(int steps)
+{
+    int i;
+
+    pictureCrossFaded = false;
+    if (nLoadedPictures > 1) {
+        CrossFadePicture();
+        pictureCrossFaded = true;
+    } else {
+        for (i = 0; i < steps; i++) {
+            HWR_BeginScene();
+            TRDrawPicture(255 - i * (256 / steps), CurPicTexIndices, f_znear);
+            HWR_EndScene();
+            DXUpdateFrame(true, 0);
+        }
+    }
+    HWR_BeginScene();
+    TRDrawPicture(0, CurPicTexIndices, f_znear);
+    HWR_EndScene();
+    DXUpdateFrame(true, 0);
+    TIME_Init();
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
