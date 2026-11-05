@@ -143,4 +143,10 @@ void DS_Release(void)
     }
 }
 
+void DS_Finish(void)
+{
+    DS_FreeAllSamples();
+    DS_Release();
+}
+
 }
