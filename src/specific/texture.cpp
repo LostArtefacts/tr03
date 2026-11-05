@@ -204,4 +204,17 @@ void DXClearAllTextures(DXTEXTURE *list)
     }
 }
 
+DXTEXTURE *DXRestoreSurfaceIfLost(int index, DXTEXTURE *list)
+{
+    DXTEXTURE *tex;
+
+    tex = &list[index];
+    if (tex->tex && tex->tex->pSurf && tex->tex->pSurf->IsLost() == DDERR_SURFACELOST) {
+        tex->tex->pSurf->Restore();
+        tex->tex->DXTex = 0;
+        tex->tex = 0;
+    }
+    return &list[index];
+}
+
 }
