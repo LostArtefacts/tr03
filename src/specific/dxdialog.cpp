@@ -57,4 +57,26 @@ void DXInitDialogBox(HWND hwnd)
     DXInitJoystickAdapter(hwnd);
 }
 
+void DXInitDSAdapters(HWND hwnd)
+{
+    HWND list;
+    HWND disable;
+    int i;
+
+    list = GetDlgItem(hwnd, 1010);
+    disable = GetDlgItem(hwnd, 1015);
+    if (!G_DeviceInfo->DSInfo) {
+        EnableWindow(disable, 0);
+        SendMessage(disable, BM_SETCHECK, 1, 0);
+        SendMessage(list, CB_ADDSTRING, 0, (LPARAM)"No Sound Adapter Available");
+        SendMessage(list, CB_SETCURSEL, 0, 0);
+        EnableWindow(list, 0);
+    } else {
+        SendMessage(list, CB_RESETCONTENT, 0, 0);
+        for (i = 0; i < G_DeviceInfo->nDSInfo; i++)
+            SendMessage(list, CB_ADDSTRING, 0, (LPARAM)G_DeviceInfo->DSInfo[i].About);
+        SendMessage(list, CB_SETCURSEL, 0, 0);
+    }
+}
+
 }

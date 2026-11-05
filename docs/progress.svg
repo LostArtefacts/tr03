@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="311.16" height="12" x="0" y="0" class="named"><title>1095 · 74.09%</title></rect>
-<rect width="1.99" height="12" x="311.16" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="106.85" height="12" x="313.15" y="0" class="todo"><title>376 · 25.44%</title></rect>
+<rect width="311.45" height="12" x="0" y="0" class="named"><title>1096 · 74.15%</title></rect>
+<rect width="1.99" height="12" x="311.45" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="106.56" height="12" x="313.44" y="0" class="todo"><title>375 · 25.37%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">74.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1095</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">376</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1096</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">375</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.41" height="12" x="0" y="0" class="named"><title>311 KB · 46.53%</title></rect>
-<rect width="3.79" height="12" x="195.41" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="220.80" height="12" x="199.20" y="0" class="todo"><title>351 KB · 52.57%</title></rect>
+<rect width="195.53" height="12" x="0" y="0" class="named"><title>311 KB · 46.56%</title></rect>
+<rect width="3.79" height="12" x="195.53" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="220.68" height="12" x="199.32" y="0" class="todo"><title>351 KB · 52.54%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">46.5%</text>
+<text text-anchor="end" x="600" y="24.50">46.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1472,7 +1472,7 @@
 <rect width="12" height="12" x="75" y="420" class="todo"><title>0x00496c20 DXSetupDlgProc (1596 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="420" class="todo"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="420" class="named"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="420" class="todo"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="420" class="named"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="420" class="todo"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="420" class="todo"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="420" class="todo"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
@@ -2245,7 +2245,7 @@
 <rect width="8.34" height="8.30" x="625.89" y="211.29" class="named"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
 <rect width="8.34" height="8.30" x="637.23" y="211.29" class="named"><title>0x0048bf40 S_FadeToBlack (197 bytes)</title></rect>
 <rect width="8.34" height="8.30" x="648.57" y="211.29" class="todo"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
-<rect width="8.34" height="8.30" x="659.91" y="211.29" class="todo"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
+<rect width="8.34" height="8.30" x="659.91" y="211.29" class="named"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="8.34" height="8.30" x="671.25" y="211.29" class="todo"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
 <rect width="8.30" height="8.30" x="682.59" y="211.29" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
 <rect width="8.30" height="8.30" x="693.89" y="211.29" class="named"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
