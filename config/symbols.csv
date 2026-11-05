@@ -981,7 +981,7 @@ address,size,name,symbol
 0x0046b6f0,42,GetTextScaleH,_GetTextScaleH
 0x0046b720,42,GetTextScaleV,_GetTextScaleV
 0x0046b750,784,TigerControl,_TigerControl
-0x0046ba60,1539,TonyBossControl,_TonyBossControl
+0x0046ba60,1564,TonyBossControl,_TonyBossControl
 0x0046c080,65,S_DrawTonyBoss,_S_DrawTonyBoss
 0x0046c0d0,66,TonyBossDie,_TonyBossDie
 0x0046c120,157,InitialiseTonyBoss,_InitialiseTonyBoss

@@ -464,3 +464,204 @@ void TriggerFireBallFlame(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, s
         sptr->Scalar = 2;
     }
 }
+
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+#define TONYBOSS_WAIT 0
+#define TONYBOSS_RISE 1
+#define TONYBOSS_FLOAT 2
+#define TONYBOSS_ZAPP 3
+#define TONYBOSS_ROCKZAPP 4
+#define TONYBOSS_BIGBOOM 5
+#define TONYBOSS_DEATH 6
+#define TONYBOSS_TURN (ONE_DEGREE * 2)
+#define TONYBOSS_DIE_ANIM 6
+#define TONYBOSS_HITS 100
+#define SQUARE(x) ((x) * (x))
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);
+void BossDropIcon(sint16 item_number);
+
+void TonyBossControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *tonyboss;
+    AI_INFO info;
+    PHD_VECTOR pos1;
+    sint16 angle, head, torso_x, torso_y, tilt, lp;
+    sint32 rnd;
+
+    if (!CreatureActive(item_number))
+        return;
+    item = &items[item_number];
+    tonyboss = (CREATURE_INFO *)item->data;
+    head = torso_y = torso_x = angle = tilt = 0;
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != TONYBOSS_DEATH) {
+            item->anim_number = objects[item->object_number].anim_index + TONYBOSS_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = TONYBOSS_DEATH;
+        }
+        if (item->frame_number - anims[item->anim_number].frame_base > 110) {
+            item->frame_number = anims[item->anim_number].frame_base + 110;
+            item->mesh_bits = 0;
+            if (bossdata.explode_count == 0) {
+                bossdata.ring_count = 0;
+                for (lp = 0; lp < 6; lp++) {
+                    ExpRings[lp].on = 0;
+                    ExpRings[lp].life = 32;
+                    ExpRings[lp].radius = 512;
+                    ExpRings[lp].speed = 128 + (lp << 5);
+                    ExpRings[lp].xrot = ((GetRandomControl() & 511) - 256) & 4095;
+                    ExpRings[lp].zrot = ((GetRandomControl() & 511) - 256) & 4095;
+                }
+                if (bossdata.dropped_icon == 0) {
+                    BossDropIcon(item_number);
+                    bossdata.dropped_icon = 1;
+                }
+            }
+            if (bossdata.explode_count < 256)
+                bossdata.explode_count++;
+            if (bossdata.explode_count > 128 && bossdata.ring_count == 6 && ExpRings[5].life == 0) {
+                TonyBossDie(item_number);
+                bossdata.dead = 1;
+            } else
+                ExplodeTonyBoss(item);
+            return;
+        }
+    } else {
+        if (item->item_flags[3] != 2)
+            item->hit_points = TONYBOSS_HITS;
+        CreatureAIInfo(item, &info);
+        if (!item->item_flags[3]) {
+            sint32 dx, dz;
+
+            dx = item->pos.x_pos - lara_item->pos.x_pos;
+            dz = item->pos.z_pos - lara_item->pos.z_pos;
+            if (SQUARE(dx) + SQUARE(dz) < SQUARE(5120))
+                item->item_flags[3] = 1;
+            angle = 0;
+        } else {
+            tonyboss->target.x = lara_item->pos.x_pos;
+            tonyboss->target.z = lara_item->pos.z_pos;
+            angle = CreatureTurn(item, tonyboss->maximum_turn);
+        }
+        if (info.ahead)
+            head = info.angle;
+        switch (item->current_anim_state) {
+        case TONYBOSS_WAIT:
+            tonyboss->maximum_turn = 0;
+            if (item->goal_anim_state != TONYBOSS_RISE && item->item_flags[3])
+                item->goal_anim_state = TONYBOSS_RISE;
+            break;
+        case TONYBOSS_RISE:
+            if (item->frame_number - anims[item->anim_number].frame_base > 16)
+                tonyboss->maximum_turn = TONYBOSS_TURN;
+            else
+                tonyboss->maximum_turn = 0;
+            break;
+        case TONYBOSS_FLOAT:
+            torso_y = info.angle;
+            torso_x = info.x_angle;
+            tonyboss->maximum_turn = TONYBOSS_TURN;
+            if (!bossdata.explode_count) {
+                if (item->goal_anim_state != TONYBOSS_BIGBOOM && item->item_flags[3] != 2) {
+                    item->goal_anim_state = TONYBOSS_BIGBOOM;
+                    tonyboss->maximum_turn = 0;
+                }
+                if (item->goal_anim_state != TONYBOSS_ROCKZAPP && item->item_flags[3] == 2) {
+                    if (!(wibble & 255) && item->item_flags[0] == 0) {
+                        item->goal_anim_state = TONYBOSS_ROCKZAPP;
+                        item->item_flags[0] = 1;
+                    }
+                }
+                if (item->goal_anim_state != TONYBOSS_ZAPP && item->goal_anim_state != TONYBOSS_ROCKZAPP
+                    && item->item_flags[3] == 2) {
+                    if (!(wibble & 255) && item->item_flags[0] == 1) {
+                        item->goal_anim_state = TONYBOSS_ZAPP;
+                        item->item_flags[0] = 0;
+                    }
+                }
+            }
+            break;
+        case TONYBOSS_ROCKZAPP:
+            torso_y = info.angle;
+            torso_x = info.x_angle;
+            tonyboss->maximum_turn = 0;
+            if (item->frame_number - anims[item->anim_number].frame_base == 40) {
+                TriggerFireBall(item, 0, NULL, item->room_number, 0, 0);
+                TriggerFireBall(item, 1, NULL, item->room_number, 0, 0);
+            }
+            break;
+        case TONYBOSS_ZAPP:
+            torso_y = info.angle;
+            torso_x = info.x_angle;
+            tonyboss->maximum_turn = TONYBOSS_TURN >> 1;
+            if (item->frame_number - anims[item->anim_number].frame_base == 28)
+                TriggerFireBall(item, 2, NULL, item->room_number, item->pos.y_rot, 0);
+            break;
+        case TONYBOSS_BIGBOOM:
+            tonyboss->maximum_turn = 0;
+            if (item->frame_number - anims[item->anim_number].frame_base == 56) {
+                item->item_flags[3] = 2;
+                bossdata.explode_count = 1;
+            }
+            break;
+        default:
+            break;
+        }
+    }
+    if (item->current_anim_state == TONYBOSS_ROCKZAPP || item->current_anim_state == TONYBOSS_ZAPP
+        || item->current_anim_state == TONYBOSS_BIGBOOM) {
+        sint32 bright, r, g, b;
+
+        bright = item->frame_number - anims[item->anim_number].frame_base;
+        if (bright > 16) {
+            bright = anims[item->anim_number].frame_end - item->frame_number;
+            if (bright > 16)
+                bright = 16;
+        }
+        rnd = GetRandomControl();
+        r = 31 - ((rnd >> 4) & 3);
+        g = 24 - ((rnd >> 6) & 3);
+        b = rnd & 7;
+        r = (r * bright) >> 4;
+        g = (g * bright) >> 4;
+        b = (b * bright) >> 4;
+        pos1.x = pos1.y = pos1.z = 0;
+        GetJointAbsPosition(&items[item_number], &pos1, 10);
+        TriggerDynamic(pos1.x, pos1.y, pos1.z, 12, r, g, b);
+        TriggerTonyFlame(item_number, 5);
+        if (item->current_anim_state == TONYBOSS_ROCKZAPP || item->current_anim_state == TONYBOSS_BIGBOOM) {
+            pos1.x = pos1.y = pos1.z = 0;
+            GetJointAbsPosition(&items[item_number], &pos1, 13);
+            TriggerDynamic(pos1.x, pos1.y, pos1.z, 12, r, g, b);
+            TriggerTonyFlame(item_number, 4);
+        }
+    }
+    if (bossdata.explode_count && item->hit_points > 0) {
+        ExplodeTonyBoss(item);
+        bossdata.explode_count++;
+        if (bossdata.explode_count == 32)
+            FlipMap();
+        if (bossdata.explode_count > 64)
+            bossdata.explode_count = bossdata.ring_count = 0;
+    }
+    CreatureJoint(item, 0, torso_y >> 1);
+    CreatureJoint(item, 1, torso_x);
+    CreatureJoint(item, 2, torso_y >> 1);
+    CreatureAnimation(item_number, angle, 0);
+}
