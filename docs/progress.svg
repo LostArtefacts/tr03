@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="293.26" height="12" x="0" y="0" class="named"><title>1032 · 69.82%</title></rect>
-<rect width="1.99" height="12" x="293.26" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="124.75" height="12" x="295.25" y="0" class="todo"><title>439 · 29.70%</title></rect>
+<rect width="293.55" height="12" x="0" y="0" class="named"><title>1033 · 69.89%</title></rect>
+<rect width="1.99" height="12" x="293.55" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="124.47" height="12" x="295.53" y="0" class="todo"><title>438 · 29.63%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">69.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1032</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">439</tspan></text>
+<text text-anchor="end" x="600" y="7.50">69.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1033</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">438</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.14" height="12" x="0" y="0" class="named"><title>302 KB · 45.27%</title></rect>
-<rect width="3.79" height="12" x="190.14" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="226.07" height="12" x="193.93" y="0" class="todo"><title>359 KB · 53.83%</title></rect>
+<rect width="190.25" height="12" x="0" y="0" class="named"><title>302 KB · 45.30%</title></rect>
+<rect width="3.79" height="12" x="190.25" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="225.95" height="12" x="194.05" y="0" class="todo"><title>359 KB · 53.80%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">359 KB</tspan></text>
@@ -1332,7 +1332,7 @@
 <rect width="12" height="12" x="225" y="375" class="named"><title>0x0048ad80 ForceFadeDown (17 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="375" class="todo"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="375" class="named"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="375" class="todo"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="375" class="named"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="375" class="todo"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="375" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="375" class="todo"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
@@ -2268,7 +2268,7 @@
 <rect width="8.26" height="7.87" x="660.82" y="222.61" class="named"><title>0x0044ae20 HitTarget (185 bytes)</title></rect>
 <rect width="8.26" height="7.87" x="672.08" y="222.61" class="named"><title>0x0044e350 lara_as_surftread (185 bytes)</title></rect>
 <rect width="8.26" height="7.87" x="683.33" y="222.61" class="named"><title>0x0045b700 GunHit (185 bytes)</title></rect>
-<rect width="8.21" height="7.87" x="694.59" y="222.61" class="todo"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
+<rect width="8.21" height="7.87" x="694.59" y="222.61" class="named"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="8.17" height="7.87" x="705.81" y="222.61" class="named"><title>0x0044c630 LaraCheatGetStuff (183 bytes)</title></rect>
 <rect width="8.04" height="7.87" x="716.98" y="222.61" class="named"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
 <rect width="7.99" height="7.87" x="728.02" y="222.61" class="named"><title>0x00422f40 FlipMap (179 bytes)</title></rect>

@@ -84,6 +84,30 @@ void CrossFadePicture(void)
     TIME_Init();
 }
 
+bool LoadPicture(const char *name, LPDIRECTDRAWSURFACE3 surf, int a)
+{
+    HANDLE img;
+    BITMAP bitmap;
+    HDC cdc;
+    HDC hdc;
+
+    name = GetFullPath(name);
+    img = LoadImage(0, name, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
+    if (!img)
+        return false;
+    cdc = CreateCompatibleDC(0);
+    SelectObject(cdc, img);
+    GetObject(img, sizeof(BITMAP), &bitmap);
+    surf->GetDC(&hdc);
+    BitBlt(hdc, 0, 0, bitmap.bmWidth, bitmap.bmHeight, cdc, 0, 0, SRCCOPY);
+    surf->ReleaseDC(hdc);
+    DeleteDC(cdc);
+    ConvertSurfaceToTextures(surf);
+    HWR_GetAllTextureHandles();
+    nLoadedPictures++;
+    return true;
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
