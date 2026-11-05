@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="228.34" height="12" x="0" y="0" class="named"><title>730 · 49.42%</title></rect>
-<rect width="233.66" height="12" x="228.34" y="0" class="todo"><title>747 · 50.58%</title></rect>
+<rect width="228.65" height="12" x="0" y="0" class="named"><title>731 · 49.49%</title></rect>
+<rect width="233.35" height="12" x="228.65" y="0" class="todo"><title>746 · 50.51%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">49.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">730</tspan> · <tspan class="todo">747</tspan></text>
+<text text-anchor="end" x="642" y="7.50">49.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">731</tspan> · <tspan class="todo">746</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="95.91" height="12" x="0" y="0" class="named"><title>138 KB · 20.76%</title></rect>
-<rect width="366.09" height="12" x="95.91" y="0" class="todo"><title>527 KB · 79.24%</title></rect>
+<rect width="96.27" height="12" x="0" y="0" class="named"><title>139 KB · 20.84%</title></rect>
+<rect width="365.73" height="12" x="96.27" y="0" class="todo"><title>527 KB · 79.16%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">20.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">138 KB</tspan> · <tspan class="todo">527 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">139 KB</tspan> · <tspan class="todo">527 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -303,7 +303,7 @@
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x004240c0 DogControl (1382 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="60" class="named"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="60" class="named"><title>0x00424830 TriggerFlamethrowerHitFlame (475 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="60" class="todo"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="60" class="named"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="60" class="named"><title>0x00424c20 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="60" class="todo"><title>0x00424c60 DrawRooms (887 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="60" class="named"><title>0x00424fe0 PrintRooms (185 bytes)</title></rect>
@@ -1886,7 +1886,7 @@
 <rect width="13.84" height="13.25" x="500.96" y="98.99" class="todo"><title>0x00451e80 ControlLondBossPlasmaBall (520 bytes)</title></rect>
 <rect width="13.78" height="13.25" x="517.80" y="98.99" class="todo"><title>0x00481e10 LoadBoxes (518 bytes)</title></rect>
 <rect width="13.76" height="13.25" x="534.59" y="98.99" class="todo"><title>0x00448440 PistolHandler (517 bytes)</title></rect>
-<rect width="13.73" height="13.25" x="551.34" y="98.99" class="todo"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
+<rect width="13.73" height="13.25" x="551.34" y="98.99" class="named"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
 <rect width="13.71" height="13.25" x="568.08" y="98.99" class="named"><title>0x0042af20 TriggerExplosionSmokeEnd (515 bytes)</title></rect>
 <rect width="13.71" height="13.25" x="584.78" y="98.99" class="todo"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
 <rect width="13.65" height="13.25" x="601.49" y="98.99" class="named"><title>0x0043ac30 InitialiseItem (513 bytes)</title></rect>
