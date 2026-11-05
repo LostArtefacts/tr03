@@ -9,6 +9,104 @@ void SwimTurn(ITEM_INFO *item);
 #define WATERROLL_A 203
 #define WATERROLL_F GF(WATERROLL_A, 0)
 
+extern void (*lara_control_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern void (*extra_control_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern void (*lara_collision_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern char LaraOnPad;
+
+void LookLeftRight(void);
+void ResetLook(void);
+void LaraWaterCurrent(COLL_INFO *coll);
+void AnimateLara(ITEM_INFO *item);
+void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll);
+void UpdateLaraRoom(ITEM_INFO *item, int height);
+void LaraGun(void);
+
+void LaraUnderWater(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->bad_pos = -NO_HEIGHT;
+    coll->bad_neg = -400;
+    coll->bad_ceiling = 400;
+    coll->old.x = item->pos.x_pos;
+    coll->old.y = item->pos.y_pos;
+    coll->old.z = item->pos.z_pos;
+    coll->radius = 300;
+    coll->trigger = NULL;
+    coll->slopes_are_walls = 0;
+    coll->slopes_are_pits = 0;
+    coll->lava_is_pit = 0;
+    coll->enable_hit = 0;
+    coll->enable_baddie_push = 1;
+
+    if ((input & IN_LOOK) && lara.look) {
+        LookLeftRight();
+    } else {
+        ResetLook();
+    }
+    lara.look = 1;
+
+    if (lara.extra_anim) {
+        (*extra_control_routines[item->current_anim_state])(item, coll);
+    } else {
+        (*lara_control_routines[item->current_anim_state])(item, coll);
+    }
+
+    if (item->pos.z_rot >= -364 && item->pos.z_rot <= 364) {
+        item->pos.z_rot = 0;
+    } else if (item->pos.z_rot < 0) {
+        item->pos.z_rot += 364;
+    } else {
+        item->pos.z_rot -= 364;
+    }
+
+    if (item->pos.x_rot < -85 * ONE_DEGREE) {
+        item->pos.x_rot = -85 * ONE_DEGREE;
+    } else if (item->pos.x_rot > 85 * ONE_DEGREE) {
+        item->pos.x_rot = 85 * ONE_DEGREE;
+    }
+    if (item->pos.z_rot < -4004) {
+        item->pos.z_rot = -4004;
+    } else if (item->pos.z_rot > 4004) {
+        item->pos.z_rot = 4004;
+    }
+
+    if (lara.turn_rate >= -364 && lara.turn_rate <= 364) {
+        lara.turn_rate = 0;
+    } else if (lara.turn_rate < -364) {
+        lara.turn_rate += 364;
+    } else {
+        lara.turn_rate -= 364;
+    }
+    item->pos.y_rot += lara.turn_rate;
+
+    if (lara.current_active && lara.water_status != LARA_CHEAT) {
+        LaraWaterCurrent(coll);
+    }
+
+    AnimateLara(item);
+    item->pos.y_pos -= (phd_sin(item->pos.x_rot) * item->fallspeed) >> (W2V_SHIFT + 2);
+    item->pos.x_pos += (((phd_sin(item->pos.y_rot) * item->fallspeed) >> (W2V_SHIFT + 2)) * phd_cos(item->pos.x_rot)) >> W2V_SHIFT;
+    item->pos.z_pos += (((phd_cos(item->pos.y_rot) * item->fallspeed) >> (W2V_SHIFT + 2)) * phd_cos(item->pos.x_rot)) >> W2V_SHIFT;
+
+    if (lara.water_status != LARA_CHEAT && !lara.extra_anim) {
+        LaraBaddieCollision(item, coll);
+    }
+
+    if (!lara.extra_anim && lara.skidoo == NO_ITEM) {
+        (*lara_collision_routines[item->current_anim_state])(item, coll);
+    }
+
+    UpdateLaraRoom(item, 0);
+
+    LaraGun();
+
+    LaraOnPad = 0;
+    TestTriggers(coll->trigger, 0);
+    if (!LaraOnPad) {
+        lara_item->item_flags[1] = 0;
+    }
+}
+
 void lara_as_swim(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
