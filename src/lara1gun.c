@@ -51,7 +51,54 @@ extern sint32 SmokeWeapon;
 int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles);
 void TriggerGunShell(sint16 leftright, sint32 type, sint32 weapon);
 
+void LaraTargetInfo(WEAPON_INFO *winfo);
+void LaraGetNewTarget(WEAPON_INFO *winfo);
+void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm);
+void AnimatePistols(int weapon_type);
+void AnimateShotgun(int weapon_type);
 void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+
+extern sint32 FuckYou;
+
+void RifleHandler(int weapon_type)
+{
+    WEAPON_INFO *winfo;
+
+    winfo = &weapons[weapon_type];
+    if (input & IN_ACTION)
+        LaraTargetInfo(winfo);
+    else
+        lara.target = NULL;
+    if (lara.target == NULL)
+        LaraGetNewTarget(winfo);
+    AimWeapon(winfo, &lara.left_arm);
+    if (lara.left_arm.lock) {
+        lara.torso_y_rot = lara.left_arm.y_rot;
+        lara.torso_x_rot = lara.left_arm.x_rot;
+        if (camera.old_type != LOOK_CAMERA)
+            lara.head_x_rot = lara.head_y_rot = 0;
+    }
+    lara.torso_x_rot += FuckYou;
+    lara.left_arm.x_rot += FuckYou;
+    if (weapon_type == LG_MAGNUMS)
+        AnimatePistols(weapon_type);
+    else
+        AnimateShotgun(weapon_type);
+    if (lara.right_arm.flash_gun) {
+        if (weapon_type == LG_SHOTGUN || weapon_type == LG_M16) {
+            TriggerDynamic(lara_item->pos.x_pos + (phd_sin(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)) + ((GetRandomControl() & 255) - 128), lara_item->pos.y_pos - WALL_L / 2 + ((GetRandomControl() & 127) - 63), lara_item->pos.z_pos + (phd_cos(lara_item->pos.y_rot) >> (W2V_SHIFT - 10)) + ((GetRandomControl() & 255) - 128), (weapon_type == LG_SHOTGUN) ? 12 : 11, (GetRandomControl() & 7) + 24, (GetRandomControl() & 3) + 16, GetRandomControl() & 7);
+        } else if (weapon_type == LG_MAGNUMS) {
+            PHD_VECTOR pos;
+
+            pos.x = (GetRandomControl() & 255) - 128;
+            pos.y = (GetRandomControl() & 127) - 63;
+            pos.z = (GetRandomControl() & 255) - 128;
+            GetLaraHandAbsPosition(&pos, 1);
+            TriggerDynamic(pos.x, pos.y, pos.z, 12, (GetRandomControl() & 7) + 24, (GetRandomControl() & 3) + 16, GetRandomControl() & 7);
+        }
+    }
+}
+
 void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 initial, sint32 weapon, sint32 count);
 void TriggerShotgunSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv);
 
