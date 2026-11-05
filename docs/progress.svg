@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="214.89" height="12" x="0" y="0" class="named"><title>687 · 46.51%</title></rect>
-<rect width="247.11" height="12" x="214.89" y="0" class="todo"><title>790 · 53.49%</title></rect>
+<rect width="215.20" height="12" x="0" y="0" class="named"><title>688 · 46.58%</title></rect>
+<rect width="246.80" height="12" x="215.20" y="0" class="todo"><title>789 · 53.42%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">46.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">687</tspan> · <tspan class="todo">790</tspan></text>
+<text text-anchor="end" x="642" y="7.50">46.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">688</tspan> · <tspan class="todo">789</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="77.91" height="12" x="0" y="0" class="named"><title>112 KB · 16.86%</title></rect>
-<rect width="384.09" height="12" x="77.91" y="0" class="todo"><title>553 KB · 83.14%</title></rect>
+<rect width="78.19" height="12" x="0" y="0" class="named"><title>113 KB · 16.92%</title></rect>
+<rect width="383.81" height="12" x="78.19" y="0" class="todo"><title>553 KB · 83.08%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">16.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">112 KB</tspan> · <tspan class="todo">553 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">113 KB</tspan> · <tspan class="todo">553 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1101,7 +1101,7 @@
 <rect width="12" height="12" x="540" y="300" class="named"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="300" class="todo"><title>0x00471680 FindClosestShieldPoint (689 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="300" class="named"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="300" class="todo"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="300" class="named"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="300" class="todo"><title>0x00471bd0 ExplodeTribeBoss (598 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="300" class="named"><title>0x00471e30 TriggerSummonSmoke (381 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="300" class="named"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
@@ -1974,7 +1974,7 @@
 <rect width="12.19" height="11.89" x="585.21" y="130.82" class="todo"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>
 <rect width="12.16" height="11.89" x="600.40" y="130.82" class="todo"><title>0x0041e730 GetTiltType (410 bytes)</title></rect>
 <rect width="12.10" height="11.89" x="615.55" y="130.82" class="todo"><title>0x004475d0 draw_shotgun (408 bytes)</title></rect>
-<rect width="12.01" height="11.89" x="630.65" y="130.82" class="todo"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
+<rect width="12.01" height="11.89" x="630.65" y="130.82" class="named"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
 <rect width="11.98" height="11.89" x="645.66" y="130.82" class="todo"><title>0x0044a330 LaraTargetInfo (404 bytes)</title></rect>
 <rect width="11.95" height="11.89" x="660.63" y="130.82" class="todo"><title>0x0048d2e0 CD_Init (403 bytes)</title></rect>
 <rect width="11.92" height="11.89" x="675.58" y="130.82" class="named"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>

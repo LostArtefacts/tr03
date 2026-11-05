@@ -108,6 +108,49 @@ void RotateHeadXAngle(ITEM_INFO *item)
         CreatureJoint(item, 2, 0);
 }
 
+extern sint32 lizman_summon_coords[][4];
+
+int EnableBaddieAI(sint16 item_number, int Always);
+void RemoveDrawnItem(sint16 item_num);
+
+void TriggerLizardMan(void)
+{
+    ROOM_INFO *r;
+    ITEM_INFO *item;
+    sint16 room_number;
+
+    item = &items[bossdata.LizmanItem];
+    item->object_number = LIZARD_MAN;
+    item->room_number = bossdata.LizmanRoom;
+    item->pos.x_pos = lizman_summon_coords[bossdata.attack_type - 1][0];
+    item->pos.y_pos = lizman_summon_coords[bossdata.attack_type - 1][1];
+    item->pos.z_pos = lizman_summon_coords[bossdata.attack_type - 1][2];
+    item->anim_number = objects[item->object_number].anim_index;
+    item->frame_number = anims[item->anim_number].frame_base;
+    item->current_anim_state = item->goal_anim_state = anims[item->anim_number].current_anim_state;
+    item->required_anim_state = 0;
+    item->pos.y_rot = (bossdata.attack_type == 1) ? 0x8000 : 0;
+    item->pos.x_rot = item->pos.z_rot = 0;
+    item->flags = item->timer = 0;
+    item->data = NULL;
+    item->mesh_bits = 0xffffffff;
+    item->hit_points = objects[item->object_number].hit_points;
+    item->collidable = 1;
+    item->active = 0;
+    item->status = ACTIVE;
+    AddActiveItem(bossdata.LizmanItem);
+    EnableBaddieAI(bossdata.LizmanItem, 1);
+    room_number = item->room_number;
+    GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (item->room_number != room_number)
+        ItemNewRoom(bossdata.LizmanItem, room_number);
+    lizard_man_active = 1;
+    RemoveDrawnItem(bossdata.LizmanItem);
+    r = &room[item->room_number];
+    item->next_item = r->item_number;
+    r->item_number = bossdata.LizmanItem;
+}
+
 sint32 GetFreeSpark(void);
 
 void TriggerSummonSmoke(sint32 x, sint32 y, sint32 z)
