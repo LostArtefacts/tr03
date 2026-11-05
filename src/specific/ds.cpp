@@ -50,6 +50,21 @@ bool DS_IsChannelPlaying(int nChannel)
     return false;
 }
 
+int DS_GetFreeChannel(void)
+{
+    int nChannel;
+
+    for (nChannel = 0; nChannel < ArraySize(DS_Samples); nChannel++) {
+        if (DS_Samples[nChannel] == 0)
+            return nChannel;
+    }
+    for (nChannel = 0; nChannel < ArraySize(DS_Samples); nChannel++) {
+        if (!DS_IsChannelPlaying(nChannel))
+            return nChannel;
+    }
+    return -1;
+}
+
 bool DS_MakeAdapterList(void);
 
 }
