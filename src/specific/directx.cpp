@@ -140,4 +140,18 @@ void DXGetSurfaceDesc(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC *ddsd)
     lpSurface->GetSurfaceDesc(ddsd);
 }
 
+bool DXSurfBlt(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, int FillColor)
+{
+    DDBLTFX bltfx;
+    int RetVal;
+
+    memset(&bltfx, 0, sizeof(bltfx));
+    bltfx.dwSize = sizeof(bltfx);
+    bltfx.dwFillColor = FillColor;
+    RetVal = lpSurface->Blt(lpRect, 0, 0, DDBLT_COLORFILL | DDBLT_WAIT, &bltfx);
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 }
