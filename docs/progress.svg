@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="264.63" height="12" x="0" y="0" class="named"><title>846 · 57.28%</title></rect>
-<rect width="197.37" height="12" x="264.63" y="0" class="todo"><title>631 · 42.72%</title></rect>
+<rect width="264.94" height="12" x="0" y="0" class="named"><title>847 · 57.35%</title></rect>
+<rect width="197.06" height="12" x="264.94" y="0" class="todo"><title>630 · 42.65%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">57.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">846</tspan> · <tspan class="todo">631</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">847</tspan> · <tspan class="todo">630</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="149.28" height="12" x="0" y="0" class="named"><title>215 KB · 32.31%</title></rect>
-<rect width="312.72" height="12" x="149.28" y="0" class="todo"><title>451 KB · 67.69%</title></rect>
+<rect width="149.96" height="12" x="0" y="0" class="named"><title>216 KB · 32.46%</title></rect>
+<rect width="312.04" height="12" x="149.96" y="0" class="todo"><title>450 KB · 67.54%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">32.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">215 KB</tspan> · <tspan class="todo">451 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">32.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">216 KB</tspan> · <tspan class="todo">450 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -140,7 +140,7 @@
 <rect width="12" height="12" x="375" y="15" class="todo"><title>0x0040d650 BatonControl (3238 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="15" class="named"><title>0x0040e350 InitialiseCivvy (82 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="15" class="todo"><title>0x0040e3b0 CivvyControl (2208 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="15" class="todo"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="15" class="named"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="15" class="named"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="15" class="todo"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="15" class="named"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
@@ -1715,7 +1715,7 @@
 <rect width="19.29" height="18.29" x="348.06" y="23.52" class="todo"><title>0x00414390 CreatureAIInfo (1002 bytes)</title></rect>
 <rect width="19.18" height="18.29" x="370.35" y="23.52" class="named"><title>0x0044d2a0 AnimateLara (996 bytes)</title></rect>
 <rect width="19.02" height="18.29" x="392.53" y="23.52" class="todo"><title>0x00474d70 ACMHandleNotifications (988 bytes)</title></rect>
-<rect width="18.91" height="18.29" x="414.55" y="23.52" class="todo"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
+<rect width="18.91" height="18.29" x="414.55" y="23.52" class="named"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
 <rect width="18.87" height="18.29" x="436.46" y="23.52" class="todo"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
 <rect width="18.87" height="18.29" x="458.32" y="23.52" class="named"><title>0x00420590 AnimateItem (980 bytes)</title></rect>
 <rect width="18.68" height="18.29" x="480.19" y="23.52" class="todo"><title>0x00437380 RingNotActive (970 bytes)</title></rect>
