@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="204.57" height="12" x="0" y="0" class="named"><title>654 · 44.28%</title></rect>
-<rect width="257.43" height="12" x="204.57" y="0" class="todo"><title>823 · 55.72%</title></rect>
+<rect width="204.88" height="12" x="0" y="0" class="named"><title>655 · 44.35%</title></rect>
+<rect width="257.12" height="12" x="204.88" y="0" class="todo"><title>822 · 55.65%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">44.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">654</tspan> · <tspan class="todo">823</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">655</tspan> · <tspan class="todo">822</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="69.27" height="12" x="0" y="0" class="named"><title>100 KB · 14.99%</title></rect>
-<rect width="392.73" height="12" x="69.27" y="0" class="todo"><title>565 KB · 85.01%</title></rect>
+<rect width="69.50" height="12" x="0" y="0" class="named"><title>100 KB · 15.04%</title></rect>
+<rect width="392.50" height="12" x="69.50" y="0" class="todo"><title>565 KB · 84.96%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">15.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">100 KB</tspan> · <tspan class="todo">565 KB</tspan></text>
@@ -762,7 +762,7 @@
 <rect width="12" height="12" x="705" y="195" class="named"><title>0x004493e0 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="195" class="named"><title>0x004494d0 lara_col_climbright (89 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="195" class="todo"><title>0x00449530 lara_col_climbstnc (525 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="210" class="todo"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="210" class="named"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="210" class="todo"><title>0x00449890 lara_col_climbdown (413 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="210" class="todo"><title>0x00449a30 UpdateElectricityPoints (383 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="210" class="todo"><title>0x00449bb0 LaraGun (1370 bytes)</title></rect>
@@ -2055,7 +2055,7 @@
 <rect width="10.83" height="10.87" x="571.91" y="160.11" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="10.80" height="10.87" x="585.74" y="160.11" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="10.80" height="10.87" x="599.54" y="160.11" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
-<rect width="10.77" height="10.87" x="613.35" y="160.11" class="todo"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
+<rect width="10.77" height="10.87" x="613.35" y="160.11" class="named"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
 <rect width="10.77" height="10.87" x="627.11" y="160.11" class="todo"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
 <rect width="10.74" height="10.87" x="640.88" y="160.11" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="10.70" height="10.87" x="654.62" y="160.11" class="todo"><title>0x004086b0 HWI_InsertObjectGT4_Sorted (330 bytes)</title></rect>
