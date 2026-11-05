@@ -98,4 +98,9 @@ void S_CDPlay(sint16 nTrack, int tMode)
     ACMEmulateCDPlay(nTrack, tMode);
 }
 
+void S_CDStop(void)
+{
+    ACMEmulateCDStop();
+}
+
 }
