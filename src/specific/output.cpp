@@ -27,4 +27,9 @@ int S_DumpCine(void)
     return 0;
 }
 
+void S_ClearScreen(void)
+{
+    ScreenClear(false);
+}
+
 }
