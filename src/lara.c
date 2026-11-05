@@ -1,6 +1,5 @@
-#include <windows.h>
+#include "specific/standard.h"
 #include "game.h"
-#include <stdlib.h>
 
 #define DAMAGE_START 140
 #define DAMAGE_LENGTH 14
@@ -89,6 +88,7 @@ int TestLaraSlide(ITEM_INFO *item, COLL_INFO *coll)
 }
 
 int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down);
+void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number);
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
     int shift_l, result_r, shift_r, result_l;
@@ -3259,7 +3259,6 @@ typedef struct {
 extern STATIC_INFO static_objects[];
 extern sint32 number_draw_rooms;
 extern sint16 draw_rooms[];
-void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number);
 
 int GetStaticObjects(ITEM_INFO *item, PHD_ANGLE ang, sint32 hite, sint32 radius, sint32 dist)
 {
