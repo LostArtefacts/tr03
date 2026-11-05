@@ -1133,7 +1133,8 @@ address,size,name,symbol
 0x00480b80,145,DS_Start,_DS_Start
 0x00480c20,28,DS_Create,_DS_Create
 0x00480c40,206,DS_SetOutputFormat,_DS_SetOutputFormat
-0x00480d10,36,DS_Finish,_DS_Finish
+0x00480d10,16,DS_Finish,_DS_Finish
+0x00480d20,26,DS_Release,_DS_Release
 0x00480d40,14,DS_IsSoundEnabled,_DS_IsSoundEnabled
 0x00480d50,73,MyReadFile,_MyReadFile
 0x00480da0,449,LoadTexturePages,_LoadTexturePages
@@ -1478,7 +1479,7 @@ address,size,name,symbol
 0x004b4c93,44,phd_sqrt,@phd_sqrt@4
 0x004b4cc0,6,DirectInputCreateA,
 0x004b5ce8,6,DirectSoundEnumerateA,
-0x004b5cee,6,DirectSoundCreate,
+0x004b5cee,6,DirectSoundCreate,_DirectSoundCreate@12
 0x004b5cf4,6,DirectDrawEnumerateA,
 0x004b5cfa,6,DirectDrawCreate,
 0x004b5d00,6,Player_PlayFrame,
@@ -2275,7 +2276,7 @@ address,size,name,symbol
 0x006326c8,,DS_Buffers,_DS_Buffers
 0x00632ac8,,lpDirectSound,_lpDirectSound
 0x00632ad0,128,DS_SamplesPlaying,_DS_SamplesPlaying
-0x00632b50,,DS_Samples,_DS_Samples
+0x00632b50,128,DS_Samples,_DS_Samples
 0x00632c00,,TexturesUVFlag,_TexturesUVFlag
 0x00633c90,400,GF_Offsets,_GF_Offsets
 0x00633e20,4,mesh_base,_mesh_base
