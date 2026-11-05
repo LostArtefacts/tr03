@@ -709,7 +709,7 @@ address,size,name,symbol
 0x0044a4d0,557,LaraGetNewTarget,_LaraGetNewTarget
 0x0044a700,170,find_target_point,_find_target_point
 0x0044a7b0,209,AimWeapon,_AimWeapon
-0x0044a890,1394,FireWeapon,_FireWeapon
+0x0044a890,1412,FireWeapon,_FireWeapon
 0x0044ae20,185,HitTarget,_HitTarget
 0x0044aee0,106,SmashItem,_SmashItem
 0x0044af50,96,WeaponObject,_WeaponObject

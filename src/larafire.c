@@ -293,3 +293,158 @@ void LaraGetNewTarget(WEAPON_INFO *winfo)
     lara.target = bestitem;
     LaraTargetInfo(winfo);
 }
+
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint32 r;
+} SPHERE;
+
+extern char TribeBossShieldOn;
+extern uint32 CurrentLevel;
+extern WEAPON_INFO weapons[];
+
+void phd_GenerateW2V(PHD_3DPOS *viewpos);
+int GetSpheres(ITEM_INFO *item, SPHERE *ptr, int WorldSpace);
+int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void Richochet(GAME_VECTOR *pos);
+void FindClosestShieldPoint(sint32 x, sint32 y, sint32 z, ITEM_INFO *item);
+sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
+
+int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles)
+{
+    int r, i, nums, bestdist, best;
+    AMMO_INFO *ammo;
+    WEAPON_INFO *winfo;
+    PHD_3DPOS view;
+    SPHERE *sptr, slist[33];
+    GAME_VECTOR vsrc, vdest;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+    sint16 smash_item, angle;
+    sint32 ricochet_angle;
+    sint32 x, z;
+
+    switch (weapon_type) {
+    default:
+        ammo = &lara.pistols;
+        ammo->ammo = 1000;
+        break;
+    case LG_MAGNUMS:
+        ammo = &lara.magnums;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+    case LG_UZIS:
+        ammo = &lara.uzis;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+    case LG_M16:
+        ammo = &lara.m16;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+    case LG_SHOTGUN:
+        ammo = &lara.shotgun;
+        if (savegame.bonus_flag)
+            ammo->ammo = 1000;
+        break;
+    }
+
+    if (ammo->ammo > 0) {
+        ammo->ammo--;
+        winfo = &weapons[weapon_type];
+        view.x_pos = src->pos.x_pos;
+        view.y_pos = src->pos.y_pos - winfo->gun_height;
+        view.z_pos = src->pos.z_pos;
+        r = (int)((GetRandomControl() - 16384) * winfo->shot_accuracy) / 65536;
+        view.x_rot = *(angles + 1) + (sint16)r;
+        r = (int)((GetRandomControl() - 16384) * winfo->shot_accuracy) / 65536;
+        view.y_rot = *(angles + 0) + (sint16)r;
+        view.z_rot = 0;
+        phd_GenerateW2V(&view);
+
+        nums = GetSpheres(target, slist, 0);
+        sptr = &slist[0];
+        best = -1;
+        bestdist = 0x7fffffff;
+        for (i = 0; i < nums; i++, sptr++) {
+            r = sptr->r;
+            if (ABS(sptr->x) < r && ABS(sptr->y) < r && sptr->z > r && (sptr->x * sptr->x) + (sptr->y * sptr->y) <= (r * r)) {
+                if (sptr->z - r < bestdist) {
+                    bestdist = sptr->z - r;
+                    best = i;
+                }
+            }
+        }
+
+        lara.has_fired = 1;
+        savegame.ammo_used++;
+        vsrc.x = view.x_pos;
+        vsrc.y = view.y_pos;
+        vsrc.z = view.z_pos;
+        room_number = src->room_number;
+        floor = GetFloor(view.x_pos, view.y_pos, view.z_pos, &room_number);
+        vsrc.room_number = room_number;
+
+        if (best >= 0) {
+            savegame.ammo_hit++;
+            vdest.x = vsrc.x + ((*(phd_mxptr + 8) * bestdist) >> W2V_SHIFT);
+            vdest.y = vsrc.y + ((*(phd_mxptr + 9) * bestdist) >> W2V_SHIFT);
+            vdest.z = vsrc.z + ((*(phd_mxptr + 10) * bestdist) >> W2V_SHIFT);
+            smash_item = ObjectOnLOS(&vsrc, &vdest);
+            if (smash_item != NO_ITEM) {
+                if (!(items[smash_item].object_number == 102 && CurrentLevel == 6))
+                    SmashItem(smash_item, weapon_type);
+            }
+            if (target->object_number != 70 && target->object_number != 361 && target->object_number != 57
+                && (target->object_number != 36 || TribeBossShieldOn == 0))
+                HitTarget(target, &vdest, winfo->damage);
+            else if (target->object_number == 36) {
+                sint32 dx, dy, dz;
+
+                dx = (vdest.x - vsrc.x) >> 5;
+                dy = (vdest.y - vsrc.y) >> 5;
+                dz = (vdest.z - vsrc.z) >> 5;
+                FindClosestShieldPoint(vdest.x - dx, vdest.y - dy, vdest.z - dz, target);
+            } else if (target->object_number == 361 || target->object_number == 57) {
+                target->hit_status = 1;
+                target->hit_points--;
+                ricochet_angle = (mGetAngle(lara_item->pos.z_pos, lara_item->pos.x_pos, target->pos.z_pos, target->pos.x_pos) >> 4) & 4095;
+                TriggerRicochetSpark(&vdest, ricochet_angle, 16);
+                SoundEffect(10, &target->pos, 0);
+            } else {
+                z = target->pos.z_pos - lara_item->pos.z_pos;
+                x = target->pos.x_pos - lara_item->pos.x_pos;
+                angle = 0x8000 + phd_atan(z, x) - target->pos.y_rot;
+                if ((target->current_anim_state > 1 && target->current_anim_state < 5) && angle < 0x4000 && angle > -0x4000) {
+                    target->hit_status = 1;
+                    ricochet_angle = (mGetAngle(lara_item->pos.z_pos, lara_item->pos.x_pos, target->pos.z_pos, target->pos.x_pos) >> 4) & 4095;
+                    TriggerRicochetSpark(&vdest, ricochet_angle, 16);
+                    SoundEffect(10, &target->pos, 0);
+                } else
+                    HitTarget(target, &vdest, winfo->damage);
+            }
+            return 1;
+        } else {
+            vdest.x = vsrc.x + ((*(phd_mxptr + 8) * winfo->target_dist) >> W2V_SHIFT);
+            vdest.y = vsrc.y + ((*(phd_mxptr + 9) * winfo->target_dist) >> W2V_SHIFT);
+            vdest.z = vsrc.z + ((*(phd_mxptr + 10) * winfo->target_dist) >> W2V_SHIFT);
+            best = LOS(&vsrc, &vdest);
+            smash_item = ObjectOnLOS(&vsrc, &vdest);
+            if (smash_item != NO_ITEM) {
+                if (!(items[smash_item].object_number == 102 && CurrentLevel == 6))
+                    SmashItem(smash_item, weapon_type);
+                else
+                    Richochet(&vdest);
+            } else if (!best)
+                Richochet(&vdest);
+            return -1;
+        }
+    }
+    ammo->ammo = 0;
+    return 0;
+}
