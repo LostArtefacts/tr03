@@ -139,6 +139,76 @@ RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 mor
 
 extern sint16 rcossin_tbl[];
 
+int abs(int x);
+#pragma intrinsic(abs)
+
+void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, sint32 size)
+{
+    sint32 lp1;
+    sint32 tangle;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 255;
+    sptr->sG = 32 + (GetRandomControl() & 31);
+    sptr->sB = 0;
+    sptr->dR = 192;
+    sptr->dG = 96 + (GetRandomControl() & 63);
+    sptr->dB = 0;
+    sptr->ColFadeSpeed = 8;
+    sptr->FadeToBlack = 8;
+    sptr->sLife = sptr->Life = 24;
+    sptr->TransType = 2;
+    sptr->Dynamic = -1;
+    sptr->x = pos->x;
+    sptr->y = pos->y;
+    sptr->z = pos->z;
+    tangle = (angle + ((GetRandomControl() & 2047) - 1024)) & 4095;
+    sptr->Zvel = rcossin_tbl[(tangle << 1) + 1] >> 1;
+    sptr->Xvel = -rcossin_tbl[tangle << 1] >> 1;
+    sptr->Yvel = ((GetRandomControl() & 511) - 384) << 1;
+    sptr->Friction = 1;
+    sptr->Flags = 2;
+    sptr->Scalar = 3;
+    sptr->Gravity = (GetRandomControl() & 31) + abs(sptr->Yvel >> 6);
+    sptr->Width = sptr->sWidth = (GetRandomControl() & 3) + 4;
+    sptr->dWidth = (GetRandomControl() & 1) + 1;
+    sptr->Height = sptr->sHeight = (GetRandomControl() & 3) + 4;
+    sptr->dHeight = (GetRandomControl() & 1) + 1;
+    sptr->MaxYvel = 0;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    lp1 = 128 + (GetRandomControl() & 63);
+    sptr->sR = lp1;
+    sptr->sG = lp1;
+    sptr->sB = lp1;
+    sptr->dR = lp1 >> 1;
+    sptr->dG = lp1 >> 1;
+    sptr->dB = lp1 >> 1;
+    sptr->ColFadeSpeed = 8;
+    sptr->FadeToBlack = 16;
+    sptr->sLife = sptr->Life = 28;
+    sptr->TransType = 3;
+    sptr->Dynamic = -1;
+    sptr->x = pos->x;
+    sptr->y = pos->y;
+    sptr->z = pos->z;
+    tangle = (angle + ((GetRandomControl() & 2047) - 1023)) & 4095;
+    sptr->Zvel = rcossin_tbl[(tangle << 1) + 1] >> 1;
+    sptr->Xvel = -rcossin_tbl[tangle << 1] >> 1;
+    sptr->Yvel = (GetRandomControl() & 511) - 384;
+    sptr->Friction = 1 | 32;
+    sptr->Flags = 2;
+    sptr->Scalar = 3;
+    sptr->Gravity = (GetRandomControl() & 7) + 4;
+    sptr->Width = sptr->sWidth = (GetRandomControl() & 3) + 4;
+    sptr->dWidth = (GetRandomControl() & 1) + 1;
+    sptr->Height = sptr->sHeight = (GetRandomControl() & 3) + 4;
+    sptr->dHeight = (GetRandomControl() & 1) + 1;
+    sptr->MaxYvel = 0;
+}
+
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 
 void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 b, sint32 angle, sint16 room_no)
