@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="213.01" height="12" x="0" y="0" class="named"><title>681 · 46.11%</title></rect>
-<rect width="248.99" height="12" x="213.01" y="0" class="todo"><title>796 · 53.89%</title></rect>
+<rect width="213.33" height="12" x="0" y="0" class="named"><title>682 · 46.17%</title></rect>
+<rect width="248.67" height="12" x="213.33" y="0" class="todo"><title>795 · 53.83%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">46.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">681</tspan> · <tspan class="todo">796</tspan></text>
+<text text-anchor="end" x="642" y="7.50">46.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">682</tspan> · <tspan class="todo">795</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="76.25" height="12" x="0" y="0" class="named"><title>110 KB · 16.50%</title></rect>
-<rect width="385.75" height="12" x="76.25" y="0" class="todo"><title>555 KB · 83.50%</title></rect>
+<rect width="76.52" height="12" x="0" y="0" class="named"><title>110 KB · 16.56%</title></rect>
+<rect width="385.48" height="12" x="76.52" y="0" class="todo"><title>555 KB · 83.44%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">16.5%</text>
+<text text-anchor="end" x="642" y="24.50">16.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">110 KB</tspan> · <tspan class="todo">555 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -729,7 +729,7 @@
 <rect width="12" height="12" x="210" y="195" class="todo"><title>0x00445340 RifleHandler (532 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="195" class="todo"><title>0x00445560 FireShotgun (507 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="195" class="named"><title>0x00445760 FireM16 (192 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="195" class="todo"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="195" class="named"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="195" class="todo"><title>0x004459b0 ControlHarpoonBolt (1429 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="195" class="todo"><title>0x00445f50 FireRocket (651 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="195" class="todo"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
@@ -1988,7 +1988,7 @@
 <rect width="11.89" height="11.71" x="431.41" y="190" class="todo"><title>0x00431a80 TriggerPilotFlame (395 bytes)</title></rect>
 <rect width="11.89" height="11.65" x="431.41" y="204.71" class="named"><title>0x00442140 lara_col_run (393 bytes)</title></rect>
 <rect width="11.89" height="11.62" x="431.41" y="219.37" class="named"><title>0x00437160 RingIsOpen (392 bytes)</title></rect>
-<rect width="11.89" height="11.53" x="431.41" y="233.99" class="todo"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
+<rect width="11.89" height="11.53" x="431.41" y="233.99" class="named"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
 <rect width="11.89" height="11.53" x="431.41" y="248.52" class="todo"><title>0x00474110 OldWinstonControl (389 bytes)</title></rect>
 <rect width="11.89" height="11.47" x="431.41" y="263.06" class="named"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
 <rect width="11.89" height="11.47" x="431.41" y="277.53" class="named"><title>0x004535b0 EnableNonLotAI (387 bytes)</title></rect>

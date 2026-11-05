@@ -76,6 +76,55 @@ void FireM16(int running)
     }
 }
 
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+void find_target_point(ITEM_INFO *item, GAME_VECTOR *target);
+
+void FireHarpoon(void)
+{
+    sint16 item_number;
+    ITEM_INFO *item;
+    GAME_VECTOR pos;
+    int distance;
+
+    if (lara.harpoon.ammo <= 0)
+        return;
+    item_number = CreateItem();
+    if (item_number != NO_ITEM) {
+        item = &items[item_number];
+        item->shade = 0x4210 | 0x8000;
+        item->object_number = 310;
+        item->room_number = lara_item->room_number;
+        pos.x = -2;
+        pos.y = 273 + 100;
+        pos.z = 77;
+        GetLaraHandAbsPosition((PHD_VECTOR *)&pos, 1);
+        item->pos.x_pos = pos.x;
+        item->pos.y_pos = pos.y;
+        item->pos.z_pos = pos.z;
+        InitialiseItem(item_number);
+        if (lara.target) {
+            find_target_point(lara.target, &pos);
+            item->pos.y_rot = phd_atan(pos.z - item->pos.z_pos, pos.x - item->pos.x_pos);
+            distance = phd_sqrt((pos.z - item->pos.z_pos) * (pos.z - item->pos.z_pos) +
+                                (pos.x - item->pos.x_pos) * (pos.x - item->pos.x_pos));
+            item->pos.x_rot = -phd_atan(distance, pos.y - item->pos.y_pos);
+        } else {
+            item->pos.x_rot = lara_item->pos.x_rot + lara.torso_x_rot;
+            item->pos.y_rot = lara_item->pos.y_rot + lara.torso_y_rot;
+        }
+        item->pos.z_rot = 0;
+        item->fallspeed = (sint16)(-256 * phd_sin(item->pos.x_rot) >> W2V_SHIFT);
+        item->speed = (sint16)(256 * phd_cos(item->pos.x_rot) >> W2V_SHIFT);
+        item->hit_points = 256;
+        AddActiveItem(item_number);
+        if (!savegame.bonus_flag)
+            lara.harpoon.ammo--;
+        savegame.ammo_used++;
+    }
+}
+
 void undraw_shotgun(int weapon_type)
 {
     ITEM_INFO *item;
