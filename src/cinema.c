@@ -1,8 +1,9 @@
+#include "specific/standard.h"
 #include "game.h"
 
 extern int camera_underwater;
 
-void DrawRooms(sint16 current_room);
+void DrawRooms(sint16);
 void S_DrawSparks(void);
 void S_FadePicture(void);
 void S_OutputPolyList(void);
