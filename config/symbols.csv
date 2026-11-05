@@ -1029,7 +1029,7 @@ address,size,name,symbol
 0x0046fae0,73,LaraBurn,_LaraBurn
 0x0046fb30,150,LavaBurn,_LavaBurn
 0x0046fbd0,428,TriggerPendulumFlame,_TriggerPendulumFlame
-0x0046fd80,1916,DinoControl,_DinoControl
+0x0046fd80,1968,DinoControl,_DinoControl
 0x00470530,1600,TribeAxeControl,_TribeAxeControl
 0x00470b70,1908,TribeBossControl,_TribeBossControl
 0x004712f0,93,S_DrawTribeBoss,_S_DrawTribeBoss
@@ -1993,6 +1993,7 @@ address,size,name,symbol
 0x004c7e00,16,teeth2b,_teeth2b
 0x004c7e10,16,teeth3a,_teeth3a
 0x004c7e20,16,teeth3b,_teeth3b
+0x004c7e30,16,trex_hit,_trex_hit
 0x004c7e40,16,tribeaxe_hit,_tribeaxe_hit
 0x004c7e50,39,tribeaxe_hitframes,_tribeaxe_hitframes
 0x004c7e78,20,TribeBossRadii,_TribeBossRadii
