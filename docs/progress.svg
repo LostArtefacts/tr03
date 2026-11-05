@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="261.61" height="12" x="0" y="0" class="named"><title>920 · 62.29%</title></rect>
-<rect width="1.42" height="12" x="261.61" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="156.97" height="12" x="263.03" y="0" class="todo"><title>552 · 37.37%</title></rect>
+<rect width="261.90" height="12" x="0" y="0" class="named"><title>921 · 62.36%</title></rect>
+<rect width="1.42" height="12" x="261.90" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="156.68" height="12" x="263.32" y="0" class="todo"><title>551 · 37.31%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">62.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">920</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">552</tspan></text>
+<text text-anchor="end" x="600" y="7.50">62.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">921</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">551</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.22" height="12" x="0" y="0" class="named"><title>296 KB · 44.34%</title></rect>
-<rect width="3.69" height="12" x="186.22" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.10" height="12" x="189.90" y="0" class="todo"><title>366 KB · 54.79%</title></rect>
+<rect width="186.24" height="12" x="0" y="0" class="named"><title>296 KB · 44.34%</title></rect>
+<rect width="3.69" height="12" x="186.24" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="230.08" height="12" x="189.92" y="0" class="todo"><title>366 KB · 54.78%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1365,7 +1365,7 @@
 <rect width="12" height="12" x="720" y="375" class="todo"><title>0x0048d2e0 CD_Init (403 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="375" class="named"><title>0x0048d480 S_CDPlay (20 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="390" class="named"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="390" class="todo"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="390" class="named"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="390" class="todo"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="390" class="todo"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="390" class="todo"><title>0x0048d500 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
@@ -2878,7 +2878,7 @@
 <rect width="3.30" height="3.52" x="681.86" y="381.32" class="todo"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
 <rect width="3.30" height="3.52" x="688.16" y="381.32" class="todo"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
 <rect width="3.30" height="3.52" x="694.46" y="381.32" class="todo"><title>0x0048ab20 S_SetupAboveWater (33 bytes)</title></rect>
-<rect width="3.30" height="3.52" x="700.75" y="381.32" class="todo"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
+<rect width="3.30" height="3.52" x="700.75" y="381.32" class="named"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
 <rect width="3.19" height="3.52" x="707.05" y="381.32" class="named"><title>0x00439060 Inv_RingMotionCameraPitch (32 bytes)</title></rect>
 <rect width="3.19" height="3.52" x="713.24" y="381.32" class="named"><title>0x0043ffb0 GetDirOctant (32 bytes)</title></rect>
 <rect width="3.19" height="3.52" x="719.44" y="381.32" class="named"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>

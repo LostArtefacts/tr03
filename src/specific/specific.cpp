@@ -103,4 +103,12 @@ void S_CDStop(void)
     ACMEmulateCDStop();
 }
 
+int S_StartSyncedAudio(int nTrack)
+{
+    if (!App.DXConfig.sound)
+        return 0;
+    ACMEmulateCDPlay(nTrack, 0);
+    return 1;
+}
+
 }
