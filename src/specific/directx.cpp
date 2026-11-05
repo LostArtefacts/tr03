@@ -17,4 +17,14 @@ void DXBitMask2ShiftCnt(unsigned long mask, unsigned char *shift, unsigned char 
     *cnt = n;
 }
 
+bool DXCreateDirect3D(LPDIRECTDRAW2 lpDD2, LPDIRECT3D2 *lpD3D2)
+{
+    int RetVal;
+
+    RetVal = lpDD2->QueryInterface(IID_IDirect3D2, (LPVOID *)lpD3D2);
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 }

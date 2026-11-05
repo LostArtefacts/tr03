@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="267.69" height="12" x="0" y="0" class="named"><title>942 · 63.73%</title></rect>
-<rect width="1.42" height="12" x="267.69" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="150.89" height="12" x="269.11" y="0" class="todo"><title>531 · 35.93%</title></rect>
+<rect width="267.97" height="12" x="0" y="0" class="named"><title>943 · 63.80%</title></rect>
+<rect width="1.42" height="12" x="267.97" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="150.61" height="12" x="269.39" y="0" class="todo"><title>530 · 35.86%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">63.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">942</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">531</tspan></text>
+<text text-anchor="end" x="600" y="7.50">63.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">943</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">530</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.62" height="12" x="0" y="0" class="named"><title>297 KB · 44.43%</title></rect>
-<rect width="3.69" height="12" x="186.62" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.69" height="12" x="190.31" y="0" class="todo"><title>365 KB · 54.69%</title></rect>
+<rect width="186.64" height="12" x="0" y="0" class="named"><title>297 KB · 44.44%</title></rect>
+<rect width="3.69" height="12" x="186.64" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.68" height="12" x="190.32" y="0" class="todo"><title>365 KB · 54.68%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1410,7 +1410,7 @@
 <rect width="12" height="12" x="645" y="390" class="todo"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="390" class="todo"><title>0x0048fdb0 BPPToDDBD (70 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="390" class="todo"><title>0x0048fe40 DXCreateDirectDraw (87 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="390" class="todo"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="390" class="named"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="390" class="todo"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="390" class="todo"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="390" class="todo"><title>0x0048ff10 DXCreateSurface (72 bytes)</title></rect>
@@ -2928,7 +2928,7 @@
 <rect width="3.15" height="2.90" x="743.85" y="394.11" class="todo"><title>0x004b4c79 Func4b4c79 (26 bytes)</title></rect>
 <rect width="2.62" height="3.33" x="694.30" y="400.01" class="todo"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
 <rect width="2.62" height="3.33" x="694.30" y="406.34" class="todo"><title>0x00474d50 ACMEmulateCDStop (25 bytes)</title></rect>
-<rect width="2.62" height="3.33" x="694.30" y="412.66" class="todo"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
+<rect width="2.62" height="3.33" x="694.30" y="412.66" class="named"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
 <rect width="2.62" height="3.20" x="694.30" y="418.99" class="todo"><title>0x00402180 SetZFar (24 bytes)</title></rect>
 <rect width="2.62" height="3.20" x="694.30" y="425.19" class="named"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
 <rect width="2.62" height="3.20" x="694.30" y="431.39" class="named"><title>0x004404e0 lara_as_monkey180 (24 bytes)</title></rect>
