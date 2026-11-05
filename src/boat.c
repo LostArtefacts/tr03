@@ -1,3 +1,5 @@
+#include <math.h>
+#include <direct.h>
 #include "game.h"
 
 #define GRAVITY 6
@@ -602,4 +604,30 @@ void BoatSplash(ITEM_INFO *item, sint32 fallspeed, sint32 water)
     splash_setup.OuterFriction = 9;
     SetupSplash(&splash_setup);
     SplashCount = 16;
+}
+
+FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
+
+sint32 TestWaterHeight(ITEM_INFO *item, sint32 z_off, sint32 x_off, PHD_VECTOR *pos)
+{
+    FLOOR_INFO *floor;
+    sint32 s, c, height;
+    sint16 room_number;
+
+    pos->y = item->pos.y_pos + ((x_off * phd_sin(item->pos.z_rot) >> W2V_SHIFT) - (z_off * phd_sin(item->pos.x_rot) >> W2V_SHIFT));
+    c = phd_cos(item->pos.y_rot);
+    s = phd_sin(item->pos.y_rot);
+    pos->z = item->pos.z_pos + ((z_off * c - x_off * s) >> W2V_SHIFT);
+    pos->x = item->pos.x_pos + ((z_off * s + x_off * c) >> W2V_SHIFT);
+
+    room_number = item->room_number;
+    GetFloor(pos->x, pos->y, pos->z, &room_number);
+    height = GetWaterHeight(pos->x, pos->y, pos->z, room_number);
+    if (height == NO_HEIGHT) {
+        floor = GetFloor(pos->x, pos->y, pos->z, &room_number);
+        height = GetHeight(floor, pos->x, pos->y, pos->z);
+        if (height == NO_HEIGHT)
+            return height;
+    }
+    return height - 5;
 }
