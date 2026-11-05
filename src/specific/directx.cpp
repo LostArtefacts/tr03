@@ -1,6 +1,7 @@
 #include "standard.h"
 #include "specific.h"
 #include "winmain.h"
+#include "global.h"
 
 extern "C" {
 
@@ -15,6 +16,27 @@ void DXBitMask2ShiftCnt(unsigned long mask, unsigned char *shift, unsigned char 
     for (n = 0; m & 1; n++, m >>= 1)
         ;
     *cnt = n;
+}
+
+DWORD BPPToDDBD(int bpp)
+{
+    switch (bpp) {
+    case 1:
+        return DDBD_1;
+    case 2:
+        return DDBD_2;
+    case 4:
+        return DDBD_4;
+    case 8:
+        return DDBD_8;
+    case 16:
+        return DDBD_16;
+    case 24:
+        return DDBD_24;
+    case 32:
+        return DDBD_32;
+    }
+    return 0;
 }
 
 bool DXCreateDirect3D(LPDIRECTDRAW2 lpDD2, LPDIRECT3D2 *lpD3D2)
