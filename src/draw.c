@@ -129,6 +129,124 @@ void GetRoomBounds(void)
     }
 }
 
+struct door_vbuf {
+    sint32 xv;
+    sint32 yv;
+    sint32 zv;
+};
+
+extern struct door_vbuf vbufdoor[4];
+extern sint32 phd_zfar, phd_persp, phd_centerx, phd_centery;
+extern sint16 phd_winxmax, phd_winymax;
+
+void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
+{
+    int i, z_behind, z_toofar;
+    sint32 left, right, top, bottom;
+    sint32 xv, yv, zv, xs, ys;
+    sint32 *mptr;
+    ROOM_INFO *r;
+    struct door_vbuf *dest, *last;
+
+    r = &room[room_number];
+    if (r->left <= parent->test_left && r->right >= parent->test_right && r->top <= parent->test_top && r->bottom >= parent->test_bottom)
+        return;
+
+    left = parent->test_right;
+    right = parent->test_left;
+    top = parent->test_bottom;
+    bottom = parent->test_top;
+    objptr += 3;
+    mptr = phd_mxptr;
+    dest = vbufdoor;
+    z_behind = z_toofar = 0;
+    for (i = 0; i < 4; i++, dest++, objptr += 3) {
+        dest->xv = xv = (sint32)(*(mptr + 0) * *objptr + *(mptr + 1) * *(objptr + 1) + *(mptr + 2) * *(objptr + 2) + *(mptr + 3));
+        dest->yv = yv = (sint32)(*(mptr + 4) * *objptr + *(mptr + 5) * *(objptr + 1) + *(mptr + 6) * *(objptr + 2) + *(mptr + 7));
+        dest->zv = zv = (sint32)(*(mptr + 8) * *objptr + *(mptr + 9) * *(objptr + 1) + *(mptr + 10) * *(objptr + 2) + *(mptr + 11));
+        if (zv > 0) {
+            if (zv > phd_zfar)
+                z_toofar++;
+            zv /= phd_persp;
+            if (zv) {
+                xs = xv / zv + phd_centerx;
+                ys = yv / zv + phd_centery;
+            } else {
+                xs = (xv >= 0) ? phd_right : phd_left;
+                ys = (yv >= 0) ? phd_bottom : phd_top;
+            }
+            if (xs - 1 < left)
+                left = xs - 1;
+            if (xs + 1 > right)
+                right = xs + 1;
+            if (ys - 1 < top)
+                top = ys - 1;
+            if (ys + 1 > bottom)
+                bottom = ys + 1;
+        } else
+            z_behind++;
+    }
+
+    if (z_behind == 4)
+        return;
+    if (z_toofar == 4 && outside == 0)
+        return;
+
+    if (z_behind > 0) {
+        dest = vbufdoor;
+        last = dest + 3;
+        for (i = 0; i < 4; i++, last = dest, dest++) {
+            if ((dest->zv <= 0) ^ (last->zv <= 0)) {
+                if (dest->xv < 0 && last->xv < 0)
+                    left = 0;
+                else if (dest->xv > 0 && last->xv > 0)
+                    right = phd_winxmax;
+                else {
+                    left = 0;
+                    right = phd_winxmax;
+                }
+                if (dest->yv < 0 && last->yv < 0)
+                    top = 0;
+                else if (dest->yv > 0 && last->yv > 0)
+                    bottom = phd_winymax;
+                else {
+                    top = 0;
+                    bottom = phd_winymax;
+                }
+            }
+        }
+    }
+
+    if (left < parent->test_left)
+        left = parent->test_left;
+    if (right > parent->test_right)
+        right = parent->test_right;
+    if (top < parent->test_top)
+        top = parent->test_top;
+    if (bottom > parent->test_bottom)
+        bottom = parent->test_bottom;
+    if (left >= right || top >= bottom)
+        return;
+
+    if (r->bound_active & 2) {
+        if (left < r->test_left)
+            r->test_left = (sint16)left;
+        if (top < r->test_top)
+            r->test_top = (sint16)top;
+        if (right > r->test_right)
+            r->test_right = (sint16)right;
+        if (bottom > r->test_bottom)
+            r->test_bottom = (sint16)bottom;
+    } else {
+        bound_list[(bound_end++) % 128] = room_number;
+        r->bound_active |= 2;
+        r->test_left = (sint16)left;
+        r->test_right = (sint16)right;
+        r->test_top = (sint16)top;
+        r->test_bottom = (sint16)bottom;
+    }
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;
