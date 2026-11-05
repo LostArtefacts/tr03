@@ -124,3 +124,45 @@ int GetInMineCart(ITEM_INFO *v, ITEM_INFO *l, COLL_INFO *coll)
 
 void DoUserInput(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart);
 void MoveCart(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart);
+
+int MineCartControl(void)
+{
+    CARTINFO *cart;
+    ITEM_INFO *v, *l;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    l = lara_item;
+    v = &items[lara.skidoo];
+    cart = (CARTINFO *)v->data;
+
+    DoUserInput(v, l, cart);
+    if (cart->Flags & 16)
+        MoveCart(v, l, cart);
+
+    if (lara.skidoo != NO_ITEM) {
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.x_rot = v->pos.x_rot;
+        l->pos.y_rot = v->pos.y_rot;
+        l->pos.z_rot = v->pos.z_rot;
+    }
+
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    if (room_number != v->room_number) {
+        ItemNewRoom(lara.skidoo, room_number);
+        ItemNewRoom(lara.item_number, room_number);
+    }
+
+    TestTriggers(trigger_index, 0);
+
+    if (!(cart->Flags & 128)) {
+        camera.target_elevation = -45 * ONE_DEGREE;
+        camera.target_distance = WALL_L * 2;
+    }
+
+    return (lara.skidoo == NO_ITEM) ? 0 : 1;
+}

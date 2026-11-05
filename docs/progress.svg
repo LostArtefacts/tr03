@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="198.54" height="12" x="0" y="0" class="named"><title>627 · 42.42%</title></rect>
-<rect width="269.46" height="12" x="198.54" y="0" class="todo"><title>851 · 57.58%</title></rect>
+<rect width="198.85" height="12" x="0" y="0" class="named"><title>628 · 42.49%</title></rect>
+<rect width="269.15" height="12" x="198.85" y="0" class="todo"><title>850 · 57.51%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">42.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">627</tspan> · <tspan class="todo">851</tspan></text>
+<text text-anchor="end" x="648" y="7.50">42.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">628</tspan> · <tspan class="todo">850</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="64.02" height="12" x="0" y="0" class="named"><title>91 KB · 13.68%</title></rect>
-<rect width="403.98" height="12" x="64.02" y="0" class="todo"><title>574 KB · 86.32%</title></rect>
+<rect width="64.22" height="12" x="0" y="0" class="named"><title>91 KB · 13.72%</title></rect>
+<rect width="403.78" height="12" x="64.22" y="0" class="todo"><title>574 KB · 86.28%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">91 KB</tspan> · <tspan class="todo">574 KB</tspan></text>
@@ -862,7 +862,7 @@
 <rect width="12" height="12" x="705" y="225" class="named"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="225" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="225" class="named"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="240" class="todo"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="240" class="named"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="240" class="todo"><title>0x00453ca0 MoveCart (1323 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="240" class="todo"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="240" class="todo"><title>0x004542a0 DoUserInput (2307 bytes)</title></rect>
@@ -2107,7 +2107,7 @@
 <rect width="10.08" height="9.83" x="473.28" y="411.58" class="named"><title>0x0043f600 lara_as_dash (281 bytes)</title></rect>
 <rect width="10.08" height="9.83" x="473.28" y="424.41" class="todo"><title>0x00490780 Func490780 (281 bytes)</title></rect>
 <rect width="10.08" height="9.76" x="473.28" y="437.24" class="named"><title>0x0042ebb0 WaterFall (279 bytes)</title></rect>
-<rect width="9.79" height="10.05" x="486.37" y="173.86" class="todo"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
+<rect width="9.79" height="10.05" x="486.37" y="173.86" class="named"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
 <rect width="9.75" height="10.05" x="499.16" y="173.86" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
 <rect width="9.75" height="10.05" x="511.91" y="173.86" class="todo"><title>0x00483650 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="9.72" height="10.05" x="524.66" y="173.86" class="named"><title>0x0043fa70 lara_col_dashdive (277 bytes)</title></rect>
