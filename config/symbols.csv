@@ -286,7 +286,7 @@ address,size,name,symbol
 0x0042b780,1080,TriggerFireFlame,_TriggerFireFlame
 0x0042bbc0,474,TriggerSideFlame,_TriggerSideFlame
 0x0042bda0,163,TriggerAlertLight,_TriggerAlertLight
-0x0042be50,816,TriggerGunShell,_TriggerGunShell
+0x0042be50,836,TriggerGunShell,_TriggerGunShell
 0x0042c1a0,598,ControlGunShell,_ControlGunShell
 0x0042c400,272,TriggerShotgunSparks,_TriggerShotgunSparks
 0x0042c510,341,TriggerRocketFlame,_TriggerRocketFlame

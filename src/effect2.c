@@ -833,6 +833,105 @@ void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 
         TriggerDynamic(target.x, target.y, target.z, 8, r, g, b);
 }
 
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, sint32 lr);
+
+void TriggerGunShell(sint16 leftright, sint32 shelltype, sint32 weapon)
+{
+    FX_INFO *fx;
+    PHD_VECTOR pos;
+    sint16 fx_number;
+
+    if (leftright == 0) {
+        switch (weapon) {
+        case LG_PISTOLS:
+            pos.x = -12;
+            pos.y = 48;
+            pos.z = 40;
+            break;
+        case LG_MAGNUMS:
+            pos.x = -16;
+            pos.y = 40;
+            pos.z = 56;
+            break;
+        case LG_UZIS:
+            pos.x = -16;
+            pos.y = 35;
+            pos.z = 48;
+            break;
+        }
+        GetLaraHandAbsPosition(&pos, 0);
+    } else {
+        switch (weapon) {
+        case LG_PISTOLS:
+            pos.x = 8;
+            pos.y = 48;
+            pos.z = 40;
+            break;
+        case LG_MAGNUMS:
+            pos.x = 16;
+            pos.y = 40;
+            pos.z = 56;
+            break;
+        case LG_UZIS:
+            pos.x = 8;
+            pos.y = 35;
+            pos.z = 48;
+            break;
+        case LG_M16:
+            pos.x = 16;
+            pos.y = 2;
+            pos.z = 64;
+            break;
+        case LG_SHOTGUN:
+            pos.x = 16;
+            pos.y = 114;
+            pos.z = 32;
+            break;
+        }
+        GetLaraHandAbsPosition(&pos, 1);
+    }
+    if (weapon == LG_SHOTGUN)
+        TriggerGunSmoke(pos.x, pos.y, pos.z, 0, 0, 0, 0, weapon, 24);
+    else
+        TriggerGunSmoke(pos.x, pos.y, pos.z, 0, 0, 0, 0, weapon, 16);
+    fx_number = CreateEffect(lara_item->room_number);
+    if (fx_number != NO_ITEM) {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = pos.x;
+        fx->pos.y_pos = pos.y;
+        fx->pos.z_pos = pos.z;
+        fx->room_number = lara_item->room_number;
+        fx->pos.y_rot = 0;
+        fx->pos.x_rot = 0;
+        fx->pos.z_rot = GetRandomControl();
+        fx->speed = 16 + (GetRandomControl() & 31);
+        fx->fallspeed = -48 - (GetRandomControl() & 7);
+        fx->object_number = shelltype;
+        fx->frame_number = objects[fx->object_number].mesh_index;
+        fx->shade = 0x4210;
+        fx->counter = (GetRandomControl() & 1) + 1;
+        if (leftright == 0) {
+            fx->flag1 = lara.left_arm.y_rot + lara_item->pos.y_rot - 0x4800 + (GetRandomControl() & 0xfff);
+        } else {
+            if (weapon == LG_SHOTGUN) {
+                fx->flag1 = lara.left_arm.y_rot + lara_item->pos.y_rot + lara.torso_y_rot + 0x2800 -
+                            (GetRandomControl() & 0xfff);
+                fx->pos.y_rot += lara.left_arm.y_rot + lara_item->pos.y_rot + lara.torso_y_rot;
+                if (fx->speed < 24)
+                    fx->speed += 24;
+            } else if (weapon == LG_M16) {
+                fx->flag1 = lara.left_arm.y_rot + lara_item->pos.y_rot + lara.torso_y_rot + 0x4800 -
+                            (GetRandomControl() & 0xfff);
+                fx->pos.y_rot += lara.left_arm.y_rot + lara_item->pos.y_rot + lara.torso_y_rot;
+            } else
+                fx->flag1 = lara.left_arm.y_rot + lara_item->pos.y_rot + 0x4800 - (GetRandomControl() & 0xfff);
+        }
+    }
+}
+
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+void KillEffect(sint16 fx_num);
+
 void TriggerShotgunSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv)
 {
     SPARKS *sptr;
