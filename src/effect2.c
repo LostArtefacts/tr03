@@ -209,6 +209,82 @@ void TriggerRicochetSpark(GAME_VECTOR *pos, sint32 angle, sint32 size)
     sptr->MaxYvel = 0;
 }
 
+void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 initial, sint32 weapon, sint32 count)
+{
+    sint32 size;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    sptr->dR = count << 2;
+    sptr->dG = count << 2;
+    sptr->dB = count << 2;
+    sptr->ColFadeSpeed = 4;
+    sptr->FadeToBlack = 32 - (initial << 4);
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 40;
+    if (weapon == LG_PISTOLS || weapon == LG_MAGNUMS || weapon == LG_UZIS) {
+        if (sptr->dR > 64) {
+            sptr->dR = 64;
+            sptr->dG = 64;
+            sptr->dB = 64;
+        }
+    }
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + (GetRandomControl() & 31) - 16;
+    sptr->y = y + (GetRandomControl() & 31) - 16;
+    sptr->z = z + (GetRandomControl() & 31) - 16;
+    if (initial) {
+        sptr->Xvel = ((GetRandomControl() & 1023) - 512) + xv;
+        sptr->Yvel = ((GetRandomControl() & 1023) - 512) + yv;
+        sptr->Zvel = ((GetRandomControl() & 1023) - 512) + zv;
+    } else {
+        sptr->Xvel = ((GetRandomControl() & 511) - 256) >> 1;
+        sptr->Yvel = ((GetRandomControl() & 511) - 256) >> 1;
+        sptr->Zvel = ((GetRandomControl() & 511) - 256) >> 1;
+    }
+    sptr->Friction = 4;
+    if (GetRandomControl() & 1) {
+        if (room[lara_item->room_number].flags & 0x20)
+            sptr->Flags = 2 | 8 | 16 | 256 | 512;
+        else
+            sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else {
+        if (room[lara_item->room_number].flags & 0x20)
+            sptr->Flags = 2 | 8 | 256 | 512;
+        else
+            sptr->Flags = 2 | 8 | 512;
+    }
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = -(GetRandomControl() & 1) - 2;
+    sptr->MaxYvel = -(GetRandomControl() & 1) - 2;
+    size = (GetRandomControl() & 7) + 24 - ((weapon != LG_ROCKET && weapon != LG_GRENADE) ? 12 : 0);
+    if (initial) {
+        sptr->Width = sptr->sWidth = size >> 1;
+        sptr->dWidth = (size << 1) + 8;
+    } else {
+        sptr->Width = sptr->sWidth = size >> 2;
+        sptr->dWidth = size;
+    }
+    if (initial) {
+        sptr->Height = sptr->sHeight = size >> 1;
+        sptr->dHeight = (size << 1) + 8;
+    } else {
+        sptr->Height = sptr->sHeight = size >> 2;
+        sptr->dHeight = size;
+    }
+}
+
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 
 void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 b, sint32 angle, sint16 room_no)
