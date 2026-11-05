@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="275.93" height="12" x="0" y="0" class="named"><title>971 · 65.70%</title></rect>
-<rect width="1.42" height="12" x="275.93" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="142.65" height="12" x="277.35" y="0" class="todo"><title>502 · 33.96%</title></rect>
+<rect width="276.21" height="12" x="0" y="0" class="named"><title>972 · 65.76%</title></rect>
+<rect width="1.42" height="12" x="276.21" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="142.37" height="12" x="277.63" y="0" class="todo"><title>501 · 33.90%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">65.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">971</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">502</tspan></text>
+<text text-anchor="end" x="600" y="7.50">65.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">972</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">501</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.29" height="12" x="0" y="0" class="named"><title>298 KB · 44.59%</title></rect>
-<rect width="3.69" height="12" x="187.29" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.02" height="12" x="190.98" y="0" class="todo"><title>364 KB · 54.53%</title></rect>
+<rect width="187.32" height="12" x="0" y="0" class="named"><title>298 KB · 44.60%</title></rect>
+<rect width="3.69" height="12" x="187.32" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.99" height="12" x="191.01" y="0" class="todo"><title>364 KB · 54.52%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
@@ -1141,7 +1141,7 @@
 <rect width="12" height="12" x="360" y="315" class="todo"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="315" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="315" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="315" class="todo"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="315" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="315" class="todo"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="315" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="315" class="todo"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
@@ -2832,7 +2832,7 @@
 <rect width="3.92" height="3.76" x="661.72" y="429.89" class="named"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
 <rect width="3.92" height="3.67" x="661.72" y="436.66" class="named"><title>0x0043fa40 lara_as_dashdive (41 bytes)</title></rect>
 <rect width="3.92" height="3.67" x="661.72" y="443.33" class="named"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
-<rect width="3.66" height="3.94" x="668.64" y="368.76" class="todo"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
+<rect width="3.66" height="3.94" x="668.64" y="368.76" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
 <rect width="3.66" height="3.94" x="668.64" y="375.69" class="todo"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
 <rect width="3.66" height="3.84" x="668.64" y="382.63" class="named"><title>0x0043f1c0 lara_col_all4turnl (40 bytes)</title></rect>
 <rect width="3.66" height="3.75" x="668.64" y="389.47" class="todo"><title>0x00406750 GETR (39 bytes)</title></rect>

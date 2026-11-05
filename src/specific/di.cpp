@@ -29,4 +29,14 @@ void DI_Release(void)
     }
 }
 
+void DI_FinishKeyboard(void)
+{
+    if (Keyboard)
+        Keyboard->Unacquire();
+    if (Keyboard) {
+        Keyboard->Release();
+        Keyboard = 0;
+    }
+}
+
 }
