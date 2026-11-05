@@ -109,6 +109,107 @@ void TriggerLaserBolt(PHD_VECTOR *pos, ITEM_INFO *item, sint32 type, sint16 yang
     }
 }
 
+#define SQUARE(A) ((A) * (A))
+
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+void TriggerPlasmaBall_londboss(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos, sint16 room_number, sint16 angle);
+void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b);
+int ItemNearLara(PHD_3DPOS *pos, sint32 radius);
+
+void ControlLaserBolts(sint16 item_number)
+{
+    FLOOR_INFO *floor;
+    ITEM_INFO *item;
+    PHD_VECTOR oldpos;
+    sint32 g, b, rad;
+    sint16 room_number, oldroom, hitlara;
+    sint32 speed;
+
+    item = &items[item_number];
+    oldpos.x = item->pos.x_pos;
+    oldpos.y = item->pos.y_pos;
+    oldpos.z = item->pos.z_pos;
+    oldroom = item->room_number;
+    speed = (item->speed * phd_cos(item->pos.x_rot)) >> W2V_SHIFT;
+    item->pos.z_pos += (speed * phd_cos(item->pos.y_rot)) >> W2V_SHIFT;
+    item->pos.x_pos += (speed * phd_sin(item->pos.y_rot)) >> W2V_SHIFT;
+    item->pos.y_pos += -((item->speed * phd_sin(item->pos.x_rot)) >> W2V_SHIFT);
+    if (item->speed < 384)
+        item->speed += (item->speed >> 3) + 2;
+    if (item->item_flags[2] && item->speed > (384 >> 1)) {
+        item->item_flags[3]++;
+        if (item->item_flags[3] >= 16) {
+            KillItem(item_number);
+            return;
+        }
+    }
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+
+    if (!item->item_flags[2]) {
+        if (ItemNearLara(&item->pos, 400))
+            hitlara = 1;
+        else
+            hitlara = 0;
+        item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+        if (hitlara || item->pos.y_pos >= item->floor
+            || item->pos.y_pos <= GetCeiling(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos)) {
+            SoundEffect(105, &item->pos, 0);
+            if (item->item_flags[0] < 0)
+                rad = 2;
+            else
+                rad = 3;
+            TriggerExplosionSparks(oldpos.x, oldpos.y, oldpos.z, rad, -2, 2, item->room_number);
+            for (g = 0; g < rad; g++)
+                TriggerExplosionSparks(oldpos.x, oldpos.y, oldpos.z, 2, -1, 2, item->room_number);
+            rad++;
+            for (g = 0; g < rad; g++)
+                TriggerPlasmaBall_londboss(item, 1, &oldpos, oldroom, item->pos.y_rot);
+            if (hitlara) {
+                lara_item->hit_points -= 30 + ((item->item_flags[0] >= 0) << 9);
+                lara_item->hit_status = 1;
+            } else {
+                sint32 dx, dy, dz;
+
+                dx = SQUARE(lara_item->pos.x_pos - item->pos.x_pos);
+                dy = SQUARE(lara_item->pos.y_pos - 256 - item->pos.y_pos);
+                dz = SQUARE(lara_item->pos.z_pos - item->pos.z_pos);
+                dx = phd_sqrt(dx + dy + dz);
+                if (dx < 0x400) {
+                    lara_item->hit_points -= (0x400 - dx) >> (6 - ((item->item_flags[0] >= 0) << 1));
+                    lara_item->hit_status = 1;
+                }
+            }
+            KillItem(item_number);
+            return;
+        }
+    }
+
+    g = 31 - (GetRandomControl() & 7);
+    b = g >> 1;
+    if (item->item_flags[0] < 0) {
+        if (item->item_flags[2]) {
+            g = (g * (16 - item->item_flags[3])) >> 4;
+            b = (b * (16 - item->item_flags[3])) >> 4;
+        }
+        rad = -item->item_flags[0];
+        if (rad > 10) {
+            item->item_flags[0]++;
+            item->item_flags[1] += 2;
+        }
+    } else {
+        rad = item->item_flags[0];
+        if (rad > 16) {
+            item->item_flags[0]--;
+            item->item_flags[1] += 4;
+        }
+    }
+    TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, rad, 0, g, b);
+}
+
 typedef struct {
     sint16 x;
     sint16 z;

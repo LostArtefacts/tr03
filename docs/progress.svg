@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="260.87" height="12" x="0" y="0" class="named"><title>834 · 56.47%</title></rect>
-<rect width="201.13" height="12" x="260.87" y="0" class="todo"><title>643 · 43.53%</title></rect>
+<rect width="261.18" height="12" x="0" y="0" class="named"><title>835 · 56.53%</title></rect>
+<rect width="200.82" height="12" x="261.18" y="0" class="todo"><title>642 · 43.47%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">56.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">834</tspan> · <tspan class="todo">643</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">835</tspan> · <tspan class="todo">642</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="141.26" height="12" x="0" y="0" class="named"><title>204 KB · 30.58%</title></rect>
-<rect width="320.74" height="12" x="141.26" y="0" class="todo"><title>462 KB · 69.42%</title></rect>
+<rect width="141.83" height="12" x="0" y="0" class="named"><title>204 KB · 30.70%</title></rect>
+<rect width="320.17" height="12" x="141.83" y="0" class="todo"><title>461 KB · 69.30%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">30.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">204 KB</tspan> · <tspan class="todo">462 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">30.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">204 KB</tspan> · <tspan class="todo">461 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -844,7 +844,7 @@
 <rect width="12" height="12" x="435" y="225" class="named"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="225" class="todo"><title>0x00451730 ExplodeLondonBoss (591 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="225" class="named"><title>0x00451980 TriggerLaserBolt (302 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="225" class="todo"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="225" class="named"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="225" class="todo"><title>0x00451de0 TriggerPlasmaBall_londboss (159 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="225" class="named"><title>0x00451e80 ControlLondBossPlasmaBall (520 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="225" class="named"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
@@ -1751,7 +1751,7 @@
 <rect width="17.28" height="16.76" x="325.73" y="390.89" class="todo"><title>0x0041eda0 ItemPushLara (822 bytes)</title></rect>
 <rect width="17.28" height="16.74" x="325.73" y="410.65" class="todo"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
 <rect width="17.28" height="16.62" x="325.73" y="430.38" class="named"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
-<rect width="17.03" height="16.84" x="346.01" y="44.80" class="todo"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
+<rect width="17.03" height="16.84" x="346.01" y="44.80" class="named"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="16.99" height="16.84" x="366.04" y="44.80" class="named"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
 <rect width="16.99" height="16.84" x="386.03" y="44.80" class="todo"><title>0x00491940 Func491940 (812 bytes)</title></rect>
 <rect width="16.97" height="16.84" x="406.02" y="44.80" class="todo"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
