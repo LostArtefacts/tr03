@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="232.72" height="12" x="0" y="0" class="named"><title>744 · 50.37%</title></rect>
-<rect width="229.28" height="12" x="232.72" y="0" class="todo"><title>733 · 49.63%</title></rect>
+<rect width="233.03" height="12" x="0" y="0" class="named"><title>745 · 50.44%</title></rect>
+<rect width="228.97" height="12" x="233.03" y="0" class="todo"><title>732 · 49.56%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">50.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">744</tspan> · <tspan class="todo">733</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">745</tspan> · <tspan class="todo">732</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="101.43" height="12" x="0" y="0" class="named"><title>146 KB · 21.96%</title></rect>
-<rect width="360.57" height="12" x="101.43" y="0" class="todo"><title>519 KB · 78.04%</title></rect>
+<rect width="101.77" height="12" x="0" y="0" class="named"><title>147 KB · 22.03%</title></rect>
+<rect width="360.23" height="12" x="101.77" y="0" class="todo"><title>519 KB · 77.97%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">22.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">146 KB</tspan> · <tspan class="todo">519 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">147 KB</tspan> · <tspan class="todo">519 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -269,7 +269,7 @@
 <rect width="12" height="12" x="60" y="60" class="todo"><title>0x00420590 AnimateItem (931 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="60" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="60" class="todo"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="60" class="todo"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="60" class="named"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="60" class="named"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="60" class="todo"><title>0x00420e10 GetHeight (1300 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="60" class="named"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
@@ -1912,7 +1912,7 @@
 <rect width="13.23" height="12.87" x="399.43" y="292.25" class="todo"><title>0x00495ed0 Func495ed0 (483 bytes)</title></rect>
 <rect width="13.23" height="12.84" x="399.43" y="308.11" class="todo"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
 <rect width="13.23" height="12.84" x="399.43" y="323.95" class="named"><title>0x0044bd90 CreateFlare (482 bytes)</title></rect>
-<rect width="13.23" height="12.81" x="399.43" y="339.79" class="todo"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
+<rect width="13.23" height="12.81" x="399.43" y="339.79" class="named"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="13.23" height="12.81" x="399.43" y="355.61" class="todo"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="13.23" height="12.81" x="399.43" y="371.42" class="todo"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
 <rect width="13.23" height="12.73" x="399.43" y="387.23" class="todo"><title>0x00495cf0 Func495cf0 (478 bytes)</title></rect>
