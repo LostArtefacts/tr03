@@ -34,4 +34,16 @@ int S_SoundPlaySample(int nSample, unsigned short wVol, int nPitch, sint16 wPan)
     return DS_StartSample(nSample, CalcVolume(wVol), nPitch, CalcPan(wPan), 0);
 }
 
+int CalcPan(sint16 angle)
+{
+    angle += 0x4000;
+    if (angle < 0) {
+        angle = -angle;
+        if (angle < 0)
+            angle = 0x7fff;
+    }
+    angle -= 0x4000;
+    return angle >> 4;
+}
+
 }
