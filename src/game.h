@@ -28,6 +28,7 @@
 
 extern ITEM_INFO *items;
 extern ROOM_INFO *room;
+extern BOX_INFO *boxes;
 extern int level_complete;
 extern int flipeffect, fliptimer;
 extern int assault_timer_display, assault_timer_active;
