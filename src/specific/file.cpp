@@ -21,4 +21,14 @@ void build_ext(char *fname, char *ext)
     *(fname++) = 0;
 }
 
+void S_UnloadLevelFile(void)
+{
+    if (App.nRenderMode == 1)
+        HWR_FreeTexturePages();
+    for (int i = 0; i < 32; ++i)
+        texture_page_ptrs[i] = 0;
+    LastLoadedLevelPath[0] = 0;
+    nTInfos = 0;
+}
+
 }
