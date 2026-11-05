@@ -169,6 +169,70 @@ void T_BottomAlign(TEXTSTRING *textString, sint16 ok)
         textString->flags &= ~T_BOTTOMALIGN;
 }
 
+extern char T_textSpacing[];
+extern char T_remapASCII[];
+
+uint32 GetTextScaleV(uint32 scaleV);
+
+sint32 T_GetTextWidth(TEXTSTRING *textString)
+{
+    uint8 *string;
+    uint32 letter;
+    sint32 width;
+    uint32 scaleV, scaleH;
+
+    letter = 0;
+    width = 0;
+    scaleH = GetTextScaleH(textString->scaleH);
+    scaleV = GetTextScaleV(textString->scaleV);
+    width = 0;
+    string = (uint8 *)textString->string;
+    while (*string) {
+        letter = *(string++);
+        if (letter == 17 || letter == 18) {
+            width += 14;
+            continue;
+        }
+        if (letter > 129)
+            continue;
+        if (letter > 10 && letter < 32)
+            continue;
+        if (letter == '(' || letter == ')' || letter == '$' || letter == '~')
+            continue;
+        if (letter == 32) {
+            if (scaleH == 0x10000)
+                width += textString->wordSpacing;
+            else
+                width += (textString->wordSpacing * scaleH) >> 16;
+            continue;
+        }
+        if (letter >= 127 && letter <= 129) {
+            if (scaleH == 0x10000)
+                width += 16;
+            else
+                width += (16 * scaleH) >> 16;
+            continue;
+        }
+        if (letter < 11)
+            letter += 81;
+        else if (letter < 16)
+            letter += 91;
+        else
+            letter = T_remapASCII[letter - 32];
+        if (letter >= '0' && letter <= '9')
+            width += (12 * scaleH) >> 16;
+        else {
+            if (scaleH == 0x10000)
+                width += T_textSpacing[letter] + textString->letterSpacing;
+            else
+                width += (((sint32)T_textSpacing[letter] + textString->letterSpacing) * scaleH) >> 16;
+        }
+    }
+    width -= textString->letterSpacing;
+    width &= 0xfffe;
+    return width;
+}
+
 int T_RemovePrint(TEXTSTRING *textString)
 {
     if (!textString)

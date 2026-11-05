@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="205.32" height="12" x="0" y="0" class="named"><title>648 · 43.87%</title></rect>
-<rect width="262.68" height="12" x="205.32" y="0" class="todo"><title>829 · 56.13%</title></rect>
+<rect width="205.64" height="12" x="0" y="0" class="named"><title>649 · 43.94%</title></rect>
+<rect width="262.36" height="12" x="205.64" y="0" class="todo"><title>828 · 56.06%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">43.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">648</tspan> · <tspan class="todo">829</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">649</tspan> · <tspan class="todo">828</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="68.83" height="12" x="0" y="0" class="named"><title>98 KB · 14.71%</title></rect>
-<rect width="399.17" height="12" x="68.83" y="0" class="todo"><title>567 KB · 85.29%</title></rect>
+<rect width="69.04" height="12" x="0" y="0" class="named"><title>98 KB · 14.75%</title></rect>
+<rect width="398.96" height="12" x="69.04" y="0" class="todo"><title>567 KB · 85.25%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">14.7%</text>
+<text text-anchor="end" x="648" y="24.50">14.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">98 KB</tspan> · <tspan class="todo">567 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1035,7 +1035,7 @@
 <rect width="12" height="12" x="300" y="285" class="named"><title>0x0046af00 T_CentreV (30 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="285" class="named"><title>0x0046af20 T_RightAlign (30 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="285" class="named"><title>0x0046af40 T_BottomAlign (30 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="285" class="todo"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="285" class="named"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="285" class="named"><title>0x0046b090 T_RemovePrint (37 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="285" class="named"><title>0x0046b0c0 T_GetStringLen (36 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="285" class="named"><title>0x0046b0f0 T_DrawText (39 bytes)</title></rect>
@@ -2088,7 +2088,7 @@
 <rect width="10.14" height="10.61" x="473.46" y="173.97" class="todo"><title>0x00434bf0 DrawAmmoInfo (305 bytes)</title></rect>
 <rect width="10.14" height="10.55" x="473.46" y="187.58" class="todo"><title>0x004302b0 SetupFish (303 bytes)</title></rect>
 <rect width="10.14" height="10.51" x="473.46" y="201.12" class="todo"><title>0x00451980 TriggerLaserBolt (302 bytes)</title></rect>
-<rect width="10.14" height="10.51" x="473.46" y="214.63" class="todo"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
+<rect width="10.14" height="10.51" x="473.46" y="214.63" class="named"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
 <rect width="10.14" height="10.34" x="473.46" y="228.15" class="named"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
 <rect width="10.14" height="10.34" x="473.46" y="241.48" class="named"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="10.14" height="10.34" x="473.46" y="254.82" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
