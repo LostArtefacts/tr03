@@ -19,6 +19,40 @@ void InitialiseMovingBlock(sint16 item_num)
 void floor_shake_effect(ITEM_INFO *item);
 void AdjustStopperFlag(ITEM_INFO *item, sint32 dir, sint32 set);
 
+void ClearMovableBlockSplitters(sint32 x, sint32 y, sint32 z, sint16 room_number)
+{
+    sint16 height, base_room_number;
+    FLOOR_INFO *floor;
+
+    floor = GetFloor(x, y, z, &room_number);
+    boxes[floor->box].overlap_index &= ~BLOCKED;
+    height = boxes[floor->box].height;
+    base_room_number = room_number;
+    floor = GetFloor(x + WALL_L, y, z, &room_number);
+    if (floor->box != NO_BOX) {
+        if (boxes[floor->box].height == height && (boxes[floor->box].overlap_index & 0x8000) && (boxes[floor->box].overlap_index & BLOCKED))
+            ClearMovableBlockSplitters(x + WALL_L, y, z, room_number);
+    }
+    room_number = base_room_number;
+    floor = GetFloor(x - WALL_L, y, z, &room_number);
+    if (floor->box != NO_BOX) {
+        if (boxes[floor->box].height == height && (boxes[floor->box].overlap_index & 0x8000) && (boxes[floor->box].overlap_index & BLOCKED))
+            ClearMovableBlockSplitters(x - WALL_L, y, z, room_number);
+    }
+    room_number = base_room_number;
+    floor = GetFloor(x, y, z + WALL_L, &room_number);
+    if (floor->box != NO_BOX) {
+        if (boxes[floor->box].height == height && (boxes[floor->box].overlap_index & 0x8000) && (boxes[floor->box].overlap_index & BLOCKED))
+            ClearMovableBlockSplitters(x, y, z + WALL_L, room_number);
+    }
+    room_number = base_room_number;
+    floor = GetFloor(x, y, z - WALL_L, &room_number);
+    if (floor->box != NO_BOX) {
+        if (boxes[floor->box].height == height && (boxes[floor->box].overlap_index & 0x8000) && (boxes[floor->box].overlap_index & BLOCKED))
+            ClearMovableBlockSplitters(x, y, z - WALL_L, room_number);
+    }
+}
+
 void MovableBlock(sint16 item_number)
 {
     ITEM_INFO *item;

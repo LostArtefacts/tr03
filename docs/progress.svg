@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="247.73" height="12" x="0" y="0" class="named"><title>792 · 53.62%</title></rect>
-<rect width="214.27" height="12" x="247.73" y="0" class="todo"><title>685 · 46.38%</title></rect>
+<rect width="248.05" height="12" x="0" y="0" class="named"><title>793 · 53.69%</title></rect>
+<rect width="213.95" height="12" x="248.05" y="0" class="todo"><title>684 · 46.31%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">53.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">792</tspan> · <tspan class="todo">685</tspan></text>
+<text text-anchor="end" x="642" y="7.50">53.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">793</tspan> · <tspan class="todo">684</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="123.72" height="12" x="0" y="0" class="named"><title>178 KB · 26.78%</title></rect>
-<rect width="338.28" height="12" x="123.72" y="0" class="todo"><title>487 KB · 73.22%</title></rect>
+<rect width="124.11" height="12" x="0" y="0" class="named"><title>179 KB · 26.86%</title></rect>
+<rect width="337.89" height="12" x="124.11" y="0" class="todo"><title>487 KB · 73.14%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">26.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">178 KB</tspan> · <tspan class="todo">487 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">26.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">179 KB</tspan> · <tspan class="todo">487 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -876,7 +876,7 @@
 <rect width="12" height="12" x="165" y="240" class="todo"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="240" class="todo"><title>0x00455e30 MonkeyControl (3257 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="240" class="named"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="240" class="todo"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="240" class="named"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="240" class="named"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="240" class="todo"><title>0x00456f40 MovableBlockCollision (636 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="240" class="named"><title>0x004571e0 TestBlockPush (436 bytes)</title></rect>
@@ -1859,7 +1859,7 @@
 <rect width="13.89" height="14.13" x="382.65" y="99" class="named"><title>0x0044a4d0 LaraGetNewTarget (557 bytes)</title></rect>
 <rect width="13.89" height="14.03" x="382.65" y="116.12" class="named"><title>0x00448e60 LaraTestClimbUpPos (553 bytes)</title></rect>
 <rect width="13.89" height="14.03" x="382.65" y="133.15" class="todo"><title>0x004964c0 Func4964c0 (553 bytes)</title></rect>
-<rect width="13.89" height="13.92" x="382.65" y="150.18" class="todo"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
+<rect width="13.89" height="13.92" x="382.65" y="150.18" class="named"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
 <rect width="13.89" height="13.90" x="382.65" y="167.10" class="todo"><title>0x00491c70 Func491c70 (548 bytes)</title></rect>
 <rect width="13.89" height="13.87" x="382.65" y="184" class="named"><title>0x0042a680 TriggerRicochetSpark (547 bytes)</title></rect>
 <rect width="13.89" height="13.87" x="382.65" y="200.87" class="todo"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
