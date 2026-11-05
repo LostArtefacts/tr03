@@ -39,4 +39,9 @@ void DI_FinishKeyboard(void)
     }
 }
 
+bool DI_StartJoystick(void)
+{
+    return true;
+}
+
 }

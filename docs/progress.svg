@@ -46,12 +46,12 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="276.21" height="12" x="0" y="0" class="named"><title>972 · 65.76%</title></rect>
-<rect width="1.42" height="12" x="276.21" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="142.37" height="12" x="277.63" y="0" class="todo"><title>501 · 33.90%</title></rect>
+<rect width="276.50" height="12" x="0" y="0" class="named"><title>973 · 65.83%</title></rect>
+<rect width="1.42" height="12" x="276.50" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="142.08" height="12" x="277.92" y="0" class="todo"><title>500 · 33.83%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">65.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">972</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">501</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">973</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">500</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="187.32" height="12" x="0" y="0" class="named"><title>298 KB · 44.60%</title></rect>
@@ -1142,7 +1142,7 @@
 <rect width="12" height="12" x="375" y="315" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="315" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="315" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="315" class="todo"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="315" class="named"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="315" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="315" class="todo"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="315" class="todo"><title>0x00475700 Func475700 (31 bytes)</title></rect>
@@ -3023,7 +3023,7 @@
 <rect width="1" height="2.19" x="742.78" y="438.18" class="named"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="1" height="2.19" x="746" y="438.18" class="named"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
 <rect width="2.27" height="1" x="742.78" y="443.37" class="named"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
-<rect width="2.27" height="1" x="742.78" y="446" class="todo"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
+<rect width="2.27" height="1" x="742.78" y="446" class="named"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
 <rect width="1" height="3.63" x="746" y="443.37" class="named"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
 </g>
 </g>
