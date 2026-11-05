@@ -39,4 +39,9 @@ void S_SetupAboveWater(int underwater)
     bBlueEffect = underwater;
 }
 
+void ScreenPartialDump(void)
+{
+    DXUpdateFrame(true, &phd_WindowRect);
+}
+
 }

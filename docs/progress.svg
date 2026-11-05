@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="271.95" height="12" x="0" y="0" class="named"><title>957 · 64.75%</title></rect>
-<rect width="1.42" height="12" x="271.95" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="146.63" height="12" x="273.37" y="0" class="todo"><title>516 · 34.91%</title></rect>
+<rect width="272.23" height="12" x="0" y="0" class="named"><title>958 · 64.82%</title></rect>
+<rect width="1.42" height="12" x="272.23" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="146.35" height="12" x="273.65" y="0" class="todo"><title>515 · 34.84%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">64.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">957</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">516</tspan></text>
+<text text-anchor="end" x="600" y="7.50">64.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">958</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">515</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.88" height="12" x="0" y="0" class="named"><title>297 KB · 44.50%</title></rect>
-<rect width="3.69" height="12" x="186.88" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.43" height="12" x="190.57" y="0" class="todo"><title>365 KB · 54.63%</title></rect>
+<rect width="186.89" height="12" x="0" y="0" class="named"><title>297 KB · 44.50%</title></rect>
+<rect width="3.69" height="12" x="186.89" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.42" height="12" x="190.58" y="0" class="todo"><title>365 KB · 54.62%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1324,7 +1324,7 @@
 <rect width="12" height="12" x="105" y="375" class="todo"><title>0x0048aac0 S_SetupBelowWater (81 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="375" class="named"><title>0x0048ab20 S_SetupAboveWater (33 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="375" class="todo"><title>0x0048ab50 S_AnimateTextures (171 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="375" class="todo"><title>0x0048ac00 ScreenPartialDump (16 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="375" class="named"><title>0x0048ac00 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="375" class="todo"><title>0x0048ac10 ScreenClear (13 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="375" class="todo"><title>0x0048ac20 mCalcPoint (151 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="375" class="todo"><title>0x0048acc0 ProjectPCoord (157 bytes)</title></rect>
@@ -2976,7 +2976,7 @@
 <rect width="2.27" height="2.47" x="711.76" y="417.18" class="named"><title>0x0046ae90 T_RemoveBackground (16 bytes)</title></rect>
 <rect width="2.27" height="2.47" x="711.76" y="422.65" class="named"><title>0x0046aed0 T_RemoveOutline (16 bytes)</title></rect>
 <rect width="2.27" height="2.47" x="711.76" y="428.12" class="named"><title>0x00480d10 DS_Finish (16 bytes)</title></rect>
-<rect width="2.27" height="2.47" x="711.76" y="433.59" class="todo"><title>0x0048ac00 ScreenPartialDump (16 bytes)</title></rect>
+<rect width="2.27" height="2.47" x="711.76" y="433.59" class="named"><title>0x0048ac00 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="2.27" height="2.47" x="711.76" y="439.06" class="named"><title>0x004900b0 DXGetSurfaceDesc (16 bytes)</title></rect>
 <rect width="2.27" height="2.47" x="711.76" y="444.53" class="todo"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
 <rect width="2.05" height="2.55" x="717.03" y="417.18" class="todo"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
