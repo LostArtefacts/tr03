@@ -228,6 +228,46 @@ extern int GnGameMode;
 
 void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
 void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint32 room_number, ITEM_LIGHT *il);
+void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *ri);
+void phd_PushUnitMatrix(void);
+
+#define M03 3
+#define M13 7
+#define M23 11
+
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame)
+{
+    sint16 room_no;
+    PHD_VECTOR pos;
+    sint32 *mptr;
+    sint32 x, y, z;
+
+    if (item->shade < 0) {
+        if (GnGameMode == 3) {
+            pos.x = 0;
+            pos.y = 0;
+            pos.z = 0;
+            GetJointAbsPosition(item, &pos, 0);
+            room_no = item->room_number;
+            GetFloor(pos.x, pos.y, pos.z, &room_no);
+            S_CalculateLight(pos.x, pos.y, pos.z, room_no, &item->il);
+        } else if (item->object_number == 110)
+            S_CalculateLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, &item->il);
+        else {
+            phd_PushUnitMatrix();
+            mptr = phd_mxptr;
+            mptr[M03] = mptr[M13] = mptr[M23] = 0;
+            phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+            x = (phd_mxptr[M03] >> W2V_SHIFT) + item->pos.x_pos;
+            y = (phd_mxptr[M13] >> W2V_SHIFT) + item->pos.y_pos;
+            z = (phd_mxptr[M23] >> W2V_SHIFT) + item->pos.z_pos;
+            phd_PopMatrix();
+            S_CalculateLight(x, y, z, item->room_number, &item->il);
+        }
+    } else
+        S_CalculateStaticMeshLight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->shade & 0x7fff, item->shadeB,
+                                   &room[item->room_number]);
+}
 
 void CalculateObjectLightingLara(void)
 {
