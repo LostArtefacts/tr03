@@ -104,3 +104,38 @@ void GetCarriedItems(void)
         }
     }
 }
+
+extern uint32 CurrentLevel;
+
+void DrawDummyItem(ITEM_INFO *item);
+
+void GetAIPickups(void)
+{
+    int i;
+    sint16 pickup_number;
+    ITEM_INFO *item, *pickup;
+
+    for (i = 0, item = items; i < level_items; i++, item++) {
+        if (objects[item->object_number].intelligent) {
+            item->ai_bits = 0;
+            pickup_number = room[item->room_number].item_number;
+            do {
+                pickup = &items[pickup_number];
+                if (pickup->pos.x_pos == item->pos.x_pos && pickup->pos.z_pos == item->pos.z_pos &&
+                    objects[pickup->object_number].collision == (void *)DrawDummyItem && pickup->object_number < 79) {
+                    item->ai_bits |= 1 << (pickup->object_number - 74);
+                    item->item_flags[3] = pickup->pos.y_rot;
+                    if (!(pickup->object_number == 76 && (CurrentLevel == 15 || CurrentLevel == 14))) {
+                        KillItem(pickup_number);
+                        pickup->room_number = NO_ROOM;
+                    }
+                } else if (pickup->object_number == 330 && item->object_number == PUNK1) {
+                    item->item_flags[2] = 3;
+                    KillItem(pickup_number);
+                    pickup->room_number = NO_ROOM;
+                }
+                pickup_number = pickup->next_item;
+            } while (pickup_number != NO_ITEM);
+        }
+    }
+}

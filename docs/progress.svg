@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="203.92" height="12" x="0" y="0" class="named"><title>644 · 43.57%</title></rect>
-<rect width="264.08" height="12" x="203.92" y="0" class="todo"><title>834 · 56.43%</title></rect>
+<rect width="204.24" height="12" x="0" y="0" class="named"><title>645 · 43.64%</title></rect>
+<rect width="263.76" height="12" x="204.24" y="0" class="todo"><title>833 · 56.36%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">43.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">644</tspan> · <tspan class="todo">834</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">645</tspan> · <tspan class="todo">833</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="67.63" height="12" x="0" y="0" class="named"><title>96 KB · 14.45%</title></rect>
-<rect width="400.37" height="12" x="67.63" y="0" class="todo"><title>569 KB · 85.55%</title></rect>
+<rect width="67.83" height="12" x="0" y="0" class="named"><title>96 KB · 14.49%</title></rect>
+<rect width="400.17" height="12" x="67.83" y="0" class="todo"><title>569 KB · 85.51%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">14.4%</text>
+<text text-anchor="end" x="648" y="24.50">14.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">96 KB</tspan> · <tspan class="todo">569 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -990,7 +990,7 @@
 <rect width="12" height="12" x="375" y="270" class="todo"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="270" class="todo"><title>0x00465820 ObjectObjects (3209 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="270" class="named"><title>0x004664b0 GetCarriedItems (215 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="270" class="todo"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="270" class="named"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="270" class="todo"><title>0x004666c0 BuildOutsideTable (716 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="270" class="todo"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="270" class="todo"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
@@ -2093,7 +2093,7 @@
 <rect width="10.11" height="10.36" x="473.28" y="227.72" class="named"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
 <rect width="10.11" height="10.36" x="473.28" y="241.08" class="todo"><title>0x0044d060 LaraInitialiseMeshes (297 bytes)</title></rect>
 <rect width="10.11" height="10.36" x="473.28" y="254.44" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
-<rect width="10.11" height="10.33" x="473.28" y="267.80" class="todo"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
+<rect width="10.11" height="10.33" x="473.28" y="267.80" class="named"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
 <rect width="10.11" height="10.33" x="473.28" y="281.13" class="named"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="10.11" height="10.15" x="473.28" y="294.46" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="10.11" height="10.15" x="473.28" y="307.61" class="named"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
