@@ -338,6 +338,56 @@ void TriggerBlood(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 num)
     }
 }
 
+void TriggerBloodD(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 num)
+{
+    sint32 lp1;
+    sint32 tangle, tspeed;
+    SPARKS *sptr;
+
+    for (lp1 = 0; lp1 < num; lp1++) {
+        sptr = &sparks[GetFreeSpark()];
+        sptr->On = 1;
+        if (gameflow.language == 2) {
+            sptr->sB = 224;
+            sptr->sG = 0;
+            sptr->sR = 112;
+            sptr->dB = 192;
+            sptr->dG = 0;
+            sptr->dR = 96;
+        } else {
+            sptr->sR = 224;
+            sptr->sG = 0;
+            sptr->sB = 32;
+            sptr->dR = 192;
+            sptr->dG = 0;
+            sptr->dB = 24;
+        }
+        sptr->ColFadeSpeed = 8;
+        sptr->FadeToBlack = 8;
+        sptr->sLife = sptr->Life = 24;
+        sptr->TransType = 1;
+        sptr->Dynamic = -1;
+        sptr->x = x + ((GetRandomDraw() & 31) - 16);
+        sptr->y = y + ((GetRandomDraw() & 31) - 16);
+        sptr->z = z + ((GetRandomDraw() & 31) - 16);
+        tangle = (angle + ((GetRandomDraw() & 31) - 16)) & 4095;
+        tspeed = GetRandomDraw() & 15;
+        sptr->Zvel = (rcossin_tbl[(tangle << 1) + 1] * tspeed) >> 5;
+        sptr->Xvel = (-rcossin_tbl[tangle << 1] * tspeed) >> 5;
+        sptr->Yvel = -((GetRandomDraw() & 255) + 128);
+        sptr->Friction = 4;
+        sptr->Flags = 0;
+        sptr->Scalar = 3;
+        sptr->Gravity = (GetRandomDraw() & 31) + 31;
+        sptr->Width = sptr->sWidth = 2;
+        sptr->dWidth = 2 - (GetRandomDraw() & 1);
+        sptr->Height = sptr->sHeight = 2;
+        sptr->dHeight = 2 - (GetRandomDraw() & 1);
+        sptr->MaxYvel = 0;
+        sptr++;
+    }
+}
+
 void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size)
 {
     RIPPLE_STRUCT *rptr;
