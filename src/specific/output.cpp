@@ -44,4 +44,9 @@ void ScreenPartialDump(void)
     DXUpdateFrame(true, &phd_WindowRect);
 }
 
+void ScreenClear(bool tWindow)
+{
+    DXClearBuffers(2, 0);
+}
+
 }
