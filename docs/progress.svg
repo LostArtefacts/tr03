@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="255.92" height="12" x="0" y="0" class="named"><title>900 · 60.93%</title></rect>
-<rect width="0.85" height="12" x="255.92" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
-<rect width="163.22" height="12" x="256.78" y="0" class="todo"><title>574 · 38.86%</title></rect>
+<rect width="256.21" height="12" x="0" y="0" class="named"><title>901 · 61%</title></rect>
+<rect width="0.85" height="12" x="256.21" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
+<rect width="162.94" height="12" x="257.06" y="0" class="todo"><title>573 · 38.79%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">60.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">900</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">574</tspan></text>
+<text text-anchor="end" x="600" y="7.50">61.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">901</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">573</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="179.70" height="12" x="0" y="0" class="named"><title>286 KB · 42.79%</title></rect>
-<rect width="1.51" height="12" x="179.70" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
-<rect width="238.79" height="12" x="181.21" y="0" class="todo"><title>379 KB · 56.85%</title></rect>
+<rect width="180.67" height="12" x="0" y="0" class="named"><title>287 KB · 43.02%</title></rect>
+<rect width="1.51" height="12" x="180.67" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
+<rect width="237.82" height="12" x="182.18" y="0" class="todo"><title>378 KB · 56.62%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">42.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">286 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">379 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">43.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">287 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">378 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -146,7 +146,7 @@
 <rect width="12" height="12" x="435" y="15" class="named"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="15" class="named"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="15" class="named"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="15" class="todo"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="15" class="named"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="15" class="named"><title>0x0040faf0 Trigger51RocketSmoke (450 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="15" class="named"><title>0x0040fcc0 Trigger51BlastFire (464 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="15" class="named"><title>0x0040fe90 InitialiseArea51Struts (8 bytes)</title></rect>
@@ -1650,7 +1650,7 @@
 <rect width="23.51" height="23.39" x="251.98" y="190.53" class="named"><title>0x0046ba60 TonyBossControl (1564 bytes)</title></rect>
 <rect width="23.51" height="23.33" x="251.98" y="216.92" class="todo"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
 <rect width="23.51" height="23.26" x="251.98" y="243.25" class="named"><title>0x00462ea0 SealmuteControl (1555 bytes)</title></rect>
-<rect width="23.51" height="23.11" x="251.98" y="269.51" class="todo"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
+<rect width="23.51" height="23.11" x="251.98" y="269.51" class="named"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
 <rect width="23.51" height="23.11" x="251.98" y="295.61" class="todo"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="23.51" height="22.79" x="251.98" y="321.72" class="named"><title>0x0041f750 CompyControl (1524 bytes)</title></rect>
 <rect width="23.51" height="22.72" x="251.98" y="347.51" class="todo"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
