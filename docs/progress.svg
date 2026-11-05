@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="250.86" height="12" x="0" y="0" class="named"><title>802 · 54.30%</title></rect>
-<rect width="211.14" height="12" x="250.86" y="0" class="todo"><title>675 · 45.70%</title></rect>
+<rect width="251.18" height="12" x="0" y="0" class="named"><title>803 · 54.37%</title></rect>
+<rect width="210.82" height="12" x="251.18" y="0" class="todo"><title>674 · 45.63%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">54.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">802</tspan> · <tspan class="todo">675</tspan></text>
+<text text-anchor="end" x="642" y="7.50">54.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">803</tspan> · <tspan class="todo">674</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="126.97" height="12" x="0" y="0" class="named"><title>183 KB · 27.48%</title></rect>
-<rect width="335.03" height="12" x="126.97" y="0" class="todo"><title>483 KB · 72.52%</title></rect>
+<rect width="127.37" height="12" x="0" y="0" class="named"><title>184 KB · 27.57%</title></rect>
+<rect width="334.63" height="12" x="127.37" y="0" class="todo"><title>482 KB · 72.43%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">27.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">183 KB</tspan> · <tspan class="todo">483 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">27.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">184 KB</tspan> · <tspan class="todo">482 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -835,7 +835,7 @@
 <rect width="12" height="12" x="300" y="225" class="todo"><title>0x0044f7a0 UpdateLaserShades (99 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="225" class="named"><title>0x0044f810 LaserControl (31 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="225" class="named"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="225" class="todo"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="225" class="named"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="225" class="todo"><title>0x0044fbc0 LizManControl (2003 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="225" class="named"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="225" class="named"><title>0x00450620 TriggerLizmanGas (469 bytes)</title></rect>
@@ -1845,7 +1845,7 @@
 <rect width="14.61" height="13.86" x="506.64" y="82.12" class="named"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="14.61" height="13.86" x="524.25" y="82.12" class="named"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
 <rect width="14.48" height="13.86" x="541.86" y="82.12" class="named"><title>0x00410ec0 BigGunDraw (570 bytes)</title></rect>
-<rect width="14.48" height="13.86" x="559.34" y="82.12" class="todo"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
+<rect width="14.48" height="13.86" x="559.34" y="82.12" class="named"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
 <rect width="14.46" height="13.86" x="576.83" y="82.12" class="named"><title>0x0046cd00 TriggerFireBallFlame (569 bytes)</title></rect>
 <rect width="14.43" height="13.86" x="594.29" y="82.12" class="named"><title>0x00414c10 GetCreatureMood (568 bytes)</title></rect>
 <rect width="14.41" height="13.86" x="611.72" y="82.12" class="named"><title>0x0042de80 ControlSmokeEmitter (567 bytes)</title></rect>

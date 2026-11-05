@@ -118,3 +118,92 @@ void LaserSplitterToggle(ITEM_INFO *item)
         floor = GetFloor(x, item->pos.y_pos, z, &room_number);
     }
 }
+
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+void S_DrawLaserBeam(GAME_VECTOR *src, GAME_VECTOR *dest, uint8 r, uint8 g, uint8 b);
+
+extern sint32 level_items;
+
+void S_DrawLaser(ITEM_INFO *item)
+{
+    GAME_VECTOR src, dest;
+    sint32 x, z, lp, y;
+
+    if (!TriggerActive(item)) {
+        return;
+    }
+
+    y = 0;
+
+    switch (item->pos.y_rot) {
+    case 0:
+        z = 511;
+        x = 0;
+        break;
+    case 16384:
+        z = 0;
+        x = 511;
+        break;
+    case -32768:
+        z = -511;
+        x = 0;
+        break;
+    default:
+        z = 0;
+        x = -511;
+        break;
+    }
+
+    for (lp = 0; lp < item->hit_points; lp++) {
+        src.room_number = item->room_number;
+        src.x = item->pos.x_pos + x;
+        src.y = item->pos.y_pos + y;
+        src.z = item->pos.z_pos + z;
+
+        dest.x = item->pos.x_pos - (x << 5);
+        dest.y = item->pos.y_pos + y;
+        dest.z = item->pos.z_pos - (z << 5);
+
+        LOS(&src, &dest);
+
+        if (LaraOnLOS(&src, &dest)) {
+            sint32 lp;
+            ITEM_INFO *target;
+
+            if (item->object_number != 66) {
+                if (item->object_number == 68) {
+                    lara_item->hit_points = 0;
+                } else {
+                    lara_item->hit_points -= 10;
+                }
+                DoLotsOfBloodD(lara_item->pos.x_pos, item->pos.y_pos + y, lara_item->pos.z_pos, (GetRandomDraw() & 127) + 128,
+                               GetRandomDraw() << 1, lara_item->room_number, 1);
+            }
+
+            if (item->pos.y_rot == 0 || item->pos.y_rot == -32768) {
+                dest.z = lara_item->pos.z_pos;
+            } else {
+                dest.x = lara_item->pos.x_pos;
+            }
+
+            for (lp = 0, target = &items[0]; lp < level_items; lp++, target++) {
+                if (target->object_number == 318 || target->object_number == 64) {
+                    if (TriggerActive(target)) {
+                        target->really_active = 1;
+                    }
+                }
+            }
+        }
+
+        if (item->object_number == 66) {
+            S_DrawLaserBeam(&src, &dest, 16, 0, 16);
+        } else if (item->object_number == 67) {
+            S_DrawLaserBeam(&src, &dest, 0, 0, 16);
+        } else {
+            S_DrawLaserBeam(&src, &dest, 0, 2, 16);
+        }
+
+        y -= 256;
+    }
+}
