@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="204.88" height="12" x="0" y="0" class="named"><title>655 · 44.35%</title></rect>
-<rect width="257.12" height="12" x="204.88" y="0" class="todo"><title>822 · 55.65%</title></rect>
+<rect width="205.19" height="12" x="0" y="0" class="named"><title>656 · 44.41%</title></rect>
+<rect width="256.81" height="12" x="205.19" y="0" class="todo"><title>821 · 55.59%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">44.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">655</tspan> · <tspan class="todo">822</tspan></text>
+<text text-anchor="end" x="642" y="7.50">44.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">656</tspan> · <tspan class="todo">821</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="69.50" height="12" x="0" y="0" class="named"><title>100 KB · 15.04%</title></rect>
-<rect width="392.50" height="12" x="69.50" y="0" class="todo"><title>565 KB · 84.96%</title></rect>
+<rect width="69.73" height="12" x="0" y="0" class="named"><title>100 KB · 15.09%</title></rect>
+<rect width="392.27" height="12" x="69.73" y="0" class="todo"><title>565 KB · 84.91%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">15.0%</text>
+<text text-anchor="end" x="642" y="24.50">15.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">100 KB</tspan> · <tspan class="todo">565 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -834,7 +834,7 @@
 <rect width="12" height="12" x="285" y="225" class="todo"><title>0x0044f580 LaraOnLOS (531 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="225" class="todo"><title>0x0044f7a0 UpdateLaserShades (99 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="225" class="named"><title>0x0044f810 LaserControl (31 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="225" class="todo"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="225" class="named"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="225" class="todo"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="225" class="todo"><title>0x0044fbc0 LizManControl (2003 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="225" class="todo"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
@@ -2056,7 +2056,7 @@
 <rect width="10.80" height="10.87" x="585.74" y="160.11" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="10.80" height="10.87" x="599.54" y="160.11" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
 <rect width="10.77" height="10.87" x="613.35" y="160.11" class="named"><title>0x00449740 lara_col_climbing (332 bytes)</title></rect>
-<rect width="10.77" height="10.87" x="627.11" y="160.11" class="todo"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
+<rect width="10.77" height="10.87" x="627.11" y="160.11" class="named"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
 <rect width="10.74" height="10.87" x="640.88" y="160.11" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="10.70" height="10.87" x="654.62" y="160.11" class="todo"><title>0x004086b0 HWI_InsertObjectGT4_Sorted (330 bytes)</title></rect>
 <rect width="10.70" height="10.87" x="668.33" y="160.11" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
