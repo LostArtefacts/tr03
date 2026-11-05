@@ -30,6 +30,59 @@ int TestBlockMovable(ITEM_INFO *item, int blokhite)
     return 1;
 }
 
+extern int height_type;
+
+int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite);
+
+int TestBlockPush(ITEM_INFO *item, int blokhite, uint16 quadrant)
+{
+    COLL_INFO scoll;
+    FLOOR_INFO *floor;
+    ROOM_INFO *r;
+    sint32 x, y, z, cmax;
+    sint16 room_num;
+
+    if (!TestBlockMovable(item, blokhite))
+        return 0;
+    x = item->pos.x_pos;
+    y = item->pos.y_pos;
+    z = item->pos.z_pos;
+    room_num = item->room_number;
+    switch (quadrant) {
+    case 0:
+        z += WALL_L;
+        break;
+    case 1:
+        x += WALL_L;
+        break;
+    case 2:
+        z -= WALL_L;
+        break;
+    case 3:
+        x -= WALL_L;
+        break;
+    }
+    floor = GetFloor(x, y, z, &room_num);
+    r = &room[room_num];
+    if (r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size].stopper)
+        return 0;
+    scoll.quadrant = quadrant;
+    scoll.radius = 500;
+    if (CollideStaticObjects(&scoll, x, y, z, room_num, 1000))
+        return 0;
+    if (((sint32)floor->floor << 8) != y)
+        return 0;
+    GetHeight(floor, x, y, z);
+    if (height_type != 0)
+        return 0;
+    cmax = y - (blokhite - 100);
+    floor = GetFloor(x, cmax, z, &room_num);
+    if (GetCeiling(floor, x, cmax, z) > cmax)
+        return 0;
+    item->item_flags[0] = lara_item->pos.y_rot;
+    return 1;
+}
+
 void DrawMovableBlock(ITEM_INFO *item)
 {
     if (item->status != ACTIVE)

@@ -816,8 +816,7 @@ address,size,name,symbol
 0x00456ba0,549,ClearMovableBlockSplitters,_ClearMovableBlockSplitters
 0x00456dd0,367,MovableBlock,_MovableBlock
 0x00456f40,636,MovableBlockCollision,_MovableBlockCollision
-0x004571e0,299,TestBlockPush,_TestBlockPush
-0x0045730b,120,Func45730b,
+0x004571e0,436,TestBlockPush,_TestBlockPush
 0x004573a0,78,TestBlockMovable,_TestBlockMovable
 0x004573f0,655,TestBlockPull,_TestBlockPull
 0x00457690,195,AlterFloorHeight,_AlterFloorHeight
