@@ -1,5 +1,5 @@
+#include "specific/standard.h"
 #include "game.h"
-#include <string.h>
 
 #define DOOR_CLOSED 0
 #define DOOR_OPEN 1

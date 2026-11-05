@@ -1,5 +1,5 @@
+#include "specific/standard.h"
 #include "game.h"
-#include <stdio.h>
 
 #define CAMERA_YOFFSET -96
 #define NUM_ASS_TIMES 10

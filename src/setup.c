@@ -1,4 +1,4 @@
-#include <string.h>
+#include "specific/standard.h"
 #include "game.h"
 
 extern sint32 flipmap[10];

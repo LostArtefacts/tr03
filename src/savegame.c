@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "specific/standard.h"
 #include "game.h"
 
 extern int SGcount;
