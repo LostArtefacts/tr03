@@ -1317,7 +1317,7 @@ address,size,name,symbol
 0x0048e490,111,UT_CenterWindow,_UT_CenterWindow
 0x0048e500,44,UT_FindArg,_UT_FindArg
 0x0048e530,59,UT_OKCancelBox,_UT_OKCancelBox
-0x0048e570,97,UT_OKCB_DlgProc,_UT_OKCB_DlgProc
+0x0048e570,97,UT_OKCB_DlgProc,_UT_OKCB_DlgProc@16
 0x0048e5e0,231,Func48e5e0,
 0x0048e6d0,54,Func48e6d0,
 0x0048e710,19,Func48e710,
@@ -1404,7 +1404,7 @@ address,size,name,symbol
 0x00496a70,170,MMXBlit32to16,_MMXBlit32to16
 0x00496b20,143,MMXBlit32to24,_MMXBlit32to24
 0x00496bb0,97,DXUserDialog,_DXUserDialog
-0x00496c20,1596,DXSetupDlgProc,_DXSetupDlgProc
+0x00496c20,1596,DXSetupDlgProc,_DXSetupDlgProc@16
 0x00497290,660,DXCheckMMXTechnology,_DXCheckMMXTechnology
 0x00497530,246,DXInitDialogBox,_DXInitDialogBox
 0x00497630,197,DXInitDSAdapters,_DXInitDSAdapters

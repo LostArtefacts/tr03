@@ -1,5 +1,6 @@
 #include "standard.h"
 #include "specific.h"
+#include "winmain.h"
 
 extern "C" {
 
@@ -52,6 +53,18 @@ char *UT_FindArg(char *pArg)
     if (!p)
         return 0;
     return p + strlen(pArg);
+}
+
+BOOL CALLBACK UT_OKCB_DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+bool UT_OKCancelBox(char *szDlgResource, HWND hWndOwner)
+{
+    bool ret;
+
+    ShowCursor(1);
+    ret = DialogBox(App.hInstance, szDlgResource, hWndOwner, UT_OKCB_DlgProc) != 0;
+    ShowCursor(0);
+    return ret;
 }
 
 }
