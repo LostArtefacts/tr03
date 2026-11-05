@@ -53,4 +53,16 @@ void DrawBuckets(void)
     }
 }
 
+int GETR(int rgb)
+{
+    int r;
+
+    r = ColorTable[((rgb >> 10) & 0x1f) << 3];
+    if (bBlueEffect) {
+        r *= 128;
+        r >>= 8;
+    }
+    return r;
+}
+
 }
