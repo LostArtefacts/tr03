@@ -148,3 +148,73 @@ void undraw_shotgun(int weapon_type)
     lara.left_arm.frame_number = lara.right_arm.frame_number = item->frame_number - anims[item->anim_number].frame_base;
     lara.left_arm.anim_number = lara.right_arm.anim_number = item->anim_number;
 }
+
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint16 InnerXZoff;
+    sint16 InnerXZsize;
+    sint16 InnerYsize;
+    sint16 InnerXZvel;
+    sint16 InnerYvel;
+    sint16 InnerGravity;
+    sint16 InnerFriction;
+    sint16 MiddleXZoff;
+    sint16 MiddleXZsize;
+    sint16 MiddleYsize;
+    sint16 MiddleXZvel;
+    sint16 MiddleYvel;
+    sint16 MiddleGravity;
+    sint16 MiddleFriction;
+    sint16 OuterXZoff;
+    sint16 OuterXZsize;
+    sint16 OuterXZvel;
+    sint16 OuterFriction;
+} SPLASH_SETUP;
+
+extern SPLASH_SETUP splash_setup;
+
+void SetupSplash(SPLASH_SETUP *spl);
+void TriggerExplosionBubble(sint32 x, sint32 y, sint32 z, sint16 roomnum);
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+
+void TriggerUnderwaterExplosion(ITEM_INFO *item)
+{
+    sint32 wh, hfw, lp;
+
+    TriggerExplosionBubble(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    TriggerExplosionSparks(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 2, -2, 1, item->room_number);
+    for (lp = 0; lp < 3; lp++)
+        TriggerExplosionSparks(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 2, -1, 1, item->room_number);
+    wh = GetWaterHeight(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number);
+    if (wh != NO_HEIGHT) {
+        hfw = item->pos.y_pos - wh;
+        if (hfw < 2048) {
+            hfw = 2048 - hfw;
+            splash_setup.x = item->pos.x_pos;
+            splash_setup.y = room[item->room_number].maxceiling;
+            splash_setup.z = item->pos.z_pos;
+            splash_setup.InnerXZoff = 16 + (hfw >> 6);
+            splash_setup.InnerXZsize = 12 + (hfw >> 6);
+            splash_setup.InnerYsize = -96;
+            splash_setup.InnerXZvel = 0xa0;
+            splash_setup.InnerYvel = (-hfw << 3) - 4096;
+            splash_setup.InnerGravity = 0x60;
+            splash_setup.InnerFriction = 7;
+            splash_setup.MiddleXZoff = 24 + (hfw >> 6);
+            splash_setup.MiddleXZsize = 24 + (hfw >> 6);
+            splash_setup.MiddleYsize = -64;
+            splash_setup.MiddleXZvel = 0xe0;
+            splash_setup.MiddleYvel = (-hfw << 2) - 3072;
+            splash_setup.MiddleGravity = 0x38;
+            splash_setup.MiddleFriction = 8;
+            splash_setup.OuterXZoff = 32 + (hfw >> 6);
+            splash_setup.OuterXZsize = 32 + (hfw >> 6);
+            splash_setup.OuterXZvel = 0x110;
+            splash_setup.OuterFriction = 9;
+            SetupSplash(&splash_setup);
+        }
+    }
+}
