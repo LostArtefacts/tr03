@@ -97,7 +97,7 @@ address,size,name,symbol
 0x00410ec0,570,BigGunDraw,_BigGunDraw
 0x00411100,845,BigGunControl,_BigGunControl
 0x00411450,143,InitialiseVulture,_InitialiseVulture
-0x004114e0,531,VultureControl,_VultureControl
+0x004114e0,560,VultureControl,_VultureControl
 0x00411710,2203,BlowpipeControl,_BlowpipeControl
 0x00411fe0,84,InitialiseBoat,_InitialiseBoat
 0x00412040,362,BoatCheckGeton,_BoatCheckGeton
@@ -1839,6 +1839,8 @@ address,size,name,symbol
 0x004c31bc,4,joyGetPosEx,__imp__joyGetPosEx@8
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
 0x004c5084,4,one,_one
+0x004c5160,16,bird_bite,_bird_bite
+0x004c5170,16,crow_bite,_crow_bite
 0x004c51a0,16,seal_gas_boomute,_seal_gas_boomute
 0x004c51b4,4,cine_delay,_cine_delay
 0x004c51d8,16,cobra_hit,_cobra_hit
