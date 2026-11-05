@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="299.80" height="12" x="0" y="0" class="named"><title>1055 · 71.38%</title></rect>
-<rect width="1.99" height="12" x="299.80" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="118.21" height="12" x="301.79" y="0" class="todo"><title>416 · 28.15%</title></rect>
+<rect width="300.08" height="12" x="0" y="0" class="named"><title>1056 · 71.45%</title></rect>
+<rect width="1.99" height="12" x="300.08" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="117.93" height="12" x="302.07" y="0" class="todo"><title>415 · 28.08%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">71.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1055</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">416</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1056</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">415</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.42" height="12" x="0" y="0" class="named"><title>306 KB · 45.81%</title></rect>
-<rect width="3.79" height="12" x="192.42" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.79" height="12" x="196.21" y="0" class="todo"><title>356 KB · 53.28%</title></rect>
+<rect width="192.44" height="12" x="0" y="0" class="named"><title>306 KB · 45.82%</title></rect>
+<rect width="3.79" height="12" x="192.44" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.76" height="12" x="196.24" y="0" class="todo"><title>356 KB · 53.28%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
@@ -1123,7 +1123,7 @@
 <rect width="12" height="12" x="90" y="315" class="todo"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="315" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="315" class="todo"><title>0x00474760 ACMClose (323 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="315" class="todo"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="315" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="315" class="todo"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="315" class="todo"><title>0x00474900 ACMEmulateCDPlay (558 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="315" class="todo"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
@@ -2781,7 +2781,7 @@
 <rect width="4.17" height="3.96" x="653.95" y="354.17" class="named"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
 <rect width="4.17" height="3.96" x="653.95" y="361.13" class="todo"><title>0x0048e830 Func48e830 (47 bytes)</title></rect>
 <rect width="4.17" height="3.88" x="653.95" y="368.09" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
-<rect width="4.17" height="3.88" x="653.95" y="374.97" class="todo"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
+<rect width="4.17" height="3.88" x="653.95" y="374.97" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="4.17" height="3.88" x="653.95" y="381.84" class="named"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
 <rect width="4.17" height="3.88" x="653.95" y="388.72" class="todo"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
 <rect width="4.17" height="3.88" x="653.95" y="395.59" class="named"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
