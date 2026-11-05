@@ -78,3 +78,22 @@ void SeedRandomDraw(sint32 seed)
 {
     rand_2 = seed;
 }
+
+extern "C" int S_LoadGame(LPVOID data, int size, int slot)
+{
+    HANDLE file;
+    DWORD bytes;
+    int value;
+    char buffer[80];
+
+    wsprintf(buffer, "savegame.%d", slot);
+    file = CreateFile(buffer, GENERIC_READ, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+    if (file != INVALID_HANDLE_VALUE) {
+        ReadFile(file, buffer, 75, &bytes, 0);
+        ReadFile(file, &value, sizeof(int), &bytes, 0);
+        ReadFile(file, data, size, &bytes, 0);
+        CloseHandle(file);
+        return 1;
+    }
+    return 0;
+}
