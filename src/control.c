@@ -1,5 +1,5 @@
+#include "specific/standard.h"
 #include "game.h"
-#include <string.h>
 
 #define MAX_CD_TRACKS 128
 
@@ -23,7 +23,7 @@ typedef struct {
 extern CHANGE_STRUCT *changes;
 extern RANGE_STRUCT *ranges;
 
-void RemoveDrawnItem(sint16 item_num);
+void RemoveDrawnItem(sint16);
 void TriggerNormalCDTrack(sint16 value, sint16 flags, sint16 type);
 
 int GetChange(ITEM_INFO *item, ANIM_STRUCT *anim)
