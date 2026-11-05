@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="277.35" height="12" x="0" y="0" class="named"><title>976 · 66.04%</title></rect>
-<rect width="1.42" height="12" x="277.35" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="141.23" height="12" x="278.77" y="0" class="todo"><title>497 · 33.63%</title></rect>
+<rect width="277.63" height="12" x="0" y="0" class="named"><title>977 · 66.10%</title></rect>
+<rect width="1.42" height="12" x="277.63" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="140.95" height="12" x="279.05" y="0" class="todo"><title>496 · 33.56%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">66.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">976</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">497</tspan></text>
+<text text-anchor="end" x="600" y="7.50">66.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">977</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">496</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.37" height="12" x="0" y="0" class="named"><title>298 KB · 44.61%</title></rect>
-<rect width="3.69" height="12" x="187.37" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.95" height="12" x="191.05" y="0" class="todo"><title>364 KB · 54.51%</title></rect>
+<rect width="187.38" height="12" x="0" y="0" class="named"><title>298 KB · 44.61%</title></rect>
+<rect width="3.69" height="12" x="187.38" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.94" height="12" x="191.06" y="0" class="todo"><title>364 KB · 54.51%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
@@ -1370,7 +1370,7 @@
 <rect width="12" height="12" x="45" y="390" class="named"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="390" class="named"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="390" class="todo"><title>0x0048d500 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="390" class="todo"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="390" class="named"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="390" class="todo"><title>0x0048d5e0 TIME_Init (65 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="390" class="todo"><title>0x0048d630 Sync (105 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="390" class="todo"><title>0x0048d6a0 InitZTable (58 bytes)</title></rect>
@@ -2994,7 +2994,7 @@
 <rect width="1.73" height="2.58" x="726.96" y="422.06" class="named"><title>0x0048ac10 ScreenClear (13 bytes)</title></rect>
 <rect width="1.58" height="2.58" x="731.69" y="422.06" class="named"><title>0x0042f3f0 invisibility_on (12 bytes)</title></rect>
 <rect width="1.58" height="2.58" x="736.27" y="422.06" class="named"><title>0x0042f420 dynamic_light_on (12 bytes)</title></rect>
-<rect width="1.58" height="2.58" x="740.85" y="422.06" class="todo"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
+<rect width="1.58" height="2.58" x="740.85" y="422.06" class="named"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
 <rect width="1.58" height="2.58" x="745.42" y="422.06" class="named"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
 <rect width="2.51" height="1.47" x="722.09" y="427.64" class="named"><title>0x0042d990 KillAllCurrentItems (11 bytes)</title></rect>
 <rect width="2.51" height="1.47" x="722.09" y="432.11" class="named"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
