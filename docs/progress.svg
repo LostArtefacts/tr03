@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="275.07" height="12" x="0" y="0" class="named"><title>968 · 65.49%</title></rect>
-<rect width="1.42" height="12" x="275.07" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="143.50" height="12" x="276.50" y="0" class="todo"><title>505 · 34.17%</title></rect>
+<rect width="275.36" height="12" x="0" y="0" class="named"><title>969 · 65.56%</title></rect>
+<rect width="1.42" height="12" x="275.36" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="143.22" height="12" x="276.78" y="0" class="todo"><title>504 · 34.10%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">65.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">968</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">505</tspan></text>
+<text text-anchor="end" x="600" y="7.50">65.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">969</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">504</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.21" height="12" x="0" y="0" class="named"><title>298 KB · 44.57%</title></rect>
-<rect width="3.69" height="12" x="187.21" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.11" height="12" x="190.89" y="0" class="todo"><title>364 KB · 54.55%</title></rect>
+<rect width="187.26" height="12" x="0" y="0" class="named"><title>298 KB · 44.58%</title></rect>
+<rect width="3.69" height="12" x="187.26" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.06" height="12" x="190.94" y="0" class="todo"><title>364 KB · 54.54%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
@@ -1312,7 +1312,7 @@
 <rect width="12" height="12" x="675" y="360" class="named"><title>0x0048a200 GetRenderWidth (6 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="360" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="360" class="named"><title>0x0048a2a0 S_DumpCine (45 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="360" class="todo"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="360" class="named"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="360" class="named"><title>0x0048a320 S_ClearScreen (11 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="375" class="todo"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="375" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
@@ -2595,7 +2595,7 @@
 <rect width="5.14" height="5.33" x="733.73" y="300.66" class="named"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
 <rect width="5.14" height="5.33" x="741.86" y="300.66" class="named"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
 <rect width="5.05" height="5.42" x="608.82" y="309" class="todo"><title>0x00484eb0 HWR_BeginScene (78 bytes)</title></rect>
-<rect width="5.05" height="5.42" x="608.82" y="317.42" class="todo"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
+<rect width="5.05" height="5.42" x="608.82" y="317.42" class="named"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
 <rect width="5.05" height="5.42" x="608.82" y="325.84" class="todo"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="5.05" height="5.35" x="608.82" y="334.26" class="named"><title>0x004142e0 InitialiseCreature (77 bytes)</title></rect>
 <rect width="5.05" height="5.35" x="608.82" y="342.61" class="named"><title>0x00441e30 extra_as_startanim (77 bytes)</title></rect>
