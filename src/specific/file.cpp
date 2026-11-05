@@ -106,6 +106,21 @@ int LoadSoundEffects(HANDLE file)
     return 1;
 }
 
+int LoadCinematic(HANDLE file)
+{
+    DWORD read;
+
+    MyReadFile(file, &num_cine_frames, sizeof(sint16), &read, 0);
+    if (num_cine_frames) {
+        cine = (sint16 *)game_malloc(16 * num_cine_frames, 26);
+        MyReadFile(file, cine, 16 * num_cine_frames, &read, 0);
+        cine_loaded = 1;
+    } else {
+        cine_loaded = 0;
+    }
+    return 1;
+}
+
 void build_ext(char *fname, char *ext)
 {
     while (*fname != '.' && *fname != 0)

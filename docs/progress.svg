@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="302.07" height="12" x="0" y="0" class="named"><title>1063 · 71.92%</title></rect>
-<rect width="1.99" height="12" x="302.07" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="115.94" height="12" x="304.06" y="0" class="todo"><title>408 · 27.60%</title></rect>
+<rect width="302.35" height="12" x="0" y="0" class="named"><title>1064 · 71.99%</title></rect>
+<rect width="1.99" height="12" x="302.35" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="115.66" height="12" x="304.34" y="0" class="todo"><title>407 · 27.54%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">71.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1063</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">408</tspan></text>
+<text text-anchor="end" x="600" y="7.50">72.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1064</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">407</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.77" height="12" x="0" y="0" class="named"><title>306 KB · 45.90%</title></rect>
-<rect width="3.79" height="12" x="192.77" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.43" height="12" x="196.57" y="0" class="todo"><title>355 KB · 53.20%</title></rect>
+<rect width="192.85" height="12" x="0" y="0" class="named"><title>307 KB · 45.92%</title></rect>
+<rect width="3.79" height="12" x="192.85" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.36" height="12" x="196.64" y="0" class="todo"><title>355 KB · 53.18%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">307 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1214,7 +1214,7 @@
 <rect width="12" height="12" x="705" y="330" class="named"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="330" class="todo"><title>0x00481e10 LoadBoxes (518 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="330" class="todo"><title>0x00482020 LoadAnimatedTextures (284 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="345" class="todo"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="345" class="named"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="345" class="todo"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="345" class="todo"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="345" class="todo"><title>0x004822f0 LoadSamples (613 bytes)</title></rect>
@@ -2433,7 +2433,7 @@
 <rect width="6.65" height="6.45" x="564.28" y="273.50" class="todo"><title>0x004834c0 FMV_Play (122 bytes)</title></rect>
 <rect width="6.65" height="6.45" x="564.28" y="282.95" class="todo"><title>0x00483860 mGetAngle (122 bytes)</title></rect>
 <rect width="6.65" height="6.40" x="564.28" y="292.40" class="named"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
-<rect width="6.65" height="6.40" x="564.28" y="301.80" class="todo"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
+<rect width="6.65" height="6.40" x="564.28" y="301.80" class="named"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
 <rect width="6.65" height="6.40" x="564.28" y="311.19" class="named"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="320.59" class="named"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="329.93" class="named"><title>0x0043fb90 lara_as_hang2 (120 bytes)</title></rect>
