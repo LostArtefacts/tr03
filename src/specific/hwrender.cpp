@@ -7,6 +7,9 @@
 extern "C" {
 
 extern HRESULT (*EndScene)(void);
+extern HRESULT (*BeginScene)(void);
+extern bool bBlueEffect;
+extern int nDrawnPoints;
 extern void *VertexBuffer;
 extern D3DTLVERTEX *CurrentTLVertex;
 extern HRESULT (*SetRenderState)(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
@@ -19,6 +22,8 @@ extern bool GtAlphaBlendEnabled;
 extern bool GtColorKeyEnabled;
 
 void HWR_InitState(void);
+void InitBuckets(void);
+void HWR_GetAllTextureHandles(void);
 void DXTextureCleanup(int nTexture, DXTEXTURE *pTextures);
 DXTEXTURE *DXRestoreSurfaceIfLost(int nTexture, DXTEXTURE *pTextures);
 
@@ -140,6 +145,20 @@ void HWR_EnableZBuffer(bool tWrite, bool tCompare)
             SetRenderState(D3DRENDERSTATE_ZENABLE, tCompare);
         GtZBufferCompareEnabled = tCompare;
     }
+}
+
+void HWR_BeginScene(void)
+{
+    bBlueEffect = false;
+    HWR_GetAllTextureHandles();
+    HWR_EnableAlphaBlend(false);
+    HWR_EnableColorKey(false);
+    HWR_EnableColorAddition(false);
+    HWR_ResetCurrentTexture();
+    BeginScene();
+    nDrawnPoints = 0;
+    if (App.lpZBuffer)
+        InitBuckets();
 }
 
 void HWR_EndScene(void)
