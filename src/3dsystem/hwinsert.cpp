@@ -43,4 +43,14 @@ void InitUVTable(void)
         UVTable[n] = float(n) * (1.0f / 65536.0f);
 }
 
+void DrawBuckets(void)
+{
+    for (int n = 0; n < 6; n++) {
+        if (Buckets[n].cnt != 0) {
+            HWR_SetCurrentTexture(Buckets[n].tpage);
+            DrawPrimitive(D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, &Buckets[n].Vertex[0], Buckets[n].cnt, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        }
+    }
+}
+
 }

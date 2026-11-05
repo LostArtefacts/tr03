@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="290.99" height="12" x="0" y="0" class="named"><title>1024 · 69.28%</title></rect>
-<rect width="1.42" height="12" x="290.99" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="127.59" height="12" x="292.41" y="0" class="todo"><title>449 · 30.38%</title></rect>
+<rect width="291.27" height="12" x="0" y="0" class="named"><title>1025 · 69.35%</title></rect>
+<rect width="1.42" height="12" x="291.27" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="127.31" height="12" x="292.69" y="0" class="todo"><title>448 · 30.31%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">69.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1024</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">449</tspan></text>
+<text text-anchor="end" x="600" y="7.50">69.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1025</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">448</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.80" height="12" x="0" y="0" class="named"><title>302 KB · 45.19%</title></rect>
-<rect width="3.69" height="12" x="189.80" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="226.52" height="12" x="193.48" y="0" class="todo"><title>360 KB · 53.93%</title></rect>
+<rect width="189.84" height="12" x="0" y="0" class="named"><title>302 KB · 45.20%</title></rect>
+<rect width="3.69" height="12" x="189.84" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="226.48" height="12" x="193.52" y="0" class="todo"><title>360 KB · 53.92%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">360 KB</tspan></text>
@@ -104,7 +104,7 @@
 <rect width="12" height="12" x="555" y="0" class="named"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="0" class="todo"><title>0x00405250 Func405250 (30 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="0" class="todo"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="0" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="0" class="todo"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="0" class="todo"><title>0x00405450 HWI_InsertClippedPoly_Textured (1315 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="0" class="todo"><title>0x00405980 HWI_InsertGT3_Sorted (253 bytes)</title></rect>
@@ -2678,7 +2678,7 @@
 <rect width="4.49" height="4.85" x="632.15" y="324.61" class="named"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
 <rect width="4.49" height="4.85" x="639.64" y="324.61" class="named"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
 <rect width="4.49" height="4.85" x="647.13" y="324.61" class="todo"><title>0x0048e860 Func48e860 (62 bytes)</title></rect>
-<rect width="4.42" height="4.85" x="654.62" y="324.61" class="todo"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
+<rect width="4.42" height="4.85" x="654.62" y="324.61" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="662.04" y="324.61" class="named"><title>0x004295a0 gar_RotYXZsuperpack_I (61 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="669.45" y="324.61" class="todo"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
 <rect width="4.34" height="4.85" x="676.87" y="324.61" class="todo"><title>0x004025c0 draw_poly_gtmap (60 bytes)</title></rect>
