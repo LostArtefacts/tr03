@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="203.29" height="12" x="0" y="0" class="named"><title>642 · 43.44%</title></rect>
-<rect width="264.71" height="12" x="203.29" y="0" class="todo"><title>836 · 56.56%</title></rect>
+<rect width="203.60" height="12" x="0" y="0" class="named"><title>643 · 43.50%</title></rect>
+<rect width="264.40" height="12" x="203.60" y="0" class="todo"><title>835 · 56.50%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">43.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">642</tspan> · <tspan class="todo">836</tspan></text>
+<text text-anchor="end" x="648" y="7.50">43.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">643</tspan> · <tspan class="todo">835</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="67.22" height="12" x="0" y="0" class="named"><title>96 KB · 14.36%</title></rect>
-<rect width="400.78" height="12" x="67.22" y="0" class="todo"><title>569 KB · 85.64%</title></rect>
+<rect width="67.42" height="12" x="0" y="0" class="named"><title>96 KB · 14.41%</title></rect>
+<rect width="400.58" height="12" x="67.42" y="0" class="todo"><title>569 KB · 85.59%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">96 KB</tspan> · <tspan class="todo">569 KB</tspan></text>
@@ -467,7 +467,7 @@
 <rect width="12" height="12" x="30" y="120" class="todo"><title>0x00431890 TriggerFlamethrowerFlame (487 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="120" class="todo"><title>0x00431a80 TriggerPilotFlame (395 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="120" class="todo"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="120" class="todo"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="120" class="named"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="120" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="120" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="120" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
@@ -2114,7 +2114,7 @@
 <rect width="9.68" height="10.06" x="537.40" y="173.85" class="named"><title>0x0046e890 FallingBlock (276 bytes)</title></rect>
 <rect width="9.68" height="10.06" x="550.08" y="173.85" class="todo"><title>0x00484580 S_SaveGame (276 bytes)</title></rect>
 <rect width="9.65" height="10.06" x="562.77" y="173.85" class="named"><title>0x00415820 CreatureDie (275 bytes)</title></rect>
-<rect width="9.65" height="10.06" x="575.41" y="173.85" class="todo"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
+<rect width="9.65" height="10.06" x="575.41" y="173.85" class="named"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
 <rect width="9.61" height="10.06" x="588.06" y="173.85" class="todo"><title>0x004842f0 DisplayCredits (274 bytes)</title></rect>
 <rect width="9.54" height="10.06" x="600.67" y="173.85" class="named"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
 <rect width="9.54" height="10.06" x="613.21" y="173.85" class="named"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
