@@ -114,6 +114,21 @@ void S_SetupAboveWater(int underwater)
 
 static int pulse;
 
+void S_AnimateTextures(int n)
+{
+    pulse = (n + pulse) & 31;
+    light_level[1] = GetRandomDraw() & 31;
+    light_level[2] = ((phd_sin((pulse << 16) / 32) + 0x4000) * 31) >> 15;
+    if (GF_SunsetEnabled) {
+        SunsetTimer += n;
+        if (SunsetTimer < 72000)
+            light_level[3] = 31 * SunsetTimer / 72000;
+        else
+            light_level[3] = 31;
+    }
+    AnimateTextures(n);
+}
+
 void ScreenPartialDump(void)
 {
     DXUpdateFrame(true, &phd_WindowRect);
