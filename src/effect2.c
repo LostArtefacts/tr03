@@ -482,6 +482,143 @@ void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 
     }
 }
 
+void TriggerFireFlame(sint32 x, sint32 y, sint32 z, sint32 body_part, sint32 type)
+{
+    sint32 size;
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    if (type != 2) {
+        if (type == 254) {
+            sptr->sG = 255;
+            sptr->sB = 48 + (GetRandomControl() & 31);
+            sptr->sR = 48;
+            sptr->dG = 192 + (GetRandomControl() & 63);
+            sptr->dB = 128 + (GetRandomControl() & 63);
+            sptr->dR = 32;
+        } else {
+            sptr->sR = 255;
+            sptr->sG = 48 + (GetRandomControl() & 31);
+            sptr->sB = 48;
+        }
+    } else {
+        sptr->sR = 48 + (GetRandomControl() & 31);
+        sptr->sG = sptr->sR;
+        sptr->sB = 192 + (GetRandomControl() & 63);
+    }
+    if (type != 254) {
+        sptr->dR = 192 + (GetRandomControl() & 63);
+        sptr->dG = 128 + (GetRandomControl() & 63);
+        sptr->dB = 32;
+    }
+    if (body_part != -1) {
+        sptr->ColFadeSpeed = 8 + (GetRandomControl() & 3);
+        sptr->FadeToBlack = 16;
+        sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 28;
+    } else {
+        if (type != 2 && type != 255 && type != 254) {
+            sptr->ColFadeSpeed = 20 + (GetRandomControl() & 3);
+            sptr->FadeToBlack = 8;
+            sptr->sLife = sptr->Life = (GetRandomControl() & 7) + 40;
+        } else {
+            sptr->ColFadeSpeed = 5 + (GetRandomControl() & 3);
+            sptr->FadeToBlack = 6;
+            sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 16 + ((type >= 254) ? 8 : 0);
+        }
+    }
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    if (body_part != -1) {
+        sptr->x = (GetRandomControl() & 31) - 16;
+        sptr->y = 0;
+        sptr->z = (GetRandomControl() & 31) - 16;
+    } else {
+        if (type == 0 || type == 1) {
+            sptr->x = x + ((GetRandomControl() & 31) - 16);
+            sptr->y = y;
+            sptr->z = z + ((GetRandomControl() & 31) - 16);
+        } else if (type >= 254) {
+            sptr->x = x + ((GetRandomControl() & 63) - 32);
+            sptr->y = y;
+            sptr->z = z + ((GetRandomControl() & 63) - 32);
+        } else {
+            sptr->x = x + ((GetRandomControl() & 15) - 8);
+            sptr->y = y;
+            sptr->z = z + ((GetRandomControl() & 15) - 8);
+        }
+    }
+    if (type != 2) {
+        sptr->Xvel = (GetRandomControl() & 255) - 128;
+        sptr->Yvel = -(GetRandomControl() & 15) - 16;
+        sptr->Zvel = (GetRandomControl() & 255) - 128;
+        if (type == 1)
+            sptr->Friction = 3 | (3 << 4);
+        else
+            sptr->Friction = 5;
+    } else {
+        sptr->Xvel = (GetRandomControl() & 31) - 16;
+        sptr->Yvel = -(GetRandomControl() & 511) - 1024;
+        sptr->Zvel = (GetRandomControl() & 31) - 16;
+        sptr->Friction = 4 | (4 << 4);
+    }
+    if (GetRandomControl() & 1) {
+        if (body_part != -1) {
+            sptr->Flags = 2 | 8 | 16 | 64 | 512;
+            sptr->FxObj = body_part;
+            sptr->Gravity = -(GetRandomControl() & 63) - 32;
+            sptr->MaxYvel = -(GetRandomControl() & 7) - 24;
+        } else {
+            sptr->Gravity = -(GetRandomControl() & 31) - 16;
+            sptr->MaxYvel = -(GetRandomControl() & 7) - 16;
+            sptr->Flags = 2 | 8 | 16 | 512;
+        }
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else {
+        if (body_part != -1) {
+            sptr->Flags = 2 | 8 | 64 | 512;
+            sptr->FxObj = body_part;
+            sptr->Gravity = -(GetRandomControl() & 63) - 32;
+            sptr->MaxYvel = -(GetRandomControl() & 7) - 24;
+        } else {
+            sptr->Flags = 2 | 8 | 512;
+            sptr->Gravity = -(GetRandomControl() & 31) - 16;
+            sptr->MaxYvel = -(GetRandomControl() & 7) - 16;
+        }
+    }
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 2;
+    if (type == 0)
+        size = (GetRandomControl() & 31) + 128;
+    else if (type == 1)
+        size = (GetRandomControl() & 31) + 64;
+    else if (type >= 254)
+        size = (GetRandomControl() & 15) + 48;
+    else {
+        sptr->Gravity = sptr->MaxYvel = 0;
+        size = (GetRandomControl() & 31) + 32;
+    }
+    sptr->Width = sptr->sWidth = size;
+    sptr->Height = sptr->sHeight = size;
+    if (type != 2) {
+        sptr->dWidth = size >> 4;
+        sptr->dHeight = size >> 4;
+    } else {
+        sptr->dWidth = size >> 2;
+        sptr->dHeight = size >> 2;
+    }
+}
+
 void TriggerFlareSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 smoke)
 {
     SPARKS *sptr;
