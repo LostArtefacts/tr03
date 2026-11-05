@@ -387,3 +387,8 @@ void InGameCinematicCamera(void)
         camera.mike_pos.y = camera.pos.y;
     }
 }
+
+void SetCutsceneTrack(int track)
+{
+    cutscene_track = track;
+}

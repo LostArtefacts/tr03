@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="265.70" height="12" x="0" y="0" class="named"><title>935 · 63.26%</title></rect>
-<rect width="1.42" height="12" x="265.70" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="152.88" height="12" x="267.12" y="0" class="todo"><title>538 · 36.40%</title></rect>
+<rect width="265.98" height="12" x="0" y="0" class="named"><title>936 · 63.33%</title></rect>
+<rect width="1.42" height="12" x="265.98" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="152.60" height="12" x="267.40" y="0" class="todo"><title>537 · 36.33%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">63.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">935</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">538</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">936</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">537</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="186.53" height="12" x="0" y="0" class="named"><title>297 KB · 44.41%</title></rect>
 <rect width="3.69" height="12" x="186.53" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.79" height="12" x="190.21" y="0" class="todo"><title>365 KB · 54.71%</title></rect>
+<rect width="229.78" height="12" x="190.22" y="0" class="todo"><title>365 KB · 54.71%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -470,7 +470,7 @@
 <rect width="12" height="12" x="45" y="120" class="named"><title>0x00431a80 TriggerPilotFlame (395 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="120" class="named"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="120" class="named"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="120" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="120" class="named"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="120" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="120" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="120" class="named"><title>0x004322a0 GF_DoLevelSequence (102 bytes)</title></rect>
@@ -3005,7 +3005,7 @@
 <rect width="2.35" height="1.44" x="727.60" y="432.25" class="named"><title>0x0042f180 lara_hands_free (10 bytes)</title></rect>
 <rect width="2.35" height="1.44" x="727.60" y="436.68" class="named"><title>0x0042f240 shoot_right_gun (10 bytes)</title></rect>
 <rect width="2.35" height="1.44" x="727.60" y="441.12" class="named"><title>0x0042f250 shoot_left_gun (10 bytes)</title></rect>
-<rect width="2.35" height="1.44" x="727.60" y="445.56" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
+<rect width="2.35" height="1.44" x="727.60" y="445.56" class="named"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="1.26" height="2.58" x="732.95" y="427.64" class="named"><title>0x00441330 lara_as_splat (10 bytes)</title></rect>
 <rect width="1.26" height="2.58" x="737.22" y="427.64" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
 <rect width="1.26" height="2.58" x="741.48" y="427.64" class="named"><title>0x00484240 SeedRandomDraw (10 bytes)</title></rect>
