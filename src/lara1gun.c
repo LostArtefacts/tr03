@@ -1,5 +1,7 @@
 #include "specific/standard.h"
 #include <commctrl.h>
+#include <mmreg.h>
+#include <dos.h>
 #include "game.h"
 
 void draw_shotgun_meshes(int weapon_type)
@@ -977,6 +979,207 @@ void ControlRocket(sint16 item_number)
             ItemNewRoom(item_number, oldroom);
             TriggerUnderwaterExplosion(item);
         } else {
+            TriggerExplosionSparks(old_x, old_y, old_z, 3, -2, 0, item->room_number);
+            for (x = 0; x < 2; x++)
+                TriggerExplosionSparks(old_x, old_y, old_z, 3, -1, 0, item->room_number);
+        }
+
+        AlertNearbyGuards(item);
+        SoundEffect(105, &item->pos, 4 | 0x1800000);
+        SoundEffect(106, &item->pos, 0);
+        KillItem(item_number);
+    }
+}
+
+void DoProperDetection(sint16 item_number, sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv);
+void AlertNearbyGuards(ITEM_INFO *item);
+
+void ControlGrenade(sint16 item_number)
+{
+    sint16 *bounds;
+    sint32 wx, wy, wz, xv, yv, zv, lp;
+    ITEM_INFO *item, *target;
+    sint32 old_x, old_y, old_z;
+    sint16 target_number;
+    sint32 c, s, x, z, rx, rz, ox, oz, sx, sz, explode, radius, abovewater;
+    sint32 syrot;
+
+    item = &items[item_number];
+
+    old_x = item->pos.x_pos;
+    old_y = item->pos.y_pos;
+    old_z = item->pos.z_pos;
+
+    item->shade = 0x4210 | 0x8000;
+
+    if (room[item->room_number].flags & UNDERWATER) {
+        abovewater = 0;
+        item->fallspeed += (5 - item->fallspeed) >> 1;
+        item->speed -= item->speed >> 2;
+        if (item->speed) {
+            item->pos.z_rot += ((item->speed >> 4) + 3) * ONE_DEGREE;
+            if (item->required_anim_state)
+                item->pos.y_rot += ((item->speed >> 2) + 3) * ONE_DEGREE;
+            else
+                item->pos.x_rot += ((item->speed >> 2) + 3) * ONE_DEGREE;
+        }
+    } else {
+        abovewater = 1;
+        item->fallspeed += 6 >> 1;
+        if (item->speed) {
+            item->pos.z_rot += ((item->speed >> 2) + 7) * ONE_DEGREE;
+            if (item->required_anim_state)
+                item->pos.y_rot += ((item->speed >> 1) + 7) * ONE_DEGREE;
+            else
+                item->pos.x_rot += ((item->speed >> 1) + 7) * ONE_DEGREE;
+        }
+    }
+
+    phd_PushUnitMatrix();
+    *(phd_mxptr + M03) = 0;
+    *(phd_mxptr + M13) = 0;
+    *(phd_mxptr + M23) = 0;
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    phd_TranslateRel(0, 0, -64);
+    wx = *(phd_mxptr + M03) >> W2V_SHIFT;
+    wy = *(phd_mxptr + M13) >> W2V_SHIFT;
+    wz = *(phd_mxptr + M23) >> W2V_SHIFT;
+    phd_PopMatrix();
+
+    if (item->speed && abovewater)
+        TriggerRocketSmoke(wx + item->pos.x_pos, wy + item->pos.y_pos, wz + item->pos.z_pos, -1);
+
+    item->pos.z_pos += (zv = (item->speed * phd_cos(item->goal_anim_state)) >> W2V_SHIFT);
+    item->pos.x_pos += (xv = (item->speed * phd_sin(item->goal_anim_state)) >> W2V_SHIFT);
+    item->pos.y_pos += (yv = item->fallspeed);
+
+    syrot = item->pos.y_rot;
+    item->pos.y_rot = item->goal_anim_state;
+    DoProperDetection(item_number, old_x, old_y, old_z, xv, yv, zv);
+    item->goal_anim_state = item->pos.y_rot;
+    item->pos.y_rot = syrot;
+
+    if (room[item->room_number].flags & UNDERWATER && abovewater) {
+        splash_setup.x = item->pos.x_pos;
+        splash_setup.y = room[item->room_number].maxceiling;
+        splash_setup.z = item->pos.z_pos;
+        splash_setup.InnerXZoff = 16;
+        splash_setup.InnerXZsize = 12;
+        splash_setup.InnerYsize = -96;
+        splash_setup.InnerXZvel = 0xa0;
+        splash_setup.InnerYvel = -(item->fallspeed << 5) - (64 << 5);
+        splash_setup.InnerGravity = 0x80;
+        splash_setup.InnerFriction = 7;
+        splash_setup.MiddleXZoff = 24;
+        splash_setup.MiddleXZsize = 24;
+        splash_setup.MiddleYsize = -64;
+        splash_setup.MiddleXZvel = 0xe0;
+        splash_setup.MiddleYvel = -(item->fallspeed << 4) - (64 << 4);
+        splash_setup.MiddleGravity = 0x48;
+        splash_setup.MiddleFriction = 8;
+        splash_setup.OuterXZoff = 32;
+        splash_setup.OuterXZsize = 32;
+        splash_setup.OuterXZvel = 0x110;
+        splash_setup.OuterFriction = 9;
+        SetupSplash(&splash_setup);
+    }
+
+    radius = explode = 0;
+    if (item->hit_points) {
+        item->hit_points--;
+        if (!item->hit_points) {
+            radius = WALL_L;
+            explode = 1;
+        }
+    }
+
+    GetNearByRooms(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, radius << 2, radius << 2, item->room_number);
+
+    for (lp = 0; lp < number_draw_rooms; lp++) {
+        for (target_number = room[draw_rooms[lp]].item_number; target_number != NO_ITEM;
+             target_number = target->next_item) {
+            target = &items[target_number];
+            if (target == lara_item || !target->collidable)
+                continue;
+
+            if (target->object_number == 101 || target->object_number == 102 || target->object_number == 103 ||
+                target->object_number == 104 || target->object_number == 38 || target->object_number == 373 ||
+                target->object_number == 47 ||
+                (objects[target->object_number].intelligent && target->status != INVISIBLE &&
+                 objects[target->object_number].collision)) {
+                bounds = GetBestFrame(target);
+                if (item->pos.y_pos + radius < target->pos.y_pos + bounds[2] ||
+                    item->pos.y_pos - radius > target->pos.y_pos + bounds[3])
+                    continue;
+
+                c = phd_cos(target->pos.y_rot);
+                s = phd_sin(target->pos.y_rot);
+
+                x = item->pos.x_pos - target->pos.x_pos;
+                z = item->pos.z_pos - target->pos.z_pos;
+                rx = (c * x - s * z) >> W2V_SHIFT;
+
+                ox = old_x - target->pos.x_pos;
+                oz = old_z - target->pos.z_pos;
+                sx = (c * ox - s * oz) >> W2V_SHIFT;
+
+                if ((rx + radius < bounds[0] && sx + radius < bounds[0]) ||
+                    (rx - radius > bounds[1] && sx - radius > bounds[1]))
+                    continue;
+
+                rz = (c * z + s * x) >> W2V_SHIFT;
+                sz = (c * oz + s * ox) >> W2V_SHIFT;
+
+                if ((rz + radius < bounds[4] && sz + radius < bounds[4]) ||
+                    (rz - radius > bounds[5] && sz - radius > bounds[5]))
+                    continue;
+
+                if (target->object_number == 102 && CurrentLevel != 6) {
+                    SmashWindow(target_number);
+                } else if (target->object_number == 101 || target->object_number == 103 ||
+                           target->object_number == 104) {
+                    SmashWindow(target_number);
+                } else if (target->object_number == 38 || target->object_number == 373) {
+                    if (item->status != ACTIVE) {
+                        item->status = ACTIVE;
+                        AddActiveItem(target_number);
+                    }
+                } else if (target->object_number != 102) {
+                    if (target->object_number != 36 || !TribeBossShieldOn)
+                        HitTarget(target, NULL, 20);
+                    else
+                        FindClosestShieldPoint(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, target);
+
+                    savegame.ammo_hit++;
+
+                    if (target->hit_points <= 0) {
+                        savegame.kills++;
+                        if (target->object_number != 36 && target->object_number != 25 &&
+                            target->object_number != 49 && target->object_number != 73 &&
+                            target->object_number != 57 && target->object_number != 58 &&
+                            target->object_number != 47) {
+                            if (target->object_number == 35 && lizard_man_active)
+                                lizard_man_active = 0;
+                            item_after_projectile = items[target_number].next_active;
+                            CreatureDie(target_number, 1);
+                        }
+                    }
+
+                    if (explode == 0) {
+                        explode = 1;
+                        radius = WALL_L;
+                        lp = -1;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    if (explode) {
+        if (room[item->room_number].flags & UNDERWATER)
+            TriggerUnderwaterExplosion(item);
+        else {
             TriggerExplosionSparks(old_x, old_y, old_z, 3, -2, 0, item->room_number);
             for (x = 0; x < 2; x++)
                 TriggerExplosionSparks(old_x, old_y, old_z, 3, -1, 0, item->room_number);
