@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="261.81" height="12" x="0" y="0" class="named"><title>837 · 56.67%</title></rect>
-<rect width="200.19" height="12" x="261.81" y="0" class="todo"><title>640 · 43.33%</title></rect>
+<rect width="262.12" height="12" x="0" y="0" class="named"><title>838 · 56.74%</title></rect>
+<rect width="199.88" height="12" x="262.12" y="0" class="todo"><title>639 · 43.26%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">56.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">837</tspan> · <tspan class="todo">640</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">838</tspan> · <tspan class="todo">639</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="143.10" height="12" x="0" y="0" class="named"><title>206 KB · 30.97%</title></rect>
-<rect width="318.90" height="12" x="143.10" y="0" class="todo"><title>460 KB · 69.03%</title></rect>
+<rect width="143.82" height="12" x="0" y="0" class="named"><title>207 KB · 31.13%</title></rect>
+<rect width="318.18" height="12" x="143.82" y="0" class="todo"><title>459 KB · 68.87%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">31.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">206 KB</tspan> · <tspan class="todo">460 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">31.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">207 KB</tspan> · <tspan class="todo">459 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -897,7 +897,7 @@
 <rect width="12" height="12" x="480" y="240" class="named"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="240" class="named"><title>0x00458dc0 ShutThatDoor (66 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="240" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="240" class="todo"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="240" class="named"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="240" class="named"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="240" class="named"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="240" class="named"><title>0x004593f0 DrawBridgeFloor (82 bytes)</title></rect>
@@ -1704,7 +1704,7 @@
 <rect width="19.16" height="19.58" x="303.56" y="229.90" class="todo"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
 <rect width="19.16" height="19.55" x="303.56" y="252.48" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
 <rect width="19.16" height="19.38" x="303.56" y="275.02" class="todo"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
-<rect width="19.16" height="19.10" x="303.56" y="297.40" class="todo"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
+<rect width="19.16" height="19.10" x="303.56" y="297.40" class="named"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
 <rect width="19.16" height="18.99" x="303.56" y="319.51" class="named"><title>0x0042cac0 SetupSplash (1033 bytes)</title></rect>
 <rect width="19.16" height="18.87" x="303.56" y="341.50" class="todo"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
 <rect width="19.16" height="18.81" x="303.56" y="363.37" class="todo"><title>0x00425910 ClipRoom (1023 bytes)</title></rect>
