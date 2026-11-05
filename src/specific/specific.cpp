@@ -53,4 +53,11 @@ int S_SoundPlaySampleLooped(int nSample, unsigned short wVol, int nPitch, sint16
     return DS_StartSample(nSample, CalcVolume(wVol), nPitch, CalcPan(wPan), DSBPLAY_LOOPING);
 }
 
+void S_SoundSetPanAndVolume(int nHandle, sint16 wPan, unsigned short wVolume)
+{
+    if (!sound_active)
+        return;
+    DS_AdjustVolumeAndPan(nHandle, CalcVolume(wVolume), CalcPan(wPan));
+}
+
 }
