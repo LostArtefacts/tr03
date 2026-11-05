@@ -1944,6 +1944,7 @@ address,size,name,symbol
 0x004c79b8,12,Switch2Position,_Switch2Position
 0x004c7a98,4,tunes,_tunes
 0x004c7ab8,16,mouse_bite,_mouse_bite
+0x004c7b08,16,seal_gas,_seal_gas
 0x004c7be0,16,shiva_left,_shiva_left
 0x004c7bf0,16,shiva_right,_shiva_right
 0x004c7c78,110,T_textSpacing,_T_textSpacing
