@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="217.08" height="12" x="0" y="0" class="named"><title>694 · 46.99%</title></rect>
-<rect width="244.92" height="12" x="217.08" y="0" class="todo"><title>783 · 53.01%</title></rect>
+<rect width="217.39" height="12" x="0" y="0" class="named"><title>695 · 47.05%</title></rect>
+<rect width="244.61" height="12" x="217.39" y="0" class="todo"><title>782 · 52.95%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">47.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">694</tspan> · <tspan class="todo">783</tspan></text>
+<text text-anchor="end" x="642" y="7.50">47.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">695</tspan> · <tspan class="todo">782</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="79.98" height="12" x="0" y="0" class="named"><title>115 KB · 17.31%</title></rect>
-<rect width="382.02" height="12" x="79.98" y="0" class="todo"><title>550 KB · 82.69%</title></rect>
+<rect width="80.28" height="12" x="0" y="0" class="named"><title>116 KB · 17.38%</title></rect>
+<rect width="381.72" height="12" x="80.28" y="0" class="todo"><title>550 KB · 82.62%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">17.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">115 KB</tspan> · <tspan class="todo">550 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">17.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">116 KB</tspan> · <tspan class="todo">550 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1056,7 +1056,7 @@
 <rect width="12" height="12" x="615" y="285" class="todo"><title>0x0046cf40 TrainControl (527 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="285" class="todo"><title>0x0046d150 TestHeight_train (159 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="285" class="todo"><title>0x0046d1f0 TrainCollision (327 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="285" class="todo"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="285" class="named"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="285" class="named"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="285" class="named"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="285" class="named"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
@@ -1947,7 +1947,7 @@
 <rect width="12.73" height="12.44" x="415.66" y="192.83" class="todo"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
 <rect width="12.73" height="12.38" x="415.66" y="208.27" class="todo"><title>0x0041bbe0 TriggerPlasma_clawmute (447 bytes)</title></rect>
 <rect width="12.73" height="12.32" x="415.66" y="223.65" class="named"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
-<rect width="12.73" height="12.32" x="415.66" y="238.97" class="todo"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
+<rect width="12.73" height="12.32" x="415.66" y="238.97" class="named"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
 <rect width="12.73" height="12.32" x="415.66" y="254.29" class="named"><title>0x0046ec10 DartEmitterControl (445 bytes)</title></rect>
 <rect width="12.73" height="12.18" x="415.66" y="269.62" class="todo"><title>0x0044bbd0 DrawFlareInAir (440 bytes)</title></rect>
 <rect width="12.73" height="12.16" x="415.66" y="284.80" class="todo"><title>0x00485ce0 S_InitialiseSystem (439 bytes)</title></rect>

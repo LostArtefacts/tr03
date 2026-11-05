@@ -28,6 +28,46 @@ void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction,
 
 int OnTrapDoor(ITEM_INFO *item, sint32 x, sint32 z);
 
+void PropellerControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (TriggerActive(item) && !(item->flags & ONESHOT)) {
+        item->goal_anim_state = 0;
+        if (item->touch_bits & 6) {
+            if (CurrentLevel == 9) {
+                lara_item->hit_points = -1;
+                DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - 512, lara_item->pos.z_pos,
+                              (sint16)(GetRandomControl() >> 10), (sint16)(item->pos.y_rot + 0x4000),
+                              lara_item->room_number, 5);
+            } else
+                lara_item->hit_points -= 200;
+            lara_item->hit_status = 1;
+            DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - 512, lara_item->pos.z_pos,
+                          (sint16)(GetRandomControl() >> 10), (sint16)(item->pos.y_rot + 0x4000),
+                          lara_item->room_number, 3);
+            if (item->object_number == 105)
+                SoundEffect(207, &item->pos, 0);
+        } else if (item->object_number == 105)
+            SoundEffect(206, &item->pos, 0);
+        else if (item->object_number == 119)
+            SoundEffect(215, &item->pos, 1);
+        else
+            SoundEffect(217, &item->pos, 0);
+    } else if (item->goal_anim_state != 1) {
+        if (item->object_number == 119)
+            SoundEffect(216, &item->pos, 1);
+        item->goal_anim_state = 1;
+    }
+    AnimateItem(item);
+    if (item->status == DEACTIVATED) {
+        RemoveActiveItem(item_number);
+        if (item->object_number != 105)
+            item->collidable = 0;
+    }
+}
+
 void ControlSpikeWall(sint16 item_number)
 {
     ITEM_INFO *item;
