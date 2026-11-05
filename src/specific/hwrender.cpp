@@ -142,6 +142,20 @@ void HWR_EndScene(void)
     EndScene();
 }
 
+void HWR_FreeTexturePages(void)
+{
+    int i;
+
+    for (i = 0; i < 32; i++) {
+        if (PictureTextures[i].dwFlags & 8)
+            DXTextureCleanup(i, PictureTextures);
+    }
+    if (DXPalette) {
+        DXPalette->Release();
+        DXPalette = 0;
+    }
+}
+
 bool HWR_Init(void)
 {
     VertexBuffer = 0;

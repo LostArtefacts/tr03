@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="285.87" height="12" x="0" y="0" class="named"><title>1006 · 68.06%</title></rect>
-<rect width="1.42" height="12" x="285.87" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="132.71" height="12" x="287.29" y="0" class="todo"><title>467 · 31.60%</title></rect>
+<rect width="286.16" height="12" x="0" y="0" class="named"><title>1007 · 68.13%</title></rect>
+<rect width="1.42" height="12" x="286.16" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="132.42" height="12" x="287.58" y="0" class="todo"><title>466 · 31.53%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">68.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1006</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">467</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1007</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">466</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.56" height="12" x="0" y="0" class="named"><title>300 KB · 44.90%</title></rect>
-<rect width="3.69" height="12" x="188.56" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.75" height="12" x="192.25" y="0" class="todo"><title>362 KB · 54.23%</title></rect>
+<rect width="188.61" height="12" x="0" y="0" class="named"><title>300 KB · 44.91%</title></rect>
+<rect width="3.69" height="12" x="188.61" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.71" height="12" x="192.29" y="0" class="todo"><title>362 KB · 54.22%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
@@ -1277,7 +1277,7 @@
 <rect width="12" height="12" x="150" y="360" class="todo"><title>0x004854c0 HWR_DrawPolyList (236 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="360" class="todo"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="360" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="360" class="todo"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="360" class="named"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="360" class="todo"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="360" class="todo"><title>0x00485a80 Func485a80 (11 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="360" class="named"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
@@ -2643,7 +2643,7 @@
 <rect width="4.70" height="5.08" x="726.91" y="316.53" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="4.70" height="5.08" x="734.61" y="316.53" class="named"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="4.70" height="5.08" x="742.30" y="316.53" class="todo"><title>0x00484250 GetValidLevelsList (68 bytes)</title></rect>
-<rect width="4.82" height="4.96" x="616.70" y="324.61" class="todo"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
+<rect width="4.82" height="4.96" x="616.70" y="324.61" class="named"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
 <rect width="4.82" height="4.96" x="616.70" y="332.57" class="todo"><title>0x0048a9b0 S_LightRoom (68 bytes)</title></rect>
 <rect width="4.82" height="4.96" x="616.70" y="340.53" class="named"><title>0x004b3950 DD_CreateSurface (68 bytes)</title></rect>
 <rect width="4.82" height="4.89" x="616.70" y="348.49" class="named"><title>0x0042f1a0 draw_right_gun (67 bytes)</title></rect>
