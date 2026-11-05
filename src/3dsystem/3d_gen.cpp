@@ -184,4 +184,56 @@ void phd_NormaliseVector(sint32 x, sint32 y, sint32 z, sint32 *dest)
     }
 }
 
+typedef struct phd_vbuf {
+    float xv;
+    float yv;
+    float zv;
+    float ooz;
+    float xs;
+    float ys;
+    sint32 z;
+    char clip;
+    char fog;
+    sint16 g;
+    unsigned short u;
+    unsigned short v;
+    int dynamic;
+} PHD_VBUF;
+
+extern PHD_VBUF vbuf[1500];
+extern int surfacenum;
+extern int surfacenumbf;
+extern int surfacenumfb;
+extern sint16 *info3dptr;
+extern sint32 *sort3dptr;
+extern sint16 info3d_buffer[];
+extern sint32 sort3d_buffer[];
+extern sint16 *info3dptrbf;
+extern sint16 *info3dptrfb;
+extern sint32 *sort3dptrbf;
+extern sint32 *sort3dptrfb;
+extern sint16 info3d_bufferbf[];
+extern sint16 info3d_bufferfb[];
+extern sint32 sort3d_bufferbf[];
+extern sint32 sort3d_bufferfb[];
+
+void HWR_InitVertexList(void);
+
+sint16 *calc_back_light(sint16 *objptr)
+{
+    int nNormals;
+    int i;
+
+    nNormals = *objptr++;
+    if (nNormals > 0) {
+        objptr += 3 * nNormals;
+    } else if (nNormals < 0) {
+        nNormals = -nNormals;
+        objptr += nNormals;
+    }
+    for (i = 0; i < nNormals; i++)
+        vbuf[i].g = 0x4210;
+    return objptr;
+}
+
 }

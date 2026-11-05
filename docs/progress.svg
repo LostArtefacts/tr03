@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="295.82" height="12" x="0" y="0" class="named"><title>1041 · 70.43%</title></rect>
-<rect width="1.99" height="12" x="295.82" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="122.19" height="12" x="297.81" y="0" class="todo"><title>430 · 29.09%</title></rect>
+<rect width="296.10" height="12" x="0" y="0" class="named"><title>1042 · 70.50%</title></rect>
+<rect width="1.99" height="12" x="296.10" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="121.91" height="12" x="298.09" y="0" class="todo"><title>429 · 29.03%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">70.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1041</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">430</tspan></text>
+<text text-anchor="end" x="600" y="7.50">70.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1042</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">429</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.13" height="12" x="0" y="0" class="named"><title>304 KB · 45.51%</title></rect>
-<rect width="3.79" height="12" x="191.13" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="225.07" height="12" x="194.93" y="0" class="todo"><title>358 KB · 53.59%</title></rect>
+<rect width="191.16" height="12" x="0" y="0" class="named"><title>304 KB · 45.52%</title></rect>
+<rect width="3.79" height="12" x="191.16" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="225.04" height="12" x="194.96" y="0" class="todo"><title>358 KB · 53.58%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">304 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">358 KB</tspan></text>
@@ -77,7 +77,7 @@
 <rect width="12" height="12" x="150" y="0" class="named"><title>0x00401a70 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="0" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="0" class="todo"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="0" class="todo"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="0" class="named"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="0" class="todo"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="0" class="todo"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="0" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
@@ -2757,7 +2757,7 @@
 <rect width="4.40" height="4.07" x="669.30" y="347.10" class="named"><title>0x00442dd0 lara_col_hangright (51 bytes)</title></rect>
 <rect width="4.40" height="4.07" x="676.69" y="347.10" class="named"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
 <rect width="4.40" height="4.07" x="684.09" y="347.10" class="todo"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
-<rect width="4.31" height="4.07" x="691.49" y="347.10" class="todo"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
+<rect width="4.31" height="4.07" x="691.49" y="347.10" class="named"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="698.81" y="347.10" class="named"><title>0x00437870 RingActive (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="706.12" y="347.10" class="named"><title>0x0043de00 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="713.43" y="347.10" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
