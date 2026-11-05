@@ -104,6 +104,136 @@ void InitialiseSparks(void)
         bats[lp].flags = 0;
 }
 
+typedef struct {
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    sint16 InnerXZoff;
+    sint16 InnerXZsize;
+    sint16 InnerYsize;
+    sint16 InnerXZvel;
+    sint16 InnerYvel;
+    sint16 InnerGravity;
+    sint16 InnerFriction;
+    sint16 MiddleXZoff;
+    sint16 MiddleXZsize;
+    sint16 MiddleYsize;
+    sint16 MiddleXZvel;
+    sint16 MiddleYvel;
+    sint16 MiddleGravity;
+    sint16 MiddleFriction;
+    sint16 OuterXZoff;
+    sint16 OuterXZsize;
+    sint16 OuterXZvel;
+    sint16 OuterFriction;
+} SPLASH_SETUP;
+
+extern sint16 SplashRings[8][2];
+
+void SetupSplash(SPLASH_SETUP *spl)
+{
+    SPLASH_STRUCT *sptr;
+    SPLASH_VERTS *svptr;
+    sint32 lp, vlp;
+
+    sptr = &splashes[0];
+    for (lp = 0; lp < MAX_SPLASHES; lp++) {
+        if (!(sptr->flags & SPL_ON)) {
+            sptr->flags = SPL_ON | SPL_TRANS;
+            if (spl->OuterFriction == -9) {
+                sptr->flags |= 0x40;
+                spl->OuterFriction = 9;
+            }
+            sptr->x = spl->x;
+            sptr->y = spl->y;
+            sptr->z = spl->z;
+            sptr->life = 63;
+            svptr = &sptr->sv[0];
+            for (vlp = 0; vlp < 8; vlp++) {
+                svptr->wx = (spl->InnerXZoff * SplashRings[vlp][0]) << 1;
+                svptr->wz = (spl->InnerXZoff * SplashRings[vlp][1]) << 1;
+                svptr->wy = 0;
+                svptr->xv = (spl->InnerXZvel * SplashRings[vlp][0]) / 12;
+                svptr->zv = (spl->InnerXZvel * SplashRings[vlp][1]) / 12;
+                svptr->yv = 0;
+                svptr->oxv = svptr->xv >> 3;
+                svptr->ozv = svptr->zv >> 3;
+                svptr->friction = spl->InnerFriction - 2;
+                svptr->gravity = 0;
+                svptr++;
+            }
+            for (vlp = 0; vlp < 8; vlp++) {
+                svptr->wx = ((spl->InnerXZoff + spl->InnerXZsize) * SplashRings[vlp][0]) << 1;
+                svptr->wz = ((spl->InnerXZoff + spl->InnerXZsize) * SplashRings[vlp][1]) << 1;
+                svptr->wy = spl->InnerYsize;
+                svptr->xv = (spl->InnerXZvel * SplashRings[vlp][0]) >> 3;
+                svptr->zv = (spl->InnerXZvel * SplashRings[vlp][1]) >> 3;
+                svptr->yv = spl->InnerYvel;
+                svptr->oxv = svptr->xv >> 3;
+                svptr->ozv = svptr->zv >> 3;
+                svptr->friction = spl->InnerFriction;
+                svptr->gravity = spl->InnerGravity;
+                svptr++;
+            }
+            for (vlp = 0; vlp < 8; vlp++) {
+                svptr->wx = (spl->MiddleXZoff * SplashRings[vlp][0]) << 1;
+                svptr->wz = (spl->MiddleXZoff * SplashRings[vlp][1]) << 1;
+                svptr->wy = 0;
+                svptr->xv = (spl->MiddleXZvel * SplashRings[vlp][0]) / 12;
+                svptr->zv = (spl->MiddleXZvel * SplashRings[vlp][1]) / 12;
+                svptr->yv = 0;
+                svptr->oxv = svptr->xv >> 3;
+                svptr->ozv = svptr->zv >> 3;
+                svptr->friction = spl->MiddleFriction - 2;
+                svptr->gravity = 0;
+                svptr++;
+            }
+            for (vlp = 0; vlp < 8; vlp++) {
+                svptr->wx = ((spl->MiddleXZoff + spl->MiddleXZsize) * SplashRings[vlp][0]) << 1;
+                svptr->wz = ((spl->MiddleXZoff + spl->MiddleXZsize) * SplashRings[vlp][1]) << 1;
+                svptr->wy = spl->MiddleYsize;
+                svptr->xv = (spl->MiddleXZvel * SplashRings[vlp][0]) >> 3;
+                svptr->zv = (spl->MiddleXZvel * SplashRings[vlp][1]) >> 3;
+                svptr->yv = spl->MiddleYvel;
+                svptr->oxv = svptr->xv >> 3;
+                svptr->ozv = svptr->zv >> 3;
+                svptr->friction = spl->MiddleFriction;
+                svptr->gravity = spl->MiddleGravity;
+                svptr++;
+            }
+            for (vlp = 0; vlp < 8; vlp++) {
+                svptr->wx = (spl->OuterXZoff * SplashRings[vlp][0]) << 1;
+                svptr->wz = (spl->OuterXZoff * SplashRings[vlp][1]) << 1;
+                svptr->wy = 0;
+                svptr->xv = (spl->OuterXZvel * SplashRings[vlp][0]) / 12;
+                svptr->zv = (spl->OuterXZvel * SplashRings[vlp][1]) / 12;
+                svptr->yv = 0;
+                svptr->oxv = svptr->xv >> 3;
+                svptr->ozv = svptr->zv >> 3;
+                svptr->friction = spl->OuterFriction - 2;
+                svptr->gravity = 0;
+                svptr++;
+            }
+            for (vlp = 0; vlp < 8; vlp++) {
+                svptr->wx = ((spl->OuterXZoff + spl->OuterXZsize) * SplashRings[vlp][0]) << 1;
+                svptr->wz = ((spl->OuterXZoff + spl->OuterXZsize) * SplashRings[vlp][1]) << 1;
+                svptr->wy = 0;
+                svptr->xv = (spl->OuterXZvel * SplashRings[vlp][0]) >> 3;
+                svptr->zv = (spl->OuterXZvel * SplashRings[vlp][1]) >> 3;
+                svptr->yv = 0;
+                svptr->oxv = svptr->xv >> 3;
+                svptr->ozv = svptr->zv >> 3;
+                svptr->friction = spl->OuterFriction;
+                svptr->gravity = 0;
+                svptr++;
+            }
+            break;
+        }
+        sptr++;
+    }
+    SoundEffect(33, (PHD_3DPOS *)&spl->x, 0);
+}
+
 void UpdateSplashes(void)
 {
     RIPPLE_STRUCT *rptr;
