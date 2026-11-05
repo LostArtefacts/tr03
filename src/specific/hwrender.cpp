@@ -1,6 +1,7 @@
 #include "standard.h"
 #include "specific.h"
 #include "winmain.h"
+#include "texture.h"
 
 extern "C" {
 
@@ -10,10 +11,13 @@ extern HRESULT (*SetRenderState)(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwR
 extern bool GtZBufferCompareEnabled;
 extern bool GtZBufferWriteEnabled;
 extern bool GtColorAdditionEnabled;
+extern bool GtPerspCorrectEnabled;
+extern bool GtFilterEnabled;
 extern bool GtAlphaBlendEnabled;
 extern bool GtColorKeyEnabled;
 
 void HWR_InitState(void);
+void DXTextureCleanup(int nTexture, DXTEXTURE *pTextures);
 void HWR_SetCurrentTexture(DWORD handle);
 void HWR_EnableAlphaBlend(bool enable);
 void HWR_EnableColorKey(bool enable);
@@ -55,6 +59,23 @@ void HWR_EnableColorAddition(bool enable)
         GtColorAdditionEnabled = false;
         SetRenderState(D3DRENDERSTATE_SRCBLEND, D3DBLEND_SRCALPHA);
         SetRenderState(D3DRENDERSTATE_DESTBLEND, D3DBLEND_INVSRCALPHA);
+    }
+}
+
+void HWR_EnablePerspCorrect(bool enable)
+{
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+        if (enable) {
+            if (!GtPerspCorrectEnabled) {
+                GtPerspCorrectEnabled = true;
+                SetRenderState(D3DRENDERSTATE_TEXTUREPERSPECTIVE, true);
+            }
+        } else if (GtPerspCorrectEnabled) {
+            GtPerspCorrectEnabled = false;
+            SetRenderState(D3DRENDERSTATE_TEXTUREPERSPECTIVE, false);
+        }
+    } else {
+        SetRenderState(D3DRENDERSTATE_TEXTUREPERSPECTIVE, true);
     }
 }
 

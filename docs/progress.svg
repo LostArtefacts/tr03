@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="285.30" height="12" x="0" y="0" class="named"><title>1004 · 67.93%</title></rect>
-<rect width="1.42" height="12" x="285.30" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="133.27" height="12" x="286.73" y="0" class="todo"><title>469 · 31.73%</title></rect>
+<rect width="285.59" height="12" x="0" y="0" class="named"><title>1005 · 68%</title></rect>
+<rect width="1.42" height="12" x="285.59" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="132.99" height="12" x="287.01" y="0" class="todo"><title>468 · 31.66%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">67.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1004</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">469</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1005</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">468</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.40" height="12" x="0" y="0" class="named"><title>300 KB · 44.86%</title></rect>
-<rect width="3.69" height="12" x="188.40" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.91" height="12" x="192.09" y="0" class="todo"><title>362 KB · 54.27%</title></rect>
+<rect width="188.49" height="12" x="0" y="0" class="named"><title>300 KB · 44.88%</title></rect>
+<rect width="3.69" height="12" x="188.49" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.83" height="12" x="192.17" y="0" class="todo"><title>362 KB · 54.24%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
@@ -1263,7 +1263,7 @@
 <rect width="12" height="12" x="690" y="345" class="named"><title>0x00484a20 HWR_ResetColorKey (31 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="345" class="named"><title>0x00484a40 HWR_ResetZBuffer (64 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="345" class="named"><title>0x00484a80 HWR_EnableColorAddition (89 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="345" class="todo"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="345" class="named"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="360" class="todo"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="360" class="named"><title>0x00484bf0 HWR_EnableAlphaBlend (63 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="360" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
@@ -2385,7 +2385,7 @@
 <rect width="7.13" height="6.75" x="554.15" y="353.34" class="named"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="7.13" height="6.75" x="554.15" y="363.09" class="named"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
 <rect width="7.13" height="6.70" x="554.15" y="372.83" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>
-<rect width="7.13" height="6.70" x="554.15" y="382.53" class="todo"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
+<rect width="7.13" height="6.70" x="554.15" y="382.53" class="named"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
 <rect width="7.13" height="6.70" x="554.15" y="392.23" class="named"><title>0x0048fdb0 BPPToDDBD (136 bytes)</title></rect>
 <rect width="7.13" height="6.65" x="554.15" y="401.92" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
 <rect width="7.13" height="6.65" x="554.15" y="411.57" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
