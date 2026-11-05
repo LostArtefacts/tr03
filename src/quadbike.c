@@ -33,6 +33,59 @@ void InitialiseQuadBike(sint16 item_number)
     bike->Flags = 0;
 }
 
+int GetOnQuadBike(sint16 item_number, COLL_INFO *coll)
+{
+    int dist;
+    sint32 x, z;
+    ITEM_INFO *v, *l;
+    FLOOR_INFO *floor;
+    sint16 room_number, ang;
+    uint16 tempang;
+
+    l = lara_item;
+    v = &items[item_number];
+    if (!(input & IN_ACTION) || (v->flags & ONESHOT) || lara.gun_status != LG_ARMLESS || l->gravity_status
+        || ABS(v->pos.y_pos - l->pos.y_pos) > 256)
+        return 0;
+
+    x = l->pos.x_pos - v->pos.x_pos;
+    z = l->pos.z_pos - v->pos.z_pos;
+    dist = x * x + z * z;
+    if (dist > 170000)
+        return 0;
+
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    if (GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos) < -32000)
+        return 0;
+
+    ang = phd_atan(v->pos.z_pos - l->pos.z_pos, v->pos.x_pos - l->pos.x_pos);
+    ang -= v->pos.y_rot;
+    if (ang > -(ONE_DEGREE * 45) && ang < ONE_DEGREE * 135) {
+        tempang = l->pos.y_rot - v->pos.y_rot;
+        if (tempang > 45 * ONE_DEGREE && tempang < 135 * ONE_DEGREE)
+            return 1;
+        else
+            return 0;
+    } else {
+        tempang = l->pos.y_rot - v->pos.y_rot;
+        if (tempang > 225 * ONE_DEGREE && tempang < 315 * ONE_DEGREE)
+            return 1;
+        else
+            return 0;
+    }
+    return 0;
+}
+
+void CreateFlare(int thrown);
+void S_CDPlay(sint32 track, int mode);
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
+extern char tunes[];
+extern sint16 cdtrack;
+extern char IsAtmospherePlaying;
+extern uint32 CurrentLevel;
+
 void TriggerUnderwaterExplosion(ITEM_INFO *item);
 void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
 int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);

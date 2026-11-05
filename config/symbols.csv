@@ -1923,6 +1923,7 @@ address,size,name,symbol
 0x004c7448,4,mycoll,_mycoll
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
+0x004c7a98,4,tunes,_tunes
 0x004c7be0,16,shiva_left,_shiva_left
 0x004c7bf0,16,shiva_right,_shiva_right
 0x004c7c78,110,T_textSpacing,_T_textSpacing
