@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="287.86" height="12" x="0" y="0" class="named"><title>1013 · 68.54%</title></rect>
-<rect width="1.42" height="12" x="287.86" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="130.72" height="12" x="289.28" y="0" class="todo"><title>460 · 31.12%</title></rect>
+<rect width="288.15" height="12" x="0" y="0" class="named"><title>1014 · 68.61%</title></rect>
+<rect width="1.42" height="12" x="288.15" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="130.43" height="12" x="289.57" y="0" class="todo"><title>459 · 31.06%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">68.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1013</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">460</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1014</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">459</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.05" height="12" x="0" y="0" class="named"><title>301 KB · 45.01%</title></rect>
-<rect width="3.69" height="12" x="189.05" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.26" height="12" x="192.74" y="0" class="todo"><title>361 KB · 54.11%</title></rect>
+<rect width="189.12" height="12" x="0" y="0" class="named"><title>301 KB · 45.03%</title></rect>
+<rect width="3.69" height="12" x="189.12" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.19" height="12" x="192.81" y="0" class="todo"><title>361 KB · 54.09%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">301 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">361 KB</tspan></text>
@@ -1510,7 +1510,7 @@
 <rect width="12" height="12" x="645" y="420" class="todo"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="420" class="named"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="420" class="todo"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="420" class="todo"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="420" class="named"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="420" class="todo"><title>0x004b2dc0 WinCreateWindow (75 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="420" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="420" class="todo"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
@@ -2447,7 +2447,7 @@
 <rect width="6.65" height="6.18" x="564.28" y="404.30" class="named"><title>0x0043f0d0 LaraDeflectEdgeDuck (117 bytes)</title></rect>
 <rect width="6.65" height="6.18" x="564.28" y="413.48" class="named"><title>0x00444d80 LaraFloorFront (117 bytes)</title></rect>
 <rect width="6.65" height="6.13" x="564.28" y="422.67" class="named"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
-<rect width="6.65" height="6.13" x="564.28" y="431.80" class="todo"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
+<rect width="6.65" height="6.13" x="564.28" y="431.80" class="named"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
 <rect width="6.65" height="6.08" x="564.28" y="440.92" class="named"><title>0x0043b410 KayakInitialise (115 bytes)</title></rect>
 <rect width="6.40" height="6.31" x="573.93" y="273.50" class="todo"><title>0x004838e0 SortOutAdventureSave (115 bytes)</title></rect>
 <rect width="6.34" height="6.31" x="583.33" y="273.50" class="named"><title>0x00414780 UpdateLOT (114 bytes)</title></rect>
