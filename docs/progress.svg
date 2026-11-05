@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="309.46" height="12" x="0" y="0" class="named"><title>1089 · 73.68%</title></rect>
-<rect width="1.99" height="12" x="309.46" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="108.55" height="12" x="311.45" y="0" class="todo"><title>382 · 25.85%</title></rect>
+<rect width="309.74" height="12" x="0" y="0" class="named"><title>1090 · 73.75%</title></rect>
+<rect width="1.99" height="12" x="309.74" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="108.27" height="12" x="311.73" y="0" class="todo"><title>381 · 25.78%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">73.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1089</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">382</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1090</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">381</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="194.76" height="12" x="0" y="0" class="named"><title>310 KB · 46.37%</title></rect>
-<rect width="3.79" height="12" x="194.76" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.45" height="12" x="198.55" y="0" class="todo"><title>352 KB · 52.73%</title></rect>
+<rect width="194.82" height="12" x="0" y="0" class="named"><title>310 KB · 46.39%</title></rect>
+<rect width="3.79" height="12" x="194.82" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="221.38" height="12" x="198.62" y="0" class="todo"><title>352 KB · 52.71%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">310 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">352 KB</tspan></text>
@@ -1468,7 +1468,7 @@
 <rect width="12" height="12" x="15" y="420" class="todo"><title>0x00496930 MMXBlit32to15 (306 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="420" class="todo"><title>0x00496a70 MMXBlit32to16 (170 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="420" class="todo"><title>0x00496b20 MMXBlit32to24 (143 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="420" class="todo"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="420" class="named"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="420" class="todo"><title>0x00496c20 DXSetupDlgProc (1596 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="420" class="todo"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="420" class="todo"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
@@ -2506,7 +2506,7 @@
 <rect width="5.64" height="6.04" x="732.72" y="282.84" class="named"><title>0x004230a0 AddRoomFlipItems (97 bytes)</title></rect>
 <rect width="5.64" height="6.04" x="741.36" y="282.84" class="named"><title>0x0042f040 ControlBirdTweeter (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="291.88" class="named"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
-<rect width="5.82" height="5.86" x="582.88" y="300.74" class="todo"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
+<rect width="5.82" height="5.86" x="582.88" y="300.74" class="named"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="309.59" class="todo"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="318.45" class="todo"><title>0x004b42d4 Func4b42d4 (97 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="327.31" class="named"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
