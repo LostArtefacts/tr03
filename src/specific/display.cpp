@@ -43,4 +43,13 @@ void TempVideoAdjust(int hires, double sizer)
     }
 }
 
+void TempVideoRemove(void)
+{
+    VidSizeLocked = 0;
+    if (screen_sizer != game_sizer) {
+        screen_sizer = game_sizer;
+        setup_screen_size();
+    }
+}
+
 }

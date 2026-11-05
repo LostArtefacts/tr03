@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="281.61" height="12" x="0" y="0" class="named"><title>991 · 67.05%</title></rect>
-<rect width="1.42" height="12" x="281.61" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="136.97" height="12" x="283.03" y="0" class="todo"><title>482 · 32.61%</title></rect>
+<rect width="281.89" height="12" x="0" y="0" class="named"><title>992 · 67.12%</title></rect>
+<rect width="1.42" height="12" x="281.89" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="136.68" height="12" x="283.32" y="0" class="todo"><title>481 · 32.54%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">67.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">991</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">482</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">992</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">481</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.88" height="12" x="0" y="0" class="named"><title>299 KB · 44.73%</title></rect>
-<rect width="3.69" height="12" x="187.88" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.43" height="12" x="191.57" y="0" class="todo"><title>363 KB · 54.39%</title></rect>
+<rect width="187.92" height="12" x="0" y="0" class="named"><title>299 KB · 44.74%</title></rect>
+<rect width="3.69" height="12" x="187.92" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.40" height="12" x="191.60" y="0" class="todo"><title>363 KB · 54.38%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">299 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">363 KB</tspan></text>
@@ -1150,7 +1150,7 @@
 <rect width="12" height="12" x="495" y="315" class="named"><title>0x00475790 DecreaseScreenSize (98 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="315" class="todo"><title>0x00475800 setup_screen_size (268 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="315" class="named"><title>0x00475910 TempVideoAdjust (52 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="315" class="todo"><title>0x00475950 TempVideoRemove (57 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="315" class="named"><title>0x00475950 TempVideoRemove (57 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="315" class="todo"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="315" class="todo"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="315" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
@@ -2701,7 +2701,7 @@
 <rect width="4.64" height="4.31" x="632.59" y="369.78" class="named"><title>0x004404a0 lara_as_hangturnr (57 bytes)</title></rect>
 <rect width="4.64" height="4.31" x="632.59" y="377.09" class="named"><title>0x004594c0 InitialiseLift (57 bytes)</title></rect>
 <rect width="4.64" height="4.31" x="632.59" y="384.41" class="todo"><title>0x00475380 Func475380 (57 bytes)</title></rect>
-<rect width="4.64" height="4.31" x="632.59" y="391.72" class="todo"><title>0x00475950 TempVideoRemove (57 bytes)</title></rect>
+<rect width="4.64" height="4.31" x="632.59" y="391.72" class="named"><title>0x00475950 TempVideoRemove (57 bytes)</title></rect>
 <rect width="4.64" height="4.31" x="632.59" y="399.03" class="todo"><title>0x00480580 Func480580 (57 bytes)</title></rect>
 <rect width="4.64" height="4.31" x="632.59" y="406.35" class="named"><title>0x004808b0 DS_GetFreeChannel (57 bytes)</title></rect>
 <rect width="4.64" height="4.31" x="632.59" y="413.66" class="todo"><title>0x00483610 S_DrawScreenLine (57 bytes)</title></rect>
