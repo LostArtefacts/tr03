@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="264" height="12" x="0" y="0" class="named"><title>844 · 57.14%</title></rect>
-<rect width="198" height="12" x="264" y="0" class="todo"><title>633 · 42.86%</title></rect>
+<rect width="264.31" height="12" x="0" y="0" class="named"><title>845 · 57.21%</title></rect>
+<rect width="197.69" height="12" x="264.31" y="0" class="todo"><title>632 · 42.79%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">57.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">844</tspan> · <tspan class="todo">633</tspan></text>
+<text text-anchor="end" x="642" y="7.50">57.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">845</tspan> · <tspan class="todo">632</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="147.76" height="12" x="0" y="0" class="named"><title>213 KB · 31.98%</title></rect>
-<rect width="314.24" height="12" x="147.76" y="0" class="todo"><title>453 KB · 68.02%</title></rect>
+<rect width="148.49" height="12" x="0" y="0" class="named"><title>214 KB · 32.14%</title></rect>
+<rect width="313.51" height="12" x="148.49" y="0" class="todo"><title>452 KB · 67.86%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">32.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">213 KB</tspan> · <tspan class="todo">453 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">32.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">214 KB</tspan> · <tspan class="todo">452 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -873,7 +873,7 @@
 <rect width="12" height="12" x="120" y="240" class="named"><title>0x00455370 ExplodingDeath (1067 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="240" class="named"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="240" class="named"><title>0x004559b0 InitialiseMonkey (82 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="240" class="todo"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="240" class="named"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="240" class="todo"><title>0x00455e30 MonkeyControl (3257 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="240" class="named"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="240" class="named"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
@@ -1703,7 +1703,7 @@
 <rect width="19.21" height="19.57" x="303.52" y="207.81" class="named"><title>0x00455370 ExplodingDeath (1067 bytes)</title></rect>
 <rect width="19.21" height="19.53" x="303.52" y="230.38" class="named"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
 <rect width="19.21" height="19.50" x="303.52" y="252.91" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
-<rect width="19.21" height="19.33" x="303.52" y="275.41" class="todo"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
+<rect width="19.21" height="19.33" x="303.52" y="275.41" class="named"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
 <rect width="19.21" height="19.06" x="303.52" y="297.74" class="named"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
 <rect width="19.21" height="18.95" x="303.52" y="319.79" class="named"><title>0x0042cac0 SetupSplash (1033 bytes)</title></rect>
 <rect width="19.21" height="18.82" x="303.52" y="341.74" class="todo"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
