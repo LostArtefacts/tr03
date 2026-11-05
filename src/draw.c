@@ -645,3 +645,115 @@ sint16 *GetBestFrame(ITEM_INFO *item)
     else
         return frmptr[1];
 }
+
+extern sint32 nPolyType;
+extern int bLaraOn, bRoomOn, bEffectOn;
+extern uint32 CurrentLevel;
+
+void S_InitialisePolyList(int clear);
+void S_InsertBackground(sint16 *objptr);
+void PrintObjects(sint16 room_number);
+void DrawLara(ITEM_INFO *item);
+void S_DrawSparks(void);
+void S_DrawSplashes(void);
+void S_DrawBat(void);
+void DoRain(void);
+void DoSnow(void);
+void DrawDummyItem();
+void UpdateElectricityPoints(void);
+void LaraElectricDeath(sint32 copy, ITEM_INFO *item);
+
+void DrawRooms(sint16 current_room)
+{
+    int i;
+    ROOM_INFO *r;
+
+    CurrentRoom = current_room;
+    r = &room[current_room];
+    phd_left = r->test_left = 0;
+    phd_top = r->test_top = 0;
+    phd_right = r->test_right = phd_winxmax;
+    phd_bottom = r->test_bottom = phd_winymax;
+    outside = r->flags & 8;
+    camera_underwater = r->flags & UNDERWATER;
+    r->bound_active = 2;
+    bound_list[0] = current_room;
+    bound_start = 0;
+    bound_end = 1;
+    number_draw_rooms = 0;
+    if (outside) {
+        outside_left = outside_top = 0;
+        outside_right = phd_winxmax;
+        outside_bottom = phd_winymax;
+    } else {
+        outside_left = phd_winxmax;
+        outside_top = phd_winymax;
+        outside_right = outside_bottom = 0;
+    }
+    GetRoomBounds();
+    mid_sort = 0;
+
+    if (outside) {
+        phd_left = outside_left;
+        phd_right = outside_right;
+        phd_top = outside_top;
+        phd_bottom = outside_bottom;
+        if (objects[355].loaded) {
+            sint16 *frame;
+
+            S_SetupAboveWater(camera_underwater);
+            phd_PushMatrix();
+            *(phd_mxptr + 3) = *(phd_mxptr + 7) = *(phd_mxptr + 11) = 0;
+            frame = anims[objects[355].anim_index].frame_ptr + 9;
+            gar_RotYXZsuperpack(&frame, 0);
+            S_InitialisePolyList(0);
+            S_InsertBackground(meshes[objects[355].mesh_index]);
+            phd_PopMatrix();
+        } else {
+            S_InitialisePolyList(1);
+            outside = -1;
+        }
+    } else
+        S_InitialisePolyList(0);
+
+    if (objects[0].loaded && !(lara_item->flags & ONESHOT)) {
+        if (room[lara_item->room_number].flags & UNDERWATER)
+            S_SetupBelowWater(camera_underwater);
+        else
+            S_SetupAboveWater(camera_underwater);
+        mid_sort = room[lara_item->room_number].bound_active >> 8;
+        if (mid_sort)
+            mid_sort--;
+        nPolyType = 2;
+        if (bLaraOn)
+            DrawLara(lara_item);
+    }
+
+    if (bRoomOn) {
+        nPolyType = 3;
+        for (i = 0; i < number_draw_rooms; i++)
+            PrintRooms(draw_rooms[i]);
+    }
+    for (i = 0; i < number_draw_rooms; i++)
+        PrintObjects(draw_rooms[i]);
+
+    if (bEffectOn) {
+        nPolyType = 6;
+        S_DrawSparks();
+        S_DrawSplashes();
+        S_DrawBat();
+        if (CurrentLevel == 16 || CurrentLevel == 19)
+            DoSnow();
+        if (CurrentLevel == 1 || CurrentLevel == 9)
+            DoRain();
+        DrawDummyItem();
+    }
+
+    if (lara.electric) {
+        if (lara.electric < 16)
+            lara.electric++;
+        UpdateElectricityPoints();
+        LaraElectricDeath(0, lara_item);
+        LaraElectricDeath(1, lara_item);
+    }
+}
