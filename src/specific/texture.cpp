@@ -79,6 +79,40 @@ bool DXCreateTextureSurface(TEXTURE *tex, LPDDPIXELFORMAT ddpf)
     return true;
 }
 
+void DXCreateMaxTPages(int create)
+{
+    TEXTURE *tex;
+    LPDDPIXELFORMAT ddpf;
+    LPDDPIXELFORMAT ddpf2;
+    int n;
+    int oldTF;
+
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware)
+        return;
+    ddpf = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].ddsd.ddpfPixelFormat;
+    DXCreateTextureSurface(Textures, ddpf);
+    n = 1;
+    if (create && ddpf->dwRGBBitCount == 8) {
+        bSetColorKey = false;
+        oldTF = App.DXConfigPtr->D3DTF;
+        App.DXConfigPtr->D3DTF = 0;
+        ddpf2 = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].ddsd.ddpfPixelFormat;
+        tex = &Textures[1];
+        for (; n < 6; n++, tex++) {
+            if (!DXCreateTextureSurface(tex, ddpf2))
+                break;
+        }
+        App.DXConfigPtr->D3DTF = oldTF;
+        ddpf = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].ddsd.ddpfPixelFormat;
+        bSetColorKey = true;
+    }
+    for (; n < 32; n++) {
+        if (!DXCreateTextureSurface(&Textures[n], ddpf))
+            break;
+    }
+    nTPages = n;
+}
+
 int DXTextureFindTextureSlot(DXTEXTURE *tex)
 {
     int i;

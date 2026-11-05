@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="297.24" height="12" x="0" y="0" class="named"><title>1046 · 70.77%</title></rect>
-<rect width="1.99" height="12" x="297.24" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="120.77" height="12" x="299.23" y="0" class="todo"><title>425 · 28.76%</title></rect>
+<rect width="297.52" height="12" x="0" y="0" class="named"><title>1047 · 70.84%</title></rect>
+<rect width="1.99" height="12" x="297.52" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="120.49" height="12" x="299.51" y="0" class="todo"><title>424 · 28.69%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">70.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1046</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">425</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1047</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">424</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.70" height="12" x="0" y="0" class="named"><title>305 KB · 45.64%</title></rect>
-<rect width="3.79" height="12" x="191.70" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="224.50" height="12" x="195.50" y="0" class="todo"><title>357 KB · 53.45%</title></rect>
+<rect width="191.94" height="12" x="0" y="0" class="named"><title>305 KB · 45.70%</title></rect>
+<rect width="3.79" height="12" x="191.94" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="224.27" height="12" x="195.73" y="0" class="todo"><title>357 KB · 53.40%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">45.6%</text>
+<text text-anchor="end" x="600" y="24.50">45.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">305 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">357 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1494,7 +1494,7 @@
 <rect width="12" height="12" x="405" y="420" class="named"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="420" class="nonmatching"><title>0x004b1b80 DXTextureNewPalette (112 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="420" class="named"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="420" class="todo"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="420" class="named"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="420" class="todo"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="420" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="420" class="named"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
@@ -2008,7 +2008,7 @@
 <rect width="11.86" height="11.26" x="431.91" y="435.74" class="named"><title>0x00441a80 lara_as_wade (380 bytes)</title></rect>
 <rect width="11.68" height="11.40" x="446.76" y="145.86" class="named"><title>0x0045ce70 AnimatingPickUp (379 bytes)</title></rect>
 <rect width="11.65" height="11.40" x="461.44" y="145.86" class="named"><title>0x00452240 KnockBackCollision (378 bytes)</title></rect>
-<rect width="11.65" height="11.40" x="476.09" y="145.86" class="todo"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
+<rect width="11.65" height="11.40" x="476.09" y="145.86" class="named"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
 <rect width="11.62" height="11.40" x="490.74" y="145.86" class="todo"><title>0x0040a510 HWI_InsertLine_Sorted (377 bytes)</title></rect>
 <rect width="11.62" height="11.40" x="505.36" y="145.86" class="named"><title>0x00436840 Construct_Inventory (377 bytes)</title></rect>
 <rect width="11.62" height="11.40" x="519.98" y="145.86" class="named"><title>0x004595e0 LiftFloorCeiling (377 bytes)</title></rect>
