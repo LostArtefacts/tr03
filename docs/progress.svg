@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="274.51" height="12" x="0" y="0" class="named"><title>966 · 65.36%</title></rect>
-<rect width="1.42" height="12" x="274.51" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="144.07" height="12" x="275.93" y="0" class="todo"><title>507 · 34.30%</title></rect>
+<rect width="274.79" height="12" x="0" y="0" class="named"><title>967 · 65.43%</title></rect>
+<rect width="1.42" height="12" x="274.79" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="143.79" height="12" x="276.21" y="0" class="todo"><title>506 · 34.24%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">65.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">966</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">507</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">967</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">506</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.09" height="12" x="0" y="0" class="named"><title>297 KB · 44.54%</title></rect>
-<rect width="3.69" height="12" x="187.09" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.23" height="12" x="190.77" y="0" class="todo"><title>364 KB · 54.58%</title></rect>
+<rect width="187.13" height="12" x="0" y="0" class="named"><title>297 KB · 44.55%</title></rect>
+<rect width="3.69" height="12" x="187.13" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.19" height="12" x="190.81" y="0" class="todo"><title>364 KB · 54.57%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">44.5%</text>
+<text text-anchor="end" x="600" y="24.50">44.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1267,7 +1267,7 @@
 <rect width="12" height="12" x="0" y="360" class="todo"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="360" class="named"><title>0x00484bf0 HWR_EnableAlphaBlend (63 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="360" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="360" class="todo"><title>0x00484de0 HWR_EnableColorKey (63 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="360" class="named"><title>0x00484de0 HWR_EnableColorKey (63 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="360" class="todo"><title>0x00484e20 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="360" class="todo"><title>0x00484eb0 HWR_BeginScene (78 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="360" class="named"><title>0x00484f00 HWR_EndScene (6 bytes)</title></rect>
@@ -2673,7 +2673,7 @@
 <rect width="4.63" height="4.78" x="624.96" y="395.79" class="named"><title>0x00458840 InitialiseFinalLevel (63 bytes)</title></rect>
 <rect width="4.63" height="4.78" x="624.96" y="403.57" class="named"><title>0x00459760 LiftFloor (63 bytes)</title></rect>
 <rect width="4.63" height="4.78" x="624.96" y="411.35" class="named"><title>0x00484bf0 HWR_EnableAlphaBlend (63 bytes)</title></rect>
-<rect width="4.63" height="4.78" x="624.96" y="419.12" class="todo"><title>0x00484de0 HWR_EnableColorKey (63 bytes)</title></rect>
+<rect width="4.63" height="4.78" x="624.96" y="419.12" class="named"><title>0x00484de0 HWR_EnableColorKey (63 bytes)</title></rect>
 <rect width="4.63" height="4.70" x="624.96" y="426.90" class="named"><title>0x00430010 ControlRotateyThing (62 bytes)</title></rect>
 <rect width="4.63" height="4.70" x="624.96" y="434.60" class="named"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
 <rect width="4.63" height="4.70" x="624.96" y="442.30" class="named"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
