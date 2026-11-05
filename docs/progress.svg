@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="262.75" height="12" x="0" y="0" class="named"><title>840 · 56.87%</title></rect>
-<rect width="199.25" height="12" x="262.75" y="0" class="todo"><title>637 · 43.13%</title></rect>
+<rect width="263.06" height="12" x="0" y="0" class="named"><title>841 · 56.94%</title></rect>
+<rect width="198.94" height="12" x="263.06" y="0" class="todo"><title>636 · 43.06%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">56.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">840</tspan> · <tspan class="todo">637</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">841</tspan> · <tspan class="todo">636</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="145.32" height="12" x="0" y="0" class="named"><title>209 KB · 31.45%</title></rect>
-<rect width="316.68" height="12" x="145.32" y="0" class="todo"><title>456 KB · 68.55%</title></rect>
+<rect width="145.76" height="12" x="0" y="0" class="named"><title>210 KB · 31.55%</title></rect>
+<rect width="316.24" height="12" x="145.76" y="0" class="todo"><title>456 KB · 68.45%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">31.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">209 KB</tspan> · <tspan class="todo">456 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">210 KB</tspan> · <tspan class="todo">456 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -972,7 +972,7 @@
 <rect width="12" height="12" x="105" y="270" class="named"><title>0x00461740 MouseControl (524 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="270" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="270" class="named"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="270" class="todo"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="270" class="named"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="270" class="todo"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="270" class="todo"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="270" class="named"><title>0x00462df0 ResetSG (21 bytes)</title></rect>
@@ -1804,7 +1804,7 @@
 <rect width="14.56" height="15.38" x="507.42" y="64.65" class="todo"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>
 <rect width="14.56" height="15.38" x="524.98" y="64.65" class="todo"><title>0x00456f40 MovableBlockCollision (636 bytes)</title></rect>
 <rect width="14.56" height="15.38" x="542.55" y="64.65" class="todo"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
-<rect width="14.52" height="15.38" x="560.11" y="64.65" class="todo"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
+<rect width="14.52" height="15.38" x="560.11" y="64.65" class="named"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
 <rect width="14.40" height="15.38" x="577.63" y="64.65" class="named"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
 <rect width="14.38" height="15.38" x="595.03" y="64.65" class="named"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
 <rect width="14.29" height="15.38" x="612.41" y="64.65" class="named"><title>0x0041d290 CobraControl (624 bytes)</title></rect>
