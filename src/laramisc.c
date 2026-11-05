@@ -55,6 +55,62 @@ void LaraCheat(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+#define LARA_SKIN 315
+
+void LaraInitialiseMeshes(int level_number)
+{
+    int i;
+    START_INFO *start;
+
+    start = &savegame.start[level_number];
+    for (i = 0; i < 15; i++)
+        lara.mesh_ptrs[i] = meshes[objects[LARA].mesh_index + i] = meshes[objects[LARA_SKIN].mesh_index + i];
+    switch (start->gun_type) {
+    case LG_UNARMED:
+        break;
+    case LG_MAGNUMS:
+        lara.mesh_ptrs[THIGH_L] = meshes[objects[MAGNUM].mesh_index + THIGH_L];
+        lara.mesh_ptrs[THIGH_R] = meshes[objects[MAGNUM].mesh_index + THIGH_R];
+        break;
+    case LG_UZIS:
+        lara.mesh_ptrs[THIGH_L] = meshes[objects[UZI].mesh_index + THIGH_L];
+        lara.mesh_ptrs[THIGH_R] = meshes[objects[UZI].mesh_index + THIGH_R];
+        break;
+    default:
+        lara.mesh_ptrs[THIGH_L] = meshes[objects[PISTOLS].mesh_index + THIGH_L];
+        lara.mesh_ptrs[THIGH_R] = meshes[objects[PISTOLS].mesh_index + THIGH_R];
+        break;
+    }
+    if (start->gun_type == LG_FLARE)
+        lara.mesh_ptrs[HAND_L] = meshes[objects[FLARE].mesh_index + HAND_L];
+    switch (start->gun_type) {
+    case LG_M16:
+        lara.back_gun = M16;
+        break;
+    case LG_HARPOON:
+        lara.back_gun = HARPOON_GUN;
+        break;
+    case LG_ROCKET:
+        lara.back_gun = ROCKET_GUN;
+        break;
+    case LG_GRENADE:
+        lara.back_gun = GRENADE_GUN;
+        break;
+    default:
+        if (start->got_shotgun)
+            lara.back_gun = SHOTGUN;
+        else if (start->got_m16)
+            lara.back_gun = M16;
+        else if (start->got_rocket)
+            lara.back_gun = ROCKET_GUN;
+        else if (start->got_grenade)
+            lara.back_gun = GRENADE_GUN;
+        else if (start->got_harpoon)
+            lara.back_gun = HARPOON_GUN;
+        break;
+    }
+}
+
 #define SWIMGLIDE_A 87
 #define SWIMGLIDE_F GF(SWIMGLIDE_A, 0)
 

@@ -728,7 +728,7 @@ address,size,name,symbol
 0x0044c630,183,LaraCheatGetStuff,_LaraCheatGetStuff
 0x0044c6f0,2212,LaraControl,_LaraControl
 0x0044cfc0,156,LaraCheat,_LaraCheat
-0x0044d060,297,LaraInitialiseMeshes,_LaraInitialiseMeshes
+0x0044d060,316,LaraInitialiseMeshes,_LaraInitialiseMeshes
 0x0044d1a0,255,LaraCheatyBits,_LaraCheatyBits
 0x0044d2a0,945,AnimateLara,_AnimateLara
 0x0044d690,356,UseItem,_UseItem
