@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="291.56" height="12" x="0" y="0" class="named"><title>1026 · 69.42%</title></rect>
-<rect width="1.42" height="12" x="291.56" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="127.02" height="12" x="292.98" y="0" class="todo"><title>447 · 30.24%</title></rect>
+<rect width="291.84" height="12" x="0" y="0" class="named"><title>1027 · 69.49%</title></rect>
+<rect width="1.42" height="12" x="291.84" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="126.74" height="12" x="293.26" y="0" class="todo"><title>446 · 30.18%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">69.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1026</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">447</tspan></text>
+<text text-anchor="end" x="600" y="7.50">69.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1027</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">446</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.86" height="12" x="0" y="0" class="named"><title>302 KB · 45.21%</title></rect>
-<rect width="3.69" height="12" x="189.86" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="226.45" height="12" x="193.55" y="0" class="todo"><title>360 KB · 53.92%</title></rect>
+<rect width="189.89" height="12" x="0" y="0" class="named"><title>302 KB · 45.21%</title></rect>
+<rect width="3.69" height="12" x="189.89" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="226.42" height="12" x="193.58" y="0" class="todo"><title>360 KB · 53.91%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">360 KB</tspan></text>
@@ -110,7 +110,7 @@
 <rect width="12" height="12" x="645" y="0" class="todo"><title>0x00405980 HWI_InsertGT3_Sorted (253 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="0" class="todo"><title>0x00405a80 HWI_InsertGT3_Poly (3268 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="0" class="named"><title>0x00406750 GETR (39 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="0" class="todo"><title>0x00406780 GETG (48 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="0" class="named"><title>0x00406780 GETG (48 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="0" class="todo"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="0" class="todo"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="0" class="todo"><title>0x004069e0 SubdivideGT4 (880 bytes)</title></rect>
@@ -2770,7 +2770,7 @@
 <rect width="3.85" height="4.46" x="647.10" y="369.09" class="named"><title>0x00429470 phd_RotZ_I (49 bytes)</title></rect>
 <rect width="3.85" height="4.46" x="647.10" y="376.55" class="named"><title>0x00480920 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="3.85" height="4.37" x="647.10" y="384.01" class="named"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
-<rect width="3.85" height="4.37" x="647.10" y="391.38" class="todo"><title>0x00406780 GETG (48 bytes)</title></rect>
+<rect width="3.85" height="4.37" x="647.10" y="391.38" class="named"><title>0x00406780 GETG (48 bytes)</title></rect>
 <rect width="3.85" height="4.37" x="647.10" y="398.75" class="named"><title>0x00429ed0 GetBestFrame (48 bytes)</title></rect>
 <rect width="3.85" height="4.37" x="647.10" y="406.12" class="named"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
 <rect width="3.85" height="4.37" x="647.10" y="413.50" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>

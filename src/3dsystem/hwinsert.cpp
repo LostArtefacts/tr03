@@ -65,4 +65,16 @@ int GETR(int rgb)
     return r;
 }
 
+int GETG(int rgb)
+{
+    int g;
+
+    g = ColorTable[((rgb >> 5) & 0x1f) << 3];
+    if (bBlueEffect) {
+        g *= 224;
+        g >>= 8;
+    }
+    return g;
+}
+
 }
