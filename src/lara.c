@@ -2131,6 +2131,42 @@ void lara_col_fastfall(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_hang(ITEM_INFO *item, COLL_INFO *coll)
+{
+    LaraHangTest(item, coll);
+    if (item->goal_anim_state == AS_HANG) {
+        if (input & IN_FORWARD) {
+            if (coll->front_floor > -850 && coll->front_floor < -650 && coll->front_floor - coll->front_ceiling >= 0 &&
+                coll->left_floor2 - coll->left_ceiling2 >= 0 && coll->right_floor2 - coll->right_ceiling2 >= 0 &&
+                !coll->hit_static) {
+                if (input & IN_SLOW)
+                    item->goal_anim_state = AS_GYMNAST;
+                else
+                    item->goal_anim_state = AS_NULL;
+                return;
+            } else if (lara.climb_status && item->anim_number == 96 && item->frame_number == GF(96, 21) &&
+                       coll->mid_ceiling <= -256) {
+                item->goal_anim_state = AS_HANG;
+                item->current_anim_state = AS_HANG;
+                item->anim_number = 187;
+                item->frame_number = GF(187, 0);
+                return;
+            }
+        }
+        if ((input & (IN_DUCK | IN_FORWARD)) && coll->front_floor > -850 && coll->front_floor < -650 &&
+            coll->front_floor - coll->front_ceiling >= -STEP_L && coll->left_floor2 - coll->left_ceiling2 >= -STEP_L &&
+            coll->right_floor2 - coll->right_ceiling2 >= -STEP_L && !coll->hit_static) {
+            item->goal_anim_state = AS_HANG2DUCK;
+            item->required_anim_state = AS_DUCK;
+        } else if ((input & IN_BACK) && lara.climb_status && item->anim_number == 96 && item->frame_number == GF(96, 21)) {
+            item->goal_anim_state = AS_HANG;
+            item->current_anim_state = AS_HANG;
+            item->anim_number = 188;
+            item->frame_number = GF(188, 0);
+        }
+    }
+}
+
 void lara_col_reach(ITEM_INFO *item, COLL_INFO *coll)
 {
     item->gravity_status = 1;
