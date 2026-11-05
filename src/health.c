@@ -120,6 +120,45 @@ void DrawAssaultPenalties(int type)
     }
 }
 
+void DrawQuadbikeLapTime(void)
+{
+    int x, timer, hund, lp, col;
+    char txt[8], *c;
+
+    if (CurrentLevel != 0 || !QuadbikeLapTimeDisplayTimer)
+        return;
+
+    for (lp = 0; lp < 2; lp++) {
+        if (lp == 0) {
+            timer = QuadbikeLapTime / 30;
+            hund = ((QuadbikeLapTime % 30) * 334) / 100;
+            x = (phd_winxmax >> 1) - 20 * 5 / 2;
+            col = 9;
+        } else {
+            timer = savegame.best_quadbike_times[0] / 30;
+            hund = ((savegame.best_quadbike_times[0] % 30) * 334) / 100;
+            x = (phd_winxmax >> 1) + 40 * 5 / 2;
+            col = 10;
+        }
+
+        sprintf(txt, "%d:%02d.%02d", timer / 60, timer % 60, hund);
+        for (c = txt; *c; c++) {
+            if (*c == ':') {
+                x -= 6;
+                S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 10), col, 0);
+                x += 14;
+            } else if (*c == '.') {
+                x -= 6;
+                S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 11), col, 0);
+                x += 14;
+            } else {
+                S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + (*c - '0')), col, 0);
+                x += 20;
+            }
+        }
+    }
+}
+
 extern int overlay_flag;
 extern uint16 DashTimer;
 extern sint16 ExposureMeter;
