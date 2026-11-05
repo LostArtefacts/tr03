@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="273.38" height="12" x="0" y="0" class="named"><title>874 · 59.17%</title></rect>
-<rect width="188.62" height="12" x="273.38" y="0" class="todo"><title>603 · 40.83%</title></rect>
+<rect width="273.70" height="12" x="0" y="0" class="named"><title>875 · 59.24%</title></rect>
+<rect width="188.30" height="12" x="273.70" y="0" class="todo"><title>602 · 40.76%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">59.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">874</tspan> · <tspan class="todo">603</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">875</tspan> · <tspan class="todo">602</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="164.80" height="12" x="0" y="0" class="named"><title>238 KB · 35.67%</title></rect>
-<rect width="297.20" height="12" x="164.80" y="0" class="todo"><title>429 KB · 64.33%</title></rect>
+<rect width="164.94" height="12" x="0" y="0" class="named"><title>238 KB · 35.70%</title></rect>
+<rect width="297.06" height="12" x="164.94" y="0" class="todo"><title>428 KB · 64.30%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">35.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">238 KB</tspan> · <tspan class="todo">429 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">238 KB</tspan> · <tspan class="todo">428 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -927,7 +927,7 @@
 <rect width="12" height="12" x="180" y="255" class="named"><title>0x0045aa00 InitialiseOilSMG (82 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="255" class="todo"><title>0x0045aa60 OilSMGControl (1992 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="255" class="named"><title>0x0045b260 OrcaControl (732 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="255" class="todo"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="255" class="named"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="255" class="named"><title>0x0045b610 Targetable (210 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="255" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="255" class="named"><title>0x0045b700 GunHit (185 bytes)</title></rect>
@@ -2244,7 +2244,7 @@
 <rect width="8.30" height="8.36" x="511.39" y="348.55" class="todo"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="8.30" height="8.36" x="511.39" y="359.91" class="todo"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
 <rect width="8.30" height="8.32" x="511.39" y="371.27" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
-<rect width="8.30" height="8.32" x="511.39" y="382.59" class="todo"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
+<rect width="8.30" height="8.32" x="511.39" y="382.59" class="named"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
 <rect width="8.30" height="8.28" x="511.39" y="393.91" class="named"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
 <rect width="8.30" height="8.23" x="511.39" y="405.19" class="named"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>
 <rect width="8.30" height="8.19" x="511.39" y="416.42" class="named"><title>0x0042e4f0 CreateBubble (193 bytes)</title></rect>
