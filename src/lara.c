@@ -3237,3 +3237,89 @@ void lara_as_stop(ITEM_INFO *item, COLL_INFO *coll)
         }
     }
 }
+
+typedef struct {
+    sint16 mesh_number;
+    sint16 flags;
+    sint16 x_minp;
+    sint16 x_maxp;
+    sint16 y_minp;
+    sint16 y_maxp;
+    sint16 z_minp;
+    sint16 z_maxp;
+    sint16 x_minc;
+    sint16 x_maxc;
+    sint16 y_minc;
+    sint16 y_maxc;
+    sint16 z_minc;
+    sint16 z_maxc;
+} STATIC_INFO;
+
+extern STATIC_INFO static_objects[];
+extern sint32 number_draw_rooms;
+extern sint16 draw_rooms[];
+void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number);
+
+int GetStaticObjects(ITEM_INFO *item, PHD_ANGLE ang, sint32 hite, sint32 radius, sint32 dist)
+{
+    int i, j;
+    ROOM_INFO *r;
+    MESH_INFO *mesh;
+    STATIC_INFO *sinfo;
+    sint16 room_number;
+    sint32 xmin, xmax, ymin, ymax, zmin, zmax;
+    sint32 inxmin, inxmax, inymin, inymax, inzmin, inzmax, x, y, z;
+
+    x = item->pos.x_pos + ((phd_sin(ang) * dist) >> W2V_SHIFT);
+    y = item->pos.y_pos;
+    z = item->pos.z_pos + ((phd_cos(ang) * dist) >> W2V_SHIFT);
+    room_number = item->room_number;
+    inxmin = x - radius;
+    inxmax = x + radius;
+    inymin = y - hite;
+    inymax = y;
+    inzmin = z - radius;
+    inzmax = z + radius;
+    GetNearByRooms(x, y, z, radius + 50, hite + 50, room_number);
+    for (i = 0; i < number_draw_rooms; i++) {
+        r = &room[draw_rooms[i]];
+        mesh = r->mesh;
+        for (j = r->num_meshes; j > 0; j--, mesh++) {
+            sinfo = &static_objects[mesh->static_number];
+            if (sinfo->flags & 1)
+                continue;
+            ymin = mesh->y + sinfo->y_minc;
+            ymax = mesh->y + sinfo->y_maxc;
+            switch (mesh->y_rot) {
+            default:
+                xmin = mesh->x + sinfo->x_minc;
+                xmax = mesh->x + sinfo->x_maxc;
+                zmin = mesh->z + sinfo->z_minc;
+                zmax = mesh->z + sinfo->z_maxc;
+                break;
+            case 16384:
+                xmin = mesh->x + sinfo->z_minc;
+                xmax = mesh->x + sinfo->z_maxc;
+                zmin = mesh->z - sinfo->x_maxc;
+                zmax = mesh->z - sinfo->x_minc;
+                break;
+            case -32768:
+                xmin = mesh->x - sinfo->x_maxc;
+                xmax = mesh->x - sinfo->x_minc;
+                zmin = mesh->z - sinfo->z_maxc;
+                zmax = mesh->z - sinfo->z_minc;
+                break;
+            case -16384:
+                xmin = mesh->x - sinfo->z_maxc;
+                xmax = mesh->x - sinfo->z_minc;
+                zmin = mesh->z + sinfo->x_minc;
+                zmax = mesh->z + sinfo->x_maxc;
+                break;
+            }
+            if (inxmax <= xmin || inxmin >= xmax || inymax <= ymin || inymin >= ymax || inzmax <= zmin || inzmin >= zmax)
+                continue;
+            return 1;
+        }
+    }
+    return 0;
+}
