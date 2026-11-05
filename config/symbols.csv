@@ -883,7 +883,7 @@ address,size,name,symbol
 0x0045cde0,132,BossDropIcon,_BossDropIcon
 0x0045ce70,379,AnimatingPickUp,_AnimatingPickUp
 0x0045cff0,82,InitialisePrisoner,_InitialisePrisoner
-0x0045d050,2859,PrisonerControl,_PrisonerControl
+0x0045d050,2936,PrisonerControl,_PrisonerControl
 0x0045dbd0,82,InitialisePunk,_InitialisePunk
 0x0045dc30,2480,PunkControl,_PunkControl
 0x0045e5e0,497,TriggerPunkFlame,_TriggerPunkFlame
@@ -1979,6 +1979,7 @@ address,size,name,symbol
 0x004c79e0,12,KeyHolePosition,_KeyHolePosition
 0x004c79f0,24,PuzzleHoleBounds,_PuzzleHoleBounds
 0x004c7a08,12,PuzzleHolePosition,_PuzzleHolePosition
+0x004c7a18,16,bob_hit,_bob_hit
 0x004c7a28,16,punk_hit,_punk_hit
 0x004c7a38,32,quad_bites,_quad_bites
 0x004c7a98,4,tunes,_tunes

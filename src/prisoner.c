@@ -13,3 +13,385 @@ void InitialisePrisoner(sint16 item_number)
     item->frame_number = anims[item->anim_number].frame_base;
     item->current_anim_state = item->goal_anim_state = BOB_STOP;
 }
+
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+#define BOB_WALK 2
+#define BOB_PUNCH2 3
+#define BOB_AIM2 4
+#define BOB_WAIT 5
+#define BOB_AIM1 6
+#define BOB_AIM0 7
+#define BOB_PUNCH1 8
+#define BOB_PUNCH0 9
+#define BOB_RUN 10
+#define BOB_DEATH 11
+#define BOB_CLIMB3 12
+#define BOB_CLIMB1 13
+#define BOB_CLIMB2 14
+#define BOB_FALL3 15
+
+#define SQUARE(x) ((x) * (x))
+#define BOB_HIT_DAMAGE 40
+#define BOB_SWIPE_DAMAGE 50
+#define BOB_WALK_TURN (ONE_DEGREE * 7)
+#define BOB_RUN_TURN (ONE_DEGREE * 11)
+#define BOB_ATTACK0_RANGE SQUARE(WALL_L / 3)
+#define BOB_ATTACK1_RANGE SQUARE(WALL_L * 2 / 3)
+#define BOB_ATTACK2_RANGE SQUARE(WALL_L * 3 / 4)
+#define BOB_WALK_RANGE SQUARE(WALL_L)
+#define BOB_WAIT_CHANCE 0x100
+#define BOB_DIE_ANIM 26
+#define BOB_CLIMB1_ANIM 28
+#define BOB_CLIMB2_ANIM 29
+#define BOB_CLIMB3_ANIM 27
+#define BOB_FALL3_ANIM 30
+#define BOB_TOUCH 0x2400
+#define BOB_VAULT_SHIFT 260
+#define BOB_AWARE_DISTANCE SQUARE(WALL_L)
+#define GUARD 1
+#define PATROL1 4
+#define FOLLOW 16
+#define MODIFY 8
+#define BOB_HIT_RADIUS STEP_L
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);
+int CreatureVault(sint16 item_number, sint16 angle, int vault, int shift);
+sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number));
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+void GetAITarget(CREATURE_INFO *creature);
+void AlertAllGuards(sint16 item_number);
+sint16 AIGuard(CREATURE_INFO *creature);
+void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+
+extern BITE_INFO bob_hit;
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+void PrisonerControl(sint16 item_number)
+{
+    ITEM_INFO *item, *enemy, *target;
+    CREATURE_INFO *sec, *cinfo;
+    sint16 angle, torso_y, torso_x, head, tilt, slot;
+    sint32 lara_dx, lara_dz, x, z, distance, best_distance;
+    AI_INFO info, lara_info;
+
+    if (!CreatureActive(item_number))
+        return;
+    item = &items[item_number];
+    sec = (CREATURE_INFO *)item->data;
+    torso_y = torso_x = head = angle = tilt = 0;
+    if (boxes[item->box_number].overlap_index & 0x4000) {
+        DoLotsOfBloodD(item->pos.x_pos, item->pos.y_pos - (GetRandomControl() & 255) - 32, item->pos.z_pos,
+                       (GetRandomControl() & 127) + 128, GetRandomControl() << 1, item->room_number, 3);
+        item->hit_points -= 20;
+    }
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != BOB_DEATH) {
+            item->anim_number = objects[BOB].anim_index + BOB_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = BOB_DEATH;
+            sec->LOT.step = STEP_L;
+        }
+    } else {
+        if (item->ai_bits && item->ai_bits != MODIFY)
+            GetAITarget(sec);
+        else if (sec->hurt_by_lara)
+            sec->enemy = lara_item;
+        else {
+            sec->enemy = NULL;
+            best_distance = 0x7fffffff;
+            cinfo = baddie_slots;
+            for (slot = 0; slot < NUM_SLOTS; slot++, cinfo++) {
+                if (cinfo->item_num == NO_ITEM || cinfo->item_num == item_number)
+                    continue;
+                target = &items[cinfo->item_num];
+                if (target->object_number == LARA || target->object_number == BOB
+                    || target->object_number == ROBOT_SENTRY_GUN || target->hit_points <= 0)
+                    continue;
+                x = target->pos.x_pos - item->pos.x_pos;
+                z = target->pos.z_pos - item->pos.z_pos;
+                if (z > 32000 || z < -32000 || x > 32000 || x < -32000)
+                    continue;
+                distance = x * x + z * z;
+                if (distance < best_distance) {
+                    sec->enemy = target;
+                    best_distance = distance;
+                }
+            }
+        }
+        if (item->ai_bits == MODIFY)
+            item->hit_points = 200;
+        CreatureAIInfo(item, &info);
+        if (!sec->hurt_by_lara && sec->enemy == lara_item)
+            sec->enemy = NULL;
+        if (sec->enemy == lara_item) {
+            lara_info.angle = info.angle;
+            lara_info.distance = info.distance;
+        } else {
+            lara_dz = lara_item->pos.z_pos - item->pos.z_pos;
+            lara_dx = lara_item->pos.x_pos - item->pos.x_pos;
+            lara_info.angle = phd_atan(lara_dz, lara_dx) - item->pos.y_rot;
+            lara_info.distance = lara_dz * lara_dz + lara_dx * lara_dx;
+        }
+        GetCreatureMood(item, &info, 1);
+        CreatureMood(item, &info, 1);
+        angle = CreatureTurn(item, sec->maximum_turn);
+        if (sec->hurt_by_lara) {
+            if (!sec->alerted)
+                SoundEffect(300, &item->pos, 0);
+            AlertAllGuards(item_number);
+        }
+        enemy = sec->enemy;
+        switch (item->current_anim_state) {
+        case BOB_WAIT:
+            if (sec->alerted || item->goal_anim_state == BOB_RUN) {
+                item->goal_anim_state = BOB_STOP;
+                break;
+            }
+        case BOB_STOP:
+            sec->flags = 0;
+            sec->maximum_turn = 0;
+            head = lara_info.angle;
+            if (item->ai_bits & GUARD) {
+                head = AIGuard(sec);
+                if (!(GetRandomControl() & 0xff)) {
+                    if (item->current_anim_state == BOB_STOP)
+                        item->goal_anim_state = BOB_WAIT;
+                    else
+                        item->goal_anim_state = BOB_STOP;
+                }
+                break;
+            } else if (item->ai_bits & PATROL1)
+                item->goal_anim_state = BOB_WALK;
+            else if (sec->mood == ESCAPE_MOOD) {
+                if (lara.target != item && info.ahead && !item->hit_status)
+                    item->goal_anim_state = BOB_STOP;
+                else
+                    item->goal_anim_state = BOB_RUN;
+            } else if (sec->mood == BORED_MOOD
+                       || ((item->ai_bits & FOLLOW)
+                           && (sec->reached_goal || lara_info.distance > SQUARE(WALL_L * 2)))) {
+                if (item->required_anim_state)
+                    item->goal_anim_state = item->required_anim_state;
+                else if (info.ahead)
+                    item->goal_anim_state = BOB_STOP;
+                else
+                    item->goal_anim_state = BOB_RUN;
+            } else if (info.bite && info.distance < BOB_ATTACK0_RANGE)
+                item->goal_anim_state = BOB_AIM0;
+            else if (info.bite && info.distance < BOB_ATTACK1_RANGE)
+                item->goal_anim_state = BOB_AIM1;
+            else if (info.bite && info.distance < BOB_WALK_RANGE)
+                item->goal_anim_state = BOB_WALK;
+            else
+                item->goal_anim_state = BOB_RUN;
+            break;
+        case BOB_WALK:
+            head = lara_info.angle;
+            sec->maximum_turn = BOB_WALK_TURN;
+            if (item->ai_bits & PATROL1) {
+                item->goal_anim_state = BOB_WALK;
+                head = 0;
+            } else if (sec->mood == ESCAPE_MOOD)
+                item->goal_anim_state = BOB_RUN;
+            else if (sec->mood == BORED_MOOD) {
+                if (GetRandomControl() < BOB_WAIT_CHANCE) {
+                    item->required_anim_state = BOB_WAIT;
+                    item->goal_anim_state = BOB_STOP;
+                }
+            } else if (info.bite && info.distance < BOB_ATTACK0_RANGE)
+                item->goal_anim_state = BOB_STOP;
+            else if (info.bite && info.distance < BOB_ATTACK2_RANGE)
+                item->goal_anim_state = BOB_AIM2;
+            else
+                item->goal_anim_state = BOB_RUN;
+            break;
+        case BOB_RUN:
+            if (info.ahead)
+                head = info.angle;
+            sec->maximum_turn = BOB_RUN_TURN;
+            tilt = angle / 2;
+            if (item->ai_bits & GUARD)
+                item->goal_anim_state = BOB_STOP;
+            else if (sec->mood == ESCAPE_MOOD) {
+                if (lara.target != item && info.ahead)
+                    item->goal_anim_state = BOB_STOP;
+                break;
+            } else if ((item->ai_bits & FOLLOW) && (sec->reached_goal || lara_info.distance > SQUARE(WALL_L * 2)))
+                item->goal_anim_state = BOB_STOP;
+            else if (sec->mood == BORED_MOOD)
+                item->goal_anim_state = BOB_WALK;
+            else if (info.ahead && info.distance < BOB_WALK_RANGE)
+                item->goal_anim_state = BOB_WALK;
+            break;
+        case BOB_AIM0:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+            }
+            sec->maximum_turn = BOB_WALK_TURN;
+            sec->flags = 0;
+            if (info.bite && info.distance < BOB_ATTACK0_RANGE)
+                item->goal_anim_state = BOB_PUNCH0;
+            else
+                item->goal_anim_state = BOB_STOP;
+            break;
+        case BOB_AIM1:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+            }
+            sec->maximum_turn = BOB_WALK_TURN;
+            sec->flags = 0;
+            if (info.ahead && info.distance < BOB_ATTACK1_RANGE)
+                item->goal_anim_state = BOB_PUNCH1;
+            else
+                item->goal_anim_state = BOB_STOP;
+            break;
+        case BOB_AIM2:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+            }
+            sec->maximum_turn = BOB_WALK_TURN;
+            sec->flags = 0;
+            if (info.bite && info.distance < BOB_ATTACK2_RANGE)
+                item->goal_anim_state = BOB_PUNCH2;
+            else
+                item->goal_anim_state = BOB_WALK;
+            break;
+        case BOB_PUNCH0:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+            }
+            sec->maximum_turn = BOB_WALK_TURN;
+            if (enemy == lara_item) {
+                if (!sec->flags && (item->touch_bits & BOB_TOUCH)) {
+                    lara_item->hit_points -= BOB_HIT_DAMAGE;
+                    lara_item->hit_status = 1;
+                    CreatureEffect(item, &bob_hit, DoBloodSplat);
+                    SoundEffect(70, &item->pos, 0);
+                    sec->flags = 1;
+                }
+            } else if (!sec->flags && enemy) {
+                if (ABS(enemy->pos.x_pos - item->pos.x_pos) < BOB_HIT_RADIUS
+                    && ABS(enemy->pos.y_pos - item->pos.y_pos) <= BOB_HIT_RADIUS
+                    && ABS(enemy->pos.z_pos - item->pos.z_pos) < BOB_HIT_RADIUS) {
+                    enemy->hit_points -= BOB_HIT_DAMAGE >> 1;
+                    enemy->hit_status = 1;
+                    SoundEffect(70, &item->pos, 0);
+                    sec->flags = 1;
+                    CreatureEffect(item, &bob_hit, DoBloodSplat);
+                }
+            }
+            break;
+        case BOB_PUNCH1:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+            }
+            sec->maximum_turn = BOB_WALK_TURN;
+            if (enemy == lara_item) {
+                if (!sec->flags && (item->touch_bits & BOB_TOUCH)) {
+                    lara_item->hit_points -= BOB_HIT_DAMAGE;
+                    lara_item->hit_status = 1;
+                    CreatureEffect(item, &bob_hit, DoBloodSplat);
+                    SoundEffect(70, &item->pos, 0);
+                    sec->flags = 1;
+                }
+            } else if (!sec->flags && enemy) {
+                if (ABS(enemy->pos.x_pos - item->pos.x_pos) < BOB_HIT_RADIUS
+                    && ABS(enemy->pos.y_pos - item->pos.y_pos) <= BOB_HIT_RADIUS
+                    && ABS(enemy->pos.z_pos - item->pos.z_pos) < BOB_HIT_RADIUS) {
+                    enemy->hit_points -= BOB_HIT_DAMAGE >> 1;
+                    enemy->hit_status = 1;
+                    sec->flags = 1;
+                    CreatureEffect(item, &bob_hit, DoBloodSplat);
+                    SoundEffect(70, &item->pos, 0);
+                }
+            }
+            if (info.ahead && info.distance > BOB_ATTACK1_RANGE && info.distance < BOB_ATTACK2_RANGE)
+                item->goal_anim_state = BOB_PUNCH2;
+            break;
+        case BOB_PUNCH2:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+            }
+            sec->maximum_turn = BOB_WALK_TURN;
+            if (enemy == lara_item) {
+                if (sec->flags != 2 && (item->touch_bits & BOB_TOUCH)) {
+                    lara_item->hit_points -= BOB_SWIPE_DAMAGE;
+                    lara_item->hit_status = 1;
+                    CreatureEffect(item, &bob_hit, DoBloodSplat);
+                    SoundEffect(70, &item->pos, 0);
+                    sec->flags = 2;
+                }
+            } else if (sec->flags != 2 && enemy) {
+                if (ABS(enemy->pos.x_pos - item->pos.x_pos) < BOB_HIT_RADIUS
+                    && ABS(enemy->pos.y_pos - item->pos.y_pos) <= BOB_HIT_RADIUS
+                    && ABS(enemy->pos.z_pos - item->pos.z_pos) < BOB_HIT_RADIUS) {
+                    enemy->hit_points -= BOB_SWIPE_DAMAGE >> 1;
+                    enemy->hit_status = 1;
+                    SoundEffect(70, &item->pos, 0);
+                    sec->flags = 2;
+                    CreatureEffect(item, &bob_hit, DoBloodSplat);
+                }
+            }
+            break;
+        }
+    }
+    CreatureTilt(item, tilt);
+    CreatureJoint(item, 0, torso_y);
+    CreatureJoint(item, 1, torso_x);
+    CreatureJoint(item, 2, head);
+    if (item->current_anim_state < BOB_DEATH) {
+        switch (CreatureVault(item_number, angle, 2, BOB_VAULT_SHIFT)) {
+        case 2:
+            sec->maximum_turn = 0;
+            item->anim_number = objects[BOB].anim_index + BOB_CLIMB1_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = BOB_CLIMB1;
+            break;
+        case 3:
+            sec->maximum_turn = 0;
+            item->anim_number = objects[BOB].anim_index + BOB_CLIMB2_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = BOB_CLIMB2;
+            break;
+        case 4:
+            sec->maximum_turn = 0;
+            item->anim_number = objects[BOB].anim_index + BOB_CLIMB3_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = BOB_CLIMB3;
+            break;
+        case -4:
+            sec->maximum_turn = 0;
+            item->anim_number = objects[BOB].anim_index + BOB_FALL3_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = BOB_FALL3;
+            break;
+        }
+    } else {
+        sec->maximum_turn = 0;
+        CreatureAnimation(item_number, angle, 0);
+    }
+}
