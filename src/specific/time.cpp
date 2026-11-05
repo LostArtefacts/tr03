@@ -22,4 +22,14 @@ bool TIME_Init(void)
     return true;
 }
 
+int Sync(void)
+{
+    __int64 PerformanceCount, f;
+
+    QueryPerformanceCounter((LARGE_INTEGER *)&PerformanceCount);
+    f = (PerformanceCount - counter) / frequency;
+    counter += frequency * f;
+    return (int)f;
+}
+
 }
