@@ -87,7 +87,7 @@ address,size,name,symbol
 0x0040fe90,8,InitialiseArea51Struts,_InitialiseArea51Struts
 0x0040fea0,78,ControlArea51Struts,_ControlArea51Struts
 0x0040fef0,82,InitialiseArmySMG,_InitialiseArmySMG
-0x0040ff50,1994,ArmySMGControl,_ArmySMGControl
+0x0040ff50,2040,ArmySMGControl,_ArmySMGControl
 0x00410750,75,InitialiseAutogun,_InitialiseAutogun
 0x004107a0,837,AutogunControl,_AutogunControl
 0x00410af0,522,FireBigGun,_FireBigGun
@@ -1839,6 +1839,7 @@ address,size,name,symbol
 0x004c31bc,4,joyGetPosEx,__imp__joyGetPosEx@8
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
 0x004c5084,4,one,_one
+0x004c5130,16,army_gun,_army_gun
 0x004c5140,16,autogun_left,_autogun_left
 0x004c5150,16,autogun_right,_autogun_right
 0x004c5160,16,bird_bite,_bird_bite
