@@ -193,6 +193,55 @@ void TriggerShotgunSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, si
     sptr->Gravity = sptr->MaxYvel = 0;
 }
 
+void TriggerRocketFlame(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 item_no)
+{
+    sint32 size;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 48 + (GetRandomControl() & 31);
+    sptr->sG = sptr->sR;
+    sptr->sB = 192 + (GetRandomControl() & 63);
+    sptr->dR = 192 + (GetRandomControl() & 63);
+    sptr->dG = 128 + (GetRandomControl() & 63);
+    sptr->dB = 32;
+    sptr->ColFadeSpeed = 12 + (GetRandomControl() & 3);
+    sptr->FadeToBlack = 12;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 28;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 31) - 16);
+    sptr->y = y;
+    sptr->z = z + ((GetRandomControl() & 31) - 16);
+    sptr->Xvel = xv;
+    sptr->Yvel = yv;
+    sptr->Zvel = zv;
+    sptr->Friction = 3 | (3 << 4);
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 128 | 512;
+        sptr->FxObj = item_no;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else {
+        sptr->Flags = 2 | 8 | 128 | 512;
+        sptr->FxObj = item_no;
+    }
+    sptr->Gravity = 0;
+    sptr->MaxYvel = 0;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 2;
+    size = (GetRandomControl() & 7) + 32;
+    sptr->Width = sptr->sWidth = size;
+    sptr->dWidth = 2;
+    sptr->Height = sptr->sHeight = size;
+    sptr->dHeight = 2;
+}
+
 void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size)
 {
     RIPPLE_STRUCT *rptr;
