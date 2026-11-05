@@ -37,4 +37,14 @@ bool DXSetCooperativeLevel(LPDIRECTDRAW2 lpDD2, HWND WindowHandle, int Flags)
     return true;
 }
 
+bool DXSetVideoMode(LPDIRECTDRAW2 lpDD2, int w, int h, int bpp)
+{
+    int RetVal;
+
+    RetVal = lpDD2->SetDisplayMode(w, h, bpp, 0, 0);
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 }

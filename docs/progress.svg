@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="268.25" height="12" x="0" y="0" class="named"><title>944 · 63.87%</title></rect>
-<rect width="1.42" height="12" x="268.25" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="150.32" height="12" x="269.68" y="0" class="todo"><title>529 · 35.79%</title></rect>
+<rect width="268.54" height="12" x="0" y="0" class="named"><title>945 · 63.94%</title></rect>
+<rect width="1.42" height="12" x="268.54" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="150.04" height="12" x="269.96" y="0" class="todo"><title>528 · 35.72%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">63.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">944</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">529</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">945</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">528</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.66" height="12" x="0" y="0" class="named"><title>297 KB · 44.44%</title></rect>
-<rect width="3.69" height="12" x="186.66" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.66" height="12" x="190.34" y="0" class="todo"><title>365 KB · 54.68%</title></rect>
+<rect width="186.68" height="12" x="0" y="0" class="named"><title>297 KB · 44.45%</title></rect>
+<rect width="3.69" height="12" x="186.68" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.64" height="12" x="190.36" y="0" class="todo"><title>365 KB · 54.68%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1412,7 +1412,7 @@
 <rect width="12" height="12" x="675" y="390" class="todo"><title>0x0048fe40 DXCreateDirectDraw (87 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="390" class="named"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="390" class="named"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="390" class="todo"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="390" class="named"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="390" class="todo"><title>0x0048ff10 DXCreateSurface (72 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="405" class="todo"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="405" class="todo"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
@@ -2868,7 +2868,7 @@
 <rect width="3.76" height="3.26" x="743.24" y="375.19" class="named"><title>0x0044e890 lara_col_surfleft (35 bytes)</title></rect>
 <rect width="3.68" height="3.34" x="675.30" y="381.45" class="named"><title>0x0044e8c0 lara_col_surfright (35 bytes)</title></rect>
 <rect width="3.68" height="3.34" x="675.30" y="387.79" class="todo"><title>0x004835e0 S_COLOUR (35 bytes)</title></rect>
-<rect width="3.68" height="3.34" x="675.30" y="394.13" class="todo"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
+<rect width="3.68" height="3.34" x="675.30" y="394.13" class="named"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
 <rect width="3.68" height="3.24" x="675.30" y="400.47" class="named"><title>0x00429390 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="3.68" height="3.24" x="675.30" y="406.71" class="named"><title>0x00439000 Inv_RingMotionRotation (34 bytes)</title></rect>
 <rect width="3.68" height="3.24" x="675.30" y="412.95" class="todo"><title>0x00475400 DI_Create (34 bytes)</title></rect>
