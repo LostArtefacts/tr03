@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="254.30" height="12" x="0" y="0" class="named"><title>813 · 55.04%</title></rect>
-<rect width="207.70" height="12" x="254.30" y="0" class="todo"><title>664 · 44.96%</title></rect>
+<rect width="254.62" height="12" x="0" y="0" class="named"><title>814 · 55.11%</title></rect>
+<rect width="207.38" height="12" x="254.62" y="0" class="todo"><title>663 · 44.89%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">55.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">813</tspan> · <tspan class="todo">664</tspan></text>
+<text text-anchor="end" x="642" y="7.50">55.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">814</tspan> · <tspan class="todo">663</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="131.28" height="12" x="0" y="0" class="named"><title>189 KB · 28.42%</title></rect>
-<rect width="330.72" height="12" x="131.28" y="0" class="todo"><title>477 KB · 71.58%</title></rect>
+<rect width="131.71" height="12" x="0" y="0" class="named"><title>190 KB · 28.51%</title></rect>
+<rect width="330.29" height="12" x="131.71" y="0" class="todo"><title>476 KB · 71.49%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">28.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">189 KB</tspan> · <tspan class="todo">477 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">28.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">190 KB</tspan> · <tspan class="todo">476 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -966,7 +966,7 @@
 <rect width="12" height="12" x="15" y="270" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="270" class="todo"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="270" class="named"><title>0x00460bd0 TriggerExhaustSmoke (455 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="270" class="todo"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="270" class="named"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="270" class="named"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="270" class="named"><title>0x00461040 RaptorControl (1792 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="270" class="named"><title>0x00461740 MouseControl (524 bytes)</title></rect>
@@ -1811,7 +1811,7 @@
 <rect width="15.08" height="14.56" x="641.98" y="64.56" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="15.03" height="14.56" x="660.05" y="64.56" class="todo"><title>0x004296c0 InterpolateMatrix (621 bytes)</title></rect>
 <rect width="15.03" height="14.56" x="678.08" y="64.56" class="todo"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
-<rect width="14.98" height="14.56" x="696.11" y="64.56" class="todo"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
+<rect width="14.98" height="14.56" x="696.11" y="64.56" class="named"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
 <rect width="14.96" height="14.56" x="714.09" y="64.56" class="named"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
 <rect width="14.96" height="14.56" x="732.04" y="64.56" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="14.56" height="14.94" x="365.07" y="82.12" class="named"><title>0x0044c150 undraw_flare (617 bytes)</title></rect>

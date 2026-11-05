@@ -1955,6 +1955,7 @@ address,size,name,symbol
 0x004c79f0,24,PuzzleHoleBounds,_PuzzleHoleBounds
 0x004c7a08,12,PuzzleHolePosition,_PuzzleHolePosition
 0x004c7a98,4,tunes,_tunes
+0x004c7a9c,6,RaptorItem,_RaptorItem
 0x004c7aa8,16,raptor_bite,_raptor_bite
 0x004c7ab8,16,mouse_bite,_mouse_bite
 0x004c7b08,16,seal_gas,_seal_gas
