@@ -7,6 +7,14 @@ extern "C" {
 extern DEVICEINFO *G_DeviceInfo;
 extern DXCONFIG *G_DXConfig;
 
+extern bool bSoftwareDefault;
+
+void DXCheckMMXTechnology(HWND hwnd);
+void DXInitD3DDrivers(HWND hwnd, int nDrivers);
+void DXInitVideoModes(HWND hwnd, int nDD, int nD3D);
+void DXInitTextures(HWND hwnd, int nDD, int nD3D);
+void DXInitDSAdapters(HWND hwnd);
+void DXInitJoystickAdapter(HWND hwnd);
 BOOL CALLBACK DXSetupDlgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 bool DXUserDialog(DEVICEINFO *DeviceInfo, DXCONFIG *DXConfig, HINSTANCE hInstance)
@@ -23,6 +31,30 @@ bool DXUserDialog(DEVICEINFO *DeviceInfo, DXCONFIG *DXConfig, HINSTANCE hInstanc
         return false;
     }
     return ret ? true : false;
+}
+
+void DXInitDialogBox(HWND hwnd)
+{
+    HWND gfx;
+    int nDD;
+    int i;
+    char abt[80];
+
+    gfx = GetDlgItem(hwnd, 1000);
+    for (i = 0; i < G_DeviceInfo->nDDInfo; i++) {
+        sprintf(abt, "%s (%s)", G_DeviceInfo->DDInfo[i].About, G_DeviceInfo->DDInfo[i].Name);
+        SendMessage(gfx, CB_ADDSTRING, 0, (LPARAM)abt);
+    }
+    nDD = G_DeviceInfo->nDDInfo - 1;
+    if (bSoftwareDefault)
+        nDD = 0;
+    SendMessage(gfx, CB_SETCURSEL, nDD, 0);
+    DXCheckMMXTechnology(hwnd);
+    DXInitD3DDrivers(hwnd, nDD);
+    DXInitVideoModes(hwnd, nDD, SendMessage(GetDlgItem(hwnd, 1001), CB_GETCURSEL, 0, 0));
+    DXInitTextures(hwnd, nDD, SendMessage(GetDlgItem(hwnd, 1001), CB_GETCURSEL, 0, 0));
+    DXInitDSAdapters(hwnd);
+    DXInitJoystickAdapter(hwnd);
 }
 
 }

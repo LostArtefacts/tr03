@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="310.88" height="12" x="0" y="0" class="named"><title>1094 · 74.02%</title></rect>
-<rect width="1.99" height="12" x="310.88" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="107.13" height="12" x="312.87" y="0" class="todo"><title>377 · 25.51%</title></rect>
+<rect width="311.16" height="12" x="0" y="0" class="named"><title>1095 · 74.09%</title></rect>
+<rect width="1.99" height="12" x="311.16" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="106.85" height="12" x="313.15" y="0" class="todo"><title>376 · 25.44%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">74.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1094</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">377</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1095</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">376</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.25" height="12" x="0" y="0" class="named"><title>311 KB · 46.49%</title></rect>
-<rect width="3.79" height="12" x="195.25" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="220.95" height="12" x="199.05" y="0" class="todo"><title>351 KB · 52.61%</title></rect>
+<rect width="195.41" height="12" x="0" y="0" class="named"><title>311 KB · 46.53%</title></rect>
+<rect width="3.79" height="12" x="195.41" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="220.80" height="12" x="199.20" y="0" class="todo"><title>351 KB · 52.57%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
@@ -1471,7 +1471,7 @@
 <rect width="12" height="12" x="60" y="420" class="named"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="420" class="todo"><title>0x00496c20 DXSetupDlgProc (1596 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="420" class="todo"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="420" class="todo"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="420" class="named"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="420" class="todo"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="420" class="todo"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="420" class="todo"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
@@ -2160,7 +2160,7 @@
 <rect width="9.60" height="9.04" x="575.58" y="187.09" class="todo"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
 <rect width="9.60" height="9.04" x="588.17" y="187.09" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="9.60" height="9.04" x="600.77" y="187.09" class="named"><title>0x00453460 CreateZone (247 bytes)</title></rect>
-<rect width="9.56" height="9.04" x="613.37" y="187.09" class="todo"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
+<rect width="9.56" height="9.04" x="613.37" y="187.09" class="named"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
 <rect width="9.52" height="9.04" x="625.93" y="187.09" class="named"><title>0x00417110 SameZone (245 bytes)</title></rect>
 <rect width="9.52" height="9.04" x="638.45" y="187.09" class="named"><title>0x0043f330 lara_col_crawlb (245 bytes)</title></rect>
 <rect width="9.52" height="9.04" x="650.97" y="187.09" class="todo"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
