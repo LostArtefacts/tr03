@@ -2862,3 +2862,70 @@ void lara_col_crawl2hang(ITEM_INFO *item, COLL_INFO *coll)
         lara.gun_status = LG_HANDSBUSY;
     }
 }
+
+int LaraTestHangJump(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int edge_catch;
+    PHD_ANGLE angle;
+    sint16 *bounds;
+    sint32 edge;
+
+    if (!(input & IN_ACTION) || lara.gun_status != LG_ARMLESS || coll->hit_static)
+        return 0;
+    if (lara.CanMonkeySwing && coll->coll_type == COLL_TOP) {
+        lara.head_x_rot = lara.head_y_rot = 0;
+        lara.torso_x_rot = lara.torso_y_rot = 0;
+        item->goal_anim_state = AS_HANG2;
+        item->current_anim_state = AS_HANG2;
+        item->anim_number = 150;
+        item->frame_number = GF(150, 0);
+        item->gravity_status = 0;
+        item->speed = 0;
+        item->fallspeed = 0;
+        lara.gun_status = LG_HANDSBUSY;
+        return 1;
+    }
+    if (coll->mid_ceiling > -STEPUP_HEIGHT || coll->mid_floor < 200 || coll->coll_type != COLL_FRONT)
+        return 0;
+    if (!(edge_catch = LaraTestEdgeCatch(item, coll, &edge)))
+        return 0;
+    if (edge_catch < 0 && !LaraTestHangOnClimbWall(item, coll))
+        return 0;
+    angle = item->pos.y_rot;
+    if (angle >= -HANG_ANGLE && angle <= HANG_ANGLE)
+        angle = 0;
+    else if (angle >= 16384 - HANG_ANGLE && angle <= 16384 + HANG_ANGLE)
+        angle = 16384;
+    else if (angle >= 32767 - HANG_ANGLE || angle <= -32767 + HANG_ANGLE)
+        angle = -32768;
+    else if (angle >= -16384 - HANG_ANGLE && angle <= -16384 + HANG_ANGLE)
+        angle = -16384;
+    if (angle & 0x3fff)
+        return 0;
+    if (TestHangSwingIn(item, angle)) {
+        lara.head_x_rot = lara.head_y_rot = 0;
+        lara.torso_x_rot = lara.torso_y_rot = 0;
+        item->anim_number = 150;
+        item->frame_number = GF(150, 0);
+        item->current_anim_state = AS_HANG2;
+        item->goal_anim_state = AS_HANG2;
+    } else {
+        item->anim_number = 96;
+        item->frame_number = GF(96, 0);
+        item->current_anim_state = AS_HANG;
+        item->goal_anim_state = AS_HANG;
+    }
+    bounds = GetBoundsAccurate(item);
+    if (edge_catch > 0) {
+        item->pos.y_pos += coll->front_floor - bounds[2];
+        item->pos.x_pos += coll->shift.x;
+        item->pos.z_pos += coll->shift.z;
+    } else
+        item->pos.y_pos = edge - bounds[2];
+    item->pos.y_rot = angle;
+    item->gravity_status = 1;
+    item->speed = 2;
+    item->fallspeed = 1;
+    lara.gun_status = LG_HANDSBUSY;
+    return 1;
+}
