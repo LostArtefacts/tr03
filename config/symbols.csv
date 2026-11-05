@@ -823,7 +823,7 @@ address,size,name,symbol
 0x00457760,37,DrawMovableBlock,_DrawMovableBlock
 0x00457790,107,DrawUnclippedItem,_DrawUnclippedItem
 0x00457800,575,SetupCleanerFromSavegame,_SetupCleanerFromSavegame
-0x00457a40,3027,MPGunControl,_MPGunControl
+0x00457a40,3104,MPGunControl,_MPGunControl
 0x00458660,400,EarthQuake,_EarthQuake
 0x004587f0,73,ControlCutShotgun,_ControlCutShotgun
 0x00458840,63,InitialiseFinalLevel,_InitialiseFinalLevel
@@ -1960,6 +1960,7 @@ address,size,name,symbol
 0x004c7778,16,lizman_gas,_lizman_gas
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c78a0,16,londsec_gun,_londsec_gun
+0x004c78d8,16,mpgun_gun,_mpgun_gun
 0x004c78e8,16,oilred_gun,_oilred_gun
 0x004c78f8,16,oilsmg_gun,_oilsmg_gun
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
