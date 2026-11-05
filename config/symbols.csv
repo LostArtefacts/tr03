@@ -2122,7 +2122,7 @@ address,size,name,symbol
 0x005d7ae0,4,phd_right,_phd_right
 0x005d7af8,4,water_effect,_water_effect
 0x005d7afc,4,shade_effect,_shade_effect
-0x005d7b00,,Buckets,_Buckets
+0x005d7b00,55344,Buckets,_Buckets
 0x005e5450,262144,UVTable,_UVTable
 0x00625450,,G_GouraudPalette,_G_GouraudPalette
 0x00625850,,v_buffer,_v_buffer
