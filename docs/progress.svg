@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="227.72" height="12" x="0" y="0" class="named"><title>728 · 49.29%</title></rect>
-<rect width="234.28" height="12" x="227.72" y="0" class="todo"><title>749 · 50.71%</title></rect>
+<rect width="228.03" height="12" x="0" y="0" class="named"><title>729 · 49.36%</title></rect>
+<rect width="233.97" height="12" x="228.03" y="0" class="todo"><title>748 · 50.64%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">49.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">728</tspan> · <tspan class="todo">749</tspan></text>
+<text text-anchor="end" x="642" y="7.50">49.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">729</tspan> · <tspan class="todo">748</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="95.26" height="12" x="0" y="0" class="named"><title>137 KB · 20.62%</title></rect>
-<rect width="366.74" height="12" x="95.26" y="0" class="todo"><title>528 KB · 79.38%</title></rect>
+<rect width="95.58" height="12" x="0" y="0" class="named"><title>138 KB · 20.69%</title></rect>
+<rect width="366.42" height="12" x="95.58" y="0" class="todo"><title>528 KB · 79.31%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">20.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">137 KB</tspan> · <tspan class="todo">528 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">20.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">138 KB</tspan> · <tspan class="todo">528 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -301,7 +301,7 @@
 <rect width="12" height="12" x="540" y="60" class="todo"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="60" class="named"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x004240c0 DogControl (1382 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="60" class="todo"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="60" class="named"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="60" class="todo"><title>0x00424830 TriggerFlamethrowerHitFlame (475 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="60" class="todo"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="60" class="named"><title>0x00424c20 DrawPhaseGame (55 bytes)</title></rect>
@@ -1935,7 +1935,7 @@
 <rect width="12.84" height="12.68" x="624.17" y="115.24" class="todo"><title>0x0043f430 lara_col_crawl2hang (462 bytes)</title></rect>
 <rect width="12.84" height="12.68" x="640.01" y="115.24" class="todo"><title>0x00469150 BackgroundCollision (462 bytes)</title></rect>
 <rect width="12.76" height="12.68" x="655.85" y="115.24" class="todo"><title>0x004130c0 DoWake_boat (459 bytes)</title></rect>
-<rect width="12.73" height="12.68" x="671.60" y="115.24" class="todo"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
+<rect width="12.73" height="12.68" x="671.60" y="115.24" class="named"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
 <rect width="12.73" height="12.68" x="687.33" y="115.24" class="todo"><title>0x004253c0 GetRoomBounds (458 bytes)</title></rect>
 <rect width="12.65" height="12.68" x="703.06" y="115.24" class="todo"><title>0x00412330 BoatUserControl (455 bytes)</title></rect>
 <rect width="12.65" height="12.68" x="718.71" y="115.24" class="named"><title>0x00460bd0 TriggerExhaustSmoke (455 bytes)</title></rect>
