@@ -1,6 +1,10 @@
+#include "specific/standard.h"
 #include "game.h"
 
 void LaserSplitterToggle(ITEM_INFO *item);
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+void S_DrawLaserBeam(GAME_VECTOR *src, GAME_VECTOR *dest, uint8 r, uint8 g, uint8 b);
 
 int LaraOnLOS(GAME_VECTOR *start, GAME_VECTOR *target)
 {
@@ -119,9 +123,6 @@ void LaserSplitterToggle(ITEM_INFO *item)
     }
 }
 
-int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
-void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
-void S_DrawLaserBeam(GAME_VECTOR *src, GAME_VECTOR *dest, uint8 r, uint8 g, uint8 b);
 
 extern sint32 level_items;
 
