@@ -50,6 +50,61 @@ void set_flare_arm(int frame)
     lara.left_arm.frame_base = anims[lara.left_arm.anim_number].frame_ptr;
 }
 
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+
+void CreateFlare(int thrown)
+{
+    sint16 flare_item;
+    ITEM_INFO *flare;
+    PHD_VECTOR pos;
+    FLOOR_INFO *floor;
+
+    flare_item = CreateItem();
+    if (flare_item != NO_ITEM) {
+        flare = &items[flare_item];
+        flare->object_number = 179;
+        flare->room_number = lara_item->room_number;
+        pos.x = -16;
+        pos.y = 32;
+        pos.z = 42;
+        GetLaraHandAbsPosition(&pos, 0);
+        floor = GetFloor(pos.x, pos.y, pos.z, &flare->room_number);
+        if (GetHeight(floor, pos.x, pos.y, pos.z) < pos.y) {
+            flare->pos.x_pos = lara_item->pos.x_pos;
+            flare->pos.y_pos = pos.y;
+            flare->pos.z_pos = lara_item->pos.z_pos;
+            flare->pos.y_rot = lara_item->pos.y_rot;
+            flare->room_number = lara_item->room_number;
+        } else {
+            flare->pos.x_pos = pos.x;
+            flare->pos.y_pos = pos.y;
+            flare->pos.z_pos = pos.z;
+            if (thrown)
+                flare->pos.y_rot = lara_item->pos.y_rot;
+            else
+                flare->pos.y_rot = lara_item->pos.y_rot - 0x2000;
+        }
+        InitialiseItem(flare_item);
+        flare->pos.z_rot = 0;
+        flare->pos.x_rot = 0;
+        flare->shade = -1;
+        if (thrown) {
+            flare->speed = lara_item->speed + 50;
+            flare->fallspeed = lara_item->fallspeed - 50;
+        } else {
+            flare->speed = lara_item->speed + 10;
+            flare->fallspeed = lara_item->fallspeed + 50;
+        }
+        if (DoFlareLight((PHD_VECTOR *)&flare->pos, lara.flare_age))
+            flare->data = (void *)(lara.flare_age | 0x8000);
+        else
+            flare->data = (void *)(lara.flare_age & 0x7fff);
+        AddActiveItem(flare_item);
+        flare->status = ACTIVE;
+    }
+}
+
 void ready_flare(void);
 int Inv_RemoveItem(int item_num);
 
