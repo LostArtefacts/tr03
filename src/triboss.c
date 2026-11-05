@@ -108,6 +108,55 @@ void RotateHeadXAngle(ITEM_INFO *item)
         CreatureJoint(item, 2, 0);
 }
 
+sint32 GetFreeSpark(void);
+
+void TriggerSummonSmoke(sint32 x, sint32 y, sint32 z)
+{
+    SPARKS *sptr;
+    sint32 size;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 16;
+    sptr->sG = 64;
+    sptr->sB = 0;
+    sptr->dR = 8;
+    sptr->dG = 32;
+    sptr->dB = 0;
+    sptr->ColFadeSpeed = 16 + (GetRandomControl() & 7);
+    sptr->FadeToBlack = 64;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 15) + 96;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 127) - 64);
+    sptr->y = y - (GetRandomControl() & 31);
+    sptr->z = z + ((GetRandomControl() & 127) - 64);
+    sptr->Xvel = (GetRandomControl() & 255) - 128;
+    sptr->Yvel = -(GetRandomControl() & 15) - 16;
+    sptr->Zvel = (GetRandomControl() & 255) - 128;
+    sptr->Friction = 0;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512 | 256;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 7) - 4;
+        else
+            sptr->RotAdd = (GetRandomControl() & 7) + 4;
+    } else
+        sptr->Flags = 2 | 8 | 512 | 256;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = -(GetRandomControl() & 7) - 8;
+    sptr->MaxYvel = -(GetRandomControl() & 7) - 4;
+    size = (GetRandomControl() & 31) + 128;
+    sptr->Width = sptr->sWidth = size >> 1;
+    sptr->dWidth = size;
+    size += (GetRandomControl() & 31) + 32;
+    sptr->Height = sptr->sHeight = size >> 1;
+    sptr->dHeight = size;
+}
+
 sint16 FindLizardManItemNumber(sint16 room_number)
 {
     ITEM_INFO *target;
