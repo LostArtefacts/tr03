@@ -144,6 +144,80 @@ void LaraCheatyBits(void)
     }
 }
 
+#define LARA_HITPOINTS 1000
+
+int Inv_RemoveItem(int item_num);
+
+void UseItem(sint16 object_num)
+{
+    if (object_num < 0 || object_num >= NUMBER_OBJECTS)
+        return;
+    switch (object_num) {
+    case 160:
+    case 185:
+        lara.request_gun_type = LG_PISTOLS;
+        break;
+    case 162:
+    case 187:
+        lara.request_gun_type = LG_MAGNUMS;
+        break;
+    case 163:
+    case 188:
+        lara.request_gun_type = LG_UZIS;
+        break;
+    case 161:
+    case 186:
+        lara.request_gun_type = LG_SHOTGUN;
+        break;
+    case 164:
+    case 189:
+        lara.request_gun_type = LG_HARPOON;
+        break;
+    case 165:
+    case 190:
+        lara.request_gun_type = LG_M16;
+        break;
+    case 166:
+    case 191:
+        lara.request_gun_type = LG_ROCKET;
+        break;
+    case 167:
+    case 192:
+        lara.request_gun_type = LG_GRENADE;
+        break;
+    case 178:
+    case 203:
+        lara.request_gun_type = LG_FLARE;
+        break;
+    case 176:
+    case 201:
+        if ((lara_item->hit_points > 0 && lara_item->hit_points < LARA_HITPOINTS) || lara.poisoned) {
+            lara.poisoned = 0;
+            lara_item->hit_points += LARA_HITPOINTS / 2;
+            if (lara_item->hit_points > LARA_HITPOINTS)
+                lara_item->hit_points = LARA_HITPOINTS;
+            Inv_RemoveItem(176);
+            SoundEffect(116, NULL, 2);
+            savegame.health_used++;
+        }
+        break;
+    case 177:
+    case 202:
+        if ((lara_item->hit_points > 0 && lara_item->hit_points < LARA_HITPOINTS) || lara.poisoned) {
+            lara.poisoned = 0;
+            lara_item->hit_points += LARA_HITPOINTS;
+            if (lara_item->hit_points > LARA_HITPOINTS)
+                lara_item->hit_points = LARA_HITPOINTS;
+            Inv_RemoveItem(177);
+            SoundEffect(116, NULL, 2);
+            savegame.health_used += 2;
+        }
+        break;
+    default:
+        break;
+    }
+}
+
 void ControlLaraExtra(sint16 item_num)
 {
     AnimateItem(&items[item_num]);
