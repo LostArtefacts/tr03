@@ -76,7 +76,7 @@ address,size,name,symbol
 0x0040d5f0,82,InitialiseBaton,_InitialiseBaton
 0x0040d650,3238,BatonControl,_BatonControl
 0x0040e350,82,InitialiseCivvy,_InitialiseCivvy
-0x0040e3b0,2208,CivvyControl,_CivvyControl
+0x0040e3b0,2284,CivvyControl,_CivvyControl
 0x0040eca0,982,ControlElectricFence,_ControlElectricFence
 0x0040f080,257,TriggerFenceSparks,_TriggerFenceSparks
 0x0040f190,720,ControlArea51Laser,_ControlArea51Laser
@@ -1839,6 +1839,7 @@ address,size,name,symbol
 0x004c31bc,4,joyGetPosEx,__imp__joyGetPosEx@8
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
 0x004c5084,4,one,_one
+0x004c5120,16,civvy_hit,_civvy_hit
 0x004c5130,16,army_gun,_army_gun
 0x004c5140,16,autogun_left,_autogun_left
 0x004c5150,16,autogun_right,_autogun_right
