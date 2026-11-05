@@ -181,6 +181,72 @@ extern SPLASH_SETUP splash_setup;
 extern sint32 SplashCount;
 void SetupSplash(SPLASH_SETUP *spl);
 
+sint32 GetFreeSpark(void);
+
+void TriggerBoatMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle, sint32 snow)
+{
+    sint32 size, xv, zv;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    if (snow) {
+        sptr->dR = 255;
+        sptr->dG = 255;
+        sptr->dB = 255;
+    } else {
+        sptr->dR = 64;
+        sptr->dG = 64;
+        sptr->dB = 64;
+    }
+    sptr->ColFadeSpeed = 4 + (GetRandomControl() & 3);
+    sptr->FadeToBlack = 12 - (snow << 3);
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 20;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 15) - 8);
+    sptr->y = y + ((GetRandomControl() & 15) - 8);
+    sptr->z = z + ((GetRandomControl() & 15) - 8);
+    zv = (speed * phd_cos(angle)) >> (W2V_SHIFT + 2);
+    xv = (speed * phd_sin(angle)) >> (W2V_SHIFT + 2);
+    sptr->Xvel = xv + ((GetRandomControl() & 127) - 64);
+    sptr->Yvel = (speed << 3) + (speed << 2);
+    sptr->Zvel = zv + ((GetRandomControl() & 127) - 64);
+    sptr->Friction = 3;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else
+        sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    if (!snow) {
+        sptr->Scalar = 4;
+        sptr->Gravity = sptr->MaxYvel = 0;
+        size = (GetRandomControl() & 7) + (speed >> 1) + 16;
+        sptr->Width = sptr->sWidth = size >> 2;
+        sptr->Height = sptr->sHeight = size >> 2;
+    } else {
+        sptr->Friction = 0;
+        sptr->Scalar = 3;
+        sptr->Yvel = -sptr->Yvel >> 5;
+        sptr->Gravity = (GetRandomControl() & 31) + 32;
+        sptr->MaxYvel = 0;
+        size = (GetRandomControl() & 7) + 16;
+        sptr->Width = sptr->sWidth = size;
+        sptr->Height = sptr->sHeight = size;
+    }
+    sptr->dWidth = size;
+    sptr->dHeight = size;
+}
+
 void BoatSplash(ITEM_INFO *item, sint32 fallspeed, sint32 water)
 {
     splash_setup.x = item->pos.x_pos;
