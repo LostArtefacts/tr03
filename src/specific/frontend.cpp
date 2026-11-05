@@ -39,6 +39,32 @@ void DrawDummyItem(struct item_info *item)
 {
 }
 
+void S_Wait(int nFrames, int skip)
+{
+    int s;
+
+    if (skip) {
+        while (nFrames > 0) {
+            if (!input)
+                break;
+            S_UpdateInput();
+            do {
+                s = Sync();
+            } while (!s);
+            nFrames -= s;
+        }
+    }
+    while (nFrames > 0) {
+        S_UpdateInput();
+        if (skip && input)
+            break;
+        do {
+            s = Sync();
+        } while (!s);
+        nFrames -= s;
+    }
+}
+
 int S_PlayFMV(char *fname, int sequence)
 {
     return FMV_Play(fname);
