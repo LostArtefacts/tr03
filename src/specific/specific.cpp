@@ -86,4 +86,11 @@ void S_SoundStopAllSamples(void)
     DS_StopAllSamples();
 }
 
+int S_SoundSampleIsPlaying(int nHandle)
+{
+    if (!sound_active)
+        return 0;
+    return DS_IsChannelPlaying(nHandle);
+}
+
 }
