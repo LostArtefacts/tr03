@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="200.12" height="12" x="0" y="0" class="named"><title>632 · 42.76%</title></rect>
-<rect width="267.88" height="12" x="200.12" y="0" class="todo"><title>846 · 57.24%</title></rect>
+<rect width="200.44" height="12" x="0" y="0" class="named"><title>633 · 42.83%</title></rect>
+<rect width="267.56" height="12" x="200.44" y="0" class="todo"><title>845 · 57.17%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">42.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">632</tspan> · <tspan class="todo">846</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">633</tspan> · <tspan class="todo">845</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="65.33" height="12" x="0" y="0" class="named"><title>93 KB · 13.96%</title></rect>
-<rect width="402.67" height="12" x="65.33" y="0" class="todo"><title>572 KB · 86.04%</title></rect>
+<rect width="65.51" height="12" x="0" y="0" class="named"><title>93 KB · 14%</title></rect>
+<rect width="402.49" height="12" x="65.51" y="0" class="todo"><title>572 KB · 86%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">93 KB</tspan> · <tspan class="todo">572 KB</tspan></text>
@@ -141,7 +141,7 @@
 <rect width="12" height="12" x="390" y="15" class="named"><title>0x0040e350 InitialiseCivvy (82 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="15" class="todo"><title>0x0040e3b0 CivvyControl (2208 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="15" class="todo"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="15" class="todo"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="15" class="named"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="15" class="todo"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="15" class="named"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="15" class="todo"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
@@ -2140,7 +2140,7 @@
 <rect width="9.57" height="9.59" x="486.37" y="301.37" class="named"><title>0x0043f870 TestWall (260 bytes)</title></rect>
 <rect width="9.57" height="9.55" x="486.37" y="313.95" class="todo"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
 <rect width="9.57" height="9.51" x="486.37" y="326.50" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
-<rect width="9.57" height="9.48" x="486.37" y="339.02" class="todo"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
+<rect width="9.57" height="9.48" x="486.37" y="339.02" class="named"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="9.57" height="9.44" x="486.37" y="351.49" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
 <rect width="9.57" height="9.40" x="486.37" y="363.93" class="named"><title>0x0044d1a0 LaraCheatyBits (255 bytes)</title></rect>
 <rect width="9.57" height="9.36" x="486.37" y="376.33" class="todo"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
