@@ -129,6 +129,115 @@ void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     }
 }
 
+extern sint16 PuzzleHoleBounds[];
+extern PHD_VECTOR PuzzleHolePosition;
+
+void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+    int correct = 0;
+
+    item = &items[item_num];
+    if (laraitem->current_anim_state == AS_STOP && laraitem->anim_number == 103) {
+        if ((Inventory_Chosen == -1 && !(input & IN_ACTION)) || lara.gun_status != LG_ARMLESS || laraitem->gravity_status)
+            return;
+        if (!TestLaraPosition(PuzzleHoleBounds, item, laraitem))
+            return;
+        if (item->status != NOT_ACTIVE) {
+            if (laraitem->pos.x_pos != pup_x || laraitem->pos.y_pos != pup_y || laraitem->pos.z_pos != pup_z) {
+                pup_x = laraitem->pos.x_pos;
+                pup_y = laraitem->pos.y_pos;
+                pup_z = laraitem->pos.z_pos;
+                SoundEffect(2, &laraitem->pos, 0);
+            }
+            return;
+        }
+        if (Inventory_Chosen == -1) {
+            Display_Inventory(2);
+            if (Inventory_Chosen == -1 && inv_keys_objects)
+                return;
+            if (Inventory_Chosen != -1)
+                pup_y = laraitem->pos.y_pos - 1;
+        } else
+            pup_y = laraitem->pos.y_pos - 1;
+        switch (item->object_number) {
+        case 213:
+            if (Inventory_Chosen != 209)
+                break;
+            Inv_RemoveItem(209);
+            correct = 1;
+            break;
+        case 214:
+            if (Inventory_Chosen != 210)
+                break;
+            Inv_RemoveItem(210);
+            correct = 1;
+            break;
+        case 215:
+            if (Inventory_Chosen != 211)
+                break;
+            Inv_RemoveItem(211);
+            correct = 1;
+            break;
+        case 216:
+            if (Inventory_Chosen != 212)
+                break;
+            Inv_RemoveItem(212);
+            correct = 1;
+            break;
+        }
+        Inventory_Chosen = -1;
+        if (!correct) {
+            if (laraitem->pos.x_pos != pup_x || laraitem->pos.y_pos != pup_y || laraitem->pos.z_pos != pup_z) {
+                SoundEffect(2, &laraitem->pos, 0);
+                pup_x = laraitem->pos.x_pos;
+                pup_y = laraitem->pos.y_pos;
+                pup_z = laraitem->pos.z_pos;
+            }
+            return;
+        }
+        AlignLaraPosition(&PuzzleHolePosition, item, laraitem);
+        laraitem->goal_anim_state = AS_USEPUZZLE;
+        do {
+            AnimateLara(laraitem);
+        } while (laraitem->current_anim_state != AS_USEPUZZLE);
+        laraitem->goal_anim_state = AS_STOP;
+        lara.gun_status = LG_HANDSBUSY;
+        item->status = ACTIVE;
+        pup_x = laraitem->pos.x_pos;
+        pup_y = laraitem->pos.y_pos;
+        pup_z = laraitem->pos.z_pos;
+        return;
+    } else if (laraitem->current_anim_state == AS_USEPUZZLE) {
+        if (!TestLaraPosition(PuzzleHoleBounds, item, laraitem))
+            return;
+        if (laraitem->frame_number == GF(134, 80)) {
+            switch (item->object_number) {
+            case 213:
+                item->object_number = 217;
+                break;
+            case 214:
+                item->object_number = 218;
+                break;
+            case 215:
+                item->object_number = 219;
+                break;
+            case 216:
+                item->object_number = 220;
+                break;
+            }
+            item->anim_number = objects[item->object_number].anim_index;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = item->goal_anim_state = anims[item->anim_number].current_anim_state;
+            item->required_anim_state = 0;
+            AddActiveItem(item_num);
+            item->status = ACTIVE;
+            item->flags = 0x3e00;
+            AnimateItem(item);
+        }
+    }
+}
+
 void SwitchControl(sint16 item_number)
 {
     ITEM_INFO *item;

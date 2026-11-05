@@ -875,7 +875,7 @@ address,size,name,symbol
 0x0045c400,263,SwitchCollision2,_SwitchCollision2
 0x0045c510,413,DetonatorCollision,_DetonatorCollision
 0x0045c6b0,592,KeyHoleCollision,_KeyHoleCollision
-0x0045c900,818,PuzzleHoleCollision,_PuzzleHoleCollision
+0x0045c900,852,PuzzleHoleCollision,_PuzzleHoleCollision
 0x0045cc60,75,SwitchControl,_SwitchControl
 0x0045ccb0,150,SwitchTrigger,_SwitchTrigger
 0x0045cd50,72,KeyTrigger,_KeyTrigger
@@ -1945,6 +1945,8 @@ address,size,name,symbol
 0x004c79b8,12,Switch2Position,_Switch2Position
 0x004c79c8,24,KeyHoleBounds,_KeyHoleBounds
 0x004c79e0,12,KeyHolePosition,_KeyHolePosition
+0x004c79f0,24,PuzzleHoleBounds,_PuzzleHoleBounds
+0x004c7a08,12,PuzzleHolePosition,_PuzzleHolePosition
 0x004c7a98,4,tunes,_tunes
 0x004c7aa8,16,raptor_bite,_raptor_bite
 0x004c7ab8,16,mouse_bite,_mouse_bite
