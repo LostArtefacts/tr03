@@ -396,3 +396,117 @@ void KayakToBaddieCollision(ITEM_INFO *v)
         }
     }
 }
+
+extern uint8 WakeShade;
+extern char kayak_mist_cnt;
+extern sint16 kayak_mist_zpos[10];
+extern sint16 kayak_mist_xpos[10];
+extern sint32 wibble;
+
+void KayakUserInput(ITEM_INFO *v, ITEM_INFO *l, KAYAKINFO *Kayak);
+void KayakToBackground(ITEM_INFO *v, KAYAKINFO *Kayak);
+void DoWake_kayak(ITEM_INFO *v, sint16 xoff, sint16 zoff, sint16 rotate);
+void UpdateWakeFX_kayak(void);
+void AnimateItem(ITEM_INFO *item);
+void phd_PushUnitMatrix(void);
+void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
+
+int KayakControl(void)
+{
+    sint32 h;
+    KAYAKINFO *Kayak;
+    ITEM_INFO *v, *l;
+    FLOOR_INFO *floor;
+    sint32 ofs, water, lp;
+    sint16 room_number;
+    PHD_VECTOR dest;
+    sint32 *mptr;
+
+    l = lara_item;
+    v = &items[lara.skidoo];
+    Kayak = (KAYAKINFO *)v->data;
+    if (input & IN_LOOK)
+        LookUpDown();
+
+    ofs = v->fallspeed;
+    KayakUserInput(v, l, Kayak);
+    KayakToBackground(v, Kayak);
+
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    h = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    TestTriggers(trigger_index, 0);
+
+    if ((Kayak->Water = water = GetWaterHeight(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, room_number)) == NO_HEIGHT) {
+        Kayak->Water = water = h;
+        Kayak->TrueWater = 0;
+    } else {
+        Kayak->Water -= 5;
+        Kayak->TrueWater = 1;
+    }
+
+    if ((ofs - v->fallspeed) > 128 && v->fallspeed == 0 && water != NO_HEIGHT) {
+        sint32 damage;
+
+        if ((damage = ofs - v->fallspeed) > 160)
+            l->hit_points -= (damage - 160) << 3;
+        KayakSplash(v, ofs - v->fallspeed, water);
+    }
+
+    if (lara.skidoo != NO_ITEM) {
+        if (v->room_number != room_number) {
+            ItemNewRoom(lara.skidoo, room_number);
+            ItemNewRoom(lara.item_number, room_number);
+        }
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos + 32;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.x_rot = v->pos.x_rot;
+        l->pos.y_rot = v->pos.y_rot;
+        l->pos.z_rot = v->pos.z_rot >> 1;
+        AnimateItem(l);
+        v->anim_number = objects[14].anim_index + (l->anim_number - objects[VEHICLE_ANIM].anim_index);
+        v->frame_number = anims[v->anim_number].frame_base + (l->frame_number - anims[l->anim_number].frame_base);
+        camera.target_elevation = -30 * ONE_DEGREE;
+        camera.target_distance = WALL_L * 2;
+    }
+
+    if (!(wibble & 15) && Kayak->TrueWater) {
+        DoWake_kayak(v, -128, 0, 0);
+        DoWake_kayak(v, 128, 0, 1);
+    }
+
+    if (wibble & 7) {
+        if (!Kayak->TrueWater && v->fallspeed < 20) {
+            kayak_mist_cnt ^= 1;
+            for (lp = kayak_mist_cnt; lp < 10; lp += 2) {
+                if (GetRandomControl() & 1)
+                    dest.x = kayak_mist_xpos[lp] >> 1;
+                else
+                    dest.x = -(kayak_mist_xpos[lp] >> 1);
+                dest.y = 50;
+                dest.z = kayak_mist_zpos[lp];
+                phd_PushUnitMatrix();
+                mptr = phd_mxptr;
+                phd_RotYXZ(v->pos.y_rot, v->pos.x_rot, v->pos.z_rot);
+                dest.x = v->pos.x_pos + ((*(mptr + 0) * dest.x + *(mptr + 1) * dest.y + *(mptr + 2) * dest.z) >> W2V_SHIFT);
+                dest.y = v->pos.y_pos + ((*(mptr + 4) * dest.x + *(mptr + 5) * dest.y + *(mptr + 6) * dest.z) >> W2V_SHIFT);
+                dest.z = v->pos.z_pos + ((*(mptr + 8) * dest.x + *(mptr + 9) * dest.y + *(mptr + 10) * dest.z) >> W2V_SHIFT);
+                TriggerRapidsMist(dest.x, dest.y, dest.z);
+                phd_PopMatrix();
+            }
+        }
+    }
+
+    if (v->speed == 0 && !lara.current_xvel && !lara.current_zvel) {
+        if (WakeShade)
+            WakeShade--;
+    } else {
+        if (WakeShade < 16)
+            WakeShade++;
+    }
+
+    UpdateWakeFX_kayak();
+    KayakToBaddieCollision(v);
+    return (lara.skidoo != NO_ITEM) ? 1 : 0;
+}

@@ -46,18 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="275.89" height="12" x="0" y="0" class="named"><title>882 · 59.72%</title></rect>
-<rect width="186.11" height="12" x="275.89" y="0" class="todo"><title>595 · 40.28%</title></rect>
+<rect width="250.81" height="12" x="0" y="0" class="named"><title>882 · 59.72%</title></rect>
+<rect width="0.28" height="12" x="250.81" y="0" class="nonmatching"><title>1 · 0.07%</title></rect>
+<rect width="168.91" height="12" x="251.09" y="0" class="todo"><title>594 · 40.22%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">59.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">882</tspan> · <tspan class="todo">595</tspan></text>
+<text text-anchor="end" x="600" y="7.50">59.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">882</tspan> · <tspan class="nonmatching">1</tspan> · <tspan class="todo">594</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="167.88" height="12" x="0" y="0" class="named"><title>242 KB · 36.34%</title></rect>
-<rect width="294.12" height="12" x="167.88" y="0" class="todo"><title>424 KB · 63.66%</title></rect>
+<rect width="152.62" height="12" x="0" y="0" class="named"><title>242 KB · 36.34%</title></rect>
+<rect width="0.57" height="12" x="152.62" y="0" class="nonmatching"><title>1 KB · 0.14%</title></rect>
+<rect width="266.81" height="12" x="153.19" y="0" class="todo"><title>423 KB · 63.53%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">36.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">242 KB</tspan> · <tspan class="todo">424 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">36.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">242 KB</tspan> · <tspan class="nonmatching">1 KB</tspan> · <tspan class="todo">423 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -561,7 +563,7 @@
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="135" class="todo"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="135" class="nonmatching"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="todo"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="150" class="todo"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="150" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
@@ -1727,7 +1729,7 @@
 <rect width="17.54" height="18.29" x="607.61" y="23.55" class="todo"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
 <rect width="17.42" height="18.29" x="628.15" y="23.55" class="named"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
 <rect width="17.36" height="18.29" x="648.57" y="23.55" class="todo"><title>0x0043a220 ShowStatsText (902 bytes)</title></rect>
-<rect width="17.36" height="18.29" x="668.94" y="23.55" class="todo"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
+<rect width="17.36" height="18.29" x="668.94" y="23.55" class="nonmatching"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="17.32" height="18.29" x="689.30" y="23.55" class="named"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
 <rect width="17.30" height="18.29" x="709.62" y="23.55" class="todo"><title>0x004a6b90 Func4a6b90 (899 bytes)</title></rect>
 <rect width="17.07" height="18.29" x="729.93" y="23.55" class="named"><title>0x00424c60 DrawRooms (887 bytes)</title></rect>
