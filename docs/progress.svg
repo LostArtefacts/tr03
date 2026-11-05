@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="268.07" height="12" x="0" y="0" class="named"><title>857 · 58.02%</title></rect>
-<rect width="193.93" height="12" x="268.07" y="0" class="todo"><title>620 · 41.98%</title></rect>
+<rect width="268.38" height="12" x="0" y="0" class="named"><title>858 · 58.09%</title></rect>
+<rect width="193.62" height="12" x="268.38" y="0" class="todo"><title>619 · 41.91%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">58.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">857</tspan> · <tspan class="todo">620</tspan></text>
+<text text-anchor="end" x="642" y="7.50">58.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">858</tspan> · <tspan class="todo">619</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="158.29" height="12" x="0" y="0" class="named"><title>228 KB · 34.26%</title></rect>
-<rect width="303.71" height="12" x="158.29" y="0" class="todo"><title>438 KB · 65.74%</title></rect>
+<rect width="158.99" height="12" x="0" y="0" class="named"><title>229 KB · 34.41%</title></rect>
+<rect width="303.01" height="12" x="158.99" y="0" class="todo"><title>437 KB · 65.59%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">34.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">228 KB</tspan> · <tspan class="todo">438 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">34.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">229 KB</tspan> · <tspan class="todo">437 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1009,7 +1009,7 @@
 <rect width="12" height="12" x="660" y="270" class="todo"><title>0x00468610 SubCollision (354 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="270" class="named"><title>0x00468780 GetOnSub (200 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="270" class="todo"><title>0x00468850 SubDraw (958 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="270" class="todo"><title>0x00468c10 SubControl (1016 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="270" class="named"><title>0x00468c10 SubControl (1016 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="270" class="named"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="named"><title>0x00469150 BackgroundCollision (462 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="285" class="todo"><title>0x00469320 UserInput (1584 bytes)</title></rect>
@@ -1708,7 +1708,7 @@
 <rect width="19.20" height="18.94" x="303.59" y="319.80" class="named"><title>0x0042cac0 SetupSplash (1033 bytes)</title></rect>
 <rect width="19.20" height="18.82" x="303.59" y="341.75" class="todo"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
 <rect width="19.20" height="18.76" x="303.59" y="363.56" class="todo"><title>0x00425910 ClipRoom (1023 bytes)</title></rect>
-<rect width="19.20" height="18.63" x="303.59" y="385.32" class="todo"><title>0x00468c10 SubControl (1016 bytes)</title></rect>
+<rect width="19.20" height="18.63" x="303.59" y="385.32" class="named"><title>0x00468c10 SubControl (1016 bytes)</title></rect>
 <rect width="19.20" height="18.56" x="303.59" y="406.96" class="named"><title>0x00473d10 WinstonControl (1012 bytes)</title></rect>
 <rect width="19.20" height="18.48" x="303.59" y="428.52" class="todo"><title>0x00480f70 LoadRooms (1008 bytes)</title></rect>
 <rect width="19.33" height="18.29" x="325.79" y="23.55" class="named"><title>0x0041e170 CollideStaticObjects (1004 bytes)</title></rect>

@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 #include <stdlib.h>
 
@@ -66,6 +67,127 @@ int GetOnSub(sint16 item_number, COLL_INFO *coll)
     if (GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos) < -32000)
         return 0;
     return 1;
+}
+
+void UserInput(ITEM_INFO *v, ITEM_INFO *l, SUBINFO *sub);
+void DoCurrent(ITEM_INFO *item);
+void FireSubHarpoon(ITEM_INFO *v);
+void BackgroundCollision(ITEM_INFO *v, ITEM_INFO *l, SUBINFO *sub);
+sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+void AnimateItem(ITEM_INFO *item);
+
+int SubControl(void)
+{
+    sint32 h;
+    SUBINFO *sub;
+    ITEM_INFO *v, *l;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    l = lara_item;
+    v = &items[lara.skidoo];
+    sub = (SUBINFO *)v->data;
+    if (!(sub->Flags & 8)) {
+        UserInput(v, l, sub);
+        v->speed = sub->Vel >> 16;
+        v->pos.x_rot += sub->RotX >> 16;
+        v->pos.y_rot += sub->Rot >> 16;
+        v->pos.z_rot = sub->Rot >> 12;
+        if (v->pos.x_rot > 80 * ONE_DEGREE)
+            v->pos.x_rot = 80 * ONE_DEGREE;
+        else if (v->pos.x_rot < -80 * ONE_DEGREE)
+            v->pos.x_rot = -80 * ONE_DEGREE;
+        v->pos.x_pos += (((phd_sin(v->pos.y_rot) * v->speed) >> W2V_SHIFT) * phd_cos(v->pos.x_rot)) >> W2V_SHIFT;
+        v->pos.y_pos -= (phd_sin(v->pos.x_rot) * v->speed) >> W2V_SHIFT;
+        v->pos.z_pos += (((phd_cos(v->pos.y_rot) * v->speed) >> W2V_SHIFT) * phd_cos(v->pos.x_rot)) >> W2V_SHIFT;
+    }
+
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    v->floor = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+
+    if ((sub->Flags & 1) && !(sub->Flags & 8)) {
+        h = GetWaterHeight(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, room_number);
+        if (h != NO_HEIGHT && !(room[v->room_number].flags & UNDERWATER)) {
+            if ((h - v->pos.y_pos) >= -210)
+                v->pos.y_pos = h + 210;
+            if (!(sub->Flags & SF_SURFACE)) {
+                SoundEffect(36, &lara_item->pos, 2);
+                sub->Flags &= ~4;
+            }
+            sub->Flags |= SF_SURFACE;
+        } else if (h != NO_HEIGHT && (h - v->pos.y_pos) >= -210) {
+            v->pos.y_pos = h + 210;
+            if (!(sub->Flags & SF_SURFACE)) {
+                SoundEffect(36, &lara_item->pos, 2);
+                sub->Flags &= ~4;
+            }
+            sub->Flags |= SF_SURFACE;
+        } else
+            sub->Flags &= ~SF_SURFACE;
+
+        if (!(sub->Flags & SF_SURFACE)) {
+            if (l->hit_points >= 0) {
+                lara.air--;
+                if (lara.air < 0) {
+                    lara.air = -1;
+                    l->hit_points -= 5;
+                }
+            }
+        } else {
+            if (l->hit_points >= 0) {
+                lara.air += 10;
+                if (lara.air > 1800)
+                    lara.air = 1800;
+            }
+        }
+    }
+
+    TestTriggers(trigger_index, 0);
+
+    if (lara.skidoo != NO_ITEM && !(sub->Flags & 8)) {
+        DoCurrent(v);
+        if ((input & IN_ACTION) && (sub->Flags & 1) && !sub->WeaponTimer) {
+            FireSubHarpoon(v);
+            sub->WeaponTimer = 15;
+        }
+        if (room_number != v->room_number) {
+            ItemNewRoom(lara.skidoo, room_number);
+            ItemNewRoom(lara.item_number, room_number);
+        }
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos + 128;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.x_rot = v->pos.x_rot;
+        l->pos.y_rot = v->pos.y_rot;
+        l->pos.z_rot = v->pos.z_rot;
+        AnimateItem(l);
+        BackgroundCollision(v, l, sub);
+        if (sub->Flags & 1)
+            SoundEffect(346, (PHD_3DPOS *)&v->pos.x_pos, 2 | 4 | 0x1000000 | (v->speed << 16));
+        v->anim_number = objects[19].anim_index - objects[VEHICLE_ANIM].anim_index + l->anim_number;
+        v->frame_number = anims[v->anim_number].frame_base + (l->frame_number - anims[l->anim_number].frame_base);
+        if (sub->Flags & SF_SURFACE)
+            camera.target_elevation = -60 * ONE_DEGREE;
+        else
+            camera.target_elevation = 0;
+        return 1;
+    } else if (sub->Flags & 8) {
+        AnimateItem(l);
+        if (room_number != v->room_number)
+            ItemNewRoom(lara.skidoo, room_number);
+        BackgroundCollision(v, l, sub);
+        sub->RotX = 0;
+        v->anim_number = 5;
+        v->frame_number = anims[objects[19].anim_index + 5].frame_base;
+        v->goal_anim_state = v->current_anim_state = 5;
+        v->fallspeed = 0;
+        v->speed = 0;
+        v->gravity_status = 1;
+        AnimateItem(v);
+        return 1;
+    } else
+        return 0;
 }
 
 extern char SubHarpoonLR;
