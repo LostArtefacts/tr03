@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="201.07" height="12" x="0" y="0" class="named"><title>635 · 42.96%</title></rect>
-<rect width="266.93" height="12" x="201.07" y="0" class="todo"><title>843 · 57.04%</title></rect>
+<rect width="201.39" height="12" x="0" y="0" class="named"><title>636 · 43.03%</title></rect>
+<rect width="266.61" height="12" x="201.39" y="0" class="todo"><title>842 · 56.97%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">43.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">635</tspan> · <tspan class="todo">843</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">636</tspan> · <tspan class="todo">842</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="65.87" height="12" x="0" y="0" class="named"><title>94 KB · 14.08%</title></rect>
-<rect width="402.13" height="12" x="65.87" y="0" class="todo"><title>571 KB · 85.92%</title></rect>
+<rect width="66.06" height="12" x="0" y="0" class="named"><title>94 KB · 14.11%</title></rect>
+<rect width="401.94" height="12" x="66.06" y="0" class="todo"><title>571 KB · 85.89%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">94 KB</tspan> · <tspan class="todo">571 KB</tspan></text>
@@ -297,7 +297,7 @@
 <rect width="12" height="12" x="480" y="60" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="60" class="todo"><title>0x004239a0 DiverControl (813 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="60" class="named"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="60" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="60" class="named"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="60" class="todo"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="60" class="named"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x004240c0 DogControl (1382 bytes)</title></rect>
@@ -2134,7 +2134,7 @@
 <rect width="9.57" height="9.73" x="486.37" y="225.30" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="9.57" height="9.73" x="486.37" y="238.03" class="named"><title>0x0043e0b0 LaraTestHangOnClimbWall (264 bytes)</title></rect>
 <rect width="9.57" height="9.70" x="486.37" y="250.77" class="todo"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
-<rect width="9.57" height="9.66" x="486.37" y="263.46" class="todo"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
+<rect width="9.57" height="9.66" x="486.37" y="263.46" class="named"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="9.57" height="9.62" x="486.37" y="276.12" class="named"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
 <rect width="9.57" height="9.62" x="486.37" y="288.75" class="named"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
 <rect width="9.57" height="9.59" x="486.37" y="301.37" class="named"><title>0x0043f870 TestWall (260 bytes)</title></rect>
