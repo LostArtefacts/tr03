@@ -42,6 +42,16 @@ typedef struct phdtexturestruct {
 
 extern PHDTEXTURESTRUCT phdtextinfo[];
 
+extern char **GF_picfilenames;
+extern sint16 GF_LoadingPic;
+extern char GF_Playing_Story;
+
+void S_UnloadLevelFile(void);
+void S_CDStop(void);
+bool LoadPicture(const char *name, LPDIRECTDRAWSURFACE3 surf, int a);
+void FadePictureUp(int steps);
+void FadePictureDown(int steps);
+int LoadLevel(char *name, int number);
 bool DD_SpinMessageLoop(bool tWait);
 
 void HWR_FreeTexturePages(void);
@@ -147,6 +157,25 @@ void build_ext(char *fname, char *ext)
     *(fname++) = *(ext++);
     *(fname++) = *(ext++);
     *(fname++) = 0;
+}
+
+int S_LoadLevelFile(char *name, int number, int type)
+{
+    int loaded;
+    bool fade;
+
+    S_UnloadLevelFile();
+    S_CDStop();
+    fade = false;
+    if (type && type != 6 && (type != 4 || GF_Playing_Story)) {
+        LoadPicture(GF_picfilenames[GF_LoadingPic], App.lpPictureBuffer, 1);
+        FadePictureUp(32);
+        fade = true;
+    }
+    loaded = LoadLevel(name, number);
+    if (fade)
+        FadePictureDown(32);
+    return loaded;
 }
 
 void S_UnloadLevelFile(void)
