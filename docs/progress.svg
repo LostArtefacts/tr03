@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="257.91" height="12" x="0" y="0" class="named"><title>907 · 61.41%</title></rect>
-<rect width="1.42" height="12" x="257.91" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="160.66" height="12" x="259.34" y="0" class="todo"><title>565 · 38.25%</title></rect>
+<rect width="258.20" height="12" x="0" y="0" class="named"><title>908 · 61.48%</title></rect>
+<rect width="1.42" height="12" x="258.20" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="160.38" height="12" x="259.62" y="0" class="todo"><title>564 · 38.19%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">61.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">907</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">565</tspan></text>
+<text text-anchor="end" x="600" y="7.50">61.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">908</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">564</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="185.96" height="12" x="0" y="0" class="named"><title>296 KB · 44.28%</title></rect>
 <rect width="3.69" height="12" x="185.96" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.36" height="12" x="189.64" y="0" class="todo"><title>366 KB · 54.85%</title></rect>
+<rect width="230.35" height="12" x="189.65" y="0" class="todo"><title>366 KB · 54.85%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1308,7 +1308,7 @@
 <rect width="12" height="12" x="615" y="360" class="todo"><title>0x0048a100 S_ChangeCtrlText (150 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="360" class="todo"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="360" class="named"><title>0x0048a1f0 GetRenderHeight (6 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="360" class="todo"><title>0x0048a200 GetRenderWidth (6 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="360" class="named"><title>0x0048a200 GetRenderWidth (6 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="360" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="360" class="todo"><title>0x0048a2a0 S_DumpCine (45 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="360" class="todo"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
@@ -3013,7 +3013,7 @@
 <rect width="1" height="2.08" x="742.20" y="432.95" class="todo"><title>0x00483b50 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="1" height="2.08" x="746" y="432.95" class="todo"><title>0x00484f00 HWR_EndScene (6 bytes)</title></rect>
 <rect width="1.97" height="1" x="733.22" y="438.03" class="named"><title>0x0048a1f0 GetRenderHeight (6 bytes)</title></rect>
-<rect width="1.97" height="1" x="733.22" y="442.02" class="todo"><title>0x0048a200 GetRenderWidth (6 bytes)</title></rect>
+<rect width="1.97" height="1" x="733.22" y="442.02" class="named"><title>0x0048a200 GetRenderWidth (6 bytes)</title></rect>
 <rect width="1.97" height="1" x="733.22" y="446" class="todo"><title>0x004b4c58 phd_cos (6 bytes)</title></rect>
 <rect width="1" height="1.75" x="738.19" y="438.03" class="named"><title>0x0042f190 flip_map_effect (5 bytes)</title></rect>
 <rect width="1" height="1.75" x="742.13" y="438.03" class="named"><title>0x0042f440 reset_hair (5 bytes)</title></rect>
