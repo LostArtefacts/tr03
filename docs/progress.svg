@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="308.04" height="12" x="0" y="0" class="named"><title>1084 · 73.34%</title></rect>
-<rect width="1.99" height="12" x="308.04" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="109.97" height="12" x="310.03" y="0" class="todo"><title>387 · 26.18%</title></rect>
+<rect width="308.32" height="12" x="0" y="0" class="named"><title>1085 · 73.41%</title></rect>
+<rect width="1.99" height="12" x="308.32" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="109.69" height="12" x="310.31" y="0" class="todo"><title>386 · 26.12%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">73.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1084</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">387</tspan></text>
+<text text-anchor="end" x="600" y="7.50">73.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1085</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">386</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="194.37" height="12" x="0" y="0" class="named"><title>309 KB · 46.28%</title></rect>
-<rect width="3.79" height="12" x="194.37" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.84" height="12" x="198.16" y="0" class="todo"><title>353 KB · 52.82%</title></rect>
+<rect width="194.47" height="12" x="0" y="0" class="named"><title>309 KB · 46.30%</title></rect>
+<rect width="3.79" height="12" x="194.47" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="221.74" height="12" x="198.26" y="0" class="todo"><title>353 KB · 52.80%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">309 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">353 KB</tspan></text>
@@ -1216,7 +1216,7 @@
 <rect width="12" height="12" x="735" y="330" class="todo"><title>0x00482020 LoadAnimatedTextures (284 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="345" class="named"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="345" class="named"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="345" class="todo"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="345" class="named"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="345" class="todo"><title>0x004822f0 LoadSamples (613 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="345" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="345" class="todo"><title>0x004825a0 GetFullPath (38 bytes)</title></rect>
@@ -2338,7 +2338,7 @@
 <rect width="7.45" height="7.35" x="565.06" y="243.93" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="7.36" height="7.35" x="575.51" y="243.93" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="7.36" height="7.35" x="585.87" y="243.93" class="named"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
-<rect width="7.36" height="7.35" x="596.22" y="243.93" class="todo"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
+<rect width="7.36" height="7.35" x="596.22" y="243.93" class="named"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
 <rect width="7.36" height="7.35" x="606.58" y="243.93" class="named"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
 <rect width="7.31" height="7.35" x="616.94" y="243.93" class="named"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
 <rect width="7.31" height="7.35" x="627.25" y="243.93" class="named"><title>0x00440400 lara_col_hangturnlr (153 bytes)</title></rect>

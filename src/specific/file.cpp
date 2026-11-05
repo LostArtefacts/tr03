@@ -47,6 +47,7 @@ extern sint16 GF_LoadingPic;
 extern char GF_Playing_Story;
 
 void S_UnloadLevelFile(void);
+void build_ext(char *fname, char *ext);
 void S_CDStop(void);
 bool LoadPicture(const char *name, LPDIRECTDRAWSURFACE3 surf, int a);
 void FadePictureUp(int steps);
@@ -146,6 +147,22 @@ int LoadDemo(HANDLE file)
         demo_loaded = 0;
     }
     return 1;
+}
+
+void LoadDemFile(char *name)
+{
+    HANDLE file;
+    DWORD read;
+    char buf[80];
+
+    strcpy(buf, name);
+    build_ext(buf, "DEM");
+    file = CreateFile(buf, GENERIC_READ, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+    if (file != INVALID_HANDLE_VALUE) {
+        MyReadFile(file, demoptr, 3608 * sizeof(unsigned long), &read, 0);
+        demo_loaded = read > 0;
+        CloseHandle(file);
+    }
 }
 
 void build_ext(char *fname, char *ext)
