@@ -266,7 +266,7 @@ address,size,name,symbol
 0x00429690,42,phd_PutPolygons_I,_phd_PutPolygons_I
 0x004296c0,621,InterpolateMatrix,_InterpolateMatrix
 0x00429930,248,InterpolateArmMatrix,_InterpolateArmMatrix
-0x00429a30,321,DrawGunFlash,_DrawGunFlash
+0x00429a30,356,DrawGunFlash,_DrawGunFlash
 0x00429ba0,352,CalculateObjectLighting,_CalculateObjectLighting
 0x00429d00,166,CalculateObjectLightingLara,_CalculateObjectLightingLara
 0x00429db0,146,GetFrames,_GetFrames

@@ -177,6 +177,53 @@ void phd_PutPolygons_I(sint16 *ptr, int clip)
     phd_PopMatrix();
 }
 
+extern sint32 wibble;
+
+void S_CalculateStaticLight(sint16 adder);
+void S_DrawSprite(uint32 flags, sint32 x, sint32 y, sint32 z, sint16 sprnum, sint16 shade, sint16 scale);
+
+void DrawGunFlash(int weapon_type, int clip)
+{
+    sint16 light;
+    int g_len, nZOff;
+
+    switch (weapon_type) {
+    case LG_FLARE:
+        return;
+    case LG_MAGNUMS:
+        light = 24 | (18 << 5);
+        g_len = 215;
+        nZOff = 65;
+        break;
+    case LG_UZIS:
+        light = 24 | (18 << 5);
+        g_len = 150;
+        nZOff = 50;
+        break;
+    case LG_M16:
+        phd_TranslateRel(0, 332, 96);
+        phd_RotYXZ(0, -85 * 182, (sint16)((GetRandomDraw() * 2 & 0x4000) + 0x2000 + (GetRandomDraw() & 4095) - 2048));
+        S_CalculateStaticLight(24 | (18 << 5));
+        phd_PutPolygons(meshes[objects[301].mesh_index], clip);
+        S_DrawSprite(0x02000000 | 0x10000000 | 0x20000000 | 0x3f | (0x30 << 8) | (0x08 << 16) | 0x04000000, 0, 0, -65,
+                     objects[299].mesh_index, 0, 0xc0);
+        return;
+    case LG_SHOTGUN:
+        return;
+    default:
+        light = 24 | (18 << 5);
+        g_len = 150;
+        nZOff = 40;
+        break;
+    }
+    phd_TranslateRel(0, g_len, nZOff);
+    phd_RotYXZ(0, -90 * 182, (sint16)(wibble << 8));
+    S_CalculateStaticLight(light);
+    phd_PutPolygons(meshes[objects[300].mesh_index], clip);
+    S_DrawSprite(0x02000000 | 0x10000000 | 0x20000000 | 0x3f | (0x38 << 8) | (0x8 << 16) | 0x04000000, 0, 0, 0,
+                 objects[299].mesh_index, 0, 0xc0);
+}
+
 extern int GnGameMode;
 
 void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
