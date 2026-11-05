@@ -1,10 +1,17 @@
 #include "standard.h"
 #include "specific.h"
+#include "winmain.h"
 
 extern "C" {
 
 extern HRESULT (*EndScene)(void);
 extern void *VertexBuffer;
+extern HRESULT (*SetRenderState)(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
+extern bool GtZBufferCompareEnabled;
+extern bool GtZBufferWriteEnabled;
+extern bool GtColorAdditionEnabled;
+extern bool GtAlphaBlendEnabled;
+extern bool GtColorKeyEnabled;
 
 void HWR_InitState(void);
 void HWR_SetCurrentTexture(DWORD handle);
@@ -22,6 +29,18 @@ void HWR_ResetColorKey(void)
     HWR_EnableAlphaBlend(false);
     HWR_EnableColorKey(false);
     HWR_EnableColorAddition(false);
+}
+
+void HWR_ResetZBuffer(void)
+{
+    GtZBufferWriteEnabled = false;
+    GtZBufferCompareEnabled = false;
+    if (App.lpZBuffer) {
+        SetRenderState(D3DRENDERSTATE_ZFUNC, D3DCMP_ALWAYS);
+    } else {
+        SetRenderState(D3DRENDERSTATE_ZENABLE, false);
+        SetRenderState(D3DRENDERSTATE_ZWRITEENABLE, false);
+    }
 }
 
 void HWR_EndScene(void)
