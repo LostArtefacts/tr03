@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="298.94" height="12" x="0" y="0" class="named"><title>1052 · 71.18%</title></rect>
-<rect width="1.99" height="12" x="298.94" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="119.07" height="12" x="300.93" y="0" class="todo"><title>419 · 28.35%</title></rect>
+<rect width="299.23" height="12" x="0" y="0" class="named"><title>1053 · 71.24%</title></rect>
+<rect width="1.99" height="12" x="299.23" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="118.78" height="12" x="301.22" y="0" class="todo"><title>418 · 28.28%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">71.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1052</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">419</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1053</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">418</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.33" height="12" x="0" y="0" class="named"><title>306 KB · 45.79%</title></rect>
-<rect width="3.79" height="12" x="192.33" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.88" height="12" x="196.12" y="0" class="todo"><title>356 KB · 53.30%</title></rect>
+<rect width="192.34" height="12" x="0" y="0" class="named"><title>306 KB · 45.80%</title></rect>
+<rect width="3.79" height="12" x="192.34" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.86" height="12" x="196.14" y="0" class="todo"><title>356 KB · 53.30%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
@@ -102,7 +102,7 @@
 <rect width="12" height="12" x="525" y="0" class="todo"><title>0x004051a0 Func4051a0 (55 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="todo"><title>0x004051e0 Func4051e0 (55 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="named"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="0" class="todo"><title>0x00405250 Func405250 (30 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="0" class="todo"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="0" class="todo"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
@@ -1193,7 +1193,7 @@
 <rect width="12" height="12" x="390" y="330" class="named"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="named"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="330" class="todo"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="330" class="named"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="330" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="330" class="named"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
@@ -2890,7 +2890,7 @@
 <rect width="3.29" height="3.31" x="687.83" y="381.46" class="named"><title>0x00484a20 HWR_ResetColorKey (31 bytes)</title></rect>
 <rect width="3.29" height="3.31" x="694.12" y="381.46" class="named"><title>0x0048d240 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="3.29" height="3.31" x="700.41" y="381.46" class="named"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
-<rect width="3.18" height="3.31" x="706.71" y="381.46" class="todo"><title>0x00405250 Func405250 (30 bytes)</title></rect>
+<rect width="3.18" height="3.31" x="706.71" y="381.46" class="todo"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
 <rect width="3.18" height="3.31" x="712.89" y="381.46" class="named"><title>0x00442c50 lara_col_slide (30 bytes)</title></rect>
 <rect width="3.18" height="3.31" x="719.08" y="381.46" class="named"><title>0x0046aee0 T_CentreH (30 bytes)</title></rect>
 <rect width="3.18" height="3.31" x="725.26" y="381.46" class="named"><title>0x0046af00 T_CentreV (30 bytes)</title></rect>
@@ -2921,7 +2921,7 @@
 <rect width="2.87" height="3.30" x="693.84" y="406.51" class="named"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
 <rect width="2.87" height="3.30" x="693.84" y="412.81" class="todo"><title>0x004b4c5e phd_sin (27 bytes)</title></rect>
 <rect width="2.87" height="3.18" x="693.84" y="419.11" class="named"><title>0x00475430 DI_Release (26 bytes)</title></rect>
-<rect width="2.87" height="3.18" x="693.84" y="425.29" class="todo"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
+<rect width="2.87" height="3.18" x="693.84" y="425.29" class="named"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="2.87" height="3.18" x="693.84" y="431.46" class="named"><title>0x00480d20 DS_Release (26 bytes)</title></rect>
 <rect width="2.87" height="3.18" x="693.84" y="437.64" class="named"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
 <rect width="2.87" height="3.18" x="693.84" y="443.82" class="named"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>

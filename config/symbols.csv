@@ -37,7 +37,7 @@ address,size,name,symbol
 0x004051a0,55,Func4051a0,
 0x004051e0,55,Func4051e0,
 0x00405220,48,InitUVTable,_InitUVTable
-0x00405250,30,Func405250,
+0x00405250,30,InitBuckets,_InitBuckets
 0x00405270,289,FindBucket,_FindBucket
 0x004053a0,61,DrawBuckets,_DrawBuckets
 0x004053e0,104,visible_zclip,_visible_zclip
@@ -1129,7 +1129,7 @@ address,size,name,symbol
 0x004809c0,5,DS_Init,_DS_Init
 0x004809d0,156,DS_MakeAdapterList,_DS_MakeAdapterList
 0x00480a70,26,DS_EnumerateDevices,_DS_EnumerateDevices
-0x00480a90,226,DS_EnumCallback,_DS_EnumCallback
+0x00480a90,226,DS_EnumCallback,_DS_EnumCallback@16
 0x00480b80,145,DS_Start,_DS_Start
 0x00480c20,28,DS_Create,_DS_Create
 0x00480c40,206,DS_SetOutputFormat,_DS_SetOutputFormat
@@ -1478,7 +1478,7 @@ address,size,name,symbol
 0x004b4c79,26,Func4b4c79,
 0x004b4c93,44,phd_sqrt,@phd_sqrt@4
 0x004b4cc0,6,DirectInputCreateA,_DirectInputCreateA@16
-0x004b5ce8,6,DirectSoundEnumerateA,
+0x004b5ce8,6,DirectSoundEnumerateA,_DirectSoundEnumerateA@8
 0x004b5cee,6,DirectSoundCreate,_DirectSoundCreate@12
 0x004b5cf4,6,DirectDrawEnumerateA,
 0x004b5cfa,6,DirectDrawCreate,_DirectDrawCreate@12

@@ -128,6 +128,15 @@ void DS_Init(void)
     DS_MakeAdapterList();
 }
 
+BOOL CALLBACK DS_EnumCallback(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext);
+
+bool DS_EnumerateDevices(LPVOID lpContext)
+{
+    if (DX_TRY(DirectSoundEnumerate(DS_EnumCallback, lpContext)))
+        return false;
+    return true;
+}
+
 bool DS_Create(LPGUID lpGuid)
 {
     if (DX_TRY(DirectSoundCreate(lpGuid, &lpDirectSound, 0)))
