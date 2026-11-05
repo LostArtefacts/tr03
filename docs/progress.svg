@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="209.26" height="12" x="0" y="0" class="named"><title>669 · 45.29%</title></rect>
-<rect width="252.74" height="12" x="209.26" y="0" class="todo"><title>808 · 54.71%</title></rect>
+<rect width="209.57" height="12" x="0" y="0" class="named"><title>670 · 45.36%</title></rect>
+<rect width="252.43" height="12" x="209.57" y="0" class="todo"><title>807 · 54.64%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">45.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">669</tspan> · <tspan class="todo">808</tspan></text>
+<text text-anchor="end" x="642" y="7.50">45.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">670</tspan> · <tspan class="todo">807</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="73.07" height="12" x="0" y="0" class="named"><title>105 KB · 15.82%</title></rect>
-<rect width="388.93" height="12" x="73.07" y="0" class="todo"><title>560 KB · 84.18%</title></rect>
+<rect width="73.33" height="12" x="0" y="0" class="named"><title>106 KB · 15.87%</title></rect>
+<rect width="388.67" height="12" x="73.33" y="0" class="todo"><title>560 KB · 84.13%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">15.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">105 KB</tspan> · <tspan class="todo">560 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">15.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">106 KB</tspan> · <tspan class="todo">560 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1395,7 +1395,7 @@
 <rect width="12" height="12" x="450" y="390" class="todo"><title>0x0048e970 Func48e970 (55 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="390" class="todo"><title>0x0048e9b0 Func48e9b0 (55 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="390" class="todo"><title>0x0048e9f0 Func48e9f0 (55 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="390" class="todo"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="390" class="named"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="390" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="390" class="todo"><title>0x0048ece0 DXEnumDirectInput (251 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="390" class="todo"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
@@ -2009,7 +2009,7 @@
 <rect width="11.64" height="11.42" x="490.35" y="145.72" class="todo"><title>0x0040a510 HWI_InsertLine_Sorted (377 bytes)</title></rect>
 <rect width="11.64" height="11.42" x="504.99" y="145.72" class="todo"><title>0x00436840 Construct_Inventory (377 bytes)</title></rect>
 <rect width="11.64" height="11.42" x="519.63" y="145.72" class="named"><title>0x004595e0 LiftFloorCeiling (377 bytes)</title></rect>
-<rect width="11.61" height="11.42" x="534.27" y="145.72" class="todo"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
+<rect width="11.61" height="11.42" x="534.27" y="145.72" class="named"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
 <rect width="11.52" height="11.42" x="548.88" y="145.72" class="named"><title>0x00440f20 lara_as_run (373 bytes)</title></rect>
 <rect width="11.52" height="11.42" x="563.40" y="145.72" class="named"><title>0x0044bfd0 draw_flare (373 bytes)</title></rect>
 <rect width="11.49" height="11.42" x="577.92" y="145.72" class="named"><title>0x0043de40 LaraDeflectEdgeJump (372 bytes)</title></rect>
