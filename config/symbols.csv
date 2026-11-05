@@ -2223,6 +2223,7 @@ address,size,name,symbol
 0x0062711c,4,clonked,_clonked
 0x00627120,20,death_heights_triboss,_death_heights_triboss
 0x00627138,20,death_radii_triboss,_death_radii_triboss
+0x0062714c,1,turned,_turned
 0x00627158,20,death_heights_willboss,_death_heights_willboss
 0x00627170,,ai_junction,_ai_junction
 0x006271b8,20,death_radii_willboss,_death_radii_willboss

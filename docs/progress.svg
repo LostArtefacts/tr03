@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="254.22" height="12" x="0" y="0" class="named"><title>894 · 60.53%</title></rect>
-<rect width="0.85" height="12" x="254.22" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
-<rect width="164.93" height="12" x="255.07" y="0" class="todo"><title>580 · 39.27%</title></rect>
+<rect width="254.50" height="12" x="0" y="0" class="named"><title>895 · 60.60%</title></rect>
+<rect width="0.85" height="12" x="254.50" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
+<rect width="164.64" height="12" x="255.36" y="0" class="todo"><title>579 · 39.20%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">60.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">894</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">580</tspan></text>
+<text text-anchor="end" x="600" y="7.50">60.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">895</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">579</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="168.74" height="12" x="0" y="0" class="named"><title>268 KB · 40.18%</title></rect>
-<rect width="1.51" height="12" x="168.74" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
-<rect width="249.74" height="12" x="170.26" y="0" class="todo"><title>397 KB · 59.46%</title></rect>
+<rect width="169.95" height="12" x="0" y="0" class="named"><title>270 KB · 40.46%</title></rect>
+<rect width="1.51" height="12" x="169.95" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
+<rect width="248.54" height="12" x="171.46" y="0" class="todo"><title>395 KB · 59.18%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">40.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">268 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">397 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">40.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">270 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">395 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1096,7 +1096,7 @@
 <rect width="12" height="12" x="435" y="300" class="named"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="300" class="named"><title>0x0046fd80 DinoControl (1968 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="300" class="named"><title>0x00470530 TribeAxeControl (1600 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="300" class="todo"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="300" class="named"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="300" class="named"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="300" class="todo"><title>0x00471350 TriggerElectricSparks_triboss (453 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="300" class="named"><title>0x00471520 TribeBossDie (66 bytes)</title></rect>
@@ -1622,7 +1622,7 @@
 <rect width="26.50" height="26.93" x="194.13" y="304.75" class="todo"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
 <rect width="26.50" height="26.59" x="194.13" y="334.69" class="todo"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="26.50" height="26.12" x="194.13" y="364.27" class="named"><title>0x0046fd80 DinoControl (1968 bytes)</title></rect>
-<rect width="26.50" height="25.33" x="194.13" y="393.40" class="todo"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
+<rect width="26.50" height="25.33" x="194.13" y="393.40" class="named"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
 <rect width="26.50" height="25.27" x="194.13" y="421.73" class="todo"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="25.13" height="26.64" x="223.63" y="0" class="todo"><title>0x004946b0 MMXDrawTriangle (1903 bytes)</title></rect>
 <rect width="25.13" height="26.51" x="223.63" y="29.64" class="todo"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
