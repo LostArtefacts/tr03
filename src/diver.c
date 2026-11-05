@@ -55,3 +55,157 @@ sint32 GetWaterSurface(sint32 x, sint32 y, sint32 z, sint16 room_number)
     }
     return NO_HEIGHT;
 }
+
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureFloat(sint16 item_number);
+void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);
+void CreatureUnderwater(ITEM_INFO *item, sint32 depth);
+sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number));
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+
+extern BITE_INFO croc_bite;
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+
+extern BITE_INFO diver_poon;
+
+void DiverControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *diver;
+    sint16 angle, head, neck;
+    AI_INFO info;
+    sint32 water_level, shoot;
+    GAME_VECTOR start, target;
+
+    if (!CreatureActive(item_number))
+        return;
+    item = &items[item_number];
+    diver = (CREATURE_INFO *)item->data;
+    angle = head = neck = 0;
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != 9) {
+            item->anim_number = objects[26].anim_index + 16;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = 9;
+        }
+        CreatureFloat(item_number);
+        return;
+    }
+    CreatureAIInfo(item, &info);
+    GetCreatureMood(item, &info, 0);
+    CreatureMood(item, &info, 0);
+    if (lara.water_status == LARA_ABOVEWATER) {
+        start.x = item->pos.x_pos;
+        start.y = item->pos.y_pos - 256;
+        start.z = item->pos.z_pos;
+        start.room_number = item->room_number;
+        target.x = lara_item->pos.x_pos;
+        target.y = lara_item->pos.y_pos - 612;
+        target.z = lara_item->pos.z_pos;
+        shoot = LOS(&start, &target);
+        if (shoot) {
+            diver->target.x = lara_item->pos.x_pos;
+            diver->target.y = lara_item->pos.y_pos;
+            diver->target.z = lara_item->pos.z_pos;
+        }
+        if (info.angle < -0x2000 || info.angle > 0x2000)
+            shoot = 0;
+    } else if (info.angle > -0x2000 && info.angle < 0x2000) {
+        start.x = item->pos.x_pos;
+        start.y = item->pos.y_pos;
+        start.z = item->pos.z_pos;
+        start.room_number = item->room_number;
+        target.x = lara_item->pos.x_pos;
+        target.y = lara_item->pos.y_pos;
+        target.z = lara_item->pos.z_pos;
+        shoot = LOS(&start, &target);
+    } else
+        shoot = 0;
+    angle = CreatureTurn(item, diver->maximum_turn);
+    water_level = GetWaterSurface(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number) + 512;
+    switch (item->current_anim_state) {
+    case 1:
+        diver->maximum_turn = 546;
+        if (shoot)
+            neck = -info.angle;
+        if (diver->target.y < water_level && item->pos.y_pos < water_level + diver->LOT.fly)
+            item->goal_anim_state = 2;
+        else if (diver->mood == ESCAPE_MOOD)
+            break;
+        else if (shoot)
+            item->goal_anim_state = 4;
+        break;
+    case 4:
+        diver->flags = 0;
+        if (shoot)
+            neck = -info.angle;
+        if (!shoot || diver->mood == ESCAPE_MOOD ||
+            (diver->target.y < water_level && item->pos.y_pos < water_level + diver->LOT.fly))
+            item->goal_anim_state = 1;
+        else
+            item->goal_anim_state = 3;
+        break;
+    case 3:
+        if (shoot)
+            neck = -info.angle;
+        if (!diver->flags) {
+            CreatureEffect(item, &diver_poon, Harpoon);
+            diver->flags = 1;
+        }
+        break;
+    case 2:
+        diver->maximum_turn = 546;
+        if (shoot)
+            head = info.angle;
+        if (diver->target.y > water_level)
+            item->goal_anim_state = 1;
+        else if (diver->mood == ESCAPE_MOOD)
+            break;
+        else if (shoot)
+            item->goal_anim_state = 6;
+        break;
+    case 6:
+        diver->flags = 0;
+        if (shoot)
+            head = info.angle;
+        if (!shoot || diver->mood == ESCAPE_MOOD || diver->target.y > water_level)
+            item->goal_anim_state = 2;
+        else
+            item->goal_anim_state = 7;
+        break;
+    case 7:
+        if (shoot)
+            head = info.angle;
+        if (!diver->flags) {
+            CreatureEffect(item, &diver_poon, Harpoon);
+            diver->flags = 1;
+        }
+        break;
+    }
+    CreatureAnimation(item_number, angle, 0);
+    switch (item->current_anim_state) {
+    case 1:
+    case 4:
+    case 3:
+        CreatureUnderwater(item, 512);
+        break;
+    default:
+        item->pos.y_pos = water_level - 512;
+    }
+}

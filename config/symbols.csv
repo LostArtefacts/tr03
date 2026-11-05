@@ -232,7 +232,7 @@ address,size,name,symbol
 0x00423710,386,StartDemo,_StartDemo
 0x004238a0,205,LoadLaraDemoPos,_LoadLaraDemoPos
 0x00423970,45,GetDemoInput,_GetDemoInput
-0x004239a0,813,DiverControl,_DiverControl
+0x004239a0,844,DiverControl,_DiverControl
 0x00423cf0,122,Harpoon,_Harpoon
 0x00423d70,262,GetWaterSurface,_GetWaterSurface
 0x00423e80,481,ControlGhostGasEmitter,_ControlGhostGasEmitter
@@ -1053,7 +1053,7 @@ address,size,name,symbol
 0x00473780,94,InitialiseWingmute,_InitialiseWingmute
 0x004737e0,925,WingmuteControl,_WingmuteControl
 0x00473ba0,355,TriggerWingMuteParticles,_TriggerWingMuteParticles
-0x00473d10,941,WinstonControl,_WinstonControl
+0x00473d10,1012,WinstonControl,_WinstonControl
 0x00474110,389,OldWinstonControl,_OldWinstonControl
 0x004742a0,144,ACMEnumCallBack,_ACMEnumCallBack@12
 0x00474330,1063,ACMInit,_ACMInit
@@ -1847,6 +1847,7 @@ address,size,name,symbol
 0x004c51f8,2,cdtrack,_cdtrack
 0x004c5200,4,flipeffect,_flipeffect
 0x004c5258,16,croc_bite,_croc_bite
+0x004c5288,16,diver_poon,_diver_poon
 0x004c52b0,,lara_meshes,_lara_meshes
 0x004c52d0,,lara_last_points,_lara_last_points
 0x004c52e0,,lara_line_counts,_lara_line_counts
