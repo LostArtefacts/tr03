@@ -46,11 +46,11 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="235.22" height="12" x="0" y="0" class="named"><title>752 · 50.91%</title></rect>
-<rect width="226.78" height="12" x="235.22" y="0" class="todo"><title>725 · 49.09%</title></rect>
+<rect width="235.54" height="12" x="0" y="0" class="named"><title>753 · 50.98%</title></rect>
+<rect width="226.46" height="12" x="235.54" y="0" class="todo"><title>724 · 49.02%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">50.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">752</tspan> · <tspan class="todo">725</tspan></text>
+<text text-anchor="end" x="642" y="7.50">51.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">753</tspan> · <tspan class="todo">724</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="104.43" height="12" x="0" y="0" class="named"><title>150 KB · 22.60%</title></rect>
@@ -1232,7 +1232,7 @@
 <rect width="12" height="12" x="255" y="345" class="todo"><title>0x00483650 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="345" class="todo"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="345" class="todo"><title>0x004837b0 S_FinishInventory (15 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="345" class="todo"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="345" class="named"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="345" class="todo"><title>0x004837d0 S_Wait (87 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="345" class="todo"><title>0x00483830 S_PlayFMV (14 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="345" class="todo"><title>0x00483840 S_IntroFMV (19 bytes)</title></rect>
@@ -3020,7 +3020,7 @@
 <rect width="2.19" height="1" x="738.18" y="446" class="todo"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
 <rect width="1" height="2.27" x="743.37" y="442.78" class="todo"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
 <rect width="1" height="2.27" x="746" y="442.78" class="todo"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
-<rect width="3.63" height="1" x="743.37" y="446" class="todo"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
+<rect width="3.63" height="1" x="743.37" y="446" class="named"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
 </g>
 </g>
 <g transform="translate(0 1036)">
