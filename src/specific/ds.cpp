@@ -33,6 +33,23 @@ void DS_FreeAllSamples(void)
     }
 }
 
+bool DS_IsChannelPlaying(int nChannel)
+{
+    LPDIRECTSOUNDBUFFER pBuffer;
+    DWORD dwStatus;
+
+    pBuffer = DS_Samples[nChannel];
+    if (!pBuffer)
+        return false;
+    if (DX_TRY(pBuffer->GetStatus(&dwStatus)))
+        return false;
+    if (dwStatus & DSBSTATUS_PLAYING)
+        return true;
+    pBuffer->Release();
+    DS_Samples[nChannel] = 0;
+    return false;
+}
+
 bool DS_MakeAdapterList(void);
 
 }

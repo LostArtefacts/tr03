@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="262.57" height="12" x="0" y="0" class="named"><title>924 · 62.52%</title></rect>
-<rect width="1.42" height="12" x="262.57" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="156.01" height="12" x="263.99" y="0" class="todo"><title>549 · 37.14%</title></rect>
+<rect width="262.86" height="12" x="0" y="0" class="named"><title>925 · 62.58%</title></rect>
+<rect width="1.42" height="12" x="262.86" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="155.72" height="12" x="264.28" y="0" class="todo"><title>548 · 37.08%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">62.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">924</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">549</tspan></text>
+<text text-anchor="end" x="600" y="7.50">62.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">925</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">548</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.28" height="12" x="0" y="0" class="named"><title>296 KB · 44.35%</title></rect>
-<rect width="3.69" height="12" x="186.28" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.04" height="12" x="189.96" y="0" class="todo"><title>366 KB · 54.77%</title></rect>
+<rect width="186.32" height="12" x="0" y="0" class="named"><title>296 KB · 44.36%</title></rect>
+<rect width="3.69" height="12" x="186.32" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.99" height="12" x="190.01" y="0" class="todo"><title>366 KB · 54.76%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1184,7 +1184,7 @@
 <rect width="12" height="12" x="255" y="330" class="todo"><title>0x004805c0 Func4805c0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="330" class="named"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="330" class="todo"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="330" class="todo"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="330" class="named"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="330" class="todo"><title>0x00480790 DS_StartSample (285 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="330" class="todo"><title>0x004808b0 DS_GetFreeChannel (57 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="330" class="todo"><title>0x004808f0 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
@@ -2638,7 +2638,7 @@
 <rect width="5.08" height="4.84" x="616.88" y="372.56" class="todo"><title>0x004b39a0 DD_EnsureSurfaceAvailable (70 bytes)</title></rect>
 <rect width="5.08" height="4.77" x="616.88" y="380.40" class="named"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
 <rect width="5.08" height="4.77" x="616.88" y="388.17" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
-<rect width="5.08" height="4.77" x="616.88" y="395.95" class="todo"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
+<rect width="5.08" height="4.77" x="616.88" y="395.95" class="named"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="5.08" height="4.77" x="616.88" y="403.72" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
 <rect width="5.08" height="4.70" x="616.88" y="411.49" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="5.08" height="4.70" x="616.88" y="419.19" class="named"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
