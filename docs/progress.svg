@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="232.09" height="12" x="0" y="0" class="named"><title>742 · 50.24%</title></rect>
-<rect width="229.91" height="12" x="232.09" y="0" class="todo"><title>735 · 49.76%</title></rect>
+<rect width="232.41" height="12" x="0" y="0" class="named"><title>743 · 50.30%</title></rect>
+<rect width="229.59" height="12" x="232.41" y="0" class="todo"><title>734 · 49.70%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">50.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">742</tspan> · <tspan class="todo">735</tspan></text>
+<text text-anchor="end" x="642" y="7.50">50.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">743</tspan> · <tspan class="todo">734</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="100.70" height="12" x="0" y="0" class="named"><title>145 KB · 21.80%</title></rect>
-<rect width="361.30" height="12" x="100.70" y="0" class="todo"><title>520 KB · 78.20%</title></rect>
+<rect width="101" height="12" x="0" y="0" class="named"><title>145 KB · 21.86%</title></rect>
+<rect width="361" height="12" x="101" y="0" class="todo"><title>520 KB · 78.14%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">21.8%</text>
+<text text-anchor="end" x="642" y="24.50">21.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">145 KB</tspan> · <tspan class="todo">520 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -779,7 +779,7 @@
 <rect width="12" height="12" x="210" y="210" class="todo"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="210" class="todo"><title>0x0044b940 DoFlareLight (431 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="210" class="named"><title>0x0044baf0 DoFlareInHand (218 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="210" class="todo"><title>0x0044bbd0 DrawFlareInAir (440 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="210" class="named"><title>0x0044bbd0 DrawFlareInAir (440 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="210" class="named"><title>0x0044bd90 CreateFlare (482 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="210" class="named"><title>0x0044bf80 set_flare_arm (75 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="210" class="named"><title>0x0044bfd0 draw_flare (373 bytes)</title></rect>
@@ -1949,7 +1949,7 @@
 <rect width="12.73" height="12.32" x="415.67" y="223.71" class="named"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
 <rect width="12.73" height="12.32" x="415.67" y="239.02" class="named"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>
 <rect width="12.73" height="12.32" x="415.67" y="254.34" class="named"><title>0x0046ec10 DartEmitterControl (445 bytes)</title></rect>
-<rect width="12.73" height="12.18" x="415.67" y="269.66" class="todo"><title>0x0044bbd0 DrawFlareInAir (440 bytes)</title></rect>
+<rect width="12.73" height="12.18" x="415.67" y="269.66" class="named"><title>0x0044bbd0 DrawFlareInAir (440 bytes)</title></rect>
 <rect width="12.73" height="12.15" x="415.67" y="284.85" class="todo"><title>0x00485ce0 S_InitialiseSystem (439 bytes)</title></rect>
 <rect width="12.73" height="12.13" x="415.67" y="300" class="named"><title>0x004234f0 CrocControl (438 bytes)</title></rect>
 <rect width="12.73" height="12.13" x="415.67" y="315.12" class="todo"><title>0x00434770 DrawQuadbikeLapTime (438 bytes)</title></rect>

@@ -50,6 +50,54 @@ void set_flare_arm(int frame)
     lara.left_arm.frame_base = anims[lara.left_arm.anim_number].frame_ptr;
 }
 
+void phd_PushMatrix(void);
+void phd_PushUnitMatrix(void);
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+void phd_RotX(sint16 rx);
+void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
+void phd_PutPolygons(sint16 *objptr, int clip);
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void S_CalculateStaticLight(sint16 adder);
+void TriggerFlareSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 smoke, sint32 FromLara);
+
+void DrawFlareInAir(ITEM_INFO *item)
+{
+    int clip, rate;
+    sint16 *frmptr[2];
+    sint32 xv, yv, zv, lp;
+
+    GetFrames(item, frmptr, &rate);
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    if ((clip = S_GetObjectBounds(frmptr[0]))) {
+        CalculateObjectLighting(item, frmptr[0]);
+        phd_PutPolygons(meshes[objects[179].mesh_index], clip);
+        if ((sint32)item->data & 0x8000) {
+            phd_TranslateRel(-6, 6, 48);
+            phd_RotX(-90 * 182);
+            S_CalculateStaticLight(8 * 256);
+            phd_PushUnitMatrix();
+            phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+            phd_PushMatrix();
+            phd_TranslateRel(-6, 6, 32);
+            xv = item->pos.x_pos + (phd_mxptr[3] >> W2V_SHIFT);
+            yv = item->pos.y_pos + (phd_mxptr[7] >> W2V_SHIFT);
+            zv = item->pos.z_pos + (phd_mxptr[11] >> W2V_SHIFT);
+            phd_PopMatrix();
+            phd_TranslateRel((GetRandomDraw() & 127) - 64, (GetRandomDraw() & 127) - 64, (GetRandomDraw() & 511) + 512);
+            for (lp = 0; lp < (GetRandomDraw() & 3) + 4; lp++)
+                TriggerFlareSparks(xv, yv, zv, phd_mxptr[3] >> W2V_SHIFT, phd_mxptr[7] >> W2V_SHIFT,
+                                   phd_mxptr[11] >> W2V_SHIFT, lp >> 2, 0);
+            phd_PopMatrix();
+        }
+    }
+    phd_PopMatrix();
+}
+
 sint16 CreateItem(void);
 void InitialiseItem(sint16 item_num);
 

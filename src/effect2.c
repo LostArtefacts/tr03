@@ -619,7 +619,7 @@ void TriggerFireFlame(sint32 x, sint32 y, sint32 z, sint32 body_part, sint32 typ
     }
 }
 
-void TriggerFlareSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 smoke)
+void TriggerFlareSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 smoke, sint32 FromLara)
 {
     SPARKS *sptr;
     SPARKS *sptr1;
