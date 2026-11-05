@@ -49,4 +49,22 @@ int FMV_Play(char *name)
     return GtWindowClosed;
 }
 
+int FMV_PlayIntro(char *name1, char *name2)
+{
+    fmv_playing = 1;
+    ShowCursor(0);
+    WinFreeDX(false);
+    name1 = (char *)GetFullPath(name1);
+    WinPlayFMV(name1, true);
+    WinStopFMV(true);
+    name2 = (char *)GetFullPath(name2);
+    WinPlayFMV(name2, true);
+    WinStopFMV(true);
+    fmv_playing = 0;
+    if (!GtWindowClosed)
+        WinDXInit(&App.DeviceInfo, &App.DXConfig, false);
+    ShowCursor(1);
+    return GtWindowClosed;
+}
+
 }
