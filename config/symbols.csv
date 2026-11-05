@@ -891,7 +891,7 @@ address,size,name,symbol
 0x0045e830,424,QuadBikeCollision,_QuadBikeCollision
 0x0045e9e0,318,GetOnQuadBike,_GetOnQuadBike
 0x0045eb20,753,QuadBikeDraw,_QuadBikeDraw
-0x0045ee20,1409,QuadBikeControl,_QuadBikeControl
+0x0045ee20,1440,QuadBikeControl,_QuadBikeControl
 0x0045f3c0,206,QuadbikeExplode,_QuadbikeExplode
 0x0045f490,431,SkidooCheckGetOff,_SkidooCheckGetOff
 0x0045f640,223,TestHeight_quadbike,_TestHeight_quadbike
@@ -1965,6 +1965,7 @@ address,size,name,symbol
 0x004c79e0,12,KeyHolePosition,_KeyHolePosition
 0x004c79f0,24,PuzzleHoleBounds,_PuzzleHoleBounds
 0x004c7a08,12,PuzzleHolePosition,_PuzzleHolePosition
+0x004c7a38,32,quad_bites,_quad_bites
 0x004c7a98,4,tunes,_tunes
 0x004c7a9c,6,RaptorItem,_RaptorItem
 0x004c7aa8,16,raptor_bite,_raptor_bite
@@ -2189,6 +2190,7 @@ address,size,name,symbol
 0x006267b0,12,DetonatorPosition,_DetonatorPosition
 0x006267bc,1,dont_exit_quad,_dont_exit_quad
 0x006267c0,1,quad_slowdamp,_quad_slowdamp
+0x006267c4,1,ExhaustStart,_ExhaustStart
 0x006267c8,1,HandbrakeStarting,_HandbrakeStarting
 0x006267cc,1,CanHandbrakeStart,_CanHandbrakeStart
 0x006267d0,4,number_cameras,_number_cameras

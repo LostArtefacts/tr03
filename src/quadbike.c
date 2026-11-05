@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 
 typedef struct {
@@ -696,4 +697,164 @@ int UserControl(ITEM_INFO *v, sint32 height, int *pitch)
 
     *pitch = bike->EngineRevs;
     return drive;
+}
+
+extern BITE_INFO quad_bites[2];
+static uint8 ExhaustStart;
+
+int SkidooDynamics(ITEM_INFO *v);
+sint32 TestHeight_quadbike(ITEM_INFO *v, sint32 z_off, sint32 x_off, PHD_VECTOR *pos);
+sint32 DoDynamics_quadbike(sint32 height, sint32 fallspeed, sint32 *y);
+int UserControl(ITEM_INFO *v, sint32 height, int *pitch);
+void AnimateQuadBike(ITEM_INFO *v, int collide, int dead);
+void AnimateItem(ITEM_INFO *item);
+void QuadbikeExplode(ITEM_INFO *v);
+void TriggerExhaustSmoke(sint32 x, sint32 y, sint32 z, sint16 angle, sint32 speed, sint32 moving);
+int SkidooCheckGetOff(void);
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+int QuadBikeControl(void)
+{
+    QUADINFO *bike;
+    ITEM_INFO *v, *l;
+    PHD_VECTOR fl, fr;
+    sint32 hfl, hfr;
+    FLOOR_INFO *floor;
+    sint32 height, collide, drive, ceiling;
+    sint16 room_number, x_rot, z_rot, rotadd;
+    int pitch, dead;
+
+    dead = 0;
+    l = lara_item;
+    v = &items[lara.skidoo];
+    bike = (QUADINFO *)v->data;
+    collide = SkidooDynamics(v);
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    height = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    ceiling = GetCeiling(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    hfl = TestHeight_quadbike(v, 550, -260, &fl);
+    hfr = TestHeight_quadbike(v, 550, 260, &fr);
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    height = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    TestTriggers(trigger_index, 0);
+
+    if (lara_item->hit_points <= 0) {
+        input &= ~(IN_LEFT | IN_RIGHT | IN_BACK | IN_FORWARD);
+        dead = 1;
+    }
+
+    if (bike->Flags) {
+        collide = 0;
+    } else {
+        switch (lara_item->current_anim_state) {
+        case 9:
+        case 10:
+        case 23:
+        case 24:
+            drive = -1;
+            collide = 0;
+            break;
+        default:
+            drive = UserControl(v, height, &pitch);
+            break;
+        }
+    }
+
+    if (bike->Velocity || bike->Revs) {
+        bike->pitch = pitch;
+        if (bike->pitch < -0x8000)
+            bike->pitch = -0x8000;
+        else if (bike->pitch > 0xa000)
+            bike->pitch = 0xa000;
+        SoundEffect(155, &v->pos, 4 + ((0x10000 + bike->pitch) << 8));
+    } else {
+        if (drive != -1)
+            SoundEffect(153, &v->pos, 0);
+        bike->pitch = 0;
+    }
+
+    v->floor = height;
+    rotadd = bike->Velocity >> 2;
+    bike->RearRot -= rotadd;
+    bike->RearRot -= bike->Revs >> 3;
+    bike->FrontRot -= rotadd;
+    bike->left_fallspeed = DoDynamics_quadbike(hfl, bike->left_fallspeed, &fl.y);
+    bike->right_fallspeed = DoDynamics_quadbike(hfr, bike->right_fallspeed, &fr.y);
+    v->fallspeed = DoDynamics_quadbike(height, v->fallspeed, &v->pos.y_pos);
+    height = (fl.y + fr.y) >> 1;
+    x_rot = phd_atan(550, v->pos.y_pos - height);
+    z_rot = phd_atan(260, height - fl.y);
+    v->pos.x_rot += (x_rot - v->pos.x_rot) >> 1;
+    v->pos.z_rot += (z_rot - v->pos.z_rot) >> 1;
+
+    if (!(bike->Flags & 0x80)) {
+        if (room_number != v->room_number) {
+            ItemNewRoom(lara.skidoo, room_number);
+            ItemNewRoom(lara.item_number, room_number);
+        }
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.y_rot = v->pos.y_rot;
+        l->pos.x_rot = v->pos.x_rot;
+        l->pos.z_rot = v->pos.z_rot;
+        AnimateQuadBike(v, collide, dead);
+        AnimateItem(l);
+        v->anim_number = objects[16].anim_index + (l->anim_number - objects[VEHICLE_ANIM].anim_index);
+        v->frame_number = anims[v->anim_number].frame_base + (l->frame_number - anims[l->anim_number].frame_base);
+        camera.target_elevation = -30 * ONE_DEGREE;
+        if (bike->Flags & 0x40) {
+            if (v->pos.y_pos == v->floor) {
+                ExplodingDeath(lara.item_number, 0xffffffff, 1);
+                lara_item->hit_points = 0;
+                lara_item->flags |= ONESHOT;
+                QuadbikeExplode(v);
+                return 0;
+            }
+        }
+    }
+
+    if (l->current_anim_state != 9 && l->current_anim_state != 23 && l->current_anim_state != 10 && l->current_anim_state != 24) {
+        PHD_VECTOR pos;
+        sint32 lp, speed;
+        sint16 angle;
+
+        for (lp = 0; lp < 2; lp++) {
+            pos.x = quad_bites[lp].x;
+            pos.y = quad_bites[lp].y;
+            pos.z = quad_bites[lp].z;
+            GetJointAbsPosition(v, &pos, quad_bites[lp].mesh_num);
+            angle = v->pos.y_rot + ((lp == 0) ? 0x9000 : 0x7000);
+            if (v->speed > 32) {
+                if (v->speed < 64) {
+                    speed = 64 - v->speed;
+                    TriggerExhaustSmoke(pos.x, pos.y, pos.z, angle, speed, 1);
+                }
+            } else {
+                if (ExhaustStart < 16) {
+                    speed = ((ExhaustStart << 1) + (GetRandomControl() & 7) + (GetRandomControl() & 16)) << 7;
+                    ExhaustStart++;
+                } else if (HandbrakeStarting)
+                    speed = (abs(bike->Revs) >> 2) + ((GetRandomControl() & 7) << 7);
+                else if ((GetRandomControl() & 3) == 0)
+                    speed = ((GetRandomControl() & 15) + (GetRandomControl() & 16)) << 7;
+                else
+                    speed = 0;
+                TriggerExhaustSmoke(pos.x, pos.y, pos.z, angle, speed, 0);
+            }
+        }
+    } else {
+        if (CurrentLevel == 0) {
+            savegame.timer = 0;
+            assault_timer_active = 0;
+            assault_timer_display = 0;
+        }
+        ExhaustStart = 0;
+    }
+
+    return SkidooCheckGetOff();
 }
