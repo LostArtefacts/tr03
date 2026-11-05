@@ -1975,6 +1975,9 @@ address,size,name,symbol
 0x004c7e50,39,tribeaxe_hitframes,_tribeaxe_hitframes
 0x004c7e78,20,TribeBossRadii,_TribeBossRadii
 0x004c7e90,20,TribeBossHeights,_TribeBossHeights
+0x004c7ea8,20,dradii_triboss,_dradii_triboss
+0x004c7ec0,20,dheights1_triboss,_dheights1_triboss
+0x004c7ed8,20,dheights2_triboss,_dheights2_triboss
 0x004c7ef0,32,lizman_summon_coords,_lizman_summon_coords
 0x004c7f10,,tribeboss_hit,_tribeboss_hit
 0x004c7fb4,4,closest_ai_path,_closest_ai_path
@@ -2168,6 +2171,8 @@ address,size,name,symbol
 0x006270e4,,SubWakeShade,_SubWakeShade
 0x006270e8,1,SubHarpoonLR,_SubHarpoonLR
 0x0062711c,4,clonked,_clonked
+0x00627120,20,death_heights_triboss,_death_heights_triboss
+0x00627138,20,death_radii_triboss,_death_radii_triboss
 0x00627170,,ai_junction,_ai_junction
 0x006271d0,16,junction_index,_junction_index
 0x006271e0,,ai_path,_ai_path

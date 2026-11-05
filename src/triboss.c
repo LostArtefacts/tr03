@@ -151,6 +151,99 @@ void TriggerLizardMan(void)
     r->item_number = bossdata.LizmanItem;
 }
 
+typedef struct {
+    sint16 x;
+    sint16 z;
+    sint32 rgb;
+} EXPLOSION_VERTS;
+
+typedef struct {
+    sint16 on;
+    sint16 life;
+    sint16 speed;
+    sint16 radius;
+    sint16 xrot;
+    sint16 zrot;
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    EXPLOSION_VERTS verts[16];
+} EXPLOSION_RING;
+
+extern EXPLOSION_RING ExpRings[];
+extern sint32 death_radii_triboss[5];
+extern sint32 death_heights_triboss[5];
+extern sint32 dradii_triboss[5];
+extern sint32 dheights1_triboss[5];
+extern sint32 dheights2_triboss[5];
+extern sint32 wibble;
+
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+
+void ExplodeTribeBoss(ITEM_INFO *item)
+{
+    SHIELD_POINTS *shptr;
+    sint32 lp, lp1, angle, y, r, g, b;
+
+    TribeBossShieldOn = 0;
+
+    if (bossdata.explode_count == 1 || bossdata.explode_count == 15 || bossdata.explode_count == 25 ||
+        bossdata.explode_count == 35 || bossdata.explode_count == 45 || bossdata.explode_count == 55) {
+        sint32 x, y, z;
+
+        x = item->pos.x_pos + ((GetRandomDraw() & 1023) - 512);
+        y = item->pos.y_pos - (GetRandomDraw() & 1023) - 256;
+        z = item->pos.z_pos + ((GetRandomDraw() & 1023) - 512);
+
+        ExpRings[bossdata.ring_count].x = x;
+        ExpRings[bossdata.ring_count].y = y;
+        ExpRings[bossdata.ring_count].z = z;
+        ExpRings[bossdata.ring_count].on = 1;
+        bossdata.ring_count++;
+
+        TriggerExplosionSparks(x, y, z, 3, -2, 2, 0);
+        for (lp = 0; lp < 2; lp++) {
+            TriggerExplosionSparks(x, y, z, 3, -1, 2, 0);
+        }
+
+        SoundEffect(76, &item->pos, 0x800004);
+    }
+
+    for (lp = 0; lp < 5; lp++) {
+        if (bossdata.explode_count < 128) {
+            death_radii_triboss[lp] = (dradii_triboss[lp] >> 4) + ((dradii_triboss[lp] * bossdata.explode_count) >> 7);
+            death_heights_triboss[lp] = dheights2_triboss[lp] + (((dheights1_triboss[lp] - dheights2_triboss[lp]) * bossdata.explode_count) >> 7);
+        }
+    }
+
+    shptr = &TribeBossShield[0];
+
+    for (lp = 0; lp < 5; lp++) {
+        y = death_heights_triboss[lp];
+        angle = (wibble << 3) & 511;
+        for (lp1 = 0; lp1 < 8; lp1++) {
+            shptr->x = (rcossin_tbl[angle << 1] * death_radii_triboss[lp]) >> 11;
+            shptr->y = y;
+            shptr->z = (rcossin_tbl[(angle << 1) + 1] * death_radii_triboss[lp]) >> 11;
+
+            if (lp != 0 && lp != 4 && bossdata.explode_count < 64) {
+                r = GetRandomDraw() & 31;
+                b = (GetRandomDraw() & 63) + 224;
+                g = (b >> 2) + (GetRandomDraw() & 63);
+                r = (r * (64 - bossdata.explode_count)) >> 6;
+                g = (g * (64 - bossdata.explode_count)) >> 6;
+                b = (b * (64 - bossdata.explode_count)) >> 6;
+                shptr->rgb = r | (g << 8) | (b << 16);
+            } else {
+                shptr->rgb = 0;
+            }
+            angle += 512;
+            angle &= 4095;
+            shptr++;
+        }
+    }
+}
+
 sint32 GetFreeSpark(void);
 
 void TriggerSummonSmoke(sint32 x, sint32 y, sint32 z)
