@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="258.48" height="12" x="0" y="0" class="named"><title>909 · 61.54%</title></rect>
-<rect width="1.42" height="12" x="258.48" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="160.09" height="12" x="259.91" y="0" class="todo"><title>563 · 38.12%</title></rect>
+<rect width="258.77" height="12" x="0" y="0" class="named"><title>910 · 61.61%</title></rect>
+<rect width="1.42" height="12" x="258.77" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="159.81" height="12" x="260.19" y="0" class="todo"><title>562 · 38.05%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">61.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">909</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">563</tspan></text>
+<text text-anchor="end" x="600" y="7.50">61.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">910</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">562</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="185.99" height="12" x="0" y="0" class="named"><title>296 KB · 44.28%</title></rect>
-<rect width="3.69" height="12" x="185.99" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.33" height="12" x="189.67" y="0" class="todo"><title>366 KB · 54.84%</title></rect>
+<rect width="186.03" height="12" x="0" y="0" class="named"><title>296 KB · 44.29%</title></rect>
+<rect width="3.69" height="12" x="186.03" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="230.28" height="12" x="189.72" y="0" class="todo"><title>366 KB · 54.83%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1352,7 +1352,7 @@
 <rect width="12" height="12" x="525" y="375" class="todo"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="375" class="todo"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="375" class="named"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="375" class="todo"><title>0x0048d0d0 S_SoundPlaySample (70 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="375" class="named"><title>0x0048d0d0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="375" class="todo"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="375" class="todo"><title>0x0048d150 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="375" class="todo"><title>0x0048d1a0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
@@ -2631,7 +2631,7 @@
 <rect width="4.92" height="5.07" x="632.93" y="316.91" class="named"><title>0x00429500 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="4.92" height="5.07" x="640.85" y="316.91" class="todo"><title>0x00490f80 Func490f80 (71 bytes)</title></rect>
 <rect width="4.92" height="5.07" x="648.77" y="316.91" class="todo"><title>0x00490fd0 Func490fd0 (71 bytes)</title></rect>
-<rect width="4.85" height="5.07" x="656.68" y="316.91" class="todo"><title>0x0048d0d0 S_SoundPlaySample (70 bytes)</title></rect>
+<rect width="4.85" height="5.07" x="656.68" y="316.91" class="named"><title>0x0048d0d0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="4.85" height="5.07" x="664.53" y="316.91" class="todo"><title>0x0048d150 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="4.85" height="5.07" x="672.38" y="316.91" class="todo"><title>0x0048fdb0 BPPToDDBD (70 bytes)</title></rect>
 <rect width="4.85" height="5.07" x="680.22" y="316.91" class="todo"><title>0x004b39a0 DD_EnsureSurfaceAvailable (70 bytes)</title></rect>

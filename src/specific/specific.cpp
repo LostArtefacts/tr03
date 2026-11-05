@@ -27,4 +27,11 @@ int CalcVolume(int nGameVolume)
 }
 
 
+int S_SoundPlaySample(int nSample, unsigned short wVol, int nPitch, sint16 wPan)
+{
+    if (!sound_active)
+        return -3;
+    return DS_StartSample(nSample, CalcVolume(wVol), nPitch, CalcPan(wPan), 0);
+}
+
 }
