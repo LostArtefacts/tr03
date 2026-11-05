@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="233.97" height="12" x="0" y="0" class="named"><title>748 · 50.64%</title></rect>
-<rect width="228.03" height="12" x="233.97" y="0" class="todo"><title>729 · 49.36%</title></rect>
+<rect width="234.28" height="12" x="0" y="0" class="named"><title>749 · 50.71%</title></rect>
+<rect width="227.72" height="12" x="234.28" y="0" class="todo"><title>728 · 49.29%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">50.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">748</tspan> · <tspan class="todo">729</tspan></text>
+<text text-anchor="end" x="642" y="7.50">50.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">749</tspan> · <tspan class="todo">728</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="103.01" height="12" x="0" y="0" class="named"><title>148 KB · 22.30%</title></rect>
-<rect width="358.99" height="12" x="103.01" y="0" class="todo"><title>517 KB · 77.70%</title></rect>
+<rect width="103.35" height="12" x="0" y="0" class="named"><title>149 KB · 22.37%</title></rect>
+<rect width="358.65" height="12" x="103.35" y="0" class="todo"><title>517 KB · 77.63%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">22.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">148 KB</tspan> · <tspan class="todo">517 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">22.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">149 KB</tspan> · <tspan class="todo">517 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -960,7 +960,7 @@
 <rect width="12" height="12" x="675" y="255" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="255" class="todo"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="255" class="todo"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="255" class="todo"><title>0x0045ffb0 SkidooBaddieCollision (489 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="255" class="named"><title>0x0045ffb0 SkidooBaddieCollision (489 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="255" class="todo"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="270" class="todo"><title>0x00460230 AnimateQuadBike (1072 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="270" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
@@ -1904,7 +1904,7 @@
 <rect width="13.23" height="13.16" x="399.43" y="163.99" class="named"><title>0x00453000 EnableBaddieAI (494 bytes)</title></rect>
 <rect width="13.23" height="13.13" x="399.43" y="180.15" class="todo"><title>0x00485ab0 init_water_table (493 bytes)</title></rect>
 <rect width="13.23" height="13.11" x="399.43" y="196.28" class="named"><title>0x0044d690 UseItem (492 bytes)</title></rect>
-<rect width="13.23" height="13.03" x="399.43" y="212.38" class="todo"><title>0x0045ffb0 SkidooBaddieCollision (489 bytes)</title></rect>
+<rect width="13.23" height="13.03" x="399.43" y="212.38" class="named"><title>0x0045ffb0 SkidooBaddieCollision (489 bytes)</title></rect>
 <rect width="13.23" height="12.97" x="399.43" y="228.41" class="todo"><title>0x004017d0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="13.23" height="12.97" x="399.43" y="244.38" class="named"><title>0x00431890 TriggerFlamethrowerFlame (487 bytes)</title></rect>
 <rect width="13.23" height="12.97" x="399.43" y="260.36" class="named"><title>0x00463700 TriggerSealmuteGas (487 bytes)</title></rect>

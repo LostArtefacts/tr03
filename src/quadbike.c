@@ -225,3 +225,54 @@ void TriggerExhaustSmoke(sint32 x, sint32 y, sint32 z, sint16 angle, sint32 spee
     sptr->Height = sptr->sHeight = size >> 1;
     sptr->dHeight = size;
 }
+
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+
+void SkidooBaddieCollision(ITEM_INFO *skidoo)
+{
+    int i, x, y, z;
+    ITEM_INFO *item;
+    OBJECT_INFO *object;
+    sint16 roomies[16], numroom, *door;
+    sint16 item_num;
+
+    numroom = 1;
+    roomies[0] = skidoo->room_number;
+    door = room[skidoo->room_number].door;
+    if (door) {
+        for (i = (int)*(door++); i > 0; i--) {
+            roomies[numroom++] = *door;
+            door += 16;
+        }
+    }
+    for (i = 0; i < numroom; i++) {
+        item_num = room[roomies[i]].item_number;
+        while (item_num != NO_ITEM) {
+            item = &items[item_num];
+            if (item->collidable && item->status != INVISIBLE && item != lara_item && item != skidoo) {
+                object = &objects[item->object_number];
+                if (object->collision && (object->intelligent || item->object_number == 112)) {
+                    x = skidoo->pos.x_pos - item->pos.x_pos;
+                    y = skidoo->pos.y_pos - item->pos.y_pos;
+                    z = skidoo->pos.z_pos - item->pos.z_pos;
+                    if (x > -2048 && x < 2048 && z > -2048 && z < 2048 && y > -2048 && y < 2048) {
+                        if (TestBoundsCollide(item, skidoo, 500)) {
+                            if (item->object_number == 112) {
+                                if (item->current_anim_state == 1) {
+                                    lara_item->hit_status = 1;
+                                    lara_item->hit_points -= 100;
+                                }
+                            } else {
+                                DoLotsOfBlood(item->pos.x_pos, skidoo->pos.y_pos - 256, item->pos.z_pos, skidoo->speed,
+                                              skidoo->pos.y_rot, item->room_number, 3);
+                                item->hit_points = 0;
+                            }
+                        }
+                    }
+                }
+            }
+            item_num = item->next_item;
+        }
+    }
+}
