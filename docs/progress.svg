@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="246.80" height="12" x="0" y="0" class="named"><title>789 · 53.42%</title></rect>
-<rect width="215.20" height="12" x="246.80" y="0" class="todo"><title>688 · 46.58%</title></rect>
+<rect width="247.11" height="12" x="0" y="0" class="named"><title>790 · 53.49%</title></rect>
+<rect width="214.89" height="12" x="247.11" y="0" class="todo"><title>687 · 46.51%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">53.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">789</tspan> · <tspan class="todo">688</tspan></text>
+<text text-anchor="end" x="642" y="7.50">53.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">790</tspan> · <tspan class="todo">687</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="122.37" height="12" x="0" y="0" class="named"><title>176 KB · 26.49%</title></rect>
-<rect width="339.63" height="12" x="122.37" y="0" class="todo"><title>489 KB · 73.51%</title></rect>
+<rect width="122.73" height="12" x="0" y="0" class="named"><title>177 KB · 26.57%</title></rect>
+<rect width="339.27" height="12" x="122.73" y="0" class="todo"><title>489 KB · 73.43%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">26.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">176 KB</tspan> · <tspan class="todo">489 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">26.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">177 KB</tspan> · <tspan class="todo">489 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -871,7 +871,7 @@
 <rect width="12" height="12" x="90" y="240" class="todo"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="240" class="named"><title>0x004552c0 ShootAtLara (167 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="240" class="todo"><title>0x00455370 ExplodingDeath (1067 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="240" class="todo"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="240" class="named"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="240" class="named"><title>0x004559b0 InitialiseMonkey (82 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="240" class="todo"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="240" class="todo"><title>0x00455e30 MonkeyControl (3257 bytes)</title></rect>
@@ -1877,7 +1877,7 @@
 <rect width="13.89" height="13.44" x="382.63" y="400.80" class="named"><title>0x0043e800 LaraAboveWater (530 bytes)</title></rect>
 <rect width="13.89" height="13.39" x="382.63" y="417.24" class="named"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
 <rect width="13.89" height="13.37" x="382.63" y="433.63" class="todo"><title>0x0046cf40 TrainControl (527 bytes)</title></rect>
-<rect width="13.99" height="13.25" x="399.52" y="98.99" class="todo"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
+<rect width="13.99" height="13.25" x="399.52" y="98.99" class="named"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
 <rect width="13.97" height="13.25" x="416.52" y="98.99" class="named"><title>0x00449530 lara_col_climbstnc (525 bytes)</title></rect>
 <rect width="13.94" height="13.25" x="433.48" y="98.99" class="named"><title>0x00461740 MouseControl (524 bytes)</title></rect>
 <rect width="13.89" height="13.25" x="450.42" y="98.99" class="todo"><title>0x00410af0 FireBigGun (522 bytes)</title></rect>
