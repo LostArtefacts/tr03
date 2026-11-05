@@ -257,6 +257,49 @@ void BoatAnimation(ITEM_INFO *boat, int collide)
     }
 }
 
+extern int height_type;
+
+int CanGetOff_boat(int direction)
+{
+    ITEM_INFO *v;
+    FLOOR_INFO *floor;
+    sint16 room_number, angle;
+    int x, y, z, height, ceiling;
+
+    v = &items[lara.skidoo];
+
+    if (direction < 0) {
+        angle = v->pos.y_rot - 0x4000;
+    } else {
+        angle = v->pos.y_rot + 0x4000;
+    }
+
+    x = v->pos.x_pos + (1024 * phd_sin(angle) >> W2V_SHIFT);
+    y = v->pos.y_pos;
+    z = v->pos.z_pos + (1024 * phd_cos(angle) >> W2V_SHIFT);
+
+    room_number = v->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+
+    height = GetHeight(floor, x, y, z);
+
+    if ((height - v->pos.y_pos) < -512) {
+        return 0;
+    }
+
+    if (height_type == 2 || height_type == 3) {
+        return 0;
+    }
+
+    ceiling = GetCeiling(floor, x, y, z);
+
+    if (ceiling - v->pos.y_pos > -762 || height - ceiling < 762) {
+        return 0;
+    }
+
+    return 1;
+}
+
 int DoBoatDynamics(int height, int fallspeed, int *y)
 {
     if (height > *y)

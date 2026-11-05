@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="248.67" height="12" x="0" y="0" class="named"><title>795 · 53.83%</title></rect>
-<rect width="213.33" height="12" x="248.67" y="0" class="todo"><title>682 · 46.17%</title></rect>
+<rect width="248.99" height="12" x="0" y="0" class="named"><title>796 · 53.89%</title></rect>
+<rect width="213.01" height="12" x="248.99" y="0" class="todo"><title>681 · 46.11%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">53.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">795</tspan> · <tspan class="todo">682</tspan></text>
+<text text-anchor="end" x="642" y="7.50">53.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">796</tspan> · <tspan class="todo">681</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="124.79" height="12" x="0" y="0" class="named"><title>180 KB · 27.01%</title></rect>
-<rect width="337.21" height="12" x="124.79" y="0" class="todo"><title>486 KB · 72.99%</title></rect>
+<rect width="124.96" height="12" x="0" y="0" class="named"><title>180 KB · 27.05%</title></rect>
+<rect width="337.04" height="12" x="124.96" y="0" class="todo"><title>486 KB · 72.95%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">27.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">180 KB</tspan> · <tspan class="todo">486 KB</tspan></text>
@@ -167,7 +167,7 @@
 <rect width="12" height="12" x="30" y="30" class="named"><title>0x004121b0 BoatCollision (380 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="30" class="named"><title>0x00412330 BoatUserControl (455 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="30" class="named"><title>0x00412500 BoatAnimation (548 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="30" class="todo"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="30" class="named"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="30" class="todo"><title>0x00412820 BoatControl (2202 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="30" class="todo"><title>0x004130c0 DoWake_boat (459 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="30" class="todo"><title>0x00413290 TestWaterHeight (250 bytes)</title></rect>
@@ -2172,7 +2172,7 @@
 <rect width="9.16" height="9.16" x="511.45" y="199.20" class="named"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
 <rect width="9.16" height="9.16" x="523.61" y="199.20" class="named"><title>0x0043b1a0 KillEffect (238 bytes)</title></rect>
 <rect width="9.16" height="9.16" x="535.77" y="199.20" class="named"><title>0x0046eb20 FallingCeiling (238 bytes)</title></rect>
-<rect width="9.12" height="9.16" x="547.93" y="199.20" class="todo"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>
+<rect width="9.12" height="9.16" x="547.93" y="199.20" class="named"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>
 <rect width="9.08" height="9.16" x="560.05" y="199.20" class="todo"><title>0x004854c0 HWR_DrawPolyList (236 bytes)</title></rect>
 <rect width="9.04" height="9.16" x="572.13" y="199.20" class="named"><title>0x00442490 lara_col_turn_r (235 bytes)</title></rect>
 <rect width="9.04" height="9.16" x="584.17" y="199.20" class="named"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
