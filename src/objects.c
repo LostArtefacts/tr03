@@ -20,6 +20,56 @@ extern sint32 level_items;
 int OnDrawBridge(ITEM_INFO *item, sint32 z, sint32 x);
 void LiftFloorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *floor, sint32 *ceiling);
 
+int abs(int x);
+#pragma intrinsic(abs)
+
+void EarthQuake(sint16 item_number)
+{
+    sint16 earth_item;
+    int want, pitch;
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    if (!TriggerActive(item))
+        return;
+    if (item->item_flags[1] == 0)
+        item->item_flags[1] = 100;
+    if (item->item_flags[2] == 0 && abs(item->item_flags[0] - item->item_flags[1]) < 16) {
+        if (item->item_flags[1] == 20) {
+            item->item_flags[1] = 100;
+            item->item_flags[2] = (GetRandomControl() & 127) + 90;
+        } else {
+            item->item_flags[1] = 20;
+            item->item_flags[2] = (GetRandomControl() & 127) + 30;
+        }
+    }
+    if (item->item_flags[2])
+        item->item_flags[2]--;
+    if (item->item_flags[0] > item->item_flags[1])
+        item->item_flags[0] -= (GetRandomControl() & 7) + 2;
+    else
+        item->item_flags[0] += (GetRandomControl() & 7) + 2;
+    pitch = (0x10000 + (item->item_flags[0] << 8)) << 8;
+    SoundEffect(107, NULL, 4 + pitch);
+    camera.bounce = -item->item_flags[0];
+    want = GetRandomControl();
+    if (want < 0x400) {
+        want = (want < 0x200) ? 330 : 107;
+        for (earth_item = room[item->room_number].item_number; earth_item != NO_ITEM; earth_item = items[earth_item].next_item) {
+            item = &items[earth_item];
+            if (item->object_number != want)
+                continue;
+            if (item->status == ACTIVE || item->status == DEACTIVATED)
+                continue;
+            AddActiveItem(earth_item);
+            item->status = ACTIVE;
+            item->flags = 0x3e00;
+            item->timer = 0;
+            return;
+        }
+    }
+}
+
 void ControlCutShotgun(sint16 item_number)
 {
     ITEM_INFO *item;

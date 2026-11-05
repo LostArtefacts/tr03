@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="214.27" height="12" x="0" y="0" class="named"><title>685 · 46.38%</title></rect>
-<rect width="247.73" height="12" x="214.27" y="0" class="todo"><title>792 · 53.62%</title></rect>
+<rect width="214.58" height="12" x="0" y="0" class="named"><title>686 · 46.45%</title></rect>
+<rect width="247.42" height="12" x="214.58" y="0" class="todo"><title>791 · 53.55%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">46.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">685</tspan> · <tspan class="todo">792</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">686</tspan> · <tspan class="todo">791</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="77.35" height="12" x="0" y="0" class="named"><title>111 KB · 16.74%</title></rect>
-<rect width="384.65" height="12" x="77.35" y="0" class="todo"><title>554 KB · 83.26%</title></rect>
+<rect width="77.63" height="12" x="0" y="0" class="named"><title>112 KB · 16.80%</title></rect>
+<rect width="384.37" height="12" x="77.63" y="0" class="todo"><title>553 KB · 83.20%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">16.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">111 KB</tspan> · <tspan class="todo">554 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">16.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">112 KB</tspan> · <tspan class="todo">553 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -887,7 +887,7 @@
 <rect width="12" height="12" x="330" y="240" class="named"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="240" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="240" class="todo"><title>0x00457a40 MPGunControl (3027 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="240" class="todo"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="240" class="named"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="240" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="240" class="named"><title>0x00458840 InitialiseFinalLevel (63 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="240" class="todo"><title>0x00458880 FinalLevelCounter (545 bytes)</title></rect>
@@ -1980,7 +1980,7 @@
 <rect width="11.92" height="11.89" x="675.58" y="130.82" class="named"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
 <rect width="11.92" height="11.89" x="690.50" y="130.82" class="todo"><title>0x00447d90 TriggerUnderwaterExplosion (402 bytes)</title></rect>
 <rect width="11.89" height="11.89" x="705.42" y="130.82" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
-<rect width="11.86" height="11.89" x="720.31" y="130.82" class="todo"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
+<rect width="11.86" height="11.89" x="720.31" y="130.82" class="named"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
 <rect width="11.83" height="11.89" x="735.17" y="130.82" class="named"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
 <rect width="11.89" height="11.83" x="431.41" y="145.72" class="todo"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="11.89" height="11.74" x="431.41" y="160.55" class="named"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
