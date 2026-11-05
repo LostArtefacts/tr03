@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="300.65" height="12" x="0" y="0" class="named"><title>1058 · 71.58%</title></rect>
-<rect width="1.99" height="12" x="300.65" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="117.36" height="12" x="302.64" y="0" class="todo"><title>413 · 27.94%</title></rect>
+<rect width="300.93" height="12" x="0" y="0" class="named"><title>1059 · 71.65%</title></rect>
+<rect width="1.99" height="12" x="300.93" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="117.08" height="12" x="302.92" y="0" class="todo"><title>412 · 27.88%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">71.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1058</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">413</tspan></text>
+<text text-anchor="end" x="600" y="7.50">71.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1059</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">412</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.48" height="12" x="0" y="0" class="named"><title>306 KB · 45.83%</title></rect>
-<rect width="3.79" height="12" x="192.48" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.73" height="12" x="196.27" y="0" class="todo"><title>356 KB · 53.27%</title></rect>
+<rect width="192.51" height="12" x="0" y="0" class="named"><title>306 KB · 45.84%</title></rect>
+<rect width="3.79" height="12" x="192.51" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.70" height="12" x="196.30" y="0" class="todo"><title>356 KB · 53.26%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
@@ -1130,7 +1130,7 @@
 <rect width="12" height="12" x="195" y="315" class="named"><title>0x00474d50 ACMEmulateCDStop (25 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="315" class="todo"><title>0x00474d70 ACMHandleNotifications (988 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="315" class="todo"><title>0x00475160 ACMSetupNotifications (214 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="315" class="todo"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="315" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="315" class="todo"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="315" class="todo"><title>0x004752d0 Func4752d0 (18 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="315" class="todo"><title>0x004752f0 Func4752f0 (14 bytes)</title></rect>
@@ -2722,7 +2722,7 @@
 <rect width="4.34" height="4.46" x="728.15" y="332.46" class="todo"><title>0x0048e9f0 Func48e9f0 (55 bytes)</title></rect>
 <rect width="4.26" height="4.46" x="735.48" y="332.46" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="4.26" height="4.46" x="742.74" y="332.46" class="named"><title>0x0042f9c0 Exercise8_109Sp (54 bytes)</title></rect>
-<rect width="4.31" height="4.40" x="639.79" y="339.91" class="todo"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
+<rect width="4.31" height="4.40" x="639.79" y="339.91" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="347.31" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="354.71" class="todo"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="362.11" class="todo"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>

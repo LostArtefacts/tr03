@@ -33,4 +33,9 @@ void ACMEmulateCDStop(void)
         DSBuffer->Stop();
 }
 
+int ACMGetTrackLocation(void)
+{
+    return (int)(60.0f * ((float)(timeGetTime() - acm_start_time) * 0.001f));
+}
+
 }
