@@ -85,4 +85,14 @@ bool DXAddAttachedSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPDIRECTDRAWSURFACE3 l
     return true;
 }
 
+bool DXCreateDirect3DDevice(LPDIRECT3D2 lpD3D2, GUID Guid, LPDIRECTDRAWSURFACE3 lpSurface, LPDIRECT3DDEVICE2 *lpD3DDevice2)
+{
+    int RetVal;
+
+    RetVal = lpD3D2->CreateDevice(Guid, (LPDIRECTDRAWSURFACE)lpSurface, lpD3DDevice2);
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 }

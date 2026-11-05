@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="269.39" height="12" x="0" y="0" class="named"><title>948 · 64.14%</title></rect>
-<rect width="1.42" height="12" x="269.39" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="149.19" height="12" x="270.81" y="0" class="todo"><title>525 · 35.52%</title></rect>
+<rect width="269.68" height="12" x="0" y="0" class="named"><title>949 · 64.21%</title></rect>
+<rect width="1.42" height="12" x="269.68" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="148.90" height="12" x="271.10" y="0" class="todo"><title>524 · 35.45%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">64.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">948</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">525</tspan></text>
+<text text-anchor="end" x="600" y="7.50">64.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">949</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">524</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.75" height="12" x="0" y="0" class="named"><title>297 KB · 44.46%</title></rect>
-<rect width="3.69" height="12" x="186.75" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.56" height="12" x="190.44" y="0" class="todo"><title>365 KB · 54.66%</title></rect>
+<rect width="186.77" height="12" x="0" y="0" class="named"><title>297 KB · 44.47%</title></rect>
+<rect width="3.69" height="12" x="186.77" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.54" height="12" x="190.46" y="0" class="todo"><title>365 KB · 54.65%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1416,7 +1416,7 @@
 <rect width="12" height="12" x="735" y="390" class="named"><title>0x0048ff10 DXCreateSurface (72 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="405" class="named"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="405" class="named"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="405" class="todo"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="405" class="named"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="405" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="405" class="todo"><title>0x004900b0 DXGetSurfaceDesc (16 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="405" class="todo"><title>0x004900c0 DXSurfBlt (72 bytes)</title></rect>
@@ -2889,7 +2889,7 @@
 <rect width="3.12" height="3.49" x="737.76" y="381.45" class="todo"><title>0x00475700 Func475700 (31 bytes)</title></rect>
 <rect width="3.12" height="3.49" x="743.88" y="381.45" class="todo"><title>0x00484a20 HWR_ResetColorKey (31 bytes)</title></rect>
 <rect width="3.31" height="3.29" x="681.98" y="387.94" class="named"><title>0x0048d240 S_SoundSampleIsPlaying (31 bytes)</title></rect>
-<rect width="3.31" height="3.29" x="681.98" y="394.23" class="todo"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
+<rect width="3.31" height="3.29" x="681.98" y="394.23" class="named"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
 <rect width="3.31" height="3.18" x="681.98" y="400.52" class="todo"><title>0x00405250 Func405250 (30 bytes)</title></rect>
 <rect width="3.31" height="3.18" x="681.98" y="406.71" class="named"><title>0x00442c50 lara_col_slide (30 bytes)</title></rect>
 <rect width="3.31" height="3.18" x="681.98" y="412.89" class="named"><title>0x0046aee0 T_CentreH (30 bytes)</title></rect>
