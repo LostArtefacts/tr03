@@ -1051,7 +1051,7 @@ address,size,name,symbol
 0x00473230,831,ControlWillbossPlasmaBall,_ControlWillbossPlasmaBall
 0x00473570,528,TriggerPlasmaBallFlame_willboss,_TriggerPlasmaBallFlame_willboss
 0x00473780,94,InitialiseWingmute,_InitialiseWingmute
-0x004737e0,925,WingmuteControl,_WingmuteControl
+0x004737e0,960,WingmuteControl,_WingmuteControl
 0x00473ba0,355,TriggerWingMuteParticles,_TriggerWingMuteParticles
 0x00473d10,1012,WinstonControl,_WinstonControl
 0x00474110,389,OldWinstonControl,_OldWinstonControl
@@ -1956,6 +1956,7 @@ address,size,name,symbol
 0x004c7fb4,4,closest_ai_path,_closest_ai_path
 0x004c7fb8,4,lara_ai_path,_lara_ai_path
 0x004c7fbc,4,lara_junction,_lara_junction
+0x004c7fe8,16,wing_bite,_wing_bite
 0x004c8040,8,screen_sizer,_screen_sizer
 0x004c8048,8,game_sizer,_game_sizer
 0x004c805c,4,BarsWidth,_BarsWidth
