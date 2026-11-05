@@ -2,6 +2,7 @@
 #include "specific.h"
 #include "global.h"
 #include "texture.h"
+#include "winmain.h"
 
 extern "C" {
 
@@ -19,6 +20,20 @@ LPDIRECT3DTEXTURE2 DXTextureGetInterface(LPDIRECTDRAWSURFACE3 lpSurface)
     if (DX_TRY(lpSurface->QueryInterface(IID_IDirect3DTexture2, (LPVOID *)&lpTexture)))
         return 0;
     return lpTexture;
+}
+
+HRESULT DXTextureNewPalette(unsigned char *pPal)
+{
+    DWORD adwPal[256];
+    int nEntry;
+
+    if (DXPalette) {
+        DXPalette->Release();
+        DXPalette = 0;
+    }
+    for (nEntry = 0; nEntry < 256; ++nEntry, pPal += 3)
+        adwPal[nEntry] = RGB(pPal[0], pPal[1], pPal[2]);
+    return App.lpDD->CreatePalette(DDPCAPS_8BIT | DDPCAPS_ALLOW256, (PALETTEENTRY *)adwPal, &DXPalette, 0);
 }
 
 int DXTextureFindTextureSlot(DXTEXTURE *tex)
