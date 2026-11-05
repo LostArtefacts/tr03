@@ -221,6 +221,66 @@ void FireHarpoon(void)
     }
 }
 
+void FireGrenade(void)
+{
+    sint16 item_number, lp;
+    ITEM_INFO *item;
+    PHD_VECTOR pos;
+    FLOOR_INFO *floor;
+    sint32 x, y, z;
+
+    if (lara.grenade.ammo <= 0)
+        return;
+    lara.has_fired = 1;
+    item_number = CreateItem();
+    if (item_number != NO_ITEM) {
+        item = &items[item_number];
+        item->shade = 0x4210 | 0x8000;
+        item->object_number = 311;
+        item->room_number = lara_item->room_number;
+        pos.x = 0;
+        pos.y = 180 + 96;
+        pos.z = 80;
+        GetLaraHandAbsPosition(&pos, 1);
+        item->pos.x_pos = x = pos.x;
+        item->pos.y_pos = y = pos.y;
+        item->pos.z_pos = z = pos.z;
+        floor = GetFloor(pos.x, pos.y, pos.z, &item->room_number);
+        if (GetHeight(floor, pos.x, pos.y, pos.z) < pos.y) {
+            item->pos.x_pos = lara_item->pos.x_pos;
+            item->pos.y_pos = pos.y;
+            item->pos.z_pos = lara_item->pos.z_pos;
+            item->room_number = lara_item->room_number;
+        }
+        pos.x = 0;
+        pos.y = 180 + 1024;
+        pos.z = 80;
+        GetLaraHandAbsPosition(&pos, 1);
+        SmokeCountL = 32;
+        SmokeWeapon = LG_GRENADE;
+        for (lp = 0; lp < 5; lp++)
+            TriggerGunSmoke(x, y, z, pos.x - x, pos.y - y, pos.z - z, 1, LG_GRENADE, 32);
+        InitialiseItem(item_number);
+        item->pos.x_rot = lara_item->pos.x_rot + lara.left_arm.x_rot;
+        item->pos.y_rot = lara_item->pos.y_rot + lara.left_arm.y_rot;
+        item->pos.z_rot = 0;
+        if (!lara.left_arm.lock) {
+            item->pos.x_rot += lara.torso_x_rot;
+            item->pos.y_rot += lara.torso_y_rot;
+        }
+        item->speed = 128;
+        item->fallspeed = (-item->speed * phd_sin(item->pos.x_rot)) >> W2V_SHIFT;
+        item->current_anim_state = item->pos.x_rot;
+        item->goal_anim_state = item->pos.y_rot;
+        item->required_anim_state = 0;
+        item->hit_points = 4 * 30;
+        AddActiveItem(item_number);
+        if (!savegame.bonus_flag)
+            lara.grenade.ammo--;
+        savegame.ammo_used++;
+    }
+}
+
 void draw_shotgun(int weapon_type)
 {
     ITEM_INFO *item;
