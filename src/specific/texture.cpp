@@ -170,4 +170,26 @@ bool DXTextureMakeSystemSurface(DXTEXTURE *tex, LPDDPIXELFORMAT ddpf)
     return true;
 }
 
+int DXTextureMakeDeviceSurface(int w, int h, LPDIRECTDRAWPALETTE palette, DXTEXTURE *list)
+{
+    DXTEXTURE *tex;
+    LPDDPIXELFORMAT ddpf;
+    int index;
+
+    index = DXTextureFindTextureSlot(list);
+    if (index < 0)
+        return -1;
+    tex = &list[index];
+    memset(tex, 0, sizeof(DXTEXTURE));
+    tex->nWidth = w;
+    tex->dwFlags = 1;
+    tex->nHeight = h;
+    tex->pPalette = palette;
+    ddpf = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].ddsd.ddpfPixelFormat;
+    tex->bpp = ddpf->dwRGBBitCount;
+    if (!DXTextureMakeSystemSurface(tex, ddpf))
+        return -1;
+    return index;
+}
+
 }

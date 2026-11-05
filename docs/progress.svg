@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="298.09" height="12" x="0" y="0" class="named"><title>1049 · 70.97%</title></rect>
-<rect width="1.99" height="12" x="298.09" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="119.92" height="12" x="300.08" y="0" class="todo"><title>422 · 28.55%</title></rect>
+<rect width="298.38" height="12" x="0" y="0" class="named"><title>1050 · 71.04%</title></rect>
+<rect width="1.99" height="12" x="298.38" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="119.63" height="12" x="300.37" y="0" class="todo"><title>421 · 28.48%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">71.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1049</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">422</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1050</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">421</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.13" height="12" x="0" y="0" class="named"><title>305 KB · 45.75%</title></rect>
-<rect width="3.79" height="12" x="192.13" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="224.07" height="12" x="195.93" y="0" class="todo"><title>356 KB · 53.35%</title></rect>
+<rect width="192.25" height="12" x="0" y="0" class="named"><title>306 KB · 45.77%</title></rect>
+<rect width="3.79" height="12" x="192.25" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.96" height="12" x="196.04" y="0" class="todo"><title>356 KB · 53.32%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">45.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">305 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">45.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1500,7 +1500,7 @@
 <rect width="12" height="12" x="495" y="420" class="named"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="420" class="named"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="420" class="named"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="420" class="todo"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="420" class="named"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="420" class="todo"><title>0x004b2180 DXTextureCleanup (106 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="420" class="todo"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="420" class="todo"><title>0x004b2230 DXRestoreSurfaceIfLost (75 bytes)</title></rect>
@@ -2273,7 +2273,7 @@
 <rect width="8.04" height="7.87" x="716.98" y="222.61" class="named"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
 <rect width="7.99" height="7.87" x="728.02" y="222.61" class="named"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
 <rect width="7.99" height="7.87" x="739.01" y="222.61" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
-<rect width="7.77" height="8.09" x="522.79" y="233.48" class="todo"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
+<rect width="7.77" height="8.09" x="522.79" y="233.48" class="named"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
 <rect width="7.77" height="8.04" x="522.79" y="244.57" class="named"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="7.77" height="8" x="522.79" y="255.61" class="named"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
 <rect width="7.77" height="8" x="522.79" y="266.61" class="todo"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
