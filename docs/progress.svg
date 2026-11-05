@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="285.59" height="12" x="0" y="0" class="named"><title>1005 · 68%</title></rect>
-<rect width="1.42" height="12" x="285.59" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="132.99" height="12" x="287.01" y="0" class="todo"><title>468 · 31.66%</title></rect>
+<rect width="285.87" height="12" x="0" y="0" class="named"><title>1006 · 68.06%</title></rect>
+<rect width="1.42" height="12" x="285.87" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="132.71" height="12" x="287.29" y="0" class="todo"><title>467 · 31.60%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">68.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1005</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">468</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1006</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">467</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.49" height="12" x="0" y="0" class="named"><title>300 KB · 44.88%</title></rect>
-<rect width="3.69" height="12" x="188.49" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.83" height="12" x="192.17" y="0" class="todo"><title>362 KB · 54.24%</title></rect>
+<rect width="188.56" height="12" x="0" y="0" class="named"><title>300 KB · 44.90%</title></rect>
+<rect width="3.69" height="12" x="188.56" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.75" height="12" x="192.25" y="0" class="todo"><title>362 KB · 54.23%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
@@ -1264,7 +1264,7 @@
 <rect width="12" height="12" x="705" y="345" class="named"><title>0x00484a40 HWR_ResetZBuffer (64 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="345" class="named"><title>0x00484a80 HWR_EnableColorAddition (89 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="345" class="named"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="360" class="todo"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="360" class="named"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="360" class="named"><title>0x00484bf0 HWR_EnableAlphaBlend (63 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="360" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="360" class="named"><title>0x00484de0 HWR_EnableColorKey (63 bytes)</title></rect>
@@ -2434,7 +2434,7 @@
 <rect width="6.65" height="6.45" x="564.28" y="282.95" class="todo"><title>0x00483860 mGetAngle (122 bytes)</title></rect>
 <rect width="6.65" height="6.40" x="564.28" y="292.40" class="named"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
 <rect width="6.65" height="6.40" x="564.28" y="301.80" class="todo"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
-<rect width="6.65" height="6.40" x="564.28" y="311.19" class="todo"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
+<rect width="6.65" height="6.40" x="564.28" y="311.19" class="named"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="320.59" class="todo"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="329.93" class="named"><title>0x0043fb90 lara_as_hang2 (120 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="339.27" class="named"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>

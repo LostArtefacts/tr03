@@ -79,6 +79,21 @@ void HWR_EnablePerspCorrect(bool enable)
     }
 }
 
+void HWR_EnableFilter(bool enable)
+{
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+        if (enable) {
+            if (!GtFilterEnabled) {
+                GtFilterEnabled = true;
+                SetRenderState(D3DRENDERSTATE_TEXTUREMIN, D3DFILTER_MIPNEAREST);
+            }
+        } else if (GtFilterEnabled) {
+            GtFilterEnabled = false;
+            SetRenderState(D3DRENDERSTATE_TEXTUREMIN, D3DFILTER_NEAREST);
+        }
+    }
+}
+
 void HWR_EnableAlphaBlend(bool enable)
 {
     if (enable) {
