@@ -123,7 +123,6 @@ void LaserSplitterToggle(ITEM_INFO *item)
     }
 }
 
-
 extern sint32 level_items;
 
 void S_DrawLaser(ITEM_INFO *item)
