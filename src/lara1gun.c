@@ -221,6 +221,95 @@ void FireHarpoon(void)
     }
 }
 
+void phd_PushMatrix(void);
+void phd_PushUnitMatrix(void);
+void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
+void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+void TriggerRocketFlame(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 item_no);
+
+void FireRocket(void)
+{
+    sint16 item_number, lp;
+    ITEM_INFO *item;
+    PHD_VECTOR pos;
+    sint32 x, y, z, wx, wy, wz, xv, yv, zv;
+
+    if (lara.rocket.ammo <= 0)
+        return;
+
+    lara.has_fired = 1;
+
+    item_number = CreateItem();
+    if (item_number != NO_ITEM) {
+        item = &items[item_number];
+
+        item->object_number = 309;
+        item->room_number = lara_item->room_number;
+        pos.x = 0;
+        pos.y = 180;
+        pos.z = 72;
+
+        GetLaraHandAbsPosition(&pos, 1);
+        item->pos.x_pos = x = pos.x;
+        item->pos.y_pos = y = pos.y;
+        item->pos.z_pos = z = pos.z;
+        pos.x = 0;
+        pos.y = 180 + 1024;
+        pos.z = 72;
+        GetLaraHandAbsPosition(&pos, 1);
+
+        SmokeCountL = 32;
+        SmokeWeapon = LG_ROCKET;
+        for (lp = 0; lp < 5; lp++)
+            TriggerGunSmoke(x, y, z, pos.x - x, pos.y - y, pos.z - z, 1, LG_ROCKET, 32);
+
+        InitialiseItem(item_number);
+
+        item->pos.x_rot = lara_item->pos.x_rot + lara.left_arm.x_rot;
+        item->pos.y_rot = lara_item->pos.y_rot + lara.left_arm.y_rot;
+        item->pos.z_rot = 0;
+
+        if (!lara.left_arm.lock) {
+            item->pos.x_rot += lara.torso_x_rot;
+            item->pos.y_rot += lara.torso_y_rot;
+        }
+
+        item->speed = 512 >> 5;
+        item->item_flags[0] = 0;
+
+        AddActiveItem(item_number);
+
+        if (!savegame.bonus_flag)
+            lara.rocket.ammo--;
+        savegame.ammo_used++;
+
+        phd_PushUnitMatrix();
+        phd_mxptr[3] = 0;
+        phd_mxptr[7] = 0;
+        phd_mxptr[11] = 0;
+        phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+        phd_PushMatrix();
+        phd_TranslateRel(0, 0, -128);
+        wx = phd_mxptr[3] >> W2V_SHIFT;
+        wy = phd_mxptr[7] >> W2V_SHIFT;
+        wz = phd_mxptr[11] >> W2V_SHIFT;
+        phd_PopMatrix();
+
+        for (lp = 0; lp < 8; lp++) {
+            phd_PushMatrix();
+            phd_TranslateRel(0, 0, -(GetRandomControl() & 2047));
+            xv = phd_mxptr[3] >> W2V_SHIFT;
+            yv = phd_mxptr[7] >> W2V_SHIFT;
+            zv = phd_mxptr[11] >> W2V_SHIFT;
+            phd_PopMatrix();
+            TriggerRocketFlame(wx, wy, wz, xv - wx, yv - wy, zv - wz, item_number);
+        }
+        phd_PopMatrix();
+
+        SoundEffect(105, &lara_item->pos, 0x2000004);
+    }
+}
+
 void FireGrenade(void)
 {
     sint16 item_number, lp;
