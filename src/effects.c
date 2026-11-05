@@ -1,5 +1,4 @@
 #include "game.h"
-#include <stdlib.h>
 
 #define FLIPFLAG 64
 #define UNFLIPFLAG 128

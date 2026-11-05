@@ -1,5 +1,4 @@
 #include "game.h"
-#include <stdlib.h>
 
 extern sint32 level_items;
 extern PHD_VECTOR TrigDynamics[3];

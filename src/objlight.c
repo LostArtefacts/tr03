@@ -1,5 +1,4 @@
 #include "game.h"
-#include <stdlib.h>
 
 extern sint16 rcossin_tbl[];
 

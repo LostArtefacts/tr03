@@ -1,5 +1,4 @@
 #include "game.h"
-#include <stdlib.h>
 
 #define SS_OFF 0
 #define SS_ON 1

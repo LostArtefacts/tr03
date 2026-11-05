@@ -1,5 +1,4 @@
 #include "game.h"
-#include <string.h>
 
 extern int IM_rate, IM_frac;
 extern sint32 *IMptr;
