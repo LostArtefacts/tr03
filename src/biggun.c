@@ -8,6 +8,88 @@ typedef struct {
     char FireCount;
 } BIGGUNINFO;
 
+extern sint32 SmokeCountL;
+extern sint32 SmokeWeapon;
+
+void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 initial, sint32 weapon, sint32 count);
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+void phd_PushMatrix(void);
+void phd_PushUnitMatrix(void);
+void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
+void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+void TriggerRocketFlame(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 item_no);
+
+void FireBigGun(ITEM_INFO *v)
+{
+    sint16 item_number;
+
+    if ((item_number = CreateItem()) != NO_ITEM) {
+        int lp;
+        PHD_VECTOR pos;
+        ITEM_INFO *item;
+        long wx, wy, wz, xv, yv, zv;
+        BIGGUNINFO *gun = (BIGGUNINFO *)v->data;
+
+        item = &items[item_number];
+
+        item->object_number = 309;
+        item->room_number = lara_item->room_number;
+
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 256;
+        GetJointAbsPosition(v, &pos, 2);
+
+        item->pos.x_pos = pos.x;
+        item->pos.y_pos = pos.y;
+        item->pos.z_pos = pos.z;
+
+        InitialiseItem(item_number);
+
+        item->pos.x_rot = -((gun->RotX - 32) * ONE_DEGREE);
+        item->pos.y_rot = v->pos.y_rot;
+        item->pos.z_rot = 0;
+        item->speed = 512 >> 5;
+        item->item_flags[0] = 1;
+
+        AddActiveItem(item_number);
+
+        SoundEffect(77, &item->pos, 0);
+        SoundEffect(105, &item->pos, 0x2000004);
+
+        SmokeCountL = 32;
+        SmokeWeapon = LG_ROCKET;
+
+        for (lp = 0; lp < 5; lp++) {
+            TriggerGunSmoke(pos.x, pos.y, pos.z, 0, 0, 0, 1, LG_ROCKET, 32);
+        }
+
+        phd_PushUnitMatrix();
+        phd_mxptr[3] = 0;
+        phd_mxptr[7] = 0;
+        phd_mxptr[11] = 0;
+        phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+        phd_PushMatrix();
+        phd_TranslateRel(0, 0, -128);
+        wx = phd_mxptr[3] >> W2V_SHIFT;
+        wy = phd_mxptr[7] >> W2V_SHIFT;
+        wz = phd_mxptr[11] >> W2V_SHIFT;
+        phd_PopMatrix();
+
+        for (lp = 0; lp < 8; lp++) {
+            phd_PushMatrix();
+            phd_TranslateRel(0, 0, -(GetRandomControl() & 2047));
+            xv = phd_mxptr[3] >> W2V_SHIFT;
+            yv = phd_mxptr[7] >> W2V_SHIFT;
+            zv = phd_mxptr[11] >> W2V_SHIFT;
+            phd_PopMatrix();
+            TriggerRocketFlame(wx, wy, wz, xv - wx, yv - wy, zv - wz, item_number);
+        }
+        phd_PopMatrix();
+    }
+}
+
 void BigGunInitialise(sint16 item_number)
 {
     ITEM_INFO *v;
