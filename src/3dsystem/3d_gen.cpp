@@ -147,4 +147,13 @@ void AlterFOV(PHD_ANGLE fov)
     InitZTable();
 }
 
+void SetZNear(int nNewZNear)
+{
+    phd_znear = nNewZNear;
+    f_znear = float(phd_znear);
+    f_oneoznear = one / f_znear;
+    f_perspoznear = f_persp / f_znear;
+    SetupZRange();
+}
+
 }
