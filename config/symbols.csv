@@ -2083,6 +2083,7 @@ address,size,name,symbol
 0x00625850,,v_buffer,_v_buffer
 0x00625df0,4,GlobalAlpha,_GlobalAlpha
 0x00625f1c,1,strut_fall,_strut_fall
+0x00625f20,4,GunRotYAdd,_GunRotYAdd
 0x00625f3c,1,camerasnaps,_camerasnaps
 0x00625f40,2,cinematic_level,_cinematic_level
 0x00625f44,4,actual_current_frame,_actual_current_frame

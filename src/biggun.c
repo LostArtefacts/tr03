@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "game.h"
 
 typedef struct {
@@ -233,4 +234,128 @@ void BigGunDraw(ITEM_INFO *v)
         }
     }
     phd_PopMatrix();
+}
+
+extern sint32 GunRotYAdd;
+extern sint32 wibble;
+
+void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll);
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+int BigGunControl(COLL_INFO *coll)
+{
+    BIGGUNINFO *gun;
+    ITEM_INFO *v, *l;
+
+    l = lara_item;
+    v = &items[lara.skidoo];
+    gun = (BIGGUNINFO *)v->data;
+
+    if (gun->Flags & 1) {
+        if (l->hit_points <= 0 || (input & IN_ROLL)) {
+            gun->Flags = 2;
+        } else if ((input & IN_ACTION) && gun->FireCount == 0) {
+            FireBigGun(v);
+            gun->FireCount = 26;
+        } else {
+            if (input & IN_LEFT) {
+                if (GunRotYAdd > 0) {
+                    GunRotYAdd >>= 1;
+                }
+                GunRotYAdd -= 8;
+                if (GunRotYAdd < -64) {
+                    GunRotYAdd = -64;
+                }
+                if ((wibble & 7) == 0 && abs(gun->RotY) < (136 << 2)) {
+                    SoundEffect(44, &v->pos, 0);
+                }
+            } else if (input & IN_RIGHT) {
+                if (GunRotYAdd < 0) {
+                    GunRotYAdd >>= 1;
+                }
+                GunRotYAdd += 8;
+                if (GunRotYAdd > 64) {
+                    GunRotYAdd = 64;
+                }
+                if ((wibble & 7) == 0 && abs(gun->RotY) < (136 << 2)) {
+                    SoundEffect(44, &v->pos, 0);
+                }
+            } else {
+                GunRotYAdd -= GunRotYAdd >> 2;
+                if (abs(GunRotYAdd) < 8) {
+                    GunRotYAdd = 0;
+                }
+            }
+
+            gun->RotY += GunRotYAdd >> 2;
+            if (gun->RotY < -(136 << 2)) {
+                gun->RotY = -(136 << 2);
+                GunRotYAdd = 0;
+            } else if (gun->RotY > (136 << 2)) {
+                gun->RotY = 136 << 2;
+                GunRotYAdd = 0;
+            }
+
+            if ((input & IN_FORWARD) && gun->RotX < 59) {
+                gun->RotX++;
+            } else if ((input & IN_BACK) && gun->RotX) {
+                gun->RotX--;
+            }
+        }
+    }
+
+    if (gun->Flags & 2) {
+        if (gun->RotX < 30) {
+            gun->RotX++;
+        } else if (gun->RotX > 30) {
+            gun->RotX--;
+        } else {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 1;
+            l->frame_number = anims[objects[BIGGUN].anim_index + 1].frame_base;
+            l->current_anim_state = l->goal_anim_state = 1;
+            gun->Flags = 4;
+        }
+    }
+
+    switch (l->current_anim_state) {
+    case 0:
+    case 1:
+        AnimateItem(l);
+        v->anim_number = objects[BIGGUN].anim_index + (l->anim_number - objects[VEHICLE_ANIM].anim_index);
+        v->frame_number = anims[v->anim_number].frame_base + (l->frame_number - anims[l->anim_number].frame_base);
+
+        if ((gun->Flags & 4) && l->frame_number == anims[l->anim_number].frame_end) {
+            l->anim_number = 11;
+            l->frame_number = anims[11].frame_base;
+            l->current_anim_state = l->goal_anim_state = AS_STOP;
+            lara.skidoo = NO_ITEM;
+            lara.gun_status = LG_ARMLESS;
+        }
+        break;
+
+    case 2:
+        l->anim_number = objects[VEHICLE_ANIM].anim_index + 2;
+        l->frame_number = anims[objects[BIGGUN].anim_index + 2].frame_base + gun->RotX;
+
+        v->anim_number = objects[BIGGUN].anim_index + (l->anim_number - objects[VEHICLE_ANIM].anim_index);
+        v->frame_number = anims[v->anim_number].frame_base + (l->frame_number - anims[l->anim_number].frame_base);
+
+        if (gun->FireCount) {
+            gun->FireCount--;
+        }
+
+        gun->Flags = 1;
+        break;
+    }
+
+    l->pos.y_rot = v->pos.y_rot = gun->RotY * (ONE_DEGREE >> 2) + gun->StartRotY;
+
+    coll->enable_hit = 0;
+    coll->enable_baddie_push = 0;
+    LaraBaddieCollision(l, coll);
+
+    camera.target_elevation = -15 * ONE_DEGREE;
+    return 1;
 }
