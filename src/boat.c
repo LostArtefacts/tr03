@@ -95,6 +95,90 @@ void BoatCollision(sint16 item_number, ITEM_INFO *litem, COLL_INFO *coll)
     S_CDPlay(12, 0);
 }
 
+void LookUpDown(void);
+
+int BoatUserControl(ITEM_INFO *boat)
+{
+    int no_turn = 1, max_speed;
+    BOAT_INFO *binfo;
+
+    binfo = (BOAT_INFO *)boat->data;
+
+    if (boat->pos.y_pos >= binfo->water - 128 && binfo->water != NO_HEIGHT) {
+        if ((!(input & IN_ROLL) && !(input & IN_LOOK)) || boat->speed) {
+            if (((input & (IN_LEFT | IN_STEPL)) && !(input & IN_JUMP))
+                || ((input & (IN_RIGHT | IN_STEPR)) && (input & IN_JUMP))) {
+                if (binfo->boat_turn > 0) {
+                    binfo->boat_turn -= 45;
+                } else {
+                    binfo->boat_turn -= 22;
+                    if (binfo->boat_turn < -728) {
+                        binfo->boat_turn = -728;
+                    }
+                }
+                no_turn = 0;
+            } else if (((input & (IN_RIGHT | IN_STEPR)) && !(input & IN_JUMP))
+                || ((input & (IN_LEFT | IN_STEPL)) && (input & IN_JUMP))) {
+                if (binfo->boat_turn < 0) {
+                    binfo->boat_turn += 45;
+                } else {
+                    binfo->boat_turn += 22;
+                    if (binfo->boat_turn > 728) {
+                        binfo->boat_turn = 728;
+                    }
+                }
+                no_turn = 0;
+            }
+
+            if (input & IN_JUMP) {
+                if (boat->speed > 0) {
+                    boat->speed -= 5;
+                } else if (boat->speed > -20) {
+                    boat->speed += -2;
+                }
+            } else if (input & IN_ACTION) {
+                if (input & (IN_DASH | IN_DUCK)) {
+                    max_speed = 185;
+                } else {
+                    max_speed = (input & IN_SLOW) ? 36 : 110;
+                }
+
+                if (boat->speed < max_speed) {
+                    boat->speed += 5 / 2 + 5 * boat->speed / (2 * max_speed);
+                } else if (boat->speed > max_speed + 1) {
+                    boat->speed -= 1;
+                }
+            } else if (boat->speed >= 0 && boat->speed < 20
+                && (input & (IN_LEFT | IN_STEPL | IN_RIGHT | IN_STEPR))) {
+                if (boat->speed == 0 && !(input & IN_ROLL)) {
+                    boat->speed = 20;
+                }
+            } else if (boat->speed > 1) {
+                boat->speed -= 1;
+            } else {
+                boat->speed = 0;
+            }
+        } else {
+            if (boat->speed >= 0 && boat->speed < 20
+                && (input & (IN_LEFT | IN_STEPL | IN_RIGHT | IN_STEPR))) {
+                if (boat->speed == 0 && !(input & IN_ROLL)) {
+                    boat->speed = 20;
+                }
+            } else if (boat->speed > 1) {
+                boat->speed -= 1;
+            } else {
+                boat->speed = 0;
+            }
+
+            if ((input & IN_LOOK) && boat->speed == 0) {
+                LookUpDown();
+            }
+        }
+    }
+
+    return no_turn;
+}
+
 int DoBoatDynamics(int height, int fallspeed, int *y)
 {
     if (height > *y)
