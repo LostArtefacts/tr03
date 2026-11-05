@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="300.93" height="12" x="0" y="0" class="named"><title>1059 · 71.65%</title></rect>
-<rect width="1.99" height="12" x="300.93" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="117.08" height="12" x="302.92" y="0" class="todo"><title>412 · 27.88%</title></rect>
+<rect width="301.22" height="12" x="0" y="0" class="named"><title>1060 · 71.72%</title></rect>
+<rect width="1.99" height="12" x="301.22" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="116.79" height="12" x="303.21" y="0" class="todo"><title>411 · 27.81%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">71.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1059</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">412</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1060</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">411</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.51" height="12" x="0" y="0" class="named"><title>306 KB · 45.84%</title></rect>
-<rect width="3.79" height="12" x="192.51" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.70" height="12" x="196.30" y="0" class="todo"><title>356 KB · 53.26%</title></rect>
+<rect width="192.54" height="12" x="0" y="0" class="named"><title>306 KB · 45.84%</title></rect>
+<rect width="3.79" height="12" x="192.54" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.66" height="12" x="196.34" y="0" class="todo"><title>356 KB · 53.25%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
@@ -1131,7 +1131,7 @@
 <rect width="12" height="12" x="210" y="315" class="todo"><title>0x00474d70 ACMHandleNotifications (988 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="315" class="todo"><title>0x00475160 ACMSetupNotifications (214 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="315" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="315" class="todo"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="315" class="named"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="315" class="todo"><title>0x004752d0 Func4752d0 (18 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="315" class="todo"><title>0x004752f0 Func4752f0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="315" class="todo"><title>0x00475380 Func475380 (57 bytes)</title></rect>
@@ -2762,7 +2762,7 @@
 <rect width="4.31" height="4.07" x="706.12" y="347.10" class="named"><title>0x0043de00 GetLaraCollisionInfo (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="713.43" y="347.10" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="720.75" y="347.10" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
-<rect width="4.31" height="4.07" x="728.06" y="347.10" class="todo"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
+<rect width="4.31" height="4.07" x="728.06" y="347.10" class="named"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="735.37" y="347.10" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
 <rect width="4.31" height="4.07" x="742.69" y="347.10" class="todo"><title>0x0048e8f0 Func48e8f0 (50 bytes)</title></rect>
 <rect width="3.85" height="4.46" x="647.10" y="354.17" class="named"><title>0x004293f0 phd_RotY_I (49 bytes)</title></rect>

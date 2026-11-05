@@ -38,4 +38,11 @@ int ACMGetTrackLocation(void)
     return (int)(60.0f * ((float)(timeGetTime() - acm_start_time) * 0.001f));
 }
 
+void ACMSetVolume(int volume)
+{
+    acm_volume = (int)(((float)volume * 1.5625f - 400.0f) * 6.0f);
+    if (DSBuffer)
+        DSBuffer->SetVolume(acm_volume);
+}
+
 }
