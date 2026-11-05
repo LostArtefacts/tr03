@@ -200,7 +200,7 @@ address,size,name,symbol
 0x0041f430,395,MoveLaraPosition,_MoveLaraPosition
 0x0041f5c0,366,Move3DPosTo3DPos,_Move3DPosTo3DPos
 0x0041f730,24,InitialiseCompy,_InitialiseCompy
-0x0041f750,1489,CompyControl,_CompyControl
+0x0041f750,1524,CompyControl,_CompyControl
 0x0041fd50,587,CarcassControl,_CarcassControl
 0x0041ffa0,1516,ControlPhase,_ControlPhase
 0x00420590,931,AnimateItem,_AnimateItem
@@ -1844,6 +1844,7 @@ address,size,name,symbol
 0x004c51a0,16,seal_gas_boomute,_seal_gas_boomute
 0x004c51b4,4,cine_delay,_cine_delay
 0x004c51d8,16,cobra_hit,_cobra_hit
+0x004c51e8,16,compy_hit,_compy_hit
 0x004c51f8,2,cdtrack,_cdtrack
 0x004c5200,4,flipeffect,_flipeffect
 0x004c5258,16,croc_bite,_croc_bite
