@@ -11,6 +11,82 @@ int TestLaraPosition(sint16 *bounds, ITEM_INFO *item, ITEM_INFO *laraitem);
 int MoveLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
 void AnimateLara(ITEM_INFO *item);
 
+extern sint16 Switch1Bounds[];
+extern PHD_VECTOR SmallSwitchPosition;
+extern PHD_VECTOR PushSwitchPosition;
+extern PHD_VECTOR AirlockPosition;
+
+void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
+
+void SwitchCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_num];
+
+    if (!(input & IN_ACTION) || item->status != NOT_ACTIVE || (item->flags & ONESHOT) || lara.gun_status != LG_ARMLESS ||
+        laraitem->gravity_status || laraitem->current_anim_state != AS_STOP || laraitem->anim_number != 103 ||
+        !TestLaraPosition(Switch1Bounds, item, laraitem))
+        return;
+
+    lara.head_x_rot = lara.head_y_rot = 0;
+    lara.torso_x_rot = lara.torso_y_rot = 0;
+    laraitem->pos.y_rot = item->pos.y_rot;
+
+    if (item->object_number == 118)
+        AlignLaraPosition(&SmallSwitchPosition, item, laraitem);
+    else if (item->object_number == 128)
+        AlignLaraPosition(&PushSwitchPosition, item, laraitem);
+    else if (item->object_number == 117)
+        AlignLaraPosition(&AirlockPosition, item, laraitem);
+
+    if (item->current_anim_state == SS_ON) {
+        laraitem->current_anim_state = AS_SWITCHON;
+        if (item->object_number == 118) {
+            laraitem->anim_number = objects[LARA].anim_index + 195;
+        } else if (item->object_number == 128) {
+            laraitem->anim_number = objects[LARA].anim_index + 197;
+        } else if (item->object_number == 117) {
+            laraitem->anim_number = objects[13].anim_index;
+            laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+            laraitem->current_anim_state = 0;
+            laraitem->goal_anim_state = 4;
+            AnimateItem(laraitem);
+            lara.extra_anim = 1;
+        } else {
+            laraitem->anim_number = objects[LARA].anim_index + 63;
+        }
+        item->goal_anim_state = SS_OFF;
+    } else {
+        laraitem->current_anim_state = AS_SWITCHOFF;
+        if (item->object_number == 118) {
+            laraitem->anim_number = objects[LARA].anim_index + 196;
+        } else if (item->object_number == 128) {
+            laraitem->anim_number = objects[LARA].anim_index + 197;
+        } else if (item->object_number == 117) {
+            laraitem->anim_number = objects[13].anim_index;
+            laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+            laraitem->current_anim_state = 0;
+            laraitem->goal_anim_state = 4;
+            AnimateItem(laraitem);
+            lara.extra_anim = 1;
+        } else {
+            laraitem->anim_number = objects[LARA].anim_index + 64;
+        }
+        item->goal_anim_state = SS_ON;
+    }
+
+    if (!lara.extra_anim) {
+        laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+        laraitem->goal_anim_state = AS_STOP;
+    }
+
+    lara.gun_status = LG_HANDSBUSY;
+    item->status = ACTIVE;
+    AddActiveItem(item_num);
+    AnimateItem(item);
+}
+
 void SwitchCollision2(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 {
     ITEM_INFO *item;
@@ -49,7 +125,6 @@ extern sint32 pup_x, pup_y, pup_z;
 extern sint16 Inventory_Chosen;
 sint32 Display_Inventory(sint32 inventory_mode);
 int Inv_RemoveItem(int itemNum);
-void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
 
 void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
 {

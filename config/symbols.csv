@@ -1948,6 +1948,10 @@ address,size,name,symbol
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
 0x004c7908,24,PickUpBounds,_PickUpBounds
+0x004c7958,24,Switch1Bounds,_Switch1Bounds
+0x004c7970,12,SmallSwitchPosition,_SmallSwitchPosition
+0x004c7980,12,PushSwitchPosition,_PushSwitchPosition
+0x004c7990,12,AirlockPosition,_AirlockPosition
 0x004c79a0,24,Switch2Bounds,_Switch2Bounds
 0x004c79b8,12,Switch2Position,_Switch2Position
 0x004c79c8,24,KeyHoleBounds,_KeyHoleBounds
