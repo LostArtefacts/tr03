@@ -108,3 +108,66 @@ void TriggerLaserBolt(PHD_VECTOR *pos, ITEM_INFO *item, sint32 type, sint16 yang
         AddActiveItem(item_number);
     }
 }
+
+typedef struct {
+    sint16 x;
+    sint16 z;
+    sint32 rgb;
+} EXPLOSION_VERTS;
+
+typedef struct {
+    sint16 on;
+    sint16 life;
+    sint16 speed;
+    sint16 radius;
+    sint16 xrot;
+    sint16 zrot;
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    EXPLOSION_VERTS verts[16];
+} EXPLOSION_RING;
+
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+void TriggerPlasmaBall_londboss(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos, sint16 room_number, sint16 angle);
+
+sint32 KnockBackCollision(EXPLOSION_RING *erptr)
+{
+    int radius, x, z, dist;
+    sint16 angle, diff;
+
+    radius = erptr->radius;
+    x = lara_item->pos.x_pos - erptr->x;
+    z = lara_item->pos.z_pos - erptr->z;
+    if (x > 16000 || x < -16000 || z > 16000 || z < -16000)
+        dist = 0x7fff;
+    else
+        dist = x * x + z * z;
+    if (dist < radius * radius) {
+        lara_item->hit_points -= 200;
+        lara_item->hit_status = 1;
+        angle = phd_atan(z, x);
+        diff = lara_item->pos.y_rot - angle;
+        if (ABS(diff) < 0x4000) {
+            lara_item->speed = 75;
+            lara_item->pos.y_rot = angle;
+        } else {
+            lara_item->pos.y_rot = (sint16)(angle - 0x8000);
+            lara_item->speed = -75;
+        }
+        lara_item->gravity_status = 1;
+        lara_item->fallspeed = -50;
+        lara_item->pos.x_rot = lara_item->pos.z_rot = 0;
+        lara_item->anim_number = FALLDOWN_A;
+        lara_item->frame_number = FALLDOWN_F;
+        lara_item->current_anim_state = AS_FORWARDJUMP;
+        lara_item->goal_anim_state = AS_FORWARDJUMP;
+        TriggerExplosionSparks(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos, 3, -2, 2,
+                               lara_item->room_number);
+        for (x = 0; x < 3; x++)
+            TriggerPlasmaBall_londboss(lara_item, 2, (PHD_VECTOR *)&lara_item->pos, lara_item->room_number,
+                                       GetRandomControl() << 1);
+        return 1;
+    }
+    return 0;
+}
