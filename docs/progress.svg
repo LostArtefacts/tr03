@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="238.66" height="12" x="0" y="0" class="named"><title>763 · 51.66%</title></rect>
-<rect width="223.34" height="12" x="238.66" y="0" class="todo"><title>714 · 48.34%</title></rect>
+<rect width="238.98" height="12" x="0" y="0" class="named"><title>764 · 51.73%</title></rect>
+<rect width="223.02" height="12" x="238.98" y="0" class="todo"><title>713 · 48.27%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">51.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">763</tspan> · <tspan class="todo">714</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">764</tspan> · <tspan class="todo">713</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="108.56" height="12" x="0" y="0" class="named"><title>156 KB · 23.50%</title></rect>
-<rect width="353.44" height="12" x="108.56" y="0" class="todo"><title>509 KB · 76.50%</title></rect>
+<rect width="108.90" height="12" x="0" y="0" class="named"><title>157 KB · 23.57%</title></rect>
+<rect width="353.10" height="12" x="108.90" y="0" class="todo"><title>509 KB · 76.43%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">23.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">156 KB</tspan> · <tspan class="todo">509 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">23.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">157 KB</tspan> · <tspan class="todo">509 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -298,7 +298,7 @@
 <rect width="12" height="12" x="495" y="60" class="named"><title>0x004239a0 DiverControl (844 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="60" class="named"><title>0x00423cf0 Harpoon (122 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="60" class="named"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="60" class="todo"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="60" class="named"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="60" class="named"><title>0x00424070 InitialiseDog (76 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="60" class="todo"><title>0x004240c0 DogControl (1382 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="60" class="named"><title>0x00424660 ControlFlameThrower (458 bytes)</title></rect>
@@ -1913,7 +1913,7 @@
 <rect width="13.23" height="12.84" x="399.44" y="308.11" class="todo"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
 <rect width="13.23" height="12.84" x="399.44" y="323.95" class="named"><title>0x0044bd90 CreateFlare (482 bytes)</title></rect>
 <rect width="13.23" height="12.81" x="399.44" y="339.79" class="named"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
-<rect width="13.23" height="12.81" x="399.44" y="355.60" class="todo"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
+<rect width="13.23" height="12.81" x="399.44" y="355.60" class="named"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="13.23" height="12.81" x="399.44" y="371.42" class="todo"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
 <rect width="13.23" height="12.73" x="399.44" y="387.23" class="todo"><title>0x00495cf0 Func495cf0 (478 bytes)</title></rect>
 <rect width="13.23" height="12.71" x="399.44" y="402.96" class="named"><title>0x0042fe30 TriggerFireHeadFlame (477 bytes)</title></rect>

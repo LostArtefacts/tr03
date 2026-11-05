@@ -209,3 +209,61 @@ void DiverControl(sint16 item_number)
         item->pos.y_pos = water_level - 512;
     }
 }
+
+sint32 GetFreeSpark(void);
+extern sint32 wibble;
+
+void ControlGhostGasEmitter(sint16 item_number)
+{
+    ITEM_INFO *item;
+    SPARKS *sptr;
+    sint32 size;
+    sint32 dx, dz;
+
+    item = &items[item_number];
+    if (!TriggerActive(item) || (wibble & 15))
+        return;
+    dx = lara_item->pos.x_pos - item->pos.x_pos;
+    dz = lara_item->pos.z_pos - item->pos.z_pos;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    sptr->dR = 12;
+    sptr->dG = 32;
+    sptr->dB = 0;
+    sptr->ColFadeSpeed = 24 + (GetRandomControl() & 7);
+    sptr->FadeToBlack = 32;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 7) + 64;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = item->pos.x_pos + ((GetRandomControl() & 511) - 256);
+    sptr->y = item->pos.y_pos - 256 - ((GetRandomControl() & 15) + 8);
+    sptr->z = item->pos.z_pos + ((GetRandomControl() & 1023) - 512);
+    sptr->Xvel = (GetRandomControl() & 255) - 128;
+    sptr->Yvel = -(GetRandomControl() & 1) - 1;
+    sptr->Zvel = (GetRandomControl() & 255) - 128;
+    sptr->Friction = 4;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 7) - 4;
+        else
+            sptr->RotAdd = (GetRandomControl() & 7) + 4;
+    } else
+        sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = sptr->MaxYvel = 0;
+    size = (GetRandomControl() & 31) + 96;
+    sptr->Width = sptr->sWidth = size >> 1;
+    sptr->dWidth = size >> 1;
+    size += (GetRandomControl() & 31) + 32;
+    sptr->Height = sptr->sHeight = size >> 1;
+    sptr->dHeight = size >> 1;
+}
