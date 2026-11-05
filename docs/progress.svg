@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="202.34" height="12" x="0" y="0" class="named"><title>639 · 43.23%</title></rect>
-<rect width="265.66" height="12" x="202.34" y="0" class="todo"><title>839 · 56.77%</title></rect>
+<rect width="202.65" height="12" x="0" y="0" class="named"><title>640 · 43.30%</title></rect>
+<rect width="265.35" height="12" x="202.65" y="0" class="todo"><title>838 · 56.70%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">43.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">639</tspan> · <tspan class="todo">839</tspan></text>
+<text text-anchor="end" x="648" y="7.50">43.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">640</tspan> · <tspan class="todo">838</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="66.62" height="12" x="0" y="0" class="named"><title>95 KB · 14.23%</title></rect>
-<rect width="401.38" height="12" x="66.62" y="0" class="todo"><title>570 KB · 85.77%</title></rect>
+<rect width="66.81" height="12" x="0" y="0" class="named"><title>95 KB · 14.28%</title></rect>
+<rect width="401.19" height="12" x="66.81" y="0" class="todo"><title>570 KB · 85.72%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">14.2%</text>
+<text text-anchor="end" x="648" y="24.50">14.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">95 KB</tspan> · <tspan class="todo">570 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -351,7 +351,7 @@
 <rect width="12" height="12" x="540" y="75" class="named"><title>0x0042bda0 TriggerAlertLight (163 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="75" class="todo"><title>0x0042be50 TriggerGunShell (816 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="75" class="todo"><title>0x0042c1a0 ControlGunShell (598 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="75" class="todo"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="75" class="named"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="75" class="todo"><title>0x0042c510 TriggerRocketFlame (341 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="75" class="todo"><title>0x0042c670 TriggerRocketSmoke (366 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="75" class="todo"><title>0x0042c7e0 TriggerBlood (366 bytes)</title></rect>
@@ -2117,7 +2117,7 @@
 <rect width="9.65" height="10.05" x="575.40" y="173.86" class="todo"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
 <rect width="9.61" height="10.05" x="588.05" y="173.86" class="todo"><title>0x004842f0 DisplayCredits (274 bytes)</title></rect>
 <rect width="9.54" height="10.05" x="600.66" y="173.86" class="todo"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
-<rect width="9.54" height="10.05" x="613.20" y="173.86" class="todo"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
+<rect width="9.54" height="10.05" x="613.20" y="173.86" class="named"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
 <rect width="9.54" height="10.05" x="625.74" y="173.86" class="named"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="9.51" height="10.05" x="638.29" y="173.86" class="named"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="9.47" height="10.05" x="650.79" y="173.86" class="todo"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>

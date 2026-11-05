@@ -160,6 +160,39 @@ void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 
         TriggerDynamic(target.x, target.y, target.z, 8, r, g, b);
 }
 
+void TriggerShotgunSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv)
+{
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 255;
+    sptr->sG = 255;
+    sptr->sB = 0;
+    sptr->dR = 255;
+    sptr->dG = (GetRandomControl() & 127) + 64;
+    sptr->dB = 0;
+    sptr->ColFadeSpeed = 3;
+    sptr->FadeToBlack = 5;
+    sptr->sLife = sptr->Life = 10;
+    sptr->TransType = 2;
+    sptr->Dynamic = -1;
+    sptr->x = x + (GetRandomControl() & 7) - 3;
+    sptr->y = y + (GetRandomControl() & 7) - 3;
+    sptr->z = z + (GetRandomControl() & 7) - 3;
+    sptr->Xvel = xv + ((GetRandomControl() & 511) - 256);
+    sptr->Yvel = yv + ((GetRandomControl() & 511) - 256);
+    sptr->Zvel = zv + ((GetRandomControl() & 511) - 256);
+    sptr->Friction = 0;
+    sptr->Flags = 2;
+    sptr->Scalar = 2;
+    sptr->Width = sptr->sWidth = (GetRandomControl() & 3) + 4;
+    sptr->dWidth = 1;
+    sptr->Height = sptr->sHeight = (GetRandomControl() & 3) + 4;
+    sptr->dHeight = 1;
+    sptr->Gravity = sptr->MaxYvel = 0;
+}
+
 void TriggerUnderwaterBlood(sint32 x, sint32 y, sint32 z, sint32 size)
 {
     RIPPLE_STRUCT *rptr;
