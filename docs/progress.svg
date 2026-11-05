@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="270.88" height="12" x="0" y="0" class="named"><title>866 · 58.63%</title></rect>
-<rect width="191.12" height="12" x="270.88" y="0" class="todo"><title>611 · 41.37%</title></rect>
+<rect width="271.19" height="12" x="0" y="0" class="named"><title>867 · 58.70%</title></rect>
+<rect width="190.81" height="12" x="271.19" y="0" class="todo"><title>610 · 41.30%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">58.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">866</tspan> · <tspan class="todo">611</tspan></text>
+<text text-anchor="end" x="642" y="7.50">58.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">867</tspan> · <tspan class="todo">610</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="162.62" height="12" x="0" y="0" class="named"><title>235 KB · 35.20%</title></rect>
-<rect width="299.38" height="12" x="162.62" y="0" class="todo"><title>432 KB · 64.80%</title></rect>
+<rect width="163.07" height="12" x="0" y="0" class="named"><title>235 KB · 35.30%</title></rect>
+<rect width="298.93" height="12" x="163.07" y="0" class="todo"><title>431 KB · 64.70%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">35.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">235 KB</tspan> · <tspan class="todo">432 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">35.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">235 KB</tspan> · <tspan class="todo">431 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1108,7 +1108,7 @@
 <rect width="12" height="12" x="645" y="300" class="todo"><title>0x00472000 WillBossControl (3077 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="300" class="named"><title>0x00472ce0 S_DrawWillBoss (58 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="named"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="300" class="todo"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="300" class="named"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="300" class="todo"><title>0x00472fe0 TriggerPlasma_willboss (455 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="300" class="named"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="300" class="named"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
@@ -1801,7 +1801,7 @@
 <rect width="15.54" height="14.59" x="458.88" y="64.67" class="todo"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="15.54" height="14.59" x="477.42" y="64.67" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
 <rect width="15.45" height="14.59" x="495.96" y="64.67" class="named"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
-<rect width="15.40" height="14.59" x="514.41" y="64.67" class="todo"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
+<rect width="15.40" height="14.59" x="514.41" y="64.67" class="named"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
 <rect width="15.35" height="14.59" x="532.81" y="64.67" class="todo"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>
 <rect width="15.35" height="14.59" x="551.16" y="64.67" class="todo"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
 <rect width="15.30" height="14.59" x="569.51" y="64.67" class="named"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>

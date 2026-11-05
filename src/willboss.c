@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 
 #define NO_AI_PATH -1
@@ -20,6 +21,117 @@ void InitialiseWillBoss(sint16 item_number)
     closest_ai_path = NO_AI_PATH;
     items[item_number].item_flags[1] = 0;
     bossdata.dead = bossdata.dropped_icon = bossdata.explode_count = 0;
+}
+
+typedef struct {
+    sint16 x;
+    sint16 y;
+    sint16 z;
+    uint8 rsub;
+    uint8 gsub;
+    uint8 bsub;
+    uint8 pad[3];
+    sint32 rgb;
+} SHIELD_POINTS;
+
+typedef struct {
+    sint16 x;
+    sint16 z;
+    sint32 rgb;
+} EXPLOSION_VERTS;
+
+typedef struct {
+    sint16 on;
+    sint16 life;
+    sint16 speed;
+    sint16 radius;
+    sint16 xrot;
+    sint16 zrot;
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    EXPLOSION_VERTS verts[16];
+} EXPLOSION_RING;
+
+extern sint16 rcossin_tbl[];
+extern SHIELD_POINTS WillBossShield[40];
+extern EXPLOSION_RING ExpRings[];
+extern sint32 death_radii_willboss[5];
+extern sint32 death_heights_willboss[5];
+extern sint32 dradii_willboss[5];
+extern sint32 dheights1_willboss[5];
+extern sint32 dheights2_willboss[5];
+extern sint32 wibble;
+
+void TriggerPlasmaBall_willboss(PHD_VECTOR *pos, sint16 room_number, sint16 angle, sint16 type);
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+
+void ExplodeWillBoss(ITEM_INFO *item)
+{
+    SHIELD_POINTS *shptr;
+    sint32 lp, lp1, angle, y, r, g, b;
+    sint32 x, z;
+
+    if (bossdata.explode_count == 1 || bossdata.explode_count == 15 || bossdata.explode_count == 25 ||
+        bossdata.explode_count == 35 || bossdata.explode_count == 45 || bossdata.explode_count == 55) {
+        x = item->pos.x_pos + ((GetRandomDraw() & 1023) - 512);
+        y = item->pos.y_pos - (GetRandomDraw() & 1023) - 256;
+        z = item->pos.z_pos + ((GetRandomDraw() & 1023) - 512);
+
+        ExpRings[bossdata.ring_count].x = x;
+        ExpRings[bossdata.ring_count].y = y;
+        ExpRings[bossdata.ring_count].z = z;
+        ExpRings[bossdata.ring_count].on = 1;
+        bossdata.ring_count++;
+
+        for (x = 0; x < 24; x += 3) {
+            PHD_VECTOR pos;
+
+            pos.x = 0;
+            pos.y = 0;
+            pos.z = 0;
+            GetJointAbsPosition(item, &pos, x);
+            TriggerPlasmaBall_willboss(&pos, item->room_number, GetRandomControl() << 1, 4);
+        }
+
+        TriggerExplosionSparks(x, y, z, 3, -2, 2, 0);
+
+        SoundEffect(76, &item->pos, 0x800004);
+    }
+
+    for (lp = 0; lp < 5; lp++) {
+        if (bossdata.explode_count < 128) {
+            death_radii_willboss[lp] = (dradii_willboss[lp] >> 4) + ((dradii_willboss[lp] * bossdata.explode_count) >> 7);
+            death_heights_willboss[lp] = dheights2_willboss[lp] + (((dheights1_willboss[lp] - dheights2_willboss[lp]) * bossdata.explode_count) >> 7);
+        }
+    }
+
+    shptr = &WillBossShield[0];
+
+    for (lp = 0; lp < 5; lp++) {
+        y = death_heights_willboss[lp];
+        angle = (wibble << 3) & 511;
+        for (lp1 = 0; lp1 < 8; lp1++) {
+            shptr->x = (rcossin_tbl[angle << 1] * death_radii_willboss[lp]) >> 11;
+            shptr->y = y;
+            shptr->z = (rcossin_tbl[(angle << 1) + 1] * death_radii_willboss[lp]) >> 11;
+
+            if (lp != 0 && lp != 4 && bossdata.explode_count < 64) {
+                g = (GetRandomDraw() & 31) + 224;
+                b = (g >> 1) + (GetRandomDraw() & 63);
+                r = GetRandomDraw() & 63;
+                r = (r * (64 - bossdata.explode_count)) >> 6;
+                g = (g * (64 - bossdata.explode_count)) >> 6;
+                b = (b * (64 - bossdata.explode_count)) >> 6;
+                shptr->rgb = r | (g << 8) | (b << 16);
+            } else {
+                shptr->rgb = 0;
+            }
+            angle += 512;
+            angle &= 4095;
+            shptr++;
+        }
+    }
 }
 
 sint16 CreateEffect(sint16 room_num);

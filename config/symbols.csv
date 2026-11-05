@@ -1993,6 +1993,9 @@ address,size,name,symbol
 0x004c7ed8,20,dheights2_triboss,_dheights2_triboss
 0x004c7ef0,32,lizman_summon_coords,_lizman_summon_coords
 0x004c7f10,,tribeboss_hit,_tribeboss_hit
+0x004c7f70,20,dradii_willboss,_dradii_willboss
+0x004c7f88,20,dheights1_willboss,_dheights1_willboss
+0x004c7fa0,20,dheights2_willboss,_dheights2_willboss
 0x004c7fb4,4,closest_ai_path,_closest_ai_path
 0x004c7fb8,4,lara_ai_path,_lara_ai_path
 0x004c7fbc,4,lara_junction,_lara_junction
@@ -2197,7 +2200,9 @@ address,size,name,symbol
 0x0062711c,4,clonked,_clonked
 0x00627120,20,death_heights_triboss,_death_heights_triboss
 0x00627138,20,death_radii_triboss,_death_radii_triboss
+0x00627158,20,death_heights_willboss,_death_heights_willboss
 0x00627170,,ai_junction,_ai_junction
+0x006271b8,20,death_radii_willboss,_death_radii_willboss
 0x006271d0,16,junction_index,_junction_index
 0x006271e0,,ai_path,_ai_path
 0x00627314,,acm_start_time,_acm_start_time
