@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="239.29" height="12" x="0" y="0" class="named"><title>765 · 51.79%</title></rect>
-<rect width="222.71" height="12" x="239.29" y="0" class="todo"><title>712 · 48.21%</title></rect>
+<rect width="239.60" height="12" x="0" y="0" class="named"><title>766 · 51.86%</title></rect>
+<rect width="222.40" height="12" x="239.60" y="0" class="todo"><title>711 · 48.14%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">51.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">765</tspan> · <tspan class="todo">712</tspan></text>
+<text text-anchor="end" x="642" y="7.50">51.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">766</tspan> · <tspan class="todo">711</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="109.26" height="12" x="0" y="0" class="named"><title>157 KB · 23.65%</title></rect>
-<rect width="352.74" height="12" x="109.26" y="0" class="todo"><title>508 KB · 76.35%</title></rect>
+<rect width="109.55" height="12" x="0" y="0" class="named"><title>158 KB · 23.71%</title></rect>
+<rect width="352.45" height="12" x="109.55" y="0" class="todo"><title>508 KB · 76.29%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">23.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">157 KB</tspan> · <tspan class="todo">508 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">23.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">158 KB</tspan> · <tspan class="todo">508 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -847,7 +847,7 @@
 <rect width="12" height="12" x="480" y="225" class="todo"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="225" class="todo"><title>0x00451de0 TriggerPlasmaBall_londboss (159 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="225" class="named"><title>0x00451e80 ControlLondBossPlasmaBall (520 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="225" class="todo"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="225" class="named"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="225" class="named"><title>0x00452240 KnockBackCollision (378 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="225" class="todo"><title>0x004523c0 LondSecControl (2811 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="225" class="named"><title>0x00452f10 InitialiseLOTarray (124 bytes)</title></rect>
@@ -1960,7 +1960,7 @@
 <rect width="12.73" height="11.93" x="415.67" y="390.53" class="todo"><title>0x0044b940 DoFlareLight (431 bytes)</title></rect>
 <rect width="12.73" height="11.93" x="415.67" y="405.46" class="named"><title>0x0045f490 SkidooCheckGetOff (431 bytes)</title></rect>
 <rect width="12.73" height="11.85" x="415.67" y="420.39" class="named"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>
-<rect width="12.73" height="11.76" x="415.67" y="435.24" class="todo"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
+<rect width="12.73" height="11.76" x="415.67" y="435.24" class="named"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
 <rect width="12.57" height="11.89" x="431.41" y="130.92" class="named"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
 <rect width="12.54" height="11.89" x="446.98" y="130.92" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12.51" height="11.89" x="462.52" y="130.92" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
