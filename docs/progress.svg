@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="201.70" height="12" x="0" y="0" class="named"><title>637 · 43.10%</title></rect>
-<rect width="266.30" height="12" x="201.70" y="0" class="todo"><title>841 · 56.90%</title></rect>
+<rect width="202.02" height="12" x="0" y="0" class="named"><title>638 · 43.17%</title></rect>
+<rect width="265.98" height="12" x="202.02" y="0" class="todo"><title>840 · 56.83%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">43.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">637</tspan> · <tspan class="todo">841</tspan></text>
+<text text-anchor="end" x="648" y="7.50">43.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">638</tspan> · <tspan class="todo">840</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="66.24" height="12" x="0" y="0" class="named"><title>94 KB · 14.15%</title></rect>
-<rect width="401.76" height="12" x="66.24" y="0" class="todo"><title>571 KB · 85.85%</title></rect>
+<rect width="66.43" height="12" x="0" y="0" class="named"><title>94 KB · 14.19%</title></rect>
+<rect width="401.57" height="12" x="66.43" y="0" class="todo"><title>571 KB · 85.81%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">94 KB</tspan> · <tspan class="todo">571 KB</tspan></text>
@@ -736,7 +736,7 @@
 <rect width="12" height="12" x="315" y="195" class="todo"><title>0x00446ba0 FireGrenade (560 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="195" class="todo"><title>0x00446dd0 ControlGrenade (2040 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="195" class="todo"><title>0x004475d0 draw_shotgun (408 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="195" class="todo"><title>0x00447770 undraw_shotgun (265 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="195" class="named"><title>0x00447770 undraw_shotgun (265 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="195" class="todo"><title>0x00447880 AnimateShotgun (1255 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="195" class="todo"><title>0x00447d90 TriggerUnderwaterExplosion (402 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="195" class="named"><title>0x00447f30 draw_pistols (158 bytes)</title></rect>
@@ -2130,7 +2130,7 @@
 <rect width="9.33" height="10.05" x="737.67" y="173.86" class="todo"><title>0x00437050 InitColours (266 bytes)</title></rect>
 <rect width="9.57" height="9.81" x="486.37" y="186.92" class="named"><title>0x00459ce0 ControlElectricalLight (266 bytes)</title></rect>
 <rect width="9.57" height="9.81" x="486.37" y="199.72" class="todo"><title>0x00498750 Func498750 (266 bytes)</title></rect>
-<rect width="9.57" height="9.77" x="486.37" y="212.53" class="todo"><title>0x00447770 undraw_shotgun (265 bytes)</title></rect>
+<rect width="9.57" height="9.77" x="486.37" y="212.53" class="named"><title>0x00447770 undraw_shotgun (265 bytes)</title></rect>
 <rect width="9.57" height="9.73" x="486.37" y="225.30" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="9.57" height="9.73" x="486.37" y="238.03" class="named"><title>0x0043e0b0 LaraTestHangOnClimbWall (264 bytes)</title></rect>
 <rect width="9.57" height="9.70" x="486.37" y="250.77" class="named"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
