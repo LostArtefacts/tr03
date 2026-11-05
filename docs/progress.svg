@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="302.35" height="12" x="0" y="0" class="named"><title>1064 · 71.99%</title></rect>
-<rect width="1.99" height="12" x="302.35" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="115.66" height="12" x="304.34" y="0" class="todo"><title>407 · 27.54%</title></rect>
+<rect width="302.64" height="12" x="0" y="0" class="named"><title>1065 · 72.06%</title></rect>
+<rect width="1.99" height="12" x="302.64" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="115.37" height="12" x="304.63" y="0" class="todo"><title>406 · 27.47%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">72.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1064</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">407</tspan></text>
+<text text-anchor="end" x="600" y="7.50">72.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1065</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">406</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.85" height="12" x="0" y="0" class="named"><title>307 KB · 45.92%</title></rect>
-<rect width="3.79" height="12" x="192.85" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.36" height="12" x="196.64" y="0" class="todo"><title>355 KB · 53.18%</title></rect>
+<rect width="192.93" height="12" x="0" y="0" class="named"><title>307 KB · 45.94%</title></rect>
+<rect width="3.79" height="12" x="192.93" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.27" height="12" x="196.73" y="0" class="todo"><title>355 KB · 53.16%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">307 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
@@ -1215,7 +1215,7 @@
 <rect width="12" height="12" x="720" y="330" class="todo"><title>0x00481e10 LoadBoxes (518 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="330" class="todo"><title>0x00482020 LoadAnimatedTextures (284 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="345" class="named"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="345" class="todo"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="345" class="named"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="345" class="todo"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="345" class="todo"><title>0x004822f0 LoadSamples (613 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="345" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
@@ -2381,7 +2381,7 @@
 <rect width="7.13" height="6.89" x="554.15" y="313.92" class="todo"><title>0x00487750 do_inventory_options (140 bytes)</title></rect>
 <rect width="7.13" height="6.89" x="554.15" y="323.81" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
 <rect width="7.13" height="6.84" x="554.15" y="333.71" class="named"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
-<rect width="7.13" height="6.79" x="554.15" y="343.55" class="todo"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
+<rect width="7.13" height="6.79" x="554.15" y="343.55" class="named"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
 <rect width="7.13" height="6.75" x="554.15" y="353.34" class="named"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="7.13" height="6.75" x="554.15" y="363.09" class="named"><title>0x0046e340 SpikeControl (137 bytes)</title></rect>
 <rect width="7.13" height="6.70" x="554.15" y="372.83" class="named"><title>0x00441f00 extra_as_rapidsdrown (136 bytes)</title></rect>

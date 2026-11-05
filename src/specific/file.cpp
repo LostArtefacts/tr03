@@ -121,6 +121,23 @@ int LoadCinematic(HANDLE file)
     return 1;
 }
 
+int LoadDemo(HANDLE file)
+{
+    DWORD read;
+    sint16 size;
+
+    democount = 0;
+    demoptr = (unsigned long *)game_malloc(3608 * sizeof(unsigned long), 27);
+    MyReadFile(file, &size, sizeof(sint16), &read, 0);
+    if (size) {
+        MyReadFile(file, demoptr, size, &read, 0);
+        demo_loaded = 1;
+    } else {
+        demo_loaded = 0;
+    }
+    return 1;
+}
+
 void build_ext(char *fname, char *ext)
 {
     while (*fname != '.' && *fname != 0)
