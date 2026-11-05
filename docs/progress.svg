@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="310.60" height="12" x="0" y="0" class="named"><title>1093 · 73.95%</title></rect>
-<rect width="1.99" height="12" x="310.60" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="107.42" height="12" x="312.58" y="0" class="todo"><title>378 · 25.58%</title></rect>
+<rect width="310.88" height="12" x="0" y="0" class="named"><title>1094 · 74.02%</title></rect>
+<rect width="1.99" height="12" x="310.88" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="107.13" height="12" x="312.87" y="0" class="todo"><title>377 · 25.51%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">74.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1093</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">378</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1094</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">377</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.19" height="12" x="0" y="0" class="named"><title>310 KB · 46.47%</title></rect>
-<rect width="3.79" height="12" x="195.19" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.01" height="12" x="198.99" y="0" class="todo"><title>351 KB · 52.62%</title></rect>
+<rect width="195.25" height="12" x="0" y="0" class="named"><title>311 KB · 46.49%</title></rect>
+<rect width="3.79" height="12" x="195.25" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="220.95" height="12" x="199.05" y="0" class="todo"><title>351 KB · 52.61%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">310 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1517,7 +1517,7 @@
 <rect width="12" height="12" x="0" y="435" class="todo"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="435" class="todo"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="435" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="435" class="todo"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="435" class="named"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="435" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="435" class="named"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="435" class="named"><title>0x004b3930 DD_UnlockSurface (22 bytes)</title></rect>
@@ -2507,7 +2507,7 @@
 <rect width="5.64" height="6.04" x="741.36" y="282.84" class="named"><title>0x0042f040 ControlBirdTweeter (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="291.88" class="named"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="300.74" class="named"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
-<rect width="5.82" height="5.86" x="582.88" y="309.59" class="todo"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
+<rect width="5.82" height="5.86" x="582.88" y="309.59" class="named"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="318.45" class="todo"><title>0x004b42d4 Func4b42d4 (97 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="327.31" class="named"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="336.11" class="named"><title>0x0044af50 WeaponObject (96 bytes)</title></rect>

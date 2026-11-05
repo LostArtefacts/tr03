@@ -5,6 +5,8 @@
 extern "C" {
 
 void ShutdownGame(void);
+bool DXSetCooperativeLevel(LPDIRECTDRAW2 lpDD2, HWND WindowHandle, int Flags);
+extern char exit_message[128];
 LRESULT CALLBACK WinAppProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 void WinAppExit(void)
@@ -37,6 +39,15 @@ HWND WinCreateWindow(HINSTANCE hInstance, int nCmdShow)
         UpdateWindow(hWnd);
     }
     return hWnd;
+}
+
+void S_ExitSystem(char *message)
+{
+    DXSetCooperativeLevel(App.lpDD, App.WindowHandle, DDSCL_NORMAL);
+    MessageBox(App.WindowHandle, message, 0, MB_OK);
+    ShutdownGame();
+    strcpy(exit_message, message);
+    exit(1);
 }
 
 }
