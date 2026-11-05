@@ -119,4 +119,15 @@ void phd_TranslateAbs(sint32 x, sint32 y, sint32 z)
     *(mptr + M23) = *(mptr + M20) * x + *(mptr + M21) * y + *(mptr + M22) * z;
 }
 
+void phd_SortPolyList(int number, sint32 buffer[][3])
+{
+    sint32 i;
+
+    if (number) {
+        for (i = 0; i < number; i++)
+            buffer[i][1] += i;
+        do_quickysorty(0, number - 1, buffer);
+    }
+}
+
 }

@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="289.28" height="12" x="0" y="0" class="named"><title>1018 · 68.88%</title></rect>
-<rect width="1.42" height="12" x="289.28" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="129.30" height="12" x="290.70" y="0" class="todo"><title>455 · 30.78%</title></rect>
+<rect width="289.57" height="12" x="0" y="0" class="named"><title>1019 · 68.94%</title></rect>
+<rect width="1.42" height="12" x="289.57" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="129.01" height="12" x="290.99" y="0" class="todo"><title>454 · 30.72%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">68.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1018</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">455</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1019</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">454</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.49" height="12" x="0" y="0" class="named"><title>301 KB · 45.12%</title></rect>
-<rect width="3.69" height="12" x="189.49" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="226.83" height="12" x="193.17" y="0" class="todo"><title>361 KB · 54.01%</title></rect>
+<rect width="189.52" height="12" x="0" y="0" class="named"><title>301 KB · 45.12%</title></rect>
+<rect width="3.69" height="12" x="189.52" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="226.79" height="12" x="193.21" y="0" class="todo"><title>361 KB · 54%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">301 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">361 KB</tspan></text>
@@ -80,7 +80,7 @@
 <rect width="12" height="12" x="195" y="0" class="todo"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="0" class="todo"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="0" class="todo"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="0" class="todo"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="0" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="0" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="0" class="todo"><title>0x00402030 AlterFOV (158 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="0" class="todo"><title>0x004020d0 SetupZRange (83 bytes)</title></rect>
@@ -2720,7 +2720,7 @@
 <rect width="4.34" height="4.46" x="713.47" y="332.46" class="todo"><title>0x0048e970 Func48e970 (55 bytes)</title></rect>
 <rect width="4.34" height="4.46" x="720.81" y="332.46" class="todo"><title>0x0048e9b0 Func48e9b0 (55 bytes)</title></rect>
 <rect width="4.34" height="4.46" x="728.15" y="332.46" class="todo"><title>0x0048e9f0 Func48e9f0 (55 bytes)</title></rect>
-<rect width="4.26" height="4.46" x="735.48" y="332.46" class="todo"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
+<rect width="4.26" height="4.46" x="735.48" y="332.46" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="4.26" height="4.46" x="742.74" y="332.46" class="named"><title>0x0042f9c0 Exercise8_109Sp (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="339.91" class="todo"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="347.31" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
