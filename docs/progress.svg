@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="208.64" height="12" x="0" y="0" class="named"><title>667 · 45.16%</title></rect>
-<rect width="253.36" height="12" x="208.64" y="0" class="todo"><title>810 · 54.84%</title></rect>
+<rect width="208.95" height="12" x="0" y="0" class="named"><title>668 · 45.23%</title></rect>
+<rect width="253.05" height="12" x="208.95" y="0" class="todo"><title>809 · 54.77%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">45.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">667</tspan> · <tspan class="todo">810</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">668</tspan> · <tspan class="todo">809</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="72.56" height="12" x="0" y="0" class="named"><title>104 KB · 15.70%</title></rect>
-<rect width="389.44" height="12" x="72.56" y="0" class="todo"><title>561 KB · 84.30%</title></rect>
+<rect width="72.81" height="12" x="0" y="0" class="named"><title>105 KB · 15.76%</title></rect>
+<rect width="389.19" height="12" x="72.81" y="0" class="todo"><title>560 KB · 84.24%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">15.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">104 KB</tspan> · <tspan class="todo">561 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">15.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">105 KB</tspan> · <tspan class="todo">560 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -877,7 +877,7 @@
 <rect width="12" height="12" x="180" y="240" class="todo"><title>0x00455e30 MonkeyControl (3257 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="240" class="named"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="240" class="todo"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="240" class="todo"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="240" class="named"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="240" class="todo"><title>0x00456f40 MovableBlockCollision (636 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="240" class="named"><title>0x004571e0 TestBlockPush (436 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="240" class="named"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
@@ -2017,7 +2017,7 @@
 <rect width="11.36" height="11.42" x="606.77" y="145.72" class="named"><title>0x0044e050 LaraSurface (368 bytes)</title></rect>
 <rect width="11.36" height="11.42" x="621.13" y="145.72" class="todo"><title>0x00495760 Func495760 (368 bytes)</title></rect>
 <rect width="11.33" height="11.42" x="635.49" y="145.72" class="named"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
-<rect width="11.33" height="11.42" x="649.83" y="145.72" class="todo"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
+<rect width="11.33" height="11.42" x="649.83" y="145.72" class="named"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
 <rect width="11.33" height="11.42" x="664.16" y="145.72" class="named"><title>0x0046d850 SpinningBlade (367 bytes)</title></rect>
 <rect width="11.30" height="11.42" x="678.49" y="145.72" class="named"><title>0x0041f5c0 Move3DPosTo3DPos (366 bytes)</title></rect>
 <rect width="11.30" height="11.42" x="692.79" y="145.72" class="named"><title>0x0042c670 TriggerRocketSmoke (366 bytes)</title></rect>
