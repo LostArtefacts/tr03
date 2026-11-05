@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="270.81" height="12" x="0" y="0" class="named"><title>953 · 64.48%</title></rect>
-<rect width="1.42" height="12" x="270.81" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="147.77" height="12" x="272.23" y="0" class="todo"><title>520 · 35.18%</title></rect>
+<rect width="271.10" height="12" x="0" y="0" class="named"><title>954 · 64.55%</title></rect>
+<rect width="1.42" height="12" x="271.10" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="147.48" height="12" x="272.52" y="0" class="todo"><title>519 · 35.12%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">64.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">953</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">520</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">954</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">519</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.81" height="12" x="0" y="0" class="named"><title>297 KB · 44.48%</title></rect>
-<rect width="3.69" height="12" x="186.81" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.50" height="12" x="190.50" y="0" class="todo"><title>365 KB · 54.64%</title></rect>
+<rect width="186.82" height="12" x="0" y="0" class="named"><title>297 KB · 44.48%</title></rect>
+<rect width="3.69" height="12" x="186.82" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.49" height="12" x="190.51" y="0" class="todo"><title>365 KB · 54.64%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1280,7 +1280,7 @@
 <rect width="12" height="12" x="195" y="360" class="todo"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="360" class="todo"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="360" class="todo"><title>0x00485a80 Func485a80 (11 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="360" class="todo"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="360" class="named"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="360" class="todo"><title>0x00485ab0 init_water_table (493 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="360" class="todo"><title>0x00485ca0 GetRandom (55 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="360" class="todo"><title>0x00485ce0 S_InitialiseSystem (439 bytes)</title></rect>
@@ -2970,7 +2970,7 @@
 <rect width="2.48" height="2.55" x="717.38" y="411.64" class="named"><title>0x0042fa30 ResetExercises (18 bytes)</title></rect>
 <rect width="2.48" height="2.55" x="722.86" y="411.64" class="todo"><title>0x004752d0 Func4752d0 (18 bytes)</title></rect>
 <rect width="2.48" height="2.55" x="728.35" y="411.64" class="todo"><title>0x004804d0 Func4804d0 (18 bytes)</title></rect>
-<rect width="2.48" height="2.55" x="733.83" y="411.64" class="todo"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
+<rect width="2.48" height="2.55" x="733.83" y="411.64" class="named"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
 <rect width="2.34" height="2.55" x="739.31" y="411.64" class="todo"><title>0x0048ad60 SetPictureToFade (17 bytes)</title></rect>
 <rect width="2.34" height="2.55" x="744.66" y="411.64" class="todo"><title>0x0048ad80 ForceFadeDown (17 bytes)</title></rect>
 <rect width="2.27" height="2.47" x="711.76" y="417.18" class="named"><title>0x0046ae90 T_RemoveBackground (16 bytes)</title></rect>

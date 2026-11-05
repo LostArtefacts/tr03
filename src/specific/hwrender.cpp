@@ -29,4 +29,11 @@ void HWR_EndScene(void)
     EndScene();
 }
 
+bool HWR_Init(void)
+{
+    VertexBuffer = 0;
+    HWR_InitState();
+    return true;
+}
+
 }
