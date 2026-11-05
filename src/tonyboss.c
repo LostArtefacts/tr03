@@ -186,6 +186,119 @@ void TriggerFireBall(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos1, sint16 room
     }
 }
 
+void TriggerFireBallFlame(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv);
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+void KillEffect(sint16 fx_num);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+int ItemNearLara(PHD_3DPOS *pos, sint32 distance);
+void LaraBurn(void);
+
+extern sint32 wibble;
+
+void ControlTonyFireBall(sint16 fx_number)
+{
+    FX_INFO *fx;
+    FLOOR_INFO *floor;
+    sint32 old_x, old_y, old_z, x;
+    sint32 rnd, r, g, b;
+    uint8 radtab[7] = {16, 0, 14, 9, 7, 7, 7};
+    sint16 room_number;
+
+    fx = &effects[fx_number];
+    old_x = fx->pos.x_pos;
+    old_y = fx->pos.y_pos;
+    old_z = fx->pos.z_pos;
+    if (fx->flag1 == 0 || fx->flag1 == 1) {
+        fx->fallspeed += (fx->fallspeed >> 3) + 1;
+        if (fx->fallspeed < -4096)
+            fx->fallspeed = -4096;
+        fx->pos.y_pos += fx->fallspeed;
+        if (wibble & 4)
+            TriggerFireBallFlame(fx_number, fx->flag1, 0, 0, 0);
+    } else if (fx->flag1 == 3) {
+        fx->fallspeed += 2;
+        fx->pos.y_pos += fx->fallspeed;
+        if (wibble & 4)
+            TriggerFireBallFlame(fx_number, fx->flag1, 0, 0, 0);
+    } else {
+        if (fx->flag1 != 2) {
+            if (fx->speed > 48)
+                fx->speed--;
+        }
+        fx->fallspeed += fx->flag2;
+        if (fx->fallspeed > 512)
+            fx->fallspeed = 512;
+        fx->pos.y_pos += fx->fallspeed >> 1;
+        fx->pos.z_pos += fx->speed * phd_cos(fx->pos.y_rot) >> W2V_SHIFT;
+        fx->pos.x_pos += fx->speed * phd_sin(fx->pos.y_rot) >> W2V_SHIFT;
+        if (wibble & 4)
+            TriggerFireBallFlame(fx_number, fx->flag1, (old_x - fx->pos.x_pos) << 3, (old_y - fx->pos.y_pos) << 3,
+                                 (old_z - fx->pos.z_pos) << 3);
+    }
+    room_number = fx->room_number;
+    floor = GetFloor(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, &room_number);
+    if (fx->pos.y_pos >= GetHeight(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos) ||
+        fx->pos.y_pos < GetCeiling(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos)) {
+        if (fx->flag1 == 0 || fx->flag1 == 1 || fx->flag1 == 2 || fx->flag1 == 3) {
+            PHD_VECTOR pos;
+
+            TriggerExplosionSparks(old_x, old_y, old_z, 3, -2, 0, fx->room_number);
+            if (fx->flag1 == 0 || fx->flag1 == 1) {
+                for (x = 0; x < 2; x++)
+                    TriggerExplosionSparks(old_x, old_y, old_z, 3, -1, 0, fx->room_number);
+            }
+            pos.x = old_x;
+            pos.y = old_y;
+            pos.z = old_z;
+            if (fx->flag1 == 2)
+                r = 7;
+            else
+                r = 3;
+            if (fx->flag1 == 2)
+                g = 5;
+            else if (fx->flag1 == 3)
+                g = 6;
+            else
+                g = 4;
+            for (x = 0; x < r; x++)
+                TriggerFireBall(NULL, g, &pos, fx->room_number, fx->pos.y_rot, 32 + (x << 2));
+            if (fx->flag1 == 0 || fx->flag1 == 1) {
+                room_number = lara_item->room_number;
+                floor = GetFloor(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos, &room_number);
+                pos.y = GetCeiling(floor, lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos) + 256;
+                pos.x = lara_item->pos.x_pos + (GetRandomControl() & 1023) - 512;
+                pos.z = lara_item->pos.z_pos + (GetRandomControl() & 1023) - 512;
+                TriggerExplosionSparks(pos.x, pos.y, pos.z, 3, -2, 0, room_number);
+                TriggerFireBall(NULL, 3, &pos, room_number, 0, 0);
+            }
+        }
+        KillEffect(fx_number);
+        return;
+    }
+    if (room[room_number].flags & UNDERWATER) {
+        KillEffect(fx_number);
+        return;
+    }
+    if (!lara.burn) {
+        if (ItemNearLara(&fx->pos, 200)) {
+            lara_item->hit_status = 1;
+            KillEffect(fx_number);
+            lara_item->hit_points -= 200;
+            LaraBurn();
+            return;
+        }
+    }
+    if (room_number != fx->room_number)
+        EffectNewRoom(fx_number, lara_item->room_number);
+    if (radtab[fx->flag1]) {
+        rnd = GetRandomControl();
+        r = 31 - ((rnd >> 4) & 3);
+        g = 24 - ((rnd >> 6) & 3);
+        b = rnd & 7;
+        TriggerDynamic(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, radtab[fx->flag1], r, g, b);
+    }
+}
+
 void TriggerFireBallFlame(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv)
 {
     SPARKS *sptr;
