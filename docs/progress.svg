@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="282.18" height="12" x="0" y="0" class="named"><title>993 · 67.19%</title></rect>
-<rect width="1.42" height="12" x="282.18" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="136.40" height="12" x="283.60" y="0" class="todo"><title>480 · 32.48%</title></rect>
+<rect width="282.46" height="12" x="0" y="0" class="named"><title>994 · 67.25%</title></rect>
+<rect width="1.42" height="12" x="282.46" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="136.12" height="12" x="283.88" y="0" class="todo"><title>479 · 32.41%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">67.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">993</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">480</tspan></text>
+<text text-anchor="end" x="600" y="7.50">67.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">994</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">479</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.94" height="12" x="0" y="0" class="named"><title>299 KB · 44.75%</title></rect>
-<rect width="3.69" height="12" x="187.94" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.37" height="12" x="191.63" y="0" class="todo"><title>363 KB · 54.37%</title></rect>
+<rect width="187.97" height="12" x="0" y="0" class="named"><title>299 KB · 44.76%</title></rect>
+<rect width="3.69" height="12" x="187.97" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.34" height="12" x="191.66" y="0" class="todo"><title>363 KB · 54.37%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">44.7%</text>
+<text text-anchor="end" x="600" y="24.50">44.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">299 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">363 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1380,7 +1380,7 @@
 <rect width="12" height="12" x="195" y="390" class="todo"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="390" class="todo"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="390" class="todo"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="390" class="todo"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="390" class="todo"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="390" class="todo"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="390" class="todo"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
@@ -2818,7 +2818,7 @@
 <rect width="3.79" height="4.08" x="716.05" y="361.68" class="named"><title>0x00441730 lara_as_fallback (44 bytes)</title></rect>
 <rect width="3.79" height="4.08" x="722.84" y="361.68" class="named"><title>0x0046ac70 T_InitPrint (44 bytes)</title></rect>
 <rect width="3.79" height="4.08" x="729.63" y="361.68" class="named"><title>0x004808f0 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
-<rect width="3.79" height="4.08" x="736.42" y="361.68" class="todo"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
+<rect width="3.79" height="4.08" x="736.42" y="361.68" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="3.79" height="4.08" x="743.21" y="361.68" class="todo"><title>0x004b4c93 phd_sqrt (44 bytes)</title></rect>
 <rect width="3.92" height="3.85" x="661.72" y="368.76" class="named"><title>0x00441630 lara_as_slide (43 bytes)</title></rect>
 <rect width="3.92" height="3.85" x="661.72" y="375.61" class="named"><title>0x00445290 undraw_shotgun_meshes (43 bytes)</title></rect>
