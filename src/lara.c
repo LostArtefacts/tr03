@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 #include <stdlib.h>
 
@@ -87,6 +88,7 @@ int TestLaraSlide(ITEM_INFO *item, COLL_INFO *coll)
     return 1;
 }
 
+int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down);
 int LaraTestClimbStance(ITEM_INFO *item, COLL_INFO *coll)
 {
     int shift_l, result_r, shift_r, result_l;
@@ -553,7 +555,6 @@ void lara_col_crawlb(ITEM_INFO *item, COLL_INFO *coll)
 
 extern uint16 DashTimer;
 int TestLaraVault(ITEM_INFO *item, COLL_INFO *coll);
-int TestWall(ITEM_INFO *item, sint32 front, sint32 right, sint32 down);
 void LaraCollideStop(ITEM_INFO *item, COLL_INFO *coll);
 
 #define HITWALLLEFT_A 53
@@ -3406,4 +3407,29 @@ void LaraAboveWater(ITEM_INFO *item, COLL_INFO *coll)
     TestTriggers(coll->trigger, 0);
     if (!LaraOnPad)
         lara_item->item_flags[1] = 0;
+}
+
+
+#define DUCKBREATHE_A 222
+#define DUCKBREATHE_F GF(DUCKBREATHE_A, 0)
+
+void lara_as_duck(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->enable_hit = 1;
+    coll->enable_baddie_push = 1;
+    lara.IsDucked = 1;
+    if (item->hit_points <= 0)
+    {
+        item->goal_anim_state = AS_ALL4S;
+        return;
+    }
+    if (TestLaraSlide(item, coll))
+        return;
+    if (input & IN_LOOK)
+        LookUpDown();
+    if ((input & (IN_FORWARD | IN_BACK)) && lara.gun_status == LG_ARMLESS && item->frame_number > DUCKBREATHE_F + 10)
+    {
+        lara.torso_x_rot = lara.torso_y_rot = 0;
+        item->goal_anim_state = AS_ALL4S;
+    }
 }

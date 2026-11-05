@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="272.13" height="12" x="0" y="0" class="named"><title>870 · 58.90%</title></rect>
-<rect width="189.87" height="12" x="272.13" y="0" class="todo"><title>607 · 41.10%</title></rect>
+<rect width="272.45" height="12" x="0" y="0" class="named"><title>871 · 58.97%</title></rect>
+<rect width="189.55" height="12" x="272.45" y="0" class="todo"><title>606 · 41.03%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">58.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">870</tspan> · <tspan class="todo">607</tspan></text>
+<text text-anchor="end" x="642" y="7.50">59.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">871</tspan> · <tspan class="todo">606</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="164.08" height="12" x="0" y="0" class="named"><title>237 KB · 35.52%</title></rect>
-<rect width="297.92" height="12" x="164.08" y="0" class="todo"><title>430 KB · 64.48%</title></rect>
+<rect width="164.17" height="12" x="0" y="0" class="named"><title>237 KB · 35.53%</title></rect>
+<rect width="297.83" height="12" x="164.17" y="0" class="todo"><title>430 KB · 64.47%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">35.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">237 KB</tspan> · <tspan class="todo">430 KB</tspan></text>
@@ -588,7 +588,7 @@
 <rect width="12" height="12" x="345" y="150" class="named"><title>0x0043e4e0 LaraTestHangJump (586 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="150" class="named"><title>0x0043e730 TestHangSwingIn (193 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="150" class="named"><title>0x0043e800 LaraAboveWater (530 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="150" class="todo"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="150" class="named"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="150" class="named"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="150" class="named"><title>0x0043eba0 lara_as_all4s (122 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="150" class="named"><title>0x0043ec20 lara_col_all4s (744 bytes)</title></rect>
@@ -2407,7 +2407,7 @@
 <rect width="6.78" height="6.65" x="554.29" y="411.42" class="named"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
 <rect width="6.78" height="6.65" x="554.29" y="421.06" class="named"><title>0x0043aee0 RemoveDrawnItem (128 bytes)</title></rect>
 <rect width="6.78" height="6.65" x="554.29" y="430.71" class="named"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
-<rect width="6.78" height="6.65" x="554.29" y="440.35" class="todo"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
+<rect width="6.78" height="6.65" x="554.29" y="440.35" class="named"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
 <rect width="6.46" height="6.92" x="564.07" y="264.29" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="6.46" height="6.92" x="564.07" y="274.22" class="todo"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="6.46" height="6.87" x="564.07" y="284.14" class="named"><title>0x0041ec90 DoorCollision (126 bytes)</title></rect>
