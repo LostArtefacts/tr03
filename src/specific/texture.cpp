@@ -152,4 +152,22 @@ int DXTextureFindTextureSlot(DXTEXTURE *tex)
     return -1;
 }
 
+bool DXTextureMakeSystemSurface(DXTEXTURE *tex, LPDDPIXELFORMAT ddpf)
+{
+    DDSURFACEDESC desc;
+
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    desc.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_PIXELFORMAT;
+    desc.ddsCaps.dwCaps = DDSCAPS_SYSTEMMEMORY | DDSCAPS_TEXTURE;
+    desc.dwWidth = tex->nWidth;
+    desc.dwHeight = tex->nHeight;
+    memcpy(&desc.ddpfPixelFormat, ddpf, sizeof(DDPIXELFORMAT));
+    if (DX_TRY(DD_CreateSurface(desc, tex->pSystemSurface)))
+        return false;
+    if (tex->pPalette && DX_TRY(tex->pSystemSurface->SetPalette(tex->pPalette)))
+        return false;
+    return true;
+}
+
 }
