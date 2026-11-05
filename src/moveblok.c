@@ -83,6 +83,72 @@ int TestBlockPush(ITEM_INFO *item, int blokhite, uint16 quadrant)
     return 1;
 }
 
+int TestBlockPull(ITEM_INFO *item, int blokhite, uint16 quadrant)
+{
+    COLL_INFO scoll;
+    FLOOR_INFO *floor;
+    ROOM_INFO *r;
+    sint32 x, y, z, zadd, xadd, cmax;
+    sint16 room_num;
+
+    if (!TestBlockMovable(item, blokhite))
+        return 0;
+    xadd = zadd = 0;
+    switch (quadrant) {
+    case 0:
+        zadd = -WALL_L;
+        break;
+    case 1:
+        xadd = -WALL_L;
+        break;
+    case 2:
+        zadd = WALL_L;
+        break;
+    case 3:
+        xadd = WALL_L;
+        break;
+    }
+    x = item->pos.x_pos + xadd;
+    y = item->pos.y_pos;
+    z = item->pos.z_pos + zadd;
+    room_num = item->room_number;
+    floor = GetFloor(x, y, z, &room_num);
+    r = &room[room_num];
+    if (r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size].stopper)
+        return 0;
+    scoll.quadrant = quadrant;
+    scoll.radius = 500;
+    if (CollideStaticObjects(&scoll, x, y, z, room_num, 1000))
+        return 0;
+    if (((sint32)floor->floor << 8) != y)
+        return 0;
+    cmax = y - blokhite;
+    floor = GetFloor(x, cmax, z, &room_num);
+    if (((sint32)floor->ceiling << 8) > cmax)
+        return 0;
+    x += xadd;
+    z += zadd;
+    room_num = item->room_number;
+    floor = GetFloor(x, y, z, &room_num);
+    if (((sint32)floor->floor << 8) != y)
+        return 0;
+    cmax = y - LARA_HITE;
+    floor = GetFloor(x, cmax, z, &room_num);
+    if (((sint32)floor->ceiling << 8) > cmax)
+        return 0;
+    x = lara_item->pos.x_pos + xadd;
+    y = lara_item->pos.y_pos;
+    z = lara_item->pos.z_pos + zadd;
+    room_num = lara_item->room_number;
+    floor = GetFloor(x, y, z, &room_num);
+    scoll.quadrant = (quadrant + 2) & 3;
+    scoll.radius = LARA_RAD;
+    if (CollideStaticObjects(&scoll, x, y, z, room_num, LARA_HITE))
+        return 0;
+    item->item_flags[0] = lara_item->pos.y_rot + 0x8000;
+    return 1;
+}
+
 void DrawMovableBlock(ITEM_INFO *item)
 {
     if (item->status != ACTIVE)
