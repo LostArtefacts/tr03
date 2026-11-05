@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="294.40" height="12" x="0" y="0" class="named"><title>1036 · 70.09%</title></rect>
-<rect width="1.99" height="12" x="294.40" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="123.61" height="12" x="296.39" y="0" class="todo"><title>435 · 29.43%</title></rect>
+<rect width="294.68" height="12" x="0" y="0" class="named"><title>1037 · 70.16%</title></rect>
+<rect width="1.99" height="12" x="294.68" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="123.33" height="12" x="296.67" y="0" class="todo"><title>434 · 29.36%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">70.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1036</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">435</tspan></text>
+<text text-anchor="end" x="600" y="7.50">70.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1037</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">434</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.56" height="12" x="0" y="0" class="named"><title>303 KB · 45.37%</title></rect>
-<rect width="3.79" height="12" x="190.56" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="225.65" height="12" x="194.35" y="0" class="todo"><title>359 KB · 53.73%</title></rect>
+<rect width="190.76" height="12" x="0" y="0" class="named"><title>303 KB · 45.42%</title></rect>
+<rect width="3.79" height="12" x="190.76" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="225.45" height="12" x="194.55" y="0" class="todo"><title>358 KB · 53.68%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">303 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">359 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">303 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">358 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1340,7 +1340,7 @@
 <rect width="12" height="12" x="345" y="375" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="375" class="todo"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="375" class="named"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="375" class="todo"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="375" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="375" class="todo"><title>0x0048be60 CreateMonoScreen (222 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="375" class="todo"><title>0x0048bf40 S_FadeToBlack (197 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="375" class="named"><title>0x0048c010 DrawMonoScreen (22 bytes)</title></rect>
@@ -2068,7 +2068,7 @@
 <rect width="10.59" height="10.85" x="709.37" y="160.26" class="named"><title>0x0046d1f0 TrainCollision (327 bytes)</title></rect>
 <rect width="10.55" height="10.85" x="722.96" y="160.26" class="todo"><title>0x00402720 gen_xg (326 bytes)</title></rect>
 <rect width="10.49" height="10.85" x="736.51" y="160.26" class="named"><title>0x0044a1e0 InitialiseNewWeapon (324 bytes)</title></rect>
-<rect width="10.27" height="11.08" x="460.60" y="174.11" class="todo"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
+<rect width="10.27" height="11.08" x="460.60" y="174.11" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
 <rect width="10.27" height="11.05" x="460.60" y="188.20" class="todo"><title>0x00474760 ACMClose (323 bytes)</title></rect>
 <rect width="10.27" height="10.95" x="460.60" y="202.25" class="todo"><title>0x00406fa0 HWI_InsertGT4_Sorted (320 bytes)</title></rect>
 <rect width="10.27" height="10.92" x="460.60" y="216.20" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>

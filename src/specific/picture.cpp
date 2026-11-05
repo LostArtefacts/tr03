@@ -158,6 +158,35 @@ void FadePictureUp(int steps)
     TIME_Init();
 }
 
+void FadePictureDown(int steps)
+{
+    int i;
+
+    if (!forceFadeDown) {
+        if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bPalette && App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware && App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bAlpha) {
+            HWR_BeginScene();
+            TRDrawPicture(0, CurPicTexIndices, f_znear);
+            HWR_EndScene();
+            DXUpdateFrame(true, 0);
+            return;
+        }
+    }
+    for (i = steps; i > 0; i--) {
+        HWR_BeginScene();
+        TRDrawPicture(256 - i * (256 / steps), CurPicTexIndices, f_znear);
+        HWR_EndScene();
+        DXUpdateFrame(true, 0);
+    }
+    HWR_BeginScene();
+    TRDrawPicture(255, CurPicTexIndices, f_znear);
+    HWR_EndScene();
+    DXUpdateFrame(true, 0);
+    forceFadeDown = false;
+    nLoadedPictures = 0;
+    FreePictureTextures(CurPicTexIndices);
+    TIME_Init();
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
