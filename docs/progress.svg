@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="304.91" height="12" x="0" y="0" class="named"><title>1073 · 72.60%</title></rect>
-<rect width="1.99" height="12" x="304.91" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="113.10" height="12" x="306.90" y="0" class="todo"><title>398 · 26.93%</title></rect>
+<rect width="305.20" height="12" x="0" y="0" class="named"><title>1074 · 72.67%</title></rect>
+<rect width="1.99" height="12" x="305.20" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="112.81" height="12" x="307.19" y="0" class="todo"><title>397 · 26.86%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">72.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1073</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">398</tspan></text>
+<text text-anchor="end" x="600" y="7.50">72.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1074</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">397</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="193.50" height="12" x="0" y="0" class="named"><title>308 KB · 46.07%</title></rect>
-<rect width="3.79" height="12" x="193.50" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="222.71" height="12" x="197.29" y="0" class="todo"><title>354 KB · 53.03%</title></rect>
+<rect width="193.54" height="12" x="0" y="0" class="named"><title>308 KB · 46.08%</title></rect>
+<rect width="3.79" height="12" x="193.54" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="222.67" height="12" x="197.33" y="0" class="todo"><title>354 KB · 53.02%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">308 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">354 KB</tspan></text>
@@ -1307,7 +1307,7 @@
 <rect width="12" height="12" x="600" y="360" class="todo"><title>0x00489550 do_control_option (1798 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="360" class="todo"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="360" class="named"><title>0x0048a100 S_ChangeCtrlText (150 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="360" class="todo"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="360" class="named"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="360" class="named"><title>0x0048a1f0 GetRenderHeight (6 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="360" class="named"><title>0x0048a200 GetRenderWidth (6 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="360" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
@@ -2648,7 +2648,7 @@
 <rect width="4.82" height="4.96" x="616.71" y="340.54" class="named"><title>0x004b3950 DD_CreateSurface (68 bytes)</title></rect>
 <rect width="4.82" height="4.89" x="616.71" y="348.50" class="named"><title>0x0042f1a0 draw_right_gun (67 bytes)</title></rect>
 <rect width="4.82" height="4.89" x="616.71" y="356.39" class="named"><title>0x0042f1f0 draw_left_gun (67 bytes)</title></rect>
-<rect width="4.82" height="4.89" x="616.71" y="364.27" class="todo"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
+<rect width="4.82" height="4.89" x="616.71" y="364.27" class="named"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
 <rect width="4.82" height="4.81" x="616.71" y="372.16" class="named"><title>0x00402130 SetZNear (66 bytes)</title></rect>
 <rect width="4.82" height="4.81" x="616.71" y="379.97" class="named"><title>0x00410d00 BigGunInitialise (66 bytes)</title></rect>
 <rect width="4.82" height="4.81" x="616.71" y="387.79" class="todo"><title>0x0043d550 CanGetOut_kayak (66 bytes)</title></rect>

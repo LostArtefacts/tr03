@@ -172,3 +172,17 @@ void S_ChangeCtrlText(void)
             T_ChangeText(btext[i], "BAD");
     }
 }
+
+void S_RemoveCtrlText(void)
+{
+    int i;
+
+    for (i = 0; i < 14; i++) {
+        if (ctext[i])
+            T_RemovePrint(ctext[i]);
+        ctext[i] = 0;
+        if (btext[i])
+            T_RemovePrint(btext[i]);
+        btext[i] = 0;
+    }
+}
