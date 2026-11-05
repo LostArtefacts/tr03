@@ -13,6 +13,7 @@ typedef struct texture {
     D3DTEXTUREHANDLE handle;
     long num;
     unsigned long nFrames;
+    unsigned long bpp;
 } TEXTURE;
 
 typedef struct dxtexture {
