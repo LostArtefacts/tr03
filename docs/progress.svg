@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="295.25" height="12" x="0" y="0" class="named"><title>1039 · 70.30%</title></rect>
-<rect width="1.99" height="12" x="295.25" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="122.76" height="12" x="297.24" y="0" class="todo"><title>432 · 29.23%</title></rect>
+<rect width="295.53" height="12" x="0" y="0" class="named"><title>1040 · 70.37%</title></rect>
+<rect width="1.99" height="12" x="295.53" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="122.48" height="12" x="297.52" y="0" class="todo"><title>431 · 29.16%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">70.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1039</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">432</tspan></text>
+<text text-anchor="end" x="600" y="7.50">70.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1040</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">431</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.02" height="12" x="0" y="0" class="named"><title>304 KB · 45.48%</title></rect>
-<rect width="3.79" height="12" x="191.02" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="225.18" height="12" x="194.82" y="0" class="todo"><title>358 KB · 53.61%</title></rect>
+<rect width="191.13" height="12" x="0" y="0" class="named"><title>304 KB · 45.51%</title></rect>
+<rect width="3.79" height="12" x="191.13" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="225.08" height="12" x="194.92" y="0" class="todo"><title>358 KB · 53.59%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">304 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">358 KB</tspan></text>
@@ -1346,7 +1346,7 @@
 <rect width="12" height="12" x="435" y="375" class="named"><title>0x0048c010 DrawMonoScreen (22 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="375" class="named"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="375" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="375" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="375" class="named"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="375" class="todo"><title>0x0048c150 GameMain (704 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="375" class="todo"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="375" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
@@ -2313,7 +2313,7 @@
 <rect width="7.70" height="7.44" x="717.90" y="233.48" class="named"><title>0x0042bda0 TriggerAlertLight (163 bytes)</title></rect>
 <rect width="7.70" height="7.44" x="728.60" y="233.48" class="named"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
 <rect width="7.70" height="7.44" x="739.30" y="233.48" class="named"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
-<rect width="7.61" height="7.48" x="533.56" y="243.92" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
+<rect width="7.61" height="7.48" x="533.56" y="243.92" class="named"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="7.61" height="7.43" x="533.56" y="254.39" class="named"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="7.61" height="7.43" x="533.56" y="264.82" class="named"><title>0x0042f340 swap_meshes_with_meshswap3 (161 bytes)</title></rect>
 <rect width="7.61" height="7.38" x="533.56" y="275.25" class="named"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>

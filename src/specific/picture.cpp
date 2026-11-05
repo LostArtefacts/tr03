@@ -247,4 +247,25 @@ void RemoveMonoScreen(int fade)
     }
 }
 
+void S_FadePicture(void)
+{
+    static int pos;
+    static int max = 64;
+    int nframes;
+
+    if (!pictureFading || dontFadePicture)
+        return;
+    nframes = camera.number_frames;
+    if (nframes > 10)
+        nframes = 2;
+    DrawPictureAlpha(256 - 256 / max * (max - pos), CurPicTexIndices, f_znear);
+    pos += nframes;
+    if (pos >= max) {
+        pos = 0;
+        pictureFading = false;
+        nLoadedPictures = 0;
+        FreePictureTextures(CurPicTexIndices);
+    }
+}
+
 }
