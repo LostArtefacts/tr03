@@ -31,4 +31,19 @@ HRESULT DD_CreateSurface(DDSURFACEDESC &ddsd, LPDIRECTDRAWSURFACE3 &lpSurface)
     return hr;
 }
 
+HRESULT DD_EnsureSurfaceAvailable(LPDIRECTDRAWSURFACE3 lpSurface, LPDIRECTDRAWSURFACE3 lpTarget, bool tClear)
+{
+    HRESULT hr;
+
+    hr = lpSurface->IsLost();
+    if (hr == DDERR_SURFACELOST) {
+        if (!lpTarget)
+            lpTarget = lpSurface;
+        hr = lpTarget->Restore();
+        if (tClear && SUCCEEDED(hr))
+            DD_ClearSurface(lpSurface, 0, 0);
+    }
+    return hr;
+}
+
 }
