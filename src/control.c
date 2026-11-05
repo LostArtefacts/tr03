@@ -530,3 +530,67 @@ int xLOS(GAME_VECTOR *start, GAME_VECTOR *target)
     target->room_number = room_number;
     return 1;
 }
+
+int ClipTarget(GAME_VECTOR *start, GAME_VECTOR *target)
+{
+    sint32 dx, dy, dz, height, lp;
+    sint16 room_no;
+    FLOOR_INFO *floor;
+    GAME_VECTOR src;
+
+    room_no = target->room_number;
+    floor = GetFloor(target->x, target->y, target->z, &room_no);
+    height = GetHeight(floor, target->x, target->y, target->z);
+    if (target->y > height) {
+        src.x = start->x + (((target->x - start->x) * 7) >> 3);
+        src.y = start->y + (((target->y - start->y) * 7) >> 3);
+        src.z = start->z + (((target->z - start->z) * 7) >> 3);
+        for (lp = 3; lp > 0; lp--) {
+            dx = src.x + (((target->x - src.x) * lp) >> 2);
+            dy = src.y + (((target->y - src.y) * lp) >> 2);
+            dz = src.z + (((target->z - src.z) * lp) >> 2);
+            floor = GetFloor(dx, dy, dz, &room_no);
+            height = GetHeight(floor, dx, dy, dz);
+            if (dy < height) {
+                target->x = dx;
+                target->y = dy;
+                target->z = dz;
+                target->room_number = room_no;
+                return 0;
+            }
+        }
+        target->x = dx;
+        target->y = dy;
+        target->z = dz;
+        target->room_number = room_no;
+        return 0;
+    }
+    room_no = target->room_number;
+    floor = GetFloor(target->x, target->y, target->z, &room_no);
+    height = GetCeiling(floor, target->x, target->y, target->z);
+    if (target->y < height) {
+        src.x = start->x + (((target->x - start->x) * 7) >> 3);
+        src.y = start->y + (((target->y - start->y) * 7) >> 3);
+        src.z = start->z + (((target->z - start->z) * 7) >> 3);
+        for (lp = 3; lp > 0; lp--) {
+            dx = src.x + (((target->x - src.x) * lp) >> 2);
+            dy = src.y + (((target->y - src.y) * lp) >> 2);
+            dz = src.z + (((target->z - src.z) * lp) >> 2);
+            floor = GetFloor(dx, dy, dz, &room_no);
+            height = GetCeiling(floor, dx, dy, dz);
+            if (dy > height) {
+                target->x = dx;
+                target->y = dy;
+                target->z = dz;
+                target->room_number = room_no;
+                return 0;
+            }
+        }
+        target->x = dx;
+        target->y = dy;
+        target->z = dz;
+        target->room_number = room_no;
+        return 0;
+    }
+    return 1;
+}
