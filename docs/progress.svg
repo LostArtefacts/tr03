@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="287.01" height="12" x="0" y="0" class="named"><title>1010 · 68.34%</title></rect>
-<rect width="1.42" height="12" x="287.01" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="131.57" height="12" x="288.43" y="0" class="todo"><title>463 · 31.33%</title></rect>
+<rect width="287.29" height="12" x="0" y="0" class="named"><title>1011 · 68.40%</title></rect>
+<rect width="1.42" height="12" x="287.29" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="131.29" height="12" x="288.71" y="0" class="todo"><title>462 · 31.26%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">68.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1010</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">463</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1011</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">462</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.87" height="12" x="0" y="0" class="named"><title>300 KB · 44.97%</title></rect>
-<rect width="3.69" height="12" x="188.87" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.44" height="12" x="192.56" y="0" class="todo"><title>362 KB · 54.15%</title></rect>
+<rect width="188.94" height="12" x="0" y="0" class="named"><title>300 KB · 44.99%</title></rect>
+<rect width="3.69" height="12" x="188.94" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.37" height="12" x="192.63" y="0" class="todo"><title>362 KB · 54.14%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
@@ -1278,7 +1278,7 @@
 <rect width="12" height="12" x="165" y="360" class="todo"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="360" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="360" class="named"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="360" class="todo"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="360" class="named"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="360" class="todo"><title>0x00485a80 Func485a80 (11 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="360" class="named"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="360" class="todo"><title>0x00485ab0 init_water_table (493 bytes)</title></rect>
@@ -2469,7 +2469,7 @@
 <rect width="6.18" height="6.31" x="731.70" y="273.50" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="6.12" height="6.31" x="740.88" y="273.50" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
 <rect width="5.95" height="6.49" x="573.93" y="282.82" class="todo"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
-<rect width="5.95" height="6.49" x="573.93" y="292.31" class="todo"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
+<rect width="5.95" height="6.49" x="573.93" y="292.31" class="named"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
 <rect width="5.95" height="6.43" x="573.93" y="301.80" class="named"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
 <rect width="5.95" height="6.38" x="573.93" y="311.23" class="named"><title>0x0043b130 CreateEffect (108 bytes)</title></rect>
 <rect width="5.95" height="6.38" x="573.93" y="320.61" class="named"><title>0x004428e0 lara_col_splat (108 bytes)</title></rect>

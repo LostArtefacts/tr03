@@ -2,6 +2,7 @@
 #include "specific.h"
 #include "winmain.h"
 #include "texture.h"
+#include "global.h"
 
 extern "C" {
 
@@ -18,6 +19,9 @@ extern bool GtColorKeyEnabled;
 
 void HWR_InitState(void);
 void DXTextureCleanup(int nTexture, DXTEXTURE *pTextures);
+DXTEXTURE *DXRestoreSurfaceIfLost(int nTexture, DXTEXTURE *pTextures);
+
+extern DXTEXTURE *TPages[32];
 void HWR_SetCurrentTexture(DWORD handle);
 void HWR_EnableAlphaBlend(bool enable);
 void HWR_EnableColorKey(bool enable);
@@ -153,6 +157,25 @@ void HWR_FreeTexturePages(void)
     if (DXPalette) {
         DXPalette->Release();
         DXPalette = 0;
+    }
+}
+
+void HWR_GetAllTextureHandles(void)
+{
+    DXTEXTURE *pTex;
+    int n;
+
+    n = 0;
+    memset(TPages, 0, sizeof(TPages));
+    for (int i = 0; i < ArraySize(PictureTextures); i++) {
+        pTex = DXRestoreSurfaceIfLost(i, PictureTextures);
+        if (pTex->dwFlags & 8)
+            TPages[n++] = pTex;
+    }
+    for (int j = 0; j < ArraySize(PictureTextures); j++) {
+        pTex = DXRestoreSurfaceIfLost(j, PictureTextures);
+        if (pTex->dwFlags & 16)
+            TPages[n++] = pTex;
     }
 }
 
