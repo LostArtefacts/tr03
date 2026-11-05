@@ -78,6 +78,20 @@ int LoadPalette(HANDLE file)
     return 1;
 }
 
+int LoadCameras(HANDLE file)
+{
+    DWORD read;
+
+    MyReadFile(file, &number_cameras, sizeof(int), &read, 0);
+    if (number_cameras) {
+        camera.fixed = (OBJECT_VECTOR *)game_malloc(sizeof(OBJECT_VECTOR) * number_cameras, 19);
+        if (!camera.fixed)
+            return 0;
+        MyReadFile(file, camera.fixed, sizeof(OBJECT_VECTOR) * number_cameras, &read, 0);
+    }
+    return 1;
+}
+
 void build_ext(char *fname, char *ext)
 {
     while (*fname != '.' && *fname != 0)
