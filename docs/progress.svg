@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="275.57" height="12" x="0" y="0" class="named"><title>881 · 59.65%</title></rect>
-<rect width="186.43" height="12" x="275.57" y="0" class="todo"><title>596 · 40.35%</title></rect>
+<rect width="275.89" height="12" x="0" y="0" class="named"><title>882 · 59.72%</title></rect>
+<rect width="186.11" height="12" x="275.89" y="0" class="todo"><title>595 · 40.28%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">59.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">881</tspan> · <tspan class="todo">596</tspan></text>
+<text text-anchor="end" x="642" y="7.50">59.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">882</tspan> · <tspan class="todo">595</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="167.72" height="12" x="0" y="0" class="named"><title>242 KB · 36.30%</title></rect>
-<rect width="294.28" height="12" x="167.72" y="0" class="todo"><title>424 KB · 63.70%</title></rect>
+<rect width="167.88" height="12" x="0" y="0" class="named"><title>242 KB · 36.34%</title></rect>
+<rect width="294.12" height="12" x="167.88" y="0" class="todo"><title>424 KB · 63.66%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">36.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">242 KB</tspan> · <tspan class="todo">424 KB</tspan></text>
@@ -1015,7 +1015,7 @@
 <rect width="12" height="12" x="0" y="285" class="todo"><title>0x00469320 UserInput (1584 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="285" class="todo"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="285" class="named"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="285" class="todo"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="285" class="named"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="285" class="named"><title>0x00469de0 UpdateWakeFX_sub (42 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="285" class="named"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="285" class="named"><title>0x00469f80 InitialiseSwat (93 bytes)</title></rect>
@@ -2181,7 +2181,7 @@
 <rect width="9.15" height="8.92" x="499.25" y="320.19" class="todo"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>
 <rect width="9.15" height="8.89" x="499.25" y="332.11" class="todo"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="9.15" height="8.89" x="499.25" y="344" class="named"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
-<rect width="9.15" height="8.89" x="499.25" y="355.88" class="todo"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
+<rect width="9.15" height="8.89" x="499.25" y="355.88" class="named"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
 <rect width="9.15" height="8.89" x="499.25" y="367.77" class="todo"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
 <rect width="9.15" height="8.85" x="499.25" y="379.65" class="named"><title>0x00417210 AdjustStopperFlag (230 bytes)</title></rect>
 <rect width="9.15" height="8.73" x="499.25" y="391.50" class="named"><title>0x0043dfc0 LaraSlideEdgeJump (227 bytes)</title></rect>

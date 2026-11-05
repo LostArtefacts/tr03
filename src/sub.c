@@ -389,6 +389,36 @@ void SubEffects(sint16 item_number)
     UpdateWakeFX_sub();
 }
 
+static uint8 SubCurrentStartWake;
+
+void DoWake_sub(ITEM_INFO *v, sint16 leftright)
+{
+    PHD_VECTOR pos;
+    sint32 lp;
+
+    if (!TriggerActive(v))
+        return;
+
+    if (SubWakePts[SubCurrentStartWake][leftright].life)
+        return;
+    SubWakePts[SubCurrentStartWake][leftright].life = 0x20;
+    for (lp = 0; lp < 2; lp++) {
+        pos.x = sub_bites[2 + (leftright << 1) + lp].x;
+        pos.y = sub_bites[2 + (leftright << 1) + lp].y;
+        pos.z = sub_bites[2 + (leftright << 1) + lp].z;
+        GetJointAbsPosition(v, &pos, sub_bites[2 + (leftright << 1) + lp].mesh_num);
+        SubWakePts[SubCurrentStartWake][leftright].x[lp] = pos.x;
+        SubWakePts[SubCurrentStartWake][leftright].y[lp] = pos.y + 128;
+        SubWakePts[SubCurrentStartWake][leftright].z[lp] = pos.z;
+    }
+
+    if (leftright == 1) {
+        SubCurrentStartWake++;
+        SubCurrentStartWake &= NUM_WAKE_SPRITES - 1;
+    }
+}
+
+
 void UpdateWakeFX_sub(void)
 {
     int i, j;
