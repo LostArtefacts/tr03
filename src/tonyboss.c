@@ -114,3 +114,74 @@ void TriggerTonyFlame(sint16 item_number, sint32 hand)
     sptr->dWidth = size >> 2;
     sptr->dHeight = size >> 2;
 }
+
+void TriggerFireBall(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos1, sint16 room_number, sint16 angle, sint32 zdspeed)
+{
+    FX_INFO *fx;
+    PHD_VECTOR pos;
+    sint16 fx_number;
+    sint32 speed, fallspeed;
+
+    if (type == 0) {
+        pos.x = pos.y = pos.z = 0;
+        GetJointAbsPosition(item, &pos, 10);
+        angle = item->pos.y_rot;
+        speed = 0;
+        fallspeed = -16;
+    } else if (type == 1) {
+        pos.x = pos.y = pos.z = 0;
+        GetJointAbsPosition(item, &pos, 13);
+        angle = item->pos.y_rot;
+        speed = 0;
+        fallspeed = -16;
+    } else if (type == 2) {
+        pos.x = pos.y = pos.z = 0;
+        GetJointAbsPosition(item, &pos, 13);
+        speed = 160;
+        fallspeed = -(GetRandomControl() & 7) - 32;
+    } else if (type == 4) {
+        pos.x = pos1->x;
+        pos.y = pos1->y;
+        pos.z = pos1->z;
+        speed = zdspeed + (GetRandomControl() & 3);
+        angle = GetRandomControl() << 1;
+        fallspeed = (GetRandomControl() & 3) - 2;
+    } else if (type == 5) {
+        pos.x = pos1->x;
+        pos.y = pos1->y;
+        pos.z = pos1->z;
+        speed = (GetRandomControl() & 7) + 48;
+        angle += (GetRandomControl() & 0x1fff) - 0x9000;
+        fallspeed = -(GetRandomControl() & 15) - 16;
+    } else if (type == 3) {
+        pos.x = pos1->x;
+        pos.y = pos1->y;
+        pos.z = pos1->z;
+        speed = 0;
+        fallspeed = (GetRandomControl() & 3) + 4;
+    } else {
+        pos.x = pos1->x;
+        pos.y = pos1->y;
+        pos.z = pos1->z;
+        speed = (GetRandomControl() & 31) + 32;
+        angle = GetRandomControl() << 1;
+        fallspeed = -(GetRandomControl() & 31) - 32;
+    }
+    fx_number = CreateEffect(room_number);
+    if (fx_number != NO_ITEM) {
+        fx = &effects[fx_number];
+        fx->pos.x_pos = pos.x;
+        fx->pos.y_pos = pos.y;
+        fx->pos.z_pos = pos.z;
+        fx->pos.y_rot = angle;
+        fx->object_number = 283;
+        fx->speed = speed;
+        fx->fallspeed = fallspeed;
+        fx->flag1 = type;
+        fx->flag2 = (GetRandomControl() & 3) + 1;
+        if (type == 5)
+            fx->flag2 <<= 1;
+        else if (type == 2)
+            fx->flag2 = 0;
+    }
+}

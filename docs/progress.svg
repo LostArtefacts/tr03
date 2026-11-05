@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="229.91" height="12" x="0" y="0" class="named"><title>735 · 49.76%</title></rect>
-<rect width="232.09" height="12" x="229.91" y="0" class="todo"><title>742 · 50.24%</title></rect>
+<rect width="230.22" height="12" x="0" y="0" class="named"><title>736 · 49.83%</title></rect>
+<rect width="231.78" height="12" x="230.22" y="0" class="todo"><title>741 · 50.17%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">49.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">735</tspan> · <tspan class="todo">742</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">736</tspan> · <tspan class="todo">741</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="97.64" height="12" x="0" y="0" class="named"><title>141 KB · 21.14%</title></rect>
-<rect width="364.36" height="12" x="97.64" y="0" class="todo"><title>525 KB · 78.86%</title></rect>
+<rect width="98.02" height="12" x="0" y="0" class="named"><title>141 KB · 21.22%</title></rect>
+<rect width="363.98" height="12" x="98.02" y="0" class="todo"><title>524 KB · 78.78%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">21.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">141 KB</tspan> · <tspan class="todo">525 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">21.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">141 KB</tspan> · <tspan class="todo">524 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1050,7 +1050,7 @@
 <rect width="12" height="12" x="525" y="285" class="named"><title>0x0046c120 InitialiseTonyBoss (157 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="285" class="todo"><title>0x0046c1c0 ExplodeTonyBoss (663 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="285" class="named"><title>0x0046c460 TriggerTonyFlame (468 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="285" class="todo"><title>0x0046c640 TriggerFireBall (541 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="285" class="named"><title>0x0046c640 TriggerFireBall (541 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="285" class="todo"><title>0x0046c860 ControlTonyFireBall (1182 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="285" class="todo"><title>0x0046cd00 TriggerFireBallFlame (569 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="285" class="todo"><title>0x0046cf40 TrainControl (527 bytes)</title></rect>
@@ -1867,7 +1867,7 @@
 <rect width="13.90" height="13.82" x="382.53" y="234.60" class="todo"><title>0x00458880 FinalLevelCounter (545 bytes)</title></rect>
 <rect width="13.90" height="13.77" x="382.53" y="251.42" class="todo"><title>0x0046b120 draw_border (543 bytes)</title></rect>
 <rect width="13.90" height="13.75" x="382.53" y="268.19" class="todo"><title>0x00440b90 LaraTestHangJumpUp (542 bytes)</title></rect>
-<rect width="13.90" height="13.72" x="382.53" y="284.94" class="todo"><title>0x0046c640 TriggerFireBall (541 bytes)</title></rect>
+<rect width="13.90" height="13.72" x="382.53" y="284.94" class="named"><title>0x0046c640 TriggerFireBall (541 bytes)</title></rect>
 <rect width="13.90" height="13.62" x="382.53" y="301.66" class="todo"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
 <rect width="13.90" height="13.57" x="382.53" y="318.28" class="todo"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
 <rect width="13.90" height="13.52" x="382.53" y="334.85" class="todo"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
