@@ -47,16 +47,16 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="257.63" height="12" x="0" y="0" class="named"><title>906 · 61.34%</title></rect>
-<rect width="1.14" height="12" x="257.63" y="0" class="nonmatching"><title>4 · 0.27%</title></rect>
-<rect width="161.23" height="12" x="258.77" y="0" class="todo"><title>567 · 38.39%</title></rect>
+<rect width="1.42" height="12" x="257.63" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="160.95" height="12" x="259.05" y="0" class="todo"><title>566 · 38.32%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">61.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">906</tspan> · <tspan class="nonmatching">4</tspan> · <tspan class="todo">567</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">906</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">566</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="185.95" height="12" x="0" y="0" class="named"><title>296 KB · 44.27%</title></rect>
-<rect width="3.58" height="12" x="185.95" y="0" class="nonmatching"><title>6 KB · 0.85%</title></rect>
-<rect width="230.47" height="12" x="189.53" y="0" class="todo"><title>366 KB · 54.87%</title></rect>
+<rect width="3.69" height="12" x="185.95" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="230.36" height="12" x="189.64" y="0" class="todo"><title>366 KB · 54.85%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -866,7 +866,7 @@
 <rect width="12" height="12" x="735" y="225" class="named"><title>0x00453ab0 GetInMineCart (193 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="240" class="named"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="240" class="named"><title>0x00453ca0 MoveCart (1356 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="240" class="todo"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="240" class="nonmatching"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="240" class="named"><title>0x004542a0 DoUserInput (2388 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="240" class="named"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="240" class="named"><title>0x00454d10 CartToBaddieCollision (658 bytes)</title></rect>
@@ -2296,7 +2296,7 @@
 <rect width="7.93" height="7.44" x="544.71" y="233.58" class="todo"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
 <rect width="7.93" height="7.44" x="555.64" y="233.58" class="todo"><title>0x00401540 phd_RotZ (168 bytes)</title></rect>
 <rect width="7.93" height="7.44" x="566.57" y="233.58" class="named"><title>0x0043d4a0 DoRipple (168 bytes)</title></rect>
-<rect width="7.93" height="7.44" x="577.50" y="233.58" class="todo"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
+<rect width="7.93" height="7.44" x="577.50" y="233.58" class="nonmatching"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
 <rect width="7.93" height="7.44" x="588.42" y="233.58" class="named"><title>0x0046ef40 SideFlameEmitterControl (168 bytes)</title></rect>
 <rect width="7.88" height="7.44" x="599.35" y="233.58" class="named"><title>0x004552c0 ShootAtLara (167 bytes)</title></rect>
 <rect width="7.88" height="7.44" x="610.23" y="233.58" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>

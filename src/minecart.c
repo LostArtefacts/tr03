@@ -345,6 +345,27 @@ void MoveCart(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart)
         v->pos.z_rot -= v->pos.z_rot >> 3;
 }
 
+void AnimateItem(ITEM_INFO *item);
+
+sint32 TestHeight_minecart(ITEM_INFO *v, sint32 x, sint32 z)
+{
+    sint32 s, c;
+    PHD_VECTOR pos;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+
+    c = phd_cos(v->pos.y_rot);
+    s = phd_sin(v->pos.y_rot);
+
+    pos.x = v->pos.x_pos + ((x * c + z * s) >> W2V_SHIFT);
+    pos.y = v->pos.y_pos - (z * phd_sin(v->pos.x_rot) >> W2V_SHIFT) + (x * phd_sin(v->pos.z_rot) >> W2V_SHIFT);
+    pos.z = v->pos.z_pos + ((z * c - x * s) >> W2V_SHIFT);
+
+    room_number = v->room_number;
+    floor = GetFloor(pos.x, pos.y, pos.z, &room_number);
+    return GetHeight(floor, pos.x, pos.y, pos.z);
+}
+
 #define CART_GETIN 0
 #define CART_GETOUT 1
 #define CART_GETOUTL 2
