@@ -956,7 +956,7 @@ address,size,name,symbol
 0x00469de0,42,UpdateWakeFX_sub,_UpdateWakeFX_sub
 0x00469e10,366,TriggerSubMist,_TriggerSubMist
 0x00469f80,93,InitialiseSwat,_InitialiseSwat
-0x00469fe0,2205,SwatControl,_SwatControl
+0x00469fe0,2252,SwatControl,_SwatControl
 0x0046a8b0,164,InitialiseTarget,_InitialiseTarget
 0x0046a960,668,TargetControl,_TargetControl
 0x0046ac00,98,ResetTargets,_ResetTargets
@@ -1981,6 +1981,7 @@ address,size,name,symbol
 0x004c7be0,16,shiva_left,_shiva_left
 0x004c7bf0,16,shiva_right,_shiva_right
 0x004c7c08,96,sub_bites,_sub_bites
+0x004c7c68,16,swat_gun,_swat_gun
 0x004c7c78,110,T_textSpacing,_T_textSpacing
 0x004c7ce8,95,T_remapASCII,_T_remapASCII
 0x004c7d48,16,tiger_bite,_tiger_bite
