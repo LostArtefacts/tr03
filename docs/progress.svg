@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="303.78" height="12" x="0" y="0" class="named"><title>1069 · 72.33%</title></rect>
-<rect width="1.99" height="12" x="303.78" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="114.24" height="12" x="305.76" y="0" class="todo"><title>402 · 27.20%</title></rect>
+<rect width="304.06" height="12" x="0" y="0" class="named"><title>1070 · 72.40%</title></rect>
+<rect width="1.99" height="12" x="304.06" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="113.95" height="12" x="306.05" y="0" class="todo"><title>401 · 27.13%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">72.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1069</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">402</tspan></text>
+<text text-anchor="end" x="600" y="7.50">72.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1070</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">401</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="193.16" height="12" x="0" y="0" class="named"><title>307 KB · 45.99%</title></rect>
-<rect width="3.79" height="12" x="193.16" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.05" height="12" x="196.95" y="0" class="todo"><title>355 KB · 53.11%</title></rect>
+<rect width="193.28" height="12" x="0" y="0" class="named"><title>307 KB · 46.02%</title></rect>
+<rect width="3.79" height="12" x="193.28" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="222.92" height="12" x="197.08" y="0" class="todo"><title>355 KB · 53.08%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">307 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
@@ -1301,7 +1301,7 @@
 <rect width="12" height="12" x="510" y="360" class="todo"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="360" class="todo"><title>0x00488260 do_detail_option (3247 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="360" class="todo"><title>0x00488f30 do_sound_option (1181 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="360" class="todo"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="360" class="named"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="360" class="todo"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="360" class="todo"><title>0x00489510 DefaultConflict (64 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="360" class="todo"><title>0x00489550 do_control_option (1798 bytes)</title></rect>
@@ -2257,7 +2257,7 @@
 <rect width="8.58" height="7.89" x="534.32" y="222.59" class="named"><title>0x00471960 RotateHeadXAngle (193 bytes)</title></rect>
 <rect width="8.54" height="7.89" x="545.90" y="222.59" class="named"><title>0x00439c50 ChangeRequesterItem (192 bytes)</title></rect>
 <rect width="8.54" height="7.89" x="557.44" y="222.59" class="named"><title>0x00445760 FireM16 (192 bytes)</title></rect>
-<rect width="8.54" height="7.89" x="568.98" y="222.59" class="todo"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
+<rect width="8.54" height="7.89" x="568.98" y="222.59" class="named"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
 <rect width="8.54" height="7.89" x="580.52" y="222.59" class="named"><title>0x0048aa00 AnimateTextures (192 bytes)</title></rect>
 <rect width="8.50" height="7.89" x="592.06" y="222.59" class="named"><title>0x0043f980 LaraCollideStop (191 bytes)</title></rect>
 <rect width="8.50" height="7.89" x="603.56" y="222.59" class="named"><title>0x00440960 lara_col_stop (191 bytes)</title></rect>
