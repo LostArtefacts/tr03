@@ -168,6 +168,182 @@ int MineCartControl(void)
     return (lara.skidoo == NO_ITEM) ? 0 : 1;
 }
 
+#define CF_TURNINGL 2
+#define CF_TURNINGR 4
+#define CF_CONTROL 16
+#define CF_STOPPED 32
+
+sint32 TestHeight_minecart(ITEM_INFO *v, sint32 x, sint32 z);
+
+void MoveCart(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart)
+{
+    sint16 val;
+
+    if (cart->StopDelay)
+        cart->StopDelay--;
+
+    if (lara.MineL && lara.MineR && !cart->StopDelay &&
+        ((v->pos.x_pos & 0x380) == 512 || (v->pos.z_pos & 0x380) == 512)) {
+        if (cart->Speed < 0xf000) {
+            cart->Flags |= CF_STOPPED | CF_CONTROL;
+            cart->Speed = v->speed = 0;
+            return;
+        } else
+            cart->StopDelay = 16;
+    }
+
+    if ((lara.MineL || lara.MineR) && !(lara.MineL && lara.MineR) && !cart->StopDelay &&
+        !(cart->Flags & (CF_TURNINGL | CF_TURNINGR))) {
+        sint16 ang;
+        uint16 rot = (((uint16)v->pos.y_rot) >> 14) | (lara.MineL << 2);
+
+        switch (rot) {
+        case 0:
+            cart->TurnX = (v->pos.x_pos + 4096) & ~1023;
+            cart->TurnZ = v->pos.z_pos & ~1023;
+            break;
+        case 1:
+            cart->TurnX = v->pos.x_pos & ~1023;
+            cart->TurnZ = (v->pos.z_pos - 4096) | 1023;
+            break;
+        case 2:
+            cart->TurnX = (v->pos.x_pos - 4096) | 1023;
+            cart->TurnZ = v->pos.z_pos | 1023;
+            break;
+        case 3:
+            cart->TurnX = v->pos.x_pos | 1023;
+            cart->TurnZ = (v->pos.z_pos + 4096) & ~1023;
+            break;
+        case 4:
+            cart->TurnX = (v->pos.x_pos - 4096) | 1023;
+            cart->TurnZ = v->pos.z_pos & ~1023;
+            break;
+        case 5:
+            cart->TurnX = v->pos.x_pos & ~1023;
+            cart->TurnZ = (v->pos.z_pos + 4096) & ~1023;
+            break;
+        case 6:
+            cart->TurnX = (v->pos.x_pos + 4096) & ~1023;
+            cart->TurnZ = v->pos.z_pos | 1023;
+            break;
+        case 7:
+            cart->TurnX = v->pos.x_pos | 1023;
+            cart->TurnZ = (v->pos.z_pos - 4096) | 1023;
+            break;
+        }
+
+        ang = mGetAngle(v->pos.x_pos, v->pos.z_pos, cart->TurnX, cart->TurnZ) & 0x3fff;
+        if (rot < 4) {
+            cart->TurnRot = v->pos.y_rot;
+            cart->TurnLen = ang;
+        } else {
+            cart->TurnRot = v->pos.y_rot;
+            if (ang)
+                ang = 16384 - ang;
+            cart->TurnLen = ang;
+        }
+        cart->Flags |= lara.MineL ? CF_TURNINGL : CF_TURNINGR;
+    }
+
+    if (cart->Speed < 0xa00)
+        cart->Speed = 0xa00;
+    cart->Speed += -cart->Gradient << 2;
+
+    if ((v->speed = cart->Speed >> 8) < 32) {
+        v->speed = 32;
+        StopSoundEffect(209);
+        if (cart->YVel)
+            StopSoundEffect(210);
+        else
+            SoundEffect(210, &v->pos, 2);
+    } else {
+        StopSoundEffect(210);
+        if (cart->YVel)
+            StopSoundEffect(209);
+        else
+            SoundEffect(209, &v->pos, (2 | 4) + 0x1000000 + (v->speed << 15));
+    }
+
+    if (cart->Flags & (CF_TURNINGL | CF_TURNINGR)) {
+        sint32 x, z;
+        uint16 quad, deg;
+
+        if ((cart->TurnLen += v->speed * 3) > ONE_DEGREE * 90) {
+            if (cart->Flags & CF_TURNINGL)
+                v->pos.y_rot = cart->TurnRot - 16384;
+            else
+                v->pos.y_rot = cart->TurnRot + 16384;
+            cart->Flags &= ~(CF_TURNINGL | CF_TURNINGR);
+        } else {
+            if (cart->Flags & CF_TURNINGL)
+                v->pos.y_rot = cart->TurnRot - cart->TurnLen;
+            else
+                v->pos.y_rot = cart->TurnRot + cart->TurnLen;
+        }
+
+        if (cart->Flags & (CF_TURNINGL | CF_TURNINGR)) {
+            quad = ((uint16)v->pos.y_rot) >> 14;
+            deg = v->pos.y_rot & 16383;
+            switch (quad) {
+            case 0:
+                x = -phd_cos(deg);
+                z = phd_sin(deg);
+                break;
+            case 1:
+                x = phd_sin(deg);
+                z = phd_cos(deg);
+                break;
+            case 2:
+                x = phd_cos(deg);
+                z = -phd_sin(deg);
+                break;
+            default:
+                x = -phd_sin(deg);
+                z = -phd_cos(deg);
+                break;
+            }
+            if (cart->Flags & CF_TURNINGL) {
+                x = -x;
+                z = -z;
+            }
+            v->pos.x_pos = cart->TurnX + ((x * 3584) >> W2V_SHIFT);
+            v->pos.z_pos = cart->TurnZ + ((z * 3584) >> W2V_SHIFT);
+        }
+    } else {
+        v->pos.x_pos += (v->speed * phd_sin(v->pos.y_rot)) >> W2V_SHIFT;
+        v->pos.z_pos += (v->speed * phd_cos(v->pos.y_rot)) >> W2V_SHIFT;
+    }
+
+    cart->MidPos = TestHeight_minecart(v, 0, 0);
+    if (!cart->YVel) {
+        cart->FrontPos = TestHeight_minecart(v, 0, 256);
+        cart->Gradient = cart->MidPos - cart->FrontPos;
+        v->pos.y_pos = cart->MidPos;
+    } else {
+        if (v->pos.y_pos > cart->MidPos) {
+            if (cart->YVel > 0)
+                SoundEffect(202, &v->pos, 2);
+            v->pos.y_pos = cart->MidPos;
+            cart->YVel = 0;
+        } else {
+            cart->YVel += 0x401;
+            if (cart->YVel > 0x3f00)
+                cart->YVel = 0x3f00;
+            v->pos.y_pos += cart->YVel >> 8;
+        }
+    }
+
+    v->pos.x_rot = cart->Gradient << 5;
+    val = v->pos.y_rot & 16383;
+    if (cart->Flags & (CF_TURNINGL | CF_TURNINGR)) {
+        if (cart->Flags & CF_TURNINGR)
+            v->pos.z_rot = -(val * v->speed) >> 9;
+        else
+            v->pos.z_rot = ((16384 - val) * v->speed) >> 9;
+    } else
+        v->pos.z_rot -= v->pos.z_rot >> 3;
+}
+
 int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
 void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
 

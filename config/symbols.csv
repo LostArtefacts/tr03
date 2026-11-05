@@ -800,7 +800,7 @@ address,size,name,symbol
 0x00453960,333,MineCartCollision,_MineCartCollision
 0x00453ab0,193,GetInMineCart,_GetInMineCart
 0x00453b80,279,MineCartControl,_MineCartControl
-0x00453ca0,1323,MoveCart,_MoveCart
+0x00453ca0,1356,MoveCart,_MoveCart
 0x004541f0,168,TestHeight_minecart,_TestHeight_minecart
 0x004542a0,2307,DoUserInput,_DoUserInput
 0x00454c00,270,CanGetOut_minecart,_CanGetOut_minecart
