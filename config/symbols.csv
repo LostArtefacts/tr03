@@ -905,7 +905,7 @@ address,size,name,symbol
 0x00460bd0,455,TriggerExhaustSmoke,_TriggerExhaustSmoke
 0x00460da0,619,RaptorEmitterControl,_RaptorEmitterControl
 0x00461010,37,InitialiseRaptorEmitter,_InitialiseRaptorEmitter
-0x00461040,1758,RaptorControl,_RaptorControl
+0x00461040,1792,RaptorControl,_RaptorControl
 0x00461740,524,MouseControl,_MouseControl
 0x00461950,258,InitialiseStartInfo,_InitialiseStartInfo
 0x00461a60,240,ModifyStartInfo,_ModifyStartInfo
@@ -1943,6 +1943,7 @@ address,size,name,symbol
 0x004c79a0,24,Switch2Bounds,_Switch2Bounds
 0x004c79b8,12,Switch2Position,_Switch2Position
 0x004c7a98,4,tunes,_tunes
+0x004c7aa8,16,raptor_bite,_raptor_bite
 0x004c7ab8,16,mouse_bite,_mouse_bite
 0x004c7b08,16,seal_gas,_seal_gas
 0x004c7be0,16,shiva_left,_shiva_left
