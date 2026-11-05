@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="274.64" height="12" x="0" y="0" class="named"><title>878 · 59.44%</title></rect>
-<rect width="187.36" height="12" x="274.64" y="0" class="todo"><title>599 · 40.56%</title></rect>
+<rect width="274.95" height="12" x="0" y="0" class="named"><title>879 · 59.51%</title></rect>
+<rect width="187.05" height="12" x="274.95" y="0" class="todo"><title>598 · 40.49%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">59.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">878</tspan> · <tspan class="todo">599</tspan></text>
+<text text-anchor="end" x="642" y="7.50">59.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">879</tspan> · <tspan class="todo">598</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="165.64" height="12" x="0" y="0" class="named"><title>239 KB · 35.85%</title></rect>
-<rect width="296.36" height="12" x="165.64" y="0" class="todo"><title>427 KB · 64.15%</title></rect>
+<rect width="166.16" height="12" x="0" y="0" class="named"><title>240 KB · 35.97%</title></rect>
+<rect width="295.84" height="12" x="166.16" y="0" class="todo"><title>427 KB · 64.03%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">35.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">239 KB</tspan> · <tspan class="todo">427 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">36.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">240 KB</tspan> · <tspan class="todo">427 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -278,7 +278,7 @@
 <rect width="12" height="12" x="195" y="60" class="todo"><title>0x00421de0 GetCeiling (1183 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="60" class="named"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="60" class="named"><title>0x00422370 LOS (159 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="60" class="todo"><title>0x00422410 zLOS (747 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="60" class="named"><title>0x00422410 zLOS (747 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="60" class="named"><title>0x00422700 xLOS (748 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="60" class="named"><title>0x004229f0 ClipTarget (576 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="60" class="named"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
@@ -1770,7 +1770,7 @@
 <rect width="15.75" height="16.83" x="656.71" y="44.84" class="named"><title>0x0045eb20 QuadBikeDraw (753 bytes)</title></rect>
 <rect width="15.65" height="16.83" x="675.46" y="44.84" class="named"><title>0x00422700 xLOS (748 bytes)</title></rect>
 <rect width="15.65" height="16.83" x="694.10" y="44.84" class="todo"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
-<rect width="15.63" height="16.83" x="712.75" y="44.84" class="todo"><title>0x00422410 zLOS (747 bytes)</title></rect>
+<rect width="15.63" height="16.83" x="712.75" y="44.84" class="named"><title>0x00422410 zLOS (747 bytes)</title></rect>
 <rect width="15.63" height="16.83" x="731.37" y="44.84" class="named"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
 <rect width="16.06" height="16.31" x="346.05" y="64.67" class="named"><title>0x0043ec20 lara_col_all4s (744 bytes)</title></rect>
 <rect width="16.06" height="16.07" x="346.05" y="83.98" class="named"><title>0x00467f70 GetSpheres (733 bytes)</title></rect>

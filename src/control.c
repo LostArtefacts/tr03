@@ -3,7 +3,7 @@
 
 #define MAX_CD_TRACKS 128
 
-void MovableBlock(sint16 item_number);
+void MovableBlock(sint16);
 void AlterFloorHeight(ITEM_INFO *item, int height);
 #define KILLED_ITEM (-0x8000)
 
@@ -453,6 +453,83 @@ FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number)
 
 extern int los_rooms[20];
 extern int number_los_rooms;
+
+int zLOS(GAME_VECTOR *start, GAME_VECTOR *target)
+{
+    sint32 x, y, z;
+    sint32 dx, dy, dz;
+    sint16 room_number, last_room;
+    FLOOR_INFO *floor;
+
+    dz = target->z - start->z;
+    if (dz == 0)
+        return 1;
+    dx = ((target->x - start->x) << WALL_SHIFT) / dz;
+    dy = ((target->y - start->y) << WALL_SHIFT) / dz;
+    los_rooms[0] = room_number = last_room = start->room_number;
+    number_los_rooms = 1;
+    if (dz < 0) {
+        z = start->z & ~(WALL_L - 1);
+        x = start->x + (dx * (z - start->z) >> WALL_SHIFT);
+        y = start->y + (dy * (z - start->z) >> WALL_SHIFT);
+        while (z > target->z) {
+            floor = GetFloor(x, y, z, &room_number);
+            if (y > GetHeight(floor, x, y, z) || y < GetCeiling(floor, x, y, z)) {
+                target->x = x;
+                target->y = y;
+                target->z = z;
+                target->room_number = room_number;
+                return -1;
+            }
+            if (room_number != last_room) {
+                los_rooms[number_los_rooms++] = room_number;
+                last_room = room_number;
+            }
+            floor = GetFloor(x, y, z - 1, &room_number);
+            if (y > GetHeight(floor, x, y, z - 1) || y < GetCeiling(floor, x, y, z - 1)) {
+                target->x = x;
+                target->y = y;
+                target->z = z;
+                target->room_number = last_room;
+                return 0;
+            }
+            z -= WALL_L;
+            x -= dx;
+            y -= dy;
+        }
+    } else {
+        z = start->z | (WALL_L - 1);
+        x = start->x + (dx * (z - start->z) >> WALL_SHIFT);
+        y = start->y + (dy * (z - start->z) >> WALL_SHIFT);
+        while (z < target->z) {
+            floor = GetFloor(x, y, z, &room_number);
+            if (y > GetHeight(floor, x, y, z) || y < GetCeiling(floor, x, y, z)) {
+                target->x = x;
+                target->y = y;
+                target->z = z;
+                target->room_number = room_number;
+                return -1;
+            }
+            if (room_number != last_room) {
+                los_rooms[number_los_rooms++] = room_number;
+                last_room = room_number;
+            }
+            floor = GetFloor(x, y, z + 1, &room_number);
+            if (y > GetHeight(floor, x, y, z + 1) || y < GetCeiling(floor, x, y, z + 1)) {
+                target->x = x;
+                target->y = y;
+                target->z = z;
+                target->room_number = last_room;
+                return 0;
+            }
+            z += WALL_L;
+            x += dx;
+            y += dy;
+        }
+    }
+    target->room_number = room_number;
+    return 1;
+}
 
 int xLOS(GAME_VECTOR *start, GAME_VECTOR *target)
 {
