@@ -86,6 +86,66 @@ extern sint16 cdtrack;
 extern char IsAtmospherePlaying;
 extern uint32 CurrentLevel;
 
+void QuadBikeCollision(sint16 item_number, ITEM_INFO *l, COLL_INFO *coll)
+{
+    int geton;
+
+    if (l->hit_points < 0 || lara.skidoo != NO_ITEM)
+        return;
+
+    if ((geton = GetOnQuadBike(item_number, coll))) {
+        sint16 ang;
+        QUADINFO *bike;
+        ITEM_INFO *v;
+
+        lara.skidoo = item_number;
+        if (lara.gun_type == LG_FLARE) {
+            CreateFlare(0);
+            undraw_flare_meshes();
+            lara.flare_control_left = 0;
+            lara.request_gun_type = lara.gun_type = LG_ARMLESS;
+        }
+        lara.gun_status = LG_HANDSBUSY;
+
+        v = &items[item_number];
+        ang = phd_atan(v->pos.z_pos - l->pos.z_pos, v->pos.x_pos - l->pos.x_pos);
+        ang -= v->pos.y_rot;
+        if (ang > -(ONE_DEGREE * 45) && ang < ONE_DEGREE * 135) {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 23;
+            l->current_anim_state = l->goal_anim_state = 23;
+        } else {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 9;
+            l->current_anim_state = l->goal_anim_state = 9;
+        }
+        l->frame_number = anims[l->anim_number].frame_base;
+
+        v->hit_points = 1;
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.y_rot = v->pos.y_rot;
+        lara.head_x_rot = lara.head_y_rot = 0;
+        lara.torso_x_rot = lara.torso_y_rot = 0;
+        lara.hit_direction = -1;
+        AnimateItem(l);
+
+        if (CurrentLevel == 3) {
+            int track;
+
+            track = tunes[GetRandomControl() & 3];
+            if (track != cdtrack && IsAtmospherePlaying) {
+                cdtrack = track;
+                S_CDPlay(track, 0);
+            }
+        }
+
+        bike = (QUADINFO *)v->data;
+        bike->Revs = 0;
+    } else {
+        ObjectCollision(item_number, l, coll);
+    }
+}
+
 void TriggerUnderwaterExplosion(ITEM_INFO *item);
 void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
 int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);

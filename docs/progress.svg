@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="199.17" height="12" x="0" y="0" class="named"><title>629 · 42.56%</title></rect>
-<rect width="268.83" height="12" x="199.17" y="0" class="todo"><title>849 · 57.44%</title></rect>
+<rect width="199.49" height="12" x="0" y="0" class="named"><title>630 · 42.63%</title></rect>
+<rect width="268.51" height="12" x="199.49" y="0" class="todo"><title>848 · 57.37%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">42.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">629</tspan> · <tspan class="todo">849</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">630</tspan> · <tspan class="todo">848</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="64.44" height="12" x="0" y="0" class="named"><title>92 KB · 13.77%</title></rect>
-<rect width="403.56" height="12" x="64.44" y="0" class="todo"><title>573 KB · 86.23%</title></rect>
+<rect width="64.74" height="12" x="0" y="0" class="named"><title>92 KB · 13.83%</title></rect>
+<rect width="403.26" height="12" x="64.74" y="0" class="todo"><title>573 KB · 86.17%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">13.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">92 KB</tspan> · <tspan class="todo">573 KB</tspan></text>
@@ -952,7 +952,7 @@
 <rect width="12" height="12" x="555" y="255" class="todo"><title>0x0045dc30 PunkControl (2401 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="255" class="todo"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="255" class="named"><title>0x0045e7e0 InitialiseQuadBike (75 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="255" class="todo"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="255" class="named"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="255" class="named"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="255" class="todo"><title>0x0045eb20 QuadBikeDraw (753 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="255" class="todo"><title>0x0045ee20 QuadBikeControl (1409 bytes)</title></rect>
@@ -1960,7 +1960,7 @@
 <rect width="12.68" height="11.99" x="415.77" y="375.73" class="todo"><title>0x0045f490 SkidooCheckGetOff (431 bytes)</title></rect>
 <rect width="12.68" height="11.90" x="415.77" y="390.72" class="todo"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>
 <rect width="12.68" height="11.82" x="415.77" y="405.62" class="todo"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
-<rect width="12.68" height="11.79" x="415.77" y="420.44" class="todo"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
+<rect width="12.68" height="11.79" x="415.77" y="420.44" class="named"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
 <rect width="12.68" height="11.76" x="415.77" y="435.24" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12.58" height="11.83" x="431.45" y="130.87" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12.46" height="11.83" x="447.03" y="130.87" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
