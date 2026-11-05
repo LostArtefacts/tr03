@@ -447,3 +447,50 @@ void TriggerSubMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle)
     sptr->dWidth = size;
     sptr->dHeight = size;
 }
+
+int GetOnSub(sint16 item_number, COLL_INFO *coll);
+void CreateFlare(int thrown);
+void ObjectCollisionSub(int item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
+void SubCollision(sint16 item_number, ITEM_INFO *l, COLL_INFO *coll)
+{
+    int geton;
+    ITEM_INFO *v;
+
+    if (l->hit_points < 0 || lara.skidoo != NO_ITEM)
+        return;
+
+    v = &items[item_number];
+    if ((geton = GetOnSub(item_number, coll))) {
+        lara.skidoo = item_number;
+        lara.water_status = LARA_ABOVEWATER;
+        if (lara.gun_type == LG_FLARE) {
+            CreateFlare(0);
+            undraw_flare_meshes();
+            lara.flare_control_left = 0;
+            lara.request_gun_type = lara.gun_type = LG_ARMLESS;
+        }
+        lara.gun_status = LG_HANDSBUSY;
+
+        v->hit_points = 1;
+        l->pos.x_pos = v->pos.x_pos;
+        l->pos.y_pos = v->pos.y_pos;
+        l->pos.z_pos = v->pos.z_pos;
+        l->pos.y_rot = v->pos.y_rot;
+        if (l->current_anim_state == AS_SURFTREAD || l->current_anim_state == AS_SURFSWIM) {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 10;
+            l->frame_number = anims[objects[19].anim_index + 10].frame_base;
+            l->current_anim_state = l->goal_anim_state = 8;
+        } else {
+            l->anim_number = objects[VEHICLE_ANIM].anim_index + 13;
+            l->frame_number = anims[objects[19].anim_index + 13].frame_base;
+            l->current_anim_state = l->goal_anim_state = 8;
+        }
+        AnimateItem(l);
+    } else {
+        v->pos.y_pos += 128;
+        ObjectCollisionSub(item_number, l, coll);
+        v->pos.y_pos -= 128;
+    }
+}
+
