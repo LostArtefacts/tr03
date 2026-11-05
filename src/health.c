@@ -27,6 +27,45 @@ int FlashIt(void)
     return flash_state;
 }
 
+extern uint32 CurrentLevel;
+extern int assault_timer_display;
+extern sint16 phd_winxmax;
+
+int sprintf(char *buf, const char *fmt, ...);
+void S_DrawScreenSprite2d(sint32 x, sint32 y, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
+
+void DrawAssaultTimer(void)
+{
+    int x, timer, hund, ttimer;
+    char txt[8], *c;
+
+    if (CurrentLevel != 0 || !assault_timer_display || QuadbikeLapTimeDisplayTimer)
+        return;
+    if (savegame.timer > 0x1a5dd)
+        savegame.timer = 0x1a5dd;
+    ttimer = savegame.timer;
+    if (ttimer < 2)
+        ttimer = 0;
+    timer = ttimer / 30;
+    hund = ((ttimer % 30) * 334) / 100;
+    sprintf(txt, "%d:%02d.%02d", timer / 60, timer % 60, hund);
+    x = (phd_winxmax >> 1) - 20 * 5 / 2;
+    for (c = txt; *c; c++) {
+        if (*c == ':') {
+            x -= 6;
+            S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 10), 2, 0);
+            x += 14;
+        } else if (*c == '.') {
+            x -= 6;
+            S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 11), 2, 0);
+            x += 14;
+        } else {
+            S_DrawScreenSprite2d(x, 36, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + (*c - '0')), 2, 0);
+            x += 20;
+        }
+    }
+}
+
 extern int overlay_flag;
 extern uint16 DashTimer;
 extern sint16 ExposureMeter;

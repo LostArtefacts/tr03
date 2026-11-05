@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="211.45" height="12" x="0" y="0" class="named"><title>676 · 45.77%</title></rect>
-<rect width="250.55" height="12" x="211.45" y="0" class="todo"><title>801 · 54.23%</title></rect>
+<rect width="211.76" height="12" x="0" y="0" class="named"><title>677 · 45.84%</title></rect>
+<rect width="250.24" height="12" x="211.76" y="0" class="todo"><title>800 · 54.16%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">45.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">676</tspan> · <tspan class="todo">801</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">677</tspan> · <tspan class="todo">800</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="74.91" height="12" x="0" y="0" class="named"><title>108 KB · 16.22%</title></rect>
-<rect width="387.09" height="12" x="74.91" y="0" class="todo"><title>557 KB · 83.78%</title></rect>
+<rect width="75.18" height="12" x="0" y="0" class="named"><title>108 KB · 16.27%</title></rect>
+<rect width="386.82" height="12" x="75.18" y="0" class="todo"><title>557 KB · 83.73%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">16.2%</text>
+<text text-anchor="end" x="642" y="24.50">16.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">108 KB</tspan> · <tspan class="todo">557 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -478,7 +478,7 @@
 <rect width="12" height="12" x="195" y="120" class="todo"><title>0x00433810 HairControl (2748 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="120" class="named"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="120" class="named"><title>0x00434360 FlashIt (45 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="120" class="todo"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="120" class="named"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="120" class="todo"><title>0x00434510 DrawAssaultPenalties (598 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="120" class="todo"><title>0x00434770 DrawQuadbikeLapTime (438 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="120" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
@@ -1995,7 +1995,7 @@
 <rect width="11.89" height="11.47" x="431.41" y="292" class="todo"><title>0x0046f1e0 SideFlameDetection (387 bytes)</title></rect>
 <rect width="11.89" height="11.44" x="431.41" y="306.48" class="todo"><title>0x00423710 StartDemo (386 bytes)</title></rect>
 <rect width="11.89" height="11.44" x="431.41" y="320.92" class="todo"><title>0x00425d10 DrawEffect (386 bytes)</title></rect>
-<rect width="11.89" height="11.38" x="431.41" y="335.37" class="todo"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
+<rect width="11.89" height="11.38" x="431.41" y="335.37" class="named"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
 <rect width="11.89" height="11.38" x="431.41" y="349.75" class="todo"><title>0x004920a0 Func4920a0 (384 bytes)</title></rect>
 <rect width="11.89" height="11.36" x="431.41" y="364.14" class="named"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
 <rect width="11.89" height="11.36" x="431.41" y="378.49" class="todo"><title>0x00449a30 UpdateElectricityPoints (383 bytes)</title></rect>
