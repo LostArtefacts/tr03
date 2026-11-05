@@ -93,4 +93,9 @@ int S_SoundSampleIsPlaying(int nHandle)
     return DS_IsChannelPlaying(nHandle);
 }
 
+void S_CDPlay(sint16 nTrack, int tMode)
+{
+    ACMEmulateCDPlay(nTrack, tMode);
+}
+
 }
