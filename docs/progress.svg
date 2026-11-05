@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="287.58" height="12" x="0" y="0" class="named"><title>1012 · 68.47%</title></rect>
-<rect width="1.42" height="12" x="287.58" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="131" height="12" x="289" y="0" class="todo"><title>461 · 31.19%</title></rect>
+<rect width="287.86" height="12" x="0" y="0" class="named"><title>1013 · 68.54%</title></rect>
+<rect width="1.42" height="12" x="287.86" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="130.72" height="12" x="289.28" y="0" class="todo"><title>460 · 31.12%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">68.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1012</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">461</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1013</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">460</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189" height="12" x="0" y="0" class="named"><title>300 KB · 45%</title></rect>
-<rect width="3.69" height="12" x="189" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.31" height="12" x="192.69" y="0" class="todo"><title>361 KB · 54.12%</title></rect>
+<rect width="189.05" height="12" x="0" y="0" class="named"><title>301 KB · 45.01%</title></rect>
+<rect width="3.69" height="12" x="189.05" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.26" height="12" x="192.74" y="0" class="todo"><title>361 KB · 54.11%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">361 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">301 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">361 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1378,7 +1378,7 @@
 <rect width="12" height="12" x="165" y="390" class="todo"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="390" class="todo"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="390" class="named"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="390" class="todo"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="390" class="named"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="390" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="390" class="todo"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
@@ -2597,7 +2597,7 @@
 <rect width="5.06" height="5.41" x="608.64" y="317.09" class="named"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
 <rect width="5.06" height="5.41" x="608.64" y="325.50" class="todo"><title>0x00484eb0 HWR_BeginScene (78 bytes)</title></rect>
 <rect width="5.06" height="5.41" x="608.64" y="333.92" class="named"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
-<rect width="5.06" height="5.41" x="608.64" y="342.33" class="todo"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
+<rect width="5.06" height="5.41" x="608.64" y="342.33" class="named"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="5.06" height="5.35" x="608.64" y="350.75" class="named"><title>0x004142e0 InitialiseCreature (77 bytes)</title></rect>
 <rect width="5.06" height="5.35" x="608.64" y="359.09" class="named"><title>0x00441e30 extra_as_startanim (77 bytes)</title></rect>
 <rect width="5.06" height="5.35" x="608.64" y="367.44" class="named"><title>0x004b39f0 DD_ClearSurface (77 bytes)</title></rect>

@@ -25,6 +25,15 @@ void UT_InitAccurateTimer(void)
     }
 }
 
+double UT_GetAccurateTimer(void)
+{
+    LARGE_INTEGER counter;
+
+    if (QueryPerformanceCounter(&counter))
+        return ((double)counter.QuadPart - start_us) * period;
+    return (double)(timeGetTime() - start) / 1000.0;
+}
+
 void UT_CenterWindow(HWND hWnd)
 {
     RECT rArea;
