@@ -27,4 +27,16 @@ int WinRegisterWindow(HINSTANCE hInstance)
     return RegisterClass(&App.WindowClass);
 }
 
+HWND WinCreateWindow(HINSTANCE hInstance, int nCmdShow)
+{
+    HWND hWnd;
+
+    hWnd = CreateWindowEx(WS_EX_APPWINDOW, "Window Class", "Tomb Raider III", WS_POPUP, 0, 0, 0, 0, 0, 0, hInstance, 0);
+    if (hWnd) {
+        ShowWindow(hWnd, nCmdShow);
+        UpdateWindow(hWnd);
+    }
+    return hWnd;
+}
+
 }
