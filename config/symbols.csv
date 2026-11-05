@@ -1036,7 +1036,7 @@ address,size,name,symbol
 0x00471350,453,TriggerElectricSparks_triboss,_TriggerElectricSparks_triboss
 0x00471520,66,TribeBossDie,_TribeBossDie
 0x00471570,261,InitialiseTribeBoss,_InitialiseTribeBoss
-0x00471680,689,FindClosestShieldPoint,_FindClosestShieldPoint
+0x00471680,724,FindClosestShieldPoint,_FindClosestShieldPoint
 0x00471960,193,RotateHeadXAngle,_RotateHeadXAngle
 0x00471a30,405,TriggerLizardMan,_TriggerLizardMan
 0x00471bd0,598,ExplodeTribeBoss,_ExplodeTribeBoss

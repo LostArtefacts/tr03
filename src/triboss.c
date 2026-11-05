@@ -306,3 +306,144 @@ sint16 FindLizardManItemNumber(sint16 room_number)
     }
     return -1;
 }
+
+#define SQUARE(A) ((A) * (A))
+
+void FindClosestShieldPoint(sint32 x, sint32 y, sint32 z, ITEM_INFO *item)
+{
+    SHIELD_POINTS *shptr;
+    GAME_VECTOR pos;
+    sint32 affected[5] = { 0, -1, 1, -8, 8 };
+    sint32 closestdist, closestvert, r, g, b, rgb, coladd;
+    sint32 lp;
+
+    shptr = &TribeBossShield[0];
+    closestdist = 0x7fffffff;
+    closestvert = 0;
+    for (lp = 0; lp < 40; lp++) {
+        sint32 dx, dy, dz;
+
+        if (lp >= 16 && lp <= 23) {
+            dx = (shptr->x + item->pos.x_pos) - x;
+            dy = (shptr->y + item->pos.y_pos) - y;
+            dz = (shptr->z + item->pos.z_pos) - z;
+            dx = SQUARE(dx) + SQUARE(dy) + SQUARE(dz);
+            if (dx < closestdist) {
+                closestdist = dx;
+                closestvert = lp;
+            }
+        }
+        shptr++;
+    }
+
+    switch (lara.gun_type) {
+    case LG_PISTOLS:
+        coladd = 144;
+        break;
+    case LG_MAGNUMS:
+        coladd = 200;
+        break;
+    case LG_UZIS:
+        coladd = 144;
+        break;
+    case LG_SHOTGUN:
+        coladd = 192;
+        break;
+    case LG_HARPOON:
+        coladd = 200;
+        break;
+    case LG_ROCKET:
+        coladd = 224;
+        break;
+    case LG_GRENADE:
+        coladd = 224;
+        break;
+    case LG_M16:
+        coladd = 192;
+        break;
+    default:
+        coladd = 0;
+        break;
+    }
+
+    for (lp = 0; lp < 5; lp++) {
+        sint32 vert;
+
+        vert = closestvert + affected[lp];
+        if ((vert & 7) == 7 && affected[lp] == -1)
+            vert += 8;
+        if ((vert & 7) == 0 && affected[lp] == 1)
+            vert -= 8;
+        shptr = &TribeBossShield[vert];
+        rgb = shptr->rgb;
+        r = rgb & 255;
+        g = (rgb >> 8) & 255;
+        b = (rgb >> 16) & 255;
+        if (lp == 0) {
+            if (coladd >= 200)
+                r = coladd;
+            else {
+                r += coladd >> 2;
+                if (r > coladd)
+                    r = coladd;
+            }
+        } else {
+            if (coladd >= 200)
+                r = coladd >> 1;
+            else {
+                r += coladd >> 3;
+                if (r > coladd >> 1)
+                    r = coladd >> 1;
+            }
+        }
+        if (lp == 0) {
+            if (coladd >= 200)
+                g = coladd;
+            else {
+                g += coladd >> 2;
+                if (g > coladd)
+                    g = coladd;
+            }
+        } else {
+            if (coladd >= 200)
+                g = coladd >> 1;
+            else {
+                g += coladd >> 3;
+                if (g > coladd >> 1)
+                    g = coladd >> 1;
+            }
+        }
+        if (lp == 0) {
+            if (coladd >= 200)
+                b = coladd;
+            else {
+                b += coladd >> 2;
+                if (b > coladd)
+                    b = coladd;
+            }
+        } else {
+            if (coladd >= 200)
+                b = coladd >> 1;
+            else {
+                b += coladd >> 3;
+                if (b > coladd >> 1)
+                    b = coladd >> 1;
+            }
+        }
+        shptr->rsub = (GetRandomControl() & 7) + 8;
+        shptr->gsub = (GetRandomControl() & 7) + 8;
+        shptr->bsub = (GetRandomControl() & 7) + 8;
+        if (lara.gun_type == LG_ROCKET || lara.gun_type == LG_GRENADE) {
+            shptr->rsub >>= 1;
+            shptr->gsub >>= 1;
+            shptr->bsub >>= 1;
+        }
+        shptr->rgb = r | (g << 8) | (b << 16);
+    }
+
+    pos.x = x;
+    pos.y = y;
+    pos.z = z;
+    for (lp = 0; lp < 7; lp++)
+        TriggerElectricSparks_triboss(&pos, 1);
+}
