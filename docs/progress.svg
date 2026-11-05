@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="258.20" height="12" x="0" y="0" class="named"><title>908 · 61.48%</title></rect>
-<rect width="1.42" height="12" x="258.20" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="160.38" height="12" x="259.62" y="0" class="todo"><title>564 · 38.19%</title></rect>
+<rect width="258.48" height="12" x="0" y="0" class="named"><title>909 · 61.54%</title></rect>
+<rect width="1.42" height="12" x="258.48" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="160.09" height="12" x="259.91" y="0" class="todo"><title>563 · 38.12%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">61.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">908</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">564</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">909</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">563</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="185.96" height="12" x="0" y="0" class="named"><title>296 KB · 44.28%</title></rect>
-<rect width="3.69" height="12" x="185.96" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.35" height="12" x="189.65" y="0" class="todo"><title>366 KB · 54.85%</title></rect>
+<rect width="185.99" height="12" x="0" y="0" class="named"><title>296 KB · 44.28%</title></rect>
+<rect width="3.69" height="12" x="185.99" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="230.33" height="12" x="189.67" y="0" class="todo"><title>366 KB · 54.84%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1190,7 +1190,7 @@
 <rect width="12" height="12" x="345" y="330" class="todo"><title>0x004808f0 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="330" class="todo"><title>0x00480920 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="330" class="todo"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="330" class="todo"><title>0x00480990 Func480990 (45 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="330" class="todo"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="todo"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="todo"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
@@ -1351,7 +1351,7 @@
 <rect width="12" height="12" x="510" y="375" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="375" class="todo"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="375" class="todo"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="375" class="todo"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="375" class="named"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="375" class="todo"><title>0x0048d0d0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="375" class="todo"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="375" class="todo"><title>0x0048d150 S_SoundPlaySampleLooped (70 bytes)</title></rect>
@@ -2789,7 +2789,7 @@
 <rect width="3.78" height="4.18" x="709.33" y="354.37" class="named"><title>0x0042f510 AssaultPenalty30 (45 bytes)</title></rect>
 <rect width="3.78" height="4.18" x="716.10" y="354.37" class="named"><title>0x00434360 FlashIt (45 bytes)</title></rect>
 <rect width="3.78" height="4.18" x="722.88" y="354.37" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
-<rect width="3.78" height="4.18" x="729.66" y="354.37" class="todo"><title>0x00480990 Func480990 (45 bytes)</title></rect>
+<rect width="3.78" height="4.18" x="729.66" y="354.37" class="todo"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="3.78" height="4.18" x="736.44" y="354.37" class="todo"><title>0x0048a2a0 S_DumpCine (45 bytes)</title></rect>
 <rect width="3.78" height="4.18" x="743.22" y="354.37" class="todo"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
 <rect width="4.06" height="3.80" x="654.49" y="361.55" class="named"><title>0x0042eed0 ChandelierFX (44 bytes)</title></rect>
@@ -2828,7 +2828,7 @@
 <rect width="3.93" height="3.75" x="661.56" y="416.33" class="named"><title>0x0046b6f0 GetTextScaleH (42 bytes)</title></rect>
 <rect width="3.93" height="3.75" x="661.56" y="423.08" class="named"><title>0x0046b720 GetTextScaleV (42 bytes)</title></rect>
 <rect width="3.93" height="3.75" x="661.56" y="429.83" class="todo"><title>0x00482990 S_UnloadLevelFile (42 bytes)</title></rect>
-<rect width="3.93" height="3.75" x="661.56" y="436.59" class="todo"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
+<rect width="3.93" height="3.75" x="661.56" y="436.59" class="named"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
 <rect width="3.93" height="3.66" x="661.56" y="443.34" class="named"><title>0x0043fa40 lara_as_dashdive (41 bytes)</title></rect>
 <rect width="3.67" height="3.92" x="668.49" y="368.61" class="named"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
 <rect width="3.67" height="3.92" x="668.49" y="375.53" class="todo"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>

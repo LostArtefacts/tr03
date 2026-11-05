@@ -1125,7 +1125,7 @@ address,size,name,symbol
 0x004808f0,44,DS_AdjustVolumeAndPan,_DS_AdjustVolumeAndPan
 0x00480920,49,DS_AdjustPitch,_DS_AdjustPitch
 0x00480960,47,DS_StopSample,_DS_StopSample
-0x00480990,45,Func480990,
+0x00480990,45,DS_StopAllSamples,_DS_StopAllSamples
 0x004809c0,5,DS_Init,_DS_Init
 0x004809d0,156,DS_MakeAdapterList,_DS_MakeAdapterList
 0x00480a70,26,DS_EnumerateDevices,_DS_EnumerateDevices
@@ -1510,7 +1510,7 @@ address,size,name,symbol
 0x004b5d9c,6,Player_StopTimer,
 0x004b5db0,23,__fpmath,
 0x004b5dd0,56,Func4b5dd0,
-0x004b5e10,39,__ftol,
+0x004b5e10,39,__ftol,__ftol
 0x004b5e40,11,abs,_abs
 0x004b5e50,61,printf,_printf
 0x004b5e90,104,sprintf,_sprintf
@@ -2346,6 +2346,7 @@ address,size,name,symbol
 0x006a1bd0,4,FinishLevelCheat,_FinishLevelCheat
 0x006a1bd8,128,exit_message,_exit_message
 0x006a1c58,4,title_loaded,_title_loaded
+0x006a2060,4,LnMasterVolume,_LnMasterVolume
 0x006a2080,4,m22,_m22
 0x006a2084,4,m23,_m23
 0x006a2088,163840,ZTable,_ZTable
