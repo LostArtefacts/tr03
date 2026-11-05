@@ -29,6 +29,17 @@ void DI_Release(void)
     }
 }
 
+void DI_ReadKeyboard(unsigned char *KeyMap)
+{
+    HRESULT hr;
+
+    hr = Keyboard->GetDeviceState(256, KeyMap);
+    if (FAILED(hr) && hr == DIERR_INPUTLOST) {
+        if (DX_TRY(Keyboard->Acquire()) || DX_TRY(Keyboard->GetDeviceState(256, KeyMap)))
+            memset(KeyMap, 0, 256);
+    }
+}
+
 void DI_FinishKeyboard(void)
 {
     if (Keyboard)

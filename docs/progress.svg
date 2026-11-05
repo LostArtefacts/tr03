@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="284.45" height="12" x="0" y="0" class="named"><title>1001 · 67.73%</title></rect>
-<rect width="1.42" height="12" x="284.45" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="134.13" height="12" x="285.87" y="0" class="todo"><title>472 · 31.94%</title></rect>
+<rect width="284.74" height="12" x="0" y="0" class="named"><title>1002 · 67.79%</title></rect>
+<rect width="1.42" height="12" x="284.74" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="133.84" height="12" x="286.16" y="0" class="todo"><title>471 · 31.87%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">67.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1001</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">472</tspan></text>
+<text text-anchor="end" x="600" y="7.50">67.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1002</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">471</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.29" height="12" x="0" y="0" class="named"><title>299 KB · 44.83%</title></rect>
-<rect width="3.69" height="12" x="188.29" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.03" height="12" x="191.97" y="0" class="todo"><title>363 KB · 54.29%</title></rect>
+<rect width="188.35" height="12" x="0" y="0" class="named"><title>299 KB · 44.84%</title></rect>
+<rect width="3.69" height="12" x="188.35" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.97" height="12" x="192.03" y="0" class="todo"><title>362 KB · 54.28%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">299 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">363 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">299 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1138,7 +1138,7 @@
 <rect width="12" height="12" x="315" y="315" class="todo"><title>0x004753c0 Func4753c0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="315" class="named"><title>0x00475400 DI_Create (34 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="315" class="named"><title>0x00475430 DI_Release (26 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="315" class="todo"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="315" class="named"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="315" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="315" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="315" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
@@ -2541,7 +2541,7 @@
 <rect width="5.59" height="5.72" x="591.70" y="423.91" class="named"><title>0x004418b0 lara_as_pickupflare (91 bytes)</title></rect>
 <rect width="5.59" height="5.72" x="591.70" y="432.63" class="named"><title>0x0044f100 lara_col_uwdeath (91 bytes)</title></rect>
 <rect width="5.59" height="5.65" x="591.70" y="441.35" class="named"><title>0x004419f0 lara_as_fastdive (90 bytes)</title></rect>
-<rect width="5.94" height="5.32" x="600.29" y="291.86" class="todo"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
+<rect width="5.94" height="5.32" x="600.29" y="291.86" class="named"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
 <rect width="5.94" height="5.32" x="609.23" y="291.86" class="todo"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
 <rect width="5.88" height="5.32" x="618.17" y="291.86" class="named"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="5.88" height="5.32" x="627.04" y="291.86" class="named"><title>0x0042f0b0 DoChimeSound (89 bytes)</title></rect>
