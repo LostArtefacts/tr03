@@ -166,3 +166,68 @@ int MineCartControl(void)
 
     return (lara.skidoo == NO_ITEM) ? 0 : 1;
 }
+
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+
+void CartToBaddieCollision(ITEM_INFO *v)
+{
+    int i;
+    sint16 roomies[20], numroom, *door;
+    sint16 item_num, nex;
+    ITEM_INFO *item;
+    OBJECT_INFO *object;
+    int x, y, z;
+
+    numroom = 1;
+    roomies[0] = v->room_number;
+    if ((door = room[v->room_number].door)) {
+        for (i = (int)*(door++); i > 0; i--) {
+            roomies[numroom++] = *door;
+            door += 16;
+        }
+    }
+    for (i = 0; i < numroom; i++) {
+        item_num = room[roomies[i]].item_number;
+        while (item_num != NO_ITEM) {
+            item = &items[item_num];
+            nex = item->next_item;
+            if (item->collidable && item->status != INVISIBLE) {
+                object = &objects[item->object_number];
+                if (object->collision && (object->intelligent || item->object_number == 350)) {
+                    x = v->pos.x_pos - item->pos.x_pos;
+                    y = v->pos.y_pos - item->pos.y_pos;
+                    z = v->pos.z_pos - item->pos.z_pos;
+                    if (x > -2048 && x < 2048 && z > -2048 && z < 2048 && y > -2048 && y < 2048) {
+                        if (TestBoundsCollide(item, v, 256)) {
+                            if (item->object_number == 350) {
+                                if (item->frame_number == anims[item->anim_number].frame_base &&
+                                    lara_item->current_anim_state == 18 &&
+                                    lara_item->anim_number == objects[11].anim_index + 6) {
+                                    sint16 frame;
+                                    FLOOR_INFO *floor;
+                                    sint16 room_number;
+
+                                    frame = lara_item->frame_number - anims[lara_item->anim_number].frame_base;
+                                    if (frame >= 12 && frame <= 22) {
+                                        SoundEffect(220, &item->pos, 2);
+                                        room_number = item->room_number;
+                                        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+                                        GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+                                        TestTriggers(trigger_index, 1);
+                                        item->frame_number++;
+                                    }
+                                }
+                            } else {
+                                DoLotsOfBlood(item->pos.x_pos, v->pos.y_pos - 256, item->pos.z_pos, v->speed,
+                                              v->pos.y_rot, item->room_number, 3);
+                                item->hit_points = 0;
+                            }
+                        }
+                    }
+                }
+            }
+            item_num = nex;
+        }
+    }
+}
