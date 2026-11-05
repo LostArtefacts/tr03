@@ -101,3 +101,82 @@ void undraw_pistol_mesh_right(int weapon_type)
     lara.mesh_ptrs[THIGH_R] = meshes[objects[obj].mesh_index + THIGH_R];
     lara.mesh_ptrs[HAND_R] = meshes[objects[LARA].mesh_index + HAND_R];
 }
+
+typedef struct {
+    sint16 lock_angles[4];
+    sint16 left_angles[4];
+    sint16 right_angles[4];
+    sint16 aim_speed;
+    sint16 shot_accuracy;
+    sint16 gun_height;
+    sint16 target_dist;
+    char damage;
+    char recoil_frame;
+    char flash_time;
+    char draw_frame;
+    sint16 sample_num;
+} WEAPON_INFO;
+
+extern WEAPON_INFO weapons[];
+
+void LaraTargetInfo(WEAPON_INFO *winfo);
+void LaraGetNewTarget(WEAPON_INFO *winfo);
+void AimWeapon(WEAPON_INFO *winfo, LARA_ARM *arm);
+void AnimatePistols(int weapon_type);
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+
+void PistolHandler(int weapon_type)
+{
+    WEAPON_INFO *winfo;
+
+    winfo = &weapons[weapon_type];
+    if (input & IN_ACTION)
+        LaraTargetInfo(winfo);
+    else
+        lara.target = NULL;
+    if (lara.target == NULL)
+        LaraGetNewTarget(winfo);
+    AimWeapon(winfo, &lara.left_arm);
+    AimWeapon(winfo, &lara.right_arm);
+    if (lara.left_arm.lock && !lara.right_arm.lock)
+    {
+        lara.torso_y_rot = lara.left_arm.y_rot / 2;
+        lara.torso_x_rot = lara.left_arm.x_rot / 2;
+        if (camera.old_type != LOOK_CAMERA)
+        {
+            lara.head_y_rot = lara.torso_y_rot;
+            lara.head_x_rot = lara.torso_x_rot;
+        }
+    }
+    else if (lara.right_arm.lock && !lara.left_arm.lock)
+    {
+        lara.torso_y_rot = lara.right_arm.y_rot / 2;
+        lara.torso_x_rot = lara.right_arm.x_rot / 2;
+        if (camera.old_type != LOOK_CAMERA)
+        {
+            lara.head_y_rot = lara.torso_y_rot;
+            lara.head_x_rot = lara.torso_x_rot;
+        }
+    }
+    else if (lara.left_arm.lock && lara.right_arm.lock)
+    {
+        lara.torso_y_rot = (lara.left_arm.y_rot + lara.right_arm.y_rot) / 4;
+        lara.torso_x_rot = (lara.left_arm.x_rot + lara.right_arm.x_rot) / 4;
+        if (camera.old_type != LOOK_CAMERA)
+        {
+            lara.head_y_rot = lara.torso_y_rot;
+            lara.head_x_rot = lara.torso_x_rot;
+        }
+    }
+    AnimatePistols(weapon_type);
+    if (lara.left_arm.flash_gun || lara.right_arm.flash_gun)
+    {
+        PHD_VECTOR pos;
+
+        pos.x = (GetRandomControl() & 255) - 128;
+        pos.y = (GetRandomControl() & 127) - 63;
+        pos.z = (GetRandomControl() & 255) - 128;
+        GetLaraHandAbsPosition(&pos, lara.left_arm.flash_gun ? 0 : 1);
+        TriggerDynamic(pos.x, pos.y, pos.z, 10, (GetRandomControl() & 7) + 24, (GetRandomControl() & 3) + 16, GetRandomControl() & 7);
+    }
+}

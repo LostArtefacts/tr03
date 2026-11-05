@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="238.35" height="12" x="0" y="0" class="named"><title>762 · 51.59%</title></rect>
-<rect width="223.65" height="12" x="238.35" y="0" class="todo"><title>715 · 48.41%</title></rect>
+<rect width="238.66" height="12" x="0" y="0" class="named"><title>763 · 51.66%</title></rect>
+<rect width="223.34" height="12" x="238.66" y="0" class="todo"><title>714 · 48.34%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">51.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">762</tspan> · <tspan class="todo">715</tspan></text>
+<text text-anchor="end" x="642" y="7.50">51.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">763</tspan> · <tspan class="todo">714</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="108.20" height="12" x="0" y="0" class="named"><title>156 KB · 23.42%</title></rect>
-<rect width="353.80" height="12" x="108.20" y="0" class="todo"><title>510 KB · 76.58%</title></rect>
+<rect width="108.56" height="12" x="0" y="0" class="named"><title>156 KB · 23.50%</title></rect>
+<rect width="353.44" height="12" x="108.56" y="0" class="todo"><title>509 KB · 76.50%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">23.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">156 KB</tspan> · <tspan class="todo">510 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">23.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">156 KB</tspan> · <tspan class="todo">509 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -746,7 +746,7 @@
 <rect width="12" height="12" x="465" y="195" class="named"><title>0x00448350 draw_pistol_meshes (89 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="195" class="named"><title>0x004483b0 undraw_pistol_mesh_left (65 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="195" class="named"><title>0x00448400 undraw_pistol_mesh_right (59 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="195" class="todo"><title>0x00448440 PistolHandler (517 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="195" class="named"><title>0x00448440 PistolHandler (517 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="195" class="todo"><title>0x00448650 AnimatePistols (1410 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="195" class="todo"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="195" class="todo"><title>0x00448e60 LaraTestClimbUpPos (553 bytes)</title></rect>
@@ -1885,7 +1885,7 @@
 <rect width="13.84" height="13.25" x="484.13" y="98.99" class="named"><title>0x00414800 SearchLOT (520 bytes)</title></rect>
 <rect width="13.84" height="13.25" x="500.97" y="98.99" class="todo"><title>0x00451e80 ControlLondBossPlasmaBall (520 bytes)</title></rect>
 <rect width="13.78" height="13.25" x="517.81" y="98.99" class="todo"><title>0x00481e10 LoadBoxes (518 bytes)</title></rect>
-<rect width="13.76" height="13.25" x="534.59" y="98.99" class="todo"><title>0x00448440 PistolHandler (517 bytes)</title></rect>
+<rect width="13.76" height="13.25" x="534.59" y="98.99" class="named"><title>0x00448440 PistolHandler (517 bytes)</title></rect>
 <rect width="13.73" height="13.25" x="551.35" y="98.99" class="named"><title>0x00424a10 TriggerFlamethrowerSmoke (516 bytes)</title></rect>
 <rect width="13.70" height="13.25" x="568.08" y="98.99" class="named"><title>0x0042af20 TriggerExplosionSmokeEnd (515 bytes)</title></rect>
 <rect width="13.70" height="13.25" x="584.78" y="98.99" class="named"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
