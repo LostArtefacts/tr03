@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="239.91" height="12" x="0" y="0" class="named"><title>767 · 51.93%</title></rect>
-<rect width="222.09" height="12" x="239.91" y="0" class="todo"><title>710 · 48.07%</title></rect>
+<rect width="240.23" height="12" x="0" y="0" class="named"><title>768 · 52%</title></rect>
+<rect width="221.77" height="12" x="240.23" y="0" class="todo"><title>709 · 48%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">51.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">767</tspan> · <tspan class="todo">710</tspan></text>
+<text text-anchor="end" x="642" y="7.50">52.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">768</tspan> · <tspan class="todo">709</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="109.64" height="12" x="0" y="0" class="named"><title>158 KB · 23.73%</title></rect>
-<rect width="352.36" height="12" x="109.64" y="0" class="todo"><title>508 KB · 76.27%</title></rect>
+<rect width="110.21" height="12" x="0" y="0" class="named"><title>159 KB · 23.86%</title></rect>
+<rect width="351.79" height="12" x="110.21" y="0" class="todo"><title>507 KB · 76.14%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">23.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">158 KB</tspan> · <tspan class="todo">508 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">23.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">159 KB</tspan> · <tspan class="todo">507 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1111,7 +1111,7 @@
 <rect width="12" height="12" x="690" y="300" class="todo"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="300" class="todo"><title>0x00472fe0 TriggerPlasma_willboss (455 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="300" class="named"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="300" class="todo"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="300" class="named"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="315" class="todo"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="315" class="named"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="315" class="named"><title>0x004737e0 WingmuteControl (960 bytes)</title></rect>
@@ -1745,7 +1745,7 @@
 <rect width="17.25" height="17.10" x="325.72" y="270.99" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
 <rect width="17.25" height="17.08" x="325.72" y="291.10" class="named"><title>0x0042be50 TriggerGunShell (836 bytes)</title></rect>
 <rect width="17.25" height="17.02" x="325.72" y="311.18" class="todo"><title>0x004b48cc Func4b48cc (833 bytes)</title></rect>
-<rect width="17.25" height="16.98" x="325.72" y="331.20" class="todo"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
+<rect width="17.25" height="16.98" x="325.72" y="331.20" class="named"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
 <rect width="17.25" height="16.88" x="325.72" y="351.18" class="todo"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
 <rect width="17.25" height="16.80" x="325.72" y="371.06" class="todo"><title>0x0041eda0 ItemPushLara (822 bytes)</title></rect>
 <rect width="17.25" height="16.78" x="325.72" y="390.86" class="todo"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>

@@ -43,3 +43,92 @@ void TriggerPlasmaBall_willboss(PHD_VECTOR *pos, sint16 room_number, sint16 angl
         fx->flag1 = type;
     }
 }
+
+extern sint32 wibble;
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+void TriggerPlasmaBallFlame_willboss(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv);
+void KillEffect(sint16 fx_num);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+int ItemNearLara(PHD_3DPOS *pos, sint32 radius);
+void LaraBurn(void);
+
+void ControlWillbossPlasmaBall(sint16 fx_number)
+{
+    FLOOR_INFO *floor;
+    FX_INFO *fx;
+    sint32 old_x, old_y, old_z, speed;
+    sint32 tx, ty, tz;
+    sint32 rnd, r, g, b;
+    uint8 radtab[5] = {13, 7, 7, 7, 7};
+    sint16 room_number;
+    PHD_ANGLE angles[2];
+
+    fx = &effects[fx_number];
+    old_x = fx->pos.x_pos;
+    old_y = fx->pos.y_pos;
+    old_z = fx->pos.z_pos;
+    if (fx->flag1 == 0) {
+        tx = lara_item->pos.x_pos;
+        ty = lara_item->pos.y_pos - 256;
+        tz = lara_item->pos.z_pos;
+        phd_GetVectorAngles(tx - fx->pos.x_pos, ty - fx->pos.y_pos, tz - fx->pos.z_pos, angles);
+        fx->pos.y_rot = angles[0];
+        fx->pos.x_rot = angles[1];
+        if (fx->speed < 512)
+            fx->speed += (fx->speed >> 4) + 4;
+        if (wibble & 4)
+            TriggerPlasmaBallFlame_willboss(fx_number, fx->speed >> 1, 0, 0, 0);
+    } else {
+        fx->fallspeed += (fx->flag1 == 1) ? 1 : 2;
+        if (!(wibble & 12)) {
+            if (fx->speed)
+                fx->speed--;
+            TriggerPlasmaBallFlame_willboss(fx_number, -1 - fx->flag1, 0, -(GetRandomControl() & 31), 0);
+        }
+    }
+    speed = (fx->speed * phd_cos(fx->pos.x_rot)) >> W2V_SHIFT;
+    fx->pos.z_pos += (speed * phd_cos(fx->pos.y_rot)) >> W2V_SHIFT;
+    fx->pos.x_pos += (speed * phd_sin(fx->pos.y_rot)) >> W2V_SHIFT;
+    fx->pos.y_pos += -((fx->speed * phd_sin(fx->pos.x_rot)) >> W2V_SHIFT) + fx->fallspeed;
+    room_number = fx->room_number;
+    floor = GetFloor(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, &room_number);
+    if (fx->pos.y_pos >= GetHeight(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos) || fx->pos.y_pos < GetCeiling(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos)) {
+        PHD_VECTOR pos;
+
+        if (fx->flag1 == 0) {
+            pos.x = old_x;
+            pos.y = old_y;
+            pos.z = old_z;
+            r = 2 + (GetRandomControl() & 3);
+            for (g = 0; g < r; g++)
+                TriggerPlasmaBall_willboss(&pos, fx->room_number, fx->pos.y_rot + 0x6000 + (GetRandomControl() & 0x3fff), 1);
+        }
+        KillEffect(fx_number);
+        return;
+    }
+    if (ItemNearLara(&fx->pos, 200) && !fx->flag1) {
+        PHD_VECTOR pos;
+
+        for (g = 14; g >= 0; g -= 2) {
+            pos.x = 0;
+            pos.y = 0;
+            pos.z = 0;
+            GetJointAbsPosition(lara_item, &pos, g);
+            TriggerPlasmaBall_willboss(&pos, fx->room_number, GetRandomControl() << 1, 1);
+        }
+        LaraBurn();
+        lara_item->hit_points = -1;
+        lara.BurnGreen = 1;
+        KillEffect(fx_number);
+        return;
+    }
+    if (room_number != fx->room_number)
+        EffectNewRoom(fx_number, lara_item->room_number);
+    if (radtab[fx->flag1]) {
+        rnd = GetRandomControl();
+        g = 31 - ((rnd >> 4) & 3);
+        b = 24 - ((rnd >> 6) & 3);
+        r = rnd & 7;
+        TriggerDynamic(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, radtab[fx->flag1], r, g, b);
+    }
+}
