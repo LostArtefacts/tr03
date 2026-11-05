@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="243.04" height="12" x="0" y="0" class="named"><title>777 · 52.61%</title></rect>
-<rect width="218.96" height="12" x="243.04" y="0" class="todo"><title>700 · 47.39%</title></rect>
+<rect width="243.36" height="12" x="0" y="0" class="named"><title>778 · 52.67%</title></rect>
+<rect width="218.64" height="12" x="243.36" y="0" class="todo"><title>699 · 47.33%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">52.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">777</tspan> · <tspan class="todo">700</tspan></text>
+<text text-anchor="end" x="642" y="7.50">52.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">778</tspan> · <tspan class="todo">699</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="116.25" height="12" x="0" y="0" class="named"><title>167 KB · 25.16%</title></rect>
-<rect width="345.75" height="12" x="116.25" y="0" class="todo"><title>498 KB · 74.84%</title></rect>
+<rect width="116.65" height="12" x="0" y="0" class="named"><title>168 KB · 25.25%</title></rect>
+<rect width="345.35" height="12" x="116.65" y="0" class="todo"><title>498 KB · 74.75%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">25.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">167 KB</tspan> · <tspan class="todo">498 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">168 KB</tspan> · <tspan class="todo">498 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -979,7 +979,7 @@
 <rect width="12" height="12" x="210" y="270" class="named"><title>0x00462e10 WriteSG (76 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="270" class="named"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="270" class="named"><title>0x00462ea0 SealmuteControl (1555 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="270" class="todo"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="270" class="named"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="270" class="named"><title>0x00463700 TriggerSealmuteGas (487 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="270" class="todo"><title>0x004638f0 InitialiseLevel (522 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="270" class="named"><title>0x00463b00 InitialiseGameFlags (101 bytes)</title></rect>
@@ -1842,7 +1842,7 @@
 <rect width="14.65" height="13.85" x="453.56" y="82.14" class="named"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
 <rect width="14.63" height="13.85" x="471.21" y="82.14" class="todo"><title>0x004140a0 TriggerSealmuteGasThrower_boomute (575 bytes)</title></rect>
 <rect width="14.63" height="13.85" x="488.83" y="82.14" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
-<rect width="14.63" height="13.85" x="506.46" y="82.14" class="todo"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
+<rect width="14.63" height="13.85" x="506.46" y="82.14" class="named"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
 <rect width="14.60" height="13.85" x="524.09" y="82.14" class="todo"><title>0x0045c6b0 KeyHoleCollision (574 bytes)</title></rect>
 <rect width="14.50" height="13.85" x="541.69" y="82.14" class="todo"><title>0x00410ec0 BigGunDraw (570 bytes)</title></rect>
 <rect width="14.50" height="13.85" x="559.18" y="82.14" class="todo"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
