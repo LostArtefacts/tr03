@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="240.23" height="12" x="0" y="0" class="named"><title>768 · 52%</title></rect>
-<rect width="221.77" height="12" x="240.23" y="0" class="todo"><title>709 · 48%</title></rect>
+<rect width="240.54" height="12" x="0" y="0" class="named"><title>769 · 52.06%</title></rect>
+<rect width="221.46" height="12" x="240.54" y="0" class="todo"><title>708 · 47.94%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">52.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">768</tspan> · <tspan class="todo">709</tspan></text>
+<text text-anchor="end" x="642" y="7.50">52.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">769</tspan> · <tspan class="todo">708</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="110.21" height="12" x="0" y="0" class="named"><title>159 KB · 23.86%</title></rect>
-<rect width="351.79" height="12" x="110.21" y="0" class="todo"><title>507 KB · 76.14%</title></rect>
+<rect width="110.58" height="12" x="0" y="0" class="named"><title>159 KB · 23.94%</title></rect>
+<rect width="351.42" height="12" x="110.58" y="0" class="todo"><title>506 KB · 76.06%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">23.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">159 KB</tspan> · <tspan class="todo">507 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">159 KB</tspan> · <tspan class="todo">506 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1112,7 +1112,7 @@
 <rect width="12" height="12" x="705" y="300" class="todo"><title>0x00472fe0 TriggerPlasma_willboss (455 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="300" class="named"><title>0x004731b0 TriggerPlasmaBall_willboss (122 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="300" class="named"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="315" class="todo"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="315" class="named"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="315" class="named"><title>0x00473780 InitialiseWingmute (94 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="315" class="named"><title>0x004737e0 WingmuteControl (960 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="315" class="named"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
@@ -1875,7 +1875,7 @@
 <rect width="13.90" height="13.47" x="382.54" y="367.86" class="todo"><title>0x0044f580 LaraOnLOS (531 bytes)</title></rect>
 <rect width="13.90" height="13.47" x="382.54" y="384.33" class="todo"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
 <rect width="13.90" height="13.44" x="382.54" y="400.80" class="todo"><title>0x0043e800 LaraAboveWater (530 bytes)</title></rect>
-<rect width="13.90" height="13.39" x="382.54" y="417.24" class="todo"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
+<rect width="13.90" height="13.39" x="382.54" y="417.24" class="named"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
 <rect width="13.90" height="13.37" x="382.54" y="433.63" class="todo"><title>0x0046cf40 TrainControl (527 bytes)</title></rect>
 <rect width="14" height="13.25" x="399.44" y="98.99" class="todo"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
 <rect width="13.97" height="13.25" x="416.44" y="98.99" class="todo"><title>0x00449530 lara_col_climbstnc (525 bytes)</title></rect>

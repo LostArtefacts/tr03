@@ -51,6 +51,7 @@ void KillEffect(sint16 fx_num);
 void EffectNewRoom(sint16 fx_num, sint16 room_number);
 int ItemNearLara(PHD_3DPOS *pos, sint32 radius);
 void LaraBurn(void);
+sint32 GetFreeSpark(void);
 
 void ControlWillbossPlasmaBall(sint16 fx_number)
 {
@@ -131,4 +132,68 @@ void ControlWillbossPlasmaBall(sint16 fx_number)
         r = rnd & 7;
         TriggerDynamic(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, radtab[fx->flag1], r, g, b);
     }
+}
+
+void TriggerPlasmaBallFlame_willboss(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv)
+{
+    SPARKS *sptr;
+    sint32 size;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - effects[fx_number].pos.x_pos;
+    dz = lara_item->pos.z_pos - effects[fx_number].pos.z_pos;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sG = 255;
+    sptr->sB = 48 + (GetRandomControl() & 31);
+    sptr->sR = 48;
+    sptr->dG = 192 + (GetRandomControl() & 63);
+    sptr->dB = 128 + (GetRandomControl() & 63);
+    sptr->dR = 32;
+    sptr->ColFadeSpeed = 12 + (GetRandomControl() & 3);
+    sptr->FadeToBlack = 8;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 7) + 24;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = (GetRandomControl() & 15) - 8;
+    sptr->y = 0;
+    sptr->z = (GetRandomControl() & 15) - 8;
+    sptr->Xvel = (xv + (GetRandomControl() & 255) - 128) << 1;
+    sptr->Yvel = (GetRandomControl() & 511) - 256;
+    sptr->Zvel = (zv + (GetRandomControl() & 255) - 128) << 1;
+    sptr->Friction = 5 | (5 << 4);
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512 | 64;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else {
+        sptr->Flags = 2 | 8 | 512 | 64;
+    }
+    sptr->FxObj = fx_number;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Gravity = sptr->MaxYvel = 0;
+    if (type >= 0) {
+        sptr->Scalar = 3;
+        size = type;
+    } else {
+        if (type < -2)
+            sptr->Scalar = 4;
+        else
+            sptr->Scalar = 2;
+        size = (GetRandomControl() & 15) + 16;
+        sptr->Xvel = xv + (GetRandomControl() & 255) - 128;
+        sptr->Yvel = yv;
+        sptr->Zvel = zv + (GetRandomControl() & 255) - 128;
+        sptr->Friction = 5;
+    }
+    sptr->Width = sptr->sWidth = size;
+    sptr->Height = sptr->sHeight = size;
+    sptr->dWidth = size >> 3;
+    sptr->dHeight = size >> 3;
 }
