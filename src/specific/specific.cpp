@@ -116,4 +116,9 @@ int S_CDGetLoc(void)
     return ACMGetTrackLocation();
 }
 
+void S_CDVolume(int volume)
+{
+    ACMSetVolume(volume);
+}
+
 }

@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="262.18" height="12" x="0" y="0" class="named"><title>922 · 62.42%</title></rect>
-<rect width="1.42" height="12" x="262.18" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="156.40" height="12" x="263.60" y="0" class="todo"><title>550 · 37.24%</title></rect>
+<rect width="262.46" height="12" x="0" y="0" class="named"><title>923 · 62.49%</title></rect>
+<rect width="1.42" height="12" x="262.46" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="156.11" height="12" x="263.89" y="0" class="todo"><title>549 · 37.17%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">62.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">922</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">550</tspan></text>
+<text text-anchor="end" x="600" y="7.50">62.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">923</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">549</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.24" height="12" x="0" y="0" class="named"><title>296 KB · 44.34%</title></rect>
-<rect width="3.69" height="12" x="186.24" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.07" height="12" x="189.93" y="0" class="todo"><title>366 KB · 54.78%</title></rect>
+<rect width="186.25" height="12" x="0" y="0" class="named"><title>296 KB · 44.35%</title></rect>
+<rect width="3.69" height="12" x="186.25" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="230.06" height="12" x="189.94" y="0" class="todo"><title>366 KB · 54.78%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1367,7 +1367,7 @@
 <rect width="12" height="12" x="0" y="390" class="named"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="390" class="named"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="390" class="named"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="390" class="todo"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="390" class="named"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="390" class="todo"><title>0x0048d500 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="390" class="todo"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="390" class="todo"><title>0x0048d5e0 TIME_Init (65 bytes)</title></rect>
@@ -2988,7 +2988,7 @@
 <rect width="2.59" height="1.87" x="733.24" y="417.20" class="todo"><title>0x004805c0 Func4805c0 (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="738.83" y="417.20" class="todo"><title>0x00480d40 DS_IsSoundEnabled (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="744.41" y="417.20" class="todo"><title>0x00483830 S_PlayFMV (14 bytes)</title></rect>
-<rect width="2.58" height="1.88" x="722.07" y="422.07" class="todo"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>
+<rect width="2.58" height="1.88" x="722.07" y="422.07" class="named"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>
 <rect width="2.58" height="1.73" x="722.07" y="426.96" class="todo"><title>0x0048ac10 ScreenClear (13 bytes)</title></rect>
 <rect width="2.58" height="1.58" x="722.07" y="431.69" class="named"><title>0x0042f3f0 invisibility_on (12 bytes)</title></rect>
 <rect width="2.58" height="1.58" x="722.07" y="436.26" class="named"><title>0x0042f420 dynamic_light_on (12 bytes)</title></rect>
