@@ -106,6 +106,21 @@ void DS_StopSample(int nHandle)
     }
 }
 
+void DS_StopAllSamples(void)
+{
+    int nChannel;
+    LPDIRECTSOUNDBUFFER pBuffer;
+
+    for (nChannel = 0; nChannel < ArraySize(DS_Samples); nChannel++) {
+        pBuffer = DS_Samples[nChannel];
+        if (pBuffer) {
+            DX_TRY(pBuffer->Stop());
+            pBuffer->Release();
+            DS_Samples[nChannel] = 0;
+        }
+    }
+}
+
 bool DS_MakeAdapterList(void);
 
 }
