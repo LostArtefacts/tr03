@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="296.10" height="12" x="0" y="0" class="named"><title>1042 · 70.50%</title></rect>
-<rect width="1.99" height="12" x="296.10" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="121.91" height="12" x="298.09" y="0" class="todo"><title>429 · 29.03%</title></rect>
+<rect width="296.39" height="12" x="0" y="0" class="named"><title>1043 · 70.57%</title></rect>
+<rect width="1.99" height="12" x="296.39" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="121.62" height="12" x="298.38" y="0" class="todo"><title>428 · 28.96%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">70.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1042</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">429</tspan></text>
+<text text-anchor="end" x="600" y="7.50">70.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1043</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">428</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.16" height="12" x="0" y="0" class="named"><title>304 KB · 45.52%</title></rect>
-<rect width="3.79" height="12" x="191.16" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="225.04" height="12" x="194.96" y="0" class="todo"><title>358 KB · 53.58%</title></rect>
+<rect width="191.22" height="12" x="0" y="0" class="named"><title>304 KB · 45.53%</title></rect>
+<rect width="3.79" height="12" x="191.22" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="224.99" height="12" x="195.01" y="0" class="todo"><title>358 KB · 53.57%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">304 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">358 KB</tspan></text>
@@ -79,7 +79,7 @@
 <rect width="12" height="12" x="180" y="0" class="todo"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="0" class="named"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="0" class="todo"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="0" class="todo"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="0" class="named"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="0" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="0" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="0" class="named"><title>0x00402030 AlterFOV (158 bytes)</title></rect>
@@ -2570,7 +2570,7 @@
 <rect width="5.30" height="5.50" x="675.66" y="300.17" class="named"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="683.96" y="300.17" class="named"><title>0x0044edd0 lara_as_uwdeath (83 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="692.26" y="300.17" class="named"><title>0x0046e530 TrapDoorControl (83 bytes)</title></rect>
-<rect width="5.24" height="5.50" x="700.57" y="300.17" class="todo"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
+<rect width="5.24" height="5.50" x="700.57" y="300.17" class="named"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
 <rect width="5.24" height="5.50" x="708.81" y="300.17" class="named"><title>0x0040d5f0 InitialiseBaton (82 bytes)</title></rect>
 <rect width="5.24" height="5.50" x="717.05" y="300.17" class="named"><title>0x0040e350 InitialiseCivvy (82 bytes)</title></rect>
 <rect width="5.24" height="5.50" x="725.28" y="300.17" class="named"><title>0x0040fef0 InitialiseArmySMG (82 bytes)</title></rect>

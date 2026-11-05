@@ -236,4 +236,18 @@ sint16 *calc_back_light(sint16 *objptr)
     return objptr;
 }
 
+void phd_InitPolyList(void)
+{
+    surfacenum = 0;
+    surfacenumbf = 0;
+    surfacenumfb = 0;
+    sort3dptr = sort3d_buffer;
+    info3dptr = info3d_buffer;
+    info3dptrbf = info3d_bufferbf;
+    sort3dptrbf = sort3d_bufferbf;
+    info3dptrfb = info3d_bufferfb;
+    sort3dptrfb = sort3d_bufferfb;
+    HWR_InitVertexList();
+}
+
 }
