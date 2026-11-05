@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="279.05" height="12" x="0" y="0" class="named"><title>982 · 66.44%</title></rect>
-<rect width="1.42" height="12" x="279.05" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="139.53" height="12" x="280.47" y="0" class="todo"><title>491 · 33.22%</title></rect>
+<rect width="279.34" height="12" x="0" y="0" class="named"><title>983 · 66.51%</title></rect>
+<rect width="1.42" height="12" x="279.34" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="139.24" height="12" x="280.76" y="0" class="todo"><title>490 · 33.15%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">66.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">982</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">491</tspan></text>
+<text text-anchor="end" x="600" y="7.50">66.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">983</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">490</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.52" height="12" x="0" y="0" class="named"><title>298 KB · 44.65%</title></rect>
-<rect width="3.69" height="12" x="187.52" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.80" height="12" x="191.20" y="0" class="todo"><title>364 KB · 54.48%</title></rect>
+<rect width="187.55" height="12" x="0" y="0" class="named"><title>298 KB · 44.65%</title></rect>
+<rect width="3.69" height="12" x="187.55" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.77" height="12" x="191.23" y="0" class="todo"><title>364 KB · 54.47%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">44.6%</text>
+<text text-anchor="end" x="600" y="24.50">44.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1519,7 +1519,7 @@
 <rect width="12" height="12" x="30" y="435" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="435" class="todo"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="435" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="435" class="todo"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="435" class="named"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="435" class="todo"><title>0x004b3930 DD_UnlockSurface (22 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="435" class="todo"><title>0x004b3950 DD_CreateSurface (68 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="435" class="todo"><title>0x004b39a0 DD_EnsureSurfaceAvailable (70 bytes)</title></rect>
@@ -2784,7 +2784,7 @@
 <rect width="3.87" height="4.17" x="661.52" y="354.51" class="todo"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="3.87" height="4.17" x="668.39" y="354.51" class="named"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
 <rect width="3.87" height="4.17" x="675.26" y="354.51" class="todo"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
-<rect width="3.87" height="4.17" x="682.14" y="354.51" class="todo"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
+<rect width="3.87" height="4.17" x="682.14" y="354.51" class="named"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
 <rect width="3.79" height="4.17" x="689.01" y="354.51" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
 <rect width="3.79" height="4.17" x="695.79" y="354.51" class="named"><title>0x0042f4e0 AssaultPenalty4 (45 bytes)</title></rect>
 <rect width="3.79" height="4.17" x="702.58" y="354.51" class="named"><title>0x0042f510 AssaultPenalty30 (45 bytes)</title></rect>
