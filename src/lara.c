@@ -3432,3 +3432,86 @@ void lara_as_duck(ITEM_INFO *item, COLL_INFO *coll)
         item->goal_anim_state = AS_ALL4S;
     }
 }
+
+#define VAULT_ANGLE (30 * ONE_DEGREE)
+
+int TestLaraVault(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (!(input & IN_ACTION) || lara.gun_status != LG_ARMLESS)
+        return 0;
+    if (coll->coll_type == COLL_FRONT) {
+        int hdif, slope;
+        PHD_ANGLE angle;
+
+        angle = item->pos.y_rot;
+        if (angle >= -VAULT_ANGLE && angle <= VAULT_ANGLE)
+            angle = 0;
+        else if (angle >= 16384 - VAULT_ANGLE && angle <= 16384 + VAULT_ANGLE)
+            angle = 16384;
+        else if (angle >= 32767 - VAULT_ANGLE || angle <= -32767 + VAULT_ANGLE)
+            angle = -32768;
+        else if (angle >= -16384 - VAULT_ANGLE && angle <= -16384 + VAULT_ANGLE)
+            angle = -16384;
+        if (angle & 0x3fff)
+            return 0;
+        hdif = coll->front_floor;
+        slope = ABS(coll->left_floor2 - coll->right_floor2) >= 60;
+        if (hdif >= -STEP_L * 2 - STEP_L / 2 && hdif <= -STEP_L * 2 + STEP_L / 2) {
+            if (slope || coll->front_floor - coll->front_ceiling < 0 || coll->left_floor2 - coll->left_ceiling2 < 0 || coll->right_floor2 - coll->right_ceiling2 < 0)
+                return 0;
+            if ((room[item->room_number].flags & SWAMP) && lara.water_surface_dist < -768)
+                return 0;
+            item->anim_number = 50;
+            item->frame_number = GF(50, 0);
+            item->current_anim_state = AS_NULL;
+            item->goal_anim_state = AS_STOP;
+            item->pos.y_pos += STEP_L * 2 + hdif;
+            lara.gun_status = LG_HANDSBUSY;
+        } else if (hdif >= -STEP_L * 3 - STEP_L / 2 && hdif <= -STEP_L * 3 + STEP_L / 2) {
+            if (slope || coll->front_floor - coll->front_ceiling < 0 || coll->left_floor2 - coll->left_ceiling2 < 0 || coll->right_floor2 - coll->right_ceiling2 < 0)
+                return 0;
+            if ((room[item->room_number].flags & SWAMP) && lara.water_surface_dist < -768)
+                return 0;
+            item->anim_number = 42;
+            item->frame_number = GF(42, 0);
+            item->current_anim_state = AS_NULL;
+            item->goal_anim_state = AS_STOP;
+            item->pos.y_pos += STEP_L * 3 + hdif;
+            lara.gun_status = LG_HANDSBUSY;
+        } else if (!slope && hdif >= -STEP_L * 7 - STEP_L / 2 && hdif <= -STEP_L * 4 + STEP_L / 2) {
+            if (room[item->room_number].flags & SWAMP)
+                return 0;
+            item->anim_number = 11;
+            item->frame_number = GF(11, 0);
+            item->goal_anim_state = AS_UPJUMP;
+            item->current_anim_state = AS_STOP;
+            lara.calc_fallspeed = -(sint16)(phd_sqrt(-2 * 6 * (hdif + 800)) + 3);
+            AnimateLara(item);
+        } else if (lara.climb_status && hdif <= -STEP_L * 8 + STEP_L / 2 && lara.water_status != LARA_WADE && coll->left_floor2 <= -STEP_L * 8 + STEP_L / 2 && coll->right_floor2 <= -STEP_L * 8 && coll->mid_ceiling <= -STEP_L * 8 + STEP_L / 2 + LARA_HITE) {
+            item->anim_number = 11;
+            item->frame_number = GF(11, 0);
+            item->goal_anim_state = AS_UPJUMP;
+            item->current_anim_state = AS_STOP;
+            lara.calc_fallspeed = -116;
+            AnimateLara(item);
+        } else if (lara.climb_status && (hdif < -STEP_L * 4 || coll->front_ceiling >= LARA_HITE - STEP_L) && coll->mid_ceiling <= -STEP_L * 5 + LARA_HITE) {
+            ShiftItem(item, coll);
+            if (LaraTestClimbStance(item, coll)) {
+                item->anim_number = 11;
+                item->frame_number = GF(11, 0);
+                item->goal_anim_state = AS_CLIMBSTNC;
+                item->current_anim_state = AS_STOP;
+                AnimateLara(item);
+                item->pos.y_rot = angle;
+                lara.gun_status = LG_HANDSBUSY;
+                return 1;
+            }
+            return 0;
+        } else
+            return 0;
+        item->pos.y_rot = angle;
+        ShiftItem(item, coll);
+        return 1;
+    } else
+        return 0;
+}
