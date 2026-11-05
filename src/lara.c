@@ -3118,3 +3118,122 @@ void lara_col_all4s(ITEM_INFO *item, COLL_INFO *coll)
         }
     }
 }
+
+void lara_as_stop(ITEM_INFO *item, COLL_INFO *coll)
+{
+    sint16 fheight = NO_HEIGHT;
+    sint16 rheight = NO_HEIGHT;
+
+    if (item->hit_points <= 0) {
+        item->goal_anim_state = AS_DEATH;
+        return;
+    }
+    if (item->anim_number != 226 && item->anim_number != 228)
+        StopSoundEffect(3);
+    if ((input & IN_ROLL) && lara.water_status != LARA_WADE) {
+        item->anim_number = 146;
+        item->frame_number = GF(146, 2);
+        item->current_anim_state = AS_ROLL;
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+    if ((input & IN_DUCK) && lara.water_status != LARA_WADE && item->current_anim_state == AS_STOP && (lara.gun_status == LG_ARMLESS || lara.gun_type == LG_UNARMED || lara.gun_type == LG_PISTOLS || lara.gun_type == LG_MAGNUMS || lara.gun_type == LG_UZIS || lara.gun_type == LG_FLARE)) {
+        item->goal_anim_state = AS_DUCK;
+        return;
+    }
+    item->goal_anim_state = AS_STOP;
+    if (input & IN_LOOK)
+        LookUpDown();
+    if (input & IN_FORWARD)
+        fheight = LaraFloorFront(item, item->pos.y_rot, LARA_RAD + 4);
+    else if (input & IN_BACK)
+        rheight = LaraFloorFront(item, item->pos.y_rot + 32768, LARA_RAD + 4);
+    if (room[item->room_number].flags & SWAMP) {
+        if (input & IN_LEFT)
+            item->goal_anim_state = AS_TURN_L;
+        else if (input & IN_RIGHT)
+            item->goal_anim_state = AS_TURN_R;
+    } else {
+        if (input & IN_STEPL) {
+            sint16 height, ceiling;
+
+            height = LaraFloorFront(item, item->pos.y_rot - 16384, LARA_RAD + 48);
+            ceiling = LaraCeilingFront(item, item->pos.y_rot - 16384, LARA_RAD + 48);
+            if (height < 128 && height > -128 && height_type != 2 && ceiling <= 0)
+                item->goal_anim_state = AS_STEPLEFT;
+        } else if (input & IN_STEPR) {
+            sint16 height, ceiling;
+
+            height = LaraFloorFront(item, item->pos.y_rot + 16384, LARA_RAD + 48);
+            ceiling = LaraCeilingFront(item, item->pos.y_rot + 16384, LARA_RAD + 48);
+            if (height < 128 && height > -128 && height_type != 2 && ceiling <= 0)
+                item->goal_anim_state = AS_STEPRIGHT;
+        } else if (input & IN_LEFT)
+            item->goal_anim_state = AS_TURN_L;
+        else if (input & IN_RIGHT)
+            item->goal_anim_state = AS_TURN_R;
+    }
+    if (lara.water_status == LARA_WADE) {
+        if ((input & IN_JUMP) && !(room[item->room_number].flags & SWAMP))
+            item->goal_anim_state = AS_COMPRESS;
+        if (input & IN_FORWARD) {
+            int wade = 0;
+
+            if (room[item->room_number].flags & SWAMP) {
+                if (fheight > -(STEPUP_HEIGHT - 1)) {
+                    lara_as_wade(item, coll);
+                    wade = 1;
+                }
+            } else {
+                if (fheight < STEPUP_HEIGHT - 1 && fheight > -(STEPUP_HEIGHT - 1)) {
+                    lara_as_wade(item, coll);
+                    wade = 1;
+                }
+            }
+            if (!wade) {
+                lara.move_angle = item->pos.y_rot;
+                coll->bad_pos = NO_BAD_POS;
+                coll->bad_neg = -STEPUP_HEIGHT;
+                coll->bad_ceiling = 0;
+                coll->slopes_are_walls = 1;
+                coll->radius = LARA_RAD + 2;
+                GetLaraCollisionInfo(item, coll);
+                if (TestLaraVault(item, coll))
+                    return;
+                coll->radius = LARA_RAD;
+            }
+        } else if (input & IN_BACK) {
+            if (rheight < STEPUP_HEIGHT - 1 && rheight > -(STEPUP_HEIGHT - 1))
+                lara_as_back(item, coll);
+        }
+    } else {
+        if (input & IN_JUMP)
+            item->goal_anim_state = AS_COMPRESS;
+        else if (input & IN_FORWARD) {
+            sint32 height, ceiling;
+
+            height = LaraFloorFront(item, item->pos.y_rot, LARA_RAD + 4);
+            ceiling = LaraCeilingFront(item, item->pos.y_rot, LARA_RAD + 4);
+            if (height_type == 2 && height < 0) {
+                item->goal_anim_state = AS_STOP;
+                return;
+            }
+            if (ceiling > 0) {
+                item->goal_anim_state = AS_STOP;
+                return;
+            }
+            if (input & IN_SLOW)
+                lara_as_walk(item, coll);
+            else
+                lara_as_run(item, coll);
+        } else if (input & IN_BACK) {
+            if (input & IN_SLOW) {
+                if (rheight < STEPUP_HEIGHT - 1 && rheight > -(STEPUP_HEIGHT - 1) && height_type != 2)
+                    lara_as_back(item, coll);
+            } else {
+                if (rheight > -(STEPUP_HEIGHT - 1))
+                    item->goal_anim_state = AS_FASTBACK;
+            }
+        }
+    }
+}
