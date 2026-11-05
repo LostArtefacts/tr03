@@ -12,6 +12,11 @@ HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd, DWOR
     return lpSurface->Lock(0, &ddsd, dwFlags, 0);
 }
 
+HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd)
+{
+    return lpSurface->Unlock(ddsd.lpSurface);
+}
+
 bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, DWORD dwColour);
 
 }
