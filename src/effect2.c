@@ -104,6 +104,73 @@ void InitialiseSparks(void)
         bats[lp].flags = 0;
 }
 
+void UpdateSplashes(void)
+{
+    RIPPLE_STRUCT *rptr;
+    SPLASH_STRUCT *sptr;
+    SPLASH_VERTS *svptr;
+    sint32 lp, vlp, oyv, declife;
+
+    sptr = &splashes[0];
+    for (lp = 0; lp < MAX_SPLASHES; lp++) {
+        if (sptr->flags & SPL_ON) {
+            svptr = &sptr->sv[0];
+            declife = 0;
+            for (vlp = 0; vlp < 48; vlp++) {
+                svptr->wx += svptr->xv >> 2;
+                svptr->wy += svptr->yv >> 6;
+                svptr->wz += svptr->zv >> 2;
+                svptr->xv -= svptr->xv >> svptr->friction;
+                svptr->zv -= svptr->zv >> svptr->friction;
+                if (svptr->oxv < 0 && svptr->xv > svptr->oxv)
+                    svptr->xv = svptr->oxv;
+                else if (svptr->oxv > 0 && svptr->xv < svptr->oxv)
+                    svptr->xv = svptr->oxv;
+                else if (svptr->ozv < 0 && svptr->zv > svptr->ozv)
+                    svptr->zv = svptr->ozv;
+                else if (svptr->ozv > 0 && svptr->zv < svptr->ozv)
+                    svptr->zv = svptr->ozv;
+                oyv = svptr->yv;
+                svptr->yv += svptr->gravity << 3;
+                if (svptr->yv > 0x10000)
+                    svptr->yv = 0x10000;
+                if (svptr->wy > 0) {
+                    if (vlp < 16)
+                        sptr->flags |= 4;
+                    else if (vlp < 32)
+                        sptr->flags |= 8;
+                    svptr->wy = 0;
+                    declife = 1;
+                }
+                svptr++;
+            }
+            if (declife) {
+                sptr->life--;
+                if (sptr->life == 0)
+                    sptr->flags = 0;
+            }
+        }
+        sptr++;
+    }
+    rptr = &ripples[0];
+    for (lp = 0; lp < MAX_RIPPLES; lp++) {
+        if (rptr->flags & SPL_ON) {
+            if (rptr->size < 254)
+                rptr->size += 2;
+            if (!rptr->init) {
+                rptr->life -= 2;
+                if (rptr->life > 250)
+                    rptr->flags = 0;
+            } else if (rptr->init < rptr->life) {
+                rptr->init += 4;
+                if (rptr->init >= rptr->life)
+                    rptr->init = 0;
+            }
+        }
+        rptr++;
+    }
+}
+
 RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 moretrans)
 {
     RIPPLE_STRUCT *rptr;

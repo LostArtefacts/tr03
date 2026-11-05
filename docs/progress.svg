@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="223.02" height="12" x="0" y="0" class="named"><title>713 · 48.27%</title></rect>
-<rect width="238.98" height="12" x="223.02" y="0" class="todo"><title>764 · 51.73%</title></rect>
+<rect width="223.34" height="12" x="0" y="0" class="named"><title>714 · 48.34%</title></rect>
+<rect width="238.66" height="12" x="223.34" y="0" class="todo"><title>763 · 51.66%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">48.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">713</tspan> · <tspan class="todo">764</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">714</tspan> · <tspan class="todo">763</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="88.73" height="12" x="0" y="0" class="named"><title>128 KB · 19.21%</title></rect>
-<rect width="373.27" height="12" x="88.73" y="0" class="todo"><title>538 KB · 80.79%</title></rect>
+<rect width="89.02" height="12" x="0" y="0" class="named"><title>128 KB · 19.27%</title></rect>
+<rect width="372.98" height="12" x="89.02" y="0" class="todo"><title>537 KB · 80.73%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">19.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">128 KB</tspan> · <tspan class="todo">538 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">19.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">128 KB</tspan> · <tspan class="todo">537 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -357,7 +357,7 @@
 <rect width="12" height="12" x="630" y="75" class="named"><title>0x0042c7e0 TriggerBlood (366 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="75" class="named"><title>0x0042c950 TriggerBloodD (366 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="75" class="todo"><title>0x0042cac0 SetupSplash (1033 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="75" class="todo"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="75" class="named"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="75" class="named"><title>0x0042d080 SetupRipple (133 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="75" class="named"><title>0x0042d110 TriggerUnderwaterBlood (101 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="75" class="named"><title>0x0042d180 TriggerUnderwaterBloodD (101 bytes)</title></rect>
@@ -1965,7 +1965,7 @@
 <rect width="12.54" height="11.89" x="446.96" y="130.93" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="12.51" height="11.89" x="462.50" y="130.93" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12.39" height="11.89" x="478.01" y="130.93" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
-<rect width="12.36" height="11.89" x="493.41" y="130.93" class="todo"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
+<rect width="12.36" height="11.89" x="493.41" y="130.93" class="named"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
 <rect width="12.33" height="11.89" x="508.77" y="130.93" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="12.30" height="11.89" x="524.10" y="130.93" class="todo"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="12.30" height="11.89" x="539.41" y="130.93" class="todo"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
