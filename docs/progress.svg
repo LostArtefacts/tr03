@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="300.08" height="12" x="0" y="0" class="named"><title>1056 · 71.45%</title></rect>
-<rect width="1.99" height="12" x="300.08" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="117.93" height="12" x="302.07" y="0" class="todo"><title>415 · 28.08%</title></rect>
+<rect width="300.37" height="12" x="0" y="0" class="named"><title>1057 · 71.52%</title></rect>
+<rect width="1.99" height="12" x="300.37" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="117.65" height="12" x="302.35" y="0" class="todo"><title>414 · 28.01%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">71.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1056</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">415</tspan></text>
+<text text-anchor="end" x="600" y="7.50">71.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1057</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">414</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.44" height="12" x="0" y="0" class="named"><title>306 KB · 45.82%</title></rect>
-<rect width="3.79" height="12" x="192.44" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.76" height="12" x="196.24" y="0" class="todo"><title>356 KB · 53.28%</title></rect>
+<rect width="192.46" height="12" x="0" y="0" class="named"><title>306 KB · 45.82%</title></rect>
+<rect width="3.79" height="12" x="192.46" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.75" height="12" x="196.25" y="0" class="todo"><title>356 KB · 53.27%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
@@ -1124,7 +1124,7 @@
 <rect width="12" height="12" x="105" y="315" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="315" class="todo"><title>0x00474760 ACMClose (323 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="315" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="315" class="todo"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="315" class="named"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="315" class="todo"><title>0x00474900 ACMEmulateCDPlay (558 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="315" class="todo"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="315" class="todo"><title>0x00474d50 ACMEmulateCDStop (25 bytes)</title></rect>
@@ -2916,7 +2916,7 @@
 <rect width="3.01" height="3.15" x="687.83" y="431.54" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="3.01" height="3.15" x="687.83" y="437.69" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="3.01" height="3.15" x="687.83" y="443.85" class="named"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
-<rect width="2.87" height="3.30" x="693.84" y="393.92" class="todo"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
+<rect width="2.87" height="3.30" x="693.84" y="393.92" class="named"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
 <rect width="2.87" height="3.30" x="693.84" y="400.21" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
 <rect width="2.87" height="3.30" x="693.84" y="406.51" class="named"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
 <rect width="2.87" height="3.30" x="693.84" y="412.81" class="todo"><title>0x004b4c5e phd_sin (27 bytes)</title></rect>

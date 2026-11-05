@@ -19,4 +19,12 @@ bool ACMOpenFile(const char *name)
     return true;
 }
 
+void ACMCloseFile(void)
+{
+    if (acm_file) {
+        CloseHandle(acm_file);
+        acm_file = 0;
+    }
+}
+
 }
