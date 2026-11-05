@@ -276,3 +276,56 @@ void SkidooBaddieCollision(ITEM_INFO *skidoo)
         }
     }
 }
+
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+
+int SkidooCheckGetOff(void)
+{
+    ITEM_INFO *v, *l;
+    QUADINFO *bike;
+
+    v = &items[lara.skidoo];
+    l = lara_item;
+    if ((l->current_anim_state == 10 || l->current_anim_state == 24) &&
+        l->frame_number == anims[l->anim_number].frame_end) {
+        if (l->current_anim_state == 24)
+            l->pos.y_rot += 0x4000;
+        else
+            l->pos.y_rot -= 0x4000;
+        l->anim_number = 11;
+        l->frame_number = anims[11].frame_base;
+        l->current_anim_state = l->goal_anim_state = AS_STOP;
+        l->pos.x_pos -= 512 * phd_sin(l->pos.y_rot) >> W2V_SHIFT;
+        l->pos.z_pos -= 512 * phd_cos(l->pos.y_rot) >> W2V_SHIFT;
+        l->pos.x_rot = l->pos.z_rot = 0;
+        lara.skidoo = NO_ITEM;
+        lara.gun_status = LG_ARMLESS;
+    } else if (l->frame_number == anims[l->anim_number].frame_end) {
+        bike = (QUADINFO *)v->data;
+        if (l->current_anim_state == 20) {
+            PHD_VECTOR vec = {0, 0, 0};
+
+            l->anim_number = 23;
+            l->frame_number = anims[23].frame_base;
+            l->current_anim_state = 9;
+            GetLaraHandAbsPosition(&vec, 2);
+            l->pos.x_pos = vec.x;
+            l->pos.y_pos = vec.y;
+            l->pos.z_pos = vec.z;
+            l->fallspeed = v->fallspeed;
+            l->gravity_status = 1;
+            l->pos.x_rot = l->pos.z_rot = 0;
+            l->hit_points = 0;
+            lara.gun_status = LG_ARMLESS;
+            v->flags |= ONESHOT;
+            return 0;
+        } else if (l->current_anim_state == 19) {
+            l->goal_anim_state = 8;
+            l->fallspeed = 154;
+            l->speed = 0;
+            bike->Flags |= 0x80;
+            return 0;
+        }
+    }
+    return 1;
+}
