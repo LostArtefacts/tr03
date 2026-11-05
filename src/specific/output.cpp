@@ -1,0 +1,30 @@
+#include "standard.h"
+#include "specific.h"
+#include "winmain.h"
+
+extern "C" {
+
+extern int water_effect;
+extern int shade_effect;
+extern bool bBlueEffect;
+extern int framedump;
+extern RECT phd_WindowRect;
+
+void DXSaveScreen(LPDIRECTDRAWSURFACE3 lpSurface);
+void DXUpdateFrame(bool runMessageLoop, LPRECT rect);
+void DXClearBuffers(DWORD dwClrFlags, DWORD dwColour);
+void ScreenClear(bool tWindow);
+
+int S_DumpCine(void)
+{
+    static int nf = 0;
+
+    if (framedump) {
+        nf++;
+        DXSaveScreen(App.lpFrontBuffer);
+        return 1;
+    }
+    return 0;
+}
+
+}
