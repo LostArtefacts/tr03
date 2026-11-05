@@ -2048,6 +2048,7 @@ address,size,name,symbol
 0x00625f78,4,DemoPlay,_DemoPlay
 0x00625f7c,4,demo_loaded,_demo_loaded
 0x00625f80,4,demo_level,_demo_level
+0x00625f84,4,start_demo_level,_start_demo_level
 0x00625f88,512,bound_list,_bound_list
 0x00626188,4,bound_start,_bound_start
 0x0062618c,4,bound_end,_bound_end

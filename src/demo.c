@@ -22,6 +22,68 @@ sint32 DoDemoSequence(int level_number)
     return GF_DoLevelSequence(level_number, IL_DEMO);
 }
 
+extern int title_loaded;
+extern sint32 demo_loaded;
+extern int start_demo_level;
+extern sint32 Inventory_DemoMode;
+extern sint16 DumpHeight;
+extern char **GF_PCStrings;
+extern char **GF_levelfilenames;
+
+void LoadLaraDemoPos(void);
+sint32 InitialiseLevel(sint32 level, sint32 type);
+sint32 GameLoop(int demo_mode);
+void S_ExitSystem(char *message);
+int sprintf(char *buf, const char *fmt, ...);
+TEXTSTRING *T_Print(sint32 xpos, sint32 ypos, sint32 zpos, char *string);
+void DrawDummyItem();
+
+sint32 StartDemo(int level_number)
+{
+    TEXTSTRING *txt;
+    START_INFO start, *s;
+    int return_val = EXIT_TO_TITLE;
+    char buf[64];
+
+    if (level_number < 0 && !gameflow.num_demos)
+        return EXIT_TO_TITLE;
+    if (level_number < 0) {
+        if (start_demo_level >= gameflow.num_demos)
+            start_demo_level = 0;
+        level_number = GF_valid_demos[start_demo_level];
+        start_demo_level++;
+    } else
+        start_demo_level = level_number;
+    s = &savegame.start[level_number];
+    start = *s;
+    s->available = 1;
+    s->got_pistols = 1;
+    s->pistol_ammo = 1000;
+    s->gun_status = LG_ARMLESS;
+    s->gun_type = LG_PISTOLS;
+    title_loaded = 0;
+    if (!InitialiseLevel(level_number, IL_DEMO))
+        return EXITGAME;
+    level_complete = 0;
+    if (demo_loaded) {
+        LoadLaraDemoPos();
+        txt = T_Print(0, DumpHeight / 2 - 16, 0, GF_PCStrings[1]);
+        T_FlashText(txt, 1, 20);
+        T_CentreV(txt, 1);
+        T_CentreH(txt, 1);
+        Inventory_DemoMode = 1;
+        return_val = GameLoop(1);
+        Inventory_DemoMode = 0;
+        T_RemovePrint(txt);
+    } else {
+        sprintf(buf, "Level '%s' has no demo data!", GF_levelfilenames[level_number]);
+        S_ExitSystem(buf);
+    }
+    *s = start;
+    DrawDummyItem();
+    return return_val;
+}
+
 void LoadLaraDemoPos(void)
 {
     sint16 room_number;
