@@ -425,3 +425,146 @@ int SkidooCheckGetOff(void)
     }
     return 1;
 }
+
+extern char HandbrakeStarting;
+extern char CanHandbrakeStart;
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+int UserControl(ITEM_INFO *v, sint32 height, int *pitch)
+{
+    int drive, revs;
+    QUADINFO *bike;
+
+    drive = 0;
+    bike = (QUADINFO *)v->data;
+    if (!bike->Velocity && !(input & IN_DASH) && !CanHandbrakeStart)
+        CanHandbrakeStart = 1;
+    else if (bike->Velocity)
+        CanHandbrakeStart = 0;
+
+    if (!(input & IN_DASH))
+        HandbrakeStarting = 0;
+
+    if (!HandbrakeStarting) {
+        if (bike->Revs > 0x10) {
+            bike->Velocity += bike->Revs >> 4;
+            bike->Revs -= bike->Revs >> 3;
+        } else
+            bike->Revs = 0;
+    }
+
+    if (v->pos.y_pos >= height - STEP_L) {
+        if (!bike->Velocity && (input & IN_LOOK))
+            LookUpDown();
+
+        if (bike->Velocity > 0) {
+            if ((input & IN_DASH) && !HandbrakeStarting && bike->Velocity > 0x3000) {
+                if (input & IN_LEFT) {
+                    bike->skidoo_turn -= 500;
+                    if (bike->skidoo_turn < -0x5b0)
+                        bike->skidoo_turn = -0x5b0;
+                } else if (input & IN_RIGHT) {
+                    bike->skidoo_turn += 500;
+                    if (bike->skidoo_turn > 0x5b0)
+                        bike->skidoo_turn = 0x5b0;
+                }
+            } else {
+                if (input & IN_LEFT) {
+                    bike->skidoo_turn -= 0x1c7;
+                    if (bike->skidoo_turn < -0x38e)
+                        bike->skidoo_turn = -0x38e;
+                } else if (input & IN_RIGHT) {
+                    bike->skidoo_turn += 0x1c7;
+                    if (bike->skidoo_turn > 0x38e)
+                        bike->skidoo_turn = 0x38e;
+                }
+            }
+        } else if (bike->Velocity < 0) {
+            if ((input & IN_DASH) && !HandbrakeStarting && bike->Velocity < -0x3000 + 0x800) {
+                if (input & IN_RIGHT) {
+                    bike->skidoo_turn -= 500;
+                    if (bike->skidoo_turn < -0x5b0)
+                        bike->skidoo_turn = -0x5b0;
+                } else if (input & IN_LEFT) {
+                    bike->skidoo_turn += 500;
+                    if (bike->skidoo_turn > 0x5b0)
+                        bike->skidoo_turn = 0x5b0;
+                }
+            } else {
+                if (input & IN_RIGHT) {
+                    bike->skidoo_turn -= 0x1c7;
+                    if (bike->skidoo_turn < -0x38e)
+                        bike->skidoo_turn = -0x38e;
+                } else if (input & IN_LEFT) {
+                    bike->skidoo_turn += 0x1c7;
+                    if (bike->skidoo_turn > 0x38e)
+                        bike->skidoo_turn = 0x38e;
+                }
+            }
+        }
+
+        if (input & IN_JUMP) {
+            if ((input & IN_DASH) && (CanHandbrakeStart || HandbrakeStarting)) {
+                HandbrakeStarting = 1;
+                bike->Revs -= 0x200;
+                if (bike->Revs < -0x3000)
+                    bike->Revs = -0x3000;
+            } else if (bike->Velocity > 0)
+                bike->Velocity -= 0x280;
+            else {
+                if (bike->Velocity > -0x3000)
+                    bike->Velocity += -0x300;
+            }
+        } else if (input & IN_ACTION) {
+            if ((input & IN_DASH) && (CanHandbrakeStart || HandbrakeStarting)) {
+                HandbrakeStarting = 1;
+                bike->Revs += 0x200;
+                if (bike->Revs >= 0xa000)
+                    bike->Revs = 0xa000;
+            } else if (bike->Velocity < 0xa000) {
+                if (bike->Velocity < 0x4000)
+                    bike->Velocity += 8 + ((0x4000 + 0x800 - bike->Velocity) >> 3);
+                else if (bike->Velocity < 0x7000)
+                    bike->Velocity += 4 + ((0x7000 + 0x800 - bike->Velocity) >> 4);
+                else if (bike->Velocity < 0xa000)
+                    bike->Velocity += 2 + ((0xa000 - bike->Velocity) >> 3);
+            } else
+                bike->Velocity = 0xa000;
+            bike->Velocity -= ABS(v->pos.y_rot - bike->momentum_angle) >> 6;
+        } else if (bike->Velocity > 0x100) {
+            bike->Velocity -= 0x100;
+        } else if (bike->Velocity < -0x100) {
+            bike->Velocity += 0x100;
+        } else {
+            bike->Velocity = 0;
+        }
+
+        if (HandbrakeStarting && bike->Revs && !(input & (IN_ACTION | IN_JUMP))) {
+            if (bike->Revs > 8)
+                bike->Revs -= bike->Revs >> 3;
+            else
+                bike->Revs = 0;
+        }
+
+        v->speed = bike->Velocity >> 8;
+        if (bike->EngineRevs > 0x7000)
+            bike->EngineRevs = -0x2000;
+
+        if (bike->Velocity < 0)
+            revs = abs(bike->Velocity >> 1);
+        else if (bike->Velocity < 0x7000)
+            revs = -0x2000 + ((bike->Velocity * (0x6800 - -0x2000)) / 0x7000);
+        else if (bike->Velocity <= 0xa000)
+            revs = -0x2800 + (((bike->Velocity - 0x7000) * (0x7000 - -0x2800)) / (0xa000 - 0x7000));
+        revs += abs(bike->Revs);
+        bike->EngineRevs += (revs - bike->EngineRevs) >> 3;
+    } else {
+        if (bike->EngineRevs < 0xa000)
+            bike->EngineRevs += (0xa000 - bike->EngineRevs) >> 3;
+    }
+
+    *pitch = bike->EngineRevs;
+    return drive;
+}
