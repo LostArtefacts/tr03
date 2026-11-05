@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="274.01" height="12" x="0" y="0" class="named"><title>876 · 59.31%</title></rect>
-<rect width="187.99" height="12" x="274.01" y="0" class="todo"><title>601 · 40.69%</title></rect>
+<rect width="274.32" height="12" x="0" y="0" class="named"><title>877 · 59.38%</title></rect>
+<rect width="187.68" height="12" x="274.32" y="0" class="todo"><title>600 · 40.62%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">59.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">876</tspan> · <tspan class="todo">601</tspan></text>
+<text text-anchor="end" x="642" y="7.50">59.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">877</tspan> · <tspan class="todo">600</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="165.18" height="12" x="0" y="0" class="named"><title>238 KB · 35.75%</title></rect>
-<rect width="296.82" height="12" x="165.18" y="0" class="todo"><title>428 KB · 64.25%</title></rect>
+<rect width="165.47" height="12" x="0" y="0" class="named"><title>239 KB · 35.82%</title></rect>
+<rect width="296.53" height="12" x="165.47" y="0" class="todo"><title>428 KB · 64.18%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">35.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">238 KB</tspan> · <tspan class="todo">428 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">239 KB</tspan> · <tspan class="todo">428 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -936,7 +936,7 @@
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="255" class="named"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="named"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="255" class="todo"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="255" class="named"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="255" class="named"><title>0x0045c6b0 KeyHoleCollision (592 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="255" class="named"><title>0x0045c900 PuzzleHoleCollision (852 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="255" class="named"><title>0x0045cc60 SwitchControl (75 bytes)</title></rect>
@@ -1970,7 +1970,7 @@
 <rect width="12.30" height="11.88" x="524.20" y="131.05" class="todo"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="12.30" height="11.88" x="539.50" y="131.05" class="todo"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
 <rect width="12.24" height="11.88" x="554.80" y="131.05" class="named"><title>0x00449890 lara_col_climbdown (413 bytes)</title></rect>
-<rect width="12.24" height="11.88" x="570.03" y="131.05" class="todo"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
+<rect width="12.24" height="11.88" x="570.03" y="131.05" class="named"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
 <rect width="12.18" height="11.88" x="585.27" y="131.05" class="todo"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>
 <rect width="12.15" height="11.88" x="600.45" y="131.05" class="named"><title>0x0041e730 GetTiltType (410 bytes)</title></rect>
 <rect width="12.09" height="11.88" x="615.60" y="131.05" class="named"><title>0x004475d0 draw_shotgun (408 bytes)</title></rect>

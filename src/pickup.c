@@ -313,6 +313,61 @@ void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     }
 }
 
+extern sint16 PickUpBounds[];
+extern PHD_VECTOR DetonatorPosition;
+extern sint16 Inventory_Chosen;
+sint32 Display_Inventory(sint32 inventory_mode);
+int Inv_RemoveItem(int item_num);
+void AlignLaraPosition(PHD_VECTOR *vec, ITEM_INFO *item, ITEM_INFO *laraitem);
+void ObjectCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+
+void DetonatorCollision(sint16 item_number, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+    ITEM_INFO *item;
+    sint16 x_rot, y_rot, z_rot;
+
+    if (lara.extra_anim)
+        return;
+    item = &items[item_number];
+    x_rot = item->pos.x_rot;
+    y_rot = item->pos.y_rot;
+    z_rot = item->pos.z_rot;
+    item->pos.y_rot = laraitem->pos.y_rot;
+    item->pos.z_rot = 0;
+    item->pos.x_rot = 0;
+    if (item->status != DEACTIVATED && (input & IN_ACTION) && lara.gun_status == LG_ARMLESS &&
+        !laraitem->gravity_status && laraitem->current_anim_state == AS_STOP) {
+        if (item->object_number == 295) {
+            if (!TestLaraPosition(PickUpBounds, item, laraitem))
+                goto normal_collision;
+        }
+        if (Inventory_Chosen == -1)
+            Display_Inventory(2);
+        if (Inventory_Chosen != 229)
+            goto normal_collision;
+        Inv_RemoveItem(229);
+        AlignLaraPosition(&DetonatorPosition, item, laraitem);
+        laraitem->anim_number = objects[13].anim_index;
+        laraitem->frame_number = anims[laraitem->anim_number].frame_base;
+        laraitem->current_anim_state = 0;
+        if (item->object_number == 295)
+            laraitem->goal_anim_state = 1;
+        AnimateItem(laraitem);
+        lara.extra_anim = 1;
+        lara.gun_status = LG_HANDSBUSY;
+        if (item->object_number == 295) {
+            item->status = ACTIVE;
+            AddActiveItem(item_number);
+        }
+        return;
+    }
+normal_collision:
+    item->pos.x_rot = x_rot;
+    item->pos.y_rot = y_rot;
+    item->pos.z_rot = z_rot;
+    ObjectCollision(item_number, laraitem, coll);
+}
+
 void SwitchControl(sint16 item_number)
 {
     ITEM_INFO *item;
