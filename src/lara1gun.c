@@ -227,6 +227,127 @@ void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
 void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
 void TriggerRocketFlame(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 item_no);
 
+extern sint16 rcossin_tbl[];
+extern sint32 wibble;
+extern char TribeBossShieldOn;
+extern uint32 CurrentLevel;
+
+sint16 *GetBestFrame(ITEM_INFO *item);
+void SmashWindow(sint16 item_number);
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+void HitTarget(ITEM_INFO *item, GAME_VECTOR *hitpos, int damage);
+void FindClosestShieldPoint(sint32 x, sint32 y, sint32 z, ITEM_INFO *item);
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
+void TriggerRocketSmoke(sint32 x, sint32 y, sint32 z, sint32 body_part);
+
+void ControlHarpoonBolt(sint16 item_number)
+{
+    ITEM_INFO *item, *target;
+    FLOOR_INFO *floor;
+    sint32 c, s, x, z, rx, rz, ox, oz, sx, sz, old_x, old_z, old_y, oldroom;
+    sint16 room_number, target_number;
+    sint16 *bounds;
+
+    item = &items[item_number];
+    old_x = item->pos.x_pos;
+    old_y = item->pos.y_pos;
+    old_z = item->pos.z_pos;
+    oldroom = item->room_number;
+    item->pos.z_pos += item->speed * phd_cos(item->pos.y_rot) >> W2V_SHIFT;
+    item->pos.x_pos += item->speed * phd_sin(item->pos.y_rot) >> W2V_SHIFT;
+    item->pos.y_pos += item->fallspeed;
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+
+    for (target_number = room[item->room_number].item_number; target_number != NO_ITEM; target_number = target->next_item) {
+        target = &items[target_number];
+        if (target == lara_item || !target->collidable || target->object_number == 19)
+            continue;
+        if (target->object_number == 101 || target->object_number == 102 || target->object_number == 103
+            || target->object_number == 104 || target->object_number == 38 || target->object_number == 373
+            || (target->status != INVISIBLE && objects[target->object_number].collision)) {
+            bounds = GetBestFrame(target);
+            if (item->pos.y_pos < target->pos.y_pos + bounds[2] || item->pos.y_pos > target->pos.y_pos + bounds[3])
+                continue;
+            c = phd_cos(target->pos.y_rot);
+            s = phd_sin(target->pos.y_rot);
+            x = item->pos.x_pos - target->pos.x_pos;
+            z = item->pos.z_pos - target->pos.z_pos;
+            rx = (c * x - s * z) >> W2V_SHIFT;
+            ox = old_x - target->pos.x_pos;
+            oz = old_z - target->pos.z_pos;
+            sx = (c * ox - s * oz) >> W2V_SHIFT;
+            if ((rx < bounds[0] && sx < bounds[0]) || (rx > bounds[1] && sx > bounds[1]))
+                continue;
+            rz = (c * z + s * x) >> W2V_SHIFT;
+            sz = (c * oz + s * ox) >> W2V_SHIFT;
+            if ((rz < bounds[4] && sz < bounds[4]) || (rz > bounds[5] && sz > bounds[5]))
+                continue;
+            if (target->object_number == 102 && CurrentLevel != 6) {
+                SmashWindow(target_number);
+            } else if (target->object_number == 101 || target->object_number == 103 || target->object_number == 104) {
+                SmashWindow(target_number);
+            } else if (target->object_number == 38 || target->object_number == 373) {
+                if (item->status != ACTIVE) {
+                    item->status = ACTIVE;
+                    AddActiveItem(target_number);
+                }
+            } else if (target->object_number != 102) {
+                if (objects[target->object_number].intelligent) {
+                    if (target->object_number != 36 || !TribeBossShieldOn) {
+                        if (target->object_number != 36 && target->object_number != 57)
+                            DoLotsOfBlood(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 0, 0, item->room_number, 3);
+                        HitTarget(target, NULL, weapons[LG_HARPOON].damage << item->item_flags[0]);
+                        savegame.ammo_hit++;
+                    } else
+                        FindClosestShieldPoint(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, target);
+                }
+                KillItem(item_number);
+                return;
+            }
+        }
+    }
+
+    if (item->pos.y_pos >= item->floor || item->pos.y_pos <= GetCeiling(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos)) {
+        if (item->hit_points == 256)
+            item->current_anim_state = item->pos.x_rot;
+        if (item->hit_points >= 192) {
+            item->pos.x_rot = item->current_anim_state + ((((rcossin_tbl[((item->hit_points - 192) << 9) & 4095] >> 1) - 1024) * (item->hit_points - 192)) >> 6);
+            item->hit_points--;
+        }
+        item->hit_points--;
+        if (!item->hit_points) {
+            KillItem(item_number);
+            return;
+        }
+        item->speed = item->fallspeed = 0;
+    } else {
+        item->pos.z_rot += 35 * ONE_DEGREE;
+        if (!(room[item->room_number].flags & UNDERWATER)) {
+            item->pos.x_rot -= 1 * ONE_DEGREE;
+            if (item->pos.x_rot < -16384)
+                item->pos.x_rot = -16384;
+            item->fallspeed = (sint16)(-256 * phd_sin(item->pos.x_rot) >> W2V_SHIFT);
+            item->speed = (sint16)(256 * phd_cos(item->pos.x_rot) >> W2V_SHIFT);
+        } else {
+            if ((wibble & 15) == 0)
+                CreateBubble(&item->pos, item->room_number, 2, 8);
+            TriggerRocketSmoke(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 64);
+            item->fallspeed = (sint16)(-(256 >> 1) * phd_sin(item->pos.x_rot) >> W2V_SHIFT);
+            item->speed = (sint16)((256 >> 1) * phd_cos(item->pos.x_rot) >> W2V_SHIFT);
+        }
+    }
+
+    room_number = item->room_number;
+    floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+    GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+}
+
 void FireRocket(void)
 {
     sint16 item_number, lp;

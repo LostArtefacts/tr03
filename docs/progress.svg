@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="265.88" height="12" x="0" y="0" class="named"><title>850 · 57.55%</title></rect>
-<rect width="196.12" height="12" x="265.88" y="0" class="todo"><title>627 · 42.45%</title></rect>
+<rect width="266.19" height="12" x="0" y="0" class="named"><title>851 · 57.62%</title></rect>
+<rect width="195.81" height="12" x="266.19" y="0" class="todo"><title>626 · 42.38%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">57.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">850</tspan> · <tspan class="todo">627</tspan></text>
+<text text-anchor="end" x="642" y="7.50">57.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">851</tspan> · <tspan class="todo">626</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="152.80" height="12" x="0" y="0" class="named"><title>220 KB · 33.07%</title></rect>
-<rect width="309.20" height="12" x="152.80" y="0" class="todo"><title>446 KB · 66.93%</title></rect>
+<rect width="153.79" height="12" x="0" y="0" class="named"><title>222 KB · 33.29%</title></rect>
+<rect width="308.21" height="12" x="153.79" y="0" class="todo"><title>444 KB · 66.71%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">33.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">220 KB</tspan> · <tspan class="todo">446 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">33.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">222 KB</tspan> · <tspan class="todo">444 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -730,7 +730,7 @@
 <rect width="12" height="12" x="225" y="195" class="named"><title>0x00445560 FireShotgun (507 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="195" class="named"><title>0x00445760 FireM16 (192 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="195" class="named"><title>0x00445820 FireHarpoon (389 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="195" class="todo"><title>0x004459b0 ControlHarpoonBolt (1429 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="195" class="named"><title>0x004459b0 ControlHarpoonBolt (1429 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="195" class="named"><title>0x00445f50 FireRocket (651 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="195" class="todo"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="195" class="named"><title>0x00446ba0 FireGrenade (560 bytes)</title></rect>
@@ -1661,7 +1661,7 @@
 <rect width="22.51" height="22.56" x="278.01" y="78.12" class="todo"><title>0x0042a0d0 UpdateSparks (1442 bytes)</title></rect>
 <rect width="22.51" height="22.47" x="278.01" y="103.68" class="named"><title>0x004240c0 DogControl (1436 bytes)</title></rect>
 <rect width="22.51" height="22.47" x="278.01" y="129.15" class="named"><title>0x00434e60 HybridControl (1436 bytes)</title></rect>
-<rect width="22.51" height="22.36" x="278.01" y="154.62" class="todo"><title>0x004459b0 ControlHarpoonBolt (1429 bytes)</title></rect>
+<rect width="22.51" height="22.36" x="278.01" y="154.62" class="named"><title>0x004459b0 ControlHarpoonBolt (1429 bytes)</title></rect>
 <rect width="22.51" height="22.09" x="278.01" y="179.98" class="named"><title>0x0044a890 FireWeapon (1412 bytes)</title></rect>
 <rect width="22.51" height="22.08" x="278.01" y="205.07" class="named"><title>0x0041a0be CameraCollisionBounds (1411 bytes)</title></rect>
 <rect width="22.51" height="22.06" x="278.01" y="230.15" class="named"><title>0x00448650 AnimatePistols (1410 bytes)</title></rect>
