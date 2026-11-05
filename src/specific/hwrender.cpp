@@ -58,6 +58,19 @@ void HWR_EnableColorAddition(bool enable)
     }
 }
 
+void HWR_EnableAlphaBlend(bool enable)
+{
+    if (enable) {
+        if (!GtAlphaBlendEnabled) {
+            SetRenderState(D3DRENDERSTATE_ALPHABLENDENABLE, true);
+            GtAlphaBlendEnabled = true;
+        }
+    } else if (GtAlphaBlendEnabled) {
+        SetRenderState(D3DRENDERSTATE_ALPHABLENDENABLE, false);
+        GtAlphaBlendEnabled = false;
+    }
+}
+
 void HWR_EndScene(void)
 {
     EndScene();
