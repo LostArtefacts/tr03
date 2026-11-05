@@ -126,6 +126,15 @@ void FreePictureTextures(int *indices)
         HWR_SetCurrentTexture(TPages[i]);
 }
 
+void ConvertSurfaceToTextures(LPDIRECTDRAWSURFACE3 surf)
+{
+    if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bPalette) {
+        DXFreeTPages();
+        DXCreateMaxTPages(1);
+    }
+    ConvertSurfaceToTextures16Bit(surf);
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
