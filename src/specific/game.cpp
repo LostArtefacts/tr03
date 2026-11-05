@@ -3,6 +3,11 @@
 extern "C" sint32 rand_1;
 extern "C" sint32 rand_2;
 
+extern "C" sint32 LevelCompleteSequence(int level_number)
+{
+    return 0x500;
+}
+
 sint32 GetRandomControl(void)
 {
     rand_1 = rand_1 * 0x41c64e6d + 0x3039;
