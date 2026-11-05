@@ -1839,6 +1839,10 @@ address,size,name,symbol
 0x004c31b8,4,mciSendCommandA,__imp__mciSendCommandA@16
 0x004c31bc,4,joyGetPosEx,__imp__joyGetPosEx@8
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
+0x004c3458,16,IID_IDirect3D2,_IID_IDirect3D2
+0x004c3468,16,IID_IDirectDraw2,_IID_IDirectDraw2
+0x004c3478,16,IID_IDirectDrawSurface3,_IID_IDirectDrawSurface3
+0x004c3488,16,IID_IDirect3DTexture2,_IID_IDirect3DTexture2
 0x004c5084,4,one,_one
 0x004c5100,16,baton_hit,_baton_hit
 0x004c5110,16,baton_kick,_baton_kick
@@ -2367,6 +2371,10 @@ address,size,name,symbol
 0x006ca104,1,SoftwareRenderer,_SoftwareRenderer
 0x006ca108,1,MMXSupported,_MMXSupported
 0x006ca124,,D3DDev,_D3DDev
+0x006ca1a0,4,EndScene,_EndScene
+0x006ca1b8,4,SetRenderState,_SetRenderState
+0x006ca1c0,4,DrawPrimitive,_DrawPrimitive
+0x006ca1c8,4,BeginScene,_BeginScene
 0x006ce508,4,G_DXConfig,_G_DXConfig
 0x006ce50c,4,G_DeviceInfo,_G_DeviceInfo
 0x006ce514,1,bSoftwareDefault,_bSoftwareDefault

@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="266.27" height="12" x="0" y="0" class="named"><title>937 · 63.40%</title></rect>
-<rect width="1.42" height="12" x="266.27" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="152.31" height="12" x="267.69" y="0" class="todo"><title>536 · 36.27%</title></rect>
+<rect width="266.55" height="12" x="0" y="0" class="named"><title>938 · 63.46%</title></rect>
+<rect width="1.42" height="12" x="266.55" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="152.03" height="12" x="267.97" y="0" class="todo"><title>535 · 36.20%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">63.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">937</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">536</tspan></text>
+<text text-anchor="end" x="600" y="7.50">63.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">938</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">535</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.54" height="12" x="0" y="0" class="named"><title>297 KB · 44.41%</title></rect>
-<rect width="3.69" height="12" x="186.54" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.78" height="12" x="190.22" y="0" class="todo"><title>365 KB · 54.71%</title></rect>
+<rect width="186.55" height="12" x="0" y="0" class="named"><title>297 KB · 44.42%</title></rect>
+<rect width="3.69" height="12" x="186.55" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.76" height="12" x="190.24" y="0" class="todo"><title>365 KB · 54.71%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1424,7 +1424,7 @@
 <rect width="12" height="12" x="105" y="405" class="todo"><title>0x00490700 CloseDrawPrimitive (119 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="405" class="todo"><title>0x00490780 Func490780 (281 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="405" class="todo"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="405" class="todo"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="405" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="405" class="todo"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="405" class="todo"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="405" class="todo"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
@@ -2966,7 +2966,7 @@
 <rect width="2.69" height="2.48" x="706.07" y="433.56" class="named"><title>0x0044f160 lara_col_waterroll (19 bytes)</title></rect>
 <rect width="2.69" height="2.48" x="706.07" y="439.04" class="todo"><title>0x00483840 S_IntroFMV (19 bytes)</title></rect>
 <rect width="2.69" height="2.48" x="706.07" y="444.52" class="todo"><title>0x0048e710 Func48e710 (19 bytes)</title></rect>
-<rect width="2.62" height="2.55" x="711.76" y="411.64" class="todo"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
+<rect width="2.62" height="2.55" x="711.76" y="411.64" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="2.48" height="2.55" x="717.38" y="411.64" class="named"><title>0x0042fa30 ResetExercises (18 bytes)</title></rect>
 <rect width="2.48" height="2.55" x="722.86" y="411.64" class="todo"><title>0x004752d0 Func4752d0 (18 bytes)</title></rect>
 <rect width="2.48" height="2.55" x="728.35" y="411.64" class="todo"><title>0x004804d0 Func4804d0 (18 bytes)</title></rect>
