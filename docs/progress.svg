@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="310.03" height="12" x="0" y="0" class="named"><title>1091 · 73.82%</title></rect>
-<rect width="1.99" height="12" x="310.03" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="107.98" height="12" x="312.02" y="0" class="todo"><title>380 · 25.71%</title></rect>
+<rect width="310.31" height="12" x="0" y="0" class="named"><title>1092 · 73.88%</title></rect>
+<rect width="1.99" height="12" x="310.31" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="107.70" height="12" x="312.30" y="0" class="todo"><title>379 · 25.64%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">73.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1091</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">380</tspan></text>
+<text text-anchor="end" x="600" y="7.50">73.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1092</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">379</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="194.93" height="12" x="0" y="0" class="named"><title>310 KB · 46.41%</title></rect>
-<rect width="3.79" height="12" x="194.93" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.27" height="12" x="198.73" y="0" class="todo"><title>352 KB · 52.68%</title></rect>
+<rect width="195.08" height="12" x="0" y="0" class="named"><title>310 KB · 46.45%</title></rect>
+<rect width="3.79" height="12" x="195.08" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="221.13" height="12" x="198.87" y="0" class="todo"><title>352 KB · 52.65%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">310 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">352 KB</tspan></text>
@@ -1288,7 +1288,7 @@
 <rect width="12" height="12" x="315" y="360" class="named"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="360" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="360" class="named"><title>0x00486010 game_free (52 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="360" class="todo"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="360" class="named"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="360" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="360" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="360" class="todo"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
@@ -2181,7 +2181,7 @@
 <rect width="9.01" height="9.16" x="584.27" y="199.13" class="named"><title>0x00442490 lara_col_turn_r (235 bytes)</title></rect>
 <rect width="9.01" height="9.16" x="596.28" y="199.13" class="named"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
 <rect width="8.97" height="9.16" x="608.29" y="199.13" class="todo"><title>0x004825d0 FindCDDrive (234 bytes)</title></rect>
-<rect width="8.90" height="9.16" x="620.26" y="199.13" class="todo"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
+<rect width="8.90" height="9.16" x="620.26" y="199.13" class="named"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="8.90" height="9.16" x="632.16" y="199.13" class="todo"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>
 <rect width="8.86" height="9.16" x="644.05" y="199.13" class="todo"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="8.86" height="9.16" x="655.91" y="199.13" class="named"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>

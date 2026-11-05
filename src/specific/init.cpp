@@ -86,4 +86,22 @@ void game_free(int size, int type)
     malloc_used -= size;
 }
 
+void CalculateWibbleTable(void)
+{
+    int i;
+    int j;
+    int sn;
+    sint16 angle;
+
+    for (i = 0; i < 32; i++) {
+        angle = (i * 65536) / 32;
+        sn = phd_sin(angle);
+        wibble_table[i] = (float)(sn * 2 >> 14);
+        shade_table[i] = sn * 0x300 >> 14;
+        rand_table[i] = (GetRandomDraw() >> 5) - 0x1ff;
+        for (j = 0; j < 31; j++)
+            wibble_light[i][j] = ((j - 16) * i << 9) / 31;
+    }
+}
+
 }
