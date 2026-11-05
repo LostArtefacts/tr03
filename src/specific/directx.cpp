@@ -47,4 +47,22 @@ bool DXSetVideoMode(LPDIRECTDRAW2 lpDD2, int w, int h, int bpp)
     return true;
 }
 
+bool DXCreateSurface(LPDIRECTDRAW2 lpDD2, DDSURFACEDESC *ddsd, LPDIRECTDRAWSURFACE3 *lpSurface)
+{
+    int RetVal;
+    LPDIRECTDRAWSURFACE lps;
+
+    RetVal = lpDD2->CreateSurface(ddsd, &lps, 0);
+    if (RetVal != DD_OK)
+        return false;
+    RetVal = lps->QueryInterface(IID_IDirectDrawSurface3, (LPVOID *)lpSurface);
+    if (lps) {
+        lps->Release();
+        lps = 0;
+    }
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 }
