@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="263.71" height="12" x="0" y="0" class="named"><title>928 · 62.79%</title></rect>
-<rect width="1.42" height="12" x="263.71" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="154.87" height="12" x="265.13" y="0" class="todo"><title>545 · 36.87%</title></rect>
+<rect width="263.99" height="12" x="0" y="0" class="named"><title>929 · 62.86%</title></rect>
+<rect width="1.42" height="12" x="263.99" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="154.59" height="12" x="265.41" y="0" class="todo"><title>544 · 36.81%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">62.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">928</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">545</tspan></text>
+<text text-anchor="end" x="600" y="7.50">62.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">929</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">544</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.41" height="12" x="0" y="0" class="named"><title>296 KB · 44.38%</title></rect>
-<rect width="3.69" height="12" x="186.41" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.90" height="12" x="190.10" y="0" class="todo"><title>365 KB · 54.74%</title></rect>
+<rect width="186.44" height="12" x="0" y="0" class="named"><title>296 KB · 44.39%</title></rect>
+<rect width="3.69" height="12" x="186.44" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.87" height="12" x="190.13" y="0" class="todo"><title>365 KB · 54.73%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1189,7 +1189,7 @@
 <rect width="12" height="12" x="330" y="330" class="named"><title>0x004808b0 DS_GetFreeChannel (57 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="330" class="named"><title>0x004808f0 DS_AdjustVolumeAndPan (44 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="330" class="named"><title>0x00480920 DS_AdjustPitch (49 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="330" class="todo"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="330" class="named"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="330" class="todo"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="todo"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
@@ -2778,7 +2778,7 @@
 <rect width="4.27" height="3.86" x="713.63" y="347.65" class="named"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="4.27" height="3.86" x="720.91" y="347.65" class="named"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="4.27" height="3.86" x="728.18" y="347.65" class="named"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
-<rect width="4.27" height="3.86" x="735.45" y="347.65" class="todo"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
+<rect width="4.27" height="3.86" x="735.45" y="347.65" class="named"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
 <rect width="4.27" height="3.86" x="742.73" y="347.65" class="todo"><title>0x0048e830 Func48e830 (47 bytes)</title></rect>
 <rect width="3.87" height="4.17" x="654.65" y="354.51" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
 <rect width="3.87" height="4.17" x="661.52" y="354.51" class="todo"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>

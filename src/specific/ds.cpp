@@ -92,6 +92,20 @@ void DS_AdjustPitch(int nHandle, int nPitch)
     }
 }
 
+void DS_StopSample(int nHandle)
+{
+    LPDIRECTSOUNDBUFFER pBuffer;
+
+    if (nHandle < 0)
+        return;
+    pBuffer = DS_Samples[nHandle];
+    if (pBuffer) {
+        DX_TRY(pBuffer->Stop());
+        pBuffer->Release();
+        DS_Samples[nHandle] = 0;
+    }
+}
+
 bool DS_MakeAdapterList(void);
 
 }
