@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="308.32" height="12" x="0" y="0" class="named"><title>1085 · 73.41%</title></rect>
-<rect width="1.99" height="12" x="308.32" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="109.69" height="12" x="310.31" y="0" class="todo"><title>386 · 26.12%</title></rect>
+<rect width="308.61" height="12" x="0" y="0" class="named"><title>1086 · 73.48%</title></rect>
+<rect width="1.99" height="12" x="308.61" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="109.40" height="12" x="310.60" y="0" class="todo"><title>385 · 26.05%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">73.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1085</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">386</tspan></text>
+<text text-anchor="end" x="600" y="7.50">73.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1086</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">385</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="194.47" height="12" x="0" y="0" class="named"><title>309 KB · 46.30%</title></rect>
-<rect width="3.79" height="12" x="194.47" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.74" height="12" x="198.26" y="0" class="todo"><title>353 KB · 52.80%</title></rect>
+<rect width="194.57" height="12" x="0" y="0" class="named"><title>309 KB · 46.33%</title></rect>
+<rect width="3.79" height="12" x="194.57" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="221.64" height="12" x="198.36" y="0" class="todo"><title>352 KB · 52.77%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">309 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">353 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">309 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">352 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1242,7 +1242,7 @@
 <rect width="12" height="12" x="375" y="345" class="named"><title>0x00483860 mGetAngle (122 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="345" class="named"><title>0x004838e0 SortOutAdventureSave (115 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="345" class="todo"><title>0x00483960 StartGame (319 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="345" class="todo"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="345" class="named"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="345" class="named"><title>0x00483b50 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="345" class="todo"><title>0x00483b60 LevelStats (1077 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="345" class="named"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
@@ -2308,7 +2308,7 @@
 <rect width="7.73" height="7.45" x="664.33" y="233.48" class="named"><title>0x00414ab0 EscapeBox (164 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="675.06" y="233.48" class="named"><title>0x0042e3b0 DoLotsOfBlood (164 bytes)</title></rect>
 <rect width="7.73" height="7.45" x="685.79" y="233.48" class="named"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
-<rect width="7.73" height="7.45" x="696.53" y="233.48" class="todo"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
+<rect width="7.73" height="7.45" x="696.53" y="233.48" class="named"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
 <rect width="7.69" height="7.45" x="707.26" y="233.48" class="named"><title>0x0040d320 S_DrawScreenSprite (163 bytes)</title></rect>
 <rect width="7.69" height="7.45" x="717.94" y="233.48" class="named"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
 <rect width="7.69" height="7.45" x="728.63" y="233.48" class="named"><title>0x0042bda0 TriggerAlertLight (163 bytes)</title></rect>
