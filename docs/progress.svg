@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="254.93" height="12" x="0" y="0" class="named"><title>815 · 55.18%</title></rect>
-<rect width="207.07" height="12" x="254.93" y="0" class="todo"><title>662 · 44.82%</title></rect>
+<rect width="255.24" height="12" x="0" y="0" class="named"><title>816 · 55.25%</title></rect>
+<rect width="206.76" height="12" x="255.24" y="0" class="todo"><title>661 · 44.75%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">55.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">815</tspan> · <tspan class="todo">662</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">816</tspan> · <tspan class="todo">661</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="132.15" height="12" x="0" y="0" class="named"><title>190 KB · 28.60%</title></rect>
-<rect width="329.85" height="12" x="132.15" y="0" class="todo"><title>475 KB · 71.40%</title></rect>
+<rect width="132.58" height="12" x="0" y="0" class="named"><title>191 KB · 28.70%</title></rect>
+<rect width="329.42" height="12" x="132.58" y="0" class="todo"><title>475 KB · 71.30%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">28.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">190 KB</tspan> · <tspan class="todo">475 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">28.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">191 KB</tspan> · <tspan class="todo">475 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -228,7 +228,7 @@
 <rect width="12" height="12" x="195" y="45" class="named"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="45" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="45" class="named"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="45" class="todo"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="45" class="named"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="45" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="45" class="named"><title>0x0041b1d0 ControlCinematicPlayer (199 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="45" class="todo"><title>0x0041b2a0 InGameCinematicCamera (582 bytes)</title></rect>
@@ -1806,7 +1806,7 @@
 <rect width="15.39" height="14.56" x="550.73" y="64.56" class="todo"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
 <rect width="15.34" height="14.56" x="569.12" y="64.56" class="todo"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
 <rect width="15.22" height="14.56" x="587.46" y="64.56" class="named"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
-<rect width="15.20" height="14.56" x="605.68" y="64.56" class="todo"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
+<rect width="15.20" height="14.56" x="605.68" y="64.56" class="named"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
 <rect width="15.10" height="14.56" x="623.88" y="64.56" class="named"><title>0x0041d290 CobraControl (624 bytes)</title></rect>
 <rect width="15.08" height="14.56" x="641.98" y="64.56" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="15.03" height="14.56" x="660.05" y="64.56" class="todo"><title>0x004296c0 InterpolateMatrix (621 bytes)</title></rect>

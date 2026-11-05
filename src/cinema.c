@@ -224,6 +224,87 @@ sint32 DoCinematic(sint32 nframes)
     return 0;
 }
 
+extern sint32 SmokeCountL, SmokeCountR;
+
+sint16 CreateEffect(sint16 room_num);
+void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b);
+void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 initial, sint32 weapon, sint32 count);
+
+void UpdateLaraGuns(void)
+{
+    uint16 flag, lr = 0;
+    PHD_VECTOR posl, posr, *pos = &posl;
+
+    if (lara.left_arm.flash_gun || lara.right_arm.flash_gun || SmokeCountL || SmokeCountR) {
+        posl.x = -12;
+        posl.y = (128 >> 2) + 16;
+        posl.z = 40;
+        GetJointAbsPosition(lara_item, &posl, HAND_L);
+
+        posr.x = 8;
+        posr.y = (128 >> 2) + 16;
+        posr.z = 40;
+        GetJointAbsPosition(lara_item, &posr, HAND_R);
+    } else {
+        return;
+    }
+
+    if ((flag = lara.left_arm.flash_gun)) {
+        lara.left_arm.flash_gun--;
+    } else if ((flag = lara.right_arm.flash_gun)) {
+        lr = 1;
+        pos = &posr;
+        lara.right_arm.flash_gun--;
+    }
+
+    if (flag) {
+        if (flag == 3) {
+            sint16 fx_number;
+            sint16 room_number;
+
+            room_number = GetCinematicRoom(pos->x, pos->y, pos->z);
+
+            if ((fx_number = CreateEffect(room_number)) != NO_ITEM) {
+                FX_INFO *fx;
+
+                fx = &effects[fx_number];
+                fx->pos.x_pos = pos->x;
+                fx->pos.y_pos = pos->y;
+                fx->pos.z_pos = pos->z;
+                fx->room_number = room_number;
+                fx->pos.y_rot = 0;
+                fx->pos.x_rot = 0;
+                fx->pos.z_rot = GetRandomControl();
+                fx->speed = 16 + (GetRandomControl() & 31);
+                fx->fallspeed = -48 - (GetRandomControl() & 7);
+                fx->object_number = 366;
+                fx->frame_number = objects[366].mesh_index;
+                fx->shade = 0x4210;
+                fx->counter = (GetRandomControl() & 1) + 1;
+            }
+
+            if (lr)
+                SmokeCountR = 28;
+            else
+                SmokeCountL = 28;
+        }
+
+        TriggerDynamic(pos->x + ((GetRandomControl() & 255) - 128), pos->y - ((GetRandomControl() & 127) - 63),
+                       pos->z + ((GetRandomControl() & 255) - 128), 10, (GetRandomControl() & 7) + 24,
+                       (GetRandomControl() & 3) + 16, GetRandomControl() & 7);
+    }
+
+    if (SmokeCountL) {
+        TriggerGunSmoke(posl.x, posl.y, posl.z, 0, 0, 0, 0, LG_PISTOLS, SmokeCountL);
+        SmokeCountL--;
+    }
+
+    if (SmokeCountR) {
+        TriggerGunSmoke(posr.x, posr.y, posr.z, 0, 0, 0, 0, LG_PISTOLS, SmokeCountR);
+        SmokeCountR--;
+    }
+}
+
 void ControlCinematicPlayer(sint16 item_num)
 {
     ITEM_INFO *item;
