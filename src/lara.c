@@ -2430,6 +2430,60 @@ void lara_col_fastdive(ITEM_INFO *item, COLL_INFO *coll)
     }
 }
 
+void lara_col_wade(ITEM_INFO *item, COLL_INFO *coll)
+{
+    lara.move_angle = item->pos.y_rot;
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    coll->slopes_are_walls = 1;
+    GetLaraCollisionInfo(item, coll);
+
+    if (LaraHitCeiling(item, coll))
+        return;
+    if (TestLaraVault(item, coll))
+        return;
+
+    if (LaraDeflectEdge(item, coll)) {
+        item->pos.z_rot = 0;
+        if ((coll->front_type == 0 || coll->front_type == 4) && coll->front_floor < -(STEP_L * 5) / 2
+            && !(room[item->room_number].flags & SWAMP)) {
+            item->current_anim_state = AS_SPLAT;
+            if (item->frame_number >= 0 && item->frame_number <= 9) {
+                item->anim_number = HITWALLLEFT_A;
+                item->frame_number = HITWALLLEFT_F;
+                return;
+            }
+            if (item->frame_number >= 10 && item->frame_number <= 21) {
+                item->anim_number = HITWALLRIGHT_A;
+                item->frame_number = HITWALLRIGHT_F;
+                return;
+            }
+        }
+        LaraCollideStop(item, coll);
+    }
+
+    if (coll->mid_floor >= -STEPUP_HEIGHT && coll->mid_floor < -STEP_L / 2 && !(room[item->room_number].flags & SWAMP)) {
+        if (item->frame_number >= 3 && item->frame_number <= 14) {
+            item->anim_number = RUNSTEPUP_LEFT_A;
+            item->frame_number = RUNSTEPUP_LEFT_F;
+        } else {
+            item->anim_number = RUNSTEPUP_RIGHT_A;
+            item->frame_number = RUNSTEPUP_RIGHT_F;
+        }
+    }
+
+    if (coll->mid_floor >= 50 && !(room[item->room_number].flags & SWAMP)) {
+        item->pos.y_pos += 50;
+        return;
+    }
+
+    if (!(room[item->room_number].flags & SWAMP) || coll->mid_floor < 0)
+        item->pos.y_pos += coll->mid_floor;
+    else if ((room[item->room_number].flags & SWAMP) && coll->mid_floor)
+        item->pos.y_pos += SWAMP_GRAVITY;
+}
+
 void lara_default_col(ITEM_INFO *item, COLL_INFO *coll)
 {
     lara.move_angle = item->pos.y_rot;
