@@ -11,4 +11,15 @@ void TIME_Reset(void)
     QueryPerformanceCounter((LARGE_INTEGER *)&counter);
 }
 
+bool TIME_Init(void)
+{
+    __int64 pfq;
+
+    if (!QueryPerformanceFrequency((LARGE_INTEGER *)&pfq))
+        return false;
+    frequency = pfq / 60;
+    TIME_Reset();
+    return true;
+}
+
 }
