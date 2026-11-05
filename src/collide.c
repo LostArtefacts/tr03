@@ -483,3 +483,163 @@ sint16 GetTiltType(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
     }
     return 0;
 }
+
+
+typedef struct {
+    sint16 mesh_number;
+    sint16 flags;
+    sint16 x_minp;
+    sint16 x_maxp;
+    sint16 y_minp;
+    sint16 y_maxp;
+    sint16 z_minp;
+    sint16 z_maxp;
+    sint16 x_minc;
+    sint16 x_maxc;
+    sint16 y_minc;
+    sint16 y_maxc;
+    sint16 z_minc;
+    sint16 z_maxc;
+} STATIC_INFO;
+
+extern STATIC_INFO static_objects[];
+
+void GetNearByRooms(sint32 x, sint32 y, sint32 z, sint32 r, sint32 h, sint16 room_number);
+
+int CollideStaticObjects(COLL_INFO *coll, sint32 x, sint32 y, sint32 z, sint16 room_number, sint32 hite)
+{
+    int i, j;
+    ROOM_INFO *r;
+    MESH_INFO *mesh;
+    STATIC_INFO *sinfo;
+    sint32 xmin, xmax, ymin, ymax, zmin, zmax;
+    sint32 inxmin, inxmax, inymin, inymax, inzmin, inzmax;
+    PHD_VECTOR shifter;
+    sint32 shl, shr;
+
+    coll->hit_static = 0;
+    inxmin = x - coll->radius;
+    inxmax = x + coll->radius;
+    inymin = y - hite;
+    inymax = y;
+    inzmin = z - coll->radius;
+    inzmax = z + coll->radius;
+    shifter.x = shifter.y = shifter.z = 0;
+    GetNearByRooms(x, y, z, coll->radius + 50, hite + 50, room_number);
+    for (i = 0; i < number_draw_rooms; i++) {
+        r = &room[draw_rooms[i]];
+        mesh = r->mesh;
+        for (j = r->num_meshes; j > 0; j--, mesh++) {
+            sinfo = &static_objects[mesh->static_number];
+            if (sinfo->flags & 1)
+                continue;
+            ymin = mesh->y + sinfo->y_minc;
+            ymax = mesh->y + sinfo->y_maxc;
+            switch (mesh->y_rot) {
+            default:
+                xmin = mesh->x + sinfo->x_minc;
+                xmax = mesh->x + sinfo->x_maxc;
+                zmin = mesh->z + sinfo->z_minc;
+                zmax = mesh->z + sinfo->z_maxc;
+                break;
+            case 16384:
+                xmin = mesh->x + sinfo->z_minc;
+                xmax = mesh->x + sinfo->z_maxc;
+                zmin = mesh->z - sinfo->x_maxc;
+                zmax = mesh->z - sinfo->x_minc;
+                break;
+            case -32768:
+                xmin = mesh->x - sinfo->x_maxc;
+                xmax = mesh->x - sinfo->x_minc;
+                zmin = mesh->z - sinfo->z_maxc;
+                zmax = mesh->z - sinfo->z_minc;
+                break;
+            case -16384:
+                xmin = mesh->x - sinfo->z_maxc;
+                xmax = mesh->x - sinfo->z_minc;
+                zmin = mesh->z + sinfo->x_minc;
+                zmax = mesh->z + sinfo->x_maxc;
+                break;
+            }
+            if (inxmax <= xmin || inxmin >= xmax || inymax <= ymin || inymin >= ymax || inzmax <= zmin || inzmin >= zmax)
+                continue;
+            shl = inxmax - xmin;
+            shr = xmax - inxmin;
+            if (shl < shr)
+                shifter.x = -shl;
+            else
+                shifter.x = shr;
+            shl = inzmax - zmin;
+            shr = zmax - inzmin;
+            if (shl < shr)
+                shifter.z = -shl;
+            else
+                shifter.z = shr;
+            switch (coll->quadrant) {
+            case 0:
+                if (shifter.x > coll->radius || shifter.x < -coll->radius) {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = coll->old.x - x;
+                    coll->coll_type = COLL_FRONT;
+                } else if (shifter.x > 0 && shifter.x <= coll->radius) {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_LEFT;
+                } else if (shifter.x < 0 && shifter.x >= -coll->radius) {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_RIGHT;
+                }
+                break;
+            case 1:
+                if (shifter.z > coll->radius || shifter.z < -coll->radius) {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = coll->old.z - z;
+                    coll->coll_type = COLL_FRONT;
+                } else if (shifter.z > 0 && shifter.z <= coll->radius) {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_RIGHT;
+                } else if (shifter.z < 0 && shifter.z >= -coll->radius) {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_LEFT;
+                }
+                break;
+            case 2:
+                if (shifter.x > coll->radius || shifter.x < -coll->radius) {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = coll->old.x - x;
+                    coll->coll_type = COLL_FRONT;
+                } else if (shifter.x > 0 && shifter.x <= coll->radius) {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_RIGHT;
+                } else if (shifter.x < 0 && shifter.x >= -coll->radius) {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = 0;
+                    coll->coll_type = COLL_LEFT;
+                }
+                break;
+            case 3:
+                if (shifter.z > coll->radius || shifter.z < -coll->radius) {
+                    coll->shift.x = shifter.x;
+                    coll->shift.z = coll->old.z - z;
+                    coll->coll_type = COLL_FRONT;
+                } else if (shifter.z > 0 && shifter.z <= coll->radius) {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_LEFT;
+                } else if (shifter.z < 0 && shifter.z >= -coll->radius) {
+                    coll->shift.z = shifter.z;
+                    coll->shift.x = 0;
+                    coll->coll_type = COLL_RIGHT;
+                }
+                break;
+            }
+            coll->hit_static = 1;
+            return 1;
+        }
+    }
+    return 0;
+}

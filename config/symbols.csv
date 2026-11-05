@@ -181,7 +181,7 @@ address,size,name,symbol
 0x0041d290,624,CobraControl,_CobraControl
 0x0041d500,3061,GetCollisionInfo,_GetCollisionInfo
 0x0041e140,47,FindGridShift,_FindGridShift
-0x0041e170,987,CollideStaticObjects,_CollideStaticObjects
+0x0041e170,1004,CollideStaticObjects,_CollideStaticObjects
 0x0041e560,200,GetNearByRooms,_GetNearByRooms
 0x0041e630,85,GetNewRoom,_GetNewRoom
 0x0041e690,55,ShiftItem,_ShiftItem
