@@ -862,7 +862,7 @@ address,size,name,symbol
 0x00459df0,114,ControlBeaconLight,_ControlBeaconLight
 0x00459e70,2869,OilRedControl,_OilRedControl
 0x0045aa00,82,InitialiseOilSMG,_InitialiseOilSMG
-0x0045aa60,1992,OilSMGControl,_OilSMGControl
+0x0045aa60,2036,OilSMGControl,_OilSMGControl
 0x0045b260,732,OrcaControl,_OrcaControl
 0x0045b540,196,TargetVisible,_TargetVisible
 0x0045b610,210,Targetable,_Targetable
@@ -1954,6 +1954,7 @@ address,size,name,symbol
 0x004c7768,16,lizman_swipe_hit,_lizman_swipe_hit
 0x004c7778,16,lizman_gas,_lizman_gas
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
+0x004c78f8,16,oilsmg_gun,_oilsmg_gun
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
 0x004c7828,20,dradii_londboss,_dradii_londboss
 0x004c7840,20,dheights1_londboss,_dheights1_londboss
