@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="210.20" height="12" x="0" y="0" class="named"><title>672 · 45.50%</title></rect>
-<rect width="251.80" height="12" x="210.20" y="0" class="todo"><title>805 · 54.50%</title></rect>
+<rect width="210.51" height="12" x="0" y="0" class="named"><title>673 · 45.57%</title></rect>
+<rect width="251.49" height="12" x="210.51" y="0" class="todo"><title>804 · 54.43%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">45.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">672</tspan> · <tspan class="todo">805</tspan></text>
+<text text-anchor="end" x="642" y="7.50">45.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">673</tspan> · <tspan class="todo">804</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="73.86" height="12" x="0" y="0" class="named"><title>106 KB · 15.99%</title></rect>
-<rect width="388.14" height="12" x="73.86" y="0" class="todo"><title>559 KB · 84.01%</title></rect>
+<rect width="74.12" height="12" x="0" y="0" class="named"><title>107 KB · 16.04%</title></rect>
+<rect width="387.88" height="12" x="74.12" y="0" class="todo"><title>558 KB · 83.96%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">16.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">106 KB</tspan> · <tspan class="todo">559 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">107 KB</tspan> · <tspan class="todo">558 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -944,7 +944,7 @@
 <rect width="12" height="12" x="435" y="255" class="named"><title>0x0045cd50 KeyTrigger (72 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="255" class="named"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="255" class="named"><title>0x0045cde0 BossDropIcon (132 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="255" class="todo"><title>0x0045ce70 AnimatingPickUp (379 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="255" class="named"><title>0x0045ce70 AnimatingPickUp (379 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="255" class="named"><title>0x0045cff0 InitialisePrisoner (82 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="255" class="todo"><title>0x0045d050 PrisonerControl (2859 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="255" class="named"><title>0x0045dbd0 InitialisePunk (82 bytes)</title></rect>
@@ -2003,7 +2003,7 @@
 <rect width="11.89" height="11.30" x="431.41" y="407.17" class="todo"><title>0x00471e30 TriggerSummonSmoke (381 bytes)</title></rect>
 <rect width="11.89" height="11.27" x="431.41" y="421.47" class="todo"><title>0x004121b0 BoatCollision (380 bytes)</title></rect>
 <rect width="11.89" height="11.27" x="431.41" y="435.73" class="named"><title>0x00441a80 lara_as_wade (380 bytes)</title></rect>
-<rect width="11.70" height="11.42" x="446.30" y="145.72" class="todo"><title>0x0045ce70 AnimatingPickUp (379 bytes)</title></rect>
+<rect width="11.70" height="11.42" x="446.30" y="145.72" class="named"><title>0x0045ce70 AnimatingPickUp (379 bytes)</title></rect>
 <rect width="11.67" height="11.42" x="461" y="145.72" class="named"><title>0x00452240 KnockBackCollision (378 bytes)</title></rect>
 <rect width="11.67" height="11.42" x="475.67" y="145.72" class="todo"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
 <rect width="11.64" height="11.42" x="490.35" y="145.72" class="todo"><title>0x0040a510 HWI_InsertLine_Sorted (377 bytes)</title></rect>

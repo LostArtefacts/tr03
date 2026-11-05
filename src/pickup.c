@@ -1,4 +1,5 @@
 #include "game.h"
+#include <stdlib.h>
 
 #define SS_OFF 0
 #define SS_ON 1
@@ -128,4 +129,46 @@ void BossDropIcon(sint16 item_number)
         item->status = ACTIVE;
         pickup_number = pickup->carried_item;
     }
+}
+
+#define KILLED_ITEM (-0x8000)
+
+extern sint16 rcossin_tbl[];
+
+void AnimatingPickUp(sint16 item_number)
+{
+    ITEM_INFO *item;
+    sint32 dx, dy, dz;
+    sint32 col;
+
+    item = &items[item_number];
+    if (item->status == INVISIBLE || (item->flags & KILLED_ITEM))
+        return;
+    if (item->object_number == 180 && item->item_flags[1] == 0) {
+        item->item_flags[1] = 1;
+        item->item_flags[2] = item->pos.y_pos;
+    }
+    item->pos.y_rot += 0x400;
+    item->item_flags[0]++;
+    item->item_flags[0] &= 63;
+    col = abs(rcossin_tbl[item->item_flags[0] << 7] >> 7);
+    if (col > 31)
+        col = 31;
+    if (item->object_number == 180) {
+        dx = abs(rcossin_tbl[item->item_flags[0] << 7] >> 4);
+        item->pos.y_pos = item->item_flags[2] - dx - 64;
+        TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 8, 0, col, 0);
+        dx = abs(item->pos.x_pos - lara_item->pos.x_pos);
+        dy = abs(item->pos.y_pos - lara_item->pos.y_pos);
+        dz = abs(item->pos.z_pos - lara_item->pos.z_pos);
+        if (dx < 0x100 && dy < 0x400 && dz < 0x100) {
+            lara.poisoned = 0;
+            lara_item->hit_points += 500;
+            if (lara_item->hit_points > 1000)
+                lara_item->hit_points = 1000;
+            SoundEffect(116, &lara_item->pos, 0);
+            KillItem(item_number);
+        }
+    } else
+        TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 8, 0, col, col >> 1);
 }
