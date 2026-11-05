@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="293.55" height="12" x="0" y="0" class="named"><title>1033 · 69.89%</title></rect>
-<rect width="1.99" height="12" x="293.55" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="124.47" height="12" x="295.53" y="0" class="todo"><title>438 · 29.63%</title></rect>
+<rect width="293.83" height="12" x="0" y="0" class="named"><title>1034 · 69.96%</title></rect>
+<rect width="1.99" height="12" x="293.83" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="124.18" height="12" x="295.82" y="0" class="todo"><title>437 · 29.57%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">69.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1033</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">438</tspan></text>
+<text text-anchor="end" x="600" y="7.50">70.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1034</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">437</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.25" height="12" x="0" y="0" class="named"><title>302 KB · 45.30%</title></rect>
-<rect width="3.79" height="12" x="190.25" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="225.95" height="12" x="194.05" y="0" class="todo"><title>359 KB · 53.80%</title></rect>
+<rect width="190.39" height="12" x="0" y="0" class="named"><title>303 KB · 45.33%</title></rect>
+<rect width="3.79" height="12" x="190.39" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="225.81" height="12" x="194.19" y="0" class="todo"><title>359 KB · 53.77%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">359 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">303 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">359 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1333,7 +1333,7 @@
 <rect width="12" height="12" x="240" y="375" class="todo"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="375" class="named"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="375" class="named"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="375" class="todo"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="375" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="375" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="375" class="todo"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="375" class="todo"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
@@ -2194,7 +2194,7 @@
 <rect width="8.68" height="9.14" x="738.32" y="199.18" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="8.61" height="9.18" x="499.51" y="211.33" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="8.61" height="9.18" x="499.51" y="223.50" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
-<rect width="8.61" height="9.14" x="499.51" y="235.68" class="todo"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
+<rect width="8.61" height="9.14" x="499.51" y="235.68" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="8.61" height="9.10" x="499.51" y="247.82" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
 <rect width="8.61" height="9.10" x="499.51" y="259.92" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
 <rect width="8.61" height="9.10" x="499.51" y="272.02" class="todo"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>

@@ -108,6 +108,24 @@ bool LoadPicture(const char *name, LPDIRECTDRAWSURFACE3 surf, int a)
     return true;
 }
 
+void FreePictureTextures(int *indices)
+{
+    int i;
+
+    DXTextureCleanup(indices[0], PictureTextures);
+    DXTextureCleanup(indices[1], PictureTextures);
+    DXTextureCleanup(indices[2], PictureTextures);
+    DXTextureCleanup(indices[3], PictureTextures);
+    DXTextureCleanup(indices[4], PictureTextures);
+    if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bPalette) {
+        DXFreeTPages();
+        DXCreateMaxTPages(0);
+    }
+    HWR_GetAllTextureHandles();
+    for (i = 0; i < nTPages; i++)
+        HWR_SetCurrentTexture(TPages[i]);
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
