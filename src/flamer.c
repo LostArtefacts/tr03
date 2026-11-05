@@ -5,6 +5,279 @@ sint32 GetFreeSpark(void);
 void TriggerFlamethrowerFlame(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 fxnum);
 void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
 
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+#define FLAMER_STOP 1
+#define FLAMER_WALK 2
+#define FLAMER_WAIT 4
+#define FLAMER_SHOOT2 6
+#define FLAMER_DEATH 7
+#define FLAMER_AIM2 9
+#define FLAMER_AIM3 10
+#define FLAMER_SHOOT3 11
+
+#define SQUARE(x) ((x) * (x))
+#define FLAMER_WALK_TURN (ONE_DEGREE * 5)
+#define FLAMER_SHOOT1_RANGE SQUARE(WALL_L * 4)
+#define FLAMER_AWARE_DISTANCE SQUARE(WALL_L)
+#define FLAMER_DIE_ANIM 19
+#define FLAMER_STOP_ANIM 12
+#define SEAL_X_OFFSET 0x800
+#define LV_CHAMBER 19
+#define FLAMETHROWER_BLOKE 50
+#define BURNT_MUTANT 42
+#define GUARD 1
+#define PATROL1 4
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);
+void GetAITarget(CREATURE_INFO *creature);
+void AlertAllGuards(sint16 item_number);
+sint16 AIGuard(CREATURE_INFO *creature);
+int TargetVisible(ITEM_INFO *item, AI_INFO *info);
+int Targetable(ITEM_INFO *item, AI_INFO *info);
+sint16 TriggerFlameThrower(ITEM_INFO *item, BITE_INFO *bite, sint16 speed);
+void TriggerPilotFlame(sint32 itemnum);
+
+extern uint32 CurrentLevel;
+extern BITE_INFO flamer_gun;
+
+void FlamerControl(sint16 item_number)
+{
+    PHD_VECTOR pos1;
+    ITEM_INFO *item, *target, *real_enemy;
+    CREATURE_INFO *flamer, *cinfo;
+    sint16 angle, torso_y, torso_x, head, tilt, rnd, meta_mood, slot;
+    sint32 lara_dx, lara_dz, x, z, distance, best_distance;
+    AI_INFO info, lara_info;
+
+    if (!CreatureActive(item_number))
+        return;
+    item = &items[item_number];
+    flamer = (CREATURE_INFO *)item->data;
+    torso_y = torso_x = head = angle = tilt = 0;
+    pos1.x = flamer_gun.x;
+    pos1.y = flamer_gun.y;
+    pos1.z = flamer_gun.z;
+    GetJointAbsPosition(item, &pos1, flamer_gun.mesh_num);
+    rnd = GetRandomControl();
+    if (item->current_anim_state != FLAMER_SHOOT2 && item->current_anim_state != FLAMER_SHOOT3) {
+        TriggerDynamic(pos1.x, pos1.y, pos1.z, (rnd & 3) + 6, 24 - ((rnd >> 4) & 3), 16 - ((rnd >> 6) & 3), rnd & 3);
+        TriggerPilotFlame(item_number);
+    } else
+        TriggerDynamic(pos1.x, pos1.y, pos1.z, (rnd & 3) + 10, 31 - ((rnd >> 4) & 3), 24 - ((rnd >> 6) & 3), rnd & 7);
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != FLAMER_DEATH) {
+            item->anim_number = objects[item->object_number].anim_index + FLAMER_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = FLAMER_DEATH;
+        }
+    } else {
+        if (item->ai_bits)
+            GetAITarget(flamer);
+        else if (flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER)
+            flamer->enemy = lara_item;
+        else {
+            flamer->enemy = NULL;
+            best_distance = 0x7fffffff;
+            cinfo = baddie_slots;
+            for (slot = 0; slot < NUM_SLOTS; slot++, cinfo++) {
+                if (cinfo->item_num == NO_ITEM || cinfo->item_num == item_number)
+                    continue;
+                target = &items[cinfo->item_num];
+                if (target->object_number == LARA || target->object_number == WHITE_SOLDIER
+                    || target->object_number == FLAMETHROWER_BLOKE || target->hit_points <= 0)
+                    continue;
+                x = target->pos.x_pos - item->pos.x_pos;
+                z = target->pos.z_pos - item->pos.z_pos;
+                distance = x * x + z * z;
+                if (distance < best_distance) {
+                    flamer->enemy = target;
+                    best_distance = distance;
+                }
+            }
+        }
+        CreatureAIInfo(item, &info);
+        if (flamer->enemy == lara_item) {
+            lara_info.angle = info.angle;
+            lara_info.distance = info.distance;
+            if (!flamer->hurt_by_lara && CurrentLevel != LV_CHAMBER)
+                flamer->enemy = NULL;
+        } else {
+            lara_dz = lara_item->pos.z_pos - item->pos.z_pos;
+            lara_dx = lara_item->pos.x_pos - item->pos.x_pos;
+            lara_info.angle = phd_atan(lara_dz, lara_dx) - item->pos.y_rot;
+            lara_info.distance = lara_dz * lara_dz + lara_dx * lara_dx;
+            info.x_angle -= SEAL_X_OFFSET;
+        }
+        meta_mood = 0;
+        GetCreatureMood(item, &info, meta_mood);
+        CreatureMood(item, &info, meta_mood);
+        angle = CreatureTurn(item, flamer->maximum_turn);
+        real_enemy = flamer->enemy;
+        if (item->hit_status
+            || ((lara_info.distance < FLAMER_AWARE_DISTANCE || TargetVisible(item, &lara_info))
+                && CurrentLevel == LV_CHAMBER)) {
+            if (!flamer->alerted)
+                SoundEffect(300, &item->pos, 0);
+            AlertAllGuards(item_number);
+        }
+        switch (item->current_anim_state) {
+        case FLAMER_STOP:
+            head = lara_info.angle;
+            flamer->flags = 0;
+            flamer->maximum_turn = 0;
+            if (item->ai_bits & GUARD) {
+                head = AIGuard(flamer);
+                if (!(GetRandomControl() & 0xff))
+                    item->goal_anim_state = FLAMER_WAIT;
+                break;
+            } else if (item->ai_bits & PATROL1)
+                item->goal_anim_state = FLAMER_WALK;
+            else if (flamer->mood == ESCAPE_MOOD)
+                item->goal_anim_state = FLAMER_WALK;
+            else if (Targetable(item, &info)
+                     && (real_enemy != lara_item || flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER)) {
+                if (info.distance < FLAMER_SHOOT1_RANGE)
+                    item->goal_anim_state = FLAMER_AIM3;
+                else
+                    item->goal_anim_state = FLAMER_WALK;
+            } else if (flamer->mood == BORED_MOOD && info.ahead && !(GetRandomControl() & 0xff))
+                item->goal_anim_state = FLAMER_WAIT;
+            else if (flamer->mood == ATTACK_MOOD || !(GetRandomControl() & 0xff))
+                item->goal_anim_state = FLAMER_WALK;
+            break;
+        case FLAMER_WAIT:
+            head = lara_info.angle;
+            if (item->ai_bits & GUARD) {
+                head = AIGuard(flamer);
+                if (!(GetRandomControl() & 0xff))
+                    item->goal_anim_state = FLAMER_STOP;
+                break;
+            } else if ((Targetable(item, &info) && info.distance < FLAMER_SHOOT1_RANGE
+                        && (real_enemy != lara_item || flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER))
+                       || flamer->mood != BORED_MOOD || !(GetRandomControl() & 0xff))
+                item->goal_anim_state = FLAMER_STOP;
+            break;
+        case FLAMER_WALK:
+            head = lara_info.angle;
+            flamer->flags = 0;
+            flamer->maximum_turn = FLAMER_WALK_TURN;
+            if (item->ai_bits & GUARD) {
+                item->anim_number = objects[item->object_number].anim_index + FLAMER_STOP_ANIM;
+                item->frame_number = anims[item->anim_number].frame_base;
+                item->current_anim_state = FLAMER_STOP;
+                item->goal_anim_state = FLAMER_STOP;
+            } else if (item->ai_bits & PATROL1)
+                item->goal_anim_state = FLAMER_WALK;
+            else if (flamer->mood == ESCAPE_MOOD)
+                item->goal_anim_state = FLAMER_WALK;
+            else if (Targetable(item, &info)
+                     && (real_enemy != lara_item || flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER)) {
+                if (info.distance < FLAMER_SHOOT1_RANGE)
+                    item->goal_anim_state = FLAMER_STOP;
+                else
+                    item->goal_anim_state = FLAMER_AIM2;
+            } else if (flamer->mood == BORED_MOOD && info.ahead)
+                item->goal_anim_state = FLAMER_STOP;
+            else
+                item->goal_anim_state = FLAMER_WALK;
+            break;
+        case FLAMER_AIM3:
+            flamer->flags = 0;
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+                if (Targetable(item, &info) && info.distance < FLAMER_SHOOT1_RANGE
+                    && (real_enemy != lara_item || flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER))
+                    item->goal_anim_state = FLAMER_SHOOT3;
+                else
+                    item->goal_anim_state = FLAMER_STOP;
+            }
+            break;
+        case FLAMER_AIM2:
+            flamer->flags = 0;
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+                if (Targetable(item, &info) && info.distance < FLAMER_SHOOT1_RANGE
+                    && (real_enemy != lara_item || flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER))
+                    item->goal_anim_state = FLAMER_SHOOT2;
+                else
+                    item->goal_anim_state = FLAMER_WALK;
+            }
+            break;
+        case FLAMER_SHOOT3:
+            if (flamer->flags < 40)
+                flamer->flags += (flamer->flags >> 2) + 1;
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+                if (Targetable(item, &info) && info.distance < FLAMER_SHOOT1_RANGE
+                    && (real_enemy != lara_item || flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER))
+                    item->goal_anim_state = FLAMER_SHOOT3;
+                else
+                    item->goal_anim_state = FLAMER_STOP;
+            } else
+                item->goal_anim_state = FLAMER_STOP;
+            if (flamer->flags < 40)
+                TriggerFlameThrower(item, &flamer_gun, flamer->flags);
+            else {
+                TriggerFlameThrower(item, &flamer_gun, (GetRandomControl() & 31) + 12);
+                if (real_enemy) {
+                    if (real_enemy->object_number == BURNT_MUTANT)
+                        real_enemy->item_flags[0]++;
+                }
+            }
+            SoundEffect(204, &item->pos, 0);
+            break;
+        case FLAMER_SHOOT2:
+            if (flamer->flags < 40)
+                flamer->flags += (flamer->flags >> 2) + 1;
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+                if (Targetable(item, &info) && info.distance < FLAMER_SHOOT1_RANGE
+                    && (real_enemy != lara_item || flamer->hurt_by_lara || CurrentLevel == LV_CHAMBER))
+                    item->goal_anim_state = FLAMER_SHOOT2;
+                else
+                    item->goal_anim_state = FLAMER_WALK;
+            } else
+                item->goal_anim_state = FLAMER_WALK;
+            if (flamer->flags < 40)
+                TriggerFlameThrower(item, &flamer_gun, flamer->flags);
+            else {
+                TriggerFlameThrower(item, &flamer_gun, (GetRandomControl() & 31) + 12);
+                if (real_enemy) {
+                    if (real_enemy->object_number == BURNT_MUTANT)
+                        real_enemy->item_flags[0]++;
+                }
+            }
+            SoundEffect(204, &item->pos, 0);
+            break;
+        }
+    }
+    CreatureTilt(item, tilt);
+    CreatureJoint(item, 0, torso_y);
+    CreatureJoint(item, 1, torso_x);
+    CreatureJoint(item, 2, head);
+    CreatureAnimation(item_number, angle, 0);
+}
+
 sint16 TriggerFlameThrower(ITEM_INFO *item, BITE_INFO *bite, sint16 speed)
 {
     PHD_VECTOR pos1, pos2;
