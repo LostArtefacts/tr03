@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="264.56" height="12" x="0" y="0" class="named"><title>931 · 62.99%</title></rect>
-<rect width="1.42" height="12" x="264.56" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="154.02" height="12" x="265.98" y="0" class="todo"><title>542 · 36.67%</title></rect>
+<rect width="264.84" height="12" x="0" y="0" class="named"><title>932 · 63.06%</title></rect>
+<rect width="1.42" height="12" x="264.84" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="153.73" height="12" x="266.27" y="0" class="todo"><title>541 · 36.60%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">63.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">931</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">542</tspan></text>
+<text text-anchor="end" x="600" y="7.50">63.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">932</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">541</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.48" height="12" x="0" y="0" class="named"><title>296 KB · 44.40%</title></rect>
-<rect width="3.69" height="12" x="186.48" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.84" height="12" x="190.16" y="0" class="todo"><title>365 KB · 54.72%</title></rect>
+<rect width="186.49" height="12" x="0" y="0" class="named"><title>296 KB · 44.40%</title></rect>
+<rect width="3.69" height="12" x="186.49" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.82" height="12" x="190.18" y="0" class="todo"><title>365 KB · 54.72%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1196,7 +1196,7 @@
 <rect width="12" height="12" x="435" y="330" class="todo"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="330" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="330" class="todo"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="330" class="named"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="330" class="todo"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="330" class="todo"><title>0x00480d10 DS_Finish (16 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="330" class="todo"><title>0x00480d20 DS_Release (26 bytes)</title></rect>
@@ -2911,7 +2911,7 @@
 <rect width="3.01" height="3.26" x="688.29" y="394.11" class="named"><title>0x0042f400 invisibility_off (28 bytes)</title></rect>
 <rect width="3.01" height="3.26" x="688.29" y="400.37" class="named"><title>0x0042fa70 RumbleNoShake (28 bytes)</title></rect>
 <rect width="3.01" height="3.26" x="688.29" y="406.63" class="named"><title>0x00441310 lara_as_reach (28 bytes)</title></rect>
-<rect width="3.01" height="3.26" x="688.29" y="412.89" class="todo"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
+<rect width="3.01" height="3.26" x="688.29" y="412.89" class="named"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
 <rect width="3.01" height="3.26" x="688.29" y="419.15" class="named"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="3.01" height="3.15" x="688.29" y="425.41" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="3.01" height="3.15" x="688.29" y="431.56" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>

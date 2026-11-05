@@ -128,4 +128,11 @@ void DS_Init(void)
     DS_MakeAdapterList();
 }
 
+bool DS_Create(LPGUID lpGuid)
+{
+    if (DX_TRY(DirectSoundCreate(lpGuid, &lpDirectSound, 0)))
+        return false;
+    return true;
+}
+
 }
