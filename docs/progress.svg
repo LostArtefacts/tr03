@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="303.49" height="12" x="0" y="0" class="named"><title>1068 · 72.26%</title></rect>
-<rect width="1.99" height="12" x="303.49" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="114.52" height="12" x="305.48" y="0" class="todo"><title>403 · 27.27%</title></rect>
+<rect width="303.78" height="12" x="0" y="0" class="named"><title>1069 · 72.33%</title></rect>
+<rect width="1.99" height="12" x="303.78" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="114.24" height="12" x="305.76" y="0" class="todo"><title>402 · 27.20%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">72.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1068</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">403</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1069</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">402</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.98" height="12" x="0" y="0" class="named"><title>307 KB · 45.95%</title></rect>
-<rect width="3.79" height="12" x="192.98" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.23" height="12" x="196.77" y="0" class="todo"><title>355 KB · 53.15%</title></rect>
+<rect width="193.16" height="12" x="0" y="0" class="named"><title>307 KB · 45.99%</title></rect>
+<rect width="3.79" height="12" x="193.16" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.05" height="12" x="196.95" y="0" class="todo"><title>355 KB · 53.11%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">45.9%</text>
+<text text-anchor="end" x="600" y="24.50">46.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">307 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1296,7 +1296,7 @@
 <rect width="12" height="12" x="435" y="360" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="360" class="todo"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="360" class="named"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="360" class="todo"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="360" class="named"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="360" class="todo"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="360" class="todo"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="360" class="todo"><title>0x00488260 do_detail_option (3247 bytes)</title></rect>
@@ -2102,7 +2102,7 @@
 <rect width="10.11" height="10.07" x="473.74" y="320.90" class="named"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="10.11" height="10.04" x="473.74" y="333.97" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
 <rect width="10.11" height="10" x="473.74" y="347.01" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>
-<rect width="10.11" height="10" x="473.74" y="360.01" class="todo"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
+<rect width="10.11" height="10" x="473.74" y="360.01" class="named"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
 <rect width="10.11" height="9.90" x="473.74" y="373.02" class="named"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
 <rect width="10.11" height="9.90" x="473.74" y="385.92" class="todo"><title>0x00480790 DS_StartSample (285 bytes)</title></rect>
 <rect width="10.11" height="9.87" x="473.74" y="398.82" class="todo"><title>0x00482020 LoadAnimatedTextures (284 bytes)</title></rect>

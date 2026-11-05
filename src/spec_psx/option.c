@@ -30,3 +30,67 @@ void do_pickup_option(INVENTORY_ITEM *inv_item)
         inv_item->anim_direction = 1;
     }
 }
+
+void do_inventory_options(INVENTORY_ITEM *inv_item)
+{
+    switch (inv_item->object_number) {
+    case 146:
+        do_compass_option(inv_item);
+        break;
+    case 185:
+    case 186:
+    case 187:
+    case 188:
+    case 189:
+    case 190:
+    case 191:
+    case 192:
+        inputDB |= IN_SELECT;
+        break;
+    case 193:
+    case 194:
+    case 195:
+    case 196:
+    case 197:
+    case 198:
+    case 199:
+        break;
+    case 201:
+    case 202:
+    case 209:
+    case 210:
+    case 211:
+    case 212:
+    case 228:
+    case 229:
+    case 230:
+    case 231:
+        inputDB |= IN_SELECT;
+        break;
+    case 238:
+    case 239:
+        do_pickup_option(inv_item);
+        break;
+    case 145:
+        do_passport_option(inv_item);
+        break;
+    case 181:
+        do_detail_option(inv_item);
+        break;
+    case 182:
+        do_sound_option(inv_item);
+        break;
+    case 183:
+        do_control_option(inv_item);
+        break;
+    case 184:
+        do_levelselect_option(inv_item);
+        break;
+    default:
+        if (inputDB & (IN_SELECT | IN_DESELECT)) {
+            inv_item->goal_frame = 0;
+            inv_item->anim_direction = -1;
+        }
+        break;
+    }
+}
