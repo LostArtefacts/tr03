@@ -5,6 +5,64 @@
 
 extern char strut_fall;
 
+sint32 GetFreeSpark(void);
+
+void Trigger51RocketSmoke(sint32 x, sint32 y, sint32 z, sint32 yv, sint32 fire)
+{
+    sint32 size;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    if (fire) {
+        sptr->sR = 48 + (GetRandomControl() & 31);
+        sptr->sG = sptr->sR;
+        sptr->sB = 192 + (GetRandomControl() & 63);
+        sptr->dR = 192 + (GetRandomControl() & 63);
+        sptr->dG = 128 + (GetRandomControl() & 63);
+        sptr->dB = 32;
+    } else {
+        sptr->sR = 0;
+        sptr->sG = 0;
+        sptr->sB = 0;
+        sptr->dR = 32 + (yv >> 5);
+        sptr->dG = 32 + (yv >> 5);
+        sptr->dB = 32 + (yv >> 5);
+    }
+    sptr->ColFadeSpeed = 16 - (fire ? (yv >> 9) : 0);
+    sptr->FadeToBlack = fire ? 0 : 16;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 60 - (fire ? (yv >> 8) : 0);
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 15) - 8);
+    sptr->y = y;
+    sptr->z = z + ((GetRandomControl() & 15) - 8);
+    sptr->Xvel = (GetRandomControl() & 255) - 128;
+    sptr->Yvel = yv + (GetRandomControl() & 15);
+    sptr->Zvel = (GetRandomControl() & 255) - 128;
+    sptr->Friction = 4;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else
+        sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = sptr->MaxYvel = 0;
+    size = (GetRandomControl() & 63) + 64 + (yv >> 5);
+    if (size > 255)
+        size = 255;
+    sptr->Width = sptr->sWidth = size >> 2;
+    sptr->dWidth = size;
+    sptr->Height = sptr->sHeight = size >> 2;
+    sptr->dHeight = size;
+}
+
 void InitialiseArea51Struts(sint16 item_number)
 {
     strut_fall = 0;
