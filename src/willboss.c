@@ -309,3 +309,421 @@ void TriggerPlasmaBallFlame_willboss(sint16 fx_number, sint32 type, sint32 xv, s
     sptr->dWidth = size >> 3;
     sptr->dHeight = size >> 3;
 }
+
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+#define WILLBOSS_STOP 0
+#define WILLBOSS_WALK 1
+#define WILLBOSS_LUNGE 2
+#define WILLBOSS_BIGKILL 3
+#define WILLBOSS_STUNNED 4
+#define WILLBOSS_KNOCKOUT 5
+#define WILLBOSS_GETUP 6
+#define WILLBOSS_WALKATAK1 7
+#define WILLBOSS_WALKATAK2 8
+#define WILLBOSS_180 9
+#define WILLBOSS_SHOOT 10
+
+#define WILLBOSS_TURN (ONE_DEGREE * 5)
+#define WILLBOSS_ATTACK_TURN (ONE_DEGREE * 2)
+#define WILLBOSS_TOUCH 0x900000
+#define WILLBOSS_BITE_DAMAGE 220
+#define WILLBOSS_TOUCH_DAMAGE 10
+#define WILLBOSS_ATTACK_RANGE SQUARE(WALL_L * 3 / 2)
+#define WILLBOSS_LUNGE_RANGE SQUARE(WALL_L * 2)
+#define WILLBOSS_FIRE_RANGE SQUARE(WALL_L * 4)
+#define WILLBOSS_KILL_ANIM 6
+#define WILLBOSS_HP_AFTER_KO 200
+#define WILLBOSS_KO_TIME 280
+#define WILLBOSS_PATH_DISTANCE 1024
+#define WILLBOSS_STUN_ANIM 7
+#define SQUARE(x) ((x) * (x))
+
+extern PHD_3DPOS ai_path[16];
+extern PHD_3DPOS ai_junction[4];
+extern sint32 junction_index[4];
+extern sint32 lara_ai_path;
+extern sint32 lara_junction;
+extern sint32 direction;
+extern sint32 desired_direction;
+extern uint8 puzzle_complete;
+extern BITE_INFO willboss_bite_left;
+extern BITE_INFO willboss_bite_right;
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureKill(ITEM_INFO *item, int kill_anim, int kill_state, int lara_kill_state);
+sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number));
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+int Inv_RequestItem(int item_num);
+void TonyBossDie(sint16 item_number);
+void ExplodeWillBoss(ITEM_INFO *item);
+void TriggerPlasma_willboss(sint16 item_number, sint32 node, sint32 size);
+void TriggerPlasmaBall_willboss(PHD_VECTOR *pos, sint16 room_number, sint16 angle, sint16 type);
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+void WillBossControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *willboss;
+    sint16 angle, head, tilt, i, linknum, pathnum, juncnum, old_closest, pathdiff, lara_alive, in_fire_zone;
+    AI_INFO info;
+    sint32 distance, best_distance, best_junc_distance, will2junc_distance, x, z;
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    willboss = (CREATURE_INFO *)item->data;
+    head = angle = tilt = 0;
+    lara_alive = (lara_item->hit_points > 0);
+
+    if (closest_ai_path == NO_AI_PATH) {
+        for (linknum = room[item->room_number].item_number, pathnum = 0, juncnum = 0; linknum != NO_ITEM;
+             linknum = items[linknum].next_item) {
+            if (items[linknum].object_number == 80 && pathnum < 16) {
+                ai_path[pathnum] = items[linknum].pos;
+                pathnum++;
+            } else if (items[linknum].object_number == 81 && juncnum < 4) {
+                ai_junction[juncnum] = items[linknum].pos;
+                juncnum++;
+            }
+        }
+
+        closest_ai_path = -1;
+        best_distance = 0x7fffffff;
+        for (i = 0; i < 16; i++) {
+            x = (ai_path[i].x_pos - item->pos.x_pos) >> 6;
+            z = (ai_path[i].z_pos - item->pos.z_pos) >> 6;
+            distance = x * x + z * z;
+            if (distance < best_distance) {
+                closest_ai_path = i;
+                best_distance = distance;
+            }
+        }
+
+        lara_ai_path = -1;
+        best_distance = 0x7fffffff;
+        for (i = 0; i < 16; i++) {
+            x = (ai_path[i].x_pos - lara_item->pos.x_pos) >> 6;
+            z = (ai_path[i].z_pos - lara_item->pos.z_pos) >> 6;
+            distance = x * x + z * z;
+            if (distance < best_distance) {
+                lara_ai_path = i;
+                best_distance = distance;
+            }
+        }
+
+        for (juncnum = 0; juncnum < 4; juncnum++) {
+            pathnum = -1;
+            best_distance = 0x7fffffff;
+            for (i = 0; i < 16; i++) {
+                x = abs((ai_path[i].x_pos - ai_junction[juncnum].x_pos) >> 6);
+                z = abs((ai_path[i].z_pos - ai_junction[juncnum].z_pos) >> 6);
+                if (x > z)
+                    distance = x + (z >> 1);
+                else
+                    distance = x + (z >> 1);
+                if (distance < best_distance) {
+                    pathnum = i;
+                    best_distance = distance;
+                }
+            }
+            junction_index[juncnum] = pathnum;
+        }
+    }
+
+    best_distance = 0x7fffffff;
+    old_closest = closest_ai_path;
+    for (i = old_closest - 1; i < old_closest + 2; i++) {
+        if (i < 0)
+            pathnum = i + 16;
+        else if (i > 15)
+            pathnum = i - 16;
+        else
+            pathnum = i;
+
+        x = (ai_path[pathnum].x_pos - item->pos.x_pos) >> 6;
+        z = (ai_path[pathnum].z_pos - item->pos.z_pos) >> 6;
+        distance = x * x + z * z;
+        if (distance < best_distance) {
+            closest_ai_path = pathnum;
+            best_distance = distance;
+        }
+    }
+
+    best_distance = 0x7fffffff;
+    old_closest = lara_ai_path;
+    for (i = old_closest - 1; i < old_closest + 2; i++) {
+        if (i < 0)
+            pathnum = i + 16;
+        else if (i > 15)
+            pathnum = i - 16;
+        else
+            pathnum = i;
+
+        x = (ai_path[pathnum].x_pos - lara_item->pos.x_pos) >> 6;
+        z = (ai_path[pathnum].z_pos - lara_item->pos.z_pos) >> 6;
+        distance = x * x + z * z;
+        if (distance < best_distance) {
+            lara_ai_path = pathnum;
+            best_distance = distance;
+        }
+    }
+
+    best_junc_distance = 0x7fffffff;
+    for (i = 0; i < 4; i++) {
+        x = (ai_junction[i].x_pos - lara_item->pos.x_pos) >> 6;
+        z = (ai_junction[i].z_pos - lara_item->pos.z_pos) >> 6;
+        distance = x * x + z * z;
+        if (distance < best_junc_distance) {
+            lara_junction = i;
+            best_junc_distance = distance;
+        }
+    }
+
+    in_fire_zone = (best_junc_distance < best_distance || item->pos.y_pos > lara_item->pos.y_pos + WALL_L * 2);
+    x = ai_junction[lara_junction].x_pos - item->pos.x_pos;
+    z = ai_junction[lara_junction].z_pos - item->pos.z_pos;
+    will2junc_distance = x * x + z * z;
+
+    if (item->hit_points <= 0) {
+        puzzle_complete = Inv_RequestItem(240);
+        puzzle_complete += Inv_RequestItem(241);
+        puzzle_complete += Inv_RequestItem(242);
+        puzzle_complete += Inv_RequestItem(243);
+
+        if (puzzle_complete != 4 || item->item_flags[1] == 0) {
+            willboss->maximum_turn = 0;
+            switch (item->current_anim_state) {
+            case WILLBOSS_STOP:
+                item->goal_anim_state = WILLBOSS_STUNNED;
+                break;
+            case WILLBOSS_STUNNED:
+                bossdata.death_count = WILLBOSS_KO_TIME;
+                break;
+            case WILLBOSS_KNOCKOUT:
+                if (bossdata.death_count-- < 0)
+                    item->goal_anim_state = WILLBOSS_GETUP;
+                break;
+            case WILLBOSS_GETUP:
+                item->hit_points = WILLBOSS_HP_AFTER_KO;
+                if (puzzle_complete == 4)
+                    item->item_flags[1] = 1;
+                willboss->maximum_turn = WILLBOSS_ATTACK_TURN;
+                break;
+            default:
+                item->goal_anim_state = WILLBOSS_STOP;
+            }
+        } else {
+            if (item->current_anim_state != WILLBOSS_STUNNED) {
+                item->anim_number = objects[item->object_number].anim_index + WILLBOSS_STUN_ANIM;
+                item->frame_number = anims[item->anim_number].frame_base;
+                item->current_anim_state = WILLBOSS_STUNNED;
+            } else if (item->frame_number >= anims[item->anim_number].frame_end - 2) {
+                sint32 lp;
+
+                item->frame_number = anims[item->anim_number].frame_end - 2;
+                item->mesh_bits = 0;
+                if (bossdata.explode_count == 0) {
+                    bossdata.ring_count = 0;
+                    for (lp = 0; lp < 6; lp++) {
+                        ExpRings[lp].on = 0;
+                        ExpRings[lp].life = 32;
+                        ExpRings[lp].radius = 512;
+                        ExpRings[lp].speed = 128 + (lp << 5);
+                        ExpRings[lp].xrot = ((GetRandomControl() & 511) - 256) & 4095;
+                        ExpRings[lp].zrot = ((GetRandomControl() & 511) - 256) & 4095;
+                    }
+                }
+
+                if (bossdata.explode_count < 256)
+                    bossdata.explode_count++;
+
+                if (bossdata.explode_count > 128 && bossdata.ring_count == 6 && ExpRings[5].life == 0) {
+                    TonyBossDie(item_number);
+                    bossdata.dead = 1;
+                } else {
+                    ExplodeWillBoss(item);
+                }
+                return;
+            }
+        }
+    } else {
+        CreatureAIInfo(item, &info);
+
+        if (item->touch_bits)
+            lara_item->hit_points -= WILLBOSS_TOUCH_DAMAGE;
+
+        pathdiff = lara_ai_path - closest_ai_path;
+
+        if (direction == -1 && ((pathdiff < 0 && pathdiff > -6) || pathdiff > 10))
+            desired_direction = 1;
+        else if (direction == 1 && ((pathdiff > 0 && pathdiff < 6) || pathdiff < -10))
+            desired_direction = -1;
+
+        willboss->target.x = ai_path[closest_ai_path].x_pos +
+                             (direction * WILLBOSS_PATH_DISTANCE * phd_sin(ai_path[closest_ai_path].y_rot) >> W2V_SHIFT);
+        willboss->target.z = ai_path[closest_ai_path].z_pos +
+                             (direction * WILLBOSS_PATH_DISTANCE * phd_cos(ai_path[closest_ai_path].y_rot) >> W2V_SHIFT);
+
+        switch (item->current_anim_state) {
+        case WILLBOSS_STOP:
+            willboss->maximum_turn = 0;
+            willboss->flags = 0;
+            if (direction != desired_direction)
+                item->goal_anim_state = WILLBOSS_180;
+            else if (in_fire_zone && info.ahead && will2junc_distance < WILLBOSS_FIRE_RANGE &&
+                     lara_item->hit_points > 0)
+                item->goal_anim_state = WILLBOSS_SHOOT;
+            else if (info.bite && info.distance < WILLBOSS_LUNGE_RANGE)
+                item->goal_anim_state = WILLBOSS_LUNGE;
+            else
+                item->goal_anim_state = WILLBOSS_WALK;
+            break;
+
+        case WILLBOSS_WALK:
+            willboss->maximum_turn = WILLBOSS_TURN;
+            willboss->flags = 0;
+            if (direction != desired_direction)
+                item->goal_anim_state = WILLBOSS_STOP;
+            else if (in_fire_zone && info.ahead && will2junc_distance < WILLBOSS_FIRE_RANGE)
+                item->goal_anim_state = WILLBOSS_STOP;
+            else if (info.bite && info.distance < WILLBOSS_ATTACK_RANGE) {
+                if ((GetRandomControl() & 3) == 1)
+                    item->goal_anim_state = WILLBOSS_STOP;
+                else if (item->frame_number < anims[item->anim_number].frame_base + 30)
+                    item->goal_anim_state = WILLBOSS_WALKATAK2;
+                else
+                    item->goal_anim_state = WILLBOSS_WALKATAK1;
+            }
+            break;
+
+        case WILLBOSS_180:
+            willboss->maximum_turn = 0;
+            willboss->flags = 0;
+            if (item->frame_number == anims[item->anim_number].frame_base + 51) {
+                item->pos.y_rot += 0x8000;
+                direction = -direction;
+            }
+            break;
+
+        case WILLBOSS_LUNGE:
+            willboss->target.x = lara_item->pos.x_pos;
+            willboss->target.z = lara_item->pos.z_pos;
+            willboss->maximum_turn = WILLBOSS_ATTACK_TURN;
+            if (!willboss->flags && (item->touch_bits & WILLBOSS_TOUCH)) {
+                lara_item->hit_status = 1;
+                lara_item->hit_points -= WILLBOSS_BITE_DAMAGE * 2;
+                CreatureEffect(item, &willboss_bite_left, DoBloodSplat);
+                CreatureEffect(item, &willboss_bite_right, DoBloodSplat);
+                willboss->flags = 1;
+            }
+            break;
+
+        case WILLBOSS_WALKATAK1:
+        case WILLBOSS_WALKATAK2:
+            if (!willboss->flags && (item->touch_bits & WILLBOSS_TOUCH)) {
+                lara_item->hit_status = 1;
+                lara_item->hit_points -= WILLBOSS_BITE_DAMAGE;
+                CreatureEffect(item, &willboss_bite_left, DoBloodSplat);
+                CreatureEffect(item, &willboss_bite_right, DoBloodSplat);
+                willboss->flags = 1;
+            }
+            if (in_fire_zone && info.bite && will2junc_distance < WILLBOSS_FIRE_RANGE)
+                item->goal_anim_state = WILLBOSS_WALK;
+            else if (info.bite && info.distance < WILLBOSS_ATTACK_RANGE) {
+                if (item->current_anim_state == WILLBOSS_WALKATAK1)
+                    item->goal_anim_state = WILLBOSS_WALKATAK2;
+                else
+                    item->goal_anim_state = WILLBOSS_WALKATAK1;
+            } else
+                item->goal_anim_state = WILLBOSS_WALK;
+            break;
+
+        case WILLBOSS_BIGKILL:
+            switch (item->frame_number - anims[item->anim_number].frame_base) {
+            case 0:
+            case 43:
+            case 95:
+            case 105:
+                CreatureEffect(item, &willboss_bite_left, DoBloodSplat);
+                break;
+            case 61:
+            case 91:
+            case 101:
+                CreatureEffect(item, &willboss_bite_right, DoBloodSplat);
+                break;
+            }
+            break;
+
+        case WILLBOSS_SHOOT:
+            willboss->target.x = lara_item->pos.x_pos;
+            willboss->target.z = lara_item->pos.z_pos;
+            willboss->maximum_turn = WILLBOSS_ATTACK_TURN;
+            if (item->frame_number - anims[item->anim_number].frame_base == 40 && lara_item->hit_points > 0) {
+                PHD_VECTOR pos;
+
+                pos.x = -64;
+                pos.y = 410;
+                pos.z = 0;
+                GetJointAbsPosition(item, &pos, 20);
+                TriggerPlasmaBall_willboss(&pos, item->room_number, item->pos.y_rot - 0x1000, 0);
+                pos.x = 64;
+                pos.y = 410;
+                pos.z = 0;
+                GetJointAbsPosition(item, &pos, 23);
+                TriggerPlasmaBall_willboss(&pos, item->room_number, item->pos.y_rot + 0x1000, 0);
+            }
+
+            {
+                PHD_VECTOR pos;
+                sint32 bright, r, g, b, rnd;
+
+                bright = item->frame_number - anims[item->anim_number].frame_base;
+                if (bright > 16) {
+                    bright = anims[item->anim_number].frame_end - item->frame_number;
+                    if (bright > 16)
+                        bright = 16;
+                }
+
+                rnd = GetRandomControl();
+                g = 31 - ((rnd >> 4) & 3);
+                b = 24 - ((rnd >> 6) & 3);
+                r = rnd & 7;
+                r = (r * bright) >> 4;
+                g = (g * bright) >> 4;
+                b = (b * bright) >> 4;
+
+                pos.x = pos.y = pos.z = 0;
+                GetJointAbsPosition(item, &pos, 17);
+                TriggerDynamic(pos.x, pos.y, pos.z, 12, r, g, b);
+                TriggerPlasma_willboss(item_number, 7, bright << 2);
+                TriggerPlasma_willboss(item_number, 8, bright << 2);
+            }
+            break;
+        }
+
+        if (lara_alive && lara_item->hit_points <= 0) {
+            CreatureKill(item, WILLBOSS_KILL_ANIM, WILLBOSS_BIGKILL, 2);
+            willboss->maximum_turn = 0;
+            return;
+        }
+    }
+
+    angle = CreatureTurn(item, willboss->maximum_turn);
+    CreatureAnimation(item_number, angle, 0);
+}

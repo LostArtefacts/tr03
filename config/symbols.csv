@@ -1042,7 +1042,7 @@ address,size,name,symbol
 0x00471bd0,598,ExplodeTribeBoss,_ExplodeTribeBoss
 0x00471e30,381,TriggerSummonSmoke,_TriggerSummonSmoke
 0x00471fb0,74,FindLizardManItemNumber,_FindLizardManItemNumber
-0x00472000,3077,WillBossControl,_WillBossControl
+0x00472000,3290,WillBossControl,_WillBossControl
 0x00472ce0,58,S_DrawWillBoss,_S_DrawWillBoss
 0x00472d20,53,InitialiseWillBoss,_InitialiseWillBoss
 0x00472d60,638,ExplodeWillBoss,_ExplodeWillBoss
@@ -2024,6 +2024,10 @@ address,size,name,symbol
 0x004c7fb4,4,closest_ai_path,_closest_ai_path
 0x004c7fb8,4,lara_ai_path,_lara_ai_path
 0x004c7fbc,4,lara_junction,_lara_junction
+0x004c7fc0,4,direction,_direction
+0x004c7fc4,4,desired_direction,_desired_direction
+0x004c7fc8,16,willboss_bite_left,_willboss_bite_left
+0x004c7fd8,16,willboss_bite_right,_willboss_bite_right
 0x004c7fe8,16,wing_bite,_wing_bite
 0x004c8040,8,screen_sizer,_screen_sizer
 0x004c8048,8,game_sizer,_game_sizer
@@ -2230,6 +2234,7 @@ address,size,name,symbol
 0x00627120,20,death_heights_triboss,_death_heights_triboss
 0x00627138,20,death_radii_triboss,_death_radii_triboss
 0x0062714c,1,turned,_turned
+0x00627150,1,puzzle_complete,_puzzle_complete
 0x00627158,20,death_heights_willboss,_death_heights_willboss
 0x00627170,,ai_junction,_ai_junction
 0x006271b8,20,death_radii_willboss,_death_radii_willboss
