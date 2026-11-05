@@ -72,4 +72,11 @@ void S_SoundSetMasterVolume(int nVolume)
     LnMasterVolume = nVolume;
 }
 
+void S_SoundStopSample(int nHandle)
+{
+    if (!sound_active)
+        return;
+    DS_StopSample(nHandle);
+}
+
 }
