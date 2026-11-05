@@ -31,6 +31,65 @@ void InitialiseGenPlayer(sint16 item_num)
     items[item_num].dynamic_light = 0;
 }
 
+extern int title_loaded;
+extern int sound_active;
+extern int GnGameMode;
+extern sint16 Option_Music_Volume;
+extern sint16 cinematic_level;
+extern uint16 GF_Cutscene_Orientation;
+extern sint16 cine_frame;
+extern sint32 cutscene_track;
+extern sint32 actual_current_frame;
+extern sint32 framedump;
+
+void InitCinematicRooms(void);
+void InitialisePlayer1(sint16 item_num);
+void S_ClearScreen(void);
+sint32 S_StartSyncedAudio(sint32 track);
+void S_CDStop(void);
+void S_CDVolume(int volume);
+void S_SoundStopAllSamples(void);
+sint32 DoCinematic(sint32 nframes);
+
+sint32 StartCinematic(sint32 level_number)
+{
+    sint32 old_sound, ret, nframes;
+
+    title_loaded = 0;
+    cinematic_level = (sint16)level_number;
+    InitCinematicRooms();
+    InitialisePlayer1(lara.item_number);
+    old_sound = sound_active;
+    camera.target_angle = GF_Cutscene_Orientation;
+    sound_active = 0;
+    cine_frame = 0;
+    S_ClearScreen();
+    if (!S_StartSyncedAudio(cutscene_track))
+        return 1;
+    S_CDVolume(255);
+    actual_current_frame = 0;
+    GnGameMode = 3;
+    do {
+        DrawPhaseCinematic();
+        nframes = actual_current_frame + 2 * (4 - cine_frame);
+        if (nframes < 2)
+            nframes = 2;
+        if (framedump)
+            nframes = 2;
+        ret = DoCinematic(nframes);
+    } while (!ret);
+    GnGameMode = 0;
+    if (Option_Music_Volume)
+        S_CDVolume(25 * Option_Music_Volume + 5);
+    else
+        S_CDVolume(0);
+    S_CDStop();
+    sound_active = old_sound;
+    S_SoundStopAllSamples();
+    level_complete = 1;
+    return ret;
+}
+
 extern sint16 draw_rooms[];
 extern int number_draw_rooms;
 

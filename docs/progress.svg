@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="202.65" height="12" x="0" y="0" class="named"><title>640 · 43.30%</title></rect>
-<rect width="265.35" height="12" x="202.65" y="0" class="todo"><title>838 · 56.70%</title></rect>
+<rect width="202.97" height="12" x="0" y="0" class="named"><title>641 · 43.37%</title></rect>
+<rect width="265.03" height="12" x="202.97" y="0" class="todo"><title>837 · 56.63%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">43.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">640</tspan> · <tspan class="todo">838</tspan></text>
+<text text-anchor="end" x="648" y="7.50">43.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">641</tspan> · <tspan class="todo">837</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="66.81" height="12" x="0" y="0" class="named"><title>95 KB · 14.28%</title></rect>
-<rect width="401.19" height="12" x="66.81" y="0" class="todo"><title>570 KB · 85.72%</title></rect>
+<rect width="67" height="12" x="0" y="0" class="named"><title>95 KB · 14.32%</title></rect>
+<rect width="401" height="12" x="67" y="0" class="todo"><title>570 KB · 85.68%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">95 KB</tspan> · <tspan class="todo">570 KB</tspan></text>
@@ -222,7 +222,7 @@
 <rect width="12" height="12" x="105" y="45" class="named"><title>0x0041a641 mgLOS (585 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="45" class="named"><title>0x0041a890 DrawPhaseCinematic (91 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="45" class="named"><title>0x0041a8f0 InitialiseGenPlayer (58 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="45" class="todo"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="45" class="named"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="45" class="named"><title>0x0041aa40 InitCinematicRooms (142 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="45" class="named"><title>0x0041aad0 InitialisePlayer1 (163 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="45" class="named"><title>0x0041ab80 LaraControlCinematic (153 bytes)</title></rect>
@@ -2116,7 +2116,7 @@
 <rect width="9.65" height="10.05" x="562.75" y="173.86" class="named"><title>0x00415820 CreatureDie (275 bytes)</title></rect>
 <rect width="9.65" height="10.05" x="575.40" y="173.86" class="todo"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
 <rect width="9.61" height="10.05" x="588.05" y="173.86" class="todo"><title>0x004842f0 DisplayCredits (274 bytes)</title></rect>
-<rect width="9.54" height="10.05" x="600.66" y="173.86" class="todo"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
+<rect width="9.54" height="10.05" x="600.66" y="173.86" class="named"><title>0x0041a930 StartCinematic (272 bytes)</title></rect>
 <rect width="9.54" height="10.05" x="613.20" y="173.86" class="named"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
 <rect width="9.54" height="10.05" x="625.74" y="173.86" class="named"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="9.51" height="10.05" x="638.29" y="173.86" class="named"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
