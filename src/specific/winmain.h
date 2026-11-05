@@ -5,13 +5,86 @@
 extern "C" {
 #endif
 
+typedef struct displaymode {
+    long w;
+    long h;
+    unsigned long bpp;
+    bool bPalette;
+    unsigned char rbpp;
+    unsigned char gbpp;
+    unsigned char bbpp;
+    unsigned char abpp;
+    DDSURFACEDESC ddsd;
+    unsigned char rshift;
+    unsigned char gshift;
+    unsigned char bshift;
+    unsigned char ashift;
+} DISPLAYMODE;
+
+typedef struct d3dtextureinfo {
+    unsigned long bpp;
+    bool bPalette;
+    bool bAlpha;
+    unsigned char rbpp;
+    unsigned char gbpp;
+    unsigned char bbpp;
+    unsigned char abpp;
+    DDSURFACEDESC ddsd;
+    DDPIXELFORMAT ddpf;
+    unsigned char rshift;
+    unsigned char gshift;
+    unsigned char bshift;
+    unsigned char ashift;
+} D3DTEXTUREINFO;
+
+typedef struct direct3dinfo {
+    char Name[30];
+    char About[80];
+    LPGUID lpGuid;
+    GUID Guid;
+    D3DDEVICEDESC DeviceDesc;
+    bool bAlpha;
+    bool bHardware;
+    bool bAGP;
+    long nDisplayMode;
+    DISPLAYMODE *DisplayMode;
+    long nTexture;
+    D3DTEXTUREINFO *Texture;
+} DIRECT3DINFO;
+
+typedef struct directdrawinfo {
+    char Name[30];
+    char About[80];
+    LPGUID lpGuid;
+    GUID Guid;
+    DDCAPS DDCaps;
+    long nDisplayMode;
+    DISPLAYMODE *DisplayMode;
+    long nD3DInfo;
+    DIRECT3DINFO *D3DInfo;
+} DIRECTDRAWINFO;
+
+typedef struct dxdirectsoundinfo {
+    char Name[30];
+    char About[80];
+    LPGUID lpGuid;
+    GUID Guid;
+} DXDIRECTSOUNDINFO;
+
+typedef struct dxdirectinputinfo {
+    char Name[30];
+    char About[80];
+    LPGUID lpGuid;
+    GUID Guid;
+} DXDIRECTINPUTINFO;
+
 typedef struct deviceinfo {
     long nDDInfo;
-    struct directdrawinfo *DDInfo;
+    DIRECTDRAWINFO *DDInfo;
     long nDSInfo;
-    struct dxdirectsoundinfo *DSInfo;
+    DXDIRECTSOUNDINFO *DSInfo;
     long nDIInfo;
-    struct dxdirectinputinfo *DIInfo;
+    DXDIRECTINPUTINFO *DIInfo;
 } DEVICEINFO;
 
 typedef struct dxconfig {

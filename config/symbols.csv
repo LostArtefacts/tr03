@@ -1343,7 +1343,7 @@ address,size,name,symbol
 0x0048f1f0,450,DXEnumDisplayModes,_DXEnumDisplayModes
 0x0048f3c0,2029,DXEnumDirect3D,_DXEnumDirect3D
 0x0048fbb0,499,DXEnumTextureFormats,_DXEnumTextureFormats
-0x0048fdb0,70,BPPToDDBD,_BPPToDDBD
+0x0048fdb0,136,BPPToDDBD,_BPPToDDBD
 0x0048fe40,87,DXCreateDirectDraw,_DXCreateDirectDraw
 0x0048fea0,25,DXCreateDirect3D,_DXCreateDirect3D
 0x0048fec0,26,DXSetCooperativeLevel,_DXSetCooperativeLevel
@@ -1481,7 +1481,7 @@ address,size,name,symbol
 0x004b5ce8,6,DirectSoundEnumerateA,
 0x004b5cee,6,DirectSoundCreate,_DirectSoundCreate@12
 0x004b5cf4,6,DirectDrawEnumerateA,
-0x004b5cfa,6,DirectDrawCreate,
+0x004b5cfa,6,DirectDrawCreate,_DirectDrawCreate@12
 0x004b5d00,6,Player_PlayFrame,
 0x004b5d06,6,Movie_GetTotalFrames,
 0x004b5d0c,6,Movie_GetCurrentFrame,
@@ -1542,13 +1542,13 @@ address,size,name,symbol
 0x004b69b0,55,Func4b69b0,
 0x004b69f0,24,Func4b69f0,
 0x004b6ae0,170,__alldiv,__alldiv
-0x004b6b90,52,__allmul,
+0x004b6b90,52,__allmul,__allmul
 0x004b6bd0,16,Func4b6bd0,
 0x004b6be0,572,Func4b6be0,
 0x004b6e20,128,_strstr,_strstr
 0x004b6ea0,410,Func4b6ea0,
 0x004b7040,48,Func4b7040,
-0x004b7070,18,Func4b7070,
+0x004b7070,18,exit,_exit
 0x004b7090,18,__exit,
 0x004b70b0,164,Func4b70b0,
 0x004b7160,32,Func4b7160,
@@ -2066,6 +2066,7 @@ address,size,name,symbol
 0x004d78f4,4,phd_bottomfloat,_phd_bottomfloat
 0x004d78f8,4,f_a,_f_a
 0x004d78fc,4,f_b,_f_b
+0x004d7908,4,InsertTransQuad,_InsertTransQuad
 0x004d790c,4,phd_winheight,_phd_winheight
 0x004d7910,4,info3dptrbf,_info3dptrbf
 0x004d7914,4,phd_centerx,_phd_centerx
@@ -2105,6 +2106,7 @@ address,size,name,symbol
 0x005a6ab8,4,f_persp,_f_persp
 0x005a6ac0,,w2v_matrix,_w2v_matrix
 0x005a6af4,4,phd_winwidth,_phd_winwidth
+0x005a6af8,4,InsertLine,_InsertLine
 0x005a6b00,,phdtextinfo,_phdtextinfo
 0x005bab00,1,bBlueEffect,_bBlueEffect
 0x005bab04,4,phd_viewdist,_phd_viewdist
@@ -2286,6 +2288,7 @@ address,size,name,symbol
 0x00632ad0,128,DS_SamplesPlaying,_DS_SamplesPlaying
 0x00632b50,128,DS_Samples,_DS_Samples
 0x00632c00,,TexturesUVFlag,_TexturesUVFlag
+0x00633c00,4,nBytesRead,_nBytesRead
 0x00633c90,400,GF_Offsets,_GF_Offsets
 0x00633e20,4,mesh_base,_mesh_base
 0x00633e24,4,floor_data,_floor_data
@@ -2309,6 +2312,8 @@ address,size,name,symbol
 0x00634110,1,GtZBufferWriteEnabled,_GtZBufferWriteEnabled
 0x00634114,,dpPrimitiveType,_dpPrimitiveType
 0x00634120,1,GtColorAdditionEnabled,_GtColorAdditionEnabled
+0x00634124,1,GtPerspCorrectEnabled,_GtPerspCorrectEnabled
+0x00634128,1,GtFilterEnabled,_GtFilterEnabled
 0x0063412c,1,GtAlphaBlendEnabled,_GtAlphaBlendEnabled
 0x00634134,1,GtColorKeyEnabled,_GtColorKeyEnabled
 0x00634138,4,malloc_size,_malloc_size
