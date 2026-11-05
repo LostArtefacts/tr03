@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="260.25" height="12" x="0" y="0" class="named"><title>832 · 56.33%</title></rect>
-<rect width="201.75" height="12" x="260.25" y="0" class="todo"><title>645 · 43.67%</title></rect>
+<rect width="260.56" height="12" x="0" y="0" class="named"><title>833 · 56.40%</title></rect>
+<rect width="201.44" height="12" x="260.56" y="0" class="todo"><title>644 · 43.60%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">56.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">832</tspan> · <tspan class="todo">645</tspan></text>
+<text text-anchor="end" x="642" y="7.50">56.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">833</tspan> · <tspan class="todo">644</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="140.10" height="12" x="0" y="0" class="named"><title>202 KB · 30.32%</title></rect>
-<rect width="321.90" height="12" x="140.10" y="0" class="todo"><title>464 KB · 69.68%</title></rect>
+<rect width="140.72" height="12" x="0" y="0" class="named"><title>203 KB · 30.46%</title></rect>
+<rect width="321.28" height="12" x="140.72" y="0" class="todo"><title>463 KB · 69.54%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">30.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">202 KB</tspan> · <tspan class="todo">464 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">30.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">203 KB</tspan> · <tspan class="todo">463 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -932,7 +932,7 @@
 <rect width="12" height="12" x="255" y="255" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="255" class="named"><title>0x0045b700 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="255" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="255" class="todo"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="255" class="named"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="255" class="named"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="named"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
@@ -1728,7 +1728,7 @@
 <rect width="17.44" height="18.28" x="628.04" y="23.52" class="named"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
 <rect width="17.38" height="18.28" x="648.48" y="23.52" class="todo"><title>0x0043a220 ShowStatsText (902 bytes)</title></rect>
 <rect width="17.38" height="18.28" x="668.86" y="23.52" class="todo"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
-<rect width="17.34" height="18.28" x="689.24" y="23.52" class="todo"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
+<rect width="17.34" height="18.28" x="689.24" y="23.52" class="named"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
 <rect width="17.32" height="18.28" x="709.59" y="23.52" class="todo"><title>0x004a6b90 Func4a6b90 (899 bytes)</title></rect>
 <rect width="17.09" height="18.28" x="729.91" y="23.52" class="todo"><title>0x00424c60 DrawRooms (887 bytes)</title></rect>
 <rect width="17.28" height="18.04" x="325.73" y="44.80" class="todo"><title>0x00425590 SetRoomBounds (885 bytes)</title></rect>
