@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="309.74" height="12" x="0" y="0" class="named"><title>1090 · 73.75%</title></rect>
-<rect width="1.99" height="12" x="309.74" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="108.27" height="12" x="311.73" y="0" class="todo"><title>381 · 25.78%</title></rect>
+<rect width="310.03" height="12" x="0" y="0" class="named"><title>1091 · 73.82%</title></rect>
+<rect width="1.99" height="12" x="310.03" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="107.98" height="12" x="312.02" y="0" class="todo"><title>380 · 25.71%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">73.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1090</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">381</tspan></text>
+<text text-anchor="end" x="600" y="7.50">73.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1091</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">380</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="194.82" height="12" x="0" y="0" class="named"><title>310 KB · 46.39%</title></rect>
-<rect width="3.79" height="12" x="194.82" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.38" height="12" x="198.62" y="0" class="todo"><title>352 KB · 52.71%</title></rect>
+<rect width="194.93" height="12" x="0" y="0" class="named"><title>310 KB · 46.41%</title></rect>
+<rect width="3.79" height="12" x="194.93" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="221.27" height="12" x="198.73" y="0" class="todo"><title>352 KB · 52.68%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">310 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">352 KB</tspan></text>
@@ -1284,7 +1284,7 @@
 <rect width="12" height="12" x="255" y="360" class="todo"><title>0x00485ab0 init_water_table (493 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="360" class="named"><title>0x00485ca0 GetRandom (55 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="360" class="todo"><title>0x00485ce0 S_InitialiseSystem (439 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="360" class="todo"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="360" class="named"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="360" class="named"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="360" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="360" class="named"><title>0x00486010 game_free (52 bytes)</title></rect>
@@ -2277,7 +2277,7 @@
 <rect width="7.79" height="8.07" x="522.73" y="244.55" class="named"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
 <rect width="7.79" height="8.02" x="522.73" y="255.62" class="named"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="7.79" height="7.98" x="522.73" y="266.64" class="named"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>
-<rect width="7.79" height="7.98" x="522.73" y="277.62" class="todo"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
+<rect width="7.79" height="7.98" x="522.73" y="277.62" class="named"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
 <rect width="7.79" height="7.93" x="522.73" y="288.60" class="named"><title>0x00449090 LaraTestClimbPos (176 bytes)</title></rect>
 <rect width="7.79" height="7.89" x="522.73" y="299.53" class="named"><title>0x00414b60 ValidBox (175 bytes)</title></rect>
 <rect width="7.79" height="7.84" x="522.73" y="310.42" class="named"><title>0x00416570 CreatureFloat (174 bytes)</title></rect>

@@ -2362,7 +2362,7 @@ address,size,name,symbol
 0x006a0170,56,btext,_btext
 0x006a01b8,4,passport_text1,_passport_text1
 0x006a0218,8,ctrltext,_ctrltext
-0x006a0220,4096,wibble_light,_wibble_light
+0x006a0228,4096,wibble_light,_wibble_light
 0x006a1228,,water_palette,_water_palette
 0x006a1828,16,light_level,_light_level
 0x006a1838,,phd_WindowRect,_phd_WindowRect
