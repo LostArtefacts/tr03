@@ -79,4 +79,11 @@ void S_SoundStopSample(int nHandle)
     DS_StopSample(nHandle);
 }
 
+void S_SoundStopAllSamples(void)
+{
+    if (!sound_active)
+        return;
+    DS_StopAllSamples();
+}
+
 }

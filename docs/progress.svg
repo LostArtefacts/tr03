@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="260.47" height="12" x="0" y="0" class="named"><title>916 · 62.02%</title></rect>
-<rect width="1.42" height="12" x="260.47" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="158.10" height="12" x="261.90" y="0" class="todo"><title>556 · 37.64%</title></rect>
+<rect width="260.76" height="12" x="0" y="0" class="named"><title>917 · 62.09%</title></rect>
+<rect width="1.42" height="12" x="260.76" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="157.82" height="12" x="262.18" y="0" class="todo"><title>555 · 37.58%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">62.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">916</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">556</tspan></text>
+<text text-anchor="end" x="600" y="7.50">62.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">917</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">555</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.17" height="12" x="0" y="0" class="named"><title>296 KB · 44.33%</title></rect>
-<rect width="3.69" height="12" x="186.17" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.14" height="12" x="189.86" y="0" class="todo"><title>366 KB · 54.80%</title></rect>
+<rect width="186.18" height="12" x="0" y="0" class="named"><title>296 KB · 44.33%</title></rect>
+<rect width="3.69" height="12" x="186.18" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="230.13" height="12" x="189.87" y="0" class="todo"><title>366 KB · 54.79%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1359,7 +1359,7 @@
 <rect width="12" height="12" x="630" y="375" class="named"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="375" class="named"><title>0x0048d200 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="375" class="named"><title>0x0048d210 S_SoundStopSample (23 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="375" class="todo"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="375" class="named"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="375" class="todo"><title>0x0048d240 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="375" class="todo"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="375" class="todo"><title>0x0048d2e0 CD_Init (403 bytes)</title></rect>
@@ -2979,7 +2979,7 @@
 <rect width="2.30" height="2.44" x="711.71" y="444.56" class="todo"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
 <rect width="2.06" height="2.55" x="717.01" y="417.20" class="todo"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
 <rect width="2.06" height="2.55" x="717.01" y="422.75" class="todo"><title>0x004837b0 S_FinishInventory (15 bytes)</title></rect>
-<rect width="2.06" height="2.55" x="717.01" y="428.29" class="todo"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
+<rect width="2.06" height="2.55" x="717.01" y="428.29" class="named"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="2.06" height="2.39" x="717.01" y="433.84" class="named"><title>0x0042f430 dynamic_light_off (14 bytes)</title></rect>
 <rect width="2.06" height="2.39" x="717.01" y="439.23" class="named"><title>0x00441a50 lara_as_gymnast (14 bytes)</title></rect>
 <rect width="2.06" height="2.39" x="717.01" y="444.61" class="todo"><title>0x004752f0 Func4752f0 (14 bytes)</title></rect>
