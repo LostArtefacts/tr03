@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="268.69" height="12" x="0" y="0" class="named"><title>859 · 58.16%</title></rect>
-<rect width="193.31" height="12" x="268.69" y="0" class="todo"><title>618 · 41.84%</title></rect>
+<rect width="269" height="12" x="0" y="0" class="named"><title>860 · 58.23%</title></rect>
+<rect width="193" height="12" x="269" y="0" class="todo"><title>617 · 41.77%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">58.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">859</tspan> · <tspan class="todo">618</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">860</tspan> · <tspan class="todo">617</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="159.58" height="12" x="0" y="0" class="named"><title>230 KB · 34.54%</title></rect>
-<rect width="302.42" height="12" x="159.58" y="0" class="todo"><title>436 KB · 65.46%</title></rect>
+<rect width="160.08" height="12" x="0" y="0" class="named"><title>231 KB · 34.65%</title></rect>
+<rect width="301.92" height="12" x="160.08" y="0" class="todo"><title>435 KB · 65.35%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">34.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">230 KB</tspan> · <tspan class="todo">436 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">34.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">231 KB</tspan> · <tspan class="todo">435 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -142,7 +142,7 @@
 <rect width="12" height="12" x="405" y="15" class="todo"><title>0x0040e3b0 CivvyControl (2208 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="15" class="named"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="15" class="named"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="15" class="todo"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="15" class="named"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="15" class="named"><title>0x0040f460 InitialiseArea51Laser (128 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="15" class="todo"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="15" class="named"><title>0x0040faf0 Trigger51RocketSmoke (450 bytes)</title></rect>
@@ -1778,7 +1778,7 @@
 <rect width="16.06" height="15.90" x="346.06" y="122.13" class="named"><title>0x0042fb50 ControlFireHead (725 bytes)</title></rect>
 <rect width="16.06" height="15.88" x="346.06" y="141.03" class="named"><title>0x00471680 FindClosestShieldPoint (724 bytes)</title></rect>
 <rect width="16.06" height="15.79" x="346.06" y="159.91" class="todo"><title>0x0040ca50 XYClipper (720 bytes)</title></rect>
-<rect width="16.06" height="15.79" x="346.06" y="178.70" class="todo"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
+<rect width="16.06" height="15.79" x="346.06" y="178.70" class="named"><title>0x0040f190 ControlArea51Laser (720 bytes)</title></rect>
 <rect width="16.06" height="15.70" x="346.06" y="197.49" class="todo"><title>0x004666c0 BuildOutsideTable (716 bytes)</title></rect>
 <rect width="16.06" height="15.66" x="346.06" y="216.19" class="todo"><title>0x0048d6e0 calc_object_vertices (714 bytes)</title></rect>
 <rect width="16.06" height="15.46" x="346.06" y="234.85" class="named"><title>0x0042a8b0 TriggerFlareSparks (705 bytes)</title></rect>
