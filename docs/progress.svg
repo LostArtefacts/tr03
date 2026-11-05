@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="231.16" height="12" x="0" y="0" class="named"><title>739 · 50.03%</title></rect>
-<rect width="230.84" height="12" x="231.16" y="0" class="todo"><title>738 · 49.97%</title></rect>
+<rect width="231.47" height="12" x="0" y="0" class="named"><title>740 · 50.10%</title></rect>
+<rect width="230.53" height="12" x="231.47" y="0" class="todo"><title>737 · 49.90%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">50.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">739</tspan> · <tspan class="todo">738</tspan></text>
+<text text-anchor="end" x="642" y="7.50">50.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">740</tspan> · <tspan class="todo">737</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="99.63" height="12" x="0" y="0" class="named"><title>144 KB · 21.56%</title></rect>
-<rect width="362.37" height="12" x="99.63" y="0" class="todo"><title>522 KB · 78.44%</title></rect>
+<rect width="100.03" height="12" x="0" y="0" class="named"><title>144 KB · 21.65%</title></rect>
+<rect width="361.97" height="12" x="100.03" y="0" class="todo"><title>521 KB · 78.35%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">21.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">144 KB</tspan> · <tspan class="todo">522 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">21.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">144 KB</tspan> · <tspan class="todo">521 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -837,7 +837,7 @@
 <rect width="12" height="12" x="330" y="225" class="named"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="225" class="todo"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="225" class="todo"><title>0x0044fbc0 LizManControl (2003 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="225" class="todo"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="225" class="named"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="225" class="named"><title>0x00450620 TriggerLizmanGas (469 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="225" class="todo"><title>0x00450800 LondonBossControl (3575 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="225" class="named"><title>0x00451640 S_DrawLondonBoss (96 bytes)</title></rect>
@@ -1839,7 +1839,7 @@
 <rect width="14.81" height="13.85" x="400.39" y="82.14" class="todo"><title>0x0041b2a0 InGameCinematicCamera (582 bytes)</title></rect>
 <rect width="14.65" height="13.85" x="418.20" y="82.14" class="todo"><title>0x004229f0 ClipTarget (576 bytes)</title></rect>
 <rect width="14.65" height="13.85" x="435.85" y="82.14" class="named"><title>0x00438530 Inv_GetItemOption (576 bytes)</title></rect>
-<rect width="14.65" height="13.85" x="453.51" y="82.14" class="todo"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
+<rect width="14.65" height="13.85" x="453.51" y="82.14" class="named"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
 <rect width="14.63" height="13.85" x="471.16" y="82.14" class="todo"><title>0x004140a0 TriggerSealmuteGasThrower_boomute (575 bytes)</title></rect>
 <rect width="14.63" height="13.85" x="488.79" y="82.14" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="14.63" height="13.85" x="506.42" y="82.14" class="todo"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
