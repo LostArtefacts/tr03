@@ -66,6 +66,60 @@ void DrawAssaultTimer(void)
     }
 }
 
+void DrawAssaultPenalties(int type)
+{
+    int x, timer, y;
+    char txt[10], *c;
+
+    if (CurrentLevel != 0 || !assault_penalty_display_timer || !assault_timer_display)
+        return;
+
+    if (type == 0) {
+        if (assault_penalties == 0)
+            return;
+        if (assault_penalties > 0x1a5dd)
+            assault_penalties = 0x1a5dd;
+        y = 36;
+        timer = assault_penalties / 30;
+        sprintf(txt, "%d:%02d s", timer / 60, timer % 60);
+        x = (phd_winxmax >> 1) - 70 * 5 / 2;
+    } else {
+        if (assault_target_penalties == 0)
+            return;
+        if (assault_target_penalties > 0x1a5dd)
+            assault_target_penalties = 0x1a5dd;
+        y = (assault_penalties == 0) ? 36 : 64;
+        timer = assault_target_penalties / 30;
+        sprintf(txt, "T %d:%02d s", timer / 60, timer % 60);
+        x = (phd_winxmax >> 1) - 70 * 5 / 2 - 18;
+    }
+
+    for (c = txt; *c; c++) {
+        if (*c == ' ') {
+            x += 8;
+        } else if (*c == 'T') {
+            x -= 6;
+            S_DrawScreenSprite2d(x, y + 1, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 12), 0, 0);
+            x += 16;
+        } else if (*c == 's') {
+            x -= 6;
+            S_DrawScreenSprite2d(x - 4, y, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 13), 9, 0);
+            x += 14;
+        } else if (*c == ':') {
+            x -= 6;
+            S_DrawScreenSprite2d(x, y, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 10), 9, 0);
+            x += 14;
+        } else if (*c == '.') {
+            x -= 6;
+            S_DrawScreenSprite2d(x, y, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + 11), 9, 0);
+            x += 14;
+        } else {
+            S_DrawScreenSprite2d(x, y, 0, 0x10000, 0x10000, (sint16)(objects[362].mesh_index + (*c - '0')), 9, 0);
+            x += 20;
+        }
+    }
+}
+
 extern int overlay_flag;
 extern uint16 DashTimer;
 extern sint16 ExposureMeter;
