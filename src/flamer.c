@@ -2,6 +2,58 @@
 
 sint32 GetFreeSpark(void);
 
+void TriggerFlamethrowerFlame(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 fxnum);
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+
+sint16 TriggerFlameThrower(ITEM_INFO *item, BITE_INFO *bite, sint16 speed)
+{
+    PHD_VECTOR pos1, pos2;
+    FX_INFO *fx;
+    sint16 fx_number;
+    PHD_ANGLE angles[2];
+    sint32 xv, yv, zv, vel, spd, lp;
+
+    fx_number = CreateEffect(item->room_number);
+    if (fx_number != NO_ITEM) {
+        fx = &effects[fx_number];
+        pos1.x = bite->x;
+        pos1.y = bite->y;
+        pos1.z = bite->z;
+        GetJointAbsPosition(item, &pos1, bite->mesh_num);
+        pos2.x = bite->x;
+        pos2.y = bite->y << 1;
+        pos2.z = bite->z;
+        GetJointAbsPosition(item, &pos2, bite->mesh_num);
+        phd_GetVectorAngles(pos2.x - pos1.x, pos2.y - pos1.y, pos2.z - pos1.z, angles);
+        fx->pos.x_pos = pos1.x;
+        fx->pos.y_pos = pos1.y;
+        fx->pos.z_pos = pos1.z;
+        fx->room_number = item->room_number;
+        fx->pos.x_rot = angles[1];
+        fx->pos.z_rot = 0;
+        fx->pos.y_rot = angles[0];
+        fx->speed = speed << 2;
+        fx->object_number = 307;
+        fx->counter = 20;
+        fx->flag1 = 0;
+        TriggerFlamethrowerFlame(0, 0, 0, 0, 0, 0, fx_number);
+        for (lp = 0; lp < 2; lp++) {
+            spd = (GetRandomControl() % (speed << 2)) + 32;
+            vel = (spd * phd_cos(fx->pos.x_rot)) >> W2V_SHIFT;
+            zv = (vel * phd_cos(fx->pos.y_rot)) >> W2V_SHIFT;
+            xv = (vel * phd_sin(fx->pos.y_rot)) >> W2V_SHIFT;
+            yv = -((spd * phd_sin(fx->pos.x_rot)) >> W2V_SHIFT);
+            TriggerFlamethrowerFlame(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, xv << 5, yv << 5, zv << 5, -1);
+        }
+        vel = ((speed << 1) * phd_cos(fx->pos.x_rot)) >> W2V_SHIFT;
+        zv = (vel * phd_cos(fx->pos.y_rot)) >> W2V_SHIFT;
+        xv = (vel * phd_sin(fx->pos.y_rot)) >> W2V_SHIFT;
+        yv = -(((speed << 1) * phd_sin(fx->pos.x_rot)) >> W2V_SHIFT);
+        TriggerFlamethrowerFlame(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, xv << 5, yv << 5, zv << 5, -2);
+    }
+    return fx_number;
+}
+
 void TriggerFlamethrowerFlame(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 fxnum)
 {
     sint32 size;
