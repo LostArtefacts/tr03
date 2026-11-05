@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="288.71" height="12" x="0" y="0" class="named"><title>1016 · 68.74%</title></rect>
-<rect width="1.42" height="12" x="288.71" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="129.86" height="12" x="290.14" y="0" class="todo"><title>457 · 30.92%</title></rect>
+<rect width="289" height="12" x="0" y="0" class="named"><title>1017 · 68.81%</title></rect>
+<rect width="1.42" height="12" x="289" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="129.58" height="12" x="290.42" y="0" class="todo"><title>456 · 30.85%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">68.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1016</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">457</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1017</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">456</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.31" height="12" x="0" y="0" class="named"><title>301 KB · 45.07%</title></rect>
-<rect width="3.69" height="12" x="189.31" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.01" height="12" x="192.99" y="0" class="todo"><title>361 KB · 54.05%</title></rect>
+<rect width="189.41" height="12" x="0" y="0" class="named"><title>301 KB · 45.10%</title></rect>
+<rect width="3.69" height="12" x="189.41" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="226.90" height="12" x="193.10" y="0" class="todo"><title>361 KB · 54.02%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">301 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">361 KB</tspan></text>
@@ -73,7 +73,7 @@
 <rect width="12" height="12" x="90" y="0" class="todo"><title>0x00401540 phd_RotZ (168 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="0" class="todo"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="0" class="todo"><title>0x004017d0 phd_RotYXZpack (487 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="0" class="todo"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="0" class="named"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="0" class="todo"><title>0x00401a70 phd_TranslateAbs (122 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="0" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="0" class="todo"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
@@ -2285,7 +2285,7 @@
 <rect width="7.77" height="7.82" x="522.79" y="332.03" class="todo"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
 <rect width="7.77" height="7.77" x="522.79" y="342.85" class="named"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
 <rect width="7.77" height="7.77" x="522.79" y="353.62" class="named"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
-<rect width="7.77" height="7.73" x="522.79" y="364.39" class="todo"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
+<rect width="7.77" height="7.73" x="522.79" y="364.39" class="named"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="7.77" height="7.73" x="522.79" y="375.12" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="7.77" height="7.73" x="522.79" y="385.85" class="todo"><title>0x0048ab50 S_AnimateTextures (171 bytes)</title></rect>
 <rect width="7.77" height="7.68" x="522.79" y="396.58" class="named"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
