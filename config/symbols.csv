@@ -1839,6 +1839,8 @@ address,size,name,symbol
 0x004c31bc,4,joyGetPosEx,__imp__joyGetPosEx@8
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
 0x004c5084,4,one,_one
+0x004c5140,16,autogun_left,_autogun_left
+0x004c5150,16,autogun_right,_autogun_right
 0x004c5160,16,bird_bite,_bird_bite
 0x004c5170,16,crow_bite,_crow_bite
 0x004c51a0,16,seal_gas_boomute,_seal_gas_boomute

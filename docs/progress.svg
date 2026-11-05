@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="261.18" height="12" x="0" y="0" class="named"><title>835 · 56.53%</title></rect>
-<rect width="200.82" height="12" x="261.18" y="0" class="todo"><title>642 · 43.47%</title></rect>
+<rect width="261.50" height="12" x="0" y="0" class="named"><title>836 · 56.60%</title></rect>
+<rect width="200.50" height="12" x="261.50" y="0" class="todo"><title>641 · 43.40%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">56.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">835</tspan> · <tspan class="todo">642</tspan></text>
+<text text-anchor="end" x="642" y="7.50">56.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">836</tspan> · <tspan class="todo">641</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="141.83" height="12" x="0" y="0" class="named"><title>204 KB · 30.70%</title></rect>
-<rect width="320.17" height="12" x="141.83" y="0" class="todo"><title>461 KB · 69.30%</title></rect>
+<rect width="142.41" height="12" x="0" y="0" class="named"><title>205 KB · 30.82%</title></rect>
+<rect width="319.59" height="12" x="142.41" y="0" class="todo"><title>461 KB · 69.18%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">30.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">204 KB</tspan> · <tspan class="todo">461 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">30.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">205 KB</tspan> · <tspan class="todo">461 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -152,7 +152,7 @@
 <rect width="12" height="12" x="555" y="15" class="named"><title>0x0040fef0 InitialiseArmySMG (82 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="15" class="todo"><title>0x0040ff50 ArmySMGControl (1994 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="15" class="named"><title>0x00410750 InitialiseAutogun (75 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="15" class="todo"><title>0x004107a0 AutogunControl (837 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="15" class="named"><title>0x004107a0 AutogunControl (837 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="15" class="named"><title>0x00410af0 FireBigGun (522 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="15" class="named"><title>0x00410d00 BigGunInitialise (66 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="15" class="named"><title>0x00410d50 BigGunCollision (259 bytes)</title></rect>
@@ -1742,7 +1742,7 @@
 <rect width="17.28" height="17.23" x="325.73" y="210.38" class="todo"><title>0x00411100 BigGunControl (845 bytes)</title></rect>
 <rect width="17.28" height="17.21" x="325.73" y="230.61" class="named"><title>0x004239a0 DiverControl (844 bytes)</title></rect>
 <rect width="17.28" height="17.13" x="325.73" y="250.82" class="todo"><title>0x00493920 MMXDrawLine (840 bytes)</title></rect>
-<rect width="17.28" height="17.07" x="325.73" y="270.94" class="todo"><title>0x004107a0 AutogunControl (837 bytes)</title></rect>
+<rect width="17.28" height="17.07" x="325.73" y="270.94" class="named"><title>0x004107a0 AutogunControl (837 bytes)</title></rect>
 <rect width="17.28" height="17.07" x="325.73" y="291.01" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
 <rect width="17.28" height="17.04" x="325.73" y="311.07" class="named"><title>0x0042be50 TriggerGunShell (836 bytes)</title></rect>
 <rect width="17.28" height="16.98" x="325.73" y="331.12" class="todo"><title>0x004b48cc Func4b48cc (833 bytes)</title></rect>
