@@ -1,5 +1,242 @@
 #include "game.h"
 
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);
+void CreatureTilt(ITEM_INFO *item, sint16 angle);
+void CreatureDie(sint16 item_number, int explode);
+sint16 CreatureEffect(ITEM_INFO *item, BITE_INFO *bite, sint16 (*generate)(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 yrot, sint16 room_number));
+sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num);
+void GetAITarget(CREATURE_INFO *creature);
+void AlertAllGuards(sint16 item_number);
+sint16 AIGuard(CREATURE_INFO *creature);
+int TargetVisible(ITEM_INFO *item, AI_INFO *info);
+int Targetable(ITEM_INFO *item, AI_INFO *info);
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+void TriggerPlasma_clawmute(sint16 item_number);
+void TriggerPlasmaBall_clawmute(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos1, sint16 room_number, sint16 angle);
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+extern BITE_INFO claw_bite_left;
+extern BITE_INFO claw_bite_right;
+
+void ClawmuteControl(sint16 item_number)
+{
+    ITEM_INFO *item, *real_enemy;
+    CREATURE_INFO *claw;
+    sint16 angle, head, torso_y, torso_x, tilt, random;
+    sint32 lara_dx, lara_dz;
+    AI_INFO info, lara_info;
+
+    if (!CreatureActive(item_number))
+        return;
+    item = &items[item_number];
+    claw = (CREATURE_INFO *)item->data;
+    head = torso_y = torso_x = angle = tilt = 0;
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != 8) {
+            item->anim_number = objects[item->object_number].anim_index + 20;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = 8;
+        }
+        if (item->frame_number == anims[item->anim_number].frame_end - 1) {
+            sint32 lp;
+
+            CreatureDie(item_number, 1);
+            TriggerExplosionSparks(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 3, -2, 2, 0);
+            for (lp = 0; lp < 2; lp++)
+                TriggerExplosionSparks(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 3, -1, 2, 0);
+            SoundEffect(106, &item->pos, 0);
+            return;
+        }
+    } else {
+        if (item->ai_bits)
+            GetAITarget(claw);
+        CreatureAIInfo(item, &info);
+        if (claw->enemy == lara_item) {
+            lara_info.angle = info.angle;
+            lara_info.distance = info.distance;
+        } else {
+            lara_dz = lara_item->pos.z_pos - item->pos.z_pos;
+            lara_dx = lara_item->pos.x_pos - item->pos.x_pos;
+            lara_info.angle = phd_atan(lara_dz, lara_dx) - item->pos.y_rot;
+            lara_info.distance = lara_dz * lara_dz + lara_dx * lara_dx;
+        }
+        if (info.zone_number == info.enemy_zone) {
+            GetCreatureMood(item, &info, 1);
+            CreatureMood(item, &info, 1);
+        } else {
+            GetCreatureMood(item, &info, 0);
+            CreatureMood(item, &info, 0);
+        }
+        angle = CreatureTurn(item, claw->maximum_turn);
+        real_enemy = claw->enemy;
+        claw->enemy = lara_item;
+        if (lara_info.distance < 0x100000 || item->hit_status || TargetVisible(item, &lara_info))
+            AlertAllGuards(item_number);
+        claw->enemy = real_enemy;
+        switch (item->current_anim_state) {
+        case 0:
+            claw->maximum_turn = 0;
+            claw->flags = 0;
+            head = info.angle;
+            if (item->ai_bits & 1) {
+                head = AIGuard(claw);
+                item->goal_anim_state = 0;
+                break;
+            } else if (item->ai_bits & 4) {
+                item->goal_anim_state = 1;
+                head = 0;
+            } else if (claw->mood == ESCAPE_MOOD)
+                item->goal_anim_state = 2;
+            else if (info.bite && info.distance < 0x100000) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+                if (info.angle < 0)
+                    item->goal_anim_state = 6;
+                else
+                    item->goal_anim_state = 7;
+            } else if (info.bite && info.distance < 0x1c6e39) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+                item->goal_anim_state = 9;
+            } else if (Targetable(item, &info) && ((info.distance > 0x900000 && !item->item_flags[0]) || info.zone_number != info.enemy_zone))
+                item->goal_anim_state = 10;
+            else if (claw->mood == BORED_MOOD) {
+                random = (sint16)GetRandomControl();
+                item->goal_anim_state = 1;
+            } else if (item->required_anim_state)
+                item->goal_anim_state = item->required_anim_state;
+            else
+                item->goal_anim_state = 2;
+            break;
+        case 1:
+            claw->maximum_turn = 3 * ONE_DEGREE;
+            if (info.ahead)
+                head = info.angle;
+            if (item->ai_bits & 4) {
+                item->goal_anim_state = 1;
+                head = 0;
+            } else if (info.bite && info.distance < 0x1c6e39) {
+                claw->maximum_turn = 3 * ONE_DEGREE;
+                if (info.angle < 0)
+                    item->goal_anim_state = 4;
+                else
+                    item->goal_anim_state = 5;
+            } else if (Targetable(item, &info) && ((info.distance > 0x900000 && !item->item_flags[0]) || info.zone_number != info.enemy_zone)) {
+                claw->maximum_turn = 3 * ONE_DEGREE;
+                item->goal_anim_state = 0;
+            } else if (claw->mood == ESCAPE_MOOD || claw->mood == ATTACK_MOOD)
+                item->goal_anim_state = 2;
+            break;
+        case 2:
+            claw->maximum_turn = 4 * ONE_DEGREE;
+            if (info.ahead)
+                head = info.angle;
+            if (item->ai_bits & 1)
+                item->goal_anim_state = 0;
+            else if (claw->mood == BORED_MOOD)
+                item->goal_anim_state = 0;
+            else if (claw->flags && info.ahead)
+                item->goal_anim_state = 0;
+            else if (info.bite && info.distance < 0x400000) {
+                if (lara_item->speed == 0)
+                    item->goal_anim_state = 0;
+                else
+                    item->goal_anim_state = 3;
+            } else if (Targetable(item, &info) && ((info.distance > 0x900000 && !item->item_flags[0]) || info.zone_number != info.enemy_zone)) {
+                claw->maximum_turn = 3 * ONE_DEGREE;
+                item->goal_anim_state = 0;
+            }
+            claw->flags = 0;
+            break;
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 9:
+        case 3:
+            if (info.ahead) {
+                torso_y = info.angle;
+                torso_x = info.x_angle;
+            }
+            if (!claw->flags && (item->touch_bits & 0x90)) {
+                lara_item->hit_status = 1;
+                lara_item->hit_points -= 100;
+                CreatureEffect(item, &claw_bite_left, DoBloodSplat);
+                CreatureEffect(item, &claw_bite_right, DoBloodSplat);
+                claw->flags = 1;
+            }
+            item->item_flags[0] = 0;
+            break;
+        case 10:
+            if (abs(info.angle) < 3 * ONE_DEGREE)
+                item->pos.y_rot += info.angle;
+            else if (info.angle < 0)
+                item->pos.y_rot -= 3 * ONE_DEGREE;
+            else
+                item->pos.y_rot += 3 * ONE_DEGREE;
+            if (info.ahead) {
+                torso_y = info.angle >> 1;
+                torso_x = info.x_angle;
+            }
+            if (item->frame_number == anims[item->anim_number].frame_base && !(GetRandomControl() & 3))
+                item->item_flags[0] = 1;
+            if (item->frame_number - anims[item->anim_number].frame_base < 28)
+                TriggerPlasma_clawmute(item_number);
+            else if (item->frame_number - anims[item->anim_number].frame_base == 28)
+                TriggerPlasmaBall_clawmute(item, 0, NULL, item->room_number, item->pos.y_rot);
+            {
+                PHD_VECTOR pos1;
+                sint32 bright, r, g, b, rnd;
+
+                bright = item->frame_number - anims[item->anim_number].frame_base;
+                if (bright > 16) {
+                    bright = anims[item->anim_number].frame_base + 28 + 16 - item->frame_number;
+                    if (bright > 16)
+                        bright = 16;
+                }
+                if (bright > 0) {
+                    rnd = GetRandomControl();
+                    b = 31 - ((rnd >> 4) & 3);
+                    g = 24 - ((rnd >> 6) & 3);
+                    r = rnd & 7;
+                    r = (r * bright) >> 4;
+                    g = (g * bright) >> 4;
+                    b = (b * bright) >> 4;
+                    pos1.x = -32;
+                    pos1.y = -16;
+                    pos1.z = -192;
+                    GetJointAbsPosition(item, &pos1, 13);
+                    TriggerDynamic(pos1.x, pos1.y, pos1.z, 13, r, g, b);
+                }
+            }
+        }
+    }
+    CreatureTilt(item, tilt);
+    CreatureJoint(item, 0, torso_x);
+    CreatureJoint(item, 1, torso_y);
+    CreatureJoint(item, 2, head);
+    CreatureAnimation(item_number, angle, 0);
+}
+
 sint32 GetFreeSpark(void);
 
 void TriggerPlasma_clawmute(sint16 item_number)
@@ -97,8 +334,6 @@ void TriggerPlasmaBall_clawmute(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos1, 
     }
 }
 
-int abs(int x);
-#pragma intrinsic(abs)
 extern sint32 wibble;
 void TriggerPlasmaBallFlame_clawmute(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv);
 void KillEffect(sint16 fx_num);

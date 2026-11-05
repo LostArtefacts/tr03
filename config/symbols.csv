@@ -169,7 +169,7 @@ address,size,name,symbol
 0x0041b090,312,CalculateCinematicCamera,_CalculateCinematicCamera
 0x0041b1d0,199,ControlCinematicPlayer,_ControlCinematicPlayer
 0x0041b2a0,582,InGameCinematicCamera,_InGameCinematicCamera
-0x0041b4f0,1727,ClawmuteControl,_ClawmuteControl
+0x0041b4f0,1772,ClawmuteControl,_ClawmuteControl
 0x0041bbe0,447,TriggerPlasma_clawmute,_TriggerPlasma_clawmute
 0x0041bda0,290,TriggerPlasmaBall_clawmute,_TriggerPlasmaBall_clawmute
 0x0041bed0,785,ControlClawmutePlasmaBall,_ControlClawmutePlasmaBall
@@ -1843,6 +1843,8 @@ address,size,name,symbol
 0x004c5170,16,crow_bite,_crow_bite
 0x004c51a0,16,seal_gas_boomute,_seal_gas_boomute
 0x004c51b4,4,cine_delay,_cine_delay
+0x004c51b8,16,claw_bite_left,_claw_bite_left
+0x004c51c8,16,claw_bite_right,_claw_bite_right
 0x004c51d8,16,cobra_hit,_cobra_hit
 0x004c51e8,16,compy_hit,_compy_hit
 0x004c51f8,2,cdtrack,_cdtrack
