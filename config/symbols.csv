@@ -958,7 +958,7 @@ address,size,name,symbol
 0x00469f80,93,InitialiseSwat,_InitialiseSwat
 0x00469fe0,2205,SwatControl,_SwatControl
 0x0046a8b0,164,InitialiseTarget,_InitialiseTarget
-0x0046a960,649,TargetControl,_TargetControl
+0x0046a960,668,TargetControl,_TargetControl
 0x0046ac00,98,ResetTargets,_ResetTargets
 0x0046ac70,44,T_InitPrint,_T_InitPrint
 0x0046aca0,226,T_Print,_T_Print
