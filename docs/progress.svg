@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="309.17" height="12" x="0" y="0" class="named"><title>1088 · 73.61%</title></rect>
-<rect width="1.99" height="12" x="309.17" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="108.84" height="12" x="311.16" y="0" class="todo"><title>383 · 25.91%</title></rect>
+<rect width="309.46" height="12" x="0" y="0" class="named"><title>1089 · 73.68%</title></rect>
+<rect width="1.99" height="12" x="309.46" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="108.55" height="12" x="311.45" y="0" class="todo"><title>382 · 25.85%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">73.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1088</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">383</tspan></text>
+<text text-anchor="end" x="600" y="7.50">73.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1089</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">382</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="194.70" height="12" x="0" y="0" class="named"><title>310 KB · 46.36%</title></rect>
-<rect width="3.79" height="12" x="194.70" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.51" height="12" x="198.49" y="0" class="todo"><title>352 KB · 52.74%</title></rect>
+<rect width="194.76" height="12" x="0" y="0" class="named"><title>310 KB · 46.37%</title></rect>
+<rect width="3.79" height="12" x="194.76" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="221.45" height="12" x="198.55" y="0" class="todo"><title>352 KB · 52.73%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">310 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">352 KB</tspan></text>
@@ -1382,7 +1382,7 @@
 <rect width="12" height="12" x="225" y="390" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="390" class="named"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="390" class="todo"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="390" class="named"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="390" class="todo"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="390" class="todo"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="390" class="todo"><title>0x0048e710 Func48e710 (19 bytes)</title></rect>
@@ -2505,7 +2505,7 @@
 <rect width="5.64" height="6.04" x="724.08" y="282.84" class="named"><title>0x004169c0 AlertAllGuards (97 bytes)</title></rect>
 <rect width="5.64" height="6.04" x="732.72" y="282.84" class="named"><title>0x004230a0 AddRoomFlipItems (97 bytes)</title></rect>
 <rect width="5.64" height="6.04" x="741.36" y="282.84" class="named"><title>0x0042f040 ControlBirdTweeter (97 bytes)</title></rect>
-<rect width="5.82" height="5.86" x="582.88" y="291.88" class="todo"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
+<rect width="5.82" height="5.86" x="582.88" y="291.88" class="named"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="300.74" class="todo"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="309.59" class="todo"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="5.82" height="5.86" x="582.88" y="318.45" class="todo"><title>0x004b42d4 Func4b42d4 (97 bytes)</title></rect>

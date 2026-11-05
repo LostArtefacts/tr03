@@ -67,4 +67,24 @@ bool UT_OKCancelBox(char *szDlgResource, HWND hWndOwner)
     return ret;
 }
 
+BOOL CALLBACK UT_OKCB_DlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+    switch (msg) {
+    case WM_INITDIALOG:
+        UT_CenterWindow(hWnd);
+        return TRUE;
+    case WM_COMMAND:
+        switch (LOWORD(wParam)) {
+        case IDOK:
+            EndDialog(hWnd, TRUE);
+            return TRUE;
+        case IDCANCEL:
+            EndDialog(hWnd, FALSE);
+            return TRUE;
+        }
+        break;
+    }
+    return FALSE;
+}
+
 }
