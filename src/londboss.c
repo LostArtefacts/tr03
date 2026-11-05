@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "game.h"
 
 void DrawLondonBossShield(ITEM_INFO *item);
@@ -59,6 +60,97 @@ void InitialiseLondonBoss(sint16 item_number)
             shptr->z = (rcossin_tbl[(angle << 1) + 1] * LondonBossRadii[lp]) >> 11;
             shptr->rgb = 0;
             angle += 512;
+            shptr++;
+        }
+    }
+}
+
+typedef struct {
+    sint16 x;
+    sint16 z;
+    sint32 rgb;
+} EXPLOSION_VERTS;
+
+typedef struct {
+    sint16 on;
+    sint16 life;
+    sint16 speed;
+    sint16 radius;
+    sint16 xrot;
+    sint16 zrot;
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    EXPLOSION_VERTS verts[16];
+} EXPLOSION_RING;
+
+extern EXPLOSION_RING ExpRings[];
+extern sint32 death_radii_londboss[5];
+extern sint32 death_heights_londboss[5];
+extern sint32 dradii_londboss[5];
+extern sint32 dheights1_londboss[5];
+extern sint32 dheights2_londboss[5];
+extern sint32 wibble;
+
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+
+void ExplodeLondonBoss(ITEM_INFO *item)
+{
+    SHIELD_POINTS *shptr;
+    sint32 lp, lp1, angle, y, r, g, b;
+
+    if (bossdata.explode_count == 1 || bossdata.explode_count == 15 || bossdata.explode_count == 25 ||
+        bossdata.explode_count == 35 || bossdata.explode_count == 45 || bossdata.explode_count == 55) {
+        sint32 x, y, z;
+
+        x = item->pos.x_pos + ((GetRandomDraw() & 1023) - 512);
+        y = item->pos.y_pos - (GetRandomDraw() & 1023) - 256;
+        z = item->pos.z_pos + ((GetRandomDraw() & 1023) - 512);
+
+        ExpRings[bossdata.ring_count].x = x;
+        ExpRings[bossdata.ring_count].y = y;
+        ExpRings[bossdata.ring_count].z = z;
+        ExpRings[bossdata.ring_count].on = 1;
+        bossdata.ring_count++;
+
+        TriggerExplosionSparks(x, y, z, 3, -2, 2, 0);
+        for (lp = 0; lp < 2; lp++) {
+            TriggerExplosionSparks(x, y, z, 3, -1, 2, 0);
+        }
+
+        SoundEffect(76, &item->pos, 0x800004);
+    }
+
+    for (lp = 0; lp < 5; lp++) {
+        if (bossdata.explode_count < 128) {
+            death_radii_londboss[lp] = (dradii_londboss[lp] >> 4) + ((dradii_londboss[lp] * bossdata.explode_count) >> 7);
+            death_heights_londboss[lp] = dheights2_londboss[lp] + (((dheights1_londboss[lp] - dheights2_londboss[lp]) * bossdata.explode_count) >> 7);
+        }
+    }
+
+    shptr = &LondonBossShield[0];
+
+    for (lp = 0; lp < 5; lp++) {
+        y = death_heights_londboss[lp];
+        angle = (wibble << 3) & 511;
+        for (lp1 = 0; lp1 < 8; lp1++) {
+            shptr->x = (rcossin_tbl[angle << 1] * death_radii_londboss[lp]) >> 11;
+            shptr->y = y;
+            shptr->z = (rcossin_tbl[(angle << 1) + 1] * death_radii_londboss[lp]) >> 11;
+
+            if (lp != 0 && lp != 4 && bossdata.explode_count < 64) {
+                r = (GetRandomDraw() & 31) + 224;
+                g = (r >> 2) + (GetRandomDraw() & 63);
+                b = GetRandomDraw() & 63;
+                r = (r * (64 - bossdata.explode_count)) >> 6;
+                g = (g * (64 - bossdata.explode_count)) >> 6;
+                b = (b * (64 - bossdata.explode_count)) >> 6;
+                shptr->rgb = b | (r << 8) | (g << 16);
+            } else {
+                shptr->rgb = 0;
+            }
+            angle += 512;
+            angle &= 4095;
             shptr++;
         }
     }
@@ -209,25 +301,6 @@ void ControlLaserBolts(sint16 item_number)
     }
     TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, rad, 0, g, b);
 }
-
-typedef struct {
-    sint16 x;
-    sint16 z;
-    sint32 rgb;
-} EXPLOSION_VERTS;
-
-typedef struct {
-    sint16 on;
-    sint16 life;
-    sint16 speed;
-    sint16 radius;
-    sint16 xrot;
-    sint16 zrot;
-    sint32 x;
-    sint32 y;
-    sint32 z;
-    EXPLOSION_VERTS verts[16];
-} EXPLOSION_RING;
 
 int abs(int x);
 #pragma intrinsic(abs)
