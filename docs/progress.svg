@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="203.60" height="12" x="0" y="0" class="named"><title>643 · 43.50%</title></rect>
-<rect width="264.40" height="12" x="203.60" y="0" class="todo"><title>835 · 56.50%</title></rect>
+<rect width="203.92" height="12" x="0" y="0" class="named"><title>644 · 43.57%</title></rect>
+<rect width="264.08" height="12" x="203.92" y="0" class="todo"><title>834 · 56.43%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">43.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">643</tspan> · <tspan class="todo">835</tspan></text>
+<text text-anchor="end" x="648" y="7.50">43.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">644</tspan> · <tspan class="todo">834</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="67.42" height="12" x="0" y="0" class="named"><title>96 KB · 14.41%</title></rect>
-<rect width="400.58" height="12" x="67.42" y="0" class="todo"><title>569 KB · 85.59%</title></rect>
+<rect width="67.63" height="12" x="0" y="0" class="named"><title>96 KB · 14.45%</title></rect>
+<rect width="400.37" height="12" x="67.63" y="0" class="todo"><title>569 KB · 85.55%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">96 KB</tspan> · <tspan class="todo">569 KB</tspan></text>
@@ -1002,7 +1002,7 @@
 <rect width="12" height="12" x="555" y="270" class="named"><title>0x00467d60 SOUND_EndScene (134 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="270" class="named"><title>0x00467df0 SOUND_Stop (36 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="270" class="named"><title>0x00467e20 SOUND_Init (32 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="270" class="todo"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="270" class="named"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="270" class="todo"><title>0x00467f70 GetSpheres (733 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="270" class="todo"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="270" class="named"><title>0x00468580 InitInterpolate2 (52 bytes)</title></rect>
@@ -2094,7 +2094,7 @@
 <rect width="10.11" height="10.36" x="473.28" y="241.08" class="todo"><title>0x0044d060 LaraInitialiseMeshes (297 bytes)</title></rect>
 <rect width="10.11" height="10.36" x="473.28" y="254.44" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
 <rect width="10.11" height="10.33" x="473.28" y="267.80" class="todo"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
-<rect width="10.11" height="10.33" x="473.28" y="281.13" class="todo"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
+<rect width="10.11" height="10.33" x="473.28" y="281.13" class="named"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="10.11" height="10.15" x="473.28" y="294.46" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="10.11" height="10.15" x="473.28" y="307.61" class="named"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
 <rect width="10.11" height="10.12" x="473.28" y="320.77" class="todo"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
