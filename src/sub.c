@@ -267,6 +267,18 @@ void SubEffects(sint16 item_number)
     UpdateWakeFX_sub();
 }
 
+void UpdateWakeFX_sub(void)
+{
+    int i, j;
+
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < NUM_WAKE_SPRITES; j++) {
+            if (SubWakePts[j][i].life)
+                SubWakePts[j][i].life--;
+        }
+    }
+}
+
 void TriggerSubMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle)
 {
     sint32 size, xv, zv;
