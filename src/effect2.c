@@ -448,6 +448,134 @@ extern SP_DYNAMIC spark_dynamics[32];
 void TriggerExplosionSmokeEnd(sint32 x, sint32 y, sint32 z, sint32 uw);
 void TriggerExplosionSmoke(sint32 x, sint32 y, sint32 z, sint32 uw);
 
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum)
+{
+    sint32 lp1, fric;
+    SPARKS *sptr;
+    SP_DYNAMIC *sdptr;
+    uint8 extra_tab[6] = {0, 4, 7, 10};
+    sint32 dx, dz;
+    sint32 tr, tg, tb;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    if (uw == 1) {
+        sptr->sR = 255;
+        sptr->sG = 128 + (GetRandomControl() & 63);
+        sptr->sB = 32;
+        sptr->dR = 192;
+        sptr->dG = 64 + (GetRandomControl() & 31);
+        sptr->dB = 0;
+    } else {
+        sptr->sR = 255;
+        sptr->sG = 32 + (GetRandomControl() & 15);
+        sptr->sB = 0;
+        sptr->dR = 192 + (GetRandomControl() & 63);
+        sptr->dG = 128 + (GetRandomControl() & 63);
+        sptr->dB = 32;
+    }
+    if (uw == 1) {
+        sptr->ColFadeSpeed = 7;
+        sptr->FadeToBlack = 8;
+        sptr->sLife = sptr->Life = (GetRandomControl() & 7) + 16;
+        sptr->TransType = 2;
+        sptr->RoomNumber = roomnum;
+    } else {
+        sptr->ColFadeSpeed = 8;
+        sptr->FadeToBlack = 16;
+        sptr->sLife = sptr->Life = (GetRandomControl() & 7) + 24;
+        sptr->TransType = 2;
+    }
+    fric = extra_tab[extra_trigs] + (GetRandomControl() & 7) - 4;
+    sptr->extras = extra_trigs | (fric << 3);
+    sptr->Dynamic = dyn;
+    if (dyn == -2) {
+        sdptr = &spark_dynamics[0];
+        for (lp1 = 0; lp1 < 32; lp1++) {
+            if (!sdptr->On) {
+                sdptr->On = 1;
+                sdptr->Falloff = 4;
+                if (uw == 1)
+                    sdptr->Flags = 2;
+                else
+                    sdptr->Flags = 1;
+                sptr->Dynamic = lp1;
+                break;
+            }
+            sdptr++;
+        }
+        if (lp1 == 32)
+            sptr->Dynamic = -1;
+    }
+    sptr->x = x + (GetRandomControl() & 31) - 16;
+    sptr->y = y + (GetRandomControl() & 31) - 16;
+    sptr->z = z + (GetRandomControl() & 31) - 16;
+    sptr->Xvel = (GetRandomControl() & 4095) - 2048;
+    sptr->Yvel = (GetRandomControl() & 4095) - 2048;
+    sptr->Zvel = (GetRandomControl() & 4095) - 2048;
+    if (dyn == -2 && uw != 1) {
+        sptr->x = x + (GetRandomControl() & 511) - 256;
+        sptr->y = y + (GetRandomControl() & 511) - 256;
+        sptr->z = z + (GetRandomControl() & 511) - 256;
+    } else {
+        sptr->x = x + (GetRandomControl() & 31) - 16;
+        sptr->y = y + (GetRandomControl() & 31) - 16;
+        sptr->z = z + (GetRandomControl() & 31) - 16;
+    }
+    if (uw == 1)
+        sptr->Friction = 1 | (1 << 4);
+    else
+        sptr->Friction = 3 | (3 << 4);
+    if (GetRandomControl() & 1) {
+        if (uw == 1)
+            sptr->Flags = 2 | 8 | 16 | 512 | 2048;
+        else
+            sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        sptr->RotAdd = (GetRandomControl() & 255) - 128;
+    } else {
+        if (uw == 1)
+            sptr->Flags = 2 | 8 | 512 | 2048;
+        else
+            sptr->Flags = 2 | 8 | 512;
+    }
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = 0;
+    fric = (GetRandomControl() & 15) + 40;
+    sptr->Width = sptr->sWidth = fric;
+    sptr->dWidth = fric << 1;
+    fric += (GetRandomControl() & 7) + 8;
+    sptr->Height = sptr->sHeight = fric;
+    sptr->dHeight = fric << 1;
+    sptr->dHeight = fric << 1;
+    sptr->MaxYvel = 0;
+    if (uw != 2) {
+        if (extra_trigs == 0)
+            TriggerExplosionSmokeEnd(x, y, z, uw);
+        else
+            TriggerExplosionSmoke(x, y, z, uw);
+    } else {
+        tr = sptr->sR;
+        tg = sptr->sG;
+        tb = sptr->sB;
+        sptr->sR = tb;
+        sptr->sG = tr;
+        sptr->sB = tg;
+        tr = sptr->dR;
+        tg = sptr->dG;
+        tb = sptr->dB;
+        sptr->dR = tb;
+        sptr->dG = tr;
+        sptr->dB = tg;
+        sptr->Flags |= 0x2000;
+    }
+}
+
 void TriggerExplosionSmokeEnd(sint32 x, sint32 y, sint32 z, sint32 uw)
 {
     sint32 size;
