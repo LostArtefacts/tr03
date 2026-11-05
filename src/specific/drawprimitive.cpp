@@ -13,4 +13,9 @@ HRESULT HWBeginScene(void)
     return D3DDev->BeginScene();
 }
 
+HRESULT HWEndScene(void)
+{
+    return D3DDev->EndScene();
+}
+
 }

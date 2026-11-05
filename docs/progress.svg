@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="266.55" height="12" x="0" y="0" class="named"><title>938 · 63.46%</title></rect>
-<rect width="1.42" height="12" x="266.55" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="152.03" height="12" x="267.97" y="0" class="todo"><title>535 · 36.20%</title></rect>
+<rect width="266.83" height="12" x="0" y="0" class="named"><title>939 · 63.53%</title></rect>
+<rect width="1.42" height="12" x="266.83" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="151.75" height="12" x="268.25" y="0" class="todo"><title>534 · 36.13%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">63.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">938</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">535</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">939</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">534</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.55" height="12" x="0" y="0" class="named"><title>297 KB · 44.42%</title></rect>
-<rect width="3.69" height="12" x="186.55" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.76" height="12" x="190.24" y="0" class="todo"><title>365 KB · 54.71%</title></rect>
+<rect width="186.56" height="12" x="0" y="0" class="named"><title>297 KB · 44.42%</title></rect>
+<rect width="3.69" height="12" x="186.56" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.76" height="12" x="190.24" y="0" class="todo"><title>365 KB · 54.70%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1425,7 +1425,7 @@
 <rect width="12" height="12" x="120" y="405" class="todo"><title>0x00490780 Func490780 (281 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="405" class="todo"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="405" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="405" class="todo"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="405" class="named"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="405" class="todo"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="405" class="todo"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="405" class="todo"><title>0x00490b40 Func490b40 (88 bytes)</title></rect>
@@ -2995,7 +2995,7 @@
 <rect width="1.58" height="2.58" x="731.69" y="422.06" class="named"><title>0x0042f3f0 invisibility_on (12 bytes)</title></rect>
 <rect width="1.58" height="2.58" x="736.27" y="422.06" class="named"><title>0x0042f420 dynamic_light_on (12 bytes)</title></rect>
 <rect width="1.58" height="2.58" x="740.85" y="422.06" class="todo"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
-<rect width="1.58" height="2.58" x="745.42" y="422.06" class="todo"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
+<rect width="1.58" height="2.58" x="745.42" y="422.06" class="named"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
 <rect width="2.51" height="1.47" x="722.09" y="427.64" class="named"><title>0x0042d990 KillAllCurrentItems (11 bytes)</title></rect>
 <rect width="2.51" height="1.47" x="722.09" y="432.11" class="named"><title>0x0042ecd0 finish_level_effect (11 bytes)</title></rect>
 <rect width="2.51" height="1.47" x="722.09" y="436.58" class="named"><title>0x0044ee30 lara_as_waterroll (11 bytes)</title></rect>
