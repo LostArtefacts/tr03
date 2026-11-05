@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="259.62" height="12" x="0" y="0" class="named"><title>913 · 61.81%</title></rect>
-<rect width="1.42" height="12" x="259.62" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="158.96" height="12" x="261.04" y="0" class="todo"><title>559 · 37.85%</title></rect>
+<rect width="259.91" height="12" x="0" y="0" class="named"><title>914 · 61.88%</title></rect>
+<rect width="1.42" height="12" x="259.91" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="158.67" height="12" x="261.33" y="0" class="todo"><title>558 · 37.78%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">61.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">913</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">559</tspan></text>
+<text text-anchor="end" x="600" y="7.50">61.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">914</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">558</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.13" height="12" x="0" y="0" class="named"><title>296 KB · 44.32%</title></rect>
-<rect width="3.69" height="12" x="186.13" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.18" height="12" x="189.82" y="0" class="todo"><title>366 KB · 54.80%</title></rect>
+<rect width="186.15" height="12" x="0" y="0" class="named"><title>296 KB · 44.32%</title></rect>
+<rect width="3.69" height="12" x="186.15" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="230.16" height="12" x="189.84" y="0" class="todo"><title>366 KB · 54.80%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1356,7 +1356,7 @@
 <rect width="12" height="12" x="585" y="375" class="named"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="375" class="named"><title>0x0048d150 S_SoundPlaySampleLooped (70 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="375" class="named"><title>0x0048d1a0 S_SoundSetPanAndVolume (57 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="375" class="todo"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="375" class="named"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="375" class="todo"><title>0x0048d200 S_SoundSetMasterVolume (10 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="375" class="todo"><title>0x0048d210 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="375" class="todo"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
@@ -2912,7 +2912,7 @@
 <rect width="3.03" height="3.24" x="688.18" y="412.77" class="named"><title>0x0042fa70 RumbleNoShake (28 bytes)</title></rect>
 <rect width="3.03" height="3.24" x="688.18" y="419.01" class="named"><title>0x00441310 lara_as_reach (28 bytes)</title></rect>
 <rect width="3.03" height="3.24" x="688.18" y="425.25" class="todo"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
-<rect width="3.03" height="3.24" x="688.18" y="431.50" class="todo"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
+<rect width="3.03" height="3.24" x="688.18" y="431.50" class="named"><title>0x0048d1e0 S_SoundSetPitch (28 bytes)</title></rect>
 <rect width="3.03" height="3.13" x="688.18" y="437.74" class="named"><title>0x00438400 Inv_RemoveAllItems (27 bytes)</title></rect>
 <rect width="3.03" height="3.13" x="688.18" y="443.87" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="3.25" height="2.91" x="694.22" y="394.04" class="named"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>

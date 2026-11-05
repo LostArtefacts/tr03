@@ -60,4 +60,11 @@ void S_SoundSetPanAndVolume(int nHandle, sint16 wPan, unsigned short wVolume)
     DS_AdjustVolumeAndPan(nHandle, CalcVolume(wVolume), CalcPan(wPan));
 }
 
+void S_SoundSetPitch(int nHandle, int nPitch)
+{
+    if (!sound_active)
+        return;
+    DS_AdjustPitch(nHandle, nPitch);
+}
+
 }
