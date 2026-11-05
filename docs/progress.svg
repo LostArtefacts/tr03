@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="301.79" height="12" x="0" y="0" class="named"><title>1062 · 71.85%</title></rect>
-<rect width="1.99" height="12" x="301.79" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="116.22" height="12" x="303.78" y="0" class="todo"><title>409 · 27.67%</title></rect>
+<rect width="302.07" height="12" x="0" y="0" class="named"><title>1063 · 71.92%</title></rect>
+<rect width="1.99" height="12" x="302.07" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="115.94" height="12" x="304.06" y="0" class="todo"><title>408 · 27.60%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">71.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1062</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">409</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1063</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">408</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.71" height="12" x="0" y="0" class="named"><title>306 KB · 45.88%</title></rect>
-<rect width="3.79" height="12" x="192.71" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.49" height="12" x="196.51" y="0" class="todo"><title>355 KB · 53.21%</title></rect>
+<rect width="192.77" height="12" x="0" y="0" class="named"><title>306 KB · 45.90%</title></rect>
+<rect width="3.79" height="12" x="192.77" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.43" height="12" x="196.57" y="0" class="todo"><title>355 KB · 53.20%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
@@ -1211,7 +1211,7 @@
 <rect width="12" height="12" x="660" y="330" class="todo"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="330" class="named"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="330" class="named"><title>0x00481d50 LoadCameras (96 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="330" class="todo"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="330" class="named"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="330" class="todo"><title>0x00481e10 LoadBoxes (518 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="330" class="todo"><title>0x00482020 LoadAnimatedTextures (284 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="345" class="todo"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
@@ -2515,7 +2515,7 @@
 <rect width="5.82" height="5.80" x="582.88" y="353.69" class="named"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="362.49" class="named"><title>0x00451640 S_DrawLondonBoss (96 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="371.29" class="named"><title>0x00481d50 LoadCameras (96 bytes)</title></rect>
-<rect width="5.82" height="5.80" x="582.88" y="380.09" class="todo"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
+<rect width="5.82" height="5.80" x="582.88" y="380.09" class="named"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="388.89" class="named"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="5.82" height="5.74" x="582.88" y="397.69" class="named"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
 <rect width="5.82" height="5.74" x="582.88" y="406.43" class="named"><title>0x00439e00 AddAssaultTime (95 bytes)</title></rect>

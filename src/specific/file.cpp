@@ -92,6 +92,20 @@ int LoadCameras(HANDLE file)
     return 1;
 }
 
+int LoadSoundEffects(HANDLE file)
+{
+    DWORD read;
+
+    MyReadFile(file, &number_sound_effects, sizeof(int), &read, 0);
+    if (number_sound_effects) {
+        sound_effects = (OBJECT_VECTOR *)game_malloc(sizeof(OBJECT_VECTOR) * number_sound_effects, 20);
+        if (!sound_effects)
+            return 0;
+        MyReadFile(file, sound_effects, sizeof(OBJECT_VECTOR) * number_sound_effects, &read, 0);
+    }
+    return 1;
+}
+
 void build_ext(char *fname, char *ext)
 {
     while (*fname != '.' && *fname != 0)
