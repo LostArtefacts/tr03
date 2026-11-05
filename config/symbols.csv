@@ -2101,6 +2101,7 @@ address,size,name,symbol
 0x00625f88,512,bound_list,_bound_list
 0x00626188,4,bound_start,_bound_start
 0x0062618c,4,bound_end,_bound_end
+0x00626190,24,null_rotations,_null_rotations
 0x006261a8,4,wibble,_wibble
 0x006261ac,4,KillEverythingFlag,_KillEverythingFlag
 0x006261b0,4,next_spark,_next_spark
