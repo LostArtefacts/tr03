@@ -1,3 +1,4 @@
+#include "specific/standard.h"
 #include "game.h"
 
 #define KAYAK_DRAW_SHIFT 32
@@ -77,7 +78,7 @@ void KayakDraw(ITEM_INFO *v)
     S_DrawWakeFX(v);
 }
 
-sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+sint32 GetWaterHeight(sint32, sint32, sint32, sint16);
 RIPPLE_STRUCT *SetupRipple(sint32 x, sint32 y, sint32 z, sint32 size, sint32 moretrans);
 
 typedef struct {
