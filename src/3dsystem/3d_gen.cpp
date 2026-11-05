@@ -156,4 +156,11 @@ void SetZNear(int nNewZNear)
     SetupZRange();
 }
 
+void SetZFar(int nNewZFar)
+{
+    phd_zfar = nNewZFar;
+    f_zfar = float(phd_zfar);
+    SetupZRange();
+}
+
 }
