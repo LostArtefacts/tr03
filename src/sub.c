@@ -112,6 +112,65 @@ void FireSubHarpoon(ITEM_INFO *v)
 
 sint32 GetFreeSpark(void);
 
+void BackgroundCollision(ITEM_INFO *v, ITEM_INFO *l, SUBINFO *sub)
+{
+    int height;
+    COLL_INFO cinfo, *coll = &cinfo;
+
+    coll->bad_pos = -NO_HEIGHT;
+    coll->bad_neg = -400;
+    coll->bad_ceiling = 400;
+    coll->old.x = v->pos.x_pos;
+    coll->old.y = v->pos.y_pos;
+    coll->old.z = v->pos.z_pos;
+    coll->radius = 300;
+    coll->trigger = NULL;
+    coll->slopes_are_walls = 0;
+    coll->slopes_are_pits = 0;
+    coll->lava_is_pit = 0;
+    coll->enable_hit = 0;
+    coll->enable_baddie_push = 1;
+    if (v->pos.x_rot >= -16384 && v->pos.x_rot <= 16384)
+        coll->facing = lara.move_angle = v->pos.y_rot;
+    else
+        coll->facing = lara.move_angle = v->pos.y_rot - 32768;
+    height = phd_sin(v->pos.x_rot) * 1024 >> W2V_SHIFT;
+    if (height < 0)
+        height = -height;
+    if (height < 200)
+        height = 200;
+    coll->bad_neg = -height;
+    GetCollisionInfo(coll, v->pos.x_pos, v->pos.y_pos + height / 2, v->pos.z_pos, v->room_number, height);
+    ShiftItem(v, coll);
+    if (coll->coll_type == COLL_FRONT) {
+        if (sub->RotX > 0x1ffe0000)
+            sub->RotX += 0x16c0000;
+        else if (sub->RotX < -0x1ffe0000)
+            sub->RotX -= 0x16c0000;
+        else
+            sub->Vel = 0;
+    } else if (coll->coll_type == COLL_TOP) {
+        if (sub->RotX >= -0x1ffe0000)
+            sub->RotX -= 0x16c0000;
+    } else if (coll->coll_type == COLL_TOPFRONT)
+        sub->Vel = 0;
+    else if (coll->coll_type == COLL_LEFT)
+        v->pos.y_rot += 5 * 182;
+    else if (coll->coll_type == COLL_RIGHT)
+        v->pos.y_rot -= 5 * 182;
+    else if (coll->coll_type == COLL_CLAMP) {
+        v->pos.x_pos = coll->old.x;
+        v->pos.y_pos = coll->old.y;
+        v->pos.z_pos = coll->old.z;
+        sub->Vel = 0;
+        return;
+    }
+    if (coll->mid_floor < 0) {
+        v->pos.y_pos += coll->mid_floor;
+        sub->RotX += 0x16c0000;
+    }
+}
+
 void TriggerSubMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle)
 {
     sint32 size, xv, zv;
