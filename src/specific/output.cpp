@@ -15,6 +15,27 @@ extern int phd_zfar;
 extern unsigned short inv_colours[17];
 extern void (*InsertFlatRect)(int x1, int y1, int x2, int y2, int zdepth, int col);
 
+typedef struct phdtexturestruct {
+    unsigned short drawtype;
+    unsigned short tpage;
+    unsigned short u1;
+    unsigned short v1;
+    unsigned short u2;
+    unsigned short v2;
+    unsigned short u3;
+    unsigned short v3;
+    unsigned short u4;
+    unsigned short v4;
+} PHDTEXTURESTRUCT;
+
+extern PHDTEXTURESTRUCT phdtextinfo[];
+extern sint16 *aranges;
+extern int light_level[4];
+extern sint16 GF_SunsetEnabled;
+extern int SunsetTimer;
+
+sint32 __fastcall phd_sin(sint32 angle);
+
 int Sync(void);
 void ScreenPartialDump(void);
 
@@ -58,12 +79,40 @@ void S_ClearScreen(void)
     ScreenClear(false);
 }
 
+void AnimateTextures(int n)
+{
+    static int comp;
+    PHDTEXTURESTRUCT tex;
+    sint16 *range;
+    int nRanges;
+    int nFrames;
+    int i;
+
+    for (comp += n; comp > 5; comp -= 5) {
+        range = aranges;
+        nRanges = *range++;
+        for (i = 0; i < nRanges; i++) {
+            nFrames = *range++;
+            tex = phdtextinfo[*range];
+            while (nFrames > 0) {
+                phdtextinfo[range[0]] = phdtextinfo[range[1]];
+                range++;
+                nFrames--;
+            }
+            phdtextinfo[*range] = tex;
+            range++;
+        }
+    }
+}
+
 void S_SetupAboveWater(int underwater)
 {
     water_effect = underwater;
     shade_effect = 0;
     bBlueEffect = underwater;
 }
+
+static int pulse;
 
 void ScreenPartialDump(void)
 {
