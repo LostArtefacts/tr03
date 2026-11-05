@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "game.h"
 #include <string.h>
 
@@ -104,6 +105,27 @@ void T_FlashText(TEXTSTRING *textString, sint16 ok, sint16 rate)
     }
     else
         textString->flags &= ~T_FLASH;
+}
+
+uint32 GetTextScaleV(uint32 scaleV);
+
+void T_AddBackground(TEXTSTRING *textString, sint16 xsize, sint16 ysize, sint16 xoff, sint16 yoff, sint16 zoff, sint16 colour, GOURAUD_FILL *gourptr, uint16 flags)
+{
+    uint32 scaleV, scaleH;
+
+    scaleH = GetTextScaleH(textString->scaleH);
+    scaleV = GetTextScaleV(textString->scaleV);
+    if (textString) {
+        textString->flags |= T_ADDBACKGROUND;
+        textString->bgndSizeX = (sint16)((scaleH * xsize) >> 16);
+        textString->bgndSizeY = (sint16)((scaleV * ysize) >> 16);
+        textString->bgndOffX = (sint16)((scaleH * xoff) >> 16);
+        textString->bgndOffY = (sint16)((scaleV * yoff) >> 16);
+        textString->bgndOffZ = zoff;
+        textString->bgndColour = colour;
+        textString->bgndGour = gourptr;
+        textString->bgndflags = flags;
+    }
 }
 
 void T_RemoveBackground(TEXTSTRING *textString)

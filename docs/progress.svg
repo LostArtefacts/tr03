@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="270.26" height="12" x="0" y="0" class="named"><title>864 · 58.50%</title></rect>
-<rect width="191.74" height="12" x="270.26" y="0" class="todo"><title>613 · 41.50%</title></rect>
+<rect width="270.57" height="12" x="0" y="0" class="named"><title>865 · 58.56%</title></rect>
+<rect width="191.43" height="12" x="270.57" y="0" class="todo"><title>612 · 41.44%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">58.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">864</tspan> · <tspan class="todo">613</tspan></text>
+<text text-anchor="end" x="642" y="7.50">58.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">865</tspan> · <tspan class="todo">612</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="162.24" height="12" x="0" y="0" class="named"><title>234 KB · 35.12%</title></rect>
-<rect width="299.76" height="12" x="162.24" y="0" class="todo"><title>432 KB · 64.88%</title></rect>
+<rect width="162.34" height="12" x="0" y="0" class="named"><title>234 KB · 35.14%</title></rect>
+<rect width="299.66" height="12" x="162.34" y="0" class="todo"><title>432 KB · 64.86%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">35.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">234 KB</tspan> · <tspan class="todo">432 KB</tspan></text>
@@ -1027,7 +1027,7 @@
 <rect width="12" height="12" x="180" y="285" class="named"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="285" class="named"><title>0x0046ad90 T_ChangeText (55 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="285" class="named"><title>0x0046add0 T_FlashText (43 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="285" class="todo"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="285" class="named"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="285" class="named"><title>0x0046ae90 T_RemoveBackground (16 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="285" class="named"><title>0x0046aea0 T_AddOutline (41 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="285" class="named"><title>0x0046aed0 T_RemoveOutline (16 bytes)</title></rect>
@@ -2362,7 +2362,7 @@
 <rect width="7.25" height="6.99" x="647.79" y="244.15" class="todo"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
 <rect width="7.25" height="6.99" x="658.04" y="244.15" class="named"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
 <rect width="7.25" height="6.99" x="668.30" y="244.15" class="todo"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
-<rect width="7.25" height="6.99" x="678.55" y="244.15" class="todo"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
+<rect width="7.25" height="6.99" x="678.55" y="244.15" class="named"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
 <rect width="7.25" height="6.99" x="688.80" y="244.15" class="todo"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
 <rect width="7.20" height="6.99" x="699.05" y="244.15" class="todo"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>
 <rect width="7.20" height="6.99" x="709.25" y="244.15" class="named"><title>0x00411450 InitialiseVulture (143 bytes)</title></rect>
