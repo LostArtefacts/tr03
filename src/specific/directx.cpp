@@ -95,4 +95,9 @@ bool DXCreateDirect3DDevice(LPDIRECT3D2 lpD3D2, GUID Guid, LPDIRECTDRAWSURFACE3 
     return true;
 }
 
+void DXGetSurfaceDesc(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC *ddsd)
+{
+    lpSurface->GetSurfaceDesc(ddsd);
+}
+
 }
