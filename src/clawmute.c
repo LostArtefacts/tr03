@@ -97,6 +97,91 @@ void TriggerPlasmaBall_clawmute(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos1, 
     }
 }
 
+int abs(int x);
+#pragma intrinsic(abs)
+extern sint32 wibble;
+void TriggerPlasmaBallFlame_clawmute(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv);
+void KillEffect(sint16 fx_num);
+void EffectNewRoom(sint16 fx_num, sint16 room_number);
+int ItemNearLara(PHD_3DPOS *pos, sint32 radius);
+
+void ControlClawmutePlasmaBall(sint16 fx_number)
+{
+    FX_INFO *fx;
+    FLOOR_INFO *floor;
+    sint32 old_x, old_y, old_z, x, speed;
+    sint32 rnd, r, g, b;
+    uint8 radtab[2] = {13, 7};
+    sint16 room_number;
+
+    fx = &effects[fx_number];
+    old_x = fx->pos.x_pos;
+    old_y = fx->pos.y_pos;
+    old_z = fx->pos.z_pos;
+    if (fx->speed < 384 && fx->flag1 == 0)
+        fx->speed += (fx->speed >> 3) + 4;
+    if (fx->flag1 == 1) {
+        fx->fallspeed++;
+        if (fx->speed > 8)
+            fx->speed -= 2;
+        if (fx->pos.x_rot > -0x3c00)
+            fx->pos.x_rot -= 0x100;
+    }
+    speed = (fx->speed * phd_cos(fx->pos.x_rot)) >> W2V_SHIFT;
+    fx->pos.z_pos += (speed * phd_cos(fx->pos.y_rot)) >> W2V_SHIFT;
+    fx->pos.x_pos += (speed * phd_sin(fx->pos.y_rot)) >> W2V_SHIFT;
+    fx->pos.y_pos += -((fx->speed * phd_sin(fx->pos.x_rot)) >> W2V_SHIFT) + fx->fallspeed;
+    if (wibble & 4) {
+        if (fx->flag1 == 0)
+            TriggerPlasmaBallFlame_clawmute(fx_number, fx->flag1, 0, 0, 0);
+        else
+            TriggerPlasmaBallFlame_clawmute(fx_number, fx->flag1, 0, abs(old_y - fx->pos.y_pos) << 3, 0);
+    }
+    room_number = fx->room_number;
+    floor = GetFloor(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, &room_number);
+    if (fx->pos.y_pos >= GetHeight(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos) || fx->pos.y_pos < GetCeiling(floor, fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos)) {
+        PHD_VECTOR pos;
+
+        if (fx->flag1 == 0) {
+            pos.x = old_x;
+            pos.y = old_y;
+            pos.z = old_z;
+            r = 5 + (GetRandomControl() & 3);
+            for (x = 0; x < r; x++)
+                TriggerPlasmaBall_clawmute(NULL, 1, &pos, fx->room_number, fx->pos.y_rot);
+        }
+        KillEffect(fx_number);
+        return;
+    }
+    if (room[room_number].flags & UNDERWATER) {
+        KillEffect(fx_number);
+        return;
+    }
+    if (ItemNearLara(&fx->pos, 200) && fx->flag1 == 0) {
+        PHD_VECTOR pos;
+
+        pos.x = fx->pos.x_pos;
+        pos.y = fx->pos.y_pos;
+        pos.z = fx->pos.z_pos;
+        r = 3 + (GetRandomControl() & 1);
+        for (x = 0; x < r; x++)
+            TriggerPlasmaBall_clawmute(NULL, 1, &pos, fx->room_number, fx->pos.y_rot);
+        lara_item->hit_points -= 200;
+        lara_item->hit_status = 1;
+        KillEffect(fx_number);
+        return;
+    }
+    if (room_number != fx->room_number)
+        EffectNewRoom(fx_number, lara_item->room_number);
+    if (radtab[fx->flag1]) {
+        rnd = GetRandomControl();
+        b = 31 - ((rnd >> 4) & 3);
+        g = 24 - ((rnd >> 6) & 3);
+        r = rnd & 7;
+        TriggerDynamic(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, radtab[fx->flag1], r, g, b);
+    }
+}
+
 void TriggerPlasmaBallFlame_clawmute(sint16 fx_number, sint32 type, sint32 xv, sint32 yv, sint32 zv)
 {
     SPARKS *sptr;
