@@ -56,6 +56,69 @@ void set_arm_info(LARA_ARM *arm, int frame)
     arm->frame_number = frame;
 }
 
+void undraw_pistol_mesh_left(int weapon_type);
+void undraw_pistol_mesh_right(int weapon_type);
+
+void undraw_pistols(int weapon_type)
+{
+    PISTOL_DEF *p;
+    sint16 anil, anir;
+
+    p = &PistolTable[lara.gun_type];
+
+    anil = lara.left_arm.frame_number;
+
+    if (anil >= p->RecoilAnim) {
+        anil = p->Draw1Anim2;
+    } else if (anil > 0 && anil < p->Draw1Anim) {
+        lara.left_arm.x_rot -= lara.left_arm.x_rot / anil;
+        lara.left_arm.y_rot -= lara.left_arm.y_rot / anil;
+        anil--;
+    } else if (anil == 0) {
+        lara.left_arm.x_rot = lara.left_arm.y_rot = lara.left_arm.z_rot = 0;
+        anil = p->RecoilAnim - 1;
+    } else if (anil > p->Draw1Anim && anil < p->RecoilAnim) {
+        anil--;
+        if (anil == p->Draw2Anim - 1) {
+            undraw_pistol_mesh_left(weapon_type);
+            SoundEffect(7, &lara_item->pos, 0);
+        }
+    }
+    set_arm_info(&lara.left_arm, anil);
+
+    anir = lara.right_arm.frame_number;
+
+    if (anir >= p->RecoilAnim) {
+        anir = p->Draw1Anim2;
+    } else if (anir > 0 && anir < p->Draw1Anim) {
+        lara.right_arm.x_rot -= lara.right_arm.x_rot / anir;
+        lara.right_arm.y_rot -= lara.right_arm.y_rot / anir;
+        anir--;
+    } else if (anir == 0) {
+        lara.right_arm.x_rot = lara.right_arm.y_rot = lara.right_arm.z_rot = 0;
+        anir = p->RecoilAnim - 1;
+    } else if (anir > p->Draw1Anim && anir < p->RecoilAnim) {
+        anir--;
+        if (anir == p->Draw2Anim - 1) {
+            undraw_pistol_mesh_right(weapon_type);
+            SoundEffect(7, &lara_item->pos, 0);
+        }
+    }
+    set_arm_info(&lara.right_arm, anir);
+
+    if (anil == p->Draw1Anim && anir == p->Draw1Anim) {
+        lara.gun_status = LG_ARMLESS;
+        lara.right_arm.frame_number = lara.left_arm.frame_number = 0;
+        lara.target = NULL;
+        lara.left_arm.lock = lara.right_arm.lock = 0;
+    }
+
+    if (!(input & IN_LOOK)) {
+        lara.torso_y_rot = lara.head_y_rot = (lara.left_arm.y_rot + lara.right_arm.y_rot) / 4;
+        lara.torso_x_rot = lara.head_x_rot = (lara.left_arm.x_rot + lara.right_arm.x_rot) / 4;
+    }
+}
+
 void ready_pistols(int weapon_type)
 {
     lara.gun_status = LG_READY;
