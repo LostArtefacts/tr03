@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="257.74" height="12" x="0" y="0" class="named"><title>824 · 55.79%</title></rect>
-<rect width="204.26" height="12" x="257.74" y="0" class="todo"><title>653 · 44.21%</title></rect>
+<rect width="258.06" height="12" x="0" y="0" class="named"><title>825 · 55.86%</title></rect>
+<rect width="203.94" height="12" x="258.06" y="0" class="todo"><title>652 · 44.14%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">55.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">824</tspan> · <tspan class="todo">653</tspan></text>
+<text text-anchor="end" x="642" y="7.50">55.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">825</tspan> · <tspan class="todo">652</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="135.57" height="12" x="0" y="0" class="named"><title>195 KB · 29.34%</title></rect>
-<rect width="326.43" height="12" x="135.57" y="0" class="todo"><title>470 KB · 70.66%</title></rect>
+<rect width="136.09" height="12" x="0" y="0" class="named"><title>196 KB · 29.46%</title></rect>
+<rect width="325.91" height="12" x="136.09" y="0" class="todo"><title>470 KB · 70.54%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">29.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">195 KB</tspan> · <tspan class="todo">470 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">29.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">196 KB</tspan> · <tspan class="todo">470 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -466,7 +466,7 @@
 <rect width="12" height="12" x="15" y="120" class="named"><title>0x00431650 TriggerFlameThrower (564 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="120" class="named"><title>0x00431890 TriggerFlamethrowerFlame (487 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="120" class="named"><title>0x00431a80 TriggerPilotFlame (395 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="120" class="todo"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="120" class="named"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="120" class="named"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="120" class="todo"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="120" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
@@ -1771,7 +1771,7 @@
 <rect width="15.65" height="16.84" x="675.46" y="44.72" class="named"><title>0x00422700 xLOS (748 bytes)</title></rect>
 <rect width="15.65" height="16.84" x="694.10" y="44.72" class="todo"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="15.62" height="16.84" x="712.75" y="44.72" class="todo"><title>0x00422410 zLOS (747 bytes)</title></rect>
-<rect width="15.62" height="16.84" x="731.38" y="44.72" class="todo"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
+<rect width="15.62" height="16.84" x="731.38" y="44.72" class="named"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
 <rect width="16.02" height="16.36" x="346.05" y="64.56" class="named"><title>0x0043ec20 lara_col_all4s (744 bytes)</title></rect>
 <rect width="16.02" height="16.12" x="346.05" y="83.92" class="todo"><title>0x00467f70 GetSpheres (733 bytes)</title></rect>
 <rect width="16.02" height="16.10" x="346.05" y="103.04" class="named"><title>0x0045b260 OrcaControl (732 bytes)</title></rect>

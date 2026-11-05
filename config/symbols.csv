@@ -1866,6 +1866,7 @@ address,size,name,symbol
 0x004c55b0,12,shore_fish_ranges,_shore_fish_ranges
 0x004c55bc,3,crash_fish_ranges,_crash_fish_ranges
 0x004c55c0,24,rapids_fish_ranges,_rapids_fish_ranges
+0x004c55d8,6,FlyItem,_FlyItem
 0x004c55e0,14,footsounds,_footsounds
 0x004c55f0,2,GF_NumSecrets,_GF_NumSecrets
 0x004c55f8,32,GF_CDtracks,_GF_CDtracks
