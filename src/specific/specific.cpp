@@ -67,4 +67,9 @@ void S_SoundSetPitch(int nHandle, int nPitch)
     DS_AdjustPitch(nHandle, nPitch);
 }
 
+void S_SoundSetMasterVolume(int nVolume)
+{
+    LnMasterVolume = nVolume;
+}
+
 }
