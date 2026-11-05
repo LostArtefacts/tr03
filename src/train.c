@@ -90,3 +90,48 @@ sint32 TestHeight_train(ITEM_INFO *item, sint32 x, sint32 z, sint16 *room_number
     floor = GetFloor(pos.x, pos.y, pos.z, room_number);
     return GetHeight(floor, pos.x, pos.y, pos.z);
 }
+
+
+#define LARA_EXTRA 13
+#define EXTRA_TRAINKILL 11
+
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+
+void TrainCollision(sint16 train_number, ITEM_INFO *l, COLL_INFO *coll)
+{
+    ITEM_INFO *t;
+    sint32 s, c;
+    sint32 x, z;
+
+    t = &items[train_number];
+    if (!TestBoundsCollide(t, l, coll->radius))
+        return;
+    if (!TestCollision(t, l))
+        return;
+    SoundEffect(41, &l->pos, 2);
+    SoundEffect(53, &l->pos, 2);
+    StopSoundEffect(148);
+    l->anim_number = objects[LARA_EXTRA].anim_index;
+    l->frame_number = anims[l->anim_number].frame_base;
+    l->current_anim_state = EXTRA_TRAINKILL;
+    l->goal_anim_state = EXTRA_TRAINKILL;
+    l->hit_points = 0;
+    l->pos.y_rot = t->pos.y_rot;
+    l->fallspeed = 0;
+    l->gravity_status = 0;
+    l->speed = 0;
+    AnimateItem(l);
+    lara.extra_anim = 1;
+    lara.gun_status = LG_HANDSBUSY;
+    lara.gun_type = LG_UNARMED;
+    lara.hit_direction = -1;
+    lara.air = -1;
+    t->item_flags[1] = 160;
+    c = phd_cos(t->pos.y_rot);
+    s = phd_sin(t->pos.y_rot);
+    x = l->pos.x_pos + ((256 * s) >> W2V_SHIFT);
+    z = l->pos.z_pos + ((256 * c) >> W2V_SHIFT);
+    DoLotsOfBlood(x, l->pos.y_pos - 512, z, 1024, t->pos.y_rot, l->room_number, 15);
+}
