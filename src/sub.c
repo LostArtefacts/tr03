@@ -171,6 +171,102 @@ void BackgroundCollision(ITEM_INFO *v, ITEM_INFO *l, SUBINFO *sub)
     }
 }
 
+extern BITE_INFO sub_bites[6];
+extern uint8 SubWakeShade;
+extern sint32 wibble;
+
+void TriggerSubMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle);
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b);
+void DoWake_sub(ITEM_INFO *v, sint16 leftright);
+void UpdateWakeFX_sub(void);
+
+void SubEffects(sint16 item_number)
+{
+    ITEM_INFO *v;
+    SUBINFO *sub;
+    PHD_VECTOR pos;
+    sint32 lp;
+
+    v = &items[item_number];
+    sub = (SUBINFO *)v->data;
+
+    if (lara.skidoo == item_number) {
+        if (!sub->Vel)
+            sub->FanRot += ONE_DEGREE * 2;
+        else
+            sub->FanRot += sub->Vel >> 12;
+
+        if (sub->Vel) {
+            pos.x = sub_bites[0].x;
+            pos.y = sub_bites[0].y;
+            pos.z = sub_bites[0].z;
+            GetJointAbsPosition(v, &pos, sub_bites[0].mesh_num);
+            TriggerSubMist(pos.x, pos.y + 128, pos.z, abs(sub->Vel) >> 16, v->pos.y_rot + 0x8000);
+
+            if ((GetRandomControl() & 1) == 0) {
+                PHD_3DPOS pos3d;
+                sint16 room_number;
+
+                pos3d.x_pos = pos.x + (GetRandomControl() & 63) - 32;
+                pos3d.y_pos = pos.y + 128;
+                pos3d.z_pos = pos.z + (GetRandomControl() & 63) - 32;
+                room_number = v->room_number;
+                GetFloor(pos3d.x_pos, pos3d.y_pos, pos3d.z_pos, &room_number);
+                CreateBubble(&pos3d, room_number, 4, 8);
+            }
+        }
+    }
+
+    for (lp = 0; lp < 2; lp++) {
+        GAME_VECTOR source, target;
+        sint32 r;
+
+        r = 31 - (GetRandomControl() & 3);
+        pos.x = sub_bites[1].x;
+        pos.y = sub_bites[1].y;
+        pos.z = sub_bites[1].z << (lp * 6);
+        GetJointAbsPosition(v, &pos, sub_bites[1].mesh_num);
+
+        if (lp == 1) {
+            target.x = pos.x;
+            target.y = pos.y;
+            target.z = pos.z;
+            target.room_number = v->room_number;
+            LOS(&source, &target);
+            pos.x = target.x;
+            pos.y = target.y;
+            pos.z = target.z;
+        } else {
+            source.x = pos.x;
+            source.y = pos.y;
+            source.z = pos.z;
+            source.room_number = v->room_number;
+        }
+
+        TriggerDynamic(pos.x, pos.y, pos.z, 16 + (lp << 3), r, r, r);
+    }
+
+    if (!(wibble & 15) && sub->Vel) {
+        DoWake_sub(v, 0);
+        DoWake_sub(v, 1);
+    }
+
+    if (sub->Vel == 0) {
+        if (SubWakeShade)
+            SubWakeShade--;
+    } else {
+        if (SubWakeShade < 16)
+            SubWakeShade++;
+    }
+
+    if (sub->WeaponTimer)
+        sub->WeaponTimer--;
+
+    UpdateWakeFX_sub();
+}
+
 void TriggerSubMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle)
 {
     sint32 size, xv, zv;

@@ -1960,6 +1960,7 @@ address,size,name,symbol
 0x004c7b08,16,seal_gas,_seal_gas
 0x004c7be0,16,shiva_left,_shiva_left
 0x004c7bf0,16,shiva_right,_shiva_right
+0x004c7c08,96,sub_bites,_sub_bites
 0x004c7c78,110,T_textSpacing,_T_textSpacing
 0x004c7ce8,95,T_remapASCII,_T_remapASCII
 0x004c7d48,16,tiger_bite,_tiger_bite
