@@ -3323,3 +3323,87 @@ int GetStaticObjects(ITEM_INFO *item, PHD_ANGLE ang, sint32 hite, sint32 radius,
     }
     return 0;
 }
+
+extern void (*lara_control_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern void (*extra_control_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern void (*lara_collision_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+int KayakControl(void);
+int QuadBikeControl(void);
+int SubControl(void);
+int BigGunControl(COLL_INFO *coll);
+int MineCartControl(void);
+void LaraGun(void);
+void UpdateLaraRoom(ITEM_INFO *item, int height);
+void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll);
+
+void LaraAboveWater(ITEM_INFO *item, COLL_INFO *coll)
+{
+    coll->old.x = item->pos.x_pos;
+    coll->old.y = item->pos.y_pos;
+    coll->old.z = item->pos.z_pos;
+    coll->old_anim_state = item->current_anim_state;
+    coll->old_anim_number = item->anim_number;
+    coll->old_frame_number = item->frame_number;
+    coll->radius = LARA_RAD;
+    coll->trigger = NULL;
+    coll->lava_is_pit = 0;
+    coll->slopes_are_walls = 0;
+    coll->slopes_are_pits = 0;
+    coll->enable_hit = 1;
+    coll->enable_baddie_push = 1;
+    if ((input & IN_LOOK) && !lara.extra_anim && lara.look)
+        LookLeftRight();
+    else
+        ResetLook();
+    lara.look = 1;
+    if (lara.skidoo != NO_ITEM) {
+        if (items[lara.skidoo].object_number == 14) {
+            if (KayakControl())
+                return;
+        } else if (items[lara.skidoo].object_number == 16) {
+            if (QuadBikeControl())
+                return;
+        } else if (items[lara.skidoo].object_number == 19) {
+            if (SubControl())
+                return;
+        } else if (items[lara.skidoo].object_number == 18) {
+            if (BigGunControl(coll))
+                return;
+        } else if (items[lara.skidoo].object_number == 17) {
+            if (MineCartControl())
+                return;
+        } else {
+            LaraGun();
+            return;
+        }
+    }
+    if (lara.extra_anim)
+        (*extra_control_routines[item->current_anim_state])(item, coll);
+    else
+        (*lara_control_routines[item->current_anim_state])(item, coll);
+    if (item->pos.z_rot >= -ONE_DEGREE && item->pos.z_rot <= ONE_DEGREE)
+        item->pos.z_rot = 0;
+    else if (item->pos.z_rot < -ONE_DEGREE)
+        item->pos.z_rot += ONE_DEGREE;
+    else
+        item->pos.z_rot -= ONE_DEGREE;
+    if (lara.turn_rate >= -2 * ONE_DEGREE && lara.turn_rate <= 2 * ONE_DEGREE)
+        lara.turn_rate = 0;
+    else if (lara.turn_rate < -2 * ONE_DEGREE)
+        lara.turn_rate += 2 * ONE_DEGREE;
+    else
+        lara.turn_rate -= 2 * ONE_DEGREE;
+    item->pos.y_rot += lara.turn_rate;
+    AnimateLara(item);
+    if (!lara.extra_anim) {
+        LaraBaddieCollision(item, coll);
+        if (lara.skidoo == NO_ITEM)
+            (*lara_collision_routines[item->current_anim_state])(item, coll);
+    }
+    UpdateLaraRoom(item, -LARA_HITE / 2);
+    LaraGun();
+    LaraOnPad = 0;
+    TestTriggers(coll->trigger, 0);
+    if (!LaraOnPad)
+        lara_item->item_flags[1] = 0;
+}

@@ -1936,6 +1936,7 @@ address,size,name,symbol
 0x004c7428,,HoldStates,_HoldStates
 0x004c7448,4,mycoll,_mycoll
 0x004c7450,416,lara_control_routines,_lara_control_routines
+0x004c75b8,56,extra_control_routines,_extra_control_routines
 0x004c75f0,416,lara_collision_routines,_lara_collision_routines
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
