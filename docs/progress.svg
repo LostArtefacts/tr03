@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="310.31" height="12" x="0" y="0" class="named"><title>1092 · 73.88%</title></rect>
-<rect width="1.99" height="12" x="310.31" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="107.70" height="12" x="312.30" y="0" class="todo"><title>379 · 25.64%</title></rect>
+<rect width="310.60" height="12" x="0" y="0" class="named"><title>1093 · 73.95%</title></rect>
+<rect width="1.99" height="12" x="310.60" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="107.42" height="12" x="312.58" y="0" class="todo"><title>378 · 25.58%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">73.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1092</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">379</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1093</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">378</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.08" height="12" x="0" y="0" class="named"><title>310 KB · 46.45%</title></rect>
-<rect width="3.79" height="12" x="195.08" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="221.13" height="12" x="198.87" y="0" class="todo"><title>352 KB · 52.65%</title></rect>
+<rect width="195.19" height="12" x="0" y="0" class="named"><title>310 KB · 46.47%</title></rect>
+<rect width="3.79" height="12" x="195.19" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="221.01" height="12" x="198.99" y="0" class="todo"><title>351 KB · 52.62%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">46.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">310 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">352 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">46.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">310 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1276,7 +1276,7 @@
 <rect width="12" height="12" x="135" y="360" class="todo"><title>0x00485350 HWR_DrawRoutinesNoAlpha (339 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="360" class="todo"><title>0x004854c0 HWR_DrawPolyList (236 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="360" class="todo"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="360" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="360" class="named"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="360" class="named"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="360" class="named"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="360" class="named"><title>0x00485a80 HWR_InitVertexList (11 bytes)</title></rect>
@@ -2273,7 +2273,7 @@
 <rect width="8.14" height="7.89" x="716.88" y="222.59" class="named"><title>0x0044c630 LaraCheatGetStuff (183 bytes)</title></rect>
 <rect width="8.01" height="7.89" x="728.03" y="222.59" class="named"><title>0x00467780 ShivaDamage (180 bytes)</title></rect>
 <rect width="7.97" height="7.89" x="739.03" y="222.59" class="named"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
-<rect width="7.79" height="8.07" x="522.73" y="233.48" class="todo"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
+<rect width="7.79" height="8.07" x="522.73" y="233.48" class="named"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
 <rect width="7.79" height="8.07" x="522.73" y="244.55" class="named"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
 <rect width="7.79" height="8.02" x="522.73" y="255.62" class="named"><title>0x004222b0 GetDoor (178 bytes)</title></rect>
 <rect width="7.79" height="7.98" x="522.73" y="266.64" class="named"><title>0x00459330 OnDrawBridge (177 bytes)</title></rect>

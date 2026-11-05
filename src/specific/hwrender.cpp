@@ -23,6 +23,13 @@ extern bool GtColorKeyEnabled;
 
 void HWR_InitState(void);
 void InitBuckets(void);
+void HWR_FreeTexturePages(void);
+HRESULT DXTextureNewPalette(unsigned char *pPal);
+void DXFreeTPages(void);
+void DXCreateMaxTPages(int create);
+int DXTextureAddPal(int w, int h, unsigned char *src, DXTEXTURE *list, unsigned long flags);
+int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, unsigned long flags);
+extern int nTPages;
 void HWR_GetAllTextureHandles(void);
 void DXTextureCleanup(int nTexture, DXTEXTURE *pTextures);
 DXTEXTURE *DXRestoreSurfaceIfLost(int nTexture, DXTEXTURE *pTextures);
@@ -164,6 +171,30 @@ void HWR_BeginScene(void)
 void HWR_EndScene(void)
 {
     EndScene();
+}
+
+void HWR_LoadTexturePages(int nPages, unsigned char *src, unsigned char *palette)
+{
+    int i;
+
+    HWR_FreeTexturePages();
+    if (palette) {
+        DXTextureNewPalette(palette);
+        DXFreeTPages();
+        DXCreateMaxTPages(1);
+    }
+    for (i = 0; i < nPages; i++) {
+        if (palette) {
+            DXTextureAddPal(256, 256, src, PictureTextures, 8);
+            src += 0x10000;
+        } else {
+            DXTextureAdd(256, 256, src, PictureTextures, 555, 8);
+            src += 0x20000;
+        }
+    }
+    HWR_GetAllTextureHandles();
+    for (i = 0; i < nTPages; i++)
+        HWR_SetCurrentTexture((DWORD)TPages[i]);
 }
 
 void HWR_FreeTexturePages(void)
