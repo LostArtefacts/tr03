@@ -43,6 +43,21 @@ void HWR_ResetZBuffer(void)
     }
 }
 
+void HWR_EnableColorAddition(bool enable)
+{
+    if (enable) {
+        if (!GtColorAdditionEnabled) {
+            GtColorAdditionEnabled = true;
+            SetRenderState(D3DRENDERSTATE_SRCBLEND, D3DBLEND_ONE);
+            SetRenderState(D3DRENDERSTATE_DESTBLEND, D3DBLEND_ONE);
+        }
+    } else if (GtColorAdditionEnabled) {
+        GtColorAdditionEnabled = false;
+        SetRenderState(D3DRENDERSTATE_SRCBLEND, D3DBLEND_SRCALPHA);
+        SetRenderState(D3DRENDERSTATE_DESTBLEND, D3DBLEND_INVSRCALPHA);
+    }
+}
+
 void HWR_EndScene(void)
 {
     EndScene();
