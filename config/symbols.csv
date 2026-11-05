@@ -427,7 +427,7 @@ address,size,name,symbol
 0x00434d70,63,AddDisplayPickup,_AddDisplayPickup
 0x00434db0,122,DisplayModeInfo,_DisplayModeInfo
 0x00434e30,44,DrawModeInfo,_DrawModeInfo
-0x00434e60,1393,HybridControl,_HybridControl
+0x00434e60,1436,HybridControl,_HybridControl
 0x00435400,4978,Display_Inventory,_Display_Inventory
 0x00436840,377,Construct_Inventory,_Construct_Inventory
 0x004369c0,143,SelectMeshes,_SelectMeshes
@@ -1868,6 +1868,8 @@ address,size,name,symbol
 0x004c582c,4,wind_angle,_wind_angle
 0x004c5830,4,dwind_angle,_dwind_angle
 0x004c5834,4,overlay_flag,_overlay_flag
+0x004c5868,16,hybrid_bite_left,_hybrid_bite_left
+0x004c5878,16,hybrid_bite_right,_hybrid_bite_right
 0x004c5e20,,icompass_option,_icompass_option
 0x004c5e70,,igun_option,_igun_option
 0x004c5ec0,,iflare_option,_iflare_option
