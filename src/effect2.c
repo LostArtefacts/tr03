@@ -467,6 +467,60 @@ void TriggerFireSmoke(sint32 x, sint32 y, sint32 z, sint32 body_part, sint32 typ
     sptr->dHeight = size;
 }
 
+void TriggerSideFlame(sint32 x, sint32 y, sint32 z, sint32 angle, sint32 speed, sint32 pilot)
+{
+    sint32 size, zv, xv;
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 48 + (GetRandomControl() & 31);
+    sptr->sG = sptr->sR;
+    sptr->sB = 192 + (GetRandomControl() & 63);
+    sptr->dR = 192 + (GetRandomControl() & 63);
+    sptr->dG = 128 + (GetRandomControl() & 63);
+    sptr->dB = 32;
+    sptr->ColFadeSpeed = 12 + (GetRandomControl() & 3);
+    sptr->FadeToBlack = 8;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 7) + 28;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 31) - 16);
+    sptr->y = y + ((GetRandomControl() & 31) - 16);
+    sptr->z = z + ((GetRandomControl() & 31) - 16);
+    if (!pilot) {
+        speed <<= 8;
+        speed += GetRandomControl() & 511;
+    } else {
+        speed <<= 7;
+        speed += GetRandomControl() & 31;
+    }
+    zv = (rcossin_tbl[angle + 1] * speed) >> 11;
+    xv = (rcossin_tbl[angle] * speed) >> 11;
+    sptr->Xvel = xv + ((GetRandomControl() & 127) - 64);
+    sptr->Yvel = -(GetRandomControl() & 7) - 6;
+    sptr->Zvel = zv + ((GetRandomControl() & 127) - 64);
+    sptr->Friction = 4;
+    sptr->Flags = 2 | 8 | 512;
+    sptr->Gravity = -(GetRandomControl() & 15) - 8;
+    sptr->MaxYvel = -(GetRandomControl() & 7) - 8;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    size = (GetRandomControl() & 31) + 128;
+    if (pilot)
+        size >>= 2;
+    sptr->Width = sptr->sWidth = size >> 1;
+    sptr->Height = sptr->sHeight = size >> 1;
+    sptr->dWidth = size;
+    sptr->dHeight = size;
+}
+
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 
 void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 b, sint32 angle, sint16 room_no)
