@@ -210,6 +210,27 @@ void CreateMonoScreen(void)
     TIME_Init();
 }
 
+void S_FadeToBlack(void)
+{
+    int w;
+    int h;
+    int i;
+
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
+    if (w == 640 && h == 480) {
+        ConvertSurfaceToTextures(App.lpFrontBuffer);
+    } else {
+        App.lpPictureBuffer->Blt(0, App.lpFrontBuffer, 0, DDBLT_WAIT, 0);
+        ConvertSurfaceToTextures(App.lpPictureBuffer);
+    }
+    HWR_GetAllTextureHandles();
+    for (i = 0; i < nTPages; i++)
+        HWR_SetCurrentTexture(TPages[i]);
+    nLoadedPictures++;
+    TIME_Init();
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
