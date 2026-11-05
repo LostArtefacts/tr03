@@ -46,16 +46,16 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="264.28" height="12" x="0" y="0" class="named"><title>930 · 62.92%</title></rect>
-<rect width="1.42" height="12" x="264.28" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="154.30" height="12" x="265.70" y="0" class="todo"><title>543 · 36.74%</title></rect>
+<rect width="264.56" height="12" x="0" y="0" class="named"><title>931 · 62.99%</title></rect>
+<rect width="1.42" height="12" x="264.56" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="154.02" height="12" x="265.98" y="0" class="todo"><title>542 · 36.67%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">62.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">930</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">543</tspan></text>
+<text text-anchor="end" x="600" y="7.50">63.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">931</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">542</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.47" height="12" x="0" y="0" class="named"><title>296 KB · 44.40%</title></rect>
-<rect width="3.69" height="12" x="186.47" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="186.48" height="12" x="0" y="0" class="named"><title>296 KB · 44.40%</title></rect>
+<rect width="3.69" height="12" x="186.48" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
 <rect width="229.84" height="12" x="190.16" y="0" class="todo"><title>365 KB · 54.72%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
@@ -1191,7 +1191,7 @@
 <rect width="12" height="12" x="360" y="330" class="named"><title>0x00480920 DS_AdjustPitch (49 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="330" class="named"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="330" class="named"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="330" class="todo"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="330" class="named"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="todo"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
@@ -3020,7 +3020,7 @@
 <rect width="1.75" height="1" x="738.03" y="438.18" class="named"><title>0x0042f190 flip_map_effect (5 bytes)</title></rect>
 <rect width="1.75" height="1" x="738.03" y="442.12" class="named"><title>0x0042f440 reset_hair (5 bytes)</title></rect>
 <rect width="1.75" height="1" x="738.03" y="446" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
-<rect width="1" height="2.19" x="742.78" y="438.18" class="todo"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
+<rect width="1" height="2.19" x="742.78" y="438.18" class="named"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="1" height="2.19" x="746" y="438.18" class="named"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
 <rect width="2.27" height="1" x="742.78" y="443.37" class="named"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
 <rect width="2.27" height="1" x="742.78" y="446" class="todo"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>

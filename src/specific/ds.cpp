@@ -123,4 +123,9 @@ void DS_StopAllSamples(void)
 
 bool DS_MakeAdapterList(void);
 
+void DS_Init(void)
+{
+    DS_MakeAdapterList();
+}
+
 }
