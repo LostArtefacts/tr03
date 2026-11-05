@@ -51,6 +51,56 @@ extern sint32 SmokeWeapon;
 int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles);
 void TriggerGunShell(sint16 leftright, sint32 type, sint32 weapon);
 
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
+void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 initial, sint32 weapon, sint32 count);
+void TriggerShotgunSparks(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv);
+
+void FireShotgun(void)
+{
+    int i, r, fired, x, y, z, lp;
+    PHD_VECTOR pos;
+    PHD_ANGLE angles[2];
+    PHD_ANGLE dangles[2];
+
+    angles[0] = lara.left_arm.y_rot + lara_item->pos.y_rot;
+    angles[1] = lara.left_arm.x_rot;
+    if (!lara.left_arm.lock) {
+        angles[0] += lara.torso_y_rot;
+        angles[1] += lara.torso_x_rot;
+    }
+    fired = 0;
+    for (i = 0; i < 6; i++) {
+        r = (int)((GetRandomControl() - 16384) * (20 * ONE_DEGREE)) / 65536;
+        dangles[0] = angles[0] + r;
+        r = (int)((GetRandomControl() - 16384) * (20 * ONE_DEGREE)) / 65536;
+        dangles[1] = angles[1] + r;
+        if (FireWeapon(LG_SHOTGUN, lara.target, lara_item, dangles))
+            fired = 1;
+    }
+    if (fired) {
+        pos.x = 0;
+        pos.y = 228;
+        pos.z = 32;
+        GetLaraHandAbsPosition(&pos, 1);
+        x = pos.x;
+        y = pos.y;
+        z = pos.z;
+        pos.x = 0;
+        pos.y = 228 + 1280;
+        pos.z = 32;
+        GetLaraHandAbsPosition(&pos, 1);
+        SmokeCountL = 32;
+        SmokeWeapon = LG_SHOTGUN;
+        for (lp = 0; lp < 7; lp++)
+            TriggerGunSmoke(x, y, z, pos.x - x, pos.y - y, pos.z - z, 1, SmokeWeapon, 32);
+        for (lp = 0; lp < 12; lp++)
+            TriggerShotgunSparks(x, y, z, (pos.x - x) << 1, (pos.y - y) << 1, (pos.z - z) << 1);
+        lara.right_arm.flash_gun = weapons[LG_SHOTGUN].flash_time;
+        SoundEffect(105, &lara_item->pos, 0x1400000 | 4);
+        SoundEffect(weapons[LG_SHOTGUN].sample_num, &lara_item->pos, 0);
+    }
+}
+
 void FireM16(int running)
 {
     PHD_ANGLE angles[2];
@@ -78,7 +128,6 @@ void FireM16(int running)
 
 sint16 CreateItem(void);
 void InitialiseItem(sint16 item_num);
-void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
 void find_target_point(ITEM_INFO *item, GAME_VECTOR *target);
 
 void FireHarpoon(void)
