@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="255.87" height="12" x="0" y="0" class="named"><title>818 · 55.38%</title></rect>
-<rect width="206.13" height="12" x="255.87" y="0" class="todo"><title>659 · 44.62%</title></rect>
+<rect width="256.18" height="12" x="0" y="0" class="named"><title>819 · 55.45%</title></rect>
+<rect width="205.82" height="12" x="256.18" y="0" class="todo"><title>658 · 44.55%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">55.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">818</tspan> · <tspan class="todo">659</tspan></text>
+<text text-anchor="end" x="642" y="7.50">55.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">819</tspan> · <tspan class="todo">658</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="133.19" height="12" x="0" y="0" class="named"><title>192 KB · 28.83%</title></rect>
-<rect width="328.81" height="12" x="133.19" y="0" class="todo"><title>474 KB · 71.17%</title></rect>
+<rect width="133.30" height="12" x="0" y="0" class="named"><title>192 KB · 28.85%</title></rect>
+<rect width="328.70" height="12" x="133.30" y="0" class="todo"><title>474 KB · 71.15%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">28.8%</text>
+<text text-anchor="end" x="642" y="24.50">28.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">192 KB</tspan> · <tspan class="todo">474 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -325,7 +325,7 @@
 <rect width="12" height="12" x="150" y="75" class="named"><title>0x00429500 phd_TranslateRel_ID (71 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="75" class="named"><title>0x00429550 phd_RotYXZ_I (65 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="75" class="named"><title>0x004295a0 gar_RotYXZsuperpack_I (61 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="75" class="todo"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="75" class="named"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="75" class="named"><title>0x00429690 phd_PutPolygons_I (42 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="75" class="named"><title>0x004296c0 InterpolateMatrix (621 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="75" class="named"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
@@ -2311,7 +2311,7 @@
 <rect width="7.70" height="7.45" x="728.59" y="233.45" class="named"><title>0x004391e0 Remove_Requester (163 bytes)</title></rect>
 <rect width="7.70" height="7.45" x="739.30" y="233.45" class="named"><title>0x0046e640 OnTrapDoor (163 bytes)</title></rect>
 <rect width="7.63" height="7.48" x="533.46" y="243.90" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
-<rect width="7.63" height="7.43" x="533.46" y="254.38" class="todo"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
+<rect width="7.63" height="7.43" x="533.46" y="254.38" class="named"><title>0x004295e0 gar_RotYXZsuperpack (161 bytes)</title></rect>
 <rect width="7.63" height="7.43" x="533.46" y="264.81" class="named"><title>0x0042f340 swap_meshes_with_meshswap3 (161 bytes)</title></rect>
 <rect width="7.63" height="7.38" x="533.46" y="275.24" class="named"><title>0x0043ae40 RemoveActiveItem (160 bytes)</title></rect>
 <rect width="7.63" height="7.34" x="533.46" y="285.62" class="named"><title>0x00422370 LOS (159 bytes)</title></rect>
