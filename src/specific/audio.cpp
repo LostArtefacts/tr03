@@ -27,4 +27,10 @@ void ACMCloseFile(void)
     }
 }
 
+void ACMEmulateCDStop(void)
+{
+    if (acm_ready && DSBuffer)
+        DSBuffer->Stop();
+}
+
 }
