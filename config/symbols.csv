@@ -237,7 +237,7 @@ address,size,name,symbol
 0x00423d70,262,GetWaterSurface,_GetWaterSurface
 0x00423e80,481,ControlGhostGasEmitter,_ControlGhostGasEmitter
 0x00424070,76,InitialiseDog,_InitialiseDog
-0x004240c0,1382,DogControl,_DogControl
+0x004240c0,1436,DogControl,_DogControl
 0x00424660,458,ControlFlameThrower,_ControlFlameThrower
 0x00424830,475,TriggerFlamethrowerHitFlame,_TriggerFlamethrowerHitFlame
 0x00424a10,516,TriggerFlamethrowerSmoke,_TriggerFlamethrowerSmoke
@@ -1851,6 +1851,8 @@ address,size,name,symbol
 0x004c5200,4,flipeffect,_flipeffect
 0x004c5258,16,croc_bite,_croc_bite
 0x004c5288,16,diver_poon,_diver_poon
+0x004c5298,16,dog_bite,_dog_bite
+0x004c52a8,4,dog_death_anims,_dog_death_anims
 0x004c52b0,,lara_meshes,_lara_meshes
 0x004c52d0,,lara_last_points,_lara_last_points
 0x004c52e0,,lara_line_counts,_lara_line_counts

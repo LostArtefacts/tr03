@@ -39,6 +39,192 @@ sint16 DoBloodSplat(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction
 extern BITE_INFO croc_bite;
 void CreatureTilt(ITEM_INFO *item, sint16 angle);
 
+void GetAITarget(CREATURE_INFO *creature);
+void AlertAllGuards(sint16 item_number);
+sint16 AIGuard(CREATURE_INFO *creature);
+
+extern BITE_INFO dog_bite;
+extern char dog_death_anims[];
+
+void DogControl(sint16 item_number)
+{
+    ITEM_INFO *item;
+    CREATURE_INFO *dog;
+    sint16 angle, head, tilt, x_head;
+
+    if (!CreatureActive(item_number))
+        return;
+    item = &items[item_number];
+    dog = (CREATURE_INFO *)item->data;
+    head = x_head = angle = tilt = 0;
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != 11) {
+            item->anim_number = objects[item->object_number].anim_index + dog_death_anims[GetRandomControl() & 3];
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = 11;
+        }
+    } else {
+        AI_INFO info, lara_info;
+        sint16 random, frame;
+        sint32 lara_dx, lara_dz;
+
+        if (item->ai_bits)
+            GetAITarget(dog);
+        else
+            dog->enemy = lara_item;
+        CreatureAIInfo(item, &info);
+        if (dog->enemy == lara_item) {
+            lara_info.angle = info.angle;
+            lara_info.distance = info.distance;
+        } else {
+            lara_dz = lara_item->pos.z_pos - item->pos.z_pos;
+            lara_dx = lara_item->pos.x_pos - item->pos.x_pos;
+            lara_info.angle = phd_atan(lara_dz, lara_dx) - item->pos.y_rot;
+            lara_info.distance = lara_dz * lara_dz + lara_dx * lara_dx;
+        }
+        if (info.ahead) {
+            head = info.angle;
+            x_head = info.x_angle;
+        }
+        GetCreatureMood(item, &info, 1);
+        CreatureMood(item, &info, 1);
+        if (dog->mood == BORED_MOOD)
+            dog->maximum_turn >>= 1;
+        angle = CreatureTurn(item, dog->maximum_turn);
+        if (dog->hurt_by_lara || (lara_info.distance < 0x900000 && !(item->ai_bits & 8))) {
+            AlertAllGuards(item_number);
+            item->ai_bits &= ~8;
+        }
+        random = (sint16)GetRandomControl();
+        frame = item->frame_number - anims[item->anim_number].frame_base;
+        switch (item->current_anim_state) {
+        case 8:
+        case 0:
+            head = 0;
+            x_head = 0;
+            if (dog->mood == BORED_MOOD || item->ai_bits == 8) {
+                dog->maximum_turn = 0;
+                dog->flags++;
+                if (dog->flags > 300 && random < 0x80)
+                    item->goal_anim_state = 1;
+            } else
+                item->goal_anim_state = 1;
+            break;
+        case 9:
+            if (item->required_anim_state) {
+                item->goal_anim_state = item->required_anim_state;
+                break;
+            }
+        case 1:
+            dog->maximum_turn = 0;
+            if (item->ai_bits & 1) {
+                head = AIGuard(dog);
+                if (!(GetRandomControl() & 0xff)) {
+                    if (item->current_anim_state == 1)
+                        item->goal_anim_state = 9;
+                    else
+                        item->goal_anim_state = 1;
+                }
+                break;
+            } else if (item->current_anim_state == 9 && random < 0x80) {
+                item->goal_anim_state = 1;
+                break;
+            } else if (item->ai_bits & 4) {
+                if (item->current_anim_state == 1)
+                    item->goal_anim_state = 2;
+                else
+                    item->goal_anim_state = 1;
+            } else if (dog->mood == ESCAPE_MOOD) {
+                if (lara.target != item && info.ahead && !item->hit_status)
+                    item->goal_anim_state = 1;
+                else {
+                    item->required_anim_state = 3;
+                    item->goal_anim_state = 9;
+                }
+            } else if (dog->mood == BORED_MOOD) {
+                dog->flags = 0;
+                dog->maximum_turn = ONE_DEGREE;
+                if (random < 0x100 && (item->ai_bits & 8) && item->current_anim_state == 1) {
+                    item->goal_anim_state = 8;
+                    dog->flags = 0;
+                } else if (random < 0x1000) {
+                    if (item->current_anim_state == 1)
+                        item->goal_anim_state = 2;
+                    else
+                        item->goal_anim_state = 1;
+                } else if (!(random & 0x1f))
+                    item->goal_anim_state = 7;
+            } else {
+                if (item->current_anim_state == 1) {
+                    item->required_anim_state = 3;
+                    item->goal_anim_state = 9;
+                } else
+                    item->required_anim_state = 3;
+            }
+            break;
+        case 2:
+            dog->maximum_turn = 3 * ONE_DEGREE;
+            if (item->ai_bits & 4)
+                item->goal_anim_state = 2;
+            else if (dog->mood == BORED_MOOD && random < 0x100)
+                item->goal_anim_state = 1;
+            else
+                item->goal_anim_state = 5;
+            break;
+        case 3:
+            dog->maximum_turn = 6 * ONE_DEGREE;
+            if (dog->mood == ESCAPE_MOOD) {
+                if (lara.target != item && info.ahead)
+                    item->goal_anim_state = 9;
+                break;
+            } else if (dog->mood == BORED_MOOD)
+                item->goal_anim_state = 9;
+            else if (info.bite && info.distance < 0x100000)
+                item->goal_anim_state = 6;
+            else if (info.distance < 0x240000) {
+                item->required_anim_state = 5;
+                item->goal_anim_state = 9;
+            }
+            break;
+        case 5:
+            dog->maximum_turn = 3 * ONE_DEGREE;
+            if (dog->mood == BORED_MOOD)
+                item->goal_anim_state = 9;
+            else if (dog->mood == ESCAPE_MOOD)
+                item->goal_anim_state = 3;
+            else if (info.bite && info.distance < 0x2c4e4) {
+                item->goal_anim_state = 12;
+                item->required_anim_state = 5;
+            } else if (info.distance > 0x240000 || item->hit_status)
+                item->goal_anim_state = 3;
+            break;
+        case 6:
+            if (info.bite && (item->touch_bits & 0x6648) && frame >= 4 && frame <= 14) {
+                CreatureEffect(item, &dog_bite, DoBloodSplat);
+                lara_item->hit_points -= 50;
+                lara_item->hit_status = 1;
+            }
+            item->goal_anim_state = 3;
+            break;
+        case 12:
+            if (info.bite && (item->touch_bits & 0x48) && ((frame >= 9 && frame <= 12) || (frame >= 22 && frame <= 25))) {
+                CreatureEffect(item, &dog_bite, DoBloodSplat);
+                lara_item->hit_points -= 12;
+                lara_item->hit_status = 1;
+            }
+            break;
+        case 7:
+            head = 0;
+            x_head = 0;
+            break;
+        }
+    }
+    CreatureTilt(item, tilt);
+    CreatureJoint(item, 0, head);
+    CreatureJoint(item, 1, x_head);
+    CreatureAnimation(item_number, angle, 0);
+}
+
 extern BITE_INFO tiger_bite;
 
 void TigerControl(sint16 item_number)
