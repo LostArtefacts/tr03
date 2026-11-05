@@ -78,6 +78,20 @@ void DS_AdjustVolumeAndPan(int nHandle, int nVolume, int nPan)
     }
 }
 
+void DS_AdjustPitch(int nHandle, int nPitch)
+{
+    LPDIRECTSOUNDBUFFER pBuffer;
+    int nFrequency;
+
+    if (nHandle < 0)
+        return;
+    pBuffer = DS_Samples[nHandle];
+    if (pBuffer) {
+        nFrequency = (nPitch * DS_SampleFrequencies[DS_SamplesPlaying[nHandle]]) >> 16;
+        DX_TRY(pBuffer->SetFrequency(nFrequency));
+    }
+}
+
 bool DS_MakeAdapterList(void);
 
 }
