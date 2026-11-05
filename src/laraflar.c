@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "game.h"
 
 #define FL_THROW_F 1
@@ -8,6 +10,57 @@
 void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
 int DoFlareLight(PHD_VECTOR *pos, int flare_age);
 void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
+
+int DoFlareLight(PHD_VECTOR *pos, int flare_age)
+{
+    int x, y, z, random;
+    sint32 r, g, b, falloff;
+
+    if (flare_age >= 900)
+        return 0;
+    random = GetRandomControl();
+    x = pos->x + ((random & 0xf) << 3);
+    y = pos->y + ((random & 0xf0) >> 1);
+    z = pos->z + ((random & 0xf00) >> 5);
+    if (flare_age < 4) {
+        r = (flare_age << 1) + 20 + (random & 3);
+        g = flare_age + 4 + ((random >> 4) & 3);
+        b = (flare_age << 1) + ((random >> 8) & 3);
+        falloff = (flare_age << 2) + 4 + (random & 3);
+        if (falloff > 16)
+            falloff -= (random >> 12) & 3;
+        TriggerDynamic(x, y, z, falloff, r, g, b);
+    } else if (flare_age < 16) {
+        r = (flare_age >> 1) + 16 + (random & 7);
+        g = (flare_age >> 1) + 8 + ((random >> 4) & 3);
+        b = (flare_age >> 1) + 2 + ((random >> 8) & 3);
+        falloff = flare_age + 2 + (random & 1);
+        TriggerDynamic(x, y, z, falloff, r, g, b);
+    } else if (flare_age < 810) {
+        r = 24 + (random & 7);
+        g = 16 + ((random >> 4) & 3);
+        b = ((random >> 8) & 7) + (((random >> 6) & 16) >> 2);
+        falloff = 16;
+        TriggerDynamic(x, y, z, falloff, r, g, b);
+    } else if (flare_age < 876) {
+        if (random > 0x2000) {
+            r = 24 + (random & 7);
+            g = 16 + ((random >> 4) & 3);
+            b = ((random >> 8) & 7) + (((random >> 6) & 16) >> 2);
+            falloff = 16;
+            TriggerDynamic(x, y, z, falloff, r, g, b);
+        } else {
+            TriggerDynamic(x, y, z, (GetRandomControl() & 6) + 8, (GetRandomControl() & 7) + 24,
+                           (GetRandomControl() & 7) + 8, GetRandomControl() & 15);
+            return 0;
+        }
+    } else {
+        TriggerDynamic(x, y, z, 16 - ((flare_age - 876) >> 1), (GetRandomControl() & 7) + 24,
+                       (GetRandomControl() & 7) + 8, GetRandomControl() & 3);
+        return random & 1;
+    }
+    return 1;
+}
 
 void DoFlareInHand(int flare_age)
 {
