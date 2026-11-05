@@ -3036,3 +3036,85 @@ void lara_col_hang2(ITEM_INFO *item, COLL_INFO *coll)
         }
     }
 }
+
+extern int height_type;
+int GetStaticObjects(ITEM_INFO *item, PHD_ANGLE ang, sint32 hite, sint32 rad, sint32 dist);
+
+void lara_col_all4s(ITEM_INFO *item, COLL_INFO *coll)
+{
+    item->gravity_status = item->fallspeed = 0;
+    if (item->goal_anim_state == AS_CRAWL2HANG)
+        return;
+    coll->facing = lara.move_angle = item->pos.y_rot;
+    coll->radius = LARA_RAD * 2;
+    coll->bad_pos = STEP_L - 1;
+    coll->bad_neg = -(STEP_L - 1);
+    coll->bad_ceiling = LARA_DUCK_HEIGHT;
+    coll->slopes_are_walls = 1;
+    coll->slopes_are_pits = 1;
+    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, item->room_number, LARA_DUCK_HEIGHT);
+    if (LaraFallen(item, coll)) {
+        lara.gun_status = LG_ARMLESS;
+        return;
+    }
+    if (coll->mid_ceiling >= -(LARA_HITE - LARA_DUCK_HEIGHT))
+        lara.keep_ducked = 1;
+    else
+        lara.keep_ducked = 0;
+    ShiftItem(item, coll);
+    item->pos.y_pos += coll->mid_floor;
+    if ((!(input & IN_DUCK) && !lara.keep_ducked) || (input & IN_DRAW))
+        item->goal_anim_state = AS_DUCK;
+    else if (item->anim_number == 263 || item->anim_number == 264) {
+        if (input & IN_FORWARD) {
+            sint16 height;
+
+            height = LaraFloorFront(item, item->pos.y_rot, 256);
+            if (height < STEP_L - 1 && height > -(STEP_L - 1) && height_type != 2)
+                item->goal_anim_state = AS_CRAWL;
+        } else if (input & IN_BACK) {
+            sint16 height;
+
+            height = LaraCeilingFront(item, item->pos.y_rot, -300);
+            if (height == NO_HEIGHT || height > 256)
+                return;
+            height = LaraFloorFront(item, item->pos.y_rot, -300);
+            if (height < STEP_L - 1 && height > -(STEP_L - 1) && height_type != 2)
+                item->goal_anim_state = AS_CRAWLBACK;
+            else if ((input & IN_ACTION) && height > 768 && !GetStaticObjects(item, item->pos.y_rot + 0x8000, 512, 50, 300)) {
+                PHD_ANGLE angle;
+
+                angle = (uint16)(item->pos.y_rot + 0x2000) / 0x4000;
+                switch (angle) {
+                case 0:
+                    item->pos.z_pos = (item->pos.z_pos & ~1023) + 225;
+                    item->pos.y_rot = 0;
+                    break;
+                case 2:
+                    item->pos.z_pos = (item->pos.z_pos | 1023) - 225;
+                    item->pos.y_rot = -32768;
+                    break;
+                case 1:
+                    item->pos.x_pos = (item->pos.x_pos & ~1023) + 225;
+                    item->pos.y_rot = 16384;
+                    break;
+                case 3:
+                    item->pos.x_pos = (item->pos.x_pos | 1023) - 225;
+                    item->pos.y_rot = -16384;
+                    break;
+                }
+                item->goal_anim_state = AS_CRAWL2HANG;
+            }
+        } else if (input & IN_LEFT) {
+            item->current_anim_state = AS_ALL4TURNL;
+            item->goal_anim_state = AS_ALL4TURNL;
+            item->anim_number = 269;
+            item->frame_number = GF(269, 0);
+        } else if (input & IN_RIGHT) {
+            item->current_anim_state = AS_ALL4TURNR;
+            item->goal_anim_state = AS_ALL4TURNR;
+            item->anim_number = 270;
+            item->frame_number = GF(270, 0);
+        }
+    }
+}
