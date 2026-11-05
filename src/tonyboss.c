@@ -60,6 +60,105 @@ void InitialiseTonyBoss(sint16 item_number)
     }
 }
 
+typedef struct {
+    sint16 x;
+    sint16 z;
+    sint32 rgb;
+} EXPLOSION_VERTS;
+
+typedef struct {
+    sint16 on;
+    sint16 life;
+    sint16 speed;
+    sint16 radius;
+    sint16 xrot;
+    sint16 zrot;
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    EXPLOSION_VERTS verts[16];
+} EXPLOSION_RING;
+
+extern EXPLOSION_RING ExpRings[];
+extern sint32 death_radii_tonyboss[5];
+extern sint32 death_heights_tonyboss[5];
+extern sint32 dradii_tonyboss[5];
+extern sint32 dheights1_tonyboss[5];
+extern sint32 dheights2_tonyboss[5];
+extern sint32 wibble;
+
+void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, sint32 dyn, sint32 uw, sint16 roomnum);
+
+void ExplodeTonyBoss(ITEM_INFO *item)
+{
+    SHIELD_POINTS *shptr;
+    sint32 lp, lp1, angle, y, r, g, b;
+
+    if (item->hit_points <= 0 &&
+        (bossdata.explode_count == 1 || bossdata.explode_count == 15 || bossdata.explode_count == 25 ||
+         bossdata.explode_count == 35 || bossdata.explode_count == 45 || bossdata.explode_count == 55)) {
+        sint32 x, y, z;
+
+        x = item->pos.x_pos + ((GetRandomDraw() & 1023) - 512);
+        y = item->pos.y_pos - (GetRandomDraw() & 1023) - 256;
+        z = item->pos.z_pos + ((GetRandomDraw() & 1023) - 512);
+
+        ExpRings[bossdata.ring_count].x = x;
+        ExpRings[bossdata.ring_count].y = y;
+        ExpRings[bossdata.ring_count].z = z;
+        ExpRings[bossdata.ring_count].on = 1;
+        bossdata.ring_count++;
+
+        TriggerExplosionSparks(x, y, z, 3, -2, 0, 0);
+        for (lp = 0; lp < 2; lp++) {
+            TriggerExplosionSparks(x, y, z, 3, -1, 0, 0);
+        }
+
+        SoundEffect(76, &item->pos, 0x800004);
+    }
+
+    for (lp = 0; lp < 5; lp++) {
+        if (bossdata.explode_count < 128) {
+            death_radii_tonyboss[lp] = (dradii_tonyboss[lp] >> 4) + ((dradii_tonyboss[lp] * bossdata.explode_count) >> 7);
+            death_heights_tonyboss[lp] = dheights2_tonyboss[lp] + (((dheights1_tonyboss[lp] - dheights2_tonyboss[lp]) * bossdata.explode_count) >> 7);
+        }
+    }
+
+    if (bossdata.explode_count <= 64) {
+        shptr = &TonyBossShield[0];
+        for (lp = 0; lp < 5; lp++) {
+            y = death_heights_tonyboss[lp];
+            angle = (wibble << 3) & 511;
+            for (lp1 = 0; lp1 < 8; lp1++) {
+                shptr->x = (rcossin_tbl[angle << 1] * death_radii_tonyboss[lp]) >> 11;
+                shptr->y = y;
+                shptr->z = (rcossin_tbl[(angle << 1) + 1] * death_radii_tonyboss[lp]) >> 11;
+
+                if (lp != 0 && lp != 4 && bossdata.explode_count < 64) {
+                    r = (GetRandomDraw() & 31) + 224;
+                    g = (r >> 2) + (GetRandomDraw() & 63);
+                    b = GetRandomDraw() & 63;
+                    if (item->hit_points > 0) {
+                        r = (r * (128 - bossdata.explode_count)) >> 7;
+                        g = (g * (128 - bossdata.explode_count)) >> 7;
+                        b = (b * (128 - bossdata.explode_count)) >> 7;
+                    } else {
+                        r = (r * (64 - bossdata.explode_count)) >> 6;
+                        g = (g * (64 - bossdata.explode_count)) >> 6;
+                        b = (b * (64 - bossdata.explode_count)) >> 6;
+                    }
+                    shptr->rgb = r | (g << 8) | (b << 16);
+                } else {
+                    shptr->rgb = 0;
+                }
+                angle += 512;
+                angle &= 4095;
+                shptr++;
+            }
+        }
+    }
+}
+
 sint32 GetFreeSpark(void);
 
 void TriggerTonyFlame(sint16 item_number, sint32 hand)

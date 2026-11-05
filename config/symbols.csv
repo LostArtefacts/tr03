@@ -1965,6 +1965,9 @@ address,size,name,symbol
 0x004c7d48,16,tiger_bite,_tiger_bite
 0x004c7d58,20,TonyBossRadii,_TonyBossRadii
 0x004c7d70,20,TonyBossHeights,_TonyBossHeights
+0x004c7d88,20,dradii_tonyboss,_dradii_tonyboss
+0x004c7da0,20,dheights1_tonyboss,_dheights1_tonyboss
+0x004c7db8,20,dheights2_tonyboss,_dheights2_tonyboss
 0x004c7dd0,16,teeth1a,_teeth1a
 0x004c7de0,16,teeth1b,_teeth1b
 0x004c7df0,16,teeth2a,_teeth2a
@@ -2170,6 +2173,8 @@ address,size,name,symbol
 0x006270e0,,SubCurrentStartWake,_SubCurrentStartWake
 0x006270e4,,SubWakeShade,_SubWakeShade
 0x006270e8,1,SubHarpoonLR,_SubHarpoonLR
+0x006270f0,20,death_heights_tonyboss,_death_heights_tonyboss
+0x00627108,20,death_radii_tonyboss,_death_radii_tonyboss
 0x0062711c,4,clonked,_clonked
 0x00627120,20,death_heights_triboss,_death_heights_triboss
 0x00627138,20,death_radii_triboss,_death_radii_triboss
