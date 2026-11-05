@@ -243,3 +243,163 @@ void PistolHandler(int weapon_type)
         TriggerDynamic(pos.x, pos.y, pos.z, 10, (GetRandomControl() & 7) + 24, (GetRandomControl() & 3) + 16, GetRandomControl() & 7);
     }
 }
+
+extern sint32 SmokeCountL, SmokeCountR;
+extern sint32 SmokeWeapon;
+extern int uzi_left, uzi_right;
+
+void TriggerGunSmoke(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 initial, sint32 weapon, sint32 count);
+int FireWeapon(int weapon_type, ITEM_INFO *target, ITEM_INFO *src, PHD_ANGLE *angles);
+void TriggerGunShell(sint16 leftright, sint32 shelltype, sint32 weapon);
+
+void AnimatePistols(int weapon_type)
+{
+    PISTOL_DEF *p;
+    WEAPON_INFO *winfo;
+    PHD_ANGLE angles[2];
+    sint16 anil, anir, sound_already;
+
+    sound_already = 0;
+    if (SmokeCountL) {
+        PHD_VECTOR pos;
+
+        if (SmokeWeapon == LG_PISTOLS) {
+            pos.x = 4;
+            pos.y = 128;
+            pos.z = 40;
+        } else if (SmokeWeapon == LG_MAGNUMS) {
+            pos.x = 16;
+            pos.y = 160;
+            pos.z = 56;
+        } else if (SmokeWeapon == LG_UZIS) {
+            pos.x = 8;
+            pos.y = 140;
+            pos.z = 48;
+        }
+        GetLaraHandAbsPosition(&pos, 0);
+        TriggerGunSmoke(pos.x, pos.y, pos.z, 0, 0, 0, 0, SmokeWeapon, SmokeCountL);
+    }
+
+    if (SmokeCountR) {
+        PHD_VECTOR pos;
+
+        if (SmokeWeapon == LG_PISTOLS) {
+            pos.x = -16;
+            pos.y = 128;
+            pos.z = 40;
+        } else if (SmokeWeapon == LG_MAGNUMS) {
+            pos.x = -32;
+            pos.y = 160;
+            pos.z = 56;
+        } else if (SmokeWeapon == LG_UZIS) {
+            pos.x = -16;
+            pos.y = 140;
+            pos.z = 48;
+        }
+        GetLaraHandAbsPosition(&pos, 1);
+        TriggerGunSmoke(pos.x, pos.y, pos.z, 0, 0, 0, 0, SmokeWeapon, SmokeCountR);
+    }
+
+    winfo = &weapons[weapon_type];
+    p = &PistolTable[lara.gun_type];
+
+    anir = lara.right_arm.frame_number;
+    if (lara.right_arm.lock || ((input & IN_ACTION) && !lara.target)) {
+        if (anir >= 0 && anir < p->Draw1Anim2)
+            anir++;
+        else if (anir == p->Draw1Anim2) {
+            if (input & IN_ACTION) {
+                if (weapon_type != LG_MAGNUMS) {
+                    angles[0] = lara.right_arm.y_rot + lara_item->pos.y_rot;
+                    angles[1] = lara.right_arm.x_rot;
+                    if (FireWeapon(weapon_type, lara.target, lara_item, angles)) {
+                        SmokeCountR = 28;
+                        SmokeWeapon = weapon_type;
+                        TriggerGunShell(1, 366, weapon_type);
+                        lara.right_arm.flash_gun = winfo->flash_time;
+                        SoundEffect(105, &lara_item->pos, 4 | 0x2000000);
+                        SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                        sound_already = 1;
+                        if (weapon_type == LG_UZIS)
+                            uzi_right = 1;
+                    }
+                }
+                anir = p->RecoilAnim;
+            } else if (uzi_right) {
+                SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+                uzi_right = 0;
+            }
+        } else if (anir >= p->RecoilAnim) {
+            if (weapon_type == LG_UZIS) {
+                SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                uzi_right = 1;
+            }
+            anir++;
+            if (anir == p->RecoilAnim + winfo->recoil_frame)
+                anir = p->Draw1Anim2;
+        }
+    } else {
+        if (anir >= p->RecoilAnim)
+            anir = p->Draw1Anim2;
+        else if (anir > 0 && anir <= p->Draw1Anim2)
+            anir--;
+        if (uzi_right) {
+            SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+            uzi_right = 0;
+        }
+    }
+    set_arm_info(&lara.right_arm, anir);
+
+    anil = lara.left_arm.frame_number;
+    if (lara.left_arm.lock || ((input & IN_ACTION) && !lara.target)) {
+        if (anil >= 0 && anil < p->Draw1Anim2)
+            anil++;
+        else if (anil == p->Draw1Anim2) {
+            if (input & IN_ACTION) {
+                angles[0] = lara.left_arm.y_rot + lara_item->pos.y_rot;
+                angles[1] = lara.left_arm.x_rot;
+                if (FireWeapon(weapon_type, lara.target, lara_item, angles)) {
+                    if (weapon_type == LG_MAGNUMS) {
+                        SmokeCountR = 28;
+                        SmokeWeapon = weapon_type;
+                        TriggerGunShell(1, 366, weapon_type);
+                        lara.right_arm.flash_gun = winfo->flash_time;
+                    } else {
+                        SmokeCountL = 28;
+                        SmokeWeapon = weapon_type;
+                        TriggerGunShell(0, 366, weapon_type);
+                        lara.left_arm.flash_gun = winfo->flash_time;
+                    }
+                    if (!sound_already) {
+                        SoundEffect(105, &lara_item->pos, 4 | 0x2000000);
+                        SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                    }
+                    if (weapon_type == LG_UZIS)
+                        uzi_left = 1;
+                }
+                anil = p->RecoilAnim;
+            } else if (uzi_left) {
+                SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+                uzi_left = 0;
+            }
+        } else if (anil >= p->RecoilAnim) {
+            if (weapon_type == LG_UZIS) {
+                SoundEffect(winfo->sample_num, &lara_item->pos, 0);
+                uzi_left = 1;
+            }
+            anil++;
+            if (anil == p->RecoilAnim + winfo->recoil_frame)
+                anil = p->Draw1Anim2;
+        }
+    } else {
+        if (anil >= p->RecoilAnim)
+            anil = p->Draw1Anim2;
+        else if (anil > 0 && anil <= p->Draw1Anim2)
+            anil--;
+        if (uzi_left) {
+            SoundEffect(winfo->sample_num + 1, &lara_item->pos, 0);
+            uzi_left = 0;
+        }
+    }
+    set_arm_info(&lara.left_arm, anil);
+}
