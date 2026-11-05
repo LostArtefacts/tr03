@@ -139,6 +139,54 @@ void RemoveAmmoText(void)
     }
 }
 
+TEXTSTRING *T_Print(sint32 xpos, sint32 ypos, sint32 zpos, char *string);
+__declspec(dllimport) int __cdecl wsprintfA(char *buf, const char *fmt, ...);
+
+void DrawAmmoInfo(void)
+{
+    char ammostring[80];
+
+    ammostring[0] = 0;
+    if (items[lara.skidoo].object_number == 19) {
+        wsprintfA(ammostring, "%5d", lara.harpoon.ammo);
+    } else {
+        if (lara.gun_status != LG_READY || overlay_flag <= 0 || savegame.bonus_flag) {
+            RemoveAmmoText();
+            return;
+        }
+        switch (lara.gun_type) {
+        case LG_PISTOLS:
+            return;
+        case LG_MAGNUMS:
+            wsprintfA(ammostring, "%5d", lara.magnums.ammo);
+            break;
+        case LG_UZIS:
+            wsprintfA(ammostring, "%5d", lara.uzis.ammo);
+            break;
+        case LG_SHOTGUN:
+            wsprintfA(ammostring, "%5d", lara.shotgun.ammo / 6);
+            break;
+        case LG_HARPOON:
+            wsprintfA(ammostring, "%5d", lara.harpoon.ammo);
+            break;
+        case LG_M16:
+            wsprintfA(ammostring, "%5d", lara.m16.ammo);
+            break;
+        case LG_ROCKET:
+            wsprintfA(ammostring, "%5d", lara.rocket.ammo);
+            break;
+        case LG_GRENADE:
+            wsprintfA(ammostring, "%5d", lara.grenade.ammo);
+            break;
+        default:
+            return;
+        }
+    }
+    RemoveAmmoText();
+    ammotext = T_Print(-10, 50, 0, ammostring);
+    T_RightAlign(ammotext, 1);
+}
+
 void InitialisePickUpDisplay(void)
 {
     int i;
@@ -154,8 +202,6 @@ void AddDisplayPickup(sint16 objnum)
     pickups[0].duration = 75;
     pickups[0].sprnum = objnum;
 }
-
-TEXTSTRING *T_Print(sint32 xpos, sint32 ypos, sint32 zpos, char *string);
 
 void DisplayModeInfo(char *string)
 {

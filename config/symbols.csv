@@ -422,7 +422,7 @@ address,size,name,symbol
 0x00434a10,200,DrawHealthBar,_DrawHealthBar
 0x00434ae0,231,DrawAirBar,_DrawAirBar
 0x00434bd0,29,RemoveAmmoText,_RemoveAmmoText
-0x00434bf0,305,DrawAmmoInfo,_DrawAmmoInfo
+0x00434bf0,340,DrawAmmoInfo,_DrawAmmoInfo
 0x00434d50,21,InitialisePickUpDisplay,_InitialisePickUpDisplay
 0x00434d70,63,AddDisplayPickup,_AddDisplayPickup
 0x00434db0,122,DisplayModeInfo,_DisplayModeInfo
