@@ -355,6 +355,55 @@ void TriggerExplosionSmokeEnd(sint32 x, sint32 y, sint32 z, sint32 uw)
     sptr->dHeight = size;
 }
 
+void TriggerExplosionSmoke(sint32 x, sint32 y, sint32 z, sint32 uw)
+{
+    sint32 size;
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - x;
+    dz = lara_item->pos.z_pos - z;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 144;
+    sptr->sG = 144;
+    sptr->sB = 144;
+    sptr->dR = 64;
+    sptr->dG = 64;
+    sptr->dB = 64;
+    sptr->ColFadeSpeed = 2;
+    sptr->FadeToBlack = 8;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 10;
+    sptr->TransType = 3;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + (GetRandomControl() & 511) - 256;
+    sptr->y = y + (GetRandomControl() & 511) - 256;
+    sptr->z = z + (GetRandomControl() & 511) - 256;
+    sptr->Xvel = ((GetRandomControl() & 4095) - 2048) >> 2;
+    sptr->Yvel = (GetRandomControl() & 255) - 128;
+    sptr->Zvel = ((GetRandomControl() & 4095) - 2048) >> 2;
+    if (uw)
+        sptr->Friction = 2;
+    else
+        sptr->Friction = 6;
+    sptr->Flags = 2 | 8 | 16 | 512;
+    sptr->RotAng = GetRandomControl() & 4095;
+    sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 1;
+    sptr->Gravity = -(GetRandomControl() & 3) - 3;
+    sptr->MaxYvel = -(GetRandomControl() & 3) - 4;
+    size = (GetRandomControl() & 31) + 128;
+    sptr->Width = sptr->sWidth = size >> 2;
+    sptr->dWidth = size;
+    size += (GetRandomControl() & 31) + 32;
+    sptr->Height = sptr->sHeight = size >> 3;
+    sptr->dHeight = size;
+}
+
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 
 void TriggerAlertLight(sint32 x, sint32 y, sint32 z, sint32 r, sint32 g, sint32 b, sint32 angle, sint16 room_no)
