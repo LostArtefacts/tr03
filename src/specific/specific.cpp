@@ -111,4 +111,9 @@ int S_StartSyncedAudio(int nTrack)
     return 1;
 }
 
+int S_CDGetLoc(void)
+{
+    return ACMGetTrackLocation();
+}
+
 }

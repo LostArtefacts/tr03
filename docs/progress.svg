@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="261.90" height="12" x="0" y="0" class="named"><title>921 · 62.36%</title></rect>
-<rect width="1.42" height="12" x="261.90" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="156.68" height="12" x="263.32" y="0" class="todo"><title>551 · 37.31%</title></rect>
+<rect width="262.18" height="12" x="0" y="0" class="named"><title>922 · 62.42%</title></rect>
+<rect width="1.42" height="12" x="262.18" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="156.40" height="12" x="263.60" y="0" class="todo"><title>550 · 37.24%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">62.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">921</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">551</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">922</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">550</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="186.24" height="12" x="0" y="0" class="named"><title>296 KB · 44.34%</title></rect>
 <rect width="3.69" height="12" x="186.24" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="230.08" height="12" x="189.92" y="0" class="todo"><title>366 KB · 54.78%</title></rect>
+<rect width="230.07" height="12" x="189.93" y="0" class="todo"><title>366 KB · 54.78%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">296 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">366 KB</tspan></text>
@@ -1366,7 +1366,7 @@
 <rect width="12" height="12" x="735" y="375" class="named"><title>0x0048d480 S_CDPlay (20 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="390" class="named"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="390" class="named"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="390" class="todo"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="390" class="named"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="390" class="todo"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="390" class="todo"><title>0x0048d500 SWR_FindNearestPaletteEntry (200 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="390" class="todo"><title>0x0048d5d0 TIME_Reset (12 bytes)</title></rect>
@@ -3020,7 +3020,7 @@
 <rect width="1" height="1.75" x="746" y="438.03" class="named"><title>0x0045b6f0 GunShot (5 bytes)</title></rect>
 <rect width="2.18" height="1" x="738.19" y="442.78" class="todo"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="2.18" height="1" x="738.19" y="446" class="named"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
-<rect width="1" height="2.27" x="743.37" y="442.78" class="todo"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
+<rect width="1" height="2.27" x="743.37" y="442.78" class="named"><title>0x0048d4e0 S_CDGetLoc (5 bytes)</title></rect>
 <rect width="1" height="2.27" x="746" y="442.78" class="todo"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
 <rect width="3.63" height="1" x="743.37" y="446" class="named"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
 </g>
