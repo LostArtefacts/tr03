@@ -251,6 +251,147 @@ void LaraCheatyBits(void)
 
 #define LARA_HITPOINTS 1000
 
+extern sint16 *commands;
+extern sint16 FXType;
+extern void (*effect_routines[])(ITEM_INFO *item);
+
+int GetChange(ITEM_INFO *item, ANIM_STRUCT *anim);
+void TranslateItem(ITEM_INFO *item, sint32 x, sint32 y, sint32 z);
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+void AnimateLara(ITEM_INFO *item)
+{
+    int i;
+    ANIM_STRUCT *anim;
+    sint16 *command;
+    sint32 speed;
+    uint16 type, num;
+
+    item->frame_number++;
+    anim = &anims[item->anim_number];
+    if (anim->number_changes > 0) {
+        if (GetChange(item, anim)) {
+            anim = &anims[item->anim_number];
+            item->current_anim_state = anim->current_anim_state;
+        }
+    }
+
+    if (item->frame_number > anim->frame_end) {
+        if (anim->number_commands > 0) {
+            command = &commands[anim->command_index];
+            for (i = anim->number_commands; i > 0; i--) {
+                switch (*(command++)) {
+                case 1:
+                    TranslateItem(item, (sint32)*command, (sint32)*(command + 1), (sint32)*(command + 2));
+                    command += 3;
+                    break;
+                case 2:
+                    item->fallspeed = *(command++);
+                    item->speed = *(command++);
+                    item->gravity_status = 1;
+                    if (lara.calc_fallspeed) {
+                        item->fallspeed = lara.calc_fallspeed;
+                        lara.calc_fallspeed = 0;
+                    }
+                    break;
+                case 3:
+                    if (lara.gun_status != LG_SPECIAL)
+                        lara.gun_status = LG_ARMLESS;
+                    break;
+                case 4:
+                    break;
+                case 5:
+                case 6:
+                    command += 2;
+                    break;
+                }
+            }
+        }
+        item->anim_number = anim->jump_anim_num;
+        item->frame_number = anim->jump_frame_num;
+        anim = &anims[item->anim_number];
+        item->current_anim_state = anim->current_anim_state;
+    }
+
+    if (anim->number_commands > 0) {
+        command = &commands[anim->command_index];
+        for (i = anim->number_commands; i > 0; i--) {
+            switch (*(command++)) {
+            case 1:
+                command += 3;
+                break;
+            case 2:
+                command += 2;
+                break;
+            case 3:
+            case 4:
+                break;
+            case 5:
+                if (item->frame_number == *command) {
+                    type = *(command + 1) & 0xc000;
+                    if (type == 0
+                        || (type == 0x4000 && (lara.water_surface_dist >= 0 || lara.water_surface_dist == NO_HEIGHT))
+                        || (type == 0x8000 && lara.water_surface_dist < 0 && lara.water_surface_dist != NO_HEIGHT
+                            && !(room[lara_item->room_number].flags & 128))) {
+                        num = *(command + 1) & 0x3fff;
+                        SoundEffect((int)num, &item->pos, 2);
+                    }
+                }
+                command += 2;
+                break;
+            case 6:
+                if (item->frame_number == *command) {
+                    FXType = command[1] & 0xc000;
+                    num = *(command + 1) & 0x3fff;
+                    (*effect_routines[(int)num])(item);
+                }
+                command += 2;
+                break;
+            }
+        }
+    }
+
+    if (!item->gravity_status) {
+        if (lara.water_status == LARA_WADE && (room[item->room_number].flags & 128)) {
+            speed = anim->velocity >> 1;
+            if (anim->acceleration)
+                speed += (anim->acceleration * (item->frame_number - anim->frame_base)) >> 2;
+            item->speed = (sint16)(speed >> 16);
+        } else {
+            speed = anim->velocity;
+            if (anim->acceleration)
+                speed += anim->acceleration * (item->frame_number - anim->frame_base);
+            item->speed = (sint16)(speed >> 16);
+        }
+    } else {
+        if (room[item->room_number].flags & 128) {
+            item->speed -= item->speed >> 3;
+            if (abs(item->speed) < 8) {
+                item->speed = 0;
+                item->gravity_status = 0;
+            }
+            if (item->fallspeed > 128)
+                item->fallspeed >>= 1;
+            item->fallspeed -= item->fallspeed >> 2;
+            if (item->fallspeed < 4)
+                item->fallspeed = 4;
+            item->pos.y_pos += item->fallspeed;
+        } else {
+            speed = anim->velocity + anim->acceleration * (item->frame_number - anim->frame_base - 1);
+            item->speed -= (sint16)(speed >> 16);
+            speed += anim->acceleration;
+            item->speed += (sint16)(speed >> 16);
+            item->fallspeed += (item->fallspeed < FASTFALL_SPEED) ? 6 : 1;
+            item->pos.y_pos += item->fallspeed;
+        }
+    }
+
+    item->pos.x_pos += (phd_sin(lara.move_angle) * item->speed) >> W2V_SHIFT;
+    item->pos.z_pos += (phd_cos(lara.move_angle) * item->speed) >> W2V_SHIFT;
+}
+
 int Inv_RemoveItem(int item_num);
 
 void UseItem(sint16 object_num)
