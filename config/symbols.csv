@@ -786,7 +786,7 @@ address,size,name,symbol
 0x00451e80,520,ControlLondBossPlasmaBall,_ControlLondBossPlasmaBall
 0x00452090,425,TriggerPlasmaBallFlame_londboss,_TriggerPlasmaBallFlame_londboss
 0x00452240,378,KnockBackCollision,_KnockBackCollision
-0x004523c0,2811,LondSecControl,_LondSecControl
+0x004523c0,2888,LondSecControl,_LondSecControl
 0x00452f10,124,InitialiseLOTarray,_InitialiseLOTarray
 0x00452f90,104,DisableBaddieAI,_DisableBaddieAI
 0x00453000,494,EnableBaddieAI,_EnableBaddieAI
@@ -1955,6 +1955,7 @@ address,size,name,symbol
 0x004c7768,16,lizman_swipe_hit,_lizman_swipe_hit
 0x004c7778,16,lizman_gas,_lizman_gas
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
+0x004c78a0,16,londsec_gun,_londsec_gun
 0x004c78f8,16,oilsmg_gun,_oilsmg_gun
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
 0x004c7828,20,dradii_londboss,_dradii_londboss
