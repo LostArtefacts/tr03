@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="277.92" height="12" x="0" y="0" class="named"><title>978 · 66.17%</title></rect>
-<rect width="1.42" height="12" x="277.92" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="140.66" height="12" x="279.34" y="0" class="todo"><title>495 · 33.49%</title></rect>
+<rect width="278.20" height="12" x="0" y="0" class="named"><title>979 · 66.24%</title></rect>
+<rect width="1.42" height="12" x="278.20" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="140.38" height="12" x="279.62" y="0" class="todo"><title>494 · 33.42%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">66.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">978</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">495</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">979</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">494</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.42" height="12" x="0" y="0" class="named"><title>298 KB · 44.62%</title></rect>
-<rect width="3.69" height="12" x="187.42" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.90" height="12" x="191.10" y="0" class="todo"><title>364 KB · 54.50%</title></rect>
+<rect width="187.44" height="12" x="0" y="0" class="named"><title>298 KB · 44.63%</title></rect>
+<rect width="3.69" height="12" x="187.44" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.88" height="12" x="191.12" y="0" class="todo"><title>364 KB · 54.49%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
@@ -1285,7 +1285,7 @@
 <rect width="12" height="12" x="270" y="360" class="todo"><title>0x00485ca0 GetRandom (55 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="360" class="todo"><title>0x00485ce0 S_InitialiseSystem (439 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="360" class="todo"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="360" class="todo"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="360" class="named"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="360" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="360" class="todo"><title>0x00486010 game_free (52 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="360" class="todo"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
@@ -2875,7 +2875,7 @@
 <rect width="3.68" height="3.24" x="675.30" y="419.19" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
 <rect width="3.68" height="3.14" x="675.30" y="425.43" class="named"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
 <rect width="3.68" height="3.14" x="675.30" y="431.57" class="named"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
-<rect width="3.68" height="3.14" x="675.30" y="437.72" class="todo"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
+<rect width="3.68" height="3.14" x="675.30" y="437.72" class="named"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
 <rect width="3.68" height="3.14" x="675.30" y="443.86" class="todo"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
 <rect width="3.32" height="3.49" x="681.98" y="381.45" class="named"><title>0x0048ab20 S_SetupAboveWater (33 bytes)</title></rect>
 <rect width="3.32" height="3.49" x="688.30" y="381.45" class="named"><title>0x0048d4b0 S_StartSyncedAudio (33 bytes)</title></rect>
