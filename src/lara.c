@@ -1695,6 +1695,63 @@ void lara_as_waterout(ITEM_INFO *item, COLL_INFO *coll)
     camera.flags = FOLLOW_CENTRE;
 }
 
+void lara_as_wade(ITEM_INFO *item, COLL_INFO *coll)
+{
+    if (item->hit_points <= 0) {
+        item->goal_anim_state = AS_STOP;
+        return;
+    }
+
+    camera.target_elevation = -22 * ONE_DEGREE;
+    if (room[item->room_number].flags & SWAMP) {
+        if (input & IN_LEFT) {
+            lara.turn_rate -= LARA_TURN_RATE;
+            if (lara.turn_rate < -LARA_FAST_TURN >> 1)
+                lara.turn_rate = -LARA_FAST_TURN >> 1;
+            item->pos.z_rot -= LARA_LEAN_RATE;
+            if (item->pos.z_rot < -LARA_LEAN_MAX >> 1)
+                item->pos.z_rot = -LARA_LEAN_MAX >> 1;
+        } else if (input & IN_RIGHT) {
+            lara.turn_rate += LARA_TURN_RATE;
+            if (lara.turn_rate > LARA_FAST_TURN >> 1)
+                lara.turn_rate = LARA_FAST_TURN >> 1;
+            item->pos.z_rot += LARA_LEAN_RATE;
+            if (item->pos.z_rot > LARA_LEAN_MAX >> 1)
+                item->pos.z_rot = LARA_LEAN_MAX >> 1;
+        }
+
+        if (input & IN_FORWARD)
+            item->goal_anim_state = AS_WADE;
+        else
+            item->goal_anim_state = AS_STOP;
+    } else {
+        if (input & IN_LEFT) {
+            lara.turn_rate -= LARA_TURN_RATE;
+            if (lara.turn_rate < -LARA_FAST_TURN)
+                lara.turn_rate = -LARA_FAST_TURN;
+            item->pos.z_rot -= LARA_LEAN_RATE;
+            if (item->pos.z_rot < -LARA_LEAN_MAX)
+                item->pos.z_rot = -LARA_LEAN_MAX;
+        } else if (input & IN_RIGHT) {
+            lara.turn_rate += LARA_TURN_RATE;
+            if (lara.turn_rate > LARA_FAST_TURN)
+                lara.turn_rate = LARA_FAST_TURN;
+            item->pos.z_rot += LARA_LEAN_RATE;
+            if (item->pos.z_rot > LARA_LEAN_MAX)
+                item->pos.z_rot = LARA_LEAN_MAX;
+        }
+
+        if (input & IN_FORWARD) {
+            if (lara.water_status == LARA_ABOVEWATER)
+                item->goal_anim_state = AS_RUN;
+            else
+                item->goal_anim_state = AS_WADE;
+        } else {
+            item->goal_anim_state = AS_STOP;
+        }
+    }
+}
+
 void lara_as_deathslide(ITEM_INFO *item, COLL_INFO *coll)
 {
     sint16 room_number;
