@@ -135,4 +135,12 @@ bool DS_Create(LPGUID lpGuid)
     return true;
 }
 
+void DS_Release(void)
+{
+    if (lpDirectSound) {
+        lpDirectSound->Release();
+        lpDirectSound = 0;
+    }
+}
+
 }
