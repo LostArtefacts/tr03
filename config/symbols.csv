@@ -811,7 +811,7 @@ address,size,name,symbol
 0x004557a0,526,ControlBodyPart,_ControlBodyPart
 0x004559b0,82,InitialiseMonkey,_InitialiseMonkey
 0x00455a10,1054,DrawMonkey,_DrawMonkey
-0x00455e30,3257,MonkeyControl,_MonkeyControl
+0x00455e30,3348,MonkeyControl,_MonkeyControl
 0x00456b50,80,InitialiseMovingBlock,_InitialiseMovingBlock
 0x00456ba0,549,ClearMovableBlockSplitters,_ClearMovableBlockSplitters
 0x00456dd0,367,MovableBlock,_MovableBlock
@@ -1962,6 +1962,7 @@ address,size,name,symbol
 0x004c7778,16,lizman_gas,_lizman_gas
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c78a0,16,londsec_gun,_londsec_gun
+0x004c78b0,16,monkey_hit,_monkey_hit
 0x004c78d8,16,mpgun_gun,_mpgun_gun
 0x004c78e8,16,oilred_gun,_oilred_gun
 0x004c78f8,16,oilsmg_gun,_oilsmg_gun
