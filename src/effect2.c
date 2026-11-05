@@ -818,6 +818,59 @@ void TriggerUnderwaterBloodD(sint32 x, sint32 y, sint32 z, sint32 size)
 
 extern sint32 wibble;
 
+void TriggerWaterfallMist(sint32 x, sint32 y, sint32 z, sint32 angle)
+{
+    sint32 xsize, zsize, tangle, dist, lp;
+    sint32 dist_tab[4] = {512 + 64, 171 + 32, -171 - 32, -512 - 64};
+    SPARKS *sptr;
+
+    for (lp = 0; lp < 4; lp++) {
+        sptr = &sparks[GetFreeSpark()];
+        sptr->On = 1;
+        sptr->sR = 128;
+        sptr->sG = 128;
+        sptr->sB = 128;
+        sptr->dR = 192;
+        sptr->dG = 192;
+        sptr->dB = 192;
+        sptr->ColFadeSpeed = 2;
+        sptr->FadeToBlack = 4;
+        sptr->sLife = sptr->Life = 6 + (GetRandomControl() & 3);
+        sptr->TransType = 2;
+        sptr->extras = 0;
+        sptr->Dynamic = -1;
+        dist = dist_tab[lp] + (GetRandomControl() & 31) - 16;
+        tangle = (angle + 1024) & 4095;
+        xsize = (rcossin_tbl[tangle << 1] * dist) >> 12;
+        zsize = (rcossin_tbl[(tangle << 1) + 1] * dist) >> 12;
+        sptr->x = x + xsize + ((GetRandomControl() & 15) - 8);
+        sptr->y = y + ((GetRandomControl() & 15) - 8);
+        sptr->z = z + zsize + ((GetRandomControl() & 15) - 8);
+        sptr->Xvel = rcossin_tbl[angle << 1] >> 12;
+        sptr->Zvel = rcossin_tbl[(angle << 1) + 1] >> 12;
+        sptr->Yvel = 0;
+        sptr->Friction = 3;
+        if (GetRandomControl() & 1) {
+            sptr->Flags = 2 | 8 | 16 | 512;
+            sptr->RotAng = GetRandomControl() & 4095;
+            if (GetRandomControl() & 1)
+                sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+            else
+                sptr->RotAdd = (GetRandomControl() & 15) + 16;
+        } else
+            sptr->Flags = 2 | 8 | 512;
+        sptr->Def = objects[296].mesh_index;
+        sptr->Scalar = 6;
+        sptr->Gravity = 0;
+        sptr->MaxYvel = 0;
+        xsize = (GetRandomControl() & 7) + 12;
+        sptr->Width = sptr->sWidth = xsize >> 1;
+        sptr->dWidth = xsize;
+        sptr->Height = sptr->sHeight = xsize >> 1;
+        sptr->dHeight = xsize;
+    }
+}
+
 void UpdateBats(void)
 {
     sint32 lp;
