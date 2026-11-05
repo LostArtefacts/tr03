@@ -347,3 +347,51 @@ void DoCurrent(ITEM_INFO *item)
     item->pos.z_pos += lara.current_zvel >> 8;
     lara.current_active = 0;
 }
+
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+
+void KayakToBaddieCollision(ITEM_INFO *v)
+{
+    int i;
+    sint16 roomies[20], numroom, *door;
+    sint16 item_num, nex;
+    ITEM_INFO *item;
+    OBJECT_INFO *object;
+    int x, y, z;
+
+    numroom = 1;
+    roomies[0] = v->room_number;
+    if ((door = room[v->room_number].door)) {
+        for (i = (int)*(door++); i > 0; i--) {
+            roomies[numroom++] = *door;
+            door += 16;
+        }
+    }
+    for (i = 0; i < numroom; i++) {
+        item_num = room[roomies[i]].item_number;
+        while (item_num != NO_ITEM) {
+            item = &items[item_num];
+            nex = item->next_item;
+            if (item->collidable && item->status != INVISIBLE) {
+                object = &objects[item->object_number];
+                if (object->collision &&
+                    (item->object_number == 87 || item->object_number == 90 || item->object_number == 94 ||
+                     (item->object_number == 111 && item->current_anim_state != 1) ||
+                     (item->object_number == 113 && item->current_anim_state != 3))) {
+                    x = v->pos.x_pos - item->pos.x_pos;
+                    y = v->pos.y_pos - item->pos.y_pos;
+                    z = v->pos.z_pos - item->pos.z_pos;
+                    if (x > -2048 && x < 2048 && z > -2048 && z < 2048 && y > -2048 && y < 2048) {
+                        if (TestBoundsCollide(item, v, 256)) {
+                            DoLotsOfBlood(lara_item->pos.x_pos, lara_item->pos.y_pos - 256, lara_item->pos.z_pos,
+                                          v->speed, v->pos.y_rot, lara_item->room_number, 3);
+                            lara_item->hit_points -= 5;
+                        }
+                    }
+                }
+            }
+            item_num = nex;
+        }
+    }
+}
