@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="205.64" height="12" x="0" y="0" class="named"><title>649 · 43.94%</title></rect>
-<rect width="262.36" height="12" x="205.64" y="0" class="todo"><title>828 · 56.06%</title></rect>
+<rect width="205.96" height="12" x="0" y="0" class="named"><title>650 · 44.01%</title></rect>
+<rect width="262.04" height="12" x="205.96" y="0" class="todo"><title>827 · 55.99%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">43.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">649</tspan> · <tspan class="todo">828</tspan></text>
+<text text-anchor="end" x="648" y="7.50">44.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">650</tspan> · <tspan class="todo">827</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="69.04" height="12" x="0" y="0" class="named"><title>98 KB · 14.75%</title></rect>
-<rect width="398.96" height="12" x="69.04" y="0" class="todo"><title>567 KB · 85.25%</title></rect>
+<rect width="69.26" height="12" x="0" y="0" class="named"><title>98 KB · 14.80%</title></rect>
+<rect width="398.74" height="12" x="69.26" y="0" class="todo"><title>567 KB · 85.20%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="24.50">14.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">98 KB</tspan> · <tspan class="todo">567 KB</tspan></text>
@@ -843,7 +843,7 @@
 <rect width="12" height="12" x="420" y="225" class="named"><title>0x00451640 S_DrawLondonBoss (96 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="225" class="named"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="225" class="todo"><title>0x00451730 ExplodeLondonBoss (591 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="225" class="todo"><title>0x00451980 TriggerLaserBolt (302 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="225" class="named"><title>0x00451980 TriggerLaserBolt (302 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="225" class="todo"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="225" class="todo"><title>0x00451de0 TriggerPlasmaBall_londboss (159 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="225" class="todo"><title>0x00451e80 ControlLondBossPlasmaBall (520 bytes)</title></rect>
@@ -2087,7 +2087,7 @@
 <rect width="10.27" height="10.51" x="460.19" y="436.49" class="todo"><title>0x00496930 MMXBlit32to15 (306 bytes)</title></rect>
 <rect width="10.14" height="10.61" x="473.46" y="173.97" class="todo"><title>0x00434bf0 DrawAmmoInfo (305 bytes)</title></rect>
 <rect width="10.14" height="10.55" x="473.46" y="187.58" class="todo"><title>0x004302b0 SetupFish (303 bytes)</title></rect>
-<rect width="10.14" height="10.51" x="473.46" y="201.12" class="todo"><title>0x00451980 TriggerLaserBolt (302 bytes)</title></rect>
+<rect width="10.14" height="10.51" x="473.46" y="201.12" class="named"><title>0x00451980 TriggerLaserBolt (302 bytes)</title></rect>
 <rect width="10.14" height="10.51" x="473.46" y="214.63" class="named"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
 <rect width="10.14" height="10.34" x="473.46" y="228.15" class="named"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
 <rect width="10.14" height="10.34" x="473.46" y="241.48" class="named"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>

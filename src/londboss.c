@@ -63,3 +63,48 @@ void InitialiseLondonBoss(sint16 item_number)
         }
     }
 }
+
+sint16 CreateItem(void);
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+void InitialiseItem(sint16 item_num);
+
+void TriggerLaserBolt(PHD_VECTOR *pos, ITEM_INFO *item, sint32 type, sint16 yang)
+{
+    sint16 item_number;
+    ITEM_INFO *bolt_item;
+    PHD_ANGLE angles[2];
+
+    item_number = CreateItem();
+    if (item_number != NO_ITEM) {
+        bolt_item = &items[item_number];
+        bolt_item->object_number = 371;
+        bolt_item->room_number = item->room_number;
+        bolt_item->pos.x_pos = pos->x;
+        bolt_item->pos.y_pos = pos->y;
+        bolt_item->pos.z_pos = pos->z;
+        InitialiseItem(item_number);
+        if (type == 2) {
+            bolt_item->pos.y_pos += item->pos.y_pos - 384;
+            bolt_item->pos.x_rot = -pos->y << 5;
+            bolt_item->pos.y_rot = GetRandomControl() << 1;
+        } else {
+            phd_GetVectorAngles(lara_item->pos.x_pos - pos->x, lara_item->pos.y_pos - 256 - pos->y,
+                                lara_item->pos.z_pos - pos->z, angles);
+            bolt_item->pos.x_rot = angles[1];
+            bolt_item->pos.y_rot = yang;
+            bolt_item->pos.z_rot = 0;
+        }
+        if (type != 1) {
+            bolt_item->speed = 16;
+            bolt_item->item_flags[0] = -24;
+            bolt_item->item_flags[1] = 4;
+            if (type == 2)
+                bolt_item->item_flags[2] = 1;
+        } else {
+            bolt_item->speed = 24;
+            bolt_item->item_flags[0] = 31;
+            bolt_item->item_flags[1] = 16;
+        }
+        AddActiveItem(item_number);
+    }
+}
