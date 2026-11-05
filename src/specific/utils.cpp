@@ -5,6 +5,26 @@ extern "C" {
 
 extern char *G_lpCmdLine;
 
+extern double period;
+extern double start_us;
+extern DWORD start;
+
+double UT_GetAccurateTimer(void);
+
+void UT_InitAccurateTimer(void)
+{
+    LARGE_INTEGER fq;
+
+    if (QueryPerformanceFrequency(&fq)) {
+        period = 1.0 / (double)fq.QuadPart;
+        start_us = 0;
+        start_us = UT_GetAccurateTimer();
+    } else {
+        period = 0;
+        start = timeGetTime();
+    }
+}
+
 void UT_CenterWindow(HWND hWnd)
 {
     RECT rArea;

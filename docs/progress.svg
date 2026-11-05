@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="287.29" height="12" x="0" y="0" class="named"><title>1011 · 68.40%</title></rect>
-<rect width="1.42" height="12" x="287.29" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="131.29" height="12" x="288.71" y="0" class="todo"><title>462 · 31.26%</title></rect>
+<rect width="287.58" height="12" x="0" y="0" class="named"><title>1012 · 68.47%</title></rect>
+<rect width="1.42" height="12" x="287.58" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="131" height="12" x="289" y="0" class="todo"><title>461 · 31.19%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">68.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1011</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">462</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1012</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">461</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.94" height="12" x="0" y="0" class="named"><title>300 KB · 44.99%</title></rect>
-<rect width="3.69" height="12" x="188.94" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.37" height="12" x="192.63" y="0" class="todo"><title>362 KB · 54.14%</title></rect>
+<rect width="189" height="12" x="0" y="0" class="named"><title>300 KB · 45%</title></rect>
+<rect width="3.69" height="12" x="189" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.31" height="12" x="192.69" y="0" class="todo"><title>361 KB · 54.12%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">361 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1377,7 +1377,7 @@
 <rect width="12" height="12" x="150" y="390" class="todo"><title>0x0048d6e0 calc_object_vertices (714 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="390" class="todo"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="390" class="todo"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="390" class="todo"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="390" class="named"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="390" class="todo"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="390" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
@@ -2516,7 +2516,7 @@
 <rect width="5.82" height="5.80" x="582.88" y="362.49" class="named"><title>0x00451640 S_DrawLondonBoss (96 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="371.29" class="todo"><title>0x00481d50 LoadCameras (96 bytes)</title></rect>
 <rect width="5.82" height="5.80" x="582.88" y="380.09" class="todo"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
-<rect width="5.82" height="5.80" x="582.88" y="388.89" class="todo"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
+<rect width="5.82" height="5.80" x="582.88" y="388.89" class="named"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="5.82" height="5.74" x="582.88" y="397.69" class="named"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
 <rect width="5.82" height="5.74" x="582.88" y="406.43" class="named"><title>0x00439e00 AddAssaultTime (95 bytes)</title></rect>
 <rect width="5.82" height="5.74" x="582.88" y="415.17" class="named"><title>0x00439e60 AddQuadbikeTime (95 bytes)</title></rect>
