@@ -757,3 +757,101 @@ void DrawRooms(sint16 current_room)
         LaraElectricDeath(1, lara_item);
     }
 }
+
+typedef struct {
+    sint16 mesh_number;
+    sint16 flags;
+    sint16 x_minp;
+    sint16 x_maxp;
+    sint16 y_minp;
+    sint16 y_maxp;
+    sint16 z_minp;
+    sint16 z_maxp;
+    sint16 x_minc;
+    sint16 x_maxc;
+    sint16 y_minc;
+    sint16 y_maxc;
+    sint16 z_minc;
+    sint16 z_maxc;
+} STATIC_INFO;
+
+extern STATIC_INFO static_objects[];
+extern MESH_INFO *CurrentMesh;
+extern int bObjectOn, bAObjectOn;
+
+int S_GetObjectBounds(sint16 *bptr);
+void S_CalculateStaticMeshLight(sint32 x, sint32 y, sint32 z, sint32 shade, sint32 shadeB, ROOM_INFO *ri);
+sint32 GetRandomDraw(void);
+void DoLotsOfBloodD(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
+void DrawEffect(sint16 fx_num);
+
+void PrintObjects(sint16 room_number)
+{
+    ROOM_INFO *r;
+    MESH_INFO *mesh;
+    ITEM_INFO *item;
+    sint16 i, item_num, clip;
+
+    CurrentRoom = room_number;
+    r = &room[room_number];
+    if (r->flags & UNDERWATER)
+        S_SetupBelowWater(camera_underwater);
+    else
+        S_SetupAboveWater(camera_underwater);
+    r->bound_active = 0;
+
+    phd_PushMatrix();
+    phd_TranslateAbs(r->x, r->y, r->z);
+    phd_left = r->left;
+    phd_right = r->right;
+    phd_top = r->top;
+    phd_bottom = r->bottom;
+    mesh = r->mesh;
+    for (i = r->num_meshes; i > 0; i--, mesh++) {
+        CurrentMesh = mesh;
+        nPolyType = 4;
+        if (static_objects[mesh->static_number].flags & 2) {
+            phd_PushMatrix();
+            phd_TranslateAbs(mesh->x, mesh->y, mesh->z);
+            phd_RotY(mesh->y_rot);
+            if ((clip = S_GetObjectBounds(&static_objects[mesh->static_number].x_minp))) {
+                S_CalculateStaticMeshLight(mesh->x, mesh->y, mesh->z, mesh->shade, mesh->shadeB, r);
+                if (bObjectOn)
+                    phd_PutPolygons(meshes[static_objects[mesh->static_number].mesh_number], clip);
+            }
+            phd_PopMatrix();
+        }
+    }
+
+    phd_left = 0;
+    phd_top = 0;
+    phd_right = phd_winxmax + 1;
+    phd_bottom = phd_winymax + 1;
+    nPolyType = 5;
+    for (item_num = r->item_number; item_num != NO_ITEM; item_num = items[item_num].next_item) {
+        item = &items[item_num];
+        if (item->status != INVISIBLE && bAObjectOn) {
+            if (objects[item->object_number].intelligent)
+                nPolyType = 5;
+            else if ((item->object_number >= 148 && item->object_number <= 157) || (item->object_number >= 12 && item->object_number <= 16))
+                nPolyType = 5;
+            else
+                nPolyType = 4;
+            (*objects[item->object_number].draw_routine)(item);
+        }
+        if (item->after_death < 32 && item->after_death > 0) {
+            item->after_death++;
+            if (item->after_death == 2 || item->after_death == 5 || item->after_death == 11 || item->after_death == 20
+                || item->after_death == 27 || item->after_death == 32 || (GetRandomDraw() & 7) == 0)
+                DoLotsOfBloodD(item->pos.x_pos, item->pos.y_pos - 64, item->pos.z_pos, 0, GetRandomDraw() << 1, item->room_number, 1);
+        }
+    }
+
+    nPolyType = 6;
+    for (item_num = r->fx_number; item_num != NO_ITEM; item_num = effects[item_num].next_fx)
+        DrawEffect(item_num);
+    phd_PopMatrix();
+    r->left = phd_winxmax;
+    r->top = phd_winymax;
+    r->right = r->bottom = 0;
+}
