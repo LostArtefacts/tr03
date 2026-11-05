@@ -103,7 +103,7 @@ address,size,name,symbol
 0x00412040,362,BoatCheckGeton,_BoatCheckGeton
 0x004121b0,380,BoatCollision,_BoatCollision
 0x00412330,455,BoatUserControl,_BoatUserControl
-0x00412500,510,BoatAnimation,_BoatAnimation
+0x00412500,548,BoatAnimation,_BoatAnimation
 0x00412730,237,CanGetOff_boat,_CanGetOff_boat
 0x00412820,2202,BoatControl,_BoatControl
 0x004130c0,459,DoWake_boat,_DoWake_boat

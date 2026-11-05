@@ -179,6 +179,84 @@ int BoatUserControl(ITEM_INFO *boat)
     return no_turn;
 }
 
+int CanGetOff_boat(int direction);
+
+void BoatAnimation(ITEM_INFO *boat, int collide)
+{
+    BOAT_INFO *binfo;
+
+    binfo = (BOAT_INFO *)boat->data;
+
+    if (lara_item->hit_points <= 0) {
+        if (lara_item->current_anim_state != 8) {
+            lara_item->anim_number = objects[11].anim_index + 18;
+            lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+            lara_item->current_anim_state = lara_item->goal_anim_state = 8;
+        }
+    } else if (boat->pos.y_pos < binfo->water - 128 && boat->fallspeed > 0) {
+        if (lara_item->current_anim_state != 6) {
+            lara_item->anim_number = objects[11].anim_index + 15;
+            lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+            lara_item->current_anim_state = lara_item->goal_anim_state = 6;
+        }
+    } else if (collide) {
+        if (lara_item->current_anim_state != 5) {
+            lara_item->anim_number = (sint16)(objects[11].anim_index + collide);
+            lara_item->frame_number = anims[lara_item->anim_number].frame_base;
+            lara_item->current_anim_state = lara_item->goal_anim_state = 5;
+        }
+    } else {
+        switch (lara_item->current_anim_state) {
+        case 1:
+            if (input & IN_ROLL) {
+                if (boat->speed == 0) {
+                    if ((input & (IN_RIGHT | IN_STEPR))
+                        && CanGetOff_boat(boat->pos.y_rot + 0x4000)) {
+                        lara_item->goal_anim_state = 3;
+                    } else if ((input & (IN_LEFT | IN_STEPL))
+                        && CanGetOff_boat(boat->pos.y_rot - 0x4000)) {
+                        lara_item->goal_anim_state = 4;
+                    }
+                }
+            }
+            if (boat->speed > 0) {
+                lara_item->goal_anim_state = 2;
+            }
+            break;
+
+        case 2:
+            if (boat->speed <= 0) {
+                lara_item->goal_anim_state = 1;
+            } else if (input & (IN_RIGHT | IN_STEPR)) {
+                lara_item->goal_anim_state = 7;
+            } else if (input & (IN_LEFT | IN_STEPL)) {
+                lara_item->goal_anim_state = 9;
+            }
+            break;
+
+        case 6:
+            lara_item->goal_anim_state = 2;
+            break;
+
+        case 7:
+            if (boat->speed <= 0) {
+                lara_item->goal_anim_state = 1;
+            } else if (!(input & (IN_RIGHT | IN_STEPR))) {
+                lara_item->goal_anim_state = 2;
+            }
+            break;
+
+        case 9:
+            if (boat->speed <= 0) {
+                lara_item->goal_anim_state = 1;
+            } else if (!(input & (IN_LEFT | IN_STEPL))) {
+                lara_item->goal_anim_state = 2;
+            }
+            break;
+        }
+    }
+}
+
 int DoBoatDynamics(int height, int fallspeed, int *y)
 {
     if (height > *y)
