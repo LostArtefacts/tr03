@@ -725,3 +725,79 @@ void AnimateItem(ITEM_INFO *item)
     item->pos.x_pos += (phd_sin(item->pos.y_rot) * item->speed) >> W2V_SHIFT;
     item->pos.z_pos += (phd_cos(item->pos.y_rot) * item->speed) >> W2V_SHIFT;
 }
+
+
+int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target)
+{
+    int i, j, failure;
+    sint32 x, y, z, dx, dy, dz, distance;
+    sint32 direction;
+    sint16 item_number;
+    sint16 *bounds, *zextent, *xextent;
+    ITEM_INFO *item;
+
+    dx = target->x - start->x;
+    dy = target->y - start->y;
+    dz = target->z - start->z;
+    for (i = 0; i < number_los_rooms; i++) {
+        for (item_number = room[los_rooms[i]].item_number; item_number != NO_ITEM;
+             item_number = items[item_number].next_item) {
+            item = &items[item_number];
+            if (item->status == DEACTIVATED)
+                continue;
+            if (item->object_number != 101 && item->object_number != 102 && item->object_number != 103 &&
+                item->object_number != 104 && item->object_number != 38 && item->object_number != 373)
+                continue;
+            bounds = GetBoundsAccurate(item);
+            direction = (uint16)(item->pos.y_rot + 0x2000) / 0x4000;
+            if (direction & 1) {
+                zextent = &bounds[0];
+                xextent = &bounds[4];
+            } else {
+                zextent = &bounds[4];
+                xextent = &bounds[0];
+            }
+            failure = 0;
+            if ((dz < 0 ? -dz : dz) > (dx < 0 ? -dx : dx)) {
+                distance = item->pos.z_pos + zextent[0] - start->z;
+                for (j = 0; j < 2; j++) {
+                    if ((distance & 0x80000000) == (dz & 0x80000000)) {
+                        y = dy * distance / dz;
+                        if (y > item->pos.y_pos + bounds[2] - start->y && y < item->pos.y_pos + bounds[3] - start->y) {
+                            x = dx * distance / dz;
+                            if (x < item->pos.x_pos + xextent[0] - start->x)
+                                failure |= 1;
+                            else if (x > item->pos.x_pos + xextent[1] - start->x)
+                                failure |= 2;
+                            else
+                                return item_number;
+                        }
+                    }
+                    distance = item->pos.z_pos + zextent[1] - start->z;
+                }
+                if (failure == 3)
+                    return item_number;
+            } else {
+                distance = item->pos.x_pos + xextent[0] - start->x;
+                for (j = 0; j < 2; j++) {
+                    if ((distance & 0x80000000) == (dx & 0x80000000)) {
+                        y = dy * distance / dx;
+                        if (y > item->pos.y_pos + bounds[2] - start->y && y < item->pos.y_pos + bounds[3] - start->y) {
+                            z = dz * distance / dx;
+                            if (z < item->pos.z_pos + zextent[0] - start->z)
+                                failure |= 1;
+                            else if (z > item->pos.z_pos + zextent[1] - start->z)
+                                failure |= 2;
+                            else
+                                return item_number;
+                        }
+                    }
+                    distance = item->pos.x_pos + xextent[1] - start->x;
+                }
+                if (failure == 3)
+                    return item_number;
+            }
+        }
+    }
+    return NO_ITEM;
+}

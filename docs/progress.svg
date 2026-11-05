@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="271.51" height="12" x="0" y="0" class="named"><title>868 · 58.77%</title></rect>
-<rect width="190.49" height="12" x="271.51" y="0" class="todo"><title>609 · 41.23%</title></rect>
+<rect width="271.82" height="12" x="0" y="0" class="named"><title>869 · 58.84%</title></rect>
+<rect width="190.18" height="12" x="271.82" y="0" class="todo"><title>608 · 41.16%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">58.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">868</tspan> · <tspan class="todo">609</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">869</tspan> · <tspan class="todo">608</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="163.48" height="12" x="0" y="0" class="named"><title>236 KB · 35.38%</title></rect>
-<rect width="298.52" height="12" x="163.48" y="0" class="todo"><title>431 KB · 64.62%</title></rect>
+<rect width="164.02" height="12" x="0" y="0" class="named"><title>237 KB · 35.50%</title></rect>
+<rect width="297.98" height="12" x="164.02" y="0" class="todo"><title>430 KB · 64.50%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">35.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">236 KB</tspan> · <tspan class="todo">431 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">35.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">237 KB</tspan> · <tspan class="todo">430 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -281,7 +281,7 @@
 <rect width="12" height="12" x="240" y="60" class="todo"><title>0x00422410 zLOS (747 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="60" class="named"><title>0x00422700 xLOS (748 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="60" class="named"><title>0x004229f0 ClipTarget (576 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="60" class="todo"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="60" class="named"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="60" class="named"><title>0x00422f40 FlipMap (179 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="60" class="named"><title>0x00423000 RemoveRoomFlipItems (156 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="60" class="named"><title>0x004230a0 AddRoomFlipItems (97 bytes)</title></rect>
@@ -1759,7 +1759,7 @@
 <rect width="16.47" height="16.83" x="445.97" y="44.84" class="named"><title>0x004250a0 PrintObjects (787 bytes)</title></rect>
 <rect width="16.42" height="16.83" x="465.43" y="44.84" class="named"><title>0x0041bed0 ControlClawmutePlasmaBall (785 bytes)</title></rect>
 <rect width="16.40" height="16.83" x="484.86" y="44.84" class="named"><title>0x0046b750 TigerControl (784 bytes)</title></rect>
-<rect width="16.32" height="16.83" x="504.26" y="44.84" class="todo"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
+<rect width="16.32" height="16.83" x="504.26" y="44.84" class="named"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
 <rect width="16.23" height="16.83" x="523.58" y="44.84" class="named"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
 <rect width="16.19" height="16.83" x="542.81" y="44.84" class="todo"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="16.07" height="16.83" x="562" y="44.84" class="todo"><title>0x0043e1c0 LaraHangTest (768 bytes)</title></rect>
