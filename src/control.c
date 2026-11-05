@@ -594,3 +594,134 @@ int ClipTarget(GAME_VECTOR *start, GAME_VECTOR *target)
     }
     return 1;
 }
+
+extern sint16 *commands;
+extern sint16 FXType;
+extern void (*effect_routines[])(ITEM_INFO *item);
+
+void TranslateItem(ITEM_INFO *item, sint32 x, sint32 y, sint32 z);
+
+void AnimateItem(ITEM_INFO *item)
+{
+    int i;
+    ANIM_STRUCT *anim;
+    sint16 *command;
+    sint32 speed;
+    uint16 num;
+    uint16 type;
+
+    item->touch_bits = 0;
+    item->hit_status = 0;
+    anim = &anims[item->anim_number];
+    item->frame_number++;
+    if (anim->number_changes > 0) {
+        if (GetChange(item, anim)) {
+            anim = &anims[item->anim_number];
+            item->current_anim_state = anim->current_anim_state;
+            if (item->required_anim_state == item->current_anim_state)
+                item->required_anim_state = 0;
+        }
+    }
+
+    if (item->frame_number > anim->frame_end) {
+        if (anim->number_commands > 0) {
+            command = &commands[anim->command_index];
+            for (i = anim->number_commands; i > 0; i--) {
+                switch (*(command++)) {
+                case 1:
+                    TranslateItem(item, (sint32)*command, (sint32)*(command + 1), (sint32)*(command + 2));
+                    command += 3;
+                    break;
+                case 2:
+                    item->fallspeed = *(command++);
+                    item->speed = *(command++);
+                    item->gravity_status = 1;
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    if (objects[item->object_number].intelligent)
+                        item->after_death = 1;
+                    else
+                        item->after_death = 64;
+                    item->status = DEACTIVATED;
+                    break;
+                case 5:
+                case 6:
+                    command += 2;
+                    break;
+                }
+            }
+        }
+        item->anim_number = anim->jump_anim_num;
+        item->frame_number = anim->jump_frame_num;
+        anim = &anims[item->anim_number];
+        if (item->current_anim_state != anim->current_anim_state) {
+            item->current_anim_state = anim->current_anim_state;
+            item->goal_anim_state = item->current_anim_state;
+        }
+        if (item->required_anim_state == item->current_anim_state)
+            item->required_anim_state = 0;
+    }
+
+    if (anim->number_commands > 0) {
+        command = &commands[anim->command_index];
+        for (i = anim->number_commands; i > 0; i--) {
+            switch (*(command++)) {
+            case 1:
+                command += 3;
+                break;
+            case 2:
+                command += 2;
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                if (item->frame_number == *command) {
+                    type = *(command + 1) & 0xc000;
+                    num = *(command + 1) & 0x3fff;
+                    if (objects[item->object_number].water_creature)
+                        SoundEffect((int)num, &item->pos, 1);
+                    else if (item->room_number == 255) {
+                        item->pos.x_pos = lara_item->pos.x_pos;
+                        item->pos.y_pos = lara_item->pos.y_pos - 762;
+                        item->pos.z_pos = lara_item->pos.z_pos;
+                        if (item->object_number == 9)
+                            SoundEffect((int)num, &item->pos, 2);
+                        else
+                            SoundEffect((int)num, &item->pos, 0);
+                    } else if (room[item->room_number].flags & UNDERWATER) {
+                        if (type == 0 || type == 0x8000)
+                            SoundEffect((int)num, &item->pos, 0);
+                    } else if (type == 0 || type == 0x4000)
+                        SoundEffect((int)num, &item->pos, 0);
+                }
+                command += 2;
+                break;
+            case 6:
+                if (item->frame_number == *command) {
+                    FXType = command[1] & 0xc000;
+                    num = *(command + 1) & 0x3fff;
+                    (*effect_routines[(int)num])(item);
+                }
+                command += 2;
+                break;
+            }
+        }
+    }
+
+    if (!item->gravity_status) {
+        speed = anim->velocity;
+        if (anim->acceleration != 0)
+            speed += anim->acceleration * (item->frame_number - anim->frame_base);
+        item->speed = (sint16)(speed >> 16);
+    } else {
+        item->fallspeed += (item->fallspeed < FASTFALL_SPEED) ? 6 : 1;
+        item->pos.y_pos += item->fallspeed;
+    }
+
+    item->pos.x_pos += (phd_sin(item->pos.y_rot) * item->speed) >> W2V_SHIFT;
+    item->pos.z_pos += (phd_cos(item->pos.y_rot) * item->speed) >> W2V_SHIFT;
+}

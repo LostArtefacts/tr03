@@ -203,7 +203,7 @@ address,size,name,symbol
 0x0041f750,1524,CompyControl,_CompyControl
 0x0041fd50,587,CarcassControl,_CarcassControl
 0x0041ffa0,1516,ControlPhase,_ControlPhase
-0x00420590,931,AnimateItem,_AnimateItem
+0x00420590,980,AnimateItem,_AnimateItem
 0x00420970,171,GetChange,_GetChange
 0x00420a20,95,TranslateItem,_TranslateItem
 0x00420a80,481,GetFloor,_GetFloor
