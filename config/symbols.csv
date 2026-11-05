@@ -1840,6 +1840,7 @@ address,size,name,symbol
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
 0x004c5084,4,one,_one
 0x004c51a0,16,seal_gas_boomute,_seal_gas_boomute
+0x004c51b4,4,cine_delay,_cine_delay
 0x004c51f8,2,cdtrack,_cdtrack
 0x004c5200,4,flipeffect,_flipeffect
 0x004c52b0,,lara_meshes,_lara_meshes
@@ -2036,6 +2037,7 @@ address,size,name,symbol
 0x00625f40,2,cinematic_level,_cinematic_level
 0x00625f44,4,actual_current_frame,_actual_current_frame
 0x00625f48,4,original_room,_original_room
+0x00625f4c,4,cine_framecount,_cine_framecount
 0x00625f60,4,noinput_count,_noinput_count
 0x00625f64,4,reset_flag,_reset_flag
 0x00625f68,4,fliptimer,_fliptimer
