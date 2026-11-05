@@ -46,4 +46,11 @@ int CalcPan(sint16 angle)
     return angle >> 4;
 }
 
+int S_SoundPlaySampleLooped(int nSample, unsigned short wVol, int nPitch, sint16 wPan)
+{
+    if (!sound_active)
+        return -3;
+    return DS_StartSample(nSample, CalcVolume(wVol), nPitch, CalcPan(wPan), DSBPLAY_LOOPING);
+}
+
 }
