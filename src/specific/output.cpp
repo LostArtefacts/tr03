@@ -32,4 +32,11 @@ void S_ClearScreen(void)
     ScreenClear(false);
 }
 
+void S_SetupAboveWater(int underwater)
+{
+    water_effect = underwater;
+    shade_effect = 0;
+    bBlueEffect = underwater;
+}
+
 }
