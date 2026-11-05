@@ -773,7 +773,7 @@ address,size,name,symbol
 0x0044f810,31,LaserControl,_LaserControl
 0x0044f830,332,LaserSplitterToggle,_LaserSplitterToggle
 0x0044f980,570,S_DrawLaser,_S_DrawLaser
-0x0044fbc0,2003,LizManControl,_LizManControl
+0x0044fbc0,2080,LizManControl,_LizManControl
 0x004503e0,576,TriggerLizmanGasThrower,_TriggerLizmanGasThrower
 0x00450620,469,TriggerLizmanGas,_TriggerLizmanGas
 0x00450800,3575,LondonBossControl,_LondonBossControl
@@ -1950,6 +1950,9 @@ address,size,name,symbol
 0x004c7450,416,lara_control_routines,_lara_control_routines
 0x004c75b8,56,extra_control_routines,_extra_control_routines
 0x004c75f0,416,lara_collision_routines,_lara_collision_routines
+0x004c7758,16,lizman_bite_hit,_lizman_bite_hit
+0x004c7768,16,lizman_swipe_hit,_lizman_swipe_hit
+0x004c7778,16,lizman_gas,_lizman_gas
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
 0x004c7828,20,dradii_londboss,_dradii_londboss
