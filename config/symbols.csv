@@ -1072,7 +1072,7 @@ address,size,name,symbol
 0x00475380,57,Func475380,
 0x004753c0,14,Func4753c0,
 0x00475400,34,DI_Create,_DI_Create
-0x00475430,26,Func475430,
+0x00475430,26,DI_Release,_DI_Release
 0x00475450,90,DI_ReadKeyboard,_DI_ReadKeyboard
 0x004754b0,243,DI_ReadJoystick,_DI_ReadJoystick
 0x004755b0,201,DI_StartKeyboard,_DI_StartKeyboard
@@ -1477,7 +1477,7 @@ address,size,name,symbol
 0x004b4c5e,27,phd_sin,@phd_sin@4
 0x004b4c79,26,Func4b4c79,
 0x004b4c93,44,phd_sqrt,@phd_sqrt@4
-0x004b4cc0,6,DirectInputCreateA,
+0x004b4cc0,6,DirectInputCreateA,_DirectInputCreateA@16
 0x004b5ce8,6,DirectSoundEnumerateA,
 0x004b5cee,6,DirectSoundCreate,_DirectSoundCreate@12
 0x004b5cf4,6,DirectDrawEnumerateA,
@@ -1541,11 +1541,11 @@ address,size,name,symbol
 0x004b6930,119,Func4b6930,
 0x004b69b0,55,Func4b69b0,
 0x004b69f0,24,Func4b69f0,
-0x004b6ae0,170,__alldiv,
+0x004b6ae0,170,__alldiv,__alldiv
 0x004b6b90,52,__allmul,
 0x004b6bd0,16,Func4b6bd0,
 0x004b6be0,572,Func4b6be0,
-0x004b6e20,128,_strstr,
+0x004b6e20,128,_strstr,_strstr
 0x004b6ea0,410,Func4b6ea0,
 0x004b7040,48,Func4b7040,
 0x004b7070,18,Func4b7070,
@@ -2036,6 +2036,9 @@ address,size,name,symbol
 0x004c7fe8,16,wing_bite,_wing_bite
 0x004c8040,8,screen_sizer,_screen_sizer
 0x004c8048,8,game_sizer,_game_sizer
+0x004c8050,4,fade_value,_fade_value
+0x004c8054,4,fade_limit,_fade_limit
+0x004c8058,4,fade_adder,_fade_adder
 0x004c805c,4,BarsWidth,_BarsWidth
 0x004c8848,,rcossin_tbl,_rcossin_tbl
 0x004cd878,48,saved_levels,_saved_levels
@@ -2079,6 +2082,7 @@ address,size,name,symbol
 0x004f6d50,4,phd_persp,_phd_persp
 0x004f6d54,4,surfacenumfb,_surfacenumfb
 0x004f6d58,4,phd_left,_phd_left
+0x004f6d5c,4,InsertFlatRect,_InsertFlatRect
 0x005316e0,2,phd_winxmax,_phd_winxmax
 0x005316e4,4,sort3dptrbf,_sort3dptrbf
 0x005316e8,4,phd_znear,_phd_znear
@@ -2297,11 +2301,16 @@ address,size,name,symbol
 0x00633ff0,4,UnRollBuffer,_UnRollBuffer
 0x00633ff4,1,bAlphaTesting,_bAlphaTesting
 0x00633ff8,4,VertexBuffer,_VertexBuffer
+0x00633ffc,1,GtZBufferCompareEnabled,_GtZBufferCompareEnabled
 0x00634000,4,nDrawnPoints,_nDrawnPoints
 0x00634004,4,CurrentTLVertex,_CurrentTLVertex
 0x00634008,4,nPolyType,_nPolyType
 0x00634010,,ColorTable,_ColorTable
+0x00634110,1,GtZBufferWriteEnabled,_GtZBufferWriteEnabled
 0x00634114,,dpPrimitiveType,_dpPrimitiveType
+0x00634120,1,GtColorAdditionEnabled,_GtColorAdditionEnabled
+0x0063412c,1,GtAlphaBlendEnabled,_GtAlphaBlendEnabled
+0x00634134,1,GtColorKeyEnabled,_GtColorKeyEnabled
 0x00634138,4,malloc_size,_malloc_size
 0x0063413c,4,TLVertexBuffer,_TLVertexBuffer
 0x00634140,4,malloc_ptr,_malloc_ptr
@@ -2352,6 +2361,8 @@ address,size,name,symbol
 0x006a1bd8,128,exit_message,_exit_message
 0x006a1c58,4,title_loaded,_title_loaded
 0x006a2060,4,LnMasterVolume,_LnMasterVolume
+0x006a2070,8,frequency,_frequency
+0x006a2078,8,counter,_counter
 0x006a2080,4,m22,_m22
 0x006a2084,4,m23,_m23
 0x006a2088,163840,ZTable,_ZTable

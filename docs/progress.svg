@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="272.52" height="12" x="0" y="0" class="named"><title>959 · 64.88%</title></rect>
-<rect width="1.42" height="12" x="272.52" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="146.06" height="12" x="273.94" y="0" class="todo"><title>514 · 34.78%</title></rect>
+<rect width="272.80" height="12" x="0" y="0" class="named"><title>960 · 64.95%</title></rect>
+<rect width="1.42" height="12" x="272.80" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="145.78" height="12" x="274.22" y="0" class="todo"><title>513 · 34.71%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">64.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">959</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">514</tspan></text>
+<text text-anchor="end" x="600" y="7.50">65.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">960</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">513</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.90" height="12" x="0" y="0" class="named"><title>297 KB · 44.50%</title></rect>
-<rect width="3.69" height="12" x="186.90" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.42" height="12" x="190.58" y="0" class="todo"><title>365 KB · 54.62%</title></rect>
+<rect width="186.92" height="12" x="0" y="0" class="named"><title>297 KB · 44.50%</title></rect>
+<rect width="3.69" height="12" x="186.92" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.39" height="12" x="190.61" y="0" class="todo"><title>365 KB · 54.62%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1137,7 +1137,7 @@
 <rect width="12" height="12" x="300" y="315" class="todo"><title>0x00475380 Func475380 (57 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="315" class="todo"><title>0x004753c0 Func4753c0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="315" class="todo"><title>0x00475400 DI_Create (34 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="315" class="todo"><title>0x00475430 Func475430 (26 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="315" class="todo"><title>0x00475430 DI_Release (26 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="315" class="todo"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="315" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="315" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
@@ -1230,7 +1230,7 @@
 <rect width="12" height="12" x="195" y="345" class="todo"><title>0x00483470 WinStopFMV (72 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="345" class="todo"><title>0x004834c0 FMV_Play (122 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="345" class="todo"><title>0x00483540 FMV_PlayIntro (151 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="345" class="todo"><title>0x004835e0 S_COLOUR (35 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="345" class="named"><title>0x004835e0 S_COLOUR (35 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="345" class="todo"><title>0x00483610 S_DrawScreenLine (57 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="345" class="todo"><title>0x00483650 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="345" class="todo"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
@@ -2867,7 +2867,7 @@
 <rect width="3.76" height="3.26" x="736.47" y="375.19" class="named"><title>0x0044e860 lara_col_surfback (35 bytes)</title></rect>
 <rect width="3.76" height="3.26" x="743.24" y="375.19" class="named"><title>0x0044e890 lara_col_surfleft (35 bytes)</title></rect>
 <rect width="3.68" height="3.34" x="675.30" y="381.45" class="named"><title>0x0044e8c0 lara_col_surfright (35 bytes)</title></rect>
-<rect width="3.68" height="3.34" x="675.30" y="387.79" class="todo"><title>0x004835e0 S_COLOUR (35 bytes)</title></rect>
+<rect width="3.68" height="3.34" x="675.30" y="387.79" class="named"><title>0x004835e0 S_COLOUR (35 bytes)</title></rect>
 <rect width="3.68" height="3.34" x="675.30" y="394.13" class="named"><title>0x0048fee0 DXSetVideoMode (35 bytes)</title></rect>
 <rect width="3.68" height="3.24" x="675.30" y="400.47" class="named"><title>0x00429390 phd_PopMatrix_I (34 bytes)</title></rect>
 <rect width="3.68" height="3.24" x="675.30" y="406.71" class="named"><title>0x00439000 Inv_RingMotionRotation (34 bytes)</title></rect>
@@ -2920,7 +2920,7 @@
 <rect width="3.27" height="2.90" x="694.30" y="394.11" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
 <rect width="3.27" height="2.90" x="700.57" y="394.11" class="todo"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
 <rect width="3.27" height="2.90" x="706.84" y="394.11" class="todo"><title>0x004b4c5e phd_sin (27 bytes)</title></rect>
-<rect width="3.15" height="2.90" x="713.10" y="394.11" class="todo"><title>0x00475430 Func475430 (26 bytes)</title></rect>
+<rect width="3.15" height="2.90" x="713.10" y="394.11" class="todo"><title>0x00475430 DI_Release (26 bytes)</title></rect>
 <rect width="3.15" height="2.90" x="719.25" y="394.11" class="todo"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="3.15" height="2.90" x="725.40" y="394.11" class="named"><title>0x00480d20 DS_Release (26 bytes)</title></rect>
 <rect width="3.15" height="2.90" x="731.55" y="394.11" class="named"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
