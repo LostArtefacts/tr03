@@ -251,3 +251,81 @@ void DrawUnclippedItem(ITEM_INFO *item)
     phd_top = top;
     phd_bottom = bottom;
 }
+
+void SetupCleanerFromSavegame(ITEM_INFO *item, sint32 block)
+{
+    ROOM_INFO *r;
+    sint32 x, z, xadd, zadd;
+    sint16 room_number;
+
+    x = item->pos.x_pos;
+    z = item->pos.z_pos;
+
+    if (!block && (item->pos.z_pos & 0x3ff) == 512 && (item->pos.x_pos & 0x3ff) == 512) {
+        room_number = item->room_number;
+        GetFloor(x, item->pos.y_pos, z, &room_number);
+        r = &room[room_number];
+        r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size].stopper = 1;
+        return;
+    } else if (item->pos.y_rot == 0) {
+        if (!block) {
+            if ((z & 1023) < 512) {
+                z &= ~1023;
+                z -= 512;
+            } else {
+                z &= ~1023;
+                z += 512;
+            }
+        }
+        xadd = 0;
+        zadd = 1024;
+    } else if (item->pos.y_rot == 16384) {
+        if (!block) {
+            if ((x & 1023) < 512) {
+                x &= ~1023;
+                x -= 512;
+            } else {
+                x &= ~1023;
+                x += 512;
+            }
+        }
+        xadd = 1024;
+        zadd = 0;
+    } else if (item->pos.y_rot == -32768) {
+        if (!block) {
+            if ((z & 1023) > 512) {
+                z |= 1023;
+                z += 512;
+            } else {
+                z &= ~1023;
+                z += 512;
+            }
+        }
+        xadd = 0;
+        zadd = -1024;
+    } else {
+        if (!block) {
+            if ((x & 1023) > 512) {
+                x |= 1023;
+                x += 512;
+            } else {
+                x &= ~1023;
+                x += 512;
+            }
+        }
+        xadd = -1024;
+        zadd = 0;
+    }
+
+    room_number = item->room_number;
+    GetFloor(x, item->pos.y_pos, z, &room_number);
+    r = &room[room_number];
+    r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size].stopper = 1;
+
+    x += xadd;
+    z += zadd;
+    room_number = item->room_number;
+    GetFloor(x, item->pos.y_pos, z, &room_number);
+    r = &room[room_number];
+    r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size].stopper = 1;
+}

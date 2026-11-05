@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="250.55" height="12" x="0" y="0" class="named"><title>801 · 54.23%</title></rect>
-<rect width="211.45" height="12" x="250.55" y="0" class="todo"><title>676 · 45.77%</title></rect>
+<rect width="250.86" height="12" x="0" y="0" class="named"><title>802 · 54.30%</title></rect>
+<rect width="211.14" height="12" x="250.86" y="0" class="todo"><title>675 · 45.70%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">54.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">801</tspan> · <tspan class="todo">676</tspan></text>
+<text text-anchor="end" x="642" y="7.50">54.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">802</tspan> · <tspan class="todo">675</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="126.57" height="12" x="0" y="0" class="named"><title>182 KB · 27.40%</title></rect>
-<rect width="335.43" height="12" x="126.57" y="0" class="todo"><title>483 KB · 72.60%</title></rect>
+<rect width="126.97" height="12" x="0" y="0" class="named"><title>183 KB · 27.48%</title></rect>
+<rect width="335.03" height="12" x="126.97" y="0" class="todo"><title>483 KB · 72.52%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">27.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">182 KB</tspan> · <tspan class="todo">483 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">27.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">183 KB</tspan> · <tspan class="todo">483 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -885,7 +885,7 @@
 <rect width="12" height="12" x="300" y="240" class="todo"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="240" class="named"><title>0x00457760 DrawMovableBlock (37 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="240" class="named"><title>0x00457790 DrawUnclippedItem (107 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="240" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="240" class="named"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="240" class="todo"><title>0x00457a40 MPGunControl (3027 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="240" class="named"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="240" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
@@ -1842,7 +1842,7 @@
 <rect width="14.64" height="13.86" x="453.75" y="82.12" class="named"><title>0x00438530 Inv_GetItemOption (576 bytes)</title></rect>
 <rect width="14.64" height="13.86" x="471.39" y="82.12" class="named"><title>0x004503e0 TriggerLizmanGasThrower (576 bytes)</title></rect>
 <rect width="14.61" height="13.86" x="489.02" y="82.12" class="todo"><title>0x004140a0 TriggerSealmuteGasThrower_boomute (575 bytes)</title></rect>
-<rect width="14.61" height="13.86" x="506.64" y="82.12" class="todo"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
+<rect width="14.61" height="13.86" x="506.64" y="82.12" class="named"><title>0x00457800 SetupCleanerFromSavegame (575 bytes)</title></rect>
 <rect width="14.61" height="13.86" x="524.25" y="82.12" class="named"><title>0x004634c0 TriggerSealmuteGasThrower_sealmute (575 bytes)</title></rect>
 <rect width="14.48" height="13.86" x="541.86" y="82.12" class="named"><title>0x00410ec0 BigGunDraw (570 bytes)</title></rect>
 <rect width="14.48" height="13.86" x="559.34" y="82.12" class="todo"><title>0x0044f980 S_DrawLaser (570 bytes)</title></rect>
