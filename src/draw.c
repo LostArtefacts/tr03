@@ -71,6 +71,64 @@ void PrintRooms(sint16 room_number)
     }
 }
 
+extern sint32 bound_start, bound_end;
+extern sint32 bound_list[128];
+extern sint32 mid_sort;
+extern sint32 number_draw_rooms;
+extern sint16 draw_rooms[];
+extern sint32 outside_left, outside_right, outside_top, outside_bottom;
+extern sint32 w2v_matrix[12];
+void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent);
+
+void GetRoomBounds(void)
+{
+    ROOM_INFO *r;
+    sint16 *door;
+    int i, room_number;
+
+    while (bound_start != bound_end) {
+        room_number = bound_list[(bound_start++) % 128];
+        r = &room[room_number];
+        r->bound_active -= 2;
+        mid_sort = (r->bound_active >> 8) + 1;
+        if (r->test_left < r->left)
+            r->left = r->test_left;
+        if (r->test_top < r->top)
+            r->top = r->test_top;
+        if (r->test_right > r->right)
+            r->right = r->test_right;
+        if (r->test_bottom > r->bottom)
+            r->bottom = r->test_bottom;
+        if (!(r->bound_active & 1)) {
+            draw_rooms[number_draw_rooms++] = room_number;
+            r->bound_active |= 1;
+            if (r->flags & 8)
+                outside = 8;
+        }
+        if (r->flags & 8) {
+            if (r->left < outside_left)
+                outside_left = r->left;
+            if (r->right > outside_right)
+                outside_right = r->right;
+            if (r->top < outside_top)
+                outside_top = r->top;
+            if (r->bottom > outside_bottom)
+                outside_bottom = r->bottom;
+        }
+        phd_PushMatrix();
+        phd_TranslateAbs(r->x, r->y, r->z);
+        if ((door = r->door)) {
+            for (i = *(door++); i > 0; i--, door += 15) {
+                room_number = *(door++);
+                if (door[0] * (r->x + door[3] - w2v_matrix[3]) + door[1] * (r->y + door[4] - w2v_matrix[7]) + door[2] * (r->z + door[5] - w2v_matrix[11]) >= 0)
+                    continue;
+                SetRoomBounds(door, room_number, r);
+            }
+        }
+        phd_PopMatrix();
+    }
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;
