@@ -1231,7 +1231,7 @@ address,size,name,symbol
 0x00487550,50,S_CalculateStaticLight,_S_CalculateStaticLight
 0x00487590,399,S_CalculateStaticMeshLight,_S_CalculateStaticMeshLight
 0x00487720,33,do_pickup_option,_do_pickup_option
-0x00487750,140,do_inventory_options,_do_inventory_options
+0x00487750,288,do_inventory_options,_do_inventory_options
 0x00487870,872,do_levelselect_option,_do_levelselect_option
 0x00487be0,1656,do_passport_option,_do_passport_option
 0x00488260,3247,do_detail_option,_do_detail_option
@@ -1844,6 +1844,8 @@ address,size,name,symbol
 0x004c3478,16,IID_IDirectDrawSurface3,_IID_IDirectDrawSurface3
 0x004c3488,16,IID_IDirect3DTexture2,_IID_IDirect3DTexture2
 0x004c5084,4,one,_one
+0x004c5090,56,TextLight,_TextLight
+0x004c50c8,56,TextDark,_TextDark
 0x004c5100,16,baton_hit,_baton_hit
 0x004c5110,16,baton_kick,_baton_kick
 0x004c5120,16,civvy_hit,_civvy_hit
@@ -2055,6 +2057,7 @@ address,size,name,symbol
 0x004cdc94,4,bAObjectOn,_bAObjectOn
 0x004cdc98,4,bEffectOn,_bEffectOn
 0x004cdca0,56,layout,_layout
+0x004cdcd8,,kname,_kname
 0x004ceec4,1,bSetColorKey,_bSetColorKey
 0x004d38d0,4,mid_sort,_mid_sort
 0x004d38d4,4,BlackGouraudIndex,_BlackGouraudIndex
@@ -2099,6 +2102,7 @@ address,size,name,symbol
 0x0053170c,4,f_perspoznear,_f_perspoznear
 0x00531710,4,f_oneoznear,_f_oneoznear
 0x00531714,2,phd_winymax,_phd_winymax
+0x00531718,4,InsertSprite,_InsertSprite
 0x0053171c,4,surfacenumbf,_surfacenumbf
 0x00531720,24000,info3d_bufferbf,_info3d_bufferbf
 0x0056c0a0,4,f_znear,_f_znear
