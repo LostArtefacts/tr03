@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="257.06" height="12" x="0" y="0" class="named"><title>904 · 61.21%</title></rect>
-<rect width="0.85" height="12" x="257.06" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
-<rect width="162.09" height="12" x="257.91" y="0" class="todo"><title>570 · 38.59%</title></rect>
+<rect width="257.35" height="12" x="0" y="0" class="named"><title>905 · 61.27%</title></rect>
+<rect width="0.85" height="12" x="257.35" y="0" class="nonmatching"><title>3 · 0.20%</title></rect>
+<rect width="161.80" height="12" x="258.20" y="0" class="todo"><title>569 · 38.52%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">61.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">904</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">570</tspan></text>
+<text text-anchor="end" x="600" y="7.50">61.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">905</tspan> · <tspan class="nonmatching">3</tspan> · <tspan class="todo">569</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="184.36" height="12" x="0" y="0" class="named"><title>293 KB · 43.90%</title></rect>
-<rect width="1.51" height="12" x="184.36" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
-<rect width="234.13" height="12" x="185.87" y="0" class="todo"><title>372 KB · 55.74%</title></rect>
+<rect width="184.53" height="12" x="0" y="0" class="named"><title>293 KB · 43.94%</title></rect>
+<rect width="1.51" height="12" x="184.53" y="0" class="nonmatching"><title>2 KB · 0.36%</title></rect>
+<rect width="233.96" height="12" x="186.04" y="0" class="todo"><title>372 KB · 55.70%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">43.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">293 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">372 KB</tspan></text>
@@ -868,7 +868,7 @@
 <rect width="12" height="12" x="15" y="240" class="named"><title>0x00453ca0 MoveCart (1356 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="240" class="todo"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="240" class="todo"><title>0x004542a0 DoUserInput (2307 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="240" class="todo"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="240" class="named"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="240" class="named"><title>0x00454d10 CartToBaddieCollision (658 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="240" class="named"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="240" class="named"><title>0x004552c0 ShootAtLara (167 bytes)</title></rect>
@@ -2121,7 +2121,7 @@
 <rect width="9.51" height="10.05" x="613.53" y="174.18" class="named"><title>0x0042c400 TriggerShotgunSparks (272 bytes)</title></rect>
 <rect width="9.51" height="10.05" x="626.04" y="174.18" class="named"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="9.48" height="10.05" x="638.55" y="174.18" class="named"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
-<rect width="9.44" height="10.05" x="651.03" y="174.18" class="todo"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
+<rect width="9.44" height="10.05" x="651.03" y="174.18" class="named"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
 <rect width="9.44" height="10.05" x="663.47" y="174.18" class="todo"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
 <rect width="9.41" height="10.05" x="675.91" y="174.18" class="named"><title>0x0042d9a0 KillEverything (269 bytes)</title></rect>
 <rect width="9.37" height="10.05" x="688.32" y="174.18" class="named"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>

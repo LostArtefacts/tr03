@@ -344,6 +344,44 @@ void MoveCart(ITEM_INFO *v, ITEM_INFO *l, CARTINFO *cart)
         v->pos.z_rot -= v->pos.z_rot >> 3;
 }
 
+extern int height_type;
+
+int CanGetOut_minecart(int direction)
+{
+    ITEM_INFO *v;
+    FLOOR_INFO *floor;
+    sint16 room_number, angle;
+    int x, y, z, height, ceiling;
+
+    v = &items[lara.skidoo];
+
+    if (direction < 0)
+        angle = v->pos.y_rot + 0x4000;
+    else
+        angle = v->pos.y_rot - 0x4000;
+
+    x = v->pos.x_pos - (330 * phd_sin(angle) >> W2V_SHIFT);
+    y = v->pos.y_pos;
+    z = v->pos.z_pos - (330 * phd_cos(angle) >> W2V_SHIFT);
+
+    room_number = v->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    height = GetHeight(floor, x, y, z);
+
+    if (height_type == 2 || height_type == 3 || height == NO_HEIGHT)
+        return 0;
+
+    if (ABS(height - v->pos.y_pos) > WALL_L / 2)
+        return 0;
+
+    ceiling = GetCeiling(floor, x, y, z);
+
+    if (ceiling - v->pos.y_pos > -762 || height - ceiling < 762)
+        return 0;
+
+    return 1;
+}
+
 int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
 void DoLotsOfBlood(sint32 x, sint32 y, sint32 z, sint16 speed, sint16 direction, sint16 room_num, int number);
 
