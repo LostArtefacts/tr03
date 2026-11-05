@@ -158,3 +158,79 @@ int CanUseGun(ITEM_INFO *v, ITEM_INFO *l)
     else
         return 1;
 }
+
+extern sint32 *bones;
+
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void gar_RotYXZsuperpack(sint16 **pprot, int skip);
+void gar_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
+void phd_PutPolygons(sint16 *objptr, int clip);
+void phd_PutPolygons_I(sint16 *ptr, int clip);
+void InitInterpolate(int frac, int rate);
+void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
+void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
+
+void BigGunDraw(ITEM_INFO *v)
+{
+    sint16 *frmptr[2];
+    OBJECT_INFO *object;
+    int clip, rate, frac;
+
+    frac = GetFrames(v, frmptr, &rate);
+
+    object = &objects[v->object_number];
+
+    phd_PushMatrix();
+    phd_TranslateAbs(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    phd_RotYXZ(v->pos.y_rot, v->pos.x_rot, v->pos.z_rot);
+
+    if ((clip = S_GetObjectBounds(frmptr[0]))) {
+        sint32 *bone;
+        sint16 **meshpp;
+        sint16 *rotation;
+        BIGGUNINFO *gun = (BIGGUNINFO *)v->data;
+
+        CalculateObjectLighting(v, frmptr[0]);
+
+        meshpp = &meshes[object->mesh_index];
+        bone = bones + object->bone_index;
+
+        if (!frac) {
+            phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
+            rotation = frmptr[0] + 9;
+            gar_RotYXZsuperpack(&rotation, 0);
+            phd_PutPolygons(*meshpp++, clip);
+
+            phd_TranslateRel(*(bone + 1), *(bone + 2), *(bone + 3));
+            gar_RotYXZsuperpack(&rotation, 0);
+            phd_PutPolygons(*meshpp++, clip);
+
+            phd_TranslateRel(*(bone + 1 + 4), *(bone + 2 + 4), *(bone + 3 + 4));
+            gar_RotYXZsuperpack(&rotation, 0);
+            phd_PutPolygons(*meshpp++, clip);
+        } else {
+            sint16 *rotation2;
+
+            InitInterpolate(frac, rate);
+            rotation = frmptr[0] + 9;
+            rotation2 = frmptr[1] + 9;
+
+            phd_TranslateRel_ID((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8),
+                                (sint32)*(frmptr[1] + 6), (sint32)*(frmptr[1] + 7), (sint32)*(frmptr[1] + 8));
+            gar_RotYXZsuperpack_I(&rotation, &rotation2, 0);
+            phd_PutPolygons_I(*meshpp++, clip);
+
+            phd_TranslateRel_I(*(bone + 1), *(bone + 2), *(bone + 3));
+            gar_RotYXZsuperpack_I(&rotation, &rotation2, 0);
+            phd_PutPolygons_I(*meshpp++, clip);
+
+            phd_TranslateRel_I(*(bone + 1 + 4), *(bone + 2 + 4), *(bone + 3 + 4));
+            gar_RotYXZsuperpack_I(&rotation, &rotation2, 0);
+            phd_PutPolygons_I(*meshpp++, clip);
+        }
+    }
+    phd_PopMatrix();
+}
