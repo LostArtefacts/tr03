@@ -21,4 +21,12 @@ bool DI_Create(void)
     return true;
 }
 
+void DI_Release(void)
+{
+    if (lpDirectInput) {
+        lpDirectInput->Release();
+        lpDirectInput = 0;
+    }
+}
+
 }
