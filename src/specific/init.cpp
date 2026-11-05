@@ -16,4 +16,12 @@ void init_game_malloc(void)
     malloc_used = 0;
 }
 
+void game_free(int size, int type)
+{
+    size = (size + 3) & ~3;
+    malloc_ptr -= size;
+    malloc_free += size;
+    malloc_used -= size;
+}
+
 }
