@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="206.27" height="12" x="0" y="0" class="named"><title>651 · 44.08%</title></rect>
-<rect width="261.73" height="12" x="206.27" y="0" class="todo"><title>826 · 55.92%</title></rect>
+<rect width="206.59" height="12" x="0" y="0" class="named"><title>652 · 44.14%</title></rect>
+<rect width="261.41" height="12" x="206.59" y="0" class="todo"><title>825 · 55.86%</title></rect>
 </g>
 <text text-anchor="end" x="648" y="7.50">44.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">651</tspan> · <tspan class="todo">826</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">652</tspan> · <tspan class="todo">825</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="69.49" height="12" x="0" y="0" class="named"><title>99 KB · 14.85%</title></rect>
-<rect width="398.51" height="12" x="69.49" y="0" class="todo"><title>566 KB · 85.15%</title></rect>
+<rect width="69.71" height="12" x="0" y="0" class="named"><title>99 KB · 14.90%</title></rect>
+<rect width="398.29" height="12" x="69.71" y="0" class="todo"><title>566 KB · 85.10%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">14.8%</text>
+<text text-anchor="end" x="648" y="24.50">14.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">99 KB</tspan> · <tspan class="todo">566 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1010,7 +1010,7 @@
 <rect width="12" height="12" x="675" y="270" class="named"><title>0x00468780 GetOnSub (200 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="270" class="todo"><title>0x00468850 SubDraw (958 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="270" class="todo"><title>0x00468c10 SubControl (1016 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="270" class="todo"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="270" class="named"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="todo"><title>0x00469150 BackgroundCollision (462 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="285" class="todo"><title>0x00469320 UserInput (1584 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="285" class="todo"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
@@ -2081,7 +2081,7 @@
 <rect width="10.30" height="10.72" x="460.17" y="354.48" class="named"><title>0x0043d780 TestLaraSlide (313 bytes)</title></rect>
 <rect width="10.30" height="10.69" x="460.17" y="368.21" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="10.30" height="10.69" x="460.17" y="381.90" class="named"><title>0x0041f1b0 TestLaraPosition (312 bytes)</title></rect>
-<rect width="10.30" height="10.69" x="460.17" y="395.59" class="todo"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
+<rect width="10.30" height="10.69" x="460.17" y="395.59" class="named"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
 <rect width="10.30" height="10.62" x="460.17" y="409.27" class="todo"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
 <rect width="10.30" height="10.59" x="460.17" y="422.90" class="named"><title>0x0042d3d0 UpdateBats (309 bytes)</title></rect>
 <rect width="10.30" height="10.52" x="460.17" y="436.48" class="todo"><title>0x00408800 HWI_InsertObjectGT3_Sorted (307 bytes)</title></rect>

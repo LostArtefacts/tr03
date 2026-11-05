@@ -2120,6 +2120,7 @@ address,size,name,symbol
 0x006269e0,,SubWakePts,_SubWakePts
 0x006270e0,,SubCurrentStartWake,_SubCurrentStartWake
 0x006270e4,,SubWakeShade,_SubWakeShade
+0x006270e8,1,SubHarpoonLR,_SubHarpoonLR
 0x0062711c,4,clonked,_clonked
 0x00627170,,ai_junction,_ai_junction
 0x006271d0,16,junction_index,_junction_index

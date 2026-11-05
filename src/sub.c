@@ -67,3 +67,45 @@ int GetOnSub(sint16 item_number, COLL_INFO *coll)
         return 0;
     return 1;
 }
+
+extern char SubHarpoonLR;
+
+sint16 CreateItem(void);
+void InitialiseItem(sint16 item_num);
+
+void FireSubHarpoon(ITEM_INFO *v)
+{
+    sint16 item_number;
+    PHD_VECTOR pos;
+    ITEM_INFO *item;
+
+    if (lara.harpoon.ammo <= 0)
+        return;
+    if ((item_number = CreateItem()) != NO_ITEM) {
+        item = &items[item_number];
+        item->object_number = 310;
+        item->shade = 0x4210 | 0x8000;
+        item->room_number = v->room_number;
+        pos.x = SubHarpoonLR ? 22 : -22;
+        pos.y = 24;
+        pos.z = 230;
+        GetJointAbsPosition(v, &pos, 3);
+        item->pos.x_pos = pos.x;
+        item->pos.y_pos = pos.y;
+        item->pos.z_pos = pos.z;
+        InitialiseItem(item_number);
+        item->pos.x_rot = v->pos.x_rot;
+        item->pos.y_rot = v->pos.y_rot;
+        item->pos.z_rot = 0;
+        item->fallspeed = (sint16)(-256 * phd_sin(item->pos.x_rot) >> W2V_SHIFT);
+        item->speed = (sint16)(256 * phd_cos(item->pos.x_rot) >> W2V_SHIFT);
+        item->hit_points = 256;
+        item->item_flags[0] = 1;
+        AddActiveItem(item_number);
+        SoundEffect(23, &lara_item->pos, 2);
+        if (!savegame.bonus_flag)
+            lara.harpoon.ammo--;
+        savegame.ammo_used++;
+        SubHarpoonLR ^= 1;
+    }
+}
