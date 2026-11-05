@@ -47,6 +47,11 @@ void SetPictureToFade(int fade)
     pictureFading = fade;
 }
 
+void ForceFadeDown(int fade)
+{
+    forceFadeDown = fade;
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
