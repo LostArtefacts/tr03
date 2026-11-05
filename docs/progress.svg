@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="297.52" height="12" x="0" y="0" class="named"><title>1047 · 70.84%</title></rect>
-<rect width="1.99" height="12" x="297.52" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="120.49" height="12" x="299.51" y="0" class="todo"><title>424 · 28.69%</title></rect>
+<rect width="297.81" height="12" x="0" y="0" class="named"><title>1048 · 70.91%</title></rect>
+<rect width="1.99" height="12" x="297.81" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="120.20" height="12" x="299.80" y="0" class="todo"><title>423 · 28.62%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">70.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1047</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">424</tspan></text>
+<text text-anchor="end" x="600" y="7.50">70.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1048</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">423</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.94" height="12" x="0" y="0" class="named"><title>305 KB · 45.70%</title></rect>
-<rect width="3.79" height="12" x="191.94" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="224.27" height="12" x="195.73" y="0" class="todo"><title>357 KB · 53.40%</title></rect>
+<rect width="192.04" height="12" x="0" y="0" class="named"><title>305 KB · 45.72%</title></rect>
+<rect width="3.79" height="12" x="192.04" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="224.17" height="12" x="195.83" y="0" class="todo"><title>356 KB · 53.37%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">305 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">357 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">305 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1495,7 +1495,7 @@
 <rect width="12" height="12" x="420" y="420" class="nonmatching"><title>0x004b1b80 DXTextureNewPalette (112 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="420" class="named"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="420" class="named"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="420" class="todo"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="420" class="named"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="420" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="420" class="named"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="420" class="named"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
@@ -2344,7 +2344,7 @@
 <rect width="7.32" height="7.34" x="627.23" y="243.92" class="named"><title>0x00441c00 lara_as_deathslide (153 bytes)</title></rect>
 <rect width="7.27" height="7.34" x="637.55" y="243.92" class="named"><title>0x00453890 GetCollision (152 bytes)</title></rect>
 <rect width="7.27" height="7.34" x="647.83" y="243.92" class="named"><title>0x0046db30 BladeControl (152 bytes)</title></rect>
-<rect width="7.27" height="7.34" x="658.10" y="243.92" class="todo"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
+<rect width="7.27" height="7.34" x="658.10" y="243.92" class="named"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
 <rect width="7.23" height="7.34" x="668.38" y="243.92" class="named"><title>0x00442e60 lara_col_roll (151 bytes)</title></rect>
 <rect width="7.23" height="7.34" x="678.61" y="243.92" class="named"><title>0x00444800 ResetLook (151 bytes)</title></rect>
 <rect width="7.23" height="7.34" x="688.83" y="243.92" class="todo"><title>0x00483540 FMV_PlayIntro (151 bytes)</title></rect>

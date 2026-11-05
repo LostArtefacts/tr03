@@ -113,6 +113,34 @@ void DXCreateMaxTPages(int create)
     nTPages = n;
 }
 
+void DXFreeTPages(void)
+{
+    TEXTURE *tex;
+    int i;
+
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware)
+        return;
+    for (i = 0; i < 32; i++) {
+        tex = &Textures[i];
+        if (tex->DXTex)
+            ((DXTEXTURE *)tex->DXTex)->tex = 0;
+        if (tex->pTexture) {
+            tex->pTexture->Release();
+            tex->pTexture = 0;
+        }
+        if (tex->pSurf) {
+            tex->pSurf->Release();
+            tex->pSurf = 0;
+        }
+        if (tex->pPalette) {
+            tex->pPalette->Release();
+            tex->pPalette = 0;
+        }
+        memset(tex, 0, sizeof(TEXTURE));
+    }
+    nTPages = 0;
+}
+
 int DXTextureFindTextureSlot(DXTEXTURE *tex)
 {
     int i;
