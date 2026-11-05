@@ -8,6 +8,7 @@ extern "C" {
 
 extern HRESULT (*EndScene)(void);
 extern void *VertexBuffer;
+extern D3DTLVERTEX *CurrentTLVertex;
 extern HRESULT (*SetRenderState)(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
 extern bool GtZBufferCompareEnabled;
 extern bool GtZBufferWriteEnabled;
@@ -177,6 +178,11 @@ void HWR_GetAllTextureHandles(void)
         if (pTex->dwFlags & 16)
             TPages[n++] = pTex;
     }
+}
+
+void HWR_InitVertexList(void)
+{
+    CurrentTLVertex = (D3DTLVERTEX *)VertexBuffer;
 }
 
 bool HWR_Init(void)

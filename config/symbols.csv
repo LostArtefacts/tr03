@@ -1214,7 +1214,7 @@ address,size,name,symbol
 0x00485900,179,HWR_LoadTexturePages,_HWR_LoadTexturePages
 0x004859c0,68,HWR_FreeTexturePages,_HWR_FreeTexturePages
 0x00485a10,110,HWR_GetAllTextureHandles,_HWR_GetAllTextureHandles
-0x00485a80,11,Func485a80,
+0x00485a80,11,HWR_InitVertexList,_HWR_InitVertexList
 0x00485a90,18,HWR_Init,_HWR_Init
 0x00485ab0,493,init_water_table,_init_water_table
 0x00485ca0,55,GetRandom,_GetRandom
@@ -2073,6 +2073,7 @@ address,size,name,symbol
 0x004d7918,4,phd_centery,_phd_centery
 0x004d7920,48000,sort3d_bufferfb,_sort3d_bufferfb
 0x004e34a8,4,phd_topfloat,_phd_topfloat
+0x004e34b0,32000,sort3d_buffer,_sort3d_buffer
 0x004eb1b0,48000,sort3d_bufferbf,_sort3d_bufferbf
 0x004f6d30,4,phd_leftfloat,_phd_leftfloat
 0x004f6d34,2,phd_winymin,_phd_winymin
@@ -2084,6 +2085,7 @@ address,size,name,symbol
 0x004f6d54,4,surfacenumfb,_surfacenumfb
 0x004f6d58,4,phd_left,_phd_left
 0x004f6d5c,4,InsertFlatRect,_InsertFlatRect
+0x004f6d60,,info3d_buffer,_info3d_buffer
 0x005316e0,2,phd_winxmax,_phd_winxmax
 0x005316e4,4,sort3dptrbf,_sort3dptrbf
 0x005316e8,4,phd_znear,_phd_znear
@@ -2106,6 +2108,7 @@ address,size,name,symbol
 0x005a6a38,128,rand_table,_rand_table
 0x005a6ab8,4,f_persp,_f_persp
 0x005a6ac0,,w2v_matrix,_w2v_matrix
+0x005a6af0,4,info3dptr,_info3dptr
 0x005a6af4,4,phd_winwidth,_phd_winwidth
 0x005a6af8,4,InsertLine,_InsertLine
 0x005a6b00,,phdtextinfo,_phdtextinfo
@@ -2120,6 +2123,8 @@ address,size,name,symbol
 0x005d7a48,4,phd_rightfloat,_phd_rightfloat
 0x005d7a60,128,wibble_table,_wibble_table
 0x005d7ae0,4,phd_right,_phd_right
+0x005d7ae4,4,surfacenum,_surfacenum
+0x005d7ae8,4,sort3dptr,_sort3dptr
 0x005d7af8,4,water_effect,_water_effect
 0x005d7afc,4,shade_effect,_shade_effect
 0x005d7b00,55344,Buckets,_Buckets
