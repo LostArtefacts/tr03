@@ -39,6 +39,24 @@ DWORD BPPToDDBD(int bpp)
     return 0;
 }
 
+bool DXCreateDirectDraw(DEVICEINFO *dd, DXCONFIG *DXConfig, LPDIRECTDRAW2 *lpDD2)
+{
+    LPDIRECTDRAW lpDD;
+    int RetVal;
+
+    RetVal = DirectDrawCreate(dd->DDInfo[DXConfig->nDD].lpGuid, &lpDD, 0);
+    if (RetVal != DD_OK)
+        return false;
+    RetVal = lpDD->QueryInterface(IID_IDirectDraw2, (LPVOID *)lpDD2);
+    if (lpDD) {
+        lpDD->Release();
+        lpDD = 0;
+    }
+    if (RetVal != DD_OK)
+        return false;
+    return true;
+}
+
 bool DXCreateDirect3D(LPDIRECTDRAW2 lpDD2, LPDIRECT3D2 *lpD3D2)
 {
     int RetVal;
