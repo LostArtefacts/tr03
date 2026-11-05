@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="207.70" height="12" x="0" y="0" class="named"><title>664 · 44.96%</title></rect>
-<rect width="254.30" height="12" x="207.70" y="0" class="todo"><title>813 · 55.04%</title></rect>
+<rect width="208.01" height="12" x="0" y="0" class="named"><title>665 · 45.02%</title></rect>
+<rect width="253.99" height="12" x="208.01" y="0" class="todo"><title>812 · 54.98%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="7.50">45.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">664</tspan> · <tspan class="todo">813</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">665</tspan> · <tspan class="todo">812</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="71.79" height="12" x="0" y="0" class="named"><title>103 KB · 15.54%</title></rect>
-<rect width="390.21" height="12" x="71.79" y="0" class="todo"><title>562 KB · 84.46%</title></rect>
+<rect width="72.05" height="12" x="0" y="0" class="named"><title>104 KB · 15.59%</title></rect>
+<rect width="389.95" height="12" x="72.05" y="0" class="todo"><title>561 KB · 84.41%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">15.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">103 KB</tspan> · <tspan class="todo">562 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">15.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">104 KB</tspan> · <tspan class="todo">561 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1017,7 +1017,7 @@
 <rect width="12" height="12" x="30" y="285" class="todo"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="285" class="todo"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="285" class="todo"><title>0x00469de0 UpdateWakeFX_sub (42 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="285" class="todo"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="285" class="named"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="285" class="named"><title>0x00469f80 InitialiseSwat (93 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="285" class="todo"><title>0x00469fe0 SwatControl (2205 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="285" class="named"><title>0x0046a8b0 InitialiseTarget (164 bytes)</title></rect>
@@ -2023,7 +2023,7 @@
 <rect width="11.30" height="11.42" x="692.79" y="145.72" class="named"><title>0x0042c670 TriggerRocketSmoke (366 bytes)</title></rect>
 <rect width="11.30" height="11.42" x="707.09" y="145.72" class="named"><title>0x0042c7e0 TriggerBlood (366 bytes)</title></rect>
 <rect width="11.30" height="11.42" x="721.40" y="145.72" class="named"><title>0x0042c950 TriggerBloodD (366 bytes)</title></rect>
-<rect width="11.30" height="11.42" x="735.70" y="145.72" class="todo"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
+<rect width="11.30" height="11.42" x="735.70" y="145.72" class="named"><title>0x00469e10 TriggerSubMist (366 bytes)</title></rect>
 <rect width="10.88" height="11.83" x="446.30" y="160.14" class="named"><title>0x004166d0 CreatureVault (365 bytes)</title></rect>
 <rect width="10.88" height="11.80" x="446.30" y="174.97" class="named"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="10.88" height="11.73" x="446.30" y="189.77" class="todo"><title>0x00412040 BoatCheckGeton (362 bytes)</title></rect>

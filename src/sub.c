@@ -109,3 +109,52 @@ void FireSubHarpoon(ITEM_INFO *v)
         SubHarpoonLR ^= 1;
     }
 }
+
+sint32 GetFreeSpark(void);
+
+void TriggerSubMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle)
+{
+    sint32 size, xv, zv;
+    SPARKS *sptr;
+
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 0;
+    sptr->sG = 0;
+    sptr->sB = 0;
+    sptr->dR = 64;
+    sptr->dG = 64;
+    sptr->dB = 64;
+    sptr->ColFadeSpeed = 4 + (GetRandomControl() & 3);
+    sptr->FadeToBlack = 12;
+    sptr->sLife = sptr->Life = (GetRandomControl() & 3) + 20;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->Dynamic = -1;
+    sptr->x = x + ((GetRandomControl() & 15) - 8);
+    sptr->y = y + ((GetRandomControl() & 15) - 8);
+    sptr->z = z + ((GetRandomControl() & 15) - 8);
+    zv = (speed * phd_cos(angle)) >> (W2V_SHIFT + 2);
+    xv = (speed * phd_sin(angle)) >> (W2V_SHIFT + 2);
+    sptr->Xvel = xv + ((GetRandomControl() & 127) - 64);
+    sptr->Yvel = 0;
+    sptr->Zvel = zv + ((GetRandomControl() & 127) - 64);
+    sptr->Friction = 3;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 2 | 8 | 16 | 512;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -(GetRandomControl() & 15) - 16;
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else
+        sptr->Flags = 2 | 8 | 512;
+    sptr->Def = objects[296].mesh_index;
+    sptr->Scalar = 3;
+    sptr->Gravity = sptr->MaxYvel = 0;
+    size = (GetRandomControl() & 7) + (speed >> 1) + 16;
+    sptr->Width = sptr->sWidth = size >> 2;
+    sptr->Height = sptr->sHeight = size >> 2;
+    sptr->dWidth = size;
+    sptr->dHeight = size;
+}
