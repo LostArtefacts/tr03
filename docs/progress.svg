@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="264.31" height="12" x="0" y="0" class="named"><title>845 · 57.21%</title></rect>
-<rect width="197.69" height="12" x="264.31" y="0" class="todo"><title>632 · 42.79%</title></rect>
+<rect width="264.63" height="12" x="0" y="0" class="named"><title>846 · 57.28%</title></rect>
+<rect width="197.37" height="12" x="264.63" y="0" class="todo"><title>631 · 42.72%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">57.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">845</tspan> · <tspan class="todo">632</tspan></text>
+<text text-anchor="end" x="642" y="7.50">57.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">846</tspan> · <tspan class="todo">631</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="148.49" height="12" x="0" y="0" class="named"><title>214 KB · 32.14%</title></rect>
-<rect width="313.51" height="12" x="148.49" y="0" class="todo"><title>452 KB · 67.86%</title></rect>
+<rect width="149.28" height="12" x="0" y="0" class="named"><title>215 KB · 32.31%</title></rect>
+<rect width="312.72" height="12" x="149.28" y="0" class="todo"><title>451 KB · 67.69%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">32.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">214 KB</tspan> · <tspan class="todo">452 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">32.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">215 KB</tspan> · <tspan class="todo">451 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -991,7 +991,7 @@
 <rect width="12" height="12" x="390" y="270" class="named"><title>0x004664b0 GetCarriedItems (215 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="270" class="named"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="270" class="todo"><title>0x004666c0 BuildOutsideTable (716 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="270" class="todo"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="270" class="named"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="270" class="named"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="270" class="named"><title>0x00467010 InitialiseShiva (95 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="270" class="todo"><title>0x00467070 ShivaControl (1758 bytes)</title></rect>
@@ -1691,7 +1691,7 @@
 <rect width="19.68" height="20.52" x="659.90" y="0" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="19.67" height="20.52" x="682.59" y="0" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
 <rect width="19.39" height="20.52" x="705.25" y="0" class="named"><title>0x00460230 AnimateQuadBike (1130 bytes)</title></rect>
-<rect width="19.36" height="20.52" x="727.64" y="0" class="todo"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
+<rect width="19.36" height="20.52" x="727.64" y="0" class="named"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
 <rect width="19.21" height="20.59" x="303.52" y="23.52" class="todo"><title>0x0043a5b0 ShowEndStatsText (1123 bytes)</title></rect>
 <rect width="19.21" height="20.47" x="303.52" y="47.12" class="todo"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
 <rect width="19.21" height="20.10" x="303.52" y="70.58" class="todo"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>

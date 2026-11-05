@@ -2180,6 +2180,7 @@ address,size,name,symbol
 0x006267d0,4,number_cameras,_number_cameras
 0x006267d4,1,lizard_man_active,_lizard_man_active
 0x006267d8,4,monks_attack_lara,_monks_attack_lara
+0x006267dc,4,effect_mesh,_effect_mesh
 0x006267e0,,LaSlot,_LaSlot
 0x006269e0,,SubWakePts,_SubWakePts
 0x006270e0,,SubCurrentStartWake,_SubCurrentStartWake
