@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="302.64" height="12" x="0" y="0" class="named"><title>1065 · 72.06%</title></rect>
-<rect width="1.99" height="12" x="302.64" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="115.37" height="12" x="304.63" y="0" class="todo"><title>406 · 27.47%</title></rect>
+<rect width="302.92" height="12" x="0" y="0" class="named"><title>1066 · 72.12%</title></rect>
+<rect width="1.99" height="12" x="302.92" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="115.09" height="12" x="304.91" y="0" class="todo"><title>405 · 27.40%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">72.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1065</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">406</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1066</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">405</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.93" height="12" x="0" y="0" class="named"><title>307 KB · 45.94%</title></rect>
-<rect width="3.79" height="12" x="192.93" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.27" height="12" x="196.73" y="0" class="todo"><title>355 KB · 53.16%</title></rect>
+<rect width="192.95" height="12" x="0" y="0" class="named"><title>307 KB · 45.94%</title></rect>
+<rect width="3.79" height="12" x="192.95" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.25" height="12" x="196.75" y="0" class="todo"><title>355 KB · 53.16%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">307 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
@@ -102,7 +102,7 @@
 <rect width="12" height="12" x="525" y="0" class="todo"><title>0x004051a0 Func4051a0 (55 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="todo"><title>0x004051e0 Func4051e0 (55 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="named"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="0" class="todo"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="0" class="named"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="0" class="todo"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
@@ -2890,7 +2890,7 @@
 <rect width="3.29" height="3.31" x="687.83" y="381.46" class="named"><title>0x00484a20 HWR_ResetColorKey (31 bytes)</title></rect>
 <rect width="3.29" height="3.31" x="694.12" y="381.46" class="named"><title>0x0048d240 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="3.29" height="3.31" x="700.41" y="381.46" class="named"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
-<rect width="3.18" height="3.31" x="706.71" y="381.46" class="todo"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
+<rect width="3.18" height="3.31" x="706.71" y="381.46" class="named"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
 <rect width="3.18" height="3.31" x="712.89" y="381.46" class="named"><title>0x00442c50 lara_col_slide (30 bytes)</title></rect>
 <rect width="3.18" height="3.31" x="719.08" y="381.46" class="named"><title>0x0046aee0 T_CentreH (30 bytes)</title></rect>
 <rect width="3.18" height="3.31" x="725.26" y="381.46" class="named"><title>0x0046af00 T_CentreV (30 bytes)</title></rect>

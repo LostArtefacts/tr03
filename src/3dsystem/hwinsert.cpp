@@ -43,6 +43,16 @@ void InitUVTable(void)
         UVTable[n] = float(n) * (1.0f / 65536.0f);
 }
 
+void InitBuckets(void)
+{
+    int n;
+
+    for (n = 0; n < 6; n++) {
+        Buckets[n].tpage = 0xffffffff;
+        Buckets[n].cnt = 0;
+    }
+}
+
 void DrawBuckets(void)
 {
     for (int n = 0; n < 6; n++) {
