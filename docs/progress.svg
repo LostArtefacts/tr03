@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="260.56" height="12" x="0" y="0" class="named"><title>833 · 56.40%</title></rect>
-<rect width="201.44" height="12" x="260.56" y="0" class="todo"><title>644 · 43.60%</title></rect>
+<rect width="260.87" height="12" x="0" y="0" class="named"><title>834 · 56.47%</title></rect>
+<rect width="201.13" height="12" x="260.87" y="0" class="todo"><title>643 · 43.53%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">56.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">833</tspan> · <tspan class="todo">644</tspan></text>
+<text text-anchor="end" x="642" y="7.50">56.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">834</tspan> · <tspan class="todo">643</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="140.72" height="12" x="0" y="0" class="named"><title>203 KB · 30.46%</title></rect>
-<rect width="321.28" height="12" x="140.72" y="0" class="todo"><title>463 KB · 69.54%</title></rect>
+<rect width="141.26" height="12" x="0" y="0" class="named"><title>204 KB · 30.58%</title></rect>
+<rect width="320.74" height="12" x="141.26" y="0" class="todo"><title>462 KB · 69.42%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">30.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">203 KB</tspan> · <tspan class="todo">463 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">30.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">204 KB</tspan> · <tspan class="todo">462 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -868,7 +868,7 @@
 <rect width="12" height="12" x="45" y="240" class="todo"><title>0x004542a0 DoUserInput (2307 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="240" class="todo"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="240" class="named"><title>0x00454d10 CartToBaddieCollision (658 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="240" class="todo"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="240" class="named"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="240" class="named"><title>0x004552c0 ShootAtLara (167 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="240" class="todo"><title>0x00455370 ExplodingDeath (1067 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="240" class="named"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
@@ -1760,7 +1760,7 @@
 <rect width="16.43" height="16.84" x="465.41" y="44.80" class="named"><title>0x0041bed0 ControlClawmutePlasmaBall (785 bytes)</title></rect>
 <rect width="16.40" height="16.84" x="484.83" y="44.80" class="named"><title>0x0046b750 TigerControl (784 bytes)</title></rect>
 <rect width="16.32" height="16.84" x="504.23" y="44.80" class="todo"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
-<rect width="16.24" height="16.84" x="523.55" y="44.80" class="todo"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
+<rect width="16.24" height="16.84" x="523.55" y="44.80" class="named"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
 <rect width="16.19" height="16.84" x="542.79" y="44.80" class="todo"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="16.07" height="16.84" x="561.99" y="44.80" class="todo"><title>0x0043e1c0 LaraHangTest (768 bytes)</title></rect>
 <rect width="16.01" height="16.84" x="581.05" y="44.80" class="todo"><title>0x00479510 ClipLine (765 bytes)</title></rect>
