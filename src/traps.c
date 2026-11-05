@@ -825,6 +825,65 @@ void FlameEmitter3Control(sint16 item_number)
     }
 }
 
+void SideFlameDetection(FX_INFO *fx, sint32 length)
+{
+    sint16 *bounds;
+    sint32 x, z, xs, zs, xe, ze;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - fx->pos.x_pos;
+    dz = lara_item->pos.z_pos - fx->pos.z_pos;
+    if (dx < -0x5000 || dx > 0x5000 || dz < -0x5000 || dz > 0x5000)
+        return;
+    switch (fx->pos.y_rot) {
+    case 0:
+        x = fx->pos.x_pos;
+        z = fx->pos.z_pos + 512;
+        xs = -256;
+        xe = 256;
+        ze = 0;
+        zs = -length;
+        break;
+    case 16384:
+        x = fx->pos.x_pos + 512;
+        z = fx->pos.z_pos;
+        xe = 0;
+        xs = -length;
+        zs = -256;
+        ze = 256;
+        break;
+    case -32768:
+        x = fx->pos.x_pos;
+        z = fx->pos.z_pos - 512;
+        xs = -256;
+        xe = 256;
+        zs = 0;
+        ze = length;
+        break;
+    case -16384:
+        x = fx->pos.x_pos - 512;
+        z = fx->pos.z_pos;
+        xs = 0;
+        xe = length;
+        zs = -256;
+        ze = 256;
+        break;
+    default:
+        x = z = xs = zs = xe = ze = 0;
+        break;
+    }
+    bounds = GetBoundsAccurate(lara_item);
+    if (lara_item->pos.x_pos < x + xs || lara_item->pos.x_pos > x + xe || lara_item->pos.z_pos < z + zs ||
+        lara_item->pos.z_pos > z + ze || lara_item->pos.y_pos + bounds[2] > fx->pos.y_pos + 128 ||
+        lara_item->pos.y_pos + bounds[3] < fx->pos.y_pos - 384)
+        return;
+    if (fx->flag1 < 18) {
+        lara_item->hit_points -= 5;
+        lara_item->hit_status = 1;
+    } else
+        LaraBurn();
+}
+
 void LaraBurn(void)
 {
     sint16 fx_number;
