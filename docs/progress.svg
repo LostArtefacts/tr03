@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="292.98" height="12" x="0" y="0" class="named"><title>1031 · 69.76%</title></rect>
-<rect width="1.99" height="12" x="292.98" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="125.03" height="12" x="294.97" y="0" class="todo"><title>440 · 29.77%</title></rect>
+<rect width="293.26" height="12" x="0" y="0" class="named"><title>1032 · 69.82%</title></rect>
+<rect width="1.99" height="12" x="293.26" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="124.75" height="12" x="295.25" y="0" class="todo"><title>439 · 29.70%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">69.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1031</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">440</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1032</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">439</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.98" height="12" x="0" y="0" class="named"><title>302 KB · 45.23%</title></rect>
-<rect width="3.79" height="12" x="189.98" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="226.23" height="12" x="193.77" y="0" class="todo"><title>360 KB · 53.86%</title></rect>
+<rect width="190.14" height="12" x="0" y="0" class="named"><title>302 KB · 45.27%</title></rect>
+<rect width="3.79" height="12" x="190.14" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="226.07" height="12" x="193.93" y="0" class="todo"><title>359 KB · 53.83%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">45.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">360 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">45.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">359 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1331,7 +1331,7 @@
 <rect width="12" height="12" x="210" y="375" class="named"><title>0x0048ad60 SetPictureToFade (17 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="375" class="named"><title>0x0048ad80 ForceFadeDown (17 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="375" class="todo"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="375" class="todo"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="375" class="named"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="375" class="todo"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="375" class="todo"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="375" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
@@ -2145,7 +2145,7 @@
 <rect width="9.54" height="9.46" x="486.97" y="339.12" class="named"><title>0x0040f080 TriggerFenceSparks (257 bytes)</title></rect>
 <rect width="9.54" height="9.43" x="486.97" y="351.58" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
 <rect width="9.54" height="9.39" x="486.97" y="364.01" class="named"><title>0x0044d1a0 LaraCheatyBits (255 bytes)</title></rect>
-<rect width="9.54" height="9.35" x="486.97" y="376.40" class="todo"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
+<rect width="9.54" height="9.35" x="486.97" y="376.40" class="named"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
 <rect width="9.54" height="9.32" x="486.97" y="388.75" class="todo"><title>0x00405980 HWI_InsertGT3_Sorted (253 bytes)</title></rect>
 <rect width="9.54" height="9.28" x="486.97" y="401.07" class="named"><title>0x004150c0 StalkBox (252 bytes)</title></rect>
 <rect width="9.54" height="9.24" x="486.97" y="413.35" class="todo"><title>0x0048ece0 DXEnumDirectInput (251 bytes)</title></rect>

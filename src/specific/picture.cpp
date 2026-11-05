@@ -52,6 +52,38 @@ void ForceFadeDown(int fade)
     forceFadeDown = fade;
 }
 
+void CrossFadePicture(void)
+{
+    int i;
+    int j;
+
+    for (j = 255, i = 0; i < 256; i += 8, j -= 8) {
+        HWR_BeginScene();
+        DrawPictureAlpha(i, CurPicTexIndices, f_znear);
+        DrawPictureAlpha(j, OldPicTexIndices, f_zfar);
+        HWR_EndScene();
+        DXUpdateFrame(true, 0);
+    }
+    FreePictureTextures(CurPicTexIndices);
+    CurPicTexIndices[0] = OldPicTexIndices[0];
+    CurPicTexIndices[1] = OldPicTexIndices[1];
+    CurPicTexIndices[2] = OldPicTexIndices[2];
+    CurPicTexIndices[3] = OldPicTexIndices[3];
+    CurPicTexIndices[4] = OldPicTexIndices[4];
+    HWR_EnableColorKey(false);
+    HWR_EnableAlphaBlend(false);
+    HWR_EnableColorAddition(false);
+    if (dontFadePicture)
+        pictureFading = false;
+    else
+        pictureFading = true;
+    HWR_BeginScene();
+    TRDrawPicture(0, CurPicTexIndices, f_znear);
+    HWR_EndScene();
+    DXUpdateFrame(true, 0);
+    TIME_Init();
+}
+
 void DrawMonoScreen(int r, int g, int b)
 {
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
