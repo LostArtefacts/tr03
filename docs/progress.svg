@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="216.77" height="12" x="0" y="0" class="named"><title>693 · 46.92%</title></rect>
-<rect width="245.23" height="12" x="216.77" y="0" class="todo"><title>784 · 53.08%</title></rect>
+<rect width="217.08" height="12" x="0" y="0" class="named"><title>694 · 46.99%</title></rect>
+<rect width="244.92" height="12" x="217.08" y="0" class="todo"><title>783 · 53.01%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">46.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">693</tspan> · <tspan class="todo">784</tspan></text>
+<text text-anchor="end" x="642" y="7.50">47.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">694</tspan> · <tspan class="todo">783</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="79.61" height="12" x="0" y="0" class="named"><title>115 KB · 17.23%</title></rect>
-<rect width="382.39" height="12" x="79.61" y="0" class="todo"><title>551 KB · 82.77%</title></rect>
+<rect width="79.98" height="12" x="0" y="0" class="named"><title>115 KB · 17.31%</title></rect>
+<rect width="382.02" height="12" x="79.98" y="0" class="todo"><title>550 KB · 82.69%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">17.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">115 KB</tspan> · <tspan class="todo">551 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">17.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">115 KB</tspan> · <tspan class="todo">550 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -969,7 +969,7 @@
 <rect width="12" height="12" x="60" y="270" class="todo"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="270" class="named"><title>0x00461010 InitialiseRaptorEmitter (37 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="270" class="todo"><title>0x00461040 RaptorControl (1758 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="270" class="todo"><title>0x00461740 MouseControl (524 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="270" class="named"><title>0x00461740 MouseControl (524 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="270" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="270" class="named"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="270" class="todo"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
@@ -1879,7 +1879,7 @@
 <rect width="13.87" height="13.40" x="382.56" y="433.60" class="todo"><title>0x0046cf40 TrainControl (527 bytes)</title></rect>
 <rect width="14" height="13.25" x="399.42" y="98.90" class="todo"><title>0x004557a0 ControlBodyPart (526 bytes)</title></rect>
 <rect width="13.97" height="13.25" x="416.42" y="98.90" class="todo"><title>0x00449530 lara_col_climbstnc (525 bytes)</title></rect>
-<rect width="13.94" height="13.25" x="433.39" y="98.90" class="todo"><title>0x00461740 MouseControl (524 bytes)</title></rect>
+<rect width="13.94" height="13.25" x="433.39" y="98.90" class="named"><title>0x00461740 MouseControl (524 bytes)</title></rect>
 <rect width="13.89" height="13.25" x="450.34" y="98.90" class="todo"><title>0x00410af0 FireBigGun (522 bytes)</title></rect>
 <rect width="13.89" height="13.25" x="467.23" y="98.90" class="todo"><title>0x004638f0 InitialiseLevel (522 bytes)</title></rect>
 <rect width="13.84" height="13.25" x="484.12" y="98.90" class="todo"><title>0x00414800 SearchLOT (520 bytes)</title></rect>
