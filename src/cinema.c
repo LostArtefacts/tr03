@@ -331,3 +331,58 @@ void ControlCinematicPlayer(sint16 item_num)
     }
     AnimateItem(item);
 }
+
+extern sint16 *cine;
+extern PHD_3DPOS cinematic_pos;
+extern sint32 phd_persp;
+
+void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, PHD_ANGLE roll);
+
+void InGameCinematicCamera(void)
+{
+    sint32 c, s;
+    sint32 tx, ty, tz;
+    sint32 cx, cy, cz;
+    sint16 roll, fov;
+    sint16 *ptr;
+
+    cine_frame++;
+    if (cine_frame >= num_cine_frames) {
+        cine_frame = num_cine_frames - 1;
+    }
+
+    ptr = cine + (int)(8 * cine_frame);
+    tx = (sint32)*(ptr + 0);
+    ty = (sint32)*(ptr + 1);
+    tz = (sint32)*(ptr + 2);
+    cx = (sint32)*(ptr + 3);
+    cy = (sint32)*(ptr + 4);
+    cz = (sint32)*(ptr + 5);
+    fov = *(ptr + 6);
+    roll = *(ptr + 7);
+
+    c = phd_cos(cinematic_pos.y_rot);
+    s = phd_sin(cinematic_pos.y_rot);
+    camera.target.x = cinematic_pos.x_pos + ((c * tx + s * tz) >> W2V_SHIFT);
+    camera.target.y = cinematic_pos.y_pos + ty;
+    camera.target.z = cinematic_pos.z_pos + ((c * tz - s * tx) >> W2V_SHIFT);
+    camera.pos.x = cinematic_pos.x_pos + ((c * cx + s * cz) >> W2V_SHIFT);
+    camera.pos.y = cinematic_pos.y_pos + cy;
+    camera.pos.z = cinematic_pos.z_pos + ((c * cz - s * cx) >> W2V_SHIFT);
+
+    AlterFOV(fov);
+    phd_LookAt(camera.pos.x, camera.pos.y, camera.pos.z, camera.target.x, camera.target.y, camera.target.z, roll);
+    GetFloor(camera.pos.x, camera.pos.y, camera.pos.z, &camera.pos.room_number);
+
+    if (camera.mike_at_lara) {
+        camera.actual_angle = lara_item->pos.y_rot + lara.head_y_rot + lara.torso_y_rot;
+        camera.mike_pos.x = lara_item->pos.x_pos;
+        camera.mike_pos.y = lara_item->pos.y_pos;
+        camera.mike_pos.z = lara_item->pos.z_pos;
+    } else {
+        camera.actual_angle = phd_atan(camera.target.z - camera.pos.z, camera.target.x - camera.pos.x);
+        camera.mike_pos.x = camera.pos.x + ((phd_persp * phd_sin(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.z = camera.pos.z + ((phd_persp * phd_cos(camera.actual_angle)) >> W2V_SHIFT);
+        camera.mike_pos.y = camera.pos.y;
+    }
+}
