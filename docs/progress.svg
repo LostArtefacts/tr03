@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="267.40" height="12" x="0" y="0" class="named"><title>941 · 63.67%</title></rect>
-<rect width="1.42" height="12" x="267.40" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="151.18" height="12" x="268.82" y="0" class="todo"><title>532 · 35.99%</title></rect>
+<rect width="267.69" height="12" x="0" y="0" class="named"><title>942 · 63.73%</title></rect>
+<rect width="1.42" height="12" x="267.69" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="150.89" height="12" x="269.11" y="0" class="todo"><title>531 · 35.93%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">63.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">941</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">532</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">942</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">531</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.60" height="12" x="0" y="0" class="named"><title>297 KB · 44.43%</title></rect>
-<rect width="3.69" height="12" x="186.60" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="229.72" height="12" x="190.28" y="0" class="todo"><title>365 KB · 54.70%</title></rect>
+<rect width="186.62" height="12" x="0" y="0" class="named"><title>297 KB · 44.43%</title></rect>
+<rect width="3.69" height="12" x="186.62" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="229.69" height="12" x="190.31" y="0" class="todo"><title>365 KB · 54.69%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">297 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">365 KB</tspan></text>
@@ -1404,7 +1404,7 @@
 <rect width="12" height="12" x="555" y="390" class="todo"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="390" class="todo"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="390" class="todo"><title>0x0048efd0 DXEnumDirectDraw (496 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="390" class="todo"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="390" class="named"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="390" class="todo"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="390" class="todo"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="390" class="todo"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
@@ -2792,7 +2792,7 @@
 <rect width="3.79" height="4.17" x="716.15" y="354.51" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
 <rect width="3.79" height="4.17" x="722.94" y="354.51" class="named"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="3.79" height="4.17" x="729.73" y="354.51" class="todo"><title>0x0048a2a0 S_DumpCine (45 bytes)</title></rect>
-<rect width="3.79" height="4.17" x="736.51" y="354.51" class="todo"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
+<rect width="3.79" height="4.17" x="736.51" y="354.51" class="named"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
 <rect width="3.70" height="4.17" x="743.30" y="354.51" class="named"><title>0x0042eed0 ChandelierFX (44 bytes)</title></rect>
 <rect width="4.07" height="3.79" x="654.65" y="361.68" class="named"><title>0x0042f5d0 QuadStart (44 bytes)</title></rect>
 <rect width="4.07" height="3.79" x="654.65" y="368.47" class="named"><title>0x0042f690 Exercise1_105 (44 bytes)</title></rect>
