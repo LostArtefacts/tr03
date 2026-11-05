@@ -324,6 +324,130 @@ int DoBoatDynamics(int height, int fallspeed, int *y)
     return fallspeed;
 }
 
+void DrawBoat(ITEM_INFO *item);
+void TriggerBoatMist(sint32 x, sint32 y, sint32 z, sint32 speed, sint16 angle, sint32 snow);
+void BoatSplash(ITEM_INFO *item, sint32 fallspeed, sint32 water);
+sint32 TestWaterHeight(ITEM_INFO *item, sint32 z_off, sint32 x_off, PHD_VECTOR *pos);
+int DoShift_boat(ITEM_INFO *boat, PHD_VECTOR *newer, PHD_VECTOR *old);
+int GetCollisionAnim_boat(ITEM_INFO *boat, PHD_VECTOR *moved);
+void DoBoatShift(int boat_number);
+sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
+
+int BoatDynamics(sint16 boat_number)
+{
+    ITEM_INFO *boat;
+    BOAT_INFO *binfo;
+    PHD_VECTOR moved, fl, fr, br, bl, f;
+    PHD_VECTOR old, fl_old, fr_old, bl_old, br_old, f_old;
+    sint32 hfl, hfr, hbr, hbl, hf;
+    sint32 hfr_old, hfl_old, hbr_old, hbl_old, hf_old;
+    FLOOR_INFO *floor;
+    sint32 height, slip, collide;
+    sint16 room_number, rot;
+    int newspeed;
+
+    boat = &items[boat_number];
+    binfo = (BOAT_INFO *)boat->data;
+    boat->pos.z_rot -= binfo->tilt_angle;
+
+    hfl_old = TestWaterHeight(boat, 750, -300, &fl_old);
+    hfr_old = TestWaterHeight(boat, 750, 300, &fr_old);
+    hbl_old = TestWaterHeight(boat, -750, -300, &bl_old);
+    hbr_old = TestWaterHeight(boat, -750, 300, &br_old);
+    hf_old = TestWaterHeight(boat, 750 + 250, 0, &f_old);
+    old.x = boat->pos.x_pos;
+    old.y = boat->pos.y_pos;
+    old.z = boat->pos.z_pos;
+
+    if (bl_old.y > hbl_old)
+        bl_old.y = hbl_old;
+    if (br_old.y > hbr_old)
+        br_old.y = hbr_old;
+    if (fl_old.y > hfl_old)
+        fl_old.y = hfl_old;
+    if (fr_old.y > hfr_old)
+        fr_old.y = hfr_old;
+    if (f_old.y > hf_old)
+        f_old.y = hf_old;
+
+    boat->pos.y_rot += binfo->boat_turn + binfo->extra_rotation;
+    binfo->tilt_angle = binfo->boat_turn * 6;
+    boat->pos.z_pos += boat->speed * phd_cos(boat->pos.y_rot) >> W2V_SHIFT;
+    boat->pos.x_pos += boat->speed * phd_sin(boat->pos.y_rot) >> W2V_SHIFT;
+    if (boat->speed >= 0)
+        binfo->prop_rot += (boat->speed * (ONE_DEGREE * 3)) + (ONE_DEGREE << 1);
+    else
+        binfo->prop_rot += ONE_DEGREE * 33;
+
+    slip = 30 * phd_sin(boat->pos.z_rot) >> W2V_SHIFT;
+    if (!slip && boat->pos.z_rot)
+        slip = (boat->pos.z_rot > 0) ? 1 : -1;
+    boat->pos.z_pos -= slip * phd_sin(boat->pos.y_rot) >> W2V_SHIFT;
+    boat->pos.x_pos += slip * phd_cos(boat->pos.y_rot) >> W2V_SHIFT;
+
+    slip = 10 * phd_sin(boat->pos.x_rot) >> W2V_SHIFT;
+    if (!slip && boat->pos.x_rot)
+        slip = (boat->pos.x_rot > 0) ? 1 : -1;
+    boat->pos.z_pos -= slip * phd_cos(boat->pos.y_rot) >> W2V_SHIFT;
+    boat->pos.x_pos -= slip * phd_sin(boat->pos.y_rot) >> W2V_SHIFT;
+
+    moved.x = boat->pos.x_pos;
+    moved.z = boat->pos.z_pos;
+    DoBoatShift(boat_number);
+
+    rot = 0;
+    hbl = TestWaterHeight(boat, -750, -300, &bl);
+    if (hbl < bl_old.y - STEP_L / 2)
+        rot = DoShift_boat(boat, &bl, &bl_old);
+    hbr = TestWaterHeight(boat, -750, 300, &br);
+    if (hbr < br_old.y - STEP_L / 2)
+        rot += DoShift_boat(boat, &br, &br_old);
+    hfl = TestWaterHeight(boat, 750, -300, &fl);
+    if (hfl < fl_old.y - STEP_L / 2)
+        rot += DoShift_boat(boat, &fl, &fl_old);
+    hfr = TestWaterHeight(boat, 750, 300, &fr);
+    if (hfr < fr_old.y - STEP_L / 2)
+        rot += DoShift_boat(boat, &fr, &fr_old);
+    if (!slip) {
+        hf = TestWaterHeight(boat, 750 + 250, 0, &f);
+        if (hf < f_old.y - STEP_L / 2)
+            DoShift_boat(boat, &f, &f_old);
+    }
+
+    room_number = boat->room_number;
+    floor = GetFloor(boat->pos.x_pos, boat->pos.y_pos, boat->pos.z_pos, &room_number);
+    height = GetWaterHeight(boat->pos.x_pos, boat->pos.y_pos, boat->pos.z_pos, room_number);
+    if (height == NO_HEIGHT)
+        height = GetHeight(floor, boat->pos.x_pos, boat->pos.y_pos, boat->pos.z_pos);
+    if (height < boat->pos.y_pos - STEP_L / 2)
+        DoShift_boat(boat, (PHD_VECTOR *)&boat->pos, &old);
+
+    binfo->extra_rotation = rot;
+    collide = GetCollisionAnim_boat(boat, &moved);
+    if (slip || collide) {
+        newspeed = ((boat->pos.x_pos - old.x) * phd_sin(boat->pos.y_rot) + (boat->pos.z_pos - old.z) * phd_cos(boat->pos.y_rot)) >> W2V_SHIFT;
+        if (lara.skidoo == boat_number && boat->speed > 110 + 5 && newspeed < boat->speed - 10) {
+            lara_item->hit_points -= boat->speed;
+            lara_item->hit_status = 1;
+            SoundEffect(31, &lara_item->pos, 0);
+            newspeed >>= 1;
+            boat->speed >>= 1;
+        }
+        if (slip) {
+            if (boat->speed <= 110 + 10)
+                boat->speed = newspeed;
+        } else {
+            if (boat->speed > 0 && newspeed < boat->speed)
+                boat->speed = newspeed;
+            else if (boat->speed < 0 && newspeed > boat->speed)
+                boat->speed = newspeed;
+        }
+        if (boat->speed < -20)
+            boat->speed = -20;
+    }
+    return collide;
+}
+
 void DoBoatShift(int boat_number)
 {
     ITEM_INFO *item, *boat;
@@ -357,6 +481,7 @@ void DrawBoat(ITEM_INFO *item)
     item->data = b;
     S_DrawWakeFX(item);
 }
+
 
 typedef struct {
     sint32 x;

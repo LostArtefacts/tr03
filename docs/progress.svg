@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="266.19" height="12" x="0" y="0" class="named"><title>851 · 57.62%</title></rect>
-<rect width="195.81" height="12" x="266.19" y="0" class="todo"><title>626 · 42.38%</title></rect>
+<rect width="266.50" height="12" x="0" y="0" class="named"><title>852 · 57.68%</title></rect>
+<rect width="195.50" height="12" x="266.50" y="0" class="todo"><title>625 · 42.32%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">57.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">851</tspan> · <tspan class="todo">626</tspan></text>
+<text text-anchor="end" x="642" y="7.50">57.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">852</tspan> · <tspan class="todo">625</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="153.79" height="12" x="0" y="0" class="named"><title>222 KB · 33.29%</title></rect>
-<rect width="308.21" height="12" x="153.79" y="0" class="todo"><title>444 KB · 66.71%</title></rect>
+<rect width="154.70" height="12" x="0" y="0" class="named"><title>223 KB · 33.48%</title></rect>
+<rect width="307.30" height="12" x="154.70" y="0" class="todo"><title>443 KB · 66.52%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">33.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">222 KB</tspan> · <tspan class="todo">444 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">33.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">223 KB</tspan> · <tspan class="todo">443 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -172,7 +172,7 @@
 <rect width="12" height="12" x="105" y="30" class="todo"><title>0x004130c0 DoWake_boat (459 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="30" class="todo"><title>0x00413290 TestWaterHeight (250 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="30" class="named"><title>0x00413390 DoBoatDynamics (75 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="30" class="todo"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="30" class="named"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="30" class="todo"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="30" class="todo"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="30" class="named"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
@@ -1673,7 +1673,7 @@
 <rect width="22.51" height="21.26" x="278.01" y="378.47" class="todo"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="22.51" height="20.70" x="278.01" y="402.74" class="todo"><title>0x00453ca0 MoveCart (1323 bytes)</title></rect>
 <rect width="22.51" height="20.57" x="278.01" y="426.43" class="todo"><title>0x00405450 HWI_InsertClippedPoly_Textured (1315 bytes)</title></rect>
-<rect width="22.41" height="20.56" x="303.52" y="0" class="todo"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
+<rect width="22.41" height="20.56" x="303.52" y="0" class="named"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
 <rect width="22.27" height="20.56" x="328.93" y="0" class="todo"><title>0x00420e10 GetHeight (1300 bytes)</title></rect>
 <rect width="22.13" height="20.56" x="354.20" y="0" class="named"><title>0x00447880 AnimateShotgun (1292 bytes)</title></rect>
 <rect width="21.19" height="20.56" x="379.33" y="0" class="todo"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
