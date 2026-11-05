@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="298.38" height="12" x="0" y="0" class="named"><title>1050 · 71.04%</title></rect>
-<rect width="1.99" height="12" x="298.38" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="119.63" height="12" x="300.37" y="0" class="todo"><title>421 · 28.48%</title></rect>
+<rect width="298.66" height="12" x="0" y="0" class="named"><title>1051 · 71.11%</title></rect>
+<rect width="1.99" height="12" x="298.66" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="119.35" height="12" x="300.65" y="0" class="todo"><title>420 · 28.42%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">71.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1050</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">421</tspan></text>
+<text text-anchor="end" x="600" y="7.50">71.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1051</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">420</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.25" height="12" x="0" y="0" class="named"><title>306 KB · 45.77%</title></rect>
-<rect width="3.79" height="12" x="192.25" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.96" height="12" x="196.04" y="0" class="todo"><title>356 KB · 53.32%</title></rect>
+<rect width="192.28" height="12" x="0" y="0" class="named"><title>306 KB · 45.78%</title></rect>
+<rect width="3.79" height="12" x="192.28" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.93" height="12" x="196.07" y="0" class="todo"><title>356 KB · 53.32%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
@@ -1502,7 +1502,7 @@
 <rect width="12" height="12" x="525" y="420" class="named"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="420" class="named"><title>0x004b20c0 DXTextureMakeDeviceSurface (179 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="420" class="todo"><title>0x004b2180 DXTextureCleanup (106 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="420" class="todo"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="420" class="named"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="420" class="todo"><title>0x004b2230 DXRestoreSurfaceIfLost (75 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="420" class="todo"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="420" class="todo"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
@@ -2747,7 +2747,7 @@
 <rect width="4.37" height="4.18" x="698.68" y="339.91" class="todo"><title>0x0048e770 Func48e770 (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="706.04" y="339.91" class="todo"><title>0x0048e7b0 Func48e7b0 (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="713.41" y="339.91" class="todo"><title>0x0048e7f0 Func48e7f0 (52 bytes)</title></rect>
-<rect width="4.37" height="4.18" x="720.78" y="339.91" class="todo"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
+<rect width="4.37" height="4.18" x="720.78" y="339.91" class="named"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="4.28" height="4.18" x="728.15" y="339.91" class="named"><title>0x004416b0 lara_as_rightjump (51 bytes)</title></rect>
 <rect width="4.28" height="4.18" x="735.43" y="339.91" class="named"><title>0x004416f0 lara_as_leftjump (51 bytes)</title></rect>
 <rect width="4.28" height="4.18" x="742.72" y="339.91" class="named"><title>0x00441800 lara_as_pushblock (51 bytes)</title></rect>

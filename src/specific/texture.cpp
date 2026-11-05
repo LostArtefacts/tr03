@@ -192,4 +192,16 @@ int DXTextureMakeDeviceSurface(int w, int h, LPDIRECTDRAWPALETTE palette, DXTEXT
     return index;
 }
 
+void DXClearAllTextures(DXTEXTURE *list)
+{
+    int i;
+
+    for (i = 0; i < 32; i++)
+        DXTextureCleanup(i, list);
+    if (DXPalette) {
+        DXPalette->Release();
+        DXPalette = 0;
+    }
+}
+
 }
