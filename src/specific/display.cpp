@@ -34,4 +34,13 @@ void DecreaseScreenSize(void)
     }
 }
 
+void TempVideoAdjust(int hires, double sizer)
+{
+    VidSizeLocked = 1;
+    if (sizer != screen_sizer) {
+        screen_sizer = sizer;
+        setup_screen_size();
+    }
+}
+
 }
