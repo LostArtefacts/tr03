@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="246.17" height="12" x="0" y="0" class="named"><title>787 · 53.28%</title></rect>
-<rect width="215.83" height="12" x="246.17" y="0" class="todo"><title>690 · 46.72%</title></rect>
+<rect width="246.48" height="12" x="0" y="0" class="named"><title>788 · 53.35%</title></rect>
+<rect width="215.52" height="12" x="246.48" y="0" class="todo"><title>689 · 46.65%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">53.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">787</tspan> · <tspan class="todo">690</tspan></text>
+<text text-anchor="end" x="642" y="7.50">53.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">788</tspan> · <tspan class="todo">689</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="121.63" height="12" x="0" y="0" class="named"><title>175 KB · 26.33%</title></rect>
-<rect width="340.37" height="12" x="121.63" y="0" class="todo"><title>490 KB · 73.67%</title></rect>
+<rect width="122" height="12" x="0" y="0" class="named"><title>176 KB · 26.41%</title></rect>
+<rect width="340" height="12" x="122" y="0" class="todo"><title>490 KB · 73.59%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="24.50">26.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">175 KB</tspan> · <tspan class="todo">490 KB</tspan></text>
+<text text-anchor="end" x="642" y="24.50">26.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">176 KB</tspan> · <tspan class="todo">490 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -806,7 +806,7 @@
 <rect width="12" height="12" x="615" y="210" class="named"><title>0x0044e2f0 lara_as_surfright (96 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="210" class="named"><title>0x0044e350 lara_as_surftread (185 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="210" class="named"><title>0x0044e410 lara_col_surfswim (50 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="210" class="todo"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="210" class="named"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="210" class="named"><title>0x0044e670 LaraSurfaceCollision (250 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="210" class="named"><title>0x0044e770 LaraTestWaterStepOut (239 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="210" class="named"><title>0x0044e860 lara_col_surfback (35 bytes)</title></rect>
@@ -1870,7 +1870,7 @@
 <rect width="13.89" height="13.72" x="382.63" y="284.94" class="named"><title>0x0046c640 TriggerFireBall (541 bytes)</title></rect>
 <rect width="13.89" height="13.62" x="382.63" y="301.66" class="todo"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
 <rect width="13.89" height="13.57" x="382.63" y="318.28" class="named"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
-<rect width="13.89" height="13.52" x="382.63" y="334.85" class="todo"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
+<rect width="13.89" height="13.52" x="382.63" y="334.85" class="named"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
 <rect width="13.89" height="13.49" x="382.63" y="351.37" class="named"><title>0x00445340 RifleHandler (532 bytes)</title></rect>
 <rect width="13.89" height="13.47" x="382.63" y="367.86" class="todo"><title>0x0044f580 LaraOnLOS (531 bytes)</title></rect>
 <rect width="13.89" height="13.47" x="382.63" y="384.33" class="todo"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>

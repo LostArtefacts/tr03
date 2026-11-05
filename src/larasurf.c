@@ -282,3 +282,66 @@ void lara_col_surftread(ITEM_INFO *item, COLL_INFO *coll)
     lara.move_angle = item->pos.y_rot;
     LaraSurfaceCollision(item, coll);
 }
+
+int LaraTestWaterClimbOut(ITEM_INFO *item, COLL_INFO *coll)
+{
+    int hdif;
+    PHD_ANGLE angle;
+
+    if (coll->coll_type != COLL_FRONT || !(input & IN_ACTION) || ABS(coll->left_floor2 - coll->right_floor2) >= 60)
+        return 0;
+    if (lara.gun_status != LG_ARMLESS && !(lara.gun_status == LG_READY && lara.gun_type == LG_FLARE))
+        return 0;
+    if (coll->front_ceiling > 0 || coll->mid_ceiling > -STEPUP_HEIGHT)
+        return 0;
+    hdif = coll->front_floor + 700;
+    if (hdif <= -(STEP_L * 2) || hdif > 700 - STEPUP_HEIGHT)
+        return 0;
+    angle = item->pos.y_rot;
+    if (angle >= -(35 * ONE_DEGREE) && angle <= 35 * ONE_DEGREE)
+        angle = 0;
+    else if (angle >= 16384 - 35 * ONE_DEGREE && angle <= 16384 + 35 * ONE_DEGREE)
+        angle = 16384;
+    else if (angle >= 32767 - 35 * ONE_DEGREE || angle <= -32767 + 35 * ONE_DEGREE)
+        angle = -32768;
+    else if (angle >= -16384 - 35 * ONE_DEGREE && angle <= -16384 + 35 * ONE_DEGREE)
+        angle = -16384;
+    if (angle & 0x3fff)
+        return 0;
+    item->pos.y_pos += hdif - 5;
+    UpdateLaraRoom(item, -LARA_HITE / 2);
+    switch (angle) {
+    case 0:
+        item->pos.z_pos = (item->pos.z_pos & -WALL_L) + WALL_L + LARA_RAD;
+        break;
+    case 0x4000:
+        item->pos.x_pos = (item->pos.x_pos & -WALL_L) + WALL_L + LARA_RAD;
+        break;
+    case -0x8000:
+        item->pos.z_pos = (item->pos.z_pos & -WALL_L) - LARA_RAD;
+        break;
+    case -0x4000:
+        item->pos.x_pos = (item->pos.x_pos & -WALL_L) - LARA_RAD;
+        break;
+    }
+    if (hdif < -128) {
+        item->anim_number = 111;
+        item->frame_number = GF(111, 0);
+    } else if (hdif < 128) {
+        item->anim_number = 191;
+        item->frame_number = GF(191, 0);
+    } else {
+        item->anim_number = 193;
+        item->frame_number = GF(193, 0);
+    }
+    item->current_anim_state = AS_WATEROUT;
+    item->goal_anim_state = AS_STOP;
+    item->pos.y_rot = angle;
+    lara.gun_status = LG_HANDSBUSY;
+    item->pos.x_rot = item->pos.z_rot = 0;
+    item->gravity_status = 0;
+    item->speed = 0;
+    item->fallspeed = 0;
+    lara.water_status = LARA_ABOVEWATER;
+    return 1;
+}
