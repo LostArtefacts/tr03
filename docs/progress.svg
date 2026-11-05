@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="281.89" height="12" x="0" y="0" class="named"><title>992 · 67.12%</title></rect>
-<rect width="1.42" height="12" x="281.89" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="136.68" height="12" x="283.32" y="0" class="todo"><title>481 · 32.54%</title></rect>
+<rect width="282.18" height="12" x="0" y="0" class="named"><title>993 · 67.19%</title></rect>
+<rect width="1.42" height="12" x="282.18" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="136.40" height="12" x="283.60" y="0" class="todo"><title>480 · 32.48%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">67.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">992</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">481</tspan></text>
+<text text-anchor="end" x="600" y="7.50">67.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">993</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">480</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.92" height="12" x="0" y="0" class="named"><title>299 KB · 44.74%</title></rect>
-<rect width="3.69" height="12" x="187.92" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.40" height="12" x="191.60" y="0" class="todo"><title>363 KB · 54.38%</title></rect>
+<rect width="187.94" height="12" x="0" y="0" class="named"><title>299 KB · 44.75%</title></rect>
+<rect width="3.69" height="12" x="187.94" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.37" height="12" x="191.63" y="0" class="todo"><title>363 KB · 54.37%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">299 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">363 KB</tspan></text>
@@ -1152,7 +1152,7 @@
 <rect width="12" height="12" x="525" y="315" class="named"><title>0x00475910 TempVideoAdjust (52 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="315" class="named"><title>0x00475950 TempVideoRemove (57 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="315" class="todo"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="315" class="todo"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="315" class="named"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="315" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="315" class="todo"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="315" class="todo"><title>0x00475f60 S_DrawAirBar (604 bytes)</title></rect>
@@ -2841,7 +2841,7 @@
 <rect width="3.66" height="3.75" x="668.64" y="409.71" class="named"><title>0x0042fa00 Exercise8_87 (39 bytes)</title></rect>
 <rect width="3.66" height="3.75" x="668.64" y="416.46" class="named"><title>0x00453930 MineCartInitialise (39 bytes)</title></rect>
 <rect width="3.66" height="3.75" x="668.64" y="423.20" class="named"><title>0x0046b0f0 T_DrawText (39 bytes)</title></rect>
-<rect width="3.66" height="3.75" x="668.64" y="429.95" class="todo"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
+<rect width="3.66" height="3.75" x="668.64" y="429.95" class="named"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="3.66" height="3.65" x="668.64" y="436.70" class="named"><title>0x0042f600 QuadStop (38 bytes)</title></rect>
 <rect width="3.66" height="3.65" x="668.64" y="443.35" class="named"><title>0x00438fd0 Inv_RingMotionRadius (38 bytes)</title></rect>
 <rect width="3.88" height="3.43" x="675.30" y="368.76" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>

@@ -52,4 +52,13 @@ void TempVideoRemove(void)
     }
 }
 
+void S_FadeOutInventory(int fade)
+{
+    if (fade) {
+        fade_value = 24 << 16;
+        fade_limit = 16 << 16;
+        fade_adder = -32768;
+    }
+}
+
 }
