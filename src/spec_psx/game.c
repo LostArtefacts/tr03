@@ -13,3 +13,17 @@ int Level2World(int level)
     else
         return 5;
 }
+
+int World2Level(int world)
+{
+    if (world == 1)
+        return 0;
+    if (world == 2)
+        return 4;
+    if (world == 3)
+        return 8;
+    if (world == 4)
+        return 12;
+    else
+        return 15;
+}

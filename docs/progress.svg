@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="292.12" height="12" x="0" y="0" class="named"><title>1028 · 69.55%</title></rect>
-<rect width="1.42" height="12" x="292.12" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="126.45" height="12" x="293.55" y="0" class="todo"><title>445 · 30.11%</title></rect>
+<rect width="292.41" height="12" x="0" y="0" class="named"><title>1029 · 69.62%</title></rect>
+<rect width="1.42" height="12" x="292.41" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="126.17" height="12" x="293.83" y="0" class="todo"><title>444 · 30.04%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">69.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1028</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">445</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1029</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">444</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.92" height="12" x="0" y="0" class="named"><title>302 KB · 45.22%</title></rect>
-<rect width="3.69" height="12" x="189.92" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="226.39" height="12" x="193.61" y="0" class="todo"><title>360 KB · 53.90%</title></rect>
+<rect width="189.96" height="12" x="0" y="0" class="named"><title>302 KB · 45.23%</title></rect>
+<rect width="3.69" height="12" x="189.96" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="226.36" height="12" x="193.64" y="0" class="todo"><title>360 KB · 53.90%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">302 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">360 KB</tspan></text>
@@ -1246,7 +1246,7 @@
 <rect width="12" height="12" x="435" y="345" class="named"><title>0x00483b50 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="345" class="todo"><title>0x00483b60 LevelStats (1077 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="345" class="named"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="345" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="345" class="named"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="345" class="todo"><title>0x00484010 GameStats (468 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="345" class="named"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="345" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
@@ -2773,7 +2773,7 @@
 <rect width="3.85" height="4.37" x="647.10" y="391.38" class="named"><title>0x00406780 GETG (48 bytes)</title></rect>
 <rect width="3.85" height="4.37" x="647.10" y="398.75" class="named"><title>0x00429ed0 GetBestFrame (48 bytes)</title></rect>
 <rect width="3.85" height="4.37" x="647.10" y="406.12" class="named"><title>0x0043b100 InitialiseFXArray (48 bytes)</title></rect>
-<rect width="3.85" height="4.37" x="647.10" y="413.50" class="todo"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
+<rect width="3.85" height="4.37" x="647.10" y="413.50" class="named"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
 <rect width="3.85" height="4.28" x="647.10" y="420.87" class="named"><title>0x0041e140 FindGridShift (47 bytes)</title></rect>
 <rect width="3.85" height="4.28" x="647.10" y="428.15" class="named"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
 <rect width="3.85" height="4.28" x="647.10" y="435.43" class="named"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
