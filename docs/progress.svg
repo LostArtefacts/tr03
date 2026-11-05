@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="271.82" height="12" x="0" y="0" class="named"><title>869 · 58.84%</title></rect>
-<rect width="190.18" height="12" x="271.82" y="0" class="todo"><title>608 · 41.16%</title></rect>
+<rect width="272.13" height="12" x="0" y="0" class="named"><title>870 · 58.90%</title></rect>
+<rect width="189.87" height="12" x="272.13" y="0" class="todo"><title>607 · 41.10%</title></rect>
 </g>
-<text text-anchor="end" x="642" y="7.50">58.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">869</tspan> · <tspan class="todo">608</tspan></text>
+<text text-anchor="end" x="642" y="7.50">58.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="7"><tspan class="named">870</tspan> · <tspan class="todo">607</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="164.02" height="12" x="0" y="0" class="named"><title>237 KB · 35.50%</title></rect>
-<rect width="297.98" height="12" x="164.02" y="0" class="todo"><title>430 KB · 64.50%</title></rect>
+<rect width="164.08" height="12" x="0" y="0" class="named"><title>237 KB · 35.52%</title></rect>
+<rect width="297.92" height="12" x="164.08" y="0" class="todo"><title>430 KB · 64.48%</title></rect>
 </g>
 <text text-anchor="end" x="642" y="24.50">35.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="657" y="24"><tspan class="named">237 KB</tspan> · <tspan class="todo">430 KB</tspan></text>
@@ -268,7 +268,7 @@
 <rect width="12" height="12" x="45" y="60" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="60" class="named"><title>0x00420590 AnimateItem (980 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="60" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="60" class="todo"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="60" class="named"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="60" class="named"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="60" class="named"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="60" class="todo"><title>0x00420e10 GetHeight (1300 bytes)</title></rect>
@@ -2513,7 +2513,7 @@
 <rect width="5.81" height="5.82" x="662.52" y="282.88" class="todo"><title>0x00481d50 LoadCameras (96 bytes)</title></rect>
 <rect width="5.81" height="5.82" x="671.33" y="282.88" class="todo"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="5.81" height="5.82" x="680.14" y="282.88" class="todo"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
-<rect width="5.75" height="5.82" x="688.95" y="282.88" class="todo"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
+<rect width="5.75" height="5.82" x="688.95" y="282.88" class="named"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
 <rect width="5.75" height="5.82" x="697.70" y="282.88" class="named"><title>0x00439e00 AddAssaultTime (95 bytes)</title></rect>
 <rect width="5.75" height="5.82" x="706.44" y="282.88" class="named"><title>0x00439e60 AddQuadbikeTime (95 bytes)</title></rect>
 <rect width="5.75" height="5.82" x="715.19" y="282.88" class="named"><title>0x00467010 InitialiseShiva (95 bytes)</title></rect>

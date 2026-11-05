@@ -801,3 +801,14 @@ int ObjectOnLOS(GAME_VECTOR *start, GAME_VECTOR *target)
     }
     return NO_ITEM;
 }
+
+void TranslateItem(ITEM_INFO *item, sint32 x, sint32 y, sint32 z)
+{
+    sint32 cosy, siny;
+
+    cosy = phd_cos(item->pos.y_rot);
+    siny = phd_sin(item->pos.y_rot);
+    item->pos.x_pos += (x * cosy + z * siny) >> W2V_SHIFT;
+    item->pos.y_pos += y;
+    item->pos.z_pos += (z * cosy - x * siny) >> W2V_SHIFT;
+}
