@@ -815,7 +815,7 @@ address,size,name,symbol
 0x00456b50,80,InitialiseMovingBlock,_InitialiseMovingBlock
 0x00456ba0,549,ClearMovableBlockSplitters,_ClearMovableBlockSplitters
 0x00456dd0,367,MovableBlock,_MovableBlock
-0x00456f40,636,MovableBlockCollision,_MovableBlockCollision
+0x00456f40,668,MovableBlockCollision,_MovableBlockCollision
 0x004571e0,436,TestBlockPush,_TestBlockPush
 0x004573a0,78,TestBlockMovable,_TestBlockMovable
 0x004573f0,672,TestBlockPull,_TestBlockPull
@@ -1950,6 +1950,7 @@ address,size,name,symbol
 0x004c75f0,416,lara_collision_routines,_lara_collision_routines
 0x004c77f8,20,LondonBossRadii,_LondonBossRadii
 0x004c7810,20,LondonBossHeights,_LondonBossHeights
+0x004c78c0,24,MovingBlockBounds,_MovingBlockBounds
 0x004c7908,24,PickUpBounds,_PickUpBounds
 0x004c7958,24,Switch1Bounds,_Switch1Bounds
 0x004c7970,12,SmallSwitchPosition,_SmallSwitchPosition
