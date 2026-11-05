@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="288.15" height="12" x="0" y="0" class="named"><title>1014 · 68.61%</title></rect>
-<rect width="1.42" height="12" x="288.15" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="130.43" height="12" x="289.57" y="0" class="todo"><title>459 · 31.06%</title></rect>
+<rect width="288.43" height="12" x="0" y="0" class="named"><title>1015 · 68.67%</title></rect>
+<rect width="1.42" height="12" x="288.43" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="130.15" height="12" x="289.85" y="0" class="todo"><title>458 · 30.99%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">68.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1014</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">459</tspan></text>
+<text text-anchor="end" x="600" y="7.50">68.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1015</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">458</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.12" height="12" x="0" y="0" class="named"><title>301 KB · 45.03%</title></rect>
-<rect width="3.69" height="12" x="189.12" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.19" height="12" x="192.81" y="0" class="todo"><title>361 KB · 54.09%</title></rect>
+<rect width="189.20" height="12" x="0" y="0" class="named"><title>301 KB · 45.05%</title></rect>
+<rect width="3.69" height="12" x="189.20" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.12" height="12" x="192.88" y="0" class="todo"><title>361 KB · 54.08%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">45.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">301 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">361 KB</tspan></text>
@@ -66,7 +66,7 @@
 <g transform="translate(0 20)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="0" class="todo"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="0" class="todo"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="0" class="named"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="todo"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="todo"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="todo"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
@@ -83,7 +83,7 @@
 <rect width="12" height="12" x="240" y="0" class="todo"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="0" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="0" class="todo"><title>0x00402030 AlterFOV (158 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="0" class="todo"><title>0x004020d0 Func4020d0 (83 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="0" class="todo"><title>0x004020d0 SetupZRange (83 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="0" class="todo"><title>0x00402130 SetZNear (66 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="0" class="todo"><title>0x00402180 SetZFar (24 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="0" class="todo"><title>0x004021a0 phd_InitWindow (434 bytes)</title></rect>
@@ -2435,7 +2435,7 @@
 <rect width="6.65" height="6.40" x="564.28" y="292.40" class="named"><title>0x0043b390 LaraRapidsDrown (121 bytes)</title></rect>
 <rect width="6.65" height="6.40" x="564.28" y="301.80" class="todo"><title>0x00482140 LoadCinematic (121 bytes)</title></rect>
 <rect width="6.65" height="6.40" x="564.28" y="311.19" class="named"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
-<rect width="6.65" height="6.34" x="564.28" y="320.59" class="todo"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
+<rect width="6.65" height="6.34" x="564.28" y="320.59" class="named"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="329.93" class="named"><title>0x0043fb90 lara_as_hang2 (120 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="339.27" class="named"><title>0x00447fd0 set_arm_info (120 bytes)</title></rect>
 <rect width="6.65" height="6.34" x="564.28" y="348.62" class="named"><title>0x004491c0 lara_as_climbstnc (120 bytes)</title></rect>
@@ -2565,7 +2565,7 @@
 <rect width="5.37" height="5.50" x="633.95" y="300.17" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
 <rect width="5.37" height="5.50" x="642.32" y="300.17" class="named"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
 <rect width="5.37" height="5.50" x="650.68" y="300.17" class="todo"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
-<rect width="5.30" height="5.50" x="659.05" y="300.17" class="todo"><title>0x004020d0 Func4020d0 (83 bytes)</title></rect>
+<rect width="5.30" height="5.50" x="659.05" y="300.17" class="todo"><title>0x004020d0 SetupZRange (83 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="667.36" y="300.17" class="named"><title>0x0041ec30 ObjectCollisionSub (83 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="675.66" y="300.17" class="named"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="683.96" y="300.17" class="named"><title>0x0044edd0 lara_as_uwdeath (83 bytes)</title></rect>

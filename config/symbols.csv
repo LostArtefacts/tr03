@@ -18,7 +18,7 @@ address,size,name,symbol
 0x00401f20,54,phd_SortPolyList,_phd_SortPolyList
 0x00401f60,196,do_quickysorty,_do_quickysorty
 0x00402030,158,AlterFOV,_AlterFOV
-0x004020d0,83,Func4020d0,
+0x004020d0,83,SetupZRange,_SetupZRange
 0x00402130,66,SetZNear,_SetZNear
 0x00402180,24,SetZFar,_SetZFar
 0x004021a0,434,phd_InitWindow,_phd_InitWindow
@@ -2101,6 +2101,7 @@ address,size,name,symbol
 0x00531720,24000,info3d_bufferbf,_info3d_bufferbf
 0x0056c0a0,4,f_znear,_f_znear
 0x0056c0a8,24000,info3d_bufferfb,_info3d_bufferfb
+0x005a6a28,4,phd_oopersp,_phd_oopersp
 0x005a6a2c,4,phd_mxptr,_phd_mxptr
 0x005a6a38,128,rand_table,_rand_table
 0x005a6ab8,4,f_persp,_f_persp
