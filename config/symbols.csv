@@ -704,7 +704,7 @@ address,size,name,symbol
 0x00449a30,383,UpdateElectricityPoints,_UpdateElectricityPoints
 0x00449bb0,1370,LaraGun,_LaraGun
 0x0044a1a0,59,CheckForHoldingState,_CheckForHoldingState
-0x0044a1e0,285,InitialiseNewWeapon,_InitialiseNewWeapon
+0x0044a1e0,324,InitialiseNewWeapon,_InitialiseNewWeapon
 0x0044a330,404,LaraTargetInfo,_LaraTargetInfo
 0x0044a4d0,557,LaraGetNewTarget,_LaraGetNewTarget
 0x0044a700,170,find_target_point,_find_target_point
