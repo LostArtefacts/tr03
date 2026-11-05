@@ -47,19 +47,19 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="250.81" height="12" x="0" y="0" class="named"><title>882 · 59.72%</title></rect>
-<rect width="0.28" height="12" x="250.81" y="0" class="nonmatching"><title>1 · 0.07%</title></rect>
-<rect width="168.91" height="12" x="251.09" y="0" class="todo"><title>594 · 40.22%</title></rect>
+<rect width="0.57" height="12" x="250.81" y="0" class="nonmatching"><title>2 · 0.14%</title></rect>
+<rect width="168.63" height="12" x="251.37" y="0" class="todo"><title>593 · 40.15%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">59.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">882</tspan> · <tspan class="nonmatching">1</tspan> · <tspan class="todo">594</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">882</tspan> · <tspan class="nonmatching">2</tspan> · <tspan class="todo">593</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="152.62" height="12" x="0" y="0" class="named"><title>242 KB · 36.34%</title></rect>
-<rect width="0.57" height="12" x="152.62" y="0" class="nonmatching"><title>1 KB · 0.14%</title></rect>
-<rect width="266.81" height="12" x="153.19" y="0" class="todo"><title>423 KB · 63.53%</title></rect>
+<rect width="0.96" height="12" x="152.62" y="0" class="nonmatching"><title>2 KB · 0.23%</title></rect>
+<rect width="266.42" height="12" x="153.58" y="0" class="todo"><title>423 KB · 63.43%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">36.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">242 KB</tspan> · <tspan class="nonmatching">1 KB</tspan> · <tspan class="todo">423 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">242 KB</tspan> · <tspan class="nonmatching">2 KB</tspan> · <tspan class="todo">423 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -832,7 +832,7 @@
 <rect width="12" height="12" x="225" y="225" class="named"><title>0x0044f100 lara_col_uwdeath (91 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="225" class="named"><title>0x0044f160 lara_col_waterroll (19 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="225" class="named"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="225" class="todo"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="225" class="nonmatching"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="225" class="named"><title>0x0044f580 LaraOnLOS (531 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="225" class="todo"><title>0x0044f7a0 UpdateLaserShades (99 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="225" class="named"><title>0x0044f810 LaserControl (31 bytes)</title></rect>
@@ -1812,7 +1812,7 @@
 <rect width="15.06" height="14.59" x="624.15" y="64.67" class="named"><title>0x0041d290 CobraControl (624 bytes)</title></rect>
 <rect width="15.04" height="14.59" x="642.21" y="64.67" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="14.99" height="14.59" x="660.25" y="64.67" class="named"><title>0x004296c0 InterpolateMatrix (621 bytes)</title></rect>
-<rect width="14.99" height="14.59" x="678.24" y="64.67" class="todo"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
+<rect width="14.99" height="14.59" x="678.24" y="64.67" class="nonmatching"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
 <rect width="14.94" height="14.59" x="696.23" y="64.67" class="named"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
 <rect width="14.92" height="14.59" x="714.17" y="64.67" class="named"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
 <rect width="14.92" height="14.59" x="732.08" y="64.67" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
