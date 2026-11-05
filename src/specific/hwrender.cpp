@@ -84,6 +84,23 @@ void HWR_EnableColorKey(bool enable)
     }
 }
 
+void HWR_EnableZBuffer(bool tWrite, bool tCompare)
+{
+    if (!App.lpZBuffer)
+        return;
+    if (tWrite != GtZBufferWriteEnabled) {
+        SetRenderState(D3DRENDERSTATE_ZWRITEENABLE, tWrite);
+        GtZBufferWriteEnabled = tWrite;
+    }
+    if (tCompare != GtZBufferCompareEnabled) {
+        if (App.lpZBuffer)
+            SetRenderState(D3DRENDERSTATE_ZFUNC, tCompare ? D3DCMP_LESSEQUAL : D3DCMP_ALWAYS);
+        else
+            SetRenderState(D3DRENDERSTATE_ZENABLE, tCompare);
+        GtZBufferCompareEnabled = tCompare;
+    }
+}
+
 void HWR_EndScene(void)
 {
     EndScene();
