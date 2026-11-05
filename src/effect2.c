@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <malloc.h>
 #include "game.h"
 
 extern sint32 BatsTriggered;
@@ -840,6 +844,152 @@ void TriggerExplosionSparks(sint32 x, sint32 y, sint32 z, sint32 extra_trigs, si
         sptr->dG = tr;
         sptr->dB = tg;
         sptr->Flags |= 0x2000;
+    }
+}
+
+extern sint32 SmokeWindX, SmokeWindZ;
+
+void TriggerExplosionBubble(sint32 x, sint32 y, sint32 z, sint16 roomnum);
+
+void UpdateSparks(void)
+{
+    sint32 lp, lp1;
+    sint32 divmult;
+    sint32 random, expflag;
+    SPARKS *sptr;
+
+    sptr = &sparks[0];
+    for (lp = 0; lp < MAX_SPARKS; lp++) {
+        if (sptr->On == 0) {
+            sptr++;
+            continue;
+        }
+        if (!(sptr->Flags & 0x400) || ((sptr->Flags & 0x400) && sptr->Life > 16))
+            sptr->Life--;
+        if (sptr->Life == 0) {
+            if (sptr->Dynamic != -1) {
+                spark_dynamics[sptr->Dynamic].On = 0;
+                sptr->Dynamic = -1;
+            }
+            sptr->On = 0;
+            sptr++;
+            continue;
+        }
+        if (sptr->sLife - sptr->Life < sptr->ColFadeSpeed) {
+            divmult = (65536 * (sptr->sLife - sptr->Life)) / sptr->ColFadeSpeed;
+            sptr->R = sptr->sR + (((sptr->dR - sptr->sR) * divmult) >> 16);
+            sptr->G = sptr->sG + (((sptr->dG - sptr->sG) * divmult) >> 16);
+            sptr->B = sptr->sB + (((sptr->dB - sptr->sB) * divmult) >> 16);
+        } else if (sptr->Life < sptr->FadeToBlack) {
+            divmult = 65536 - ((65536 * (sptr->FadeToBlack - sptr->Life)) / sptr->FadeToBlack);
+            sptr->R = (sptr->dR * divmult) >> 16;
+            sptr->G = (sptr->dG * divmult) >> 16;
+            sptr->B = (sptr->dB * divmult) >> 16;
+        } else {
+            sptr->R = sptr->dR;
+            sptr->G = sptr->dG;
+            sptr->B = sptr->dB;
+        }
+        if (sptr->Life == sptr->FadeToBlack && (sptr->Flags & 0x800)) {
+            sptr->dWidth >>= 2;
+            sptr->dHeight >>= 2;
+        }
+        if (sptr->Flags & 16) {
+            sptr->RotAng += sptr->RotAdd;
+            sptr->RotAng &= 4095;
+        }
+        if (sptr->Flags & 512) {
+            if (sptr->R < 16 && sptr->G < 16 && sptr->B < 16)
+                sptr->Def = objects[296].mesh_index + 3;
+            else if (sptr->R < 64 && sptr->G < 64 && sptr->B < 64)
+                sptr->Def = objects[296].mesh_index + 2;
+            else if (sptr->R < 96 && sptr->G < 96 && sptr->B < 96)
+                sptr->Def = objects[296].mesh_index + 1;
+            else
+                sptr->Def = objects[296].mesh_index;
+        }
+        if (sptr->sLife - sptr->Life == (sptr->extras >> 3) && (sptr->extras & 7)) {
+            if (sptr->Flags & 0x800)
+                expflag = 1;
+            else if (sptr->Flags & 0x2000)
+                expflag = 2;
+            else
+                expflag = 0;
+            for (lp1 = 0; lp1 < (sptr->extras & 7); lp1++) {
+                TriggerExplosionSparks(sptr->x, sptr->y, sptr->z, (sptr->extras & 7) - 1, sptr->Dynamic, expflag,
+                                       sptr->RoomNumber);
+                sptr->Dynamic = -1;
+            }
+            if (sptr->Flags & 0x800)
+                TriggerExplosionBubble(sptr->x, sptr->y, sptr->z, sptr->RoomNumber);
+            sptr->extras = 0;
+        }
+        divmult = (65536 * (sptr->sLife - sptr->Life)) / sptr->sLife;
+        sptr->Yvel += sptr->Gravity;
+        if (sptr->MaxYvel) {
+            if ((sptr->Yvel < 0 && sptr->Yvel < (sptr->MaxYvel << 5)) ||
+                (sptr->Yvel > 0 && sptr->Yvel > (sptr->MaxYvel << 5)))
+                sptr->Yvel = sptr->MaxYvel << 5;
+        }
+        if (sptr->Friction & 15) {
+            sptr->Xvel -= sptr->Xvel >> (sptr->Friction & 15);
+            sptr->Zvel -= sptr->Zvel >> (sptr->Friction & 15);
+        }
+        if ((sptr->Friction >> 4) & 15)
+            sptr->Yvel -= sptr->Yvel >> ((sptr->Friction >> 4) & 15);
+        sptr->x += sptr->Xvel >> 5;
+        sptr->y += sptr->Yvel >> 5;
+        sptr->z += sptr->Zvel >> 5;
+        if (sptr->Flags & 256) {
+            sptr->x += SmokeWindX >> 1;
+            sptr->z += SmokeWindZ >> 1;
+        }
+        sptr->Width = sptr->sWidth + (((sptr->dWidth - sptr->sWidth) * divmult) >> 16);
+        sptr->Height = sptr->sHeight + (((sptr->dHeight - sptr->sHeight) * divmult) >> 16);
+        sptr++;
+    }
+    sptr = &sparks[0];
+    for (lp = 0; lp < MAX_SPARKS; lp++) {
+        if (sptr->On && sptr->Dynamic != -1) {
+            sint32 r, g, b, falloff;
+            sint32 x, y, z;
+            SP_DYNAMIC *sdptr;
+
+            sdptr = &spark_dynamics[sptr->Dynamic];
+            if (sdptr->Flags & 3) {
+                random = GetRandomControl();
+                x = sptr->x + ((random & 0xf) << 4);
+                y = sptr->y + (random & 0xf0);
+                z = sptr->z + ((random & 0xf00) >> 4);
+                falloff = sptr->sLife - sptr->Life - 1;
+                if (falloff < 2) {
+                    if (sdptr->Falloff < 28)
+                        sdptr->Falloff += 6;
+                    r = 31 - (random & 3) - falloff;
+                    g = 31 - (random & 3) - (falloff << 1);
+                    b = 31 - (random & 3) - (falloff << 3);
+                } else if (falloff < 4) {
+                    if (sdptr->Falloff < 28)
+                        sdptr->Falloff += 6;
+                    r = 31 - (random & 3) - falloff;
+                    g = 16 - falloff;
+                    b = 16 - (falloff << 2);
+                    if (b < 0)
+                        b = 0;
+                } else {
+                    if (sdptr->Falloff > 0)
+                        sdptr->Falloff--;
+                    r = 28 + (random & 3);
+                    g = 16 + ((random >> 4) & 3);
+                    b = (random >> 8) & 7;
+                }
+                if (sptr->Flags & 0x2000)
+                    TriggerDynamic(x, y, z, (sdptr->Falloff > 31) ? 31 : sdptr->Falloff, b, r, g);
+                else
+                    TriggerDynamic(x, y, z, (sdptr->Falloff > 31) ? 31 : sdptr->Falloff, r, g, b);
+            }
+        }
+        sptr++;
     }
 }
 
