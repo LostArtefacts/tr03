@@ -3,6 +3,62 @@
 #define SURF_MAXSPEED 60
 #define DIVE_COUNT 10
 
+extern void (*lara_control_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern void (*lara_collision_routines[])(ITEM_INFO *item, COLL_INFO *coll);
+extern char LaraOnPad;
+
+void LookLeftRight(void);
+void ResetLook(void);
+void LaraWaterCurrent(COLL_INFO *coll);
+void AnimateLara(ITEM_INFO *item);
+void LaraBaddieCollision(ITEM_INFO *laraitem, COLL_INFO *coll);
+void UpdateLaraRoom(ITEM_INFO *item, int height);
+void LaraGun(void);
+
+void LaraSurface(ITEM_INFO *item, COLL_INFO *coll)
+{
+    camera.target_elevation = -22 * ONE_DEGREE;
+    coll->bad_pos = -NO_HEIGHT;
+    coll->bad_neg = -STEP_L / 2;
+    coll->bad_ceiling = 100;
+    coll->old.x = item->pos.x_pos;
+    coll->old.y = item->pos.y_pos;
+    coll->old.z = item->pos.z_pos;
+    coll->radius = 100;
+    coll->trigger = NULL;
+    coll->slopes_are_walls = 0;
+    coll->slopes_are_pits = 0;
+    coll->lava_is_pit = 0;
+    coll->enable_hit = 0;
+    coll->enable_baddie_push = 0;
+    if ((input & IN_LOOK) && lara.look)
+        LookLeftRight();
+    else
+        ResetLook();
+    lara.look = 1;
+    (*lara_control_routines[item->current_anim_state])(item, coll);
+    if (item->pos.z_rot >= -(2 * ONE_DEGREE) && item->pos.z_rot <= 2 * ONE_DEGREE)
+        item->pos.z_rot = 0;
+    else if (item->pos.z_rot < 0)
+        item->pos.z_rot += 2 * ONE_DEGREE;
+    else
+        item->pos.z_rot -= 2 * ONE_DEGREE;
+    if (lara.current_active && lara.water_status != LARA_CHEAT)
+        LaraWaterCurrent(coll);
+    AnimateLara(item);
+    item->pos.x_pos += (phd_sin(lara.move_angle) * item->fallspeed) >> (W2V_SHIFT + 2);
+    item->pos.z_pos += (phd_cos(lara.move_angle) * item->fallspeed) >> (W2V_SHIFT + 2);
+    LaraBaddieCollision(item, coll);
+    if (lara.skidoo == NO_ITEM)
+        (*lara_collision_routines[item->current_anim_state])(item, coll);
+    UpdateLaraRoom(item, 100);
+    LaraGun();
+    LaraOnPad = 0;
+    TestTriggers(coll->trigger, 0);
+    if (!LaraOnPad)
+        lara_item->item_flags[1] = 0;
+}
+
 void lara_as_surfswim(ITEM_INFO *item, COLL_INFO *coll)
 {
     if (item->hit_points <= 0)
@@ -125,8 +181,6 @@ void lara_col_surfswim(ITEM_INFO *item, COLL_INFO *coll)
     LaraSurfaceCollision(item, coll);
     LaraTestWaterClimbOut(item, coll);
 }
-
-void UpdateLaraRoom(ITEM_INFO *item, int height);
 
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 int LaraTestWaterStepOut(ITEM_INFO *item, COLL_INFO *coll);
