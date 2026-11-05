@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="201.39" height="12" x="0" y="0" class="named"><title>636 · 43.03%</title></rect>
-<rect width="266.61" height="12" x="201.39" y="0" class="todo"><title>842 · 56.97%</title></rect>
+<rect width="201.70" height="12" x="0" y="0" class="named"><title>637 · 43.10%</title></rect>
+<rect width="266.30" height="12" x="201.70" y="0" class="todo"><title>841 · 56.90%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="7.50">43.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">636</tspan> · <tspan class="todo">842</tspan></text>
+<text text-anchor="end" x="648" y="7.50">43.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="7"><tspan class="named">637</tspan> · <tspan class="todo">841</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="66.06" height="12" x="0" y="0" class="named"><title>94 KB · 14.11%</title></rect>
-<rect width="401.94" height="12" x="66.06" y="0" class="todo"><title>571 KB · 85.89%</title></rect>
+<rect width="66.24" height="12" x="0" y="0" class="named"><title>94 KB · 14.15%</title></rect>
+<rect width="401.76" height="12" x="66.24" y="0" class="todo"><title>571 KB · 85.85%</title></rect>
 </g>
-<text text-anchor="end" x="648" y="24.50">14.1%</text>
+<text text-anchor="end" x="648" y="24.50">14.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="663" y="24"><tspan class="named">94 KB</tspan> · <tspan class="todo">571 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -936,7 +936,7 @@
 <rect width="12" height="12" x="315" y="255" class="todo"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="255" class="todo"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="todo"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="255" class="todo"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="255" class="named"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="255" class="todo"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="255" class="todo"><title>0x0045c6b0 KeyHoleCollision (574 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="255" class="todo"><title>0x0045c900 PuzzleHoleCollision (818 bytes)</title></rect>
@@ -2133,7 +2133,7 @@
 <rect width="9.57" height="9.77" x="486.37" y="212.53" class="todo"><title>0x00447770 undraw_shotgun (265 bytes)</title></rect>
 <rect width="9.57" height="9.73" x="486.37" y="225.30" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="9.57" height="9.73" x="486.37" y="238.03" class="named"><title>0x0043e0b0 LaraTestHangOnClimbWall (264 bytes)</title></rect>
-<rect width="9.57" height="9.70" x="486.37" y="250.77" class="todo"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
+<rect width="9.57" height="9.70" x="486.37" y="250.77" class="named"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
 <rect width="9.57" height="9.66" x="486.37" y="263.46" class="named"><title>0x00423d70 GetWaterSurface (262 bytes)</title></rect>
 <rect width="9.57" height="9.62" x="486.37" y="276.12" class="named"><title>0x0043dcf0 lara_slide_slope (261 bytes)</title></rect>
 <rect width="9.57" height="9.62" x="486.37" y="288.75" class="named"><title>0x00471570 InitialiseTribeBoss (261 bytes)</title></rect>
