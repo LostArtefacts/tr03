@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="284.74" height="12" x="0" y="0" class="named"><title>1002 · 67.79%</title></rect>
-<rect width="1.42" height="12" x="284.74" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="133.84" height="12" x="286.16" y="0" class="todo"><title>471 · 31.87%</title></rect>
+<rect width="285.02" height="12" x="0" y="0" class="named"><title>1003 · 67.86%</title></rect>
+<rect width="1.42" height="12" x="285.02" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="133.56" height="12" x="286.44" y="0" class="todo"><title>470 · 31.80%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">67.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1002</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">471</tspan></text>
+<text text-anchor="end" x="600" y="7.50">67.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1003</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">470</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.35" height="12" x="0" y="0" class="named"><title>299 KB · 44.84%</title></rect>
-<rect width="3.69" height="12" x="188.35" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="227.97" height="12" x="192.03" y="0" class="todo"><title>362 KB · 54.28%</title></rect>
+<rect width="188.39" height="12" x="0" y="0" class="named"><title>300 KB · 44.86%</title></rect>
+<rect width="3.69" height="12" x="188.39" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="227.92" height="12" x="192.08" y="0" class="todo"><title>362 KB · 54.27%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">44.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">299 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">44.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">300 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">362 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1201,7 +1201,7 @@
 <rect width="12" height="12" x="510" y="330" class="named"><title>0x00480d10 DS_Finish (16 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="330" class="named"><title>0x00480d20 DS_Release (26 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="330" class="named"><title>0x00480d40 DS_IsSoundEnabled (14 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="330" class="todo"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="330" class="named"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="330" class="todo"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="330" class="todo"><title>0x00480f70 LoadRooms (1008 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="330" class="todo"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
@@ -2623,7 +2623,7 @@
 <rect width="5.28" height="4.85" x="700.45" y="308.67" class="named"><title>0x004587f0 ControlCutShotgun (73 bytes)</title></rect>
 <rect width="5.28" height="4.85" x="708.73" y="308.67" class="named"><title>0x00463b70 InitialiseLevelFlags (73 bytes)</title></rect>
 <rect width="5.28" height="4.85" x="717.01" y="308.67" class="named"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
-<rect width="5.28" height="4.85" x="725.30" y="308.67" class="todo"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>
+<rect width="5.28" height="4.85" x="725.30" y="308.67" class="named"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>
 <rect width="5.21" height="4.85" x="733.58" y="308.67" class="named"><title>0x0045cd50 KeyTrigger (72 bytes)</title></rect>
 <rect width="5.21" height="4.85" x="741.79" y="308.67" class="named"><title>0x0046e9b0 FallingBlockFloor (72 bytes)</title></rect>
 <rect width="4.98" height="5.08" x="616.70" y="316.53" class="todo"><title>0x00483470 WinStopFMV (72 bytes)</title></rect>

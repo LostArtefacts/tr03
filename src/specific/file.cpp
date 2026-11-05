@@ -7,8 +7,21 @@ extern "C" {
 extern char LastLoadedLevelPath[256];
 extern unsigned char *texture_page_ptrs[32];
 extern int nTInfos;
+extern DWORD nBytesRead;
+
+bool DD_SpinMessageLoop(bool tWait);
 
 void HWR_FreeTexturePages(void);
+
+BOOL MyReadFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped)
+{
+    nBytesRead += nNumberOfBytesToRead;
+    if (nBytesRead > 0x4000) {
+        nBytesRead = 0;
+        DD_SpinMessageLoop(false);
+    }
+    return ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
+}
 
 void build_ext(char *fname, char *ext)
 {
