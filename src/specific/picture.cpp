@@ -16,4 +16,15 @@ void DrawMonoScreen(int r, int g, int b)
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
 }
 
+void RemoveMonoScreen(int fade)
+{
+    if (fade) {
+        nLoadedPictures = 1;
+        FadePictureDown(32);
+    } else {
+        FreePictureTextures(CurPicTexIndices);
+        nLoadedPictures = 0;
+    }
+}
+
 }

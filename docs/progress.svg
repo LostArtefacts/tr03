@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="278.77" height="12" x="0" y="0" class="named"><title>981 · 66.37%</title></rect>
-<rect width="1.42" height="12" x="278.77" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
-<rect width="139.81" height="12" x="280.19" y="0" class="todo"><title>492 · 33.29%</title></rect>
+<rect width="279.05" height="12" x="0" y="0" class="named"><title>982 · 66.44%</title></rect>
+<rect width="1.42" height="12" x="279.05" y="0" class="nonmatching"><title>5 · 0.34%</title></rect>
+<rect width="139.53" height="12" x="280.47" y="0" class="todo"><title>491 · 33.22%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">66.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">981</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">492</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">982</tspan> · <tspan class="nonmatching">5</tspan> · <tspan class="todo">491</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.48" height="12" x="0" y="0" class="named"><title>298 KB · 44.64%</title></rect>
-<rect width="3.69" height="12" x="187.48" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
-<rect width="228.83" height="12" x="191.17" y="0" class="todo"><title>364 KB · 54.48%</title></rect>
+<rect width="187.52" height="12" x="0" y="0" class="named"><title>298 KB · 44.65%</title></rect>
+<rect width="3.69" height="12" x="187.52" y="0" class="nonmatching"><title>6 KB · 0.88%</title></rect>
+<rect width="228.80" height="12" x="191.20" y="0" class="todo"><title>364 KB · 54.48%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">44.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">298 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">364 KB</tspan></text>
@@ -1344,7 +1344,7 @@
 <rect width="12" height="12" x="405" y="375" class="todo"><title>0x0048be60 CreateMonoScreen (222 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="375" class="todo"><title>0x0048bf40 S_FadeToBlack (197 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="375" class="named"><title>0x0048c010 DrawMonoScreen (22 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="375" class="todo"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="375" class="named"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="375" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="375" class="todo"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="375" class="todo"><title>0x0048c150 GameMain (704 bytes)</title></rect>
@@ -2736,7 +2736,7 @@
 <rect width="4.33" height="4.30" x="640.23" y="406.34" class="named"><title>0x00462e60 ReadSG (53 bytes)</title></rect>
 <rect width="4.33" height="4.30" x="640.23" y="413.64" class="named"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
 <rect width="4.33" height="4.30" x="640.23" y="420.95" class="todo"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
-<rect width="4.33" height="4.30" x="640.23" y="428.25" class="todo"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
+<rect width="4.33" height="4.30" x="640.23" y="428.25" class="named"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
 <rect width="4.33" height="4.22" x="640.23" y="435.56" class="named"><title>0x00429350 InitInterpolate (52 bytes)</title></rect>
 <rect width="4.33" height="4.22" x="640.23" y="442.78" class="named"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
 <rect width="4.35" height="4.20" x="647.56" y="340.44" class="named"><title>0x00459980 BridgeTilt2Ceiling (52 bytes)</title></rect>
