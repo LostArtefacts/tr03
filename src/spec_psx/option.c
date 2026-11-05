@@ -135,3 +135,21 @@ void FlashConflicts(void)
         }
     }
 }
+
+void DefaultConflict(void)
+{
+    int i;
+    int j;
+    sint16 key;
+
+    for (i = 0; i < 14; i++) {
+        key = layout[0][i];
+        conflict[i] = 0;
+        for (j = 0; j < 14; j++) {
+            if (key == layout[1][j]) {
+                conflict[i] = 1;
+                break;
+            }
+        }
+    }
+}
