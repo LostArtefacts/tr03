@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="301.22" height="12" x="0" y="0" class="named"><title>1060 · 71.72%</title></rect>
-<rect width="1.99" height="12" x="301.22" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="116.79" height="12" x="303.21" y="0" class="todo"><title>411 · 27.81%</title></rect>
+<rect width="301.50" height="12" x="0" y="0" class="named"><title>1061 · 71.79%</title></rect>
+<rect width="1.99" height="12" x="301.50" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="116.51" height="12" x="303.49" y="0" class="todo"><title>410 · 27.74%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">71.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1060</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">411</tspan></text>
+<text text-anchor="end" x="600" y="7.50">71.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1061</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">410</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="192.54" height="12" x="0" y="0" class="named"><title>306 KB · 45.84%</title></rect>
-<rect width="3.79" height="12" x="192.54" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="223.66" height="12" x="196.34" y="0" class="todo"><title>356 KB · 53.25%</title></rect>
+<rect width="192.65" height="12" x="0" y="0" class="named"><title>306 KB · 45.87%</title></rect>
+<rect width="3.79" height="12" x="192.65" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="223.56" height="12" x="196.44" y="0" class="todo"><title>355 KB · 53.23%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">45.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">356 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">45.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">306 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">355 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1209,7 +1209,7 @@
 <rect width="12" height="12" x="630" y="330" class="todo"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="330" class="todo"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="330" class="todo"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="330" class="todo"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="330" class="named"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="330" class="todo"><title>0x00481d50 LoadCameras (96 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="330" class="todo"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="330" class="todo"><title>0x00481e10 LoadBoxes (518 bytes)</title></rect>
@@ -2282,7 +2282,7 @@
 <rect width="7.77" height="7.86" x="522.79" y="299.48" class="named"><title>0x00416570 CreatureFloat (174 bytes)</title></rect>
 <rect width="7.77" height="7.86" x="522.79" y="310.34" class="named"><title>0x0046f130 FlameEmitter3Control (174 bytes)</title></rect>
 <rect width="7.77" height="7.82" x="522.79" y="321.21" class="named"><title>0x00444ee0 LaraTestEdgeCatch (173 bytes)</title></rect>
-<rect width="7.77" height="7.82" x="522.79" y="332.03" class="todo"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
+<rect width="7.77" height="7.82" x="522.79" y="332.03" class="named"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
 <rect width="7.77" height="7.77" x="522.79" y="342.85" class="named"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
 <rect width="7.77" height="7.77" x="522.79" y="353.62" class="named"><title>0x00439d10 AddRequesterItem (172 bytes)</title></rect>
 <rect width="7.77" height="7.73" x="522.79" y="364.39" class="named"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
