@@ -3817,4 +3817,577 @@ __declspec(naked) void MMXDrawTriangleFog(void)
         ret
     }
 }
+
+extern long Var6ca254;
+extern long Var6ca498;
+extern long Var6ca354;
+extern long Var6ca3d8;
+extern long Var6ca40c;
+extern long Var6ca438;
+extern long Var6ca400;
+extern long Var6ca230;
+extern long Var6ca3b8;
+extern long Var6ca434;
+extern long Var6ca3ec;
+extern long Var6ca4b0;
+extern long Var6ca208;
+extern long Var6ca378;
+extern long Var6ca368;
+extern long Var6ca31c;
+extern long Var6ca480;
+extern long Var6ca218;
+extern long Var6ca234;
+extern long Var6ca25c;
+extern double Var6ca410;
+extern long Var6ca440;
+extern long Var6ca2a4;
+extern double Var6ca298;
+extern long Var6ca2c0;
+extern long Var6ca250;
+extern double Var6ca278;
+extern long Var6ca47c;
+extern double Var4ceb60;
+extern long Var6ca430;
+extern double Var6ca388;
+extern long Var6ca4c4;
+extern long Var6ca490;
+extern double Var6ca340;
+extern long Var6ca2e4;
+extern double Var6ca308;
+extern long Var6ca3a8;
+extern long Var6ca274;
+extern long Var6ca3f8;
+extern long Var6ce4dc;
+extern long Var6ca390;
+extern long Var6ca3e8;
+extern double Var6ca3e0;
+extern long Var6ca260;
+extern long Var6ca328;
+
+__declspec(naked) void MMXDrawTriangle(void)
+{
+    __asm {
+        push edi
+        push esi
+        push ebx
+        mov ebx, dword ptr [esp+0x10]
+        mov ecx, dword ptr [esp+0x14]
+        mov edx, dword ptr [esp+0x18]
+        fld dword ptr [ebx]
+        fsub dword ptr [ecx]
+        fld dword ptr [ebx+0x4]
+        fsub dword ptr [edx+0x4]
+        fxch st(1)
+        fst dword ptr [Var6ca254]
+        fxch st(1)
+        fst dword ptr [Var6ca498]
+        fmulp st(1), st
+        fld dword ptr [ebx]
+        fsub dword ptr [edx]
+        fld dword ptr [ebx+0x4]
+        fsub dword ptr [ecx+0x4]
+        fxch st(1)
+        fst dword ptr [Var6ca354]
+        fxch st(1)
+        fst dword ptr [Var6ca3d8]
+        fmulp st(1), st
+        fsubp st(1), st
+        fst dword ptr [Var6ca40c]
+        fld1
+        test dword ptr [Var6ca40c], 0x80000000
+        jne L9
+        fdivrp st(1), st
+        mov dword ptr [ebx+0x8], ecx
+        mov dword ptr [ecx+0x8], edx
+        mov dword ptr [edx+0x8], ebx
+        mov dword ptr [ebx+0x14], edx
+        mov dword ptr [ecx+0x14], ebx
+        mov dword ptr [edx+0x14], ecx
+        mov esi, ebx
+        mov eax, dword ptr [ebx+0x4]
+        cmp eax, dword ptr [ecx+0x4]
+        jb L1
+        mov eax, dword ptr [ecx+0x4]
+        mov esi, ecx
+    L1:
+        cmp eax, dword ptr [edx+0x4]
+        jb L2
+        mov esi, edx
+    L2:
+        mov dword ptr [Var6ca438], esi
+        mov dword ptr [Var6ca400], esi
+        mov eax, dword ptr [ebx+0x10]
+        mov dword ptr [Var6ca474], eax
+        mov esi, dword ptr [ebx+0x10]
+        mov edi, esi
+        mov eax, esi
+        shl esi, 0x8
+        and edi, 0xff00
+        shr eax, 0x8
+        and esi, 0xff00
+        and eax, 0xff00
+        add edi, 0x80
+        add esi, 0x80
+        add eax, 0x80
+        mov dword ptr [Var6ca230], edi
+        mov dword ptr [Var6ca3b8], esi
+        mov dword ptr [Var6ca434], eax
+        mov esi, dword ptr [ecx+0x10]
+        mov edi, esi
+        mov eax, esi
+        shl esi, 0x8
+        and edi, 0xff00
+        shr eax, 0x8
+        and esi, 0xff00
+        and eax, 0xff00
+        add edi, 0x80
+        add esi, 0x80
+        add eax, 0x80
+        mov dword ptr [Var6ca3ec], edi
+        mov dword ptr [Var6ca4b0], esi
+        mov dword ptr [Var6ca208], eax
+        mov esi, dword ptr [edx+0x10]
+        mov edi, esi
+        mov eax, esi
+        shl esi, 0x8
+        and edi, 0xff00
+        shr eax, 0x8
+        and esi, 0xff00
+        and eax, 0xff00
+        add edi, 0x80
+        add esi, 0x80
+        add eax, 0x80
+        mov dword ptr [Var6ca378], edi
+        mov dword ptr [Var6ca368], esi
+        mov dword ptr [Var6ca31c], eax
+        fild dword ptr [Var6ca434]
+        fild dword ptr [Var6ca208]
+        fild dword ptr [Var6ca31c]
+        fxch st(1)
+        fsubr st, st(2)
+        fxch st(2)
+        fsubrp st(1), st
+        fxch st(1)
+        fst dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca498]
+        fxch st(1)
+        fst dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca3d8]
+        fld dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca354]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca254]
+        fxch st(2)
+        fmul st, st(3)
+        fist word ptr [Var6ca338 + 4]
+        fxch st(1)
+        fsubp st(2), st
+        fstp dword ptr [Var6ca234]
+        fmul st, st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [Var6ca234]
+        fld dword ptr [ebx+0x4]
+        fmul st, st(2)
+        fxch st(2)
+        fstp dword ptr [Var6ca25c]
+        fild dword ptr [Var6ca434]
+        fxch st(1)
+        faddp st(2), st
+        fadd qword ptr [Var4ceb48]
+        fsubrp st(1), st
+        fstp qword ptr [Var6ca410]
+        fild dword ptr [Var6ca230]
+        fild dword ptr [Var6ca3ec]
+        fild dword ptr [Var6ca378]
+        fxch st(1)
+        fsubr st, st(2)
+        fxch st(2)
+        fsubrp st(1), st
+        fxch st(1)
+        fst dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca498]
+        fxch st(1)
+        fst dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca3d8]
+        fld dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca354]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca254]
+        fxch st(2)
+        fmul st, st(3)
+        fist word ptr [Var6ca338 + 2]
+        fxch st(1)
+        fsubp st(2), st
+        fstp dword ptr [Var6ca440]
+        fmul st, st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [Var6ca440]
+        fld dword ptr [ebx+0x4]
+        fmul st, st(2)
+        fxch st(2)
+        fstp dword ptr [Var6ca2a4]
+        fild dword ptr [Var6ca230]
+        fxch st(1)
+        faddp st(2), st
+        fadd qword ptr [Var4ceb48]
+        fsubrp st(1), st
+        fstp qword ptr [Var6ca298]
+        fild dword ptr [Var6ca3b8]
+        fild dword ptr [Var6ca4b0]
+        fild dword ptr [Var6ca368]
+        fxch st(1)
+        fsubr st, st(2)
+        fxch st(2)
+        fsubrp st(1), st
+        fxch st(1)
+        fst dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca498]
+        fxch st(1)
+        fst dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca3d8]
+        fld dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca354]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca254]
+        fxch st(2)
+        fmul st, st(3)
+        fist word ptr [Var6ca338]
+        fxch st(1)
+        fsubp st(2), st
+        fstp dword ptr [Var6ca2c0]
+        fmul st, st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [Var6ca2c0]
+        fld dword ptr [ebx+0x4]
+        fmul st, st(2)
+        fxch st(2)
+        fstp dword ptr [Var6ca250]
+        fild dword ptr [Var6ca3b8]
+        fxch st(1)
+        faddp st(2), st
+        fadd qword ptr [Var4ceb48]
+        fsubrp st(1), st
+        fstp qword ptr [Var6ca278]
+        fld dword ptr [ebx+0x18]
+        fsub dword ptr [ecx+0x18]
+        fld dword ptr [ebx+0x18]
+        fsub dword ptr [edx+0x18]
+        fxch st(1)
+        fst dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca498]
+        fxch st(1)
+        fst dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca3d8]
+        fld dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca354]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca254]
+        fxch st(2)
+        fmul st, st(3)
+        fxch st(1)
+        fsubp st(2), st
+        fst dword ptr [Var6ca47c]
+        fxch st(1)
+        fmul st, st(2)
+        fxch st(1)
+        fadd qword ptr [Var4ceb60]
+        fxch st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [Var6ca47c]
+        fxch st(1)
+        fstp dword ptr [Var6ca430]
+        fld dword ptr [ebx+0x4]
+        fmul dword ptr [Var6ca430]
+        fld dword ptr [ebx+0x18]
+        fadd qword ptr [Var4ceb60]
+        fxch st(3)
+        fstp qword ptr [Var6ca4c8]
+        faddp st(1), st
+        fsubp st(1), st
+        fstp qword ptr [Var6ca388]
+        fld dword ptr [ebx+0x1c]
+        fsub dword ptr [ecx+0x1c]
+        fld dword ptr [ebx+0x1c]
+        fsub dword ptr [edx+0x1c]
+        fxch st(1)
+        fst dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca498]
+        fxch st(1)
+        fst dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca3d8]
+        fld dword ptr [Var6ca480]
+        fmul dword ptr [Var6ca354]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [Var6ca218]
+        fmul dword ptr [Var6ca254]
+        fxch st(2)
+        fmul st, st(3)
+        fxch st(1)
+        fsubp st(2), st
+        fst dword ptr [Var6ca4c4]
+        fxch st(1)
+        fmul st, st(2)
+        fxch st(1)
+        fadd qword ptr [Var4ceb60]
+        fxch st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [Var6ca4c4]
+        fxch st(1)
+        fstp dword ptr [Var6ca490]
+        fld dword ptr [ebx+0x4]
+        fmul dword ptr [Var6ca490]
+        fld dword ptr [ebx+0x1c]
+        fadd qword ptr [Var4ceb60]
+        fxch st(3)
+        fstp qword ptr [Var6ca2b0]
+        faddp st(1), st
+        fsubp st(1), st
+        fstp qword ptr [Var6ca340]
+        fld dword ptr [ebx+0x18]
+        fsub dword ptr [ecx+0x18]
+        fld dword ptr [ebx+0x1c]
+        fsub dword ptr [edx+0x1c]
+        fmulp st(1), st
+        fld dword ptr [ebx+0x18]
+        fsub dword ptr [edx+0x18]
+        fld dword ptr [ebx+0x1c]
+        fsub dword ptr [ecx+0x1c]
+        fmulp st(1), st
+        fsubp st(1), st
+        fmul st, st(1)
+        fstp dword ptr [Var6ca40c]
+        mov eax, dword ptr [Var6ca40c]
+        sub eax, 0x400000
+        shr eax, 0x17
+        and eax, 0xff
+        sub eax, 0x6f
+        inc eax
+        sar eax, 1
+        test eax, eax
+        jns L3
+        mov eax, 0x0
+    L3:
+        cmp eax, 0x4
+        jb L4
+        mov eax, 0x4
+    L4:
+        ffree st(0)
+        mov dword ptr [Var6ce4e0], eax
+        mov esi, dword ptr [Var6ca438]
+        fld dword ptr [esi+0x4]
+        fsub dword ptr [Var4ceb6c]
+        mov eax, 0x3
+        mov edi, dword ptr [Var6ca4d0]
+        xor edx, edx
+        mov dword ptr [Var6ca2e4], eax
+        fadd qword ptr [Var4ceb50]
+        fstp qword ptr [Var6ca308]
+        mov eax, dword ptr [Var6ca308]
+        inc eax
+        mov dword ptr [Var6ca308], eax
+        mov dword ptr [Var6ca460], eax
+        jmp L10
+    L5:
+        push ebx
+        mov eax, dword ptr [edi]
+        mov eax, dword ptr [edi+0x20]
+        shr ebx, 0x10
+        mov eax, esi
+        shr eax, 0x10
+        mov dword ptr [Var6ca40c], ebx
+        sub eax, ebx
+        fild dword ptr [Var6ca308]
+        fild dword ptr [Var6ca40c]
+        mov dword ptr [edi+0x4], eax
+        mov dword ptr [edi], ebx
+        fld dword ptr [Var6ca47c]
+        fmul st, st(1)
+        fld dword ptr [Var6ca430]
+        fmul st, st(3)
+        fld dword ptr [Var6ca4c4]
+        fmul st, st(3)
+        fld dword ptr [Var6ca490]
+        fmul st, st(5)
+        fxch st(2)
+        faddp st(3), st
+        mov eax, dword ptr [Var6ca308]
+        faddp st(1), st
+        fxch st(1)
+        fadd qword ptr [Var6ca388]
+        fxch st(1)
+        fld dword ptr [Var6ca2c0]
+        fmul st, st(3)
+        fxch st(1)
+        fadd qword ptr [Var6ca340]
+        fxch st(2)
+        fstp qword ptr [edi+0x8]
+        fld dword ptr [Var6ca250]
+        fmul st, st(4)
+        fxch st(2)
+        fstp qword ptr [edi+0x10]
+        inc eax
+        mov dword ptr [Var6ca308], eax
+        fld dword ptr [Var6ca440]
+        fmul st, st(3)
+        fld dword ptr [Var6ca2a4]
+        fmul st, st(5)
+        fxch st(2)
+        faddp st(3), st
+        fld dword ptr [Var6ca234]
+        fmul st, st(4)
+        fld dword ptr [Var6ca25c]
+        fmul st, st(6)
+        fxch st(2)
+        faddp st(3), st
+        fxch st(3)
+        fadd qword ptr [Var6ca278]
+        fxch st(3)
+        faddp st(1), st
+        fxch st(1)
+        fadd qword ptr [Var6ca298]
+        fxch st(3)
+        faddp st(0), st
+        fxch st(1)
+        fstp dword ptr [edi+0x18]
+        fadd qword ptr [Var6ca410]
+        fxch st(1)
+        fstp dword ptr [Var6ca40c]
+        fxch st(1)
+        faddp st(0), st
+        fstp dword ptr [edi+0x1c]
+        mov eax, dword ptr [Var6ca40c]
+        pop ebx
+        mov word ptr [edi+0x1a], ax
+        mov eax, dword ptr [Var6ca3a8]
+        add edi, 0x20
+        add ebx, eax
+        mov eax, dword ptr [Var6ca274]
+        add esi, eax
+        dec edx
+        dec ecx
+        je L10
+        test edx, edx
+        je L11
+        jmp L5
+    L6:
+        mov dword ptr [Var6ca248], edi
+        cmp dword ptr [Var6ce4e0], 0x0
+        jne L7
+        call dword ptr [Var6ca3f8]
+        pop ebx
+        pop esi
+        pop edi
+        ret
+    L7:
+        cmp dword ptr [Var6ce4dc], 0x1
+        je L8
+        mov dword ptr [Var6ce4e0], 0x0
+    L8:
+        call dword ptr [Var6ca310]
+        pop ebx
+        pop esi
+        pop edi
+        ret
+    L9:
+        faddp st(0), st
+        faddp st(0), st
+        pop ebx
+        pop esi
+        pop edi
+        ret
+        nop
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L10:
+        mov esi, dword ptr [Var6ca438]
+        mov eax, dword ptr [Var6ca2e4]
+        mov ecx, esi
+        dec eax
+        js L6
+        mov ecx, dword ptr [ecx+0x8]
+        mov dword ptr [Var6ca2e4], eax
+        mov dword ptr [Var6ca438], ecx
+        fld dword ptr [esi]
+        fsub dword ptr [ecx]
+        fld dword ptr [esi+0x4]
+        fsub dword ptr [ecx+0x4]
+        fdivp st(1), st
+        fstp dword ptr [Var6ca390]
+        fild dword ptr [Var6ca308]
+        fsub dword ptr [esi+0x4]
+        fmul dword ptr [Var6ca390]
+        fadd dword ptr [esi]
+        fstp dword ptr [Var6ca3e8]
+        fld dword ptr [ecx+0x4]
+        fsub dword ptr [Var4ceb6c]
+        fadd qword ptr [Var4ceb50]
+        fstp qword ptr [Var6ca3e0]
+        mov ecx, dword ptr [Var6ca3e0]
+        inc ecx
+        sub ecx, dword ptr [Var6ca308]
+        je L10
+        fld dword ptr [Var6ca390]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [Var6ca274]
+        fld dword ptr [Var6ca3e8]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [Var6ca40c]
+        mov esi, dword ptr [Var6ca40c]
+        add esi, 0xffff
+        test edx, edx
+        jne L12
+    L11:
+        mov edx, dword ptr [Var6ca400]
+        mov eax, dword ptr [Var6ca2e4]
+        mov ebx, edx
+        dec eax
+        js L6
+        mov ebx, dword ptr [ebx+0x14]
+        mov dword ptr [Var6ca2e4], eax
+        mov dword ptr [Var6ca400], ebx
+        fld dword ptr [edx]
+        fsub dword ptr [ebx]
+        fld dword ptr [edx+0x4]
+        fsub dword ptr [ebx+0x4]
+        fdivp st(1), st
+        fstp dword ptr [Var6ca260]
+        fild dword ptr [Var6ca308]
+        fsub dword ptr [edx+0x4]
+        fmul dword ptr [Var6ca260]
+        fadd dword ptr [edx]
+        fstp dword ptr [Var6ca328]
+        fld dword ptr [ebx+0x4]
+        fsub dword ptr [Var4ceb6c]
+        fadd qword ptr [Var4ceb50]
+        fstp qword ptr [Var6ca3e0]
+        mov edx, dword ptr [Var6ca3e0]
+        inc edx
+        sub edx, dword ptr [Var6ca308]
+        je L11
+        fld dword ptr [Var6ca260]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [Var6ca3a8]
+        fld dword ptr [Var6ca328]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [Var6ca40c]
+        mov ebx, dword ptr [Var6ca40c]
+        add ebx, 0xffff
+    L12:
+        jmp L5
+    }
+}
 }
