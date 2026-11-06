@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="330.33" height="12" x="0" y="0" class="named"><title>1352 · 90.25%</title></rect>
-<rect width="7.33" height="12" x="330.33" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.09" height="12" x="337.66" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
-<rect width="21.26" height="12" x="344.74" y="0" class="todo"><title>87 · 5.81%</title></rect>
+<rect width="330.57" height="12" x="0" y="0" class="named"><title>1353 · 90.32%</title></rect>
+<rect width="7.33" height="12" x="330.57" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.09" height="12" x="337.90" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
+<rect width="21.01" height="12" x="344.99" y="0" class="todo"><title>86 · 5.74%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">92.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1352</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">87</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1353</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">86</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="264.13" height="12" x="0" y="0" class="named"><title>523 KB · 72.17%</title></rect>
-<rect width="33.42" height="12" x="264.13" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.15" height="12" x="297.55" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
-<rect width="54.30" height="12" x="311.70" y="0" class="todo"><title>108 KB · 14.84%</title></rect>
+<rect width="264.67" height="12" x="0" y="0" class="named"><title>524 KB · 72.32%</title></rect>
+<rect width="33.42" height="12" x="264.67" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.15" height="12" x="298.09" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
+<rect width="53.76" height="12" x="312.24" y="0" class="todo"><title>106 KB · 14.69%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">81.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">523 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">108 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">81.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">524 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">106 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1338,7 +1338,7 @@
 <rect width="12" height="12" x="285" y="375" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="375" class="nonmatching"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="375" class="named"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="375" class="todo"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="375" class="named"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="375" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="375" class="todo"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="375" class="named"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
@@ -1737,7 +1737,7 @@
 <rect width="18.81" height="18.73" x="352" y="23.50" class="named"><title>0x00440520 lara_as_stop (1088 bytes)</title></rect>
 <rect width="18.67" height="18.73" x="373.81" y="23.50" class="named"><title>0x0042b780 TriggerFireFlame (1080 bytes)</title></rect>
 <rect width="18.62" height="18.73" x="395.48" y="23.50" class="todo"><title>0x00483b60 LevelStats (1077 bytes)</title></rect>
-<rect width="18.48" height="18.73" x="417.11" y="23.50" class="todo"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
+<rect width="18.48" height="18.73" x="417.11" y="23.50" class="named"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
 <rect width="18.45" height="18.73" x="438.59" y="23.50" class="named"><title>0x00455370 ExplodingDeath (1067 bytes)</title></rect>
 <rect width="18.42" height="18.73" x="460.04" y="23.50" class="named"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
 <rect width="18.38" height="18.73" x="481.46" y="23.50" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>

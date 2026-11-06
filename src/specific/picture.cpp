@@ -41,6 +41,8 @@ void DXTextureCleanup(int nTexture, DXTEXTURE *pTextures);
 void DXFreeTPages(void);
 void DXCreateMaxTPages(int create);
 const char *GetFullPath(const char *name);
+void DXBitMask2ShiftCnt(unsigned long mask, unsigned char *shift, unsigned char *cnt);
+int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, unsigned long flags);
 
 void SetPictureToFade(int fade)
 {
@@ -147,6 +149,75 @@ void ConvertSurfaceToTextures(LPDIRECTDRAWSURFACE3 surf)
         DXCreateMaxTPages(1);
     }
     ConvertSurfaceToTextures16Bit(surf);
+}
+
+void ConvertSurfaceToTextures16Bit(LPDIRECTDRAWSURFACE3 surf)
+{
+    DDSURFACEDESC desc;
+    DDSURFACEDESC desc2;
+    int *pIndices;
+    char *source;
+    char *dest;
+    long bitcnt;
+    unsigned char rshift;
+    unsigned char gshift;
+    unsigned char bshift;
+    unsigned char rcount;
+    unsigned char gcount;
+    unsigned char bcount;
+
+    pIndices = CurPicTexIndices;
+    if (nLoadedPictures)
+        pIndices = OldPicTexIndices;
+    memset(&desc, 0, sizeof(DDSURFACEDESC));
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    surf->Lock(0, &desc, DDLOCK_WAIT | DDLOCK_NOSYSLOCK, 0);
+    source = (char *)desc.lpSurface;
+    dest = (char *)malloc((256 * 256) * (desc.ddpfPixelFormat.dwRGBBitCount >> 3));
+    DXBitMask2ShiftCnt(desc.ddpfPixelFormat.dwRBitMask, &rshift, &rcount);
+    DXBitMask2ShiftCnt(desc.ddpfPixelFormat.dwGBitMask, &gshift, &gcount);
+    DXBitMask2ShiftCnt(desc.ddpfPixelFormat.dwBBitMask, &bshift, &bcount);
+    bitcnt = bcount + 10 * (gcount + 10 * rcount);
+    if (desc.ddpfPixelFormat.dwRGBBitCount == 32)
+        bitcnt = 8888;
+    memcpy(&desc2, &desc, sizeof(DDSURFACEDESC));
+    MemBlt(dest, 0, 0, 256, 256, 256, source, 0, 0, desc2);
+    surf->Unlock(0);
+    pIndices[0] = DXTextureAdd(256, 256, (unsigned char *)dest, PictureTextures, bitcnt, 16);
+    memset(&desc, 0, sizeof(DDSURFACEDESC));
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    surf->Lock(0, &desc, DDLOCK_WAIT | DDLOCK_NOSYSLOCK, 0);
+    memcpy(&desc2, &desc, sizeof(DDSURFACEDESC));
+    source = (char *)desc.lpSurface;
+    MemBlt(dest, 0, 0, 256, 256, 256, source, 256, 0, desc2);
+    surf->Unlock(0);
+    pIndices[1] = DXTextureAdd(256, 256, (unsigned char *)dest, PictureTextures, bitcnt, 16);
+    memset(&desc, 0, sizeof(DDSURFACEDESC));
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    surf->Lock(0, &desc, DDLOCK_WAIT | DDLOCK_NOSYSLOCK, 0);
+    memcpy(&desc2, &desc, sizeof(DDSURFACEDESC));
+    MemBlt(dest, 0, 0, 128, 256, 256, source, 512, 0, desc2);
+    memcpy(&desc2, &desc, sizeof(DDSURFACEDESC));
+    MemBlt(dest, 128, 0, 128, 224, 256, source, 512, 256, desc2);
+    surf->Unlock(0);
+    pIndices[2] = DXTextureAdd(256, 256, (unsigned char *)dest, PictureTextures, bitcnt, 16);
+    memset(&desc, 0, sizeof(DDSURFACEDESC));
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    surf->Lock(0, &desc, DDLOCK_WAIT | DDLOCK_NOSYSLOCK, 0);
+    memcpy(&desc2, &desc, sizeof(DDSURFACEDESC));
+    source = (char *)desc.lpSurface;
+    MemBlt(dest, 0, 0, 256, 224, 256, source, 0, 256, desc2);
+    surf->Unlock(0);
+    pIndices[3] = DXTextureAdd(256, 256, (unsigned char *)dest, PictureTextures, bitcnt, 16);
+    memset(&desc, 0, sizeof(DDSURFACEDESC));
+    desc.dwSize = sizeof(DDSURFACEDESC);
+    surf->Lock(0, &desc, DDLOCK_WAIT | DDLOCK_NOSYSLOCK, 0);
+    memcpy(&desc2, &desc, sizeof(DDSURFACEDESC));
+    source = (char *)desc.lpSurface;
+    MemBlt(dest, 0, 0, 256, 224, 256, source, 256, 256, desc2);
+    surf->Unlock(0);
+    pIndices[4] = DXTextureAdd(256, 256, (unsigned char *)dest, PictureTextures, bitcnt, 16);
+    free(dest);
 }
 
 void FadePictureUp(int steps)
