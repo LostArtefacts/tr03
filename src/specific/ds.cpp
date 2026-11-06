@@ -77,6 +77,32 @@ bool DS_IsChannelPlaying(int nChannel)
     return false;
 }
 
+int DS_StartSample(int nSample, int nVolume, int nPitch, int nPan, DWORD dwFlags)
+{
+    int nChannel;
+    LPDIRECTSOUNDBUFFER pOrigBuffer;
+    LPDIRECTSOUNDBUFFER pBuffer;
+    DWORD dwFrequency;
+
+    nChannel = DS_GetFreeChannel();
+    if (nChannel < 0)
+        return -1;
+    pOrigBuffer = DS_Buffers[nSample];
+    if (DX_TRY(lpDirectSound->DuplicateSoundBuffer(pOrigBuffer, &pBuffer)))
+        return -2;
+    dwFrequency = (DWORD)(float)(DWORD)(nPitch * DS_SampleFrequencies[nSample]) >> 16;
+    if (dwFrequency < 100)
+        dwFrequency = 100;
+    if (dwFrequency > 100000)
+        dwFrequency = 100000;
+    if (DX_TRY(pBuffer->SetVolume(nVolume)) || DX_TRY(pBuffer->SetFrequency(dwFrequency)) || DX_TRY(pBuffer->SetPan(nPan))
+        || DX_TRY(pBuffer->SetCurrentPosition(0)) || DX_TRY(pBuffer->Play(0, 0, dwFlags)))
+        return -2;
+    DS_Samples[nChannel] = pBuffer;
+    DS_SamplesPlaying[nChannel] = nSample;
+    return nChannel;
+}
+
 int DS_GetFreeChannel(void)
 {
     int nChannel;
