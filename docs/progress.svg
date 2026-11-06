@@ -46,21 +46,21 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="322.64" height="12" x="0" y="0" class="named"><title>1281 · 86.73%</title></rect>
-<rect width="1.51" height="12" x="322.64" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.54" height="12" x="324.15" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
-<rect width="42.31" height="12" x="329.69" y="0" class="todo"><title>168 · 11.37%</title></rect>
+<rect width="322.89" height="12" x="0" y="0" class="named"><title>1282 · 86.80%</title></rect>
+<rect width="1.51" height="12" x="322.89" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
+<rect width="5.54" height="12" x="324.40" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="42.06" height="12" x="329.94" y="0" class="todo"><title>167 · 11.31%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">87.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1281</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">168</tspan></text>
+<text text-anchor="end" x="552" y="7.50">87.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1282</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">167</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="235.18" height="12" x="0" y="0" class="named"><title>423 KB · 63.22%</title></rect>
-<rect width="0.34" height="12" x="235.18" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="8.07" height="12" x="235.53" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
-<rect width="128.41" height="12" x="243.59" y="0" class="todo"><title>231 KB · 34.52%</title></rect>
+<rect width="235.36" height="12" x="0" y="0" class="named"><title>423 KB · 63.27%</title></rect>
+<rect width="0.34" height="12" x="235.36" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
+<rect width="8.07" height="12" x="235.70" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="128.23" height="12" x="243.77" y="0" class="todo"><title>231 KB · 34.47%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">63.3%</text>
+<text text-anchor="end" x="552" y="24.50">63.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">423 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">231 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1535,7 +1535,7 @@
 <rect width="12" height="12" x="240" y="435" class="named"><title>0x004b4280 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="435" class="named"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="435" class="named"><title>0x004b42d4 flatA (97 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="435" class="todo"><title>0x004b4335 transA (314 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="435" class="named"><title>0x004b4335 transA (314 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="435" class="todo"><title>0x004b446f gourA (352 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="435" class="todo"><title>0x004b45cf gtmapA (765 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="435" class="todo"><title>0x004b48cc wgtmapA (833 bytes)</title></rect>
@@ -2080,7 +2080,7 @@
 <rect width="10.21" height="10.88" x="461.55" y="271.72" class="named"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="10.21" height="10.85" x="461.55" y="285.60" class="named"><title>0x00417300 InitialiseCamera (316 bytes)</title></rect>
 <rect width="10.21" height="10.85" x="461.55" y="299.45" class="named"><title>0x0044d060 LaraInitialiseMeshes (316 bytes)</title></rect>
-<rect width="10.21" height="10.78" x="461.55" y="313.30" class="todo"><title>0x004b4335 transA (314 bytes)</title></rect>
+<rect width="10.21" height="10.78" x="461.55" y="313.30" class="named"><title>0x004b4335 transA (314 bytes)</title></rect>
 <rect width="10.21" height="10.75" x="461.55" y="327.08" class="named"><title>0x0041f2f0 AlignLaraPosition (313 bytes)</title></rect>
 <rect width="10.21" height="10.75" x="461.55" y="340.82" class="named"><title>0x0043d780 TestLaraSlide (313 bytes)</title></rect>
 <rect width="10.21" height="10.71" x="461.55" y="354.57" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
