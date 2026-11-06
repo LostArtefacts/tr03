@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="285.31" height="12" x="0" y="0" class="named"><title>1233 · 83.42%</title></rect>
-<rect width="0.46" height="12" x="285.31" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="285.77" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="52.06" height="12" x="289.94" y="0" class="todo"><title>225 · 15.22%</title></rect>
+<rect width="285.54" height="12" x="0" y="0" class="named"><title>1234 · 83.49%</title></rect>
+<rect width="0.46" height="12" x="285.54" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="286" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="51.83" height="12" x="290.17" y="0" class="todo"><title>224 · 15.16%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">83.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1233</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">225</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1234</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">224</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.27" height="12" x="0" y="0" class="named"><title>372 KB · 55.63%</title></rect>
-<rect width="0.15" height="12" x="190.27" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.42" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.55" height="12" x="196.45" y="0" class="todo"><title>285 KB · 42.56%</title></rect>
+<rect width="190.28" height="12" x="0" y="0" class="named"><title>372 KB · 55.64%</title></rect>
+<rect width="0.15" height="12" x="190.28" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="190.43" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.54" height="12" x="196.46" y="0" class="todo"><title>285 KB · 42.56%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">285 KB</tspan></text>
@@ -1180,7 +1180,7 @@
 <rect width="12" height="12" x="165" y="330" class="todo"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="330" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="330" class="todo"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="330" class="todo"><title>0x004804d0 Func4804d0 (18 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="330" class="named"><title>0x004804d0 InitSoundAdapterListGlobal (18 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="330" class="todo"><title>0x004804f0 Func4804f0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="330" class="todo"><title>0x00480580 Func480580 (57 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="330" class="todo"><title>0x004805c0 Func4805c0 (14 bytes)</title></rect>
@@ -2971,7 +2971,7 @@
 <rect width="2.63" height="2.54" x="711.73" y="411.69" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="2.49" height="2.54" x="717.35" y="411.69" class="named"><title>0x0042fa30 ResetExercises (18 bytes)</title></rect>
 <rect width="2.49" height="2.54" x="722.84" y="411.69" class="named"><title>0x004752d0 InitJoystickListGlobal (18 bytes)</title></rect>
-<rect width="2.49" height="2.54" x="728.33" y="411.69" class="todo"><title>0x004804d0 Func4804d0 (18 bytes)</title></rect>
+<rect width="2.49" height="2.54" x="728.33" y="411.69" class="named"><title>0x004804d0 InitSoundAdapterListGlobal (18 bytes)</title></rect>
 <rect width="2.49" height="2.54" x="733.82" y="411.69" class="named"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
 <rect width="2.35" height="2.54" x="739.30" y="411.69" class="named"><title>0x0048ad60 SetPictureToFade (17 bytes)</title></rect>
 <rect width="2.35" height="2.54" x="744.65" y="411.69" class="named"><title>0x0048ad80 ForceFadeDown (17 bytes)</title></rect>

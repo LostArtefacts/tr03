@@ -1113,7 +1113,7 @@ address,size,name,symbol
 0x0047ec30,2187,DrawTribeBossShield,_DrawTribeBossShield
 0x0047f4c0,1890,S_DrawWakeFX,_S_DrawWakeFX
 0x0047fc30,2178,DrawWillBossShield,_DrawWillBossShield
-0x004804d0,18,Func4804d0,
+0x004804d0,18,InitSoundAdapterListGlobal,specific/ds.cpp:_$E1
 0x004804f0,14,Func4804f0,
 0x00480580,57,Func480580,
 0x004805c0,14,Func4805c0,
@@ -2336,10 +2336,12 @@ address,size,name,symbol
 0x006302b0,4,game_hires,_game_hires
 0x006302b4,4,VidSizeLocked,_VidSizeLocked
 0x006322b8,,DS_SampleFrequencies,_DS_SampleFrequencies
+0x006326b8,12,SoundAdapterList,_SoundAdapterList
 0x006326c8,,DS_Buffers,_DS_Buffers
 0x00632ac8,,lpDirectSound,_lpDirectSound
 0x00632ad0,128,DS_SamplesPlaying,_DS_SamplesPlaying
 0x00632b50,128,DS_Samples,_DS_Samples
+0x00632bd0,30,CurrentSoundAdapter,_CurrentSoundAdapter
 0x00632bf8,4,GnTexturePages,_GnTexturePages
 0x00632c00,,TexturesUVFlag,_TexturesUVFlag
 0x00633c00,4,nBytesRead,_nBytesRead

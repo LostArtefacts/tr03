@@ -1,9 +1,15 @@
 #include "standard.h"
 #include "specific.h"
 #include "winmain.h"
+#include "template.h"
+
+struct SOUND_ADAPTER : GENERIC_ADAPTER {
+};
 
 extern "C" {
 
+static LIST<SOUND_ADAPTER> SoundAdapterList;
+static SOUND_ADAPTER CurrentSoundAdapter;
 extern LPDIRECTSOUND lpDirectSound;
 extern LPDIRECTSOUNDBUFFER DS_Buffers[256];
 extern int DS_SampleFrequencies[256];
