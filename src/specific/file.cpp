@@ -325,6 +325,66 @@ void AdjustTextureUVs(bool reset)
     App.nUVAdd += num;
 }
 
+int LoadObjects(HANDLE file)
+{
+    int i;
+    int j;
+    sint32 number;
+    sint32 size;
+    sint32 number_anims;
+    DWORD read;
+
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    mesh_base = (sint16 *)game_malloc(size * sizeof(sint16), 3);
+    MyReadFile(file, mesh_base, sizeof(sint16) * size, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    meshes = (sint16 **)game_malloc(number * sizeof(sint16 *), 2);
+    MyReadFile(file, meshes, sizeof(sint16 *) * number, &read, NULL);
+    for (i = 0; i < number; i++)
+        meshes[i] = mesh_base + (int)meshes[i] / 2;
+    MyReadFile(file, &number_anims, sizeof(sint32), &read, NULL);
+    anims = (ANIM_STRUCT *)game_malloc(number_anims * sizeof(ANIM_STRUCT), 4);
+    MyReadFile(file, anims, sizeof(ANIM_STRUCT) * number_anims, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    changes = (CHANGE_STRUCT *)game_malloc(number * sizeof(CHANGE_STRUCT), 5);
+    MyReadFile(file, changes, sizeof(CHANGE_STRUCT) * number, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    ranges = (RANGE_STRUCT *)game_malloc(number * sizeof(RANGE_STRUCT), 6);
+    MyReadFile(file, ranges, sizeof(RANGE_STRUCT) * number, &read, NULL);
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    commands = (sint16 *)game_malloc(size * sizeof(sint16), 7);
+    MyReadFile(file, commands, sizeof(sint16) * size, &read, NULL);
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    bones = (sint32 *)game_malloc(size * sizeof(sint32), 8);
+    MyReadFile(file, bones, sizeof(sint32) * size, &read, NULL);
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    frames = (sint16 *)game_malloc(size * sizeof(sint16), 9);
+    MyReadFile(file, frames, sizeof(sint16) * size, &read, NULL);
+    for (i = 0; i < number_anims; i++)
+        anims[i].frame_ptr = (sint16 *)((long)anims[i].frame_ptr + (long)frames);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    for (i = 0; i < number; i++) {
+        MyReadFile(file, &j, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &objects[j].nmeshes, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &objects[j].mesh_index, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &objects[j].bone_index, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+        objects[j].frame_base = (sint16 *)((long)size + (long)frames);
+        MyReadFile(file, &objects[j].anim_index, sizeof(sint16), &read, NULL);
+        objects[j].loaded = 1;
+    }
+    InitialiseObjects();
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    for (i = 0; i < number; i++) {
+        MyReadFile(file, &j, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &static_objects[j].mesh_number, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &static_objects[j].x_minp, sizeof(sint16) * 6, &read, NULL);
+        MyReadFile(file, &static_objects[j].x_minc, sizeof(sint16) * 6, &read, NULL);
+        MyReadFile(file, &static_objects[j].flags, sizeof(sint16), &read, NULL);
+    }
+    return 1;
+}
+
 int LoadSprites(HANDLE file)
 {
     int i;
