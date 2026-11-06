@@ -43,6 +43,66 @@ void S_DrawTribeBoss(ITEM_INFO *item)
     DrawTribeBossShield(item);
 }
 
+sint32 GetFreeSpark(void);
+
+void TriggerElectricSparks_triboss(GAME_VECTOR *pos, sint32 shield)
+{
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    dx = lara_item->pos.x_pos - pos->x;
+    dz = lara_item->pos.z_pos - pos->z;
+    if (dx < -0x5000 || dx > 0x5000 || dz < -0x5000 || dz > 0x5000)
+        return;
+    TrigDynamics[1].x = pos->x;
+    TrigDynamics[1].y = pos->y;
+    TrigDynamics[1].z = pos->z;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sR = 255;
+    sptr->sG = 255;
+    sptr->sB = 255;
+    if (shield) {
+        sptr->dR = 255;
+        sptr->dG = (GetRandomControl() & 127) + 64;
+        sptr->dB = 0;
+    } else if (!bossdata.attack_type) {
+        sptr->dR = 0;
+        sptr->dG = (GetRandomControl() & 127) + 64;
+        sptr->dB = (sptr->dG >> 1) + 128;
+    } else {
+        sptr->dR = 0;
+        sptr->dB = (GetRandomControl() & 127) + 64;
+        sptr->dG = (sptr->dB >> 1) + 128;
+    }
+    sptr->ColFadeSpeed = 3;
+    sptr->FadeToBlack = 8;
+    sptr->Life = 16;
+    sptr->sLife = 16;
+    sptr->TransType = 2;
+    sptr->Dynamic = -1;
+    sptr->x = (GetRandomControl() & 31) + pos->x - 16;
+    sptr->y = (GetRandomControl() & 31) + pos->y - 16;
+    sptr->z = (GetRandomControl() & 31) + pos->z - 16;
+    sptr->Xvel = ((GetRandomControl() & 511) << 2) - 1024;
+    sptr->Yvel = ((GetRandomControl() & 511) << 1) - 512;
+    sptr->Zvel = ((GetRandomControl() & 511) << 2) - 1024;
+    if (shield) {
+        sptr->Xvel >>= 1;
+        sptr->Yvel >>= 1;
+        sptr->Zvel >>= 1;
+    }
+    sptr->Friction = 4;
+    sptr->Flags = 2;
+    sptr->Scalar = 3;
+    sptr->Width = sptr->sWidth = (GetRandomControl() & 1) + 1;
+    sptr->dWidth = (GetRandomControl() & 3) + 4;
+    sptr->Height = sptr->sHeight = (GetRandomControl() & 1) + 1;
+    sptr->dHeight = (GetRandomControl() & 3) + 4;
+    sptr->Gravity = 15;
+    sptr->MaxYvel = 0;
+}
+
 void TribeBossDie(sint16 item_number)
 {
     ITEM_INFO *item;
