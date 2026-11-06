@@ -15,6 +15,7 @@ extern unsigned long *Var6ca2d0;
 extern long Var6ca20c;
 extern unsigned char *Var6ca12c;
 extern long *YTable;
+extern LPDIRECTDRAWSURFACE3 Var6ca1d4;
 extern float *WidthTable;
 extern long *WidthTablef;
 extern unsigned char *Var6ca1a8;
@@ -24,6 +25,23 @@ extern unsigned char *Var6ca1f0;
 #define FTOLFIX(x) ((fconv = x + MAGICNUM / 65536.0), *(int *)(&fconv))
 #define FTOLFIX284(x) ((fconv = x + MAGICNUM / 16.0f), *(int *)(&fconv))
 #define FIX284TOFLOAT(x) float(float(x) * 0.0625f)
+
+void Func4934b0(void);
+
+void CloseDrawPrimitive(void)
+{
+    Var6ca1d4->Unlock(NULL);
+    if (App.DXConfig.MMX) {
+        Func4934b0();
+        return;
+    }
+    free(YTable);
+    free(WidthTable);
+    free(WidthTablef);
+    free(Var6ca12c);
+    free(Var6ca1a8);
+    free(Var6ca1f0);
+}
 
 void BuildXYTables(void)
 {

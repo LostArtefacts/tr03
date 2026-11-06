@@ -2477,6 +2477,7 @@ address,size,name,symbol
 0x006ca1c4,4,WidthTable,_WidthTable
 0x006ca1c8,4,BeginScene,_BeginScene
 0x006ca1cc,4,YTable,_YTable
+0x006ca1d4,4,Var6ca1d4,_Var6ca1d4
 0x006ca1e0,4,WidthTablef,_WidthTablef
 0x006ca1f0,4,Var6ca1f0,_Var6ca1f0
 0x006ca20c,4,Var6ca20c,_Var6ca20c
