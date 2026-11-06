@@ -221,6 +221,117 @@ sint32 TitleSequence(void)
     return 0x700;
 }
 
+extern uint32 CurrentLevel;
+extern int FinishLevelCheat;
+int Inv_AddItem(int item_num);
+int ExplodingDeath(sint16 item_number, sint32 mesh_bits, sint16 damage);
+
+void CheckCheatMode(void)
+{
+    static int cheat_mode = 0, cheat_flare, cheat_turn;
+    static sint16 as, cheat_angle;
+
+    if (CurrentLevel == 0 || CurrentLevel == (uint32)(gameflow.num_levels - gameflow.num_demos - 1))
+        return;
+
+    as = lara_item->current_anim_state;
+    switch (cheat_mode) {
+    case 0:
+        if (as == AS_WALK)
+            cheat_mode = 1;
+        break;
+    case 1:
+        cheat_flare = (lara.gun_type == LG_PISTOLS);
+
+        if (as != AS_WALK)
+            cheat_mode = (as == AS_STOP) ? 2 : 0;
+        break;
+    case 2:
+        if (as != AS_STOP)
+            cheat_mode = (as == AS_DUCK) ? 3 : 0;
+        break;
+    case 3:
+        if (as != AS_DUCK)
+            cheat_mode = (as == AS_STOP) ? 4 : 0;
+        break;
+    case 4:
+        if (as != AS_STOP) {
+            cheat_angle = lara_item->pos.y_rot;
+            cheat_turn = 0;
+            if (as == AS_TURN_L)
+                cheat_mode = 5;
+            else if (as == AS_TURN_R)
+                cheat_mode = 6;
+            else
+                cheat_mode = 0;
+        }
+        break;
+    case 5:
+        if (as != AS_TURN_L && as != AS_FASTTURN)
+            cheat_mode = (cheat_turn < -0x17000) ? 7 : 0;
+        else {
+            cheat_turn += (sint16)(lara_item->pos.y_rot - cheat_angle);
+            cheat_angle = lara_item->pos.y_rot;
+        }
+        break;
+    case 6:
+        if (as != AS_TURN_R && as != AS_FASTTURN)
+            cheat_mode = (cheat_turn > 0x17000) ? 7 : 0;
+        else {
+            cheat_turn += (sint16)(lara_item->pos.y_rot - cheat_angle);
+            cheat_angle = lara_item->pos.y_rot;
+        }
+        break;
+    case 7:
+        if (as != AS_STOP) {
+            if (as == AS_COMPRESS) {
+                cheat_mode = 8;
+            } else
+                cheat_mode = 0;
+        }
+        break;
+    case 8:
+        if (lara_item->fallspeed > 0) {
+            if (cheat_flare)
+                cheat_flare = (lara.gun_type == LG_PISTOLS);
+            if (as == AS_FORWARDJUMP && cheat_flare) {
+                FinishLevelCheat = 1;
+            } else if (as == AS_BACKJUMP && cheat_flare) {
+                int i;
+                Inv_AddItem(165);
+                Inv_AddItem(161);
+                Inv_AddItem(163);
+                Inv_AddItem(162);
+                Inv_AddItem(160);
+                Inv_AddItem(166);
+                Inv_AddItem(167);
+                Inv_AddItem(164);
+                lara.magnums.ammo = 1000;
+                lara.uzis.ammo = 1000;
+                lara.shotgun.ammo = 1000;
+                lara.harpoon.ammo = 1000;
+                lara.rocket.ammo = 1000;
+                lara.grenade.ammo = 1000;
+                lara.m16.ammo = 1000;
+                for (i = 0; i < 50; i++) {
+                    Inv_AddItem(176);
+                    Inv_AddItem(177);
+                    Inv_AddItem(179);
+                }
+                SoundEffect(7, NULL, 2);
+            } else if (as == AS_FORWARDJUMP || as == AS_BACKJUMP) {
+                ExplodingDeath(lara.item_number, 0xffffffff, 1);
+                lara_item->hit_points = 0;
+                lara_item->flags |= ONESHOT;
+            }
+            cheat_mode = 0;
+        }
+        break;
+    default:
+        cheat_mode = 0;
+    }
+}
+
 void S_SaveSettings(void)
 {
     FILE *file;

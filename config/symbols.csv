@@ -1284,7 +1284,7 @@ address,size,name,symbol
 0x0048c0a0,162,S_FadePicture,_S_FadePicture
 0x0048c150,704,GameMain,_GameMain
 0x0048c410,317,TitleSequence,_TitleSequence
-0x0048c550,837,CheckCheatMode,_CheckCheatMode
+0x0048c550,876,CheckCheatMode,_CheckCheatMode
 0x0048c8c0,811,S_SaveSettings,_S_SaveSettings
 0x0048cbf0,1185,S_LoadSettings,_S_LoadSettings
 0x0048d0a0,42,CalcVolume,_CalcVolume
