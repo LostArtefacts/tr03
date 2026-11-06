@@ -111,6 +111,38 @@ void CalculateEdgeBlack(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTL
 }
 
 
+void CalculateGradientsTFA(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+{
+    float oodx, oody;
+    float v1v3y, v2v3y, v1v3x, v2v3x;
+    float u2u3, u1u3;
+    float v2v3, v1v3;
+
+    v1v3y = v1->sy - v3->sy;
+    v2v3y = v2->sy - v3->sy;
+    v1v3x = v1->sx - v3->sx;
+    v2v3x = v2->sx - v3->sx;
+    oodx = 1.0f / ((v2v3x * v1v3y) - (v1v3x * v2v3y));
+    oody = -oodx;
+    Gradients->uoz[0] = v1->tu * 256.0f;
+    Gradients->voz[0] = v1->tv * 256.0f;
+    Gradients->uoz[1] = v2->tu * 256.0f;
+    Gradients->voz[1] = v2->tv * 256.0f;
+    Gradients->uoz[2] = v3->tu * 256.0f;
+    Gradients->voz[2] = v3->tv * 256.0f;
+    u2u3 = Gradients->uoz[1] - Gradients->uoz[2];
+    u1u3 = Gradients->uoz[0] - Gradients->uoz[2];
+    v2v3 = Gradients->voz[1] - Gradients->voz[2];
+    v1v3 = Gradients->voz[0] - Gradients->voz[2];
+    Gradients->duzx = oodx * ((u2u3 * v1v3y) - (u1u3 * v2v3y));
+    Gradients->duzy = oody * ((u2u3 * v1v3x) - (u1u3 * v2v3x));
+    Gradients->dvzx = oodx * ((v2v3 * v1v3y) - (v1v3 * v2v3y));
+    Gradients->dvzy = oody * ((v2v3 * v1v3x) - (v1v3 * v2v3x));
+    Gradients->rf = short(RGBA_GETRED(v1->color));
+    Gradients->gf = short(RGBA_GETGREEN(v1->color));
+    Gradients->bf = short(RGBA_GETBLUE(v1->color));
+}
+
 void Func4934b0(void);
 
 void CloseDrawPrimitive(void)

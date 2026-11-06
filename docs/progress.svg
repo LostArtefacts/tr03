@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="297.47" height="12" x="0" y="0" class="named"><title>1296 · 86.98%</title></rect>
-<rect width="1.15" height="12" x="297.47" y="0" class="decompiled"><title>5 · 0.34%</title></rect>
-<rect width="5.05" height="12" x="298.62" y="0" class="nonmatching"><title>22 · 1.48%</title></rect>
-<rect width="38.33" height="12" x="303.67" y="0" class="todo"><title>167 · 11.21%</title></rect>
+<rect width="297.70" height="12" x="0" y="0" class="named"><title>1297 · 87.05%</title></rect>
+<rect width="1.15" height="12" x="297.70" y="0" class="decompiled"><title>5 · 0.34%</title></rect>
+<rect width="5.05" height="12" x="298.85" y="0" class="nonmatching"><title>22 · 1.48%</title></rect>
+<rect width="38.10" height="12" x="303.90" y="0" class="todo"><title>166 · 11.14%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">87.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1296</tspan> · <tspan class="decompiled">5</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">167</tspan></text>
+<text text-anchor="end" x="522" y="7.50">87.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1297</tspan> · <tspan class="decompiled">5</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">166</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="220.24" height="12" x="0" y="0" class="named"><title>447 KB · 64.40%</title></rect>
-<rect width="0.21" height="12" x="220.24" y="0" class="decompiled"><title>418 bytes · 0.06%</title></rect>
-<rect width="7.16" height="12" x="220.45" y="0" class="nonmatching"><title>15 KB · 2.09%</title></rect>
-<rect width="114.39" height="12" x="227.61" y="0" class="todo"><title>232 KB · 33.45%</title></rect>
+<rect width="220.44" height="12" x="0" y="0" class="named"><title>447 KB · 64.46%</title></rect>
+<rect width="0.21" height="12" x="220.44" y="0" class="decompiled"><title>418 bytes · 0.06%</title></rect>
+<rect width="7.16" height="12" x="220.65" y="0" class="nonmatching"><title>15 KB · 2.09%</title></rect>
+<rect width="114.19" height="12" x="227.81" y="0" class="todo"><title>232 KB · 33.39%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">64.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">447 KB</tspan> · <tspan class="decompiled">418 bytes</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">232 KB</tspan></text>
@@ -1446,7 +1446,7 @@
 <rect width="12" height="12" x="405" y="405" class="todo"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="405" class="todo"><title>0x00491ea0 CalculateGradientsTF (511 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="405" class="named"><title>0x004920a0 CalculateEdgeBlack (384 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="405" class="todo"><title>0x00492220 CalculateGradientsTFA (410 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="405" class="named"><title>0x00492220 CalculateGradientsTFA (410 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="405" class="todo"><title>0x004923c0 CalculateEdgeTA (597 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="405" class="todo"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="405" class="todo"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
@@ -1999,7 +1999,7 @@
 <rect width="11.81" height="11.83" x="735.19" y="130.65" class="named"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
 <rect width="11.75" height="11.83" x="431.19" y="145.48" class="named"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>
 <rect width="11.75" height="11.80" x="431.19" y="160.31" class="named"><title>0x0041e730 GetTiltType (410 bytes)</title></rect>
-<rect width="11.75" height="11.80" x="431.19" y="175.12" class="todo"><title>0x00492220 CalculateGradientsTFA (410 bytes)</title></rect>
+<rect width="11.75" height="11.80" x="431.19" y="175.12" class="named"><title>0x00492220 CalculateGradientsTFA (410 bytes)</title></rect>
 <rect width="11.75" height="11.75" x="431.19" y="189.92" class="named"><title>0x004475d0 draw_shotgun (408 bytes)</title></rect>
 <rect width="11.75" height="11.66" x="431.19" y="204.66" class="named"><title>0x00471a30 TriggerLizardMan (405 bytes)</title></rect>
 <rect width="11.75" height="11.63" x="431.19" y="219.32" class="named"><title>0x0044a330 LaraTargetInfo (404 bytes)</title></rect>
