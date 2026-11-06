@@ -35,6 +35,30 @@ BOOL CALLBACK DXEnumDirectInput(LPCDIDEVICEINSTANCE lpDevInst, LPVOID lpContext)
     return DIENUM_CONTINUE;
 }
 
+BOOL CALLBACK DXEnumDirectSound(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext)
+{
+    DEVICEINFO *dd;
+
+    dd = (DEVICEINFO *)lpContext;
+    if (!dd->nDSInfo)
+        dd->DSInfo = (DXDIRECTSOUNDINFO *)malloc(sizeof(DXDIRECTSOUNDINFO));
+    else
+        dd->DSInfo = (DXDIRECTSOUNDINFO *)realloc(dd->DSInfo, (dd->nDSInfo + 1) * sizeof(DXDIRECTSOUNDINFO));
+    memset(&dd->DSInfo[dd->nDSInfo], 0, sizeof(DXDIRECTSOUNDINFO));
+
+    if (!lpGuid) {
+        dd->DSInfo[dd->nDSInfo].lpGuid = 0;
+    } else {
+        dd->DSInfo[dd->nDSInfo].lpGuid = &dd->DSInfo[dd->nDSInfo].Guid;
+        dd->DSInfo[dd->nDSInfo].Guid = *lpGuid;
+    }
+
+    lstrcpy(dd->DSInfo[dd->nDSInfo].About, lpcstrDescription);
+    lstrcpy(dd->DSInfo[dd->nDSInfo].Name, lpcstrModule);
+    dd->nDSInfo++;
+    return TRUE;
+}
+
 void DXFreeDeviceInfo(DEVICEINFO *dd)
 {
     int i, j;
