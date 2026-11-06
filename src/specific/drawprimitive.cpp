@@ -5159,4 +5159,69 @@ __declspec(naked) void MMXDrawTriangleP(void)
         jmp L5
     }
 }
+
+void MMXBlit32to16(void *dest, void *src, int w)
+{
+    unsigned long rmask[2];
+    unsigned long gmask[2];
+    unsigned long bmask[2];
+
+    rmask[0] = 0xf80000;
+    rmask[1] = 0xf80000;
+    gmask[0] = 0xfc00;
+    gmask[1] = 0xfc00;
+    bmask[0] = 0xf8;
+    bmask[1] = 0xf8;
+    __asm {
+        mov eax, dword ptr [w]
+        shr eax, 0x2
+        mov esi, dword ptr [src]
+        mov edi, dword ptr [dest]
+        movq mm3, qword ptr [rmask]
+        movq mm7, qword ptr [gmask]
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L1:
+        movq mm0, qword ptr [esi]
+        movq mm4, qword ptr [esi+0x8]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc1
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc2
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xe5
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xe6
+        pand mm0, mm3
+        pand mm1, mm7
+        pand mm2, qword ptr [bmask]
+        pand mm4, mm3
+        pand mm5, mm7
+        pand mm6, qword ptr [bmask]
+        pslld mm0, 0x8
+        pslld mm4, 0x8
+        psrad mm0, 0x10
+        psrld mm1, 0x5
+        psrld mm2, 0x3
+        psrad mm4, 0x10
+        psrld mm5, 0x5
+        psrld mm6, 0x3
+        por mm0, mm1
+        por mm4, mm5
+        por mm0, mm2
+        por mm4, mm6
+        packssdw mm0, mm4
+        movq qword ptr [edi], mm0
+        add edi, 0x8
+        add esi, 0x10
+        dec eax
+        jne L1
+        emms
+    }
+}
 }
