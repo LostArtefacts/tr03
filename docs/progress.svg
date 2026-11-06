@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="325.37" height="12" x="0" y="0" class="named"><title>1145 · 77.47%</title></rect>
-<rect width="2.84" height="12" x="325.37" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="91.79" height="12" x="328.21" y="0" class="todo"><title>323 · 21.85%</title></rect>
+<rect width="325.66" height="12" x="0" y="0" class="named"><title>1146 · 77.54%</title></rect>
+<rect width="2.84" height="12" x="325.66" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="91.50" height="12" x="328.50" y="0" class="todo"><title>322 · 21.79%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">77.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1145</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">323</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1146</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">322</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.83" height="12" x="0" y="0" class="named"><title>332 KB · 49.72%</title></rect>
-<rect width="3.98" height="12" x="208.83" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.20" height="12" x="212.80" y="0" class="todo"><title>330 KB · 49.33%</title></rect>
+<rect width="208.97" height="12" x="0" y="0" class="named"><title>332 KB · 49.75%</title></rect>
+<rect width="3.98" height="12" x="208.97" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.06" height="12" x="212.94" y="0" class="todo"><title>329 KB · 49.30%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">49.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">49.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">329 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -959,7 +959,7 @@
 <rect width="12" height="12" x="630" y="255" class="named"><title>0x0045ee20 QuadBikeControl (1440 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="255" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="255" class="named"><title>0x0045f490 SkidooCheckGetOff (431 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="255" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="255" class="named"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="255" class="named"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="255" class="todo"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="255" class="named"><title>0x0045ffb0 SkidooBaddieCollision (489 bytes)</title></rect>
@@ -2197,7 +2197,7 @@
 <rect width="8.63" height="9.15" x="499.42" y="235.63" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="8.63" height="9.11" x="499.42" y="247.79" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="8.63" height="9.07" x="499.42" y="259.90" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
-<rect width="8.63" height="9.07" x="499.42" y="271.97" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
+<rect width="8.63" height="9.07" x="499.42" y="271.97" class="named"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
 <rect width="8.63" height="9.07" x="499.42" y="284.04" class="named"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
 <rect width="8.63" height="9.03" x="499.42" y="296.11" class="named"><title>0x00440140 lara_col_monkeyswing (222 bytes)</title></rect>
 <rect width="8.63" height="9.03" x="499.42" y="308.14" class="named"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>

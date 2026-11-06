@@ -907,3 +907,29 @@ int GetCollisionAnim_quadbike(ITEM_INFO *v, PHD_VECTOR *moved)
     }
     return 0;
 }
+
+FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
+sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+sint32 TestHeight_quadbike(ITEM_INFO *v, sint32 z_off, sint32 x_off, PHD_VECTOR *pos);
+sint32 DoDynamics_quadbike(sint32 height, sint32 fallspeed, sint32 *y);
+sint32 __fastcall phd_sin(sint32 angle);
+
+sint32 TestHeight_quadbike(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos)
+{
+    sint32 s, c;
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    pos->y = v->pos.y_pos + ((z * phd_sin(v->pos.z_rot)) >> W2V_SHIFT) - ((x * phd_sin(v->pos.x_rot)) >> W2V_SHIFT);
+    c = phd_cos(v->pos.y_rot);
+    s = phd_sin(v->pos.y_rot);
+    pos->z = v->pos.z_pos + ((x * c - z * s) >> W2V_SHIFT);
+    pos->x = v->pos.x_pos + ((x * s + z * c) >> W2V_SHIFT);
+    room_number = v->room_number;
+    floor = GetFloor(pos->x, pos->y, pos->z, &room_number);
+    c = GetCeiling(floor, pos->x, pos->y, pos->z);
+    if (pos->y < c || c == NO_HEIGHT)
+        return NO_HEIGHT;
+    return GetHeight(floor, pos->x, pos->y, pos->z);
+}
