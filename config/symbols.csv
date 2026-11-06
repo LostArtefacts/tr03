@@ -1422,7 +1422,7 @@ address,size,name,symbol
 0x00498750,266,ScanLinesBlack,_ScanLinesBlack
 0x0049a510,636,Func49a510,
 0x0049b270,1556,ScanLinesTAffine,_ScanLinesTAffine
-0x0049b890,2178,ScanLinesT,_ScanLinesT
+0x0049b890,2244,ScanLinesT,_ScanLinesT
 0x0049c160,3264,ScanLinesTF,_ScanLinesTF
 0x0049ce20,2809,ScanLinesTFAffine,_ScanLinesTFAffine
 0x0049d920,4399,ScanLinesTFAlphaDecalAffine,_ScanLinesTFAlphaDecalAffine

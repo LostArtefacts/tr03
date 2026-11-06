@@ -3,8 +3,10 @@
 
 #define MAGICNUM float((1 << 26) * ((1 << 26) * 1.5))
 #define FTOL(x) ((fconv = (x) + (MAGICNUM)), *(int *)(&fconv))
+#define FTOLFIX(x) ((fconv = x + MAGICNUM / 65536.0), *(int *)(&fconv))
 
 struct GRADIENT {
+    float ooz[3];
     float uoz[3];
     float voz[3];
     float r[3];
