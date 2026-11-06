@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="328.50" height="12" x="0" y="0" class="named"><title>1156 · 78.21%</title></rect>
-<rect width="2.84" height="12" x="328.50" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="88.66" height="12" x="331.34" y="0" class="todo"><title>312 · 21.11%</title></rect>
+<rect width="328.78" height="12" x="0" y="0" class="named"><title>1157 · 78.28%</title></rect>
+<rect width="2.84" height="12" x="328.78" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="88.38" height="12" x="331.62" y="0" class="todo"><title>311 · 21.04%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">78.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1156</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">312</tspan></text>
+<text text-anchor="end" x="600" y="7.50">78.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1157</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">311</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="210.35" height="12" x="0" y="0" class="named"><title>335 KB · 50.08%</title></rect>
-<rect width="3.98" height="12" x="210.35" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="205.68" height="12" x="214.32" y="0" class="todo"><title>327 KB · 48.97%</title></rect>
+<rect width="210.49" height="12" x="0" y="0" class="named"><title>335 KB · 50.12%</title></rect>
+<rect width="3.98" height="12" x="210.49" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="205.53" height="12" x="214.47" y="0" class="todo"><title>327 KB · 48.94%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">50.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">335 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">327 KB</tspan></text>
@@ -1383,21 +1383,21 @@
 <rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="390" class="named"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="390" class="named"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="390" class="todo"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="390" class="todo"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="390" class="todo"><title>0x0048e710 Func48e710 (19 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="390" class="todo"><title>0x0048e730 Func48e730 (52 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="390" class="todo"><title>0x0048e770 Func48e770 (52 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="390" class="todo"><title>0x0048e7b0 Func48e7b0 (52 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="390" class="todo"><title>0x0048e7f0 Func48e7f0 (52 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="390" class="todo"><title>0x0048e830 Func48e830 (47 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="390" class="todo"><title>0x0048e860 Func48e860 (62 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="390" class="todo"><title>0x0048e8a0 Func48e8a0 (80 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="390" class="todo"><title>0x0048e8f0 Func48e8f0 (50 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="390" class="todo"><title>0x0048e930 Func48e930 (60 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="390" class="todo"><title>0x0048e970 Func48e970 (55 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="390" class="todo"><title>0x0048e9b0 Func48e9b0 (55 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="390" class="todo"><title>0x0048e9f0 Func48e9f0 (55 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="390" class="named"><title>0x0048e5e0 acmThunkInitialize (231 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="390" class="todo"><title>0x0048e6d0 acmThunkTerminate (54 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="390" class="todo"><title>0x0048e710 acmGetVersion (19 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="390" class="todo"><title>0x0048e730 acmMetrics (52 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="390" class="todo"><title>0x0048e770 acmDriverEnum (52 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="390" class="todo"><title>0x0048e7b0 acmDriverDetailsA (52 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="390" class="todo"><title>0x0048e7f0 acmDriverOpen (52 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="390" class="todo"><title>0x0048e830 acmDriverClose (47 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="390" class="todo"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="390" class="todo"><title>0x0048e8a0 acmStreamOpen (80 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="390" class="todo"><title>0x0048e8f0 acmStreamClose (50 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="390" class="todo"><title>0x0048e930 acmStreamSize (60 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="390" class="todo"><title>0x0048e970 acmStreamConvert (55 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="390" class="todo"><title>0x0048e9b0 acmStreamPrepareHeader (55 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="390" class="todo"><title>0x0048e9f0 acmStreamUnprepareHeader (55 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="390" class="named"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="390" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="390" class="todo"><title>0x0048ece0 DXEnumDirectInput (251 bytes)</title></rect>
@@ -2186,7 +2186,7 @@
 <rect width="8.86" height="9.16" x="644.06" y="199.13" class="named"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="8.86" height="9.16" x="655.91" y="199.13" class="named"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
 <rect width="8.86" height="9.16" x="667.77" y="199.13" class="named"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
-<rect width="8.86" height="9.16" x="679.63" y="199.13" class="todo"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
+<rect width="8.86" height="9.16" x="679.63" y="199.13" class="named"><title>0x0048e5e0 acmThunkInitialize (231 bytes)</title></rect>
 <rect width="8.82" height="9.16" x="691.48" y="199.13" class="named"><title>0x00417210 AdjustStopperFlag (230 bytes)</title></rect>
 <rect width="8.70" height="9.16" x="703.30" y="199.13" class="named"><title>0x0043dfc0 LaraSlideEdgeJump (227 bytes)</title></rect>
 <rect width="8.66" height="9.16" x="715.01" y="199.13" class="named"><title>0x00413f00 BoatSplash (226 bytes)</title></rect>
@@ -2591,7 +2591,7 @@
 <rect width="5.36" height="5.31" x="600.29" y="408.83" class="named"><title>0x0048aac0 S_SetupBelowWater (81 bytes)</title></rect>
 <rect width="5.36" height="5.25" x="600.29" y="417.15" class="named"><title>0x00416620 CreatureUnderwater (80 bytes)</title></rect>
 <rect width="5.36" height="5.25" x="600.29" y="425.39" class="named"><title>0x00456b50 InitialiseMovingBlock (80 bytes)</title></rect>
-<rect width="5.36" height="5.25" x="600.29" y="433.64" class="todo"><title>0x0048e8a0 Func48e8a0 (80 bytes)</title></rect>
+<rect width="5.36" height="5.25" x="600.29" y="433.64" class="todo"><title>0x0048e8a0 acmStreamOpen (80 bytes)</title></rect>
 <rect width="5.36" height="5.11" x="600.29" y="441.89" class="named"><title>0x0040fea0 ControlArea51Struts (78 bytes)</title></rect>
 <rect width="5.06" height="5.41" x="608.65" y="308.69" class="named"><title>0x0042a080 InitialiseSparks (78 bytes)</title></rect>
 <rect width="5.06" height="5.41" x="608.65" y="317.10" class="named"><title>0x004573a0 TestBlockMovable (78 bytes)</title></rect>
@@ -2677,7 +2677,7 @@
 <rect width="4.63" height="4.70" x="624.53" y="442.30" class="named"><title>0x00430010 ControlRotateyThing (62 bytes)</title></rect>
 <rect width="4.49" height="4.85" x="632.15" y="324.62" class="named"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
 <rect width="4.49" height="4.85" x="639.64" y="324.62" class="named"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
-<rect width="4.49" height="4.85" x="647.13" y="324.62" class="todo"><title>0x0048e860 Func48e860 (62 bytes)</title></rect>
+<rect width="4.49" height="4.85" x="647.13" y="324.62" class="todo"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="654.62" y="324.62" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="662.04" y="324.62" class="named"><title>0x004295a0 gar_RotYXZsuperpack_I (61 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="669.46" y="324.62" class="nonmatching"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
@@ -2685,7 +2685,7 @@
 <rect width="4.34" height="4.85" x="684.22" y="324.62" class="todo"><title>0x00402600 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="4.34" height="4.85" x="691.56" y="324.62" class="named"><title>0x0042f450 AssaultStart (60 bytes)</title></rect>
 <rect width="4.34" height="4.85" x="698.90" y="324.62" class="named"><title>0x00441910 lara_as_switchon (60 bytes)</title></rect>
-<rect width="4.34" height="4.85" x="706.24" y="324.62" class="todo"><title>0x0048e930 Func48e930 (60 bytes)</title></rect>
+<rect width="4.34" height="4.85" x="706.24" y="324.62" class="todo"><title>0x0048e930 acmStreamSize (60 bytes)</title></rect>
 <rect width="4.34" height="4.85" x="713.58" y="324.62" class="todo"><title>0x00490f10 Func490f10 (60 bytes)</title></rect>
 <rect width="4.27" height="4.85" x="720.93" y="324.62" class="named"><title>0x0042f000 ControlLaraAlarm (59 bytes)</title></rect>
 <rect width="4.27" height="4.85" x="728.20" y="324.62" class="named"><title>0x00448400 undraw_pistol_mesh_right (59 bytes)</title></rect>
@@ -2717,15 +2717,15 @@
 <rect width="4.34" height="4.45" x="691.46" y="332.47" class="named"><title>0x00424c20 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="698.80" y="332.47" class="named"><title>0x0046ad90 T_ChangeText (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="706.14" y="332.47" class="named"><title>0x00485ca0 GetRandom (55 bytes)</title></rect>
-<rect width="4.34" height="4.45" x="713.47" y="332.47" class="todo"><title>0x0048e970 Func48e970 (55 bytes)</title></rect>
-<rect width="4.34" height="4.45" x="720.81" y="332.47" class="todo"><title>0x0048e9b0 Func48e9b0 (55 bytes)</title></rect>
-<rect width="4.34" height="4.45" x="728.15" y="332.47" class="todo"><title>0x0048e9f0 Func48e9f0 (55 bytes)</title></rect>
+<rect width="4.34" height="4.45" x="713.47" y="332.47" class="todo"><title>0x0048e970 acmStreamConvert (55 bytes)</title></rect>
+<rect width="4.34" height="4.45" x="720.81" y="332.47" class="todo"><title>0x0048e9b0 acmStreamPrepareHeader (55 bytes)</title></rect>
+<rect width="4.34" height="4.45" x="728.15" y="332.47" class="todo"><title>0x0048e9f0 acmStreamUnprepareHeader (55 bytes)</title></rect>
 <rect width="4.26" height="4.45" x="735.49" y="332.47" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="4.26" height="4.45" x="742.74" y="332.47" class="named"><title>0x0042f9c0 Exercise8_109Sp (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="339.93" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="347.32" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="354.72" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
-<rect width="4.31" height="4.40" x="639.79" y="362.12" class="todo"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
+<rect width="4.31" height="4.40" x="639.79" y="362.12" class="todo"><title>0x0048e6d0 acmThunkTerminate (54 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="369.52" class="todo"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="376.83" class="todo"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="384.15" class="todo"><title>0x00402580 draw_poly_gouraud (53 bytes)</title></rect>
@@ -2743,10 +2743,10 @@
 <rect width="4.37" height="4.18" x="669.21" y="339.93" class="named"><title>0x00468580 InitInterpolate2 (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="676.57" y="339.93" class="named"><title>0x00475910 TempVideoAdjust (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="683.94" y="339.93" class="named"><title>0x00486010 game_free (52 bytes)</title></rect>
-<rect width="4.37" height="4.18" x="691.31" y="339.93" class="todo"><title>0x0048e730 Func48e730 (52 bytes)</title></rect>
-<rect width="4.37" height="4.18" x="698.68" y="339.93" class="todo"><title>0x0048e770 Func48e770 (52 bytes)</title></rect>
-<rect width="4.37" height="4.18" x="706.04" y="339.93" class="todo"><title>0x0048e7b0 Func48e7b0 (52 bytes)</title></rect>
-<rect width="4.37" height="4.18" x="713.41" y="339.93" class="todo"><title>0x0048e7f0 Func48e7f0 (52 bytes)</title></rect>
+<rect width="4.37" height="4.18" x="691.31" y="339.93" class="todo"><title>0x0048e730 acmMetrics (52 bytes)</title></rect>
+<rect width="4.37" height="4.18" x="698.68" y="339.93" class="todo"><title>0x0048e770 acmDriverEnum (52 bytes)</title></rect>
+<rect width="4.37" height="4.18" x="706.04" y="339.93" class="todo"><title>0x0048e7b0 acmDriverDetailsA (52 bytes)</title></rect>
+<rect width="4.37" height="4.18" x="713.41" y="339.93" class="todo"><title>0x0048e7f0 acmDriverOpen (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="720.78" y="339.93" class="named"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="4.28" height="4.18" x="728.15" y="339.93" class="named"><title>0x004416b0 lara_as_rightjump (51 bytes)</title></rect>
 <rect width="4.28" height="4.18" x="735.43" y="339.93" class="named"><title>0x004416f0 lara_as_leftjump (51 bytes)</title></rect>
@@ -2764,7 +2764,7 @@
 <rect width="4.07" height="4.31" x="647.10" y="420.75" class="named"><title>0x00458e10 OpenThatDoor (50 bytes)</title></rect>
 <rect width="4.07" height="4.31" x="647.10" y="428.06" class="named"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
 <rect width="4.07" height="4.31" x="647.10" y="435.37" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
-<rect width="4.07" height="4.31" x="647.10" y="442.69" class="todo"><title>0x0048e8f0 Func48e8f0 (50 bytes)</title></rect>
+<rect width="4.07" height="4.31" x="647.10" y="442.69" class="todo"><title>0x0048e8f0 acmStreamClose (50 bytes)</title></rect>
 <rect width="4.46" height="3.85" x="654.17" y="347.11" class="named"><title>0x004293f0 phd_RotY_I (49 bytes)</title></rect>
 <rect width="4.46" height="3.85" x="661.63" y="347.11" class="named"><title>0x00429430 phd_RotX_I (49 bytes)</title></rect>
 <rect width="4.46" height="3.85" x="669.09" y="347.11" class="named"><title>0x00429470 phd_RotZ_I (49 bytes)</title></rect>
@@ -2779,7 +2779,7 @@
 <rect width="4.28" height="3.85" x="735.44" y="347.11" class="named"><title>0x00438f00 Inv_RingRotateRight (47 bytes)</title></rect>
 <rect width="4.28" height="3.85" x="742.72" y="347.11" class="named"><title>0x00459490 DrawBridgeCollision (47 bytes)</title></rect>
 <rect width="3.96" height="4.17" x="654.17" y="353.96" class="named"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
-<rect width="3.96" height="4.17" x="661.13" y="353.96" class="todo"><title>0x0048e830 Func48e830 (47 bytes)</title></rect>
+<rect width="3.96" height="4.17" x="661.13" y="353.96" class="todo"><title>0x0048e830 acmDriverClose (47 bytes)</title></rect>
 <rect width="3.88" height="4.17" x="668.10" y="353.96" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
 <rect width="3.88" height="4.17" x="674.97" y="353.96" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="3.88" height="4.17" x="681.85" y="353.96" class="named"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
@@ -2965,7 +2965,7 @@
 <rect width="2.68" height="2.49" x="706.15" y="428.04" class="named"><title>0x0044f0e0 lara_col_dive (19 bytes)</title></rect>
 <rect width="2.68" height="2.49" x="706.15" y="433.53" class="named"><title>0x0044f160 lara_col_waterroll (19 bytes)</title></rect>
 <rect width="2.68" height="2.49" x="706.15" y="439.02" class="named"><title>0x00483840 S_IntroFMV (19 bytes)</title></rect>
-<rect width="2.68" height="2.49" x="706.15" y="444.51" class="todo"><title>0x0048e710 Func48e710 (19 bytes)</title></rect>
+<rect width="2.68" height="2.49" x="706.15" y="444.51" class="todo"><title>0x0048e710 acmGetVersion (19 bytes)</title></rect>
 <rect width="2.61" height="2.56" x="711.83" y="411.57" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="2.47" height="2.56" x="717.44" y="411.57" class="named"><title>0x0042fa30 ResetExercises (18 bytes)</title></rect>
 <rect width="2.47" height="2.56" x="722.91" y="411.57" class="todo"><title>0x004752d0 Func4752d0 (18 bytes)</title></rect>
