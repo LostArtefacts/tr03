@@ -4,6 +4,8 @@
 
 extern "C" {
 
+#include "../room.h"
+
 extern int water_effect;
 extern int shade_effect;
 extern bool bBlueEffect;
@@ -50,6 +52,41 @@ void DXSaveScreen(LPDIRECTDRAWSURFACE3 lpSurface);
 void DXUpdateFrame(bool runMessageLoop, LPRECT rect);
 void DXClearBuffers(DWORD dwClrFlags, DWORD dwColour);
 void ScreenClear(bool tWindow);
+
+extern sint32 nPolyType;
+extern bool GtFullScreenClearNeeded;
+extern int objbcnt;
+bool DXCheckForLostSurfaces(void);
+bool DD_SpinMessageLoop(bool tWait);
+void DXDoFlipWait(void);
+void HWR_BeginScene(void);
+void phd_InitPolyList(void);
+
+void S_InitialisePolyList(int clear)
+{
+    DWORD flags;
+
+    nPolyType = 0;
+    if (GtFullScreenClearNeeded) {
+        DXCheckForLostSurfaces();
+        DD_SpinMessageLoop(false);
+        DXDoFlipWait();
+        DXClearBuffers(3, 0);
+        clear = 0;
+        GtFullScreenClearNeeded = false;
+    }
+    if (!App.nRenderMode) {
+        DXClearBuffers(0x110, 0);
+    } else {
+        flags = 0x100;
+        if (clear || HWConfig.nFillMode < D3DFILL_SOLID)
+            flags = 0x102;
+        DXClearBuffers(flags | 8, 0);
+    }
+    HWR_BeginScene();
+    phd_InitPolyList();
+    objbcnt = 0;
+}
 
 int S_DumpCine(void)
 {

@@ -130,7 +130,17 @@ typedef struct winapp {
     float fps;
 } WINAPP;
 
+typedef struct hwconfig {
+    bool Perspective;
+    bool Dither;
+    long nFilter;
+    long nShadeMode;
+    long nFillMode;
+    bool TrueAlpha;
+} HWCONFIG;
+
 extern WINAPP App;
+extern HWCONFIG HWConfig;
 
 #ifdef __cplusplus
 }

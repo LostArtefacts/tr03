@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="322.53" height="12" x="0" y="0" class="named"><title>1135 · 76.79%</title></rect>
-<rect width="2.84" height="12" x="322.53" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="94.63" height="12" x="325.37" y="0" class="todo"><title>333 · 22.53%</title></rect>
+<rect width="322.81" height="12" x="0" y="0" class="named"><title>1136 · 76.86%</title></rect>
+<rect width="2.84" height="12" x="322.81" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="94.34" height="12" x="325.66" y="0" class="todo"><title>332 · 22.46%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">76.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1135</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">333</tspan></text>
+<text text-anchor="end" x="600" y="7.50">76.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1136</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">332</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.15" height="12" x="0" y="0" class="named"><title>331 KB · 49.56%</title></rect>
-<rect width="3.98" height="12" x="208.15" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.88" height="12" x="212.12" y="0" class="todo"><title>331 KB · 49.49%</title></rect>
+<rect width="208.23" height="12" x="0" y="0" class="named"><title>331 KB · 49.58%</title></rect>
+<rect width="3.98" height="12" x="208.23" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.79" height="12" x="212.21" y="0" class="todo"><title>330 KB · 49.47%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">331 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">331 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">331 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1310,7 +1310,7 @@
 <rect width="12" height="12" x="645" y="360" class="named"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="360" class="named"><title>0x0048a1f0 GetRenderHeight (6 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="360" class="named"><title>0x0048a200 GetRenderWidth (6 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="360" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="360" class="named"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="360" class="named"><title>0x0048a2a0 S_DumpCine (45 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="360" class="named"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="360" class="named"><title>0x0048a320 S_ClearScreen (11 bytes)</title></rect>
@@ -2379,7 +2379,7 @@
 <rect width="7.14" height="6.94" x="554.15" y="294.13" class="named"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
 <rect width="7.14" height="6.94" x="554.15" y="304.07" class="named"><title>0x0046d7c0 HookControl (141 bytes)</title></rect>
 <rect width="7.14" height="6.89" x="554.15" y="314" class="named"><title>0x0042e170 ItemNearLara (140 bytes)</title></rect>
-<rect width="7.14" height="6.89" x="554.15" y="323.89" class="todo"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
+<rect width="7.14" height="6.89" x="554.15" y="323.89" class="named"><title>0x0048a210 S_InitialisePolyList (140 bytes)</title></rect>
 <rect width="7.14" height="6.84" x="554.15" y="333.78" class="named"><title>0x00440e90 lara_as_walk (139 bytes)</title></rect>
 <rect width="7.14" height="6.79" x="554.15" y="343.62" class="named"><title>0x004821c0 LoadDemo (138 bytes)</title></rect>
 <rect width="7.14" height="6.74" x="554.15" y="353.41" class="named"><title>0x004516a0 InitialiseLondonBoss (137 bytes)</title></rect>
