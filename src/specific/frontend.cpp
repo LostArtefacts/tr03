@@ -29,6 +29,18 @@ void S_DrawScreenLine(int x, int y, int z, int w, int h, int col, unsigned short
     InsertLine(x, y, x + w, y + h, phd_znear + z * 8, (char)col, col);
 }
 
+void S_DrawScreenBox(int sx, int sy, int z, int w, int h, int col, unsigned short *grdptr, unsigned short flags)
+{
+    S_DrawScreenLine(sx, sy - 1, z, w + 1, 0, 15, 0, flags);
+    S_DrawScreenLine(sx + 1, sy, z, w - 1, 0, 31, 0, flags);
+    S_DrawScreenLine(sx + w, sy + 1, z, 0, h - 1, 15, 0, flags);
+    S_DrawScreenLine(sx + w + 1, sy, z, 0, h + 1, 31, 0, flags);
+    S_DrawScreenLine(sx - 1, sy - 1, z, 0, h + 1, 15, 0, flags);
+    S_DrawScreenLine(sx, sy, z, 0, h - 1, 31, 0, flags);
+    S_DrawScreenLine(sx, sy + h, z, w - 1, 0, 15, 0, flags);
+    S_DrawScreenLine(sx - 1, sy + h + 1, z, w + 1, 0, 31, 0, flags);
+}
+
 void S_DrawScreenFBox(int sx, int sy, int z, int w, int h, int col, unsigned short *grdptr, unsigned short flags)
 {
     InsertTransQuad(sx + phd_winxmin, sy + phd_winymin, w + 1, h + 1, phd_znear + 0x50000);
