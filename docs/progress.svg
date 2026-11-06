@@ -47,16 +47,16 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="339.30" height="12" x="0" y="0" class="named"><title>1194 · 80.78%</title></rect>
-<rect width="3.69" height="12" x="339.30" y="0" class="nonmatching"><title>13 · 0.88%</title></rect>
-<rect width="77.01" height="12" x="342.99" y="0" class="todo"><title>271 · 18.34%</title></rect>
+<rect width="3.98" height="12" x="339.30" y="0" class="nonmatching"><title>14 · 0.95%</title></rect>
+<rect width="76.73" height="12" x="343.27" y="0" class="todo"><title>270 · 18.27%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">80.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1194</tspan> · <tspan class="nonmatching">13</tspan> · <tspan class="todo">271</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1194</tspan> · <tspan class="nonmatching">14</tspan> · <tspan class="todo">270</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="217.70" height="12" x="0" y="0" class="named"><title>346 KB · 51.83%</title></rect>
-<rect width="4.78" height="12" x="217.70" y="0" class="nonmatching"><title>8 KB · 1.14%</title></rect>
-<rect width="197.52" height="12" x="222.48" y="0" class="todo"><title>314 KB · 47.03%</title></rect>
+<rect width="5.17" height="12" x="217.70" y="0" class="nonmatching"><title>8 KB · 1.23%</title></rect>
+<rect width="197.13" height="12" x="222.87" y="0" class="todo"><title>314 KB · 46.94%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">51.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">346 KB</tspan> · <tspan class="nonmatching">8 KB</tspan> · <tspan class="todo">314 KB</tspan></text>
@@ -1153,7 +1153,7 @@
 <rect width="12" height="12" x="540" y="315" class="named"><title>0x00475950 TempVideoRemove (57 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="315" class="named"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="315" class="named"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="315" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="315" class="nonmatching"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="315" class="named"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="315" class="todo"><title>0x00475f60 S_DrawAirBar (604 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="315" class="named"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
@@ -1811,7 +1811,7 @@
 <rect width="15.16" height="14.57" x="587.99" y="64.63" class="named"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
 <rect width="15.14" height="14.57" x="606.15" y="64.63" class="named"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
 <rect width="15.04" height="14.57" x="624.29" y="64.63" class="named"><title>0x0041d290 CobraControl (624 bytes)</title></rect>
-<rect width="15.02" height="14.57" x="642.33" y="64.63" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
+<rect width="15.02" height="14.57" x="642.33" y="64.63" class="nonmatching"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="14.97" height="14.57" x="660.35" y="64.63" class="named"><title>0x004296c0 InterpolateMatrix (621 bytes)</title></rect>
 <rect width="14.97" height="14.57" x="678.31" y="64.63" class="nonmatching"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
 <rect width="14.92" height="14.57" x="696.28" y="64.63" class="named"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>

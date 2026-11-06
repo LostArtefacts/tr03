@@ -15,6 +15,49 @@ extern bool bBlueEffect;
 
 void HWR_EnableZBuffer(bool tWrite, bool tCompare);
 
+void S_DrawDashBar(int percent)
+{
+    int oldAlpha;
+    int w;
+    int x;
+    int z;
+
+    oldAlpha = GlobalAlpha;
+    GlobalAlpha = 0xFF000000;
+    HWR_EnableZBuffer(true, true);
+    bBlueEffect = false;
+    w = BarsWidth * percent / 100;
+    x = DumpWidth - BarsWidth - 10;
+    z = phd_znear + 50;
+
+    InsertLine(x - 2, 19, x + BarsWidth + 1, 19, z, 0, 0);
+    InsertLine(x - 2, 20, x + BarsWidth + 1, 20, z, 0, 0);
+    InsertLine(x - 2, 21, x + BarsWidth + 1, 21, z, 0, 0);
+    InsertLine(x - 2, 22, x + BarsWidth + 1, 22, z, 0, 0);
+    InsertLine(x - 2, 23, x + BarsWidth + 1, 23, z, 0, 0);
+    InsertLine(x - 2, 24, x + BarsWidth + 1, 24, z, 0, 0);
+    InsertLine(x - 2, 25, x + BarsWidth + 1, 25, z, 0, 0);
+
+    z = phd_znear + 40;
+    InsertLine(x - 2, 26, x + BarsWidth + 3, 26, z, 0x7F7F7F, 0x7F7F7F);
+    InsertLine(x + BarsWidth + 2, 18, x + BarsWidth + 2, 26, z, 0x7F7F7F, 0x7F7F7F);
+
+    z = phd_znear + 30;
+    InsertLine(x - 2, 18, x + BarsWidth + 2, 18, z, 0xFFFFFF, 0xFFFFFF);
+    InsertLine(x - 2, 26, x - 2, 18, z, 0xFFFFFF, 0xFFFFFF);
+
+    if (w) {
+        z = phd_znear + 20;
+        InsertLine(x, 21, x + w, 21, z, 0xFF00, 0xFF00);
+        InsertLine(x, 20, x + w, 20, z, 0x4F00, 0x4F00);
+        InsertLine(x, 22, x + w, 22, z, 0x7F00, 0x7F00);
+        InsertLine(x, 23, x + w, 23, z, 0x7F00, 0x7F00);
+        InsertLine(x, 24, x + w, 24, z, 0x4F00, 0x4F00);
+    }
+
+    GlobalAlpha = oldAlpha;
+}
+
 void S_DrawHealthBar(int percent)
 {
     int oldAlpha;
