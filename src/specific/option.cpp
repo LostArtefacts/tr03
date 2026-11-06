@@ -575,6 +575,78 @@ void do_control_option(INVENTORY_ITEM *inv_item)
     inputDB = 0;
 }
 
+void S_ShowControls(void)
+{
+    int mid;
+    int i;
+    sint16 x;
+    sint16 *key;
+
+    mid = GetRenderWidth() / 2;
+    if (!btext[0]) {
+        key = &layout[iconfig][0];
+        if (mid < 320)
+            x = mid - 150;
+        else
+            x = mid - 200;
+        btext[0] = T_Print(x, -25, 0, kname[key[0]]);
+        btext[1] = T_Print(x, -9, 0, kname[key[1]]);
+        btext[2] = T_Print(x, 7, 0, kname[key[2]]);
+        btext[3] = T_Print(x, 23, 0, kname[key[3]]);
+        btext[4] = T_Print(x, 39, 0, kname[key[4]]);
+        btext[5] = T_Print(x, 55, 0, kname[key[5]]);
+        btext[6] = T_Print(x, 71, 0, kname[key[6]]);
+        if (mid < 320)
+            x = mid - 20;
+        else
+            x = mid + 10;
+        btext[7] = T_Print(x, -25, 0, kname[key[7]]);
+        btext[8] = T_Print(x, -9, 0, kname[key[8]]);
+        btext[9] = T_Print(x, 7, 0, kname[key[9]]);
+        btext[10] = T_Print(x, 23, 0, kname[key[10]]);
+        btext[11] = T_Print(x, 39, 0, kname[key[11]]);
+        btext[12] = T_Print(x, 55, 0, kname[key[12]]);
+        btext[13] = T_Print(x, 71, 0, kname[key[13]]);
+        for (i = 0; i < 14; i++)
+            T_CentreV(btext[i], 1);
+        keychange = 0;
+    }
+    if (!ctext[0]) {
+        if (mid < 320)
+            x = mid - 78;
+        else
+            x = mid - 120;
+        ctext[0] = T_Print(x, -25, 0, GF_GameStrings[19]);
+        ctext[1] = T_Print(x, -9, 0, GF_GameStrings[22]);
+        ctext[2] = T_Print(x, 7, 0, GF_GameStrings[20]);
+        ctext[3] = T_Print(x, 23, 0, GF_GameStrings[21]);
+        ctext[4] = T_Print(x, 39, 0, GF_GameStrings[23]);
+        ctext[5] = T_Print(x, 55, 0, GF_GameStrings[25]);
+        ctext[6] = T_Print(x, 71, 0, GF_GameStrings[17]);
+        if (mid < 320)
+            x = mid + 55;
+        else
+            x = mid + 90;
+        ctext[7] = T_Print(x, -25, 0, GF_GameStrings[28]);
+        ctext[8] = T_Print(x, -9, 0, GF_GameStrings[29]);
+        ctext[9] = T_Print(x, 7, 0, GF_GameStrings[30]);
+        ctext[10] = T_Print(x, 23, 0, GF_GameStrings[33]);
+        ctext[11] = T_Print(x, 39, 0, GF_GameStrings[27]);
+        ctext[12] = T_Print(x, 55, 0, GF_GameStrings[18]);
+        ctext[13] = T_Print(x, 71, 0, GF_GameStrings[32]);
+        for (i = 0; i < 14; i++)
+            T_CentreV(ctext[i], 1);
+    }
+    ctrltext[1] = T_Print(0, -55, 0, " ");
+    T_CentreV(ctrltext[1], 1);
+    T_CentreH(ctrltext[1], 1);
+    T_AddOutline(ctrltext[1], 1, 15, NULL, 0);
+    if (mid < 320)
+        T_AddBackground(ctrltext[1], 308, 145, 0, 0, 48, 0, NULL, 0);
+    else
+        T_AddBackground(ctrltext[1], 420, 150, 0, 0, 48, 0, NULL, 0);
+}
+
 void S_ChangeCtrlText(void)
 {
     int i;

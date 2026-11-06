@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="314.86" height="12" x="0" y="0" class="named"><title>1108 · 74.97%</title></rect>
-<rect width="2.56" height="12" x="314.86" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="102.58" height="12" x="317.42" y="0" class="todo"><title>361 · 24.42%</title></rect>
+<rect width="315.14" height="12" x="0" y="0" class="named"><title>1109 · 75.03%</title></rect>
+<rect width="2.56" height="12" x="315.14" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="102.30" height="12" x="317.70" y="0" class="todo"><title>360 · 24.36%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">75.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1108</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">361</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1109</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">360</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="199.44" height="12" x="0" y="0" class="named"><title>317 KB · 47.49%</title></rect>
-<rect width="3.89" height="12" x="199.44" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="216.67" height="12" x="203.33" y="0" class="todo"><title>345 KB · 51.59%</title></rect>
+<rect width="200.18" height="12" x="0" y="0" class="named"><title>318 KB · 47.66%</title></rect>
+<rect width="3.89" height="12" x="200.18" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="215.94" height="12" x="204.06" y="0" class="todo"><title>343 KB · 51.41%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">47.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">317 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">345 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">47.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">318 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">343 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1305,7 +1305,7 @@
 <rect width="12" height="12" x="570" y="360" class="named"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="360" class="named"><title>0x00489510 DefaultConflict (64 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="360" class="named"><title>0x00489550 do_control_option (1816 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="360" class="todo"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="360" class="named"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="360" class="named"><title>0x0048a100 S_ChangeCtrlText (150 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="360" class="named"><title>0x0048a1a0 S_RemoveCtrlText (67 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="360" class="named"><title>0x0048a1f0 GetRenderHeight (6 bytes)</title></rect>
@@ -1689,7 +1689,7 @@
 <rect width="20.22" height="20.53" x="545.08" y="0" class="named"><title>0x0046c860 ControlTonyFireBall (1182 bytes)</title></rect>
 <rect width="20.20" height="20.53" x="568.30" y="0" class="named"><title>0x00488f30 do_sound_option (1181 bytes)</title></rect>
 <rect width="19.95" height="20.53" x="591.50" y="0" class="todo"><title>0x00494e30 MMXDrawTriangleFog (1166 bytes)</title></rect>
-<rect width="19.93" height="20.53" x="614.45" y="0" class="todo"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
+<rect width="19.93" height="20.53" x="614.45" y="0" class="named"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
 <rect width="19.78" height="20.53" x="637.38" y="0" class="named"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
 <rect width="19.62" height="20.53" x="660.15" y="0" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="19.60" height="20.53" x="682.77" y="0" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
