@@ -758,6 +758,62 @@ int FindCDDrive(void)
     return 0;
 }
 
+int LoadLevel(char *name, int number)
+{
+    const char *path;
+    DWORD read;
+    HANDLE file;
+    int version;
+    int level;
+    char dem[80];
+
+    path = GetFullPath(name);
+    strcpy(LastLoadedLevelPath, path);
+    init_game_malloc();
+    file = CreateFile(path, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_SEQUENTIAL_SCAN, NULL);
+    if (file == INVALID_HANDLE_VALUE) {
+        wsprintf(exit_message, "LoadLevel(): Could not open %s (level %d)", path, number);
+        return 0;
+    }
+    MyReadFile(file, &version, sizeof(int), &read, NULL);
+    LdwPaletteOffset = SetFilePointer(file, 0, NULL, FILE_CURRENT);
+    if (!LoadPalette(file))
+        return 0;
+    LdwTextureOffset = SetFilePointer(file, 0, NULL, FILE_CURRENT);
+    if (!LoadTexturePages(file))
+        return 0;
+    MyReadFile(file, &level, sizeof(int), &read, NULL);
+    if (!LoadRooms(file))
+        return 0;
+    if (!LoadObjects(file))
+        return 0;
+    if (!LoadSprites(file))
+        return 0;
+    if (!LoadCameras(file))
+        return 0;
+    if (!LoadSoundEffects(file))
+        return 0;
+    if (!LoadBoxes(file))
+        return 0;
+    if (!LoadAnimatedTextures(file))
+        return 0;
+    if (!LoadItems(file))
+        return 0;
+    LdwDepthQOffset = SetFilePointer(file, 0, NULL, FILE_CURRENT);
+    if (!LoadDepthQ(file))
+        return 0;
+    if (!LoadCinematic(file))
+        return 0;
+    if (!LoadDemo(file))
+        return 0;
+    strcpy(dem, path);
+    if (!LoadSamples(file))
+        return 0;
+    LoadDemFile(dem);
+    CloseHandle(file);
+    return 1;
+}
+
 int S_LoadLevelFile(char *name, int number, int type)
 {
     int loaded;

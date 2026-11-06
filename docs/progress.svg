@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="317.98" height="12" x="0" y="0" class="named"><title>1119 · 75.71%</title></rect>
-<rect width="2.56" height="12" x="317.98" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="99.46" height="12" x="320.54" y="0" class="todo"><title>350 · 23.68%</title></rect>
+<rect width="318.27" height="12" x="0" y="0" class="named"><title>1120 · 75.78%</title></rect>
+<rect width="2.56" height="12" x="318.27" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="99.17" height="12" x="320.83" y="0" class="todo"><title>349 · 23.61%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">75.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1119</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">350</tspan></text>
+<text text-anchor="end" x="600" y="7.50">75.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1120</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">349</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="203.53" height="12" x="0" y="0" class="named"><title>324 KB · 48.46%</title></rect>
-<rect width="3.89" height="12" x="203.53" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="212.59" height="12" x="207.41" y="0" class="todo"><title>338 KB · 50.62%</title></rect>
+<rect width="203.89" height="12" x="0" y="0" class="named"><title>324 KB · 48.55%</title></rect>
+<rect width="3.89" height="12" x="203.89" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="212.22" height="12" x="207.78" y="0" class="todo"><title>337 KB · 50.53%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">48.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">324 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">338 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">324 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">337 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1221,7 +1221,7 @@
 <rect width="12" height="12" x="60" y="345" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="345" class="nonmatching"><title>0x004825a0 GetFullPath (38 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="345" class="named"><title>0x004825d0 FindCDDrive (234 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="345" class="todo"><title>0x004826c0 LoadLevel (584 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="345" class="named"><title>0x004826c0 LoadLevel (584 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="345" class="named"><title>0x00482910 S_LoadLevelFile (125 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="345" class="named"><title>0x00482990 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="345" class="todo"><title>0x004829c0 Read_Strings (198 bytes)</title></rect>
@@ -1839,7 +1839,7 @@
 <rect width="14.51" height="14.21" x="365.54" y="415.61" class="named"><title>0x0044e950 LaraUnderWater (587 bytes)</title></rect>
 <rect width="14.51" height="14.18" x="365.54" y="432.82" class="named"><title>0x0043e4e0 LaraTestHangJump (586 bytes)</title></rect>
 <rect width="14.84" height="13.84" x="383.05" y="82.19" class="named"><title>0x0041a641 mgLOS (585 bytes)</title></rect>
-<rect width="14.82" height="13.84" x="400.90" y="82.19" class="todo"><title>0x004826c0 LoadLevel (584 bytes)</title></rect>
+<rect width="14.82" height="13.84" x="400.90" y="82.19" class="named"><title>0x004826c0 LoadLevel (584 bytes)</title></rect>
 <rect width="14.77" height="13.84" x="418.71" y="82.19" class="named"><title>0x0041b2a0 InGameCinematicCamera (582 bytes)</title></rect>
 <rect width="14.62" height="13.84" x="436.48" y="82.19" class="named"><title>0x004229f0 ClipTarget (576 bytes)</title></rect>
 <rect width="14.62" height="13.84" x="454.10" y="82.19" class="named"><title>0x00438530 Inv_GetItemOption (576 bytes)</title></rect>
