@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="320.25" height="12" x="0" y="0" class="named"><title>1309 · 87.50%</title></rect>
-<rect width="3.91" height="12" x="320.25" y="0" class="decompiled"><title>16 · 1.07%</title></rect>
-<rect width="5.63" height="12" x="324.16" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="36.21" height="12" x="329.79" y="0" class="todo"><title>148 · 9.89%</title></rect>
+<rect width="320.49" height="12" x="0" y="0" class="named"><title>1310 · 87.57%</title></rect>
+<rect width="3.91" height="12" x="320.49" y="0" class="decompiled"><title>16 · 1.07%</title></rect>
+<rect width="5.63" height="12" x="324.41" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="35.96" height="12" x="330.04" y="0" class="todo"><title>147 · 9.83%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">88.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1309</tspan> · <tspan class="decompiled">16</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">148</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1310</tspan> · <tspan class="decompiled">16</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">147</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="238.54" height="12" x="0" y="0" class="named"><title>471 KB · 65.18%</title></rect>
-<rect width="30.21" height="12" x="238.54" y="0" class="decompiled"><title>60 KB · 8.25%</title></rect>
-<rect width="9.07" height="12" x="268.75" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="88.18" height="12" x="277.82" y="0" class="todo"><title>174 KB · 24.09%</title></rect>
+<rect width="238.56" height="12" x="0" y="0" class="named"><title>471 KB · 65.18%</title></rect>
+<rect width="30.21" height="12" x="238.56" y="0" class="decompiled"><title>60 KB · 8.25%</title></rect>
+<rect width="9.07" height="12" x="268.77" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="88.16" height="12" x="277.84" y="0" class="todo"><title>174 KB · 24.09%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">73.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">471 KB</tspan> · <tspan class="decompiled">60 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">174 KB</tspan></text>
@@ -1432,7 +1432,7 @@
 <rect width="12" height="12" x="195" y="405" class="named"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="405" class="named"><title>0x00490a20 SWSetRenderState (181 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="405" class="named"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="405" class="todo"><title>0x00490b10 SWDrawPrimitive (34 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="405" class="named"><title>0x00490b10 SWDrawPrimitive (34 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="405" class="named"><title>0x00490b40 PrepareTriangleList (88 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="405" class="todo"><title>0x00490ba0 EmulateDrawPrimitive (857 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="405" class="named"><title>0x00490f10 DrawTriangleList (60 bytes)</title></rect>
@@ -2912,7 +2912,7 @@
 <rect width="3.34" height="3.31" x="693.43" y="380.42" class="named"><title>0x00439000 Inv_RingMotionRotation (34 bytes)</title></rect>
 <rect width="3.34" height="3.31" x="699.77" y="380.42" class="named"><title>0x00475400 DI_Create (34 bytes)</title></rect>
 <rect width="3.34" height="3.31" x="706.11" y="380.42" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
-<rect width="3.34" height="3.31" x="712.45" y="380.42" class="todo"><title>0x00490b10 SWDrawPrimitive (34 bytes)</title></rect>
+<rect width="3.34" height="3.31" x="712.45" y="380.42" class="named"><title>0x00490b10 SWDrawPrimitive (34 bytes)</title></rect>
 <rect width="3.24" height="3.31" x="718.79" y="380.42" class="named"><title>0x0042f4b0 AssaultReset (33 bytes)</title></rect>
 <rect width="3.24" height="3.31" x="725.03" y="380.42" class="named"><title>0x00449260 lara_as_climbend (33 bytes)</title></rect>
 <rect width="3.24" height="3.31" x="731.28" y="380.42" class="named"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
