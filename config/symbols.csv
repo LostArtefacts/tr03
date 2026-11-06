@@ -1114,7 +1114,7 @@ address,size,name,symbol
 0x0047f4c0,1890,S_DrawWakeFX,_S_DrawWakeFX
 0x0047fc30,2178,DrawWillBossShield,_DrawWillBossShield
 0x004804d0,18,InitSoundAdapterListGlobal,specific/ds.cpp:_$E1
-0x004804f0,14,Func4804f0,
+0x004804f0,14,RegisterSoundAdapterListDestructor,specific/ds.cpp:_$E3
 0x00480580,57,Func480580,
 0x004805c0,14,Func4805c0,
 0x00480600,46,DS_FreeAllSamples,_DS_FreeAllSamples
