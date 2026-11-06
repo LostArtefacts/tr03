@@ -68,6 +68,49 @@ BOOL CALLBACK ACMEnumCallBack(HACMDRIVERID hadid, DWORD dwInstance, DWORD fdwSup
     return FALSE;
 }
 
+void ACMClose(void)
+{
+    if (!acm_ready)
+        return;
+
+    acm_done = true;
+    if (DSBuffer) {
+        DSBuffer->Play(0, 0, DSBPLAY_LOOPING);
+        DSBuffer->Stop();
+    }
+
+    if (StreamHeaders[0].fdwStatus & ACMSTREAMHEADER_STATUSF_PREPARED) {
+        StreamHeaders[0].cbSrcLength = 0x5800;
+        StreamHeaders[0].cbDstLength = StreamSize;
+        acmStreamUnprepareHeader(hACMStream, &StreamHeaders[0], 0);
+    }
+    if (StreamHeaders[1].fdwStatus & ACMSTREAMHEADER_STATUSF_PREPARED) {
+        StreamHeaders[0].cbSrcLength = 0x5800;
+        StreamHeaders[0].cbDstLength = StreamSize;
+        acmStreamUnprepareHeader(hACMStream, &StreamHeaders[1], 0);
+    }
+    if (StreamHeaders[2].fdwStatus & ACMSTREAMHEADER_STATUSF_PREPARED) {
+        StreamHeaders[0].cbSrcLength = 0x5800;
+        StreamHeaders[0].cbDstLength = StreamSize;
+        acmStreamUnprepareHeader(hACMStream, &StreamHeaders[2], 0);
+    }
+    if (StreamHeaders[3].fdwStatus & ACMSTREAMHEADER_STATUSF_PREPARED) {
+        StreamHeaders[0].cbSrcLength = 0x5800;
+        StreamHeaders[0].cbDstLength = StreamSize;
+        acmStreamUnprepareHeader(hACMStream, &StreamHeaders[3], 0);
+    }
+
+    acmStreamClose(hACMStream, 0);
+    acmDriverClose(hACMDriver, 0);
+    GlobalFree(AllocBuffer);
+    if (DSNotify)
+        DSNotify->Release();
+    if (DSBuffer)
+        DSBuffer->Release();
+    ACMCloseFile();
+    acmThunkTerminate();
+}
+
 bool ACMOpenFile(const char *name)
 {
     ACMCloseFile();

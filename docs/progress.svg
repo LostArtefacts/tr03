@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="333.04" height="12" x="0" y="0" class="named"><title>1172 · 79.30%</title></rect>
-<rect width="2.84" height="12" x="333.04" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="84.11" height="12" x="335.89" y="0" class="todo"><title>296 · 20.03%</title></rect>
+<rect width="333.33" height="12" x="0" y="0" class="named"><title>1173 · 79.36%</title></rect>
+<rect width="2.84" height="12" x="333.33" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="83.83" height="12" x="336.17" y="0" class="todo"><title>295 · 19.96%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">79.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1172</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">296</tspan></text>
+<text text-anchor="end" x="600" y="7.50">79.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1173</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">295</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="211.05" height="12" x="0" y="0" class="named"><title>336 KB · 50.25%</title></rect>
-<rect width="3.98" height="12" x="211.05" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="204.98" height="12" x="215.02" y="0" class="todo"><title>326 KB · 48.80%</title></rect>
+<rect width="211.25" height="12" x="0" y="0" class="named"><title>336 KB · 50.30%</title></rect>
+<rect width="3.98" height="12" x="211.25" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="204.77" height="12" x="215.23" y="0" class="todo"><title>326 KB · 48.76%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">50.2%</text>
+<text text-anchor="end" x="600" y="24.50">50.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">336 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">326 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1122,7 +1122,7 @@
 <rect width="12" height="12" x="75" y="315" class="named"><title>0x00474110 OldWinstonControl (389 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="315" class="named"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="315" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="315" class="todo"><title>0x00474760 ACMClose (323 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="315" class="named"><title>0x00474760 ACMClose (323 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="315" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="315" class="named"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="315" class="todo"><title>0x00474900 ACMEmulateCDPlay (558 bytes)</title></rect>
@@ -2069,7 +2069,7 @@
 <rect width="10.56" height="10.84" x="722.95" y="160.20" class="todo"><title>0x00402720 gen_xg (326 bytes)</title></rect>
 <rect width="10.49" height="10.84" x="736.51" y="160.20" class="named"><title>0x0044a1e0 InitialiseNewWeapon (324 bytes)</title></rect>
 <rect width="10.26" height="11.09" x="460.48" y="174.04" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
-<rect width="10.26" height="11.05" x="460.48" y="188.13" class="todo"><title>0x00474760 ACMClose (323 bytes)</title></rect>
+<rect width="10.26" height="11.05" x="460.48" y="188.13" class="named"><title>0x00474760 ACMClose (323 bytes)</title></rect>
 <rect width="10.26" height="10.95" x="460.48" y="202.18" class="todo"><title>0x00406fa0 HWI_InsertGT4_Sorted (320 bytes)</title></rect>
 <rect width="10.26" height="10.92" x="460.48" y="216.14" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
 <rect width="10.26" height="10.92" x="460.48" y="230.05" class="named"><title>0x00483960 StartGame (319 bytes)</title></rect>
