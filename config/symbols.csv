@@ -509,7 +509,7 @@ address,size,name,symbol
 0x0043c6b0,387,DoCurrent,_DoCurrent
 0x0043c840,278,TestHeight_kayak,_TestHeight_kayak
 0x0043c960,672,DoShift_kayak,_DoShift_kayak
-0x0043cc00,2137,KayakUserInput,_KayakUserInput
+0x0043cc00,2200,KayakUserInput,_KayakUserInput
 0x0043d4a0,168,DoRipple,_DoRipple
 0x0043d550,66,CanGetOut_kayak,_CanGetOut_kayak
 0x0043d5a0,469,KayakToBaddieCollision,_KayakToBaddieCollision
