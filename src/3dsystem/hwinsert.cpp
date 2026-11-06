@@ -542,4 +542,60 @@ void HWI_InsertLine_Sorted(long x1, long y1, long x2, long y2, long z, long c0, 
     CurrentTLVertex = v + 2;
 }
 
+void HWI_InsertTransQuad_Sorted(long x, long y, long w, long h, long z)
+{
+    D3DTLVERTEX *v;
+    sint32 *sort;
+    sint16 *info;
+    float zv;
+
+    if (CurrentTLVertex - VertexBuffer > 9184)
+        return;
+    if (!App.lpZBuffer || !bAlphaTesting) {
+        sort = sort3dptrbf;
+        info = info3dptrbf;
+        sort[2] = nPolyType;
+        surfacenumbf++;
+        sort3dptrbf += 3;
+        info3dptrbf += 5;
+    } else {
+        sort = sort3dptrfb;
+        info = info3dptrfb;
+        sort[2] = nPolyType;
+        surfacenumfb++;
+        sort3dptrfb += 3;
+        info3dptrfb += 5;
+    }
+    sort[0] = (sint32)info;
+    sort[1] = z;
+    info[0] = 13;
+    info[1] = 0;
+    info[2] = 4;
+    v = CurrentTLVertex;
+    *((D3DTLVERTEX **)(info + 3)) = v;
+    v[0].sx = v[3].sx = (float)x;
+    v[0].sy = v[1].sy = (float)y;
+    v[1].sx = v[2].sx = float(x + w);
+    v[3].sy = v[2].sy = float(y + h);
+    v[0].color = 0x50003fff;
+    v[1].color = 0x50003fff;
+    v[2].color = 0x50003f1f;
+    v[3].color = 0x50003f1f;
+    zv = one / (float)z;
+    v[3].rhw = zv;
+    v[2].rhw = zv;
+    v[1].rhw = zv;
+    v[0].rhw = zv;
+    zv = f_a - zv * f_boo;
+    v[0].specular = 0;
+    v[1].specular = 0;
+    v[2].specular = 0;
+    v[3].specular = 0;
+    v[3].sz = zv;
+    v[2].sz = zv;
+    v[1].sz = zv;
+    v[0].sz = zv;
+    CurrentTLVertex = v + 4;
+}
+
 }
