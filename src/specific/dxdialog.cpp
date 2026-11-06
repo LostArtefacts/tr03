@@ -79,4 +79,26 @@ void DXInitDSAdapters(HWND hwnd)
     }
 }
 
+void DXInitJoystickAdapter(HWND hwnd)
+{
+    HWND list;
+    HWND disable;
+    int i;
+
+    list = GetDlgItem(hwnd, 1011);
+    disable = GetDlgItem(hwnd, 1014);
+    if (!G_DeviceInfo->DIInfo) {
+        EnableWindow(disable, 0);
+        SendMessage(disable, BM_SETCHECK, 1, 0);
+        SendMessage(list, CB_ADDSTRING, 0, (LPARAM)"No Joystick Adapter Available");
+        SendMessage(list, CB_SETCURSEL, 0, 0);
+        EnableWindow(list, 0);
+    } else {
+        SendMessage(list, CB_RESETCONTENT, 0, 0);
+        for (i = 0; i < G_DeviceInfo->nDIInfo; i++)
+            SendMessage(list, CB_ADDSTRING, 0, (LPARAM)G_DeviceInfo->DIInfo[i].About);
+        SendMessage(list, CB_SETCURSEL, 0, 0);
+    }
+}
+
 }
