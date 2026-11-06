@@ -1436,7 +1436,7 @@ address,size,name,symbol
 0x004a6f20,5286,ScanLinesTG,_ScanLinesTG
 0x004a83d0,5390,ScanLinesTGAlphaDecalAffine,_ScanLinesTGAlphaDecalAffine
 0x004a98e0,5693,Func4a98e0,_Func4a98e0
-0x004ad550,9915,Func4ad550,
+0x004ad550,9915,Func4ad550,_Func4ad550
 0x004afc10,3897,ScanLinesTGDecalAffine,_ScanLinesTGDecalAffine
 0x004b0b50,4127,ScanLinesTGDecal,_ScanLinesTGDecal
 0x004b1b70,10,DXTextureSetGreyScale,_DXTextureSetGreyScale
