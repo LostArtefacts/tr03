@@ -1367,7 +1367,7 @@ address,size,name,symbol
 0x00490ba0,857,Func490ba0,
 0x00490f10,60,DrawTriangleList,_DrawTriangleList
 0x00490f50,46,Func490f50,_Func490f50
-0x00490f80,71,Func490f80,
+0x00490f80,71,DrawTriangleFan,_DrawTriangleFan
 0x00490fd0,71,Func490fd0,
 0x00491020,64,Func491020,
 0x00491680,703,Func491680,
