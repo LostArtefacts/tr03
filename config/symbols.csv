@@ -2189,6 +2189,7 @@ address,size,name,symbol
 0x00625f44,4,actual_current_frame,_actual_current_frame
 0x00625f48,4,original_room,_original_room
 0x00625f4c,4,cine_framecount,_cine_framecount
+0x00625f50,3,elecspark,_elecspark
 0x00625f54,4,snake_inner_radius,_snake_inner_radius
 0x00625f58,4,snake_forget_radius,_snake_forget_radius
 0x00625f5c,4,snake_outer_radius,_snake_outer_radius
