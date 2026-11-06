@@ -34,6 +34,8 @@ extern TEXTUREBUCKET Buckets[6];
 extern HRESULT (*DrawPrimitive)(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVertexType, LPVOID lpvVertices, DWORD dwVertexCount, DWORD dwFlags);
 
 void HWR_SetCurrentTexture(DWORD handle);
+void HWR_EnableZBuffer(bool tWrite, bool tCompare);
+extern int nDrawnPoints;
 
 void InitUVTable(void)
 {
@@ -51,6 +53,49 @@ void InitBuckets(void)
         Buckets[n].tpage = 0xffffffff;
         Buckets[n].cnt = 0;
     }
+}
+
+int FindBucket(DWORD tpage)
+{
+    int n;
+    int cnt;
+    int fullest;
+
+    if (nDrawnPoints > 2700)
+        return -1;
+
+    for (n = 0; n < 6; n++) {
+        if (Buckets[n].tpage == tpage && Buckets[n].cnt < 256)
+            return n;
+        if (Buckets[n].cnt > 256) {
+            HWR_EnableZBuffer(true, true);
+            HWR_SetCurrentTexture(Buckets[n].tpage);
+            DrawPrimitive(D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, Buckets[n].Vertex, Buckets[n].cnt, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+            Buckets[n].tpage = tpage;
+            Buckets[n].cnt = 0;
+            return n;
+        }
+    }
+
+    fullest = 0;
+    cnt = 0;
+    for (n = 0; n < 6; n++) {
+        if (Buckets[n].tpage == 0xffffffff) {
+            Buckets[n].tpage = tpage;
+            return n;
+        }
+        if (Buckets[n].cnt > cnt) {
+            cnt = Buckets[n].cnt;
+            fullest = n;
+        }
+    }
+
+    HWR_EnableZBuffer(true, true);
+    HWR_SetCurrentTexture(Buckets[fullest].tpage);
+    DrawPrimitive(D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, Buckets[fullest].Vertex, Buckets[fullest].cnt, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+    Buckets[fullest].tpage = tpage;
+    Buckets[fullest].cnt = 0;
+    return fullest;
 }
 
 void DrawBuckets(void)
