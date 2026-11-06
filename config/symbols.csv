@@ -1400,7 +1400,7 @@ address,size,name,symbol
 0x004955f0,354,Func4955f0,_Func4955f0
 0x00495760,368,Func495760,_Func495760
 0x004958d0,335,Func4958d0,_Func4958d0
-0x00495a20,360,Func495a20,
+0x00495a20,360,Func495a20,_Func495a20
 0x00495b90,341,Func495b90,
 0x00495cf0,478,Func495cf0,
 0x00495ed0,483,Func495ed0,
@@ -2109,6 +2109,7 @@ address,size,name,symbol
 0x004ceb80,160,Var4ceb80,_Var4ceb80
 0x004cec20,4,Var4cec20,_Var4cec20
 0x004cec30,8,Var4cec30,_Var4cec30
+0x004cec38,8,Var4cec38,_Var4cec38
 0x004ceec4,1,bSetColorKey,_bSetColorKey
 0x004cef68,18,tga_header,_tga_header
 0x004cefa8,12,VFAW,_VFAW
@@ -2545,6 +2546,7 @@ address,size,name,symbol
 0x006ca228,4,Var6ca228,_Var6ca228
 0x006ca248,4,Var6ca248,_Var6ca248
 0x006ca24c,4,Var6ca24c,_Var6ca24c
+0x006ca28c,4,Var6ca28c,_Var6ca28c
 0x006ca2b0,4,Var6ca2b0,_Var6ca2b0
 0x006ca2c8,4,Var6ca2c8,_Var6ca2c8
 0x006ca2d0,4,Var6ca2d0,_Var6ca2d0
