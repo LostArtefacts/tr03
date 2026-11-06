@@ -1467,7 +1467,7 @@ address,size,name,symbol
 0x004b40a0,467,DXSaveScreen,_DXSaveScreen
 0x004b4280,30,phd_PushMatrix,_phd_PushMatrix
 0x004b429e,51,phd_PushUnitMatrix,_phd_PushUnitMatrix
-0x004b42d4,97,Func4b42d4,
+0x004b42d4,97,flatA,_flatA
 0x004b4335,314,Func4b4335,
 0x004b446f,352,Func4b446f,
 0x004b45cf,765,Func4b45cf,
@@ -2087,6 +2087,8 @@ address,size,name,symbol
 0x004d38d4,4,BlackGouraudIndex,_BlackGouraudIndex
 0x004d38d8,4,LfAspectCorrection,_LfAspectCorrection
 0x004d38dc,1,bFixSkyColour,_bFixSkyColour
+0x004d38e0,4,xgen_ymin,_xgen_ymin
+0x004d38e4,4,xgen_ymax,_xgen_ymax
 0x004d38e8,8192,gouraud_table,_gouraud_table
 0x004d58e8,4,phd_top,_phd_top
 0x004d58f0,,phdspriteinfo,_phdspriteinfo
