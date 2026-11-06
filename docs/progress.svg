@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="324.52" height="12" x="0" y="0" class="named"><title>1142 · 77.27%</title></rect>
-<rect width="2.84" height="12" x="324.52" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="92.64" height="12" x="327.36" y="0" class="todo"><title>326 · 22.06%</title></rect>
+<rect width="324.80" height="12" x="0" y="0" class="named"><title>1143 · 77.33%</title></rect>
+<rect width="2.84" height="12" x="324.80" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="92.35" height="12" x="327.65" y="0" class="todo"><title>325 · 21.99%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">77.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1142</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">326</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1143</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">325</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.59" height="12" x="0" y="0" class="named"><title>332 KB · 49.66%</title></rect>
-<rect width="3.98" height="12" x="208.59" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.43" height="12" x="212.57" y="0" class="todo"><title>330 KB · 49.39%</title></rect>
+<rect width="208.64" height="12" x="0" y="0" class="named"><title>332 KB · 49.68%</title></rect>
+<rect width="3.98" height="12" x="208.64" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.38" height="12" x="212.62" y="0" class="todo"><title>330 KB · 49.38%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
@@ -960,7 +960,7 @@
 <rect width="12" height="12" x="645" y="255" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="255" class="named"><title>0x0045f490 SkidooCheckGetOff (431 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="255" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="255" class="todo"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="255" class="named"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="255" class="todo"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="255" class="named"><title>0x0045ffb0 SkidooBaddieCollision (489 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="255" class="todo"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
@@ -2564,7 +2564,7 @@
 <rect width="5.37" height="5.50" x="625.59" y="300.19" class="named"><title>0x00411fe0 InitialiseBoat (84 bytes)</title></rect>
 <rect width="5.37" height="5.50" x="633.95" y="300.19" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
 <rect width="5.37" height="5.50" x="642.32" y="300.19" class="named"><title>0x00444e80 LaraFallen (84 bytes)</title></rect>
-<rect width="5.37" height="5.50" x="650.69" y="300.19" class="todo"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
+<rect width="5.37" height="5.50" x="650.69" y="300.19" class="named"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="659.06" y="300.19" class="todo"><title>0x004020d0 SetupZRange (83 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="667.36" y="300.19" class="named"><title>0x0041ec30 ObjectCollisionSub (83 bytes)</title></rect>
 <rect width="5.30" height="5.50" x="675.66" y="300.19" class="named"><title>0x0043fc10 MonkeySwingFall (83 bytes)</title></rect>

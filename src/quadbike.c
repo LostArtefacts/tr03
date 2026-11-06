@@ -858,3 +858,26 @@ int QuadBikeControl(void)
 
     return SkidooCheckGetOff();
 }
+
+sint32 DoDynamics_quadbike(sint32 height, sint32 fallspeed, sint32 *y)
+{
+    sint32 kick;
+
+    if (height > *y) {
+        *y += fallspeed;
+        if (*y > height - 80) {
+            *y = height;
+            fallspeed = 0;
+        } else {
+            fallspeed += 6;
+        }
+    } else {
+        kick = (height - *y) << 2;
+        if (kick < -80)
+            kick = -80;
+        fallspeed += (kick - fallspeed) >> 3;
+        if (*y > height)
+            *y = height;
+    }
+    return fallspeed;
+}
