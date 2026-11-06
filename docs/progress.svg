@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="323.10" height="12" x="0" y="0" class="named"><title>1137 · 76.93%</title></rect>
-<rect width="2.84" height="12" x="323.10" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="94.06" height="12" x="325.94" y="0" class="todo"><title>331 · 22.40%</title></rect>
+<rect width="323.38" height="12" x="0" y="0" class="named"><title>1138 · 77%</title></rect>
+<rect width="2.84" height="12" x="323.38" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="93.78" height="12" x="326.22" y="0" class="todo"><title>330 · 22.33%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">76.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1137</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">331</tspan></text>
+<text text-anchor="end" x="600" y="7.50">77.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1138</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">330</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.28" height="12" x="0" y="0" class="named"><title>331 KB · 49.59%</title></rect>
-<rect width="3.98" height="12" x="208.28" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.75" height="12" x="212.25" y="0" class="todo"><title>330 KB · 49.46%</title></rect>
+<rect width="208.36" height="12" x="0" y="0" class="named"><title>331 KB · 49.61%</title></rect>
+<rect width="3.98" height="12" x="208.36" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.67" height="12" x="212.33" y="0" class="todo"><title>330 KB · 49.44%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">331 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
@@ -1362,7 +1362,7 @@
 <rect width="12" height="12" x="675" y="375" class="named"><title>0x0048d210 S_SoundStopSample (23 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="375" class="named"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="375" class="named"><title>0x0048d240 S_SoundSampleIsPlaying (31 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="375" class="todo"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="375" class="named"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="375" class="todo"><title>0x0048d2e0 CD_Init (403 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="390" class="named"><title>0x0048d480 S_CDPlay (20 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="390" class="named"><title>0x0048d4a0 S_CDStop (5 bytes)</title></rect>
@@ -2418,7 +2418,7 @@
 <rect width="6.85" height="6.46" x="603.91" y="264.06" class="named"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="613.76" y="264.06" class="named"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="623.61" y="264.06" class="named"><title>0x00489490 FlashConflicts (126 bytes)</title></rect>
-<rect width="6.85" height="6.46" x="633.46" y="264.06" class="todo"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
+<rect width="6.85" height="6.46" x="633.46" y="264.06" class="named"><title>0x0048d260 S_CDLoop (126 bytes)</title></rect>
 <rect width="6.80" height="6.46" x="643.31" y="264.06" class="named"><title>0x00482910 S_LoadLevelFile (125 bytes)</title></rect>
 <rect width="6.74" height="6.46" x="653.11" y="264.06" class="named"><title>0x00429e50 GetBoundsAccurate (124 bytes)</title></rect>
 <rect width="6.74" height="6.46" x="662.85" y="264.06" class="named"><title>0x00441530 lara_as_stepright (124 bytes)</title></rect>

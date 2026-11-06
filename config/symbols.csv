@@ -2400,6 +2400,8 @@ address,size,name,symbol
 0x006a1bd8,128,exit_message,_exit_message
 0x006a1c58,4,title_loaded,_title_loaded
 0x006a2060,4,LnMasterVolume,_LnMasterVolume
+0x006a2064,4,wDeviceID,_wDeviceID
+0x006a2068,4,cd_looping,_cd_looping
 0x006a2070,8,frequency,_frequency
 0x006a2078,8,counter,_counter
 0x006a2080,4,m22,_m22

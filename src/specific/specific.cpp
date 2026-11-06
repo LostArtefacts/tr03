@@ -93,6 +93,26 @@ int S_SoundSampleIsPlaying(int nHandle)
     return DS_IsChannelPlaying(nHandle);
 }
 
+extern UINT wDeviceID;
+extern int cd_looping;
+
+void S_CDLoop(void)
+{
+    MCI_PLAY_PARMS pp;
+    MCI_STATUS_PARMS stat;
+    int ok;
+
+    if (!cd_looping)
+        return;
+    stat.dwItem = MCI_STATUS_MODE;
+    ok = mciSendCommand(wDeviceID, MCI_STATUS, MCI_STATUS_ITEM, (DWORD)&stat) == 0;
+    if (ok && stat.dwReturn == MCI_MODE_STOP) {
+        pp.dwFrom = MCI_MAKE_TMSF(cd_looping, 0, 0, 0);
+        pp.dwTo = MCI_MAKE_TMSF(cd_looping + 1, 0, 0, 0);
+        mciSendCommand(wDeviceID, MCI_PLAY, MCI_FROM | MCI_TO, (DWORD)&pp);
+    }
+}
+
 void S_CDPlay(sint16 nTrack, int tMode)
 {
     ACMEmulateCDPlay(nTrack, tMode);
