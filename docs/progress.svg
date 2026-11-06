@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="331.06" height="12" x="0" y="0" class="named"><title>1355 · 90.45%</title></rect>
 <rect width="7.33" height="12" x="331.06" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.09" height="12" x="338.39" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
-<rect width="20.52" height="12" x="345.48" y="0" class="todo"><title>84 · 5.61%</title></rect>
+<rect width="7.33" height="12" x="338.39" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="20.28" height="12" x="345.72" y="0" class="todo"><title>83 · 5.54%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">92.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1355</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">84</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1355</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">83</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="265.21" height="12" x="0" y="0" class="named"><title>525 KB · 72.46%</title></rect>
 <rect width="33.42" height="12" x="265.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.15" height="12" x="298.63" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
-<rect width="53.23" height="12" x="312.77" y="0" class="todo"><title>105 KB · 14.54%</title></rect>
+<rect width="14.54" height="12" x="298.63" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="52.83" height="12" x="313.17" y="0" class="todo"><title>105 KB · 14.44%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">81.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">525 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">105 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">525 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">105 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1530,7 +1530,7 @@
 <rect width="12" height="12" x="165" y="435" class="nonmatching"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="435" class="nonmatching"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="435" class="todo"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="435" class="todo"><title>0x004b2940 WinMain (774 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="435" class="nonmatching"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="435" class="named"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="435" class="named"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="435" class="named"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
@@ -1800,7 +1800,7 @@
 <rect width="16.11" height="15.76" x="350.41" y="122.03" class="named"><title>0x0046b750 TigerControl (784 bytes)</title></rect>
 <rect width="16.11" height="15.68" x="350.41" y="140.79" class="named"><title>0x00422c30 ObjectOnLOS (780 bytes)</title></rect>
 <rect width="16.11" height="15.60" x="350.41" y="159.47" class="named"><title>0x00454fb0 ControlMissile (776 bytes)</title></rect>
-<rect width="16.11" height="15.56" x="350.41" y="178.07" class="todo"><title>0x004b2940 WinMain (774 bytes)</title></rect>
+<rect width="16.11" height="15.56" x="350.41" y="178.07" class="nonmatching"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="16.11" height="15.44" x="350.41" y="196.64" class="todo"><title>0x0043e1c0 LaraHangTest (768 bytes)</title></rect>
 <rect width="16.11" height="15.38" x="350.41" y="215.08" class="named"><title>0x00479510 ClipLine (765 bytes)</title></rect>
 <rect width="16.11" height="15.38" x="350.41" y="233.46" class="named"><title>0x004b45cf gtmapA (765 bytes)</title></rect>

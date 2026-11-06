@@ -1,6 +1,7 @@
 #include "standard.h"
 #include "specific.h"
 #include "winmain.h"
+#include "texture.h"
 
 extern "C" {
 
@@ -23,6 +24,95 @@ void HWR_InitState(void);
 void DXCreateMaxTPages(int create);
 extern int nTPages;
 LRESULT CALLBACK WinAppProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+int WinRegisterWindow(HINSTANCE hInstance);
+HWND WinCreateWindow(HINSTANCE hInstance, int nCmdShow);
+void DXGetDeviceInfo(DEVICEINFO *device, HWND hWnd, HINSTANCE hInstance);
+bool DXUserDialog(DEVICEINFO *DeviceInfo, DXCONFIG *DXConfig, HINSTANCE hInstance);
+void DXFreeDeviceInfo(DEVICEINFO *dd);
+bool S_LoadSettings(void);
+bool CD_Init(void);
+char *UT_FindArg(char *pArg);
+bool WinDXInit(DEVICEINFO *device, DXCONFIG *config, bool createNew);
+void WinFreeDX(bool free_dd);
+void UT_InitAccurateTimer(void);
+void DXResetPalette(DXTEXTURE *tex);
+void DS_Init(void);
+bool TIME_Init(void);
+bool HWR_Init(void);
+void DS_Start(HWND hwnd);
+void DI_Start(void);
+bool ACMInit(void);
+void setup_screen_size(void);
+sint32 GameMain(void);
+extern char *G_lpCmdLine;
+extern sint32 framedump;
+extern int farz;
+extern int distanceFogValue;
+extern int game_closedown;
+extern bool GtWindowClosed;
+extern bool GtFullScreenClearNeeded;
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+{
+    bool hw;
+
+    G_lpCmdLine = lpCmdLine;
+    memset(&App, 0, sizeof(WINAPP));
+    App.hInstance = hInstance;
+    if (!hPrevInstance && !WinRegisterWindow(hInstance)) {
+        MessageBox(0, "Unable To Register Window Class", "", MB_OK);
+        return 0;
+    }
+    App.WindowHandle = WinCreateWindow(hInstance, nShowCmd);
+    if (!App.WindowHandle) {
+        MessageBox(0, "Unable To Create Window", "", MB_OK);
+        return 0;
+    }
+    if (!CD_Init())
+        return 0;
+    DXGetDeviceInfo(&App.DeviceInfo, App.WindowHandle, App.hInstance);
+    App.DXConfigPtr = &App.DXConfig;
+    App.DeviceInfoPtr = &App.DeviceInfo;
+    if ((!S_LoadSettings() || UT_FindArg("setup")) && !DXUserDialog(&App.DeviceInfo, &App.DXConfig, App.hInstance)) {
+        DXFreeDeviceInfo(&App.DeviceInfo);
+        return 0;
+    }
+    if (!WinDXInit(&App.DeviceInfo, &App.DXConfig, 1)) {
+        WinFreeDX(1);
+        DXFreeDeviceInfo(&App.DeviceInfo);
+        ShowWindow(App.WindowHandle, 0);
+        MessageBox(App.WindowHandle, "Tomb Raider 3 Failed To Initialise, Please Run Setup", "Error", MB_ICONEXCLAMATION);
+        return 0;
+    }
+    if (!(App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DeviceDesc.dpcTriCaps.dwTextureCaps & D3DPTEXTURECAPS_ALPHA))
+        App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bAlpha = 0;
+    HWConfig.Perspective = 1;
+    HWConfig.Dither = App.DXConfig.Dither;
+    HWConfig.nFilter = D3DFILTER_NEAREST + (App.DXConfig.Filter != 0);
+    HWConfig.nShadeMode = D3DSHADE_GOURAUD;
+    HWConfig.nFillMode = D3DFILL_SOLID;
+    HWConfig.TrueAlpha = 0;
+    hw = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware;
+    framedump = 0;
+    App.nUVAdd = hw ? 256 : 128;
+    UT_InitAccurateTimer();
+    DXResetPalette(PictureTextures);
+    InitDrawPrimitive(App.lpD3DDevice, App.lpBackBuffer, App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware);
+    farz = 0x5000;
+    distanceFogValue = 0x3000;
+    DS_Init();
+    TIME_Init();
+    HWR_Init();
+    DS_Start(0);
+    DI_Start();
+    ACMInit();
+    setup_screen_size();
+    game_closedown = 0;
+    GtWindowClosed = 0;
+    GtFullScreenClearNeeded = 0;
+    GameMain();
+    return 0;
+}
 
 void WinAppExit(void)
 {
