@@ -1541,6 +1541,8 @@ address,size,name,symbol
 0x004b6930,119,fclose,_fclose
 0x004b69b0,55,fprintf,_fprintf
 0x004b69f0,24,fscanf,_fscanf
+0x004b6a10,33,fgetc,_fgetc
+0x004b6a40,150,fseek,_fseek
 0x004b6ae0,170,__alldiv,__alldiv
 0x004b6b90,52,__allmul,__allmul
 0x004b6bd0,16,Func4b6bd0,
@@ -2071,6 +2073,10 @@ address,size,name,symbol
 0x004ce710,12,gszAcmModuleName,_gszAcmModuleName
 0x004ce720,164,gapszAcmFunctions,_gapszAcmFunctions
 0x004ceec4,1,bSetColorKey,_bSetColorKey
+0x004cefa8,12,VFAW,_VFAW
+0x004cefb8,12,NEIR,_NEIR
+0x004cefc8,12,OKET,_OKET
+0x004cefd8,12,AWCS,_AWCS
 0x004d38d0,4,mid_sort,_mid_sort
 0x004d38d4,4,BlackGouraudIndex,_BlackGouraudIndex
 0x004d38d8,4,LfAspectCorrection,_LfAspectCorrection

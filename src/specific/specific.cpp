@@ -19,6 +19,14 @@ int ACMGetTrackLocation(void);
 void ACMSetVolume(int volume);
 
 int CalcPan(sint16 angle);
+int FindCDDrive(void);
+bool UT_OKCancelBox(char *szDlgResource, HWND hWndOwner);
+
+extern char cd_drive;
+extern char VFAW[];
+extern char NEIR[];
+extern char OKET[];
+extern char AWCS[];
 
 int CalcVolume(int nGameVolume)
 {
@@ -111,6 +119,73 @@ void S_CDLoop(void)
         pp.dwTo = MCI_MAKE_TMSF(cd_looping + 1, 0, 0, 0);
         mciSendCommand(wDeviceID, MCI_PLAY, MCI_FROM | MCI_TO, (DWORD)&pp);
     }
+}
+
+bool CD_Init(void)
+{
+    FILE *file;
+    int found;
+
+    while (!FindCDDrive()) {
+        if (!UT_OKCancelBox(MAKEINTRESOURCE(102), App.WindowHandle))
+            return false;
+    }
+
+    VFAW[0] = cd_drive;
+    NEIR[0] = cd_drive;
+    OKET[0] = cd_drive;
+    AWCS[0] = cd_drive;
+
+    while (1) {
+        file = fopen(VFAW, "rb");
+        if (!file) {
+            found = 0;
+        } else {
+            fseek(file, 0x29845000, SEEK_SET);
+            found = fgetc(file) == '{';
+            fclose(file);
+        }
+        if (found)
+            break;
+
+        file = fopen(NEIR, "rb");
+        if (!file) {
+            found = 0;
+        } else {
+            fseek(file, 0x29825800, SEEK_SET);
+            found = fgetc(file) == '3';
+            fclose(file);
+        }
+        if (found)
+            break;
+
+        file = fopen(OKET, "rb");
+        if (!file) {
+            found = 0;
+        } else {
+            fseek(file, 0x29842800, SEEK_SET);
+            found = fgetc(file) == 'u';
+            fclose(file);
+        }
+        if (found)
+            break;
+
+        file = fopen(AWCS, "rb");
+        if (!file) {
+            found = 0;
+        } else {
+            fseek(file, 0x2981E000, SEEK_SET);
+            found = fgetc(file) == '{';
+            fclose(file);
+        }
+        if (found)
+            break;
+
+        if (!UT_OKCancelBox(MAKEINTRESOURCE(102), App.WindowHandle))
+            return false;
+    }
+
+    return true;
 }
 
 void S_CDPlay(sint16 nTrack, int tMode)
