@@ -298,6 +298,16 @@ typedef struct vertex_info {
     int vr, vg, vb;
 } VERTEX_INFO;
 
+void PHD_VBUF_To_VERTEX_INFO(PHD_VBUF *phdV, VERTEX_INFO *v)
+{
+    v->x = phdV->xs;
+    v->y = phdV->ys;
+    v->ooz = phdV->ooz;
+    v->vr = GETR(phdV->g);
+    v->vg = GETG(phdV->g);
+    v->vb = ColorTable[(phdV->g & 0x1f) << 3];
+}
+
 typedef struct point_info {
     float xv, yv, zv;
     float ooz;
