@@ -135,6 +135,35 @@ void DXBitMask2ShiftCnt(unsigned long mask, unsigned char *shift, unsigned char 
     *cnt = n;
 }
 
+HRESULT CALLBACK DXEnumDisplayModes(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext)
+{
+    DIRECTDRAWINFO *dd;
+
+    dd = (DIRECTDRAWINFO *)lpContext;
+    if (!dd->nDisplayMode)
+        dd->DisplayMode = (DISPLAYMODE *)malloc(sizeof(DISPLAYMODE));
+    else
+        dd->DisplayMode = (DISPLAYMODE *)realloc(dd->DisplayMode, (dd->nDisplayMode + 1) * sizeof(DISPLAYMODE));
+    memset(&dd->DisplayMode[dd->nDisplayMode], 0, sizeof(DISPLAYMODE));
+
+    dd->DisplayMode[dd->nDisplayMode].w = lpDDSurfaceDesc->dwWidth;
+    dd->DisplayMode[dd->nDisplayMode].h = lpDDSurfaceDesc->dwHeight;
+    dd->DisplayMode[dd->nDisplayMode].bpp = lpDDSurfaceDesc->ddpfPixelFormat.dwRGBBitCount;
+    dd->DisplayMode[dd->nDisplayMode].bPalette = (lpDDSurfaceDesc->ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED8) != 0;
+    memcpy(&dd->DisplayMode[dd->nDisplayMode].ddsd, lpDDSurfaceDesc, sizeof(DDSURFACEDESC));
+
+    if (!dd->DisplayMode[dd->nDisplayMode].bPalette) {
+        DXBitMask2ShiftCnt(lpDDSurfaceDesc->ddpfPixelFormat.dwRBitMask, &dd->DisplayMode[dd->nDisplayMode].rshift, &dd->DisplayMode[dd->nDisplayMode].rbpp);
+        DXBitMask2ShiftCnt(lpDDSurfaceDesc->ddpfPixelFormat.dwGBitMask, &dd->DisplayMode[dd->nDisplayMode].gshift, &dd->DisplayMode[dd->nDisplayMode].gbpp);
+        DXBitMask2ShiftCnt(lpDDSurfaceDesc->ddpfPixelFormat.dwBBitMask, &dd->DisplayMode[dd->nDisplayMode].bshift, &dd->DisplayMode[dd->nDisplayMode].bbpp);
+        if (lpDDSurfaceDesc->ddpfPixelFormat.dwRGBAlphaBitMask)
+            DXBitMask2ShiftCnt(lpDDSurfaceDesc->ddpfPixelFormat.dwRGBAlphaBitMask, &dd->DisplayMode[dd->nDisplayMode].ashift, &dd->DisplayMode[dd->nDisplayMode].abpp);
+    }
+
+    dd->nDisplayMode++;
+    return DDENUMRET_OK;
+}
+
 DWORD BPPToDDBD(int bpp)
 {
     switch (bpp) {

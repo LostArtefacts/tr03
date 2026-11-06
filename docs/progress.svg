@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="337.59" height="12" x="0" y="0" class="named"><title>1188 · 80.38%</title></rect>
-<rect width="2.84" height="12" x="337.59" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="79.57" height="12" x="340.43" y="0" class="todo"><title>280 · 18.94%</title></rect>
+<rect width="337.88" height="12" x="0" y="0" class="named"><title>1189 · 80.45%</title></rect>
+<rect width="2.84" height="12" x="337.88" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="79.28" height="12" x="340.72" y="0" class="todo"><title>279 · 18.88%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">80.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1188</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">280</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1189</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">279</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="215.66" height="12" x="0" y="0" class="named"><title>343 KB · 51.35%</title></rect>
-<rect width="3.98" height="12" x="215.66" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="200.36" height="12" x="219.64" y="0" class="todo"><title>319 KB · 47.70%</title></rect>
+<rect width="215.95" height="12" x="0" y="0" class="named"><title>343 KB · 51.42%</title></rect>
+<rect width="3.98" height="12" x="215.95" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="200.08" height="12" x="219.92" y="0" class="todo"><title>318 KB · 47.64%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">51.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">343 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">319 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">51.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">343 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">318 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1405,7 +1405,7 @@
 <rect width="12" height="12" x="570" y="390" class="named"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="390" class="named"><title>0x0048efd0 DXEnumDirectDraw (496 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="390" class="named"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="390" class="todo"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="390" class="named"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="390" class="todo"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="390" class="todo"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="390" class="named"><title>0x0048fdb0 BPPToDDBD (136 bytes)</title></rect>
@@ -1946,7 +1946,7 @@
 <rect width="12.69" height="12.54" x="416.11" y="130.94" class="todo"><title>0x00471350 TriggerElectricSparks_triboss (453 bytes)</title></rect>
 <rect width="12.69" height="12.51" x="416.11" y="146.48" class="named"><title>0x004430c0 lara_col_wade (452 bytes)</title></rect>
 <rect width="12.69" height="12.46" x="416.11" y="161.99" class="named"><title>0x0040faf0 Trigger51RocketSmoke (450 bytes)</title></rect>
-<rect width="12.69" height="12.46" x="416.11" y="177.45" class="todo"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
+<rect width="12.69" height="12.46" x="416.11" y="177.45" class="named"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
 <rect width="12.69" height="12.43" x="416.11" y="192.91" class="named"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
 <rect width="12.69" height="12.37" x="416.11" y="208.34" class="named"><title>0x0041bbe0 TriggerPlasma_clawmute (447 bytes)</title></rect>
 <rect width="12.69" height="12.32" x="416.11" y="223.71" class="named"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
