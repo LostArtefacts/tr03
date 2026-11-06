@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="284.15" height="12" x="0" y="0" class="named"><title>1228 · 83.09%</title></rect>
-<rect width="0.46" height="12" x="284.15" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="284.61" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="53.22" height="12" x="288.78" y="0" class="todo"><title>230 · 15.56%</title></rect>
+<rect width="284.38" height="12" x="0" y="0" class="named"><title>1229 · 83.15%</title></rect>
+<rect width="0.46" height="12" x="284.38" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="284.85" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="52.99" height="12" x="289.01" y="0" class="todo"><title>229 · 15.49%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">83.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1228</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">230</tspan></text>
+<text text-anchor="end" x="522" y="7.50">83.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1229</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">229</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.73" height="12" x="0" y="0" class="named"><title>371 KB · 55.48%</title></rect>
-<rect width="0.15" height="12" x="189.73" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="189.87" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="146.09" height="12" x="195.91" y="0" class="todo"><title>286 KB · 42.72%</title></rect>
+<rect width="190.22" height="12" x="0" y="0" class="named"><title>372 KB · 55.62%</title></rect>
+<rect width="0.15" height="12" x="190.22" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="190.36" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.60" height="12" x="196.40" y="0" class="todo"><title>285 KB · 42.57%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">55.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">371 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">286 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">55.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">285 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1012,7 +1012,7 @@
 <rect width="12" height="12" x="645" y="270" class="named"><title>0x004685c0 SubInitialise (74 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="270" class="named"><title>0x00468610 SubCollision (354 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="270" class="named"><title>0x00468780 GetOnSub (200 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="270" class="todo"><title>0x00468850 SubDraw (958 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="270" class="named"><title>0x00468850 SubDraw (958 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="270" class="named"><title>0x00468c10 SubControl (1016 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="270" class="named"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="named"><title>0x00469150 BackgroundCollision (462 bytes)</title></rect>
@@ -1725,7 +1725,7 @@
 <rect width="18.78" height="18.31" x="459.29" y="23.66" class="todo"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
 <rect width="18.78" height="18.31" x="481.07" y="23.66" class="named"><title>0x00420590 AnimateItem (980 bytes)</title></rect>
 <rect width="18.40" height="18.31" x="502.85" y="23.66" class="named"><title>0x004737e0 WingmuteControl (960 bytes)</title></rect>
-<rect width="18.36" height="18.31" x="524.25" y="23.66" class="todo"><title>0x00468850 SubDraw (958 bytes)</title></rect>
+<rect width="18.36" height="18.31" x="524.25" y="23.66" class="named"><title>0x00468850 SubDraw (958 bytes)</title></rect>
 <rect width="18.15" height="18.31" x="545.61" y="23.66" class="todo"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
 <rect width="17.90" height="18.31" x="566.76" y="23.66" class="named"><title>0x0046b340 T_DrawThisText (934 bytes)</title></rect>
 <rect width="17.50" height="18.31" x="587.66" y="23.66" class="named"><title>0x0042ab80 TriggerExplosionSparks (913 bytes)</title></rect>
