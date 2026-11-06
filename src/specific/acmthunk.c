@@ -107,3 +107,17 @@ MMRESULT ACMAPI acmDriverEnum(ACMDRIVERENUMCB fnCallback, DWORD dwInstance, DWOR
 
     return pfn(fnCallback, dwInstance, fdwEnum);
 }
+
+MMRESULT ACMAPI acmDriverDetailsA(HACMDRIVERID hadid, LPACMDRIVERDETAILSA padd, DWORD fdwDetails)
+{
+    MMRESULT (ACMAPI *pfn)(HACMDRIVERID, LPACMDRIVERDETAILSA, DWORD);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(HACMDRIVERID, LPACMDRIVERDETAILSA, DWORD))gpafnAcmFunctions[4];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(hadid, padd, fdwDetails);
+}

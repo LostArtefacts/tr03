@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="329.92" height="12" x="0" y="0" class="named"><title>1161 · 78.55%</title></rect>
-<rect width="2.84" height="12" x="329.92" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="87.24" height="12" x="332.76" y="0" class="todo"><title>307 · 20.77%</title></rect>
+<rect width="330.20" height="12" x="0" y="0" class="named"><title>1162 · 78.62%</title></rect>
+<rect width="2.84" height="12" x="330.20" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="86.96" height="12" x="333.04" y="0" class="todo"><title>306 · 20.70%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">78.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1161</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">307</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1162</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">306</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="210.61" height="12" x="0" y="0" class="named"><title>335 KB · 50.14%</title></rect>
-<rect width="3.98" height="12" x="210.61" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="205.42" height="12" x="214.58" y="0" class="todo"><title>327 KB · 48.91%</title></rect>
+<rect width="210.64" height="12" x="0" y="0" class="named"><title>335 KB · 50.15%</title></rect>
+<rect width="3.98" height="12" x="210.64" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="205.39" height="12" x="214.61" y="0" class="todo"><title>327 KB · 48.90%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">50.1%</text>
+<text text-anchor="end" x="600" y="24.50">50.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">335 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">327 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1388,7 +1388,7 @@
 <rect width="12" height="12" x="315" y="390" class="named"><title>0x0048e710 acmGetVersion (19 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="390" class="named"><title>0x0048e730 acmMetrics (52 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="390" class="named"><title>0x0048e770 acmDriverEnum (52 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="390" class="todo"><title>0x0048e7b0 acmDriverDetailsA (52 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="390" class="named"><title>0x0048e7b0 acmDriverDetailsA (52 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="390" class="todo"><title>0x0048e7f0 acmDriverOpen (52 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="390" class="todo"><title>0x0048e830 acmDriverClose (47 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="390" class="todo"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
@@ -2745,7 +2745,7 @@
 <rect width="4.37" height="4.18" x="683.94" y="339.93" class="named"><title>0x00486010 game_free (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="691.31" y="339.93" class="named"><title>0x0048e730 acmMetrics (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="698.68" y="339.93" class="named"><title>0x0048e770 acmDriverEnum (52 bytes)</title></rect>
-<rect width="4.37" height="4.18" x="706.04" y="339.93" class="todo"><title>0x0048e7b0 acmDriverDetailsA (52 bytes)</title></rect>
+<rect width="4.37" height="4.18" x="706.04" y="339.93" class="named"><title>0x0048e7b0 acmDriverDetailsA (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="713.41" y="339.93" class="todo"><title>0x0048e7f0 acmDriverOpen (52 bytes)</title></rect>
 <rect width="4.37" height="4.18" x="720.78" y="339.93" class="named"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="4.28" height="4.18" x="728.15" y="339.93" class="named"><title>0x004416b0 lara_as_rightjump (51 bytes)</title></rect>
