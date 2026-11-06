@@ -101,6 +101,30 @@ HWND WinCreateWindow(HINSTANCE hInstance, int nCmdShow)
     return hWnd;
 }
 
+bool DXCreateZBuffer(DEVICEINFO *device, DXCONFIG *config)
+{
+    DIRECT3DINFO **d3d;
+    DDSURFACEDESC desc;
+
+    if (config->bZBuffer) {
+        memset(&desc, 0, sizeof(desc));
+        desc.dwSize = sizeof(desc);
+        desc.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_ZBUFFERBITDEPTH;
+        d3d = &device->DDInfo[config->nDD].D3DInfo;
+        desc.ddsCaps.dwCaps = (*d3d)[config->nD3D].bHardware ? DDSCAPS_ZBUFFER | DDSCAPS_VIDEOMEMORY : DDSCAPS_ZBUFFER | DDSCAPS_SYSTEMMEMORY;
+        desc.dwWidth = (*d3d)[config->nD3D].DisplayMode[config->nVMode].w;
+        desc.dwHeight = (*d3d)[config->nD3D].DisplayMode[config->nVMode].h;
+        desc.dwZBufferBitDepth = 16;
+        if (!DXCreateSurface(App.lpDD, &desc, &App.lpZBuffer))
+            return false;
+        if (!DXAddAttachedSurface(App.lpBackBuffer, App.lpZBuffer))
+            return false;
+    } else {
+        App.lpZBuffer = NULL;
+    }
+    return true;
+}
+
 float WinFrameRate(void)
 {
     static int time = clock();

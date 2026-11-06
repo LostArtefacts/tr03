@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="313.44" height="12" x="0" y="0" class="named"><title>1103 · 74.63%</title></rect>
-<rect width="2.56" height="12" x="313.44" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="104.01" height="12" x="315.99" y="0" class="todo"><title>366 · 24.76%</title></rect>
+<rect width="313.72" height="12" x="0" y="0" class="named"><title>1104 · 74.70%</title></rect>
+<rect width="2.56" height="12" x="313.72" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="103.72" height="12" x="316.28" y="0" class="todo"><title>365 · 24.70%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">74.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1103</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">366</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1104</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">365</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="196" height="12" x="0" y="0" class="named"><title>312 KB · 46.67%</title></rect>
-<rect width="3.89" height="12" x="196" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="220.11" height="12" x="199.89" y="0" class="todo"><title>350 KB · 52.41%</title></rect>
+<rect width="196.16" height="12" x="0" y="0" class="named"><title>312 KB · 46.70%</title></rect>
+<rect width="3.89" height="12" x="196.16" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="219.95" height="12" x="200.05" y="0" class="todo"><title>350 KB · 52.37%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">312 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">350 KB</tspan></text>
@@ -1513,7 +1513,7 @@
 <rect width="12" height="12" x="690" y="420" class="named"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="420" class="named"><title>0x004b2dc0 WinCreateWindow (75 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="420" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="420" class="todo"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="420" class="named"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="435" class="todo"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="435" class="named"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="435" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
@@ -2154,7 +2154,7 @@
 <rect width="9.71" height="9.04" x="499.42" y="187.09" class="named"><title>0x0044e670 LaraSurfaceCollision (250 bytes)</title></rect>
 <rect width="9.71" height="9.04" x="512.13" y="187.09" class="named"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
 <rect width="9.71" height="9.04" x="524.84" y="187.09" class="todo"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
-<rect width="9.71" height="9.04" x="537.56" y="187.09" class="todo"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
+<rect width="9.71" height="9.04" x="537.56" y="187.09" class="named"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="9.67" height="9.04" x="550.27" y="187.09" class="named"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
 <rect width="9.64" height="9.04" x="562.94" y="187.09" class="named"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
 <rect width="9.60" height="9.04" x="575.58" y="187.09" class="todo"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
