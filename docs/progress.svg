@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="325.66" height="12" x="0" y="0" class="named"><title>1146 · 77.54%</title></rect>
-<rect width="2.84" height="12" x="325.66" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="91.50" height="12" x="328.50" y="0" class="todo"><title>322 · 21.79%</title></rect>
+<rect width="325.94" height="12" x="0" y="0" class="named"><title>1147 · 77.60%</title></rect>
+<rect width="2.84" height="12" x="325.94" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="91.22" height="12" x="328.78" y="0" class="todo"><title>321 · 21.72%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">77.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1146</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">322</tspan></text>
+<text text-anchor="end" x="600" y="7.50">77.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1147</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">321</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.97" height="12" x="0" y="0" class="named"><title>332 KB · 49.75%</title></rect>
-<rect width="3.98" height="12" x="208.97" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.06" height="12" x="212.94" y="0" class="todo"><title>329 KB · 49.30%</title></rect>
+<rect width="209.14" height="12" x="0" y="0" class="named"><title>333 KB · 49.80%</title></rect>
+<rect width="3.98" height="12" x="209.14" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="206.88" height="12" x="213.12" y="0" class="todo"><title>329 KB · 49.26%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">329 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">333 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">329 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -572,7 +572,7 @@
 <rect width="12" height="12" x="75" y="150" class="named"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="150" class="named"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="150" class="named"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="150" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="150" class="named"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="150" class="todo"><title>0x0043c960 DoShift_kayak (672 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="150" class="todo"><title>0x0043cc00 KayakUserInput (2137 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="150" class="named"><title>0x0043d4a0 DoRipple (168 bytes)</title></rect>
@@ -2111,7 +2111,7 @@
 <rect width="10.11" height="9.76" x="473.75" y="437.24" class="todo"><title>0x00490780 Func490780 (281 bytes)</title></rect>
 <rect width="9.74" height="10.06" x="486.86" y="174.03" class="named"><title>0x0042ebb0 WaterFall (279 bytes)</title></rect>
 <rect width="9.74" height="10.06" x="499.60" y="174.03" class="named"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
-<rect width="9.71" height="10.06" x="512.35" y="174.03" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
+<rect width="9.71" height="10.06" x="512.35" y="174.03" class="named"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
 <rect width="9.71" height="10.06" x="525.05" y="174.03" class="todo"><title>0x00483650 S_DrawScreenBox (278 bytes)</title></rect>
 <rect width="9.67" height="10.06" x="537.76" y="174.03" class="named"><title>0x0043fa70 lara_col_dashdive (277 bytes)</title></rect>
 <rect width="9.64" height="10.06" x="550.43" y="174.03" class="named"><title>0x0046e890 FallingBlock (276 bytes)</title></rect>

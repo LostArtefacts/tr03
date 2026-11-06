@@ -589,3 +589,32 @@ int CanGetOut_kayak(ITEM_INFO *v, int direction)
         return 0;
     return 1;
 }
+
+FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
+sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos);
+sint32 DoDynamics_kayak(sint32 height, sint32 fallspeed, sint32 *y);
+
+sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos)
+{
+    sint32 s, c, h;
+    sint16 room_number;
+    FLOOR_INFO *floor;
+
+    c = phd_cos(v->pos.y_rot);
+    s = phd_sin(v->pos.y_rot);
+    pos->x = v->pos.x_pos + ((z * s + x * c) >> W2V_SHIFT);
+    pos->y = v->pos.y_pos + ((x * phd_sin(v->pos.z_rot)) >> W2V_SHIFT) - ((z * phd_sin(v->pos.x_rot)) >> W2V_SHIFT);
+    pos->z = v->pos.z_pos + ((z * c - x * s) >> W2V_SHIFT);
+    room_number = v->room_number;
+    GetFloor(pos->x, pos->y, pos->z, &room_number);
+    h = GetWaterHeight(pos->x, pos->y, pos->z, room_number);
+    if (h == NO_HEIGHT) {
+        room_number = v->room_number;
+        floor = GetFloor(pos->x, pos->y, pos->z, &room_number);
+        h = GetHeight(floor, pos->x, pos->y, pos->z);
+        if (h == NO_HEIGHT)
+            return h;
+    }
+    return h - 5;
+}
