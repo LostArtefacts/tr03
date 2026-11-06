@@ -1901,3 +1901,128 @@ void ObjectObjects(void)
     objects[366].control = ControlGunShell;
     objects[367].control = ControlGunShell;
 }
+
+extern uint8 IsAtmospherePlaying;
+extern uint32 CurrentLevel;
+extern int DemoPlay;
+extern int title_loaded;
+extern char **GF_titlefilenames;
+extern char **GF_levelfilenames;
+extern char **GF_cutscenefilenames;
+extern int health_bar_timer;
+extern uint8 CurrentAtmosphere;
+extern sint16 GF_CDtracks[16];
+extern sint32 level_items;
+
+int S_LoadLevelFile(char *name, int number, int type);
+void InitialiseLara(int type);
+void GetCarriedItems(void);
+void GetAIPickups(void);
+void InitialiseLOTarray(void);
+void InitColours(void);
+void InitialisePickUpDisplay(void);
+void S_InitialiseScreen(int type);
+void SOUND_Stop(void);
+void ExtractSaveGameInfo(void);
+void GF_ModifyInventory(int level, int type);
+void InitialiseFinalLevel(void);
+void S_CDPlay(sint16 track, int mode);
+int Inv_AddItem(int item_num);
+void RemoveDrawnItem(sint16 item_num);
+
+int InitialiseLevel(int level_number, int type)
+{
+    IsAtmospherePlaying = 0;
+
+    if (type != IL_TITLE && type != IL_CUTSCENE)
+        CurrentLevel = level_number;
+
+    if (type == IL_DEMO)
+        DemoPlay = 1;
+    else
+        DemoPlay = 0;
+
+    InitialiseGameFlags();
+    lara.item_number = NO_ITEM;
+
+    title_loaded = 0;
+
+    switch (type) {
+    case IL_CUTSCENE:
+        if (!S_LoadLevelFile(GF_cutscenefilenames[level_number], level_number, type))
+            return 0;
+        break;
+
+    case IL_TITLE:
+        if (!S_LoadLevelFile(GF_titlefilenames[0], level_number, type))
+            return 0;
+        break;
+
+    case IL_NORMAL:
+    case IL_SAVED:
+    case IL_DEMO:
+    default:
+        if (!S_LoadLevelFile(GF_levelfilenames[level_number], level_number, type))
+            return 0;
+        break;
+    }
+
+    if (lara.item_number != NO_ITEM)
+        InitialiseLara(type);
+
+    if (type == IL_NORMAL || type == IL_SAVED || type == IL_DEMO) {
+        GetCarriedItems();
+        GetAIPickups();
+    }
+
+    effects = (FX_INFO *)game_malloc(50 * sizeof(FX_INFO), 32);
+    InitialiseFXArray();
+    InitialiseLOTarray();
+
+    InitColours();
+    T_InitPrint();
+    InitialisePickUpDisplay();
+    S_InitialiseScreen(type);
+
+    health_bar_timer = 100;
+
+    SOUND_Stop();
+
+    if (type == IL_SAVED)
+        ExtractSaveGameInfo();
+    else
+        GF_ModifyInventory(CurrentLevel, 0);
+
+    if (objects[363].loaded)
+        InitialiseFinalLevel();
+
+    if (type == IL_SAVED && savegame.mid_level_save) {
+        S_CDPlay(CurrentAtmosphere, 1);
+        IsAtmospherePlaying = 1;
+    } else if ((type == IL_NORMAL || type == IL_SAVED || type == IL_DEMO) && CurrentLevel != 0) {
+        if (GF_CDtracks[0]) {
+            S_CDPlay(GF_CDtracks[0], 1);
+            CurrentAtmosphere = (uint8)GF_CDtracks[0];
+            IsAtmospherePlaying = 1;
+        }
+    }
+
+    if (CurrentLevel == 0 && savegame.QuadbikeKeyFlag) {
+        long lp;
+
+        Inv_AddItem(224);
+        for (lp = 0; lp < level_items; lp++) {
+            if (items[lp].object_number == 224) {
+                items[lp].status = INVISIBLE;
+                RemoveDrawnItem((sint16)lp);
+                break;
+            }
+        }
+    }
+
+    assault_timer_active = 0;
+    assault_timer_display = 0;
+    camera.underwater = 0;
+
+    return 1;
+}
