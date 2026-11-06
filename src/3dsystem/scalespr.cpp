@@ -23,6 +23,49 @@ extern unsigned long TextLight[14];
 extern unsigned long TextDark[14];
 extern void (*InsertSprite)(int zdepth, int x1, int y1, int x2, int y2, int nSprite, int shade, int shade1, int nDrawType, int offset);
 
+typedef struct phd_vbuf {
+    float xv;
+    float yv;
+    float zv;
+    float ooz;
+    float xs;
+    float ys;
+    sint32 z;
+    char clip;
+    char fog;
+    sint16 g;
+    unsigned short u;
+    unsigned short v;
+    int dynamic;
+} PHD_VBUF;
+
+extern PHD_VBUF vbuf[];
+extern sint32 phd_persp, phd_centerx, phd_centery;
+extern sint32 phd_left, phd_right, phd_top, phd_bottom;
+
+sint16 *ins_room_sprite(sint16 *objptr, int num)
+{
+    PHD_VBUF *vn;
+    sint32 x1, y1, x2, y2, zv;
+    PHDSPRITESTRUCT *sptr;
+
+    for (; num > 0; num--, objptr += 2) {
+        vn = &vbuf[*objptr];
+        if (vn->clip < 0)
+            continue;
+        zv = (sint32)vn->zv / phd_persp;
+        sptr = &phdspriteinfo[objptr[1]];
+        x1 = (sint32)((vn->xv + (sptr->x1 << W2V_SHIFT)) / zv + phd_centerx);
+        y1 = (sint32)((vn->yv + (sptr->y1 << W2V_SHIFT)) / zv + phd_centery);
+        x2 = (sint32)((vn->xv + (sptr->x2 << W2V_SHIFT)) / zv + phd_centerx);
+        y2 = (sint32)((vn->yv + (sptr->y2 << W2V_SHIFT)) / zv + phd_centery);
+        if (x2 < phd_left || y2 < phd_top || x1 >= phd_right || y1 >= phd_bottom)
+            continue;
+        InsertSprite((int)vn->zv, x1, y1, x2, y2, objptr[1], vn->g, -1, 10, 0);
+    }
+    return objptr;
+}
+
 void S_DrawScreenSprite2d(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags)
 {
     PHDSPRITESTRUCT *sptr;

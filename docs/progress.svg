@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="283.92" height="12" x="0" y="0" class="named"><title>1227 · 83.02%</title></rect>
-<rect width="0.46" height="12" x="283.92" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="284.38" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="53.45" height="12" x="288.55" y="0" class="todo"><title>231 · 15.63%</title></rect>
+<rect width="284.15" height="12" x="0" y="0" class="named"><title>1228 · 83.09%</title></rect>
+<rect width="0.46" height="12" x="284.15" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="284.61" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="53.22" height="12" x="288.78" y="0" class="todo"><title>230 · 15.56%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">83.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1227</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">231</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1228</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">230</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.55" height="12" x="0" y="0" class="named"><title>371 KB · 55.42%</title></rect>
-<rect width="0.15" height="12" x="189.55" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="189.69" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="146.27" height="12" x="195.73" y="0" class="todo"><title>286 KB · 42.77%</title></rect>
+<rect width="189.73" height="12" x="0" y="0" class="named"><title>371 KB · 55.48%</title></rect>
+<rect width="0.15" height="12" x="189.73" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="189.87" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="146.09" height="12" x="195.91" y="0" class="todo"><title>286 KB · 42.72%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">371 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">286 KB</tspan></text>
@@ -137,7 +137,7 @@
 <rect width="12" height="12" x="270" y="15" class="todo"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="15" class="named"><title>0x0040ca50 XYClipper (720 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="15" class="todo"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="15" class="todo"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="15" class="named"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="15" class="named"><title>0x0040d1c0 S_DrawScreenSprite2d (338 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="15" class="named"><title>0x0040d320 S_DrawScreenSprite (163 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="15" class="named"><title>0x0040d5f0 InitialiseBaton (82 bytes)</title></rect>
@@ -2045,7 +2045,7 @@
 <rect width="10.83" height="11.40" x="446.75" y="349.94" class="todo"><title>0x004b446f Func4b446f (352 bytes)</title></rect>
 <rect width="10.83" height="11.34" x="446.75" y="364.35" class="named"><title>0x0041d0b0 TriggerElectricSparks_cleaner (350 bytes)</title></rect>
 <rect width="10.83" height="11.34" x="446.75" y="378.69" class="named"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
-<rect width="10.83" height="11.31" x="446.75" y="393.03" class="todo"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
+<rect width="10.83" height="11.31" x="446.75" y="393.03" class="named"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="10.83" height="11.28" x="446.75" y="407.33" class="named"><title>0x0044ee60 LaraSwimCollision (348 bytes)</title></rect>
 <rect width="10.83" height="11.21" x="446.75" y="421.61" class="todo"><title>0x00495490 Func495490 (346 bytes)</title></rect>
 <rect width="10.83" height="11.18" x="446.75" y="435.82" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
