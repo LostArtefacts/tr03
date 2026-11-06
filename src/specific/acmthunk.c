@@ -93,3 +93,17 @@ MMRESULT ACMAPI acmMetrics(HACMOBJ hao, UINT uMetric, LPVOID pMetric)
 
     return pfn(hao, uMetric, pMetric);
 }
+
+MMRESULT ACMAPI acmDriverEnum(ACMDRIVERENUMCB fnCallback, DWORD dwInstance, DWORD fdwEnum)
+{
+    MMRESULT (ACMAPI *pfn)(ACMDRIVERENUMCB, DWORD, DWORD);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(ACMDRIVERENUMCB, DWORD, DWORD))gpafnAcmFunctions[2];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(fnCallback, dwInstance, fdwEnum);
+}
