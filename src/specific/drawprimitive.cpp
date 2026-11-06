@@ -1,6 +1,7 @@
 #include "standard.h"
 #include <mmreg.h>
 #include <stdio.h>
+#include <commctrl.h>
 #include "specific.h"
 #include "winmain.h"
 #include "drawprimitive.h"
@@ -87,6 +88,42 @@ inline long ceilint(float v)
             return (val >> 16) + 1;
     } else
         return val >> 16;
+}
+
+void CalculateEdgeT(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom)
+{
+    float YPreStep;
+    float XPreStep;
+    long dn, dm, ndm, ndn;
+    long inum;
+    double fconv;
+
+    Edge->y = ceilint(Top->sy);
+    Edge->height = ceilint(Bottom->sy) - Edge->y;
+    if (Edge->height) {
+        long tsx, tsy;
+        tsx = FTOLFIX284(Top->sx);
+        tsy = FTOLFIX284(Top->sy);
+        ndm = FTOLFIX284(Bottom->sx - Top->sx);
+        ndn = FTOLFIX284(Bottom->sy - Top->sy);
+        dn = ndn << 4;
+        dm = ndm << 4;
+        Edge->Denominator = dn;
+        inum = (((dm * Edge->y) - (ndm * tsy)) + ((ndn * tsx) - 1)) + dn;
+        FloorDivMod(inum, dn, Edge->x, Edge->ErrorTerm);
+        FloorDivMod(dm, dn, Edge->xstep, Edge->Numerator);
+        XPreStep = FIX284TOFLOAT((Edge->x << 4) - tsx);
+        YPreStep = FIX284TOFLOAT((Edge->y << 4) - tsy);
+        Edge->oozxtra = Gradients->dozx;
+        Edge->uozxtra = Gradients->duzx;
+        Edge->vozxtra = Gradients->dvzx;
+        Edge->ooz = Top->rhw + YPreStep * Gradients->dozy + XPreStep * Gradients->dozx;
+        Edge->uoz = Gradients->uoz[nTop] + YPreStep * Gradients->duzy + XPreStep * Gradients->duzx;
+        Edge->voz = Gradients->voz[nTop] + XPreStep * Gradients->dvzx + YPreStep * Gradients->dvzy;
+        Edge->oozstep = Edge->xstep * Gradients->dozx + Gradients->dozy;
+        Edge->uozstep = Edge->xstep * Gradients->duzx + Gradients->duzy;
+        Edge->vozstep = Edge->xstep * Gradients->dvzx + Gradients->dvzy;
+    }
 }
 
 void CalculateEdgeBlack(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom)
