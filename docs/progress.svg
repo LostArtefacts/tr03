@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="334.47" height="12" x="0" y="0" class="named"><title>1177 · 79.63%</title></rect>
-<rect width="2.84" height="12" x="334.47" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="82.69" height="12" x="337.31" y="0" class="todo"><title>291 · 19.69%</title></rect>
+<rect width="334.75" height="12" x="0" y="0" class="named"><title>1178 · 79.70%</title></rect>
+<rect width="2.84" height="12" x="334.75" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="82.41" height="12" x="337.59" y="0" class="todo"><title>290 · 19.62%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">79.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1177</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">291</tspan></text>
+<text text-anchor="end" x="600" y="7.50">79.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1178</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">290</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="212.70" height="12" x="0" y="0" class="named"><title>338 KB · 50.64%</title></rect>
-<rect width="3.98" height="12" x="212.70" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="203.32" height="12" x="216.68" y="0" class="todo"><title>323 KB · 48.41%</title></rect>
+<rect width="212.88" height="12" x="0" y="0" class="named"><title>339 KB · 50.69%</title></rect>
+<rect width="3.98" height="12" x="212.88" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="203.14" height="12" x="216.86" y="0" class="todo"><title>323 KB · 48.37%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">50.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">338 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">323 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">50.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">339 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">323 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1289,7 +1289,7 @@
 <rect width="12" height="12" x="330" y="360" class="named"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="360" class="named"><title>0x00486010 game_free (52 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="360" class="named"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="360" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="360" class="named"><title>0x00486140 Key (288 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="360" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="360" class="todo"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="360" class="todo"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
@@ -2101,7 +2101,7 @@
 <rect width="10.11" height="10.11" x="473.74" y="307.79" class="named"><title>0x0046d9c0 IcicleControl (291 bytes)</title></rect>
 <rect width="10.11" height="10.07" x="473.74" y="320.90" class="named"><title>0x0041bda0 TriggerPlasmaBall_clawmute (290 bytes)</title></rect>
 <rect width="10.11" height="10.04" x="473.74" y="333.97" class="todo"><title>0x00405270 FindBucket (289 bytes)</title></rect>
-<rect width="10.11" height="10" x="473.74" y="347.01" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>
+<rect width="10.11" height="10" x="473.74" y="347.01" class="named"><title>0x00486140 Key (288 bytes)</title></rect>
 <rect width="10.11" height="10" x="473.74" y="360.02" class="named"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
 <rect width="10.11" height="9.90" x="473.74" y="373.02" class="named"><title>0x0042e630 LaraBreath (285 bytes)</title></rect>
 <rect width="10.11" height="9.90" x="473.74" y="385.92" class="named"><title>0x00480790 DS_StartSample (285 bytes)</title></rect>

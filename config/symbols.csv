@@ -2372,6 +2372,7 @@ address,size,name,symbol
 0x0069fdf8,4,joy_fire,_joy_fire
 0x0069fdfc,4,joy_x,_joy_x
 0x0069fe00,4,joy_y,_joy_y
+0x0069fe10,4,med_debounce,_med_debounce
 0x0069fe28,48,LightCol,_LightCol
 0x0069fe58,48,LightPos,_LightPos
 0x0069fe88,4,smcb,_smcb
