@@ -1426,8 +1426,8 @@ address,size,name,symbol
 0x0049c160,3264,ScanLinesTF,_ScanLinesTF
 0x0049ce20,2809,ScanLinesTFAffine,_ScanLinesTFAffine
 0x0049d920,4399,ScanLinesTFAlphaDecalAffine,_ScanLinesTFAlphaDecalAffine
-0x0049ea50,5051,Func49ea50,
-0x004a2280,8735,Func4a2280,
+0x0049ea50,5051,Func49ea50,_Func49ea50
+0x004a2280,8735,Func4a2280,_Func4a2280
 0x004a44a0,1154,ScanLinesTDecalAffine,_ScanLinesTDecalAffine
 0x004a4930,1660,ScanLinesTDecal,_ScanLinesTDecal
 0x004a4fb0,3736,ScanLinesTFDecal,_ScanLinesTFDecal

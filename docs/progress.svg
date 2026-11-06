@@ -47,21 +47,21 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="319.33" height="12" x="0" y="0" class="named"><title>1300 · 87.25%</title></rect>
-<rect width="1.72" height="12" x="319.33" y="0" class="decompiled"><title>7 · 0.47%</title></rect>
-<rect width="5.65" height="12" x="321.05" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="39.30" height="12" x="326.70" y="0" class="todo"><title>160 · 10.74%</title></rect>
+<rect width="1.97" height="12" x="319.33" y="0" class="decompiled"><title>8 · 0.54%</title></rect>
+<rect width="5.65" height="12" x="321.29" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="39.06" height="12" x="326.94" y="0" class="todo"><title>159 · 10.67%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">87.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1300</tspan> · <tspan class="decompiled">7</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">160</tspan></text>
+<text text-anchor="end" x="546" y="7.50">87.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1300</tspan> · <tspan class="decompiled">8</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">159</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="242.02" height="12" x="0" y="0" class="named"><title>459 KB · 66.13%</title></rect>
-<rect width="8.46" height="12" x="242.02" y="0" class="decompiled"><title>16 KB · 2.31%</title></rect>
-<rect width="9.45" height="12" x="250.48" y="0" class="nonmatching"><title>18 KB · 2.58%</title></rect>
-<rect width="106.07" height="12" x="259.93" y="0" class="todo"><title>201 KB · 28.98%</title></rect>
+<rect width="11.12" height="12" x="242.02" y="0" class="decompiled"><title>21 KB · 3.04%</title></rect>
+<rect width="9.45" height="12" x="253.15" y="0" class="nonmatching"><title>18 KB · 2.58%</title></rect>
+<rect width="103.40" height="12" x="262.60" y="0" class="todo"><title>196 KB · 28.25%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">68.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">459 KB</tspan> · <tspan class="decompiled">16 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">201 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">69.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">459 KB</tspan> · <tspan class="decompiled">21 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">196 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1493,7 +1493,7 @@
 <rect width="12" height="12" x="360" y="420" class="named"><title>0x0049c160 ScanLinesTF (3264 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="420" class="named"><title>0x0049ce20 ScanLinesTFAffine (2809 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="420" class="todo"><title>0x0049d920 ScanLinesTFAlphaDecalAffine (4399 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="420" class="todo"><title>0x0049ea50 Func49ea50 (5051 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="420" class="decompiled"><title>0x0049ea50 Func49ea50 (5051 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="420" class="todo"><title>0x004a2280 Func4a2280 (8735 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="420" class="named"><title>0x004a44a0 ScanLinesTDecalAffine (1154 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="420" class="named"><title>0x004a4930 ScanLinesTDecal (1660 bytes)</title></rect>
@@ -1572,7 +1572,7 @@
 <rect width="50.77" height="35.32" x="0" y="373.55" class="todo"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="50.77" height="35.13" x="0" y="411.87" class="named"><title>0x004a6f20 ScanLinesTG (5286 bytes)</title></rect>
 <rect width="36.43" height="47.93" x="53.77" y="0" class="named"><title>0x00435400 Display_Inventory (5171 bytes)</title></rect>
-<rect width="36.43" height="46.83" x="53.77" y="50.93" class="todo"><title>0x0049ea50 Func49ea50 (5051 bytes)</title></rect>
+<rect width="36.43" height="46.83" x="53.77" y="50.93" class="decompiled"><title>0x0049ea50 Func49ea50 (5051 bytes)</title></rect>
 <rect width="36.43" height="40.82" x="53.77" y="100.77" class="todo"><title>0x0049d920 ScanLinesTFAlphaDecalAffine (4399 bytes)</title></rect>
 <rect width="36.43" height="38.30" x="53.77" y="144.59" class="todo"><title>0x004b0b50 ScanLinesTGDecal (4127 bytes)</title></rect>
 <rect width="36.43" height="37.20" x="53.77" y="185.89" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
