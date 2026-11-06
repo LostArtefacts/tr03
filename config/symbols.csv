@@ -35,7 +35,7 @@ address,size,name,symbol
 0x00402d20,4008,gtmap_persp32_fp,_gtmap_persp32_fp
 0x00403cd0,5315,wgtmap_persp16_fp,_wgtmap_persp16_fp
 0x004051a0,55,draw_poly_gtmap_persp,_draw_poly_gtmap_persp
-0x004051e0,55,Func4051e0,
+0x004051e0,55,draw_poly_wgtmap_persp,_draw_poly_wgtmap_persp
 0x00405220,48,InitUVTable,_InitUVTable
 0x00405250,30,InitBuckets,_InitBuckets
 0x00405270,289,FindBucket,_FindBucket

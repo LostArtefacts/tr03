@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="289.24" height="12" x="0" y="0" class="named"><title>1250 · 84.57%</title></rect>
-<rect width="0.93" height="12" x="289.24" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
-<rect width="4.17" height="12" x="290.17" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="47.67" height="12" x="294.33" y="0" class="todo"><title>206 · 13.94%</title></rect>
+<rect width="289.47" height="12" x="0" y="0" class="named"><title>1251 · 84.64%</title></rect>
+<rect width="0.93" height="12" x="289.47" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
+<rect width="4.17" height="12" x="290.40" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="47.44" height="12" x="294.56" y="0" class="todo"><title>205 · 13.87%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">84.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1250</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">206</tspan></text>
+<text text-anchor="end" x="522" y="7.50">84.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1251</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">205</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.85" height="12" x="0" y="0" class="named"><title>373 KB · 55.81%</title></rect>
-<rect width="0.20" height="12" x="190.85" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
-<rect width="6.04" height="12" x="191.06" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="144.91" height="12" x="197.09" y="0" class="todo"><title>283 KB · 42.37%</title></rect>
+<rect width="190.88" height="12" x="0" y="0" class="named"><title>373 KB · 55.81%</title></rect>
+<rect width="0.20" height="12" x="190.88" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
+<rect width="6.04" height="12" x="191.08" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="144.88" height="12" x="197.12" y="0" class="todo"><title>283 KB · 42.36%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">373 KB</tspan> · <tspan class="decompiled">395 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">283 KB</tspan></text>
@@ -102,7 +102,7 @@
 <rect width="12" height="12" x="495" y="0" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="todo"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x004051a0 draw_poly_gtmap_persp (55 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="0" class="todo"><title>0x004051e0 Func4051e0 (55 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="0" class="named"><title>0x004051e0 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="named"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="0" class="named"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x00405270 FindBucket (289 bytes)</title></rect>
@@ -2714,7 +2714,7 @@
 <rect width="4.41" height="4.45" x="654.65" y="332.51" class="named"><title>0x00449180 lara_as_climbright (56 bytes)</title></rect>
 <rect width="4.41" height="4.45" x="662.06" y="332.51" class="named"><title>0x004597e0 BridgeFlatFloor (56 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="669.47" y="332.51" class="named"><title>0x004051a0 draw_poly_gtmap_persp (55 bytes)</title></rect>
-<rect width="4.34" height="4.45" x="676.81" y="332.51" class="todo"><title>0x004051e0 Func4051e0 (55 bytes)</title></rect>
+<rect width="4.34" height="4.45" x="676.81" y="332.51" class="named"><title>0x004051e0 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="684.14" y="332.51" class="named"><title>0x0041e690 ShiftItem (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="691.48" y="332.51" class="named"><title>0x00424c20 DrawPhaseGame (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="698.81" y="332.51" class="named"><title>0x0046ad90 T_ChangeText (55 bytes)</title></rect>
