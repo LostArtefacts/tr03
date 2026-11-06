@@ -131,7 +131,7 @@ void DrawMovableBlock(ITEM_INFO *item);
 void TrapObjects(void)
 {
     OBJECT_INFO *obj;
-    int i;
+    long lp;
 
     obj = &objects[24];
     obj->hit_points = 0;
@@ -141,110 +141,91 @@ void TrapObjects(void)
 
     obj = &objects[359];
     obj->control = MiniCopterControl;
-    obj->save_position = 1;
-    obj->save_flags = 1;
+    obj->save_flags = obj->save_position = 1;
 
     obj = &objects[96];
     obj->collision = ObjectCollision;
     obj->control = GeneralControl;
-    obj->save_flags = 1;
-    obj->save_anim = 1;
+    obj->save_anim = obj->save_flags = 1;
     obj->water_creature = 1;
 
     obj = &objects[127];
     obj->initialise = InitialiseRollingBall;
     obj->collision = DeathSlideCollision;
     obj->control = ControlDeathSlide;
-    obj->save_flags = 1;
-    obj->save_anim = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[114];
     obj->control = ControlSpikeWall;
     obj->collision = ObjectCollision;
-    obj->save_flags = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_flags = 1;
 
     obj = &objects[116];
     obj->control = ControlCeilingSpikes;
     obj->collision = TrapCollision;
-    obj->save_flags = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_flags = 1;
 
     obj = &objects[106];
     obj->control = HookControl;
     obj->collision = CreatureCollision;
-    obj->save_anim = 1;
-    obj->save_flags = 1;
+    obj->save_flags = obj->save_anim = 1;
 
     obj = &objects[105];
     obj->control = PropellerControl;
     obj->collision = ObjectCollision;
-    obj->save_anim = 1;
-    obj->save_flags = 1;
+    obj->save_flags = obj->save_anim = 1;
 
     obj = &objects[119];
+    obj->water_creature = 1;
     obj->control = PropellerControl;
     obj->collision = TrapCollision;
-    obj->save_anim = 1;
-    obj->water_creature = 1;
-    obj->save_flags = 1;
+    obj->save_flags = obj->save_anim = 1;
 
     obj = &objects[120];
     obj->control = PropellerControl;
     obj->collision = TrapCollision;
-    obj->save_anim = 1;
-    obj->save_flags = 1;
+    obj->save_flags = obj->save_anim = 1;
 
     obj = &objects[108];
     obj->initialise = InitialiseKillerStatue;
     obj->control = SpinningBlade;
     obj->collision = ObjectCollision;
-    obj->save_flags = 1;
-    obj->save_anim = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[113];
     obj->control = IcicleControl;
     obj->collision = TrapCollision;
-    obj->save_flags = 1;
-    obj->save_anim = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[111];
     obj->initialise = InitialiseBlade;
     obj->control = BladeControl;
     obj->collision = TrapCollision;
-    obj->save_flags = 1;
-    obj->save_anim = 1;
+    obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[115];
     obj->control = SpringBoardControl;
-    obj->save_flags = 1;
-    obj->save_anim = 1;
+    obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[83];
+    obj->control = FallingBlock;
     obj->floor = FallingBlockFloor;
     obj->ceiling = FallingBlockCeiling;
-    obj->control = FallingBlock;
-    obj->save_anim = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_anim = 1;
     obj->save_flags = 1;
 
     obj = &objects[84];
+    obj->control = FallingBlock;
     obj->floor = FallingBlockFloor;
     obj->ceiling = FallingBlockCeiling;
-    obj->control = FallingBlock;
-    obj->save_anim = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_anim = 1;
     obj->save_flags = 1;
 
     obj = &objects[85];
+    obj->control = FallingBlock;
     obj->floor = FallingBlockFloor;
     obj->ceiling = FallingBlockCeiling;
-    obj->control = FallingBlock;
-    obj->save_anim = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_anim = 1;
     obj->save_flags = 1;
 
     obj = &objects[86];
@@ -262,8 +243,8 @@ void TrapObjects(void)
     obj->save_anim = 1;
 
     obj = &objects[94];
-    obj->control = TeethTrap;
     obj->collision = TrapCollision;
+    obj->control = TeethTrap;
     obj->save_flags = 1;
     obj->save_anim = 1;
 
@@ -271,32 +252,28 @@ void TrapObjects(void)
     obj->collision = RollingBallCollision;
     obj->control = RollingBallControl;
     obj->initialise = InitialiseRollingBall;
-    obj->save_flags = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_flags = 1;
     obj->save_anim = 1;
 
     obj = &objects[126];
     obj->collision = RollingBallCollision;
     obj->control = RollingBallControl;
     obj->initialise = InitialiseRollingBall;
-    obj->save_flags = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_flags = 1;
     obj->save_anim = 1;
 
     obj = &objects[88];
     obj->collision = RollingBallCollision;
     obj->control = RollingBallControl;
     obj->initialise = InitialiseRollingBall;
-    obj->save_flags = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_flags = 1;
     obj->save_anim = 1;
 
     obj = &objects[89];
     obj->collision = RollingBallCollision;
     obj->control = RollingBallControl;
     obj->initialise = InitialiseRollingBall;
-    obj->save_flags = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_flags = 1;
     obj->save_anim = 1;
 
     obj = &objects[87];
@@ -306,59 +283,43 @@ void TrapObjects(void)
     obj = &objects[107];
     obj->control = FallingCeiling;
     obj->collision = TrapCollision;
-    obj->save_anim = 1;
-    obj->save_position = 1;
+    obj->save_position = obj->save_anim = 1;
     obj->save_flags = 1;
-    for (i = 97; i <= 100; i++) {
-        obj = &objects[i];
+    for (lp = 97; lp <= 100; lp++) {
+        obj = &objects[lp];
         obj->initialise = InitialiseMovingBlock;
         obj->control = MovableBlock;
         obj->collision = MovableBlockCollision;
         obj->draw_routine = DrawMovableBlock;
-        obj->save_position = 1;
-        obj->save_flags = 1;
-        obj->save_anim = 1;
+        obj->save_position = obj->save_anim = obj->save_flags = 1;
     }
-
-    obj = &objects[91];
-    obj->draw_routine = DrawDummyItem;
-    obj->control = DartEmitterControl;
-    obj->save_flags = 1;
-
-    obj = &objects[92];
-    obj->draw_routine = DrawDummyItem;
-    obj->control = DartEmitterControl;
-    obj->save_flags = 1;
-
-    obj = &objects[48];
-    obj->draw_routine = DrawDummyItem;
-    obj->initialise = InitialiseRaptorEmitter;
-    obj->control = RaptorEmitterControl;
-    obj->save_flags = 1;
-
-    obj = &objects[47];
-    obj->draw_routine = DrawDummyItem;
-    obj->control = FlyEmitterControl;
-    obj->hit_points = 150;
-    obj->save_flags = 1;
+    objects[91].control = DartEmitterControl;
+    objects[91].draw_routine = DrawDummyItem;
+    objects[91].save_flags = 1;
+    objects[92].control = DartEmitterControl;
+    objects[92].draw_routine = DrawDummyItem;
+    objects[92].save_flags = 1;
+    objects[48].initialise = InitialiseRaptorEmitter;
+    objects[48].control = RaptorEmitterControl;
+    objects[48].draw_routine = DrawDummyItem;
+    objects[48].save_flags = 1;
+    objects[47].control = FlyEmitterControl;
+    objects[47].draw_routine = DrawDummyItem;
+    objects[47].hit_points = 150;
+    objects[47].save_flags = 1;
 
     obj = &objects[31];
     obj->control = BoomuteControl;
-    obj->save_anim = 1;
-    obj->save_position = 1;
-    obj->save_flags = 1;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[312];
     obj->control = ControlArea51Rocket;
-    obj->save_anim = 1;
-    obj->save_position = 1;
-    obj->save_flags = 1;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[313];
-    obj->draw_routine = DrawDummyItem;
     obj->control = ControlArea51Rocket;
-    obj->save_anim = 1;
-    obj->save_flags = 1;
+    obj->draw_routine = DrawDummyItem;
+    obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[314];
     obj->control = ControlArea51Struts;
@@ -368,9 +329,7 @@ void TrapObjects(void)
     obj = &objects[291];
     obj->control = ControlArea51Laser;
     obj->initialise = InitialiseArea51Laser;
-    obj->save_anim = 1;
-    obj->save_position = 1;
-    obj->save_flags = 1;
+    obj->save_position = obj->save_anim = obj->save_flags = 1;
 
     obj = &objects[90];
     obj->control = DartsControl;
@@ -379,28 +338,26 @@ void TrapObjects(void)
     obj->shadow_size = 128;
 
     obj = &objects[330];
-    obj->draw_routine = DrawDummyItem;
     obj->control = FlameEmitterControl;
+    obj->draw_routine = DrawDummyItem;
     obj->save_flags = 1;
 
     obj = &objects[331];
-    obj->draw_routine = DrawDummyItem;
     obj->control = FlameEmitter2Control;
+    obj->draw_routine = DrawDummyItem;
     obj->save_flags = 1;
 
     obj = &objects[332];
-    obj->draw_routine = DrawDummyItem;
     obj->control = FlameEmitter3Control;
+    obj->draw_routine = DrawDummyItem;
     obj->save_flags = 1;
 
     obj = &objects[333];
-    obj->draw_routine = DrawDummyItem;
     obj->control = SideFlameEmitterControl;
-    obj->save_flags = 1;
-
-    obj = &objects[329];
     obj->draw_routine = DrawDummyItem;
-    obj->control = FlameControl;
+    obj->save_flags = 1;
+    objects[329].control = FlameControl;
+    objects[329].draw_routine = DrawDummyItem;
 }
 
 extern sint32 level_items;
