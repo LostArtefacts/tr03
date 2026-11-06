@@ -1399,7 +1399,7 @@ address,size,name,symbol
 0x00495490,346,Func495490,_Func495490
 0x004955f0,354,Func4955f0,_Func4955f0
 0x00495760,368,Func495760,_Func495760
-0x004958d0,335,Func4958d0,
+0x004958d0,335,Func4958d0,_Func4958d0
 0x00495a20,360,Func495a20,
 0x00495b90,341,Func495b90,
 0x00495cf0,478,Func495cf0,
@@ -2542,6 +2542,7 @@ address,size,name,symbol
 0x006ca1f8,4,Var6ca1f8,_Var6ca1f8
 0x006ca1fc,4,Var6ca1fc,_Var6ca1fc
 0x006ca20c,4,Var6ca20c,_Var6ca20c
+0x006ca228,4,Var6ca228,_Var6ca228
 0x006ca248,4,Var6ca248,_Var6ca248
 0x006ca24c,4,Var6ca24c,_Var6ca24c
 0x006ca2b0,4,Var6ca2b0,_Var6ca2b0

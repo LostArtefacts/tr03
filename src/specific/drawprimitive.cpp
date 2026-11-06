@@ -1571,4 +1571,137 @@ __declspec(naked) void Func495760(void)
         ret
     }
 }
+
+extern long Var6ca228;
+
+__declspec(naked) void Func4958d0(void)
+{
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [Var6ca4d0]
+        cmp esi, dword ptr [Var6ca248]
+        je L11
+        push ebp
+        mov edi, dword ptr [Var6ca2d0]
+        mov eax, dword ptr [Var6ca460]
+        imul eax, dword ptr [Var6ca20c]
+        add edi, eax
+        mov ecx, dword ptr [Var6ce4e0]
+        mov eax, 0xff0000
+        shl eax, cl
+        and eax, 0xff0000
+        mov dword ptr [Var6ca228], eax
+        mov dword ptr [L6 + 2], eax
+        mov dword ptr [L8 + 2], eax
+        mov al, cl
+        add al, 0x8
+        add al, cl
+        mov byte ptr [L2 + 2], al
+        mov byte ptr [L7 + 2], al
+        mov al, cl
+        add al, 0x10
+        mov byte ptr [L3 + 2], al
+        mov byte ptr [L9 + 2], al
+        mov edx, dword ptr [Var6ce4d8]
+        add edx, dword ptr [ecx*4+Var4ceb80]
+        mov dword ptr [L5 + 4], edx
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L1:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esi+0x4]
+        push edi
+        lea edi, [edi+ebx*4]
+        add esi, 0x20
+        or eax, eax
+        jle L10
+        mov ebx, dword ptr [esi-0x18]
+        mov ecx, dword ptr [esi-0x10]
+        mov edx, ecx
+        mov ebp, ebx
+        and edx, dword ptr [Var6ca228]
+        and ebp, dword ptr [Var6ca228]
+    L2:
+        shr edx, 0x8
+        pxor mm5, mm5
+    L3:
+        shr ebp, 0x10
+        movq mm1, qword ptr [Var6ca338]
+        or edx, ebp
+        movq mm0, qword ptr [esi-0x8]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc6
+        add ebx, dword ptr [esi]
+        add ecx, dword ptr [esi+0x4]
+        nop
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L4:
+        push eax
+        cmp eax, 0x10
+        jle L5
+        mov eax, 0x10
+        nop
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L5:
+        movd mm7, dword ptr [edx*4+0x12345678]
+        psrlw mm6, 0x8
+        mov edx, ecx
+        punpcklbw mm7, mm5
+        pmullw mm7, mm6
+        mov ebp, ebx
+    L6:
+        and edx, 0xff0000
+        add ecx, dword ptr [esi+0x4]
+    L7:
+        shr edx, 0x8
+    L8:
+        and ebp, 0xff0000
+    L9:
+        shr ebp, 0x10
+        psrlw mm7, 0x8
+        packuswb mm7, mm7
+        add edi, 0x4
+        or edx, ebp
+        add ebx, dword ptr [esi]
+        movd dword ptr [edi-0x4], mm7
+        paddw mm0, mm1
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc6
+        dec eax
+        jne L5
+        pop eax
+        add esi, 0x8
+        sub eax, 0x10
+        jg L4
+        sub esi, 0x8
+    L10:
+        add esi, 0x8
+        pop edi
+        add edi, dword ptr [Var6ca20c]
+        cmp dword ptr [Var6ca248], esi
+        jne L1
+        emms
+        pop ebp
+    L11:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
 }

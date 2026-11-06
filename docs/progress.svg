@@ -47,21 +47,21 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="321.26" height="12" x="0" y="0" class="named"><title>1314 · 87.78%</title></rect>
-<rect width="5.13" height="12" x="321.26" y="0" class="decompiled"><title>21 · 1.40%</title></rect>
-<rect width="5.62" height="12" x="326.39" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="33.98" height="12" x="332.02" y="0" class="todo"><title>139 · 9.29%</title></rect>
+<rect width="5.38" height="12" x="321.26" y="0" class="decompiled"><title>22 · 1.47%</title></rect>
+<rect width="5.62" height="12" x="326.64" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="33.74" height="12" x="332.26" y="0" class="todo"><title>138 · 9.22%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">89.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1314</tspan> · <tspan class="decompiled">21</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">139</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1314</tspan> · <tspan class="decompiled">22</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">138</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="240.10" height="12" x="0" y="0" class="named"><title>474 KB · 65.60%</title></rect>
-<rect width="31.40" height="12" x="240.10" y="0" class="decompiled"><title>62 KB · 8.58%</title></rect>
-<rect width="9.06" height="12" x="271.50" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="85.44" height="12" x="280.56" y="0" class="todo"><title>169 KB · 23.34%</title></rect>
+<rect width="31.57" height="12" x="240.10" y="0" class="decompiled"><title>62 KB · 8.62%</title></rect>
+<rect width="9.06" height="12" x="271.67" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="85.27" height="12" x="280.73" y="0" class="todo"><title>168 KB · 23.30%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">74.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">474 KB</tspan> · <tspan class="decompiled">62 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">169 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">474 KB</tspan> · <tspan class="decompiled">62 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">168 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1466,7 +1466,7 @@
 <rect width="12" height="12" x="705" y="405" class="decompiled"><title>0x00495490 Func495490 (346 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="405" class="decompiled"><title>0x004955f0 Func4955f0 (354 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="405" class="decompiled"><title>0x00495760 Func495760 (368 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="420" class="todo"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="420" class="decompiled"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="420" class="todo"><title>0x00495a20 Func495a20 (360 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="420" class="todo"><title>0x00495b90 Func495b90 (341 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="420" class="todo"><title>0x00495cf0 Func495cf0 (478 bytes)</title></rect>
@@ -2092,7 +2092,7 @@
 <rect width="10.57" height="10.38" x="463.19" y="200.21" class="named"><title>0x0040d1c0 S_DrawScreenSprite2d (338 bytes)</title></rect>
 <rect width="10.57" height="10.32" x="463.19" y="213.59" class="named"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="10.57" height="10.29" x="463.19" y="226.91" class="named"><title>0x00440a40 lara_col_upjump (335 bytes)</title></rect>
-<rect width="10.57" height="10.29" x="463.19" y="240.19" class="todo"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
+<rect width="10.57" height="10.29" x="463.19" y="240.19" class="decompiled"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
 <rect width="10.57" height="10.26" x="463.19" y="253.48" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="10.57" height="10.22" x="463.19" y="266.73" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="10.57" height="10.22" x="463.19" y="279.96" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
