@@ -334,6 +334,58 @@ sint16 *calc_back_light(sint16 *objptr)
     return objptr;
 }
 
+extern float outsideBackgroundTop;
+extern float phd_leftfloat, phd_topfloat, phd_rightfloat, phd_bottomfloat;
+extern bool bFixSkyColour;
+extern int BlackGouraudIndex;
+extern int CurrentLevel;
+extern sint32 nPolyType;
+sint16 *calc_object_verticesback(sint16 *objptr);
+void S_InsertBackPolygon(int x1, int y1, int x2, int y2, int col);
+
+void S_InsertBackground(sint16 *objptr)
+{
+    sint16 *triPtr;
+    int nTris;
+
+    nPolyType = 1;
+    phd_leftfloat = float(phd_winxmin + phd_left);
+    phd_topfloat = float(phd_winymin + phd_top);
+    phd_rightfloat = float(phd_right + phd_winxmin + 1);
+    phd_bottomfloat = float(phd_bottom + phd_winymin + 1);
+    f_centerx = float(phd_winxmin + phd_centerx);
+    f_centery = float(phd_winymin + phd_centery);
+    objptr += 4;
+    objptr = calc_object_verticesback(objptr);
+    outsideBackgroundTop = 0;
+
+    if (objptr) {
+        objptr = calc_back_light(objptr);
+        objptr = InsertObjectGT4(objptr + 1, objptr[0], 2);
+        objptr = InsertObjectGT3(objptr + 1, objptr[0], 2);
+        objptr = InsertObjectG4(objptr + 1, objptr[0], 2);
+
+        if (bFixSkyColour) {
+            nTris = *objptr - 16;
+            if (CurrentLevel != 19)
+                triPtr = objptr + 65;
+            else
+                triPtr = objptr + 1;
+
+            for (; nTris > 0; nTris--) {
+                triPtr[3] = BlackGouraudIndex << 8;
+                triPtr += 4;
+            }
+            bFixSkyColour = false;
+        }
+
+        InsertObjectG3(objptr + 1, objptr[0], 2);
+    }
+
+    if (CurrentLevel == 0)
+        S_InsertBackPolygon(0, (int)outsideBackgroundTop, phd_right + phd_winxmin, phd_winymax, 0x800000);
+}
+
 void phd_InitPolyList(void)
 {
     surfacenum = 0;
