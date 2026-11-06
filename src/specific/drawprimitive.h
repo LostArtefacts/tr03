@@ -6,12 +6,12 @@
 #define FTOLFIX(x) ((fconv = x + MAGICNUM / 65536.0), *(int *)(&fconv))
 
 struct GRADIENT {
-    float ooz[3];
     float uoz[3];
     float voz[3];
     float r[3];
     float g[3];
     float b[3];
+    float ooz[3];
     float dozx, dozy;
     float duzx, duzy;
     float dvzx, dvzy;
