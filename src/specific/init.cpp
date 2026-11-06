@@ -125,6 +125,44 @@ unsigned short GetRandom(WATERTAB *w, int n)
     return 0;
 }
 
+int S_InitialiseSystem(void)
+{
+    int cval;
+    int i;
+    int a;
+    int b;
+    int c;
+
+    DumpX = 0;
+    DumpY = 0;
+    DumpWidth = (sint16)App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    DumpHeight = (sint16)App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
+    InitZTable();
+    InitUVTable();
+
+    TLVertexBuffer = GlobalAlloc(GMEM_FIXED, 0x48000);
+    VertexBuffer = (void *)(((long)TLVertexBuffer + 32) & 0xFFFFFFE0);
+    TLUnRollBuffer = GlobalAlloc(GMEM_FIXED, 0x48000);
+    UnRollBuffer = (void *)(((long)TLUnRollBuffer + 32) & 0xFFFFFFE0);
+
+    for (i = 0; i < 1024; i++)
+        SqrtTable[i] = (int)sqrt((float)i);
+
+    for (a = 1; a < 33; a++) {
+        for (b = 1; b < 33; b++) {
+            for (c = 1; c < 33; c++) {
+                cval = ((a - b) * c) / a;
+                RColorTable[a][b][c] = cval << 10;
+                GColorTable[a][b][c] = cval << 5;
+                BColorTable[a][b][c] = cval;
+            }
+        }
+    }
+
+    malloc_size = 0x380000;
+    return 1;
+}
+
 void ShutdownGame(void)
 {
     GlobalFree(TLVertexBuffer);
