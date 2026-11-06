@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="329.84" height="12" x="0" y="0" class="named"><title>1350 · 90.12%</title></rect>
-<rect width="7.33" height="12" x="329.84" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.09" height="12" x="337.17" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
-<rect width="21.74" height="12" x="344.26" y="0" class="todo"><title>89 · 5.94%</title></rect>
+<rect width="330.08" height="12" x="0" y="0" class="named"><title>1351 · 90.19%</title></rect>
+<rect width="7.33" height="12" x="330.08" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.09" height="12" x="337.41" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
+<rect width="21.50" height="12" x="344.50" y="0" class="todo"><title>88 · 5.87%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">92.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1350</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">89</tspan></text>
+<text text-anchor="end" x="546" y="7.50">92.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1351</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">88</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="262.77" height="12" x="0" y="0" class="named"><title>520 KB · 71.79%</title></rect>
-<rect width="33.42" height="12" x="262.77" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.15" height="12" x="296.19" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
-<rect width="55.66" height="12" x="310.34" y="0" class="todo"><title>110 KB · 15.21%</title></rect>
+<rect width="263.32" height="12" x="0" y="0" class="named"><title>521 KB · 71.95%</title></rect>
+<rect width="33.42" height="12" x="263.32" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.15" height="12" x="296.74" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
+<rect width="55.11" height="12" x="310.89" y="0" class="todo"><title>109 KB · 15.06%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">80.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">520 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">110 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">81.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">521 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">109 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1485,7 +1485,7 @@
 <rect width="12" height="12" x="240" y="420" class="named"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="420" class="named"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="420" class="named"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="420" class="todo"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="420" class="named"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="420" class="named"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="420" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="420" class="named"><title>0x00498750 ScanLinesBlack (266 bytes)</title></rect>
@@ -1732,7 +1732,7 @@
 <rect width="19.45" height="18.79" x="307.66" y="363.67" class="named"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
 <rect width="19.45" height="18.70" x="307.66" y="385.45" class="named"><title>0x0043a5b0 ShowEndStatsText (1123 bytes)</title></rect>
 <rect width="19.45" height="18.59" x="307.66" y="407.16" class="todo"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
-<rect width="19.45" height="18.25" x="307.66" y="428.75" class="todo"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
+<rect width="19.45" height="18.25" x="307.66" y="428.75" class="named"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
 <rect width="18.87" height="18.73" x="330.11" y="23.50" class="named"><title>0x0044dc00 InitialiseLaraInventory (1091 bytes)</title></rect>
 <rect width="18.81" height="18.73" x="351.98" y="23.50" class="named"><title>0x00440520 lara_as_stop (1088 bytes)</title></rect>
 <rect width="18.68" height="18.73" x="373.79" y="23.50" class="named"><title>0x0042b780 TriggerFireFlame (1080 bytes)</title></rect>

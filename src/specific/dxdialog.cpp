@@ -11,6 +11,95 @@ extern bool bSoftwareDefault;
 
 void DXCheckMMXTechnology(HWND hwnd);
 void DXInitD3DDrivers(HWND hwnd, int nDrivers);
+void DXInitD3DDrivers(HWND hwnd, int nDD)
+{
+    HWND hD3D;
+    HWND hZBuffer;
+    HWND hDither;
+    HWND hFilter;
+    HWND h8Bit;
+    HWND hAGP;
+    HWND hHardware;
+    HWND hSoftware;
+    int n;
+    char Buffer[80];
+    char Buffer1[80];
+    static int CurSel = -1;
+    int nHW;
+
+    hD3D = GetDlgItem(hwnd, 1001);
+    hZBuffer = GetDlgItem(hwnd, 1004);
+    hDither = GetDlgItem(hwnd, 1005);
+    hFilter = GetDlgItem(hwnd, 1006);
+    h8Bit = GetDlgItem(hwnd, 1009);
+    hAGP = GetDlgItem(hwnd, 1012);
+    hHardware = GetDlgItem(hwnd, 1007);
+    hSoftware = GetDlgItem(hwnd, 1008);
+    nHW = -1;
+    if (CurSel != -1)
+        SendMessage(hD3D, CB_GETLBTEXT, SendMessage(hD3D, CB_GETCURSEL, 0, 0), (LPARAM)Buffer1);
+    SendMessage(hD3D, CB_RESETCONTENT, 0, 0);
+    for (n = 0; n < G_DeviceInfo->DDInfo[nDD].nD3DInfo; n++) {
+        sprintf(Buffer, "%s", G_DeviceInfo->DDInfo[nDD].D3DInfo[n].About);
+        SendMessage(hD3D, CB_ADDSTRING, 0, (LPARAM)Buffer);
+        if (CurSel == -1 && !bSoftwareDefault)
+            if (G_DeviceInfo->DDInfo[nDD].D3DInfo[n].bHardware)
+                nHW = n;
+        if (!strcmp(Buffer1, Buffer))
+            nHW = n;
+    }
+    if (nHW == -1)
+        nHW = 0;
+    EnableWindow(hAGP, 0);
+    if (CurSel == -1) {
+        SendMessage(hZBuffer, BM_SETCHECK, 1, 0);
+        SendMessage(hFilter, BM_SETCHECK, 1, 0);
+        SendMessage(hDither, BM_SETCHECK, 1, 0);
+        if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nHW].bAGP)
+            SendMessage(hAGP, BM_SETCHECK, 1, 0);
+    }
+    SendMessage(hD3D, CB_SETCURSEL, nHW, 0);
+    CurSel = nHW;
+    if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nHW].bHardware) {
+        EnableWindow(hZBuffer, 1);
+        EnableWindow(hDither, 1);
+        EnableWindow(hFilter, 1);
+        EnableWindow(h8Bit, 1);
+        EnableWindow(hAGP, 0);
+        SendMessage(hAGP, BM_SETCHECK, 0, 0);
+        if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nHW].bAGP) {
+            EnableWindow(hAGP, 1);
+            SendMessage(hAGP, BM_SETCHECK, 1, 0);
+        }
+        SendMessage(hHardware, BM_SETCHECK, 1, 0);
+        SendMessage(hSoftware, BM_SETCHECK, 0, 0);
+        SendMessage(hZBuffer, BM_SETCHECK, 1, 0);
+        SendMessage(hFilter, BM_SETCHECK, 1, 0);
+        SendMessage(hDither, BM_SETCHECK, 1, 0);
+        SendMessage(h8Bit, BM_SETCHECK, 0, 0);
+    } else {
+        SendMessage(hZBuffer, BM_SETCHECK, 0, 0);
+        SendMessage(hFilter, BM_SETCHECK, 0, 0);
+        SendMessage(hDither, BM_SETCHECK, 0, 0);
+        SendMessage(hSoftware, BM_SETCHECK, 1, 0);
+        SendMessage(hHardware, BM_SETCHECK, 0, 0);
+        EnableWindow(hZBuffer, 0);
+        EnableWindow(hDither, 0);
+        if (G_DXConfig->MMX) {
+            EnableWindow(hFilter, 1);
+            SendMessage(hFilter, BM_SETCHECK, 1, 0);
+        } else {
+            EnableWindow(hFilter, 0);
+        }
+        if (!G_DXConfig->MMX)
+            EnableWindow(h8Bit, 0);
+        EnableWindow(hAGP, 0);
+        if (!G_DXConfig->MMX)
+            SendMessage(h8Bit, BM_SETCHECK, 0, 0);
+        SendMessage(hAGP, BM_SETCHECK, 0, 0);
+    }
+}
+
 void DXInitVideoModes(HWND hwnd, int nDD, int nD3D);
 void DXInitTextures(HWND hwnd, int nDD, int nD3D);
 void DXInitDSAdapters(HWND hwnd);
