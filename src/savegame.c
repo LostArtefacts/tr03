@@ -193,6 +193,194 @@ void CreateStartInfo(int level_number)
     start->gun_status = LG_ARMLESS;
 }
 
+extern uint32 CurrentLevel;
+extern int flipmap[];
+extern char cd_flags[];
+extern int number_cameras;
+extern sint32 level_items;
+extern sint16 *mesh_base;
+extern sint16 *frames;
+extern uint8 CurrentAtmosphere;
+extern sint32 compy_scared_timer;
+extern sint32 compys_attack_lara;
+extern sint16 CarcassItem;
+extern char TribeBossShieldOn;
+extern ITEM_INFO *TribeBossItem;
+extern char lizard_man_active;
+
+#define SAVE_CREATURE (1 << 31)
+
+void ResetSG(void);
+void WriteSG(void *pointer, int size);
+
+void CreateSaveGameInfo(void)
+{
+    int i, texplode;
+    char tflag;
+    ITEM_INFO *item;
+    OBJECT_INFO *obj;
+    char noresetexplode = 0;
+    int number_flares, flare_age;
+
+    savegame.current_level = (sint16)CurrentLevel;
+
+    CreateStartInfo(CurrentLevel);
+
+    savegame.num_pickup1 = Inv_RequestItem(236);
+    savegame.num_pickup2 = Inv_RequestItem(237);
+    savegame.num_puzzle1 = Inv_RequestItem(205);
+    savegame.num_puzzle2 = Inv_RequestItem(206);
+    savegame.num_puzzle3 = Inv_RequestItem(207);
+    savegame.num_puzzle4 = Inv_RequestItem(208);
+    savegame.num_key1 = Inv_RequestItem(224);
+    savegame.num_key2 = Inv_RequestItem(225);
+    savegame.num_key3 = Inv_RequestItem(226);
+    savegame.num_key4 = Inv_RequestItem(227);
+
+    ResetSG();
+
+    for (i = 0; i < MAX_SAVEGAME_BUFFER; i++)
+        savegame.buffer[i] = 0;
+
+    WriteSG(&flip_status, sizeof(int));
+
+    for (i = 0; i < 10; i++) {
+        tflag = (char)(flipmap[i] >> 8);
+        WriteSG(&tflag, sizeof(char));
+    }
+
+    WriteSG(cd_flags, sizeof(char) * 128);
+
+    for (i = 0; i < number_cameras; i++)
+        WriteSG(&camera.fixed[i].flags, sizeof(sint16));
+
+    for (i = 0, item = items; i < level_items; i++, item++) {
+        obj = &objects[item->object_number];
+
+        if ((item->object_number == 73 && item->hit_points > 0 && bossdata.explode_count) || bossdata.dead)
+            noresetexplode = 1;
+
+        if (obj->save_position) {
+            WriteSG(&item->pos, sizeof(PHD_3DPOS));
+            WriteSG(&item->room_number, sizeof(sint16));
+            WriteSG(&item->speed, sizeof(sint16));
+            WriteSG(&item->fallspeed, sizeof(sint16));
+        }
+
+        if (obj->save_anim) {
+            WriteSG(&item->current_anim_state, sizeof(sint16));
+            WriteSG(&item->goal_anim_state, sizeof(sint16));
+            WriteSG(&item->required_anim_state, sizeof(sint16));
+            WriteSG(&item->anim_number, sizeof(sint16));
+            WriteSG(&item->frame_number, sizeof(sint16));
+        }
+
+        if (obj->save_hitpoints)
+            WriteSG(&item->hit_points, sizeof(sint16));
+
+        if (obj->save_flags) {
+            uint32 flags = 0;
+
+            flags = ((uint16)item->flags) | (item->active << 16)
+                | (item->status << 17) | (item->gravity_status << 19)
+                | (item->hit_status << 20) | (item->collidable << 21)
+                | (item->looked_at << 22) | (item->dynamic_light << 23)
+                | (item->clear_body << 24) | (item->ai_bits << 25)
+                | (item->really_active << 30);
+
+            if (obj->intelligent && item->data)
+                flags |= SAVE_CREATURE;
+
+            WriteSG(&flags, sizeof(uint32));
+
+            if (obj->intelligent)
+                WriteSG(&item->carried_item, sizeof(sint16));
+
+            WriteSG(&item->timer, sizeof(sint16));
+
+            if (flags & SAVE_CREATURE)
+                WriteSG((CREATURE_INFO *)item->data, 18);
+
+            WriteSG(&item->item_flags[0], sizeof(sint16) * 4);
+        }
+
+        if (item->object_number == 18)
+            WriteSG(item->data, 8);
+
+        if (item->object_number == 15)
+            WriteSG(item->data, 26);
+
+        if (item->object_number == 14)
+            WriteSG(item->data, 46);
+
+        if (item->object_number == 17)
+            WriteSG(item->data, 30);
+
+        if (item->object_number == 16)
+            WriteSG(item->data, 39);
+
+        if (item->object_number == 19)
+            WriteSG(item->data, 16);
+
+        if (item->object_number == 291)
+            WriteSG(&item->shadeB, sizeof(sint16));
+    }
+
+    texplode = bossdata.explode_count;
+    if (noresetexplode == 0)
+        bossdata.explode_count = 0;
+    WriteSG(&bossdata, sizeof(BOSS_STRUCT));
+    bossdata.explode_count = texplode;
+
+    for (i = 0; i < 15; i++)
+        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] - (long)mesh_base);
+    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base - (long)frames);
+    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base - (long)frames);
+
+    WriteSG(&lara, sizeof(LARA_INFO));
+
+    for (i = 0; i < 15; i++)
+        lara.mesh_ptrs[i] = (sint16 *)((long)lara.mesh_ptrs[i] + (long)mesh_base);
+    lara.left_arm.frame_base = (sint16 *)((long)lara.left_arm.frame_base + (long)frames);
+    lara.right_arm.frame_base = (sint16 *)((long)lara.right_arm.frame_base + (long)frames);
+
+    if (lara.weapon_item != NO_ITEM) {
+        item = &items[lara.weapon_item];
+        WriteSG(&item->object_number, sizeof(sint16));
+        WriteSG(&item->anim_number, sizeof(sint16));
+        WriteSG(&item->frame_number, sizeof(sint16));
+        WriteSG(&item->current_anim_state, sizeof(sint16));
+        WriteSG(&item->goal_anim_state, sizeof(sint16));
+    }
+
+    WriteSG(&flipeffect, sizeof(int));
+    WriteSG(&fliptimer, sizeof(int));
+
+    WriteSG(&CurrentAtmosphere, sizeof(char));
+    WriteSG(&compy_scared_timer, sizeof(int));
+    WriteSG(&compys_attack_lara, sizeof(int));
+    WriteSG(&CarcassItem, sizeof(sint16));
+    WriteSG(&TribeBossShieldOn, sizeof(char));
+    WriteSG(&TribeBossItem, sizeof(sint32));
+    WriteSG(&lizard_man_active, sizeof(char));
+
+    number_flares = 0;
+    for (i = level_items, item = &items[level_items]; i < 256; i++, item++)
+        if (item->active && item->object_number == 179)
+            number_flares++;
+
+    WriteSG(&number_flares, sizeof(int));
+    for (i = level_items, item = &items[level_items]; i < 256; i++, item++)
+        if (item->active && item->object_number == 179) {
+            WriteSG(&item->pos, sizeof(PHD_3DPOS));
+            WriteSG(&item->room_number, sizeof(sint16));
+            WriteSG(&item->speed, sizeof(sint16));
+            WriteSG(&item->fallspeed, sizeof(sint16));
+            flare_age = (int)item->data;
+            WriteSG(&flare_age, sizeof(int));
+        }
+}
+
 void ResetSG(void)
 {
     SGcount = 0;

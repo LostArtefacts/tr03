@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="327.15" height="12" x="0" y="0" class="named"><title>1339 · 89.39%</title></rect>
-<rect width="7.33" height="12" x="327.15" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.84" height="12" x="334.48" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
-<rect width="24.68" height="12" x="341.32" y="0" class="todo"><title>101 · 6.74%</title></rect>
+<rect width="327.40" height="12" x="0" y="0" class="named"><title>1340 · 89.45%</title></rect>
+<rect width="7.33" height="12" x="327.40" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="6.84" height="12" x="334.73" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="24.43" height="12" x="341.57" y="0" class="todo"><title>100 · 6.68%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">91.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1339</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">101</tspan></text>
+<text text-anchor="end" x="546" y="7.50">91.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1340</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">100</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="257.83" height="12" x="0" y="0" class="named"><title>510 KB · 70.44%</title></rect>
-<rect width="33.42" height="12" x="257.83" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="13.97" height="12" x="291.25" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
-<rect width="60.78" height="12" x="305.22" y="0" class="todo"><title>120 KB · 16.61%</title></rect>
+<rect width="258.61" height="12" x="0" y="0" class="named"><title>512 KB · 70.66%</title></rect>
+<rect width="33.42" height="12" x="258.61" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="13.97" height="12" x="292.04" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
+<rect width="60" height="12" x="306" y="0" class="todo"><title>119 KB · 16.39%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">79.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">510 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">120 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">79.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">512 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">119 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -977,7 +977,7 @@
 <rect width="12" height="12" x="120" y="270" class="named"><title>0x00461950 InitialiseStartInfo (258 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="270" class="named"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="270" class="named"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="270" class="todo"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="270" class="named"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="270" class="todo"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="270" class="named"><title>0x00462df0 ResetSG (21 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="270" class="named"><title>0x00462e10 WriteSG (76 bytes)</title></rect>
@@ -1681,7 +1681,7 @@
 <rect width="22.43" height="23.11" x="282.24" y="0" class="named"><title>0x00470530 TribeAxeControl (1600 bytes)</title></rect>
 <rect width="22.43" height="23.05" x="282.24" y="26.11" class="todo"><title>0x00496c20 DXSetupDlgProc (1596 bytes)</title></rect>
 <rect width="22.43" height="22.59" x="282.24" y="52.16" class="named"><title>0x0046ba60 TonyBossControl (1564 bytes)</title></rect>
-<rect width="22.43" height="22.53" x="282.24" y="77.75" class="todo"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
+<rect width="22.43" height="22.53" x="282.24" y="77.75" class="named"><title>0x00461dd0 CreateSaveGameInfo (1560 bytes)</title></rect>
 <rect width="22.43" height="22.47" x="282.24" y="103.28" class="named"><title>0x0049b270 ScanLinesTAffine (1556 bytes)</title></rect>
 <rect width="22.43" height="22.46" x="282.24" y="128.75" class="named"><title>0x00462ea0 SealmuteControl (1555 bytes)</title></rect>
 <rect width="22.43" height="22.31" x="282.24" y="154.21" class="named"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
