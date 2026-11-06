@@ -224,4 +224,16 @@ void ScreenClear(bool tWindow)
     DXClearBuffers(2, 0);
 }
 
+extern sint32 w2v_matrix[12];
+
+void mCalcPoint(sint32 x, sint32 y, sint32 z, sint32 *result)
+{
+    x -= w2v_matrix[3];
+    y -= w2v_matrix[7];
+    z -= w2v_matrix[11];
+    result[0] = (w2v_matrix[0] * x + w2v_matrix[1] * y + w2v_matrix[2] * z) >> 14;
+    result[1] = (w2v_matrix[4] * x + w2v_matrix[5] * y + w2v_matrix[6] * z) >> 14;
+    result[2] = (w2v_matrix[8] * x + w2v_matrix[9] * y + w2v_matrix[10] * z) >> 14;
+}
+
 }

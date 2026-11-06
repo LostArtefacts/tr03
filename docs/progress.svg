@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="326.22" height="12" x="0" y="0" class="named"><title>1148 · 77.67%</title></rect>
-<rect width="2.84" height="12" x="326.22" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="90.93" height="12" x="329.07" y="0" class="todo"><title>320 · 21.65%</title></rect>
+<rect width="326.51" height="12" x="0" y="0" class="named"><title>1149 · 77.74%</title></rect>
+<rect width="2.84" height="12" x="326.51" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="90.65" height="12" x="329.35" y="0" class="todo"><title>319 · 21.58%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">77.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1148</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">320</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1149</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">319</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="209.20" height="12" x="0" y="0" class="named"><title>333 KB · 49.81%</title></rect>
-<rect width="3.98" height="12" x="209.20" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="206.82" height="12" x="213.18" y="0" class="todo"><title>329 KB · 49.24%</title></rect>
+<rect width="209.30" height="12" x="0" y="0" class="named"><title>333 KB · 49.83%</title></rect>
+<rect width="3.98" height="12" x="209.30" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="206.73" height="12" x="213.27" y="0" class="todo"><title>329 KB · 49.22%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">333 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">329 KB</tspan></text>
@@ -1326,7 +1326,7 @@
 <rect width="12" height="12" x="135" y="375" class="named"><title>0x0048ab50 S_AnimateTextures (171 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="375" class="named"><title>0x0048ac00 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="375" class="named"><title>0x0048ac10 ScreenClear (13 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="375" class="todo"><title>0x0048ac20 mCalcPoint (151 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="375" class="named"><title>0x0048ac20 mCalcPoint (151 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="375" class="todo"><title>0x0048acc0 ProjectPCoord (157 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="375" class="named"><title>0x0048ad60 SetPictureToFade (17 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="375" class="named"><title>0x0048ad80 ForceFadeDown (17 bytes)</title></rect>
@@ -2349,7 +2349,7 @@
 <rect width="7.21" height="7.35" x="678.65" y="243.93" class="named"><title>0x00442e60 lara_col_roll (151 bytes)</title></rect>
 <rect width="7.21" height="7.35" x="688.86" y="243.93" class="named"><title>0x00444800 ResetLook (151 bytes)</title></rect>
 <rect width="7.21" height="7.35" x="699.08" y="243.93" class="named"><title>0x00483540 FMV_PlayIntro (151 bytes)</title></rect>
-<rect width="7.21" height="7.35" x="709.29" y="243.93" class="todo"><title>0x0048ac20 mCalcPoint (151 bytes)</title></rect>
+<rect width="7.21" height="7.35" x="709.29" y="243.93" class="named"><title>0x0048ac20 mCalcPoint (151 bytes)</title></rect>
 <rect width="7.17" height="7.35" x="719.50" y="243.93" class="named"><title>0x0045ccb0 SwitchTrigger (150 bytes)</title></rect>
 <rect width="7.17" height="7.35" x="729.67" y="243.93" class="named"><title>0x0046fb30 LavaBurn (150 bytes)</title></rect>
 <rect width="7.17" height="7.35" x="739.83" y="243.93" class="named"><title>0x004846a0 S_LoadGame (150 bytes)</title></rect>
