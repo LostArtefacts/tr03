@@ -45,8 +45,8 @@ extern DWORD NextWriteOffset;
 extern int XATrack;
 extern int acm_volume;
 
-BOOL WINAPI acmThunkInitialize(void);
-BOOL WINAPI acmThunkTerminate(void);
+BOOL WINAPI Func48e5e0(void);
+BOOL WINAPI Func48e6d0(void);
 const char *GetFullPath(const char *name);
 void ACMCloseFile(void);
 bool ACMOpenFile(const char *name);
@@ -108,7 +108,7 @@ void ACMClose(void)
     if (DSBuffer)
         DSBuffer->Release();
     ACMCloseFile();
-    acmThunkTerminate();
+    Func48e6d0();
 }
 
 bool ACMOpenFile(const char *name)

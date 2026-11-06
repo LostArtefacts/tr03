@@ -46,20 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="339.49" height="12" x="0" y="0" class="named"><title>1212 · 82%</title></rect>
-<rect width="4.48" height="12" x="339.49" y="0" class="nonmatching"><title>16 · 1.08%</title></rect>
-<rect width="70.03" height="12" x="343.97" y="0" class="todo"><title>250 · 16.91%</title></rect>
+<rect width="279.99" height="12" x="0" y="0" class="named"><title>1210 · 81.87%</title></rect>
+<rect width="0.46" height="12" x="279.99" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="3.70" height="12" x="280.45" y="0" class="nonmatching"><title>16 · 1.08%</title></rect>
+<rect width="57.85" height="12" x="284.15" y="0" class="todo"><title>250 · 16.91%</title></rect>
 </g>
-<text text-anchor="end" x="594" y="7.50">82.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="609" y="7"><tspan class="named">1212</tspan> · <tspan class="nonmatching">16</tspan> · <tspan class="todo">250</tspan></text>
+<text text-anchor="end" x="522" y="7.50">82.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1210</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">16</tspan> · <tspan class="todo">250</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="222.55" height="12" x="0" y="0" class="named"><title>359 KB · 53.76%</title></rect>
-<rect width="5.97" height="12" x="222.55" y="0" class="nonmatching"><title>10 KB · 1.44%</title></rect>
-<rect width="185.48" height="12" x="228.52" y="0" class="todo"><title>299 KB · 44.80%</title></rect>
+<rect width="183.70" height="12" x="0" y="0" class="named"><title>359 KB · 53.71%</title></rect>
+<rect width="0.15" height="12" x="183.70" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="4.94" height="12" x="183.84" y="0" class="nonmatching"><title>10 KB · 1.44%</title></rect>
+<rect width="153.22" height="12" x="188.78" y="0" class="todo"><title>299 KB · 44.80%</title></rect>
 </g>
-<text text-anchor="end" x="594" y="24.50">53.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="609" y="24"><tspan class="named">359 KB</tspan> · <tspan class="nonmatching">10 KB</tspan> · <tspan class="todo">299 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">53.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">359 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">10 KB</tspan> · <tspan class="todo">299 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1383,8 +1385,8 @@
 <rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="390" class="named"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="390" class="named"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="390" class="named"><title>0x0048e5e0 acmThunkInitialize (231 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="390" class="named"><title>0x0048e6d0 acmThunkTerminate (54 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="390" class="decompiled"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="390" class="decompiled"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="390" class="named"><title>0x0048e710 acmGetVersion (19 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="390" class="named"><title>0x0048e730 acmMetrics (52 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="390" class="named"><title>0x0048e770 acmDriverEnum (52 bytes)</title></rect>
@@ -2186,7 +2188,7 @@
 <rect width="8.86" height="9.16" x="644.05" y="199.14" class="named"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="8.86" height="9.16" x="655.91" y="199.14" class="named"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
 <rect width="8.86" height="9.16" x="667.77" y="199.14" class="named"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
-<rect width="8.86" height="9.16" x="679.63" y="199.14" class="named"><title>0x0048e5e0 acmThunkInitialize (231 bytes)</title></rect>
+<rect width="8.86" height="9.16" x="679.63" y="199.14" class="decompiled"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
 <rect width="8.82" height="9.16" x="691.48" y="199.14" class="named"><title>0x00417210 AdjustStopperFlag (230 bytes)</title></rect>
 <rect width="8.70" height="9.16" x="703.30" y="199.14" class="named"><title>0x0043dfc0 LaraSlideEdgeJump (227 bytes)</title></rect>
 <rect width="8.66" height="9.16" x="715.01" y="199.14" class="named"><title>0x00413f00 BoatSplash (226 bytes)</title></rect>
@@ -2725,7 +2727,7 @@
 <rect width="4.31" height="4.40" x="639.79" y="339.93" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="347.33" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="354.73" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
-<rect width="4.31" height="4.40" x="639.79" y="362.12" class="named"><title>0x0048e6d0 acmThunkTerminate (54 bytes)</title></rect>
+<rect width="4.31" height="4.40" x="639.79" y="362.12" class="decompiled"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="369.52" class="todo"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="376.84" class="todo"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="384.15" class="todo"><title>0x00402580 draw_poly_gouraud (53 bytes)</title></rect>
