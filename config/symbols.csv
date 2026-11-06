@@ -1530,7 +1530,7 @@ address,size,name,symbol
 0x004b6290,25,Func4b6290,
 0x004b62b2,467,Func4b62b2,
 0x004b6485,40,Func4b6485,
-0x004b64b0,10,Func4b64b0,
+0x004b64b0,10,srand,_srand
 0x004b64c0,42,rand,_rand
 0x004b64f0,486,Func4b64f0,
 0x004b66e0,74,free,_free
@@ -2062,6 +2062,9 @@ address,size,name,symbol
 0x004cd900,2,DumpWidth,_DumpWidth
 0x004cd902,2,DumpHeight,_DumpHeight
 0x004cd908,188,game_malloc_types,_game_malloc_types
+0x004cd9c4,4,water_off,_water_off
+0x004cd9c8,8,water_shim,_water_shim
+0x004cd9d0,8,water_chop,_water_chop
 0x004cdc88,4,bLaraOn,_bLaraOn
 0x004cdc8c,4,bRoomOn,_bRoomOn
 0x004cdc90,4,bObjectOn,_bObjectOn
