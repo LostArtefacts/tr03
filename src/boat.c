@@ -631,3 +631,31 @@ sint32 TestWaterHeight(ITEM_INFO *item, sint32 z_off, sint32 x_off, PHD_VECTOR *
     }
     return height - 5;
 }
+
+int GetCollisionAnim_boat(ITEM_INFO *boat, PHD_VECTOR *moved);
+
+int GetCollisionAnim_boat(ITEM_INFO *boat, PHD_VECTOR *moved)
+{
+    sint32 c, s, front, side;
+
+    moved->x = boat->pos.x_pos - moved->x;
+    moved->z = boat->pos.z_pos - moved->z;
+    if (moved->x || moved->z) {
+        c = phd_cos(boat->pos.y_rot);
+        s = phd_sin(boat->pos.y_rot);
+        front = (moved->z * c + moved->x * s) >> W2V_SHIFT;
+        side = (moved->x * c - moved->z * s) >> W2V_SHIFT;
+        if ((front < 0 ? -front : front) > (side < 0 ? -side : side)) {
+            if (front > 0)
+                return 14;
+            else
+                return 13;
+        } else {
+            if (side > 0)
+                return 11;
+            else
+                return 12;
+        }
+    }
+    return 0;
+}

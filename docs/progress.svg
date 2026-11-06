@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="325.09" height="12" x="0" y="0" class="named"><title>1144 · 77.40%</title></rect>
-<rect width="2.84" height="12" x="325.09" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="92.07" height="12" x="327.93" y="0" class="todo"><title>324 · 21.92%</title></rect>
+<rect width="325.37" height="12" x="0" y="0" class="named"><title>1145 · 77.47%</title></rect>
+<rect width="2.84" height="12" x="325.37" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="91.79" height="12" x="328.21" y="0" class="todo"><title>323 · 21.85%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">77.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1144</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">324</tspan></text>
+<text text-anchor="end" x="600" y="7.50">77.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1145</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">323</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.73" height="12" x="0" y="0" class="named"><title>332 KB · 49.70%</title></rect>
-<rect width="3.98" height="12" x="208.73" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.29" height="12" x="212.71" y="0" class="todo"><title>330 KB · 49.35%</title></rect>
+<rect width="208.83" height="12" x="0" y="0" class="named"><title>332 KB · 49.72%</title></rect>
+<rect width="3.98" height="12" x="208.83" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.20" height="12" x="212.80" y="0" class="todo"><title>330 KB · 49.33%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
@@ -176,7 +176,7 @@
 <rect width="12" height="12" x="135" y="30" class="named"><title>0x00413390 DoBoatDynamics (75 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="30" class="named"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="30" class="todo"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="30" class="todo"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="30" class="named"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="30" class="named"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="30" class="named"><title>0x00413cf0 DrawBoat (39 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="30" class="named"><title>0x00413d20 TriggerBoatMist (471 bytes)</title></rect>
@@ -2363,7 +2363,7 @@
 <rect width="7" height="7.33" x="544.16" y="327.24" class="named"><title>0x004400a0 lara_as_monkeyswing (146 bytes)</title></rect>
 <rect width="7" height="7.28" x="544.16" y="337.57" class="named"><title>0x00441cf0 extra_as_sharkkill (145 bytes)</title></rect>
 <rect width="7" height="7.28" x="544.16" y="347.85" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
-<rect width="7" height="7.23" x="544.16" y="358.13" class="todo"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
+<rect width="7" height="7.23" x="544.16" y="358.13" class="named"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
 <rect width="7" height="7.23" x="544.16" y="368.36" class="named"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
 <rect width="7" height="7.23" x="544.16" y="378.59" class="named"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
 <rect width="7" height="7.23" x="544.16" y="388.82" class="named"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
