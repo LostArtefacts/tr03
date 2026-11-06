@@ -121,3 +121,17 @@ MMRESULT ACMAPI acmDriverDetailsA(HACMDRIVERID hadid, LPACMDRIVERDETAILSA padd, 
 
     return pfn(hadid, padd, fdwDetails);
 }
+
+MMRESULT ACMAPI acmDriverOpen(LPHACMDRIVER phad, HACMDRIVERID hadid, DWORD fdwOpen)
+{
+    MMRESULT (ACMAPI *pfn)(LPHACMDRIVER, HACMDRIVERID, DWORD);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(LPHACMDRIVER, HACMDRIVERID, DWORD))gpafnAcmFunctions[8];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(phad, hadid, fdwOpen);
+}
