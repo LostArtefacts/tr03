@@ -1,6 +1,7 @@
 #include "standard.h"
 #include "specific.h"
 #include "winmain.h"
+#include "drawprimitive.h"
 
 extern "C" {
 
@@ -30,6 +31,85 @@ extern unsigned char *Var6ca1f0;
 #define FTOLFIX(x) ((fconv = x + MAGICNUM / 65536.0), *(int *)(&fconv))
 #define FTOLFIX284(x) ((fconv = x + MAGICNUM / 16.0f), *(int *)(&fconv))
 #define FIX284TOFLOAT(x) float(float(x) * 0.0625f)
+
+inline void FloorDivMod(long Numerator, long Denominator, long &Floor, long &Modulus)
+{
+    __asm {
+        mov ecx, dword ptr [Floor]
+        mov ebx, dword ptr [Modulus]
+        mov edx, dword ptr [Numerator]
+        xor eax, eax
+        cmp edx, 0
+        jl Minus
+        je Zero
+        mov eax, edx
+        cdq
+        idiv dword ptr [Denominator]
+    Zero:
+        mov dword ptr [ecx], eax
+        mov dword ptr [ebx], edx
+        jmp End
+    Minus:
+        sub eax, edx
+        cdq
+        idiv dword ptr [Denominator]
+        cmp edx, 0
+        je Store
+        inc eax
+        mov dword ptr [ecx], 0
+        sub dword ptr [ecx], eax
+        mov eax, dword ptr [Denominator]
+        mov dword ptr [ebx], eax
+        sub dword ptr [ebx], edx
+        jmp End
+    Store:
+        mov dword ptr [ecx], 0
+        sub dword ptr [ecx], eax
+        mov dword ptr [ebx], edx
+    End:
+    }
+}
+
+inline long ceilint(float v)
+{
+    long val;
+    long frac;
+    double fconv;
+
+    val = FTOLFIX(v);
+    if (val > 0) {
+        frac = val & 0xffff;
+        if (!frac)
+            return val >> 16;
+        else
+            return (val >> 16) + 1;
+    } else
+        return val >> 16;
+}
+
+void CalculateEdgeBlack(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom)
+{
+    long dn, dm, ndm, ndn;
+    long inum;
+    double fconv;
+
+    Edge->y = ceilint(Top->sy);
+    Edge->height = ceilint(Bottom->sy) - Edge->y;
+    if (Edge->height) {
+        long tsx, tsy;
+        tsx = FTOLFIX284(Top->sx);
+        tsy = FTOLFIX284(Top->sy);
+        ndm = FTOLFIX284(Bottom->sx - Top->sx);
+        ndn = FTOLFIX284(Bottom->sy - Top->sy);
+        dn = ndn << 4;
+        dm = ndm << 4;
+        Edge->Denominator = dn;
+        inum = (((dm * Edge->y) - (ndm * tsy)) + ((ndn * tsx) - 1)) + dn;
+        FloorDivMod(inum, dn, Edge->x, Edge->ErrorTerm);
+        FloorDivMod(dm, dn, Edge->xstep, Edge->Numerator);
+    }
+}
+
 
 void Func4934b0(void);
 
