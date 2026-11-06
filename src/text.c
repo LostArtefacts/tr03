@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "game.h"
 #include <string.h>
 
@@ -17,6 +19,8 @@
 extern TEXTSTRING T_textStrings[MAX_TEXT_STRINGS];
 extern sint16 T_numStrings;
 extern char T_theStrings[MAX_TEXT_STRINGS * MAX_STRING_SIZE];
+extern int phd_znear;
+extern void (*InsertLine)(int x1, int y1, int x2, int y2, int z, int c0, int c1);
 
 void DisplayModeInfo(char *string);
 void T_DrawThisText(TEXTSTRING *textString);
@@ -295,6 +299,31 @@ void T_DrawText(void)
         }
         textString++;
     }
+}
+
+void S_DrawScreenSprite2d(sint32 x, sint32 y, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
+void S_DrawScreenFBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32 col, uint16 *grdptr, sint32 flags);
+
+void draw_border(sint32 x, sint32 y, sint32 z, sint32 w, sint32 h);
+
+void draw_border(sint32 x, sint32 y, sint32 z, sint32 w, sint32 h)
+{
+    x -= 2;
+    y -= 2;
+    w += 4;
+    h += 4;
+    InsertLine(x - 1, y - 1, x + w + 2, y - 1, phd_znear + 0xc000, 0x1040, 0x1040);
+    InsertLine(x, y, x + w, y, phd_znear + 0xc000, 0x4080c0, 0x4080c0);
+    InsertLine(x + 1, y + 1, x + w, y + 1, phd_znear + 0xc000, 0x1040, 0x1040);
+    InsertLine(x - 1, y, x - 1, y + h + 2, phd_znear + 0xc000, 0x1040, 0x1040);
+    InsertLine(x, y, x, y + h, phd_znear + 0xc000, 0x4080c0, 0x4080c0);
+    InsertLine(x + 1, y, x + 1, y + h - 1, phd_znear + 0xc000, 0x1040, 0x1040);
+    InsertLine(x + w - 1, y, x + w - 1, y + h, phd_znear + 0xc000, 0x1040, 0x1040);
+    InsertLine(x + w, y, x + w, y + h + 1, phd_znear + 0xc000, 0x4080c0, 0x4080c0);
+    InsertLine(x + w + 1, y, x + w + 1, y + h + 2, phd_znear + 0xc000, 0x1040, 0x1040);
+    InsertLine(x - 1, y + h - 1, x + w + 1, y + h - 1, phd_znear + 0xc000, 0x1040, 0x1040);
+    InsertLine(x, y + h, x + w + 1, y + h, phd_znear + 0xc000, 0x4080c0, 0x4080c0);
+    InsertLine(x, y + h + 1, x + w + 2, y + h + 1, phd_znear + 0xc000, 0x1040, 0x1040);
 }
 
 uint32 GetTextScaleH(uint32 scaleH)
