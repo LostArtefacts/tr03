@@ -212,6 +212,32 @@ extern PHDTEXTURESTRUCT phdtextinfo[];
 
 short *HWI_InsertObjectG4_Sorted(short *pFaceInfo, long nFaces, int nSortType);
 
+short *HWI_InsertObjectGT4_Sorted(short *pFaceInfo, long nFaces, int nSortType)
+{
+    PHDTEXTURESTRUCT *pTex;
+    long nDrawType;
+    unsigned short double_sided;
+
+    while (nFaces) {
+        double_sided = (pFaceInfo[4] >> 15) & 1;
+        pTex = &phdtextinfo[pFaceInfo[4] & 0x7fff];
+        nDrawType = pTex->drawtype;
+        if (nDrawType <= 1)
+            nDrawType += 9;
+        else
+            nDrawType = 14;
+        if (nDrawType == 10 || nDrawType == 14)
+            HWI_InsertGT4_Sorted(&vbuf[pFaceInfo[0]], &vbuf[pFaceInfo[1]], &vbuf[pFaceInfo[2]], &vbuf[pFaceInfo[3]], pTex, nSortType, double_sided);
+        else if (vbuf[pFaceInfo[0]].g || vbuf[pFaceInfo[1]].g || vbuf[pFaceInfo[2]].g || vbuf[pFaceInfo[3]].g)
+            HWI_InsertGT4_Sorted(&vbuf[pFaceInfo[0]], &vbuf[pFaceInfo[1]], &vbuf[pFaceInfo[2]], &vbuf[pFaceInfo[3]], pTex, nSortType, double_sided);
+        else
+            HWI_InsertObjectG4_Sorted(pFaceInfo, 1, nSortType);
+        pFaceInfo += 5;
+        nFaces--;
+    }
+    return pFaceInfo;
+}
+
 short *HWI_InsertObjectG3_Sorted(short *pFaceInfo, long nFaces, int nSortType);
 
 }
