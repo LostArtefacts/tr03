@@ -186,6 +186,31 @@ extern "C" int S_FrontEndCheck(void)
     return 1;
 }
 
+extern "C" int S_SaveGame(LPVOID data, int size, int slot)
+{
+    HANDLE file;
+    char filename[80];
+    char count_str[16];
+    DWORD bytes;
+
+    wsprintf(filename, "savegame.%d", slot);
+    file = CreateFile(filename, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (file != INVALID_HANDLE_VALUE) {
+        wsprintf(filename, "%s", GF_Level_Names[savegame.current_level]);
+        WriteFile(file, filename, 75, &bytes, NULL);
+        WriteFile(file, &save_counter, sizeof(sint32), &bytes, NULL);
+        WriteFile(file, data, size, &bytes, NULL);
+        CloseHandle(file);
+        wsprintf(count_str, "%d", save_counter);
+        ChangeRequesterItem(&Load_Game_Requester, slot, filename, 2, count_str, 4);
+        saved_levels[slot] = 1;
+        save_counter++;
+        SavedGames++;
+        return 1;
+    }
+    return 0;
+}
+
 extern "C" int S_LoadGame(LPVOID data, int size, int slot)
 {
     HANDLE file;
