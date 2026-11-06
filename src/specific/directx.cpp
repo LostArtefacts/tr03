@@ -5,6 +5,36 @@
 
 extern "C" {
 
+extern LPDIRECTDRAW2 G_ddraw;
+extern LPDIRECT3D2 G_d3d;
+extern bool SoftwareRenderer;
+HRESULT CALLBACK DXEnumDirect3D(LPGUID lpGuid, LPSTR description, LPSTR name, LPD3DDEVICEDESC lpHWDesc, LPD3DDEVICEDESC lpHELDesc, LPVOID lpContext);
+HRESULT CALLBACK DXEnumDisplayModes(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext);
+
+BOOL CALLBACK DXEnumDirectInput(LPCDIDEVICEINSTANCE lpDevInst, LPVOID lpContext)
+{
+    DEVICEINFO *dd;
+
+    dd = (DEVICEINFO *)lpContext;
+    if (!dd->nDIInfo)
+        dd->DIInfo = (DXDIRECTINPUTINFO *)malloc(sizeof(DXDIRECTINPUTINFO));
+    else
+        dd->DIInfo = (DXDIRECTINPUTINFO *)realloc(dd->DIInfo, (dd->nDIInfo + 1) * sizeof(DXDIRECTINPUTINFO));
+    memset(&dd->DIInfo[dd->nDIInfo], 0, sizeof(DXDIRECTINPUTINFO));
+
+    if (!&lpDevInst->guidInstance) {
+        dd->DIInfo[dd->nDIInfo].lpGuid = 0;
+    } else {
+        dd->DIInfo[dd->nDIInfo].lpGuid = &dd->DIInfo[dd->nDIInfo].Guid;
+        dd->DIInfo[dd->nDIInfo].Guid = lpDevInst->guidInstance;
+    }
+
+    lstrcpy(dd->DIInfo[dd->nDIInfo].About, lpDevInst->tszProductName);
+    lstrcpy(dd->DIInfo[dd->nDIInfo].Name, lpDevInst->tszInstanceName);
+    dd->nDIInfo++;
+    return DIENUM_CONTINUE;
+}
+
 void DXFreeDeviceInfo(DEVICEINFO *dd)
 {
     int i, j;

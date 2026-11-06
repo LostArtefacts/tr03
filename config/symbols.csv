@@ -1335,13 +1335,13 @@ address,size,name,symbol
 0x0048e9f0,55,acmStreamUnprepareHeader,_acmStreamUnprepareHeader@12
 0x0048ea30,376,ControlFusebox,_ControlFusebox
 0x0048ebb0,297,DXGetDeviceInfo,_DXGetDeviceInfo
-0x0048ece0,251,DXEnumDirectInput,_DXEnumDirectInput
-0x0048ede0,245,DXEnumDirectSound,_DXEnumDirectSound
+0x0048ece0,251,DXEnumDirectInput,_DXEnumDirectInput@8
+0x0048ede0,245,DXEnumDirectSound,_DXEnumDirectSound@16
 0x0048eee0,232,DXFreeDeviceInfo,_DXFreeDeviceInfo
-0x0048efd0,496,DXEnumDirectDraw,_DXEnumDirectDraw
+0x0048efd0,496,DXEnumDirectDraw,_DXEnumDirectDraw@16
 0x0048f1c0,45,DXBitMask2ShiftCnt,_DXBitMask2ShiftCnt
-0x0048f1f0,450,DXEnumDisplayModes,_DXEnumDisplayModes
-0x0048f3c0,2029,DXEnumDirect3D,_DXEnumDirect3D
+0x0048f1f0,450,DXEnumDisplayModes,_DXEnumDisplayModes@8
+0x0048f3c0,2029,DXEnumDirect3D,_DXEnumDirect3D@24
 0x0048fbb0,499,DXEnumTextureFormats,_DXEnumTextureFormats
 0x0048fdb0,136,BPPToDDBD,_BPPToDDBD
 0x0048fe40,87,DXCreateDirectDraw,_DXCreateDirectDraw
@@ -1548,7 +1548,7 @@ address,size,name,symbol
 0x004b6bd0,16,Func4b6bd0,
 0x004b6be0,572,Func4b6be0,
 0x004b6e20,128,_strstr,_strstr
-0x004b6ea0,410,Func4b6ea0,
+0x004b6ea0,410,realloc,_realloc
 0x004b7040,48,Func4b7040,
 0x004b7070,18,exit,_exit
 0x004b7090,18,__exit,
