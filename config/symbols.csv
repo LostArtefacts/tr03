@@ -1537,10 +1537,10 @@ address,size,name,symbol
 0x004b6730,20,malloc,_malloc
 0x004b6750,68,Func4b6750,
 0x004b67a0,56,Func4b67a0,
-0x004b67e0,326,Func4b67e0,
-0x004b6930,119,Func4b6930,
-0x004b69b0,55,Func4b69b0,
-0x004b69f0,24,Func4b69f0,
+0x004b67e0,326,fwrite,_fwrite
+0x004b6930,119,fclose,_fclose
+0x004b69b0,55,fprintf,_fprintf
+0x004b69f0,24,fscanf,_fscanf
 0x004b6ae0,170,__alldiv,__alldiv
 0x004b6b90,52,__allmul,__allmul
 0x004b6bd0,16,Func4b6bd0,

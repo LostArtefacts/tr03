@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="321.11" height="12" x="0" y="0" class="named"><title>1130 · 76.45%</title></rect>
-<rect width="2.56" height="12" x="321.11" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="96.33" height="12" x="323.67" y="0" class="todo"><title>339 · 22.94%</title></rect>
+<rect width="321.39" height="12" x="0" y="0" class="named"><title>1131 · 76.52%</title></rect>
+<rect width="2.56" height="12" x="321.39" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="96.05" height="12" x="323.95" y="0" class="todo"><title>338 · 22.87%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">76.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1130</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">339</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1131</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">338</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="206.32" height="12" x="0" y="0" class="named"><title>328 KB · 49.12%</title></rect>
-<rect width="3.89" height="12" x="206.32" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="209.79" height="12" x="210.21" y="0" class="todo"><title>334 KB · 49.95%</title></rect>
+<rect width="206.83" height="12" x="0" y="0" class="named"><title>329 KB · 49.25%</title></rect>
+<rect width="3.89" height="12" x="206.83" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="209.28" height="12" x="210.72" y="0" class="todo"><title>333 KB · 49.83%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">49.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">328 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">334 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">49.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">329 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">333 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1350,7 +1350,7 @@
 <rect width="12" height="12" x="495" y="375" class="todo"><title>0x0048c150 GameMain (704 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="375" class="named"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="375" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="375" class="todo"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="375" class="named"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="375" class="todo"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="375" class="named"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="375" class="named"><title>0x0048d0d0 S_SoundPlaySample (70 bytes)</title></rect>
@@ -1757,7 +1757,7 @@
 <rect width="17.01" height="16.81" x="346.52" y="44.80" class="named"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="16.96" height="16.81" x="366.53" y="44.80" class="named"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
 <rect width="16.96" height="16.81" x="386.49" y="44.80" class="todo"><title>0x00491940 Func491940 (812 bytes)</title></rect>
-<rect width="16.94" height="16.81" x="406.45" y="44.80" class="todo"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
+<rect width="16.94" height="16.81" x="406.45" y="44.80" class="named"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
 <rect width="16.92" height="16.81" x="426.40" y="44.80" class="todo"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="16.44" height="16.81" x="446.32" y="44.80" class="named"><title>0x004250a0 PrintObjects (787 bytes)</title></rect>
 <rect width="16.40" height="16.81" x="465.76" y="44.80" class="named"><title>0x0041bed0 ControlClawmutePlasmaBall (785 bytes)</title></rect>
