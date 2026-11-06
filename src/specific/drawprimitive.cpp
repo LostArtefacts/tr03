@@ -3406,4 +3406,415 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         ret
     }
 }
+
+extern long Var6ca474;
+extern double Var4ceb48;
+extern long Var6ca310;
+extern long Var4ceb70;
+
+__declspec(naked) void MMXDrawTriangleFog(void)
+{
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0xa4
+        push ebx
+        push esi
+        push edi
+        mov ebx, dword ptr [ebp+0x8]
+        mov ecx, dword ptr [ebp+0xc]
+        mov edx, dword ptr [ebp+0x10]
+        mov dword ptr [Var6ca314], ebx
+        fld dword ptr [ebx]
+        fsub dword ptr [ecx]
+        fld dword ptr [ebx+0x4]
+        fsub dword ptr [edx+0x4]
+        fxch st(1)
+        fst dword ptr [ebp-0x68]
+        fxch st(1)
+        fst dword ptr [ebp-0x9c]
+        fmulp st(1), st
+        fld dword ptr [ebx]
+        fsub dword ptr [edx]
+        fld dword ptr [ebx+0x4]
+        fsub dword ptr [ecx+0x4]
+        fxch st(1)
+        fst dword ptr [ebp-0x80]
+        fxch st(1)
+        fst dword ptr [ebp-0x94]
+        fmulp st(1), st
+        fsubp st(1), st
+        fst dword ptr [ebp-0x64]
+        fld1
+        test dword ptr [ebp-0x64], 0x80000000
+        jne L5
+        fdivrp st(1), st
+        mov dword ptr [ebx+0x8], ecx
+        mov dword ptr [ecx+0x8], edx
+        mov dword ptr [edx+0x8], ebx
+        mov dword ptr [ebx+0x14], edx
+        mov dword ptr [ecx+0x14], ebx
+        mov dword ptr [edx+0x14], ecx
+        mov esi, ebx
+        mov eax, dword ptr [ebx+0x4]
+        cmp eax, dword ptr [ecx+0x4]
+        jb L1
+        mov eax, dword ptr [ecx+0x4]
+        mov esi, ecx
+    L1:
+        cmp eax, dword ptr [edx+0x4]
+        jb L2
+        mov esi, edx
+    L2:
+        mov dword ptr [ebp-0x3c], esi
+        mov dword ptr [ebp-0x1c], esi
+        mov eax, dword ptr [ebx+0x10]
+        mov dword ptr [Var6ca474], eax
+        mov esi, dword ptr [ebx+0x10]
+        mov edi, esi
+        mov eax, esi
+        shl esi, 0x8
+        and edi, 0xff00
+        shr eax, 0x8
+        and esi, 0xff00
+        and eax, 0xff00
+        add edi, 0x80
+        add esi, 0x80
+        add eax, 0x80
+        mov dword ptr [ebp-0x2c], edi
+        mov dword ptr [ebp-0xa4], esi
+        mov dword ptr [ebp-0x8], eax
+        mov esi, dword ptr [ecx+0x10]
+        mov edi, esi
+        mov eax, esi
+        shl esi, 0x8
+        and edi, 0xff00
+        shr eax, 0x8
+        and esi, 0xff00
+        and eax, 0xff00
+        add edi, 0x80
+        add esi, 0x80
+        add eax, 0x80
+        mov dword ptr [ebp-0x34], edi
+        mov dword ptr [ebp-0x4], esi
+        mov dword ptr [ebp-0x18], eax
+        mov esi, dword ptr [edx+0x10]
+        mov edi, esi
+        mov eax, esi
+        shl esi, 0x8
+        and edi, 0xff00
+        shr eax, 0x8
+        and esi, 0xff00
+        and eax, 0xff00
+        add edi, 0x80
+        add esi, 0x80
+        add eax, 0x80
+        mov dword ptr [ebp-0x4c], edi
+        mov dword ptr [ebp-0x14], esi
+        mov dword ptr [ebp-0x28], eax
+        fild dword ptr [ebp-0x8]
+        fild dword ptr [ebp-0x18]
+        fild dword ptr [ebp-0x28]
+        fxch st(1)
+        fsubr st, st(2)
+        fxch st(2)
+        fsubrp st(1), st
+        fxch st(1)
+        fst dword ptr [ebp-0x38]
+        fmul dword ptr [ebp-0x9c]
+        fxch st(1)
+        fst dword ptr [ebp-0x50]
+        fmul dword ptr [ebp-0x94]
+        fld dword ptr [ebp-0x38]
+        fmul dword ptr [ebp-0x80]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [ebp-0x50]
+        fmul dword ptr [ebp-0x68]
+        fxch st(2)
+        fmul st, st(3)
+        fist word ptr [Var6ca338 + 4]
+        fxch st(1)
+        fsubp st(2), st
+        fstp dword ptr [ebp-0x30]
+        fmul st, st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [ebp-0x30]
+        fld dword ptr [ebx+0x4]
+        fmul st, st(2)
+        fxch st(2)
+        fstp dword ptr [ebp-0x48]
+        fild dword ptr [ebp-0x8]
+        fxch st(1)
+        faddp st(2), st
+        fadd qword ptr [Var4ceb48]
+        fsubrp st(1), st
+        fstp qword ptr [ebp-0x58]
+        fild dword ptr [ebp-0x2c]
+        fild dword ptr [ebp-0x34]
+        fild dword ptr [ebp-0x4c]
+        fxch st(1)
+        fsubr st, st(2)
+        fxch st(2)
+        fsubrp st(1), st
+        fxch st(1)
+        fst dword ptr [ebp-0x38]
+        fmul dword ptr [ebp-0x9c]
+        fxch st(1)
+        fst dword ptr [ebp-0x50]
+        fmul dword ptr [ebp-0x94]
+        fld dword ptr [ebp-0x38]
+        fmul dword ptr [ebp-0x80]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [ebp-0x50]
+        fmul dword ptr [ebp-0x68]
+        fxch st(2)
+        fmul st, st(3)
+        fist word ptr [Var6ca338 + 2]
+        fxch st(1)
+        fsubp st(2), st
+        fstp dword ptr [ebp-0x90]
+        fmul st, st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [ebp-0x90]
+        fld dword ptr [ebx+0x4]
+        fmul st, st(2)
+        fxch st(2)
+        fstp dword ptr [ebp-0x98]
+        fild dword ptr [ebp-0x2c]
+        fxch st(1)
+        faddp st(2), st
+        fadd qword ptr [Var4ceb48]
+        fsubrp st(1), st
+        fstp qword ptr [ebp-0x24]
+        fild dword ptr [ebp-0xa4]
+        fild dword ptr [ebp-0x4]
+        fild dword ptr [ebp-0x14]
+        fxch st(1)
+        fsubr st, st(2)
+        fxch st(2)
+        fsubrp st(1), st
+        fxch st(1)
+        fst dword ptr [ebp-0x38]
+        fmul dword ptr [ebp-0x9c]
+        fxch st(1)
+        fst dword ptr [ebp-0x50]
+        fmul dword ptr [ebp-0x94]
+        fld dword ptr [ebp-0x38]
+        fmul dword ptr [ebp-0x80]
+        fxch st(1)
+        fsubp st(2), st
+        fld dword ptr [ebp-0x50]
+        fmul dword ptr [ebp-0x68]
+        fxch st(2)
+        fmul st, st(3)
+        fist word ptr [Var6ca338]
+        fxch st(1)
+        fsubp st(2), st
+        fstp dword ptr [ebp-0x88]
+        fmul st, st(1)
+        fld dword ptr [ebx]
+        fmul dword ptr [ebp-0x88]
+        fld dword ptr [ebx+0x4]
+        fmul st, st(2)
+        fxch st(2)
+        fstp dword ptr [ebp-0x8c]
+        fild dword ptr [ebp-0xa4]
+        fxch st(1)
+        faddp st(2), st
+        fadd qword ptr [Var4ceb48]
+        fsubrp st(1), st
+        fstp qword ptr [ebp-0x7c]
+        faddp st(0), st
+        mov esi, dword ptr [ebp-0x3c]
+        mov eax, 0x3
+        mov dword ptr [ebp-0x84], eax
+        mov edi, dword ptr [Var6ca4d0]
+        fld dword ptr [esi+0x4]
+        fsub dword ptr [Var4ceb6c]
+        fadd qword ptr [Var4ceb50]
+        fstp qword ptr [ebp-0x70]
+        inc dword ptr [ebp-0x70]
+        mov eax, dword ptr [ebp-0x70]
+        xor edx, edx
+        mov dword ptr [Var6ca460], eax
+        jmp L6
+        mov edi, edi
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L3:
+        mov eax, dword ptr [edi]
+        push ebx
+        shr ebx, 0x10
+        mov eax, esi
+        shr eax, 0x10
+        mov dword ptr [ebp-0x64], ebx
+        sub eax, ebx
+        fild dword ptr [ebp-0x70]
+        fild dword ptr [ebp-0x64]
+        mov dword ptr [edi+0x4], eax
+        mov dword ptr [edi], ebx
+        fld dword ptr [ebp-0x88]
+        fmul st, st(1)
+        fld dword ptr [ebp-0x8c]
+        fmul st, st(3)
+        fld dword ptr [ebp-0x90]
+        fmul st, st(3)
+        fld dword ptr [ebp-0x98]
+        fmul st, st(5)
+        fxch st(2)
+        faddp st(3), st
+        fld dword ptr [ebp-0x30]
+        fmul st, st(4)
+        fld dword ptr [ebp-0x48]
+        fmul st, st(6)
+        fxch st(2)
+        faddp st(3), st
+        fxch st(3)
+        fadd qword ptr [ebp-0x7c]
+        fxch st(3)
+        faddp st(1), st
+        fxch st(1)
+        fadd qword ptr [ebp-0x24]
+        fxch st(3)
+        faddp st(0), st
+        fxch st(1)
+        fstp dword ptr [edi+0x18]
+        fadd qword ptr [ebp-0x58]
+        fxch st(1)
+        fstp dword ptr [edi+0x1a]
+        fxch st(1)
+        faddp st(0), st
+        fstp dword ptr [edi+0x1c]
+        mov eax, dword ptr [ebp-0x70]
+        add edi, 0x20
+        inc eax
+        pop ebx
+        mov dword ptr [ebp-0x70], eax
+        mov eax, dword ptr [ebp-0x10]
+        add ebx, eax
+        mov eax, dword ptr [ebp-0x74]
+        add esi, eax
+        dec edx
+        dec ecx
+        je L6
+        test edx, edx
+        je L7
+        jmp L3
+    L4:
+        mov dword ptr [Var6ca248], edi
+        call dword ptr [Var6ca310]
+        jmp L8
+    L5:
+        faddp st(0), st
+        faddp st(0), st
+        jmp L8
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L6:
+        mov esi, dword ptr [ebp-0x3c]
+        mov eax, dword ptr [ebp-0x84]
+        mov ecx, esi
+        dec eax
+        js L4
+        mov ecx, dword ptr [ecx+0x8]
+        mov dword ptr [ebp-0x84], eax
+        mov dword ptr [ebp-0x3c], ecx
+        fld dword ptr [esi]
+        fsub dword ptr [ecx]
+        fld dword ptr [esi+0x4]
+        fsub dword ptr [ecx+0x4]
+        fdivp st(1), st
+        fstp dword ptr [ebp-0xc]
+        fild dword ptr [ebp-0x70]
+        fsub dword ptr [esi+0x4]
+        fmul dword ptr [ebp-0xc]
+        fadd dword ptr [esi]
+        fstp dword ptr [ebp-0x5c]
+        fld dword ptr [ecx+0x4]
+        fsub dword ptr [Var4ceb6c]
+        fadd qword ptr [Var4ceb50]
+        fstp qword ptr [ebp-0x44]
+        mov ecx, dword ptr [ebp-0x44]
+        sub ecx, dword ptr [ebp-0x70]
+        inc ecx
+        je L6
+        fld dword ptr [ebp-0xc]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [ebp-0x74]
+        fld dword ptr [ebp-0x5c]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [ebp-0x64]
+        mov esi, dword ptr [ebp-0x64]
+        add esi, 0xffff
+        test edx, edx
+        _emit 0x0f
+        _emit 0x85
+        _emit 0x7d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L7:
+        mov edx, dword ptr [ebp-0x1c]
+        mov eax, dword ptr [ebp-0x84]
+        mov ebx, edx
+        dec eax
+        js L4
+        mov ebx, dword ptr [ebx+0x14]
+        mov dword ptr [ebp-0x84], eax
+        mov dword ptr [ebp-0x1c], ebx
+        fld dword ptr [edx]
+        fsub dword ptr [ebx]
+        fld dword ptr [edx+0x4]
+        fsub dword ptr [ebx+0x4]
+        fdivp st(1), st
+        fstp dword ptr [ebp-0x60]
+        fild dword ptr [ebp-0x70]
+        fsub dword ptr [edx+0x4]
+        fmul dword ptr [ebp-0x60]
+        fadd dword ptr [edx]
+        fstp dword ptr [ebp-0xa0]
+        fld dword ptr [ebx+0x4]
+        fsub dword ptr [Var4ceb6c]
+        fadd qword ptr [Var4ceb50]
+        fstp qword ptr [ebp-0x44]
+        mov edx, dword ptr [ebp-0x44]
+        sub edx, dword ptr [ebp-0x70]
+        inc edx
+        je L7
+        fld dword ptr [ebp-0x60]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [ebp-0x10]
+        fld dword ptr [ebp-0xa0]
+        fmul dword ptr [Var4ceb70]
+        fistp dword ptr [ebp-0x64]
+        mov ebx, dword ptr [ebp-0x64]
+        add ebx, 0xffff
+        jmp L3
+    L8:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
 }

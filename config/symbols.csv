@@ -2106,9 +2106,11 @@ address,size,name,symbol
 0x004ce708,4,Var4ce708,_Var4ce708
 0x004ce710,12,Var4ce710,_Var4ce710
 0x004ce720,164,Var4ce720,_Var4ce720
+0x004ceb48,8,Var4ceb48,_Var4ceb48
 0x004ceb50,8,Var4ceb50,_Var4ceb50
 0x004ceb58,8,Var4ceb58,_Var4ceb58
 0x004ceb6c,4,Var4ceb6c,_Var4ceb6c
+0x004ceb70,4,Var4ceb70,_Var4ceb70
 0x004ceb80,160,Var4ceb80,_Var4ceb80
 0x004cec20,4,Var4cec20,_Var4cec20
 0x004cec28,8,Var4cec28,_Var4cec28
@@ -2572,6 +2574,7 @@ address,size,name,symbol
 0x006ca2f8,4,Var6ca2f8,_Var6ca2f8
 0x006ca2fc,4,Var6ca2fc,_Var6ca2fc
 0x006ca300,4,Var6ca300,_Var6ca300
+0x006ca310,4,Var6ca310,_Var6ca310
 0x006ca314,4,Var6ca314,_Var6ca314
 0x006ca318,4,Var6ca318,_Var6ca318
 0x006ca338,8,Var6ca338,_Var6ca338
@@ -2586,6 +2589,7 @@ address,size,name,symbol
 0x006ca450,4,Var6ca450,_Var6ca450
 0x006ca458,8,Var6ca458,_Var6ca458
 0x006ca460,4,Var6ca460,_Var6ca460
+0x006ca474,4,Var6ca474,_Var6ca474
 0x006ca4ac,4,Var6ca4ac,_Var6ca4ac
 0x006ca4c8,4,Var6ca4c8,_Var6ca4c8
 0x006ca4d0,4,Var6ca4d0,_Var6ca4d0
