@@ -440,7 +440,7 @@ address,size,name,symbol
 0x004372f0,129,RingIsNotOpen,_RingIsNotOpen
 0x00437380,1262,RingNotActive,_RingNotActive
 0x00437870,50,RingActive,_RingActive
-0x004378b0,2065,Inv_AddItem,_Inv_AddItem
+0x004378b0,2454,Inv_AddItem,_Inv_AddItem
 0x00438250,297,Inv_InsertItem,_Inv_InsertItem
 0x00438380,119,Inv_RequestItem,_Inv_RequestItem
 0x00438400,27,Inv_RemoveAllItems,_Inv_RemoveAllItems
