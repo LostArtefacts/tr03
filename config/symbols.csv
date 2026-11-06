@@ -1366,7 +1366,7 @@ address,size,name,symbol
 0x00490b40,88,PrepareTriangleList,_PrepareTriangleList
 0x00490ba0,857,Func490ba0,
 0x00490f10,60,DrawTriangleList,_DrawTriangleList
-0x00490f50,46,Func490f50,
+0x00490f50,46,Func490f50,_Func490f50
 0x00490f80,71,Func490f80,
 0x00490fd0,71,Func490fd0,
 0x00491020,64,Func491020,
@@ -2464,6 +2464,7 @@ address,size,name,symbol
 0x006ca104,1,SoftwareRenderer,_SoftwareRenderer
 0x006ca108,1,MMXSupported,_MMXSupported
 0x006ca124,,D3DDev,_D3DDev
+0x006ca198,4,Var6ca198,_Var6ca198
 0x006ca1a0,4,EndScene,_EndScene
 0x006ca1b8,4,SetRenderState,_SetRenderState
 0x006ca1c0,4,DrawPrimitive,_DrawPrimitive

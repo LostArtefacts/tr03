@@ -63,4 +63,18 @@ void DrawTriangleList(D3DTLVERTEX *v, DWORD vcnt)
     }
 }
 
+void Func490f50(D3DTLVERTEX *v, DWORD vcnt)
+{
+    int n;
+    D3DTLVERTEX *v1, *v2;
+
+    for (n = vcnt; n > 0; n -= 2) {
+        v1 = v;
+        v++;
+        v2 = v;
+        v++;
+        Var6ca198(v1, v2);
+    }
+}
+
 }
