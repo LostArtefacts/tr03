@@ -730,6 +730,34 @@ const char *GetFullPath(const char *name)
     return path;
 }
 
+int FindCDDrive(void)
+{
+    HANDLE file;
+    DWORD drives;
+    char path[] = "D:\\data\\tombpc.dat";
+    char root[8];
+
+    drives = GetLogicalDrives();
+    cd_drive = 'A';
+    lstrcpy(root, "A:\\");
+    while (drives) {
+        if (drives & 1) {
+            root[0] = cd_drive;
+            if (GetDriveType(root) == DRIVE_CDROM) {
+                path[0] = cd_drive;
+                file = CreateFile(path, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+                if (file != INVALID_HANDLE_VALUE) {
+                    CloseHandle(file);
+                    return 1;
+                }
+            }
+        }
+        cd_drive++;
+        drives >>= 1;
+    }
+    return 0;
+}
+
 int S_LoadLevelFile(char *name, int number, int type)
 {
     int loaded;

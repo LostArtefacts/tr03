@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="317.70" height="12" x="0" y="0" class="named"><title>1118 · 75.64%</title></rect>
-<rect width="2.56" height="12" x="317.70" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="99.74" height="12" x="320.26" y="0" class="todo"><title>351 · 23.75%</title></rect>
+<rect width="317.98" height="12" x="0" y="0" class="named"><title>1119 · 75.71%</title></rect>
+<rect width="2.56" height="12" x="317.98" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="99.46" height="12" x="320.54" y="0" class="todo"><title>350 · 23.68%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">75.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1118</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">351</tspan></text>
+<text text-anchor="end" x="600" y="7.50">75.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1119</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">350</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="203.38" height="12" x="0" y="0" class="named"><title>323 KB · 48.42%</title></rect>
-<rect width="3.89" height="12" x="203.38" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="212.74" height="12" x="207.26" y="0" class="todo"><title>338 KB · 50.65%</title></rect>
+<rect width="203.53" height="12" x="0" y="0" class="named"><title>324 KB · 48.46%</title></rect>
+<rect width="3.89" height="12" x="203.53" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="212.59" height="12" x="207.41" y="0" class="todo"><title>338 KB · 50.62%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">48.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">323 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">338 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">48.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">324 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">338 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1220,7 +1220,7 @@
 <rect width="12" height="12" x="45" y="345" class="named"><title>0x004822f0 LoadSamples (613 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="345" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="345" class="nonmatching"><title>0x004825a0 GetFullPath (38 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="345" class="todo"><title>0x004825d0 FindCDDrive (234 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="345" class="named"><title>0x004825d0 FindCDDrive (234 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="345" class="todo"><title>0x004826c0 LoadLevel (584 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="345" class="named"><title>0x00482910 S_LoadLevelFile (125 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="345" class="named"><title>0x00482990 S_UnloadLevelFile (42 bytes)</title></rect>
@@ -2180,7 +2180,7 @@
 <rect width="9.05" height="9.16" x="572.22" y="199.13" class="todo"><title>0x004854c0 HWR_DrawPolyList (236 bytes)</title></rect>
 <rect width="9.01" height="9.16" x="584.27" y="199.13" class="named"><title>0x00442490 lara_col_turn_r (235 bytes)</title></rect>
 <rect width="9.01" height="9.16" x="596.28" y="199.13" class="named"><title>0x00444c20 LaraLandedBad (235 bytes)</title></rect>
-<rect width="8.97" height="9.16" x="608.29" y="199.13" class="todo"><title>0x004825d0 FindCDDrive (234 bytes)</title></rect>
+<rect width="8.97" height="9.16" x="608.29" y="199.13" class="named"><title>0x004825d0 FindCDDrive (234 bytes)</title></rect>
 <rect width="8.90" height="9.16" x="620.26" y="199.13" class="named"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="8.90" height="9.16" x="632.16" y="199.13" class="todo"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>
 <rect width="8.86" height="9.16" x="644.06" y="199.13" class="todo"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
