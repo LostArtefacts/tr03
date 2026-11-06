@@ -6,6 +6,7 @@ extern "C" {
 extern double screen_sizer;
 extern double game_sizer;
 extern int VidSizeLocked;
+extern int Inventory_Mode;
 extern int fade_value;
 extern int fade_limit;
 extern int fade_adder;
@@ -49,6 +50,19 @@ void TempVideoRemove(void)
     if (screen_sizer != game_sizer) {
         screen_sizer = game_sizer;
         setup_screen_size();
+    }
+}
+
+void S_CopyScreenToBuffer(void);
+
+void S_FadeInInventory(int fade)
+{
+    if (Inventory_Mode != 1)
+        S_CopyScreenToBuffer();
+    if (fade) {
+        fade_value = 16 << 16;
+        fade_limit = 24 << 16;
+        fade_adder = 32768;
     }
 }
 
