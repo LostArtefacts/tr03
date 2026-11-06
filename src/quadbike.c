@@ -933,3 +933,41 @@ sint32 TestHeight_quadbike(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos)
         return NO_HEIGHT;
     return GetHeight(floor, pos->x, pos->y, pos->z);
 }
+
+extern int height_type;
+
+int CanGetOff_quadbike(int direction)
+{
+    ITEM_INFO *v;
+    FLOOR_INFO *floor;
+    sint16 room_number, angle;
+    int x, y, z, height, ceiling;
+
+    v = &items[lara.skidoo];
+
+    if (direction < 0)
+        angle = v->pos.y_rot - 0x4000;
+    else
+        angle = v->pos.y_rot + 0x4000;
+
+    x = v->pos.x_pos + (512 * phd_sin(angle) >> W2V_SHIFT);
+    y = v->pos.y_pos;
+    z = v->pos.z_pos + (512 * phd_cos(angle) >> W2V_SHIFT);
+
+    room_number = v->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    height = GetHeight(floor, x, y, z);
+
+    if (height_type == 2 || height_type == 3 || height == NO_HEIGHT)
+        return 0;
+
+    if (ABS(height - v->pos.y_pos) > WALL_L / 2)
+        return 0;
+
+    ceiling = GetCeiling(floor, x, y, z);
+
+    if (ceiling - v->pos.y_pos > -762 || height - ceiling < 762)
+        return 0;
+
+    return 1;
+}
