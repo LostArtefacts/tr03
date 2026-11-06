@@ -630,6 +630,224 @@ void SubCollision(sint16 item_number, ITEM_INFO *l, COLL_INFO *coll)
     }
 }
 
+void GetLaraHandAbsPosition(PHD_VECTOR *vec, int joint);
+int mgLOS(GAME_VECTOR *start, GAME_VECTOR *target, int push);
+void UpdateLaraRoom(ITEM_INFO *item, int height);
+sint32 GetWaterDepth(sint32 x, sint32 y, sint32 z, sint16 room_number);
+int CanGetOff_sub(ITEM_INFO *v);
+
+void UserInput(ITEM_INFO *v, ITEM_INFO *l, SUBINFO *sub)
+{
+    sint16 anim, frame;
+    PHD_VECTOR vec;
+    GAME_VECTOR VPos, LPos;
+    sint32 wd, wh, hfw;
+
+    CanGetOff_sub(v);
+    anim = l->anim_number - objects[VEHICLE_ANIM].anim_index;
+    frame = l->frame_number - anims[l->anim_number].frame_base;
+    switch (l->current_anim_state) {
+    case 4:
+        if (l->hit_points <= 0) {
+            l->goal_anim_state = 0;
+            break;
+        }
+        if (input & IN_LEFT)
+            sub->Rot -= 0x400000;
+        else if (input & IN_RIGHT)
+            sub->Rot += 0x400000;
+        if (sub->Flags & SF_SURFACE) {
+            if (v->pos.x_rot > ONE_DEGREE * 50)
+                v->pos.x_rot -= ONE_DEGREE;
+            else if (v->pos.x_rot < ONE_DEGREE * 50)
+                v->pos.x_rot += ONE_DEGREE;
+        } else {
+            if (input & IN_FORWARD)
+                sub->RotX -= (ONE_DEGREE * 2) << 16;
+            else if (input & IN_BACK)
+                sub->RotX += (ONE_DEGREE * 2) << 16;
+        }
+        if (input & IN_JUMP) {
+            if ((sub->Flags & SF_SURFACE) && (input & IN_FORWARD) && v->pos.x_rot > -(ONE_DEGREE * 15))
+                sub->Flags |= 4;
+            sub->Vel += 0x40000;
+        } else {
+            l->goal_anim_state = 5;
+        }
+        break;
+    case 5:
+        if (l->hit_points <= 0) {
+            l->goal_anim_state = 0;
+            break;
+        }
+        if (input & IN_LEFT)
+            sub->Rot -= 0x200000;
+        else if (input & IN_RIGHT)
+            sub->Rot += 0x200000;
+        if (sub->Flags & SF_SURFACE) {
+            if (v->pos.x_rot > ONE_DEGREE * 50)
+                v->pos.x_rot -= ONE_DEGREE;
+            else if (v->pos.x_rot < ONE_DEGREE * 50)
+                v->pos.x_rot += ONE_DEGREE;
+        } else {
+            if (input & IN_FORWARD)
+                sub->RotX -= (ONE_DEGREE * 2) << 16;
+            else if (input & IN_BACK)
+                sub->RotX += (ONE_DEGREE * 2) << 16;
+        }
+        if ((input & IN_ROLL) && CanGetOff_sub(v)) {
+            if (sub->Flags & SF_SURFACE)
+                l->goal_anim_state = 2;
+            else
+                l->goal_anim_state = 9;
+            sub->Flags &= ~1;
+            StopSoundEffect(346);
+            SoundEffect(348, (PHD_3DPOS *)&v->pos.x_pos, 2);
+        } else if (input & IN_JUMP) {
+            if ((sub->Flags & SF_SURFACE) && (input & IN_FORWARD) && v->pos.x_rot > -(ONE_DEGREE * 15))
+                sub->Flags |= 4;
+            l->goal_anim_state = 4;
+        }
+        break;
+    case 8:
+        if (anim == 11) {
+            v->pos.y_pos += 4;
+            v->pos.x_rot += ONE_DEGREE;
+            if (frame == 30)
+                SoundEffect(347, (PHD_3DPOS *)&v->pos.x_pos, 2);
+            if (frame == 50)
+                sub->Flags |= 1;
+        } else if (anim == 13) {
+            if (frame == 30)
+                SoundEffect(347, (PHD_3DPOS *)&v->pos.x_pos, 2);
+            if (frame == 42)
+                sub->Flags |= 1;
+        }
+        break;
+    case 9:
+        if (anim == 12 && frame == 42) {
+            vec.x = 0;
+            vec.y = 0;
+            vec.z = 0;
+            GetLaraHandAbsPosition(&vec, 2);
+            LPos.x = vec.x;
+            LPos.y = vec.y;
+            LPos.z = vec.z;
+            LPos.room_number = v->room_number;
+            VPos.x = v->pos.x_pos;
+            VPos.y = v->pos.y_pos;
+            VPos.z = v->pos.z_pos;
+            VPos.room_number = v->room_number;
+            mgLOS(&VPos, &LPos, 0);
+            l->pos.x_pos = LPos.x;
+            l->pos.y_pos = LPos.y;
+            l->pos.z_pos = LPos.z;
+            l->anim_number = 108;
+            l->frame_number = anims[108].frame_base;
+            l->current_anim_state = AS_TREAD;
+            l->fallspeed = 0;
+            l->gravity_status = 0;
+            l->pos.x_rot = l->pos.z_rot = 0;
+            UpdateLaraRoom(l, 0);
+            lara.water_status = LARA_UNDERWATER;
+            lara.gun_status = LG_ARMLESS;
+            lara.skidoo = NO_ITEM;
+            v->hit_points = 0;
+        }
+        break;
+    case 2:
+        if (anim == 9 && frame == 51) {
+            vec.x = 0;
+            vec.y = 0;
+            vec.z = 0;
+            wd = GetWaterDepth(l->pos.x_pos, l->pos.y_pos, l->pos.z_pos, l->room_number);
+            wh = GetWaterHeight(l->pos.x_pos, l->pos.y_pos, l->pos.z_pos, l->room_number);
+            if (wh != NO_HEIGHT)
+                hfw = l->pos.y_pos - wh;
+            else
+                hfw = NO_HEIGHT;
+            GetLaraHandAbsPosition(&vec, 2);
+            l->pos.x_pos = vec.x;
+            l->pos.y_pos = l->pos.y_pos + 1 - hfw;
+            l->pos.y_pos = vec.y;
+            l->pos.z_pos = vec.z;
+            l->anim_number = 114;
+            l->frame_number = anims[114].frame_base;
+            l->current_anim_state = l->goal_anim_state = AS_SURFTREAD;
+            l->fallspeed = 0;
+            l->gravity_status = 0;
+            l->pos.x_rot = l->pos.z_rot = 0;
+            UpdateLaraRoom(l, -LARA_HITE / 2);
+            lara.water_status = LARA_SURFACE;
+            lara.water_surface_dist = -hfw;
+            lara.dive_count = 11;
+            lara.torso_x_rot = lara.torso_y_rot = 0;
+            lara.head_x_rot = lara.head_y_rot = 0;
+            lara.gun_status = LG_ARMLESS;
+            lara.skidoo = NO_ITEM;
+            v->hit_points = 0;
+        }
+        break;
+    case 0:
+        if ((anim == 0 && frame == 16) || (anim == 0 && frame == 17)) {
+            vec.x = 0;
+            vec.y = 0;
+            vec.z = 0;
+            GetLaraHandAbsPosition(&vec, 2);
+            l->pos.x_pos = vec.x;
+            l->pos.y_pos = vec.y;
+            l->pos.z_pos = vec.z;
+            l->anim_number = 124;
+            l->frame_number = anims[124].frame_base + 17;
+            l->current_anim_state = l->goal_anim_state = AS_UWDEATH;
+            l->fallspeed = 0;
+            l->gravity_status = 0;
+            l->pos.x_rot = l->pos.z_rot = 0;
+            sub->Flags |= 8;
+        }
+        v->speed = 0;
+        break;
+    }
+    if (sub->Flags & 4) {
+        if (v->pos.x_rot > -(ONE_DEGREE * 15))
+            v->pos.x_rot -= ONE_DEGREE * 5;
+        else
+            sub->Flags &= ~4;
+    }
+    if (sub->Vel > 0) {
+        if ((sub->Vel -= 0x18000) < 0)
+            sub->Vel = 0;
+    } else if (sub->Vel < 0) {
+        if ((sub->Vel += 0x18000) > 0)
+            sub->Vel = 0;
+    }
+    if (sub->Vel > 0x400000)
+        sub->Vel = 0x400000;
+    else if (sub->Vel < -0x400000)
+        sub->Vel = -0x400000;
+    if (sub->Rot > 0) {
+        if ((sub->Rot -= 0x100000) < 0)
+            sub->Rot = 0;
+    } else if (sub->Rot < 0) {
+        if ((sub->Rot += 0x100000) > 0)
+            sub->Rot = 0;
+    }
+    if (sub->RotX > 0) {
+        if ((sub->RotX -= ONE_DEGREE << 16) < 0)
+            sub->RotX = 0;
+    } else if (sub->RotX < 0) {
+        if ((sub->RotX += ONE_DEGREE << 16) > 0)
+            sub->RotX = 0;
+    }
+    if (sub->Rot > 0x1c00000)
+        sub->Rot = 0x1c00000;
+    else if (sub->Rot < -0x1c00000)
+        sub->Rot = -0x1c00000;
+    if (sub->RotX > (ONE_DEGREE * 2) << 16)
+        sub->RotX = (ONE_DEGREE * 2) << 16;
+    else if (sub->RotX < -((ONE_DEGREE * 2) << 16))
+        sub->RotX = -((ONE_DEGREE * 2) << 16);
+}
 
 int CanGetOff_sub(ITEM_INFO *v)
 {

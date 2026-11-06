@@ -949,7 +949,7 @@ address,size,name,symbol
 0x00468c10,1016,SubControl,_SubControl
 0x00469010,312,FireSubHarpoon,_FireSubHarpoon
 0x00469150,462,BackgroundCollision,_BackgroundCollision
-0x00469320,1584,UserInput,_UserInput
+0x00469320,1624,UserInput,_UserInput
 0x00469980,250,CanGetOff_sub,_CanGetOff_sub
 0x00469a80,618,SubEffects,_SubEffects
 0x00469cf0,231,DoWake_sub,_DoWake_sub
