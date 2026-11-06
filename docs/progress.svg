@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="316.85" height="12" x="0" y="0" class="named"><title>1115 · 75.44%</title></rect>
-<rect width="2.56" height="12" x="316.85" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="100.60" height="12" x="319.40" y="0" class="todo"><title>354 · 23.95%</title></rect>
+<rect width="317.13" height="12" x="0" y="0" class="named"><title>1116 · 75.51%</title></rect>
+<rect width="2.56" height="12" x="317.13" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="100.31" height="12" x="319.69" y="0" class="todo"><title>353 · 23.88%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">75.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1115</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">354</tspan></text>
+<text text-anchor="end" x="600" y="7.50">75.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1116</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">353</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="201.70" height="12" x="0" y="0" class="named"><title>321 KB · 48.02%</title></rect>
-<rect width="3.89" height="12" x="201.70" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="214.41" height="12" x="205.59" y="0" class="todo"><title>341 KB · 51.05%</title></rect>
+<rect width="201.98" height="12" x="0" y="0" class="named"><title>321 KB · 48.09%</title></rect>
+<rect width="3.89" height="12" x="201.98" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="214.13" height="12" x="205.87" y="0" class="todo"><title>341 KB · 50.98%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">48.0%</text>
+<text text-anchor="end" x="600" y="24.50">48.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">321 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">341 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1202,7 +1202,7 @@
 <rect width="12" height="12" x="525" y="330" class="named"><title>0x00480d20 DS_Release (26 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="330" class="named"><title>0x00480d40 DS_IsSoundEnabled (14 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="330" class="named"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="330" class="todo"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="330" class="named"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="330" class="todo"><title>0x00480f70 LoadRooms (1008 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="330" class="nonmatching"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="330" class="todo"><title>0x004813d0 LoadObjects (1214 bytes)</title></rect>
@@ -1947,7 +1947,7 @@
 <rect width="12.69" height="12.51" x="416.12" y="146.47" class="named"><title>0x004430c0 lara_col_wade (452 bytes)</title></rect>
 <rect width="12.69" height="12.46" x="416.12" y="161.99" class="named"><title>0x0040faf0 Trigger51RocketSmoke (450 bytes)</title></rect>
 <rect width="12.69" height="12.46" x="416.12" y="177.44" class="todo"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
-<rect width="12.69" height="12.43" x="416.12" y="192.90" class="todo"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
+<rect width="12.69" height="12.43" x="416.12" y="192.90" class="named"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
 <rect width="12.69" height="12.38" x="416.12" y="208.33" class="named"><title>0x0041bbe0 TriggerPlasma_clawmute (447 bytes)</title></rect>
 <rect width="12.69" height="12.32" x="416.12" y="223.71" class="named"><title>0x0042e9f0 WadeSplash (445 bytes)</title></rect>
 <rect width="12.69" height="12.32" x="416.12" y="239.03" class="named"><title>0x0046d340 PropellerControl (445 bytes)</title></rect>

@@ -8,6 +8,7 @@ extern "C" {
 #include "../camera.h"
 #include "../anim.h"
 #include "../room.h"
+#include "../gameflow.h"
 
 extern char LastLoadedLevelPath[256];
 extern unsigned char *texture_page_ptrs[32];
@@ -109,6 +110,44 @@ void DS_FreeAllSamples(void);
 bool DS_MakeSample(int nSample, LPWAVEFORMATEX pWF, LPVOID pData, DWORD dwLen);
 void game_free(int size, int type);
 const char *GetFullPath(const char *name);
+extern int GnTexturePages;
+void HWR_LoadTexturePages(int nPages, unsigned char *src, unsigned char *palette);
+extern sint16 number_rooms;
+extern ROOM_INFO *room;
+extern sint16 *floor_data;
+extern sint16 phd_winxmax;
+extern sint16 phd_winymax;
+extern sint32 wibble;
+extern uint8 CurrentAtmosphere;
+void init_water_table(void);
+void CalculateWibbleTable(void);
+void BuildOutsideTable(void);
+
+typedef struct {
+    sint16 goal_anim_state;
+    sint16 number_ranges;
+    sint16 range_index;
+} CHANGE_STRUCT;
+
+typedef struct {
+    sint16 start_frame;
+    sint16 end_frame;
+    sint16 link_anim_num;
+    sint16 link_frame_num;
+} RANGE_STRUCT;
+
+extern sint16 *mesh_base;
+extern CHANGE_STRUCT *changes;
+extern RANGE_STRUCT *ranges;
+extern sint16 *commands;
+extern sint32 *bones;
+extern sint16 *frames;
+void InitialiseObjects(void);
+extern sint16 GF_Offsets[200];
+extern DWORD LdwPaletteOffset;
+extern DWORD LdwTextureOffset;
+extern DWORD LdwDepthQOffset;
+void init_game_malloc(void);
 
 extern char cd_drive;
 extern char **GF_picfilenames;
@@ -134,6 +173,49 @@ BOOL MyReadFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWO
         DD_SpinMessageLoop(false);
     }
     return ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
+}
+
+int LoadTexturePages(HANDLE file)
+{
+    DWORD read;
+    char *base;
+    int i;
+    int num_pages;
+    bool t16BitTextures;
+    int nBytesPerPage;
+
+    MyReadFile(file, &num_pages, sizeof(int), &read, NULL);
+    if (App.nRenderMode == 0) {
+        for (i = 0; i < num_pages; i++) {
+            if (texture_page_ptrs[i] == NULL)
+                texture_page_ptrs[i] = (unsigned char *)game_malloc(65536, 1);
+            MyReadFile(file, texture_page_ptrs[i], 65536, &read, NULL);
+        }
+        SetFilePointer(file, num_pages * 131072, NULL, FILE_CURRENT);
+        return 1;
+    }
+    if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bPalette == false)
+        t16BitTextures = true;
+    else
+        t16BitTextures = false;
+    nBytesPerPage = t16BitTextures ? 0x20000 : 0x10000;
+    base = (char *)GlobalAlloc(GMEM_FIXED, num_pages * nBytesPerPage);
+    if (base == NULL)
+        return 0;
+    if (t16BitTextures) {
+        SetFilePointer(file, num_pages * 65536, NULL, FILE_CURRENT);
+        for (i = 0; i < num_pages; i++)
+            MyReadFile(file, base + i * nBytesPerPage, nBytesPerPage, &read, NULL);
+        HWR_LoadTexturePages(num_pages, (unsigned char *)base, NULL);
+    } else {
+        for (i = 0; i < num_pages; i++)
+            MyReadFile(file, base + i * nBytesPerPage, nBytesPerPage, &read, NULL);
+        SetFilePointer(file, num_pages * 131072, NULL, FILE_CURRENT);
+        HWR_LoadTexturePages(num_pages, (unsigned char *)base, game_palette);
+    }
+    GnTexturePages = num_pages;
+    GlobalFree((HGLOBAL)base);
+    return 1;
 }
 
 void AdjustTextureUVs(bool reset)

@@ -2304,13 +2304,17 @@ address,size,name,symbol
 0x00632ac8,,lpDirectSound,_lpDirectSound
 0x00632ad0,128,DS_SamplesPlaying,_DS_SamplesPlaying
 0x00632b50,128,DS_Samples,_DS_Samples
+0x00632bf8,4,GnTexturePages,_GnTexturePages
 0x00632c00,,TexturesUVFlag,_TexturesUVFlag
 0x00633c00,4,nBytesRead,_nBytesRead
+0x00633c88,4,LdwPaletteOffset,_LdwPaletteOffset
+0x00633c8c,4,LdwTextureOffset,_LdwTextureOffset
 0x00633c90,400,GF_Offsets,_GF_Offsets
 0x00633e20,4,mesh_base,_mesh_base
 0x00633e24,4,floor_data,_floor_data
 0x00633e28,256,LastLoadedLevelPath,_LastLoadedLevelPath
 0x00633f28,4,nTInfos,_nTInfos
+0x00633f2c,4,LdwDepthQOffset,_LdwDepthQOffset
 0x00633f38,1,cd_drive,_cd_drive
 0x00633f3c,4,fmv_playing,_fmv_playing
 0x00633f40,4,MovieContext,_MovieContext
