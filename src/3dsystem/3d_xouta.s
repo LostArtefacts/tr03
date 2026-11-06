@@ -2,6 +2,7 @@
     .model flat
 
     extern _depthq_table:byte
+    extern _gouraud_table:byte
     extern _phd_scrwidth:byte
     extern _phd_winptr:byte
     extern _phd_winwidth:byte
@@ -169,5 +170,149 @@ L4b446a:
     popa
     ret
 _transA endp
+
+_gourA proc public
+    push ecx
+    push esi
+    push edi
+    push ebp
+    sub esp, 010h
+    sub edx, eax
+    jle near ptr L4b45c7
+    mov dword ptr [esp+04h], edx
+    mov ecx, eax
+    shl ecx, 04h
+    add ecx, offset _xbuffer
+    mov dword ptr [esp+08h], ecx
+    imul eax, dword ptr [_phd_scrwidth]
+    add eax, dword ptr [_phd_winptr]
+    mov dword ptr [esp+0ch], eax
+    movzx ebx, bx
+    shl ebx, 05h
+    add ebx, offset _gouraud_table
+    mov dword ptr [esp], ebx
+L4b44b1:
+    mov eax, dword ptr [esp+08h]
+    movsx ebx, word ptr [eax+0ah]
+    movsx edi, word ptr [eax+02h]
+    cmp edi, ebx
+    jge near ptr L4b45af
+    mov ecx, dword ptr [eax+04h]
+    mov ebp, ebx
+    mov edx, dword ptr [eax+0ch]
+    sub edx, ecx
+    sub ebx, edi
+    mov eax, edx
+    sar edx, 01fh
+    idiv ebx
+    test edi, edi
+    jns short L4b44e3
+    imul edi, eax
+    sub ecx, edi
+    xor edi, edi
+L4b44e3:
+    sub ebp, edi
+    add edi, dword ptr [esp+0ch]
+    mov edx, eax
+    mov esi, ecx
+    sar eax, 010h
+    sar ecx, 010h
+    shl edx, 010h
+    shl esi, 010h
+    add ecx, dword ptr [esp]
+    test edi, 01h
+    je short L4b450e
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    mov byte ptr [edi], bl
+    adc ecx, eax
+    dec ebp
+    inc edi
+L4b450e:
+    sub ebp, 010h
+    js near ptr L4b459e
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+02h], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+04h], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+06h], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+08h], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+0ah], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+0ch], bx
+    adc ecx, eax
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    adc ecx, eax
+    mov bh, byte ptr [ecx]
+    add esi, edx
+    mov word ptr [edi+0eh], bx
+    adc ecx, eax
+    add edi, 010h
+    jmp near ptr L4b450e
+L4b459e:
+    add ebp, 010h
+    jle short L4b45af
+L4b45a3:
+    mov bl, byte ptr [ecx]
+    add esi, edx
+    mov byte ptr [edi], bl
+    adc ecx, eax
+    inc edi
+    dec ebp
+    jne short L4b45a3
+L4b45af:
+    mov eax, dword ptr [_phd_scrwidth]
+    add dword ptr [esp+08h], 010h
+    add dword ptr [esp+0ch], eax
+    dec dword ptr [esp+04h]
+    jne near ptr L4b44b1
+L4b45c7:
+    add esp, 010h
+    pop ebp
+    pop edi
+    pop esi
+    pop ecx
+    ret
+_gourA endp
 
     end
