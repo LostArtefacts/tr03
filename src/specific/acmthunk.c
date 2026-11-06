@@ -191,3 +191,17 @@ MMRESULT ACMAPI acmStreamClose(HACMSTREAM has, DWORD fdwClose)
 
     return pfn(has, fdwClose);
 }
+
+MMRESULT ACMAPI acmStreamSize(HACMSTREAM has, DWORD cbInput, LPDWORD pdwOutputBytes, DWORD fdwSize)
+{
+    MMRESULT (ACMAPI *pfn)(HACMSTREAM, DWORD, LPDWORD, DWORD);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, DWORD, LPDWORD, DWORD))gpafnAcmFunctions[36];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(has, cbInput, pdwOutputBytes, fdwSize);
+}
