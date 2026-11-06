@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="318.39" height="12" x="0" y="0" class="named"><title>1265 · 85.59%</title></rect>
-<rect width="1.51" height="12" x="318.39" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.54" height="12" x="319.90" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
-<rect width="46.56" height="12" x="325.44" y="0" class="todo"><title>185 · 12.52%</title></rect>
+<rect width="318.64" height="12" x="0" y="0" class="named"><title>1266 · 85.66%</title></rect>
+<rect width="1.51" height="12" x="318.64" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
+<rect width="5.54" height="12" x="320.15" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="46.31" height="12" x="325.69" y="0" class="todo"><title>184 · 12.45%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">86.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1265</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">185</tspan></text>
+<text text-anchor="end" x="552" y="7.50">86.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1266</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">184</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="219.91" height="12" x="0" y="0" class="named"><title>395 KB · 59.12%</title></rect>
-<rect width="0.34" height="12" x="219.91" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="8.07" height="12" x="220.25" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
-<rect width="143.67" height="12" x="228.33" y="0" class="todo"><title>258 KB · 38.62%</title></rect>
+<rect width="222.01" height="12" x="0" y="0" class="named"><title>399 KB · 59.68%</title></rect>
+<rect width="0.34" height="12" x="222.01" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
+<rect width="8.07" height="12" x="222.35" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="141.58" height="12" x="230.42" y="0" class="todo"><title>255 KB · 38.06%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">59.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">395 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">258 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">59.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">399 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">255 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -477,7 +477,7 @@
 <rect width="12" height="12" x="120" y="120" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="120" class="named"><title>0x004322a0 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="120" class="todo"><title>0x00432310 GF_InterpretSequence (1372 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="120" class="todo"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="120" class="named"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="120" class="named"><title>0x00433790 InitialiseHair (116 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="120" class="named"><title>0x00433810 HairControl (2768 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="120" class="named"><title>0x004342e0 DrawHair (118 bytes)</title></rect>
@@ -1562,7 +1562,7 @@
 <rect width="39.15" height="44.59" x="50.85" y="48.24" class="todo"><title>0x00435400 Display_Inventory (4978 bytes)</title></rect>
 <rect width="39.15" height="36.98" x="50.85" y="95.84" class="todo"><title>0x004b0b50 Func4b0b50 (4127 bytes)</title></rect>
 <rect width="39.15" height="35.91" x="50.85" y="135.82" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
-<rect width="39.15" height="33.75" x="50.85" y="174.72" class="todo"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
+<rect width="39.15" height="33.75" x="50.85" y="174.72" class="named"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
 <rect width="39.15" height="33.59" x="50.85" y="211.47" class="named"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
 <rect width="39.15" height="33.46" x="50.85" y="248.06" class="todo"><title>0x004a4fb0 Func4a4fb0 (3736 bytes)</title></rect>
 <rect width="39.15" height="32.01" x="50.85" y="284.52" class="todo"><title>0x00450800 LondonBossControl (3575 bytes)</title></rect>
