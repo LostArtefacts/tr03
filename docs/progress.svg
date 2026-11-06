@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="282.07" height="12" x="0" y="0" class="named"><title>1219 · 82.48%</title></rect>
-<rect width="0.46" height="12" x="282.07" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="282.53" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="55.30" height="12" x="286.70" y="0" class="todo"><title>239 · 16.17%</title></rect>
+<rect width="282.30" height="12" x="0" y="0" class="named"><title>1220 · 82.54%</title></rect>
+<rect width="0.46" height="12" x="282.30" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="282.76" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="55.07" height="12" x="286.93" y="0" class="todo"><title>238 · 16.10%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">82.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1219</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">239</tspan></text>
+<text text-anchor="end" x="522" y="7.50">82.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1220</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">238</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.38" height="12" x="0" y="0" class="named"><title>368 KB · 55.08%</title></rect>
-<rect width="0.15" height="12" x="188.38" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="188.53" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="147.44" height="12" x="194.56" y="0" class="todo"><title>288 KB · 43.11%</title></rect>
+<rect width="188.39" height="12" x="0" y="0" class="named"><title>368 KB · 55.09%</title></rect>
+<rect width="0.15" height="12" x="188.39" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="188.54" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="147.42" height="12" x="194.58" y="0" class="todo"><title>288 KB · 43.11%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">368 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">288 KB</tspan></text>
@@ -500,7 +500,7 @@
 <rect width="12" height="12" x="465" y="120" class="named"><title>0x004369c0 SelectMeshes (143 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="120" class="named"><title>0x00436a50 AnimateInventoryItem (129 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="120" class="named"><title>0x00436ae0 DrawInventoryItem (1216 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="120" class="todo"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="120" class="named"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="120" class="named"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="120" class="named"><title>0x00437050 InitColours (266 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="120" class="named"><title>0x00437160 RingIsOpen (392 bytes)</title></rect>
@@ -2928,7 +2928,7 @@
 <rect width="3.15" height="2.89" x="731.54" y="394.19" class="named"><title>0x0048fec0 DXSetCooperativeLevel (26 bytes)</title></rect>
 <rect width="3.15" height="2.89" x="737.69" y="394.19" class="named"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>
 <rect width="3.15" height="2.89" x="743.85" y="394.19" class="todo"><title>0x004b4c79 Func4b4c79 (26 bytes)</title></rect>
-<rect width="2.62" height="3.32" x="694.26" y="400.08" class="todo"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
+<rect width="2.62" height="3.32" x="694.26" y="400.08" class="named"><title>0x00436fa0 GetDebouncedInput (25 bytes)</title></rect>
 <rect width="2.62" height="3.32" x="694.26" y="406.40" class="named"><title>0x00474d50 ACMEmulateCDStop (25 bytes)</title></rect>
 <rect width="2.62" height="3.32" x="694.26" y="412.72" class="named"><title>0x0048fea0 DXCreateDirect3D (25 bytes)</title></rect>
 <rect width="2.62" height="3.19" x="694.26" y="419.04" class="named"><title>0x00402180 SetZFar (24 bytes)</title></rect>

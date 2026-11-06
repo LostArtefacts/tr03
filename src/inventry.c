@@ -300,6 +300,16 @@ void DrawInventoryItem(INVENTORY_ITEM *inv_item)
     phd_PopMatrix();
 }
 
+sint32 GetDebouncedInput(sint32 input)
+{
+    int j;
+
+    j = input ^ (input & oldInputDB);
+    oldInputDB = input;
+    input &= j;
+    return input;
+}
+
 void GetGlobeMeshFlags(void)
 {
     GlobeLevelComplete[0] = savegame.IndiaComplete;
