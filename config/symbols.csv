@@ -1398,7 +1398,7 @@ address,size,name,symbol
 0x004953b0,212,DrawSpansAlpha,_DrawSpansAlpha
 0x00495490,346,Func495490,_Func495490
 0x004955f0,354,Func4955f0,_Func4955f0
-0x00495760,368,Func495760,
+0x00495760,368,Func495760,_Func495760
 0x004958d0,335,Func4958d0,
 0x00495a20,360,Func495a20,
 0x00495b90,341,Func495b90,
@@ -2108,6 +2108,7 @@ address,size,name,symbol
 0x004ce720,164,Var4ce720,_Var4ce720
 0x004ceb80,160,Var4ceb80,_Var4ceb80
 0x004cec20,4,Var4cec20,_Var4cec20
+0x004cec30,8,Var4cec30,_Var4cec30
 0x004ceec4,1,bSetColorKey,_bSetColorKey
 0x004cef68,18,tga_header,_tga_header
 0x004cefa8,12,VFAW,_VFAW
@@ -2548,6 +2549,7 @@ address,size,name,symbol
 0x006ca2d0,4,Var6ca2d0,_Var6ca2d0
 0x006ca300,4,Var6ca300,_Var6ca300
 0x006ca338,8,Var6ca338,_Var6ca338
+0x006ca394,4,Var6ca394,_Var6ca394
 0x006ca3ac,4,Var6ca3ac,_Var6ca3ac
 0x006ca408,4,Var6ca408,_Var6ca408
 0x006ca460,4,Var6ca460,_Var6ca460
