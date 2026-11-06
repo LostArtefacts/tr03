@@ -114,6 +114,15 @@ extern "C" void GetValidLevelsList(REQUEST_INFO *req)
         AddRequesterItem(req, GF_Level_Names[i], 0, NULL, 0);
 }
 
+extern "C" void GetSavedGamesList(REQUEST_INFO *req)
+{
+    SetPCRequesterSize(req, 10, -32);
+    if (req->selected >= req->vis_lines)
+        req->line_offset = req->selected - req->vis_lines + 1;
+    memcpy(RequesterFlags1, SaveGameReqFlags1, 24 * sizeof(uint32));
+    memcpy(RequesterFlags2, SaveGameReqFlags2, 24 * sizeof(uint32));
+}
+
 extern "C" int S_LoadGame(LPVOID data, int size, int slot)
 {
     HANDLE file;
