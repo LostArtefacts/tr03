@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="333.61" height="12" x="0" y="0" class="named"><title>1174 · 79.43%</title></rect>
-<rect width="2.84" height="12" x="333.61" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="83.55" height="12" x="336.45" y="0" class="todo"><title>294 · 19.89%</title></rect>
+<rect width="333.90" height="12" x="0" y="0" class="named"><title>1175 · 79.50%</title></rect>
+<rect width="2.84" height="12" x="333.90" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="83.26" height="12" x="336.74" y="0" class="todo"><title>293 · 19.82%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">79.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1174</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">294</tspan></text>
+<text text-anchor="end" x="600" y="7.50">79.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1175</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">293</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="211.60" height="12" x="0" y="0" class="named"><title>337 KB · 50.38%</title></rect>
-<rect width="3.98" height="12" x="211.60" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="204.42" height="12" x="215.58" y="0" class="todo"><title>325 KB · 48.67%</title></rect>
+<rect width="211.94" height="12" x="0" y="0" class="named"><title>337 KB · 50.46%</title></rect>
+<rect width="3.98" height="12" x="211.94" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="204.09" height="12" x="215.91" y="0" class="todo"><title>325 KB · 48.59%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">50.4%</text>
+<text text-anchor="end" x="600" y="24.50">50.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">337 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">325 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1126,7 +1126,7 @@
 <rect width="12" height="12" x="135" y="315" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="315" class="named"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="315" class="named"><title>0x00474900 ACMEmulateCDPlay (558 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="315" class="todo"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="315" class="named"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="315" class="named"><title>0x00474d50 ACMEmulateCDStop (25 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="315" class="todo"><title>0x00474d70 ACMHandleNotifications (1001 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="315" class="todo"><title>0x00475160 ACMSetupNotifications (214 bytes)</title></rect>
@@ -1877,7 +1877,7 @@
 <rect width="13.88" height="13.49" x="383.05" y="351.38" class="named"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
 <rect width="13.88" height="13.47" x="383.05" y="367.87" class="named"><title>0x00445340 RifleHandler (532 bytes)</title></rect>
 <rect width="13.88" height="13.44" x="383.05" y="384.34" class="named"><title>0x0044f580 LaraOnLOS (531 bytes)</title></rect>
-<rect width="13.88" height="13.44" x="383.05" y="400.78" class="todo"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
+<rect width="13.88" height="13.44" x="383.05" y="400.78" class="named"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
 <rect width="13.88" height="13.42" x="383.05" y="417.22" class="named"><title>0x0043e800 LaraAboveWater (530 bytes)</title></rect>
 <rect width="13.88" height="13.36" x="383.05" y="433.64" class="named"><title>0x00473570 TriggerPlasmaBallFlame_willboss (528 bytes)</title></rect>
 <rect width="13.98" height="13.24" x="399.92" y="99.04" class="named"><title>0x0046cf40 TrainControl (527 bytes)</title></rect>
