@@ -80,4 +80,19 @@ void draw_poly_gtmap(sint16 *iptr)
     }
 }
 
+void draw_poly_wgtmap(sint16 *iptr)
+{
+    char *texture;
+
+    if (gen_xguv(iptr + 1)) {
+        texture = texture_page_ptrs[*iptr];
+        __asm {
+            mov eax, xgen_ymin
+            mov edx, xgen_ymax
+            mov ebx, texture
+            call wgtmapA
+        }
+    }
+}
+
 }

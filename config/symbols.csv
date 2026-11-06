@@ -1471,7 +1471,7 @@ address,size,name,symbol
 0x004b4335,314,transA,_transA
 0x004b446f,352,gourA,_gourA
 0x004b45cf,765,gtmapA,_gtmapA
-0x004b48cc,833,Func4b48cc,
+0x004b48cc,833,wgtmapA,_wgtmapA
 0x004b4c10,72,phd_atan,@phd_atan@8
 0x004b4c58,6,phd_cos,@phd_cos@4
 0x004b4c5e,27,phd_sin,@phd_sin@4
