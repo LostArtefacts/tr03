@@ -47,21 +47,21 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="287.85" height="12" x="0" y="0" class="named"><title>1244 · 84.17%</title></rect>
-<rect width="0.69" height="12" x="287.85" y="0" class="decompiled"><title>3 · 0.20%</title></rect>
-<rect width="4.17" height="12" x="288.55" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="49.29" height="12" x="292.71" y="0" class="todo"><title>213 · 14.41%</title></rect>
+<rect width="0.93" height="12" x="287.85" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
+<rect width="4.17" height="12" x="288.78" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="49.06" height="12" x="292.94" y="0" class="todo"><title>212 · 14.34%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">84.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1244</tspan> · <tspan class="decompiled">3</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">213</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1244</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">212</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="190.68" height="12" x="0" y="0" class="named"><title>373 KB · 55.76%</title></rect>
-<rect width="0.17" height="12" x="190.68" y="0" class="decompiled"><title>331 bytes · 0.05%</title></rect>
-<rect width="6.04" height="12" x="190.85" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.11" height="12" x="196.89" y="0" class="todo"><title>284 KB · 42.43%</title></rect>
+<rect width="0.20" height="12" x="190.68" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
+<rect width="6.04" height="12" x="190.88" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.08" height="12" x="196.92" y="0" class="todo"><title>284 KB · 42.42%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">373 KB</tspan> · <tspan class="decompiled">331 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">373 KB</tspan> · <tspan class="decompiled">395 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1436,7 +1436,7 @@
 <rect width="12" height="12" x="255" y="405" class="decompiled"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="405" class="named"><title>0x00490f80 DrawTriangleFan (71 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="405" class="named"><title>0x00490fd0 DrawTriangleStrip (71 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="405" class="todo"><title>0x00491020 Func491020 (64 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="405" class="decompiled"><title>0x00491020 Func491020 (64 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="405" class="todo"><title>0x00491680 Func491680 (703 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="405" class="todo"><title>0x00491940 Func491940 (812 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="405" class="todo"><title>0x00491c70 Func491c70 (548 bytes)</title></rect>
@@ -2670,7 +2670,7 @@
 <rect width="4.63" height="4.85" x="624.56" y="372" class="named"><title>0x0046dd10 InitialiseRollingBall (64 bytes)</title></rect>
 <rect width="4.63" height="4.85" x="624.56" y="379.86" class="named"><title>0x00484a40 HWR_ResetZBuffer (64 bytes)</title></rect>
 <rect width="4.63" height="4.85" x="624.56" y="387.71" class="named"><title>0x00489510 DefaultConflict (64 bytes)</title></rect>
-<rect width="4.63" height="4.85" x="624.56" y="395.56" class="todo"><title>0x00491020 Func491020 (64 bytes)</title></rect>
+<rect width="4.63" height="4.85" x="624.56" y="395.56" class="decompiled"><title>0x00491020 Func491020 (64 bytes)</title></rect>
 <rect width="4.63" height="4.78" x="624.56" y="403.41" class="named"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
 <rect width="4.63" height="4.78" x="624.56" y="411.19" class="named"><title>0x00458840 InitialiseFinalLevel (63 bytes)</title></rect>
 <rect width="4.63" height="4.78" x="624.56" y="418.97" class="named"><title>0x00459760 LiftFloor (63 bytes)</title></rect>

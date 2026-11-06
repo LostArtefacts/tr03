@@ -119,4 +119,23 @@ void DrawTriangleStrip(D3DTLVERTEX *v, DWORD vcnt)
     }
 }
 
+void Func491020(D3DTLVERTEX *v, DWORD vcnt)
+{
+    int n;
+    D3DTLVERTEX *v1, *v2;
+
+    v1 = v;
+    v++;
+    v2 = v;
+    v++;
+    Var6ca198(v1, v2);
+    vcnt -= 2;
+    for (n = vcnt; n > 0; n--) {
+        v1 = v2;
+        v2 = v;
+        v++;
+        Var6ca198(v1, v2);
+    }
+}
+
 }
