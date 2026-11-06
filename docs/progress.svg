@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="312.02" height="12" x="0" y="0" class="named"><title>1098 · 74.29%</title></rect>
-<rect width="1.99" height="12" x="312.02" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="105.99" height="12" x="314.01" y="0" class="todo"><title>373 · 25.24%</title></rect>
+<rect width="312.30" height="12" x="0" y="0" class="named"><title>1099 · 74.36%</title></rect>
+<rect width="1.99" height="12" x="312.30" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="105.71" height="12" x="314.29" y="0" class="todo"><title>372 · 25.17%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">74.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1098</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">373</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1099</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">372</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.74" height="12" x="0" y="0" class="named"><title>311 KB · 46.60%</title></rect>
+<rect width="195.74" height="12" x="0" y="0" class="named"><title>311 KB · 46.61%</title></rect>
 <rect width="3.79" height="12" x="195.74" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="220.47" height="12" x="199.53" y="0" class="todo"><title>351 KB · 52.49%</title></rect>
+<rect width="220.46" height="12" x="199.54" y="0" class="todo"><title>351 KB · 52.49%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
@@ -1144,7 +1144,7 @@
 <rect width="12" height="12" x="405" y="315" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="315" class="named"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="315" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="315" class="todo"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="315" class="named"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="315" class="todo"><title>0x00475700 Func475700 (31 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="315" class="named"><title>0x00475720 IncreaseScreenSize (98 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="315" class="named"><title>0x00475790 DecreaseScreenSize (98 bytes)</title></rect>
@@ -2979,7 +2979,7 @@
 <rect width="2.26" height="2.48" x="711.83" y="433.56" class="named"><title>0x0048ac00 ScreenPartialDump (16 bytes)</title></rect>
 <rect width="2.26" height="2.48" x="711.83" y="439.04" class="named"><title>0x004900b0 DXGetSurfaceDesc (16 bytes)</title></rect>
 <rect width="2.26" height="2.48" x="711.83" y="444.52" class="named"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
-<rect width="2.04" height="2.56" x="717.09" y="417.13" class="todo"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
+<rect width="2.04" height="2.56" x="717.09" y="417.13" class="named"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
 <rect width="2.04" height="2.56" x="717.09" y="422.69" class="named"><title>0x004837b0 S_FinishInventory (15 bytes)</title></rect>
 <rect width="2.04" height="2.56" x="717.09" y="428.25" class="named"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="2.04" height="2.40" x="717.09" y="433.81" class="named"><title>0x0042f430 dynamic_light_off (14 bytes)</title></rect>

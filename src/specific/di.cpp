@@ -55,4 +55,13 @@ bool DI_StartJoystick(void)
     return true;
 }
 
+void DI_FinishJoystick(void);
+
+void DI_Finish(void)
+{
+    DI_FinishJoystick();
+    DI_FinishKeyboard();
+    DI_Release();
+}
+
 }
