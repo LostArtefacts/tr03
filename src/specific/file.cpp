@@ -432,6 +432,63 @@ void LoadDemFile(char *name)
     }
 }
 
+int LoadSamples(HANDLE file)
+{
+    int i;
+    int n;
+    int num_samples;
+    int size;
+    int fsize;
+    HANDLE sfx;
+    char *data;
+    LPWAVEFORMATEX wf;
+    DWORD read;
+    int header[11];
+    int sample_offsets[500];
+
+    sound_active = 0;
+    if (!DS_IsSoundEnabled())
+        return 1;
+    DS_FreeAllSamples();
+    MyReadFile(file, sample_lut, sizeof(sint16) * 370, &read, NULL);
+    MyReadFile(file, &num_sample_infos, sizeof(sint32), &read, NULL);
+    if (!num_sample_infos)
+        return 0;
+    sample_infos = (SAMPLE_INFO *)game_malloc(sizeof(SAMPLE_INFO) * num_sample_infos, 35);
+    MyReadFile(file, sample_infos, sizeof(SAMPLE_INFO) * num_sample_infos, &read, NULL);
+    MyReadFile(file, &num_samples, sizeof(sint32), &read, NULL);
+    if (!num_samples)
+        return 0;
+    MyReadFile(file, sample_offsets, sizeof(sint32) * num_samples, &read, NULL);
+    sfx = CreateFile(GetFullPath("data\\main.sfx"), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (sfx == INVALID_HANDLE_VALUE) {
+        wsprintf(exit_message, "Could not open MAIN.SFX file");
+        return 0;
+    }
+    for (n = 0, i = 0; n < num_samples; i++) {
+        MyReadFile(sfx, header, sizeof(header), &read, NULL);
+        if (header[0] != 0x46464952 || header[2] != 0x45564157 || header[9] != 0x61746164)
+            return 0;
+        wf = (LPWAVEFORMATEX)&header[5];
+        size = header[10];
+        fsize = (size + 1) & ~1;
+        wf->cbSize = 0;
+        if (sample_offsets[n] != i) {
+            SetFilePointer(sfx, fsize, NULL, FILE_CURRENT);
+        } else {
+            data = (char *)game_malloc(fsize, 36);
+            MyReadFile(sfx, data, fsize, &read, NULL);
+            if (!DS_MakeSample(n, wf, data, size))
+                return 0;
+            game_free(fsize, 36);
+            n++;
+        }
+    }
+    CloseHandle(sfx);
+    sound_active = 1;
+    return 1;
+}
+
 void build_ext(char *fname, char *ext)
 {
     while (*fname != '.' && *fname != 0)
