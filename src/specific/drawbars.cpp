@@ -110,6 +110,49 @@ void S_DrawHealthBar(int percent)
     GlobalAlpha = oldAlpha;
 }
 
+void S_DrawAirBar(int percent)
+{
+    int oldAlpha;
+    int w;
+    int x;
+    int z;
+
+    oldAlpha = GlobalAlpha;
+    GlobalAlpha = 0xFF000000;
+    HWR_EnableZBuffer(true, true);
+    bBlueEffect = false;
+    w = BarsWidth * percent / 100;
+    x = DumpWidth - BarsWidth - 10;
+    z = phd_znear + 50;
+
+    InsertLine(x - 2, 7, x + BarsWidth + 1, 7, z, 0, 0);
+    InsertLine(x - 2, 8, x + BarsWidth + 1, 8, z, 0, 0);
+    InsertLine(x - 2, 9, x + BarsWidth + 1, 9, z, 0, 0);
+    InsertLine(x - 2, 10, x + BarsWidth + 1, 10, z, 0, 0);
+    InsertLine(x - 2, 11, x + BarsWidth + 1, 11, z, 0, 0);
+    InsertLine(x - 2, 12, x + BarsWidth + 1, 12, z, 0, 0);
+    InsertLine(x - 2, 13, x + BarsWidth + 1, 13, z, 0, 0);
+
+    z = phd_znear + 40;
+    InsertLine(x - 2, 14, x + BarsWidth + 3, 14, z, 0x7F7F7F, 0x7F7F7F);
+    InsertLine(x + BarsWidth + 2, 6, x + BarsWidth + 2, 14, z, 0x7F7F7F, 0x7F7F7F);
+
+    z = phd_znear + 30;
+    InsertLine(x - 2, 6, x + BarsWidth + 2, 6, z, 0xFFFFFF, 0xFFFFFF);
+    InsertLine(x - 2, 14, x - 2, 6, z, 0xFFFFFF, 0xFFFFFF);
+
+    if (percent > 0) {
+        z = phd_znear + 20;
+        InsertLine(x, 9, x + w, 9, z, 0xFF, 0xFF);
+        InsertLine(x, 8, x + w, 8, z, 0x4F, 0x4F);
+        InsertLine(x, 10, x + w, 10, z, 0x7F, 0x7F);
+        InsertLine(x, 11, x + w, 11, z, 0x7F, 0x7F);
+        InsertLine(x, 12, x + w, 12, z, 0x4F, 0x4F);
+    }
+
+    GlobalAlpha = oldAlpha;
+}
+
 void S_DrawColdBar(int percent)
 {
     int oldAlpha;
