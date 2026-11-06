@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="321.39" height="12" x="0" y="0" class="named"><title>1131 · 76.52%</title></rect>
-<rect width="2.56" height="12" x="321.39" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="96.05" height="12" x="323.95" y="0" class="todo"><title>338 · 22.87%</title></rect>
+<rect width="321.68" height="12" x="0" y="0" class="named"><title>1132 · 76.59%</title></rect>
+<rect width="2.56" height="12" x="321.68" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="95.76" height="12" x="324.24" y="0" class="todo"><title>337 · 22.80%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">76.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1131</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">338</tspan></text>
+<text text-anchor="end" x="600" y="7.50">76.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1132</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">337</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="206.83" height="12" x="0" y="0" class="named"><title>329 KB · 49.25%</title></rect>
-<rect width="3.89" height="12" x="206.83" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="209.28" height="12" x="210.72" y="0" class="todo"><title>333 KB · 49.83%</title></rect>
+<rect width="207.58" height="12" x="0" y="0" class="named"><title>330 KB · 49.42%</title></rect>
+<rect width="3.89" height="12" x="207.58" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="208.53" height="12" x="211.47" y="0" class="todo"><title>332 KB · 49.65%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">49.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">329 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">333 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">49.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">330 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">332 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1351,7 +1351,7 @@
 <rect width="12" height="12" x="510" y="375" class="named"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="375" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="375" class="named"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="375" class="todo"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="375" class="named"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="375" class="named"><title>0x0048d0a0 CalcVolume (42 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="375" class="named"><title>0x0048d0d0 S_SoundPlaySample (70 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="375" class="named"><title>0x0048d120 CalcPan (38 bytes)</title></rect>
@@ -1684,7 +1684,7 @@
 <rect width="20.73" height="20.53" x="427.77" y="0" class="todo"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
 <rect width="20.53" height="20.53" x="451.51" y="0" class="todo"><title>0x00436ae0 DrawInventoryItem (1200 bytes)</title></rect>
 <rect width="20.53" height="20.53" x="475.04" y="0" class="todo"><title>0x00467840 SoundEffect (1200 bytes)</title></rect>
-<rect width="20.27" height="20.53" x="498.57" y="0" class="todo"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
+<rect width="20.27" height="20.53" x="498.57" y="0" class="named"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
 <rect width="20.24" height="20.53" x="521.84" y="0" class="todo"><title>0x00421de0 GetCeiling (1183 bytes)</title></rect>
 <rect width="20.22" height="20.53" x="545.08" y="0" class="named"><title>0x0046c860 ControlTonyFireBall (1182 bytes)</title></rect>
 <rect width="20.20" height="20.53" x="568.30" y="0" class="named"><title>0x00488f30 do_sound_option (1181 bytes)</title></rect>

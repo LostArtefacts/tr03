@@ -167,4 +167,102 @@ void S_SaveSettings(void)
     }
 }
 
+bool S_LoadSettings(void)
+{
+    FILE *file;
+    char s[80];
+
+    file = fopen("data.bin", "rb");
+    if (file) {
+        fread(savegame.best_assault_times, sizeof(uint32), 10, file);
+        fread(savegame.best_quadbike_times, sizeof(uint32), 10, file);
+        fread(&savegame.QuadbikeKeyFlag, sizeof(uint32), 1, file);
+        fclose(file);
+    }
+    file = fopen("config.txt", "r");
+    if (file) {
+        if (App.DeviceInfoPtr->nDDInfo) {
+            fscanf(file, "%s", s);
+            fscanf(file, "%d\n", &App.DXConfigPtr->nDD);
+        }
+        if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].nD3DInfo) {
+            fscanf(file, "%s", s);
+            fscanf(file, "%d\n", &App.DXConfigPtr->nD3D);
+            fscanf(file, "%s", s);
+            fscanf(file, "%d\n", &App.DXConfigPtr->D3DTF);
+        }
+        if (App.DeviceInfoPtr->nDSInfo) {
+            fscanf(file, "%s", s);
+            fscanf(file, "%d\n", &App.DXConfigPtr->DS);
+        }
+        if (App.DeviceInfoPtr->nDIInfo) {
+            fscanf(file, "%s", s);
+            fscanf(file, "%d\n", &App.DXConfigPtr->DI);
+        }
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->nVMode);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->bZBuffer);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->Dither);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->Filter);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->AGP);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->sound);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->Joystick);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &App.DXConfigPtr->MMX);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &Option_SFX_Volume);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d\n", &Option_Music_Volume);
+        fscanf(file, "%s", s);
+        fscanf(file, "%f\n", &GammaOption);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d %d %d %d %d %d %d %d %d %d %d %d %d %d\n",
+            &layout[0][0],
+            &layout[0][1],
+            &layout[0][2],
+            &layout[0][3],
+            &layout[0][4],
+            &layout[0][5],
+            &layout[0][6],
+            &layout[0][7],
+            &layout[0][8],
+            &layout[0][9],
+            &layout[0][10],
+            &layout[0][11],
+            &layout[0][12],
+            &layout[0][13]);
+        fscanf(file, "%s", s);
+        fscanf(file, "%d %d %d %d %d %d %d %d %d %d %d %d %d %d\n",
+            &layout[1][0],
+            &layout[1][1],
+            &layout[1][2],
+            &layout[1][3],
+            &layout[1][4],
+            &layout[1][5],
+            &layout[1][6],
+            &layout[1][7],
+            &layout[1][8],
+            &layout[1][9],
+            &layout[1][10],
+            &layout[1][11],
+            &layout[1][12],
+            &layout[1][13]);
+        S_CDVolume(25 * Option_Music_Volume + 5);
+        S_SoundSetMasterVolume(6 * Option_SFX_Volume + 4);
+        fclose(file);
+        return true;
+    }
+    Option_Music_Volume = 7;
+    Option_SFX_Volume = 10;
+    S_CDVolume(25 * Option_Music_Volume + 5);
+    S_SoundSetMasterVolume(6 * Option_SFX_Volume + 4);
+    return false;
+}
+
 }
