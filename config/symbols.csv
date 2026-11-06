@@ -208,7 +208,7 @@ address,size,name,symbol
 0x00420a20,95,TranslateItem,_TranslateItem
 0x00420a80,481,GetFloor,_GetFloor
 0x00420c70,402,GetWaterHeight,_GetWaterHeight
-0x00420e10,1300,GetHeight,_GetHeight
+0x00420e10,1369,GetHeight,_GetHeight
 0x00421370,238,RefreshCamera,_RefreshCamera
 0x00421460,2328,TestTriggers,_TestTriggers
 0x00421d80,85,TriggerActive,_TriggerActive

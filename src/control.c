@@ -1251,3 +1251,186 @@ void TestTriggers(sint16 *data, int heavy)
         fliptimer = 0;
     }
 }
+
+#define TRIGGER_TYPE 4
+
+extern sint32 OnObject;
+extern sint32 height_type;
+extern sint32 tiltxoff;
+extern sint32 tiltyoff;
+extern sint32 chunky_flag;
+extern sint16 GF_NoFloor;
+void S_ExitSystem(char *message);
+
+sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
+{
+    sint32 xoff, yoff, height, height2;
+    ROOM_INFO *r;
+    ITEM_INFO *item;
+    sint16 *data, type, trigger;
+    sint16 tilts, dx, dz, t0, t1, t2, t3, hadj;
+
+    OnObject = 0;
+    height_type = 0;
+    while (floor->pit_room != NO_ROOM) {
+        if (CheckNoColFloorTriangle(floor, x, z) == 1)
+            break;
+        r = &room[floor->pit_room];
+        floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+    }
+    height = floor->floor << 8;
+    if (height == NO_HEIGHT)
+        return height;
+    if (GF_NoFloor && GF_NoFloor == height)
+        height = 0x4000;
+    height2 = height;
+    trigger_index = NULL;
+    if (!floor->index)
+        return height;
+    tiltxoff = tiltyoff = 0;
+    data = &floor_data[floor->index];
+    do {
+        type = *(data++);
+        switch (type & DATA_TYPE) {
+        case SPLIT1:
+        case SPLIT2:
+        case NOCOLF1T:
+        case NOCOLF1B:
+        case NOCOLF2T:
+        case NOCOLF2B:
+            tilts = *data;
+            t0 = tilts & 15;
+            t1 = (tilts >> 4) & 15;
+            t2 = (tilts >> 8) & 15;
+            t3 = (tilts >> 12) & 15;
+            dx = x & 1023;
+            dz = z & 1023;
+            xoff = yoff = 0;
+            height_type = 4;
+            if ((type & DATA_TYPE) == SPLIT1 || (type & DATA_TYPE) == NOCOLF1T || (type & DATA_TYPE) == NOCOLF1B) {
+                if (dx <= (1024 - dz)) {
+                    hadj = (type >> 10) & 0x1f;
+                    if (hadj & 0x10)
+                        hadj |= 0xfff0;
+                    height += hadj << 8;
+                    xoff = t2 - t1;
+                    yoff = t0 - t1;
+                } else {
+                    hadj = (type >> 5) & 0x1f;
+                    if (hadj & 0x10)
+                        hadj |= 0xfff0;
+                    height += hadj << 8;
+                    xoff = t3 - t0;
+                    yoff = t3 - t2;
+                }
+            } else {
+                if (dx <= dz) {
+                    hadj = (type >> 10) & 0x1f;
+                    if (hadj & 0x10)
+                        hadj |= 0xfff0;
+                    height += hadj << 8;
+                    xoff = t2 - t1;
+                    yoff = t3 - t2;
+                } else {
+                    hadj = (type >> 5) & 0x1f;
+                    if (hadj & 0x10)
+                        hadj |= 0xfff0;
+                    height += hadj << 8;
+                    xoff = t3 - t0;
+                    yoff = t0 - t1;
+                }
+            }
+            tiltxoff = xoff;
+            tiltyoff = yoff;
+            if (chunky_flag) {
+                long h1, h2;
+                hadj = (hadj >> 10) & 0x1f;
+                if (hadj & 0x10)
+                    hadj |= 0xfff0;
+                h1 = h2 = height2;
+                h1 += hadj << 8;
+                hadj = (hadj >> 5) & 0x1f;
+                if (hadj & 0x10)
+                    hadj |= 0xfff0;
+                h2 += hadj << 8;
+                if (h1 < h2)
+                    height = h1;
+                else
+                    height = h2;
+            } else {
+                if (ABS(xoff) > 2 || ABS(yoff) > 2)
+                    height_type = 3;
+                else if (height_type != 4)
+                    height_type = 1;
+                if (xoff < 0)
+                    height -= (z & (WALL_L - 1)) * xoff >> 2;
+                else
+                    height += ((WALL_L - 1 - z) & (WALL_L - 1)) * xoff >> 2;
+                if (yoff < 0)
+                    height -= (x & (WALL_L - 1)) * yoff >> 2;
+                else
+                    height += ((WALL_L - 1 - x) & (WALL_L - 1)) * yoff >> 2;
+            }
+            data++;
+            break;
+        case TILT_TYPE:
+            tiltxoff = xoff = (*data) >> 8;
+            tiltyoff = yoff = (signed char)(*data);
+            if (!chunky_flag || (ABS(xoff) <= 2 && ABS(yoff) <= 2)) {
+                if (ABS(xoff) > 2 || ABS(yoff) > 2)
+                    height_type = 2;
+                else
+                    height_type = 1;
+                if (xoff < 0)
+                    height -= (z & (WALL_L - 1)) * xoff >> 2;
+                else
+                    height += ((WALL_L - 1 - z) & (WALL_L - 1)) * xoff >> 2;
+                if (yoff < 0)
+                    height -= (x & (WALL_L - 1)) * yoff >> 2;
+                else
+                    height += ((WALL_L - 1 - x) & (WALL_L - 1)) * yoff >> 2;
+            }
+            data++;
+            break;
+        case SPLIT3:
+        case SPLIT4:
+        case NOCOLC1T:
+        case NOCOLC1B:
+        case NOCOLC2T:
+        case NOCOLC2B:
+        case ROOF_TYPE:
+        case DOOR_TYPE:
+            data++;
+            break;
+        case LAVA_TYPE:
+            trigger_index = data - 1;
+            break;
+        case CLIMB_TYPE:
+        case MONKEY_TYPE:
+        case MINEL_TYPE:
+        case MINER_TYPE:
+            if (!trigger_index)
+                trigger_index = data - 1;
+            break;
+        case TRIGGER_TYPE:
+            if (!trigger_index)
+                trigger_index = data - 1;
+            data++;
+            do {
+                trigger = *(data++);
+                if (TRIG_BITS(trigger) != TO_OBJECT) {
+                    if (TRIG_BITS(trigger) == TO_CAMERA)
+                        trigger = *(data++);
+                    continue;
+                }
+                item = &items[trigger & VALUE_BITS];
+                if (objects[item->object_number].floor)
+                    (*objects[item->object_number].floor)(item, x, y, z, &height);
+            } while (!(trigger & END_BIT));
+            break;
+        default:
+            S_ExitSystem("GetHeight(): Unknown type");
+        }
+    } while (!(type & END_BIT));
+    return height;
+}
