@@ -1,5 +1,6 @@
 #include "standard.h"
 #include "specific.h"
+#include "winmain.h"
 
 extern "C" {
 
@@ -8,6 +9,10 @@ extern LPDIRECT3DDEVICE2 D3DDev;
 float WinFrameRate(void);
 extern void (*Var6ca198)(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 void Func492cd0(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern HGLOBAL Var6ca3ac;
+extern unsigned char *Var6ca4d0;
+extern unsigned long *Var6ca2d0;
+extern long Var6ca20c;
 
 #define MAGICNUM float((1 << 26) * ((1 << 26) * 1.5))
 #define FTOLFIX284(x) ((fconv = x + MAGICNUM / 16.0f), *(int *)(&fconv))
@@ -136,6 +141,13 @@ void Func491020(D3DTLVERTEX *v, DWORD vcnt)
         v++;
         Var6ca198(v1, v2);
     }
+}
+
+
+void Func4934b0(void)
+{
+    GlobalFree(Var6ca3ac);
+    Var6ca4d0 = 0;
 }
 
 }

@@ -1378,7 +1378,7 @@ address,size,name,symbol
 0x00492970,862,Func492970,
 0x00492cd0,1794,Func492cd0,_Func492cd0
 0x004933e0,206,MMXInit,_MMXInit
-0x004934b0,23,Func4934b0,
+0x004934b0,23,Func4934b0,_Func4934b0
 0x004934d0,90,MMXBeginScene,_MMXBeginScene
 0x00493530,614,MMXSetRenderState,_MMXSetRenderState
 0x004937f0,282,MMXDrawPrimitive,_MMXDrawPrimitive
@@ -2473,6 +2473,8 @@ address,size,name,symbol
 0x006ca1b8,4,SetRenderState,_SetRenderState
 0x006ca1c0,4,DrawPrimitive,_DrawPrimitive
 0x006ca1c8,4,BeginScene,_BeginScene
+0x006ca3ac,4,Var6ca3ac,_Var6ca3ac
+0x006ca4d0,4,Var6ca4d0,_Var6ca4d0
 0x006ce508,4,G_DXConfig,_G_DXConfig
 0x006ce50c,4,G_DeviceInfo,_G_DeviceInfo
 0x006ce514,1,bSoftwareDefault,_bSoftwareDefault
