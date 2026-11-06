@@ -46,27 +46,27 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="282.99" height="12" x="0" y="0" class="named"><title>1223 · 82.75%</title></rect>
-<rect width="0.46" height="12" x="282.99" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="283.46" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="54.38" height="12" x="287.62" y="0" class="todo"><title>235 · 15.90%</title></rect>
+<rect width="283.23" height="12" x="0" y="0" class="named"><title>1224 · 82.81%</title></rect>
+<rect width="0.46" height="12" x="283.23" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="283.69" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="54.15" height="12" x="287.85" y="0" class="todo"><title>234 · 15.83%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">82.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1223</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">235</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1224</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">234</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.69" height="12" x="0" y="0" class="named"><title>369 KB · 55.17%</title></rect>
-<rect width="0.15" height="12" x="188.69" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="188.84" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="147.13" height="12" x="194.87" y="0" class="todo"><title>288 KB · 43.02%</title></rect>
+<rect width="188.93" height="12" x="0" y="0" class="named"><title>369 KB · 55.24%</title></rect>
+<rect width="0.15" height="12" x="188.93" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="189.08" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="146.89" height="12" x="195.11" y="0" class="todo"><title>287 KB · 42.95%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">55.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">369 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">288 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">55.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">369 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">287 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
 <g transform="translate(0 20)">
-<rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="0" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="0" class="named"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="named"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>
@@ -1935,7 +1935,7 @@
 <rect width="12.98" height="12.65" x="544.73" y="115.40" class="named"><title>0x0046c460 TriggerTonyFlame (468 bytes)</title></rect>
 <rect width="12.98" height="12.65" x="560.71" y="115.40" class="named"><title>0x00484010 GameStats (468 bytes)</title></rect>
 <rect width="12.95" height="12.65" x="576.69" y="115.40" class="nonmatching"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
-<rect width="12.87" height="12.65" x="592.64" y="115.40" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
+<rect width="12.87" height="12.65" x="592.64" y="115.40" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12.87" height="12.65" x="608.51" y="115.40" class="named"><title>0x0040fcc0 Trigger51BlastFire (464 bytes)</title></rect>
 <rect width="12.81" height="12.65" x="624.38" y="115.40" class="named"><title>0x0043f430 lara_col_crawl2hang (462 bytes)</title></rect>
 <rect width="12.81" height="12.65" x="640.19" y="115.40" class="named"><title>0x00469150 BackgroundCollision (462 bytes)</title></rect>

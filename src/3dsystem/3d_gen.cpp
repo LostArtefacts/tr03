@@ -517,6 +517,36 @@ void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar,
 }
 
 
+void phd_GenerateW2V(PHD_3DPOS *viewpos)
+{
+    sint32 sx, sy, sz, cx, cy, cz;
+    sint32 *mptr, *nptr;
+
+    mptr = phd_mxptr = matrix_stack;
+    nptr = w2v_matrix;
+    sx = phd_sin(viewpos->x_rot);
+    cx = phd_cos(viewpos->x_rot);
+    sy = phd_sin(viewpos->y_rot);
+    cy = phd_cos(viewpos->y_rot);
+    sz = phd_sin(viewpos->z_rot);
+    cz = phd_cos(viewpos->z_rot);
+    nptr[M00] = mptr[M00] = (((sx * sy) >> W2V_SHIFT) * sz >> W2V_SHIFT) + ((cy * cz) >> W2V_SHIFT);
+    nptr[M01] = mptr[M01] = (cx * sz) >> W2V_SHIFT;
+    nptr[M02] = mptr[M02] = (((sx * cy) >> W2V_SHIFT) * sz >> W2V_SHIFT) - ((sy * cz) >> W2V_SHIFT);
+    nptr[M10] = mptr[M10] = (((sx * sy) >> W2V_SHIFT) * cz >> W2V_SHIFT) - ((cy * sz) >> W2V_SHIFT);
+    nptr[M11] = mptr[M11] = (cx * cz) >> W2V_SHIFT;
+    nptr[M12] = mptr[M12] = (((sx * cy) >> W2V_SHIFT) * cz >> W2V_SHIFT) + ((sy * sz) >> W2V_SHIFT);
+    nptr[M20] = mptr[M20] = (cx * sy) >> W2V_SHIFT;
+    nptr[M21] = mptr[M21] = -sx;
+    nptr[M22] = mptr[M22] = (cx * cy) >> W2V_SHIFT;
+    nptr[M03] = mptr[M03] = viewpos->x_pos;
+    nptr[M13] = mptr[M13] = viewpos->y_pos;
+    nptr[M23] = mptr[M23] = viewpos->z_pos;
+    nptr[M10] = mptr[M10] = (sint32)((float)mptr[M10] * LfAspectCorrection);
+    nptr[M11] = mptr[M11] = (sint32)((float)mptr[M11] * LfAspectCorrection);
+    nptr[M12] = mptr[M12] = (sint32)((float)mptr[M12] * LfAspectCorrection);
+}
+
 
 void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, PHD_ANGLE roll);
 
