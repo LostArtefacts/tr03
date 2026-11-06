@@ -5,10 +5,165 @@
 
 extern "C" {
 
+static long subdivcnt;
 static long u, v, du, dv;
 static long redleft, greenleft, blueleft;
 static long dr, dg, db;
 static unsigned short *pDestination;
+
+void ScanLinesTGAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+{
+    long yline;
+
+    yline = long(Output) + YTable[pLeft->y];
+    du = pLeft->uozxtraf;
+    dv = pLeft->vozxtraf;
+    dr = pLeft->rxtraf;
+    dg = pLeft->gxtraf;
+    db = pLeft->bxtraf;
+    __asm {
+        mov esi, dword ptr [TextureHandle]
+        mov eax, [Var6ca12c]
+        mov dword ptr [P4 + 2], eax
+        mov dword ptr [P6 + 3], eax
+        mov eax, [Var6ca1a8]
+        mov dword ptr [P5 + 3], eax
+        mov dword ptr [P1 + 4], esi
+        mov eax, dword ptr [pLeft]
+        mov ebx, dword ptr [eax + 0x30]
+        mov ecx, dword ptr [eax + 0x3c]
+        mov edx, dword ptr [eax + 0x48]
+        mov dword ptr [P2 + 2], ebx
+        mov dword ptr [P3 + 2], ecx
+        mov dword ptr [P7 + 2], edx
+        mov ebx, dword ptr [eax + 0x20]
+        mov ecx, dword ptr [eax + 0x24]
+        mov dword ptr [P8 + 2], ebx
+        mov dword ptr [P9 + 2], ecx
+    }
+
+    while (StepLeft->height--) {
+        subdivcnt = pRight->x;
+        subdivcnt -= pLeft->x;
+        if (subdivcnt > 0) {
+            pDestination = (unsigned short *)yline + pLeft->x;
+            u = pLeft->uozf;
+            v = pLeft->vozf;
+            redleft = pLeft->rf;
+            greenleft = pLeft->gf;
+            blueleft = pLeft->bf;
+            __asm {
+                push ebp
+                mov esi, dword ptr [u]
+                mov ebx, dword ptr [v]
+                mov edi, dword ptr [pDestination]
+                mov ebp, dword ptr [subdivcnt]
+                _emit 0x8d
+                _emit 0x9b
+                _emit 0x00
+                _emit 0x00
+                _emit 0x00
+                _emit 0x00
+                _emit 0x8d
+                _emit 0x9b
+                _emit 0x00
+                _emit 0x00
+                _emit 0x00
+                _emit 0x00
+            SpanLoop:
+                shr ebx, 0x7
+                mov eax, [greenleft]
+                shr esi, 0x10
+                mov edx, dword ptr [redleft]
+                shr eax, 0x12
+                and ebx, 0xfffffe00
+                shr edx, 0x12
+            P1:
+                mov cx, word ptr [ebx + esi * 2 + 0x12345678]
+                mov esi, dword ptr [redleft]
+                mov ebx, ecx
+            P2:
+                add esi, 0x12345678
+                and ecx, 0xf800
+                mov dword ptr [redleft], esi
+                shr ecx, 0x5
+                mov esi, dword ptr [greenleft]
+                add edx, ecx
+                mov ecx, ebx
+                and ecx, 0x7c0
+            P3:
+                add esi, 0x12345678
+            P4:
+                mov dl, byte ptr [edx + 0x12345678]
+                mov dword ptr [greenleft], esi
+                shl edx, 0xb
+            P5:
+                mov al, byte ptr [eax + ecx + 0x12345678]
+                shl eax, 0x5
+                mov ecx, dword ptr [blueleft]
+                shr ecx, 0x12
+                and ebx, 0x1f
+                shl ebx, 0x6
+                or edx, eax
+                mov esi, dword ptr [blueleft]
+                add edi, 0x2
+            P6:
+                mov bl, byte ptr [ebx + ecx + 0x12345678]
+            P7:
+                add esi, 0x12345678
+                mov dword ptr [blueleft], esi
+                or dl, bl
+                mov esi, dword ptr [u]
+                mov word ptr [edi-0x2], dx
+                mov ebx, dword ptr [v]
+            P8:
+                add esi, 0x12345678
+            P9:
+                add ebx, 0x12345678
+                mov dword ptr [u], esi
+                mov dword ptr [v], ebx
+                dec ebp
+                jne SpanLoop
+                pop ebp
+            }
+        }
+        yline += bytepitch;
+        StepLeft->uozf += StepLeft->uozstepf;
+        StepLeft->vozf += StepLeft->vozstepf;
+        StepLeft->x += StepLeft->xstep;
+        StepLeft->y++;
+        StepLeft->rf += StepLeft->rstepf;
+        StepLeft->gf += StepLeft->gstepf;
+        StepLeft->bf += StepLeft->bstepf;
+        StepLeft->ErrorTerm += StepLeft->Numerator;
+        if (StepLeft->ErrorTerm >= StepLeft->Denominator) {
+            StepLeft->x++;
+            StepLeft->uozf += StepLeft->uozxtraf;
+            StepLeft->vozf += StepLeft->vozxtraf;
+            StepLeft->ErrorTerm -= StepLeft->Denominator;
+            StepLeft->rf += StepLeft->rxtraf;
+            StepLeft->gf += StepLeft->gxtraf;
+            StepLeft->bf += StepLeft->bxtraf;
+        }
+        StepRight->x += StepRight->xstep;
+        StepRight->uozf += StepRight->uozstepf;
+        StepRight->vozf += StepRight->vozstepf;
+        StepRight->y++;
+        StepRight->rf += StepRight->rstepf;
+        StepRight->gf += StepRight->gstepf;
+        StepRight->bf += StepRight->bstepf;
+        StepRight->ErrorTerm += StepRight->Numerator;
+        if (StepRight->ErrorTerm >= StepRight->Denominator) {
+            StepRight->x++;
+            StepRight->uozf += StepRight->uozxtraf;
+            StepRight->vozf += StepRight->vozxtraf;
+            StepRight->ErrorTerm -= StepRight->Denominator;
+            StepRight->rf += StepRight->rxtraf;
+            StepRight->gf += StepRight->gxtraf;
+            StepRight->bf += StepRight->bxtraf;
+        }
+    }
+}
 
 void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {

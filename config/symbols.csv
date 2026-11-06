@@ -2542,6 +2542,7 @@ address,size,name,symbol
 0x006ce520,4,v,_v
 0x006ce528,4,redleft,_redleft
 0x006ce52c,4,greenleft,_greenleft
+0x006ce530,4,subdivcnt,_subdivcnt
 0x006ce534,4,db,_db
 0x006ce538,4,dg,_dg
 0x006ce53c,4,dr,_dr
