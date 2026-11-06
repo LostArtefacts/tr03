@@ -1405,7 +1405,7 @@ address,size,name,symbol
 0x00495cf0,478,Func495cf0,_Func495cf0
 0x00495ed0,483,Func495ed0,_Func495ed0
 0x004960c0,503,Func4960c0,_Func4960c0
-0x004962c0,508,Func4962c0,
+0x004962c0,508,Func4962c0,_Func4962c0
 0x004964c0,553,Func4964c0,
 0x004966f0,562,Func4966f0,
 0x00496930,306,MMXBlit32to15,_MMXBlit32to15
@@ -2113,6 +2113,7 @@ address,size,name,symbol
 0x004cec40,8,Var4cec40,_Var4cec40
 0x004cec48,8,Var4cec48,_Var4cec48
 0x004cec50,8,Var4cec50,_Var4cec50
+0x004cec58,8,Var4cec58,_Var4cec58
 0x004ceec4,1,bSetColorKey,_bSetColorKey
 0x004cef68,18,tga_header,_tga_header
 0x004cefa8,12,VFAW,_VFAW
@@ -2546,6 +2547,7 @@ address,size,name,symbol
 0x006ca1f8,4,Var6ca1f8,_Var6ca1f8
 0x006ca1fc,4,Var6ca1fc,_Var6ca1fc
 0x006ca20c,4,Var6ca20c,_Var6ca20c
+0x006ca214,4,Var6ca214,_Var6ca214
 0x006ca228,4,Var6ca228,_Var6ca228
 0x006ca248,4,Var6ca248,_Var6ca248
 0x006ca24c,4,Var6ca24c,_Var6ca24c
@@ -2563,6 +2565,7 @@ address,size,name,symbol
 0x006ca3ac,4,Var6ca3ac,_Var6ca3ac
 0x006ca3f0,4,Var6ca3f0,_Var6ca3f0
 0x006ca408,4,Var6ca408,_Var6ca408
+0x006ca428,4,Var6ca428,_Var6ca428
 0x006ca43c,4,Var6ca43c,_Var6ca43c
 0x006ca460,4,Var6ca460,_Var6ca460
 0x006ca4ac,4,Var6ca4ac,_Var6ca4ac
