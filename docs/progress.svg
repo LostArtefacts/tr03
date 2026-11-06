@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="279.99" height="12" x="0" y="0" class="named"><title>1210 · 81.87%</title></rect>
-<rect width="0.46" height="12" x="279.99" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="280.45" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="57.39" height="12" x="284.61" y="0" class="todo"><title>248 · 16.78%</title></rect>
+<rect width="280.22" height="12" x="0" y="0" class="named"><title>1211 · 81.94%</title></rect>
+<rect width="0.46" height="12" x="280.22" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="280.68" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="57.15" height="12" x="284.85" y="0" class="todo"><title>247 · 16.71%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">82.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1210</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">248</tspan></text>
+<text text-anchor="end" x="522" y="7.50">82.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1211</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">247</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="183.70" height="12" x="0" y="0" class="named"><title>359 KB · 53.71%</title></rect>
-<rect width="0.15" height="12" x="183.70" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="183.84" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="152.12" height="12" x="189.88" y="0" class="todo"><title>297 KB · 44.48%</title></rect>
+<rect width="183.82" height="12" x="0" y="0" class="named"><title>359 KB · 53.75%</title></rect>
+<rect width="0.15" height="12" x="183.82" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="183.97" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="151.99" height="12" x="190.01" y="0" class="todo"><title>297 KB · 44.44%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">53.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">359 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">297 KB</tspan></text>
@@ -1141,7 +1141,7 @@
 <rect width="12" height="12" x="330" y="315" class="named"><title>0x00475400 DI_Create (34 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="315" class="named"><title>0x00475430 DI_Release (26 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="315" class="named"><title>0x00475450 DI_ReadKeyboard (90 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="315" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="315" class="named"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="315" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="315" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="315" class="named"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
@@ -2167,7 +2167,7 @@
 <rect width="9.52" height="9.04" x="638.44" y="187.11" class="named"><title>0x0043f330 lara_col_crawlb (245 bytes)</title></rect>
 <rect width="9.52" height="9.04" x="650.96" y="187.11" class="named"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
 <rect width="9.48" height="9.04" x="663.48" y="187.11" class="named"><title>0x00459b00 ControlStrobeLight (244 bytes)</title></rect>
-<rect width="9.44" height="9.04" x="675.96" y="187.11" class="todo"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
+<rect width="9.44" height="9.04" x="675.96" y="187.11" class="named"><title>0x004754b0 DI_ReadJoystick (243 bytes)</title></rect>
 <rect width="9.40" height="9.04" x="688.41" y="187.11" class="named"><title>0x0043eaa0 lara_col_duck (242 bytes)</title></rect>
 <rect width="9.33" height="9.04" x="700.81" y="187.11" class="named"><title>0x00461a60 ModifyStartInfo (240 bytes)</title></rect>
 <rect width="9.29" height="9.04" x="713.14" y="187.11" class="named"><title>0x0042dab0 TriggerBubble (239 bytes)</title></rect>

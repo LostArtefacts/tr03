@@ -2044,6 +2044,7 @@ address,size,name,symbol
 0x004c7fc8,16,willboss_bite_left,_willboss_bite_left
 0x004c7fd8,16,willboss_bite_right,_willboss_bite_right
 0x004c7fe8,16,wing_bite,_wing_bite
+0x004c8018,4,no_joy,_no_joy
 0x004c8040,8,screen_sizer,_screen_sizer
 0x004c8048,8,game_sizer,_game_sizer
 0x004c8050,4,fade_value,_fade_value
@@ -2324,6 +2325,7 @@ address,size,name,symbol
 0x006300cc,1,acm_wait,_acm_wait
 0x006300d4,1,acm_locked,_acm_locked
 0x006300d8,4,ACMSilentCount,_ACMSilentCount
+0x00630100,404,joystick,_joystick
 0x006302a4,,lpDirectInput,_lpDirectInput
 0x006302a8,,Keyboard,_Keyboard
 0x006302b0,4,game_hires,_game_hires

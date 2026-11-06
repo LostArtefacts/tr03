@@ -6,6 +6,8 @@ extern "C" {
 
 extern LPDIRECTINPUT lpDirectInput;
 extern LPDIRECTINPUTDEVICE Keyboard;
+static int no_joy = 1;
+static JOYCAPS joystick;
 
 inline bool DX_TRY(HRESULT hr)
 {
@@ -38,6 +40,37 @@ void DI_ReadKeyboard(unsigned char *KeyMap)
         if (DX_TRY(Keyboard->Acquire()) || DX_TRY(Keyboard->GetDeviceState(256, KeyMap)))
             memset(KeyMap, 0, 256);
     }
+}
+
+int DI_ReadJoystick(int &x, int &y)
+{
+    JOYINFOEX jinfo;
+
+    if (!App.DXConfig.Joystick) {
+        y = 0;
+        x = 0;
+        return 0;
+    }
+    jinfo.dwSize = sizeof(JOYINFOEX);
+    jinfo.dwFlags = JOY_RETURNBUTTONS | JOY_RETURNX | JOY_RETURNY;
+    if (joyGetPosEx(JOYSTICKID1, &jinfo) != JOYERR_NOERROR) {
+        no_joy = 1;
+        y = 0;
+        x = 0;
+        return 0;
+    }
+    if (no_joy) {
+        if (joyGetDevCaps(JOYSTICKID1, &joystick, sizeof(joystick)) == JOYERR_NOERROR) {
+            no_joy = 0;
+        } else {
+            y = 0;
+            x = 0;
+            return 0;
+        }
+    }
+    x = (jinfo.dwXpos << 5) / (joystick.wXmax - joystick.wXmin) - 16;
+    y = (jinfo.dwYpos << 5) / (joystick.wYmax - joystick.wYmin) - 16;
+    return jinfo.dwButtons;
 }
 
 void DI_FinishKeyboard(void)
