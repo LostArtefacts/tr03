@@ -432,7 +432,7 @@ address,size,name,symbol
 0x00436840,377,Construct_Inventory,_Construct_Inventory
 0x004369c0,143,SelectMeshes,_SelectMeshes
 0x00436a50,129,AnimateInventoryItem,_AnimateInventoryItem
-0x00436ae0,1200,DrawInventoryItem,_DrawInventoryItem
+0x00436ae0,1216,DrawInventoryItem,_DrawInventoryItem
 0x00436fa0,25,GetDebouncedInput,_GetDebouncedInput
 0x00436fc0,141,GetGlobeMeshFlags,_GetGlobeMeshFlags
 0x00437050,266,InitColours,_InitColours
