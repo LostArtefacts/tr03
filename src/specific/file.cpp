@@ -42,6 +42,7 @@ typedef struct phdtexturestruct {
 
 extern PHDTEXTURESTRUCT phdtextinfo[];
 
+extern char cd_drive;
 extern char **GF_picfilenames;
 extern sint16 GF_LoadingPic;
 extern char GF_Playing_Story;
@@ -174,6 +175,14 @@ void build_ext(char *fname, char *ext)
     *(fname++) = *(ext++);
     *(fname++) = *(ext++);
     *(fname++) = 0;
+}
+
+const char *GetFullPath(const char *name)
+{
+    static char path[128];
+
+    wsprintf(path, "%c:\\%s", cd_drive, name);
+    return path;
 }
 
 int S_LoadLevelFile(char *name, int number, int type)
