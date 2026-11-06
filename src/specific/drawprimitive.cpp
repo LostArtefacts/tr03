@@ -5224,4 +5224,57 @@ void MMXBlit32to16(void *dest, void *src, int w)
         emms
     }
 }
+
+void MMXBlit32to24(void *dest, void *src, int w)
+{
+    unsigned long mask1[2];
+    unsigned long mask2[2];
+    unsigned long mask3[2];
+    unsigned long mask4[2];
+
+    mask1[0] = 0xffffff;
+    mask1[1] = 0;
+    mask3[0] = 0;
+    mask3[1] = 0xffffff;
+    mask2[0] = 0xffff;
+    mask2[1] = 0;
+    mask4[0] = 0xff0000;
+    mask4[1] = 0;
+    __asm {
+        mov esi, dword ptr [src]
+        mov edi, dword ptr [dest]
+        mov eax, dword ptr [w]
+    L1:
+        movq mm0, qword ptr [esi]
+        movq mm1, qword ptr [esi+0x8]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc2
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xcb
+        sub eax, 0x4
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xcc
+        pand mm0, qword ptr [mask1]
+        pand mm1, qword ptr [mask2]
+        pand mm2, qword ptr [mask3]
+        psrlq mm2, 0x8
+        psllq mm1, 0x30
+        por mm1, mm2
+        por mm0, mm1
+        pand mm3, qword ptr [mask4]
+        pand mm4, qword ptr [mask3]
+        psrlq mm3, 0x10
+        psrlq mm4, 0x18
+        por mm3, mm4
+        lea esi, [esi+0x10]
+        movq qword ptr [edi], mm0
+        movd dword ptr [edi+0x8], mm3
+        lea edi, [edi+0xc]
+        jne L1
+        emms
+    }
+}
 }
