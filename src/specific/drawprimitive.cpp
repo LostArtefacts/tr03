@@ -5615,4 +5615,121 @@ HRESULT EmulateDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dv
     }
     return D3D_OK;
 }
+
+extern void (*Var6ca140)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca144)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca148)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca14c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern long Var6ca1d8;
+extern int bForceAffineMap;
+void MMXInit(void);
+HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
+void Func490110(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
+void ScanLinesTAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesT(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTGAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTF(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTFAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTFDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTFDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func498860(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func498da0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func499de0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func49ea50(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTFAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func4a98e0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func49a510(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func49a790(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func49fe10(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func4a2280(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func4aaf20(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+void Func4ad550(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+
+void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurf, bool HW)
+{
+    int i;
+
+    D3DDev = lpD3D;
+    Var6ca1d8 = 0;
+    if (HW) {
+        DrawPrimitive = HWDrawPrimitive;
+        BeginScene = HWBeginScene;
+        EndScene = HWEndScene;
+        SetRenderState = HWSetRenderState;
+    } else if (App.DXConfig.MMX) {
+        DrawPrimitive = MMXDrawPrimitive;
+        lpSurface = lpSurf;
+        BeginScene = MMXBeginScene;
+        EndScene = SWEndScene;
+        SetRenderState = MMXSetRenderState;
+        MMXInit();
+    } else {
+        HWConfig.nFilter = 0;
+        lpSurface = lpSurf;
+        DrawPrimitive = SWDrawPrimitive;
+        BeginScene = SWBeginScene;
+        EndScene = SWEndScene;
+        SetRenderState = SWSetRenderState;
+        Var6ca140 = ScanLinesTAffine;
+        Var6ca144 = ScanLinesTDecalAffine;
+        Var6ca148 = ScanLinesT;
+        Var6ca14c = ScanLinesTDecal;
+        Var6ca168 = ScanLinesBlack;
+        Var6ca190 = NullScanLines;
+        for (i = 0; i < App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].nTexture; i++) {
+            if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[i].rbpp == 5
+                && App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[i].gbpp == 6
+                && App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[i].bbpp == 5) {
+                App.DXConfigPtr->D3DTF = i;
+                break;
+            }
+        }
+        Var6ca160 = ScanLinesTG;
+        Var6ca150 = ScanLinesTGAffine;
+        Var6ca16c = ScanLinesTF;
+        Var6ca170 = ScanLinesTFAffine;
+        Var6ca154 = ScanLinesTGDecalAffine;
+        Var6ca164 = ScanLinesTGDecal;
+        Var6ca174 = ScanLinesTFDecal;
+        Var6ca178 = ScanLinesTFDecalAffine;
+        Var6ca184 = Func498860;
+        Var6ca188 = Func498da0;
+        Var6ca18c = Func499de0;
+        Var6ca180 = Func49ea50;
+        Var6ca17c = ScanLinesTFAlphaDecalAffine;
+        Var6ca15c = Func4a98e0;
+        Var6ca158 = ScanLinesTGAlphaDecalAffine;
+        Var6ca198 = Func490110;
+        if (HWConfig.TrueAlpha) {
+            Var6ca18c = Func49a510;
+            Var6ca188 = Func49a790;
+            Var6ca17c = Func49fe10;
+            Var6ca180 = Func4a2280;
+            Var6ca158 = Func4aaf20;
+            Var6ca15c = Func4ad550;
+        }
+        DrawScanLines = ScanLinesTG;
+        CalcGradientsPersp = CalculateGradientsTG;
+        CalcEdgePersp = CalculateEdgeTG;
+        DrawScanLinesAffine = ScanLinesTGAffine;
+        CalcGradientsAffine = CalculateGradientsTGA;
+        CalcEdgeAffine = CalculateEdgeTGA;
+        DrawScanLinesBlack = Var6ca168;
+        CalcGradientsBlack = NullCalculateGradient;
+        CalcEdgeBlack = CalculateEdgeBlack;
+        DrawScanLinesFlat = ScanLinesTF;
+        CalcGradientsFlat = CalculateGradientsTF;
+        CalcEdgeFlat = CalculateEdgeT;
+        DrawScanLinesFlatAffine = ScanLinesTFAffine;
+        CalcGradientsFlatAffine = CalculateGradientsTFA;
+        CalcEdgeFlatAffine = CalculateEdgeTA;
+        BuildXYTables();
+        BuildRGBTable();
+        bForceAffineMap = 0;
+    }
+}
 }

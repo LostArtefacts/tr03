@@ -1170,7 +1170,7 @@ address,size,name,symbol
 0x00483650,278,S_DrawScreenBox,_S_DrawScreenBox
 0x00483770,61,S_DrawScreenFBox,_S_DrawScreenFBox
 0x004837b0,15,S_FinishInventory,_S_FinishInventory
-0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1 _S_SetReverbType _NullCalculateGradient _NullCalculateEdge
+0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1 _S_SetReverbType _NullCalculateGradient _NullCalculateEdge _NullScanLines
 0x004837d0,87,S_Wait,_S_Wait
 0x00483830,14,S_PlayFMV,_S_PlayFMV
 0x00483840,19,S_IntroFMV,_S_IntroFMV
@@ -1355,6 +1355,7 @@ address,size,name,symbol
 0x0048ffc0,225,DXCreateViewPort,_DXCreateViewPort
 0x004900b0,16,DXGetSurfaceDesc,_DXGetSurfaceDesc
 0x004900c0,72,DXSurfBlt,_DXSurfBlt
+0x00490110,752,Func490110,_Func490110
 0x00490400,755,InitDrawPrimitive,_InitDrawPrimitive
 0x00490700,119,CloseDrawPrimitive,_CloseDrawPrimitive
 0x00490780,281,BuildXYTables,_BuildXYTables
@@ -1734,7 +1735,7 @@ address,size,name,symbol
 0x004c1270,804,__raise_exc,
 0x004c15b0,816,__handle_exc,
 0x004c18e0,38,__set_errno,
-0x004c1910,3,__matherr,
+0x004c1910,3,__matherr,_SWEndScene
 0x004c1920,16,__statfp,
 0x004c1930,17,__clrfp,
 0x004c1950,40,__ctrlfp,
@@ -2534,6 +2535,10 @@ address,size,name,symbol
 0x006ca130,4,DrawScanLinesFlat,_DrawScanLinesFlat
 0x006ca134,4,Output,_Output
 0x006ca138,4,tpitch,_tpitch
+0x006ca140,4,Var6ca140,_Var6ca140
+0x006ca144,4,Var6ca144,_Var6ca144
+0x006ca148,4,Var6ca148,_Var6ca148
+0x006ca14c,4,Var6ca14c,_Var6ca14c
 0x006ca150,4,Var6ca150,_Var6ca150
 0x006ca154,4,Var6ca154,_Var6ca154
 0x006ca158,4,Var6ca158,_Var6ca158
@@ -2568,6 +2573,7 @@ address,size,name,symbol
 0x006ca1cc,4,YTable,_YTable
 0x006ca1d0,4,DrawScanLinesAffine,_DrawScanLinesAffine
 0x006ca1d4,4,lpSurface,_lpSurface
+0x006ca1d8,4,Var6ca1d8,_Var6ca1d8
 0x006ca1dc,4,CalcGradientsAffine,_CalcGradientsAffine
 0x006ca1e0,4,WidthTablef,_WidthTablef
 0x006ca1e4,4,CalcGradientsPersp,_CalcGradientsPersp
