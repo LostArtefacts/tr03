@@ -412,7 +412,7 @@ address,size,name,symbol
 0x00432310,1372,GF_InterpretSequence,_GF_InterpretSequence
 0x004328d0,3768,GF_ModifyInventory,_GF_ModifyInventory
 0x00433790,116,InitialiseHair,_InitialiseHair
-0x00433810,2748,HairControl,_HairControl
+0x00433810,2768,HairControl,_HairControl
 0x004342e0,118,DrawHair,_DrawHair
 0x00434360,45,FlashIt,_FlashIt
 0x00434390,384,DrawAssaultTimer,_DrawAssaultTimer
