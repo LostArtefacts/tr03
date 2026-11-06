@@ -459,4 +459,31 @@ void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar,
 void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
 void phd_NormaliseVector(sint32 x, sint32 y, sint32 z, sint32 *dest);
 
+void phd_RotZ(PHD_ANGLE rz)
+{
+    sint32 sz, cz, r0, r1;
+    sint32 *mptr;
+
+    if (rz) {
+        mptr = phd_mxptr;
+        sz = phd_sin(rz);
+        cz = phd_cos(rz);
+
+        r0 = *(mptr + M00) * cz + *(mptr + M01) * sz;
+        r1 = *(mptr + M01) * cz - *(mptr + M00) * sz;
+        *(mptr + M00) = r0 >> W2V_SHIFT;
+        *(mptr + M01) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M10) * cz + *(mptr + M11) * sz;
+        r1 = *(mptr + M11) * cz - *(mptr + M10) * sz;
+        *(mptr + M10) = r0 >> W2V_SHIFT;
+        *(mptr + M11) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M20) * cz + *(mptr + M21) * sz;
+        r1 = *(mptr + M21) * cz - *(mptr + M20) * sz;
+        *(mptr + M20) = r0 >> W2V_SHIFT;
+        *(mptr + M21) = r1 >> W2V_SHIFT;
+    }
+}
+
 }
