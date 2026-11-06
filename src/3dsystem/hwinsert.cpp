@@ -4,6 +4,9 @@ extern "C" {
 
 #include "../3dglodef.h"
 
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+
 extern float UVTable[65536];
 extern unsigned char ColorTable[256];
 extern bool bBlueEffect;
@@ -475,6 +478,68 @@ int RoomXYGUVClipper(int number, VERTEX_INFO *input)
     if (j < 3)
         return 0;
     return j;
+}
+
+extern D3DTLVERTEX *VertexBuffer;
+extern D3DTLVERTEX *CurrentTLVertex;
+extern bool bAlphaTesting;
+extern sint32 *sort3dptrbf;
+extern sint32 *sort3dptrfb;
+extern sint16 *info3dptrbf;
+extern sint16 *info3dptrfb;
+extern int surfacenumbf;
+extern int surfacenumfb;
+extern int GlobalAlpha;
+extern float one;
+extern float f_a;
+extern float f_boo;
+
+void HWI_InsertLine_Sorted(long x1, long y1, long x2, long y2, long z, long c0, long c1)
+{
+    D3DTLVERTEX *v;
+    sint32 *sort;
+    sint16 *info;
+    float zv;
+
+    if (CurrentTLVertex - VertexBuffer > 9184)
+        return;
+    if (!App.lpZBuffer || !bAlphaTesting) {
+        sort = sort3dptrbf;
+        info = info3dptrbf;
+        sort[2] = nPolyType;
+        surfacenumbf++;
+        sort3dptrbf += 3;
+        info3dptrbf += 5;
+    } else {
+        sort = sort3dptrfb;
+        info = info3dptrfb;
+        sort[2] = nPolyType;
+        surfacenumfb++;
+        sort3dptrfb += 3;
+        info3dptrfb += 5;
+    }
+    sort[0] = (sint32)info;
+    sort[1] = z;
+    info[0] = 12;
+    info[1] = 0;
+    info[2] = 2;
+    v = CurrentTLVertex;
+    *((D3DTLVERTEX **)(info + 3)) = v;
+    v[0].sx = float(phd_winxmin + x1);
+    v[0].sy = float(phd_winymin + y1);
+    v[1].sx = float(phd_winxmin + x2);
+    v[1].sy = float(phd_winymin + y2);
+    v[0].color = c0 | GlobalAlpha;
+    v[1].color = c1 | GlobalAlpha;
+    zv = one / (float)z;
+    v[1].rhw = zv;
+    v[0].rhw = zv;
+    zv = f_a - zv * f_boo;
+    v[0].specular = 0;
+    v[1].specular = 0;
+    v[1].sz = zv;
+    v[0].sz = zv;
+    CurrentTLVertex = v + 2;
 }
 
 }
