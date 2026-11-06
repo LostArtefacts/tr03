@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="334.75" height="12" x="0" y="0" class="named"><title>1178 · 79.70%</title></rect>
-<rect width="2.84" height="12" x="334.75" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="82.41" height="12" x="337.59" y="0" class="todo"><title>290 · 19.62%</title></rect>
+<rect width="335.03" height="12" x="0" y="0" class="named"><title>1179 · 79.77%</title></rect>
+<rect width="2.84" height="12" x="335.03" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="82.12" height="12" x="337.88" y="0" class="todo"><title>289 · 19.55%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">79.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1178</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">290</tspan></text>
+<text text-anchor="end" x="600" y="7.50">79.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1179</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">289</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="212.88" height="12" x="0" y="0" class="named"><title>339 KB · 50.69%</title></rect>
-<rect width="3.98" height="12" x="212.88" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="203.14" height="12" x="216.86" y="0" class="todo"><title>323 KB · 48.37%</title></rect>
+<rect width="213.60" height="12" x="0" y="0" class="named"><title>340 KB · 50.86%</title></rect>
+<rect width="3.98" height="12" x="213.60" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="202.42" height="12" x="217.58" y="0" class="todo"><title>322 KB · 48.20%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">50.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">339 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">323 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">50.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">340 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">322 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1290,7 +1290,7 @@
 <rect width="12" height="12" x="345" y="360" class="named"><title>0x00486010 game_free (52 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="360" class="named"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="360" class="named"><title>0x00486140 Key (288 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="360" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="360" class="named"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="360" class="todo"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="360" class="todo"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="360" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
@@ -1691,7 +1691,7 @@
 <rect width="19.95" height="20.53" x="591.50" y="0" class="todo"><title>0x00494e30 MMXDrawTriangleFog (1166 bytes)</title></rect>
 <rect width="19.93" height="20.53" x="614.45" y="0" class="named"><title>0x00489c70 S_ShowControls (1165 bytes)</title></rect>
 <rect width="19.78" height="20.53" x="637.38" y="0" class="named"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
-<rect width="19.62" height="20.53" x="660.15" y="0" class="todo"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
+<rect width="19.62" height="20.53" x="660.15" y="0" class="named"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="19.60" height="20.53" x="682.77" y="0" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
 <rect width="19.33" height="20.53" x="705.38" y="0" class="named"><title>0x00460230 AnimateQuadBike (1130 bytes)</title></rect>
 <rect width="19.29" height="20.53" x="727.71" y="0" class="named"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
