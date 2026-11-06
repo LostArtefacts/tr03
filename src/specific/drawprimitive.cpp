@@ -15,6 +15,11 @@ extern unsigned long *Var6ca2d0;
 extern long Var6ca20c;
 extern unsigned char *Var6ca12c;
 extern long *YTable;
+extern long Var6ce4e4;
+extern float Var4cec20;
+extern void (*Var6ca408)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern void (*Var6ca24c)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 extern LPDIRECTDRAWSURFACE3 Var6ca1d4;
 extern float *WidthTable;
 extern long *WidthTablef;
@@ -218,6 +223,64 @@ HRESULT MMXBeginScene(void)
 {
     Var6ca2d0 = App.unk;
     Var6ca20c = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w << 2;
+    return 0;
+}
+
+
+HRESULT MMXDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVertexType, LPVOID lpvVertices, DWORD dwVertexCount, DWORD dwFlags)
+{
+    D3DTLVERTEX *v, *v2, *v3;
+    int n;
+
+    if (!Var6ca2d0)
+        return 0;
+    switch (dptPrimitiveType) {
+    case D3DPT_TRIANGLELIST:
+        v = (D3DTLVERTEX *)lpvVertices;
+        n = dwVertexCount;
+        do {
+            if (Var6ce4e4 && v->rhw > Var4cec20)
+                Var6ca408(v, v + 1, v + 2);
+            else
+                Var6ca24c(v, v + 1, v + 2);
+            n -= 3;
+            v += 3;
+        } while (n > 0);
+        break;
+    case D3DPT_TRIANGLEFAN:
+        v = (D3DTLVERTEX *)lpvVertices;
+        v2 = v + 1;
+        v3 = v + 2;
+        n = dwVertexCount;
+        do {
+            if (Var6ce4e4 && v->rhw > Var4cec20)
+                Var6ca408(v, v2, v3);
+            else
+                Var6ca24c(v, v2, v3);
+            v2++;
+            v3++;
+            n--;
+        } while (n > 2);
+        break;
+    case D3DPT_LINELIST:
+        n = dwVertexCount;
+        v = (D3DTLVERTEX *)lpvVertices;
+        do {
+            MMXDrawLine(v, v + 1);
+            n -= 2;
+            v += 2;
+        } while (n > 0);
+        break;
+    case D3DPT_LINESTRIP:
+        n = dwVertexCount;
+        v = (D3DTLVERTEX *)lpvVertices;
+        do {
+            MMXDrawLine(v, v + 1);
+            n--;
+            v++;
+        } while (n > 1);
+        break;
+    }
     return 0;
 }
 
