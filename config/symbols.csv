@@ -2538,6 +2538,17 @@ address,size,name,symbol
 0x006ce508,4,G_DXConfig,_G_DXConfig
 0x006ce50c,4,G_DeviceInfo,_G_DeviceInfo
 0x006ce514,1,bSoftwareDefault,_bSoftwareDefault
+0x006ce51c,4,u,_u
+0x006ce520,4,v,_v
+0x006ce528,4,redleft,_redleft
+0x006ce52c,4,greenleft,_greenleft
+0x006ce534,4,db,_db
+0x006ce538,4,dg,_dg
+0x006ce53c,4,dr,_dr
+0x006ce540,4,du,_du
+0x006ce544,4,dv,_dv
+0x006ce54c,4,pDestination,_pDestination
+0x006ce550,4,blueleft,_blueleft
 0x006ce558,,Textures,_Textures
 0x006ce958,,PictureTextures,_PictureTextures
 0x006ced58,,DXPalette,_DXPalette
