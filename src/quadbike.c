@@ -971,3 +971,180 @@ int CanGetOff_quadbike(int direction)
 
     return 1;
 }
+
+FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
+sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
+int DoShift_boat(ITEM_INFO *boat, PHD_VECTOR *newer, PHD_VECTOR *old);
+int GetCollisionAnim_quadbike(ITEM_INFO *v, PHD_VECTOR *moved);
+void SkidooBaddieCollision(ITEM_INFO *skidoo);
+sint32 DoDynamics_quadbike(sint32 height, sint32 fallspeed, sint32 *y);
+
+int SkidooDynamics(ITEM_INFO *v)
+{
+    QUADINFO *bike;
+    PHD_VECTOR moved, fl, fr, br, bl, mtl, mbl, mtr, mbr, mml, mmr;
+    PHD_VECTOR old, fl_old, fr_old, bl_old, br_old, mtl_old, mbl_old, mtr_old, mbr_old, mml_old, mmr_old;
+    sint32 hfl, hfr, hbr, hbl, hmtl, hmbl, hmtr, hmbr, hmml, hmmr;
+    sint32 hfr_old, hfl_old, hbr_old, hbl_old, hmtl_old, hmbl_old, hmtr_old, hmbr_old, hmml_old, hmmr_old;
+    FLOOR_INFO *floor;
+    sint32 height, slip, collide, speed;
+    sint16 room_number, rot, rotadd;
+    int newspeed;
+
+    dont_exit_quad = 0;
+    bike = (QUADINFO *)v->data;
+    hfl_old = TestHeight_quadbike(v, 550, -260, &fl_old);
+    hfr_old = TestHeight_quadbike(v, 550, 260, &fr_old);
+    hbl_old = TestHeight_quadbike(v, -550, -260, &bl_old);
+    hbr_old = TestHeight_quadbike(v, -550, 260, &br_old);
+    hmml_old = TestHeight_quadbike(v, 0, -260, &mml_old);
+    hmmr_old = TestHeight_quadbike(v, 0, 260, &mmr_old);
+    hmtl_old = TestHeight_quadbike(v, 550 >> 1, -260, &mtl_old);
+    hmtr_old = TestHeight_quadbike(v, 550 >> 1, 260, &mtr_old);
+    hmbl_old = TestHeight_quadbike(v, -550 >> 1, -260, &mbl_old);
+    hmbr_old = TestHeight_quadbike(v, -550 >> 1, 260, &mbr_old);
+    old.x = v->pos.x_pos;
+    old.y = v->pos.y_pos;
+    old.z = v->pos.z_pos;
+    if (bl_old.y > hbl_old)
+        bl_old.y = hbl_old;
+    if (br_old.y > hbr_old)
+        br_old.y = hbr_old;
+    if (fl_old.y > hfl_old)
+        fl_old.y = hfl_old;
+    if (fr_old.y > hfr_old)
+        fr_old.y = hfr_old;
+    if (mbl_old.y > hmbl_old)
+        mbl_old.y = hmbl_old;
+    if (mbr_old.y > hmbr_old)
+        mbr_old.y = hmbr_old;
+    if (mtl_old.y > hmtl_old)
+        mtl_old.y = hmtl_old;
+    if (mtr_old.y > hmtr_old)
+        mtr_old.y = hmtr_old;
+    if (mml_old.y > hmml_old)
+        mml_old.y = hmml_old;
+    if (mmr_old.y > hmmr_old)
+        mmr_old.y = hmmr_old;
+    if (v->pos.y_pos > (v->floor - STEP_L)) {
+        sint16 momentum;
+
+        if (bike->skidoo_turn < -(ONE_DEGREE * 2))
+            bike->skidoo_turn += (ONE_DEGREE * 2);
+        else if (bike->skidoo_turn > (ONE_DEGREE * 2))
+            bike->skidoo_turn -= (ONE_DEGREE * 2);
+        else
+            bike->skidoo_turn = 0;
+        v->pos.y_rot += bike->skidoo_turn + bike->extra_rotation;
+        rot = v->pos.y_rot - bike->momentum_angle;
+        momentum = (ONE_DEGREE * 3) - ((((((ONE_DEGREE * 3) - (ONE_DEGREE + (ONE_DEGREE / 2))) << 8) / 0xa000) * bike->Velocity) >> 8);
+        if (!(input & IN_ACTION) && bike->Velocity > 0)
+            momentum += momentum >> 2;
+        if (rot < -(ONE_DEGREE + (ONE_DEGREE / 2))) {
+            if (rot < -(ONE_DEGREE * 150)) {
+                rot = -(ONE_DEGREE * 150);
+                bike->momentum_angle = v->pos.y_rot - rot;
+            } else
+                bike->momentum_angle -= momentum;
+        } else if (rot > (ONE_DEGREE + (ONE_DEGREE / 2))) {
+            if (rot > (ONE_DEGREE * 150)) {
+                rot = (ONE_DEGREE * 150);
+                bike->momentum_angle = v->pos.y_rot - rot;
+            } else
+                bike->momentum_angle += momentum;
+        } else
+            bike->momentum_angle = v->pos.y_rot;
+    } else
+        v->pos.y_rot += bike->skidoo_turn + bike->extra_rotation;
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    height = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    if (v->pos.y_pos >= height) {
+        speed = (v->speed * phd_cos(v->pos.x_rot)) >> W2V_SHIFT;
+    } else
+        speed = v->speed;
+    v->pos.z_pos += (speed * phd_cos(bike->momentum_angle)) >> W2V_SHIFT;
+    v->pos.x_pos += (speed * phd_sin(bike->momentum_angle)) >> W2V_SHIFT;
+    slip = 100 * phd_sin(v->pos.x_rot) >> W2V_SHIFT;
+    if (ABS(slip) > 100 / 2) {
+        dont_exit_quad = 1;
+        if (slip > 0)
+            slip -= 10;
+        else
+            slip += 10;
+        v->pos.z_pos -= slip * phd_cos(v->pos.y_rot) >> W2V_SHIFT;
+        v->pos.x_pos -= slip * phd_sin(v->pos.y_rot) >> W2V_SHIFT;
+    }
+    slip = 50 * phd_sin(v->pos.z_rot) >> W2V_SHIFT;
+    if (ABS(slip) > 50 / 2) {
+        dont_exit_quad = 1;
+        v->pos.z_pos -= slip * phd_sin(v->pos.y_rot) >> W2V_SHIFT;
+        v->pos.x_pos += slip * phd_cos(v->pos.y_rot) >> W2V_SHIFT;
+    }
+    moved.x = v->pos.x_pos;
+    moved.z = v->pos.z_pos;
+    if (!(v->flags & ONESHOT))
+        SkidooBaddieCollision(v);
+    rot = 0;
+    hfl = TestHeight_quadbike(v, 550, -260, &fl);
+    if (hfl < fl_old.y - STEP_L)
+        rot = DoShift_boat(v, &fl, &fl_old);
+    hmtl = TestHeight_quadbike(v, 550 >> 1, -260, &mtl);
+    if (hmtl < mtl_old.y - STEP_L)
+        DoShift_boat(v, &mtl, &mtl_old);
+    hmml = TestHeight_quadbike(v, 0, -260, &mml);
+    if (hmml < mml_old.y - STEP_L)
+        DoShift_boat(v, &mml, &mml_old);
+    hmbl = TestHeight_quadbike(v, -550 >> 1, -260, &mbl);
+    if (hmbl < mbl_old.y - STEP_L)
+        DoShift_boat(v, &mbl, &mbl_old);
+    hbl = TestHeight_quadbike(v, -550, -260, &bl);
+    if (hbl < bl_old.y - STEP_L) {
+        rotadd = DoShift_boat(v, &bl, &bl_old);
+        if ((rotadd > 0 && rot >= 0) || (rotadd < 0 && rot <= 0))
+            rot += rotadd;
+    }
+    hfr = TestHeight_quadbike(v, 550, 260, &fr);
+    if (hfr < fr_old.y - STEP_L) {
+        rotadd = DoShift_boat(v, &fr, &fr_old);
+        if ((rotadd > 0 && rot >= 0) || (rotadd < 0 && rot <= 0))
+            rot += rotadd;
+    }
+    hmtr = TestHeight_quadbike(v, 550 >> 1, 260, &mtr);
+    if (hmtr < mtr_old.y - STEP_L)
+        DoShift_boat(v, &mtr, &mtr_old);
+    hmmr = TestHeight_quadbike(v, 0, 260, &mmr);
+    if (hmmr < mmr_old.y - STEP_L)
+        DoShift_boat(v, &mmr, &mmr_old);
+    hmbr = TestHeight_quadbike(v, -550 >> 1, 260, &mbr);
+    if (hmbr < mbr_old.y - STEP_L)
+        DoShift_boat(v, &mbr, &mbr_old);
+    hbr = TestHeight_quadbike(v, -550, 260, &br);
+    if (hbr < br_old.y - STEP_L) {
+        rotadd = DoShift_boat(v, &br, &br_old);
+        if ((rotadd > 0 && rot >= 0) || (rotadd < 0 && rot <= 0))
+            rot += rotadd;
+    }
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    height = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    if (height < v->pos.y_pos - STEP_L)
+        DoShift_boat(v, (PHD_VECTOR *)&v->pos, &old);
+    bike->extra_rotation = rot;
+    collide = GetCollisionAnim_quadbike(v, &moved);
+    if (collide) {
+        newspeed = ((v->pos.z_pos - old.z) * phd_cos(bike->momentum_angle) + (v->pos.x_pos - old.x) * phd_sin(bike->momentum_angle)) >> W2V_SHIFT;
+        newspeed <<= 8;
+        if ((&items[lara.skidoo] == v) && (bike->Velocity == 0xa000) && (newspeed < (bike->Velocity - 10))) {
+            lara_item->hit_points -= (bike->Velocity - newspeed) >> 7;
+            lara_item->hit_status = 1;
+        }
+        if (bike->Velocity > 0 && newspeed < bike->Velocity)
+            bike->Velocity = (newspeed < 0) ? 0 : newspeed;
+        else if (bike->Velocity < 0 && newspeed > bike->Velocity)
+            bike->Velocity = (newspeed > 0) ? 0 : newspeed;
+        if (bike->Velocity < -0x3000)
+            bike->Velocity = -0x3000;
+    }
+    return collide;
+}
