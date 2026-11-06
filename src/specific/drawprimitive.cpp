@@ -5277,4 +5277,112 @@ void MMXBlit32to24(void *dest, void *src, int w)
         emms
     }
 }
+
+void MMXBlit32to15(void *dest, void *src, int w)
+{
+    unsigned long mult[2];
+    unsigned long gmask[2];
+    unsigned long rbmask[2];
+
+    mult[0] = 0x20000008;
+    mult[1] = 0x20000008;
+    rbmask[0] = 0xf800f8;
+    rbmask[1] = 0xf800f8;
+    gmask[0] = 0xf800;
+    gmask[1] = 0xf800;
+    __asm {
+        mov eax, dword ptr [w]
+        mov ebx, dword ptr [src]
+        sub eax, 0x1
+        mov edx, dword ptr [dest]
+        and eax, 0xfffffff8
+        movq mm7, qword ptr [mult]
+        movq mm6, qword ptr [gmask]
+        movq mm2, qword ptr [ebx+eax*4+0x8]
+        movq mm0, qword ptr [ebx+eax*4]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xd3
+        pand mm3, qword ptr [rbmask]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc1
+        pand mm1, qword ptr [rbmask]
+        pmaddwd mm3, mm7
+        pmaddwd mm1, mm7
+        pand mm2, mm6
+    L1:
+        movq mm4, qword ptr [ebx+eax*4+0x18]
+        pand mm0, mm6
+        movq mm5, qword ptr [ebx+eax*4+0x10]
+        por mm3, mm2
+        psrld mm3, 0x6
+        por mm1, mm0
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xe0
+        psrld mm1, 0x6
+        pand mm0, qword ptr [rbmask]
+        packssdw mm1, mm3
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xeb
+        pmaddwd mm0, mm7
+        pand mm3, qword ptr [rbmask]
+        pand mm4, mm6
+        movq qword ptr [edx+eax*2], mm1
+        pmaddwd mm3, mm7
+        sub eax, 0x8
+        por mm4, mm0
+        pand mm5, mm6
+        psrld mm4, 0x6
+        movq mm2, qword ptr [ebx+eax*4+0x8]
+        por mm5, mm3
+        movq mm0, qword ptr [ebx+eax*4]
+        psrld mm5, 0x6
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xd3
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc1
+        pand mm3, qword ptr [rbmask]
+        packssdw mm5, mm4
+        pand mm1, qword ptr [rbmask]
+        pand mm2, mm6
+        movq qword ptr [edx+eax*2+0x18], mm5
+        pmaddwd mm3, mm7
+        pmaddwd mm1, mm7
+        jg L1
+        movq mm4, qword ptr [ebx+eax*4+0x18]
+        pand mm0, mm6
+        movq mm5, qword ptr [ebx+eax*4+0x10]
+        por mm3, mm2
+        psrld mm3, 0x6
+        por mm1, mm0
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xe0
+        psrld mm1, 0x6
+        pand mm0, qword ptr [rbmask]
+        packssdw mm1, mm3
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xeb
+        pmaddwd mm0, mm7
+        pand mm3, qword ptr [rbmask]
+        pand mm4, mm6
+        movq qword ptr [edx+eax*2], mm1
+        pmaddwd mm3, mm7
+        sub eax, 0x8
+        por mm4, mm0
+        pand mm5, mm6
+        psrld mm4, 0x6
+        por mm5, mm3
+        psrld mm5, 0x6
+        packssdw mm5, mm4
+        movq qword ptr [edx+eax*2+0x18], mm5
+        emms
+    }
+}
 }
