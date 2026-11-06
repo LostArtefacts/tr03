@@ -5,6 +5,41 @@
 
 extern "C" {
 
+extern int nReEntry;
+extern bool LtWM_QUIT;
+extern bool GtWindowClosed;
+extern int game_closedown;
+
+bool DD_SpinMessageLoop(bool tWait)
+{
+    ++nReEntry;
+    if (LtWM_QUIT) {
+        --nReEntry;
+        return false;
+    }
+    if (tWait)
+        WaitMessage();
+    MSG msg;
+    for (;;) {
+        if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+            if (msg.message == WM_QUIT)
+                break;
+        } else if (App.bFocus) {
+            --nReEntry;
+            return true;
+        } else {
+            WaitMessage();
+        }
+    }
+    LtWM_QUIT = true;
+    GtWindowClosed = true;
+    game_closedown = true;
+    --nReEntry;
+    return false;
+}
+
 HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd, DWORD dwFlags)
 {
     memset(&ddsd, 0, sizeof(ddsd));

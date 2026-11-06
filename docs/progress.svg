@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="328.62" height="12" x="0" y="0" class="named"><title>1345 · 89.79%</title></rect>
-<rect width="7.33" height="12" x="328.62" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.84" height="12" x="335.95" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
-<rect width="23.21" height="12" x="342.79" y="0" class="todo"><title>95 · 6.34%</title></rect>
+<rect width="328.86" height="12" x="0" y="0" class="named"><title>1346 · 89.85%</title></rect>
+<rect width="7.33" height="12" x="328.86" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="6.84" height="12" x="336.19" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="22.97" height="12" x="343.03" y="0" class="todo"><title>94 · 6.28%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">91.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1345</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">95</tspan></text>
+<text text-anchor="end" x="546" y="7.50">91.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1346</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">94</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="260.68" height="12" x="0" y="0" class="named"><title>516 KB · 71.23%</title></rect>
-<rect width="33.42" height="12" x="260.68" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="13.97" height="12" x="294.11" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
-<rect width="57.93" height="12" x="308.07" y="0" class="todo"><title>115 KB · 15.83%</title></rect>
+<rect width="260.79" height="12" x="0" y="0" class="named"><title>516 KB · 71.25%</title></rect>
+<rect width="33.42" height="12" x="260.79" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="13.97" height="12" x="294.21" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
+<rect width="57.82" height="12" x="308.18" y="0" class="todo"><title>114 KB · 15.80%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">80.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">516 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">115 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">516 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">114 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1541,7 +1541,7 @@
 <rect width="12" height="12" x="330" y="435" class="named"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="435" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="435" class="named"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="435" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="435" class="named"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="435" class="named"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="435" class="named"><title>0x004b3930 DD_UnlockSurface (22 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="435" class="named"><title>0x004b3950 DD_CreateSurface (68 bytes)</title></rect>
@@ -2259,7 +2259,7 @@
 <rect width="7.97" height="8.49" x="739.03" y="211.30" class="named"><title>0x00413c10 DoBoatShift (209 bytes)</title></rect>
 <rect width="7.93" height="8.54" x="513.60" y="222.79" class="named"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
 <rect width="7.93" height="8.54" x="513.60" y="234.33" class="named"><title>0x0044efc0 LaraTestWaterDepth (209 bytes)</title></rect>
-<rect width="7.93" height="8.50" x="513.60" y="245.87" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
+<rect width="7.93" height="8.50" x="513.60" y="245.87" class="named"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
 <rect width="7.93" height="8.46" x="513.60" y="257.37" class="named"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.60" y="268.83" class="todo"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.60" y="280.25" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
