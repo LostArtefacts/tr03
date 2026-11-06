@@ -70,4 +70,33 @@ L4b4c87:
     ret
 @phd_sin@4 endp
 
+@phd_sqrt@4 proc public
+    push ebx
+    push ecx
+    push edx
+    mov ebx, 040000000h
+    xor eax, eax
+L4b4c9d:
+    mov edx, eax
+    add eax, ebx
+    shr edx, 1
+    cmp eax, ecx
+    ja short L4b4cb4
+    sub ecx, eax
+    mov eax, ebx
+    or eax, edx
+    shr ebx, 02h
+    jne short L4b4c9d
+    jmp short L4b4cbb
+L4b4cb4:
+    mov eax, edx
+    shr ebx, 02h
+    jne short L4b4c9d
+L4b4cbb:
+    pop edx
+    pop ecx
+    pop ebx
+    ret
+@phd_sqrt@4 endp
+
     end
