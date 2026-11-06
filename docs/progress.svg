@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="317.38" height="12" x="0" y="0" class="named"><title>1261 · 85.32%</title></rect>
 <rect width="1.51" height="12" x="317.38" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.29" height="12" x="318.89" y="0" class="nonmatching"><title>21 · 1.42%</title></rect>
-<rect width="47.82" height="12" x="324.18" y="0" class="todo"><title>190 · 12.86%</title></rect>
+<rect width="5.54" height="12" x="318.89" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="47.57" height="12" x="324.43" y="0" class="todo"><title>189 · 12.79%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">85.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1261</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">21</tspan> · <tspan class="todo">190</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1261</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">189</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="210.22" height="12" x="0" y="0" class="named"><title>378 KB · 56.51%</title></rect>
 <rect width="0.34" height="12" x="210.22" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="7.94" height="12" x="210.57" y="0" class="nonmatching"><title>14 KB · 2.14%</title></rect>
-<rect width="153.49" height="12" x="218.51" y="0" class="todo"><title>276 KB · 41.26%</title></rect>
+<rect width="8.08" height="12" x="210.57" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="153.36" height="12" x="218.64" y="0" class="todo"><title>276 KB · 41.23%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">56.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">378 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">14 KB</tspan> · <tspan class="todo">276 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">378 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">276 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1506,7 +1506,7 @@
 <rect width="12" height="12" x="555" y="420" class="todo"><title>0x004b2180 DXTextureCleanup (106 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="420" class="named"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="420" class="named"><title>0x004b2230 DXRestoreSurfaceIfLost (75 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="420" class="todo"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="420" class="nonmatching"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="420" class="nonmatching"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="420" class="todo"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="420" class="todo"><title>0x004b2940 WinMain (774 bytes)</title></rect>
@@ -2174,7 +2174,7 @@
 <rect width="9.03" height="9.29" x="487.46" y="413.14" class="named"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
 <rect width="9.03" height="9.29" x="487.46" y="425.42" class="named"><title>0x004493e0 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="9.03" height="9.29" x="487.46" y="437.71" class="named"><title>0x0044e770 LaraTestWaterStepOut (239 bytes)</title></rect>
-<rect width="9.15" height="9.17" x="499.49" y="199.84" class="todo"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
+<rect width="9.15" height="9.17" x="499.49" y="199.84" class="nonmatching"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
 <rect width="9.15" height="9.13" x="499.49" y="212.01" class="named"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
 <rect width="9.15" height="9.13" x="499.49" y="224.14" class="named"><title>0x0043b1a0 KillEffect (238 bytes)</title></rect>
 <rect width="9.15" height="9.13" x="499.49" y="236.27" class="named"><title>0x0046eb20 FallingCeiling (238 bytes)</title></rect>

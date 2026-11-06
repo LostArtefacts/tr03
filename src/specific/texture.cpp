@@ -232,4 +232,34 @@ void MMXTextureCopy(unsigned long *dest, unsigned char *src, unsigned long step)
     }
 }
 
+
+HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd, DWORD dwFlags);
+HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd);
+
+int DXTextureAddPal(int w, int h, unsigned char *src, DXTEXTURE *list, unsigned long flags)
+{
+    DXTEXTURE *tex;
+    DDSURFACEDESC desc;
+    unsigned char *dest;
+    long pitch;
+    int index, y;
+
+    index = DXTextureMakeDeviceSurface(w, h, DXPalette, list);
+    if (index < 0)
+        return -1;
+    tex = &list[index];
+    tex->dwFlags |= flags;
+    if (DX_TRY(DD_LockSurface(tex->pSystemSurface, desc, DDLOCK_WAIT | DDLOCK_WRITEONLY)))
+        return -1;
+    pitch = desc.lPitch;
+    dest = (unsigned char *)desc.lpSurface;
+    for (y = h; y; y--) {
+        memcpy(dest, src, w);
+        src += w;
+        dest += pitch;
+    }
+    DD_UnlockSurface(tex->pSystemSurface, desc);
+    return index;
+}
+
 }
