@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="313.15" height="12" x="0" y="0" class="named"><title>1102 · 74.56%</title></rect>
-<rect width="2.56" height="12" x="313.15" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="104.29" height="12" x="315.71" y="0" class="todo"><title>367 · 24.83%</title></rect>
+<rect width="313.44" height="12" x="0" y="0" class="named"><title>1103 · 74.63%</title></rect>
+<rect width="2.56" height="12" x="313.44" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="104.01" height="12" x="315.99" y="0" class="todo"><title>366 · 24.76%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">74.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1102</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">367</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1103</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">366</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.86" height="12" x="0" y="0" class="named"><title>311 KB · 46.63%</title></rect>
-<rect width="3.89" height="12" x="195.86" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="220.25" height="12" x="199.75" y="0" class="todo"><title>350 KB · 52.44%</title></rect>
+<rect width="196" height="12" x="0" y="0" class="named"><title>312 KB · 46.67%</title></rect>
+<rect width="3.89" height="12" x="196" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="220.11" height="12" x="199.89" y="0" class="todo"><title>350 KB · 52.41%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">46.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">350 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">46.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">312 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">350 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1509,7 +1509,7 @@
 <rect width="12" height="12" x="630" y="420" class="todo"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="420" class="todo"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="420" class="named"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="420" class="todo"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="420" class="named"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="420" class="named"><title>0x004b2d40 WinRegisterWindow (116 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="420" class="named"><title>0x004b2dc0 WinCreateWindow (75 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="420" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
@@ -2198,7 +2198,7 @@
 <rect width="8.63" height="9.11" x="499.42" y="247.79" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="8.63" height="9.07" x="499.42" y="259.90" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
 <rect width="8.63" height="9.07" x="499.42" y="271.97" class="todo"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>
-<rect width="8.63" height="9.07" x="499.42" y="284.04" class="todo"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
+<rect width="8.63" height="9.07" x="499.42" y="284.04" class="named"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
 <rect width="8.63" height="9.03" x="499.42" y="296.11" class="named"><title>0x00440140 lara_col_monkeyswing (222 bytes)</title></rect>
 <rect width="8.63" height="9.03" x="499.42" y="308.14" class="named"><title>0x00458ab0 MiniCopterControl (222 bytes)</title></rect>
 <rect width="8.63" height="9.03" x="499.42" y="320.17" class="named"><title>0x0048be60 CreateMonoScreen (222 bytes)</title></rect>

@@ -1533,8 +1533,8 @@ address,size,name,symbol
 0x004b64b0,10,Func4b64b0,
 0x004b64c0,42,rand,_rand
 0x004b64f0,486,Func4b64f0,
-0x004b66e0,74,Func4b66e0,
-0x004b6730,20,Func4b6730,
+0x004b66e0,74,free,_free
+0x004b6730,20,malloc,_malloc
 0x004b6750,68,Func4b6750,
 0x004b67a0,56,Func4b67a0,
 0x004b67e0,326,Func4b67e0,
