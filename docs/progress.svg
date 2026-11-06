@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="336.17" height="12" x="0" y="0" class="named"><title>1183 · 80.04%</title></rect>
-<rect width="2.84" height="12" x="336.17" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="80.99" height="12" x="339.01" y="0" class="todo"><title>285 · 19.28%</title></rect>
+<rect width="336.45" height="12" x="0" y="0" class="named"><title>1184 · 80.11%</title></rect>
+<rect width="2.84" height="12" x="336.45" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="80.70" height="12" x="339.30" y="0" class="todo"><title>284 · 19.22%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">80.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1183</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">285</tspan></text>
+<text text-anchor="end" x="600" y="7.50">80.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1184</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">284</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="214.62" height="12" x="0" y="0" class="named"><title>341 KB · 51.10%</title></rect>
-<rect width="3.98" height="12" x="214.62" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="201.40" height="12" x="218.60" y="0" class="todo"><title>320 KB · 47.95%</title></rect>
+<rect width="214.74" height="12" x="0" y="0" class="named"><title>342 KB · 51.13%</title></rect>
+<rect width="3.98" height="12" x="214.74" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="201.28" height="12" x="218.72" y="0" class="todo"><title>320 KB · 47.92%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">51.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">341 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">320 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">342 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">320 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1526,7 +1526,7 @@
 <rect width="12" height="12" x="135" y="435" class="named"><title>0x004b39f0 DD_ClearSurface (77 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="435" class="named"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="435" class="todo"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="435" class="todo"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="435" class="named"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="435" class="todo"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="435" class="todo"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="435" class="todo"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
@@ -2261,7 +2261,7 @@
 <rect width="8.54" height="7.89" x="580.52" y="222.59" class="named"><title>0x0048aa00 AnimateTextures (192 bytes)</title></rect>
 <rect width="8.50" height="7.89" x="592.06" y="222.59" class="named"><title>0x0043f980 LaraCollideStop (191 bytes)</title></rect>
 <rect width="8.50" height="7.89" x="603.56" y="222.59" class="named"><title>0x00440960 lara_col_stop (191 bytes)</title></rect>
-<rect width="8.50" height="7.89" x="615.05" y="222.59" class="todo"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
+<rect width="8.50" height="7.89" x="615.05" y="222.59" class="named"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
 <rect width="8.45" height="7.89" x="626.55" y="222.59" class="named"><title>0x0041a000 FixedCamera (190 bytes)</title></rect>
 <rect width="8.45" height="7.89" x="638" y="222.59" class="named"><title>0x0043d8c0 LaraTestClimbStance (190 bytes)</title></rect>
 <rect width="8.32" height="7.89" x="649.45" y="222.59" class="named"><title>0x004231f0 CheckNoColFloorTriangle (187 bytes)</title></rect>

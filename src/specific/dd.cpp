@@ -18,6 +18,8 @@ HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd)
 }
 
 bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, DWORD dwColour);
+void HWR_GetAllTextureHandles(void);
+extern bool GtWindowClosed;
 
 HRESULT DD_CreateSurface(DDSURFACEDESC &ddsd, LPDIRECTDRAWSURFACE3 &lpSurface)
 {
@@ -62,6 +64,24 @@ void DXDoFlipWait(void)
 {
     while (App.lpFrontBuffer->GetFlipStatus(DDGFS_ISFLIPDONE) == DDERR_WASSTILLDRAWING)
         ;
+}
+
+bool DXCheckForLostSurfaces(void)
+{
+    bool lost;
+
+    if (!App.lpFrontBuffer)
+        S_ExitSystem("Oops... no front buffer");
+
+    lost = DX_TRY(DD_EnsureSurfaceAvailable(App.lpFrontBuffer, 0, true)) || DX_TRY(DD_EnsureSurfaceAvailable(App.lpBackBuffer, App.lpFrontBuffer, true));
+    if (App.lpZBuffer)
+        lost = lost || DX_TRY(DD_EnsureSurfaceAvailable(App.lpZBuffer, 0, false));
+    lost = lost || DX_TRY(DD_EnsureSurfaceAvailable(App.lpPictureBuffer, 0, false));
+
+    if (lost && !GtWindowClosed && App.nRenderMode == 1)
+        HWR_GetAllTextureHandles();
+
+    return lost;
 }
 
 }
