@@ -1375,7 +1375,7 @@ address,size,name,symbol
 0x00491020,64,Func491020,_Func491020
 0x00491060,919,CalculateGradientsTG,_CalculateGradientsTG
 0x00491400,634,Func491400,_Func491400
-0x00491680,703,Func491680,
+0x00491680,703,Func491680,_Func491680
 0x00491940,812,CalculateEdgeTG,_CalculateEdgeTG
 0x00491c70,548,CalculateEdgeT,_CalculateEdgeT
 0x00491ea0,511,CalculateGradientsTF,_CalculateGradientsTF
