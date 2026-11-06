@@ -219,3 +219,17 @@ MMRESULT ACMAPI acmStreamConvert(HACMSTREAM has, LPACMSTREAMHEADER pash, DWORD f
 
     return pfn(has, pash, fdwConvert);
 }
+
+MMRESULT ACMAPI acmStreamPrepareHeader(HACMSTREAM has, LPACMSTREAMHEADER pash, DWORD fdwPrepare)
+{
+    MMRESULT (ACMAPI *pfn)(HACMSTREAM, LPACMSTREAMHEADER, DWORD);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, LPACMSTREAMHEADER, DWORD))gpafnAcmFunctions[39];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(has, pash, fdwPrepare);
+}

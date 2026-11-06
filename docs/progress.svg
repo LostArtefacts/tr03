@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="332.19" height="12" x="0" y="0" class="named"><title>1169 · 79.09%</title></rect>
-<rect width="2.84" height="12" x="332.19" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="84.97" height="12" x="335.03" y="0" class="todo"><title>299 · 20.23%</title></rect>
+<rect width="332.48" height="12" x="0" y="0" class="named"><title>1170 · 79.16%</title></rect>
+<rect width="2.84" height="12" x="332.48" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="84.68" height="12" x="335.32" y="0" class="todo"><title>298 · 20.16%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">79.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1169</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">299</tspan></text>
+<text text-anchor="end" x="600" y="7.50">79.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1170</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">298</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="210.89" height="12" x="0" y="0" class="named"><title>335 KB · 50.21%</title></rect>
-<rect width="3.98" height="12" x="210.89" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="205.13" height="12" x="214.87" y="0" class="todo"><title>326 KB · 48.84%</title></rect>
+<rect width="210.93" height="12" x="0" y="0" class="named"><title>335 KB · 50.22%</title></rect>
+<rect width="3.98" height="12" x="210.93" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="205.10" height="12" x="214.90" y="0" class="todo"><title>326 KB · 48.83%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">50.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">335 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">326 KB</tspan></text>
@@ -1396,7 +1396,7 @@
 <rect width="12" height="12" x="435" y="390" class="named"><title>0x0048e8f0 acmStreamClose (50 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="390" class="named"><title>0x0048e930 acmStreamSize (60 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="390" class="named"><title>0x0048e970 acmStreamConvert (55 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="390" class="todo"><title>0x0048e9b0 acmStreamPrepareHeader (55 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="390" class="named"><title>0x0048e9b0 acmStreamPrepareHeader (55 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="390" class="todo"><title>0x0048e9f0 acmStreamUnprepareHeader (55 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="390" class="named"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="390" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
@@ -2718,7 +2718,7 @@
 <rect width="4.34" height="4.45" x="698.80" y="332.47" class="named"><title>0x0046ad90 T_ChangeText (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="706.14" y="332.47" class="named"><title>0x00485ca0 GetRandom (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="713.47" y="332.47" class="named"><title>0x0048e970 acmStreamConvert (55 bytes)</title></rect>
-<rect width="4.34" height="4.45" x="720.81" y="332.47" class="todo"><title>0x0048e9b0 acmStreamPrepareHeader (55 bytes)</title></rect>
+<rect width="4.34" height="4.45" x="720.81" y="332.47" class="named"><title>0x0048e9b0 acmStreamPrepareHeader (55 bytes)</title></rect>
 <rect width="4.34" height="4.45" x="728.15" y="332.47" class="todo"><title>0x0048e9f0 acmStreamUnprepareHeader (55 bytes)</title></rect>
 <rect width="4.26" height="4.45" x="735.49" y="332.47" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="4.26" height="4.45" x="742.74" y="332.47" class="named"><title>0x0042f9c0 Exercise8_109Sp (54 bytes)</title></rect>
