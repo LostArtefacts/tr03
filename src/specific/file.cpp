@@ -303,6 +303,50 @@ int LoadSoundEffects(HANDLE file)
     return 1;
 }
 
+int LoadBoxes(HANDLE file)
+{
+    sint32 i;
+    sint32 j;
+    sint32 number_overlaps;
+    DWORD read;
+
+    MyReadFile(file, &number_boxes, sizeof(sint32), &read, NULL);
+    boxes = (BOX_INFO *)game_malloc(sizeof(BOX_INFO) * number_boxes, 21);
+    MyReadFile(file, boxes, sizeof(BOX_INFO) * number_boxes, &read, NULL);
+    if (read != sizeof(BOX_INFO) * number_boxes) {
+        lstrcpy(exit_message, "LoadBoxes(): Unable to load boxes");
+        return 0;
+    }
+    MyReadFile(file, &number_overlaps, sizeof(sint32), &read, NULL);
+    overlap = (uint16 *)game_malloc(sizeof(uint16) * number_overlaps, 22);
+    MyReadFile(file, overlap, sizeof(uint16) * number_overlaps, &read, NULL);
+    if (read != sizeof(uint16) * number_overlaps) {
+        lstrcpy(exit_message, "LoadBoxes(): Unable to load box overlaps");
+        return 0;
+    }
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 4; j++) {
+            ground_zone[j][i] = (sint16 *)game_malloc(sizeof(sint16) * number_boxes, 23);
+            MyReadFile(file, ground_zone[j][i], sizeof(sint16) * number_boxes, &read, NULL);
+            if (read != sizeof(sint16) * number_boxes) {
+                lstrcpy(exit_message, "LoadBoxes(): Unable to load 'ground_zone'");
+                return 0;
+            }
+        }
+        fly_zone[i] = (sint16 *)game_malloc(sizeof(sint16) * number_boxes, 24);
+        MyReadFile(file, fly_zone[i], sizeof(sint16) * number_boxes, &read, NULL);
+        if (read != sizeof(sint16) * number_boxes) {
+            lstrcpy(exit_message, "LoadBoxes(): Unable to load 'fly_zone'");
+            return 0;
+        }
+    }
+    for (i = 0; i < number_boxes; i++) {
+        if (boxes[i].overlap_index & 0x8000)
+            boxes[i].overlap_index |= 0x4000;
+    }
+    return 1;
+}
+
 int LoadCinematic(HANDLE file)
 {
     DWORD read;
