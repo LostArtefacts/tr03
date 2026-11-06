@@ -428,7 +428,7 @@ address,size,name,symbol
 0x00434db0,122,DisplayModeInfo,_DisplayModeInfo
 0x00434e30,44,DrawModeInfo,_DrawModeInfo
 0x00434e60,1436,HybridControl,_HybridControl
-0x00435400,4978,Display_Inventory,_Display_Inventory
+0x00435400,5171,Display_Inventory,_Display_Inventory
 0x00436840,377,Construct_Inventory,_Construct_Inventory
 0x004369c0,143,SelectMeshes,_SelectMeshes
 0x00436a50,129,AnimateInventoryItem,_AnimateInventoryItem
@@ -1170,7 +1170,7 @@ address,size,name,symbol
 0x00483650,278,S_DrawScreenBox,_S_DrawScreenBox
 0x00483770,61,S_DrawScreenFBox,_S_DrawScreenFBox
 0x004837b0,15,S_FinishInventory,_S_FinishInventory
-0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1
+0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1 _S_SetReverbType
 0x004837d0,87,S_Wait,_S_Wait
 0x00483830,14,S_PlayFMV,_S_PlayFMV
 0x00483840,19,S_IntroFMV,_S_IntroFMV
@@ -1897,6 +1897,7 @@ address,size,name,symbol
 0x004c5834,4,overlay_flag,_overlay_flag
 0x004c5868,16,hybrid_bite_left,_hybrid_bite_left
 0x004c5878,16,hybrid_bite_right,_hybrid_bite_right
+0x004c5888,4,inv_nframes,_inv_nframes
 0x004c5890,32,req_bgnd_gour1,_req_bgnd_gour1
 0x004c58b0,24,req_bgnd_gour2,_req_bgnd_gour2
 0x004c58c8,32,req_main_gour1,_req_main_gour1
@@ -2101,6 +2102,7 @@ address,size,name,symbol
 0x004d38e8,8192,gouraud_table,_gouraud_table
 0x004d58e8,4,phd_top,_phd_top
 0x004d58f0,,phdspriteinfo,_phdspriteinfo
+0x004d78f0,4,ls_adder,_ls_adder
 0x004d78f4,4,phd_bottomfloat,_phd_bottomfloat
 0x004d78f8,4,f_a,_f_a
 0x004d78fc,4,f_b,_f_b
@@ -2560,8 +2562,10 @@ address,size,name,symbol
 0x006d62b4,4,GlobePointLight,_GlobePointLight
 0x006d62b8,2,GlobeZRot,_GlobeZRot
 0x006d62ba,2,GlobeYRot,_GlobeYRot
+0x006d62bc,2,JustSaved,_JustSaved
 0x006d62c0,,GlobeLevelComplete,_GlobeLevelComplete
 0x006d62c6,2,NextAdventure,_NextAdventure
+0x006d62c8,2,NewAdventureLoadGame,_NewAdventureLoadGame
 0x006d62ca,2,GlobeLevel,_GlobeLevel
 0x006d62e0,1200,Valid_Level_Strings,_Valid_Level_Strings
 0x006d67a0,,RequesterFlags2,_RequesterFlags2
