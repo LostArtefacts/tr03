@@ -843,4 +843,26 @@ void S_UnloadLevelFile(void)
     nTInfos = 0;
 }
 
+int Read_Strings(int num, char **strings, char **buffer, DWORD *read, HANDLE file)
+{
+    sint16 size;
+    int i;
+    char *p;
+
+    MyReadFile(file, GF_Offsets, sizeof(sint16) * num, read, NULL);
+    MyReadFile(file, &size, sizeof(sint16), read, NULL);
+    *buffer = (char *)GlobalAlloc(GMEM_FIXED, size);
+    if (buffer == NULL)
+        return 0;
+    MyReadFile(file, *buffer, size, read, NULL);
+    if (gameflow.cyphered_strings) {
+        p = *buffer;
+        for (i = 0; i < size; i++)
+            p[i] ^= gameflow.cypher_code;
+    }
+    for (i = 0; i < num; i++)
+        strings[i] = *buffer + GF_Offsets[i];
+    return 1;
+}
+
 }
