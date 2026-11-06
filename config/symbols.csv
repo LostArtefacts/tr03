@@ -1469,7 +1469,7 @@ address,size,name,symbol
 0x004b429e,51,phd_PushUnitMatrix,_phd_PushUnitMatrix
 0x004b42d4,97,flatA,_flatA
 0x004b4335,314,transA,_transA
-0x004b446f,352,Func4b446f,
+0x004b446f,352,gourA,_gourA
 0x004b45cf,765,Func4b45cf,
 0x004b48cc,833,Func4b48cc,
 0x004b4c10,72,phd_atan,@phd_atan@8
