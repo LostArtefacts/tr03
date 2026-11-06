@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="323.64" height="12" x="0" y="0" class="named"><title>1285 · 87%</title></rect>
-<rect width="1.51" height="12" x="323.64" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.54" height="12" x="325.15" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
-<rect width="41.31" height="12" x="330.69" y="0" class="todo"><title>164 · 11.10%</title></rect>
+<rect width="297.77" height="12" x="0" y="0" class="named"><title>1286 · 87.07%</title></rect>
+<rect width="1.16" height="12" x="297.77" y="0" class="decompiled"><title>5 · 0.34%</title></rect>
+<rect width="5.09" height="12" x="298.93" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="37.97" height="12" x="304.03" y="0" class="todo"><title>164 · 11.10%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">87.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1285</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">164</tspan></text>
+<text text-anchor="end" x="522" y="7.50">87.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1286</tspan> · <tspan class="decompiled">5</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">164</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="236.44" height="12" x="0" y="0" class="named"><title>425 KB · 63.56%</title></rect>
-<rect width="0.34" height="12" x="236.44" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="8.07" height="12" x="236.78" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
-<rect width="127.15" height="12" x="244.85" y="0" class="todo"><title>229 KB · 34.18%</title></rect>
+<rect width="217.48" height="12" x="0" y="0" class="named"><title>426 KB · 63.59%</title></rect>
+<rect width="0.21" height="12" x="217.48" y="0" class="decompiled"><title>418 bytes · 0.06%</title></rect>
+<rect width="7.42" height="12" x="217.69" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="116.89" height="12" x="225.11" y="0" class="todo"><title>229 KB · 34.18%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">63.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">425 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">229 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">63.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">426 KB</tspan> · <tspan class="decompiled">418 bytes</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">229 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1425,25 +1425,25 @@
 <rect width="12" height="12" x="90" y="405" class="todo"><title>0x00490400 InitDrawPrimitive (755 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="405" class="named"><title>0x00490700 CloseDrawPrimitive (119 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="405" class="named"><title>0x00490780 BuildXYTables (281 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="405" class="decompiled"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="405" class="named"><title>0x004908a0 BuildRGBTable (197 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="405" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="405" class="named"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="405" class="named"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="405" class="named"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="405" class="named"><title>0x00490b40 PrepareTriangleList (88 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="405" class="todo"><title>0x00490ba0 Func490ba0 (857 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="405" class="todo"><title>0x00490ba0 EmulateDrawPrimitive (857 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="405" class="named"><title>0x00490f10 DrawTriangleList (60 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="405" class="decompiled"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="405" class="named"><title>0x00490f80 DrawTriangleFan (71 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="405" class="named"><title>0x00490fd0 DrawTriangleStrip (71 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="405" class="decompiled"><title>0x00491020 Func491020 (64 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="405" class="todo"><title>0x00491680 Func491680 (703 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="405" class="todo"><title>0x00491940 Func491940 (812 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="405" class="todo"><title>0x00491c70 Func491c70 (548 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="405" class="todo"><title>0x004920a0 Func4920a0 (384 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="405" class="todo"><title>0x004923c0 Func4923c0 (597 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="405" class="todo"><title>0x00492970 Func492970 (862 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="405" class="todo"><title>0x00492cd0 Func492cd0 (1794 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="405" class="todo"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="405" class="todo"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="405" class="todo"><title>0x004920a0 CalculateEdgeBlack (384 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="405" class="todo"><title>0x004923c0 CalculateEdgeTA (597 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="405" class="todo"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="405" class="todo"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="405" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="405" class="decompiled"><title>0x004934b0 Func4934b0 (23 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="405" class="named"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
@@ -1634,7 +1634,7 @@
 <rect width="24.85" height="25.62" x="226.20" y="117.34" class="named"><title>0x00489550 do_control_option (1816 bytes)</title></rect>
 <rect width="24.85" height="25.34" x="226.20" y="145.96" class="named"><title>0x004198fc CalculateCamera (1796 bytes)</title></rect>
 <rect width="24.85" height="25.34" x="226.20" y="174.30" class="named"><title>0x00467070 ShivaControl (1796 bytes)</title></rect>
-<rect width="24.85" height="25.31" x="226.20" y="202.63" class="todo"><title>0x00492cd0 Func492cd0 (1794 bytes)</title></rect>
+<rect width="24.85" height="25.31" x="226.20" y="202.63" class="todo"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
 <rect width="24.85" height="25.28" x="226.20" y="230.94" class="named"><title>0x00461040 RaptorControl (1792 bytes)</title></rect>
 <rect width="24.85" height="25.20" x="226.20" y="259.23" class="named"><title>0x0041835c CombatCamera (1786 bytes)</title></rect>
 <rect width="24.85" height="25" x="226.20" y="287.42" class="named"><title>0x0041b4f0 ClawmuteControl (1772 bytes)</title></rect>
@@ -1739,9 +1739,9 @@
 <rect width="17.13" height="18.02" x="327.89" y="44.82" class="todo"><title>0x004069e0 SubdivideGT4 (880 bytes)</title></rect>
 <rect width="17.13" height="17.97" x="327.89" y="65.83" class="nonmatching"><title>0x0043d980 TestLaraVault (878 bytes)</title></rect>
 <rect width="17.13" height="17.85" x="327.89" y="86.81" class="named"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
-<rect width="17.13" height="17.65" x="327.89" y="107.66" class="todo"><title>0x00492970 Func492970 (862 bytes)</title></rect>
+<rect width="17.13" height="17.65" x="327.89" y="107.66" class="todo"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
 <rect width="17.13" height="17.57" x="327.89" y="128.31" class="named"><title>0x00439ec0 ShowGymStatsText (858 bytes)</title></rect>
-<rect width="17.13" height="17.55" x="327.89" y="148.87" class="todo"><title>0x00490ba0 Func490ba0 (857 bytes)</title></rect>
+<rect width="17.13" height="17.55" x="327.89" y="148.87" class="todo"><title>0x00490ba0 EmulateDrawPrimitive (857 bytes)</title></rect>
 <rect width="17.13" height="17.44" x="327.89" y="169.42" class="named"><title>0x0045c900 PuzzleHoleCollision (852 bytes)</title></rect>
 <rect width="17.13" height="17.30" x="327.89" y="189.86" class="named"><title>0x00411100 BigGunControl (845 bytes)</title></rect>
 <rect width="17.13" height="17.28" x="327.89" y="210.16" class="named"><title>0x004239a0 DiverControl (844 bytes)</title></rect>
@@ -1757,7 +1757,7 @@
 <rect width="17.13" height="16.69" x="327.89" y="410.65" class="named"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
 <rect width="17.13" height="16.67" x="327.89" y="430.33" class="named"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="16.96" height="16.78" x="348.01" y="44.82" class="named"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
-<rect width="16.96" height="16.78" x="367.98" y="44.82" class="todo"><title>0x00491940 Func491940 (812 bytes)</title></rect>
+<rect width="16.96" height="16.78" x="367.98" y="44.82" class="todo"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
 <rect width="16.94" height="16.78" x="387.94" y="44.82" class="named"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
 <rect width="16.92" height="16.78" x="407.88" y="44.82" class="nonmatching"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="16.44" height="16.78" x="427.80" y="44.82" class="named"><title>0x004250a0 PrintObjects (787 bytes)</title></rect>
@@ -1830,7 +1830,7 @@
 <rect width="14.45" height="14.51" x="366.92" y="224.31" class="named"><title>0x0042c1a0 ControlGunShell (598 bytes)</title></rect>
 <rect width="14.45" height="14.51" x="366.92" y="241.82" class="named"><title>0x00434510 DrawAssaultPenalties (598 bytes)</title></rect>
 <rect width="14.45" height="14.51" x="366.92" y="259.33" class="named"><title>0x00471bd0 ExplodeTribeBoss (598 bytes)</title></rect>
-<rect width="14.45" height="14.49" x="366.92" y="276.84" class="todo"><title>0x004923c0 Func4923c0 (597 bytes)</title></rect>
+<rect width="14.45" height="14.49" x="366.92" y="276.84" class="todo"><title>0x004923c0 CalculateEdgeTA (597 bytes)</title></rect>
 <rect width="14.45" height="14.39" x="366.92" y="294.32" class="named"><title>0x00430050 SetupShoal (593 bytes)</title></rect>
 <rect width="14.45" height="14.36" x="366.92" y="311.71" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
 <rect width="14.45" height="14.36" x="366.92" y="329.08" class="named"><title>0x0045c6b0 KeyHoleCollision (592 bytes)</title></rect>
@@ -1865,7 +1865,7 @@
 <rect width="13.81" height="14.04" x="384.37" y="116.04" class="todo"><title>0x004964c0 Func4964c0 (553 bytes)</title></rect>
 <rect width="13.81" height="13.94" x="384.37" y="133.08" class="named"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
 <rect width="13.81" height="13.91" x="384.37" y="150.02" class="named"><title>0x00412500 BoatAnimation (548 bytes)</title></rect>
-<rect width="13.81" height="13.91" x="384.37" y="166.93" class="todo"><title>0x00491c70 Func491c70 (548 bytes)</title></rect>
+<rect width="13.81" height="13.91" x="384.37" y="166.93" class="todo"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
 <rect width="13.81" height="13.88" x="384.37" y="183.84" class="named"><title>0x0042a680 TriggerRicochetSpark (547 bytes)</title></rect>
 <rect width="13.81" height="13.88" x="384.37" y="200.72" class="todo"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
 <rect width="13.81" height="13.86" x="384.37" y="217.60" class="named"><title>0x00445020 GetStaticObjects (546 bytes)</title></rect>
@@ -2000,7 +2000,7 @@
 <rect width="11.80" height="11.47" x="432.93" y="291.96" class="named"><title>0x00423710 StartDemo (386 bytes)</title></rect>
 <rect width="11.80" height="11.47" x="432.93" y="306.43" class="named"><title>0x00425d10 DrawEffect (386 bytes)</title></rect>
 <rect width="11.80" height="11.41" x="432.93" y="320.90" class="named"><title>0x00434390 DrawAssaultTimer (384 bytes)</title></rect>
-<rect width="11.80" height="11.41" x="432.93" y="335.31" class="todo"><title>0x004920a0 Func4920a0 (384 bytes)</title></rect>
+<rect width="11.80" height="11.41" x="432.93" y="335.31" class="todo"><title>0x004920a0 CalculateEdgeBlack (384 bytes)</title></rect>
 <rect width="11.80" height="11.38" x="432.93" y="349.73" class="named"><title>0x00416840 CreatureKill (383 bytes)</title></rect>
 <rect width="11.80" height="11.38" x="432.93" y="364.11" class="named"><title>0x00449a30 UpdateElectricityPoints (383 bytes)</title></rect>
 <rect width="11.80" height="11.35" x="432.93" y="378.49" class="named"><title>0x004426b0 lara_col_hang (382 bytes)</title></rect>
@@ -2245,7 +2245,7 @@
 <rect width="8.38" height="8.28" x="603.36" y="211.85" class="named"><title>0x004829c0 Read_Strings (198 bytes)</title></rect>
 <rect width="8.34" height="8.28" x="614.74" y="211.85" class="named"><title>0x0042d570 TriggerBats (197 bytes)</title></rect>
 <rect width="8.34" height="8.28" x="626.08" y="211.85" class="named"><title>0x0048bf40 S_FadeToBlack (197 bytes)</title></rect>
-<rect width="8.34" height="8.28" x="637.41" y="211.85" class="decompiled"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
+<rect width="8.34" height="8.28" x="637.41" y="211.85" class="named"><title>0x004908a0 BuildRGBTable (197 bytes)</title></rect>
 <rect width="8.34" height="8.28" x="648.75" y="211.85" class="named"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="8.34" height="8.28" x="660.09" y="211.85" class="named"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
 <rect width="8.30" height="8.28" x="671.43" y="211.85" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>

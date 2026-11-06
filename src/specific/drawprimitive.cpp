@@ -8,7 +8,7 @@ extern LPDIRECT3DDEVICE2 D3DDev;
 
 float WinFrameRate(void);
 extern void (*Var6ca198)(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
-void Func492cd0(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
 extern HGLOBAL Var6ca3ac;
 extern unsigned char *Var6ca4d0;
 extern unsigned long *Var6ca2d0;
@@ -20,7 +20,7 @@ extern float Var4cec20;
 extern void (*Var6ca408)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
 extern void (*Var6ca24c)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
 void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
-extern LPDIRECTDRAWSURFACE3 Var6ca1d4;
+extern LPDIRECTDRAWSURFACE3 lpSurface;
 extern float *WidthTable;
 extern long *WidthTablef;
 extern unsigned char *Var6ca1a8;
@@ -35,7 +35,7 @@ void Func4934b0(void);
 
 void CloseDrawPrimitive(void)
 {
-    Var6ca1d4->Unlock(NULL);
+    lpSurface->Unlock(NULL);
     if (App.DXConfig.MMX) {
         Func4934b0();
         return;
@@ -68,7 +68,7 @@ void BuildXYTables(void)
         WidthTablef[n] = FTOLFIX((1.0f / float(n)));
 }
 
-void Func4908a0(void)
+void BuildRGBTable(void)
 {
     unsigned int i, j;
 
@@ -133,7 +133,7 @@ void DrawTriangleList(D3DTLVERTEX *v, DWORD vcnt)
         v++;
         v3 = v;
         v++;
-        Func492cd0(v1, v2, v3);
+        DrawTriangle(v1, v2, v3);
     }
 }
 
@@ -162,13 +162,13 @@ void DrawTriangleFan(D3DTLVERTEX *v, DWORD vcnt)
     v++;
     v3 = v;
     v++;
-    Func492cd0(v1, v2, v3);
+    DrawTriangle(v1, v2, v3);
     vcnt -= 3;
     for (n = vcnt; n > 0; n--) {
         v2 = v3;
         v3 = v;
         v++;
-        Func492cd0(v1, v2, v3);
+        DrawTriangle(v1, v2, v3);
     }
 }
 
@@ -183,13 +183,13 @@ void DrawTriangleStrip(D3DTLVERTEX *v, DWORD vcnt)
     v++;
     v3 = v;
     v++;
-    Func492cd0(v1, v2, v3);
+    DrawTriangle(v1, v2, v3);
     vcnt -= 3;
     for (n = vcnt; n > 0; n--) {
         v1 = v2;
         v2 = v;
         v++;
-        Func492cd0(v1, v2, v3);
+        DrawTriangle(v1, v2, v3);
     }
 }
 
