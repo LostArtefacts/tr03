@@ -218,6 +218,86 @@ int LoadTexturePages(HANDLE file)
     return 1;
 }
 
+int LoadRooms(HANDLE file)
+{
+    int i;
+    sint16 ndoors;
+    sint32 size;
+    ROOM_INFO *r;
+    DWORD read;
+
+    SeedRandomDraw(0xd371f947);
+    SeedRandomControl(0xd371f947);
+    wibble = 0;
+    CurrentAtmosphere = 0;
+    init_water_table();
+    CalculateWibbleTable();
+    MyReadFile(file, &number_rooms, sizeof(number_rooms), &read, NULL);
+    if (number_rooms < 0 || number_rooms > 1024) {
+        lstrcpy(exit_message, "LoadRoom(): Too many rooms");
+        return 0;
+    }
+    room = (ROOM_INFO *)game_malloc(number_rooms * sizeof(ROOM_INFO), 11);
+    if (room == NULL) {
+        lstrcpy(exit_message, "LoadRoom(): Could not allocate memory for rooms");
+        return 0;
+    }
+    for (i = 0, r = room; i < number_rooms; i++, r++) {
+        MyReadFile(file, &r->x, sizeof(sint32), &read, NULL);
+        r->y = 0;
+        MyReadFile(file, &r->z, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &r->minfloor, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &r->maxceiling, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+        r->data = (sint16 *)game_malloc(size * sizeof(sint16), 12);
+        MyReadFile(file, r->data, sizeof(sint16) * size, &read, NULL);
+        MyReadFile(file, &ndoors, sizeof(sint16), &read, NULL);
+        if (ndoors) {
+            r->door = (sint16 *)game_malloc((ndoors * 16 + 1) * sizeof(sint16), 13);
+            r->door[0] = ndoors;
+            MyReadFile(file, &r->door[1], sizeof(sint16) * ndoors * 16, &read, NULL);
+        } else {
+            r->door = NULL;
+        }
+        MyReadFile(file, &r->x_size, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->y_size, sizeof(sint16), &read, NULL);
+        size = (int)r->x_size * r->y_size;
+        r->floor = (FLOOR_INFO *)game_malloc(size * sizeof(FLOOR_INFO), 14);
+        MyReadFile(file, r->floor, sizeof(FLOOR_INFO) * size, &read, NULL);
+        MyReadFile(file, &r->ambient, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->lighting, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->num_lights, sizeof(sint16), &read, NULL);
+        if (r->num_lights) {
+            r->light = (LIGHT_INFO *)game_malloc(r->num_lights * sizeof(LIGHT_INFO), 15);
+            MyReadFile(file, r->light, sizeof(LIGHT_INFO) * r->num_lights, &read, NULL);
+        } else {
+            r->light = NULL;
+        }
+        MyReadFile(file, &r->num_meshes, sizeof(sint16), &read, NULL);
+        if (r->num_meshes) {
+            r->mesh = (MESH_INFO *)game_malloc(r->num_meshes * sizeof(MESH_INFO), 16);
+            MyReadFile(file, r->mesh, sizeof(MESH_INFO) * r->num_meshes, &read, NULL);
+        } else {
+            r->mesh = NULL;
+        }
+        MyReadFile(file, &r->flipped_room, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &r->flags, sizeof(uint16), &read, NULL);
+        MyReadFile(file, &r->MeshEffect, sizeof(char), &read, NULL);
+        MyReadFile(file, &r->ReverbType, sizeof(sint16), &read, NULL);
+        r->bound_active = 0;
+        r->left = phd_winxmax;
+        r->top = phd_winymax;
+        r->right = r->bottom = 0;
+        r->item_number = -1;
+        r->fx_number = -1;
+    }
+    BuildOutsideTable();
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    floor_data = (sint16 *)game_malloc(size * sizeof(sint16), 17);
+    MyReadFile(file, floor_data, sizeof(sint16) * size, &read, NULL);
+    return 1;
+}
+
 void AdjustTextureUVs(bool reset)
 {
     sint16 *uv;
