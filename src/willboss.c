@@ -134,6 +134,64 @@ void ExplodeWillBoss(ITEM_INFO *item)
     }
 }
 
+sint32 GetFreeSpark(void);
+
+void TriggerPlasma_willboss(sint16 item_number, sint32 node, sint32 size)
+{
+    ITEM_INFO *item;
+    SPARKS *sptr;
+    sint32 dx, dz;
+
+    item = &items[item_number];
+    dx = lara_item->pos.x_pos - item->pos.x_pos;
+    dz = lara_item->pos.z_pos - item->pos.z_pos;
+    if (dx < -0x4000 || dx > 0x4000 || dz < -0x4000 || dz > 0x4000)
+        return;
+    sptr = &sparks[GetFreeSpark()];
+    sptr->On = 1;
+    sptr->sG = 255;
+    sptr->sB = (GetRandomControl() & 31) + 48;
+    sptr->sR = 48;
+    sptr->dG = (GetRandomControl() & 63) + 192;
+    sptr->dB = (GetRandomControl() & 63) + 128;
+    sptr->dR = 32;
+    sptr->ColFadeSpeed = (GetRandomControl() & 3) + 12;
+    sptr->FadeToBlack = 8;
+    sptr->Life = (GetRandomControl() & 7) + 24;
+    sptr->TransType = 2;
+    sptr->extras = 0;
+    sptr->sLife = sptr->Life;
+    sptr->Dynamic = -1;
+    sptr->x = (GetRandomControl() & 15) - 8;
+    sptr->y = 0;
+    sptr->z = (GetRandomControl() & 15) - 8;
+    sptr->Xvel = (GetRandomControl() & 31) - 16;
+    sptr->Yvel = (GetRandomControl() & 7) + 8;
+    sptr->Zvel = (GetRandomControl() & 31) - 16;
+    sptr->Friction = 3;
+    if (GetRandomControl() & 1) {
+        sptr->Flags = 0x129a;
+        sptr->RotAng = GetRandomControl() & 4095;
+        if (GetRandomControl() & 1)
+            sptr->RotAdd = -16 - (GetRandomControl() & 15);
+        else
+            sptr->RotAdd = (GetRandomControl() & 15) + 16;
+    } else {
+        sptr->Flags = 0x128a;
+    }
+    sptr->Gravity = (GetRandomControl() & 7) + 8;
+    sptr->MaxYvel = (GetRandomControl() & 7) + 16;
+    sptr->FxObj = (uint8)item_number;
+    sptr->NodeNumber = (uint8)node;
+    sptr->Def = (uint8)objects[296].mesh_index;
+    sptr->Scalar = 1;
+    size += GetRandomControl() & 15;
+    sptr->Width = sptr->sWidth = (uint8)size;
+    sptr->Height = sptr->sHeight = (uint8)size;
+    sptr->dWidth = (uint8)(size >> 2);
+    sptr->dHeight = (uint8)(size >> 2);
+}
+
 sint16 CreateEffect(sint16 room_num);
 
 void TriggerPlasmaBall_willboss(PHD_VECTOR *pos, sint16 room_number, sint16 angle, sint16 type)
