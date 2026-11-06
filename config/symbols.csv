@@ -250,7 +250,7 @@ address,size,name,symbol
 0x00425910,1023,ClipRoom,_ClipRoom
 0x00425d10,386,DrawEffect,_DrawEffect
 0x00425ea0,1844,DrawAnimatingItem,_DrawAnimatingItem
-0x004265e0,6160,DrawLara,_DrawLara
+0x004265e0,6200,DrawLara,_DrawLara
 0x00427e20,5375,DrawLaraInt,_DrawLaraInt
 0x00429350,52,InitInterpolate,_InitInterpolate
 0x00429390,34,phd_PopMatrix_I,_phd_PopMatrix_I
