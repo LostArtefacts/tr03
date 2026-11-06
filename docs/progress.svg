@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="313.72" height="12" x="0" y="0" class="named"><title>1104 · 74.70%</title></rect>
-<rect width="2.56" height="12" x="313.72" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="103.72" height="12" x="316.28" y="0" class="todo"><title>365 · 24.70%</title></rect>
+<rect width="314.01" height="12" x="0" y="0" class="named"><title>1105 · 74.76%</title></rect>
+<rect width="2.56" height="12" x="314.01" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="103.44" height="12" x="316.56" y="0" class="todo"><title>364 · 24.63%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">74.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1104</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">365</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1105</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">364</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="196.16" height="12" x="0" y="0" class="named"><title>312 KB · 46.70%</title></rect>
-<rect width="3.89" height="12" x="196.16" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="219.95" height="12" x="200.05" y="0" class="todo"><title>350 KB · 52.37%</title></rect>
+<rect width="197.02" height="12" x="0" y="0" class="named"><title>313 KB · 46.91%</title></rect>
+<rect width="3.89" height="12" x="197.02" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="219.10" height="12" x="200.90" y="0" class="todo"><title>348 KB · 52.17%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">46.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">312 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">350 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">46.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">313 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">348 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1514,7 +1514,7 @@
 <rect width="12" height="12" x="705" y="420" class="named"><title>0x004b2dc0 WinCreateWindow (75 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="420" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="420" class="named"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="435" class="todo"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="435" class="named"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="435" class="named"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="435" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="435" class="named"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
@@ -1673,7 +1673,7 @@
 <rect width="22.62" height="21.58" x="278.51" y="305.13" class="todo"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
 <rect width="22.62" height="21.41" x="278.51" y="329.71" class="todo"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="22.62" height="21.30" x="278.51" y="354.12" class="todo"><title>0x00432310 GF_InterpretSequence (1372 bytes)</title></rect>
-<rect width="22.62" height="21.10" x="278.51" y="378.43" class="todo"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
+<rect width="22.62" height="21.10" x="278.51" y="378.43" class="named"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="22.62" height="21.05" x="278.51" y="402.53" class="named"><title>0x00453ca0 MoveCart (1356 bytes)</title></rect>
 <rect width="22.62" height="20.41" x="278.51" y="426.59" class="todo"><title>0x00405450 HWI_InsertClippedPoly_Textured (1315 bytes)</title></rect>
 <rect width="22.37" height="20.53" x="304.13" y="0" class="named"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>

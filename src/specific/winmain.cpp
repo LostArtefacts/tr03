@@ -125,6 +125,90 @@ bool DXCreateZBuffer(DEVICEINFO *device, DXCONFIG *config)
     return true;
 }
 
+bool WinDXInit(DEVICEINFO *device, DXCONFIG *config, bool createNew)
+{
+    DDSURFACEDESC desc;
+    D3DMATERIAL m;
+    DDSCAPS caps;
+    D3DMATERIALHANDLE handle;
+
+    App.nRenderMode = 1;
+    if (createNew) {
+        if (!DXCreateDirectDraw(device, config, &App.lpDD))
+            return false;
+        if (!DXCreateDirect3D(App.lpDD, &App.lpD3D))
+            return false;
+    }
+    if (!DXSetCooperativeLevel(App.lpDD, App.WindowHandle, DDSCL_FULLSCREEN | DDSCL_EXCLUSIVE))
+        return false;
+    if (!DXSetVideoMode(App.lpDD, device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].w,
+            device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].h,
+            device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].bpp))
+        return false;
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    if (device->DDInfo[config->nDD].D3DInfo[config->nD3D].bHardware) {
+        desc.dwBackBufferCount = 1;
+        desc.dwFlags = DDSD_CAPS | DDSD_BACKBUFFERCOUNT;
+        desc.ddsCaps.dwCaps = DDSCAPS_COMPLEX | DDSCAPS_FLIP | DDSCAPS_PRIMARYSURFACE | DDSCAPS_3DDEVICE;
+    } else {
+        desc.dwBackBufferCount = 1;
+        desc.dwFlags = DDSD_CAPS | DDSD_BACKBUFFERCOUNT;
+        desc.ddsCaps.dwCaps = DDSCAPS_COMPLEX | DDSCAPS_FLIP | DDSCAPS_PRIMARYSURFACE | DDSCAPS_3DDEVICE;
+    }
+    if (!DXCreateSurface(App.lpDD, &desc, &App.lpFrontBuffer))
+        return false;
+    App.lpFrontBuffer->GetSurfaceDesc(&desc);
+    DXBitMask2ShiftCnt(desc.ddpfPixelFormat.dwRBitMask,
+        &device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].rshift,
+        &device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].rbpp);
+    DXBitMask2ShiftCnt(desc.ddpfPixelFormat.dwGBitMask,
+        &device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].gshift,
+        &device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].gbpp);
+    DXBitMask2ShiftCnt(desc.ddpfPixelFormat.dwBBitMask,
+        &device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].bshift,
+        &device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].bbpp);
+    if (device->DDInfo[config->nDD].D3DInfo[config->nD3D].bHardware) {
+        caps.dwCaps = DDSCAPS_BACKBUFFER;
+        if (!DXGetAttachedSurface(App.lpFrontBuffer, &caps, &App.lpBackBuffer))
+            return false;
+    } else {
+        App.unk = (unsigned long *)malloc(4 * device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].w
+            * device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].h);
+        caps.dwCaps = DDSCAPS_BACKBUFFER;
+        DXGetAttachedSurface(App.lpFrontBuffer, &caps, &App.lpBackBuffer);
+    }
+    if (!DXCreateZBuffer(device, config))
+        return false;
+    if (!DXCreateDirect3DDevice(App.lpD3D, device->DDInfo[config->nDD].D3DInfo[config->nD3D].Guid, App.lpBackBuffer, &App.lpD3DDevice))
+        return false;
+    if (!DXCreateViewPort(App.lpD3D, App.lpD3DDevice, device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].w,
+            device->DDInfo[config->nDD].D3DInfo[config->nD3D].DisplayMode[config->nVMode].h, &App.lpViewPort))
+        return false;
+    memset(&m, 0, sizeof(m));
+    m.dwSize = sizeof(m);
+    App.lpD3D->CreateMaterial(&App.lpViewPortMaterial, NULL);
+    App.lpViewPortMaterial->SetMaterial(&m);
+    App.lpViewPortMaterial->GetHandle(App.lpD3DDevice, &handle);
+    App.lpViewPort->SetBackground(handle);
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    desc.dwWidth = 640;
+    desc.dwHeight = 480;
+    desc.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH;
+    desc.ddsCaps.dwCaps = DDSCAPS_OFFSCREENPLAIN | DDSCAPS_SYSTEMMEMORY;
+    DXCreateSurface(App.lpDD, &desc, &App.lpPictureBuffer);
+    DXClearBuffers(11, 0);
+    InitDrawPrimitive(App.lpD3DDevice, App.lpBackBuffer, App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware);
+    HWR_InitState();
+    if (device->DDInfo[config->nDD].D3DInfo[config->nD3D].bHardware) {
+        DXCreateMaxTPages(1);
+        if (!nTPages)
+            return false;
+    }
+    return true;
+}
+
 float WinFrameRate(void)
 {
     static int time = clock();
