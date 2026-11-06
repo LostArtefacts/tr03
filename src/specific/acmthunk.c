@@ -79,3 +79,17 @@ DWORD ACMAPI acmGetVersion(void)
 
     return pfnAcmGetVersion();
 }
+
+MMRESULT ACMAPI acmMetrics(HACMOBJ hao, UINT uMetric, LPVOID pMetric)
+{
+    MMRESULT (ACMAPI *pfn)(HACMOBJ, UINT, LPVOID);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(HACMOBJ, UINT, LPVOID))gpafnAcmFunctions[1];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(hao, uMetric, pMetric);
+}
