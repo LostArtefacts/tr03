@@ -5,6 +5,26 @@
 
 extern "C" {
 
+void DXFreeDeviceInfo(DEVICEINFO *dd)
+{
+    int i, j;
+
+    for (i = 0; i < dd->nDDInfo; i++) {
+        for (j = 0; j < dd->DDInfo[i].nD3DInfo; j++) {
+            free(dd->DDInfo[i].D3DInfo[j].DisplayMode);
+            free(dd->DDInfo[i].D3DInfo[j].Texture);
+        }
+        free(dd->DDInfo[i].D3DInfo);
+        free(dd->DDInfo[i].DisplayMode);
+    }
+    free(dd->DDInfo);
+    if (dd->DSInfo)
+        free(dd->DSInfo);
+    if (dd->DIInfo)
+        free(dd->DIInfo);
+    memset(dd, 0, sizeof(DEVICEINFO));
+}
+
 void DXBitMask2ShiftCnt(unsigned long mask, unsigned char *shift, unsigned char *cnt)
 {
     unsigned long m;
