@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="282.30" height="12" x="0" y="0" class="named"><title>1220 · 82.54%</title></rect>
-<rect width="0.46" height="12" x="282.30" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="282.76" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="55.07" height="12" x="286.93" y="0" class="todo"><title>238 · 16.10%</title></rect>
+<rect width="282.53" height="12" x="0" y="0" class="named"><title>1221 · 82.61%</title></rect>
+<rect width="0.46" height="12" x="282.53" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="282.99" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="54.84" height="12" x="287.16" y="0" class="todo"><title>237 · 16.04%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">82.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1220</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">238</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1221</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">237</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.39" height="12" x="0" y="0" class="named"><title>368 KB · 55.09%</title></rect>
-<rect width="0.15" height="12" x="188.39" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="188.54" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="147.42" height="12" x="194.58" y="0" class="todo"><title>288 KB · 43.11%</title></rect>
+<rect width="188.48" height="12" x="0" y="0" class="named"><title>369 KB · 55.11%</title></rect>
+<rect width="0.15" height="12" x="188.48" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="188.63" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="147.34" height="12" x="194.66" y="0" class="todo"><title>288 KB · 43.08%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">55.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">368 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">288 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">55.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">369 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">288 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -71,7 +71,7 @@
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="named"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="named"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="0" class="todo"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="0" class="named"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="0" class="todo"><title>0x00401540 phd_RotZ (168 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="0" class="todo"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="0" class="todo"><title>0x004017d0 phd_RotYXZpack (487 bytes)</title></rect>
@@ -2297,7 +2297,7 @@
 <rect width="7.79" height="7.66" x="522.80" y="439.34" class="named"><title>0x00442830 lara_col_reach (170 bytes)</title></rect>
 <rect width="8.01" height="7.44" x="533.59" y="233.56" class="named"><title>0x0044a700 find_target_point (170 bytes)</title></rect>
 <rect width="8.01" height="7.44" x="544.60" y="233.56" class="todo"><title>0x00496a70 MMXBlit32to16 (170 bytes)</title></rect>
-<rect width="7.92" height="7.44" x="555.61" y="233.56" class="todo"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
+<rect width="7.92" height="7.44" x="555.61" y="233.56" class="named"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
 <rect width="7.92" height="7.44" x="566.53" y="233.56" class="todo"><title>0x00401540 phd_RotZ (168 bytes)</title></rect>
 <rect width="7.92" height="7.44" x="577.44" y="233.56" class="named"><title>0x0043d4a0 DoRipple (168 bytes)</title></rect>
 <rect width="7.92" height="7.44" x="588.36" y="233.56" class="nonmatching"><title>0x004541f0 TestHeight_minecart (168 bytes)</title></rect>

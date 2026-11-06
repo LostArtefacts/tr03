@@ -425,4 +425,38 @@ void S_InsertRoom(sint16 *objptr, int out)
     ins_room_sprite(objptr + 1, objptr[0]);
 }
 
+
+sint16 *calc_roomvert(sint16 *objptr, int far_clip);
+
+void phd_RotY(PHD_ANGLE ry)
+{
+    sint32 sy, cy, r0, r1;
+    sint32 *mptr;
+
+    if (ry) {
+        mptr = phd_mxptr;
+        sy = phd_sin(ry);
+        cy = phd_cos(ry);
+
+        r0 = *(mptr + M00) * cy - *(mptr + M02) * sy;
+        r1 = *(mptr + M02) * cy + *(mptr + M00) * sy;
+        *(mptr + M00) = r0 >> W2V_SHIFT;
+        *(mptr + M02) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M10) * cy - *(mptr + M12) * sy;
+        r1 = *(mptr + M12) * cy + *(mptr + M10) * sy;
+        *(mptr + M10) = r0 >> W2V_SHIFT;
+        *(mptr + M12) = r1 >> W2V_SHIFT;
+
+        r0 = *(mptr + M20) * cy - *(mptr + M22) * sy;
+        r1 = *(mptr + M22) * cy + *(mptr + M20) * sy;
+        *(mptr + M20) = r0 >> W2V_SHIFT;
+        *(mptr + M22) = r1 >> W2V_SHIFT;
+    }
+}
+
+void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, PHD_ANGLE roll);
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+void phd_NormaliseVector(sint32 x, sint32 y, sint32 z, sint32 *dest);
+
 }
