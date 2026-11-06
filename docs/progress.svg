@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="279.99" height="12" x="0" y="0" class="named"><title>1210 · 81.87%</title></rect>
 <rect width="0.46" height="12" x="279.99" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="3.93" height="12" x="280.45" y="0" class="nonmatching"><title>17 · 1.15%</title></rect>
-<rect width="57.62" height="12" x="284.38" y="0" class="todo"><title>249 · 16.85%</title></rect>
+<rect width="4.17" height="12" x="280.45" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="57.39" height="12" x="284.61" y="0" class="todo"><title>248 · 16.78%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">82.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1210</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">17</tspan> · <tspan class="todo">249</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1210</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">248</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="183.70" height="12" x="0" y="0" class="named"><title>359 KB · 53.71%</title></rect>
 <rect width="0.15" height="12" x="183.70" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="5.28" height="12" x="183.84" y="0" class="nonmatching"><title>10 KB · 1.54%</title></rect>
-<rect width="152.88" height="12" x="189.12" y="0" class="todo"><title>299 KB · 44.70%</title></rect>
+<rect width="6.04" height="12" x="183.84" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="152.12" height="12" x="189.88" y="0" class="todo"><title>297 KB · 44.48%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">53.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">359 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">10 KB</tspan> · <tspan class="todo">299 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">359 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">297 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -990,7 +990,7 @@
 <rect width="12" height="12" x="315" y="270" class="named"><title>0x00463b70 InitialiseLevelFlags (73 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="270" class="named"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="270" class="todo"><title>0x00463c30 BaddyObjects (5643 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="270" class="todo"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="270" class="nonmatching"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="270" class="todo"><title>0x00465820 ObjectObjects (3209 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="270" class="named"><title>0x004664b0 GetCarriedItems (215 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="270" class="named"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
@@ -1661,7 +1661,7 @@
 <rect width="23.49" height="22.61" x="252.02" y="398.90" class="named"><title>0x00449bb0 LaraGun (1512 bytes)</title></rect>
 <rect width="23.49" height="22.49" x="252.02" y="424.51" class="todo"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
 <rect width="22.62" height="23.23" x="278.51" y="0" class="todo"><title>0x0049b270 Func49b270 (1496 bytes)</title></rect>
-<rect width="22.62" height="23.20" x="278.51" y="26.23" class="todo"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>
+<rect width="22.62" height="23.20" x="278.51" y="26.23" class="nonmatching"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>
 <rect width="22.62" height="22.88" x="278.51" y="52.43" class="todo"><title>0x0047a4b0 DoRain (1473 bytes)</title></rect>
 <rect width="22.62" height="22.53" x="278.51" y="78.31" class="named"><title>0x00416b60 GetAITarget (1451 bytes)</title></rect>
 <rect width="22.62" height="22.39" x="278.51" y="103.84" class="named"><title>0x0042a0d0 UpdateSparks (1442 bytes)</title></rect>
