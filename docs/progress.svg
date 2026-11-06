@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="319.40" height="12" x="0" y="0" class="named"><title>1269 · 85.86%</title></rect>
-<rect width="1.51" height="12" x="319.40" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.54" height="12" x="320.91" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
-<rect width="45.56" height="12" x="326.44" y="0" class="todo"><title>181 · 12.25%</title></rect>
+<rect width="319.65" height="12" x="0" y="0" class="named"><title>1270 · 85.93%</title></rect>
+<rect width="1.51" height="12" x="319.65" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
+<rect width="5.54" height="12" x="321.16" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="45.30" height="12" x="326.70" y="0" class="todo"><title>180 · 12.18%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">86.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1269</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">181</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1270</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">180</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="227.32" height="12" x="0" y="0" class="named"><title>409 KB · 61.11%</title></rect>
-<rect width="0.34" height="12" x="227.32" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="8.07" height="12" x="227.66" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
-<rect width="136.27" height="12" x="235.73" y="0" class="todo"><title>245 KB · 36.63%</title></rect>
+<rect width="228.55" height="12" x="0" y="0" class="named"><title>411 KB · 61.44%</title></rect>
+<rect width="0.34" height="12" x="228.55" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
+<rect width="8.07" height="12" x="228.89" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="135.04" height="12" x="236.96" y="0" class="todo"><title>243 KB · 36.30%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">61.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">409 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">245 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">61.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">411 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">243 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -172,7 +172,7 @@
 <rect width="12" height="12" x="45" y="30" class="named"><title>0x00412330 BoatUserControl (455 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="30" class="named"><title>0x00412500 BoatAnimation (548 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="30" class="named"><title>0x00412730 CanGetOff_boat (237 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="30" class="todo"><title>0x00412820 BoatControl (2202 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="30" class="named"><title>0x00412820 BoatControl (2202 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="30" class="todo"><title>0x004130c0 DoWake_boat (459 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="30" class="named"><title>0x00413290 TestWaterHeight (250 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="30" class="named"><title>0x00413390 DoBoatDynamics (75 bytes)</title></rect>
@@ -1605,7 +1605,7 @@
 <rect width="28.83" height="27.39" x="165.05" y="123.84" class="named"><title>0x00469fe0 SwatControl (2252 bytes)</title></rect>
 <rect width="28.83" height="27.34" x="165.05" y="154.23" class="named"><title>0x00411710 BlowpipeControl (2248 bytes)</title></rect>
 <rect width="28.83" height="26.85" x="165.05" y="184.57" class="named"><title>0x00430db0 FlamerControl (2208 bytes)</title></rect>
-<rect width="28.83" height="26.78" x="165.05" y="214.42" class="todo"><title>0x00412820 BoatControl (2202 bytes)</title></rect>
+<rect width="28.83" height="26.78" x="165.05" y="214.42" class="named"><title>0x00412820 BoatControl (2202 bytes)</title></rect>
 <rect width="28.83" height="26.60" x="165.05" y="244.20" class="todo"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="28.83" height="26.49" x="165.05" y="273.80" class="todo"><title>0x00479c20 DrawLondonBossShield (2178 bytes)</title></rect>
 <rect width="28.83" height="26.49" x="165.05" y="303.28" class="todo"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>

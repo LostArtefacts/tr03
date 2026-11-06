@@ -500,7 +500,7 @@ address,size,name,symbol
 0x0043b620,264,GetInKayak,_GetInKayak
 0x0043b730,902,KayakControl,_KayakControl
 0x0043bac0,470,DoWake_kayak,_DoWake_kayak
-0x0043bca0,92,UpdateWakeFX_kayak,_UpdateWakeFX_kayak
+0x0043bca0,92,UpdateWakeFX_kayak,_UpdateWakeFX_kayak _UpdateWakeFX_boat
 0x0043bd00,225,KayakSplash,_KayakSplash
 0x0043bdf0,331,TriggerRapidsMist,_TriggerRapidsMist
 0x0043bf40,1660,KayakToBackground,_KayakToBackground
