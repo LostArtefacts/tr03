@@ -1,11 +1,17 @@
 #include "standard.h"
 #include "specific.h"
 #include "winmain.h"
+#include "template.h"
+
+struct JOYSTICK : GENERIC_ADAPTER {
+};
 
 extern "C" {
 
 extern LPDIRECTINPUT lpDirectInput;
 extern LPDIRECTINPUTDEVICE Keyboard;
+static LIST<JOYSTICK> JoystickList;
+static JOYSTICK CurrentJoystick;
 static int no_joy = 1;
 static JOYCAPS joystick;
 

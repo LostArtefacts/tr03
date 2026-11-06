@@ -1067,7 +1067,7 @@ address,size,name,symbol
 0x00475160,214,ACMSetupNotifications,_ACMSetupNotifications
 0x00475240,54,ACMGetTrackLocation,_ACMGetTrackLocation
 0x00475280,50,ACMSetVolume,_ACMSetVolume
-0x004752d0,18,Func4752d0,
+0x004752d0,18,InitJoystickListGlobal,specific/di.cpp:_$E1
 0x004752f0,14,Func4752f0,
 0x00475380,57,Func475380,
 0x004753c0,14,Func4753c0,
@@ -1519,10 +1519,10 @@ address,size,name,symbol
 0x004b5f40,316,fread,_fread
 0x004b6080,35,Func4b6080,
 0x004b60b0,21,fopen,_fopen
-0x004b60d0,14,Func4b60d0,
-0x004b60e0,16,Func4b60e0,
+0x004b60d0,14,operator_delete,??3@YAXPAX@Z
+0x004b60e0,16,operator_new,??2@YAPAXI@Z
 0x004b60f0,126,Func4b60f0,
-0x004b6170,21,Func4b6170,
+0x004b6170,21,atexit,_atexit
 0x004b61d0,23,Func4b61d0,
 0x004b61f0,30,Func4b61f0,
 0x004b6210,71,Func4b6210,
@@ -2328,7 +2328,9 @@ address,size,name,symbol
 0x006300cc,1,acm_wait,_acm_wait
 0x006300d4,1,acm_locked,_acm_locked
 0x006300d8,4,ACMSilentCount,_ACMSilentCount
+0x006300e0,30,CurrentJoystick,_CurrentJoystick
 0x00630100,404,joystick,_joystick
+0x00630298,12,JoystickList,_JoystickList
 0x006302a4,,lpDirectInput,_lpDirectInput
 0x006302a8,,Keyboard,_Keyboard
 0x006302b0,4,game_hires,_game_hires

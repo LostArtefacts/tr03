@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="284.38" height="12" x="0" y="0" class="named"><title>1229 · 83.15%</title></rect>
-<rect width="0.46" height="12" x="284.38" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="284.85" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="52.99" height="12" x="289.01" y="0" class="todo"><title>229 · 15.49%</title></rect>
+<rect width="284.61" height="12" x="0" y="0" class="named"><title>1230 · 83.22%</title></rect>
+<rect width="0.46" height="12" x="284.61" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="285.08" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="52.76" height="12" x="289.24" y="0" class="todo"><title>228 · 15.43%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">83.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1229</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">229</tspan></text>
+<text text-anchor="end" x="522" y="7.50">83.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1230</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">228</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.22" height="12" x="0" y="0" class="named"><title>372 KB · 55.62%</title></rect>
-<rect width="0.15" height="12" x="190.22" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.36" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.60" height="12" x="196.40" y="0" class="todo"><title>285 KB · 42.57%</title></rect>
+<rect width="190.23" height="12" x="0" y="0" class="named"><title>372 KB · 55.62%</title></rect>
+<rect width="0.15" height="12" x="190.23" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="190.37" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.59" height="12" x="196.41" y="0" class="todo"><title>285 KB · 42.57%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">285 KB</tspan></text>
@@ -1134,7 +1134,7 @@
 <rect width="12" height="12" x="225" y="315" class="named"><title>0x00475160 ACMSetupNotifications (214 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="315" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="315" class="named"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="315" class="todo"><title>0x004752d0 Func4752d0 (18 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="315" class="named"><title>0x004752d0 InitJoystickListGlobal (18 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="315" class="todo"><title>0x004752f0 Func4752f0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="315" class="todo"><title>0x00475380 Func475380 (57 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="315" class="todo"><title>0x004753c0 Func4753c0 (14 bytes)</title></rect>
@@ -2970,7 +2970,7 @@
 <rect width="2.69" height="2.47" x="706.03" y="444.53" class="named"><title>0x0048e710 acmGetVersion (19 bytes)</title></rect>
 <rect width="2.63" height="2.54" x="711.73" y="411.69" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="2.49" height="2.54" x="717.35" y="411.69" class="named"><title>0x0042fa30 ResetExercises (18 bytes)</title></rect>
-<rect width="2.49" height="2.54" x="722.84" y="411.69" class="todo"><title>0x004752d0 Func4752d0 (18 bytes)</title></rect>
+<rect width="2.49" height="2.54" x="722.84" y="411.69" class="named"><title>0x004752d0 InitJoystickListGlobal (18 bytes)</title></rect>
 <rect width="2.49" height="2.54" x="728.33" y="411.69" class="todo"><title>0x004804d0 Func4804d0 (18 bytes)</title></rect>
 <rect width="2.49" height="2.54" x="733.82" y="411.69" class="named"><title>0x00485a90 HWR_Init (18 bytes)</title></rect>
 <rect width="2.35" height="2.54" x="739.30" y="411.69" class="named"><title>0x0048ad60 SetPictureToFade (17 bytes)</title></rect>
