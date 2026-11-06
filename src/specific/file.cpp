@@ -347,6 +347,43 @@ int LoadBoxes(HANDLE file)
     return 1;
 }
 
+int LoadAnimatedTextures(HANDLE file)
+{
+    int size;
+    DWORD read;
+    sint32 number;
+    uint16 *pUV;
+    uint8 bByte;
+    int nBit;
+
+    MyReadFile(file, &size, sizeof(sint32), &read, NULL);
+    aranges = (sint16 *)game_malloc(size * sizeof(sint16), 25);
+    MyReadFile(file, aranges, sizeof(sint16) * size, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    if (number > 4096) {
+        lstrcpy(exit_message, "Too many Textures in level");
+        return 0;
+    }
+    MyReadFile(file, phdtextinfo, sizeof(PHDTEXTURESTRUCT) * number, &read, NULL);
+    nTInfos = number;
+    for (number = 0; number < nTInfos; number++) {
+        pUV = &phdtextinfo[number].u1;
+        bByte = 0;
+        for (nBit = 0; nBit < 8; nBit++) {
+            if (*pUV & 0x80) {
+                *pUV |= 0xff;
+                bByte |= 1 << nBit;
+            } else {
+                *pUV &= 0xff00;
+            }
+            pUV++;
+        }
+        TexturesUVFlag[number] = bByte;
+    }
+    AdjustTextureUVs(true);
+    return 1;
+}
+
 int LoadCinematic(HANDLE file)
 {
     DWORD read;
