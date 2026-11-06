@@ -2117,6 +2117,8 @@ address,size,name,symbol
 0x0056c0a8,24000,info3d_bufferfb,_info3d_bufferfb
 0x005a6a28,4,phd_oopersp,_phd_oopersp
 0x005a6a2c,4,phd_mxptr,_phd_mxptr
+0x005a6a30,4,InsertObjectGT3,_InsertObjectGT3
+0x005a6a34,4,InsertObjectGT4,_InsertObjectGT4
 0x005a6a38,128,rand_table,_rand_table
 0x005a6ab8,4,f_persp,_f_persp
 0x005a6ac0,,w2v_matrix,_w2v_matrix

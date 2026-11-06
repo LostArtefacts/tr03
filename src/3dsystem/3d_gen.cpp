@@ -250,4 +250,29 @@ void phd_InitPolyList(void)
     HWR_InitVertexList();
 }
 
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+extern sint32 phd_left, phd_right, phd_top, phd_bottom;
+extern sint32 phd_centerx, phd_centery;
+extern float phd_leftfloat, phd_topfloat, phd_rightfloat, phd_bottomfloat;
+extern float f_centerx, f_centery;
+extern sint16 *(*InsertObjectGT4)(sint16 *pFaceInfo, int nFaces, int nSortType);
+extern sint16 *(*InsertObjectGT3)(sint16 *pFaceInfo, int nFaces, int nSortType);
+sint16 *calc_roomvert(sint16 *objptr, int far_clip);
+sint16 *ins_room_sprite(sint16 *objptr, int num);
+
+void S_InsertRoom(sint16 *objptr, int out)
+{
+    phd_leftfloat = (float)(phd_winxmin + phd_left);
+    phd_topfloat = (float)(phd_winymin + phd_top);
+    phd_rightfloat = (float)(phd_right + phd_winxmin + 1);
+    phd_bottomfloat = (float)(phd_bottom + phd_winymin + 1);
+    f_centerx = (float)(phd_winxmin + phd_centerx);
+    f_centery = (float)(phd_winymin + phd_centery);
+    objptr = calc_roomvert(objptr, out ? 16 : 0);
+    objptr = InsertObjectGT4(objptr + 1, objptr[0], 1);
+    objptr = InsertObjectGT3(objptr + 1, objptr[0], 1);
+    ins_room_sprite(objptr + 1, objptr[0]);
+}
+
 }
