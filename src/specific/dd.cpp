@@ -258,4 +258,47 @@ bool DXUpdateFrame(bool runMessageLoop, LPRECT rect)
     return true;
 }
 
+
+void SWRBlit32to15(unsigned long *dest, unsigned long *src, int w)
+{
+    __asm {
+        mov ecx, dword ptr [w]
+        mov esi, dword ptr [src]
+        mov edi, dword ptr [dest]
+        shr ecx, 0x2
+        push ebp
+        mov ebp, ecx
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L1:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi+0x4]
+        mov ebx, eax
+        mov edx, ecx
+        and eax, 0xffc0ffc0
+        and ecx, 0xffc0ffc0
+        shr eax, 1
+        and ebx, 0x1f001f
+        shr ecx, 1
+        and edx, 0x1f001f
+        or eax, ebx
+        or ecx, edx
+        mov dword ptr [edi], eax
+        add esi, 0x8
+        mov dword ptr [edi+0x4], ecx
+        add edi, 0x8
+        dec ebp
+        jne L1
+        pop ebp
+    }
+}
 }

@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="323.46" height="12" x="0" y="0" class="named"><title>1323 · 88.38%</title></rect>
-<rect width="7.33" height="12" x="323.46" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="5.62" height="12" x="330.79" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="29.58" height="12" x="336.42" y="0" class="todo"><title>121 · 8.08%</title></rect>
+<rect width="323.70" height="12" x="0" y="0" class="named"><title>1324 · 88.44%</title></rect>
+<rect width="7.33" height="12" x="323.70" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="5.62" height="12" x="331.04" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="29.34" height="12" x="336.66" y="0" class="todo"><title>120 · 8.02%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">90.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1323</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">121</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1324</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">120</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="244.15" height="12" x="0" y="0" class="named"><title>483 KB · 66.71%</title></rect>
-<rect width="33.48" height="12" x="244.15" y="0" class="decompiled"><title>66 KB · 9.15%</title></rect>
-<rect width="9.06" height="12" x="277.63" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="79.31" height="12" x="286.69" y="0" class="todo"><title>157 KB · 21.67%</title></rect>
+<rect width="244.19" height="12" x="0" y="0" class="named"><title>483 KB · 66.72%</title></rect>
+<rect width="33.48" height="12" x="244.19" y="0" class="decompiled"><title>66 KB · 9.15%</title></rect>
+<rect width="9.06" height="12" x="277.67" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="79.27" height="12" x="286.73" y="0" class="todo"><title>157 KB · 21.66%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">75.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">483 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">157 KB</tspan></text>
@@ -1550,7 +1550,7 @@
 <rect width="12" height="12" x="465" y="435" class="named"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="435" class="named"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="435" class="nonmatching"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="435" class="todo"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="435" class="named"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="435" class="nonmatching"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="435" class="named"><title>0x004b4280 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="435" class="named"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
@@ -2575,7 +2575,7 @@
 <rect width="5.55" height="5.38" x="592.47" y="341.96" class="named"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="5.55" height="5.38" x="592.47" y="350.34" class="named"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
 <rect width="5.55" height="5.38" x="592.47" y="358.72" class="nonmatching"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
-<rect width="5.55" height="5.38" x="592.47" y="367.11" class="todo"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
+<rect width="5.55" height="5.38" x="592.47" y="367.11" class="named"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
 <rect width="5.55" height="5.32" x="592.47" y="375.49" class="named"><title>0x0041a890 DrawPhaseCinematic (91 bytes)</title></rect>
 <rect width="5.55" height="5.32" x="592.47" y="383.82" class="named"><title>0x0043b330 ClearBodyBag (91 bytes)</title></rect>
 <rect width="5.55" height="5.32" x="592.47" y="392.14" class="named"><title>0x004418b0 lara_as_pickupflare (91 bytes)</title></rect>
