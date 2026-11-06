@@ -464,6 +464,36 @@ HRESULT HWSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderSta
     return D3DDev->SetRenderState(dwRenderStateType, dwRenderState);
 }
 
+extern long Var6ca1f8;
+extern long Var6ca1f4;
+extern long Var6ca1fc;
+extern int bForceAffineMap;
+extern long tpitch;
+extern unsigned short *TextureHandle;
+
+HRESULT SWSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState)
+{
+    switch (dwRenderStateType) {
+    case D3DRENDERSTATE_COLORKEYENABLE:
+        Var6ca1f8 = dwRenderState;
+        return D3D_OK;
+    case D3DRENDERSTATE_ALPHABLENDENABLE:
+        Var6ca1f4 = dwRenderState;
+        return D3D_OK;
+    case D3DRENDERSTATE_SRCBLEND:
+        Var6ca1fc = dwRenderState == D3DBLEND_ONE;
+        return D3D_OK;
+    case D3DRENDERSTATE_TEXTUREPERSPECTIVE:
+        bForceAffineMap = dwRenderState == 0;
+        return D3D_OK;
+    case D3DRENDERSTATE_TEXTUREHANDLE:
+        tpitch = 512;
+        TextureHandle = (unsigned short *)dwRenderState;
+        break;
+    }
+    return D3D_OK;
+}
+
 HRESULT HWDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVertexType, LPVOID lpvVertices, DWORD dwVertexCount, DWORD dwFlags)
 {
     return D3DDev->DrawPrimitive(dptPrimitiveType, dvtVertexType, lpvVertices, dwVertexCount, dwFlags);
