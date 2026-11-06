@@ -970,3 +970,86 @@ void ShowStatsText(char *time_str, int type)
 }
 
 static int end_stats_mode;
+
+void ShowEndStatsText(void)
+{
+    int select, numsecrets, distance, i, num;
+    char str[32];
+    int h = 0, m = 0, s = 0;
+    int totallevels = gameflow.num_levels - gameflow.num_demos;
+
+    if (end_stats_mode == 1) {
+        if ((select = Display_Requester(&Stats_Requester, 0, 1)))
+            end_stats_mode = 0;
+        else
+            input = inputDB = 0;
+        return;
+    }
+    Stats_Requester.noselector = 1;
+    SetPCRequesterSize(&Stats_Requester, 7, -32);
+    Stats_Requester.line_height = 18;
+    Stats_Requester.items = 0;
+    Stats_Requester.selected = 0;
+    Stats_Requester.line_offset = 0;
+    Stats_Requester.line_oldoffset = 0;
+    Stats_Requester.pixwidth = 304;
+    Stats_Requester.xpos = 0;
+    Stats_Requester.zpos = 0;
+    Stats_Requester.itemtexts1 = Valid_Level_Strings[0];
+    Stats_Requester.itemtexts2 = Valid_Level_Strings2[0];
+    Stats_Requester.itemtextlen = 50;
+    Init_Requester(&Stats_Requester);
+    SetRequesterHeading(&Stats_Requester, GF_GameStrings[77], 0, NULL, 0);
+    s = 0;
+    for (i = 1; i < totallevels; i++)
+        s += savegame.start[i].timer;
+    s /= 30;
+    h = s / 3600;
+    m = s / 60 % 60;
+    s %= 60;
+    sprintf(str, "%02d:%02d:%02d", h, m, s);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[61], 2, str, 4);
+    numsecrets = num = 0;
+    for (i = 0; i < totallevels; i++) {
+        numsecrets += (savegame.start[i].secrets_found & 1) + ((savegame.start[i].secrets_found & 2) >> 1)
+            + ((savegame.start[i].secrets_found & 4) >> 2) + ((savegame.start[i].secrets_found & 8) >> 3)
+            + ((savegame.start[i].secrets_found & 16) >> 4) + ((savegame.start[i].secrets_found & 32) >> 5)
+            + ((savegame.start[i].secrets_found & 64) >> 6) + ((savegame.start[i].secrets_found & 128) >> 7);
+        num += LevelSecrets[i];
+    }
+    sprintf(str, "%d %s %d", numsecrets, GF_GameStrings[78], num);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[62], 2, str, 4);
+    num = 0;
+    for (i = 1; i < totallevels; i++)
+        num += savegame.start[i].kills;
+    sprintf(str, "%d", num);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[64], 2, str, 4);
+    num = 0;
+    for (i = 1; i < totallevels; i++)
+        num += savegame.start[i].ammo_used;
+    sprintf(str, "%d", num);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[65], 2, str, 4);
+    num = 0;
+    for (i = 1; i < totallevels; i++)
+        num += savegame.start[i].ammo_hit;
+    sprintf(str, "%d", num);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[66], 2, str, 4);
+    num = 0;
+    for (i = 1; i < totallevels; i++)
+        num += savegame.start[i].health_used;
+    if (num & 1)
+        sprintf(str, "%d.5", num >> 1);
+    else
+        sprintf(str, "%d.0", num >> 1);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[69], 2, str, 4);
+    num = 0;
+    for (i = 1; i < totallevels; i++)
+        num += savegame.start[i].distance_travelled;
+    distance = num / 445;
+    if (distance >= 1000)
+        sprintf(str, "%d.%02dkm", distance / 1000, distance % 100);
+    else
+        sprintf(str, "%dm", distance);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[68], 2, str, 4);
+    end_stats_mode = 1;
+}
