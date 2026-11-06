@@ -126,6 +126,20 @@ void FreePictureTextures(int *indices)
         HWR_SetCurrentTexture(TPages[i]);
 }
 
+void MemBlt(char *dest, int x, int y, int w, int h, int sz, char *source, int x2, int y2, DDSURFACEDESC desc)
+{
+    unsigned long stride;
+
+    stride = desc.ddpfPixelFormat.dwRGBBitCount >> 3;
+    dest += stride * (x + y * sz);
+    source += y2 * desc.lPitch + x2 * stride;
+    while (h--) {
+        memcpy(dest, source, w * stride);
+        dest += sz * stride;
+        source += desc.lPitch;
+    }
+}
+
 void ConvertSurfaceToTextures(LPDIRECTDRAWSURFACE3 surf)
 {
     if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bPalette) {

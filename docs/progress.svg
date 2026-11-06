@@ -47,19 +47,19 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="321.68" height="12" x="0" y="0" class="named"><title>1132 · 76.59%</title></rect>
-<rect width="2.56" height="12" x="321.68" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="95.76" height="12" x="324.24" y="0" class="todo"><title>337 · 22.80%</title></rect>
+<rect width="2.84" height="12" x="321.68" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="95.48" height="12" x="324.52" y="0" class="todo"><title>336 · 22.73%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">76.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1132</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">337</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1132</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">336</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="207.58" height="12" x="0" y="0" class="named"><title>330 KB · 49.42%</title></rect>
-<rect width="3.89" height="12" x="207.58" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="208.53" height="12" x="211.47" y="0" class="todo"><title>332 KB · 49.65%</title></rect>
+<rect width="3.98" height="12" x="207.58" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="208.45" height="12" x="211.55" y="0" class="todo"><title>331 KB · 49.63%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">330 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">332 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">330 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">331 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1334,7 +1334,7 @@
 <rect width="12" height="12" x="255" y="375" class="named"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="375" class="named"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="375" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="375" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="375" class="nonmatching"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="375" class="named"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="375" class="todo"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="375" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
@@ -2373,7 +2373,7 @@
 <rect width="7" height="7.18" x="544.16" y="429.64" class="named"><title>0x004369c0 SelectMeshes (143 bytes)</title></rect>
 <rect width="7" height="7.18" x="544.16" y="439.82" class="todo"><title>0x00496b20 MMXBlit32to24 (143 bytes)</title></rect>
 <rect width="7.14" height="6.99" x="554.15" y="254.28" class="named"><title>0x0041aa40 InitCinematicRooms (142 bytes)</title></rect>
-<rect width="7.14" height="6.99" x="554.15" y="264.27" class="todo"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
+<rect width="7.14" height="6.99" x="554.15" y="264.27" class="nonmatching"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="7.14" height="6.94" x="554.15" y="274.26" class="todo"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
 <rect width="7.14" height="6.94" x="554.15" y="284.19" class="named"><title>0x0041ed10 TrapCollision (141 bytes)</title></rect>
 <rect width="7.14" height="6.94" x="554.15" y="294.13" class="named"><title>0x00436fc0 GetGlobeMeshFlags (141 bytes)</title></rect>
