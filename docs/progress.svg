@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="320.77" height="12" x="0" y="0" class="named"><title>1312 · 87.64%</title></rect>
-<rect width="4.40" height="12" x="320.77" y="0" class="decompiled"><title>18 · 1.20%</title></rect>
-<rect width="5.62" height="12" x="325.17" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="35.21" height="12" x="330.79" y="0" class="todo"><title>144 · 9.62%</title></rect>
+<rect width="321.01" height="12" x="0" y="0" class="named"><title>1313 · 87.71%</title></rect>
+<rect width="4.40" height="12" x="321.01" y="0" class="decompiled"><title>18 · 1.20%</title></rect>
+<rect width="5.62" height="12" x="325.41" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="34.96" height="12" x="331.04" y="0" class="todo"><title>143 · 9.55%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">88.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1312</tspan> · <tspan class="decompiled">18</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">144</tspan></text>
+<text text-anchor="end" x="546" y="7.50">88.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1313</tspan> · <tspan class="decompiled">18</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">143</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="239.09" height="12" x="0" y="0" class="named"><title>472 KB · 65.33%</title></rect>
-<rect width="30.86" height="12" x="239.09" y="0" class="decompiled"><title>61 KB · 8.43%</title></rect>
-<rect width="9.06" height="12" x="269.95" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="86.99" height="12" x="279.01" y="0" class="todo"><title>172 KB · 23.77%</title></rect>
+<rect width="240" height="12" x="0" y="0" class="named"><title>474 KB · 65.57%</title></rect>
+<rect width="30.86" height="12" x="240" y="0" class="decompiled"><title>61 KB · 8.43%</title></rect>
+<rect width="9.06" height="12" x="270.85" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="86.08" height="12" x="279.92" y="0" class="todo"><title>170 KB · 23.52%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">73.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">472 KB</tspan> · <tspan class="decompiled">61 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">172 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">74.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">474 KB</tspan> · <tspan class="decompiled">61 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">170 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1451,7 +1451,7 @@
 <rect width="12" height="12" x="480" y="405" class="named"><title>0x004923c0 CalculateEdgeTA (597 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="405" class="named"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="405" class="named"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="405" class="todo"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="405" class="named"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="405" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="405" class="decompiled"><title>0x004934b0 Func4934b0 (23 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="405" class="named"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
@@ -1664,7 +1664,7 @@
 <rect width="23.89" height="24.68" x="255.67" y="27.99" class="named"><title>0x00489550 do_control_option (1816 bytes)</title></rect>
 <rect width="23.89" height="24.41" x="255.67" y="55.67" class="named"><title>0x004198fc CalculateCamera (1796 bytes)</title></rect>
 <rect width="23.89" height="24.41" x="255.67" y="83.07" class="named"><title>0x00467070 ShivaControl (1796 bytes)</title></rect>
-<rect width="23.89" height="24.38" x="255.67" y="110.48" class="todo"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
+<rect width="23.89" height="24.38" x="255.67" y="110.48" class="named"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
 <rect width="23.89" height="24.35" x="255.67" y="137.86" class="named"><title>0x00461040 RaptorControl (1792 bytes)</title></rect>
 <rect width="23.89" height="24.27" x="255.67" y="165.21" class="named"><title>0x0041835c CombatCamera (1786 bytes)</title></rect>
 <rect width="23.89" height="24.08" x="255.67" y="192.48" class="named"><title>0x0041b4f0 ClawmuteControl (1772 bytes)</title></rect>

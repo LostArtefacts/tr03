@@ -863,4 +863,207 @@ void CalculateEdgeTGA(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVE
         Edge->bxtraf = FTOLFIX(Gradients->dbx);
     }
 }
+
+extern void (*CalcGradientsPersp)(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern void (*CalcEdgePersp)(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom);
+extern void (*CalcGradientsAffine)(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern void (*CalcEdgeAffine)(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom);
+extern void (*DrawScanLinesAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*CalcGradientsBlack)(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern void (*CalcEdgeBlack)(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom);
+extern void (*DrawScanLinesBlack)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*CalcGradientsFlat)(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern void (*CalcEdgeFlat)(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom);
+extern void (*DrawScanLinesFlat)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*CalcGradientsFlatAffine)(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern void (*CalcEdgeFlatAffine)(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom);
+extern void (*DrawScanLinesFlatAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+
+void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+{
+    D3DTLVERTEX *Top, *Middle, *Bottom;
+    GRADIENT Gradients;
+    EDGE TopToBottom;
+    EDGE TopToMiddle;
+    EDGE MiddleToBottom;
+    EDGE *pLeft, *pRight;
+    float y0, y1, y2;
+    int nTop, nMiddle, nBottom;
+    int MiddleIsLeft;
+
+    y0 = v1->sy;
+    y1 = v2->sy;
+    y2 = v3->sy;
+    if (y0 < y1) {
+        if (y2 < y0) {
+            Top = v3;
+            Middle = v1;
+            Bottom = v2;
+            nTop = 2;
+            nMiddle = 0;
+            nBottom = 1;
+            MiddleIsLeft = 0;
+        } else {
+            Top = v1;
+            nTop = 0;
+            if (y1 < y2) {
+                Middle = v2;
+                Bottom = v3;
+                nMiddle = 1;
+                nBottom = 2;
+                MiddleIsLeft = 0;
+            } else {
+                Middle = v3;
+                Bottom = v2;
+                nMiddle = 2;
+                nBottom = 1;
+                MiddleIsLeft = 1;
+            }
+        }
+    } else {
+        if (y2 < y1) {
+            Top = v3;
+            Middle = v2;
+            Bottom = v1;
+            nTop = 2;
+            nMiddle = 1;
+            nBottom = 0;
+            MiddleIsLeft = 1;
+        } else {
+            Top = v2;
+            nTop = 1;
+            if (y0 < y2) {
+                Middle = v1;
+                Bottom = v3;
+                nMiddle = 0;
+                nBottom = 2;
+                MiddleIsLeft = 1;
+            } else {
+                Middle = v3;
+                Bottom = v1;
+                nMiddle = 2;
+                nBottom = 0;
+                MiddleIsLeft = 0;
+            }
+        }
+    }
+    if (!(v1->color & 0xffffff) && !(v2->color & 0xffffff) && !(v3->color & 0xffffff)) {
+        CalcGradientsBlack(&Gradients, v1, v2, v3);
+        CalcEdgeBlack(&TopToBottom, &Gradients, Top, Bottom, nTop, nBottom);
+        CalcEdgeBlack(&TopToMiddle, &Gradients, Top, Middle, nTop, nMiddle);
+        CalcEdgeBlack(&MiddleToBottom, &Gradients, Middle, Bottom, nMiddle, nBottom);
+        if (MiddleIsLeft) {
+            pLeft = &TopToMiddle;
+            pRight = &TopToBottom;
+        } else {
+            pLeft = &TopToBottom;
+            pRight = &TopToMiddle;
+        }
+        DrawScanLinesBlack(&Gradients, pLeft, pRight, &TopToMiddle, &TopToBottom);
+        if (MiddleIsLeft) {
+            pLeft = &MiddleToBottom;
+            pRight = &TopToBottom;
+        } else {
+            pLeft = &TopToBottom;
+            pRight = &MiddleToBottom;
+        }
+        DrawScanLinesBlack(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
+        return;
+    }
+    if (bForceAffineMap == 0) {
+        if (v1->rhw > 0.4f) {
+            if (!((v1->color ^ v2->color) & 0xffffff)) {
+                if (!((v2->color ^ v3->color) & 0xffffff)) {
+                    CalcGradientsFlat(&Gradients, v1, v2, v3);
+                    CalcEdgeFlat(&TopToBottom, &Gradients, Top, Bottom, nTop, nBottom);
+                    CalcEdgeFlat(&TopToMiddle, &Gradients, Top, Middle, nTop, nMiddle);
+                    CalcEdgeFlat(&MiddleToBottom, &Gradients, Middle, Bottom, nMiddle, nBottom);
+                    if (MiddleIsLeft) {
+                        pLeft = &TopToMiddle;
+                        pRight = &TopToBottom;
+                    } else {
+                        pLeft = &TopToBottom;
+                        pRight = &TopToMiddle;
+                    }
+                    DrawScanLinesFlat(&Gradients, pLeft, pRight, &TopToMiddle, &TopToBottom);
+                    if (MiddleIsLeft) {
+                        pLeft = &MiddleToBottom;
+                        pRight = &TopToBottom;
+                    } else {
+                        pLeft = &TopToBottom;
+                        pRight = &MiddleToBottom;
+                    }
+                    DrawScanLinesFlat(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
+                    return;
+                }
+            }
+            CalcGradientsPersp(&Gradients, v1, v2, v3);
+            CalcEdgePersp(&TopToBottom, &Gradients, Top, Bottom, nTop, nBottom);
+            CalcEdgePersp(&TopToMiddle, &Gradients, Top, Middle, nTop, nMiddle);
+            CalcEdgePersp(&MiddleToBottom, &Gradients, Middle, Bottom, nMiddle, nBottom);
+            if (MiddleIsLeft) {
+                pLeft = &TopToMiddle;
+                pRight = &TopToBottom;
+            } else {
+                pLeft = &TopToBottom;
+                pRight = &TopToMiddle;
+            }
+            DrawScanLines(&Gradients, pLeft, pRight, &TopToMiddle, &TopToBottom);
+            if (MiddleIsLeft) {
+                pLeft = &MiddleToBottom;
+                pRight = &TopToBottom;
+            } else {
+                pLeft = &TopToBottom;
+                pRight = &MiddleToBottom;
+            }
+            DrawScanLines(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
+            return;
+        }
+    }
+    if (!((v1->color ^ v2->color) & 0xffffff)) {
+        if (!((v2->color ^ v3->color) & 0xffffff)) {
+            CalcGradientsFlatAffine(&Gradients, v1, v2, v3);
+            CalcEdgeFlatAffine(&TopToBottom, &Gradients, Top, Bottom, nTop, nBottom);
+            CalcEdgeFlatAffine(&TopToMiddle, &Gradients, Top, Middle, nTop, nMiddle);
+            CalcEdgeFlatAffine(&MiddleToBottom, &Gradients, Middle, Bottom, nMiddle, nBottom);
+            if (MiddleIsLeft) {
+                pLeft = &TopToMiddle;
+                pRight = &TopToBottom;
+            } else {
+                pLeft = &TopToBottom;
+                pRight = &TopToMiddle;
+            }
+            DrawScanLinesFlatAffine(&Gradients, pLeft, pRight, &TopToMiddle, &TopToBottom);
+            if (MiddleIsLeft) {
+                pLeft = &MiddleToBottom;
+                pRight = &TopToBottom;
+            } else {
+                pLeft = &TopToBottom;
+                pRight = &MiddleToBottom;
+            }
+            DrawScanLinesFlatAffine(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
+            return;
+        }
+    }
+    CalcGradientsAffine(&Gradients, v1, v2, v3);
+    CalcEdgeAffine(&TopToBottom, &Gradients, Top, Bottom, nTop, nBottom);
+    CalcEdgeAffine(&TopToMiddle, &Gradients, Top, Middle, nTop, nMiddle);
+    CalcEdgeAffine(&MiddleToBottom, &Gradients, Middle, Bottom, nMiddle, nBottom);
+    if (MiddleIsLeft) {
+        pLeft = &TopToMiddle;
+        pRight = &TopToBottom;
+    } else {
+        pLeft = &TopToBottom;
+        pRight = &TopToMiddle;
+    }
+    DrawScanLinesAffine(&Gradients, pLeft, pRight, &TopToMiddle, &TopToBottom);
+    if (MiddleIsLeft) {
+        pLeft = &MiddleToBottom;
+        pRight = &TopToBottom;
+    } else {
+        pLeft = &TopToBottom;
+        pRight = &MiddleToBottom;
+    }
+    DrawScanLinesAffine(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
+}
 }
