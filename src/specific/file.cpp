@@ -6,6 +6,8 @@ extern "C" {
 
 #include "../types.h"
 #include "../camera.h"
+#include "../anim.h"
+#include "../room.h"
 
 extern char LastLoadedLevelPath[256];
 extern unsigned char *texture_page_ptrs[32];
@@ -41,6 +43,72 @@ typedef struct phdtexturestruct {
 } PHDTEXTURESTRUCT;
 
 extern PHDTEXTURESTRUCT phdtextinfo[];
+
+typedef struct phdspritestruct {
+    unsigned short tpage;
+    unsigned short offset;
+    unsigned short width;
+    unsigned short height;
+    sint16 x1;
+    sint16 y1;
+    sint16 x2;
+    sint16 y2;
+} PHDSPRITESTRUCT;
+
+extern PHDSPRITESTRUCT phdspriteinfo[];
+
+typedef struct {
+    sint16 mesh_number;
+    sint16 flags;
+    sint16 x_minp;
+    sint16 x_maxp;
+    sint16 y_minp;
+    sint16 y_maxp;
+    sint16 z_minp;
+    sint16 z_maxp;
+    sint16 x_minc;
+    sint16 x_maxc;
+    sint16 y_minc;
+    sint16 y_maxc;
+    sint16 z_minc;
+    sint16 z_maxc;
+} STATIC_INFO;
+
+extern STATIC_INFO static_objects[];
+extern ITEM_INFO *items;
+extern int level_items;
+extern char exit_message[128];
+void InitialiseItemArray(int numitems);
+void InitialiseItem(sint16 item_num);
+extern char depthq_table[33][256];
+extern char gouraud_table[256][32];
+extern unsigned char water_palette[768];
+extern int wet;
+extern BOX_INFO *boxes;
+extern int number_boxes;
+extern uint16 *overlap;
+extern sint16 *ground_zone[4][2];
+extern sint16 *fly_zone[2];
+extern sint16 *aranges;
+
+typedef struct {
+    sint16 number;
+    uint8 volume;
+    sint8 radius;
+    sint8 randomness;
+    sint8 pitch;
+    sint16 flags;
+} SAMPLE_INFO;
+
+extern int sound_active;
+extern sint16 sample_lut[370];
+extern int num_sample_infos;
+extern SAMPLE_INFO *sample_infos;
+bool DS_IsSoundEnabled(void);
+void DS_FreeAllSamples(void);
+bool DS_MakeSample(int nSample, LPWAVEFORMATEX pWF, LPVOID pData, DWORD dwLen);
+void game_free(int size, int type);
+const char *GetFullPath(const char *name);
 
 extern char cd_drive;
 extern char **GF_picfilenames;
@@ -93,6 +161,31 @@ void AdjustTextureUVs(bool reset)
         }
     }
     App.nUVAdd += num;
+}
+
+int LoadSprites(HANDLE file)
+{
+    int i;
+    int j;
+    int number;
+    DWORD read;
+
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    MyReadFile(file, phdspriteinfo, sizeof(PHDSPRITESTRUCT) * number, &read, NULL);
+    MyReadFile(file, &number, sizeof(sint32), &read, NULL);
+    for (i = 0; i < number; i++) {
+        MyReadFile(file, &j, sizeof(sint32), &read, NULL);
+        if (j < 376) {
+            MyReadFile(file, &objects[j].nmeshes, sizeof(sint16), &read, NULL);
+            MyReadFile(file, &objects[j].mesh_index, sizeof(sint16), &read, NULL);
+            objects[j].loaded = 1;
+        } else {
+            j -= 376;
+            SetFilePointer(file, sizeof(sint16), NULL, FILE_CURRENT);
+            MyReadFile(file, &static_objects[j].mesh_number, sizeof(sint16), &read, NULL);
+        }
+    }
+    return 1;
 }
 
 int LoadPalette(HANDLE file)

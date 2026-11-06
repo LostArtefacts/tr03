@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="315.14" height="12" x="0" y="0" class="named"><title>1109 · 75.03%</title></rect>
-<rect width="2.56" height="12" x="315.14" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="102.30" height="12" x="317.70" y="0" class="todo"><title>360 · 24.36%</title></rect>
+<rect width="315.43" height="12" x="0" y="0" class="named"><title>1110 · 75.10%</title></rect>
+<rect width="2.56" height="12" x="315.43" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="102.02" height="12" x="317.98" y="0" class="todo"><title>359 · 24.29%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">75.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1109</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">360</tspan></text>
+<text text-anchor="end" x="600" y="7.50">75.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1110</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">359</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="200.18" height="12" x="0" y="0" class="named"><title>318 KB · 47.66%</title></rect>
-<rect width="3.89" height="12" x="200.18" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="215.94" height="12" x="204.06" y="0" class="todo"><title>343 KB · 51.41%</title></rect>
+<rect width="200.37" height="12" x="0" y="0" class="named"><title>319 KB · 47.71%</title></rect>
+<rect width="3.89" height="12" x="200.37" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="215.74" height="12" x="204.26" y="0" class="todo"><title>343 KB · 51.37%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">47.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">318 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">343 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">319 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">343 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1206,7 +1206,7 @@
 <rect width="12" height="12" x="585" y="330" class="todo"><title>0x00480f70 LoadRooms (1008 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="330" class="nonmatching"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="330" class="todo"><title>0x004813d0 LoadObjects (1214 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="330" class="todo"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="330" class="named"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="330" class="todo"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="330" class="todo"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="330" class="named"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
@@ -2085,7 +2085,7 @@
 <rect width="10.26" height="10.68" x="460.49" y="368.25" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="10.26" height="10.68" x="460.49" y="381.94" class="named"><title>0x0041f1b0 TestLaraPosition (312 bytes)</title></rect>
 <rect width="10.26" height="10.68" x="460.49" y="395.62" class="named"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
-<rect width="10.26" height="10.61" x="460.49" y="409.30" class="todo"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
+<rect width="10.26" height="10.61" x="460.49" y="409.30" class="named"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
 <rect width="10.26" height="10.58" x="460.49" y="422.91" class="named"><title>0x0042d3d0 UpdateBats (309 bytes)</title></rect>
 <rect width="10.26" height="10.51" x="460.49" y="436.49" class="todo"><title>0x00408800 HWI_InsertObjectGT3_Sorted (307 bytes)</title></rect>
 <rect width="10.11" height="10.63" x="473.75" y="174.03" class="todo"><title>0x00496930 MMXBlit32to15 (306 bytes)</title></rect>
