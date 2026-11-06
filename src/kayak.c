@@ -578,3 +578,14 @@ sint32 DoDynamics_kayak(sint32 height, sint32 fallspeed, sint32 *y)
 }
 
 sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos);
+
+int CanGetOut_kayak(ITEM_INFO *v, int direction)
+{
+    PHD_VECTOR pos;
+    sint32 height;
+
+    height = TestHeight_kayak(v, (direction < 0) ? -768 : 768, 0, &pos);
+    if (v->pos.y_pos - height > 0)
+        return 0;
+    return 1;
+}
