@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="327.89" height="12" x="0" y="0" class="named"><title>1342 · 89.59%</title></rect>
-<rect width="7.33" height="12" x="327.89" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.84" height="12" x="335.21" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
-<rect width="23.94" height="12" x="342.06" y="0" class="todo"><title>98 · 6.54%</title></rect>
+<rect width="328.13" height="12" x="0" y="0" class="named"><title>1343 · 89.65%</title></rect>
+<rect width="7.33" height="12" x="328.13" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="6.84" height="12" x="335.46" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="23.70" height="12" x="342.30" y="0" class="todo"><title>97 · 6.48%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">91.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1342</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">98</tspan></text>
+<text text-anchor="end" x="546" y="7.50">91.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1343</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">97</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="260.26" height="12" x="0" y="0" class="named"><title>515 KB · 71.11%</title></rect>
-<rect width="33.42" height="12" x="260.26" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="13.97" height="12" x="293.68" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
-<rect width="58.36" height="12" x="307.64" y="0" class="todo"><title>116 KB · 15.94%</title></rect>
+<rect width="260.42" height="12" x="0" y="0" class="named"><title>516 KB · 71.15%</title></rect>
+<rect width="33.42" height="12" x="260.42" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="13.97" height="12" x="293.84" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
+<rect width="58.19" height="12" x="307.81" y="0" class="todo"><title>115 KB · 15.90%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">80.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">515 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">116 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">80.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">516 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">115 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -293,7 +293,7 @@
 <rect width="12" height="12" x="360" y="60" class="named"><title>0x00423140 TriggerNormalCDTrack (172 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="60" class="named"><title>0x004231f0 CheckNoColFloorTriangle (187 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="60" class="named"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="60" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="60" class="named"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="60" class="named"><title>0x004234f0 CrocControl (438 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="60" class="named"><title>0x004236b0 DoDemoSequence (89 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="60" class="named"><title>0x00423710 StartDemo (386 bytes)</title></rect>
@@ -2111,7 +2111,7 @@
 <rect width="10.58" height="9.92" x="462.94" y="424.19" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
 <rect width="10.58" height="9.89" x="462.94" y="437.11" class="named"><title>0x00474760 ACMClose (323 bytes)</title></rect>
 <rect width="10.24" height="10.12" x="476.52" y="173.92" class="named"><title>0x00406fa0 HWI_InsertGT4_Sorted (320 bytes)</title></rect>
-<rect width="10.21" height="10.12" x="489.76" y="173.92" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
+<rect width="10.21" height="10.12" x="489.76" y="173.92" class="named"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
 <rect width="10.21" height="10.12" x="502.98" y="173.92" class="named"><title>0x00483960 StartGame (319 bytes)</title></rect>
 <rect width="10.18" height="10.12" x="516.19" y="173.92" class="named"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="10.18" height="10.12" x="529.37" y="173.92" class="named"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>

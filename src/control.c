@@ -1,4 +1,6 @@
 #include "specific/standard.h"
+#include <io.h>
+#include <direct.h>
 #include "game.h"
 
 #define MAX_CD_TRACKS 128
@@ -1597,4 +1599,72 @@ sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
         }
     } while (!(type & END_BIT));
     return height;
+}
+
+extern uint16 OutsideRoomOffsets[];
+extern uint8 *OutsideRoomTable;
+extern sint16 IsRoomOutsideNo;
+
+sint32 IsRoomOutside(sint32 x, sint32 y, sint32 z)
+{
+    uint16 offset;
+    ROOM_INFO *r;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+    long height;
+
+    if ((offset = OutsideRoomOffsets[((x >> 12) * 27) + (z >> 12)]) == -1)
+        return -2;
+
+    if (offset < 0) {
+        r = &room[(offset & 0x7fff)];
+
+        if ((y > r->maxceiling) && (y < r->minfloor)
+            && ((z > (r->z + 1024)) && (z < (r->z + ((r->x_size - 1) * 1024))))
+            && ((x > (r->x + 1024)) && (x < (r->x + ((r->y_size - 1) * 1024))))) {
+            room_number = offset & 0x7fff;
+            floor = GetFloor(x, y, z, &room_number);
+            height = GetHeight(floor, x, y, z);
+            if (height == NO_HEIGHT || y > height)
+                return -2;
+            height = GetCeiling(floor, x, y, z);
+            if (y < height)
+                return -2;
+
+            if (!(r->flags & (32 | UNDERWATER)))
+                return -3;
+
+            IsRoomOutsideNo = offset & 0x7fff;
+            return 1;
+        } else
+            return -2;
+    } else {
+        unsigned char *s = &OutsideRoomTable[offset];
+
+        while (*s != 0xff) {
+            r = &room[*s];
+
+            if ((y > r->maxceiling && y < r->minfloor)
+                && ((z > (r->z + 1024)) && (z < (r->z + ((r->x_size - 1) * 1024))))
+                && ((x > (r->x + 1024)) && (x < (r->x + ((r->y_size - 1) * 1024))))) {
+                room_number = *s;
+
+                floor = GetFloor(x, y, z, &room_number);
+                height = GetHeight(floor, x, y, z);
+                if (height == NO_HEIGHT || y > height)
+                    return -2;
+                height = GetCeiling(floor, x, y, z);
+                if (y < height)
+                    return -2;
+
+                if (!(r->flags & (32 | UNDERWATER)))
+                    return -3;
+
+                IsRoomOutsideNo = *s;
+                return 1;
+            }
+            s++;
+        }
+        return -2;
+    }
 }
