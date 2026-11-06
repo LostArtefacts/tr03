@@ -47,21 +47,21 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="318.29" height="12" x="0" y="0" class="named"><title>1301 · 86.97%</title></rect>
-<rect width="3.43" height="12" x="318.29" y="0" class="decompiled"><title>14 · 0.94%</title></rect>
-<rect width="5.63" height="12" x="321.72" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="38.66" height="12" x="327.34" y="0" class="todo"><title>158 · 10.56%</title></rect>
+<rect width="3.67" height="12" x="318.29" y="0" class="decompiled"><title>15 · 1%</title></rect>
+<rect width="5.63" height="12" x="321.96" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="38.41" height="12" x="327.59" y="0" class="todo"><title>157 · 10.49%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">87.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1301</tspan> · <tspan class="decompiled">14</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">158</tspan></text>
+<text text-anchor="end" x="546" y="7.50">88.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1301</tspan> · <tspan class="decompiled">15</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">157</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="234.47" height="12" x="0" y="0" class="named"><title>463 KB · 64.06%</title></rect>
-<rect width="28.48" height="12" x="234.47" y="0" class="decompiled"><title>56 KB · 7.78%</title></rect>
-<rect width="9.07" height="12" x="262.96" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="93.97" height="12" x="272.03" y="0" class="todo"><title>186 KB · 25.68%</title></rect>
+<rect width="28.80" height="12" x="234.47" y="0" class="decompiled"><title>57 KB · 7.87%</title></rect>
+<rect width="9.07" height="12" x="263.28" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="93.65" height="12" x="272.35" y="0" class="todo"><title>185 KB · 25.59%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">71.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">463 KB</tspan> · <tspan class="decompiled">56 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">186 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">71.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">463 KB</tspan> · <tspan class="decompiled">57 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">185 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1490,7 +1490,7 @@
 <rect width="12" height="12" x="315" y="420" class="decompiled"><title>0x00498860 Func498860 (1338 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="420" class="decompiled"><title>0x00498da0 Func498da0 (4153 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="420" class="decompiled"><title>0x00499de0 Func499de0 (1839 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="420" class="todo"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="420" class="decompiled"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="420" class="todo"><title>0x0049a790 Func49a790 (2769 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="420" class="named"><title>0x0049b270 ScanLinesTAffine (1556 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="420" class="named"><title>0x0049b890 ScanLinesT (2244 bytes)</title></rect>
@@ -1840,7 +1840,7 @@
 <rect width="14.09" height="14.76" x="370.25" y="136.62" class="named"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
 <rect width="14.09" height="14.72" x="370.25" y="154.38" class="named"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
 <rect width="14.09" height="14.67" x="370.25" y="172.10" class="named"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>
-<rect width="14.09" height="14.67" x="370.25" y="189.77" class="todo"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
+<rect width="14.09" height="14.67" x="370.25" y="189.77" class="decompiled"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
 <rect width="14.09" height="14.62" x="370.25" y="207.44" class="named"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
 <rect width="14.09" height="14.51" x="370.25" y="225.06" class="named"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
 <rect width="14.09" height="14.49" x="370.25" y="242.57" class="named"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>

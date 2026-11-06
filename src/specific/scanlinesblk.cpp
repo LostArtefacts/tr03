@@ -822,4 +822,122 @@ void Func499de0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
+void Func49a510(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+{
+    int Width;
+    unsigned short *pDestination;
+    long yline;
+    short subdivcnt;
+
+    yline = long(Output) + YTable[pLeft->y];
+
+    while (StepLeft->height--) {
+        Width = pRight->x;
+        Width -= pLeft->x;
+        if (Width > 0) {
+            pDestination = (unsigned short *)yline + pLeft->x;
+            subdivcnt = Width >> 4;
+            Width = Width - (subdivcnt << 4);
+            while (subdivcnt--) {
+                if (pLeft->y & 1) {
+                    if (!((long)(pDestination + 0) & 2))
+                        *(pDestination + 0) = 0;
+                    if (!((long)(pDestination + 1) & 2))
+                        *(pDestination + 1) = 0;
+                    if (!((long)(pDestination + 2) & 2))
+                        *(pDestination + 2) = 0;
+                    if (!((long)(pDestination + 3) & 2))
+                        *(pDestination + 3) = 0;
+                    if (!((long)(pDestination + 4) & 2))
+                        *(pDestination + 4) = 0;
+                    if (!((long)(pDestination + 5) & 2))
+                        *(pDestination + 5) = 0;
+                    if (!((long)(pDestination + 6) & 2))
+                        *(pDestination + 6) = 0;
+                    if (!((long)(pDestination + 7) & 2))
+                        *(pDestination + 7) = 0;
+                    if (!((long)(pDestination + 8) & 2))
+                        *(pDestination + 8) = 0;
+                    if (!((long)(pDestination + 9) & 2))
+                        *(pDestination + 9) = 0;
+                    if (!((long)(pDestination + 10) & 2))
+                        *(pDestination + 10) = 0;
+                    if (!((long)(pDestination + 11) & 2))
+                        *(pDestination + 11) = 0;
+                    if (!((long)(pDestination + 12) & 2))
+                        *(pDestination + 12) = 0;
+                    if (!((long)(pDestination + 13) & 2))
+                        *(pDestination + 13) = 0;
+                    if (!((long)(pDestination + 14) & 2))
+                        *(pDestination + 14) = 0;
+                    if (!((long)(pDestination + 15) & 2))
+                        *(pDestination + 15) = 0;
+                } else {
+                    if ((long)(pDestination + 0) & 2)
+                        *(pDestination + 0) = 0;
+                    if ((long)(pDestination + 1) & 2)
+                        *(pDestination + 1) = 0;
+                    if ((long)(pDestination + 2) & 2)
+                        *(pDestination + 2) = 0;
+                    if ((long)(pDestination + 3) & 2)
+                        *(pDestination + 3) = 0;
+                    if ((long)(pDestination + 4) & 2)
+                        *(pDestination + 4) = 0;
+                    if ((long)(pDestination + 5) & 2)
+                        *(pDestination + 5) = 0;
+                    if ((long)(pDestination + 6) & 2)
+                        *(pDestination + 6) = 0;
+                    if ((long)(pDestination + 7) & 2)
+                        *(pDestination + 7) = 0;
+                    if ((long)(pDestination + 8) & 2)
+                        *(pDestination + 8) = 0;
+                    if ((long)(pDestination + 9) & 2)
+                        *(pDestination + 9) = 0;
+                    if ((long)(pDestination + 10) & 2)
+                        *(pDestination + 10) = 0;
+                    if ((long)(pDestination + 11) & 2)
+                        *(pDestination + 11) = 0;
+                    if ((long)(pDestination + 12) & 2)
+                        *(pDestination + 12) = 0;
+                    if ((long)(pDestination + 13) & 2)
+                        *(pDestination + 13) = 0;
+                    if ((long)(pDestination + 14) & 2)
+                        *(pDestination + 14) = 0;
+                    if ((long)(pDestination + 15) & 2)
+                        *(pDestination + 15) = 0;
+                }
+                pDestination += 16;
+            }
+            if (pLeft->y & 1) {
+                for (int n = 0; n < Width; n++) {
+                    if (!((long)(pDestination + 0) & 2))
+                        *(pDestination + 0) = 0;
+                    pDestination++;
+                }
+            } else {
+                for (int n = 0; n < Width; n++) {
+                    if ((long)(pDestination + 0) & 2)
+                        *(pDestination + 0) = 0;
+                    pDestination++;
+                }
+            }
+        }
+        yline += bytepitch;
+        StepLeft->x += StepLeft->xstep;
+        StepLeft->y++;
+        StepLeft->ErrorTerm += StepLeft->Numerator;
+        if (StepLeft->ErrorTerm >= StepLeft->Denominator) {
+            StepLeft->x++;
+            StepLeft->ErrorTerm -= StepLeft->Denominator;
+        }
+        StepRight->x += StepRight->xstep;
+        StepRight->y++;
+        StepRight->ErrorTerm += StepRight->Numerator;
+        if (StepRight->ErrorTerm >= StepRight->Denominator) {
+            StepRight->x++;
+            StepRight->ErrorTerm -= StepRight->Denominator;
+        }
+    }
+}
+
 }
