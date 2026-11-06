@@ -102,6 +102,166 @@ void RingIsNotOpen(RING_INFO *ring)
     Inv_downArrow2 = NULL;
 }
 
+extern char **GF_Puzzle1Strings;
+extern char **GF_Puzzle2Strings;
+extern char **GF_Puzzle3Strings;
+extern char **GF_Puzzle4Strings;
+extern char **GF_Pickup1Strings;
+extern char **GF_Pickup2Strings;
+extern char **GF_Key1Strings;
+extern char **GF_Key2Strings;
+extern char **GF_Key3Strings;
+extern char **GF_Key4Strings;
+extern uint32 CurrentLevel;
+extern int health_bar_timer;
+int FlashIt(void);
+void DrawHealthBar(int flash_state);
+int Inv_RequestItem(int item_num);
+__declspec(dllimport) int __cdecl wsprintfA(char *, const char *, ...);
+
+void RingNotActive(INVENTORY_ITEM *inv_item)
+{
+    int qty;
+    char txt[64];
+
+    if (!Inv_itemText[IT_NAME]) {
+        switch (inv_item->object_number) {
+        case 209:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle1Strings[CurrentLevel]);
+            break;
+        case 210:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle2Strings[CurrentLevel]);
+            break;
+        case 211:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle3Strings[CurrentLevel]);
+            break;
+        case 212:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Puzzle4Strings[CurrentLevel]);
+            break;
+        case 238:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Pickup1Strings[CurrentLevel]);
+            break;
+        case 239:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Pickup2Strings[CurrentLevel]);
+            break;
+        case 228:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key1Strings[CurrentLevel]);
+            break;
+        case 229:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key2Strings[CurrentLevel]);
+            break;
+        case 230:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key3Strings[CurrentLevel]);
+            break;
+        case 231:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 0, GF_Key4Strings[CurrentLevel]);
+            break;
+        case 145:
+        case 184:
+            break;
+        default:
+            Inv_itemText[IT_NAME] = T_Print(0, -16, 5, inv_item->itemText);
+            break;
+        }
+        if (Inv_itemText[IT_NAME]) {
+            T_BottomAlign(Inv_itemText[IT_NAME], 1);
+            T_CentreH(Inv_itemText[IT_NAME], 1);
+        }
+    }
+    qty = Inv_RequestItem(inv_item->object_number);
+    switch (inv_item->object_number) {
+    case 186:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%5d", lara.shotgun.ammo / 6);
+        break;
+    case 187:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%5d", lara.magnums.ammo);
+        break;
+    case 188:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%5d", lara.uzis.ammo);
+        break;
+    case 189:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%5d", lara.harpoon.ammo);
+        break;
+    case 190:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%5d", lara.m16.ammo);
+        break;
+    case 191:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%5d", lara.rocket.ammo);
+        break;
+    case 192:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%5d", lara.grenade.ammo);
+        break;
+    case 194:
+        if (Inv_itemText[IT_QTY])
+            return;
+        wsprintfA(txt, "%d", qty * 2);
+        break;
+    case 195:
+    case 196:
+    case 198:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%d", qty * 2);
+        break;
+    case 197:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%d", lara.harpoon.ammo);
+        break;
+    case 199:
+    case 200:
+    case 203:
+        if (Inv_itemText[IT_QTY] || savegame.bonus_flag)
+            return;
+        wsprintfA(txt, "%d", qty);
+        break;
+    case 201:
+    case 202:
+        health_bar_timer = 40;
+        DrawHealthBar(FlashIt());
+    case 204:
+    case 209:
+    case 210:
+    case 211:
+    case 212:
+    case 228:
+    case 229:
+    case 230:
+    case 231:
+    case 238:
+    case 239:
+    case 244:
+    case 245:
+    case 246:
+    case 247:
+        if (Inv_itemText[IT_QTY] || qty <= 1)
+            return;
+        wsprintfA(txt, "%d", qty);
+        break;
+    default:
+        return;
+    }
+    if (!Inv_itemText[IT_QTY]) {
+        Inv_itemText[IT_QTY] = T_Print(64, -56, 3, txt);
+        T_BottomAlign(Inv_itemText[IT_QTY], 1);
+        T_CentreH(Inv_itemText[IT_QTY], 1);
+    }
+}
+
 void RingActive(void)
 {
     T_RemovePrint(Inv_itemText[IT_NAME]);

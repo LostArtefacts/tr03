@@ -438,7 +438,7 @@ address,size,name,symbol
 0x00437050,266,InitColours,_InitColours
 0x00437160,392,RingIsOpen,_RingIsOpen
 0x004372f0,129,RingIsNotOpen,_RingIsNotOpen
-0x00437380,970,RingNotActive,_RingNotActive
+0x00437380,1262,RingNotActive,_RingNotActive
 0x00437870,50,RingActive,_RingActive
 0x004378b0,2065,Inv_AddItem,_Inv_AddItem
 0x00438250,297,Inv_InsertItem,_Inv_InsertItem
