@@ -45,6 +45,25 @@ void BuildXYTables(void)
         WidthTablef[n] = FTOLFIX((1.0f / float(n)));
 }
 
+void Func4908a0(void)
+{
+    unsigned int i, j;
+
+    Var6ca12c = (unsigned char *)malloc(0x800);
+    Var6ca1a8 = (unsigned char *)malloc(0x800);
+    Var6ca1f0 = (unsigned char *)malloc(0x2000);
+    for (i = 0; i < 64; i++) {
+        for (j = 0; j < 32; j++) {
+            Var6ca12c[i + j * 64] = (unsigned char)((i * j) >> 6);
+            Var6ca1a8[i + j * 64] = (unsigned char)((i * j) >> 5);
+        }
+    }
+    for (i = 0; i < 32; i++) {
+        for (j = 0; j < 256; j++)
+            Var6ca1f0[i * 256 + j] = (unsigned char)(i * (j / 256.0f));
+    }
+}
+
 HRESULT HWBeginScene(void)
 {
     WinFrameRate();
