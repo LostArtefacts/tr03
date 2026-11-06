@@ -486,4 +486,41 @@ void phd_RotZ(PHD_ANGLE rz)
     }
 }
 
+
+extern PHD_VECTOR CamPos;
+extern PHD_VECTOR CamRot;
+sint32 mGetAngle(sint32 x1, sint32 y1, sint32 x2, sint32 y2);
+
+void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, PHD_ANGLE roll)
+{
+    PHD_ANGLE angles[2];
+    PHD_3DPOS viewer;
+    sint32 dx, dy, dz;
+
+    phd_GetVectorAngles(xtar - xsrc, ytar - ysrc, ztar - zsrc, angles);
+    viewer.x_pos = xsrc;
+    viewer.y_pos = ysrc;
+    viewer.z_pos = zsrc;
+    viewer.x_rot = angles[1];
+    viewer.y_rot = angles[0];
+    viewer.z_rot = roll;
+    dx = xsrc - xtar;
+    dy = ysrc - ytar;
+    dz = zsrc - ztar;
+    CamRot.x = ((uint32)mGetAngle(0, 0, (sint32)sqrt((double)(dx * dx + dz * dz)), dy) >> 4) & 4095;
+    CamRot.y = ((uint32)mGetAngle(zsrc, xsrc, ztar, xtar) >> 4) & 4095;
+    CamRot.z = 0;
+    CamPos.x = xsrc;
+    CamPos.y = ysrc;
+    CamPos.z = zsrc;
+    phd_GenerateW2V(&viewer);
+}
+
+
+
+void phd_LookAt(sint32 xsrc, sint32 ysrc, sint32 zsrc, sint32 xtar, sint32 ytar, sint32 ztar, PHD_ANGLE roll);
+
+
+void phd_RotX(PHD_ANGLE rx);
+
 }

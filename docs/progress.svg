@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="282.76" height="12" x="0" y="0" class="named"><title>1222 · 82.68%</title></rect>
-<rect width="0.46" height="12" x="282.76" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="283.23" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="54.61" height="12" x="287.39" y="0" class="todo"><title>236 · 15.97%</title></rect>
+<rect width="282.99" height="12" x="0" y="0" class="named"><title>1223 · 82.75%</title></rect>
+<rect width="0.46" height="12" x="282.99" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="283.46" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="54.38" height="12" x="287.62" y="0" class="todo"><title>235 · 15.90%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">82.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1222</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">236</tspan></text>
+<text text-anchor="end" x="522" y="7.50">82.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1223</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">235</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.57" height="12" x="0" y="0" class="named"><title>369 KB · 55.14%</title></rect>
-<rect width="0.15" height="12" x="188.57" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="188.71" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="147.25" height="12" x="194.75" y="0" class="todo"><title>288 KB · 43.06%</title></rect>
+<rect width="188.69" height="12" x="0" y="0" class="named"><title>369 KB · 55.17%</title></rect>
+<rect width="0.15" height="12" x="188.69" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="188.84" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="147.13" height="12" x="194.87" y="0" class="todo"><title>288 KB · 43.02%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">369 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">288 KB</tspan></text>
@@ -67,7 +67,7 @@
 <text text-anchor="start" x="0" y="7.50">By function order</text>
 <g transform="translate(0 20)">
 <rect width="12" height="12" x="0" y="0" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="0" class="todo"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="0" class="named"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="0" class="named"><title>0x004012d0 phd_GetVectorAngles (120 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="0" class="named"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="0" class="named"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
@@ -2159,7 +2159,7 @@
 <rect width="9.71" height="9.03" x="537.63" y="187.19" class="named"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="9.67" height="9.03" x="550.33" y="187.19" class="named"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
 <rect width="9.63" height="9.03" x="563" y="187.19" class="named"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
-<rect width="9.59" height="9.03" x="575.63" y="187.19" class="todo"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
+<rect width="9.59" height="9.03" x="575.63" y="187.19" class="named"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
 <rect width="9.59" height="9.03" x="588.23" y="187.19" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="9.59" height="9.03" x="600.82" y="187.19" class="named"><title>0x00453460 CreateZone (247 bytes)</title></rect>
 <rect width="9.55" height="9.03" x="613.41" y="187.19" class="named"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
