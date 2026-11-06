@@ -46,21 +46,21 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="327.64" height="12" x="0" y="0" class="named"><title>1341 · 89.52%</title></rect>
-<rect width="7.33" height="12" x="327.64" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.84" height="12" x="334.97" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
-<rect width="24.19" height="12" x="341.81" y="0" class="todo"><title>99 · 6.61%</title></rect>
+<rect width="327.89" height="12" x="0" y="0" class="named"><title>1342 · 89.59%</title></rect>
+<rect width="7.33" height="12" x="327.89" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="6.84" height="12" x="335.21" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="23.94" height="12" x="342.06" y="0" class="todo"><title>98 · 6.54%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">91.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1341</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">99</tspan></text>
+<text text-anchor="end" x="546" y="7.50">91.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1342</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">98</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="259.90" height="12" x="0" y="0" class="named"><title>515 KB · 71.01%</title></rect>
-<rect width="33.42" height="12" x="259.90" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="13.97" height="12" x="293.32" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
-<rect width="58.71" height="12" x="307.29" y="0" class="todo"><title>116 KB · 16.04%</title></rect>
+<rect width="260.26" height="12" x="0" y="0" class="named"><title>515 KB · 71.11%</title></rect>
+<rect width="33.42" height="12" x="260.26" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="13.97" height="12" x="293.68" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
+<rect width="58.36" height="12" x="307.64" y="0" class="todo"><title>116 KB · 15.94%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">80.1%</text>
+<text text-anchor="end" x="546" y="24.50">80.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">515 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">116 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1349,7 +1349,7 @@
 <rect width="12" height="12" x="450" y="375" class="named"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="375" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="375" class="named"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="375" class="todo"><title>0x0048c150 GameMain (704 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="375" class="named"><title>0x0048c150 GameMain (704 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="375" class="named"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="375" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="375" class="named"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
@@ -1823,7 +1823,7 @@
 <rect width="15.63" height="14.80" x="463.43" y="65.10" class="todo"><title>0x0048d6e0 calc_object_vertices (714 bytes)</title></rect>
 <rect width="15.43" height="14.80" x="482.06" y="65.10" class="named"><title>0x0042a8b0 TriggerFlareSparks (705 bytes)</title></rect>
 <rect width="15.43" height="14.80" x="500.49" y="65.10" class="todo"><title>0x00484740 HWR_InitState (705 bytes)</title></rect>
-<rect width="15.41" height="14.80" x="518.92" y="65.10" class="todo"><title>0x0048c150 GameMain (704 bytes)</title></rect>
+<rect width="15.41" height="14.80" x="518.92" y="65.10" class="named"><title>0x0048c150 GameMain (704 bytes)</title></rect>
 <rect width="15.39" height="14.80" x="537.33" y="65.10" class="decompiled"><title>0x00491680 Func491680 (703 bytes)</title></rect>
 <rect width="15.08" height="14.80" x="555.72" y="65.10" class="named"><title>0x00493530 MMXSetRenderState (689 bytes)</title></rect>
 <rect width="14.86" height="14.80" x="573.80" y="65.10" class="todo"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>

@@ -57,6 +57,127 @@ extern sint16 layout[2][14];
 void S_CDVolume(int volume);
 void S_SoundSetMasterVolume(int volume);
 
+sint32 GameMain(void)
+{
+    sint32 option, level_number, ok;
+
+    game_hires = HiResFlag = 0;
+    game_sizer = screen_sizer = 1.0;
+
+    if (!S_InitialiseSystem())
+        return 0;
+
+    if (!GF_LoadScriptFile("data\\tombPC.dat"))
+        S_ExitSystem("GameMain: could not load script file");
+
+    SOUND_Init();
+
+    InitialiseStartInfo();
+
+    S_FrontEndCheck(&savegame, sizeof(SAVEGAME_INFO));
+
+    HiResFlag = -1;
+    malloc_buffer = (char *)GlobalAlloc(GMEM_FIXED, 0x380000);
+    if (!malloc_buffer) {
+        lstrcpy(exit_message, "GameMain: could not allocate malloc_buffer");
+        return 0;
+    }
+
+    HiResFlag = 0;
+    TempVideoAdjust(1, 1.0);
+
+    S_UpdateInput();
+    LoadPicture("pix/legal.bmp", App.lpPictureBuffer, 1);
+    FadePictureUp(32);
+    S_Wait(300, 1);
+    ForceFadeDown(1);
+    FadePictureDown(32);
+
+    int n = GF_DoFrontEndSequence();
+    if (GtWindowClosed)
+        return 1;
+    if (n == 1) {
+        lstrcpy(exit_message, "GameMain: failed in GF_DoFrontEndSequence()");
+        return 0;
+    }
+
+    title_loaded = 0;
+
+    option = gameflow.firstOption;
+
+    ok = 1;
+    while (ok) {
+        level_number = option & 0xff;
+        option &= ~0xff;
+
+        switch (option) {
+        case EXIT_TO_OPTION:
+        case EXIT_TO_TITLE:
+            if (!gameflow.title_disabled) {
+                option = TitleSequence();
+                GF_StartGame = 1;
+            } else if (gameflow.title_replace >= 0 && gameflow.title_replace != EXIT_TO_TITLE) {
+                option = gameflow.title_replace;
+            } else {
+                lstrcpy(exit_message, "GameMain Failed: Title disabled & no replacement");
+                return 0;
+            }
+            break;
+        case STARTGAME:
+            if (gameflow.singlelevel >= 0)
+                option = GF_DoLevelSequence(gameflow.singlelevel, IL_NORMAL);
+            else {
+                if (level_number <= gameflow.num_levels) {
+                    option = GF_DoLevelSequence(level_number, IL_NORMAL);
+                    break;
+                } else {
+                    wsprintf(exit_message, "GameMain: STARTGAME with invalid level number (%d)", level_number);
+                    return 0;
+                }
+            }
+            break;
+
+        case STARTSAVEDGAME:
+            S_LoadGame(&savegame, sizeof(SAVEGAME_INFO), level_number);
+            level_number = savegame.current_level;
+            if (level_number <= gameflow.num_levels)
+                option = GF_DoLevelSequence(level_number, IL_SAVED);
+            else {
+                wsprintf(exit_message, "GameMain: STARTSAVEDGAME with invalid level number (%d)", level_number);
+                return 0;
+            }
+            break;
+        case STARTCINE:
+            StartCinematic(level_number);
+            option = EXIT_TO_TITLE;
+            break;
+        case STARTDEMO:
+            option = DoDemoSequence(-1);
+            break;
+        case LEVELCOMPLETE:
+            option = LevelCompleteSequence(level_number);
+            break;
+        case EXITGAME:
+            ok = 0;
+            break;
+        default:
+            ok = 0;
+            break;
+        }
+    }
+
+    if (nLoadedPictures) {
+        ForceFadeDown(1);
+        FadePictureDown(32);
+    }
+
+    S_SaveSettings();
+
+    ShutdownGame();
+
+    return 1;
+}
+
 sint32 TitleSequence(void)
 {
     T_InitPrint();
