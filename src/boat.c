@@ -659,3 +659,79 @@ int GetCollisionAnim_boat(ITEM_INFO *boat, PHD_VECTOR *moved)
     }
     return 0;
 }
+
+int DoShift_boat(ITEM_INFO *boat, PHD_VECTOR *newer, PHD_VECTOR *old)
+{
+    sint32 x, z, x_old, z_old, shift_x, shift_z;
+
+    x = newer->x >> WALL_SHIFT;
+    z = newer->z >> WALL_SHIFT;
+    x_old = old->x >> WALL_SHIFT;
+    z_old = old->z >> WALL_SHIFT;
+    shift_x = newer->x & (WALL_L - 1);
+    shift_z = newer->z & (WALL_L - 1);
+    if (x == x_old) {
+        if (z == z_old) {
+            boat->pos.z_pos += old->z - newer->z;
+            boat->pos.x_pos += old->x - newer->x;
+        } else if (z > z_old) {
+            boat->pos.z_pos -= shift_z + 1;
+            return newer->x - boat->pos.x_pos;
+        } else {
+            boat->pos.z_pos += WALL_L - shift_z;
+            return boat->pos.x_pos - newer->x;
+        }
+    } else if (z == z_old) {
+        if (x > x_old) {
+            boat->pos.x_pos -= shift_x + 1;
+            return boat->pos.z_pos - newer->z;
+        } else {
+            boat->pos.x_pos += WALL_L - shift_x;
+            return newer->z - boat->pos.z_pos;
+        }
+    } else {
+        sint16 room_number;
+        FLOOR_INFO *floor;
+        sint32 height;
+
+        x = z = 0;
+        room_number = boat->room_number;
+        floor = GetFloor(old->x, newer->y, newer->z, &room_number);
+        height = GetHeight(floor, old->x, newer->y, newer->z);
+        if (height < old->y - STEP_L) {
+            if (newer->z > old->z)
+                z = -shift_z - 1;
+            else
+                z = WALL_L - shift_z;
+        }
+        room_number = boat->room_number;
+        floor = GetFloor(newer->x, newer->y, old->z, &room_number);
+        height = GetHeight(floor, newer->x, newer->y, old->z);
+        if (height < old->y - STEP_L) {
+            if (newer->x > old->x)
+                x = -shift_x - 1;
+            else
+                x = WALL_L - shift_x;
+        }
+        if (x && z) {
+            boat->pos.z_pos += z;
+            boat->pos.x_pos += x;
+        } else if (z) {
+            boat->pos.z_pos += z;
+            if (z > 0)
+                return boat->pos.x_pos - newer->x;
+            else
+                return newer->x - boat->pos.x_pos;
+        } else if (x) {
+            boat->pos.x_pos += x;
+            if (x > 0)
+                return newer->z - boat->pos.z_pos;
+            else
+                return boat->pos.z_pos - newer->z;
+        } else {
+            boat->pos.z_pos += old->z - newer->z;
+            boat->pos.x_pos += old->x - newer->x;
+        }
+    }
+    return 0;
+}
