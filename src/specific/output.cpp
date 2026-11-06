@@ -253,4 +253,70 @@ void ProjectPCoord(sint32 x, sint32 y, sint32 z, sint32 *result, sint32 cx, sint
     }
 }
 
+#include "../items.h"
+
+extern sint16 shadowman[];
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+extern sint32 phd_left, phd_right, phd_top, phd_bottom;
+extern sint32 phd_centerx, phd_centery;
+extern float phd_leftfloat, phd_topfloat, phd_rightfloat, phd_bottomfloat;
+extern float f_centerx, f_centery;
+extern sint32 *phd_mxptr;
+extern char vbuf[];
+extern void (*InsertTrans8)(void *vbuf, sint16 shade);
+void phd_PushMatrix(void);
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void phd_RotY(PHD_ANGLE ry);
+sint16 *calc_object_vertices(sint16 *objptr);
+void phd_RotY(PHD_ANGLE ry);
+
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr)
+{
+    int midx;
+    int xadd;
+    int xadd2;
+    int midz;
+    int zadd;
+    int zadd2;
+
+    midx = (bptr[0] + bptr[1]) / 2;
+    midz = (bptr[4] + bptr[5]) / 2;
+    xadd = ((bptr[1] - bptr[0]) * size) / 1024;
+    zadd = ((bptr[5] - bptr[4]) * size) / 1024;
+    xadd2 = xadd * 2;
+    zadd2 = zadd * 2;
+
+    shadowman[6] = midx - xadd;
+    shadowman[8] = midz + zadd2;
+    shadowman[9] = midx + xadd;
+    shadowman[11] = midz + zadd2;
+    shadowman[12] = midx + xadd2;
+    shadowman[14] = midz + zadd;
+    shadowman[15] = midx + xadd2;
+    shadowman[17] = midz - zadd;
+    shadowman[18] = midx + xadd;
+    shadowman[20] = midz - zadd * 2;
+    shadowman[21] = midx - xadd;
+    shadowman[23] = midz - zadd * 2;
+    shadowman[24] = midx - xadd2;
+    shadowman[26] = midz - zadd;
+    shadowman[27] = midx - xadd2;
+    shadowman[29] = midz + zadd;
+
+    phd_leftfloat = (float)(phd_winxmin + phd_left);
+    phd_topfloat = (float)(phd_winymin + phd_top);
+    phd_rightfloat = (float)(phd_winxmin + phd_right + 1);
+    phd_bottomfloat = (float)(phd_winymin + phd_bottom + 1);
+    f_centerx = (float)(phd_winxmin + phd_centerx);
+    f_centery = (float)(phd_winymin + phd_centery);
+
+    phd_PushMatrix();
+    phd_TranslateAbs(iptr->pos.x_pos, iptr->floor, iptr->pos.z_pos);
+    phd_RotY(iptr->pos.y_rot);
+    if (calc_object_vertices(&shadowman[4]))
+        InsertTrans8(vbuf, 32);
+    phd_mxptr -= 12;
+}
+
 }

@@ -2072,6 +2072,7 @@ address,size,name,symbol
 0x004cdc98,4,bEffectOn,_bEffectOn
 0x004cdca0,56,layout,_layout
 0x004cdcd8,,kname,_kname
+0x004ce390,68,shadowman,_shadowman
 0x004ce708,4,ghinstAcm,_ghinstAcm
 0x004ce710,12,gszAcmModuleName,_gszAcmModuleName
 0x004ce720,164,gapszAcmFunctions,_gapszAcmFunctions

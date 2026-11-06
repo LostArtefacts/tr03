@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="339.01" height="12" x="0" y="0" class="named"><title>1193 · 80.72%</title></rect>
-<rect width="2.84" height="12" x="339.01" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="78.15" height="12" x="341.85" y="0" class="todo"><title>275 · 18.61%</title></rect>
+<rect width="339.30" height="12" x="0" y="0" class="named"><title>1194 · 80.78%</title></rect>
+<rect width="2.84" height="12" x="339.30" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="77.86" height="12" x="342.14" y="0" class="todo"><title>274 · 18.54%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">80.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1193</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">275</tspan></text>
+<text text-anchor="end" x="600" y="7.50">80.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1194</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">274</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="217.38" height="12" x="0" y="0" class="named"><title>346 KB · 51.76%</title></rect>
-<rect width="3.98" height="12" x="217.38" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="198.64" height="12" x="221.36" y="0" class="todo"><title>316 KB · 47.30%</title></rect>
+<rect width="217.70" height="12" x="0" y="0" class="named"><title>346 KB · 51.83%</title></rect>
+<rect width="3.98" height="12" x="217.70" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="198.33" height="12" x="221.67" y="0" class="todo"><title>315 KB · 47.22%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">51.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">346 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">316 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">346 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">315 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1318,7 +1318,7 @@
 <rect width="12" height="12" x="15" y="375" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="375" class="todo"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="375" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="375" class="todo"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="375" class="named"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="375" class="named"><title>0x0048a9b0 S_LightRoom (68 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="375" class="named"><title>0x0048aa00 AnimateTextures (192 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="375" class="named"><title>0x0048aac0 S_SetupBelowWater (81 bytes)</title></rect>
@@ -1900,7 +1900,7 @@
 <rect width="13.45" height="13.24" x="684.55" y="99.04" class="named"><title>0x00445560 FireShotgun (507 bytes)</title></rect>
 <rect width="13.42" height="13.24" x="701" y="99.04" class="named"><title>0x0042b2f0 TriggerFireSmoke (506 bytes)</title></rect>
 <rect width="13.34" height="13.24" x="717.42" y="99.04" class="todo"><title>0x004960c0 Func4960c0 (503 bytes)</title></rect>
-<rect width="13.24" height="13.24" x="733.76" y="99.04" class="todo"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
+<rect width="13.24" height="13.24" x="733.76" y="99.04" class="named"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
 <rect width="13.19" height="13.29" x="399.92" y="115.28" class="named"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
 <rect width="13.19" height="13.24" x="399.92" y="131.57" class="named"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
 <rect width="13.19" height="13.21" x="399.92" y="147.81" class="named"><title>0x0048efd0 DXEnumDirectDraw (496 bytes)</title></rect>
