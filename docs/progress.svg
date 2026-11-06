@@ -47,20 +47,20 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="321.26" height="12" x="0" y="0" class="named"><title>1314 · 87.78%</title></rect>
-<rect width="7.09" height="12" x="321.26" y="0" class="decompiled"><title>29 · 1.94%</title></rect>
-<rect width="5.62" height="12" x="328.35" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="32.03" height="12" x="333.97" y="0" class="todo"><title>131 · 8.75%</title></rect>
+<rect width="7.33" height="12" x="321.26" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="5.62" height="12" x="328.59" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="31.78" height="12" x="334.22" y="0" class="todo"><title>130 · 8.68%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">89.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1314</tspan> · <tspan class="decompiled">29</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">131</tspan></text>
+<text text-anchor="end" x="546" y="7.50">89.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1314</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">130</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="240.10" height="12" x="0" y="0" class="named"><title>474 KB · 65.60%</title></rect>
-<rect width="33.20" height="12" x="240.10" y="0" class="decompiled"><title>66 KB · 9.07%</title></rect>
-<rect width="9.06" height="12" x="273.30" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="83.64" height="12" x="282.36" y="0" class="todo"><title>165 KB · 22.85%</title></rect>
+<rect width="33.48" height="12" x="240.10" y="0" class="decompiled"><title>66 KB · 9.15%</title></rect>
+<rect width="9.06" height="12" x="273.59" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="83.35" height="12" x="282.65" y="0" class="todo"><title>165 KB · 22.77%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">74.7%</text>
+<text text-anchor="end" x="546" y="24.50">74.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">474 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">165 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1474,7 +1474,7 @@
 <rect width="12" height="12" x="75" y="420" class="decompiled"><title>0x004960c0 Func4960c0 (503 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="420" class="decompiled"><title>0x004962c0 Func4962c0 (508 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="420" class="decompiled"><title>0x004964c0 Func4964c0 (553 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="420" class="todo"><title>0x004966f0 Func4966f0 (562 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="420" class="decompiled"><title>0x004966f0 Func4966f0 (562 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="420" class="todo"><title>0x00496930 MMXBlit32to15 (306 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="420" class="todo"><title>0x00496a70 MMXBlit32to16 (170 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="420" class="todo"><title>0x00496b20 MMXBlit32to24 (143 bytes)</title></rect>
@@ -1891,7 +1891,7 @@
 <rect width="13.42" height="13.64" x="386.97" y="284.71" class="named"><title>0x0042d750 TriggerDartSmoke (564 bytes)</title></rect>
 <rect width="13.42" height="13.64" x="386.97" y="301.35" class="named"><title>0x00431650 TriggerFlameThrower (564 bytes)</title></rect>
 <rect width="13.42" height="13.59" x="386.97" y="317.99" class="todo"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
-<rect width="13.42" height="13.59" x="386.97" y="334.59" class="todo"><title>0x004966f0 Func4966f0 (562 bytes)</title></rect>
+<rect width="13.42" height="13.59" x="386.97" y="334.59" class="decompiled"><title>0x004966f0 Func4966f0 (562 bytes)</title></rect>
 <rect width="13.42" height="13.55" x="386.97" y="351.18" class="named"><title>0x004114e0 VultureControl (560 bytes)</title></rect>
 <rect width="13.42" height="13.55" x="386.97" y="367.73" class="named"><title>0x00446ba0 FireGrenade (560 bytes)</title></rect>
 <rect width="13.42" height="13.50" x="386.97" y="384.27" class="named"><title>0x00474900 ACMEmulateCDPlay (558 bytes)</title></rect>
