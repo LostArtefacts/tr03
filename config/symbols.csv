@@ -2156,6 +2156,7 @@ address,size,name,symbol
 0x005bd3e0,,vbuf,_vbuf
 0x005cbe40,4,RoomInsertObjectGT4,_RoomInsertObjectGT4
 0x005cbe44,4,RoomInsertObjectGT3,_RoomInsertObjectGT3
+0x005cbe48,48000,xbuffer,_xbuffer
 0x005d79c8,128,texture_page_ptrs,_texture_page_ptrs
 0x005d7a48,4,phd_rightfloat,_phd_rightfloat
 0x005d7a60,128,wibble_table,_wibble_table
