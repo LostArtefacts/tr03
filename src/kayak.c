@@ -510,3 +510,22 @@ int KayakControl(void)
     KayakToBaddieCollision(v);
     return (lara.skidoo != NO_ITEM) ? 1 : 0;
 }
+
+void UpdateWakeFX_kayak(void)
+{
+    int i, j;
+
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < NUM_WAKE_SPRITES; j++) {
+            if (WakePts[j][i].life) {
+                WakePts[j][i].life--;
+                WakePts[j][i].x[0] += WakePts[j][i].xvel[0];
+                WakePts[j][i].z[0] += WakePts[j][i].zvel[0];
+                WakePts[j][i].x[1] += WakePts[j][i].xvel[1];
+                WakePts[j][i].z[1] += WakePts[j][i].zvel[1];
+            }
+        }
+    }
+}
+
+sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos);

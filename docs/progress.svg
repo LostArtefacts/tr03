@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="323.38" height="12" x="0" y="0" class="named"><title>1138 · 77%</title></rect>
-<rect width="2.84" height="12" x="323.38" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="93.78" height="12" x="326.22" y="0" class="todo"><title>330 · 22.33%</title></rect>
+<rect width="323.67" height="12" x="0" y="0" class="named"><title>1139 · 77.06%</title></rect>
+<rect width="2.84" height="12" x="323.67" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="93.49" height="12" x="326.51" y="0" class="todo"><title>329 · 22.26%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">77.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1138</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">330</tspan></text>
+<text text-anchor="end" x="600" y="7.50">77.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1139</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">329</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.36" height="12" x="0" y="0" class="named"><title>331 KB · 49.61%</title></rect>
-<rect width="3.98" height="12" x="208.36" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.67" height="12" x="212.33" y="0" class="todo"><title>330 KB · 49.44%</title></rect>
+<rect width="208.41" height="12" x="0" y="0" class="named"><title>331 KB · 49.62%</title></rect>
+<rect width="3.98" height="12" x="208.41" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.61" height="12" x="212.39" y="0" class="todo"><title>330 KB · 49.43%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">331 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
@@ -565,7 +565,7 @@
 <rect width="12" height="12" x="720" y="135" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="135" class="nonmatching"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="todo"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="150" class="todo"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="150" class="named"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="150" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="150" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
@@ -2532,7 +2532,7 @@
 <rect width="5.59" height="5.84" x="591.70" y="344.98" class="named"><title>0x004712f0 S_DrawTribeBoss (93 bytes)</title></rect>
 <rect width="5.59" height="5.78" x="591.70" y="353.82" class="named"><title>0x00416670 CreatureEffect (92 bytes)</title></rect>
 <rect width="5.59" height="5.78" x="591.70" y="362.60" class="named"><title>0x0041ebd0 ObjectCollision (92 bytes)</title></rect>
-<rect width="5.59" height="5.78" x="591.70" y="371.38" class="todo"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
+<rect width="5.59" height="5.78" x="591.70" y="371.38" class="named"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="5.59" height="5.78" x="591.70" y="380.15" class="named"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
 <rect width="5.59" height="5.78" x="591.70" y="388.93" class="todo"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
 <rect width="5.59" height="5.78" x="591.70" y="397.71" class="todo"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
