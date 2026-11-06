@@ -1474,8 +1474,7 @@ address,size,name,symbol
 0x004b48cc,833,wgtmapA,_wgtmapA
 0x004b4c10,72,phd_atan,@phd_atan@8
 0x004b4c58,6,phd_cos,@phd_cos@4
-0x004b4c5e,27,phd_sin,@phd_sin@4
-0x004b4c79,26,Func4b4c79,
+0x004b4c5e,53,phd_sin,@phd_sin@4
 0x004b4c93,44,phd_sqrt,@phd_sqrt@4
 0x004b4cc0,6,DirectInputCreateA,_DirectInputCreateA@16
 0x004b5ce8,6,DirectSoundEnumerateA,_DirectSoundEnumerateA@8
@@ -2094,6 +2093,9 @@ address,size,name,symbol
 0x004cefb8,12,NEIR,_NEIR
 0x004cefc8,12,OKET,_OKET
 0x004cefd8,12,AWCS,_AWCS
+0x004cf068,32,phdtan2,_phdtan2
+0x004cf088,4100,phdtantab,_phdtantab
+0x004d008c,2052,phdsintab,_phdsintab
 0x004d38d0,4,mid_sort,_mid_sort
 0x004d38d4,4,BlackGouraudIndex,_BlackGouraudIndex
 0x004d38d8,4,LfAspectCorrection,_LfAspectCorrection
