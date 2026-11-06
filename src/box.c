@@ -1,3 +1,4 @@
+#include <float.h>
 #include "game.h"
 
 #define MAX_TILT (ONE_DEGREE * 3)
@@ -990,4 +991,79 @@ int CalculateTarget(PHD_VECTOR *target, ITEM_INFO *item, LOT_INFO *LOT)
     else
         target->y = box->height - STEP_L * 3 / 2;
     return 0;
+}
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info)
+{
+    ROOM_INFO *r;
+    sint32 x, y, z;
+    sint16 angle, lara_anim, *zone;
+    CREATURE_INFO *creature;
+    OBJECT_INFO *object;
+    ITEM_INFO *enemy;
+
+    if (item->data == NULL)
+        return;
+    creature = (CREATURE_INFO *)item->data;
+    enemy = creature->enemy;
+    if (!enemy) {
+        enemy = lara_item;
+        creature->enemy = lara_item;
+    }
+    if (creature->LOT.fly == NO_FLYING)
+        zone = ground_zone[ZONE(creature->LOT.step)][flip_status];
+    else
+        zone = ground_zone[ZONE(1)][0];
+    r = &room[item->room_number];
+    item->box_number = r->floor[((item->pos.z_pos - r->z) >> WALL_SHIFT) + ((item->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size].box;
+    if (creature->LOT.fly == NO_FLYING)
+        info->zone_number = zone[item->box_number];
+    else
+        info->zone_number = 0x2000;
+    r = &room[enemy->room_number];
+    enemy->box_number = r->floor[((enemy->pos.z_pos - r->z) >> WALL_SHIFT) + ((enemy->pos.x_pos - r->x) >> WALL_SHIFT) * r->x_size].box;
+    if (creature->LOT.fly == NO_FLYING)
+        info->enemy_zone = zone[enemy->box_number];
+    else
+        info->enemy_zone = 0x2000;
+    if (!objects[item->object_number].non_lot) {
+        if (boxes[enemy->box_number].overlap_index & creature->LOT.block_mask)
+            info->enemy_zone |= BLOCKED;
+        else if (creature->LOT.node[item->box_number].search_number == (creature->LOT.search_number | 0x8000))
+            info->enemy_zone |= BLOCKED;
+    }
+    object = &objects[item->object_number];
+    if (enemy == lara_item) {
+        z = (enemy->pos.z_pos + (enemy->speed * 14 * phd_cos(lara.move_angle) >> W2V_SHIFT)) - (item->pos.z_pos + (object->pivot_length * phd_cos(item->pos.y_rot) >> W2V_SHIFT));
+        x = (enemy->pos.x_pos + (enemy->speed * 14 * phd_sin(lara.move_angle) >> W2V_SHIFT)) - (item->pos.x_pos + (object->pivot_length * phd_sin(item->pos.y_rot) >> W2V_SHIFT));
+    } else {
+        z = (enemy->pos.z_pos + (enemy->speed * 14 * phd_cos(enemy->pos.y_rot) >> W2V_SHIFT)) - (item->pos.z_pos + (object->pivot_length * phd_cos(item->pos.y_rot) >> W2V_SHIFT));
+        x = (enemy->pos.x_pos + (enemy->speed * 14 * phd_sin(enemy->pos.y_rot) >> W2V_SHIFT)) - (item->pos.x_pos + (object->pivot_length * phd_sin(item->pos.y_rot) >> W2V_SHIFT));
+    }
+    y = item->pos.y_pos - enemy->pos.y_pos;
+    angle = phd_atan(z, x);
+    if (z > 32000 || z < -32000 || x > 32000 || x < -32000)
+        info->distance = 0x7fffffff;
+    else if (creature->enemy)
+        info->distance = z * z + x * x;
+    else
+        info->distance = 0x7fffffff;
+    info->angle = angle - item->pos.y_rot;
+    info->enemy_facing = 0x8000 + angle - enemy->pos.y_rot;
+    z = abs(z);
+    x = abs(x);
+    if (enemy == lara_item) {
+        lara_anim = lara_item->current_anim_state;
+        if (lara_anim == AS_DUCK || lara_anim == AS_DUCKROLL || lara_anim == AS_ALL4S || lara_anim == AS_CRAWL || lara_anim == AS_ALL4TURNL || lara_anim == AS_ALL4TURNR)
+            y -= STEP_L * 3 / 2;
+    }
+    if (x > z)
+        info->x_angle = phd_atan(x + (z >> 1), y);
+    else
+        info->x_angle = phd_atan(z + (x >> 1), y);
+    info->ahead = (info->angle > -0x4000 && info->angle < 0x4000);
+    info->bite = (info->ahead && enemy->hit_points > 0 && (enemy->pos.y_pos - item->pos.y_pos < 0 ? -(enemy->pos.y_pos - item->pos.y_pos) : enemy->pos.y_pos - item->pos.y_pos) <= STEP_L * 2);
 }
