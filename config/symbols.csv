@@ -212,7 +212,7 @@ address,size,name,symbol
 0x00421370,238,RefreshCamera,_RefreshCamera
 0x00421460,2328,TestTriggers,_TestTriggers
 0x00421d80,85,TriggerActive,_TriggerActive
-0x00421de0,1183,GetCeiling,_GetCeiling
+0x00421de0,1229,GetCeiling,_GetCeiling
 0x004222b0,178,GetDoor,_GetDoor
 0x00422370,159,LOS,_LOS
 0x00422410,747,zLOS,_zLOS

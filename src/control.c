@@ -1434,3 +1434,167 @@ sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
     } while (!(type & END_BIT));
     return height;
 }
+
+extern ITEM_INFO *CeilingObject;
+
+sint32 GetCeiling(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z)
+{
+    sint32 xoff, yoff, height;
+    ROOM_INFO *r;
+    ITEM_INFO *item;
+    FLOOR_INFO *f;
+    sint16 *data, type, trigger;
+    sint16 tilts, dx, dz, t0, t1, t2, t3, hadj, ended;
+
+    CeilingObject = NULL;
+    f = floor;
+    while (f->sky_room != NO_ROOM) {
+        if (CheckNoColCeilingTriangle(floor, x, z) == 1)
+            break;
+        r = &room[f->sky_room];
+        f = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+    }
+    height = f->ceiling << 8;
+    if (height == NO_HEIGHT)
+        return height;
+    if (f->index) {
+        data = &floor_data[f->index];
+        hadj = *(data++);
+        type = hadj & DATA_TYPE;
+        ended = 0;
+        if (type == TILT_TYPE || type == SPLIT1 || type == SPLIT2 || type == NOCOLF1T || type == NOCOLF1B || type == NOCOLF2T || type == NOCOLF2B) {
+            ended = hadj & END_BIT;
+            data++;
+            hadj = *(data++);
+            type = hadj & DATA_TYPE;
+        }
+        if (ended == 0 && (type == ROOF_TYPE || type == SPLIT3 || type == SPLIT4 || type == NOCOLC1T || type == NOCOLC1B || type == NOCOLC2T || type == NOCOLC2B)) {
+            if (type != ROOF_TYPE) {
+                tilts = *data;
+                t0 = -(tilts & 15);
+                t1 = -((tilts >> 4) & 15);
+                t2 = -((tilts >> 8) & 15);
+                t3 = -((tilts >> 12) & 15);
+                dx = x & 1023;
+                dz = z & 1023;
+                xoff = yoff = 0;
+                if (type == SPLIT3 || type == NOCOLC1T || type == NOCOLC1B) {
+                    if (dx <= (1024 - dz)) {
+                        hadj = (hadj >> 10) & 0x1f;
+                        if (hadj & 0x10)
+                            hadj |= 0xfff0;
+                        height += hadj << 8;
+                        xoff = t2 - t1;
+                        yoff = t3 - t2;
+                    } else {
+                        hadj = (hadj >> 5) & 0x1f;
+                        if (hadj & 0x10)
+                            hadj |= 0xfff0;
+                        height += hadj << 8;
+                        xoff = t3 - t0;
+                        yoff = t0 - t1;
+                    }
+                } else {
+                    if (dx <= dz) {
+                        hadj = (hadj >> 10) & 0x1f;
+                        if (hadj & 0x10)
+                            hadj |= 0xfff0;
+                        height += hadj << 8;
+                        xoff = t2 - t1;
+                        yoff = t0 - t1;
+                    } else {
+                        hadj = (hadj >> 5) & 0x1f;
+                        if (hadj & 0x10)
+                            hadj |= 0xfff0;
+                        height += hadj << 8;
+                        xoff = t3 - t0;
+                        yoff = t3 - t2;
+                    }
+                }
+                if (chunky_flag) {
+                    long h1, h2;
+                    hadj = (hadj >> 10) & 0x1f;
+                    if (hadj & 0x10)
+                        hadj |= 0xfff0;
+                    h1 = h2 = f->ceiling << 8;
+                    h1 += hadj << 8;
+                    hadj = (hadj >> 5) & 0x1f;
+                    if (hadj & 0x10)
+                        hadj |= 0xfff0;
+                    h2 += hadj << 8;
+                    if (h1 > h2)
+                        height = h1;
+                    else
+                        height = h2;
+                }
+            } else {
+                xoff = (*data) >> 8;
+                yoff = (signed char)(*data);
+            }
+            if (!chunky_flag) {
+                if (xoff < 0)
+                    height += (z & (WALL_L - 1)) * xoff >> 2;
+                else
+                    height -= ((WALL_L - 1 - z) & (WALL_L - 1)) * xoff >> 2;
+                if (yoff >= 0)
+                    height -= (x & (WALL_L - 1)) * yoff >> 2;
+                else
+                    height += ((WALL_L - 1 - x) & (WALL_L - 1)) * yoff >> 2;
+            }
+        }
+    }
+    while (floor->pit_room != NO_ROOM) {
+        if (CheckNoColFloorTriangle(floor, x, z) == 1)
+            break;
+        r = &room[floor->pit_room];
+        floor = &r->floor[((z - r->z) >> WALL_SHIFT) + ((x - r->x) >> WALL_SHIFT) * r->x_size];
+    }
+    if (!floor->index)
+        return height;
+    data = &floor_data[floor->index];
+    do {
+        type = *(data++);
+        switch (type & DATA_TYPE) {
+        case SPLIT1:
+        case SPLIT2:
+        case SPLIT3:
+        case SPLIT4:
+        case NOCOLF1T:
+        case NOCOLF1B:
+        case NOCOLF2T:
+        case NOCOLF2B:
+        case NOCOLC1T:
+        case NOCOLC1B:
+        case NOCOLC2T:
+        case NOCOLC2B:
+        case DOOR_TYPE:
+        case TILT_TYPE:
+        case ROOF_TYPE:
+            data++;
+            break;
+        case LAVA_TYPE:
+        case CLIMB_TYPE:
+        case MONKEY_TYPE:
+        case MINEL_TYPE:
+        case MINER_TYPE:
+            break;
+        case TRIGGER_TYPE:
+            data++;
+            do {
+                trigger = *(data++);
+                if (TRIG_BITS(trigger) != TO_OBJECT) {
+                    if (TRIG_BITS(trigger) == TO_CAMERA)
+                        trigger = *(data++);
+                    continue;
+                }
+                item = &items[trigger & VALUE_BITS];
+                if (objects[item->object_number].ceiling)
+                    (*objects[item->object_number].ceiling)(item, x, y, z, &height);
+            } while (!(trigger & END_BIT));
+            break;
+        default:
+            S_ExitSystem("GetCeiling(): Unknown type");
+        }
+    } while (!(type & END_BIT));
+    return height;
+}
