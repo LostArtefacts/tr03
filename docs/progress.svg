@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="323.67" height="12" x="0" y="0" class="named"><title>1139 · 77.06%</title></rect>
-<rect width="2.84" height="12" x="323.67" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="93.49" height="12" x="326.51" y="0" class="todo"><title>329 · 22.26%</title></rect>
+<rect width="323.95" height="12" x="0" y="0" class="named"><title>1140 · 77.13%</title></rect>
+<rect width="2.84" height="12" x="323.95" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="93.21" height="12" x="326.79" y="0" class="todo"><title>328 · 22.19%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">77.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1139</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">329</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1140</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">328</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.41" height="12" x="0" y="0" class="named"><title>331 KB · 49.62%</title></rect>
-<rect width="3.98" height="12" x="208.41" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.61" height="12" x="212.39" y="0" class="todo"><title>330 KB · 49.43%</title></rect>
+<rect width="208.50" height="12" x="0" y="0" class="named"><title>332 KB · 49.64%</title></rect>
+<rect width="3.98" height="12" x="208.50" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.53" height="12" x="212.47" y="0" class="todo"><title>330 KB · 49.41%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">331 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -569,7 +569,7 @@
 <rect width="12" height="12" x="30" y="150" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="150" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="150" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="150" class="named"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="150" class="todo"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="150" class="named"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="150" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
@@ -2388,7 +2388,7 @@
 <rect width="7.14" height="6.69" x="554.15" y="382.57" class="named"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
 <rect width="7.14" height="6.69" x="554.15" y="392.26" class="named"><title>0x0048fdb0 BPPToDDBD (136 bytes)</title></rect>
 <rect width="7.14" height="6.64" x="554.15" y="401.95" class="named"><title>0x00416a30 AlertNearbyGuards (135 bytes)</title></rect>
-<rect width="7.14" height="6.64" x="554.15" y="411.59" class="todo"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
+<rect width="7.14" height="6.64" x="554.15" y="411.59" class="named"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
 <rect width="7.14" height="6.59" x="554.15" y="421.23" class="named"><title>0x00442d00 lara_col_fallback (134 bytes)</title></rect>
 <rect width="7.14" height="6.59" x="554.15" y="430.82" class="named"><title>0x00444770 LookLeftRight (134 bytes)</title></rect>
 <rect width="7.14" height="6.59" x="554.15" y="440.41" class="named"><title>0x0044ec10 SwimTurn (134 bytes)</title></rect>

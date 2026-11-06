@@ -528,4 +528,30 @@ void UpdateWakeFX_kayak(void)
     }
 }
 
+int GetCollisionAnim_kayak(ITEM_INFO *v, sint32 x, sint32 z)
+{
+    sint32 s, c, front, side;
+
+    x = v->pos.x_pos - x;
+    z = v->pos.z_pos - z;
+    if (!x && !z)
+        return 0;
+
+    c = phd_cos(v->pos.y_rot);
+    s = phd_sin(v->pos.y_rot);
+    front = (z * c + x * s) >> W2V_SHIFT;
+    side = (x * c - z * s) >> W2V_SHIFT;
+    if ((front < 0 ? -front : front) > (side < 0 ? -side : side)) {
+        if (front > 0)
+            return 1;
+        else
+            return 2;
+    } else {
+        if (side > 0)
+            return 3;
+        else
+            return 4;
+    }
+}
+
 sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos);
