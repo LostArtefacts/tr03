@@ -48,17 +48,17 @@
 <g transform="translate(130 1.50)">
 <rect width="279.99" height="12" x="0" y="0" class="named"><title>1210 · 81.87%</title></rect>
 <rect width="0.46" height="12" x="279.99" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="3.70" height="12" x="280.45" y="0" class="nonmatching"><title>16 · 1.08%</title></rect>
-<rect width="57.85" height="12" x="284.15" y="0" class="todo"><title>250 · 16.91%</title></rect>
+<rect width="3.93" height="12" x="280.45" y="0" class="nonmatching"><title>17 · 1.15%</title></rect>
+<rect width="57.62" height="12" x="284.38" y="0" class="todo"><title>249 · 16.85%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">82.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1210</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">16</tspan> · <tspan class="todo">250</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1210</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">17</tspan> · <tspan class="todo">249</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="183.70" height="12" x="0" y="0" class="named"><title>359 KB · 53.71%</title></rect>
 <rect width="0.15" height="12" x="183.70" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="4.94" height="12" x="183.84" y="0" class="nonmatching"><title>10 KB · 1.44%</title></rect>
-<rect width="153.22" height="12" x="188.78" y="0" class="todo"><title>299 KB · 44.80%</title></rect>
+<rect width="5.28" height="12" x="183.84" y="0" class="nonmatching"><title>10 KB · 1.54%</title></rect>
+<rect width="152.88" height="12" x="189.12" y="0" class="todo"><title>299 KB · 44.70%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">53.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">359 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">10 KB</tspan> · <tspan class="todo">299 KB</tspan></text>
@@ -1318,7 +1318,7 @@
 <rect width="12" height="12" x="735" y="360" class="named"><title>0x0048a320 S_ClearScreen (11 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="375" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="375" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="375" class="todo"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="375" class="nonmatching"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="375" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="375" class="named"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="375" class="named"><title>0x0048a9b0 S_LightRoom (68 bytes)</title></rect>
@@ -1796,7 +1796,7 @@
 <rect width="16.02" height="14.71" x="346.51" y="361.85" class="named"><title>0x00444980 ControlDeathSlide (671 bytes)</title></rect>
 <rect width="16.02" height="14.64" x="346.51" y="379.55" class="named"><title>0x00456f40 MovableBlockCollision (668 bytes)</title></rect>
 <rect width="16.02" height="14.64" x="346.51" y="397.19" class="named"><title>0x0046a960 TargetControl (668 bytes)</title></rect>
-<rect width="16.02" height="14.64" x="346.51" y="414.83" class="todo"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
+<rect width="16.02" height="14.64" x="346.51" y="414.83" class="nonmatching"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
 <rect width="16.02" height="14.53" x="346.51" y="432.47" class="named"><title>0x0046c1c0 ExplodeTonyBoss (663 bytes)</title></rect>
 <rect width="15.91" height="14.57" x="365.53" y="64.64" class="todo"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
 <rect width="15.86" height="14.57" x="384.43" y="64.64" class="named"><title>0x00454d10 CartToBaddieCollision (658 bytes)</title></rect>

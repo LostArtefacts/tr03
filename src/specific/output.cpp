@@ -319,4 +319,87 @@ void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr)
     phd_mxptr -= 12;
 }
 
+extern sint16 phd_winxmax;
+extern sint16 phd_winymax;
+extern int phd_znear;
+extern int phd_persp;
+extern int outside;
+
+int S_GetObjectBounds(sint16 *box)
+{
+    sint32 *v;
+    sint32 vtx[8][3];
+    sint32 xmin, xmax, ymin, ymax, zmin, zmax, nZ, x, y, z;
+    int i;
+
+    if (phd_mxptr[11] >= phd_zfar && !outside)
+        return 0;
+    objbcnt++;
+    xmin = box[0];
+    xmax = box[1];
+    ymin = box[2];
+    ymax = box[3];
+    zmin = box[4];
+    zmax = box[5];
+    vtx[0][0] = xmin;
+    vtx[0][1] = ymin;
+    vtx[0][2] = zmin;
+    vtx[1][0] = xmax;
+    vtx[1][1] = ymin;
+    vtx[1][2] = zmin;
+    vtx[2][0] = xmax;
+    vtx[2][1] = ymax;
+    vtx[2][2] = zmin;
+    vtx[3][0] = xmin;
+    vtx[3][1] = ymax;
+    vtx[3][2] = zmin;
+    vtx[4][0] = xmin;
+    vtx[4][1] = ymin;
+    vtx[4][2] = zmax;
+    vtx[5][0] = xmax;
+    vtx[5][1] = ymin;
+    vtx[5][2] = zmax;
+    vtx[6][0] = xmax;
+    vtx[6][1] = ymax;
+    vtx[6][2] = zmax;
+    vtx[7][0] = xmin;
+    vtx[7][1] = ymax;
+    vtx[7][2] = zmax;
+    xmin = 0x3fffffff;
+    xmax = -0x3fffffff;
+    ymin = 0x3fffffff;
+    ymax = -0x3fffffff;
+    v = &vtx[0][0];
+    nZ = 0;
+    for (i = 0; i < 8; i++) {
+        z = v[0] * phd_mxptr[8] + v[1] * phd_mxptr[9] + v[2] * phd_mxptr[10] + phd_mxptr[11];
+        if (z > phd_znear && z < phd_zfar) {
+            z /= phd_persp;
+            nZ++;
+            x = (phd_mxptr[1] * v[1] + phd_mxptr[2] * v[2] + phd_mxptr[0] * v[0] + phd_mxptr[3]) / z;
+            if (x < xmin)
+                xmin = x;
+            if (x > xmax)
+                xmax = x;
+            y = (v[0] * phd_mxptr[4] + v[1] * phd_mxptr[5] + v[2] * phd_mxptr[6] + phd_mxptr[7]) / z;
+            if (y < ymin)
+                ymin = y;
+            if (y > ymax)
+                ymax = y;
+        }
+        v += 3;
+    }
+    xmin += phd_centerx;
+    xmax += phd_centerx;
+    ymin += phd_centery;
+    ymax += phd_centery;
+    if (nZ < 8 && outside > 0)
+        return -1;
+    if (nZ < 8 || xmin < 0 || ymin < 0 || xmax > phd_winxmax || ymax > phd_winymax)
+        return -1;
+    if (!nZ || xmin > phd_right || ymin > phd_bottom || xmax < phd_left || ymax < phd_top)
+        return 0;
+    return 1;
+}
+
 }
