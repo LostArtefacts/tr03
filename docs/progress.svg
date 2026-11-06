@@ -48,17 +48,17 @@
 <g transform="translate(130 1.50)">
 <rect width="317.38" height="12" x="0" y="0" class="named"><title>1261 · 85.32%</title></rect>
 <rect width="1.51" height="12" x="317.38" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="4.78" height="12" x="318.89" y="0" class="nonmatching"><title>19 · 1.29%</title></rect>
-<rect width="48.32" height="12" x="323.68" y="0" class="todo"><title>192 · 12.99%</title></rect>
+<rect width="5.03" height="12" x="318.89" y="0" class="nonmatching"><title>20 · 1.35%</title></rect>
+<rect width="48.07" height="12" x="323.93" y="0" class="todo"><title>191 · 12.92%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">85.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1261</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">19</tspan> · <tspan class="todo">192</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1261</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">20</tspan> · <tspan class="todo">191</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="210.22" height="12" x="0" y="0" class="named"><title>378 KB · 56.51%</title></rect>
 <rect width="0.34" height="12" x="210.22" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="7.71" height="12" x="210.57" y="0" class="nonmatching"><title>14 KB · 2.07%</title></rect>
-<rect width="153.72" height="12" x="218.28" y="0" class="todo"><title>276 KB · 41.32%</title></rect>
+<rect width="7.89" height="12" x="210.57" y="0" class="nonmatching"><title>14 KB · 2.12%</title></rect>
+<rect width="153.54" height="12" x="218.46" y="0" class="todo"><title>276 KB · 41.27%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">56.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">378 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">14 KB</tspan> · <tspan class="todo">276 KB</tspan></text>
@@ -96,7 +96,7 @@
 <rect width="12" height="12" x="405" y="0" class="named"><title>0x004025c0 draw_poly_gtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="0" class="named"><title>0x00402600 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="0" class="named"><title>0x00402640 gen_x (210 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="0" class="todo"><title>0x00402720 gen_xg (326 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="0" class="nonmatching"><title>0x00402720 gen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="0" class="todo"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="0" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
@@ -2068,7 +2068,7 @@
 <rect width="10.83" height="10.66" x="460.58" y="368.60" class="named"><title>0x0043f720 lara_col_dash (329 bytes)</title></rect>
 <rect width="10.83" height="10.59" x="460.58" y="382.26" class="named"><title>0x0043aa90 KillItem (327 bytes)</title></rect>
 <rect width="10.83" height="10.59" x="460.58" y="395.86" class="named"><title>0x0046d1f0 TrainCollision (327 bytes)</title></rect>
-<rect width="10.83" height="10.56" x="460.58" y="409.45" class="todo"><title>0x00402720 gen_xg (326 bytes)</title></rect>
+<rect width="10.83" height="10.56" x="460.58" y="409.45" class="nonmatching"><title>0x00402720 gen_xg (326 bytes)</title></rect>
 <rect width="10.83" height="10.50" x="460.58" y="423.01" class="named"><title>0x0044a1e0 InitialiseNewWeapon (324 bytes)</title></rect>
 <rect width="10.83" height="10.50" x="460.58" y="436.50" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
 <rect width="11.07" height="10.24" x="474.41" y="160.95" class="named"><title>0x00474760 ACMClose (323 bytes)</title></rect>
