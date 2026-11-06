@@ -933,7 +933,7 @@ address,size,name,symbol
 0x00467010,95,InitialiseShiva,_InitialiseShiva
 0x00467070,1796,ShivaControl,_ShivaControl
 0x00467780,180,ShivaDamage,_ShivaDamage
-0x00467840,1200,SoundEffect,_SoundEffect
+0x00467840,1216,SoundEffect,_SoundEffect
 0x00467d00,94,StopSoundEffect,_StopSoundEffect
 0x00467d60,134,SOUND_EndScene,_SOUND_EndScene
 0x00467df0,36,SOUND_Stop,_SOUND_Stop
