@@ -10,6 +10,9 @@ extern int malloc_size;
 extern char *malloc_ptr;
 extern int malloc_free;
 extern int malloc_used;
+extern char *game_malloc_types[];
+extern char exit_message[128];
+void S_ExitSystem(char *message);
 extern void *TLVertexBuffer;
 extern void *TLUnRollBuffer;
 extern float wibble_table[32];
@@ -76,6 +79,23 @@ void init_game_malloc(void)
     malloc_ptr = malloc_buffer;
     malloc_free = malloc_size;
     malloc_used = 0;
+}
+
+void *game_malloc(int size, int type)
+{
+    char *ptr;
+
+    size = (size + 3) & ~3;
+    if (size <= malloc_free) {
+        ptr = malloc_ptr;
+        malloc_free -= size;
+        malloc_used += size;
+        malloc_ptr += size;
+        return ptr;
+    }
+    wsprintf(exit_message, "game_malloc(): OUT OF MEMORY %s %d", game_malloc_types[type], size);
+    S_ExitSystem(exit_message);
+    return NULL;
 }
 
 void game_free(int size, int type)

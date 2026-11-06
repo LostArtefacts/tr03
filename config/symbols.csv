@@ -2058,6 +2058,7 @@ address,size,name,symbol
 0x004cd8fe,2,DumpY,_DumpY
 0x004cd900,2,DumpWidth,_DumpWidth
 0x004cd902,2,DumpHeight,_DumpHeight
+0x004cd908,188,game_malloc_types,_game_malloc_types
 0x004cdc88,4,bLaraOn,_bLaraOn
 0x004cdc8c,4,bRoomOn,_bRoomOn
 0x004cdc90,4,bObjectOn,_bObjectOn

@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="322.25" height="12" x="0" y="0" class="named"><title>1134 · 76.73%</title></rect>
-<rect width="2.84" height="12" x="322.25" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="94.91" height="12" x="325.09" y="0" class="todo"><title>334 · 22.60%</title></rect>
+<rect width="322.53" height="12" x="0" y="0" class="named"><title>1135 · 76.79%</title></rect>
+<rect width="2.84" height="12" x="322.53" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="94.63" height="12" x="325.37" y="0" class="todo"><title>333 · 22.53%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">76.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1134</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">334</tspan></text>
+<text text-anchor="end" x="600" y="7.50">76.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1135</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">333</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.07" height="12" x="0" y="0" class="named"><title>331 KB · 49.54%</title></rect>
-<rect width="3.98" height="12" x="208.07" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.95" height="12" x="212.05" y="0" class="todo"><title>331 KB · 49.51%</title></rect>
+<rect width="208.15" height="12" x="0" y="0" class="named"><title>331 KB · 49.56%</title></rect>
+<rect width="3.98" height="12" x="208.15" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.88" height="12" x="212.12" y="0" class="todo"><title>331 KB · 49.49%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">49.5%</text>
+<text text-anchor="end" x="600" y="24.50">49.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">331 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">331 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1286,7 +1286,7 @@
 <rect width="12" height="12" x="285" y="360" class="todo"><title>0x00485ce0 S_InitialiseSystem (439 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="360" class="named"><title>0x00485ea0 ShutdownGame (177 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="360" class="named"><title>0x00485f60 init_game_malloc (33 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="360" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="360" class="named"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="360" class="named"><title>0x00486010 game_free (52 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="360" class="named"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="360" class="todo"><title>0x00486140 Key (288 bytes)</title></rect>
@@ -2453,7 +2453,7 @@
 <rect width="6.34" height="6.31" x="583.34" y="273.52" class="named"><title>0x00414780 UpdateLOT (114 bytes)</title></rect>
 <rect width="6.34" height="6.31" x="592.68" y="273.52" class="named"><title>0x00430d30 FishNearLara (114 bytes)</title></rect>
 <rect width="6.34" height="6.31" x="602.02" y="273.52" class="named"><title>0x00459df0 ControlBeaconLight (114 bytes)</title></rect>
-<rect width="6.34" height="6.31" x="611.36" y="273.52" class="todo"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
+<rect width="6.34" height="6.31" x="611.36" y="273.52" class="named"><title>0x00485f90 game_malloc (114 bytes)</title></rect>
 <rect width="6.29" height="6.31" x="620.71" y="273.52" class="named"><title>0x0041d210 InitialiseCobra (113 bytes)</title></rect>
 <rect width="6.29" height="6.31" x="629.99" y="273.52" class="named"><title>0x0042e330 DoBloodSplatD (113 bytes)</title></rect>
 <rect width="6.29" height="6.31" x="639.28" y="273.52" class="named"><title>0x004452c0 ready_shotgun (113 bytes)</title></rect>
