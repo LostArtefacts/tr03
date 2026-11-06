@@ -642,4 +642,184 @@ void Func498da0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
+void Func499de0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+{
+    int Width;
+    unsigned short *pDestination;
+    long yline;
+    short subdivcnt;
+    unsigned short a;
+    double fconv;
+
+    a = 255 - FTOL(Gradients->ooz[0]);
+    yline = long(Output) + YTable[pLeft->y];
+
+    while (StepLeft->height--) {
+        Width = pRight->x;
+        Width -= pLeft->x;
+        if (Width > 0) {
+            pDestination = (unsigned short *)yline + pLeft->x;
+            subdivcnt = Width >> 4;
+            Width = Width - (subdivcnt << 4);
+            while (subdivcnt--) {
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 0);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 0) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 1);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 1) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 2);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 2) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 3);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 3) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 4);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 4) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 5);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 5) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 6);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 6) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 7);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 7) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 8);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 8) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 9);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 9) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 10);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 10) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 11);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 11) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 12);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 12) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 13);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 13) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 14);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 14) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 15);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 15) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                pDestination += 16;
+            }
+            for (int n = 0; n < Width; n++) {
+                {
+                    unsigned short pix, tr, tg, tb;
+                    pix = *(pDestination + 0);
+                    tr = (pix >> 3) & 0x1f00;
+                    tg = (pix & 0x7c0) << 2;
+                    tb = (pix & 0x1f) << 8;
+                    *(pDestination + 0) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                }
+                pDestination++;
+            }
+        }
+        yline += bytepitch;
+        StepLeft->x += StepLeft->xstep;
+        StepLeft->y++;
+        StepLeft->ErrorTerm += StepLeft->Numerator;
+        if (StepLeft->ErrorTerm >= StepLeft->Denominator) {
+            StepLeft->x++;
+            StepLeft->ErrorTerm -= StepLeft->Denominator;
+        }
+        StepRight->x += StepRight->xstep;
+        StepRight->y++;
+        StepRight->ErrorTerm += StepRight->Numerator;
+        if (StepRight->ErrorTerm >= StepRight->Denominator) {
+            StepRight->x++;
+            StepRight->ErrorTerm -= StepRight->Denominator;
+        }
+    }
+}
+
 }
