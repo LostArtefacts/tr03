@@ -1420,7 +1420,11 @@ address,size,name,symbol
 0x00497c20,947,DXInitVideoModes,_DXInitVideoModes
 0x00497fe0,1894,DXInitTextures,_DXInitTextures
 0x00498750,266,ScanLinesBlack,_ScanLinesBlack
-0x0049a510,636,Func49a510,
+0x00498860,1338,Func498860,_Func498860
+0x00498da0,4153,Func498da0,_Func498da0
+0x00499de0,1839,Func499de0,_Func499de0
+0x0049a510,636,Func49a510,_Func49a510
+0x0049a790,2769,Func49a790,_Func49a790
 0x0049b270,1556,ScanLinesTAffine,_ScanLinesTAffine
 0x0049b890,2244,ScanLinesT,_ScanLinesT
 0x0049c160,3264,ScanLinesTF,_ScanLinesTF
