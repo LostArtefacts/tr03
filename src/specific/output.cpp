@@ -136,6 +136,20 @@ void S_InitialiseScreen(int type)
         HWR_InitState();
 }
 
+void S_LightRoom(ROOM_INFO *r)
+{
+    sint16 *ptr;
+    int level;
+    int i;
+
+    if (!r->lighting)
+        return;
+    level = light_level[r->lighting];
+    ptr = r->data;
+    for (i = *ptr++; i > 0; i--, ptr += 6)
+        ((unsigned char *)ptr)[2] += (unsigned char)((level * (((unsigned char *)ptr)[3] & 0x1f)) >> 6);
+}
+
 void AnimateTextures(int n)
 {
     static int comp;
