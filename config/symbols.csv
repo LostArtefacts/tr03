@@ -646,7 +646,7 @@ address,size,name,symbol
 0x004432e0,119,lara_col_jumper,_lara_col_jumper
 0x00443360,2218,GetLaraHandAbsPosition,_GetLaraHandAbsPosition
 0x00443c10,131,AddJointPos,_AddJointPos
-0x00443ca0,2557,GetLHAInt,_GetLHAInt
+0x00443ca0,2622,GetLHAInt,_GetLHAInt
 0x004446e0,132,LookUpDown,_LookUpDown
 0x00444770,134,LookLeftRight,_LookLeftRight
 0x00444800,151,ResetLook,_ResetLook
