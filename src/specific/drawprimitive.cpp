@@ -98,4 +98,25 @@ void DrawTriangleFan(D3DTLVERTEX *v, DWORD vcnt)
     }
 }
 
+void DrawTriangleStrip(D3DTLVERTEX *v, DWORD vcnt)
+{
+    int n;
+    D3DTLVERTEX *v1, *v2, *v3;
+
+    v1 = v;
+    v++;
+    v2 = v;
+    v++;
+    v3 = v;
+    v++;
+    Func492cd0(v1, v2, v3);
+    vcnt -= 3;
+    for (n = vcnt; n > 0; n--) {
+        v1 = v2;
+        v2 = v;
+        v++;
+        Func492cd0(v1, v2, v3);
+    }
+}
+
 }
