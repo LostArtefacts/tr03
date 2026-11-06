@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="338.16" height="12" x="0" y="0" class="named"><title>1190 · 80.51%</title></rect>
-<rect width="2.84" height="12" x="338.16" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="79" height="12" x="341" y="0" class="todo"><title>278 · 18.81%</title></rect>
+<rect width="338.44" height="12" x="0" y="0" class="named"><title>1191 · 80.58%</title></rect>
+<rect width="2.84" height="12" x="338.44" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="78.71" height="12" x="341.29" y="0" class="todo"><title>277 · 18.74%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">80.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1190</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">278</tspan></text>
+<text text-anchor="end" x="600" y="7.50">80.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1191</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">277</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="216.22" height="12" x="0" y="0" class="named"><title>344 KB · 51.48%</title></rect>
-<rect width="3.98" height="12" x="216.22" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="199.80" height="12" x="220.20" y="0" class="todo"><title>318 KB · 47.57%</title></rect>
+<rect width="216.69" height="12" x="0" y="0" class="named"><title>345 KB · 51.59%</title></rect>
+<rect width="3.98" height="12" x="216.69" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="199.33" height="12" x="220.67" y="0" class="todo"><title>317 KB · 47.46%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">51.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">344 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">318 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">51.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">345 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">317 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1154,7 +1154,7 @@
 <rect width="12" height="12" x="555" y="315" class="named"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="315" class="named"><title>0x004759d0 S_FadeOutInventory (39 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="315" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="315" class="todo"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="315" class="named"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="315" class="todo"><title>0x00475f60 S_DrawAirBar (604 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="315" class="todo"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="315" class="todo"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
@@ -1772,7 +1772,7 @@
 <rect width="15.77" height="16.81" x="638.04" y="44.81" class="todo"><title>0x00490400 InitDrawPrimitive (755 bytes)</title></rect>
 <rect width="15.73" height="16.81" x="656.81" y="44.81" class="named"><title>0x0045eb20 QuadBikeDraw (753 bytes)</title></rect>
 <rect width="15.62" height="16.81" x="675.54" y="44.81" class="named"><title>0x00422700 xLOS (748 bytes)</title></rect>
-<rect width="15.62" height="16.81" x="694.17" y="44.81" class="todo"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
+<rect width="15.62" height="16.81" x="694.17" y="44.81" class="named"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="15.60" height="16.81" x="712.79" y="44.81" class="named"><title>0x00422410 zLOS (747 bytes)</title></rect>
 <rect width="15.60" height="16.81" x="731.40" y="44.81" class="named"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
 <rect width="16.02" height="16.31" x="346.51" y="64.63" class="named"><title>0x0043ec20 lara_col_all4s (744 bytes)</title></rect>
