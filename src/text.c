@@ -306,6 +306,109 @@ void S_DrawScreenFBox(sint32 sx, sint32 sy, sint32 z, sint32 w, sint32 h, sint32
 
 void draw_border(sint32 x, sint32 y, sint32 z, sint32 w, sint32 h);
 
+void T_DrawThisText(TEXTSTRING *textString)
+{
+    uint8 *string;
+    uint32 letter = 0;
+    int sprite;
+    int hw, hh, hw2, hh2, textheight;
+    sint32 xpos, ypos, zpos;
+    sint32 bxpos, bypos, bwidth = 0, bheight = 0;
+    sint32 pixWidth;
+    uint32 scaleV, scaleH;
+
+    scaleH = GetTextScaleH(textString->scaleH);
+    scaleV = GetTextScaleV(textString->scaleV);
+    textheight = (11 * scaleV) >> 16;
+    if (textString->flags & T_FLASH) {
+        textString->flashCount -= (sint16)camera.number_frames;
+        if (textString->flashCount <= -textString->flashRate)
+            textString->flashCount = textString->flashRate;
+        else if (textString->flashCount < 0)
+            return;
+    }
+    string = (uint8 *)textString->string;
+    xpos = textString->xpos;
+    ypos = textString->ypos;
+    zpos = textString->zpos;
+    pixWidth = T_GetTextWidth(textString);
+    if (textString->flags & T_CENTRE_H)
+        xpos += (GetRenderWidth() - pixWidth) / 2;
+    else if (textString->flags & T_RIGHTALIGN)
+        xpos += GetRenderWidth() - pixWidth;
+    else if (textString->flags & T_RIGHTJUSTIFY)
+        xpos -= pixWidth;
+    if (textString->flags & T_CENTRE_V)
+        ypos += GetRenderHeight() / 2;
+    else if (textString->flags & T_BOTTOMALIGN)
+        ypos += GetRenderHeight();
+    bxpos = xpos - ((2 * scaleH) >> 16) + textString->bgndOffX;
+    bypos = ypos - ((4 * scaleV) >> 16) + textString->bgndOffY - textheight;
+    while (*string) {
+        letter = *(string++);
+        if (letter > 18 && letter < 32)
+            continue;
+        if (letter == 32) {
+            xpos += (textString->wordSpacing * scaleH) >> 16;
+            continue;
+        }
+        if (letter >= 127 && letter <= 129) {
+            xpos += (16 * scaleH) >> 16;
+            continue;
+        }
+        if (letter >= 127)
+            continue;
+        if (letter < 11)
+            sprite = letter + 81;
+        else if (letter <= 18)
+            sprite = letter + 91;
+        else
+            sprite = T_remapASCII[letter - 32];
+        if (letter >= '0' && letter <= '9')
+            xpos += (((12 - T_textSpacing[sprite]) / 2) * scaleH) >> 16;
+        if (xpos > 0 && xpos < GetRenderWidth() && ypos > 0 && ypos < GetRenderHeight())
+            S_DrawScreenSprite2d(xpos, ypos, zpos, scaleH, scaleV, (sint16)(objects[356].mesh_index + sprite), textString->Colour, textString->textflags);
+        if (letter == '(' || letter == ')' || letter == '$' || letter == '~')
+            continue;
+        if (letter >= '0' && letter <= '9') {
+            xpos += ((12 - (12 - T_textSpacing[sprite]) / 2) * scaleH) >> 16;
+        } else {
+            if (scaleH == 0x10000) {
+                if (sprite == 108 || sprite == 109)
+                    xpos += 14;
+                else
+                    xpos += T_textSpacing[sprite] + textString->letterSpacing;
+            } else
+                xpos += (((sint32)T_textSpacing[sprite] + textString->letterSpacing) * scaleH) >> 16;
+        }
+    }
+    if ((textString->flags & T_ADDBACKGROUND) || (textString->flags & T_ADDOUTLINE)) {
+        if (textString->bgndSizeX) {
+            bxpos += pixWidth / 2;
+            pixWidth = textString->bgndSizeX;
+            bxpos -= pixWidth / 2;
+        }
+        bwidth = pixWidth + 4;
+        if (textString->bgndSizeY)
+            bheight = textString->bgndSizeY - 2;
+        else
+            bheight = (16 * scaleV) >> 16;
+    }
+    if (textString->flags & T_ADDBACKGROUND) {
+        if (textString->bgndGour) {
+            hw = bwidth / 2;
+            hh = bheight / 2;
+            hw2 = bwidth - hw;
+            hh2 = bheight - hh;
+            S_DrawScreenFBox(bxpos, bypos, zpos + textString->bgndOffZ + 2, hw + hw2, hh + hh2, textString->bgndColour, (uint16 *)textString->bgndGour, textString->bgndflags);
+        } else {
+            S_DrawScreenFBox(bxpos, bypos, zpos + textString->bgndOffZ + 2, bwidth, bheight, textString->bgndColour, (uint16 *)textString->bgndGour, textString->bgndflags);
+        }
+    }
+    if (textString->flags & T_ADDOUTLINE)
+        draw_border(bxpos, bypos, 0, bwidth, bheight);
+}
+
 void draw_border(sint32 x, sint32 y, sint32 z, sint32 w, sint32 h)
 {
     x -= 2;
