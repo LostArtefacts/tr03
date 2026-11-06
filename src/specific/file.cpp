@@ -68,6 +68,33 @@ BOOL MyReadFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWO
     return ReadFile(hFile, lpBuffer, nNumberOfBytesToRead, lpNumberOfBytesRead, lpOverlapped);
 }
 
+void AdjustTextureUVs(bool reset)
+{
+    sint16 *uv;
+    int num;
+    unsigned char flag;
+    unsigned int i;
+    unsigned char *pFlag;
+    int j;
+
+    if (reset)
+        App.nUVAdd = 0;
+    num = 256 - App.nUVAdd;
+    pFlag = TexturesUVFlag;
+    for (i = 0; i != nTInfos; i++) {
+        uv = (sint16 *)&phdtextinfo[i].u1;
+        flag = *pFlag++;
+        for (j = 0; j < 8; j++) {
+            if (flag & 1)
+                uv[j] -= (sint16)num;
+            else
+                uv[j] += (sint16)num;
+            flag >>= 1;
+        }
+    }
+    App.nUVAdd += num;
+}
+
 int LoadPalette(HANDLE file)
 {
     DWORD read;
