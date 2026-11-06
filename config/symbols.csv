@@ -1068,7 +1068,7 @@ address,size,name,symbol
 0x00475240,54,ACMGetTrackLocation,_ACMGetTrackLocation
 0x00475280,50,ACMSetVolume,_ACMSetVolume
 0x004752d0,18,InitJoystickListGlobal,specific/di.cpp:_$E1
-0x004752f0,14,Func4752f0,
+0x004752f0,14,RegisterJoystickListDestructor,specific/di.cpp:_$E3
 0x00475380,57,Func475380,
 0x004753c0,14,Func4753c0,
 0x00475400,34,DI_Create,_DI_Create

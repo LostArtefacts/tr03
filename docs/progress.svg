@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="284.61" height="12" x="0" y="0" class="named"><title>1230 · 83.22%</title></rect>
-<rect width="0.46" height="12" x="284.61" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="285.08" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="52.76" height="12" x="289.24" y="0" class="todo"><title>228 · 15.43%</title></rect>
+<rect width="284.85" height="12" x="0" y="0" class="named"><title>1231 · 83.29%</title></rect>
+<rect width="0.46" height="12" x="284.85" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="285.31" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="52.53" height="12" x="289.47" y="0" class="todo"><title>227 · 15.36%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">83.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1230</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">228</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1231</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">227</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="190.23" height="12" x="0" y="0" class="named"><title>372 KB · 55.62%</title></rect>
 <rect width="0.15" height="12" x="190.23" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.37" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.59" height="12" x="196.41" y="0" class="todo"><title>285 KB · 42.57%</title></rect>
+<rect width="6.04" height="12" x="190.38" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.58" height="12" x="196.42" y="0" class="todo"><title>285 KB · 42.57%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">285 KB</tspan></text>
@@ -1135,7 +1135,7 @@
 <rect width="12" height="12" x="240" y="315" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="315" class="named"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="315" class="named"><title>0x004752d0 InitJoystickListGlobal (18 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="315" class="todo"><title>0x004752f0 Func4752f0 (14 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="315" class="named"><title>0x004752f0 RegisterJoystickListDestructor (14 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="315" class="todo"><title>0x00475380 Func475380 (57 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="315" class="todo"><title>0x004753c0 Func4753c0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="315" class="named"><title>0x00475400 DI_Create (34 bytes)</title></rect>
@@ -2986,7 +2986,7 @@
 <rect width="2.06" height="2.54" x="717" y="428.31" class="named"><title>0x0048d230 S_SoundStopAllSamples (15 bytes)</title></rect>
 <rect width="2.06" height="2.38" x="717" y="433.86" class="named"><title>0x0042f430 dynamic_light_off (14 bytes)</title></rect>
 <rect width="2.06" height="2.38" x="717" y="439.24" class="named"><title>0x00441a50 lara_as_gymnast (14 bytes)</title></rect>
-<rect width="2.06" height="2.38" x="717" y="444.62" class="todo"><title>0x004752f0 Func4752f0 (14 bytes)</title></rect>
+<rect width="2.06" height="2.38" x="717" y="444.62" class="named"><title>0x004752f0 RegisterJoystickListDestructor (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="722.06" y="417.23" class="todo"><title>0x004753c0 Func4753c0 (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="727.65" y="417.23" class="todo"><title>0x004804f0 Func4804f0 (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="733.24" y="417.23" class="todo"><title>0x004805c0 Func4805c0 (14 bytes)</title></rect>
