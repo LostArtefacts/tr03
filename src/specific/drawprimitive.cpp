@@ -144,6 +144,44 @@ void CalculateEdgeTG(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVER
     }
 }
 
+void Func491400(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+{
+    float oodx, oody;
+    float v1v3y, v2v3y, v1v3x, v2v3x;
+    float c2c3, c1c3;
+
+    v1v3y = v1->sy - v3->sy;
+    v2v3y = v2->sy - v3->sy;
+    v1v3x = v1->sx - v3->sx;
+    v2v3x = v2->sx - v3->sx;
+    oodx = 1.0f / ((v2v3x * v1v3y) - (v1v3x * v2v3y));
+    oody = -oodx;
+    Gradients->r[0] = float(RGBA_GETRED(v1->color));
+    Gradients->g[0] = float(RGBA_GETGREEN(v1->color));
+    Gradients->b[0] = float(RGBA_GETBLUE(v1->color));
+    Gradients->ooz[0] = float(RGBA_GETALPHA(v1->color));
+    Gradients->r[1] = float(RGBA_GETRED(v2->color));
+    Gradients->g[1] = float(RGBA_GETGREEN(v2->color));
+    Gradients->b[1] = float(RGBA_GETBLUE(v2->color));
+    Gradients->ooz[1] = float(RGBA_GETALPHA(v3->color));
+    Gradients->r[2] = float(RGBA_GETRED(v3->color));
+    Gradients->g[2] = float(RGBA_GETGREEN(v3->color));
+    Gradients->b[2] = float(RGBA_GETBLUE(v3->color));
+    Gradients->ooz[2] = float(RGBA_GETALPHA(v3->color));
+    c2c3 = Gradients->r[1] - Gradients->r[2];
+    c1c3 = Gradients->r[0] - Gradients->r[2];
+    Gradients->drx = oodx * ((c2c3 * v1v3y) - (c1c3 * v2v3y));
+    Gradients->dry = oody * ((c2c3 * v1v3x) - (c1c3 * v2v3x));
+    c2c3 = Gradients->g[1] - Gradients->g[2];
+    c1c3 = Gradients->g[0] - Gradients->g[2];
+    Gradients->dgx = oodx * ((c2c3 * v1v3y) - (c1c3 * v2v3y));
+    Gradients->dgy = oody * ((c2c3 * v1v3x) - (c1c3 * v2v3x));
+    c2c3 = Gradients->b[1] - Gradients->b[2];
+    c1c3 = Gradients->b[0] - Gradients->b[2];
+    Gradients->dbx = oodx * ((c2c3 * v1v3y) - (c1c3 * v2v3y));
+    Gradients->dby = oody * ((c2c3 * v1v3x) - (c1c3 * v2v3x));
+}
+
 void CalculateGradientsTG(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     float oodx, oody;
