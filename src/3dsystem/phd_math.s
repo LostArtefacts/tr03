@@ -46,6 +46,10 @@ L4b4c54:
     ret
 @phd_atan@8 endp
 
+@phd_cos@4 proc public
+    add ecx, 04000h
+@phd_cos@4 endp
+
 @phd_sin@4 proc public
     mov eax, ecx
     and eax, 0ffffh
