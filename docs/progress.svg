@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="326.66" height="12" x="0" y="0" class="named"><title>1337 · 89.25%</title></rect>
-<rect width="7.33" height="12" x="326.66" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.84" height="12" x="333.99" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
-<rect width="25.17" height="12" x="340.83" y="0" class="todo"><title>103 · 6.88%</title></rect>
+<rect width="326.91" height="12" x="0" y="0" class="named"><title>1338 · 89.32%</title></rect>
+<rect width="7.33" height="12" x="326.91" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="6.84" height="12" x="334.24" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="24.92" height="12" x="341.08" y="0" class="todo"><title>102 · 6.81%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">91.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1337</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">103</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1338</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">102</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="257.26" height="12" x="0" y="0" class="named"><title>509 KB · 70.29%</title></rect>
-<rect width="33.42" height="12" x="257.26" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="13.97" height="12" x="290.68" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
-<rect width="61.35" height="12" x="304.65" y="0" class="todo"><title>121 KB · 16.76%</title></rect>
+<rect width="257.56" height="12" x="0" y="0" class="named"><title>510 KB · 70.37%</title></rect>
+<rect width="33.42" height="12" x="257.56" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="13.97" height="12" x="290.98" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
+<rect width="61.05" height="12" x="304.95" y="0" class="todo"><title>121 KB · 16.68%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">79.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">509 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">121 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">79.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">510 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">121 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -473,7 +473,7 @@
 <rect width="12" height="12" x="60" y="120" class="named"><title>0x00431c10 FlyEmitterControl (747 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="120" class="named"><title>0x00431f00 AddFootprint (275 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="120" class="named"><title>0x00432020 SetCutsceneTrack (10 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="120" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="120" class="named"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="120" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="120" class="named"><title>0x004322a0 GF_DoLevelSequence (102 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="120" class="named"><title>0x00432310 GF_InterpretSequence (1464 bytes)</title></rect>
@@ -1869,7 +1869,7 @@
 <rect width="13.56" height="14.29" x="537.26" y="82.90" class="named"><title>0x00471bd0 ExplodeTribeBoss (598 bytes)</title></rect>
 <rect width="13.53" height="14.29" x="553.82" y="82.90" class="named"><title>0x004923c0 CalculateEdgeTA (597 bytes)</title></rect>
 <rect width="13.44" height="14.29" x="570.35" y="82.90" class="named"><title>0x00430050 SetupShoal (593 bytes)</title></rect>
-<rect width="13.42" height="14.29" x="586.79" y="82.90" class="todo"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
+<rect width="13.42" height="14.29" x="586.79" y="82.90" class="named"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
 <rect width="13.42" height="14.29" x="603.21" y="82.90" class="named"><title>0x0045c6b0 KeyHoleCollision (592 bytes)</title></rect>
 <rect width="13.40" height="14.29" x="619.64" y="82.90" class="named"><title>0x00451730 ExplodeLondonBoss (591 bytes)</title></rect>
 <rect width="13.38" height="14.29" x="636.03" y="82.90" class="todo"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>

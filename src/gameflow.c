@@ -4,6 +4,113 @@
 extern sint16 *GF_level_sequence_list[];
 extern int title_loaded;
 
+extern char **GF_GameStrings;
+extern char **GF_PCStrings;
+extern sint16 GF_SunsetEnabled;
+extern INVENTORY_ITEM icompass_option;
+extern INVENTORY_ITEM igun_option;
+extern INVENTORY_ITEM iflare_option;
+extern INVENTORY_ITEM ishotgun_option;
+extern INVENTORY_ITEM imagnum_option;
+extern INVENTORY_ITEM iuzi_option;
+extern INVENTORY_ITEM iharpoon_option;
+extern INVENTORY_ITEM im16_option;
+extern INVENTORY_ITEM irocket_option;
+extern INVENTORY_ITEM igrenade_option;
+extern INVENTORY_ITEM igunammo_option;
+extern INVENTORY_ITEM isgunammo_option;
+extern INVENTORY_ITEM imagammo_option;
+extern INVENTORY_ITEM iuziammo_option;
+extern INVENTORY_ITEM iharpoonammo_option;
+extern INVENTORY_ITEM im16ammo_option;
+extern INVENTORY_ITEM irocketammo_option;
+extern INVENTORY_ITEM igrenadeammo_option;
+extern INVENTORY_ITEM imedi_option;
+extern INVENTORY_ITEM ibigmedi_option;
+extern INVENTORY_ITEM ipickup1_option;
+extern INVENTORY_ITEM ipickup2_option;
+extern INVENTORY_ITEM ipuzzle1_option;
+extern INVENTORY_ITEM ipuzzle2_option;
+extern INVENTORY_ITEM ipuzzle3_option;
+extern INVENTORY_ITEM ipuzzle4_option;
+extern INVENTORY_ITEM ikey1_option;
+extern INVENTORY_ITEM ikey2_option;
+extern INVENTORY_ITEM ikey3_option;
+extern INVENTORY_ITEM ikey4_option;
+extern INVENTORY_ITEM ipassport_option;
+extern INVENTORY_ITEM igamma_option;
+extern INVENTORY_ITEM icon1_option;
+extern INVENTORY_ITEM icon2_option;
+extern INVENTORY_ITEM icon3_option;
+extern INVENTORY_ITEM icon4_option;
+extern INVENTORY_ITEM sgcrystal_option;
+extern INVENTORY_ITEM idetail_option;
+extern INVENTORY_ITEM isound_option;
+extern INVENTORY_ITEM icontrol_option;
+extern INVENTORY_ITEM iphoto_option;
+extern REQUEST_INFO Load_Game_Requester;
+extern REQUEST_INFO Level_Select_Requester;
+
+int S_LoadGameFlow(char *name);
+void SetRequesterHeading(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2);
+
+int GF_LoadScriptFile(char *fname)
+{
+    GF_SunsetEnabled = 0;
+    if (!S_LoadGameFlow(fname))
+        return 0;
+
+    gameflow.dozy_cheat_enabled = 1;
+    gameflow.stats_track = 14;
+
+    icompass_option.itemText = GF_GameStrings[35];
+    igun_option.itemText = GF_GameStrings[36];
+    iflare_option.itemText = GF_GameStrings[44];
+    ishotgun_option.itemText = GF_GameStrings[37];
+    imagnum_option.itemText = GF_GameStrings[38];
+    iuzi_option.itemText = GF_GameStrings[39];
+    iharpoon_option.itemText = GF_GameStrings[40];
+    im16_option.itemText = GF_GameStrings[41];
+    irocket_option.itemText = GF_GameStrings[42];
+    igrenade_option.itemText = GF_GameStrings[43];
+    igunammo_option.itemText = GF_GameStrings[45];
+    isgunammo_option.itemText = GF_GameStrings[46];
+    imagammo_option.itemText = GF_GameStrings[47];
+    iuziammo_option.itemText = GF_GameStrings[48];
+    iharpoonammo_option.itemText = GF_GameStrings[49];
+    im16ammo_option.itemText = GF_GameStrings[50];
+    irocketammo_option.itemText = GF_GameStrings[51];
+    igrenadeammo_option.itemText = GF_GameStrings[52];
+
+    imedi_option.itemText = GF_GameStrings[53];
+    ibigmedi_option.itemText = GF_GameStrings[54];
+    ipickup1_option.itemText = GF_GameStrings[55];
+    ipickup2_option.itemText = GF_GameStrings[55];
+    ipuzzle1_option.itemText = GF_GameStrings[56];
+    ipuzzle2_option.itemText = GF_GameStrings[56];
+    ipuzzle3_option.itemText = GF_GameStrings[56];
+    ipuzzle4_option.itemText = GF_GameStrings[56];
+    ikey1_option.itemText = GF_GameStrings[57];
+    ikey2_option.itemText = GF_GameStrings[57];
+    ikey3_option.itemText = GF_GameStrings[57];
+    ikey4_option.itemText = GF_GameStrings[57];
+    ipassport_option.itemText = GF_GameStrings[58];
+    igamma_option.itemText = GF_GameStrings[90];
+
+    icon1_option.itemText = GF_GameStrings[80];
+    icon2_option.itemText = GF_GameStrings[81];
+    icon3_option.itemText = GF_GameStrings[82];
+    icon4_option.itemText = GF_GameStrings[83];
+    sgcrystal_option.itemText = GF_GameStrings[84];
+    idetail_option.itemText = GF_PCStrings[0];
+    isound_option.itemText = GF_PCStrings[2];
+    icontrol_option.itemText = GF_PCStrings[3];
+    iphoto_option.itemText = GF_GameStrings[59];
+    SetRequesterHeading(&Load_Game_Requester, GF_GameStrings[11], 0, NULL, 0);
+    SetRequesterHeading(&Level_Select_Requester, GF_GameStrings[11], 0, NULL, 0);
+    return 1;
+}
+
 sint32 GF_DoFrontEndSequence(void)
 {
     sint32 option;
