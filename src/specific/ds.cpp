@@ -9,6 +9,7 @@ extern LPDIRECTSOUNDBUFFER DS_Buffers[256];
 extern int DS_SampleFrequencies[256];
 extern int DS_SamplesPlaying[32];
 extern LPDIRECTSOUNDBUFFER DS_Samples[32];
+int DS_GetFreeChannel(void);
 
 #define ArraySize(x) (sizeof(x) / sizeof((x)[0]))
 
@@ -31,6 +32,32 @@ void DS_FreeAllSamples(void)
             DS_Buffers[i] = 0;
         }
     }
+}
+
+bool DS_MakeSample(int nSample, LPWAVEFORMATEX pWF, LPVOID pData, DWORD dwLen)
+{
+    DSBUFFERDESC desc;
+    LPVOID pBlock;
+    DWORD dwBlockLength;
+
+    if (!App.DXConfig.sound)
+        return false;
+    if (nSample >= ArraySize(DS_Buffers))
+        return false;
+    desc.dwSize = sizeof(desc);
+    desc.dwFlags = DSBCAPS_STATIC | DSBCAPS_CTRLFREQUENCY | DSBCAPS_CTRLPAN | DSBCAPS_CTRLVOLUME;
+    desc.dwBufferBytes = dwLen;
+    desc.lpwfxFormat = pWF;
+    desc.dwReserved = 0;
+    if (DX_TRY(lpDirectSound->CreateSoundBuffer(&desc, DS_Buffers + nSample, NULL)))
+        return false;
+    if (DX_TRY(DS_Buffers[nSample]->Lock(0, dwLen, &pBlock, &dwBlockLength, NULL, NULL, 0)))
+        return false;
+    memcpy(pBlock, pData, dwBlockLength);
+    if (DX_TRY(DS_Buffers[nSample]->Unlock(pBlock, dwBlockLength, NULL, 0)))
+        return false;
+    DS_SampleFrequencies[nSample] = pWF->nSamplesPerSec;
+    return true;
 }
 
 bool DS_IsChannelPlaying(int nChannel)

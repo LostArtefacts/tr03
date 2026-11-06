@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="318.84" height="12" x="0" y="0" class="named"><title>1122 · 75.91%</title></rect>
-<rect width="2.56" height="12" x="318.84" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="98.61" height="12" x="321.39" y="0" class="todo"><title>347 · 23.48%</title></rect>
+<rect width="319.12" height="12" x="0" y="0" class="named"><title>1123 · 75.98%</title></rect>
+<rect width="2.56" height="12" x="319.12" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="98.32" height="12" x="321.68" y="0" class="todo"><title>346 · 23.41%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">75.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1122</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">347</tspan></text>
+<text text-anchor="end" x="600" y="7.50">76.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1123</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">346</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="205.12" height="12" x="0" y="0" class="named"><title>326 KB · 48.84%</title></rect>
-<rect width="3.89" height="12" x="205.12" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="211" height="12" x="209" y="0" class="todo"><title>336 KB · 50.24%</title></rect>
+<rect width="205.28" height="12" x="0" y="0" class="named"><title>326 KB · 48.88%</title></rect>
+<rect width="3.89" height="12" x="205.28" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="210.83" height="12" x="209.17" y="0" class="todo"><title>335 KB · 50.20%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">48.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">326 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">336 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">48.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">326 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">335 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1183,7 +1183,7 @@
 <rect width="12" height="12" x="240" y="330" class="todo"><title>0x00480580 Func480580 (57 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="330" class="todo"><title>0x004805c0 Func4805c0 (14 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="330" class="named"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="330" class="todo"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="330" class="named"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="330" class="named"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="330" class="todo"><title>0x00480790 DS_StartSample (285 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="330" class="named"><title>0x004808b0 DS_GetFreeChannel (57 bytes)</title></rect>
@@ -2124,7 +2124,7 @@
 <rect width="9.50" height="10.06" x="638.48" y="174.03" class="named"><title>0x00438420 Inv_RemoveItem (272 bytes)</title></rect>
 <rect width="9.46" height="10.06" x="650.97" y="174.03" class="named"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="9.43" height="10.06" x="663.44" y="174.03" class="named"><title>0x00454c00 CanGetOut_minecart (270 bytes)</title></rect>
-<rect width="9.43" height="10.06" x="675.86" y="174.03" class="todo"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
+<rect width="9.43" height="10.06" x="675.86" y="174.03" class="named"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
 <rect width="9.39" height="10.06" x="688.29" y="174.03" class="named"><title>0x0042d9a0 KillEverything (269 bytes)</title></rect>
 <rect width="9.36" height="10.06" x="700.68" y="174.03" class="named"><title>0x00441340 lara_as_compress (268 bytes)</title></rect>
 <rect width="9.36" height="10.06" x="713.04" y="174.03" class="todo"><title>0x00475800 setup_screen_size (268 bytes)</title></rect>
