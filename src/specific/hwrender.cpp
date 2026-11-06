@@ -217,6 +217,90 @@ void HWR_DrawRoutinesNoAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPag
     }
 }
 
+extern D3DTLVERTEX *UnRollBuffer;
+extern void (*DrawRoutine)(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage);
+
+inline void TLVERT_To_TLVERT(D3DTLVERTEX *s, D3DTLVERTEX *d)
+{
+    d->sx = s->sx;
+    d->sy = s->sy;
+    d->sz = s->sz;
+    d->rhw = s->rhw;
+    d->tu = s->tu;
+    d->tv = s->tv;
+    d->color = s->color;
+    d->specular = s->specular;
+}
+
+void HWR_DrawPolyListBF(int num, sint32 *sortptr)
+{
+    sint32 *pSort;
+    sint16 *pInfo;
+    int nSurf;
+    D3DTLVERTEX *pV;
+    int Routine1;
+    int Tpage1;
+    int Routine2;
+    int Tpage2;
+    int nV;
+    int n;
+    int vbcnt;
+
+    dpPrimitiveType = D3DPT_TRIANGLELIST;
+    if (num == 0)
+        return;
+    pSort = (sint32 *)sortptr;
+    vbcnt = 0;
+    pInfo = (sint16 *)(*pSort);
+    Routine1 = *pInfo++;
+    Tpage1 = pInfo[0];
+    nV = pInfo[1];
+    pV = *((D3DTLVERTEX **)(pInfo + 2));
+    for (nSurf = 0; nSurf < num; nSurf++) {
+        pInfo = (sint16 *)(*pSort);
+        Routine2 = *pInfo++;
+        Tpage2 = pInfo[0];
+        nV = pInfo[1];
+        pV = *((D3DTLVERTEX **)(pInfo + 2));
+        if (Routine2 != Routine1 || Tpage1 != Tpage2 || vbcnt > 256) {
+            DrawRoutine(vbcnt, &UnRollBuffer[0], Routine1, Tpage1);
+            vbcnt = 0;
+            Routine1 = Routine2;
+            Tpage1 = Tpage2;
+        }
+        if (Routine1 != 12) {
+            D3DTLVERTEX *pFanStart;
+
+            pFanStart = pV;
+            TLVERT_To_TLVERT(pV, &UnRollBuffer[vbcnt + 0]);
+            pV++;
+            TLVERT_To_TLVERT(pV, &UnRollBuffer[vbcnt + 1]);
+            pV++;
+            TLVERT_To_TLVERT(pV, &UnRollBuffer[vbcnt + 2]);
+            vbcnt += 3;
+            nV -= 3;
+            for (n = nV; n > 0; n--) {
+                TLVERT_To_TLVERT(pFanStart, &UnRollBuffer[vbcnt + 0]);
+                TLVERT_To_TLVERT(pV, &UnRollBuffer[vbcnt + 1]);
+                pV++;
+                TLVERT_To_TLVERT(pV, &UnRollBuffer[vbcnt + 2]);
+                vbcnt += 3;
+            }
+        } else {
+            D3DTLVERTEX *pFanStart;
+
+            pFanStart = pV;
+            TLVERT_To_TLVERT(pV, &UnRollBuffer[vbcnt + 0]);
+            pV++;
+            TLVERT_To_TLVERT(pV, &UnRollBuffer[vbcnt + 1]);
+            vbcnt += 2;
+        }
+        pSort += 3;
+    }
+    if (vbcnt > 0)
+        DrawRoutine(vbcnt, &UnRollBuffer[0], Routine1, Tpage1);
+}
+
 void HWR_LoadTexturePages(int nPages, unsigned char *src, unsigned char *palette)
 {
     int i;

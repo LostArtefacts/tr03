@@ -2425,6 +2425,7 @@ address,size,name,symbol
 0x00633f54,4,level_complete,_level_complete
 0x00633f58,4,save_counter,_save_counter
 0x00633f5c,4,GnGameMode,_GnGameMode
+0x00633f68,4,DrawRoutine,_DrawRoutine
 0x00633f70,128,TPages,_TPages
 0x00633ff0,4,UnRollBuffer,_UnRollBuffer
 0x00633ff4,1,bAlphaTesting,_bAlphaTesting

@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="330.57" height="12" x="0" y="0" class="named"><title>1353 · 90.32%</title></rect>
-<rect width="7.33" height="12" x="330.57" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.09" height="12" x="337.90" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
-<rect width="21.01" height="12" x="344.99" y="0" class="todo"><title>86 · 5.74%</title></rect>
+<rect width="330.82" height="12" x="0" y="0" class="named"><title>1354 · 90.39%</title></rect>
+<rect width="7.33" height="12" x="330.82" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.09" height="12" x="338.15" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
+<rect width="20.77" height="12" x="345.23" y="0" class="todo"><title>85 · 5.67%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">92.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1353</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">86</tspan></text>
+<text text-anchor="end" x="546" y="7.50">92.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1354</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">85</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="264.67" height="12" x="0" y="0" class="named"><title>524 KB · 72.32%</title></rect>
-<rect width="33.42" height="12" x="264.67" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.15" height="12" x="298.09" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
-<rect width="53.76" height="12" x="312.24" y="0" class="todo"><title>106 KB · 14.69%</title></rect>
+<rect width="265.09" height="12" x="0" y="0" class="named"><title>525 KB · 72.43%</title></rect>
+<rect width="33.42" height="12" x="265.09" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.15" height="12" x="298.51" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
+<rect width="53.35" height="12" x="312.65" y="0" class="todo"><title>106 KB · 14.58%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">81.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">524 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">106 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">81.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">525 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">106 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1277,7 +1277,7 @@
 <rect width="12" height="12" x="120" y="360" class="todo"><title>0x00485130 HWR_DrawRoutinesStippledAlpha (512 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="360" class="named"><title>0x00485350 HWR_DrawRoutinesNoAlpha (368 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="360" class="todo"><title>0x004854c0 HWR_DrawPolyList (236 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="360" class="todo"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="360" class="named"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="360" class="named"><title>0x00485900 HWR_LoadTexturePages (179 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="360" class="named"><title>0x004859c0 HWR_FreeTexturePages (68 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="360" class="named"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
@@ -1788,7 +1788,7 @@
 <rect width="15.93" height="16.90" x="581.86" y="45.24" class="named"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
 <rect width="15.83" height="16.90" x="600.79" y="45.24" class="todo"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
 <rect width="15.75" height="16.90" x="619.62" y="45.24" class="named"><title>0x0041eda0 ItemPushLara (822 bytes)</title></rect>
-<rect width="15.74" height="16.90" x="638.38" y="45.24" class="todo"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
+<rect width="15.74" height="16.90" x="638.38" y="45.24" class="named"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
 <rect width="15.62" height="16.90" x="657.11" y="45.24" class="named"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
 <rect width="15.60" height="16.90" x="675.73" y="45.24" class="named"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="15.56" height="16.90" x="694.33" y="45.24" class="named"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
