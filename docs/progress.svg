@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="319.52" height="12" x="0" y="0" class="named"><title>1306 · 87.30%</title></rect>
-<rect width="3.91" height="12" x="319.52" y="0" class="decompiled"><title>16 · 1.07%</title></rect>
-<rect width="5.63" height="12" x="323.43" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="36.94" height="12" x="329.06" y="0" class="todo"><title>151 · 10.09%</title></rect>
+<rect width="319.76" height="12" x="0" y="0" class="named"><title>1307 · 87.37%</title></rect>
+<rect width="3.91" height="12" x="319.76" y="0" class="decompiled"><title>16 · 1.07%</title></rect>
+<rect width="5.63" height="12" x="323.68" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="36.70" height="12" x="329.30" y="0" class="todo"><title>150 · 10.03%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">88.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1306</tspan> · <tspan class="decompiled">16</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">151</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1307</tspan> · <tspan class="decompiled">16</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">150</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="237.98" height="12" x="0" y="0" class="named"><title>470 KB · 65.02%</title></rect>
-<rect width="30.21" height="12" x="237.98" y="0" class="decompiled"><title>60 KB · 8.25%</title></rect>
-<rect width="9.07" height="12" x="268.18" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="88.74" height="12" x="277.26" y="0" class="todo"><title>175 KB · 24.25%</title></rect>
+<rect width="238.40" height="12" x="0" y="0" class="named"><title>471 KB · 65.14%</title></rect>
+<rect width="30.21" height="12" x="238.40" y="0" class="decompiled"><title>60 KB · 8.25%</title></rect>
+<rect width="9.07" height="12" x="268.61" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="88.32" height="12" x="277.68" y="0" class="todo"><title>174 KB · 24.13%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">73.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">470 KB</tspan> · <tspan class="decompiled">60 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">175 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">73.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">471 KB</tspan> · <tspan class="decompiled">60 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">174 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1448,7 +1448,7 @@
 <rect width="12" height="12" x="435" y="405" class="named"><title>0x004920a0 CalculateEdgeBlack (384 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="405" class="named"><title>0x00492220 CalculateGradientsTFA (410 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="405" class="todo"><title>0x004923c0 CalculateEdgeTA (597 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="405" class="todo"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="405" class="named"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="405" class="todo"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="405" class="todo"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="405" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
@@ -1777,7 +1777,7 @@
 <rect width="16.35" height="16.94" x="409.56" y="45.31" class="named"><title>0x0045c900 PuzzleHoleCollision (852 bytes)</title></rect>
 <rect width="16.21" height="16.94" x="428.91" y="45.31" class="named"><title>0x00411100 BigGunControl (845 bytes)</title></rect>
 <rect width="16.20" height="16.94" x="448.12" y="45.31" class="named"><title>0x004239a0 DiverControl (844 bytes)</title></rect>
-<rect width="16.14" height="16.94" x="467.32" y="45.31" class="todo"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
+<rect width="16.14" height="16.94" x="467.32" y="45.31" class="named"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
 <rect width="16.12" height="16.94" x="486.45" y="45.31" class="todo"><title>0x00493920 MMXDrawLine (840 bytes)</title></rect>
 <rect width="16.06" height="16.94" x="505.57" y="45.31" class="named"><title>0x004107a0 AutogunControl (837 bytes)</title></rect>
 <rect width="16.06" height="16.94" x="524.63" y="45.31" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
