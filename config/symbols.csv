@@ -644,7 +644,7 @@ address,size,name,symbol
 0x004430c0,452,lara_col_wade,_lara_col_wade
 0x00443290,73,lara_default_col,_lara_default_col
 0x004432e0,119,lara_col_jumper,_lara_col_jumper
-0x00443360,2147,GetLaraHandAbsPosition,_GetLaraHandAbsPosition
+0x00443360,2218,GetLaraHandAbsPosition,_GetLaraHandAbsPosition
 0x00443c10,131,AddJointPos,_AddJointPos
 0x00443ca0,2557,GetLHAInt,_GetLHAInt
 0x004446e0,132,LookUpDown,_LookUpDown
