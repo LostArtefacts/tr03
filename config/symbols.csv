@@ -1515,7 +1515,7 @@ address,size,name,symbol
 0x004b5e40,11,abs,_abs
 0x004b5e50,61,printf,_printf
 0x004b5e90,104,sprintf,_sprintf
-0x004b5f00,56,_strncmp,
+0x004b5f00,56,strncmp,_strncmp
 0x004b5f40,316,fread,_fread
 0x004b6080,35,Func4b6080,
 0x004b60b0,21,fopen,_fopen
@@ -1897,6 +1897,14 @@ address,size,name,symbol
 0x004c5834,4,overlay_flag,_overlay_flag
 0x004c5868,16,hybrid_bite_left,_hybrid_bite_left
 0x004c5878,16,hybrid_bite_right,_hybrid_bite_right
+0x004c5890,32,req_bgnd_gour1,_req_bgnd_gour1
+0x004c58b0,24,req_bgnd_gour2,_req_bgnd_gour2
+0x004c58c8,32,req_main_gour1,_req_main_gour1
+0x004c58e8,24,req_main_gour2,_req_main_gour2
+0x004c5900,32,req_sel_gour1,_req_sel_gour1
+0x004c5920,24,req_sel_gour2,_req_sel_gour2
+0x004c5938,32,req_unsel_gour1,_req_unsel_gour1
+0x004c5958,20,req_unsel_gour2,_req_unsel_gour2
 0x004c5aa8,198,is_sound_muslevel,_is_sound_muslevel
 0x004c5b70,198,is_sound_sfxlevel,_is_sound_sfxlevel
 0x004c5c38,198,is_sound_muslevellow,_is_sound_muslevellow
