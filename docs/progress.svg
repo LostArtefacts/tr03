@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="325.69" height="12" x="0" y="0" class="named"><title>1333 · 88.99%</title></rect>
 <rect width="7.33" height="12" x="325.69" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.35" height="12" x="333.02" y="0" class="nonmatching"><title>26 · 1.74%</title></rect>
-<rect width="26.63" height="12" x="339.37" y="0" class="todo"><title>109 · 7.28%</title></rect>
+<rect width="6.60" height="12" x="333.02" y="0" class="nonmatching"><title>27 · 1.80%</title></rect>
+<rect width="26.39" height="12" x="339.61" y="0" class="todo"><title>108 · 7.21%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">91.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1333</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">26</tspan> · <tspan class="todo">109</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1333</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">27</tspan> · <tspan class="todo">108</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="251.33" height="12" x="0" y="0" class="named"><title>498 KB · 68.67%</title></rect>
 <rect width="33.43" height="12" x="251.33" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="11.42" height="12" x="284.76" y="0" class="nonmatching"><title>23 KB · 3.12%</title></rect>
-<rect width="69.83" height="12" x="296.17" y="0" class="todo"><title>138 KB · 19.08%</title></rect>
+<rect width="12.52" height="12" x="284.76" y="0" class="nonmatching"><title>25 KB · 3.42%</title></rect>
+<rect width="68.73" height="12" x="297.27" y="0" class="todo"><title>136 KB · 18.78%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">77.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">498 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">23 KB</tspan> · <tspan class="todo">138 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">498 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">25 KB</tspan> · <tspan class="todo">136 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1174,7 +1174,7 @@
 <rect width="12" height="12" x="75" y="330" class="todo"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="330" class="todo"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="todo"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="330" class="todo"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="todo"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="todo"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="todo"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
@@ -1640,7 +1640,7 @@
 <rect width="26.31" height="27.09" x="197.71" y="213.38" class="named"><title>0x0043cc00 KayakUserInput (2200 bytes)</title></rect>
 <rect width="26.31" height="26.93" x="197.71" y="243.47" class="todo"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="26.31" height="26.82" x="197.71" y="273.40" class="nonmatching"><title>0x00479c20 DrawLondonBossShield (2178 bytes)</title></rect>
-<rect width="26.31" height="26.82" x="197.71" y="303.22" class="todo"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
+<rect width="26.31" height="26.82" x="197.71" y="303.22" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="26.31" height="26.82" x="197.71" y="333.04" class="todo"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
 <rect width="26.31" height="26.49" x="197.71" y="362.86" class="named"><title>0x0041743c MoveCamera (2151 bytes)</title></rect>
 <rect width="26.31" height="25.87" x="197.71" y="392.34" class="todo"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
