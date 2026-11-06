@@ -180,6 +180,33 @@ int GETG(int rgb)
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
 void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
 
+void HWI_InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl)
+{
+    long zv;
+
+    if (App.lpZBuffer) {
+        HWI_InsertGT4_Poly(v1, v2, v3, v4, pTex, nSortType, dbl);
+        return;
+    }
+    if (nPolyType != 3 && nPolyType != 4) {
+        HWI_InsertGT4_Poly(v1, v2, v3, v4, pTex, nSortType, dbl);
+        return;
+    }
+    zv = (long)v1->zv;
+    if (zv < v2->zv)
+        zv = (long)v2->zv;
+    if (zv < v3->zv)
+        zv = (long)v3->zv;
+    if (zv < v4->zv)
+        zv = (long)v4->zv;
+    if (zv < 0x1f40000)
+        SubdivideGT4(v1, v2, v3, v4, pTex, nSortType, dbl, 2);
+    else if (zv < 0x36b0000)
+        SubdivideGT4(v1, v2, v3, v4, pTex, nSortType, dbl, 1);
+    else
+        HWI_InsertGT4_Poly(v1, v2, v3, v4, pTex, nSortType, dbl);
+}
+
 extern PHD_VBUF vbuf[];
 extern PHDTEXTURESTRUCT phdtextinfo[];
 
