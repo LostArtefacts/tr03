@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="343.56" height="12" x="0" y="0" class="named"><title>1209 · 81.80%</title></rect>
-<rect width="4.26" height="12" x="343.56" y="0" class="nonmatching"><title>15 · 1.01%</title></rect>
-<rect width="72.18" height="12" x="347.82" y="0" class="todo"><title>254 · 17.19%</title></rect>
+<rect width="343.84" height="12" x="0" y="0" class="named"><title>1210 · 81.87%</title></rect>
+<rect width="4.26" height="12" x="343.84" y="0" class="nonmatching"><title>15 · 1.01%</title></rect>
+<rect width="71.89" height="12" x="348.11" y="0" class="todo"><title>253 · 17.12%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">81.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1209</tspan> · <tspan class="nonmatching">15</tspan> · <tspan class="todo">254</tspan></text>
+<text text-anchor="end" x="600" y="7.50">81.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1210</tspan> · <tspan class="nonmatching">15</tspan> · <tspan class="todo">253</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="223.48" height="12" x="0" y="0" class="named"><title>355 KB · 53.21%</title></rect>
-<rect width="5.55" height="12" x="223.48" y="0" class="nonmatching"><title>9 KB · 1.32%</title></rect>
-<rect width="190.97" height="12" x="229.03" y="0" class="todo"><title>304 KB · 45.47%</title></rect>
+<rect width="225.26" height="12" x="0" y="0" class="named"><title>358 KB · 53.63%</title></rect>
+<rect width="5.55" height="12" x="225.26" y="0" class="nonmatching"><title>9 KB · 1.32%</title></rect>
+<rect width="189.19" height="12" x="230.81" y="0" class="todo"><title>301 KB · 45.04%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">53.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">355 KB</tspan> · <tspan class="nonmatching">9 KB</tspan> · <tspan class="todo">304 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">53.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">358 KB</tspan> · <tspan class="nonmatching">9 KB</tspan> · <tspan class="todo">301 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -129,7 +129,7 @@
 <rect width="12" height="12" x="180" y="15" class="todo"><title>0x0040a690 HWI_InsertTransQuad_Sorted (437 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="15" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="15" class="named"><title>0x0040aa00 RoomZedClipper (472 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="15" class="todo"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="15" class="named"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="15" class="todo"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="15" class="todo"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="todo"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
@@ -1578,7 +1578,7 @@
 <rect width="33.68" height="30.78" x="93.05" y="253.81" class="named"><title>0x00459e70 OilRedControl (2952 bytes)</title></rect>
 <rect width="33.68" height="30.61" x="93.05" y="287.59" class="named"><title>0x0045d050 PrisonerControl (2936 bytes)</title></rect>
 <rect width="33.68" height="30.11" x="93.05" y="321.20" class="named"><title>0x004523c0 LondSecControl (2888 bytes)</title></rect>
-<rect width="33.68" height="29.46" x="93.05" y="354.31" class="todo"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
+<rect width="33.68" height="29.46" x="93.05" y="354.31" class="named"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
 <rect width="33.68" height="28.64" x="93.05" y="386.77" class="todo"><title>0x00433810 HairControl (2748 bytes)</title></rect>
 <rect width="33.68" height="28.59" x="93.05" y="418.41" class="todo"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
 <rect width="29.95" height="32.16" x="129.73" y="0" class="todo"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
