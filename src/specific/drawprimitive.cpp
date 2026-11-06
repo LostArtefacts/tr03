@@ -1295,4 +1295,144 @@ __declspec(naked) void DrawSpansGouraud(void)
         ret
     }
 }
+
+extern long Var6ca300;
+
+__declspec(naked) void Func4955f0(void)
+{
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [Var6ca4d0]
+        cmp esi, dword ptr [Var6ca248]
+        je L13
+        push ebp
+        mov edi, dword ptr [Var6ca2d0]
+        mov eax, dword ptr [Var6ca460]
+        imul eax, dword ptr [Var6ca20c]
+        add edi, eax
+        mov ecx, dword ptr [Var6ce4e0]
+        mov eax, 0xff0000
+        shl eax, cl
+        and eax, 0xff0000
+        mov dword ptr [Var6ca300], eax
+        mov dword ptr [L7 + 2], eax
+        mov dword ptr [L8 + 2], eax
+        mov al, cl
+        add al, 0x8
+        add al, cl
+        mov byte ptr [L10 + 2], al
+        mov byte ptr [L2 + 2], al
+        mov al, cl
+        add al, 0x10
+        mov byte ptr [L11 + 2], al
+        mov byte ptr [L3 + 2], al
+        mov ebx, dword ptr [Var6ca4c8]
+        mov eax, dword ptr [Var6ca2b0]
+        mov edx, dword ptr [Var6ce4d8]
+        add edx, dword ptr [ecx*4+Var4ceb80]
+        mov dword ptr [L5 + 2], ebx
+        mov dword ptr [L9 + 2], eax
+        mov dword ptr [L6 + 4], edx
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L1:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esi+0x4]
+        shl ebx, 0x2
+        push edi
+        add edi, ebx
+        or eax, eax
+        jle L12
+        movq mm0, qword ptr [esi+0x18]
+        movq mm1, qword ptr [Var6ca338]
+        push ebx
+        push ecx
+        push esi
+        mov ebx, dword ptr [esi+0x8]
+        mov ecx, dword ptr [esi+0x10]
+        mov edx, ecx
+        mov ebp, ebx
+        and edx, dword ptr [Var6ca300]
+        and ebp, dword ptr [Var6ca300]
+        pxor mm5, mm5
+    L2:
+        shr edx, 0x8
+    L3:
+        shr ebp, 0x10
+        add ecx, dword ptr [Var6ca2b0]
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L4:
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc6
+        or edx, ebp
+        psrlw mm6, 0x8
+    L5:
+        add ebx, 0x12345678
+    L6:
+        movd mm7, dword ptr [edx*4+0x12345678]
+        punpcklbw mm7, mm5
+        mov ebp, ebx
+        pmullw mm7, mm6
+        mov edx, ecx
+        movd mm4, dword ptr [edi]
+    L7:
+        and edx, 0xff0000
+    L8:
+        and ebp, 0xff0000
+        psrlw mm7, 0x8
+    L9:
+        add ecx, 0x12345678
+    L10:
+        shr edx, 0x8
+        packuswb mm7, mm7
+    L11:
+        shr ebp, 0x10
+        paddusb mm7, mm4
+        paddw mm0, mm1
+        dec eax
+        movd dword ptr [edi], mm7
+        lea edi, [edi+0x4]
+        jne L4
+        pop esi
+        pop ebx
+        pop ecx
+    L12:
+        pop edi
+        add edi, dword ptr [Var6ca20c]
+        add esi, 0x20
+        cmp dword ptr [Var6ca248], esi
+        jne L1
+        emms
+        pop ebp
+    L13:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
 }
