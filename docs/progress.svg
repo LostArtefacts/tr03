@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="286.70" height="12" x="0" y="0" class="named"><title>1239 · 83.83%</title></rect>
-<rect width="0.46" height="12" x="286.70" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="287.16" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="50.68" height="12" x="291.32" y="0" class="todo"><title>219 · 14.82%</title></rect>
+<rect width="286.93" height="12" x="0" y="0" class="named"><title>1240 · 83.90%</title></rect>
+<rect width="0.46" height="12" x="286.93" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="287.39" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="50.44" height="12" x="291.56" y="0" class="todo"><title>218 · 14.75%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">84.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1239</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">219</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1240</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">218</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.52" height="12" x="0" y="0" class="named"><title>372 KB · 55.71%</title></rect>
-<rect width="0.15" height="12" x="190.52" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.66" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.30" height="12" x="196.70" y="0" class="todo"><title>284 KB · 42.49%</title></rect>
+<rect width="190.53" height="12" x="0" y="0" class="named"><title>373 KB · 55.71%</title></rect>
+<rect width="0.15" height="12" x="190.53" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="190.68" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.28" height="12" x="196.72" y="0" class="todo"><title>284 KB · 42.48%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">55.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">55.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">373 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1147,7 +1147,7 @@
 <rect width="12" height="12" x="420" y="315" class="named"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="315" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="315" class="named"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="315" class="todo"><title>0x00475700 Func475700 (31 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="315" class="named"><title>0x00475700 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="315" class="named"><title>0x00475720 IncreaseScreenSize (98 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="315" class="named"><title>0x00475790 DecreaseScreenSize (98 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="315" class="named"><title>0x00475800 setup_screen_size (268 bytes)</title></rect>
@@ -2888,7 +2888,7 @@
 <rect width="3.14" height="3.46" x="719.32" y="381.70" class="named"><title>0x00432280 GF_DoFrontEndSequence (31 bytes)</title></rect>
 <rect width="3.14" height="3.46" x="725.45" y="381.70" class="named"><title>0x0044d880 ControlLaraExtra (31 bytes)</title></rect>
 <rect width="3.14" height="3.46" x="731.59" y="381.70" class="named"><title>0x0044f810 LaserControl (31 bytes)</title></rect>
-<rect width="3.14" height="3.46" x="737.73" y="381.70" class="todo"><title>0x00475700 Func475700 (31 bytes)</title></rect>
+<rect width="3.14" height="3.46" x="737.73" y="381.70" class="named"><title>0x00475700 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="3.14" height="3.46" x="743.86" y="381.70" class="named"><title>0x00484a20 HWR_ResetColorKey (31 bytes)</title></rect>
 <rect width="3.33" height="3.27" x="681.78" y="388.16" class="named"><title>0x0048d240 S_SoundSampleIsPlaying (31 bytes)</title></rect>
 <rect width="3.33" height="3.27" x="681.78" y="394.43" class="named"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>

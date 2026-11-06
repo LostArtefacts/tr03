@@ -1080,7 +1080,7 @@ address,size,name,symbol
 0x004756b0,3,DI_StartJoystick,_DI_StartJoystick
 0x004756c0,45,DI_Start,_DI_Start
 0x004756f0,15,DI_Finish,_DI_Finish
-0x00475700,31,Func475700,
+0x00475700,31,FlaggedStringCreate,??0STRING_FLAGGED@@QAE@H@Z
 0x00475720,98,IncreaseScreenSize,_IncreaseScreenSize
 0x00475790,98,DecreaseScreenSize,_DecreaseScreenSize
 0x00475800,268,setup_screen_size,_setup_screen_size
