@@ -179,7 +179,7 @@ address,size,name,symbol
 0x0041d0b0,350,TriggerElectricSparks_cleaner,_TriggerElectricSparks_cleaner
 0x0041d210,113,InitialiseCobra,_InitialiseCobra
 0x0041d290,624,CobraControl,_CobraControl
-0x0041d500,3061,GetCollisionInfo,_GetCollisionInfo
+0x0041d500,3128,GetCollisionInfo,_GetCollisionInfo
 0x0041e140,47,FindGridShift,_FindGridShift
 0x0041e170,1004,CollideStaticObjects,_CollideStaticObjects
 0x0041e560,200,GetNearByRooms,_GetNearByRooms
@@ -2695,6 +2695,8 @@ address,size,name,symbol
 0x006e2ffa,2,FXType,_FXType
 0x006e2ffc,2,CarcassItem,_CarcassItem
 0x006e2ffe,2,IsRoomOutsideNo,_IsRoomOutsideNo
+0x006e3000,4,xfront,_xfront
+0x006e3004,4,zfront,_zfront
 0x006e3008,2,cine_loaded,_cine_loaded
 0x006e300a,2,num_cine_frames,_num_cine_frames
 0x006e300c,4,cine,_cine
