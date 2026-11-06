@@ -940,4 +940,278 @@ void Func49a510(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
+void Func49a790(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+{
+    int Width;
+    unsigned short *pDestination;
+    long yline;
+    short subdivcnt;
+    long redleft, greenleft, blueleft;
+    long dr, dg, db;
+
+    yline = long(Output) + YTable[pLeft->y];
+    dr = pLeft->rxtraf;
+    dg = pLeft->gxtraf;
+    db = pLeft->bxtraf;
+
+    while (StepLeft->height--) {
+        Width = pRight->x;
+        Width -= pLeft->x;
+        if (Width > 0) {
+            pDestination = (unsigned short *)yline + pLeft->x;
+            redleft = pLeft->rf;
+            greenleft = pLeft->gf;
+            blueleft = pLeft->bf;
+            subdivcnt = Width >> 4;
+            Width = Width - (subdivcnt << 4);
+            while (subdivcnt--) {
+                if (pLeft->y & 1) {
+                    if (!((long)(pDestination + 0) >> 1) & 1) {
+                        *(pDestination + 0) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 1) >> 1) & 1) {
+                        *(pDestination + 1) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 2) >> 1) & 1) {
+                        *(pDestination + 2) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 3) >> 1) & 1) {
+                        *(pDestination + 3) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 4) >> 1) & 1) {
+                        *(pDestination + 4) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 5) >> 1) & 1) {
+                        *(pDestination + 5) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 6) >> 1) & 1) {
+                        *(pDestination + 6) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 7) >> 1) & 1) {
+                        *(pDestination + 7) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 8) >> 1) & 1) {
+                        *(pDestination + 8) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 9) >> 1) & 1) {
+                        *(pDestination + 9) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 10) >> 1) & 1) {
+                        *(pDestination + 10) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 11) >> 1) & 1) {
+                        *(pDestination + 11) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 12) >> 1) & 1) {
+                        *(pDestination + 12) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 13) >> 1) & 1) {
+                        *(pDestination + 13) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 14) >> 1) & 1) {
+                        *(pDestination + 14) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if (!((long)(pDestination + 15) >> 1) & 1) {
+                        *(pDestination + 15) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                } else {
+                    if ((long)(pDestination + 0) & 2) {
+                        *(pDestination + 0) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 1) & 2) {
+                        *(pDestination + 1) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 2) & 2) {
+                        *(pDestination + 2) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 3) & 2) {
+                        *(pDestination + 3) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 4) & 2) {
+                        *(pDestination + 4) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 5) & 2) {
+                        *(pDestination + 5) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 6) & 2) {
+                        *(pDestination + 6) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 7) & 2) {
+                        *(pDestination + 7) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 8) & 2) {
+                        *(pDestination + 8) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 9) & 2) {
+                        *(pDestination + 9) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 10) & 2) {
+                        *(pDestination + 10) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 11) & 2) {
+                        *(pDestination + 11) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 12) & 2) {
+                        *(pDestination + 12) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 13) & 2) {
+                        *(pDestination + 13) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 14) & 2) {
+                        *(pDestination + 14) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    if ((long)(pDestination + 15) & 2) {
+                        *(pDestination + 15) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                }
+                pDestination += 16;
+            }
+            if (pLeft->y & 1) {
+                for (int n = 0; n < Width; n++) {
+                    if (!((long)(pDestination + 0) >> 1) & 1) {
+                        *(pDestination + 0) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    pDestination++;
+                }
+            } else {
+                for (int n = 0; n < Width; n++) {
+                    if ((long)(pDestination + 0) & 2) {
+                        *(pDestination + 0) = ((redleft >> 8) & 0xf81f | greenleft >> 13) & 0xffe0 | blueleft >> 19;
+                    }
+                    redleft += dr;
+                    greenleft += dg;
+                    blueleft += db;
+                    pDestination++;
+                }
+            }
+        }
+        yline += bytepitch;
+        StepLeft->x += StepLeft->xstep;
+        StepLeft->y++;
+        StepLeft->rf += StepLeft->rstepf;
+        StepLeft->gf += StepLeft->gstepf;
+        StepLeft->bf += StepLeft->bstepf;
+        StepLeft->ErrorTerm += StepLeft->Numerator;
+        if (StepLeft->ErrorTerm >= StepLeft->Denominator) {
+            StepLeft->x++;
+            StepLeft->ErrorTerm -= StepLeft->Denominator;
+            StepLeft->rf += StepLeft->rxtraf;
+            StepLeft->gf += StepLeft->gxtraf;
+            StepLeft->bf += StepLeft->bxtraf;
+        }
+        StepRight->x += StepRight->xstep;
+        StepRight->y++;
+        StepRight->rf += StepRight->rstepf;
+        StepRight->gf += StepRight->gstepf;
+        StepRight->bf += StepRight->bstepf;
+        StepRight->ErrorTerm += StepRight->Numerator;
+        if (StepRight->ErrorTerm >= StepRight->Denominator) {
+            StepRight->x++;
+            StepRight->ErrorTerm -= StepRight->Denominator;
+            StepRight->rf += StepRight->rxtraf;
+            StepRight->gf += StepRight->gxtraf;
+            StepRight->bf += StepRight->bxtraf;
+        }
+    }
+}
+
 }
