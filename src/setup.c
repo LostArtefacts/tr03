@@ -1352,3 +1352,595 @@ void BaddyObjects(void)
         obj->hit_points = 0;
     }
 }
+
+void ControlFireHead(sint16 item_number);
+void InitialiseFireHead(sint16 item_number);
+void ControlTonyFireBall(sint16 item_number);
+void ControlClawmutePlasmaBall(sint16 item_number);
+void ControlWillbossPlasmaBall(sint16 item_number);
+void ControlRotateyThing(sint16 item_number);
+void ControlLaserBolts(sint16 item_number);
+void S_DrawLaserBolts(ITEM_INFO *item);
+void ControlLondBossPlasmaBall(sint16 item_number);
+void ControlFusebox(sint16 item_number);
+void ControlRocket(sint16 item_number);
+void ControlGrenade(sint16 item_number);
+void ControlHarpoonBolt(sint16 item_number);
+void ControlMissile(sint16 item_number);
+void KayakInitialise(sint16 item_number);
+void KayakDraw(ITEM_INFO *item);
+void KayakCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void InitialiseBoat(sint16 item_number);
+void BoatControl(sint16 item_number);
+void BoatCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DrawBoat(ITEM_INFO *item);
+void InitialiseQuadBike(sint16 item_number);
+void QuadBikeCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void QuadBikeDraw(ITEM_INFO *item);
+void MineCartInitialise(sint16 item_number);
+void MineCartCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void BigGunInitialise(sint16 item_number);
+void BigGunCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void BigGunDraw(ITEM_INFO *item);
+void SubInitialise(sint16 item_number);
+void SubEffects(sint16 item_number);
+void SubCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void SubDraw(ITEM_INFO *item);
+void TrainControl(sint16 item_number);
+void TrainCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void FlareControl(sint16 item_number);
+void DrawFlareInAir(ITEM_INFO *item);
+void InitialiseWindow(sint16 item_number);
+void WindowControl(sint16 item_number);
+void CarcassControl(sint16 item_number);
+void InitialiseLift(sint16 item_number);
+void LiftControl(sint16 item_number);
+void LiftFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void LiftCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void S_DrawFish(ITEM_INFO *item);
+void ControlFish(sint16 item_number);
+void BatEmitterControl(sint16 item_number);
+void ControlElectricFence(sint16 item_number);
+void ControlStrobeLight(sint16 item_number);
+void ControlPulseLight(sint16 item_number);
+void ControlOnOffLight(sint16 item_number);
+void ControlElectricalLight(sint16 item_number);
+void ControlBeaconLight(sint16 item_number);
+void BridgeFlatFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeFlatCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt1Floor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt1Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt2Floor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void BridgeTilt2Ceiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void DrawBridgeCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DrawBridgeFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void DrawBridgeCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void SwitchControl(sint16 item_number);
+void SwitchCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void SwitchCollision2(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void InitialiseDoor(sint16 item_number);
+void DoorControl(sint16 item_number);
+void TrapDoorControl(sint16 item_number);
+void TrapDoorFloor(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void TrapDoorCeiling(ITEM_INFO *item, sint32 x, sint32 y, sint32 z, sint32 *height);
+void AnimatingPickUp(sint16 item_number);
+void KeyHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DetonatorCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void DetonatorControl(sint16 item_number);
+void ControlAnimating_1_4(sint16 item_number);
+void PuzzleHoleCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll);
+void ControlSmokeEmitter(sint16 item_number);
+void ControlGhostGasEmitter(sint16 item_number);
+void ControlColouredLights(sint16 item_number);
+void ControlBubble1(sint16 item_number);
+void ControlFlameThrower(sint16 item_number);
+void WaterFall(sint16 item_number);
+void LaserControl(sint16 item_number);
+void S_DrawLaser(ITEM_INFO *item);
+void ControlBodyPart(sint16 item_number);
+void ControlClockChimes(sint16 item_number);
+void FinalLevelCounter(sint16 item_number);
+void ControlCutShotgun(sint16 item_number);
+void EarthQuake(sint16 item_number);
+void ControlGunShell(sint16 item_number);
+void InitialiseGenPlayer(sint16 item_num);
+void ControlCinematicPlayer(sint16 item_num);
+
+void ObjectObjects(void)
+{
+    OBJECT_INFO *obj;
+    long lp;
+
+    objects[304].draw_routine = DrawDummyItem;
+
+    obj = &objects[282];
+    obj->control = ControlFireHead;
+    obj->collision = ObjectCollision;
+    obj->initialise = InitialiseFireHead;
+    obj->save_flags = obj->save_anim = obj->save_hitpoints = 1;
+
+    obj = &objects[283];
+    obj->control = ControlTonyFireBall;
+    obj->draw_routine = DrawDummyItem;
+
+    obj = &objects[368];
+    obj->control = ControlClawmutePlasmaBall;
+    obj->draw_routine = DrawDummyItem;
+
+    obj = &objects[369];
+    obj->control = ControlWillbossPlasmaBall;
+    obj->draw_routine = DrawDummyItem;
+
+    obj = &objects[370];
+    obj->control = ControlRotateyThing;
+    obj->save_position = obj->save_flags = 1;
+
+    obj = &objects[371];
+    obj->control = ControlLaserBolts;
+    obj->draw_routine = S_DrawLaserBolts;
+
+    obj = &objects[372];
+    obj->control = ControlLondBossPlasmaBall;
+    obj->draw_routine = DrawDummyItem;
+
+    obj = &objects[373];
+    obj->control = ControlFusebox;
+    obj->collision = ObjectCollision;
+    obj->save_position = obj->save_hitpoints = obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[309];
+    obj->control = ControlRocket;
+
+    obj = &objects[311];
+    obj->control = ControlGrenade;
+
+    obj = &objects[310];
+    obj->control = ControlHarpoonBolt;
+
+    obj = &objects[308];
+    obj->control = ControlMissile;
+
+    obj = &objects[306];
+    obj->control = ControlMissile;
+
+    obj = &objects[14];
+    obj->initialise = KayakInitialise;
+    obj->draw_routine = KayakDraw;
+    obj->collision = KayakCollision;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[15];
+    obj->initialise = InitialiseBoat;
+    obj->control = BoatControl;
+    obj->collision = BoatCollision;
+    obj->draw_routine = DrawBoat;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+    bones[obj->bone_index + 4] |= 16;
+
+    obj = &objects[16];
+    obj->initialise = InitialiseQuadBike;
+    obj->collision = QuadBikeCollision;
+    obj->draw_routine = QuadBikeDraw;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[17];
+    obj->initialise = MineCartInitialise;
+    obj->collision = MineCartCollision;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[18];
+    obj->initialise = BigGunInitialise;
+    obj->collision = BigGunCollision;
+    obj->draw_routine = BigGunDraw;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[19];
+    obj->initialise = SubInitialise;
+    obj->control = SubEffects;
+    obj->collision = SubCollision;
+    obj->draw_routine = SubDraw;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[110];
+    obj->control = TrainControl;
+    obj->collision = TrainCollision;
+    obj->save_position = obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[179];
+    obj->control = FlareControl;
+    obj->collision = PickUpCollision;
+    obj->draw_routine = DrawFlareInAir;
+    obj->pivot_length = 256;
+    obj->hit_points = 256;
+    obj->save_position = obj->save_flags = 1;
+
+    obj = &objects[101];
+    obj->initialise = InitialiseWindow;
+    obj->control = WindowControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[102];
+    obj->initialise = InitialiseWindow;
+    obj->control = WindowControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[103];
+    obj->initialise = InitialiseWindow;
+    obj->control = WindowControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[104];
+    obj->initialise = InitialiseWindow;
+    obj->control = WindowControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[38];
+    obj->control = CarcassControl;
+    obj->collision = ObjectCollision;
+    obj->save_anim = obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[95];
+    obj->initialise = InitialiseLift;
+    obj->control = LiftControl;
+    obj->floor = LiftFloor;
+    obj->ceiling = LiftCeiling;
+    obj->save_anim = obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[339];
+    obj->draw_routine = S_DrawFish;
+    obj->control = ControlFish;
+    obj->hit_points = -1;
+    obj->save_flags = obj->save_position = obj->save_hitpoints = 1;
+
+    obj = &objects[338];
+    obj->draw_routine = S_DrawFish;
+    obj->control = ControlFish;
+    obj->hit_points = -1;
+    obj->save_flags = obj->save_position = obj->save_hitpoints = 1;
+
+    obj = &objects[347];
+    obj->control = BatEmitterControl;
+    obj->draw_routine = DrawDummyItem;
+    obj->save_flags = 1;
+
+    obj = &objects[292];
+    obj->control = ControlElectricFence;
+    obj->draw_routine = DrawDummyItem;
+    obj->save_flags = 1;
+    objects[318].control = ControlStrobeLight;
+    objects[318].save_flags = 1;
+    objects[321].control = ControlPulseLight;
+    objects[321].draw_routine = DrawDummyItem;
+    objects[321].save_flags = 1;
+    objects[320].control = ControlOnOffLight;
+    objects[320].draw_routine = DrawDummyItem;
+    objects[320].save_flags = 1;
+    objects[319].control = ControlElectricalLight;
+    objects[319].draw_routine = DrawDummyItem;
+    objects[319].save_flags = 1;
+    objects[322].control = ControlBeaconLight;
+    objects[322].draw_routine = DrawDummyItem;
+    objects[322].save_flags = 1;
+
+    obj = &objects[142];
+    obj->floor = BridgeFlatFloor;
+    obj->ceiling = BridgeFlatCeiling;
+
+    obj = &objects[143];
+    obj->floor = BridgeTilt1Floor;
+    obj->ceiling = BridgeTilt1Ceiling;
+
+    obj = &objects[144];
+    obj->floor = BridgeTilt2Floor;
+    obj->ceiling = BridgeTilt2Ceiling;
+
+    obj = &objects[93];
+    if (obj->loaded) {
+        obj->control = GeneralControl;
+        obj->collision = DrawBridgeCollision;
+        obj->floor = DrawBridgeFloor;
+        obj->ceiling = DrawBridgeCeiling;
+        obj->save_anim = obj->save_flags = 1;
+    }
+
+    obj = &objects[118];
+    obj->control = SwitchControl;
+    obj->collision = SwitchCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[128];
+    obj->control = SwitchControl;
+    obj->collision = SwitchCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[117];
+    obj->control = SwitchControl;
+    obj->collision = SwitchCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[129];
+    obj->control = SwitchControl;
+    obj->collision = SwitchCollision;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[130];
+    obj->control = SwitchControl;
+    obj->collision = SwitchCollision2;
+    obj->save_anim = obj->save_flags = 1;
+    for (lp = 131; lp <= 138; lp++) {
+        obj = &objects[lp];
+        obj->initialise = InitialiseDoor;
+        obj->draw_routine = DrawUnclippedItem;
+        obj->control = DoorControl;
+        obj->collision = DoorCollision;
+        obj->save_flags = obj->save_anim = 1;
+    }
+
+    obj = &objects[139];
+    obj->control = TrapDoorControl;
+    obj->floor = TrapDoorFloor;
+    obj->ceiling = TrapDoorCeiling;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[140];
+    obj->control = TrapDoorControl;
+    obj->floor = TrapDoorFloor;
+    obj->ceiling = TrapDoorCeiling;
+    obj->save_anim = obj->save_flags = 1;
+
+    obj = &objects[236];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[237];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[224];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[225];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[226];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[227];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[205];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[206];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[207];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[208];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[160];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[161];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[164];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[166];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[167];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[165];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[162];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[163];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[178];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[168];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[169];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[170];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[171];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[172];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[173];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[174];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[175];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[176];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[177];
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[240];
+    obj->control = AnimatingPickUp;
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[241];
+    obj->control = AnimatingPickUp;
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[242];
+    obj->control = AnimatingPickUp;
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[243];
+    obj->control = AnimatingPickUp;
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[180];
+    obj->control = AnimatingPickUp;
+    obj->collision = PickUpCollision;
+    obj->save_flags = obj->save_position = 1;
+
+    obj = &objects[232];
+    obj->collision = KeyHoleCollision;
+    obj->save_flags = 1;
+
+    obj = &objects[233];
+    obj->collision = KeyHoleCollision;
+    obj->save_flags = 1;
+
+    obj = &objects[234];
+    obj->collision = KeyHoleCollision;
+    obj->save_flags = 1;
+
+    obj = &objects[235];
+    obj->collision = KeyHoleCollision;
+    obj->save_flags = 1;
+
+    obj = &objects[295];
+    obj->collision = DetonatorCollision;
+    obj->control = DetonatorControl;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[213];
+    obj->control = ControlAnimating_1_4;
+    obj->collision = PuzzleHoleCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[214];
+    obj->control = ControlAnimating_1_4;
+    obj->collision = PuzzleHoleCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[215];
+    obj->control = ControlAnimating_1_4;
+    obj->collision = PuzzleHoleCollision;
+    obj->save_flags = obj->save_anim = 1;
+
+    obj = &objects[216];
+    obj->control = ControlAnimating_1_4;
+    obj->collision = PuzzleHoleCollision;
+    obj->save_flags = obj->save_anim = 1;
+    for (lp = 217; lp <= 220; lp++) {
+        obj = &objects[lp];
+        obj->control = ControlAnimating_1_4;
+        obj->save_flags = obj->save_anim = 1;
+    }
+    for (lp = 148; lp <= 157; lp++) {
+        obj = &objects[lp];
+        obj->initialise = InitialiseGenPlayer;
+        obj->control = ControlCinematicPlayer;
+        obj->hit_points = 1;
+    }
+    for (lp = 349; lp <= 354; lp++) {
+        obj = &objects[lp];
+        obj->control = ControlAnimating_1_4;
+        obj->collision = ObjectCollision;
+        obj->save_anim = obj->save_flags = 1;
+    }
+    for (lp = 334; lp <= 336; lp++) {
+        obj = &objects[lp];
+        obj->control = ControlSmokeEmitter;
+        obj->draw_routine = DrawDummyItem;
+        obj->save_flags = 1;
+    }
+    objects[337].control = ControlGhostGasEmitter;
+    objects[337].draw_routine = DrawDummyItem;
+    objects[337].save_flags = 1;
+    for (lp = 324; lp <= 328; lp++) {
+        obj = &objects[lp];
+        obj->control = ControlColouredLights;
+        obj->draw_routine = DrawDummyItem;
+        obj->save_flags = 1;
+    }
+    objects[297].control = ControlBubble1;
+    objects[297].draw_routine = DrawDummyItem;
+    objects[307].control = ControlFlameThrower;
+    objects[307].draw_routine = DrawDummyItem;
+    objects[305].control = WaterFall;
+    objects[305].draw_routine = DrawDummyItem;
+    for (lp = 66; lp <= 68; lp++) {
+        obj = &objects[lp];
+        obj->initialise = LaserControl;
+        obj->control = LaserControl;
+        obj->draw_routine = S_DrawLaser;
+        obj->save_flags = obj->save_hitpoints = 1;
+    }
+    objects[303].control = ControlBodyPart;
+    objects[303].nmeshes = 0;
+    objects[303].loaded = 1;
+    objects[289].control = ControlBirdTweeter;
+    objects[289].draw_routine = DrawDummyItem;
+    objects[286].control = ControlBirdTweeter;
+    objects[286].draw_routine = DrawDummyItem;
+    objects[357].control = ControlDingDong;
+    objects[357].draw_routine = DrawDummyItem;
+    objects[358].control = ControlLaraAlarm;
+    objects[358].draw_routine = DrawDummyItem;
+    objects[358].save_flags = 1;
+    objects[290].control = ControlClockChimes;
+    objects[290].draw_routine = DrawDummyItem;
+    objects[290].save_flags = 1;
+    objects[363].draw_routine = DrawDummyItem;
+    objects[363].control = FinalLevelCounter;
+    objects[363].save_flags = 1;
+    objects[364].control = ControlCutShotgun;
+    objects[364].save_flags = objects[364].save_anim = 1;
+    objects[365].draw_routine = DrawDummyItem;
+    objects[365].control = EarthQuake;
+    objects[365].save_flags = 1;
+    objects[366].control = ControlGunShell;
+    objects[367].control = ControlGunShell;
+}
