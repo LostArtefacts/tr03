@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="328.86" height="12" x="0" y="0" class="named"><title>1346 · 89.85%</title></rect>
-<rect width="7.33" height="12" x="328.86" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.84" height="12" x="336.19" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
-<rect width="22.97" height="12" x="343.03" y="0" class="todo"><title>94 · 6.28%</title></rect>
+<rect width="329.11" height="12" x="0" y="0" class="named"><title>1347 · 89.92%</title></rect>
+<rect width="7.33" height="12" x="329.11" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="6.84" height="12" x="336.44" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="22.72" height="12" x="343.28" y="0" class="todo"><title>93 · 6.21%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">91.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1346</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">94</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1347</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">93</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="260.79" height="12" x="0" y="0" class="named"><title>516 KB · 71.25%</title></rect>
-<rect width="33.42" height="12" x="260.79" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="13.97" height="12" x="294.21" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
-<rect width="57.82" height="12" x="308.18" y="0" class="todo"><title>114 KB · 15.80%</title></rect>
+<rect width="260.90" height="12" x="0" y="0" class="named"><title>517 KB · 71.28%</title></rect>
+<rect width="33.42" height="12" x="260.90" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="13.97" height="12" x="294.32" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
+<rect width="57.71" height="12" x="308.29" y="0" class="todo"><title>114 KB · 15.77%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">80.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">516 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">114 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">517 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">114 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1419,7 +1419,7 @@
 <rect width="12" height="12" x="0" y="405" class="named"><title>0x0048ff60 DXGetAttachedSurface (26 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="405" class="named"><title>0x0048ff80 DXAddAttachedSurface (21 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="405" class="named"><title>0x0048ffa0 DXCreateDirect3DDevice (31 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="405" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="405" class="named"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="405" class="named"><title>0x004900b0 DXGetSurfaceDesc (16 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="405" class="named"><title>0x004900c0 DXSurfBlt (72 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="405" class="todo"><title>0x00490110 Func490110 (752 bytes)</title></rect>
@@ -2234,7 +2234,7 @@
 <rect width="8.92" height="8.21" x="501.68" y="394.12" class="named"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
 <rect width="8.92" height="8.21" x="501.68" y="405.32" class="named"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="8.92" height="8.17" x="501.68" y="416.53" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
-<rect width="8.92" height="8.17" x="501.68" y="427.70" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
+<rect width="8.92" height="8.17" x="501.68" y="427.70" class="named"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="8.92" height="8.13" x="501.68" y="438.87" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
 <rect width="8.51" height="8.49" x="513.60" y="211.30" class="named"><title>0x00434930 DrawGameInfo (223 bytes)</title></rect>
 <rect width="8.51" height="8.49" x="525.11" y="211.30" class="named"><title>0x0045f640 TestHeight_quadbike (223 bytes)</title></rect>

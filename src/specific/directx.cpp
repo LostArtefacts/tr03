@@ -314,6 +314,44 @@ bool DXCreateDirect3DDevice(LPDIRECT3D2 lpD3D2, GUID Guid, LPDIRECTDRAWSURFACE3 
     return true;
 }
 
+bool DXCreateViewPort(LPDIRECT3D2 lpD3D, LPDIRECT3DDEVICE2 lpD3DDevice, int w, int h, LPDIRECT3DVIEWPORT2 *lpViewport)
+{
+    int RetVal;
+    D3DVIEWPORT2 viewdata;
+
+    RetVal = lpD3D->CreateViewport(lpViewport, NULL);
+    if (RetVal != DD_OK)
+        return false;
+
+    RetVal = lpD3DDevice->AddViewport(*lpViewport);
+    if (RetVal != DD_OK)
+        return false;
+
+    {
+        memset(&viewdata, 0, sizeof(viewdata));
+        viewdata.dwSize = sizeof(viewdata);
+    }
+    viewdata.dwX = 0;
+    viewdata.dwY = 0;
+    viewdata.dwWidth = w;
+    viewdata.dwHeight = h;
+    float inva = (float)((float)h / (float)w);
+    viewdata.dvClipX = -1.0F;
+    viewdata.dvClipY = inva;
+    viewdata.dvClipWidth = 2.0F;
+    viewdata.dvClipHeight = 2.0F * inva;
+    viewdata.dvMinZ = 0.0F;
+    viewdata.dvMaxZ = 1.0F;
+
+    RetVal = (*lpViewport)->SetViewport2(&viewdata);
+    if (RetVal != DD_OK)
+        return false;
+
+    RetVal = lpD3DDevice->SetCurrentViewport(*lpViewport);
+
+    return true;
+}
+
 void DXGetSurfaceDesc(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC *ddsd)
 {
     lpSurface->GetSurfaceDesc(ddsd);
