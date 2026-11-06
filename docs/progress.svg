@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="320.40" height="12" x="0" y="0" class="named"><title>1273 · 86.13%</title></rect>
-<rect width="1.51" height="12" x="320.40" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.54" height="12" x="321.91" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
-<rect width="44.55" height="12" x="327.45" y="0" class="todo"><title>177 · 11.98%</title></rect>
+<rect width="320.65" height="12" x="0" y="0" class="named"><title>1274 · 86.20%</title></rect>
+<rect width="1.51" height="12" x="320.65" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
+<rect width="5.54" height="12" x="322.17" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="44.30" height="12" x="327.70" y="0" class="todo"><title>176 · 11.91%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">86.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1273</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">177</tspan></text>
+<text text-anchor="end" x="552" y="7.50">86.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1274</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">176</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="233.63" height="12" x="0" y="0" class="named"><title>420 KB · 62.80%</title></rect>
-<rect width="0.34" height="12" x="233.63" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="8.07" height="12" x="233.97" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
-<rect width="129.96" height="12" x="242.04" y="0" class="todo"><title>234 KB · 34.94%</title></rect>
+<rect width="234.99" height="12" x="0" y="0" class="named"><title>423 KB · 63.17%</title></rect>
+<rect width="0.34" height="12" x="234.99" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
+<rect width="8.07" height="12" x="235.33" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="128.60" height="12" x="243.40" y="0" class="todo"><title>231 KB · 34.57%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">62.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">420 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">234 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">63.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">423 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">231 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -780,7 +780,7 @@
 <rect width="12" height="12" x="165" y="210" class="named"><title>0x0044ae20 HitTarget (185 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="210" class="named"><title>0x0044aee0 SmashItem (106 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="210" class="named"><title>0x0044af50 WeaponObject (96 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="210" class="todo"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="210" class="named"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="210" class="named"><title>0x0044b940 DoFlareLight (431 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="210" class="named"><title>0x0044baf0 DoFlareInHand (218 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="210" class="named"><title>0x0044bbd0 DrawFlareInAir (440 bytes)</title></rect>
@@ -1593,7 +1593,7 @@
 <rect width="29.65" height="29.25" x="132.44" y="197.37" class="todo"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
 <rect width="29.65" height="29.07" x="132.44" y="229.62" class="todo"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
 <rect width="29.65" height="29.02" x="132.44" y="261.70" class="named"><title>0x004378b0 Inv_AddItem (2454 bytes)</title></rect>
-<rect width="29.65" height="28.90" x="132.44" y="293.71" class="todo"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
+<rect width="29.65" height="28.90" x="132.44" y="293.71" class="named"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
 <rect width="29.65" height="28.49" x="132.44" y="325.61" class="todo"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
 <rect width="29.65" height="28.23" x="132.44" y="357.10" class="named"><title>0x004542a0 DoUserInput (2388 bytes)</title></rect>
 <rect width="29.65" height="28.04" x="132.44" y="388.34" class="named"><title>0x004303e0 ControlFish (2372 bytes)</title></rect>
