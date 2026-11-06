@@ -210,7 +210,7 @@ address,size,name,symbol
 0x00420c70,402,GetWaterHeight,_GetWaterHeight
 0x00420e10,1300,GetHeight,_GetHeight
 0x00421370,238,RefreshCamera,_RefreshCamera
-0x00421460,2247,TestTriggers,_TestTriggers
+0x00421460,2328,TestTriggers,_TestTriggers
 0x00421d80,85,TriggerActive,_TriggerActive
 0x00421de0,1183,GetCeiling,_GetCeiling
 0x004222b0,178,GetDoor,_GetDoor
