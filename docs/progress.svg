@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="286" height="12" x="0" y="0" class="named"><title>1236 · 83.63%</title></rect>
-<rect width="0.46" height="12" x="286" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="286.47" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="51.37" height="12" x="290.63" y="0" class="todo"><title>222 · 15.02%</title></rect>
+<rect width="286.23" height="12" x="0" y="0" class="named"><title>1237 · 83.69%</title></rect>
+<rect width="0.46" height="12" x="286.23" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="286.70" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="51.14" height="12" x="290.86" y="0" class="todo"><title>221 · 14.95%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">83.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1236</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">222</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1237</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">221</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="190.32" height="12" x="0" y="0" class="named"><title>372 KB · 55.65%</title></rect>
 <rect width="0.15" height="12" x="190.32" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.46" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.50" height="12" x="196.50" y="0" class="todo"><title>284 KB · 42.54%</title></rect>
+<rect width="6.04" height="12" x="190.47" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.49" height="12" x="196.51" y="0" class="todo"><title>284 KB · 42.54%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
@@ -1183,7 +1183,7 @@
 <rect width="12" height="12" x="210" y="330" class="named"><title>0x004804d0 InitSoundAdapterListGlobal (18 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="330" class="named"><title>0x004804f0 RegisterSoundAdapterListDestructor (14 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="330" class="named"><title>0x00480580 InitCurrentSoundAdapterGlobal (57 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="330" class="todo"><title>0x004805c0 Func4805c0 (14 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="330" class="named"><title>0x004805c0 RegisterCurrentSoundAdapterDestructor (14 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="330" class="named"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="330" class="named"><title>0x00480630 DS_MakeSample (270 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="330" class="named"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
@@ -2989,7 +2989,7 @@
 <rect width="2.06" height="2.38" x="717" y="444.62" class="named"><title>0x004752f0 RegisterJoystickListDestructor (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="722.06" y="417.23" class="named"><title>0x004753c0 RegisterCurrentJoystickDestructor (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="727.65" y="417.23" class="named"><title>0x004804f0 RegisterSoundAdapterListDestructor (14 bytes)</title></rect>
-<rect width="2.59" height="1.87" x="733.24" y="417.23" class="todo"><title>0x004805c0 Func4805c0 (14 bytes)</title></rect>
+<rect width="2.59" height="1.87" x="733.24" y="417.23" class="named"><title>0x004805c0 RegisterCurrentSoundAdapterDestructor (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="738.82" y="417.23" class="named"><title>0x00480d40 DS_IsSoundEnabled (14 bytes)</title></rect>
 <rect width="2.59" height="1.87" x="744.41" y="417.23" class="named"><title>0x00483830 S_PlayFMV (14 bytes)</title></rect>
 <rect width="2.58" height="1.88" x="722.06" y="422.10" class="named"><title>0x0048d4f0 S_CDVolume (14 bytes)</title></rect>

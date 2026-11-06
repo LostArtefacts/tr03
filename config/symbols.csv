@@ -1116,7 +1116,7 @@ address,size,name,symbol
 0x004804d0,18,InitSoundAdapterListGlobal,specific/ds.cpp:_$E1
 0x004804f0,14,RegisterSoundAdapterListDestructor,specific/ds.cpp:_$E3
 0x00480580,57,InitCurrentSoundAdapterGlobal,specific/ds.cpp:_$E6
-0x004805c0,14,Func4805c0,
+0x004805c0,14,RegisterCurrentSoundAdapterDestructor,specific/ds.cpp:_$E8
 0x00480600,46,DS_FreeAllSamples,_DS_FreeAllSamples
 0x00480630,270,DS_MakeSample,_DS_MakeSample
 0x00480740,69,DS_IsChannelPlaying,_DS_IsChannelPlaying
