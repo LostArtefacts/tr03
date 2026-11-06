@@ -149,3 +149,17 @@ MMRESULT ACMAPI acmDriverClose(HACMDRIVER had, DWORD fdwClose)
 
     return pfn(had, fdwClose);
 }
+
+MMRESULT ACMAPI acmFormatSuggest(HACMDRIVER had, LPWAVEFORMATEX pwfxSrc, LPWAVEFORMATEX pwfxDst, DWORD cbwfxDst, DWORD fdwSuggest)
+{
+    MMRESULT (ACMAPI *pfn)(HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, DWORD, DWORD);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, DWORD, DWORD))gpafnAcmFunctions[23];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(had, pwfxSrc, pwfxDst, cbwfxDst, fdwSuggest);
+}

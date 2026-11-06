@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="330.77" height="12" x="0" y="0" class="named"><title>1164 · 78.76%</title></rect>
-<rect width="2.84" height="12" x="330.77" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="86.39" height="12" x="333.61" y="0" class="todo"><title>304 · 20.57%</title></rect>
+<rect width="331.06" height="12" x="0" y="0" class="named"><title>1165 · 78.82%</title></rect>
+<rect width="2.84" height="12" x="331.06" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="86.10" height="12" x="333.90" y="0" class="todo"><title>303 · 20.50%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">78.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1164</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">304</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1165</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">303</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="210.70" height="12" x="0" y="0" class="named"><title>335 KB · 50.17%</title></rect>
-<rect width="3.98" height="12" x="210.70" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="205.32" height="12" x="214.68" y="0" class="todo"><title>327 KB · 48.89%</title></rect>
+<rect width="210.74" height="12" x="0" y="0" class="named"><title>335 KB · 50.18%</title></rect>
+<rect width="3.98" height="12" x="210.74" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="205.29" height="12" x="214.71" y="0" class="todo"><title>326 KB · 48.88%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">50.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">335 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">327 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">335 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">326 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1391,7 +1391,7 @@
 <rect width="12" height="12" x="360" y="390" class="named"><title>0x0048e7b0 acmDriverDetailsA (52 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="390" class="named"><title>0x0048e7f0 acmDriverOpen (52 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="390" class="named"><title>0x0048e830 acmDriverClose (47 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="390" class="todo"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="390" class="named"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="390" class="todo"><title>0x0048e8a0 acmStreamOpen (80 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="390" class="todo"><title>0x0048e8f0 acmStreamClose (50 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="390" class="todo"><title>0x0048e930 acmStreamSize (60 bytes)</title></rect>
@@ -2677,7 +2677,7 @@
 <rect width="4.63" height="4.70" x="624.53" y="442.30" class="named"><title>0x00430010 ControlRotateyThing (62 bytes)</title></rect>
 <rect width="4.49" height="4.85" x="632.15" y="324.62" class="named"><title>0x0044c400 ready_flare (62 bytes)</title></rect>
 <rect width="4.49" height="4.85" x="639.64" y="324.62" class="named"><title>0x0045cda0 PickupTrigger (62 bytes)</title></rect>
-<rect width="4.49" height="4.85" x="647.13" y="324.62" class="todo"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
+<rect width="4.49" height="4.85" x="647.13" y="324.62" class="named"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="654.62" y="324.62" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="662.04" y="324.62" class="named"><title>0x004295a0 gar_RotYXZsuperpack_I (61 bytes)</title></rect>
 <rect width="4.42" height="4.85" x="669.46" y="324.62" class="nonmatching"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
