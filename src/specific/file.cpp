@@ -188,6 +188,48 @@ int LoadSprites(HANDLE file)
     return 1;
 }
 
+int LoadItems(HANDLE file)
+{
+    sint16 i;
+    sint32 number_items;
+    ITEM_INFO *item;
+    DWORD read;
+
+    MyReadFile(file, &number_items, sizeof(sint32), &read, NULL);
+    if (number_items == 0)
+        return 1;
+    if (number_items > 256) {
+        lstrcpy(exit_message, "LoadItems(): Too Many Items being Loaded!!");
+        return 0;
+    }
+    items = (ITEM_INFO *)game_malloc(sizeof(ITEM_INFO) * 256, 18);
+    if (items == NULL) {
+        lstrcpy(exit_message, "LoadItems(): Unable to allocate memory for 'items'");
+        return 0;
+    }
+    level_items = number_items;
+    InitialiseItemArray(256);
+    for (i = 0; i < number_items; i++) {
+        item = &items[i];
+        MyReadFile(file, &item->object_number, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->room_number, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->pos.x_pos, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &item->pos.y_pos, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &item->pos.z_pos, sizeof(sint32), &read, NULL);
+        MyReadFile(file, &item->pos.y_rot, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->shade, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->shadeB, sizeof(sint16), &read, NULL);
+        MyReadFile(file, &item->flags, sizeof(sint16), &read, NULL);
+        if (item->object_number < 0 || item->object_number >= 376) {
+            wsprintf(exit_message, "LoadItems(): Bad Object number (%d) on Item %d", item->object_number, i);
+            return 0;
+        }
+    }
+    for (i = 0; i < number_items; i++)
+        InitialiseItem(i);
+    return 1;
+}
+
 int LoadPalette(HANDLE file)
 {
     DWORD read;
