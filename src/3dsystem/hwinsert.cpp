@@ -108,6 +108,51 @@ void DrawBuckets(void)
     }
 }
 
+#include "../specific/winmain.h"
+
+typedef struct phdtexturestruct {
+    unsigned short drawtype;
+    unsigned short tpage;
+    unsigned short u1;
+    unsigned short v1;
+    unsigned short u2;
+    unsigned short v2;
+    unsigned short u3;
+    unsigned short v3;
+    unsigned short u4;
+    unsigned short v4;
+} PHDTEXTURESTRUCT;
+
+extern int nPolyType;
+
+void HWI_InsertGT3_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, unsigned short *uv1, unsigned short *uv2, unsigned short *uv3, int nSortType, unsigned short dbl);
+void SubdivideGT3(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
+
+void HWI_InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, unsigned short *uv1, unsigned short *uv2, unsigned short *uv3, int nSortType, unsigned short dbl)
+{
+    long zv;
+
+    if (App.lpZBuffer) {
+        HWI_InsertGT3_Poly(v1, v2, v3, pTex, &pTex->u1, &pTex->u2, &pTex->u3, nSortType, dbl);
+        return;
+    }
+    if (nPolyType == 3 || nPolyType == 4) {
+        zv = (long)v1->zv;
+        if (zv < v2->zv)
+            zv = (long)v2->zv;
+        if (zv < v3->zv)
+            zv = (long)v3->zv;
+        if (zv < 0x1f40000)
+            SubdivideGT3(v1, v2, v3, pTex, nSortType, dbl, 2);
+        else if (zv < 0x36b0000)
+            SubdivideGT3(v1, v2, v3, pTex, nSortType, dbl, 1);
+        else
+            HWI_InsertGT3_Poly(v1, v2, v3, pTex, &pTex->u1, &pTex->u2, &pTex->u3, nSortType, dbl);
+        return;
+    }
+    HWI_InsertGT3_Poly(v1, v2, v3, pTex, &pTex->u1, &pTex->u2, &pTex->u3, nSortType, dbl);
+}
+
 int GETR(int rgb)
 {
     int r;
@@ -131,5 +176,15 @@ int GETG(int rgb)
     }
     return g;
 }
+
+void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
+void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
+
+extern PHD_VBUF vbuf[];
+extern PHDTEXTURESTRUCT phdtextinfo[];
+
+short *HWI_InsertObjectG4_Sorted(short *pFaceInfo, long nFaces, int nSortType);
+
+short *HWI_InsertObjectG3_Sorted(short *pFaceInfo, long nFaces, int nSortType);
 
 }
