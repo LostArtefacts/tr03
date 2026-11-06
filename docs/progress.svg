@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="318.55" height="12" x="0" y="0" class="named"><title>1121 · 75.85%</title></rect>
-<rect width="2.56" height="12" x="318.55" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="98.89" height="12" x="321.11" y="0" class="todo"><title>348 · 23.55%</title></rect>
+<rect width="318.84" height="12" x="0" y="0" class="named"><title>1122 · 75.91%</title></rect>
+<rect width="2.56" height="12" x="318.84" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="98.61" height="12" x="321.39" y="0" class="todo"><title>347 · 23.48%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">75.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1121</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">348</tspan></text>
+<text text-anchor="end" x="600" y="7.50">75.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1122</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">347</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="204.02" height="12" x="0" y="0" class="named"><title>324 KB · 48.58%</title></rect>
-<rect width="3.89" height="12" x="204.02" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="212.10" height="12" x="207.90" y="0" class="todo"><title>337 KB · 50.50%</title></rect>
+<rect width="205.12" height="12" x="0" y="0" class="named"><title>326 KB · 48.84%</title></rect>
+<rect width="3.89" height="12" x="205.12" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="211" height="12" x="209" y="0" class="todo"><title>336 KB · 50.24%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">48.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">324 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">337 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">48.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">326 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">336 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1225,7 +1225,7 @@
 <rect width="12" height="12" x="120" y="345" class="named"><title>0x00482910 S_LoadLevelFile (125 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="345" class="named"><title>0x00482990 S_UnloadLevelFile (42 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="345" class="named"><title>0x004829c0 Read_Strings (198 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="345" class="todo"><title>0x00482a90 S_LoadGameFlow (1745 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="345" class="named"><title>0x00482a90 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="345" class="todo"><title>0x00483170 WinPlayFMV (757 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="345" class="named"><title>0x00483470 WinStopFMV (72 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="345" class="named"><title>0x004834c0 FMV_Play (122 bytes)</title></rect>
@@ -1637,7 +1637,7 @@
 <rect width="25.11" height="25.07" x="223.92" y="258.82" class="named"><title>0x00461040 RaptorControl (1792 bytes)</title></rect>
 <rect width="25.11" height="24.98" x="223.92" y="286.89" class="named"><title>0x0041835c CombatCamera (1786 bytes)</title></rect>
 <rect width="25.11" height="24.79" x="223.92" y="314.87" class="named"><title>0x0041b4f0 ClawmuteControl (1772 bytes)</title></rect>
-<rect width="25.11" height="24.41" x="223.92" y="342.66" class="todo"><title>0x00482a90 S_LoadGameFlow (1745 bytes)</title></rect>
+<rect width="25.11" height="24.41" x="223.92" y="342.66" class="named"><title>0x00482a90 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="25.11" height="24.07" x="223.92" y="370.07" class="named"><title>0x00417ca3 ChaseCamera (1721 bytes)</title></rect>
 <rect width="25.11" height="23.64" x="223.92" y="397.14" class="todo"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
 <rect width="25.11" height="23.22" x="223.92" y="423.78" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
