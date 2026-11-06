@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="287.16" height="12" x="0" y="0" class="named"><title>1241 · 83.96%</title></rect>
-<rect width="0.46" height="12" x="287.16" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="287.62" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="50.21" height="12" x="291.79" y="0" class="todo"><title>217 · 14.68%</title></rect>
+<rect width="287.39" height="12" x="0" y="0" class="named"><title>1242 · 84.03%</title></rect>
+<rect width="0.46" height="12" x="287.39" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="287.85" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="49.98" height="12" x="292.02" y="0" class="todo"><title>216 · 14.61%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">84.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1241</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">217</tspan></text>
+<text text-anchor="end" x="522" y="7.50">84.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1242</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">216</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.58" height="12" x="0" y="0" class="named"><title>373 KB · 55.72%</title></rect>
-<rect width="0.15" height="12" x="190.58" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.72" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.24" height="12" x="196.76" y="0" class="todo"><title>284 KB · 42.47%</title></rect>
+<rect width="190.61" height="12" x="0" y="0" class="named"><title>373 KB · 55.73%</title></rect>
+<rect width="0.15" height="12" x="190.61" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="190.76" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.21" height="12" x="196.79" y="0" class="todo"><title>284 KB · 42.46%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">373 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
@@ -1432,7 +1432,7 @@
 <rect width="12" height="12" x="195" y="405" class="named"><title>0x00490ae0 HWDrawPrimitive (37 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="405" class="named"><title>0x00490b40 PrepareTriangleList (88 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="405" class="todo"><title>0x00490ba0 Func490ba0 (857 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="405" class="todo"><title>0x00490f10 Func490f10 (60 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="405" class="named"><title>0x00490f10 DrawTriangleList (60 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="405" class="todo"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="405" class="todo"><title>0x00490f80 Func490f80 (71 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="405" class="todo"><title>0x00490fd0 Func490fd0 (71 bytes)</title></rect>
@@ -2688,7 +2688,7 @@
 <rect width="4.34" height="4.84" x="691.57" y="324.66" class="named"><title>0x0042f450 AssaultStart (60 bytes)</title></rect>
 <rect width="4.34" height="4.84" x="698.91" y="324.66" class="named"><title>0x00441910 lara_as_switchon (60 bytes)</title></rect>
 <rect width="4.34" height="4.84" x="706.25" y="324.66" class="named"><title>0x0048e930 acmStreamSize (60 bytes)</title></rect>
-<rect width="4.34" height="4.84" x="713.59" y="324.66" class="todo"><title>0x00490f10 Func490f10 (60 bytes)</title></rect>
+<rect width="4.34" height="4.84" x="713.59" y="324.66" class="named"><title>0x00490f10 DrawTriangleList (60 bytes)</title></rect>
 <rect width="4.27" height="4.84" x="720.93" y="324.66" class="named"><title>0x0042f000 ControlLaraAlarm (59 bytes)</title></rect>
 <rect width="4.27" height="4.84" x="728.20" y="324.66" class="named"><title>0x00448400 undraw_pistol_mesh_right (59 bytes)</title></rect>
 <rect width="4.27" height="4.84" x="735.47" y="324.66" class="named"><title>0x0044a1a0 CheckForHoldingState (59 bytes)</title></rect>

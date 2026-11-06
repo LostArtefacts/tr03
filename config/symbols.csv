@@ -1365,7 +1365,7 @@ address,size,name,symbol
 0x00490ae0,37,HWDrawPrimitive,_HWDrawPrimitive
 0x00490b40,88,PrepareTriangleList,_PrepareTriangleList
 0x00490ba0,857,Func490ba0,
-0x00490f10,60,Func490f10,
+0x00490f10,60,DrawTriangleList,_DrawTriangleList
 0x00490f50,46,Func490f50,
 0x00490f80,71,Func490f80,
 0x00490fd0,71,Func490fd0,
@@ -1376,7 +1376,7 @@ address,size,name,symbol
 0x004920a0,384,Func4920a0,
 0x004923c0,597,Func4923c0,
 0x00492970,862,Func492970,
-0x00492cd0,1794,Func492cd0,
+0x00492cd0,1794,Func492cd0,_Func492cd0
 0x004933e0,206,MMXInit,_MMXInit
 0x004934b0,23,Func4934b0,
 0x004934d0,90,MMXBeginScene,_MMXBeginScene
