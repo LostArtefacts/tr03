@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="289.71" height="12" x="0" y="0" class="named"><title>1252 · 84.71%</title></rect>
-<rect width="0.93" height="12" x="289.71" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
-<rect width="4.17" height="12" x="290.63" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="47.20" height="12" x="294.80" y="0" class="todo"><title>204 · 13.80%</title></rect>
+<rect width="289.94" height="12" x="0" y="0" class="named"><title>1253 · 84.78%</title></rect>
+<rect width="0.93" height="12" x="289.94" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
+<rect width="4.17" height="12" x="290.86" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="46.97" height="12" x="295.03" y="0" class="todo"><title>203 · 13.73%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">85.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1252</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">204</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1253</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">203</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.99" height="12" x="0" y="0" class="named"><title>373 KB · 55.84%</title></rect>
-<rect width="0.20" height="12" x="190.99" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
-<rect width="6.04" height="12" x="191.19" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="144.77" height="12" x="197.23" y="0" class="todo"><title>283 KB · 42.33%</title></rect>
+<rect width="191.26" height="12" x="0" y="0" class="named"><title>374 KB · 55.92%</title></rect>
+<rect width="0.20" height="12" x="191.26" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
+<rect width="6.04" height="12" x="191.47" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="144.50" height="12" x="197.50" y="0" class="todo"><title>283 KB · 42.25%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">55.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">373 KB</tspan> · <tspan class="decompiled">395 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">283 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">56.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">374 KB</tspan> · <tspan class="decompiled">395 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">283 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -97,7 +97,7 @@
 <rect width="12" height="12" x="420" y="0" class="named"><title>0x00402600 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="0" class="named"><title>0x00402640 gen_x (210 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="0" class="todo"><title>0x00402720 gen_xg (326 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="0" class="todo"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="0" class="named"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="0" class="todo"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="0" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="todo"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
@@ -1874,7 +1874,7 @@
 <rect width="13.87" height="13.74" x="383.18" y="268.15" class="named"><title>0x0046b120 draw_border (543 bytes)</title></rect>
 <rect width="13.87" height="13.71" x="383.18" y="284.89" class="named"><title>0x00440b90 LaraTestHangJumpUp (542 bytes)</title></rect>
 <rect width="13.87" height="13.69" x="383.18" y="301.61" class="named"><title>0x0046c640 TriggerFireBall (541 bytes)</title></rect>
-<rect width="13.87" height="13.59" x="383.18" y="318.29" class="todo"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
+<rect width="13.87" height="13.59" x="383.18" y="318.29" class="named"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
 <rect width="13.87" height="13.54" x="383.18" y="334.88" class="named"><title>0x0043fc70 lara_col_hang2 (535 bytes)</title></rect>
 <rect width="13.87" height="13.49" x="383.18" y="351.42" class="named"><title>0x0044e450 LaraTestWaterClimbOut (533 bytes)</title></rect>
 <rect width="13.87" height="13.46" x="383.18" y="367.90" class="named"><title>0x00445340 RifleHandler (532 bytes)</title></rect>

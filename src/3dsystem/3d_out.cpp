@@ -32,6 +32,47 @@ typedef struct xbuf_xg {
     sint32 Gright;
 } XBUF_XG;
 
+typedef struct uvg_info {
+    sint16 xs;
+    sint16 ys;
+    sint16 shade;
+    uint16 u;
+    uint16 v;
+} UVG_INFO;
+
+typedef struct xbuf_xguv {
+    sint32 Xleft;
+    sint32 Gleft;
+    sint32 Uleft;
+    sint32 Vleft;
+    sint32 Xright;
+    sint32 Gright;
+    sint32 Uright;
+    sint32 Vright;
+} XBUF_XGUV;
+
+typedef struct uvgp_info {
+    sint16 xs;
+    sint16 ys;
+    sint16 shade;
+    float ooz;
+    float uoz;
+    float voz;
+} UVGP_INFO;
+
+typedef struct xbuf_persp_fp {
+    sint32 Xleft;
+    sint32 Gleft;
+    float UOZleft;
+    float VOZleft;
+    float OOZleft;
+    sint32 Xright;
+    sint32 Gright;
+    float UOZright;
+    float VOZright;
+    float OOZright;
+} XBUF_PERSP_FP;
+
 int gen_x(sint16 *iptr);
 int gen_xg(sint16 *iptr);
 int gen_xguv(sint16 *iptr);
@@ -159,6 +200,83 @@ int gen_x(sint16 *iptr)
             for (; y2 < y1; y2++, xptr++) {
                 x += x_add;
                 xptr->Xleft = x;
+            }
+        }
+    }
+    if (min_y == max_y)
+        return 0;
+    xgen_ymin = min_y;
+    xgen_ymax = max_y;
+    return 1;
+}
+
+int gen_xguv(sint16 *iptr)
+{
+    UVG_INFO *ptr1, *ptr2;
+    XBUF_XGUV *xptr;
+    int g, g_add;
+    int x, x_add;
+    int u, u_add;
+    int v, v_add;
+    int y1, y2, ydif;
+    int min_y, max_y;
+    int numcoords;
+
+    numcoords = *iptr++;
+    ptr1 = (UVG_INFO *)iptr;
+    ptr2 = ptr1;
+    ptr1 += numcoords - 1;
+    min_y = max_y = ptr1->ys;
+    for (; numcoords > 0; numcoords--, ptr1 = ptr2, ptr2++) {
+        y1 = ptr1->ys;
+        y2 = ptr2->ys;
+        if (y1 < y2) {
+            if (y1 < min_y)
+                min_y = y1;
+            ydif = y2 - y1;
+            x = ptr1->xs;
+            x_add = ((ptr2->xs - x) << 16) / ydif;
+            x = (x << 16) + 0xffff;
+            g = ptr1->shade << 8;
+            g_add = ((ptr2->shade << 8) - g) / ydif;
+            u = ptr1->u << 8;
+            u_add = ((ptr2->u << 8) - u) / ydif;
+            v = ptr1->v << 8;
+            v_add = ((ptr2->v << 8) - v) / ydif;
+            xptr = (XBUF_XGUV *)xbuffer + y1;
+            for (; y1 < y2; y1++, xptr++) {
+                x += x_add;
+                g += g_add;
+                u += u_add;
+                v += v_add;
+                xptr->Xright = x;
+                xptr->Gright = g;
+                xptr->Uright = u;
+                xptr->Vright = v;
+            }
+        } else if (y2 < y1) {
+            if (y1 > max_y)
+                max_y = y1;
+            ydif = y1 - y2;
+            x = ptr2->xs;
+            x_add = ((ptr1->xs - x) << 16) / ydif;
+            x = (x << 16) + 1;
+            g = ptr2->shade << 8;
+            g_add = ((ptr1->shade << 8) - g) / ydif;
+            u = ptr2->u << 8;
+            u_add = ((ptr1->u << 8) - u) / ydif;
+            v = ptr2->v << 8;
+            v_add = ((ptr1->v << 8) - v) / ydif;
+            xptr = (XBUF_XGUV *)xbuffer + y2;
+            for (; y2 < y1; y2++, xptr++) {
+                x += x_add;
+                g += g_add;
+                u += u_add;
+                v += v_add;
+                xptr->Xleft = x;
+                xptr->Gleft = g;
+                xptr->Uleft = u;
+                xptr->Vleft = v;
             }
         }
     }
