@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="314.01" height="12" x="0" y="0" class="named"><title>1105 · 74.76%</title></rect>
-<rect width="2.56" height="12" x="314.01" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="103.44" height="12" x="316.56" y="0" class="todo"><title>364 · 24.63%</title></rect>
+<rect width="314.29" height="12" x="0" y="0" class="named"><title>1106 · 74.83%</title></rect>
+<rect width="2.56" height="12" x="314.29" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="103.15" height="12" x="316.85" y="0" class="todo"><title>363 · 24.56%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">74.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1105</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">364</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1106</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">363</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="197.02" height="12" x="0" y="0" class="named"><title>313 KB · 46.91%</title></rect>
-<rect width="3.89" height="12" x="197.02" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="219.10" height="12" x="200.90" y="0" class="todo"><title>348 KB · 52.17%</title></rect>
+<rect width="197.56" height="12" x="0" y="0" class="named"><title>314 KB · 47.04%</title></rect>
+<rect width="3.89" height="12" x="197.56" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="218.55" height="12" x="201.45" y="0" class="todo"><title>348 KB · 52.04%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">46.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">313 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">348 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">47.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">314 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">348 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1297,7 +1297,7 @@
 <rect width="12" height="12" x="450" y="360" class="todo"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="360" class="named"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="360" class="named"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="360" class="todo"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="360" class="named"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="360" class="todo"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="360" class="todo"><title>0x00488260 do_detail_option (3247 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="360" class="todo"><title>0x00488f30 do_sound_option (1181 bytes)</title></rect>
@@ -1737,7 +1737,7 @@
 <rect width="17.23" height="18.04" x="326.28" y="44.80" class="named"><title>0x00425590 SetRoomBounds (885 bytes)</title></rect>
 <rect width="17.23" height="17.94" x="326.28" y="65.85" class="todo"><title>0x004069e0 SubdivideGT4 (880 bytes)</title></rect>
 <rect width="17.23" height="17.90" x="326.28" y="86.79" class="nonmatching"><title>0x0043d980 TestLaraVault (878 bytes)</title></rect>
-<rect width="17.23" height="17.78" x="326.28" y="107.69" class="todo"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
+<rect width="17.23" height="17.78" x="326.28" y="107.69" class="named"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
 <rect width="17.23" height="17.57" x="326.28" y="128.47" class="todo"><title>0x00492970 Func492970 (862 bytes)</title></rect>
 <rect width="17.23" height="17.49" x="326.28" y="149.04" class="todo"><title>0x00439ec0 ShowGymStatsText (858 bytes)</title></rect>
 <rect width="17.23" height="17.47" x="326.28" y="169.53" class="todo"><title>0x00490ba0 Func490ba0 (857 bytes)</title></rect>

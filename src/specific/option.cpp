@@ -129,6 +129,104 @@ void do_inventory_options(INVENTORY_ITEM *inv_item)
     }
 }
 
+void do_levelselect_option(INVENTORY_ITEM *inv_item)
+{
+    sint16 diff;
+    sint16 set;
+    int advs;
+    int lp;
+    int w;
+    char la[2] = { 17, 0 };
+    char ra[2] = { 18, 0 };
+
+    T_RemovePrint(AdventureText);
+    AdventureText = NULL;
+    T_RemovePrint(LeftArrow);
+    LeftArrow = NULL;
+    T_RemovePrint(RightArrow);
+    RightArrow = NULL;
+    set = 0;
+    diff = GlobeLevelAngles[GlobeLevel][0] - GlobeXRot;
+    if (diff < 128 && diff > -128) {
+        GlobeXRot = GlobeLevelAngles[GlobeLevel][0];
+        set++;
+    } else {
+        GlobeXRot += diff >> 3;
+    }
+    diff = GlobeLevelAngles[GlobeLevel][1] - GlobeYRot;
+    if (diff < 128 && diff > -128) {
+        GlobeYRot = GlobeLevelAngles[GlobeLevel][1];
+        set++;
+    } else {
+        GlobeYRot += diff >> 3;
+    }
+    diff = GlobeLevelAngles[GlobeLevel][2] - GlobeZRot;
+    if (diff < 128 && diff > -128) {
+        GlobeZRot = GlobeLevelAngles[GlobeLevel][2];
+        set++;
+    } else {
+        GlobeZRot += diff >> 3;
+    }
+    if (set == 3 && GlobeLevel != 6) {
+        AdventureText = T_Print(0, -16, 5, GF_GameStrings[GlobeLevelAngles[GlobeLevel][3]]);
+        T_CentreH(AdventureText, 1);
+        T_BottomAlign(AdventureText, 1);
+        if (input & IN_LEFT) {
+            do {
+                if (GlobeLevel == 0)
+                    GlobeLevel = 5;
+                else
+                    GlobeLevel--;
+            } while (GlobeLevelComplete[GlobeLevel]);
+        } else if (input & IN_RIGHT) {
+            do {
+                if (GlobeLevel == 5)
+                    GlobeLevel = 0;
+                else
+                    GlobeLevel++;
+            } while (GlobeLevelComplete[GlobeLevel]);
+        }
+    }
+    if (GlobeLevel == 6)
+        inv_item->drawn_meshes = 0xf81;
+    if (set == 3 && GlobeLevel == 6) {
+        GlobeLevel = 0;
+        while (GlobeLevelComplete[GlobeLevel])
+            GlobeLevel++;
+        inputDB |= GlobeButton;
+        inv_item->drawn_meshes = 0xf81;
+        return;
+    } else if (GlobeLevel != 6) {
+        advs = 0;
+        for (lp = 0; lp < 6; lp++) {
+            if (!GlobeLevelComplete[lp])
+                advs++;
+        }
+        if (set == 3 && advs > 1) {
+            w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w / 2;
+            LeftArrow = T_Print(w - 120, -16, 2, la);
+            T_BottomAlign(LeftArrow, 1);
+            RightArrow = T_Print(w + 120, -16, 2, ra);
+            T_BottomAlign(RightArrow, 1);
+        }
+        inv_item->drawn_meshes = 0xfff;
+        if (GlobeLevelComplete[3] == 255)
+            inv_item->drawn_meshes = 0xff7;
+        if (GlobeLevelComplete[5] == 255)
+            inv_item->drawn_meshes &= ~0x40;
+    }
+    inputDB &= ~IN_DESELECT;
+    if ((inputDB & (IN_DESELECT | IN_SELECT)) && GlobeLevel != 6) {
+        if (inputDB & IN_SELECT)
+            NextAdventure = GlobeLevel;
+        GlobeLevel = 6;
+        GlobeButton = inputDB & (IN_DESELECT | IN_SELECT);
+        inputDB &= ~(IN_DESELECT | IN_SELECT);
+    }
+    if ((inputDB & (IN_DESELECT | IN_SELECT)) && GlobeLevel == 6)
+        inputDB &= ~(IN_DESELECT | IN_SELECT);
+}
+
 void do_compass_option(INVENTORY_ITEM *inv_item)
 {
     int h;
