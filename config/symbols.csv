@@ -1363,7 +1363,7 @@ address,size,name,symbol
 0x00490990,12,HWEndScene,_HWEndScene
 0x00490a00,22,HWSetRenderState,_HWSetRenderState
 0x00490ae0,37,HWDrawPrimitive,_HWDrawPrimitive
-0x00490b40,88,Func490b40,
+0x00490b40,88,PrepareTriangleList,_PrepareTriangleList
 0x00490ba0,857,Func490ba0,
 0x00490f10,60,Func490f10,
 0x00490f50,46,Func490f50,

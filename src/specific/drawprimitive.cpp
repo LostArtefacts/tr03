@@ -6,6 +6,12 @@ extern "C" {
 extern LPDIRECT3DDEVICE2 D3DDev;
 
 float WinFrameRate(void);
+extern void (*Var6ca198)(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
+void Func492cd0(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+
+#define MAGICNUM float((1 << 26) * ((1 << 26) * 1.5))
+#define FTOLFIX284(x) ((fconv = x + MAGICNUM / 16.0f), *(int *)(&fconv))
+#define FIX284TOFLOAT(x) float(float(x) * 0.0625f)
 
 HRESULT HWBeginScene(void)
 {
@@ -27,5 +33,18 @@ HRESULT HWDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVert
 {
     return D3DDev->DrawPrimitive(dptPrimitiveType, dvtVertexType, lpvVertices, dwVertexCount, dwFlags);
 }
+
+
+void PrepareTriangleList(D3DTLVERTEX *v, DWORD vcnt)
+{
+    DWORD n;
+    double fconv;
+
+    for (n = 0; n < vcnt; n++, v++) {
+        v->sx = FIX284TOFLOAT(FTOLFIX284(v->sx));
+        v->sy = FIX284TOFLOAT(FTOLFIX284(v->sy));
+    }
+}
+
 
 }
