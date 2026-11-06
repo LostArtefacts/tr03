@@ -23,6 +23,12 @@ extern bool GtWindowClosed;
 extern char *malloc_ptr;
 extern int SaveScreenNum;
 extern char tga_header[18];
+bool DD_SpinMessageLoop(bool tWait);
+void DXGetSurfaceDesc(LPDIRECTDRAWSURFACE3 lpSurface, LPDDSURFACEDESC lpDDSurfaceDesc);
+void MMXBlit32to15(void *dest, void *src, int w);
+void MMXBlit32to16(void *dest, void *src, int w);
+void MMXBlit32to24(void *dest, void *src, int w);
+void SWRBlit32to15(unsigned long *dest, unsigned long *src, int w);
 
 HRESULT DD_CreateSurface(DDSURFACEDESC &ddsd, LPDIRECTDRAWSURFACE3 &lpSurface)
 {
@@ -188,6 +194,68 @@ void DXSaveScreen(LPDIRECTDRAWSURFACE3 lpSurface)
     }
 
     DD_UnlockSurface(lpSurface, ddsd);
+}
+
+bool DXUpdateFrame(bool runMessageLoop, LPRECT rect)
+{
+    DIRECT3DINFO *d3dinfo;
+    DDSURFACEDESC desc;
+    DDSURFACEDESC backDesc;
+    int w;
+    int i;
+    int n;
+
+    App.nFrames++;
+    DXCheckForLostSurfaces();
+    d3dinfo = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D];
+    w = d3dinfo->DisplayMode[App.DXConfigPtr->nVMode].w;
+
+    if (d3dinfo->bHardware) {
+        App.lpFrontBuffer->Flip(0, DDFLIP_WAIT);
+    } else {
+        memset(&desc, 0, sizeof(desc));
+        memset(&backDesc, 0, sizeof(backDesc));
+        desc.dwSize = sizeof(desc);
+        backDesc.dwSize = sizeof(backDesc);
+        DXGetSurfaceDesc(App.lpBackBuffer, &backDesc);
+        (backDesc.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY ? App.lpBackBuffer : App.lpFrontBuffer)->Lock(0, &desc, DDLOCK_WAIT | DDLOCK_NOSYSLOCK, 0);
+
+        if (App.DXConfig.MMX) {
+            if (desc.ddpfPixelFormat.dwRGBBitCount == 32) {
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += w)
+                    memcpy((unsigned char *)desc.lpSurface + desc.lPitch * i, &App.unk[n], w * 4);
+            }
+            if (desc.ddpfPixelFormat.dwRGBBitCount == 16 && desc.ddpfPixelFormat.dwGBitMask == 0x3E0) {
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += w)
+                    MMXBlit32to15((unsigned char *)desc.lpSurface + desc.lPitch * i, &App.unk[n], w);
+            } else if (desc.ddpfPixelFormat.dwRGBBitCount == 16 && desc.ddpfPixelFormat.dwGBitMask == 0x7E0) {
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += w)
+                    MMXBlit32to16((unsigned char *)desc.lpSurface + desc.lPitch * i, &App.unk[n], w);
+            } else if (desc.ddpfPixelFormat.dwRGBBitCount == 24) {
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += w)
+                    MMXBlit32to24((unsigned char *)desc.lpSurface + desc.lPitch * i, &App.unk[n], w);
+            }
+        } else {
+            if (desc.ddpfPixelFormat.dwGBitMask == 0x3E0) {
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += 2 * w)
+                    SWRBlit32to15((unsigned long *)((unsigned char *)desc.lpSurface + desc.lPitch * i), (unsigned long *)((unsigned char *)App.unk + n), w);
+            } else {
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += 2 * w)
+                    memcpy((unsigned char *)desc.lpSurface + desc.lPitch * i, (unsigned char *)App.unk + n, 2 * w);
+            }
+        }
+
+        if (backDesc.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY) {
+            App.lpBackBuffer->Unlock(0);
+            App.lpFrontBuffer->Flip(0, DDFLIP_WAIT);
+        } else {
+            App.lpFrontBuffer->Unlock(0);
+        }
+    }
+
+    if (runMessageLoop)
+        return DD_SpinMessageLoop(false);
+    return true;
 }
 
 }
