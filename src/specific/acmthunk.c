@@ -177,3 +177,17 @@ MMRESULT ACMAPI acmStreamOpen(LPHACMSTREAM phas, HACMDRIVER had, LPWAVEFORMATEX 
 
     return pfn(phas, had, pwfxSrc, pwfxDst, pwfltr, dwCallback, dwInstance, fdwOpen);
 }
+
+MMRESULT ACMAPI acmStreamClose(HACMSTREAM has, DWORD fdwClose)
+{
+    MMRESULT (ACMAPI *pfn)(HACMSTREAM, DWORD);
+
+    if (gpafnAcmFunctions == NULL)
+        return MMSYSERR_ERROR;
+
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, DWORD))gpafnAcmFunctions[35];
+    if (pfn == NULL)
+        return MMSYSERR_ERROR;
+
+    return pfn(has, fdwClose);
+}
