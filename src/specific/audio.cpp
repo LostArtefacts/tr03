@@ -228,6 +228,112 @@ void ACMEmulateCDStop(void)
         DSBuffer->Stop();
 }
 
+int ACMHandleNotifications(void)
+{
+    unsigned char *write;
+    DWORD wait;
+    DWORD bytes;
+    DWORD flag;
+    DWORD abytes;
+    volatile bool lostFocus;
+    bool eot;
+
+    lostFocus = false;
+    while ((wait = WaitForMultipleObjects(2, NotifyEventHandles, FALSE, INFINITE)) != WAIT_FAILED) {
+        if (acm_wait)
+            continue;
+        if (acm_done == true)
+            break;
+
+        while (!App.bFocus)
+            lostFocus = true;
+
+        if (lostFocus) {
+            ThreadACMEmulateCDPlay(XATrack, acm_loop_track);
+            lostFocus = false;
+            continue;
+        }
+
+        if (wait)
+            continue;
+
+        if (!acm_eof) {
+            eot = false;
+            bytes = 0x5800;
+            flag = ACM_STREAMCONVERTF_BLOCKALIGN;
+            if (acm_total_read + bytes > TrackInfos[XATrack].size) {
+                bytes = TrackInfos[XATrack].size - acm_total_read;
+                flag = 0;
+                eot = true;
+            }
+
+            ReadFile(acm_file, ADPCMBuffer, bytes, &acm_read, 0);
+            acm_total_read += bytes;
+            if (eot) {
+                if (acm_loop_track) {
+                    SetFilePointer(acm_file, -(long)acm_total_read, 0, FILE_CURRENT);
+                    acm_total_read = 0;
+                } else {
+                    acm_eof = true;
+                }
+            }
+
+            acm_locked = true;
+            DSBuffer->Lock(NextWriteOffset, NotifySize, (LPVOID *)&write, &abytes, 0, 0, 0);
+            if (eot) {
+                memset(write, 0, NotifySize);
+                StreamHeaders[CurrentNotify].cbSrcLength = bytes;
+            }
+            acmStreamConvert(hACMStream, &StreamHeaders[CurrentNotify], flag);
+            while (!(StreamHeaders[CurrentNotify].fdwStatus & ACMSTREAMHEADER_STATUSF_DONE));
+            DSBuffer->Unlock(write, abytes, 0, 0);
+            acm_locked = false;
+            if (eot)
+                StreamHeaders[CurrentNotify].cbSrcLength = 0x5800;
+
+            NextWriteOffset += abytes;
+            if (NextWriteOffset >= audio_buffer_size)
+                NextWriteOffset -= audio_buffer_size;
+        } else {
+            ACMSilentCount++;
+            acm_locked = true;
+            DSBuffer->Lock(NextWriteOffset, NotifySize, (LPVOID *)&write, &abytes, 0, 0, 0);
+            memset(write, 0, NotifySize);
+            NextWriteOffset += abytes;
+            if (NextWriteOffset >= audio_buffer_size)
+                NextWriteOffset -= audio_buffer_size;
+            DSBuffer->Unlock(write, abytes, 0, 0);
+            acm_locked = false;
+
+            if (ACMSilentCount > 4) {
+                ACMSilentCount = 0;
+                DSBuffer->Stop();
+                if (CurrentAtmosphere) {
+                    ThreadACMEmulateCDPlay(CurrentAtmosphere, 1);
+                    continue;
+                }
+            } else {
+                acm_locked = true;
+                DSBuffer->Lock(NextWriteOffset, NotifySize, (LPVOID *)&write, &abytes, 0, 0, 0);
+                memset(write, 0, NotifySize);
+                DSBuffer->Unlock(write, abytes, 0, 0);
+                acm_locked = false;
+            }
+        }
+
+        CurrentNotify++;
+        if (CurrentNotify > 3)
+            CurrentNotify = 0;
+    }
+
+    CloseHandle(NotifyEventHandles[0]);
+    CloseHandle(NotifyEventHandles[1]);
+    NotifyEventHandles[1] = 0;
+    NotifyEventHandles[0] = 0;
+    ExitThread(1);
+    return 1;
+}
+
 int ACMGetTrackLocation(void)
 {
     return (int)(60.0f * ((float)(timeGetTime() - acm_start_time) * 0.001f));

@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="333.90" height="12" x="0" y="0" class="named"><title>1175 · 79.50%</title></rect>
-<rect width="2.84" height="12" x="333.90" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="83.26" height="12" x="336.74" y="0" class="todo"><title>293 · 19.82%</title></rect>
+<rect width="334.18" height="12" x="0" y="0" class="named"><title>1176 · 79.57%</title></rect>
+<rect width="2.84" height="12" x="334.18" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="82.98" height="12" x="337.02" y="0" class="todo"><title>292 · 19.76%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">79.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1175</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">293</tspan></text>
+<text text-anchor="end" x="600" y="7.50">79.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1176</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">292</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="211.94" height="12" x="0" y="0" class="named"><title>337 KB · 50.46%</title></rect>
-<rect width="3.98" height="12" x="211.94" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="204.09" height="12" x="215.91" y="0" class="todo"><title>325 KB · 48.59%</title></rect>
+<rect width="212.57" height="12" x="0" y="0" class="named"><title>338 KB · 50.61%</title></rect>
+<rect width="3.98" height="12" x="212.57" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="203.46" height="12" x="216.54" y="0" class="todo"><title>324 KB · 48.44%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">50.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">337 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">325 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">50.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">338 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">324 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1128,7 +1128,7 @@
 <rect width="12" height="12" x="165" y="315" class="named"><title>0x00474900 ACMEmulateCDPlay (558 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="315" class="named"><title>0x00474b30 ThreadACMEmulateCDPlay (531 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="315" class="named"><title>0x00474d50 ACMEmulateCDStop (25 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="315" class="todo"><title>0x00474d70 ACMHandleNotifications (1001 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="315" class="named"><title>0x00474d70 ACMHandleNotifications (1001 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="315" class="todo"><title>0x00475160 ACMSetupNotifications (214 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="315" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="315" class="named"><title>0x00475280 ACMSetVolume (50 bytes)</title></rect>
@@ -1716,7 +1716,7 @@
 <rect width="19.15" height="18.49" x="304.13" y="428.51" class="named"><title>0x00480f70 LoadRooms (1008 bytes)</title></rect>
 <rect width="19.29" height="18.28" x="326.28" y="23.53" class="named"><title>0x0041e170 CollideStaticObjects (1004 bytes)</title></rect>
 <rect width="19.25" height="18.28" x="348.57" y="23.53" class="todo"><title>0x00414390 CreatureAIInfo (1002 bytes)</title></rect>
-<rect width="19.23" height="18.28" x="370.82" y="23.53" class="todo"><title>0x00474d70 ACMHandleNotifications (1001 bytes)</title></rect>
+<rect width="19.23" height="18.28" x="370.82" y="23.53" class="named"><title>0x00474d70 ACMHandleNotifications (1001 bytes)</title></rect>
 <rect width="19.13" height="18.28" x="393.05" y="23.53" class="named"><title>0x0044d2a0 AnimateLara (996 bytes)</title></rect>
 <rect width="18.87" height="18.28" x="415.18" y="23.53" class="named"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
 <rect width="18.83" height="18.28" x="437.05" y="23.53" class="todo"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
