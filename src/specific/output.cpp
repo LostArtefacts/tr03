@@ -236,4 +236,21 @@ void mCalcPoint(sint32 x, sint32 y, sint32 z, sint32 *result)
     result[2] = (w2v_matrix[8] * x + w2v_matrix[9] * y + w2v_matrix[10] * z) >> 14;
 }
 
+void ProjectPCoord(sint32 x, sint32 y, sint32 z, sint32 *result, sint32 cx, sint32 cy, sint32 fov)
+{
+    if (z > 0) {
+        result[0] = cx + x * fov / z;
+        result[1] = cy + y * fov / z;
+        result[2] = z;
+    } else if (z < 0) {
+        result[0] = cx - x * fov / z;
+        result[1] = cy - y * fov / z;
+        result[2] = z;
+    } else {
+        result[0] = cx + x * fov;
+        result[1] = cy + y * fov;
+        result[2] = z;
+    }
+}
+
 }
