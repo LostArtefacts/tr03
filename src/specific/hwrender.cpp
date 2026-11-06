@@ -217,8 +217,61 @@ void HWR_DrawRoutinesNoAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPag
     }
 }
 
-extern D3DTLVERTEX *UnRollBuffer;
 extern void (*DrawRoutine)(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage);
+
+void HWR_DrawPolyList(int num, sint32 *sortptr)
+{
+    sint16 *pInfo;
+    sint32 *pSort;
+    int nSurf;
+    D3DTLVERTEX *pV;
+    int Routine;
+    int Tpage;
+    int nV;
+
+    dpPrimitiveType = D3DPT_TRIANGLEFAN;
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+        pSort = (sint32 *)sortptr;
+        for (nSurf = 0; nSurf < num; nSurf++) {
+            pInfo = (sint16 *)(*pSort);
+            switch (pSort[2]) {
+            case 1:
+            case 2:
+            case 5:
+                HWR_EnablePerspCorrect(false);
+                HWR_EnableFilter(false);
+                break;
+            case 3:
+                HWR_EnablePerspCorrect(true);
+                HWR_EnableFilter(true);
+                break;
+            default:
+                HWR_EnablePerspCorrect(true);
+                HWR_EnableFilter(false);
+                break;
+            }
+            Routine = *pInfo++;
+            Tpage = pInfo[0];
+            nV = pInfo[1];
+            pV = *((D3DTLVERTEX **)(pInfo + 2));
+            DrawRoutine(nV, pV, Routine, Tpage);
+            pSort += 3;
+        }
+    } else {
+        pSort = (sint32 *)sortptr;
+        for (nSurf = 0; nSurf < num; nSurf++) {
+            pInfo = (sint16 *)(*pSort);
+            Routine = *pInfo++;
+            Tpage = pInfo[0];
+            nV = pInfo[1];
+            pV = *((D3DTLVERTEX **)(pInfo + 2));
+            DrawRoutine(nV, pV, Routine, Tpage);
+            pSort += 3;
+        }
+    }
+}
+
+extern D3DTLVERTEX *UnRollBuffer;
 
 inline void TLVERT_To_TLVERT(D3DTLVERTEX *s, D3DTLVERTEX *d)
 {

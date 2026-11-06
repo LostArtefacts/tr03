@@ -1209,7 +1209,7 @@ address,size,name,symbol
 0x00484f10,508,HWR_DrawRoutines,_HWR_DrawRoutines
 0x00485130,512,HWR_DrawRoutinesStippledAlpha,_HWR_DrawRoutinesStippledAlpha
 0x00485350,368,HWR_DrawRoutinesNoAlpha,_HWR_DrawRoutinesNoAlpha
-0x004854c0,236,HWR_DrawPolyList,_HWR_DrawPolyList
+0x004854c0,256,HWR_DrawPolyList,_HWR_DrawPolyList
 0x004855c0,821,HWR_DrawPolyListBF,_HWR_DrawPolyListBF
 0x00485900,179,HWR_LoadTexturePages,_HWR_LoadTexturePages
 0x004859c0,68,HWR_FreeTexturePages,_HWR_FreeTexturePages
