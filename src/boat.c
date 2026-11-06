@@ -977,3 +977,63 @@ void BoatControl(sint16 item_number)
 
     UpdateWakeFX_boat();
 }
+
+int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
+int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
+
+int BoatCheckGeton(sint16 item_number, COLL_INFO *coll)
+{
+    int geton, dist;
+    sint16 rot;
+    ITEM_INFO *boat;
+
+    if (lara.gun_status != LG_ARMLESS)
+        return 0;
+
+    boat = &items[item_number];
+
+    dist = ((lara_item->pos.z_pos - boat->pos.z_pos) * phd_cos(-boat->pos.y_rot)
+               - (lara_item->pos.x_pos - boat->pos.x_pos) * phd_sin(-boat->pos.y_rot))
+        >> W2V_SHIFT;
+
+    if (dist > 512)
+        return 0;
+
+    rot = boat->pos.y_rot - lara_item->pos.y_rot;
+
+    geton = 0;
+    if (lara.water_status == LARA_SURFACE || lara.water_status == LARA_WADE) {
+        if (!(input & IN_ACTION) || lara_item->gravity_status || boat->speed)
+            return 0;
+
+        if (rot > 0x2000 && rot < 0x6000)
+            geton = 1;
+        else if (rot > -0x6000 && rot < -0x2000)
+            geton = 2;
+    } else if (lara.water_status == LARA_ABOVEWATER) {
+        if (lara_item->fallspeed > 0) {
+            if (lara_item->pos.y_pos + 512 > boat->pos.y_pos)
+                geton = 3;
+        } else if (lara_item->fallspeed == 0) {
+            if (rot > -0x6000 && rot < 0x6000) {
+                if (lara_item->pos.x_pos == boat->pos.x_pos
+                    && lara_item->pos.y_pos == boat->pos.y_pos
+                    && lara_item->pos.z_pos == boat->pos.z_pos)
+                    geton = 4;
+                else
+                    geton = 3;
+            }
+        }
+    }
+
+    if (!geton)
+        return 0;
+
+    if (!TestBoundsCollide(boat, lara_item, coll->radius))
+        return 0;
+
+    if (!TestCollision(boat, lara_item))
+        return 0;
+
+    return geton;
+}
