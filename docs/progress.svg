@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="289.94" height="12" x="0" y="0" class="named"><title>1253 · 84.78%</title></rect>
-<rect width="0.93" height="12" x="289.94" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
-<rect width="4.17" height="12" x="290.86" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="46.97" height="12" x="295.03" y="0" class="todo"><title>203 · 13.73%</title></rect>
+<rect width="290.17" height="12" x="0" y="0" class="named"><title>1254 · 84.84%</title></rect>
+<rect width="0.93" height="12" x="290.17" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
+<rect width="4.17" height="12" x="291.09" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="46.74" height="12" x="295.26" y="0" class="todo"><title>202 · 13.67%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">85.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1253</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">203</tspan></text>
+<text text-anchor="end" x="522" y="7.50">85.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1254</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">202</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.26" height="12" x="0" y="0" class="named"><title>374 KB · 55.92%</title></rect>
-<rect width="0.20" height="12" x="191.26" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
-<rect width="6.04" height="12" x="191.47" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="144.50" height="12" x="197.50" y="0" class="todo"><title>283 KB · 42.25%</title></rect>
+<rect width="191.48" height="12" x="0" y="0" class="named"><title>374 KB · 55.99%</title></rect>
+<rect width="0.20" height="12" x="191.48" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
+<rect width="6.04" height="12" x="191.68" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="144.29" height="12" x="197.71" y="0" class="todo"><title>282 KB · 42.19%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">56.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">374 KB</tspan> · <tspan class="decompiled">395 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">283 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">374 KB</tspan> · <tspan class="decompiled">395 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">282 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -89,7 +89,7 @@
 <rect width="12" height="12" x="300" y="0" class="named"><title>0x00402130 SetZNear (66 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="0" class="named"><title>0x00402180 SetZFar (24 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="0" class="named"><title>0x004021a0 phd_InitWindow (434 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="0" class="todo"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="0" class="named"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="0" class="named"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="0" class="named"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="0" class="named"><title>0x00402580 draw_poly_gouraud (53 bytes)</title></rect>
@@ -1973,7 +1973,7 @@
 <rect width="12.34" height="11.86" x="493.82" y="131.06" class="named"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
 <rect width="12.31" height="11.86" x="509.16" y="131.06" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="12.28" height="11.86" x="524.47" y="131.06" class="nonmatching"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
-<rect width="12.28" height="11.86" x="539.75" y="131.06" class="todo"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
+<rect width="12.28" height="11.86" x="539.75" y="131.06" class="named"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
 <rect width="12.22" height="11.86" x="555.03" y="131.06" class="named"><title>0x00449890 lara_col_climbdown (413 bytes)</title></rect>
 <rect width="12.22" height="11.86" x="570.25" y="131.06" class="named"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
 <rect width="12.16" height="11.86" x="585.47" y="131.06" class="named"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>

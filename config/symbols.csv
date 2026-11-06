@@ -2125,6 +2125,7 @@ address,size,name,symbol
 0x005316f8,4,f_centerx,_f_centerx
 0x005316fc,4,f_centery,_f_centery
 0x00531700,4,phd_scrheight,_phd_scrheight
+0x00531704,4,phd_winptr,_phd_winptr
 0x00531708,2,phd_winxmin,_phd_winxmin
 0x0053170c,4,f_perspoznear,_f_perspoznear
 0x00531710,4,f_oneoznear,_f_oneoznear
