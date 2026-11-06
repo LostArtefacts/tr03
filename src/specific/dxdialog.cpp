@@ -161,4 +161,131 @@ void DXInitVideoModes(HWND hwnd, int nDD, int nD3D)
     }
 }
 
+void DXInitTextures(HWND hwnd, int nDD, int nD3D)
+{
+    HWND hTMode;
+    int n;
+    char Buffer[20];
+    char Buffer1[20];
+    char Default[12];
+    static int CurSel = -1;
+    int nDef;
+    bool palette;
+    bool found;
+    HWND h;
+
+    nDef = -1;
+    hTMode = GetDlgItem(hwnd, 1003);
+    if (CurSel != -1)
+        SendMessage(hTMode, CB_GETLBTEXT, SendMessage(hTMode, CB_GETCURSEL, 0, 0), (LPARAM)Buffer1);
+    SendMessage(hTMode, CB_RESETCONTENT, 0, 0);
+    palette = 0;
+    for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nTexture; n++) {
+        if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].bPalette == false) {
+            if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].abpp != 0) {
+                sprintf(Buffer, "%d%d%d%d", G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].rbpp,
+                    G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].gbpp,
+                    G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].bbpp,
+                    G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].abpp);
+            } else {
+                sprintf(Buffer, "%d%d%d", G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].rbpp,
+                    G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].gbpp,
+                    G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].bbpp);
+            }
+        } else {
+            palette = 1;
+            sprintf(Buffer, "%d Bit", G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].Texture[n].bpp);
+        }
+        SendMessage(hTMode, CB_ADDSTRING, 0, (LPARAM)Buffer);
+        if (CurSel == -1) {
+            if (!strcmp(Default, Buffer))
+                nDef = n;
+        } else {
+            if (!strcmp(Buffer1, Buffer))
+                nDef = n;
+        }
+    }
+    found = 0;
+    if (palette) {
+        h = GetDlgItem(hwnd, 1009);
+        if (SendMessage(h, BM_GETCHECK, 0, 0)) {
+            strcpy(Default, "8 Bit");
+            for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nTexture; n++) {
+                SendMessage(hTMode, CB_GETLBTEXT, n, (LPARAM)Buffer);
+                if (!strcmp(Default, Buffer)) {
+                    nDef = n;
+                    found = 1;
+                    break;
+                }
+            }
+        }
+    } else {
+        EnableWindow(GetDlgItem(hwnd, 1009), 0);
+    }
+    if (G_DXConfig->MMX && SendMessage(GetDlgItem(hwnd, 1008), BM_GETCHECK, 0, 0)) {
+        if (!found) {
+            strcpy(Default, "8888");
+            for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nTexture; n++) {
+                SendMessage(hTMode, CB_GETLBTEXT, n, (LPARAM)Buffer);
+                if (!strcmp(Default, Buffer)) {
+                    nDef = n;
+                    found = 1;
+                    break;
+                }
+            }
+        }
+    }
+    if (!found) {
+        strcpy(Default, "5551");
+        for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nTexture; n++) {
+            SendMessage(hTMode, CB_GETLBTEXT, n, (LPARAM)Buffer);
+            if (!strcmp(Default, Buffer)) {
+                nDef = n;
+                found = 1;
+                break;
+            }
+        }
+    }
+    if (!found) {
+        strcpy(Default, "4444");
+        for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nTexture; n++) {
+            SendMessage(hTMode, CB_GETLBTEXT, n, (LPARAM)Buffer);
+            if (!strcmp(Default, Buffer)) {
+                nDef = n;
+                found = 1;
+                break;
+            }
+        }
+    }
+    if (!found) {
+        strcpy(Default, "555");
+        for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nTexture; n++) {
+            SendMessage(hTMode, CB_GETLBTEXT, n, (LPARAM)Buffer);
+            if (!strcmp(Default, Buffer)) {
+                nDef = n;
+                found = 1;
+                break;
+            }
+        }
+    }
+    if (!found) {
+        strcpy(Default, "565");
+        for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nTexture; n++) {
+            SendMessage(hTMode, CB_GETLBTEXT, n, (LPARAM)Buffer);
+            if (!strcmp(Default, Buffer)) {
+                nDef = n;
+                found = 1;
+                break;
+            }
+        }
+    }
+    if (nDef != -1) {
+        CurSel = nDef;
+        SendMessage(hTMode, CB_SETCURSEL, nDef, 0);
+    } else {
+        CurSel = 0;
+        SendMessage(hTMode, CB_SETCURSEL, 0, 0);
+    }
+}
+
 }
