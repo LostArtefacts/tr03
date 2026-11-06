@@ -2096,6 +2096,7 @@ address,size,name,symbol
 0x004d7914,4,phd_centerx,_phd_centerx
 0x004d7918,4,phd_centery,_phd_centery
 0x004d7920,48000,sort3d_bufferfb,_sort3d_bufferfb
+0x004e34a4,4,InsertTrans8,_InsertTrans8
 0x004e34a8,4,phd_topfloat,_phd_topfloat
 0x004e34b0,32000,sort3d_buffer,_sort3d_buffer
 0x004eb1b0,48000,sort3d_bufferbf,_sort3d_bufferbf
@@ -2141,11 +2142,15 @@ address,size,name,symbol
 0x005a6b00,,phdtextinfo,_phdtextinfo
 0x005bab00,1,bBlueEffect,_bBlueEffect
 0x005bab04,4,phd_viewdist,_phd_viewdist
+0x005bab0c,4,InsertObjectG4,_InsertObjectG4
 0x005bab10,64,shade_table,_shade_table
+0x005bab50,4,InsertObjectG3,_InsertObjectG3
 0x005bab58,,matrix_stack,_matrix_stack
 0x005bb2d8,8448,depthq_table,_depthq_table
 0x005bd3d8,4,phd_scrwidth,_phd_scrwidth
 0x005bd3e0,,vbuf,_vbuf
+0x005cbe40,4,RoomInsertObjectGT4,_RoomInsertObjectGT4
+0x005cbe44,4,RoomInsertObjectGT3,_RoomInsertObjectGT3
 0x005d79c8,128,texture_page_ptrs,_texture_page_ptrs
 0x005d7a48,4,phd_rightfloat,_phd_rightfloat
 0x005d7a60,128,wibble_table,_wibble_table

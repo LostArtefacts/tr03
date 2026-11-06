@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="337.88" height="12" x="0" y="0" class="named"><title>1189 · 80.45%</title></rect>
-<rect width="2.84" height="12" x="337.88" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="79.28" height="12" x="340.72" y="0" class="todo"><title>279 · 18.88%</title></rect>
+<rect width="338.16" height="12" x="0" y="0" class="named"><title>1190 · 80.51%</title></rect>
+<rect width="2.84" height="12" x="338.16" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="79" height="12" x="341" y="0" class="todo"><title>278 · 18.81%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">80.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1189</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">279</tspan></text>
+<text text-anchor="end" x="600" y="7.50">80.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1190</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">278</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="215.95" height="12" x="0" y="0" class="named"><title>343 KB · 51.42%</title></rect>
-<rect width="3.98" height="12" x="215.95" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="200.08" height="12" x="219.92" y="0" class="todo"><title>318 KB · 47.64%</title></rect>
+<rect width="216.22" height="12" x="0" y="0" class="named"><title>344 KB · 51.48%</title></rect>
+<rect width="3.98" height="12" x="216.22" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="199.80" height="12" x="220.20" y="0" class="todo"><title>318 KB · 47.57%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">51.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">343 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">318 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">51.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">344 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">318 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -86,7 +86,7 @@
 <rect width="12" height="12" x="285" y="0" class="todo"><title>0x004020d0 SetupZRange (83 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="0" class="named"><title>0x00402130 SetZNear (66 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="0" class="named"><title>0x00402180 SetZFar (24 bytes)</title></rect>
-<rect width="12" height="12" x="330" y="0" class="todo"><title>0x004021a0 phd_InitWindow (434 bytes)</title></rect>
+<rect width="12" height="12" x="330" y="0" class="named"><title>0x004021a0 phd_InitWindow (434 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="0" class="todo"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="0" class="todo"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="0" class="todo"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
@@ -1959,7 +1959,7 @@
 <rect width="12.69" height="12.10" x="416.11" y="330.25" class="todo"><title>0x0040a690 HWI_InsertTransQuad_Sorted (437 bytes)</title></rect>
 <rect width="12.69" height="12.10" x="416.11" y="345.35" class="named"><title>0x0042b130 TriggerExplosionSmoke (437 bytes)</title></rect>
 <rect width="12.69" height="12.07" x="416.11" y="360.45" class="named"><title>0x004571e0 TestBlockPush (436 bytes)</title></rect>
-<rect width="12.69" height="12.01" x="416.11" y="375.52" class="todo"><title>0x004021a0 phd_InitWindow (434 bytes)</title></rect>
+<rect width="12.69" height="12.01" x="416.11" y="375.52" class="named"><title>0x004021a0 phd_InitWindow (434 bytes)</title></rect>
 <rect width="12.69" height="11.93" x="416.11" y="390.53" class="named"><title>0x0044b940 DoFlareLight (431 bytes)</title></rect>
 <rect width="12.69" height="11.93" x="416.11" y="405.46" class="named"><title>0x0045f490 SkidooCheckGetOff (431 bytes)</title></rect>
 <rect width="12.69" height="11.85" x="416.11" y="420.39" class="named"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>

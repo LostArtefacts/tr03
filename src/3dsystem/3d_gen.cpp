@@ -163,6 +163,104 @@ void SetZFar(int nNewZFar)
     SetupZRange();
 }
 
+#include "../specific/winmain.h"
+
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+extern sint16 phd_winxmax;
+extern sint16 phd_winymax;
+extern sint32 phd_left, phd_right, phd_top, phd_bottom;
+extern sint32 phd_centerx, phd_centery;
+extern int phd_scrwidth;
+extern int phd_scrheight;
+extern int phd_viewdist;
+extern float f_centerx, f_centery;
+extern sint32 *phd_mxptr;
+extern sint32 matrix_stack[];
+extern RECT phd_WindowRect;
+extern sint16 *(*InsertObjectGT3)(sint16 *pFaceInfo, int nFaces, int nSortType);
+extern sint16 *(*InsertObjectGT4)(sint16 *pFaceInfo, int nFaces, int nSortType);
+extern sint16 *(*InsertObjectG3)(sint16 *pFaceInfo, int nFaces, int nSortType);
+extern sint16 *(*InsertObjectG4)(sint16 *pFaceInfo, int nFaces, int nSortType);
+extern sint16 *(*RoomInsertObjectGT3)(sint16 *pFaceInfo, int nFaces, int nSortType);
+extern sint16 *(*RoomInsertObjectGT4)(sint16 *pFaceInfo, int nFaces, int nSortType);
+extern void (*InsertFlatRect)(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
+extern void (*InsertLine)(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
+extern void (*InsertSprite)(int zdepth, int x1, int y1, int x2, int y2, int nSprite, int shade, int shade1, int nDrawType, int offset);
+extern void (*InsertTrans8)(void *vbuf, sint16 shade);
+extern void (*InsertTransQuad)(sint32 sx, sint32 sy, sint32 w, sint32 h, sint32 z);
+sint16 *HWI_InsertObjectGT3_Sorted(sint16 *pFaceInfo, int nFaces, int nSortType);
+sint16 *HWI_InsertObjectGT4_Sorted(sint16 *pFaceInfo, int nFaces, int nSortType);
+sint16 *HWI_InsertObjectG3_Sorted(sint16 *pFaceInfo, int nFaces, int nSortType);
+sint16 *HWI_InsertObjectG4_Sorted(sint16 *pFaceInfo, int nFaces, int nSortType);
+void HWI_InsertFlatRect_Sorted(sint32 min_x, sint32 min_y, sint32 max_x, sint32 max_y, int nZDepth, int colour);
+void HWI_InsertLine_Sorted(sint32 x1, sint32 y1, sint32 x2, sint32 y2, sint32 z, char color);
+void HWI_InsertSprite_Sorted(int zdepth, int x1, int y1, int x2, int y2, int nSprite, int shade, int shade1, int nDrawType, int offset);
+void HWI_InsertTrans8_Sorted(void *vbuf, sint16 shade);
+void HWI_InsertTransQuad_Sorted(sint32 sx, sint32 sy, sint32 w, sint32 h, sint32 z);
+
+void phd_InitWindow(int x, int y, int width, int height, int nearz, int farz, int view_angle, int scrwidth, int scrheight)
+{
+    phd_winxmin = (sint16)x;
+    phd_winymin = (sint16)y;
+    phd_winxmax = (sint16)(width - 1);
+    phd_winymax = (sint16)(height - 1);
+    phd_winwidth = width;
+    phd_winheight = height;
+    phd_centerx = width / 2;
+    phd_centery = height / 2;
+    phd_znear = nearz << 14;
+    phd_zfar = farz << 14;
+    phd_viewdist = farz;
+    phd_scrwidth = scrwidth;
+    phd_scrheight = scrheight;
+    f_centerx = float(phd_centerx);
+    f_centery = float(phd_centery);
+    AlterFOV((PHD_ANGLE)(182 * view_angle));
+    SetZNear(phd_znear);
+    SetZFar(phd_zfar);
+    InitZTable();
+    phd_left = 0;
+    phd_top = 0;
+    phd_right = phd_winxmax;
+    phd_bottom = phd_winymax;
+    phd_mxptr = matrix_stack;
+    phd_WindowRect.left = phd_winxmin;
+    phd_WindowRect.top = phd_winymin;
+    phd_WindowRect.right = phd_winxmin + phd_winwidth;
+    phd_WindowRect.bottom = phd_winymin + phd_winheight;
+
+    switch (App.nRenderMode) {
+    case 0:
+        InsertObjectGT3 = HWI_InsertObjectGT3_Sorted;
+        InsertObjectGT4 = HWI_InsertObjectGT4_Sorted;
+        InsertObjectG3 = HWI_InsertObjectG3_Sorted;
+        InsertObjectG4 = HWI_InsertObjectG4_Sorted;
+        InsertFlatRect = HWI_InsertFlatRect_Sorted;
+        InsertLine = HWI_InsertLine_Sorted;
+        RoomInsertObjectGT3 = HWI_InsertObjectGT3_Sorted;
+        RoomInsertObjectGT4 = HWI_InsertObjectGT4_Sorted;
+        InsertSprite = HWI_InsertSprite_Sorted;
+        InsertTrans8 = HWI_InsertTrans8_Sorted;
+        InsertTransQuad = HWI_InsertTransQuad_Sorted;
+        break;
+
+    case 1:
+        InsertObjectGT3 = HWI_InsertObjectGT3_Sorted;
+        InsertObjectGT4 = HWI_InsertObjectGT4_Sorted;
+        InsertObjectG3 = HWI_InsertObjectG3_Sorted;
+        InsertObjectG4 = HWI_InsertObjectG4_Sorted;
+        InsertFlatRect = HWI_InsertFlatRect_Sorted;
+        InsertLine = HWI_InsertLine_Sorted;
+        RoomInsertObjectGT3 = HWI_InsertObjectGT3_Sorted;
+        RoomInsertObjectGT4 = HWI_InsertObjectGT4_Sorted;
+        InsertSprite = HWI_InsertSprite_Sorted;
+        InsertTrans8 = HWI_InsertTrans8_Sorted;
+        InsertTransQuad = HWI_InsertTransQuad_Sorted;
+        break;
+    }
+}
+
 void phd_NormaliseVector(sint32 x, sint32 y, sint32 z, sint32 *dest)
 {
     sint32 len;
