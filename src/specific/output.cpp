@@ -125,6 +125,20 @@ void AnimateTextures(int n)
     }
 }
 
+void S_SetupBelowWater(int underwater)
+{
+    if (underwater ^ wet) {
+        if (underwater)
+            FadeToPal(1, water_palette);
+        else
+            FadeToPal(1, game_palette);
+        wet = underwater;
+    }
+    water_effect = !underwater;
+    shade_effect = 1;
+    bBlueEffect = true;
+}
+
 void S_SetupAboveWater(int underwater)
 {
     water_effect = underwater;
