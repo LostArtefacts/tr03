@@ -913,4 +913,60 @@ void ShowGymStatsText(char *time_str, int type)
 
 static int stats_mode;
 
+void ShowStatsText(char *time_str, int type)
+{
+    int select, numsecrets, distance;
+    char str[32];
+
+    if (stats_mode == 1) {
+        ChangeRequesterItem(&Stats_Requester, 0, GF_GameStrings[61], 2, time_str, 4);
+        if ((select = Display_Requester(&Stats_Requester, type, 1)))
+            stats_mode = 0;
+        else
+            input = inputDB = 0;
+        return;
+    }
+    Stats_Requester.noselector = 1;
+    SetPCRequesterSize(&Stats_Requester, 7, -32);
+    Stats_Requester.line_height = 18;
+    Stats_Requester.items = 0;
+    Stats_Requester.selected = 0;
+    Stats_Requester.line_offset = 0;
+    Stats_Requester.line_oldoffset = 0;
+    Stats_Requester.pixwidth = 304;
+    Stats_Requester.xpos = 0;
+    Stats_Requester.zpos = 0;
+    Stats_Requester.itemtexts1 = Valid_Level_Strings[0];
+    Stats_Requester.itemtexts2 = Valid_Level_Strings2[0];
+    Stats_Requester.itemtextlen = 50;
+    Init_Requester(&Stats_Requester);
+    SetRequesterHeading(&Stats_Requester, GF_Level_Names[CurrentLevel], 0, NULL, 0);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[61], 2, time_str, 4);
+    numsecrets = (savegame.secrets & 1) + ((savegame.secrets & 2) >> 1) + ((savegame.secrets & 4) >> 2) + ((savegame.secrets & 8) >> 3)
+        + ((savegame.secrets & 16) >> 4) + ((savegame.secrets & 32) >> 5) + ((savegame.secrets & 64) >> 6) + ((savegame.secrets & 128) >> 7);
+    if (LevelSecrets[CurrentLevel])
+        sprintf(str, "%d %s %d", numsecrets, GF_GameStrings[78], LevelSecrets[CurrentLevel]);
+    else
+        sprintf(str, "%s", GF_GameStrings[71]);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[62], 2, str, 4);
+    sprintf(str, "%d", savegame.kills);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[64], 2, str, 4);
+    sprintf(str, "%d", savegame.ammo_used);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[65], 2, str, 4);
+    sprintf(str, "%d", savegame.ammo_hit);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[66], 2, str, 4);
+    if (savegame.health_used & 1)
+        sprintf(str, "%d.5", savegame.health_used >> 1);
+    else
+        sprintf(str, "%d.0", savegame.health_used >> 1);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[69], 2, str, 4);
+    distance = savegame.distance_travelled / 445;
+    if (distance >= 1000)
+        sprintf(str, "%d.%02dkm", distance / 1000, distance % 100);
+    else
+        sprintf(str, "%dm", distance);
+    AddRequesterItem(&Stats_Requester, GF_GameStrings[68], 2, str, 4);
+    stats_mode = 1;
+}
+
 static int end_stats_mode;
