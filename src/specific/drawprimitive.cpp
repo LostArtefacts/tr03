@@ -13,10 +13,37 @@ extern HGLOBAL Var6ca3ac;
 extern unsigned char *Var6ca4d0;
 extern unsigned long *Var6ca2d0;
 extern long Var6ca20c;
+extern unsigned char *Var6ca12c;
+extern long *YTable;
+extern float *WidthTable;
+extern long *WidthTablef;
+extern unsigned char *Var6ca1a8;
+extern unsigned char *Var6ca1f0;
 
 #define MAGICNUM float((1 << 26) * ((1 << 26) * 1.5))
+#define FTOLFIX(x) ((fconv = x + MAGICNUM / 65536.0), *(int *)(&fconv))
 #define FTOLFIX284(x) ((fconv = x + MAGICNUM / 16.0f), *(int *)(&fconv))
 #define FIX284TOFLOAT(x) float(float(x) * 0.0625f)
+
+void BuildXYTables(void)
+{
+    int n, w, h;
+    double fconv;
+
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
+    YTable = (long *)malloc((h + 1) * sizeof(long));
+    for (n = 0; n < h + 1; n++)
+        YTable[n] = n * w * 2;
+    WidthTable = (float *)malloc((w + 1) * sizeof(float));
+    WidthTable[0] = 0.0f;
+    for (n = 1; n < w + 1; n++)
+        WidthTable[n] = 1.0f / float(n);
+    WidthTablef = (long *)malloc((w + 1) * sizeof(long));
+    WidthTablef[0] = 0;
+    for (n = 1; n < w + 1; n++)
+        WidthTablef[n] = FTOLFIX((1.0f / float(n)));
+}
 
 HRESULT HWBeginScene(void)
 {

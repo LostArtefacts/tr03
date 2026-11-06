@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="290.40" height="12" x="0" y="0" class="named"><title>1255 · 84.91%</title></rect>
-<rect width="1.16" height="12" x="290.40" y="0" class="decompiled"><title>5 · 0.34%</title></rect>
-<rect width="4.17" height="12" x="291.56" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="46.28" height="12" x="295.72" y="0" class="todo"><title>200 · 13.53%</title></rect>
+<rect width="290.63" height="12" x="0" y="0" class="named"><title>1256 · 84.98%</title></rect>
+<rect width="1.16" height="12" x="290.63" y="0" class="decompiled"><title>5 · 0.34%</title></rect>
+<rect width="4.17" height="12" x="291.79" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="46.05" height="12" x="295.95" y="0" class="todo"><title>199 · 13.46%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="7.50">85.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1255</tspan> · <tspan class="decompiled">5</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">200</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1256</tspan> · <tspan class="decompiled">5</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">199</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.52" height="12" x="0" y="0" class="named"><title>374 KB · 56%</title></rect>
-<rect width="0.21" height="12" x="191.52" y="0" class="decompiled"><title>418 bytes · 0.06%</title></rect>
-<rect width="6.04" height="12" x="191.74" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="144.23" height="12" x="197.77" y="0" class="todo"><title>282 KB · 42.17%</title></rect>
+<rect width="191.67" height="12" x="0" y="0" class="named"><title>375 KB · 56.04%</title></rect>
+<rect width="0.21" height="12" x="191.67" y="0" class="decompiled"><title>418 bytes · 0.06%</title></rect>
+<rect width="6.04" height="12" x="191.88" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="144.08" height="12" x="197.92" y="0" class="todo"><title>282 KB · 42.13%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">56.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">374 KB</tspan> · <tspan class="decompiled">418 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">282 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">375 KB</tspan> · <tspan class="decompiled">418 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">282 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1424,7 +1424,7 @@
 <rect width="12" height="12" x="75" y="405" class="named"><title>0x004900c0 DXSurfBlt (72 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="405" class="todo"><title>0x00490400 InitDrawPrimitive (755 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="405" class="todo"><title>0x00490700 CloseDrawPrimitive (119 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="405" class="todo"><title>0x00490780 Func490780 (281 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="405" class="named"><title>0x00490780 BuildXYTables (281 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="405" class="todo"><title>0x004908a0 Func4908a0 (197 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="405" class="named"><title>0x00490970 HWBeginScene (19 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="405" class="named"><title>0x00490990 HWEndScene (12 bytes)</title></rect>
@@ -2110,7 +2110,7 @@
 <rect width="10.11" height="9.86" x="473.84" y="398.84" class="named"><title>0x00482020 LoadAnimatedTextures (284 bytes)</title></rect>
 <rect width="10.11" height="9.79" x="473.84" y="411.70" class="todo"><title>0x004937f0 MMXDrawPrimitive (282 bytes)</title></rect>
 <rect width="10.11" height="9.76" x="473.84" y="424.49" class="named"><title>0x0043f600 lara_as_dash (281 bytes)</title></rect>
-<rect width="10.11" height="9.76" x="473.84" y="437.24" class="todo"><title>0x00490780 Func490780 (281 bytes)</title></rect>
+<rect width="10.11" height="9.76" x="473.84" y="437.24" class="named"><title>0x00490780 BuildXYTables (281 bytes)</title></rect>
 <rect width="9.74" height="10.05" x="486.94" y="174.14" class="named"><title>0x0042ebb0 WaterFall (279 bytes)</title></rect>
 <rect width="9.74" height="10.05" x="499.68" y="174.14" class="named"><title>0x00453b80 MineCartControl (279 bytes)</title></rect>
 <rect width="9.70" height="10.05" x="512.42" y="174.14" class="named"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
