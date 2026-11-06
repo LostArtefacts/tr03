@@ -46,21 +46,21 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="328.37" height="12" x="0" y="0" class="named"><title>1344 · 89.72%</title></rect>
-<rect width="7.33" height="12" x="328.37" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="6.84" height="12" x="335.70" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
-<rect width="23.46" height="12" x="342.54" y="0" class="todo"><title>96 · 6.41%</title></rect>
+<rect width="328.62" height="12" x="0" y="0" class="named"><title>1345 · 89.79%</title></rect>
+<rect width="7.33" height="12" x="328.62" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="6.84" height="12" x="335.95" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="23.21" height="12" x="342.79" y="0" class="todo"><title>95 · 6.34%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">91.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1344</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">96</tspan></text>
+<text text-anchor="end" x="546" y="7.50">91.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1345</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">28</tspan> · <tspan class="todo">95</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="260.52" height="12" x="0" y="0" class="named"><title>516 KB · 71.18%</title></rect>
-<rect width="33.42" height="12" x="260.52" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="13.97" height="12" x="293.94" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
-<rect width="58.09" height="12" x="307.91" y="0" class="todo"><title>115 KB · 15.87%</title></rect>
+<rect width="260.68" height="12" x="0" y="0" class="named"><title>516 KB · 71.23%</title></rect>
+<rect width="33.42" height="12" x="260.68" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="13.97" height="12" x="294.11" y="0" class="nonmatching"><title>28 KB · 3.82%</title></rect>
+<rect width="57.93" height="12" x="308.07" y="0" class="todo"><title>115 KB · 15.83%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">80.3%</text>
+<text text-anchor="end" x="546" y="24.50">80.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">516 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">115 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1317,7 +1317,7 @@
 <rect width="12" height="12" x="720" y="360" class="named"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="360" class="named"><title>0x0048a320 S_ClearScreen (11 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="375" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="375" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="375" class="named"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="375" class="nonmatching"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="375" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="375" class="named"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
@@ -2102,7 +2102,7 @@
 <rect width="10.58" height="10.16" x="462.94" y="306.70" class="named"><title>0x0044f830 LaserSplitterToggle (332 bytes)</title></rect>
 <rect width="10.58" height="10.13" x="462.94" y="319.86" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="10.58" height="10.10" x="462.94" y="333" class="named"><title>0x004086b0 HWI_InsertObjectGT4_Sorted (330 bytes)</title></rect>
-<rect width="10.58" height="10.10" x="462.94" y="346.10" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
+<rect width="10.58" height="10.10" x="462.94" y="346.10" class="named"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
 <rect width="10.58" height="10.07" x="462.94" y="359.20" class="named"><title>0x0043f720 lara_col_dash (329 bytes)</title></rect>
 <rect width="10.58" height="10.01" x="462.94" y="372.28" class="named"><title>0x0043aa90 KillItem (327 bytes)</title></rect>
 <rect width="10.58" height="10.01" x="462.94" y="385.29" class="named"><title>0x0046d1f0 TrainCollision (327 bytes)</title></rect>

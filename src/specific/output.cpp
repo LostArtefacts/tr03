@@ -319,6 +319,60 @@ void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr)
     phd_mxptr -= 12;
 }
 
+extern int surfacenumbf;
+extern int surfacenumfb;
+extern sint32 sort3d_bufferbf[][3];
+extern sint32 sort3d_bufferfb[][3];
+extern bool bAlphaTesting;
+extern HRESULT (*SetRenderState)(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
+
+void HWR_EnableColorKey(bool enable);
+void HWR_EnableAlphaBlend(bool enable);
+void HWR_EnableColorAddition(bool enable);
+void HWR_EnableZBuffer(bool write, bool compare);
+void HWR_SetCurrentTexture(DWORD handle);
+void DrawBuckets(void *);
+void phd_SortPolyList(int number, sint32 buffer[][3]);
+void HWR_DrawPolyListBF(int num, sint32 *sortptr);
+void HWR_DrawPolyList(int num, sint32 *sortptr);
+void S_FadePicture(void);
+void HWR_EndScene(void);
+
+void S_OutputPolyList(void)
+{
+    if (App.lpZBuffer) {
+        HWR_EnableColorKey(false);
+        HWR_EnableAlphaBlend(false);
+        HWR_EnableColorAddition(false);
+        HWR_EnableZBuffer(true, true);
+        HWR_SetCurrentTexture(0);
+
+        if (bAlphaTesting) {
+            SetRenderState(D3DRENDERSTATE_ALPHATESTENABLE, 0);
+            DrawBuckets(0);
+            SetRenderState(D3DRENDERSTATE_ALPHATESTENABLE, 1);
+            phd_SortPolyList(surfacenumbf, sort3d_bufferbf);
+            HWR_DrawPolyListBF(surfacenumbf, (sint32 *)sort3d_bufferbf);
+            HWR_EnableZBuffer(false, true);
+            SetRenderState(D3DRENDERSTATE_ALPHATESTENABLE, 0);
+            phd_SortPolyList(surfacenumfb, sort3d_bufferfb);
+            HWR_DrawPolyListBF(surfacenumfb, (sint32 *)sort3d_bufferfb);
+        } else {
+            DrawBuckets(0);
+            phd_SortPolyList(surfacenumbf, sort3d_bufferbf);
+            HWR_DrawPolyListBF(surfacenumbf, (sint32 *)sort3d_bufferbf);
+        }
+    } else {
+        HWR_EnableColorKey(false);
+        HWR_EnableAlphaBlend(false);
+        phd_SortPolyList(surfacenumbf, sort3d_bufferbf);
+        HWR_DrawPolyList(surfacenumbf, (sint32 *)sort3d_bufferbf);
+    }
+
+    S_FadePicture();
+    HWR_EndScene();
+}
+
 extern sint16 phd_winxmax;
 extern sint16 phd_winymax;
 extern int phd_znear;
