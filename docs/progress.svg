@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="324.80" height="12" x="0" y="0" class="named"><title>1143 · 77.33%</title></rect>
-<rect width="2.84" height="12" x="324.80" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="92.35" height="12" x="327.65" y="0" class="todo"><title>325 · 21.99%</title></rect>
+<rect width="325.09" height="12" x="0" y="0" class="named"><title>1144 · 77.40%</title></rect>
+<rect width="2.84" height="12" x="325.09" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="92.07" height="12" x="327.93" y="0" class="todo"><title>324 · 21.92%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">77.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1143</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">325</tspan></text>
+<text text-anchor="end" x="600" y="7.50">77.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1144</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">324</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.64" height="12" x="0" y="0" class="named"><title>332 KB · 49.68%</title></rect>
-<rect width="3.98" height="12" x="208.64" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.38" height="12" x="212.62" y="0" class="todo"><title>330 KB · 49.38%</title></rect>
+<rect width="208.73" height="12" x="0" y="0" class="named"><title>332 KB · 49.70%</title></rect>
+<rect width="3.98" height="12" x="208.73" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.29" height="12" x="212.71" y="0" class="todo"><title>330 KB · 49.35%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
@@ -963,7 +963,7 @@
 <rect width="12" height="12" x="690" y="255" class="named"><title>0x0045f720 DoDynamics_quadbike (84 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="255" class="todo"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="255" class="named"><title>0x0045ffb0 SkidooBaddieCollision (489 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="255" class="todo"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="255" class="named"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="270" class="named"><title>0x00460230 AnimateQuadBike (1130 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="270" class="todo"><title>0x004606a0 CanGetOff_quadbike (256 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="270" class="named"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
@@ -2365,7 +2365,7 @@
 <rect width="7" height="7.28" x="544.16" y="347.85" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
 <rect width="7" height="7.23" x="544.16" y="358.13" class="todo"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
 <rect width="7" height="7.23" x="544.16" y="368.36" class="named"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
-<rect width="7" height="7.23" x="544.16" y="378.59" class="todo"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
+<rect width="7" height="7.23" x="544.16" y="378.59" class="named"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>
 <rect width="7" height="7.23" x="544.16" y="388.82" class="named"><title>0x0046ae00 T_AddBackground (144 bytes)</title></rect>
 <rect width="7" height="7.23" x="544.16" y="399.05" class="todo"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
 <rect width="7" height="7.18" x="544.16" y="409.28" class="named"><title>0x00401350 phd_NormaliseVector (143 bytes)</title></rect>

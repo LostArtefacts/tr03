@@ -881,3 +881,29 @@ sint32 DoDynamics_quadbike(sint32 height, sint32 fallspeed, sint32 *y)
     }
     return fallspeed;
 }
+
+int GetCollisionAnim_quadbike(ITEM_INFO *v, PHD_VECTOR *moved)
+{
+    sint32 c, s, front, side;
+
+    moved->x = v->pos.x_pos - moved->x;
+    moved->z = v->pos.z_pos - moved->z;
+    if (moved->x || moved->z) {
+        c = phd_cos(v->pos.y_rot);
+        s = phd_sin(v->pos.y_rot);
+        front = (moved->z * c + moved->x * s) >> W2V_SHIFT;
+        side = (moved->x * c - moved->z * s) >> W2V_SHIFT;
+        if ((front < 0 ? -front : front) > (side < 0 ? -side : side)) {
+            if (front > 0)
+                return 14;
+            else
+                return 13;
+        } else {
+            if (side > 0)
+                return 11;
+            else
+                return 12;
+        }
+    }
+    return 0;
+}
