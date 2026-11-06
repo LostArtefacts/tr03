@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="322.13" height="12" x="0" y="0" class="named"><title>1279 · 86.59%</title></rect>
-<rect width="1.51" height="12" x="322.13" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.54" height="12" x="323.64" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
-<rect width="42.82" height="12" x="329.18" y="0" class="todo"><title>170 · 11.51%</title></rect>
+<rect width="322.38" height="12" x="0" y="0" class="named"><title>1280 · 86.66%</title></rect>
+<rect width="1.51" height="12" x="322.38" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
+<rect width="5.54" height="12" x="323.89" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="42.56" height="12" x="329.44" y="0" class="todo"><title>169 · 11.44%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">87.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1279</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">170</tspan></text>
+<text text-anchor="end" x="552" y="7.50">87.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1280</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">169</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="235.10" height="12" x="0" y="0" class="named"><title>423 KB · 63.20%</title></rect>
-<rect width="0.34" height="12" x="235.10" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="8.07" height="12" x="235.44" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
-<rect width="128.49" height="12" x="243.51" y="0" class="todo"><title>231 KB · 34.54%</title></rect>
+<rect width="235.13" height="12" x="0" y="0" class="named"><title>423 KB · 63.21%</title></rect>
+<rect width="0.34" height="12" x="235.13" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
+<rect width="8.07" height="12" x="235.47" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="128.46" height="12" x="243.54" y="0" class="todo"><title>231 KB · 34.53%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">63.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">423 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">231 KB</tspan></text>
@@ -1533,7 +1533,7 @@
 <rect width="12" height="12" x="210" y="435" class="todo"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="435" class="nonmatching"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="435" class="named"><title>0x004b4280 phd_PushMatrix (30 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="435" class="todo"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="435" class="named"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="435" class="todo"><title>0x004b42d4 flatA (97 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="435" class="todo"><title>0x004b4335 transA (314 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="435" class="todo"><title>0x004b446f gourA (352 bytes)</title></rect>
@@ -2758,7 +2758,7 @@
 <rect width="4.09" height="4.37" x="647.50" y="362.25" class="named"><title>0x00442d90 lara_col_hangleft (51 bytes)</title></rect>
 <rect width="4.09" height="4.37" x="647.50" y="369.62" class="named"><title>0x00442dd0 lara_col_hangright (51 bytes)</title></rect>
 <rect width="4.09" height="4.37" x="647.50" y="376.99" class="named"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
-<rect width="4.09" height="4.37" x="647.50" y="384.36" class="todo"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
+<rect width="4.09" height="4.37" x="647.50" y="384.36" class="named"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="4.09" height="4.28" x="647.50" y="391.73" class="named"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="4.09" height="4.28" x="647.50" y="399.01" class="named"><title>0x00437870 RingActive (50 bytes)</title></rect>
 <rect width="4.09" height="4.28" x="647.50" y="406.30" class="named"><title>0x0043de00 GetLaraCollisionInfo (50 bytes)</title></rect>
