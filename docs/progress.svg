@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="321.68" height="12" x="0" y="0" class="named"><title>1132 · 76.59%</title></rect>
-<rect width="2.84" height="12" x="321.68" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="95.48" height="12" x="324.52" y="0" class="todo"><title>336 · 22.73%</title></rect>
+<rect width="321.96" height="12" x="0" y="0" class="named"><title>1133 · 76.66%</title></rect>
+<rect width="2.84" height="12" x="321.96" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="95.20" height="12" x="324.80" y="0" class="todo"><title>335 · 22.67%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">76.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1132</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">336</tspan></text>
+<text text-anchor="end" x="600" y="7.50">76.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1133</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">335</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="207.58" height="12" x="0" y="0" class="named"><title>330 KB · 49.42%</title></rect>
-<rect width="3.98" height="12" x="207.58" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="208.45" height="12" x="211.55" y="0" class="todo"><title>331 KB · 49.63%</title></rect>
+<rect width="207.78" height="12" x="0" y="0" class="named"><title>330 KB · 49.47%</title></rect>
+<rect width="3.98" height="12" x="207.78" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="208.24" height="12" x="211.76" y="0" class="todo"><title>331 KB · 49.58%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">49.4%</text>
+<text text-anchor="end" x="600" y="24.50">49.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">330 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">331 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1241,7 +1241,7 @@
 <rect width="12" height="12" x="360" y="345" class="named"><title>0x00483840 S_IntroFMV (19 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="345" class="named"><title>0x00483860 mGetAngle (122 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="345" class="named"><title>0x004838e0 SortOutAdventureSave (115 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="345" class="todo"><title>0x00483960 StartGame (319 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="345" class="named"><title>0x00483960 StartGame (319 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="345" class="named"><title>0x00483aa0 GameLoop (164 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="345" class="named"><title>0x00483b50 LevelCompleteSequence (6 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="345" class="todo"><title>0x00483b60 LevelStats (1077 bytes)</title></rect>
@@ -2072,7 +2072,7 @@
 <rect width="10.26" height="11.06" x="460.49" y="188.12" class="todo"><title>0x00474760 ACMClose (323 bytes)</title></rect>
 <rect width="10.26" height="10.95" x="460.49" y="202.18" class="todo"><title>0x00406fa0 HWI_InsertGT4_Sorted (320 bytes)</title></rect>
 <rect width="10.26" height="10.92" x="460.49" y="216.13" class="todo"><title>0x004233b0 IsRoomOutside (319 bytes)</title></rect>
-<rect width="10.26" height="10.92" x="460.49" y="230.05" class="todo"><title>0x00483960 StartGame (319 bytes)</title></rect>
+<rect width="10.26" height="10.92" x="460.49" y="230.05" class="named"><title>0x00483960 StartGame (319 bytes)</title></rect>
 <rect width="10.26" height="10.89" x="460.49" y="243.97" class="named"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="10.26" height="10.89" x="460.49" y="257.85" class="named"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>
 <rect width="10.26" height="10.85" x="460.49" y="271.74" class="named"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>

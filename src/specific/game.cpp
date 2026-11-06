@@ -46,6 +46,67 @@ void FadePictureUp(int steps);
 void FadePictureDown(int steps);
 void S_Wait(int nFrames, int skip);
 
+extern uint32 CurrentLevel;
+extern int level_complete;
+extern int title_loaded;
+extern sint16 Inventory_Chosen;
+extern sint32 Inventory_ExtraData[8];
+void ModifyStartInfo(int level_number);
+void InitialiseLevelFlags(void);
+void S_FadeInInventory(int fade);
+void StartGameStub1(void);
+int S_LoadGame(LPVOID data, int size, int slot);
+int GameLoop(int demo_mode);
+
+sint32 StartGame(int level_number, int type)
+{
+    sint32 result;
+
+    if (type == 1 || type == 2 || type == 3)
+        CurrentLevel = level_number;
+    if (type != 2)
+        ModifyStartInfo(level_number);
+    title_loaded = 0;
+    if (type != 2)
+        InitialiseLevelFlags();
+    if (!InitialiseLevel(level_number, type)) {
+        CurrentLevel = 0;
+        return 0x700;
+    }
+
+    result = GameLoop(0);
+    if (result == 0x500 || result == 0x400)
+        return result;
+    if (result == 0x700) {
+        CurrentLevel = 0;
+        return result;
+    }
+
+    if (level_complete) {
+        if (gameflow.demoversion && gameflow.singlelevel)
+            return 0x500;
+        if (CurrentLevel == 0) {
+            StartGameStub1();
+            return 0x500;
+        }
+        S_FadeInInventory(1);
+        return CurrentLevel | 0x600;
+    }
+
+    if (Inventory_Chosen) {
+        if (Inventory_ExtraData[0] == 0) {
+            S_LoadGame(&savegame, sizeof(SAVEGAME_INFO), Inventory_ExtraData[1]);
+            return Inventory_ExtraData[1] | 0x100;
+        }
+        if (Inventory_ExtraData[0] == 1) {
+            if (gameflow.play_any_level)
+                return Inventory_ExtraData[1] + 1;
+            return 1;
+        }
+    }
+    return 0x500;
+}
+
 int GameLoop(int demo_mode)
 {
     int nframes;
@@ -81,6 +142,46 @@ int GameLoop(int demo_mode)
 extern "C" sint32 LevelCompleteSequence(int level_number)
 {
     return 0x500;
+}
+
+extern "C" {
+extern int GF_PlayingFMV;
+extern char **GF_picfilenames;
+extern sint16 GF_LoadingPic;
+extern char **GF_titlefilenames;
+extern int HiResFlag;
+extern unsigned char game_palette[768];
+void TempVideoAdjust(int hires, double sizer);
+void TempVideoRemove(void);
+void FadeToPal(int nFrames, unsigned char *pPal);
+void S_CDPlay(sint16 track, int mode);
+void CreateMonoScreen(void);
+void DrawMonoScreen(int r, int g, int b);
+void DXTextureSetGreyScale(bool set);
+void ShowStatsText(char *time, int type);
+int S_LoadLevelFile(char *name, int number, int type);
+int Level2World(int level);
+int World2Level(int world);
+void CreateStartInfo(int level_number);
+void SortOutAdventureSave(int world);
+int Inv_RemoveItem(int item_num);
+void T_InitPrint(void);
+int S_UpdateInput(void);
+void S_InitialisePolyList(int clear);
+sint32 GetDebouncedInput(sint32 in);
+void ShowEndStatsText(void);
+void T_DrawText(void);
+void S_OutputPolyList(void);
+int S_DumpScreen(void);
+void FreePictureTextures(int *indices);
+extern int input;
+extern sint32 inputDB;
+extern int reset_flag;
+extern sint16 LevelSecrets[];
+extern int GF_BonusLevelEnabled;
+extern int CurPicTexIndices[5];
+extern int OldPicTexIndices[5];
+extern int nLoadedPictures;
 }
 
 sint32 GetRandomControl(void)
