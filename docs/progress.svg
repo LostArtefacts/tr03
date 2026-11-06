@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="318.78" height="12" x="0" y="0" class="named"><title>1303 · 87.10%</title></rect>
-<rect width="3.91" height="12" x="318.78" y="0" class="decompiled"><title>16 · 1.07%</title></rect>
-<rect width="5.63" height="12" x="322.70" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="37.68" height="12" x="328.32" y="0" class="todo"><title>154 · 10.29%</title></rect>
+<rect width="319.03" height="12" x="0" y="0" class="named"><title>1304 · 87.17%</title></rect>
+<rect width="3.91" height="12" x="319.03" y="0" class="decompiled"><title>16 · 1.07%</title></rect>
+<rect width="5.63" height="12" x="322.94" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="37.43" height="12" x="328.57" y="0" class="todo"><title>153 · 10.23%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">88.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1303</tspan> · <tspan class="decompiled">16</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">154</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1304</tspan> · <tspan class="decompiled">16</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">153</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="235.01" height="12" x="0" y="0" class="named"><title>464 KB · 64.21%</title></rect>
-<rect width="30.21" height="12" x="235.01" y="0" class="decompiled"><title>60 KB · 8.25%</title></rect>
-<rect width="9.07" height="12" x="265.22" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="91.71" height="12" x="274.29" y="0" class="todo"><title>181 KB · 25.06%</title></rect>
+<rect width="235.42" height="12" x="0" y="0" class="named"><title>465 KB · 64.32%</title></rect>
+<rect width="30.21" height="12" x="235.42" y="0" class="decompiled"><title>60 KB · 8.25%</title></rect>
+<rect width="9.07" height="12" x="265.63" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="91.30" height="12" x="274.70" y="0" class="todo"><title>180 KB · 24.95%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">72.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">464 KB</tspan> · <tspan class="decompiled">60 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">181 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">72.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">465 KB</tspan> · <tspan class="decompiled">60 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">180 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1442,7 +1442,7 @@
 <rect width="12" height="12" x="345" y="405" class="decompiled"><title>0x00491020 Func491020 (64 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="405" class="todo"><title>0x00491060 CalculateGradientsTG (919 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="405" class="todo"><title>0x00491680 Func491680 (703 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="405" class="todo"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="405" class="named"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="405" class="named"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="405" class="named"><title>0x00491ea0 CalculateGradientsTF (511 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="405" class="named"><title>0x004920a0 CalculateEdgeBlack (384 bytes)</title></rect>
@@ -1790,7 +1790,7 @@
 <rect width="15.64" height="16.94" x="657.03" y="45.31" class="named"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
 <rect width="15.62" height="16.94" x="675.67" y="45.31" class="named"><title>0x00451ab0 ControlLaserBolts (814 bytes)</title></rect>
 <rect width="15.58" height="16.94" x="694.28" y="45.31" class="named"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
-<rect width="15.58" height="16.94" x="712.86" y="45.31" class="todo"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
+<rect width="15.58" height="16.94" x="712.86" y="45.31" class="named"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
 <rect width="15.56" height="16.94" x="731.44" y="45.31" class="named"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
 <rect width="16.14" height="16.31" x="351.10" y="65.25" class="nonmatching"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="16.14" height="15.84" x="351.10" y="84.56" class="named"><title>0x004250a0 PrintObjects (787 bytes)</title></rect>
