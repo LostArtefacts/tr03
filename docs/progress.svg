@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="338.44" height="12" x="0" y="0" class="named"><title>1191 · 80.58%</title></rect>
-<rect width="2.84" height="12" x="338.44" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="78.71" height="12" x="341.29" y="0" class="todo"><title>277 · 18.74%</title></rect>
+<rect width="338.73" height="12" x="0" y="0" class="named"><title>1192 · 80.65%</title></rect>
+<rect width="2.84" height="12" x="338.73" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="78.43" height="12" x="341.57" y="0" class="todo"><title>276 · 18.67%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">80.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1191</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">277</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1192</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">276</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="216.69" height="12" x="0" y="0" class="named"><title>345 KB · 51.59%</title></rect>
-<rect width="3.98" height="12" x="216.69" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="199.33" height="12" x="220.67" y="0" class="todo"><title>317 KB · 47.46%</title></rect>
+<rect width="217.07" height="12" x="0" y="0" class="named"><title>345 KB · 51.68%</title></rect>
+<rect width="3.98" height="12" x="217.07" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="198.96" height="12" x="221.04" y="0" class="todo"><title>316 KB · 47.37%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">51.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">345 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">317 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">51.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">345 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">316 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1156,7 +1156,7 @@
 <rect width="12" height="12" x="585" y="315" class="todo"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="315" class="named"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="315" class="todo"><title>0x00475f60 S_DrawAirBar (604 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="315" class="todo"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="315" class="named"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="315" class="todo"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="315" class="todo"><title>0x00476a30 S_DrawDarts (609 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="315" class="todo"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
@@ -1825,7 +1825,7 @@
 <rect width="14.51" height="14.74" x="365.53" y="171.56" class="todo"><title>0x00476a30 S_DrawDarts (609 bytes)</title></rect>
 <rect width="14.51" height="14.62" x="365.53" y="189.30" class="todo"><title>0x00475f60 S_DrawAirBar (604 bytes)</title></rect>
 <rect width="14.51" height="14.54" x="365.53" y="206.92" class="named"><title>0x0046e0e0 RollingBallCollision (601 bytes)</title></rect>
-<rect width="14.51" height="14.50" x="365.53" y="224.46" class="todo"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
+<rect width="14.51" height="14.50" x="365.53" y="224.46" class="named"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
 <rect width="14.51" height="14.47" x="365.53" y="241.96" class="named"><title>0x0042c1a0 ControlGunShell (598 bytes)</title></rect>
 <rect width="14.51" height="14.47" x="365.53" y="259.43" class="named"><title>0x00434510 DrawAssaultPenalties (598 bytes)</title></rect>
 <rect width="14.51" height="14.47" x="365.53" y="276.90" class="named"><title>0x00471bd0 ExplodeTribeBoss (598 bytes)</title></rect>

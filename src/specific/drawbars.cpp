@@ -67,4 +67,46 @@ void S_DrawHealthBar(int percent)
     GlobalAlpha = oldAlpha;
 }
 
+void S_DrawColdBar(int percent)
+{
+    int oldAlpha;
+    int w;
+    int z;
+
+    oldAlpha = GlobalAlpha;
+    GlobalAlpha = 0xFF000000;
+    HWR_EnableZBuffer(true, true);
+    bBlueEffect = false;
+    w = BarsWidth * percent / 100;
+    z = phd_znear + 50;
+
+    InsertLine(6, 19, BarsWidth + 9, 19, z, 0, 0);
+    InsertLine(6, 20, BarsWidth + 9, 20, z, 0, 0);
+    InsertLine(6, 21, BarsWidth + 9, 21, z, 0, 0);
+    InsertLine(6, 22, BarsWidth + 9, 22, z, 0, 0);
+    InsertLine(6, 23, BarsWidth + 9, 23, z, 0, 0);
+    InsertLine(6, 24, BarsWidth + 9, 24, z, 0, 0);
+    InsertLine(6, 25, BarsWidth + 9, 25, z, 0, 0);
+
+    z = phd_znear + 40;
+    InsertLine(6, 26, BarsWidth + 11, 26, z, 0x7F7F7F, 0x7F7F7F);
+    InsertLine(BarsWidth + 10, 18, BarsWidth + 10, 26, z, 0x7F7F7F, 0x7F7F7F);
+
+    z = phd_znear + 30;
+    InsertLine(6, 18, BarsWidth + 10, 18, z, 0xFFFFFF, 0xFFFFFF);
+    InsertLine(6, 26, 6, 18, z, 0xFFFFFF, 0xFFFFFF);
+
+    if (w) {
+        w += 8;
+        z = phd_znear + 20;
+        InsertLine(8, 21, w, 21, z, 0xFFFF, 0xFFFF);
+        InsertLine(8, 20, w, 20, z, 0x4F4F, 0x4F4F);
+        InsertLine(8, 22, w, 22, z, 0x7F7F, 0x7F7F);
+        InsertLine(8, 23, w, 23, z, 0x7F7F, 0x7F7F);
+        InsertLine(8, 24, w, 24, z, 0x4F4F, 0x4F4F);
+    }
+
+    GlobalAlpha = oldAlpha;
+}
+
 }
