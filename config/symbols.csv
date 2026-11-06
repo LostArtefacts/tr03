@@ -1552,7 +1552,7 @@ address,size,name,symbol
 0x004b7090,18,__exit,
 0x004b70b0,164,Func4b70b0,
 0x004b7160,32,Func4b7160,
-0x004b7180,70,Func4b7180,
+0x004b7180,70,clock,_clock
 0x004b71e0,372,entry,
 0x004b7380,38,__amsg_exit,
 0x004b73b0,38,Func4b73b0,

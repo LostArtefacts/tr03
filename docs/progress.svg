@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="311.73" height="12" x="0" y="0" class="named"><title>1097 · 74.22%</title></rect>
-<rect width="1.99" height="12" x="311.73" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="106.28" height="12" x="313.72" y="0" class="todo"><title>374 · 25.30%</title></rect>
+<rect width="312.02" height="12" x="0" y="0" class="named"><title>1098 · 74.29%</title></rect>
+<rect width="1.99" height="12" x="312.02" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="105.99" height="12" x="314.01" y="0" class="todo"><title>373 · 25.24%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">74.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1097</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">374</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1098</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">373</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.66" height="12" x="0" y="0" class="named"><title>311 KB · 46.58%</title></rect>
-<rect width="3.79" height="12" x="195.66" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="220.55" height="12" x="199.45" y="0" class="todo"><title>351 KB · 52.51%</title></rect>
+<rect width="195.74" height="12" x="0" y="0" class="named"><title>311 KB · 46.60%</title></rect>
+<rect width="3.79" height="12" x="195.74" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="220.47" height="12" x="199.53" y="0" class="todo"><title>351 KB · 52.49%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
@@ -1515,7 +1515,7 @@
 <rect width="12" height="12" x="720" y="420" class="todo"><title>0x004b2e10 WinAppProc (112 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="420" class="todo"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="435" class="todo"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="435" class="todo"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="435" class="named"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="435" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="435" class="named"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="435" class="todo"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
@@ -2413,7 +2413,7 @@
 <rect width="6.63" height="6.78" x="740.37" y="254.28" class="named"><title>0x0043b080 GlobalItemReplace (128 bytes)</title></rect>
 <rect width="6.96" height="6.46" x="564.29" y="264.06" class="named"><title>0x0043ea20 lara_as_duck (128 bytes)</title></rect>
 <rect width="6.90" height="6.46" x="574.25" y="264.06" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
-<rect width="6.90" height="6.46" x="584.15" y="264.06" class="todo"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
+<rect width="6.90" height="6.46" x="584.15" y="264.06" class="named"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="594.06" y="264.06" class="named"><title>0x0041ec90 DoorCollision (126 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="603.91" y="264.06" class="named"><title>0x00441e80 extra_as_trainkill (126 bytes)</title></rect>
 <rect width="6.85" height="6.46" x="613.76" y="264.06" class="named"><title>0x00444e00 LaraCeilingFront (126 bytes)</title></rect>

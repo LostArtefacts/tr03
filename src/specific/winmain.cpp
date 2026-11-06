@@ -41,6 +41,26 @@ HWND WinCreateWindow(HINSTANCE hInstance, int nCmdShow)
     return hWnd;
 }
 
+float WinFrameRate(void)
+{
+    static int time = clock();
+    static int counter;
+    static float fps;
+    double t;
+    int now;
+
+    counter++;
+    if (counter == 10) {
+        now = clock();
+        t = (double)(now - time) * 0.001;
+        time = now;
+        fps = (float)(counter / t);
+        counter = 0;
+    }
+    App.fps = fps;
+    return fps;
+}
+
 void S_ExitSystem(char *message)
 {
     DXSetCooperativeLevel(App.lpDD, App.WindowHandle, DDSCL_NORMAL);
