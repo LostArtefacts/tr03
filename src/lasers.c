@@ -70,6 +70,41 @@ int LaraOnLOS(GAME_VECTOR *start, GAME_VECTOR *target)
     return 0;
 }
 
+extern uint8 LaserShades[];
+sint32 GetRandomDraw(void);
+
+void UpdateLaserShades(void)
+{
+    sint32 r, lp;
+    uint8 s;
+    uint8 *p;
+
+    p = LaserShades;
+    for (lp = 32; lp > 0; lp--, p++) {
+        s = *p;
+        r = GetRandomDraw();
+        if (r < 1024)
+            r = (r & 0xf) + 16;
+        else if (r < 4096)
+            r &= 7;
+        else if (!(r & 0x70))
+            r &= 3;
+        else
+            r = 0;
+
+        if (r) {
+            s += (uint8)r;
+            if (s > 127)
+                s = 127;
+        } else if (s > 16) {
+            s -= s >> 3;
+        } else {
+            s = 16;
+        }
+        *p = s;
+    }
+}
+
 void LaserControl(sint16 item_number)
 {
     ITEM_INFO *item;
