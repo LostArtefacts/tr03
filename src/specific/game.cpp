@@ -147,6 +147,45 @@ extern "C" void DisplayCredits(void)
     FadePictureUp(32);
 }
 
+extern "C" int S_FrontEndCheck(void)
+{
+    int i;
+    REQUEST_INFO *req;
+    int count;
+    HANDLE file;
+    char filename[80];
+    char count_str[16];
+    DWORD bytes;
+
+    req = &Load_Game_Requester;
+    Init_Requester(req);
+    SavedGames = 0;
+    for (i = 0; i < 16; i++) {
+        wsprintf(filename, "savegame.%d", i);
+        file = CreateFile(filename, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        if (file != INVALID_HANDLE_VALUE) {
+            ReadFile(file, filename, 75, &bytes, NULL);
+            ReadFile(file, &count, sizeof(sint32), &bytes, NULL);
+            CloseHandle(file);
+            wsprintf(count_str, "%d", count);
+            AddRequesterItem(req, filename, 2, count_str, 4);
+            if (count > save_counter) {
+                save_counter = count;
+                req->selected = i;
+            }
+            saved_levels[i] = 1;
+            SavedGames++;
+        } else {
+            AddRequesterItem(req, GF_PCStrings[15], 0, NULL, 0);
+            saved_levels[i] = 0;
+        }
+    }
+    memcpy(SaveGameReqFlags1, RequesterFlags1, 24 * sizeof(uint32));
+    memcpy(SaveGameReqFlags2, RequesterFlags2, 24 * sizeof(uint32));
+    save_counter++;
+    return 1;
+}
+
 extern "C" int S_LoadGame(LPVOID data, int size, int slot)
 {
     HANDLE file;

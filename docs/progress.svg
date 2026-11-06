@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="320.26" height="12" x="0" y="0" class="named"><title>1127 · 76.25%</title></rect>
-<rect width="2.56" height="12" x="320.26" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="97.19" height="12" x="322.81" y="0" class="todo"><title>342 · 23.14%</title></rect>
+<rect width="320.54" height="12" x="0" y="0" class="named"><title>1128 · 76.32%</title></rect>
+<rect width="2.56" height="12" x="320.54" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="96.90" height="12" x="323.10" y="0" class="todo"><title>341 · 23.07%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">76.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1127</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">342</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1128</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">341</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="205.73" height="12" x="0" y="0" class="named"><title>327 KB · 48.98%</title></rect>
-<rect width="3.89" height="12" x="205.73" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="210.39" height="12" x="209.61" y="0" class="todo"><title>335 KB · 50.09%</title></rect>
+<rect width="205.95" height="12" x="0" y="0" class="named"><title>328 KB · 49.04%</title></rect>
+<rect width="3.89" height="12" x="205.95" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="210.16" height="12" x="209.84" y="0" class="todo"><title>334 KB · 50.04%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">327 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">335 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">328 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">334 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1255,7 +1255,7 @@
 <rect width="12" height="12" x="570" y="345" class="named"><title>0x00484250 GetValidLevelsList (68 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="345" class="named"><title>0x004842a0 GetSavedGamesList (76 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="345" class="named"><title>0x004842f0 DisplayCredits (274 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="345" class="todo"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="345" class="named"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="345" class="todo"><title>0x00484580 S_SaveGame (276 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="345" class="named"><title>0x004846a0 S_LoadGame (150 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="345" class="todo"><title>0x00484740 HWR_InitState (705 bytes)</title></rect>
@@ -2033,7 +2033,7 @@
 <rect width="10.83" height="11.70" x="446.65" y="204.54" class="named"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
 <rect width="10.83" height="11.67" x="446.65" y="219.24" class="todo"><title>0x00495a20 Func495a20 (360 bytes)</title></rect>
 <rect width="10.83" height="11.60" x="446.65" y="233.91" class="named"><title>0x0046edd0 DartsControl (358 bytes)</title></rect>
-<rect width="10.83" height="11.57" x="446.65" y="248.52" class="todo"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
+<rect width="10.83" height="11.57" x="446.65" y="248.52" class="named"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="10.83" height="11.54" x="446.65" y="263.09" class="named"><title>0x00429a30 DrawGunFlash (356 bytes)</title></rect>
 <rect width="10.83" height="11.51" x="446.65" y="277.63" class="named"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
 <rect width="10.83" height="11.47" x="446.65" y="292.13" class="named"><title>0x00468610 SubCollision (354 bytes)</title></rect>
