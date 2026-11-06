@@ -150,4 +150,11 @@ void Func4934b0(void)
     Var6ca4d0 = 0;
 }
 
+HRESULT MMXBeginScene(void)
+{
+    Var6ca2d0 = App.unk;
+    Var6ca20c = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w << 2;
+    return 0;
+}
+
 }
