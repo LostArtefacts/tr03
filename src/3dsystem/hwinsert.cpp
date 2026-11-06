@@ -1,3 +1,4 @@
+// cflags: /Ob2
 #include "../specific/standard.h"
 
 extern "C" {
@@ -178,6 +179,27 @@ int GETG(int rgb)
         g >>= 8;
     }
     return g;
+}
+
+extern int GlobalAlpha;
+extern float f_a;
+extern float f_boo;
+
+void PHD_VBUF_To_D3DTLVTX(PHD_VBUF *phdV, D3DTLVERTEX *v, unsigned short *uv)
+{
+    long r, g, b;
+
+    v->sx = phdV->xs;
+    v->sy = phdV->ys;
+    v->sz = f_a - f_boo * phdV->ooz;
+    v->rhw = phdV->ooz;
+    r = GETR(phdV->g);
+    g = GETG(phdV->g);
+    b = ColorTable[(phdV->g & 0x1f) << 3];
+    v->color = GlobalAlpha | (r << 16) | (g << 8) | b;
+    v->tu = UVTable[uv[0]];
+    v->tv = UVTable[uv[1]];
+    v->specular = 0;
 }
 
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);

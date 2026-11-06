@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="331.31" height="12" x="0" y="0" class="named"><title>1356 · 90.52%</title></rect>
-<rect width="7.33" height="12" x="331.31" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.33" height="12" x="338.64" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="20.03" height="12" x="345.97" y="0" class="todo"><title>82 · 5.47%</title></rect>
+<rect width="331.55" height="12" x="0" y="0" class="named"><title>1357 · 90.59%</title></rect>
+<rect width="7.33" height="12" x="331.55" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.33" height="12" x="338.88" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="19.79" height="12" x="346.21" y="0" class="todo"><title>81 · 5.41%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">92.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1356</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">82</tspan></text>
+<text text-anchor="end" x="546" y="7.50">92.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1357</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">81</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="265.59" height="12" x="0" y="0" class="named"><title>526 KB · 72.57%</title></rect>
-<rect width="33.42" height="12" x="265.59" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.54" height="12" x="299.01" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="52.45" height="12" x="313.55" y="0" class="todo"><title>104 KB · 14.33%</title></rect>
+<rect width="265.70" height="12" x="0" y="0" class="named"><title>526 KB · 72.59%</title></rect>
+<rect width="33.42" height="12" x="265.70" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.54" height="12" x="299.11" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="52.35" height="12" x="313.65" y="0" class="todo"><title>104 KB · 14.30%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">81.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">526 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">104 KB</tspan></text>
@@ -113,7 +113,7 @@
 <rect width="12" height="12" x="660" y="0" class="todo"><title>0x00405a80 HWI_InsertGT3_Poly (3268 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="0" class="named"><title>0x00406750 GETR (39 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="0" class="named"><title>0x00406780 GETG (48 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="0" class="todo"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="0" class="named"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="0" class="todo"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="0" class="todo"><title>0x004069e0 SubdivideGT4 (880 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="15" class="todo"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>
@@ -2261,7 +2261,7 @@
 <rect width="7.93" height="8.54" x="513.59" y="234.36" class="named"><title>0x0044efc0 LaraTestWaterDepth (209 bytes)</title></rect>
 <rect width="7.93" height="8.50" x="513.59" y="245.89" class="named"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
 <rect width="7.93" height="8.46" x="513.59" y="257.39" class="named"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
-<rect width="7.93" height="8.42" x="513.59" y="268.85" class="todo"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
+<rect width="7.93" height="8.42" x="513.59" y="268.85" class="named"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.59" y="280.26" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.59" y="291.68" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.59" y="303.10" class="named"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
