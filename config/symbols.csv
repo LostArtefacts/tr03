@@ -2077,6 +2077,7 @@ address,size,name,symbol
 0x004ce710,12,gszAcmModuleName,_gszAcmModuleName
 0x004ce720,164,gapszAcmFunctions,_gapszAcmFunctions
 0x004ceec4,1,bSetColorKey,_bSetColorKey
+0x004cef68,18,tga_header,_tga_header
 0x004cefa8,12,VFAW,_VFAW
 0x004cefb8,12,NEIR,_NEIR
 0x004cefc8,12,OKET,_OKET
@@ -2474,6 +2475,7 @@ address,size,name,symbol
 0x006cf264,1,LtWM_QUIT,_LtWM_QUIT
 0x006cf268,1,GtWindowClosed,_GtWindowClosed
 0x006cf274,4,nReEntry,_nReEntry
+0x006cf278,4,SaveScreenNum,_SaveScreenNum
 0x006cf7f0,4,gpafnAcmFunctions,_gpafnAcmFunctions
 0x006cf800,,CamPos,_CamPos
 0x006cf810,,CamRot,_CamRot

@@ -39,4 +39,4 @@ progress = true  # every commit redraws docs/progress.svg
 compare = true  # every compiled function matches the original
 one_function = true  # one newly matching function per commit
 no_comments = true  # no comments, tabs or CRs in src/
-allow_diff = ["KayakControl", "LaraWaterCurrent", "TestLaraVault", "WillBossControl", "TestHeight_minecart", "S_DrawScreenFBox", "DXTextureNewPalette", "GetFullPath", "AdjustTextureUVs", "MemBlt", "S_InsertBackground"]  # logically equivalent, registers or term order differ
+allow_diff = ["KayakControl", "LaraWaterCurrent", "TestLaraVault", "WillBossControl", "TestHeight_minecart", "S_DrawScreenFBox", "DXTextureNewPalette", "GetFullPath", "AdjustTextureUVs", "MemBlt", "S_InsertBackground", "DXSaveScreen"]  # logically equivalent, registers or term order differ

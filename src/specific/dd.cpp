@@ -20,6 +20,9 @@ HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd)
 bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, DWORD dwColour);
 void HWR_GetAllTextureHandles(void);
 extern bool GtWindowClosed;
+extern char *malloc_ptr;
+extern int SaveScreenNum;
+extern char tga_header[18];
 
 HRESULT DD_CreateSurface(DDSURFACEDESC &ddsd, LPDIRECTDRAWSURFACE3 &lpSurface)
 {
@@ -125,6 +128,66 @@ bool DXCheckForLostSurfaces(void)
         HWR_GetAllTextureHandles();
 
     return lost;
+}
+
+void DXSaveScreen(LPDIRECTDRAWSURFACE3 lpSurface)
+{
+    FILE *file;
+    DDSURFACEDESC ddsd;
+    sint16 *pSurf;
+    sint16 *pDest;
+    unsigned long h;
+    unsigned long w;
+    unsigned long c;
+    long r;
+    long g;
+    long b;
+    char buf[16];
+
+    memset(&ddsd, 0, sizeof(ddsd));
+    ddsd.dwSize = sizeof(ddsd);
+    if (DX_TRY(lpSurface->GetSurfaceDesc(&ddsd)))
+        return;
+
+    memset(&ddsd, 0, sizeof(ddsd));
+    ddsd.dwSize = sizeof(ddsd);
+    if (DX_TRY(DD_LockSurface(lpSurface, ddsd, DDLOCK_WAIT | DDLOCK_WRITEONLY)))
+        return;
+
+    pSurf = (sint16 *)ddsd.lpSurface;
+    sprintf(buf, "tomb%04d.tga", SaveScreenNum++);
+    file = fopen(buf, "wb");
+    if (file) {
+        *(sint16 *)&tga_header[12] = (sint16)ddsd.dwWidth;
+        *(sint16 *)&tga_header[14] = (sint16)ddsd.dwHeight;
+        fwrite(tga_header, sizeof(tga_header), 1, file);
+        pDest = (sint16 *)malloc_ptr;
+        pSurf += ddsd.dwHeight * (ddsd.lPitch / 2);
+        for (h = 0; h < ddsd.dwHeight; h++) {
+            for (w = 0; w < ddsd.dwWidth; w++) {
+                c = pSurf[w];
+                if (ddsd.ddpfPixelFormat.dwRBitMask == 0xF800) {
+                    r = (c >> 11) & 0x1F;
+                    g = (c >> 6) & 0x1F;
+                    b = c & 0x1F;
+                    *pDest++ = (sint16)((r << 10) + (g << 5) + b);
+                } else {
+                    *pDest++ = (sint16)c;
+                }
+            }
+            pSurf -= ddsd.lPitch / 2;
+        }
+        fwrite(malloc_ptr, 2 * ddsd.dwWidth * ddsd.dwHeight, 1, file);
+        fclose(file);
+
+        buf[7]++;
+        if (buf[7] > '9') {
+            buf[7] = '0';
+            buf[6]++;
+        }
+    }
+
+    DD_UnlockSurface(lpSurface, ddsd);
 }
 
 }
