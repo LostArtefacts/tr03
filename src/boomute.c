@@ -30,6 +30,59 @@ void BoomuteControl(sint16 item_number)
     }
 }
 
+sint16 CreateEffect(sint16 room_num);
+void phd_GetVectorAngles(sint32 x, sint32 y, sint32 z, PHD_ANGLE *dest);
+void TriggerSealmuteGas(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 fxnum);
+
+sint16 TriggerSealmuteGasThrower_boomute(ITEM_INFO *item, BITE_INFO *bite, sint16 speed)
+{
+    FX_INFO *fx;
+    PHD_VECTOR pos, pos1;
+    sint32 lp, s, r, xv, yv, zv;
+    sint16 fx_number;
+    PHD_ANGLE angles[2];
+
+    fx_number = CreateEffect(item->room_number);
+    if (fx_number != NO_ITEM) {
+        fx = &effects[fx_number];
+        pos.x = bite->x;
+        pos.y = bite->y;
+        pos.z = bite->z;
+        GetJointAbsPosition(item, &pos, bite->mesh_num);
+        pos1.x = bite->x;
+        pos1.y = bite->y << 1;
+        pos1.z = bite->z << 3;
+        GetJointAbsPosition(item, &pos1, bite->mesh_num);
+        phd_GetVectorAngles(pos1.x - pos.x, pos1.y - pos.y, pos1.z - pos.z, angles);
+        fx->pos.x_pos = pos.x;
+        fx->pos.y_pos = pos.y;
+        fx->pos.z_pos = pos.z;
+        fx->room_number = item->room_number;
+        fx->pos.x_rot = angles[1];
+        fx->pos.z_rot = 0;
+        fx->pos.y_rot = angles[0];
+        fx->speed = speed << 2;
+        fx->object_number = 307;
+        fx->counter = 20;
+        fx->flag1 = 1;
+        TriggerSealmuteGas(0, 0, 0, 0, 0, 0, fx_number);
+        for (lp = 0; lp < 2; lp++) {
+            s = GetRandomControl() % (speed << 2) + 32;
+            r = (s * phd_cos(fx->pos.x_rot)) >> W2V_SHIFT;
+            zv = (r * phd_cos(fx->pos.y_rot)) >> W2V_SHIFT;
+            xv = (r * phd_sin(fx->pos.y_rot)) >> W2V_SHIFT;
+            yv = -((s * phd_sin(fx->pos.x_rot)) >> W2V_SHIFT);
+            TriggerSealmuteGas(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, xv << 5, yv << 5, zv << 5, -1);
+        }
+        r = ((speed << 1) * phd_cos(fx->pos.x_rot)) >> W2V_SHIFT;
+        zv = (r * phd_cos(fx->pos.y_rot)) >> W2V_SHIFT;
+        xv = (r * phd_sin(fx->pos.y_rot)) >> W2V_SHIFT;
+        yv = -(((speed << 1) * phd_sin(fx->pos.x_rot)) >> W2V_SHIFT);
+        TriggerSealmuteGas(fx->pos.x_pos, fx->pos.y_pos, fx->pos.z_pos, xv << 5, yv << 5, zv << 5, -2);
+    }
+    return fx_number;
+}
+
 sint32 GetFreeSpark(void);
 
 void TriggerSealmuteGas(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32 zv, sint32 fxnum)
