@@ -95,4 +95,10 @@ void draw_poly_wgtmap(sint16 *iptr)
     }
 }
 
+void draw_poly_gtmap_persp(sint16 *iptr)
+{
+    if (gen_xguvpersp_fp(iptr + 1))
+        gtmap_persp32_fp(xgen_ymin, xgen_ymax, (unsigned char *)texture_page_ptrs[*iptr]);
+}
+
 }
