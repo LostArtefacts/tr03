@@ -1204,4 +1204,95 @@ __declspec(naked) void Func495490(void)
         ret
     }
 }
+
+__declspec(naked) void DrawSpansGouraud(void)
+{
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [Var6ca4d0]
+        cmp esi, dword ptr [Var6ca248]
+        je L6
+        push ebp
+        mov edi, dword ptr [Var6ca2d0]
+        mov eax, dword ptr [Var6ca460]
+        imul eax, dword ptr [Var6ca20c]
+        add edi, eax
+    L1:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esi+0x4]
+        shl ebx, 0x2
+        push edi
+        add edi, ebx
+        or eax, eax
+        jle L5
+        movq mm0, qword ptr [esi+0x18]
+        movq mm1, qword ptr [Var6ca338]
+        test edi, 0x7
+        je L2
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc7
+        add edi, 0x4
+        psrlw mm7, 0x8
+        paddw mm0, mm1
+        packuswb mm7, mm7
+        dec eax
+        movd dword ptr [edi-0x4], mm7
+        je L5
+    L2:
+        cmp eax, 0x2
+        jb L4
+        push eax
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc2
+        paddw mm2, mm1
+        shr eax, 1
+        psllw mm1, 0x1
+    L3:
+        add edi, 0x8
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc6
+        psrlw mm6, 0x8
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xd7
+        psrlw mm7, 0x8
+        packuswb mm6, mm7
+        paddw mm2, mm1
+        paddw mm0, mm1
+        movq qword ptr [edi-0x8], mm6
+        dec eax
+        jne L3
+        pop eax
+        and eax, 0x1
+        je L5
+    L4:
+        movq mm2, qword ptr [Var6ca338]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc1
+        psrlw mm1, 0x8
+        packuswb mm1, mm1
+        movd dword ptr [edi], mm1
+    L5:
+        pop edi
+        add edi, dword ptr [Var6ca20c]
+        add esi, 0x20
+        cmp dword ptr [Var6ca248], esi
+        jne L1
+        _emit 0x0f
+        _emit 0x31
+        emms
+        pop ebp
+    L6:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
 }
