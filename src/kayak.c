@@ -554,4 +554,27 @@ int GetCollisionAnim_kayak(ITEM_INFO *v, sint32 x, sint32 z)
     }
 }
 
+sint32 DoDynamics_kayak(sint32 height, sint32 fallspeed, sint32 *y)
+{
+    sint32 kick;
+
+    if (height > *y) {
+        *y += fallspeed;
+        if (*y > height) {
+            *y = height;
+            fallspeed = 0;
+        } else {
+            fallspeed += 6;
+        }
+    } else {
+        kick = (height - *y) << 2;
+        if (kick < -80)
+            kick = -80;
+        fallspeed += (kick - fallspeed) >> 3;
+        if (*y > height)
+            *y = height;
+    }
+    return fallspeed;
+}
+
 sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos);

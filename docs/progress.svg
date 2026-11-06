@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="323.95" height="12" x="0" y="0" class="named"><title>1140 · 77.13%</title></rect>
-<rect width="2.84" height="12" x="323.95" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="93.21" height="12" x="326.79" y="0" class="todo"><title>328 · 22.19%</title></rect>
+<rect width="324.24" height="12" x="0" y="0" class="named"><title>1141 · 77.20%</title></rect>
+<rect width="2.84" height="12" x="324.24" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="92.92" height="12" x="327.08" y="0" class="todo"><title>327 · 22.12%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">77.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1140</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">328</tspan></text>
+<text text-anchor="end" x="600" y="7.50">77.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1141</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">327</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.50" height="12" x="0" y="0" class="named"><title>332 KB · 49.64%</title></rect>
-<rect width="3.98" height="12" x="208.50" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="207.53" height="12" x="212.47" y="0" class="todo"><title>330 KB · 49.41%</title></rect>
+<rect width="208.55" height="12" x="0" y="0" class="named"><title>332 KB · 49.65%</title></rect>
+<rect width="3.98" height="12" x="208.55" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.48" height="12" x="212.52" y="0" class="todo"><title>330 KB · 49.40%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">49.6%</text>
+<text text-anchor="end" x="600" y="24.50">49.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">332 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">330 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -570,7 +570,7 @@
 <rect width="12" height="12" x="45" y="150" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="150" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="150" class="named"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="150" class="todo"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="150" class="named"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="150" class="named"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="150" class="todo"><title>0x0043c840 TestHeight_kayak (278 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="150" class="todo"><title>0x0043c960 DoShift_kayak (672 bytes)</title></rect>
@@ -2585,7 +2585,7 @@
 <rect width="5.36" height="5.31" x="600.29" y="358.96" class="named"><title>0x00416510 CreatureJoint (81 bytes)</title></rect>
 <rect width="5.36" height="5.31" x="600.29" y="367.27" class="named"><title>0x0041c3e0 InitialiseCleaner (81 bytes)</title></rect>
 <rect width="5.36" height="5.31" x="600.29" y="375.58" class="named"><title>0x0042faf0 InitialiseFireHead (81 bytes)</title></rect>
-<rect width="5.36" height="5.31" x="600.29" y="383.90" class="todo"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
+<rect width="5.36" height="5.31" x="600.29" y="383.90" class="named"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
 <rect width="5.36" height="5.31" x="600.29" y="392.21" class="named"><title>0x00441dd0 extra_as_dinokill (81 bytes)</title></rect>
 <rect width="5.36" height="5.31" x="600.29" y="400.52" class="named"><title>0x00459920 BridgeTilt2Floor (81 bytes)</title></rect>
 <rect width="5.36" height="5.31" x="600.29" y="408.83" class="named"><title>0x0048aac0 S_SetupBelowWater (81 bytes)</title></rect>
