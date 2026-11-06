@@ -2342,6 +2342,7 @@ address,size,name,symbol
 0x00632ad0,128,DS_SamplesPlaying,_DS_SamplesPlaying
 0x00632b50,128,DS_Samples,_DS_Samples
 0x00632bd0,30,CurrentSoundAdapter,_CurrentSoundAdapter
+0x00632bf4,4,PrimarySoundAdapter,_PrimarySoundAdapter
 0x00632bf8,4,GnTexturePages,_GnTexturePages
 0x00632c00,,TexturesUVFlag,_TexturesUVFlag
 0x00633c00,4,nBytesRead,_nBytesRead

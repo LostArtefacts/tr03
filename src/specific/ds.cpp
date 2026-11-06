@@ -10,6 +10,7 @@ extern "C" {
 
 static LIST<SOUND_ADAPTER> SoundAdapterList;
 static SOUND_ADAPTER CurrentSoundAdapter;
+static LIST<SOUND_ADAPTER>::NODE *PrimarySoundAdapter;
 extern LPDIRECTSOUND lpDirectSound;
 extern LPDIRECTSOUNDBUFFER DS_Buffers[256];
 extern int DS_SampleFrequencies[256];
@@ -185,6 +186,25 @@ bool DS_MakeAdapterList(void);
 void DS_Init(void)
 {
     DS_MakeAdapterList();
+}
+
+bool DS_EnumerateDevices(LPVOID lpContext);
+
+bool DS_MakeAdapterList(void)
+{
+    LIST<SOUND_ADAPTER>::NODE *node;
+
+    SoundAdapterList.RemoveAll();
+    if (!DS_EnumerateDevices(&SoundAdapterList))
+        return false;
+    PrimarySoundAdapter = 0;
+    for (node = SoundAdapterList.GetHead(); node; node = SoundAdapterList.GetNext(node)) {
+        if (!SoundAdapterList[node].lpGuid) {
+            PrimarySoundAdapter = node;
+            return true;
+        }
+    }
+    return true;
 }
 
 BOOL CALLBACK DS_EnumCallback(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext);

@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="286.23" height="12" x="0" y="0" class="named"><title>1237 · 83.69%</title></rect>
-<rect width="0.46" height="12" x="286.23" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="286.70" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="51.14" height="12" x="290.86" y="0" class="todo"><title>221 · 14.95%</title></rect>
+<rect width="286.47" height="12" x="0" y="0" class="named"><title>1238 · 83.76%</title></rect>
+<rect width="0.46" height="12" x="286.47" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="286.93" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="50.91" height="12" x="291.09" y="0" class="todo"><title>220 · 14.88%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">83.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1237</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">221</tspan></text>
+<text text-anchor="end" x="522" y="7.50">83.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1238</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">220</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.32" height="12" x="0" y="0" class="named"><title>372 KB · 55.65%</title></rect>
-<rect width="0.15" height="12" x="190.32" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.47" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.49" height="12" x="196.51" y="0" class="todo"><title>284 KB · 42.54%</title></rect>
+<rect width="190.40" height="12" x="0" y="0" class="named"><title>372 KB · 55.67%</title></rect>
+<rect width="0.15" height="12" x="190.40" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="190.55" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.42" height="12" x="196.58" y="0" class="todo"><title>284 KB · 42.52%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
@@ -1194,7 +1194,7 @@
 <rect width="12" height="12" x="375" y="330" class="named"><title>0x00480960 DS_StopSample (47 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="330" class="named"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="330" class="named"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="330" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="330" class="named"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="named"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="330" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
@@ -2337,7 +2337,7 @@
 <rect width="7.62" height="7.18" x="533.59" y="439.82" class="named"><title>0x0044cfc0 LaraCheat (156 bytes)</title></rect>
 <rect width="7.45" height="7.35" x="544.22" y="244" class="named"><title>0x0046eff0 FlameEmitterControl (156 bytes)</title></rect>
 <rect width="7.45" height="7.35" x="554.67" y="244" class="named"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
-<rect width="7.45" height="7.35" x="565.11" y="244" class="todo"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
+<rect width="7.45" height="7.35" x="565.11" y="244" class="named"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="7.35" height="7.35" x="575.56" y="244" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="7.35" height="7.35" x="585.92" y="244" class="named"><title>0x00458d20 WindowControl (154 bytes)</title></rect>
 <rect width="7.35" height="7.35" x="596.27" y="244" class="named"><title>0x00482250 LoadDemFile (154 bytes)</title></rect>
