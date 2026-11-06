@@ -21,6 +21,9 @@ bin = 'C:\msvc5sp3\bin'
 include = ['C:\dx5\include', 'C:\msvc5sp3\include']
 lib = ['C:\dx5\lib', 'C:\msvc5sp3\lib']
 
+[dll]
+ldflags = ["/DLL", "/NODEFAULTLIB", "/ENTRY:DllMain", "/BASE:0x30000000", "/SECTION:.text,RWE"]  # self-modifying scanlines write into their own code
+
 [symbols]
 manifest = "refs/trx/docs/symbols/tr3.txt"
 
