@@ -266,4 +266,76 @@ short *HWI_InsertObjectGT3_Sorted(short *pFaceInfo, long nFaces, int nSortType)
     return pFaceInfo;
 }
 
+typedef struct vertex_info {
+    float x, y;
+    float ooz;
+    float u, v, g;
+    int vr, vg, vb;
+} VERTEX_INFO;
+
+typedef struct point_info {
+    float xv, yv, zv;
+    float ooz;
+    float xs, ys;
+    float u, v;
+    float g;
+    int vr, vg, vb;
+} POINT_INFO;
+
+extern float f_znear;
+extern float f_oneoznear;
+extern float f_perspoznear;
+extern float f_centerx, f_centery;
+
+#define MAGICNUM float((1 << 26) * ((1 << 26) * 1.5))
+#define FTOL(x) ((fconv = (x) + (MAGICNUM)), *(int *)(&fconv))
+
+int RoomZedClipper(int number, POINT_INFO *input, VERTEX_INFO *output)
+{
+    POINT_INFO *A, *B;
+    VERTEX_INFO *pOut;
+    float clipper, fADiff, fBDiff;
+    int nVertices;
+    double fconv;
+
+    A = input + number - 1;
+    B = input;
+    pOut = output;
+    nVertices = 0;
+    for (; number--; A = B++) {
+        fADiff = f_znear - A->zv;
+        fBDiff = f_znear - B->zv;
+        if (((*(long *)&fADiff) | (*(long *)&fBDiff)) >= 0)
+            continue;
+        if (((*(long *)&fADiff) ^ (*(long *)&fBDiff)) < 0) {
+            clipper = fBDiff / (A->zv - B->zv);
+            pOut->x = (B->xv + (A->xv - B->xv) * clipper) * f_perspoznear + f_centerx;
+            pOut->y = (B->yv + (A->yv - B->yv) * clipper) * f_perspoznear + f_centery;
+            pOut->ooz = f_oneoznear;
+            pOut->u = (B->u + (A->u - B->u) * clipper) * f_oneoznear;
+            pOut->v = (B->v + (A->v - B->v) * clipper) * f_oneoznear;
+            pOut->vr = FTOL((B->vr + (A->vr - B->vr) * clipper));
+            pOut->vg = FTOL((B->vg + (A->vg - B->vg) * clipper));
+            pOut->vb = FTOL((B->vb + (A->vb - B->vb) * clipper));
+            ++pOut;
+            ++nVertices;
+        }
+        if ((*(long *)&fBDiff) < 0) {
+            pOut->x = B->xs;
+            pOut->y = B->ys;
+            pOut->ooz = B->ooz;
+            pOut->u = B->u * B->ooz;
+            pOut->v = B->v * B->ooz;
+            pOut->vr = B->vr;
+            pOut->vg = B->vg;
+            pOut->vb = B->vb;
+            ++pOut;
+            ++nVertices;
+        }
+    }
+    if (nVertices < 3)
+        return 0;
+    return nVertices;
+}
+
 }
