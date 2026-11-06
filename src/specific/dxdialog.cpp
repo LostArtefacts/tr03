@@ -101,4 +101,64 @@ void DXInitJoystickAdapter(HWND hwnd)
     }
 }
 
+void DXInitVideoModes(HWND hwnd, int nDD, int nD3D)
+{
+    HWND res;
+    int n;
+    char Buffer[40];
+    char Default[] = "640x480 High Colour (16 Bit)";
+    static int CurSel = -1;
+    int nDef;
+    int nListed;
+
+    if (bSoftwareDefault)
+        strcpy(Default, "320x200 High Colour (16 Bit)");
+    nDef = -1;
+    res = GetDlgItem(hwnd, 1002);
+    if (CurSel != -1)
+        SendMessage(res, CB_GETLBTEXT, SendMessage(res, CB_GETCURSEL, 0, 0), (LPARAM)Default);
+    SendMessage(res, CB_RESETCONTENT, 0, 0);
+    nListed = 0;
+    for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nDisplayMode; n++) {
+        if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].bpp == 16) {
+            sprintf(Buffer, "%dx%d High Colour (%d Bit)", G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].w,
+                G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].h, 16);
+            SendMessage(res, CB_ADDSTRING, 0, (LPARAM)Buffer);
+            SendMessage(res, CB_SETITEMDATA, nListed, n);
+            if (!strcmp(Default, Buffer))
+                nDef = nListed;
+            nListed++;
+        }
+    }
+    for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nDisplayMode; n++) {
+        if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].bpp == 24) {
+            sprintf(Buffer, "%dx%d True Colour (%d Bit)", G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].w,
+                G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].h, 24);
+            SendMessage(res, CB_ADDSTRING, 0, (LPARAM)Buffer);
+            SendMessage(res, CB_SETITEMDATA, nListed, n);
+            if (!strcmp(Default, Buffer))
+                nDef = nListed;
+            nListed++;
+        }
+    }
+    for (n = 0; n < G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].nDisplayMode; n++) {
+        if (G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].bpp == 32) {
+            sprintf(Buffer, "%dx%d True Colour (%d Bit)", G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].w,
+                G_DeviceInfo->DDInfo[nDD].D3DInfo[nD3D].DisplayMode[n].h, 32);
+            SendMessage(res, CB_ADDSTRING, 0, (LPARAM)Buffer);
+            SendMessage(res, CB_SETITEMDATA, nListed, n);
+            if (!strcmp(Default, Buffer))
+                nDef = nListed;
+            nListed++;
+        }
+    }
+    if (nDef != -1) {
+        CurSel = nDef;
+        SendMessage(res, CB_SETCURSEL, nDef, 0);
+    } else {
+        CurSel = 0;
+        SendMessage(res, CB_SETCURSEL, 0, 0);
+    }
+}
+
 }

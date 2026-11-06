@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="329.35" height="12" x="0" y="0" class="named"><title>1348 · 89.99%</title></rect>
-<rect width="7.33" height="12" x="329.35" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.09" height="12" x="336.68" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
-<rect width="22.23" height="12" x="343.77" y="0" class="todo"><title>91 · 6.07%</title></rect>
+<rect width="329.60" height="12" x="0" y="0" class="named"><title>1349 · 90.05%</title></rect>
+<rect width="7.33" height="12" x="329.60" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.09" height="12" x="336.93" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
+<rect width="21.99" height="12" x="344.01" y="0" class="todo"><title>90 · 6.01%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">92.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1348</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">91</tspan></text>
+<text text-anchor="end" x="546" y="7.50">92.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1349</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">29</tspan> · <tspan class="todo">90</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="261.33" height="12" x="0" y="0" class="named"><title>517 KB · 71.40%</title></rect>
-<rect width="33.42" height="12" x="261.33" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.15" height="12" x="294.75" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
-<rect width="57.10" height="12" x="308.90" y="0" class="todo"><title>113 KB · 15.60%</title></rect>
+<rect width="261.81" height="12" x="0" y="0" class="named"><title>518 KB · 71.53%</title></rect>
+<rect width="33.42" height="12" x="261.81" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.15" height="12" x="295.23" y="0" class="nonmatching"><title>28 KB · 3.87%</title></rect>
+<rect width="56.62" height="12" x="309.38" y="0" class="todo"><title>112 KB · 15.47%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">80.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">517 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">113 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">80.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">518 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">28 KB</tspan> · <tspan class="todo">112 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1486,7 +1486,7 @@
 <rect width="12" height="12" x="255" y="420" class="named"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="420" class="named"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="420" class="todo"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="420" class="todo"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="420" class="named"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="420" class="todo"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="420" class="named"><title>0x00498750 ScanLinesBlack (266 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="420" class="decompiled"><title>0x00498860 Func498860 (1338 bytes)</title></rect>
@@ -1758,7 +1758,7 @@
 <rect width="17.29" height="18.36" x="330.11" y="87.99" class="named"><title>0x00420590 AnimateItem (980 bytes)</title></rect>
 <rect width="17.29" height="17.99" x="330.11" y="109.35" class="named"><title>0x004737e0 WingmuteControl (960 bytes)</title></rect>
 <rect width="17.29" height="17.95" x="330.11" y="130.34" class="named"><title>0x00468850 SubDraw (958 bytes)</title></rect>
-<rect width="17.29" height="17.74" x="330.11" y="151.28" class="todo"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
+<rect width="17.29" height="17.74" x="330.11" y="151.28" class="named"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
 <rect width="17.29" height="17.50" x="330.11" y="172.03" class="named"><title>0x0046b340 T_DrawThisText (934 bytes)</title></rect>
 <rect width="17.29" height="17.22" x="330.11" y="192.53" class="named"><title>0x00491060 CalculateGradientsTG (919 bytes)</title></rect>
 <rect width="17.29" height="17.11" x="330.11" y="212.75" class="named"><title>0x0042ab80 TriggerExplosionSparks (913 bytes)</title></rect>
