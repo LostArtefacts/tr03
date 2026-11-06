@@ -806,4 +806,61 @@ void CalculateEdgeTA(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVER
         Edge->vozxtraf = FTOLFIX(Gradients->dvzx);
     }
 }
+
+void CalculateEdgeTG(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom);
+void CalculateEdgeT(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom);
+
+void CalculateEdgeTGA(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom)
+{
+    float YPreStep;
+    float XPreStep;
+    long dn, dm, ndm, ndn;
+    long inum;
+    double fconv;
+
+    Edge->y = ceilint(Top->sy);
+    Edge->height = ceilint(Bottom->sy) - Edge->y;
+    if (Edge->height) {
+        long tsx, tsy;
+        tsx = FTOLFIX284(Top->sx);
+        tsy = FTOLFIX284(Top->sy);
+        ndm = FTOLFIX284(Bottom->sx - Top->sx);
+        ndn = FTOLFIX284(Bottom->sy - Top->sy);
+        dn = ndn << 4;
+        dm = ndm << 4;
+        Edge->Denominator = dn;
+        inum = (((dm * Edge->y) - (ndm * tsy)) + ((ndn * tsx) - 1)) + dn;
+        FloorDivMod(inum, dn, Edge->x, Edge->ErrorTerm);
+        FloorDivMod(dm, dn, Edge->xstep, Edge->Numerator);
+        XPreStep = FIX284TOFLOAT((Edge->x << 4) - tsx);
+        YPreStep = FIX284TOFLOAT((Edge->y << 4) - tsy);
+        float u, v, us, vs;
+        u = Gradients->uoz[nTop] + YPreStep * Gradients->duzy + XPreStep * Gradients->duzx;
+        v = Gradients->voz[nTop] + YPreStep * Gradients->dvzy + XPreStep * Gradients->dvzx;
+        us = Edge->xstep * Gradients->duzx + Gradients->duzy;
+        vs = Edge->xstep * Gradients->dvzx + Gradients->dvzy;
+        Edge->uozf = FTOLFIX(u);
+        Edge->vozf = FTOLFIX(v);
+        Edge->uozstepf = FTOLFIX(us);
+        Edge->vozstepf = FTOLFIX(vs);
+        Edge->uozxtraf = FTOLFIX(Gradients->duzx);
+        Edge->vozxtraf = FTOLFIX(Gradients->dvzx);
+        float r, g, b, rstep, gstep, bstep;
+        r = Gradients->r[nTop] + YPreStep * Gradients->dry + XPreStep * Gradients->drx;
+        g = Gradients->g[nTop] + YPreStep * Gradients->dgy + XPreStep * Gradients->dgx;
+        b = Gradients->b[nTop] + YPreStep * Gradients->dby + XPreStep * Gradients->dbx;
+        rstep = Edge->xstep * Gradients->drx + Gradients->dry;
+        gstep = Edge->xstep * Gradients->dgx + Gradients->dgy;
+        bstep = Edge->xstep * Gradients->dbx + Gradients->dby;
+        Edge->rf = FTOLFIX(r) + 0x8000;
+        Edge->rstepf = FTOLFIX(rstep);
+        Edge->gf = FTOLFIX(g) + 0x8000;
+        Edge->gstepf = FTOLFIX(gstep);
+        Edge->bf = FTOLFIX(b) + 0x8000;
+        Edge->bstepf = FTOLFIX(bstep);
+        Edge->rxtraf = FTOLFIX(Gradients->drx);
+        Edge->gxtraf = FTOLFIX(Gradients->dgx);
+        Edge->bxtraf = FTOLFIX(Gradients->dbx);
+    }
+}
 }
