@@ -5487,4 +5487,132 @@ HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderSt
     Var6ca310 = DrawSpansGouraud;
     return D3D_OK;
 }
+
+extern void (*Var6ca150)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca154)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca158)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca15c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca160)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca164)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca168)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca16c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca170)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca174)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca178)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca17c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca180)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca184)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca188)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca18c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*Var6ca190)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+
+HRESULT EmulateDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVertexType, LPVOID lpvVertices, DWORD dwVertexCount, DWORD dwFlags)
+{
+    DDSURFACEDESC ddsd;
+
+    memset(&ddsd, 0, sizeof(ddsd));
+    PrepareTriangleList((LPD3DTLVERTEX)lpvVertices, dwVertexCount);
+    if (TextureHandle != NULL) {
+        DrawScanLines = Var6ca160;
+        CalcGradientsPersp = CalculateGradientsTG;
+        CalcEdgePersp = CalculateEdgeTG;
+        DrawScanLinesAffine = Var6ca150;
+        CalcGradientsAffine = CalculateGradientsTGA;
+        CalcEdgeAffine = CalculateEdgeTGA;
+        DrawScanLinesBlack = Var6ca168;
+        CalcGradientsBlack = NullCalculateGradient;
+        CalcEdgeBlack = CalculateEdgeBlack;
+        DrawScanLinesFlat = Var6ca16c;
+        CalcGradientsFlat = CalculateGradientsTF;
+        CalcEdgeFlat = CalculateEdgeT;
+        DrawScanLinesFlatAffine = Var6ca170;
+        CalcGradientsFlatAffine = CalculateGradientsTFA;
+        CalcEdgeFlatAffine = CalculateEdgeTA;
+        if (Var6ca1f8) {
+            DrawScanLines = Var6ca164;
+            CalcGradientsPersp = CalculateGradientsTG;
+            CalcEdgePersp = CalculateEdgeTG;
+            DrawScanLinesAffine = Var6ca154;
+            CalcGradientsAffine = CalculateGradientsTGA;
+            CalcEdgeAffine = CalculateEdgeTGA;
+            DrawScanLinesBlack = Var6ca154;
+            CalcGradientsBlack = CalculateGradientsTGA;
+            CalcEdgeBlack = CalculateEdgeTGA;
+            DrawScanLinesFlatAffine = Var6ca178;
+            CalcGradientsFlatAffine = CalculateGradientsTFA;
+            CalcEdgeFlatAffine = CalculateEdgeTA;
+            DrawScanLinesFlat = Var6ca174;
+            CalcGradientsFlat = CalculateGradientsTF;
+            CalcEdgeFlat = CalculateEdgeT;
+        }
+        if (Var6ca1f4 && Var6ca1fc) {
+            DrawScanLines = Var6ca15c;
+            CalcGradientsPersp = CalculateGradientsTG;
+            CalcEdgePersp = CalculateEdgeTG;
+            DrawScanLinesAffine = Var6ca158;
+            CalcGradientsAffine = CalculateGradientsTGA;
+            CalcEdgeAffine = CalculateEdgeTGA;
+            DrawScanLinesBlack = Var6ca190;
+            CalcGradientsBlack = NullCalculateGradient;
+            CalcEdgeBlack = NullCalculateEdge;
+            DrawScanLinesFlatAffine = Var6ca17c;
+            CalcGradientsFlatAffine = CalculateGradientsTFA;
+            CalcEdgeFlatAffine = CalculateEdgeTA;
+            DrawScanLinesFlat = Var6ca180;
+            CalcGradientsFlat = CalculateGradientsTF;
+            CalcEdgeFlat = CalculateEdgeT;
+        }
+    } else {
+        DrawScanLines = Var6ca184;
+        CalcGradientsPersp = Func491400;
+        CalcEdgePersp = Func491680;
+        DrawScanLinesAffine = Var6ca184;
+        CalcGradientsAffine = Func491400;
+        CalcEdgeAffine = Func491680;
+        DrawScanLinesBlack = Var6ca168;
+        CalcGradientsBlack = NullCalculateGradient;
+        CalcEdgeBlack = CalculateEdgeBlack;
+        DrawScanLinesFlat = Var6ca184;
+        CalcGradientsFlat = Func491400;
+        CalcEdgeFlat = Func491680;
+        DrawScanLinesFlatAffine = Var6ca184;
+        CalcGradientsFlatAffine = Func491400;
+        CalcEdgeFlatAffine = Func491680;
+        if (Var6ca1f4) {
+            DrawScanLines = Var6ca188;
+            CalcGradientsPersp = Func491400;
+            CalcEdgePersp = Func491680;
+            DrawScanLinesAffine = Var6ca188;
+            CalcGradientsAffine = Func491400;
+            CalcEdgeAffine = Func491680;
+            DrawScanLinesBlack = Var6ca18c;
+            CalcGradientsBlack = Func491400;
+            CalcEdgeBlack = Func491680;
+            DrawScanLinesFlat = Var6ca188;
+            CalcGradientsFlat = Func491400;
+            CalcEdgeFlat = Func491680;
+            DrawScanLinesFlatAffine = Var6ca188;
+            CalcGradientsFlatAffine = Func491400;
+            CalcEdgeFlatAffine = Func491680;
+        }
+    }
+    switch (dptPrimitiveType) {
+    case D3DPT_TRIANGLELIST:
+        DrawTriangleList((LPD3DTLVERTEX)lpvVertices, dwVertexCount);
+        break;
+    case D3DPT_TRIANGLEFAN:
+        DrawTriangleFan((LPD3DTLVERTEX)lpvVertices, dwVertexCount);
+        break;
+    case D3DPT_TRIANGLESTRIP:
+        DrawTriangleStrip((LPD3DTLVERTEX)lpvVertices, dwVertexCount);
+        break;
+    case D3DPT_LINELIST:
+        Func490f50((LPD3DTLVERTEX)lpvVertices, dwVertexCount);
+        break;
+    case D3DPT_LINESTRIP:
+        Func491020((LPD3DTLVERTEX)lpvVertices, dwVertexCount);
+        break;
+    }
+    return D3D_OK;
+}
 }

@@ -1170,7 +1170,7 @@ address,size,name,symbol
 0x00483650,278,S_DrawScreenBox,_S_DrawScreenBox
 0x00483770,61,S_DrawScreenFBox,_S_DrawScreenFBox
 0x004837b0,15,S_FinishInventory,_S_FinishInventory
-0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1 _S_SetReverbType
+0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1 _S_SetReverbType _NullCalculateGradient _NullCalculateEdge
 0x004837d0,87,S_Wait,_S_Wait
 0x00483830,14,S_PlayFMV,_S_PlayFMV
 0x00483840,19,S_IntroFMV,_S_IntroFMV
@@ -1367,7 +1367,7 @@ address,size,name,symbol
 0x00490ae0,37,HWDrawPrimitive,_HWDrawPrimitive
 0x00490b10,34,SWDrawPrimitive,_SWDrawPrimitive
 0x00490b40,88,PrepareTriangleList,_PrepareTriangleList
-0x00490ba0,857,EmulateDrawPrimitive,_EmulateDrawPrimitive
+0x00490ba0,880,EmulateDrawPrimitive,_EmulateDrawPrimitive
 0x00490f10,60,DrawTriangleList,_DrawTriangleList
 0x00490f50,46,Func490f50,_Func490f50
 0x00490f80,71,DrawTriangleFan,_DrawTriangleFan
@@ -2534,6 +2534,23 @@ address,size,name,symbol
 0x006ca130,4,DrawScanLinesFlat,_DrawScanLinesFlat
 0x006ca134,4,Output,_Output
 0x006ca138,4,tpitch,_tpitch
+0x006ca150,4,Var6ca150,_Var6ca150
+0x006ca154,4,Var6ca154,_Var6ca154
+0x006ca158,4,Var6ca158,_Var6ca158
+0x006ca15c,4,Var6ca15c,_Var6ca15c
+0x006ca160,4,Var6ca160,_Var6ca160
+0x006ca164,4,Var6ca164,_Var6ca164
+0x006ca168,4,Var6ca168,_Var6ca168
+0x006ca16c,4,Var6ca16c,_Var6ca16c
+0x006ca170,4,Var6ca170,_Var6ca170
+0x006ca174,4,Var6ca174,_Var6ca174
+0x006ca178,4,Var6ca178,_Var6ca178
+0x006ca17c,4,Var6ca17c,_Var6ca17c
+0x006ca180,4,Var6ca180,_Var6ca180
+0x006ca184,4,Var6ca184,_Var6ca184
+0x006ca188,4,Var6ca188,_Var6ca188
+0x006ca18c,4,Var6ca18c,_Var6ca18c
+0x006ca190,4,Var6ca190,_Var6ca190
 0x006ca194,4,bytepitch,_bytepitch
 0x006ca198,4,Var6ca198,_Var6ca198
 0x006ca19c,4,DrawScanLines,_DrawScanLines
