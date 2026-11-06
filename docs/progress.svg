@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="312.58" height="12" x="0" y="0" class="named"><title>1100 · 74.42%</title></rect>
-<rect width="1.99" height="12" x="312.58" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
-<rect width="105.43" height="12" x="314.57" y="0" class="todo"><title>371 · 25.10%</title></rect>
+<rect width="312.87" height="12" x="0" y="0" class="named"><title>1101 · 74.49%</title></rect>
+<rect width="1.99" height="12" x="312.87" y="0" class="nonmatching"><title>7 · 0.47%</title></rect>
+<rect width="105.14" height="12" x="314.86" y="0" class="todo"><title>370 · 25.03%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">74.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1100</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">371</tspan></text>
+<text text-anchor="end" x="600" y="7.50">74.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1101</tspan> · <tspan class="nonmatching">7</tspan> · <tspan class="todo">370</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="195.78" height="12" x="0" y="0" class="named"><title>311 KB · 46.61%</title></rect>
-<rect width="3.79" height="12" x="195.78" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
-<rect width="220.43" height="12" x="199.57" y="0" class="todo"><title>351 KB · 52.48%</title></rect>
+<rect width="195.81" height="12" x="0" y="0" class="named"><title>311 KB · 46.62%</title></rect>
+<rect width="3.79" height="12" x="195.81" y="0" class="nonmatching"><title>6 KB · 0.90%</title></rect>
+<rect width="220.39" height="12" x="199.61" y="0" class="todo"><title>350 KB · 52.47%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">46.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">351 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">311 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">350 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1314,7 +1314,7 @@
 <rect width="12" height="12" x="705" y="360" class="named"><title>0x0048a2a0 S_DumpCine (45 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="360" class="named"><title>0x0048a2d0 S_DumpScreen (78 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="360" class="named"><title>0x0048a320 S_ClearScreen (11 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="375" class="todo"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="375" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="375" class="todo"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="375" class="todo"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="375" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
@@ -2724,7 +2724,7 @@
 <rect width="4.26" height="4.45" x="742.74" y="332.47" class="named"><title>0x0042f9c0 Exercise8_109Sp (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="339.93" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="347.32" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
-<rect width="4.31" height="4.40" x="639.79" y="354.72" class="todo"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
+<rect width="4.31" height="4.40" x="639.79" y="354.72" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.79" y="362.12" class="todo"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="369.52" class="todo"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
 <rect width="4.31" height="4.32" x="639.79" y="376.83" class="todo"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>

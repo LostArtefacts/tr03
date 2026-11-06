@@ -36,6 +36,13 @@ extern int SunsetTimer;
 
 sint32 __fastcall phd_sin(sint32 angle);
 
+extern unsigned char game_palette[768];
+extern unsigned char water_palette[768];
+extern int wet;
+
+void FadeToPal(int nFrames, unsigned char *pPal);
+void TempVideoRemove(void);
+void HWR_InitState(void);
 int Sync(void);
 void ScreenPartialDump(void);
 
@@ -77,6 +84,19 @@ int S_DumpScreen(void)
 void S_ClearScreen(void)
 {
     ScreenClear(false);
+}
+
+void S_InitialiseScreen(int type)
+{
+    if (type >= 0) {
+        if (type != 0)
+            TempVideoRemove();
+        FadeToPal(30, game_palette);
+    } else {
+        FadeToPal(0, game_palette);
+    }
+    if (App.nRenderMode != 0)
+        HWR_InitState();
 }
 
 void AnimateTextures(int n)
