@@ -334,6 +334,37 @@ int ACMHandleNotifications(void)
     return 1;
 }
 
+int ACMSetupNotifications(void)
+{
+    DSBPOSITIONNOTIFY posNotif[5];
+    DWORD ThreadId;
+    int result;
+    int size;
+    int i;
+
+    size = NotifySize;
+    NotifyEventHandles[0] = CreateEvent(0, FALSE, FALSE, 0);
+    NotifyEventHandles[1] = CreateEvent(0, FALSE, FALSE, 0);
+    posNotif[0].dwOffset = size;
+    posNotif[0].hEventNotify = NotifyEventHandles[0];
+    for (i = 1; i < 4; i++) {
+        posNotif[i].dwOffset = size + posNotif[i - 1].dwOffset;
+        posNotif[i].hEventNotify = NotifyEventHandles[0];
+    }
+    posNotif[i - 1].dwOffset--;
+    posNotif[4].dwOffset = DSBPN_OFFSETSTOP;
+    posNotif[4].hEventNotify = NotifyEventHandles[1];
+    ACMNotifyThread = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)ACMHandleNotifications, 0, 0, &ThreadId);
+    result = DSNotify->SetNotificationPositions(5, posNotif);
+    if (result != DS_OK) {
+        CloseHandle(NotifyEventHandles[0]);
+        CloseHandle(NotifyEventHandles[1]);
+        NotifyEventHandles[1] = 0;
+        NotifyEventHandles[0] = 0;
+    }
+    return result;
+}
+
 int ACMGetTrackLocation(void)
 {
     return (int)(60.0f * ((float)(timeGetTime() - acm_start_time) * 0.001f));
