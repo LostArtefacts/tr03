@@ -78,8 +78,328 @@ sint32 GF_DoLevelSequence(int level, int type)
 #define ROCKET_AMMO_QTY 1
 #define GRENADE_AMMO_QTY 2
 
+#define GFE_PICTURE 0
+#define GFE_LIST_START 1
+#define GFE_LIST_END 2
+#define GFE_PLAYFMV 3
+#define GFE_STARTLEVEL 4
+#define GFE_CUTSCENE 5
+#define GFE_LEVCOMPLETE 6
+#define GFE_DEMOPLAY 7
+#define GFE_JUMPTO_SEQ 8
+#define GFE_END_SEQ 9
+#define GFE_SETTRACK 10
+#define GFE_SUNSET 11
+#define GFE_LOADINGPIC 12
+#define GFE_DEADLY_WATER 13
+#define GFE_REMOVE_WEAPONS 14
+#define GFE_GAMECOMPLETE 15
+#define GFE_CUTANGLE 16
+#define GFE_NOFLOOR 17
+#define GFE_ADD2INV 18
+#define GFE_STARTANIM 19
+#define GFE_NUMSECRETS 20
+#define GFE_KILL2COMPLETE 21
+#define GFE_REMOVE_AMMO 22
+
+#define LV_JUNGLE 1
+#define LV_SHORE 5
+#define LV_DESERT 13
+#define LV_ROOFTOPS 9
+#define LV_ANTARC 16
+
 extern char GF_Add2InvItems[];
 extern char GF_SecretInvItems[];
+extern char **GF_picfilenames;
+extern char **GF_fmvfilenames;
+extern char **GF_cutscenefilenames;
+extern uint32 CurrentLevel;
+extern char GF_StartGame;
+extern int GF_PlayingFMV;
+extern int GF_BonusLevelEnabled;
+extern sint16 GF_LoadingPic;
+extern sint16 GF_NumSecrets;
+extern sint16 GF_CDtracks[];
+extern sint16 GF_Cutscene_Orientation;
+extern int GF_LaraStartAnim;
+extern sint16 GF_SunsetEnabled;
+extern sint16 GF_DeadlyWater;
+extern sint16 GF_NoFloor;
+extern sint16 GF_RemoveWeapons;
+extern sint16 GF_RemoveAmmo;
+extern char GF_Kill2Complete;
+extern sint16 NextAdventure;
+
+void ShowThis(char *string, int frames);
+int S_IntroFMV(char *movie1, char *movie2);
+int S_PlayFMV(char *fname, int sequence);
+sint32 StartGame(int level_number, int type);
+void S_FadeToBlack(void);
+void SetPictureToFade(int fade);
+sint32 InitialiseLevel(sint32 level, sint32 type);
+sint32 StartCinematic(sint32 level_number);
+int LevelStats(int level);
+sint32 Display_Inventory(sint32 inventory_mode);
+void CreateStartInfo(int level_number);
+void FadePictureDown(int steps);
+sint32 StartDemo(int level_number);
+void SetCutsceneTrack(int track);
+void DisplayCredits(void);
+sint32 GameStats(int level_number, int type);
+
+sint32 GF_InterpretSequence(sint16 *ptr, int type, int seq_type)
+{
+    int adv;
+    sint32 ret_val;
+    sint32 option = EXIT_TO_TITLE;
+    sint16 level;
+    sint16 ntracks = 0;
+    char string[80];
+
+    GF_CDtracks[0] = 2;
+    GF_LaraStartAnim = GF_SunsetEnabled = GF_DeadlyWater = GF_NoFloor = 0;
+    GF_RemoveWeapons = GF_RemoveAmmo = GF_Kill2Complete = 0;
+    GF_NumSecrets = 3;
+    memset(GF_Add2InvItems, 0, ADDINV_NUMBEROF);
+    memset(GF_SecretInvItems, 0, ADDINV_NUMBEROF);
+
+    while (*ptr != GFE_END_SEQ) {
+        switch (*ptr) {
+        case GFE_STARTLEVEL:
+            level = *(ptr + 1);
+            if (level <= gameflow.num_levels) {
+                if (type == IL_STORY_SO_FAR) {
+                    ptr += 2;
+                    continue;
+                }
+                if (type == IL_STORY_SO_FAR_MIDLEVEL)
+                    return EXIT_TO_TITLE;
+                option = StartGame(level, type);
+                GF_StartGame = 0;
+                if (type == IL_SAVED)
+                    type = IL_NORMAL;
+                if ((option & ~0xff) != LEVELCOMPLETE)
+                    return option;
+            } else {
+                sprintf(string, "INVALID LEVEL %d", level);
+                option = EXIT_TO_TITLE;
+            }
+            ptr += 2;
+            break;
+
+        case GFE_DEMOPLAY:
+            if (type != IL_SAVED && type != IL_STORY_SO_FAR && type != IL_STORY_SO_FAR_MIDLEVEL) {
+                option = StartDemo(*(ptr + 1));
+                return option;
+            }
+            ptr += 2;
+            break;
+
+        case GFE_CUTANGLE:
+            if (type != IL_SAVED)
+                GF_Cutscene_Orientation = *(ptr + 1);
+            ptr += 2;
+            break;
+
+        case GFE_CUTSCENE:
+            if (type != IL_SAVED) {
+                sprintf(string, "CUTSCENE %d %s", *(ptr + 1), GF_cutscenefilenames[*(ptr + 1)]);
+                level = (sint16)CurrentLevel;
+                S_FadeToBlack();
+                SetPictureToFade(1);
+                if (!InitialiseLevel(*(ptr + 1), IL_CUTSCENE))
+                    ret_val = 2;
+                else
+                    ret_val = StartCinematic(*(ptr + 1));
+                CurrentLevel = level;
+                if (ret_val == 2 && (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL))
+                    return EXIT_TO_TITLE;
+                if (ret_val == 3)
+                    return EXITGAME;
+            }
+            ptr += 2;
+            break;
+
+        case GFE_PLAYFMV:
+            if (type != IL_SAVED) {
+                if (*(ptr + 2) == GFE_PLAYFMV) {
+                    if (S_IntroFMV(GF_fmvfilenames[*(ptr + 1)], GF_fmvfilenames[*(ptr + 3)]))
+                        return EXITGAME;
+                    ptr += 2;
+                } else {
+                    GF_PlayingFMV = 1;
+                    if (S_PlayFMV(GF_fmvfilenames[*(ptr + 1)], *(ptr + 1)))
+                        return EXITGAME;
+                }
+            }
+            ptr += 2;
+            break;
+
+        case GFE_LEVCOMPLETE:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr++;
+                continue;
+            }
+            if ((adv = LevelStats(CurrentLevel)) == -1)
+                return EXIT_TO_TITLE;
+            if (adv) {
+                sint16 lev;
+                char Adventure[] = { LV_JUNGLE, LV_SHORE, LV_DESERT, LV_JUNGLE, LV_ROOFTOPS, LV_ANTARC };
+
+                Display_Inventory(7);
+                lev = Adventure[NextAdventure];
+                option = STARTGAME | lev;
+                CreateStartInfo(lev);
+                FadePictureDown(32);
+            } else {
+                CreateStartInfo(CurrentLevel + 1);
+                option = STARTGAME | (CurrentLevel + 1);
+                savegame.current_level = (sint16)(CurrentLevel + 1);
+            }
+            ptr++;
+            break;
+
+        case GFE_GAMECOMPLETE:
+            DisplayCredits();
+            GameStats(CurrentLevel, type);
+            if (GF_BonusLevelEnabled) {
+                CreateStartInfo(CurrentLevel + 1);
+                option = STARTGAME | (CurrentLevel + 1);
+                savegame.current_level = (sint16)(CurrentLevel + 1);
+                FadePictureDown(32);
+                return option;
+            }
+            return EXIT_TO_TITLE;
+
+        case GFE_PICTURE:
+            if (type != IL_SAVED) {
+                sprintf(string, "PICTURE %s", GF_picfilenames[*(ptr + 1)]);
+                ShowThis(string, 30 * 5);
+            }
+            ptr += 2;
+            break;
+
+        case GFE_JUMPTO_SEQ:
+            sprintf(string, "JUMPSEQ %d", *(ptr + 1));
+            ptr += 2;
+            break;
+
+        case GFE_LIST_START:
+            ptr++;
+            break;
+
+        case GFE_LIST_END:
+            ptr++;
+            break;
+
+        case GFE_SETTRACK:
+            GF_CDtracks[ntracks] = *(ptr + 1);
+            SetCutsceneTrack(*(ptr + 1));
+            ntracks++;
+            ptr += 2;
+            break;
+
+        case GFE_SUNSET:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr++;
+                continue;
+            }
+            GF_SunsetEnabled = 1;
+            ptr++;
+            break;
+
+        case GFE_DEADLY_WATER:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr++;
+                continue;
+            }
+            GF_DeadlyWater = 1;
+            ptr++;
+            break;
+
+        case GFE_NOFLOOR:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr += 2;
+                continue;
+            }
+            GF_NoFloor = *(ptr + 1);
+            ptr += 2;
+            break;
+
+        case GFE_STARTANIM:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr += 2;
+                continue;
+            }
+            GF_LaraStartAnim = *(ptr + 1);
+            ptr += 2;
+            break;
+
+        case GFE_NUMSECRETS:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr += 2;
+                continue;
+            }
+            GF_NumSecrets = *(ptr + 1);
+            ptr += 2;
+            break;
+
+        case GFE_ADD2INV:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr += 2;
+                continue;
+            }
+            if (*(ptr + 1) < 1000) {
+                GF_SecretInvItems[*(ptr + 1)]++;
+            } else {
+                if (type != IL_SAVED)
+                    GF_Add2InvItems[*(ptr + 1) - 1000]++;
+            }
+            ptr += 2;
+            break;
+
+        case GFE_REMOVE_WEAPONS:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr++;
+                continue;
+            }
+            if (type != IL_SAVED)
+                GF_RemoveWeapons = 1;
+            ptr++;
+            break;
+
+        case GFE_REMOVE_AMMO:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr++;
+                continue;
+            }
+            if (type != IL_SAVED)
+                GF_RemoveAmmo = 1;
+            ptr++;
+            break;
+
+        case GFE_KILL2COMPLETE:
+            if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL) {
+                ptr++;
+                continue;
+            }
+            GF_Kill2Complete = 1;
+            ptr++;
+            break;
+
+        case GFE_LOADINGPIC:
+            GF_LoadingPic = *(ptr + 1);
+            ptr += 2;
+            break;
+
+        default:
+            return EXITGAME;
+        }
+    }
+    if (type == IL_STORY_SO_FAR || type == IL_STORY_SO_FAR_MIDLEVEL)
+        return 0;
+    return option;
+}
 
 int Inv_AddItem(int itemNum);
 int Inv_RequestItem(int item_num);

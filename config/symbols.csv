@@ -409,7 +409,7 @@ address,size,name,symbol
 0x00432030,592,GF_LoadScriptFile,_GF_LoadScriptFile
 0x00432280,31,GF_DoFrontEndSequence,_GF_DoFrontEndSequence
 0x004322a0,102,GF_DoLevelSequence,_GF_DoLevelSequence
-0x00432310,1372,GF_InterpretSequence,_GF_InterpretSequence
+0x00432310,1464,GF_InterpretSequence,_GF_InterpretSequence
 0x004328d0,3768,GF_ModifyInventory,_GF_ModifyInventory
 0x00433790,116,InitialiseHair,_InitialiseHair
 0x00433810,2768,HairControl,_HairControl
@@ -1170,7 +1170,7 @@ address,size,name,symbol
 0x00483650,278,S_DrawScreenBox,_S_DrawScreenBox
 0x00483770,61,S_DrawScreenFBox,_S_DrawScreenFBox
 0x004837b0,15,S_FinishInventory,_S_FinishInventory
-0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1 _S_SetReverbType _NullCalculateGradient _NullCalculateEdge _NullScanLines _AIPickupCollision
+0x004837c0,1,DrawDummyItem,_DrawDummyItem _DI_FinishJoystick _S_CopyScreenToBuffer _FadeToPal _StartGameStub1 _S_SetReverbType _NullCalculateGradient _NullCalculateEdge _NullScanLines _AIPickupCollision _ShowThis
 0x004837d0,87,S_Wait,_S_Wait
 0x00483830,14,S_PlayFMV,_S_PlayFMV
 0x00483840,19,S_IntroFMV,_S_IntroFMV
