@@ -227,6 +227,112 @@ void do_levelselect_option(INVENTORY_ITEM *inv_item)
         inputDB &= ~(IN_DESELECT | IN_SELECT);
 }
 
+void do_sound_option(INVENTORY_ITEM *inv_item)
+{
+    int i;
+    char string[20];
+
+    if (!sa_text[0]) {
+        if (Option_Music_Volume > 10)
+            Option_Music_Volume = 10;
+        wsprintfA(string, "| %2d", Option_Music_Volume);
+        sa_text[0] = T_Print(0, 0, 0, string);
+        T_AddBackground(sa_text[0], 168, 0, 0, 0, 8, 0, 0, 0);
+        T_AddOutline(sa_text[0], 1, 4, 0, 0);
+        if (Option_SFX_Volume > 10)
+            Option_SFX_Volume = 10;
+        wsprintfA(string, "} %2d", Option_SFX_Volume);
+        sa_text[1] = T_Print(0, 25, 0, string);
+        sa_text[2] = T_Print(0, -32, 0, " ");
+        T_AddBackground(sa_text[2], 180, 85, 0, 0, 48, 0, 0, 0);
+        T_AddOutline(sa_text[2], 1, 15, 0, 0);
+        sa_text[3] = T_Print(0, -30, 0, GF_PCStrings[5]);
+        T_AddBackground(sa_text[3], 176, 0, 0, 0, 8, 0, 0, 0);
+        T_AddOutline(sa_text[3], 1, 15, 0, 0);
+        for (i = 0; i < 4; i++) {
+            T_CentreH(sa_text[i], 1);
+            T_CentreV(sa_text[i], 1);
+        }
+    }
+    if ((inputDB & IN_FORWARD) && item_data > 0) {
+        T_RemoveOutline(sa_text[item_data]);
+        T_RemoveBackground(sa_text[item_data]);
+        item_data--;
+        T_AddBackground(sa_text[item_data], 168, 0, 0, 0, 8, 0, 0, 0);
+        T_AddOutline(sa_text[item_data], 1, 4, 0, 0);
+    }
+    if ((inputDB & IN_BACK) && item_data < 1) {
+        T_RemoveOutline(sa_text[item_data]);
+        T_RemoveBackground(sa_text[item_data]);
+        item_data++;
+        T_AddBackground(sa_text[item_data], 168, 0, 0, 0, 8, 0, 0, 0);
+        T_AddOutline(sa_text[item_data], 1, 4, 0, 0);
+    }
+    if (!item_data) {
+        if ((input & IN_LEFT) && Option_Music_Volume > 0) {
+            idelay = 1;
+            idcount = 10;
+            Option_Music_Volume--;
+            wsprintfA(string, "| %2d", Option_Music_Volume);
+            T_ChangeText(sa_text[0], string);
+            if (Option_Music_Volume)
+                S_CDVolume(Option_Music_Volume * 25 + 5);
+            else
+                S_CDVolume(0);
+            SoundEffect(115, 0, 2);
+        } else if ((input & IN_RIGHT) && Option_Music_Volume < 10) {
+            idelay = 1;
+            idcount = 10;
+            Option_Music_Volume++;
+            wsprintfA(string, "| %2d", Option_Music_Volume);
+            T_ChangeText(sa_text[0], string);
+            if (Option_Music_Volume)
+                S_CDVolume(Option_Music_Volume * 25 + 5);
+            else
+                S_CDVolume(0);
+            SoundEffect(115, 0, 2);
+        }
+    } else {
+        if ((input & IN_LEFT) && Option_SFX_Volume > 0) {
+            idelay = 1;
+            idcount = 10;
+            Option_SFX_Volume--;
+            wsprintfA(string, "} %2d", Option_SFX_Volume);
+            T_ChangeText(sa_text[1], string);
+            if (Option_SFX_Volume)
+                S_SoundSetMasterVolume(Option_SFX_Volume * 6 + 4);
+            else
+                S_SoundSetMasterVolume(0);
+            SoundEffect(115, 0, 2);
+        } else if ((input & IN_RIGHT) && Option_SFX_Volume < 10) {
+            idelay = 1;
+            idcount = 10;
+            Option_SFX_Volume++;
+            wsprintfA(string, "} %2d", Option_SFX_Volume);
+            T_ChangeText(sa_text[1], string);
+            if (Option_SFX_Volume)
+                S_SoundSetMasterVolume(Option_SFX_Volume * 6 + 4);
+            else
+                S_SoundSetMasterVolume(0);
+            SoundEffect(115, 0, 2);
+        }
+    }
+    is_sound_sfxlevel[6].param1 = Option_SFX_Volume;
+    is_sound_sfxlevellow[6].param1 = Option_SFX_Volume;
+    is_sound_muslevel[6].param1 = Option_Music_Volume;
+    is_sound_muslevellow[6].param1 = Option_Music_Volume;
+    if (inputDB & (IN_SELECT | IN_DESELECT)) {
+        T_RemovePrint(sa_text[0]);
+        sa_text[0] = NULL;
+        T_RemovePrint(sa_text[1]);
+        sa_text[1] = NULL;
+        T_RemovePrint(sa_text[2]);
+        sa_text[2] = NULL;
+        T_RemovePrint(sa_text[3]);
+        sa_text[3] = NULL;
+    }
+}
+
 void do_compass_option(INVENTORY_ITEM *inv_item)
 {
     int h;
