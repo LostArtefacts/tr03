@@ -79,6 +79,49 @@ void DXFreeDeviceInfo(DEVICEINFO *dd)
     memset(dd, 0, sizeof(DEVICEINFO));
 }
 
+BOOL CALLBACK DXEnumDirectDraw(GUID FAR *lpGUID, LPSTR lpDriverDescription, LPSTR lpDriverName, LPVOID lpContext)
+{
+    DEVICEINFO *dd;
+    LPDIRECTDRAW lpDD;
+
+    dd = (DEVICEINFO *)lpContext;
+    if (!dd->nDDInfo)
+        dd->DDInfo = (DIRECTDRAWINFO *)malloc(sizeof(DIRECTDRAWINFO));
+    else
+        dd->DDInfo = (DIRECTDRAWINFO *)realloc(dd->DDInfo, (dd->nDDInfo + 1) * sizeof(DIRECTDRAWINFO));
+    memset(&dd->DDInfo[dd->nDDInfo], 0, sizeof(DIRECTDRAWINFO));
+
+    if (!lpGUID) {
+        dd->DDInfo[dd->nDDInfo].lpGuid = 0;
+    } else {
+        dd->DDInfo[dd->nDDInfo].lpGuid = &dd->DDInfo[dd->nDDInfo].Guid;
+        dd->DDInfo[dd->nDDInfo].Guid = *lpGUID;
+    }
+
+    lstrcpy(dd->DDInfo[dd->nDDInfo].About, lpDriverDescription);
+    lstrcpy(dd->DDInfo[dd->nDDInfo].Name, lpDriverName);
+
+    DirectDrawCreate(lpGUID, &lpDD, 0);
+    lpDD->QueryInterface(IID_IDirectDraw2, (LPVOID *)&G_ddraw);
+    if (lpDD) {
+        lpDD->Release();
+        lpDD = 0;
+    }
+
+    dd->DDInfo[dd->nDDInfo].DDCaps.dwSize = sizeof(DDCAPS);
+    G_ddraw->GetCaps(&dd->DDInfo[dd->nDDInfo].DDCaps, 0);
+    G_ddraw->SetCooperativeLevel(0, DDSCL_FULLSCREEN | DDSCL_NOWINDOWCHANGES | DDSCL_NORMAL | DDSCL_ALLOWMODEX);
+    G_ddraw->EnumDisplayModes(0, 0, &dd->DDInfo[dd->nDDInfo], DXEnumDisplayModes);
+    G_ddraw->QueryInterface(IID_IDirect3D2, (LPVOID *)&G_d3d);
+    SoftwareRenderer = false;
+    G_d3d->EnumDevices(DXEnumDirect3D, &dd->DDInfo[dd->nDDInfo]);
+    G_ddraw->SetCooperativeLevel(0, DDSCL_NORMAL);
+    G_d3d->Release();
+    G_ddraw->Release();
+    dd->nDDInfo++;
+    return DDENUMRET_OK;
+}
+
 void DXBitMask2ShiftCnt(unsigned long mask, unsigned char *shift, unsigned char *cnt)
 {
     unsigned long m;
