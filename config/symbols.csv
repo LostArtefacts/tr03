@@ -1342,7 +1342,7 @@ address,size,name,symbol
 0x0048f1c0,45,DXBitMask2ShiftCnt,_DXBitMask2ShiftCnt
 0x0048f1f0,450,DXEnumDisplayModes,_DXEnumDisplayModes@8
 0x0048f3c0,2029,DXEnumDirect3D,_DXEnumDirect3D@24
-0x0048fbb0,499,DXEnumTextureFormats,_DXEnumTextureFormats
+0x0048fbb0,499,DXEnumTextureFormats,_DXEnumTextureFormats@8
 0x0048fdb0,136,BPPToDDBD,_BPPToDDBD
 0x0048fe40,87,DXCreateDirectDraw,_DXCreateDirectDraw
 0x0048fea0,25,DXCreateDirect3D,_DXCreateDirect3D

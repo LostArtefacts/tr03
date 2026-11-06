@@ -164,6 +164,39 @@ HRESULT CALLBACK DXEnumDisplayModes(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpCo
     return DDENUMRET_OK;
 }
 
+HRESULT CALLBACK DXEnumTextureFormats(LPDDSURFACEDESC lpDDPixFmt, LPVOID lpContext)
+{
+    DIRECT3DINFO *d3d;
+
+    d3d = (DIRECT3DINFO *)lpContext;
+    if (!d3d->nTexture)
+        d3d->Texture = (D3DTEXTUREINFO *)malloc(sizeof(D3DTEXTUREINFO));
+    else
+        d3d->Texture = (D3DTEXTUREINFO *)realloc(d3d->Texture, (d3d->nTexture + 1) * sizeof(D3DTEXTUREINFO));
+    memset(&d3d->Texture[d3d->nTexture], 0, sizeof(D3DTEXTUREINFO));
+    memcpy(&d3d->Texture[d3d->nTexture].ddsd, lpDDPixFmt, sizeof(DDSURFACEDESC));
+
+    if (lpDDPixFmt->ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED8) {
+        d3d->Texture[d3d->nTexture].bPalette = true;
+        d3d->Texture[d3d->nTexture].bpp = 8;
+    } else {
+        if (lpDDPixFmt->ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED4)
+            return D3DENUMRET_OK;
+        d3d->Texture[d3d->nTexture].bPalette = false;
+        d3d->Texture[d3d->nTexture].bpp = lpDDPixFmt->ddpfPixelFormat.dwRGBBitCount;
+        DXBitMask2ShiftCnt(lpDDPixFmt->ddpfPixelFormat.dwRBitMask, &d3d->Texture[d3d->nTexture].rshift, &d3d->Texture[d3d->nTexture].rbpp);
+        DXBitMask2ShiftCnt(lpDDPixFmt->ddpfPixelFormat.dwGBitMask, &d3d->Texture[d3d->nTexture].gshift, &d3d->Texture[d3d->nTexture].gbpp);
+        DXBitMask2ShiftCnt(lpDDPixFmt->ddpfPixelFormat.dwBBitMask, &d3d->Texture[d3d->nTexture].bshift, &d3d->Texture[d3d->nTexture].bbpp);
+        if (lpDDPixFmt->ddpfPixelFormat.dwRGBAlphaBitMask) {
+            DXBitMask2ShiftCnt(lpDDPixFmt->ddpfPixelFormat.dwRGBAlphaBitMask, &d3d->Texture[d3d->nTexture].ashift, &d3d->Texture[d3d->nTexture].abpp);
+            d3d->Texture[d3d->nTexture].bAlpha = true;
+        }
+    }
+
+    d3d->nTexture++;
+    return D3DENUMRET_OK;
+}
+
 DWORD BPPToDDBD(int bpp)
 {
     switch (bpp) {
