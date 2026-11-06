@@ -1391,9 +1391,9 @@ address,size,name,symbol
 0x00493530,614,MMXSetRenderState,_MMXSetRenderState
 0x004937f0,304,MMXDrawPrimitive,_MMXDrawPrimitive
 0x00493920,840,MMXDrawLine,_MMXDrawLine
-0x00493c70,2598,MMXDrawTriangleP,_MMXDrawTriangleP
-0x004946b0,1903,MMXDrawTriangle,_MMXDrawTriangle
-0x00494e30,1166,MMXDrawTriangleFog,_MMXDrawTriangleFog
+0x00493c70,2619,MMXDrawTriangleP,_MMXDrawTriangleP
+0x004946b0,1911,MMXDrawTriangle,_MMXDrawTriangle
+0x00494e30,1188,MMXDrawTriangleFog,_MMXDrawTriangleFog
 0x004952e0,207,DrawSpansGouraud,_DrawSpansGouraud
 0x004953b0,212,DrawSpansAlpha,_DrawSpansAlpha
 0x00495490,346,Func495490,_Func495490
@@ -2106,6 +2106,9 @@ address,size,name,symbol
 0x004ce708,4,Var4ce708,_Var4ce708
 0x004ce710,12,Var4ce710,_Var4ce710
 0x004ce720,164,Var4ce720,_Var4ce720
+0x004ceb50,8,Var4ceb50,_Var4ceb50
+0x004ceb58,8,Var4ceb58,_Var4ceb58
+0x004ceb6c,4,Var4ceb6c,_Var4ceb6c
 0x004ceb80,160,Var4ceb80,_Var4ceb80
 0x004cec20,4,Var4cec20,_Var4cec20
 0x004cec28,8,Var4cec28,_Var4cec28
