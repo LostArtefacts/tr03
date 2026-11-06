@@ -524,3 +524,33 @@ void SubCollision(sint16 item_number, ITEM_INFO *l, COLL_INFO *coll)
     }
 }
 
+
+int CanGetOff_sub(ITEM_INFO *v)
+{
+    SUBINFO *sub;
+    FLOOR_INFO *floor;
+    sint32 rad, x, y, z, height, ceiling;
+    sint16 room_number, angle;
+
+    sub = (SUBINFO *)v->data;
+    if (lara.current_xvel || lara.current_zvel || sub->Vel)
+        return 0;
+
+    angle = v->pos.y_rot + 0x8000;
+    rad = WALL_L * phd_cos(v->pos.x_rot) >> W2V_SHIFT;
+    x = v->pos.x_pos + ((rad * phd_sin(angle)) >> W2V_SHIFT);
+    z = v->pos.z_pos + ((rad * phd_cos(angle)) >> W2V_SHIFT);
+    y = v->pos.y_pos - ((WALL_L * phd_sin(-v->pos.x_rot)) >> W2V_SHIFT);
+
+    room_number = v->room_number;
+    floor = GetFloor(x, y, z, &room_number);
+    height = GetHeight(floor, x, y, z);
+    if (height == NO_HEIGHT || y > height)
+        return 0;
+
+    ceiling = GetCeiling(floor, x, y, z);
+    if (height - ceiling < 256 || y < ceiling || ceiling == NO_HEIGHT)
+        return 0;
+
+    return 1;
+}

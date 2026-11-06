@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="327.08" height="12" x="0" y="0" class="named"><title>1151 · 77.88%</title></rect>
-<rect width="2.84" height="12" x="327.08" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="90.08" height="12" x="329.92" y="0" class="todo"><title>317 · 21.45%</title></rect>
+<rect width="327.36" height="12" x="0" y="0" class="named"><title>1152 · 77.94%</title></rect>
+<rect width="2.84" height="12" x="327.36" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="89.80" height="12" x="330.20" y="0" class="todo"><title>316 · 21.38%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">77.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1151</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">317</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1152</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">316</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="209.56" height="12" x="0" y="0" class="named"><title>333 KB · 49.89%</title></rect>
-<rect width="3.98" height="12" x="209.56" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="206.47" height="12" x="213.53" y="0" class="todo"><title>328 KB · 49.16%</title></rect>
+<rect width="209.71" height="12" x="0" y="0" class="named"><title>334 KB · 49.93%</title></rect>
+<rect width="3.98" height="12" x="209.71" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="206.31" height="12" x="213.69" y="0" class="todo"><title>328 KB · 49.12%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">333 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">328 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">334 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">328 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1015,7 +1015,7 @@
 <rect width="12" height="12" x="720" y="270" class="named"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="270" class="named"><title>0x00469150 BackgroundCollision (462 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="285" class="todo"><title>0x00469320 UserInput (1584 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="285" class="todo"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="285" class="named"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="285" class="named"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="285" class="named"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="285" class="named"><title>0x00469de0 UpdateWakeFX_sub (42 bytes)</title></rect>
@@ -2153,7 +2153,7 @@
 <rect width="9.56" height="9.18" x="486.86" y="437.82" class="named"><title>0x00413290 TestWaterHeight (250 bytes)</title></rect>
 <rect width="9.71" height="9.04" x="499.42" y="187.09" class="named"><title>0x0044e670 LaraSurfaceCollision (250 bytes)</title></rect>
 <rect width="9.71" height="9.04" x="512.14" y="187.09" class="named"><title>0x00458c20 SmashWindow (250 bytes)</title></rect>
-<rect width="9.71" height="9.04" x="524.85" y="187.09" class="todo"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
+<rect width="9.71" height="9.04" x="524.85" y="187.09" class="named"><title>0x00469980 CanGetOff_sub (250 bytes)</title></rect>
 <rect width="9.71" height="9.04" x="537.56" y="187.09" class="named"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="9.67" height="9.04" x="550.27" y="187.09" class="named"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
 <rect width="9.64" height="9.04" x="562.95" y="187.09" class="named"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
