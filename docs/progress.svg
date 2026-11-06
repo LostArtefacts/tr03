@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="283.23" height="12" x="0" y="0" class="named"><title>1224 · 82.81%</title></rect>
-<rect width="0.46" height="12" x="283.23" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="283.69" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="54.15" height="12" x="287.85" y="0" class="todo"><title>234 · 15.83%</title></rect>
+<rect width="283.46" height="12" x="0" y="0" class="named"><title>1225 · 82.88%</title></rect>
+<rect width="0.46" height="12" x="283.46" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="283.92" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="53.91" height="12" x="288.09" y="0" class="todo"><title>233 · 15.76%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">82.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1224</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">234</tspan></text>
+<text text-anchor="end" x="522" y="7.50">83.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1225</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">233</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.93" height="12" x="0" y="0" class="named"><title>369 KB · 55.24%</title></rect>
-<rect width="0.15" height="12" x="188.93" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="189.08" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="146.89" height="12" x="195.11" y="0" class="todo"><title>287 KB · 42.95%</title></rect>
+<rect width="189.17" height="12" x="0" y="0" class="named"><title>370 KB · 55.31%</title></rect>
+<rect width="0.15" height="12" x="189.17" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="189.32" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="146.64" height="12" x="195.36" y="0" class="todo"><title>287 KB · 42.88%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">55.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">369 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">287 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">55.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">370 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">287 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -73,7 +73,7 @@
 <rect width="12" height="12" x="60" y="0" class="named"><title>0x004013e0 phd_RotX (170 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="0" class="named"><title>0x00401490 phd_RotY (168 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="0" class="named"><title>0x00401540 phd_RotZ (168 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="0" class="todo"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="0" class="named"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="0" class="todo"><title>0x004017d0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="0" class="named"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="0" class="named"><title>0x00401a70 phd_TranslateAbs (122 bytes)</title></rect>
@@ -1922,7 +1922,7 @@
 <rect width="13.18" height="12.80" x="400.05" y="371.46" class="named"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
 <rect width="13.18" height="12.72" x="400.05" y="387.26" class="todo"><title>0x00495cf0 Func495cf0 (478 bytes)</title></rect>
 <rect width="13.18" height="12.70" x="400.05" y="402.99" class="named"><title>0x0042fe30 TriggerFireHeadFlame (477 bytes)</title></rect>
-<rect width="13.18" height="12.67" x="400.05" y="418.68" class="todo"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
+<rect width="13.18" height="12.67" x="400.05" y="418.68" class="named"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="13.18" height="12.64" x="400.05" y="434.36" class="named"><title>0x00424830 TriggerFlamethrowerHitFlame (475 bytes)</title></rect>
 <rect width="13.15" height="12.65" x="416.23" y="115.40" class="named"><title>0x0042bbc0 TriggerSideFlame (474 bytes)</title></rect>
 <rect width="13.09" height="12.65" x="432.37" y="115.40" class="named"><title>0x0040aa00 RoomZedClipper (472 bytes)</title></rect>
