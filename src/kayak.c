@@ -696,3 +696,117 @@ int DoShift_kayak(ITEM_INFO *v, PHD_VECTOR *pos, PHD_VECTOR *old)
     }
     return 0;
 }
+
+sint32 CameraCollisionBounds(GAME_VECTOR *ideal, sint32 push, sint32 yfirst);
+sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos);
+int DoShift_kayak(ITEM_INFO *v, PHD_VECTOR *pos, PHD_VECTOR *old);
+sint32 DoDynamics_kayak(sint32 height, sint32 fallspeed, sint32 *y);
+
+void KayakToBackground(ITEM_INFO *v, KAYAKINFO *Kayak)
+{
+    sint32 h, slip = 0, rot = 0;
+    PHD_VECTOR pos;
+    int i, oldx, oldz;
+    FLOOR_INFO *floor;
+    sint16 room_number;
+    sint32 height[8];
+    PHD_VECTOR oldpos[9];
+    sint32 x, z;
+    sint32 fh, lh, rh;
+    PHD_VECTOR fpos, lpos, rpos;
+
+    Kayak->OldPos = v->pos;
+    height[0] = TestHeight_kayak(v, 0, 1024, &oldpos[0]);
+    height[1] = TestHeight_kayak(v, -96, 512, &oldpos[1]);
+    height[2] = TestHeight_kayak(v, 96, 512, &oldpos[2]);
+    height[3] = TestHeight_kayak(v, -128, 128, &oldpos[3]);
+    height[4] = TestHeight_kayak(v, 128, 128, &oldpos[4]);
+    height[5] = TestHeight_kayak(v, -128, -320, &oldpos[5]);
+    height[6] = TestHeight_kayak(v, 128, -320, &oldpos[6]);
+    height[7] = TestHeight_kayak(v, 0, -640, &oldpos[7]);
+    for (i = 0; i < 8; i++) {
+        if (oldpos[i].y > height[i])
+            oldpos[i].y = height[i];
+    }
+    oldpos[8].x = v->pos.x_pos;
+    oldpos[8].y = v->pos.y_pos;
+    oldpos[8].z = v->pos.z_pos;
+    fh = TestHeight_kayak(v, 0, 1024, &fpos);
+    lh = TestHeight_kayak(v, -128, 128, &lpos);
+    rh = TestHeight_kayak(v, 128, 128, &rpos);
+    v->pos.y_rot += Kayak->Rot >> 16;
+    v->pos.x_pos += (v->speed * phd_sin(v->pos.y_rot)) >> W2V_SHIFT;
+    v->pos.z_pos += (v->speed * phd_cos(v->pos.y_rot)) >> W2V_SHIFT;
+    DoCurrent(v);
+    Kayak->FallSpeedL = DoDynamics_kayak(lh, Kayak->FallSpeedL, &lpos.y);
+    Kayak->FallSpeedR = DoDynamics_kayak(rh, Kayak->FallSpeedR, &rpos.y);
+    Kayak->FallSpeedF = DoDynamics_kayak(fh, Kayak->FallSpeedF, &fpos.y);
+    v->fallspeed = DoDynamics_kayak(Kayak->Water, v->fallspeed, &v->pos.y_pos);
+    h = (lpos.y + rpos.y) >> 1;
+    x = phd_atan(1024, v->pos.y_pos - fpos.y);
+    z = phd_atan(128, h - lpos.y);
+    v->pos.x_rot = x;
+    v->pos.z_rot = z;
+    oldx = v->pos.x_pos;
+    oldz = v->pos.z_pos;
+    if ((h = TestHeight_kayak(v, 0, -640, &pos)) < oldpos[7].y - 64)
+        rot = DoShift_kayak(v, &pos, &oldpos[7]);
+    if ((h = TestHeight_kayak(v, 128, -320, &pos)) < oldpos[6].y - 64)
+        rot += DoShift_kayak(v, &pos, &oldpos[6]);
+    if ((h = TestHeight_kayak(v, -128, -320, &pos)) < oldpos[5].y - 64)
+        rot += DoShift_kayak(v, &pos, &oldpos[5]);
+    if ((h = TestHeight_kayak(v, 128, 128, &pos)) < oldpos[4].y - 64)
+        rot += DoShift_kayak(v, &pos, &oldpos[4]);
+    if ((h = TestHeight_kayak(v, -128, 128, &pos)) < oldpos[3].y - 64)
+        rot += DoShift_kayak(v, &pos, &oldpos[3]);
+    if ((h = TestHeight_kayak(v, 96, 512, &pos)) < oldpos[2].y - 64)
+        rot += DoShift_kayak(v, &pos, &oldpos[2]);
+    if ((h = TestHeight_kayak(v, -96, 512, &pos)) < oldpos[1].y - 64)
+        rot += DoShift_kayak(v, &pos, &oldpos[1]);
+    if ((h = TestHeight_kayak(v, 0, 1024, &pos)) < oldpos[0].y - 64)
+        rot += DoShift_kayak(v, &pos, &oldpos[0]);
+    v->pos.y_rot += rot;
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    h = GetWaterHeight(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, room_number);
+    if (h == NO_HEIGHT)
+        h = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    if (h < v->pos.y_pos - 64)
+        DoShift_kayak(v, (PHD_VECTOR *)&v->pos, &oldpos[8]);
+    room_number = v->room_number;
+    floor = GetFloor(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, &room_number);
+    h = GetWaterHeight(v->pos.x_pos, v->pos.y_pos, v->pos.z_pos, room_number);
+    if (h == NO_HEIGHT)
+        h = GetHeight(floor, v->pos.x_pos, v->pos.y_pos, v->pos.z_pos);
+    if (h == NO_HEIGHT) {
+        GAME_VECTOR kpos;
+
+        kpos.x = Kayak->OldPos.x_pos;
+        kpos.y = Kayak->OldPos.y_pos;
+        kpos.z = Kayak->OldPos.z_pos;
+        kpos.room_number = v->room_number;
+        CameraCollisionBounds(&kpos, 256, 0);
+        v->pos.x_pos = kpos.x;
+        v->pos.y_pos = kpos.y;
+        v->pos.z_pos = kpos.z;
+        v->room_number = kpos.room_number;
+    }
+    i = GetCollisionAnim_kayak(v, oldx, oldz);
+    if (slip || i) {
+        sint32 newspeed;
+
+        newspeed = ((v->pos.x_pos - oldpos[8].x) * phd_sin(v->pos.y_rot) + (v->pos.z_pos - oldpos[8].z) * phd_cos(v->pos.y_rot)) >> W2V_SHIFT;
+        newspeed <<= 8;
+        if (slip) {
+            if (Kayak->Vel <= 0x380000)
+                Kayak->Vel = newspeed;
+        } else {
+            if (Kayak->Vel > 0 && newspeed < Kayak->Vel)
+                Kayak->Vel = newspeed;
+            else if (Kayak->Vel < 0 && newspeed > Kayak->Vel)
+                Kayak->Vel = newspeed;
+        }
+        if (Kayak->Vel < -0x380000)
+            Kayak->Vel = -0x380000;
+    }
+}

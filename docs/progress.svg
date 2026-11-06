@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="316.63" height="12" x="0" y="0" class="named"><title>1258 · 85.12%</title></rect>
-<rect width="1.51" height="12" x="316.63" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="4.53" height="12" x="318.14" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="49.33" height="12" x="322.67" y="0" class="todo"><title>196 · 13.26%</title></rect>
+<rect width="316.88" height="12" x="0" y="0" class="named"><title>1259 · 85.18%</title></rect>
+<rect width="1.51" height="12" x="316.88" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
+<rect width="4.53" height="12" x="318.39" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="49.08" height="12" x="322.92" y="0" class="todo"><title>195 · 13.19%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">85.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1258</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">196</tspan></text>
+<text text-anchor="end" x="552" y="7.50">85.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1259</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">195</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="208.71" height="12" x="0" y="0" class="named"><title>375 KB · 56.10%</title></rect>
-<rect width="0.34" height="12" x="208.71" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="6.57" height="12" x="209.05" y="0" class="nonmatching"><title>12 KB · 1.76%</title></rect>
-<rect width="156.39" height="12" x="215.61" y="0" class="todo"><title>281 KB · 42.04%</title></rect>
+<rect width="209.63" height="12" x="0" y="0" class="named"><title>377 KB · 56.35%</title></rect>
+<rect width="0.34" height="12" x="209.63" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
+<rect width="6.57" height="12" x="209.97" y="0" class="nonmatching"><title>12 KB · 1.76%</title></rect>
+<rect width="155.46" height="12" x="216.54" y="0" class="todo"><title>279 KB · 41.79%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">56.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">375 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">281 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">56.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">377 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">279 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -570,7 +570,7 @@
 <rect width="12" height="12" x="15" y="150" class="named"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="150" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="150" class="named"><title>0x0043bdf0 TriggerRapidsMist (331 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="150" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="150" class="named"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="150" class="named"><title>0x0043c5c0 GetCollisionAnim_kayak (135 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="150" class="named"><title>0x0043c650 DoDynamics_kayak (81 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="150" class="named"><title>0x0043c6b0 DoCurrent (387 bytes)</title></rect>
@@ -1642,7 +1642,7 @@
 <rect width="25.08" height="24.41" x="224.04" y="342.66" class="named"><title>0x00482a90 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="25.08" height="24.07" x="224.04" y="370.07" class="named"><title>0x00417ca3 ChaseCamera (1721 bytes)</title></rect>
 <rect width="25.08" height="23.64" x="224.04" y="397.14" class="todo"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
-<rect width="25.08" height="23.22" x="224.04" y="423.78" class="todo"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
+<rect width="25.08" height="23.22" x="224.04" y="423.78" class="named"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="23.46" height="24.82" x="252.12" y="0" class="todo"><title>0x004a4930 Func4a4930 (1660 bytes)</title></rect>
 <rect width="23.46" height="24.76" x="252.12" y="27.82" class="todo"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
 <rect width="23.46" height="24.50" x="252.12" y="55.59" class="todo"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
