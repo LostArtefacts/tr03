@@ -3409,10 +3409,10 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
 
 extern long Var6ca474;
 extern double Var4ceb48;
-extern long Var6ca310;
+extern void (*Var6ca310)(void);
 extern long Var4ceb70;
 
-__declspec(naked) void MMXDrawTriangleFog(void)
+__declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     __asm {
         push ebp
@@ -3856,7 +3856,7 @@ extern long Var6ca2e4;
 extern double Var6ca308;
 extern long Var6ca3a8;
 extern long Var6ca274;
-extern long Var6ca3f8;
+extern void (*Var6ca3f8)(void);
 extern long Var6ce4dc;
 extern long Var6ca390;
 extern long Var6ca3e8;
@@ -3864,7 +3864,7 @@ extern double Var6ca3e0;
 extern long Var6ca260;
 extern long Var6ca328;
 
-__declspec(naked) void MMXDrawTriangle(void)
+__declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     __asm {
         push edi
@@ -4447,10 +4447,10 @@ extern long Var6ca37c;
 extern double Var6ca468;
 extern double Var6ca488;
 extern double Var6ca420;
-extern long Var6ca210;
-extern long Var6ca4a8;
+extern void (*Var6ca210)(void);
+extern void (*Var6ca4a8)(void);
 
-__declspec(naked) void MMXDrawTriangleP(void)
+__declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     __asm {
         push edi
@@ -5384,5 +5384,107 @@ void MMXBlit32to15(void *dest, void *src, int w)
         movq qword ptr [edx+eax*2+0x18], mm5
         emms
     }
+}
+
+extern long Var6ce4e8;
+extern long Var6ce4f0;
+extern long Var6ce4f4;
+extern long Var6ce4f8;
+extern long Var6ce500;
+
+HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState)
+{
+    switch (dwRenderStateType) {
+    case D3DRENDERSTATE_COLORKEYENABLE:
+        Var6ce4f0 = dwRenderState;
+        break;
+    case D3DRENDERSTATE_TEXTUREMIN:
+        if (dwRenderState == D3DFILTER_LINEAR || dwRenderState == D3DFILTER_NEAREST)
+            Var6ce4dc = 0;
+        else
+            Var6ce4dc = 1;
+        break;
+    case D3DRENDERSTATE_TEXTUREMAG:
+        if (dwRenderState == D3DFILTER_LINEAR || dwRenderState == D3DFILTER_MIPLINEAR)
+            Var6ce500 = 1;
+        else
+            Var6ce500 = 0;
+        break;
+    case D3DRENDERSTATE_DESTBLEND:
+        if (dwRenderState == D3DBLEND_ONE) {
+            Var6ce4f4 = 1;
+            Var6ce4f8 = 0;
+        } else if (dwRenderState == D3DBLEND_SRCALPHA || dwRenderState == D3DBLEND_INVSRCALPHA) {
+            Var6ce4f4 = 0;
+            Var6ce4f8 = 1;
+        } else {
+            Var6ce4f4 = 0;
+            Var6ce4f8 = 0;
+        }
+        break;
+    case D3DRENDERSTATE_ALPHABLENDENABLE:
+        Var6ce4e8 = dwRenderState == TRUE;
+        break;
+    case D3DRENDERSTATE_TEXTUREPERSPECTIVE:
+        Var6ce4e4 = dwRenderState;
+        break;
+    case D3DRENDERSTATE_TEXTUREHANDLE:
+        Var6ce4d8 = dwRenderState;
+        break;
+    }
+    if (Var6ce4f8 && Var6ce4e8 && !Var6ce4d8) {
+        Var6ca408 = MMXDrawTriangleFog;
+        Var6ca4a8 = DrawSpansAlpha;
+        Var6ca24c = MMXDrawTriangleFog;
+        Var6ca310 = DrawSpansAlpha;
+        return D3D_OK;
+    }
+    if (!Var6ce4f4 && Var6ce4f0 && Var6ce4d8 && Var6ce4e8) {
+        Var6ca408 = MMXDrawTriangleP;
+        Var6ca4a8 = Func495a20;
+        Var6ca24c = MMXDrawTriangle;
+        Var6ca310 = Func495760;
+        if (Var6ce500) {
+            Var6ca3f8 = Func4964c0;
+            Var6ca210 = Func4966f0;
+        } else {
+            Var6ca3f8 = Func495760;
+            Var6ca210 = Func495a20;
+        }
+        return D3D_OK;
+    }
+    if (Var6ce4d8 && Var6ce4e8 && Var6ce4f4) {
+        Var6ca408 = MMXDrawTriangleP;
+        Var6ca4a8 = Func495b90;
+        Var6ca24c = MMXDrawTriangle;
+        Var6ca310 = Func4955f0;
+        if (Var6ce500) {
+            Var6ca3f8 = Func495ed0;
+            Var6ca210 = Func4962c0;
+        } else {
+            Var6ca3f8 = Func4955f0;
+            Var6ca210 = Func495b90;
+        }
+        return D3D_OK;
+    }
+    if (Var6ce4d8) {
+        Var6ca408 = MMXDrawTriangleP;
+        Var6ca4a8 = Func4958d0;
+        Var6ca24c = MMXDrawTriangle;
+        Var6ca310 = Func495490;
+        if (Var6ce500) {
+            Var6ca3f8 = Func495cf0;
+            Var6ca210 = Func4960c0;
+        } else {
+            Var6ca3f8 = Func495490;
+            Var6ca210 = Func4958d0;
+        }
+        return D3D_OK;
+    }
+    Var6ca408 = MMXDrawTriangleFog;
+    Var6ca4a8 = DrawSpansGouraud;
+    Var6ca24c = MMXDrawTriangleFog;
+    Var6ca310 = DrawSpansGouraud;
+    return D3D_OK;
 }
 }
