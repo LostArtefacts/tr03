@@ -65,3 +65,17 @@ BOOL WINAPI acmThunkTerminate(void)
     }
     return TRUE;
 }
+
+DWORD ACMAPI acmGetVersion(void)
+{
+    DWORD (ACMAPI *pfnAcmGetVersion)(void);
+
+    if (gpafnAcmFunctions == NULL)
+        return 0;
+
+    pfnAcmGetVersion = (DWORD (ACMAPI *)(void))gpafnAcmFunctions[0];
+    if (pfnAcmGetVersion == NULL)
+        return 0;
+
+    return pfnAcmGetVersion();
+}
