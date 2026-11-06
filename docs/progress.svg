@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="280.68" height="12" x="0" y="0" class="named"><title>1213 · 82.07%</title></rect>
-<rect width="0.46" height="12" x="280.68" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="281.14" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="56.69" height="12" x="285.31" y="0" class="todo"><title>245 · 16.58%</title></rect>
+<rect width="280.91" height="12" x="0" y="0" class="named"><title>1214 · 82.14%</title></rect>
+<rect width="0.46" height="12" x="280.91" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="281.37" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="56.46" height="12" x="285.54" y="0" class="todo"><title>244 · 16.51%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">82.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1213</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">245</tspan></text>
+<text text-anchor="end" x="522" y="7.50">82.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1214</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">244</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="184.58" height="12" x="0" y="0" class="named"><title>360 KB · 53.97%</title></rect>
-<rect width="0.15" height="12" x="184.58" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="184.72" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="151.23" height="12" x="190.77" y="0" class="todo"><title>295 KB · 44.22%</title></rect>
+<rect width="185.02" height="12" x="0" y="0" class="named"><title>361 KB · 54.10%</title></rect>
+<rect width="0.15" height="12" x="185.02" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="185.16" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="150.80" height="12" x="191.20" y="0" class="todo"><title>295 KB · 44.09%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">54.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">360 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">295 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">54.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">361 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">295 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -543,7 +543,7 @@
 <rect width="12" height="12" x="360" y="135" class="named"><title>0x00439dc0 SetPCRequesterSize (57 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="135" class="named"><title>0x00439e00 AddAssaultTime (95 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="135" class="named"><title>0x00439e60 AddQuadbikeTime (95 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="135" class="todo"><title>0x00439ec0 ShowGymStatsText (858 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="135" class="named"><title>0x00439ec0 ShowGymStatsText (858 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="135" class="todo"><title>0x0043a220 ShowStatsText (902 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="135" class="todo"><title>0x0043a5b0 ShowEndStatsText (1123 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="135" class="named"><title>0x0043aa20 InitialiseItemArray (98 bytes)</title></rect>
@@ -1741,7 +1741,7 @@
 <rect width="17.23" height="17.90" x="326.28" y="86.81" class="nonmatching"><title>0x0043d980 TestLaraVault (878 bytes)</title></rect>
 <rect width="17.23" height="17.78" x="326.28" y="107.71" class="named"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
 <rect width="17.23" height="17.57" x="326.28" y="128.49" class="todo"><title>0x00492970 Func492970 (862 bytes)</title></rect>
-<rect width="17.23" height="17.49" x="326.28" y="149.06" class="todo"><title>0x00439ec0 ShowGymStatsText (858 bytes)</title></rect>
+<rect width="17.23" height="17.49" x="326.28" y="149.06" class="named"><title>0x00439ec0 ShowGymStatsText (858 bytes)</title></rect>
 <rect width="17.23" height="17.47" x="326.28" y="169.55" class="todo"><title>0x00490ba0 Func490ba0 (857 bytes)</title></rect>
 <rect width="17.23" height="17.37" x="326.28" y="190.02" class="named"><title>0x0045c900 PuzzleHoleCollision (852 bytes)</title></rect>
 <rect width="17.23" height="17.23" x="326.28" y="210.39" class="named"><title>0x00411100 BigGunControl (845 bytes)</title></rect>

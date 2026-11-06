@@ -2248,6 +2248,9 @@ address,size,name,symbol
 0x00626484,4,idcount,_idcount
 0x00626488,2,item_data,_item_data
 0x00626490,,Stats_Requester,_Stats_Requester
+0x006266a8,4,gym_mode,_gym_mode
+0x006266ac,4,stats_mode,_stats_mode
+0x006266b0,4,end_stats_mode,_end_stats_mode
 0x006266b4,4,level_items,_level_items
 0x006266bc,,CurrentStartWake,_CurrentStartWake
 0x006266c0,,WakeShade,_WakeShade

@@ -810,3 +810,107 @@ int AddQuadbikeTime(uint32 time)
     }
     return 0;
 }
+
+extern REQUEST_INFO Stats_Requester;
+extern char Valid_Level_Strings[24][50];
+extern char Valid_Level_Strings2[24][50];
+extern char **GF_Level_Names;
+extern uint32 CurrentLevel;
+extern sint16 LevelSecrets[];
+extern int inputDB;
+sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds);
+
+static int gym_mode;
+
+void ShowGymStatsText(char *time_str, int type)
+{
+    int select, ms, s, hs, i;
+    char str[32];
+
+    if (gym_mode == 1) {
+        if ((select = Display_Requester(&Stats_Requester, 1, 1)))
+            gym_mode = 0;
+        else
+            input = inputDB = 0;
+        return;
+    }
+    Stats_Requester.noselector = 1;
+    SetPCRequesterSize(&Stats_Requester, 7, -32);
+    Stats_Requester.line_height = 18;
+    Stats_Requester.items = 0;
+    Stats_Requester.selected = 0;
+    Stats_Requester.line_offset = 0;
+    Stats_Requester.line_oldoffset = 0;
+    Stats_Requester.pixwidth = 296;
+    Stats_Requester.xpos = 0;
+    Stats_Requester.zpos = 0;
+    Stats_Requester.itemtexts1 = Valid_Level_Strings[0];
+    Stats_Requester.itemtexts2 = Valid_Level_Strings2[0];
+    Stats_Requester.itemtextlen = 50;
+    Init_Requester(&Stats_Requester);
+    SetRequesterHeading(&Stats_Requester, GF_GameStrings[73], 0, NULL, 0);
+    for (i = -1; i < 10; i++) {
+        if (i == -1) {
+            if (gameflow.language == 1)
+                AddRequesterItem(&Stats_Requester, "Entra(inement", 8, NULL, 0);
+            else if (gameflow.language == 2)
+                AddRequesterItem(&Stats_Requester, "Hinderniskurs", 8, NULL, 0);
+            else if (gameflow.language == 5)
+                AddRequesterItem(&Stats_Requester, "Circuito d'addestramento", 8, NULL, 0);
+            else if (gameflow.language == 6)
+                AddRequesterItem(&Stats_Requester, "Asaltar Carrera", 8, NULL, 0);
+            else
+                AddRequesterItem(&Stats_Requester, "Assault Course", 8, NULL, 0);
+            continue;
+        }
+        if (!savegame.best_assault_times[i])
+            break;
+        s = savegame.best_assault_times[i] / 30;
+        hs = savegame.best_assault_times[i] % 30 * 334 / 100;
+        ms = s / 60;
+        s = s % 60;
+        sprintf(str, "%d:%2.2d.%02d", ms, s, hs);
+        if (i == 0)
+            AddRequesterItem(&Stats_Requester, str, 16, NULL, 0);
+        else
+            AddRequesterItem(&Stats_Requester, str, 32, NULL, 0);
+    }
+    if (i == 0)
+        AddRequesterItem(&Stats_Requester, GF_GameStrings[74], 64, NULL, 0);
+    if (savegame.QuadbikeKeyFlag) {
+        AddRequesterItem(&Stats_Requester, " ", 0, NULL, 0);
+        for (i = -1; i < 10; i++) {
+            if (i == -1) {
+                if (gameflow.language == 1)
+                    AddRequesterItem(&Stats_Requester, "Course de moto", 8, NULL, 0);
+                else if (gameflow.language == 2)
+                    AddRequesterItem(&Stats_Requester, "Quadbike Teststrecke", 8, NULL, 0);
+                else if (gameflow.language == 5)
+                    AddRequesterItem(&Stats_Requester, "Circuito per moto", 8, NULL, 0);
+                else if (gameflow.language == 6)
+                    AddRequesterItem(&Stats_Requester, "Circuito Moto Quad", 8, NULL, 0);
+                else
+                    AddRequesterItem(&Stats_Requester, "Quadbike Track", 8, NULL, 0);
+                continue;
+            }
+            if (!savegame.best_quadbike_times[i])
+                break;
+            s = savegame.best_quadbike_times[i] / 30;
+            hs = savegame.best_quadbike_times[i] % 30 * 334 / 100;
+            ms = s / 60;
+            s = s % 60;
+            sprintf(str, "%d:%2.2d.%02d", ms, s, hs);
+            if (i == 0)
+                AddRequesterItem(&Stats_Requester, str, 16, NULL, 0);
+            else
+                AddRequesterItem(&Stats_Requester, str, 32, NULL, 0);
+        }
+        if (i == 0)
+            AddRequesterItem(&Stats_Requester, GF_GameStrings[74], 64, NULL, 0);
+    }
+    gym_mode = 1;
+}
+
+static int stats_mode;
+
+static int end_stats_mode;
