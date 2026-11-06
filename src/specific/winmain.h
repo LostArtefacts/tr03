@@ -123,7 +123,7 @@ typedef struct winapp {
     LPDIRECT3DMATERIAL2 lpViewPortMaterial;
     LPDIRECTDRAWPALETTE Palette;
     PALETTEENTRY PaletteEntries[257];
-    char bFocus;
+    volatile char bFocus;
     long nRenderMode;
     long nUVAdd;
     unsigned long nFrames;

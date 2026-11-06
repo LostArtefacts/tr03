@@ -1063,7 +1063,7 @@ address,size,name,symbol
 0x00474900,558,ACMEmulateCDPlay,_ACMEmulateCDPlay
 0x00474b30,531,ThreadACMEmulateCDPlay,_ThreadACMEmulateCDPlay
 0x00474d50,25,ACMEmulateCDStop,_ACMEmulateCDStop
-0x00474d70,988,ACMHandleNotifications,_ACMHandleNotifications
+0x00474d70,1001,ACMHandleNotifications,_ACMHandleNotifications
 0x00475160,214,ACMSetupNotifications,_ACMSetupNotifications
 0x00475240,54,ACMGetTrackLocation,_ACMGetTrackLocation
 0x00475280,50,ACMSetVolume,_ACMSetVolume
@@ -1839,6 +1839,7 @@ address,size,name,symbol
 0x004c31b8,4,mciSendCommandA,__imp__mciSendCommandA@16
 0x004c31bc,4,joyGetPosEx,__imp__joyGetPosEx@8
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
+0x004c3438,16,IID_IDirectSoundNotify,_IID_IDirectSoundNotify
 0x004c3458,16,IID_IDirect3D2,_IID_IDirect3D2
 0x004c3468,16,IID_IDirectDraw2,_IID_IDirectDraw2
 0x004c3478,16,IID_IDirectDrawSurface3,_IID_IDirectDrawSurface3
@@ -2274,6 +2275,7 @@ address,size,name,symbol
 0x006271b8,20,death_radii_willboss,_death_radii_willboss
 0x006271d0,16,junction_index,_junction_index
 0x006271e0,,ai_path,_ai_path
+0x00627300,18,wav_format,_wav_format
 0x00627314,,acm_start_time,_acm_start_time
 0x00627318,4,CurrentNotify,_CurrentNotify
 0x0062731c,1,acm_done,_acm_done
@@ -2281,13 +2283,16 @@ address,size,name,symbol
 0x00627470,4,acm_volume,_acm_volume
 0x00627478,8,NotifyEventHandles,_NotifyEventHandles
 0x00627480,,TrackInfos,_TrackInfos
+0x0062fc98,4,ACMNotifyThread,_ACMNotifyThread
 0x0062fc9c,,acm_read,_acm_read
 0x0062fca0,,StreamSize,_StreamSize
 0x0062fca4,1,acm_loop_track,_acm_loop_track
 0x0062fca8,,hACMDriverID,_hACMDriverID
 0x0062fcb0,4,NotifySize,_NotifySize
+0x0062fcb4,4,AllocBuffer,_AllocBuffer
 0x0062fcb8,4,NextWriteOffset,_NextWriteOffset
 0x0062fcc0,4,pAudioWrite,_pAudioWrite
+0x0062fcc8,50,source_wav_format,_source_wav_format
 0x0062fcfc,4,XATrack,_XATrack
 0x0062fd00,,AudioBytes,_AudioBytes
 0x0062fd08,,hACMStream,_hACMStream
@@ -2302,6 +2307,7 @@ address,size,name,symbol
 0x006300c8,,DSNotify,_DSNotify
 0x006300cc,1,acm_wait,_acm_wait
 0x006300d4,1,acm_locked,_acm_locked
+0x006300d8,4,ACMSilentCount,_ACMSilentCount
 0x006302a4,,lpDirectInput,_lpDirectInput
 0x006302a8,,Keyboard,_Keyboard
 0x006302b0,4,game_hires,_game_hires
