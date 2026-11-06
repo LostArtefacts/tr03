@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="320.83" height="12" x="0" y="0" class="named"><title>1129 · 76.39%</title></rect>
-<rect width="2.56" height="12" x="320.83" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="96.62" height="12" x="323.38" y="0" class="todo"><title>340 · 23%</title></rect>
+<rect width="321.11" height="12" x="0" y="0" class="named"><title>1130 · 76.45%</title></rect>
+<rect width="2.56" height="12" x="321.11" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="96.33" height="12" x="323.67" y="0" class="todo"><title>339 · 22.94%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">76.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1129</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">340</tspan></text>
+<text text-anchor="end" x="600" y="7.50">76.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1130</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">339</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="206.12" height="12" x="0" y="0" class="named"><title>328 KB · 49.08%</title></rect>
-<rect width="3.89" height="12" x="206.12" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="209.99" height="12" x="210.01" y="0" class="todo"><title>334 KB · 50%</title></rect>
+<rect width="206.32" height="12" x="0" y="0" class="named"><title>328 KB · 49.12%</title></rect>
+<rect width="3.89" height="12" x="206.32" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="209.79" height="12" x="210.21" y="0" class="todo"><title>334 KB · 49.95%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">328 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">334 KB</tspan></text>
@@ -1348,7 +1348,7 @@
 <rect width="12" height="12" x="465" y="375" class="named"><title>0x0048c070 DoInventoryPicture (34 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="375" class="named"><title>0x0048c0a0 S_FadePicture (162 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="375" class="todo"><title>0x0048c150 GameMain (704 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="375" class="todo"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="375" class="named"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="375" class="todo"><title>0x0048c550 CheckCheatMode (837 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="375" class="todo"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="375" class="todo"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
@@ -2076,7 +2076,7 @@
 <rect width="10.26" height="10.89" x="460.49" y="243.97" class="named"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="10.26" height="10.89" x="460.49" y="257.85" class="named"><title>0x0045e9e0 GetOnQuadBike (318 bytes)</title></rect>
 <rect width="10.26" height="10.85" x="460.49" y="271.74" class="named"><title>0x00442a10 lara_col_back (317 bytes)</title></rect>
-<rect width="10.26" height="10.85" x="460.49" y="285.59" class="todo"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
+<rect width="10.26" height="10.85" x="460.49" y="285.59" class="named"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="10.26" height="10.82" x="460.49" y="299.44" class="named"><title>0x00417300 InitialiseCamera (316 bytes)</title></rect>
 <rect width="10.26" height="10.82" x="460.49" y="313.26" class="named"><title>0x0044d060 LaraInitialiseMeshes (316 bytes)</title></rect>
 <rect width="10.26" height="10.75" x="460.49" y="327.08" class="todo"><title>0x004b4335 Func4b4335 (314 bytes)</title></rect>

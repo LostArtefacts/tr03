@@ -2298,6 +2298,7 @@ address,size,name,symbol
 0x006300d4,1,acm_locked,_acm_locked
 0x006302a4,,lpDirectInput,_lpDirectInput
 0x006302a8,,Keyboard,_Keyboard
+0x006302b0,4,game_hires,_game_hires
 0x006302b4,4,VidSizeLocked,_VidSizeLocked
 0x006322b8,,DS_SampleFrequencies,_DS_SampleFrequencies
 0x006326c8,,DS_Buffers,_DS_Buffers
