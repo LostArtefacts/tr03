@@ -1,6 +1,7 @@
     .486
     .model flat
 
+    extern _phdsintab:byte
     extern _phdtan2:byte
     extern _phdtantab:byte
 
@@ -44,5 +45,25 @@ L4b4c54:
     pop ebx
     ret
 @phd_atan@8 endp
+
+@phd_sin@4 proc public
+    mov eax, ecx
+    and eax, 0ffffh
+    cmp eax, 08000h
+    jl short L4b4c79
+    sub eax, 08000h
+    call L4b4c79
+    neg eax
+    ret
+L4b4c79:
+    cmp eax, 04000h
+    jle short L4b4c87
+    neg eax
+    add eax, 08000h
+L4b4c87:
+    shr eax, 04h
+    mov ax, word ptr [eax*2+offset _phdsintab]
+    ret
+@phd_sin@4 endp
 
     end

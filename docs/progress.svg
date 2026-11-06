@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="321.12" height="12" x="0" y="0" class="named"><title>1275 · 86.32%</title></rect>
-<rect width="1.51" height="12" x="321.12" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
-<rect width="5.54" height="12" x="322.64" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
-<rect width="43.82" height="12" x="328.18" y="0" class="todo"><title>174 · 11.78%</title></rect>
+<rect width="321.38" height="12" x="0" y="0" class="named"><title>1276 · 86.39%</title></rect>
+<rect width="1.51" height="12" x="321.38" y="0" class="decompiled"><title>6 · 0.41%</title></rect>
+<rect width="5.54" height="12" x="322.89" y="0" class="nonmatching"><title>22 · 1.49%</title></rect>
+<rect width="43.57" height="12" x="328.43" y="0" class="todo"><title>173 · 11.71%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">86.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1275</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">174</tspan></text>
+<text text-anchor="end" x="552" y="7.50">86.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1276</tspan> · <tspan class="decompiled">6</tspan> · <tspan class="nonmatching">22</tspan> · <tspan class="todo">173</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="235.03" height="12" x="0" y="0" class="named"><title>423 KB · 63.18%</title></rect>
-<rect width="0.34" height="12" x="235.03" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
-<rect width="8.07" height="12" x="235.37" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
-<rect width="128.56" height="12" x="243.44" y="0" class="todo"><title>231 KB · 34.56%</title></rect>
+<rect width="235.06" height="12" x="0" y="0" class="named"><title>423 KB · 63.19%</title></rect>
+<rect width="0.34" height="12" x="235.06" y="0" class="decompiled"><title>1 KB · 0.09%</title></rect>
+<rect width="8.07" height="12" x="235.40" y="0" class="nonmatching"><title>15 KB · 2.17%</title></rect>
+<rect width="128.53" height="12" x="243.47" y="0" class="todo"><title>231 KB · 34.55%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">63.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">423 KB</tspan> · <tspan class="decompiled">1 KB</tspan> · <tspan class="nonmatching">15 KB</tspan> · <tspan class="todo">231 KB</tspan></text>
@@ -1541,7 +1541,7 @@
 <rect width="12" height="12" x="330" y="435" class="todo"><title>0x004b48cc wgtmapA (833 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="435" class="named"><title>0x004b4c10 phd_atan (72 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="435" class="todo"><title>0x004b4c58 phd_cos (6 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="435" class="todo"><title>0x004b4c5e phd_sin (53 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="435" class="named"><title>0x004b4c5e phd_sin (53 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="435" class="todo"><title>0x004b4c93 phd_sqrt (44 bytes)</title></rect>
 </g>
 </g>
@@ -2738,7 +2738,7 @@
 <rect width="4.33" height="4.30" x="640.18" y="420.82" class="named"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
 <rect width="4.33" height="4.30" x="640.18" y="428.11" class="named"><title>0x00475990 S_FadeInInventory (53 bytes)</title></rect>
 <rect width="4.33" height="4.30" x="640.18" y="435.41" class="named"><title>0x0048c030 RemoveMonoScreen (53 bytes)</title></rect>
-<rect width="4.33" height="4.30" x="640.18" y="442.70" class="todo"><title>0x004b4c5e phd_sin (53 bytes)</title></rect>
+<rect width="4.33" height="4.30" x="640.18" y="442.70" class="named"><title>0x004b4c5e phd_sin (53 bytes)</title></rect>
 <rect width="4.34" height="4.20" x="647.50" y="340.31" class="named"><title>0x00429350 InitInterpolate (52 bytes)</title></rect>
 <rect width="4.34" height="4.20" x="654.84" y="340.31" class="named"><title>0x00445250 draw_shotgun_meshes (52 bytes)</title></rect>
 <rect width="4.34" height="4.20" x="662.18" y="340.31" class="named"><title>0x00459980 BridgeTilt2Ceiling (52 bytes)</title></rect>
