@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="321.96" height="12" x="0" y="0" class="named"><title>1133 · 76.66%</title></rect>
-<rect width="2.84" height="12" x="321.96" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="95.20" height="12" x="324.80" y="0" class="todo"><title>335 · 22.67%</title></rect>
+<rect width="322.25" height="12" x="0" y="0" class="named"><title>1134 · 76.73%</title></rect>
+<rect width="2.84" height="12" x="322.25" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="94.91" height="12" x="325.09" y="0" class="todo"><title>334 · 22.60%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">76.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1133</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">335</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1134</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">334</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="207.78" height="12" x="0" y="0" class="named"><title>330 KB · 49.47%</title></rect>
-<rect width="3.98" height="12" x="207.78" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="208.24" height="12" x="211.76" y="0" class="todo"><title>331 KB · 49.58%</title></rect>
+<rect width="208.07" height="12" x="0" y="0" class="named"><title>331 KB · 49.54%</title></rect>
+<rect width="3.98" height="12" x="208.07" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="207.95" height="12" x="212.05" y="0" class="todo"><title>331 KB · 49.51%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">49.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">330 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">331 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">331 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">331 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1247,7 +1247,7 @@
 <rect width="12" height="12" x="450" y="345" class="todo"><title>0x00483b60 LevelStats (1077 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="345" class="named"><title>0x00483fa0 Level2World (51 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="345" class="named"><title>0x00483fe0 World2Level (48 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="345" class="todo"><title>0x00484010 GameStats (468 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="345" class="named"><title>0x00484010 GameStats (468 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="345" class="named"><title>0x004841f0 GetRandomControl (30 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="345" class="named"><title>0x00484210 SeedRandomControl (10 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="345" class="named"><title>0x00484220 GetRandomDraw (30 bytes)</title></rect>
@@ -1931,7 +1931,7 @@
 <rect width="13.01" height="12.66" x="512.64" y="115.27" class="named"><title>0x0043d5a0 KayakToBaddieCollision (469 bytes)</title></rect>
 <rect width="13.01" height="12.66" x="528.65" y="115.27" class="named"><title>0x00450620 TriggerLizmanGas (469 bytes)</title></rect>
 <rect width="12.99" height="12.66" x="544.66" y="115.27" class="named"><title>0x0046c460 TriggerTonyFlame (468 bytes)</title></rect>
-<rect width="12.99" height="12.66" x="560.65" y="115.27" class="todo"><title>0x00484010 GameStats (468 bytes)</title></rect>
+<rect width="12.99" height="12.66" x="560.65" y="115.27" class="named"><title>0x00484010 GameStats (468 bytes)</title></rect>
 <rect width="12.96" height="12.66" x="576.63" y="115.27" class="todo"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
 <rect width="12.87" height="12.66" x="592.59" y="115.27" class="todo"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12.87" height="12.66" x="608.46" y="115.27" class="named"><title>0x0040fcc0 Trigger51BlastFire (464 bytes)</title></rect>

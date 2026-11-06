@@ -184,6 +184,60 @@ extern int OldPicTexIndices[5];
 extern int nLoadedPictures;
 }
 
+extern "C" sint32 GameStats(int level_number, int type)
+{
+    unsigned char *pS;
+    int total;
+    int found;
+    int num;
+    int i;
+
+    savegame.start[CurrentLevel].timer = savegame.timer;
+    savegame.start[CurrentLevel].ammo_used = savegame.ammo_used;
+    savegame.start[CurrentLevel].ammo_hit = savegame.ammo_hit;
+    savegame.start[CurrentLevel].distance_travelled = savegame.distance_travelled;
+    savegame.start[CurrentLevel].kills = savegame.kills;
+    savegame.start[CurrentLevel].secrets_found = savegame.secrets;
+    savegame.start[CurrentLevel].health_used = savegame.health_used;
+    T_InitPrint();
+
+    while (input & 0x100000)
+        S_UpdateInput();
+
+    do {
+        S_InitialisePolyList(0);
+        S_UpdateInput();
+        if (reset_flag)
+            input = 0x100000;
+        inputDB = GetDebouncedInput(input);
+        ShowEndStatsText();
+        T_DrawText();
+        S_OutputPolyList();
+        S_DumpScreen();
+    } while (!(input & 0x100000));
+
+    if (!reset_flag && type != 5) {
+        found = 0;
+        num = 0;
+        total = gameflow.num_levels - gameflow.num_demos - 1;
+        for (i = 0; i < total; i++) {
+            pS = &savegame.start[i].secrets_found;
+            found += (*pS & 1) + ((*pS >> 2) & 1) + ((*pS >> 1) & 1) + ((*pS >> 3) & 1) + ((*pS >> 4) & 1)
+                + ((*pS >> 6) & 1) + ((*pS >> 5) & 1) + ((*pS >> 7) & 1);
+            num += LevelSecrets[i];
+        }
+        if (found >= num - 1) {
+            GF_BonusLevelEnabled = 1;
+            FadePictureDown(32);
+            FreePictureTextures(CurPicTexIndices);
+            FreePictureTextures(OldPicTexIndices);
+            LoadPicture("pix\\theend2.bmp", App.lpPictureBuffer, 1);
+            nLoadedPictures = 1;
+        }
+    }
+    return 0;
+}
+
 sint32 GetRandomControl(void)
 {
     rand_1 = rand_1 * 0x41c64e6d + 0x3039;
