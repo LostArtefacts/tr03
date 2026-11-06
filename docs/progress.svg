@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="286.47" height="12" x="0" y="0" class="named"><title>1238 · 83.76%</title></rect>
-<rect width="0.46" height="12" x="286.47" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="286.93" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="50.91" height="12" x="291.09" y="0" class="todo"><title>220 · 14.88%</title></rect>
+<rect width="286.70" height="12" x="0" y="0" class="named"><title>1239 · 83.83%</title></rect>
+<rect width="0.46" height="12" x="286.70" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="287.16" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="50.68" height="12" x="291.32" y="0" class="todo"><title>219 · 14.82%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1238</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">220</tspan></text>
+<text text-anchor="end" x="522" y="7.50">84.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1239</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">219</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.40" height="12" x="0" y="0" class="named"><title>372 KB · 55.67%</title></rect>
-<rect width="0.15" height="12" x="190.40" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="190.55" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.42" height="12" x="196.58" y="0" class="todo"><title>284 KB · 42.52%</title></rect>
+<rect width="190.52" height="12" x="0" y="0" class="named"><title>372 KB · 55.71%</title></rect>
+<rect width="0.15" height="12" x="190.52" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="190.66" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.30" height="12" x="196.70" y="0" class="todo"><title>284 KB · 42.49%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">372 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
@@ -1196,7 +1196,7 @@
 <rect width="12" height="12" x="405" y="330" class="named"><title>0x004809c0 DS_Init (5 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="330" class="named"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="named"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="330" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="330" class="named"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="330" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="330" class="named"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="330" class="named"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
@@ -2194,7 +2194,7 @@
 <rect width="8.66" height="9.15" x="715.02" y="199.22" class="named"><title>0x00413f00 BoatSplash (226 bytes)</title></rect>
 <rect width="8.66" height="9.15" x="726.68" y="199.22" class="named"><title>0x0046aca0 T_Print (226 bytes)</title></rect>
 <rect width="8.66" height="9.15" x="738.34" y="199.22" class="named"><title>0x0046dc20 SpringBoardControl (226 bytes)</title></rect>
-<rect width="8.63" height="9.19" x="499.50" y="211.38" class="todo"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
+<rect width="8.63" height="9.19" x="499.50" y="211.38" class="named"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
 <rect width="8.63" height="9.15" x="499.50" y="223.56" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
 <rect width="8.63" height="9.15" x="499.50" y="235.71" class="todo"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="8.63" height="9.11" x="499.50" y="247.86" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>

@@ -207,7 +207,16 @@ bool DS_MakeAdapterList(void)
     return true;
 }
 
-BOOL CALLBACK DS_EnumCallback(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext);
+BOOL CALLBACK DS_EnumCallback(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext)
+{
+    LIST<SOUND_ADAPTER> *list = (LIST<SOUND_ADAPTER> *)lpContext;
+    SOUND_ADAPTER &adapter = list->NewTail();
+
+    adapter.SetGUID(lpGuid);
+    strcpy(adapter.description, lpcstrDescription);
+    strcpy(adapter.name, lpcstrModule);
+    return TRUE;
+}
 
 bool DS_EnumerateDevices(LPVOID lpContext)
 {
