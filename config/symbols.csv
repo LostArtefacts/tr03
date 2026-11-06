@@ -2502,6 +2502,7 @@ address,size,name,symbol
 0x006ca104,1,SoftwareRenderer,_SoftwareRenderer
 0x006ca108,1,MMXSupported,_MMXSupported
 0x006ca110,4,DrawScanLinesFlatAffine,_DrawScanLinesFlatAffine
+0x006ca114,4,pitch,_pitch
 0x006ca118,4,CalcGradientsBlack,_CalcGradientsBlack
 0x006ca11c,4,CalcEdgeBlack,_CalcEdgeBlack
 0x006ca120,4,CalcGradientsFlat,_CalcGradientsFlat

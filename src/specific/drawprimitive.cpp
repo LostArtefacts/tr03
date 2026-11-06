@@ -447,6 +447,18 @@ HRESULT HWEndScene(void)
     return D3DDev->EndScene();
 }
 
+extern unsigned short *Output;
+extern long pitch;
+extern long bytepitch;
+
+HRESULT SWBeginScene(void)
+{
+    Output = (unsigned short *)App.unk;
+    pitch = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    bytepitch = pitch << 1;
+    return D3D_OK;
+}
+
 HRESULT HWSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState)
 {
     return D3DDev->SetRenderState(dwRenderStateType, dwRenderState);
