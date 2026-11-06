@@ -1070,7 +1070,7 @@ address,size,name,symbol
 0x004752d0,18,InitJoystickListGlobal,specific/di.cpp:_$E1
 0x004752f0,14,RegisterJoystickListDestructor,specific/di.cpp:_$E3
 0x00475380,57,InitCurrentJoystickGlobal,specific/di.cpp:_$E6
-0x004753c0,14,Func4753c0,
+0x004753c0,14,RegisterCurrentJoystickDestructor,specific/di.cpp:_$E8
 0x00475400,34,DI_Create,_DI_Create
 0x00475430,26,DI_Release,_DI_Release
 0x00475450,90,DI_ReadKeyboard,_DI_ReadKeyboard
