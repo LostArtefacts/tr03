@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="283.69" height="12" x="0" y="0" class="named"><title>1226 · 82.95%</title></rect>
-<rect width="0.46" height="12" x="283.69" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
-<rect width="4.17" height="12" x="284.15" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="53.68" height="12" x="288.32" y="0" class="todo"><title>232 · 15.70%</title></rect>
+<rect width="283.92" height="12" x="0" y="0" class="named"><title>1227 · 83.02%</title></rect>
+<rect width="0.46" height="12" x="283.92" y="0" class="decompiled"><title>2 · 0.14%</title></rect>
+<rect width="4.17" height="12" x="284.38" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="53.45" height="12" x="288.55" y="0" class="todo"><title>231 · 15.63%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">83.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1226</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">232</tspan></text>
+<text text-anchor="end" x="522" y="7.50">83.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1227</tspan> · <tspan class="decompiled">2</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">231</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.42" height="12" x="0" y="0" class="named"><title>370 KB · 55.39%</title></rect>
-<rect width="0.15" height="12" x="189.42" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
-<rect width="6.04" height="12" x="189.57" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="146.40" height="12" x="195.60" y="0" class="todo"><title>286 KB · 42.81%</title></rect>
+<rect width="189.55" height="12" x="0" y="0" class="named"><title>371 KB · 55.42%</title></rect>
+<rect width="0.15" height="12" x="189.55" y="0" class="decompiled"><title>285 bytes · 0.04%</title></rect>
+<rect width="6.04" height="12" x="189.69" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="146.27" height="12" x="195.73" y="0" class="todo"><title>286 KB · 42.77%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="24.50">55.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">370 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">286 KB</tspan></text>
+<text text-anchor="end" x="522" y="24.50">55.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">371 KB</tspan> · <tspan class="decompiled">285 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">286 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -77,7 +77,7 @@
 <rect width="12" height="12" x="120" y="0" class="named"><title>0x004017d0 phd_RotYXZpack (487 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="0" class="named"><title>0x004019c0 phd_TranslateRel (171 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="0" class="named"><title>0x00401a70 phd_TranslateAbs (122 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="0" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="0" class="named"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="0" class="named"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="0" class="named"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="0" class="nonmatching"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
@@ -2160,7 +2160,7 @@
 <rect width="9.67" height="9.03" x="550.33" y="187.19" class="named"><title>0x004232b0 CheckNoColCeilingTriangle (249 bytes)</title></rect>
 <rect width="9.63" height="9.03" x="563" y="187.19" class="named"><title>0x00429930 InterpolateArmMatrix (248 bytes)</title></rect>
 <rect width="9.59" height="9.03" x="575.63" y="187.19" class="named"><title>0x004011d0 phd_LookAt (247 bytes)</title></rect>
-<rect width="9.59" height="9.03" x="588.23" y="187.19" class="todo"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
+<rect width="9.59" height="9.03" x="588.23" y="187.19" class="named"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="9.59" height="9.03" x="600.82" y="187.19" class="named"><title>0x00453460 CreateZone (247 bytes)</title></rect>
 <rect width="9.55" height="9.03" x="613.41" y="187.19" class="named"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
 <rect width="9.52" height="9.03" x="625.97" y="187.19" class="named"><title>0x00417110 SameZone (245 bytes)</title></rect>

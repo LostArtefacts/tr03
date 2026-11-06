@@ -669,4 +669,30 @@ void phd_RotYXZpack(sint32 rots)
     }
 }
 
+
+sint16 *calc_object_vertices(sint16 *objptr);
+sint16 *calc_vertice_light(sint16 *objptr, sint16 *objptr1);
+
+void phd_PutPolygons(sint16 *objptr, int clipstatus)
+{
+    sint16 *objptr1;
+
+    objptr += 4;
+    phd_leftfloat = (float)phd_winxmin;
+    phd_topfloat = (float)phd_winymin;
+    phd_rightfloat = (float)(phd_winxmin + phd_winxmax + 1);
+    phd_bottomfloat = (float)(phd_winymin + phd_winymax + 1);
+    f_centerx = (float)(phd_winxmin + phd_centerx);
+    f_centery = (float)(phd_winymin + phd_centery);
+    objptr1 = objptr;
+    objptr = calc_object_vertices(objptr);
+    if (objptr) {
+        objptr = calc_vertice_light(objptr, objptr1);
+        objptr = InsertObjectGT4(objptr + 1, *objptr, 0);
+        objptr = InsertObjectGT3(objptr + 1, *objptr, 0);
+        objptr = InsertObjectG4(objptr + 1, *objptr, 0);
+        objptr = InsertObjectG3(objptr + 1, *objptr, 0);
+    }
+}
+
 }
