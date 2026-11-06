@@ -105,6 +105,9 @@ void DXInitTextures(HWND hwnd, int nDD, int nD3D);
 void DXInitDSAdapters(HWND hwnd);
 void DXInitJoystickAdapter(HWND hwnd);
 BOOL CALLBACK DXSetupDlgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
+void DXInitDialogBox(HWND hwnd);
+bool WinDXInit(DEVICEINFO *device, DXCONFIG *config, bool createNew);
+void WinFreeDX(bool free_dd);
 
 bool DXUserDialog(DEVICEINFO *DeviceInfo, DXCONFIG *DXConfig, HINSTANCE hInstance)
 {
@@ -120,6 +123,132 @@ bool DXUserDialog(DEVICEINFO *DeviceInfo, DXCONFIG *DXConfig, HINSTANCE hInstanc
         return false;
     }
     return ret ? true : false;
+}
+
+BOOL CALLBACK DXSetupDlgProc(HWND dlg, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    static HWND output_setting;
+    static HWND resolution;
+    bool pass;
+    HWND hCheck;
+    HWND hList;
+
+    switch (message) {
+    case WM_INITDIALOG:
+        DXInitDialogBox(dlg);
+        output_setting = GetDlgItem(dlg, 1001);
+        resolution = GetDlgItem(dlg, 1002);
+        return 1;
+    case WM_COMMAND:
+        switch (LOWORD(wParam)) {
+        case IDOK:
+        case 1019:
+            G_DXConfig->nDD = SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0);
+            G_DXConfig->nD3D = SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0);
+            G_DXConfig->nVMode = SendMessage(GetDlgItem(dlg, 1002), CB_GETITEMDATA,
+                SendMessage(GetDlgItem(dlg, 1002), CB_GETCURSEL, 0, 0), 0);
+            G_DXConfig->D3DTF = SendMessage(GetDlgItem(dlg, 1003), CB_GETCURSEL, 0, 0);
+            G_DXConfig->bZBuffer = (bool)SendMessage(GetDlgItem(dlg, 1004), BM_GETCHECK, 0, 0);
+            G_DXConfig->DS = SendMessage(GetDlgItem(dlg, 1010), CB_GETCURSEL, 0, 0);
+            G_DXConfig->DI = SendMessage(GetDlgItem(dlg, 1011), CB_GETCURSEL, 0, 0);
+            G_DXConfig->AGP = (bool)SendMessage(GetDlgItem(dlg, 1012), BM_GETCHECK, 0, 0);
+            G_DXConfig->Dither = (bool)SendMessage(GetDlgItem(dlg, 1005), BM_GETCHECK, 0, 0);
+            G_DXConfig->Filter = (bool)SendMessage(GetDlgItem(dlg, 1006), BM_GETCHECK, 0, 0);
+            G_DXConfig->sound = (bool)!SendMessage(GetDlgItem(dlg, 1015), BM_GETCHECK, 0, 0);
+            G_DXConfig->Joystick = (bool)!SendMessage(GetDlgItem(dlg, 1014), BM_GETCHECK, 0, 0);
+            if ((unsigned short)wParam == IDOK) {
+                ShowWindow(App.WindowHandle, 1);
+                ShowCursor(0);
+                EndDialog(dlg, 1);
+            } else {
+                App.DXConfigPtr = &App.DXConfig;
+                App.DeviceInfoPtr = &App.DeviceInfo;
+                pass = WinDXInit(&App.DeviceInfo, &App.DXConfig, 1);
+                WinFreeDX(1);
+                ShowWindow(App.WindowHandle, 0);
+                ShowCursor(1);
+                if (pass)
+                    MessageBox(App.WindowHandle, "Tomb Raider 3 Configuration Test Has Passed", "Setup Test", MB_ICONASTERISK);
+                else
+                    MessageBox(App.WindowHandle, "Tomb Raider 3 Configuration Test Has Failed", "Setup Test", MB_ICONEXCLAMATION);
+            }
+            return 1;
+        case IDCANCEL:
+            EndDialog(dlg, 0);
+            return 1;
+        case 1000:
+            switch (HIWORD(wParam)) {
+            case CBN_SELCHANGE:
+                    DXInitD3DDrivers(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0));
+                    DXInitVideoModes(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                        SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+                    DXInitTextures(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                        SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+                break;
+            }
+            break;
+        case 1001:
+            switch (HIWORD(wParam)) {
+            case CBN_SELCHANGE:
+                    DXInitD3DDrivers(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0));
+                    DXInitVideoModes(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                        SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+                    DXInitTextures(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                        SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+                break;
+            }
+            break;
+        case 1008:
+            if (!HIWORD(wParam)) {
+                SendMessage(output_setting, CB_SETCURSEL, 0, 0);
+                SendMessage(resolution, CB_SETCURSEL, 0, 0);
+                DXInitD3DDrivers(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0));
+                DXInitVideoModes(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                    SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+                DXInitTextures(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                    SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+                EnableWindow(GetDlgItem(dlg, 1009), 0);
+            }
+            break;
+        case 1007:
+            if (!HIWORD(wParam)) {
+                SendMessage(output_setting, CB_SETCURSEL, 1, 0);
+                DXInitD3DDrivers(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0));
+                DXInitVideoModes(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                    SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+                DXInitTextures(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                    SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+            }
+            break;
+        case 1009:
+            if (!HIWORD(wParam))
+                DXInitTextures(dlg, SendMessage(GetDlgItem(dlg, 1000), CB_GETCURSEL, 0, 0),
+                    SendMessage(GetDlgItem(dlg, 1001), CB_GETCURSEL, 0, 0));
+            break;
+        case 1015:
+            if (!HIWORD(wParam)) {
+                hCheck = GetDlgItem(dlg, 1015);
+                hList = GetDlgItem(dlg, 1010);
+                if (SendMessage(hCheck, BM_GETCHECK, 0, 0))
+                    EnableWindow(hList, 0);
+                else
+                    EnableWindow(hList, 1);
+            }
+            break;
+        case 1014:
+            if (!HIWORD(wParam)) {
+                hCheck = GetDlgItem(dlg, 1014);
+                hList = GetDlgItem(dlg, 1011);
+                if (SendMessage(hCheck, BM_GETCHECK, 0, 0))
+                    EnableWindow(hList, 0);
+                else
+                    EnableWindow(hList, 1);
+            }
+            break;
+        }
+        break;
+    }
+    return 0;
 }
 
 void DXInitDialogBox(HWND hwnd)

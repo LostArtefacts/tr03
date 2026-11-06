@@ -1413,7 +1413,7 @@ address,size,name,symbol
 0x00496a70,170,MMXBlit32to16,_MMXBlit32to16
 0x00496b20,143,MMXBlit32to24,_MMXBlit32to24
 0x00496bb0,97,DXUserDialog,_DXUserDialog
-0x00496c20,1596,DXSetupDlgProc,_DXSetupDlgProc@16
+0x00496c20,1648,DXSetupDlgProc,_DXSetupDlgProc@16
 0x00497290,660,DXCheckMMXTechnology,_DXCheckMMXTechnology
 0x00497530,246,DXInitDialogBox,_DXInitDialogBox
 0x00497630,197,DXInitDSAdapters,_DXInitDSAdapters
