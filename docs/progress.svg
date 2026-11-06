@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="336.45" height="12" x="0" y="0" class="named"><title>1184 · 80.11%</title></rect>
-<rect width="2.84" height="12" x="336.45" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
-<rect width="80.70" height="12" x="339.30" y="0" class="todo"><title>284 · 19.22%</title></rect>
+<rect width="336.74" height="12" x="0" y="0" class="named"><title>1185 · 80.18%</title></rect>
+<rect width="2.84" height="12" x="336.74" y="0" class="nonmatching"><title>10 · 0.68%</title></rect>
+<rect width="80.42" height="12" x="339.58" y="0" class="todo"><title>283 · 19.15%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">80.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1184</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">284</tspan></text>
+<text text-anchor="end" x="600" y="7.50">80.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1185</tspan> · <tspan class="nonmatching">10</tspan> · <tspan class="todo">283</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="214.74" height="12" x="0" y="0" class="named"><title>342 KB · 51.13%</title></rect>
-<rect width="3.98" height="12" x="214.74" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
-<rect width="201.28" height="12" x="218.72" y="0" class="todo"><title>320 KB · 47.92%</title></rect>
+<rect width="215.04" height="12" x="0" y="0" class="named"><title>342 KB · 51.20%</title></rect>
+<rect width="3.98" height="12" x="215.04" y="0" class="nonmatching"><title>6 KB · 0.95%</title></rect>
+<rect width="200.98" height="12" x="219.02" y="0" class="todo"><title>320 KB · 47.85%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">51.1%</text>
+<text text-anchor="end" x="600" y="24.50">51.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">342 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">320 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1525,7 +1525,7 @@
 <rect width="12" height="12" x="120" y="435" class="named"><title>0x004b39a0 DD_EnsureSurfaceAvailable (70 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="435" class="named"><title>0x004b39f0 DD_ClearSurface (77 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="435" class="named"><title>0x004b3a40 DXDoFlipWait (41 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="435" class="todo"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="435" class="named"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="435" class="named"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="435" class="todo"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="435" class="todo"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
@@ -1924,7 +1924,7 @@
 <rect width="13.19" height="12.65" x="399.92" y="434.35" class="named"><title>0x00424830 TriggerFlamethrowerHitFlame (475 bytes)</title></rect>
 <rect width="13.15" height="12.66" x="416.11" y="115.28" class="named"><title>0x0042bbc0 TriggerSideFlame (474 bytes)</title></rect>
 <rect width="13.10" height="12.66" x="432.26" y="115.28" class="todo"><title>0x0040aa00 RoomZedClipper (472 bytes)</title></rect>
-<rect width="13.10" height="12.66" x="448.36" y="115.28" class="todo"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
+<rect width="13.10" height="12.66" x="448.36" y="115.28" class="named"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
 <rect width="13.07" height="12.66" x="464.46" y="115.28" class="named"><title>0x00413d20 TriggerBoatMist (471 bytes)</title></rect>
 <rect width="13.07" height="12.66" x="480.52" y="115.28" class="named"><title>0x0042d1f0 TriggerWaterfallMist (471 bytes)</title></rect>
 <rect width="13.04" height="12.66" x="496.59" y="115.28" class="todo"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>

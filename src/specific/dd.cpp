@@ -66,6 +66,49 @@ void DXDoFlipWait(void)
         ;
 }
 
+void DXClearBuffers(DWORD flags, DWORD color)
+{
+    RECT r;
+    D3DRECT vr;
+    DWORD sflags;
+
+    r.top = 0;
+    r.left = 0;
+    r.right = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    r.bottom = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
+
+    if (App.nRenderMode == 1) {
+        sflags = 0;
+        if (flags & 2)
+            sflags = D3DCLEAR_TARGET;
+        if (flags & 8)
+            sflags |= D3DCLEAR_ZBUFFER;
+        if (sflags) {
+            vr.x1 = 0;
+            vr.y1 = 0;
+            vr.x2 = r.right;
+            vr.y2 = r.bottom;
+            App.lpViewPort->Clear(1, &vr, sflags);
+        }
+    } else if (flags & 2) {
+        DD_ClearSurface(App.lpBackBuffer, &r, color);
+    }
+
+    if (flags & 1)
+        DD_ClearSurface(App.lpFrontBuffer, &r, color);
+
+    if (flags & 0x20) {
+        r.top = 0;
+        r.left = 0;
+        r.right = 640;
+        r.bottom = 480;
+        DD_ClearSurface(App.lpPictureBuffer, &r, color);
+    }
+
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware && (flags & 2))
+        memset(App.unk, 0, 4 * App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w * App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h);
+}
+
 bool DXCheckForLostSurfaces(void)
 {
     bool lost;
