@@ -1,5 +1,6 @@
 #include "standard.h"
 #include "specific.h"
+#include "winmain.h"
 
 extern "C" {
 
@@ -12,6 +13,15 @@ extern int fade_limit;
 extern int fade_adder;
 
 void setup_screen_size(void);
+
+extern int farz;
+extern int BarsWidth;
+extern sint16 DumpX;
+extern sint16 DumpY;
+extern sint16 DumpWidth;
+extern sint16 DumpHeight;
+extern bool GtFullScreenClearNeeded;
+void phd_InitWindow(int x, int y, int w, int h, int znear, int zfar, int fov, int sw, int sh);
 
 void IncreaseScreenSize(void)
 {
@@ -33,6 +43,31 @@ void DecreaseScreenSize(void)
         game_sizer = screen_sizer;
         setup_screen_size();
     }
+}
+
+void setup_screen_size(void)
+{
+    int w, h, sw, sh, x, y;
+
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    sw = (int)(w * screen_sizer);
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
+    sh = (int)(h * screen_sizer);
+    if (sw > w)
+        sw = w;
+    if (sh > h)
+        sh = h;
+    x = (w - sw) / 2;
+    y = (h - sh) / 2;
+    phd_InitWindow(x, y, sw, sh, 20, farz, 80, w, h);
+    DumpX = x;
+    DumpY = y;
+    DumpWidth = sw;
+    DumpHeight = sh;
+    GtFullScreenClearNeeded = true;
+    BarsWidth = sw / 5;
+    if (BarsWidth > 100)
+        BarsWidth = 100;
 }
 
 void TempVideoAdjust(int hires, double sizer)
