@@ -123,6 +123,30 @@ extern "C" void GetSavedGamesList(REQUEST_INFO *req)
     memcpy(RequesterFlags2, SaveGameReqFlags2, 24 * sizeof(uint32));
 }
 
+extern "C" void DisplayCredits(void)
+{
+    char buf[64] = "pix\\credit0?.bmp";
+    int i;
+
+    S_UnloadLevelFile();
+    if (!InitialiseLevel(0, 0))
+        return;
+    S_StartSyncedAudio(121);
+    LoadPicture("pix\\theend.bmp", App.lpPictureBuffer, 1);
+    FadePictureUp(32);
+    S_Wait(300, 0);
+    FadePictureDown(32);
+    for (i = 1; i < 10; i++) {
+        buf[11] = i + '0';
+        LoadPicture(buf, App.lpPictureBuffer, 1);
+        FadePictureUp(32);
+        S_Wait(300, 0);
+        FadePictureDown(32);
+    }
+    LoadPicture("pix\\theend2.bmp", App.lpPictureBuffer, 1);
+    FadePictureUp(32);
+}
+
 extern "C" int S_LoadGame(LPVOID data, int size, int slot)
 {
     HANDLE file;
