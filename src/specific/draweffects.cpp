@@ -273,4 +273,63 @@ void S_DrawFish(ITEM_INFO *item)
     }
 }
 
+bool ClipLine(long &x1, long &y1, long &x2, long &y2, long w, long h)
+{
+    float clip;
+    long xMin, yMin;
+    w = phd_winxmin + phd_winxmax;
+    h = phd_winymin + phd_winymax;
+    xMin = phd_winxmin;
+    yMin = phd_winymin;
+    if (x1 < xMin && x2 < xMin)
+        return 0;
+    if (y1 < yMin && y2 < yMin)
+        return 0;
+    if (x1 > w && x2 > w)
+        return 0;
+    if (y1 > h && y2 > h)
+        return 0;
+    if (x1 > w) {
+        clip = ((float)w - x2) / float(x1 - x2);
+        x1 = w;
+        y1 = long((y1 - y2) * clip + y2);
+    }
+    if (x2 > w) {
+        clip = ((float)w - x1) / float(x2 - x1);
+        x2 = w;
+        y2 = long((y2 - y1) * clip + y1);
+    }
+    if (x1 < xMin) {
+        clip = ((float)xMin - x1) / float(x2 - x1);
+        x1 = xMin;
+        y1 = long((y2 - y1) * clip + y1);
+    }
+    if (x2 < xMin) {
+        clip = ((float)xMin - x2) / float(x1 - x2);
+        x2 = xMin;
+        y2 = long((y1 - y2) * clip + y2);
+    }
+    if (y1 > h) {
+        clip = ((float)h - y2) / float(y1 - y2);
+        y1 = h;
+        x1 = long((x1 - x2) * clip + x2);
+    }
+    if (y2 > h) {
+        clip = ((float)h - y1) / float(y2 - y1);
+        y2 = h;
+        x2 = long((x2 - x1) * clip + x1);
+    }
+    if (y1 < yMin) {
+        clip = ((float)yMin - y1) / float(y2 - y1);
+        y1 = yMin;
+        x1 = long((x2 - x1) * clip + x1);
+    }
+    if (y2 < yMin) {
+        clip = ((float)yMin - y2) / float(y1 - y2);
+        y2 = yMin;
+        x2 = long((x1 - x2) * clip + x2);
+    }
+    return 1;
+}
+
 }
