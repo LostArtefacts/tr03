@@ -144,6 +144,62 @@ void CalculateEdgeTG(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVER
     }
 }
 
+void CalculateGradientsTG(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+{
+    float oodx, oody;
+    float v1v3y, v2v3y, v1v3x, v2v3x;
+    float u2u3, u1u3;
+    float v2v3, v1v3;
+    float z2z3, z1z3;
+    float c2c3, c1c3;
+
+    v1v3y = v1->sy - v3->sy;
+    v2v3y = v2->sy - v3->sy;
+    v1v3x = v1->sx - v3->sx;
+    v2v3x = v2->sx - v3->sx;
+    oodx = 1.0f / ((v2v3x * v1v3y) - (v1v3x * v2v3y));
+    oody = -oodx;
+    Gradients->r[0] = float(RGBA_GETRED(v1->color));
+    Gradients->g[0] = float(RGBA_GETGREEN(v1->color));
+    Gradients->b[0] = float(RGBA_GETBLUE(v1->color));
+    Gradients->r[1] = float(RGBA_GETRED(v2->color));
+    Gradients->g[1] = float(RGBA_GETGREEN(v2->color));
+    Gradients->b[1] = float(RGBA_GETBLUE(v2->color));
+    Gradients->r[2] = float(RGBA_GETRED(v3->color));
+    Gradients->g[2] = float(RGBA_GETGREEN(v3->color));
+    Gradients->b[2] = float(RGBA_GETBLUE(v3->color));
+    Gradients->uoz[0] = v1->tu * v1->rhw * 256.0f;
+    Gradients->voz[0] = v1->tv * v1->rhw * 256.0f;
+    Gradients->uoz[1] = v2->tu * v2->rhw * 256.0f;
+    Gradients->voz[1] = v2->tv * v2->rhw * 256.0f;
+    Gradients->uoz[2] = v3->tu * v3->rhw * 256.0f;
+    Gradients->voz[2] = v3->tv * v3->rhw * 256.0f;
+    u2u3 = Gradients->uoz[1] - Gradients->uoz[2];
+    u1u3 = Gradients->uoz[0] - Gradients->uoz[2];
+    v2v3 = Gradients->voz[1] - Gradients->voz[2];
+    v1v3 = Gradients->voz[0] - Gradients->voz[2];
+    Gradients->duzx = oodx * ((u2u3 * v1v3y) - (u1u3 * v2v3y));
+    Gradients->duzy = oody * ((u2u3 * v1v3x) - (u1u3 * v2v3x));
+    Gradients->dvzx = oodx * ((v2v3 * v1v3y) - (v1v3 * v2v3y));
+    Gradients->dvzy = oody * ((v2v3 * v1v3x) - (v1v3 * v2v3x));
+    z1z3 = v1->rhw - v3->rhw;
+    z2z3 = v2->rhw - v3->rhw;
+    Gradients->dozx = oodx * ((z2z3 * v1v3y) - (z1z3 * v2v3y));
+    Gradients->dozy = oody * ((z2z3 * v1v3x) - (z1z3 * v2v3x));
+    c2c3 = Gradients->r[1] - Gradients->r[2];
+    c1c3 = Gradients->r[0] - Gradients->r[2];
+    Gradients->drx = oodx * ((c2c3 * v1v3y) - (c1c3 * v2v3y));
+    Gradients->dry = oody * ((c2c3 * v1v3x) - (c1c3 * v2v3x));
+    c2c3 = Gradients->g[1] - Gradients->g[2];
+    c1c3 = Gradients->g[0] - Gradients->g[2];
+    Gradients->dgx = oodx * ((c2c3 * v1v3y) - (c1c3 * v2v3y));
+    Gradients->dgy = oody * ((c2c3 * v1v3x) - (c1c3 * v2v3x));
+    c2c3 = Gradients->b[1] - Gradients->b[2];
+    c1c3 = Gradients->b[0] - Gradients->b[2];
+    Gradients->dbx = oodx * ((c2c3 * v1v3y) - (c1c3 * v2v3y));
+    Gradients->dby = oody * ((c2c3 * v1v3x) - (c1c3 * v2v3x));
+}
+
 void CalculateEdgeT(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom)
 {
     float YPreStep;
