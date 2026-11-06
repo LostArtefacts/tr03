@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="315.71" height="12" x="0" y="0" class="named"><title>1111 · 75.17%</title></rect>
-<rect width="2.56" height="12" x="315.71" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
-<rect width="101.73" height="12" x="318.27" y="0" class="todo"><title>358 · 24.22%</title></rect>
+<rect width="315.99" height="12" x="0" y="0" class="named"><title>1112 · 75.24%</title></rect>
+<rect width="2.56" height="12" x="315.99" y="0" class="nonmatching"><title>9 · 0.61%</title></rect>
+<rect width="101.45" height="12" x="318.55" y="0" class="todo"><title>357 · 24.15%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">75.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1111</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">358</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1112</tspan> · <tspan class="nonmatching">9</tspan> · <tspan class="todo">357</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="200.67" height="12" x="0" y="0" class="named"><title>319 KB · 47.78%</title></rect>
-<rect width="3.89" height="12" x="200.67" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
-<rect width="215.44" height="12" x="204.56" y="0" class="todo"><title>343 KB · 51.30%</title></rect>
+<rect width="200.81" height="12" x="0" y="0" class="named"><title>319 KB · 47.81%</title></rect>
+<rect width="3.89" height="12" x="200.81" y="0" class="nonmatching"><title>6 KB · 0.93%</title></rect>
+<rect width="215.30" height="12" x="204.70" y="0" class="todo"><title>342 KB · 51.26%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">47.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">319 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">343 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">319 KB</tspan> · <tspan class="nonmatching">6 KB</tspan> · <tspan class="todo">342 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1208,7 +1208,7 @@
 <rect width="12" height="12" x="615" y="330" class="todo"><title>0x004813d0 LoadObjects (1214 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="330" class="named"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="330" class="named"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="330" class="todo"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="330" class="named"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="330" class="named"><title>0x00481ca0 LoadPalette (173 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="330" class="named"><title>0x00481d50 LoadCameras (96 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="330" class="named"><title>0x00481db0 LoadSoundEffects (96 bytes)</title></rect>
@@ -2205,7 +2205,7 @@
 <rect width="8.63" height="8.87" x="499.42" y="332.20" class="named"><title>0x004422d0 lara_col_forwardjump (218 bytes)</title></rect>
 <rect width="8.63" height="8.87" x="499.42" y="344.07" class="named"><title>0x004423b0 lara_col_fastback (218 bytes)</title></rect>
 <rect width="8.63" height="8.87" x="499.42" y="355.94" class="named"><title>0x0044baf0 DoFlareInHand (218 bytes)</title></rect>
-<rect width="8.63" height="8.87" x="499.42" y="367.81" class="todo"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
+<rect width="8.63" height="8.87" x="499.42" y="367.81" class="named"><title>0x00481bc0 LoadDepthQ (218 bytes)</title></rect>
 <rect width="8.63" height="8.83" x="499.42" y="379.68" class="named"><title>0x00429f00 DetatchSpark (217 bytes)</title></rect>
 <rect width="8.63" height="8.79" x="499.42" y="391.51" class="named"><title>0x00459500 LiftControl (216 bytes)</title></rect>
 <rect width="8.63" height="8.75" x="499.42" y="403.30" class="named"><title>0x004664b0 GetCarriedItems (215 bytes)</title></rect>

@@ -230,6 +230,29 @@ int LoadItems(HANDLE file)
     return 1;
 }
 
+int LoadDepthQ(HANDLE file)
+{
+    int i;
+    int j;
+    DWORD read;
+
+    MyReadFile(file, depthq_table, 32 * 256, &read, NULL);
+    for (i = 0; i < 33; i++)
+        depthq_table[i][0] = 0;
+    memcpy(depthq_table[32], depthq_table[24], 256);
+    for (i = 0; i < 32; i++) {
+        for (j = 0; j < 256; j++)
+            gouraud_table[j][i] = depthq_table[i][j];
+    }
+    wet = 0;
+    for (i = 0; i < 256 * 3; i += 3) {
+        water_palette[i] = (int)(game_palette[i] * 2) / 3;
+        water_palette[i + 1] = (int)(game_palette[i + 1] * 2) / 3;
+        water_palette[i + 2] = game_palette[i + 2];
+    }
+    return 1;
+}
+
 int LoadPalette(HANDLE file)
 {
     DWORD read;
