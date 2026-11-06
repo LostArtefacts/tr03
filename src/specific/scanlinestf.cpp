@@ -183,7 +183,7 @@ void ScanLinesT(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     float one = 1.0f;
     long yline;
     double fconv;
-    
+
     oozdx = Gradients->dozx * float(16);
     uozdx = Gradients->duzx * float(16);
     vozdx = Gradients->dvzx * float(16);
@@ -414,7 +414,7 @@ void ScanLinesTF(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
     short r, g, b;
     short texel;
     double fconv;
-    
+
     r = Gradients->rf;
     g = Gradients->gf;
     b = Gradients->bf;
@@ -425,7 +425,7 @@ void ScanLinesTF(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
     r >>= 2;
     g >>= 2;
     b >>= 2;
-    
+
     oozdx = Gradients->dozx * float(16);
     uozdx = Gradients->duzx * float(16);
     vozdx = Gradients->dvzx * float(16);
@@ -724,7 +724,7 @@ void ScanLinesTFAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Ste
     short subdivcnt;
     short r, g, b;
     short texel;
-    
+
     r = Gradients->rf;
     g = Gradients->gf;
     b = Gradients->bf;
@@ -734,7 +734,7 @@ void ScanLinesTFAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Ste
         ScanLinesTAffine(Gradients, pLeft, pRight, StepLeft, StepRight);
         return;
     }
-    
+
     r >>= 2;
     g >>= 2;
     b >>= 2;
