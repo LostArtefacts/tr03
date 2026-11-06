@@ -3056,4 +3056,83 @@ __declspec(naked) void Func4966f0(void)
         ret
     }
 }
+
+extern long Var6ca314;
+extern long Var6ca240;
+extern long Var6ca244;
+extern __int64 Var4cec28;
+extern __int64 Var6ca458;
+
+__declspec(naked) void DrawSpansAlpha(void)
+{
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [Var6ca4d0]
+        cmp esi, dword ptr [Var6ca248]
+        je L4
+        push ebp
+        mov edi, dword ptr [Var6ca2d0]
+        mov eax, dword ptr [Var6ca460]
+        imul eax, dword ptr [Var6ca20c]
+        add edi, eax
+        mov ebx, dword ptr [Var6ca314]
+        mov eax, dword ptr [ebx+0x10]
+        and eax, 0xff000000
+        xor eax, 0xff000000
+        mov ecx, eax
+        shr eax, 0x8
+        shr ecx, 0x18
+        or eax, ecx
+        mov dword ptr [Var6ca240], eax
+        mov dword ptr [Var6ca244], eax
+        movq mm0, qword ptr [Var6ca240]
+        pxor mm0, qword ptr [Var4cec28]
+        movq qword ptr [Var6ca458], mm0
+        pxor mm4, mm4
+        movq mm5, qword ptr [Var6ca240]
+        movq mm7, qword ptr [Var6ca458]
+    L1:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esi+0x4]
+        shl ebx, 0x2
+        push edi
+        add edi, ebx
+        or eax, eax
+        jle L3
+        movq mm0, qword ptr [esi+0x18]
+        movq mm1, qword ptr [Var6ca338]
+    L2:
+        movd mm6, dword ptr [edi]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc3
+        punpcklbw mm6, mm4
+        psrlw mm3, 0x8
+        pmullw mm6, mm5
+        add edi, 0x4
+        pmullw mm3, mm7
+        paddw mm0, mm1
+        paddsw mm6, mm3
+        psrlw mm6, 0x8
+        packuswb mm6, mm6
+        dec eax
+        movd dword ptr [edi-0x4], mm6
+        jne L2
+    L3:
+        pop edi
+        add edi, dword ptr [Var6ca20c]
+        add esi, 0x20
+        cmp dword ptr [Var6ca248], esi
+        jne L1
+        emms
+        pop ebp
+    L4:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
 }
