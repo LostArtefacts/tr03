@@ -1066,4 +1066,142 @@ void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
     }
     DrawScanLinesAffine(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
 }
+
+extern long Var6ca248;
+extern long Var6ca460;
+extern long Var6ca2c8;
+extern long Var6ca4c8;
+extern long Var6ca2b0;
+extern long Var6ce4d8;
+extern long Var6ce4e0;
+extern long Var4ceb80[];
+extern __int64 Var6ca338;
+
+__declspec(naked) void Func495490(void)
+{
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [Var6ca4d0]
+        cmp esi, dword ptr [Var6ca248]
+        je Done
+        push ebp
+        mov edi, dword ptr [Var6ca2d0]
+        mov eax, dword ptr [Var6ca460]
+        imul eax, dword ptr [Var6ca20c]
+        add edi, eax
+        mov ecx, dword ptr [Var6ce4e0]
+        mov eax, 0xff0000
+        shl eax, cl
+        and eax, 0xff0000
+        mov dword ptr [Var6ca2c8], eax
+        mov dword ptr [P1 + 2], eax
+        mov dword ptr [P4 + 2], eax
+        mov al, cl
+        add al, 8
+        add al, cl
+        mov byte ptr [P5 + 2], al
+        mov byte ptr [P3 + 2], al
+        mov al, cl
+        add al, 0x10
+        mov byte ptr [P6 + 2], al
+        mov byte ptr [P7 + 2], al
+        mov ebx, dword ptr [Var6ca4c8]
+        mov eax, dword ptr [Var6ca2b0]
+        mov edx, dword ptr [Var6ce4d8]
+        add edx, dword ptr [Var4ceb80 + ecx * 4]
+        mov dword ptr [P8 + 2], ebx
+        mov dword ptr [P2 + 2], eax
+        mov dword ptr [P0 + 4], edx
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    LineLoop:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esi + 4]
+        push edi
+        lea edi, [edi + ebx * 4]
+        or eax, eax
+        jle NextLine
+        mov ebx, dword ptr [esi + 8]
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, ecx
+        mov ebp, ebx
+        and edx, dword ptr [Var6ca2c8]
+        and ebp, dword ptr [Var6ca2c8]
+    P5:
+        shr edx, 8
+        pxor mm5, mm5
+    P6:
+        shr ebp, 0x10
+        movq mm1, qword ptr [Var6ca338]
+        or edx, ebp
+        movq mm0, qword ptr [esi + 0x18]
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc6
+        add ecx, dword ptr [Var6ca2b0]
+        add ebx, dword ptr [Var6ca4c8]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    PixelLoop:
+    P0:
+        movd mm7, dword ptr [edx * 4 + 0x12345678]
+        psrlw mm6, 8
+        mov edx, ecx
+        punpcklbw mm7, mm5
+        pmullw mm7, mm6
+        mov ebp, ebx
+    P1:
+        and edx, 0xff0000
+    P2:
+        add ecx, 0x12345678
+    P3:
+        shr edx, 8
+    P4:
+        and ebp, 0xff0000
+    P7:
+        shr ebp, 0x10
+        psrlw mm7, 8
+        packuswb mm7, mm7
+        add edi, 4
+    P8:
+        add ebx, 0x12345678
+        or edx, ebp
+        movd dword ptr [edi - 4], mm7
+        paddw mm0, mm1
+        _emit 0x0f
+        _emit 0x7f
+        _emit 0xc6
+        dec eax
+        jne PixelLoop
+    NextLine:
+        pop edi
+        add esi, 0x20
+        add edi, dword ptr [Var6ca20c]
+        cmp dword ptr [Var6ca248], esi
+        jne LineLoop
+        emms
+        pop ebp
+    Done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
 }

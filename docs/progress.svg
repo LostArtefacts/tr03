@@ -47,20 +47,20 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="321.01" height="12" x="0" y="0" class="named"><title>1313 · 87.71%</title></rect>
-<rect width="4.40" height="12" x="321.01" y="0" class="decompiled"><title>18 · 1.20%</title></rect>
-<rect width="5.62" height="12" x="325.41" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
-<rect width="34.96" height="12" x="331.04" y="0" class="todo"><title>143 · 9.55%</title></rect>
+<rect width="4.65" height="12" x="321.01" y="0" class="decompiled"><title>19 · 1.27%</title></rect>
+<rect width="5.62" height="12" x="325.66" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="34.72" height="12" x="331.28" y="0" class="todo"><title>142 · 9.49%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">88.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1313</tspan> · <tspan class="decompiled">18</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">143</tspan></text>
+<text text-anchor="end" x="546" y="7.50">89.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1313</tspan> · <tspan class="decompiled">19</tspan> · <tspan class="nonmatching">23</tspan> · <tspan class="todo">142</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="240" height="12" x="0" y="0" class="named"><title>474 KB · 65.57%</title></rect>
-<rect width="30.86" height="12" x="240" y="0" class="decompiled"><title>61 KB · 8.43%</title></rect>
-<rect width="9.06" height="12" x="270.85" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
-<rect width="86.08" height="12" x="279.92" y="0" class="todo"><title>170 KB · 23.52%</title></rect>
+<rect width="31.03" height="12" x="240" y="0" class="decompiled"><title>61 KB · 8.48%</title></rect>
+<rect width="9.06" height="12" x="271.03" y="0" class="nonmatching"><title>18 KB · 2.48%</title></rect>
+<rect width="85.91" height="12" x="280.09" y="0" class="todo"><title>170 KB · 23.47%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">74.0%</text>
+<text text-anchor="end" x="546" y="24.50">74.1%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">474 KB</tspan> · <tspan class="decompiled">61 KB</tspan> · <tspan class="nonmatching">18 KB</tspan> · <tspan class="todo">170 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1463,7 +1463,7 @@
 <rect width="12" height="12" x="660" y="405" class="todo"><title>0x00494e30 MMXDrawTriangleFog (1166 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="405" class="todo"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="405" class="todo"><title>0x004953b0 DrawSpansAlpha (212 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="405" class="todo"><title>0x00495490 Func495490 (346 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="405" class="decompiled"><title>0x00495490 Func495490 (346 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="405" class="todo"><title>0x004955f0 Func4955f0 (354 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="405" class="todo"><title>0x00495760 Func495760 (368 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="420" class="todo"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
@@ -2084,7 +2084,7 @@
 <rect width="10.54" height="10.78" x="669.39" y="159.52" class="named"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
 <rect width="10.51" height="10.78" x="682.93" y="159.52" class="named"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="10.48" height="10.78" x="696.44" y="159.52" class="named"><title>0x0044ee60 LaraSwimCollision (348 bytes)</title></rect>
-<rect width="10.42" height="10.78" x="709.92" y="159.52" class="todo"><title>0x00495490 Func495490 (346 bytes)</title></rect>
+<rect width="10.42" height="10.78" x="709.92" y="159.52" class="decompiled"><title>0x00495490 Func495490 (346 bytes)</title></rect>
 <rect width="10.39" height="10.78" x="723.34" y="159.52" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="10.27" height="10.78" x="736.73" y="159.52" class="named"><title>0x0042c510 TriggerRocketFlame (341 bytes)</title></rect>
 <rect width="10.57" height="10.47" x="463.19" y="173.30" class="todo"><title>0x00495b90 Func495b90 (341 bytes)</title></rect>
