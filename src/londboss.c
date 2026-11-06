@@ -452,3 +452,462 @@ sint32 KnockBackCollision(EXPLOSION_RING *erptr)
     }
     return 0;
 }
+
+#define GUARD 1
+#define AMBUSH 2
+#define PATROL1 4
+#define FOLLOW 16
+#define VIOLENT 1
+
+#define KNOCKBACK 2
+#define NORMAL_BOLT 0
+#define LARGE_BOLT 1
+#define SUMMON_BOLT 2
+#define RIGHT_PRONG 0
+#define ICONPOS 1
+#define LEFT_PRONG 2
+
+#define LONDONBOSS_STAND 1
+#define LONDONBOSS_WALK 2
+#define LONDONBOSS_RUN 3
+#define LONDONBOSS_SUMMON 4
+#define LONDONBOSS_BIGZAP 5
+#define LONDONBOSS_DEATH 6
+#define LONDONBOSS_LAUGH 7
+#define LONDONBOSS_LILZAP 8
+#define LONDONBOSS_VAULT2 9
+#define LONDONBOSS_VAULT3 10
+#define LONDONBOSS_VAULT4 11
+#define LONDONBOSS_GODOWN 12
+
+#define LONDONBOSS_VAULT2_ANIM 9
+#define LONDONBOSS_VAULT3_ANIM 18
+#define LONDONBOSS_VAULT4_ANIM 15
+#define LONDONBOSS_GODOWN_ANIM 21
+#define LONDONBOSS_STND2SUM_ANIM 1
+#define LONDONBOSS_SUMMON_ANIM 2
+#define LONDONBOSS_DIE_ANIM 17
+#define LONDONBOSS_VAULT_SHIFT 96
+#define LONDONBOSS_AWARE_DISTANCE SQUARE(WALL_L)
+#define LONDONBOSS_WALK_TURN (ONE_DEGREE * 4)
+#define LONDONBOSS_RUN_TURN (ONE_DEGREE * 7)
+#define LONDONBOSS_WALK_RANGE SQUARE(WALL_L)
+#define LONDONBOSS_LAUGH_CHANCE 0x100
+#define LONDONBOSS_FINAL_HEIGHT -11776
+#define BIGZAP_TIMER 600
+
+typedef struct {
+    sint16 zone_number;
+    sint16 enemy_zone;
+    sint32 distance;
+    sint32 ahead;
+    sint32 bite;
+    sint16 angle;
+    sint16 x_angle;
+    sint16 enemy_facing;
+} AI_INFO;
+
+extern BITE_INFO londonboss_points[3];
+extern EXPLOSION_RING KBRings[];
+
+int CreatureActive(sint16 item_number);
+void CreatureAIInfo(ITEM_INFO *item, AI_INFO *info);
+void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+void CreatureMood(ITEM_INFO *item, AI_INFO *info, int violent);
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn);
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt);
+void CreatureTilt(ITEM_INFO *item, sint16 angle);
+void CreatureJoint(ITEM_INFO *item, sint16 joint, sint16 required);
+int CreatureVault(sint16 item_number, sint16 angle, int vault, int shift);
+void GetAITarget(CREATURE_INFO *creature);
+void AlertAllGuards(sint16 item_number);
+sint16 AIGuard(CREATURE_INFO *creature);
+int TargetVisible(ITEM_INFO *item, AI_INFO *info);
+void BossDropIcon(sint16 item_number);
+void LondonBossDie(sint16 item_number);
+void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b);
+void StopSoundEffect(int sample_index);
+int SoundEffect(int nSFX, PHD_3DPOS *pPos, int flags);
+
+void LondonBossControl(sint16 item_number)
+{
+    ITEM_INFO *item, *enemy;
+    CREATURE_INFO *londonboss;
+    sint16 angle, head, tilt, lp, torso_y, torso_x;
+    sint32 lara_dx, lara_dz, lara_dy;
+    AI_INFO info, lara_info;
+    PHD_VECTOR pos1, trident[3];
+
+    if (!CreatureActive(item_number))
+        return;
+
+    item = &items[item_number];
+    londonboss = (CREATURE_INFO *)item->data;
+    head = angle = tilt = torso_x = torso_y = 0;
+
+    if (item->item_flags[2]) {
+        if (item->item_flags[2] == 1)
+            item->hit_points = 0;
+        if (item->item_flags[2] >= 12)
+            TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, (GetRandomControl() & 3) + 8, 0,
+                (GetRandomControl() & 7) + 8, (GetRandomControl() & 7) + 16);
+        else
+            TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos,
+                25 - (item->item_flags[2] << 1) + (GetRandomControl() & 1),
+                (16 - item->item_flags[2]) + (GetRandomControl() & 7), 32 - item->item_flags[2], 31);
+    }
+
+    for (lp = 0; lp < 3; lp++) {
+        trident[lp].x = londonboss_points[lp].x;
+        trident[lp].y = londonboss_points[lp].y;
+        trident[lp].z = londonboss_points[lp].z;
+        GetJointAbsPosition(item, &trident[lp], londonboss_points[lp].mesh_num);
+    }
+
+    if (item->hit_points <= 0) {
+        if (item->current_anim_state != LONDONBOSS_DEATH) {
+            item->anim_number = objects[item->object_number].anim_index + LONDONBOSS_DIE_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = LONDONBOSS_DEATH;
+        }
+        if (anims[item->anim_number].frame_end - item->frame_number == 1) {
+            item->frame_number = anims[item->anim_number].frame_end - 1;
+            item->mesh_bits = 0;
+            if (bossdata.explode_count == 0) {
+                bossdata.ring_count = 0;
+                for (lp = 0; lp < 6; lp++) {
+                    ExpRings[lp].on = 0;
+                    ExpRings[lp].life = 32;
+                    ExpRings[lp].radius = 512;
+                    ExpRings[lp].speed = 128 + (lp << 5);
+                    ExpRings[lp].xrot = ((GetRandomControl() & 511) - 256) << 4;
+                    ExpRings[lp].zrot = ((GetRandomControl() & 511) - 256) << 4;
+                }
+                if (bossdata.dropped_icon == 0) {
+                    BossDropIcon(item_number);
+                    bossdata.dropped_icon = 1;
+                }
+            }
+            if (bossdata.explode_count < 256)
+                bossdata.explode_count++;
+            if (bossdata.explode_count > 128 && bossdata.ring_count == 6 && ExpRings[5].life == 0) {
+                LondonBossDie(item_number);
+                bossdata.dead = 1;
+            } else
+                ExplodeLondonBoss(item);
+            return;
+        }
+    } else {
+        if (item->ai_bits)
+            GetAITarget(londonboss);
+        CreatureAIInfo(item, &info);
+
+        if (londonboss->enemy == lara_item) {
+            lara_info.angle = info.angle;
+            lara_info.distance = info.distance;
+            lara_info.x_angle = info.x_angle;
+        } else {
+            lara_dz = lara_item->pos.z_pos - item->pos.z_pos;
+            lara_dx = lara_item->pos.x_pos - item->pos.x_pos;
+            lara_dy = item->pos.y_pos - lara_item->pos.y_pos;
+            lara_info.angle = phd_atan(lara_dz, lara_dx) - item->pos.y_rot;
+            lara_info.distance = lara_dz * lara_dz + lara_dx * lara_dx;
+            if (abs(lara_dx) > abs(lara_dz))
+                lara_info.x_angle = phd_atan(abs(lara_dx) + (abs(lara_dz) >> 1), lara_dy);
+            else
+                lara_info.x_angle = phd_atan(abs(lara_dz) + (abs(lara_dx) >> 1), lara_dy);
+        }
+
+        GetCreatureMood(item, &info, VIOLENT);
+        CreatureMood(item, &info, VIOLENT);
+        angle = CreatureTurn(item, londonboss->maximum_turn);
+
+        enemy = londonboss->enemy;
+        londonboss->enemy = lara_item;
+        if (item->hit_status || lara_info.distance < LONDONBOSS_AWARE_DISTANCE || TargetVisible(item, &lara_info)
+            || lara_item->pos.y_pos < item->pos.y_pos)
+            AlertAllGuards(item_number);
+        londonboss->enemy = enemy;
+
+        if (lara_item->pos.y_pos < item->pos.y_pos)
+            londonboss->hurt_by_lara = 1;
+        if (item->timer > 0)
+            item->timer--;
+        item->hit_points = 300;
+
+        switch (item->current_anim_state) {
+        case LONDONBOSS_LAUGH:
+            if (abs(lara_info.angle) < LONDONBOSS_WALK_TURN)
+                item->pos.y_rot += lara_info.angle;
+            else if (lara_info.angle < 0)
+                item->pos.y_rot -= LONDONBOSS_WALK_TURN;
+            else
+                item->pos.y_rot += LONDONBOSS_WALK_TURN;
+            if (londonboss->alerted) {
+                item->goal_anim_state = LONDONBOSS_STAND;
+                break;
+            }
+
+        case LONDONBOSS_STAND:
+            londonboss->flags = 0;
+            londonboss->maximum_turn = 0;
+            if (londonboss->reached_goal) {
+                londonboss->reached_goal = 0;
+                item->ai_bits |= AMBUSH;
+                item->item_flags[3] += 0x2000;
+            }
+            head = lara_info.angle;
+            if (item->ai_bits & GUARD) {
+                if ((head < -0x3000 || head > 0x3000) && item->pos.y_pos > LONDONBOSS_FINAL_HEIGHT) {
+                    item->goal_anim_state = LONDONBOSS_WALK;
+                    londonboss->maximum_turn = LONDONBOSS_WALK_TURN;
+                }
+                break;
+                head = AIGuard(londonboss);
+                if (!(GetRandomControl() & 0xf))
+                    item->goal_anim_state = LONDONBOSS_LAUGH;
+                break;
+            } else if ((item->pos.y_pos <= LONDONBOSS_FINAL_HEIGHT || item->pos.y_pos < lara_item->pos.y_pos)
+                && !(GetRandomControl() & 0xf) && !bossdata.charged && item->timer)
+                item->goal_anim_state = LONDONBOSS_LAUGH;
+            else if (londonboss->reached_goal || lara_item->pos.y_pos > item->pos.y_pos
+                || item->pos.y_pos <= LONDONBOSS_FINAL_HEIGHT) {
+                if (bossdata.charged)
+                    item->goal_anim_state = LONDONBOSS_BIGZAP;
+                else if (!item->timer)
+                    item->goal_anim_state = LONDONBOSS_SUMMON;
+                else
+                    item->goal_anim_state = LONDONBOSS_LILZAP;
+            } else if (item->ai_bits & PATROL1)
+                item->goal_anim_state = LONDONBOSS_WALK;
+            else if (londonboss->mood == ESCAPE_MOOD || item->pos.y_pos > lara_item->pos.y_pos)
+                item->goal_anim_state = LONDONBOSS_RUN;
+            else if (londonboss->mood == BORED_MOOD
+                || ((item->ai_bits & FOLLOW) && (londonboss->reached_goal || lara_info.distance > SQUARE(WALL_L * 2)))) {
+                if (item->required_anim_state)
+                    item->goal_anim_state = item->required_anim_state;
+                else if (info.ahead)
+                    item->goal_anim_state = LONDONBOSS_STAND;
+                else
+                    item->goal_anim_state = LONDONBOSS_RUN;
+            } else if (info.bite && info.distance < LONDONBOSS_WALK_RANGE)
+                item->goal_anim_state = LONDONBOSS_WALK;
+            else
+                item->goal_anim_state = LONDONBOSS_RUN;
+            break;
+
+        case LONDONBOSS_WALK:
+            head = lara_info.angle;
+            londonboss->flags = 0;
+            londonboss->maximum_turn = LONDONBOSS_WALK_TURN;
+            if (item->ai_bits & GUARD || (londonboss->reached_goal && !(item->ai_bits & FOLLOW)))
+                item->goal_anim_state = LONDONBOSS_STAND;
+            else if (item->ai_bits & PATROL1) {
+                item->goal_anim_state = LONDONBOSS_WALK;
+                head = 0;
+            } else if (londonboss->mood == ESCAPE_MOOD)
+                item->goal_anim_state = LONDONBOSS_RUN;
+            else if (londonboss->mood == BORED_MOOD) {
+                if (GetRandomControl() < LONDONBOSS_LAUGH_CHANCE) {
+                    item->required_anim_state = LONDONBOSS_LAUGH;
+                    item->goal_anim_state = LONDONBOSS_STAND;
+                }
+            } else if (info.distance > LONDONBOSS_WALK_RANGE)
+                item->goal_anim_state = LONDONBOSS_RUN;
+            break;
+
+        case LONDONBOSS_RUN:
+            if (info.ahead)
+                head = info.angle;
+            londonboss->maximum_turn = LONDONBOSS_RUN_TURN;
+            tilt = angle / 2;
+            if (item->ai_bits & GUARD || (londonboss->reached_goal && !(item->ai_bits & FOLLOW)))
+                item->goal_anim_state = LONDONBOSS_STAND;
+            else if (londonboss->mood == ESCAPE_MOOD)
+                break;
+            else if ((item->ai_bits & FOLLOW) && (londonboss->reached_goal || lara_info.distance > SQUARE(WALL_L * 2)))
+                item->goal_anim_state = LONDONBOSS_STAND;
+            else if (londonboss->mood == BORED_MOOD)
+                item->goal_anim_state = LONDONBOSS_WALK;
+            else if (info.ahead && info.distance < LONDONBOSS_WALK_RANGE)
+                item->goal_anim_state = LONDONBOSS_WALK;
+            break;
+
+        case LONDONBOSS_SUMMON:
+            head = lara_info.angle;
+            if (londonboss->reached_goal) {
+                londonboss->reached_goal = 0;
+                item->ai_bits = AMBUSH;
+                item->item_flags[3] += 0x2000;
+            }
+            if (item->anim_number == objects[item->object_number].anim_index + LONDONBOSS_STND2SUM_ANIM) {
+                if (item->frame_number == anims[item->anim_number].frame_base) {
+                    bossdata.hp_counter = item->hit_points;
+                    item->timer = BIGZAP_TIMER;
+                } else if (item->hit_status && item->goal_anim_state != LONDONBOSS_STAND) {
+                    StopSoundEffect(352);
+                    SoundEffect(353, &item->pos, 0);
+                    SoundEffect(355, &item->pos, 0);
+                    item->goal_anim_state = LONDONBOSS_STAND;
+                }
+            } else if (item->anim_number == objects[item->object_number].anim_index + LONDONBOSS_SUMMON_ANIM
+                && item->frame_number == anims[item->anim_number].frame_end)
+                bossdata.charged = 1;
+            if (abs(lara_info.angle) < LONDONBOSS_WALK_TURN)
+                item->pos.y_rot += lara_info.angle;
+            else if (lara_info.angle < 0)
+                item->pos.y_rot -= LONDONBOSS_WALK_TURN;
+            else
+                item->pos.y_rot += LONDONBOSS_WALK_TURN;
+            if ((wibble & 7) == 0) {
+                pos1.x = item->pos.x_pos;
+                pos1.y = (GetRandomControl() & 511) - 256;
+                pos1.z = item->pos.z_pos;
+                TriggerLaserBolt(&pos1, item, SUMMON_BOLT, 0);
+                for (lp = 0; lp < 6; lp++) {
+                    sint32 rnd;
+
+                    if (!ExpRings[lp].on) {
+                        ExpRings[lp].on = 1;
+                        ExpRings[lp].life = 64;
+                        ExpRings[lp].speed = (GetRandomControl() & 15) + 16;
+                        ExpRings[lp].x = item->pos.x_pos;
+                        ExpRings[lp].y = item->pos.y_pos + 128 - (rnd = (GetRandomControl() & 1023));
+                        ExpRings[lp].z = item->pos.z_pos;
+                        ExpRings[lp].xrot = ((GetRandomControl() & 511) - 256) << 4;
+                        ExpRings[lp].zrot = ((GetRandomControl() & 511) - 256) << 4;
+                        ExpRings[lp].radius = (1024 + (1024 - (abs(rnd - 512))));
+                        break;
+                    }
+                }
+            }
+            londonboss->maximum_turn = 0;
+            break;
+
+        case LONDONBOSS_BIGZAP:
+            if (londonboss->reached_goal) {
+                londonboss->reached_goal = 0;
+                item->ai_bits = AMBUSH;
+                item->item_flags[3] += 0x2000;
+            }
+            bossdata.charged = 0;
+            if (abs(lara_info.angle) < LONDONBOSS_WALK_TURN)
+                item->pos.y_rot += lara_info.angle;
+            else if (lara_info.angle < 0)
+                item->pos.y_rot -= LONDONBOSS_WALK_TURN;
+            else
+                item->pos.y_rot += LONDONBOSS_WALK_TURN;
+            torso_y = lara_info.angle;
+            torso_x = lara_info.x_angle;
+            londonboss->maximum_turn = 0;
+            if (item->frame_number == anims[item->anim_number].frame_base + 36) {
+                TriggerLaserBolt(&trident[RIGHT_PRONG], item, NORMAL_BOLT, item->pos.y_rot + 0x200);
+                TriggerLaserBolt(&trident[ICONPOS], item, LARGE_BOLT, item->pos.y_rot);
+                TriggerLaserBolt(&trident[LEFT_PRONG], item, NORMAL_BOLT, item->pos.y_rot - 0x200);
+            }
+            break;
+
+        case LONDONBOSS_LILZAP:
+            if (londonboss->reached_goal) {
+                londonboss->reached_goal = 0;
+                item->ai_bits = AMBUSH;
+                item->item_flags[3] += 0x2000;
+            }
+            if (abs(lara_info.angle) < LONDONBOSS_WALK_TURN)
+                item->pos.y_rot += lara_info.angle;
+            else if (lara_info.angle < 0)
+                item->pos.y_rot -= LONDONBOSS_WALK_TURN;
+            else
+                item->pos.y_rot += LONDONBOSS_WALK_TURN;
+            torso_y = lara_info.angle;
+            torso_x = lara_info.x_angle;
+            londonboss->maximum_turn = 0;
+            if (item->frame_number == anims[item->anim_number].frame_base + 14) {
+                TriggerLaserBolt(&trident[RIGHT_PRONG], item, NORMAL_BOLT, item->pos.y_rot + 0x200);
+                TriggerLaserBolt(&trident[LEFT_PRONG], item, NORMAL_BOLT, item->pos.y_rot - 0x200);
+            }
+            break;
+        }
+    }
+
+    CreatureTilt(item, tilt);
+    CreatureJoint(item, 0, torso_y);
+    CreatureJoint(item, 1, torso_x);
+    CreatureJoint(item, 2, head);
+
+    if ((item->current_anim_state < LONDONBOSS_VAULT2 || item->current_anim_state > LONDONBOSS_GODOWN)
+        && item->current_anim_state != LONDONBOSS_DEATH) {
+        switch (CreatureVault(item_number, angle, 2, LONDONBOSS_VAULT_SHIFT)) {
+        case 2:
+            londonboss->maximum_turn = 0;
+            item->anim_number = objects[57].anim_index + LONDONBOSS_VAULT2_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = LONDONBOSS_VAULT2;
+            break;
+        case 3:
+            londonboss->maximum_turn = 0;
+            item->anim_number = objects[57].anim_index + LONDONBOSS_VAULT3_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = LONDONBOSS_VAULT3;
+            break;
+        case 4:
+            londonboss->maximum_turn = 0;
+            item->anim_number = objects[57].anim_index + LONDONBOSS_VAULT4_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = LONDONBOSS_VAULT4;
+            break;
+        case -4:
+            londonboss->maximum_turn = 0;
+            item->anim_number = objects[57].anim_index + LONDONBOSS_GODOWN_ANIM;
+            item->frame_number = anims[item->anim_number].frame_base;
+            item->current_anim_state = LONDONBOSS_GODOWN;
+            break;
+        }
+    } else {
+        londonboss->maximum_turn = 0;
+        CreatureAnimation(item_number, angle, 0);
+    }
+
+    {
+        sint32 g, b;
+
+        g = abs(rcossin_tbl[item->item_flags[1] << 7] >> 7);
+        g += (GetRandomControl() & 7);
+        if (g > 31)
+            g = 31;
+        b = g >> 1;
+        TriggerDynamic(trident[ICONPOS].x, trident[ICONPOS].y, trident[ICONPOS].z, 10, 0, g >> 1, b >> 1);
+        item->item_flags[1]++;
+        item->item_flags[1] &= 63;
+    }
+
+    if (item->hit_points > 0 && item->item_flags[0] != KNOCKBACK && lara_item->hit_points > 0) {
+        sint32 dx, dy, dz;
+
+        dx = lara_item->pos.x_pos - item->pos.x_pos;
+        dy = lara_item->pos.y_pos - 256 - item->pos.y_pos;
+        dz = lara_item->pos.z_pos - item->pos.z_pos;
+        if (dx > 8000 || dx < -8000 || dy > 8000 || dy < -8000 || dz > 8000 || dz < -8000)
+            dx = 0xfff;
+        else {
+            dx = SQUARE(dx);
+            dy = SQUARE(dy);
+            dz = SQUARE(dz);
+            dx = phd_sqrt(dx + dy + dz);
+        }
+        if (dx < 0xb00) {
+            item->item_flags[0] = KNOCKBACK;
+            for (lp = 0; lp < 3; lp++) {
+                KBRings[lp].on = 1;
+                KBRings[lp].life = 32;
+                KBRings[lp].speed = 64 + ((lp == 1) << 4);
+                KBRings[lp].x = item->pos.x_pos;
+                KBRings[lp].y = item->pos.y_pos - 384 - 128 + (lp << 7);
+                KBRings[lp].z = item->pos.z_pos;
+                KBRings[lp].xrot = KBRings[lp].zrot = 0;
+                KBRings[lp].radius = 512 + ((lp == 1) << 8);
+            }
+        }
+    } else if (KBRings[0].on == 0 && KBRings[1].on == 0 && KBRings[2].on == 0)
+        item->item_flags[0] = 0;
+}

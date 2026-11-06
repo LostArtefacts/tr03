@@ -776,7 +776,7 @@ address,size,name,symbol
 0x0044fbc0,2080,LizManControl,_LizManControl
 0x004503e0,576,TriggerLizmanGasThrower,_TriggerLizmanGasThrower
 0x00450620,469,TriggerLizmanGas,_TriggerLizmanGas
-0x00450800,3575,LondonBossControl,_LondonBossControl
+0x00450800,3644,LondonBossControl,_LondonBossControl
 0x00451640,96,S_DrawLondonBoss,_S_DrawLondonBoss
 0x004516a0,137,InitialiseLondonBoss,_InitialiseLondonBoss
 0x00451730,591,ExplodeLondonBoss,_ExplodeLondonBoss
@@ -983,7 +983,7 @@ address,size,name,symbol
 0x0046b750,784,TigerControl,_TigerControl
 0x0046ba60,1564,TonyBossControl,_TonyBossControl
 0x0046c080,65,S_DrawTonyBoss,_S_DrawTonyBoss
-0x0046c0d0,66,TonyBossDie,_TonyBossDie
+0x0046c0d0,66,TonyBossDie,_TonyBossDie _LondonBossDie
 0x0046c120,157,InitialiseTonyBoss,_InitialiseTonyBoss
 0x0046c1c0,663,ExplodeTonyBoss,_ExplodeTonyBoss
 0x0046c460,468,TriggerTonyFlame,_TriggerTonyFlame
@@ -1989,6 +1989,7 @@ address,size,name,symbol
 0x004c7828,20,dradii_londboss,_dradii_londboss
 0x004c7840,20,dheights1_londboss,_dheights1_londboss
 0x004c7858,20,dheights2_londboss,_dheights2_londboss
+0x004c7870,48,londonboss_points,_londonboss_points
 0x004c78a0,16,londsec_gun,_londsec_gun
 0x004c78b0,16,monkey_hit,_monkey_hit
 0x004c78c0,24,MovingBlockBounds,_MovingBlockBounds
