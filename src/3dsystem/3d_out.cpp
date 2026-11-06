@@ -35,4 +35,19 @@ void draw_poly_flat(sint16 *iptr)
     }
 }
 
+void draw_poly_trans(sint16 *iptr)
+{
+    int colour;
+
+    if (gen_x(iptr + 1)) {
+        colour = *iptr;
+        __asm {
+            mov eax, xgen_ymin
+            mov edx, xgen_ymax
+            mov ebx, colour
+            call transA
+        }
+    }
+}
+
 }

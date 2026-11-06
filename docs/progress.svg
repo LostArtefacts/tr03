@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="288.09" height="12" x="0" y="0" class="named"><title>1245 · 84.24%</title></rect>
-<rect width="0.93" height="12" x="288.09" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
-<rect width="4.17" height="12" x="289.01" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
-<rect width="48.82" height="12" x="293.18" y="0" class="todo"><title>211 · 14.28%</title></rect>
+<rect width="288.32" height="12" x="0" y="0" class="named"><title>1246 · 84.30%</title></rect>
+<rect width="0.93" height="12" x="288.32" y="0" class="decompiled"><title>4 · 0.27%</title></rect>
+<rect width="4.17" height="12" x="289.24" y="0" class="nonmatching"><title>18 · 1.22%</title></rect>
+<rect width="48.59" height="12" x="293.41" y="0" class="todo"><title>210 · 14.21%</title></rect>
 </g>
-<text text-anchor="end" x="522" y="7.50">84.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1245</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">211</tspan></text>
+<text text-anchor="end" x="522" y="7.50">84.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="7"><tspan class="named">1246</tspan> · <tspan class="decompiled">4</tspan> · <tspan class="nonmatching">18</tspan> · <tspan class="todo">210</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.71" height="12" x="0" y="0" class="named"><title>373 KB · 55.76%</title></rect>
-<rect width="0.20" height="12" x="190.71" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
-<rect width="6.04" height="12" x="190.91" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
-<rect width="145.05" height="12" x="196.95" y="0" class="todo"><title>284 KB · 42.41%</title></rect>
+<rect width="190.74" height="12" x="0" y="0" class="named"><title>373 KB · 55.77%</title></rect>
+<rect width="0.20" height="12" x="190.74" y="0" class="decompiled"><title>395 bytes · 0.06%</title></rect>
+<rect width="6.04" height="12" x="190.94" y="0" class="nonmatching"><title>12 KB · 1.77%</title></rect>
+<rect width="145.02" height="12" x="196.98" y="0" class="todo"><title>284 KB · 42.40%</title></rect>
 </g>
 <text text-anchor="end" x="522" y="24.50">55.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="537" y="24"><tspan class="named">373 KB</tspan> · <tspan class="decompiled">395 bytes</tspan> · <tspan class="nonmatching">12 KB</tspan> · <tspan class="todo">284 KB</tspan></text>
@@ -91,7 +91,7 @@
 <rect width="12" height="12" x="330" y="0" class="named"><title>0x004021a0 phd_InitWindow (434 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="0" class="todo"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="0" class="named"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="0" class="todo"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="0" class="named"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="0" class="todo"><title>0x00402580 draw_poly_gouraud (53 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="0" class="todo"><title>0x004025c0 draw_poly_gtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="0" class="todo"><title>0x00402600 draw_poly_wgtmap (60 bytes)</title></rect>
@@ -1535,7 +1535,7 @@
 <rect width="12" height="12" x="240" y="435" class="todo"><title>0x004b4280 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="435" class="todo"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="435" class="todo"><title>0x004b42d4 flatA (97 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="435" class="todo"><title>0x004b4335 Func4b4335 (314 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="435" class="todo"><title>0x004b4335 transA (314 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="435" class="todo"><title>0x004b446f Func4b446f (352 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="435" class="todo"><title>0x004b45cf Func4b45cf (765 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="435" class="todo"><title>0x004b48cc Func4b48cc (833 bytes)</title></rect>
@@ -2081,7 +2081,7 @@
 <rect width="10.25" height="10.85" x="460.58" y="285.65" class="named"><title>0x0048c410 TitleSequence (317 bytes)</title></rect>
 <rect width="10.25" height="10.81" x="460.58" y="299.50" class="named"><title>0x00417300 InitialiseCamera (316 bytes)</title></rect>
 <rect width="10.25" height="10.81" x="460.58" y="313.31" class="named"><title>0x0044d060 LaraInitialiseMeshes (316 bytes)</title></rect>
-<rect width="10.25" height="10.74" x="460.58" y="327.12" class="todo"><title>0x004b4335 Func4b4335 (314 bytes)</title></rect>
+<rect width="10.25" height="10.74" x="460.58" y="327.12" class="todo"><title>0x004b4335 transA (314 bytes)</title></rect>
 <rect width="10.25" height="10.71" x="460.58" y="340.87" class="named"><title>0x0041f2f0 AlignLaraPosition (313 bytes)</title></rect>
 <rect width="10.25" height="10.71" x="460.58" y="354.58" class="named"><title>0x0043d780 TestLaraSlide (313 bytes)</title></rect>
 <rect width="10.25" height="10.68" x="460.58" y="368.29" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
@@ -2729,7 +2729,7 @@
 <rect width="4.31" height="4.40" x="639.82" y="354.75" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
 <rect width="4.31" height="4.40" x="639.82" y="362.15" class="decompiled"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
 <rect width="4.31" height="4.31" x="639.82" y="369.54" class="named"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
-<rect width="4.31" height="4.31" x="639.82" y="376.86" class="todo"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
+<rect width="4.31" height="4.31" x="639.82" y="376.86" class="named"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
 <rect width="4.31" height="4.31" x="639.82" y="384.17" class="todo"><title>0x00402580 draw_poly_gouraud (53 bytes)</title></rect>
 <rect width="4.31" height="4.31" x="639.82" y="391.49" class="named"><title>0x004164d0 CreatureTilt (53 bytes)</title></rect>
 <rect width="4.31" height="4.31" x="639.82" y="398.80" class="named"><title>0x004419b0 lara_as_swandive (53 bytes)</title></rect>
