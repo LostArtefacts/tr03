@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="325.44" height="12" x="0" y="0" class="named"><title>1332 · 88.92%</title></rect>
 <rect width="7.33" height="12" x="325.44" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="5.86" height="12" x="332.77" y="0" class="nonmatching"><title>24 · 1.60%</title></rect>
-<rect width="27.36" height="12" x="338.64" y="0" class="todo"><title>112 · 7.48%</title></rect>
+<rect width="6.11" height="12" x="332.77" y="0" class="nonmatching"><title>25 · 1.67%</title></rect>
+<rect width="27.12" height="12" x="338.88" y="0" class="todo"><title>111 · 7.41%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">90.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1332</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">24</tspan> · <tspan class="todo">112</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1332</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">25</tspan> · <tspan class="todo">111</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="250.94" height="12" x="0" y="0" class="named"><title>497 KB · 68.56%</title></rect>
 <rect width="33.43" height="12" x="250.94" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="9.49" height="12" x="284.37" y="0" class="nonmatching"><title>19 KB · 2.59%</title></rect>
-<rect width="72.14" height="12" x="293.86" y="0" class="todo"><title>143 KB · 19.71%</title></rect>
+<rect width="10.32" height="12" x="284.37" y="0" class="nonmatching"><title>20 KB · 2.82%</title></rect>
+<rect width="71.31" height="12" x="294.69" y="0" class="todo"><title>141 KB · 19.48%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">77.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">497 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">19 KB</tspan> · <tspan class="todo">143 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">497 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">20 KB</tspan> · <tspan class="todo">141 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1162,7 +1162,7 @@
 <rect width="12" height="12" x="645" y="315" class="todo"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="315" class="todo"><title>0x00476a30 S_DrawDarts (609 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="315" class="todo"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="315" class="todo"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="315" class="nonmatching"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="315" class="todo"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="315" class="todo"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="315" class="todo"><title>0x00478bf0 S_DrawLaserBolts (2332 bytes)</title></rect>
@@ -1675,7 +1675,7 @@
 <rect width="23.86" height="22.54" x="255.41" y="298.41" class="named"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="23.86" height="22.54" x="255.41" y="323.95" class="named"><title>0x004a4930 ScanLinesTDecal (1660 bytes)</title></rect>
 <rect width="23.86" height="22.48" x="255.41" y="349.48" class="todo"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
-<rect width="23.86" height="22.24" x="255.41" y="374.97" class="todo"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
+<rect width="23.86" height="22.24" x="255.41" y="374.97" class="nonmatching"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
 <rect width="23.86" height="22.05" x="255.41" y="400.21" class="named"><title>0x00469320 UserInput (1624 bytes)</title></rect>
 <rect width="23.86" height="21.75" x="255.41" y="425.25" class="todo"><title>0x00409560 HWI_InsertObjectG3_Sorted (1602 bytes)</title></rect>
 <rect width="22.42" height="23.13" x="282.27" y="0" class="named"><title>0x00470530 TribeAxeControl (1600 bytes)</title></rect>
