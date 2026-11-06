@@ -1,10 +1,15 @@
 #include "standard.h"
 #include "specific.h"
+#include "winmain.h"
 
 extern "C" sint32 rand_1;
 extern "C" sint32 rand_2;
 
 extern "C" {
+
+#include "../invdata.h"
+#include "../gameflow.h"
+#include "../savegame.h"
 
 extern int overlay_flag;
 extern int noinput_count;
@@ -19,6 +24,27 @@ void S_FadeToBlack(void);
 void S_SoundStopAllSamples(void);
 void S_CDStop(void);
 void S_CDVolume(int volume);
+void AddRequesterItem(REQUEST_INFO *req, char *text1, uint32 flags1, char *text2, uint32 flags2);
+void SetPCRequesterSize(REQUEST_INFO *req, int maxlines, int ypos);
+extern char **GF_Level_Names;
+extern uint32 RequesterFlags1[];
+extern uint32 RequesterFlags2[];
+extern uint32 SaveGameReqFlags1[];
+extern uint32 SaveGameReqFlags2[];
+void ChangeRequesterItem(REQUEST_INFO *req, int item, char *text1, uint32 flags1, char *text2, uint32 flags2);
+extern REQUEST_INFO Load_Game_Requester;
+extern int save_counter;
+extern sint16 saved_levels[];
+extern int SavedGames;
+void Init_Requester(REQUEST_INFO *req);
+extern char **GF_PCStrings;
+void S_UnloadLevelFile(void);
+sint32 InitialiseLevel(sint32 level, sint32 type);
+sint32 S_StartSyncedAudio(sint32 track);
+bool LoadPicture(const char *name, LPDIRECTDRAWSURFACE3 surf, int a);
+void FadePictureUp(int steps);
+void FadePictureDown(int steps);
+void S_Wait(int nFrames, int skip);
 
 int GameLoop(int demo_mode)
 {
@@ -77,6 +103,15 @@ sint32 GetRandomDraw(void)
 void SeedRandomDraw(sint32 seed)
 {
     rand_2 = seed;
+}
+
+extern "C" void GetValidLevelsList(REQUEST_INFO *req)
+{
+    int i;
+
+    RemoveAllReqItems(req);
+    for (i = 1; i < gameflow.num_levels; i++)
+        AddRequesterItem(req, GF_Level_Names[i], 0, NULL, 0);
 }
 
 extern "C" int S_LoadGame(LPVOID data, int size, int slot)
