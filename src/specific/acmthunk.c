@@ -54,3 +54,14 @@ BOOL WINAPI acmThunkInitialize(void)
 
     return TRUE;
 }
+
+BOOL WINAPI acmThunkTerminate(void)
+{
+    if (gpafnAcmFunctions != NULL) {
+        LocalFree((HLOCAL)gpafnAcmFunctions);
+        gpafnAcmFunctions = NULL;
+        FreeLibrary(ghinstAcm);
+        ghinstAcm = (HMODULE)-1;
+    }
+    return TRUE;
+}
