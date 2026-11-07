@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="342.70" height="12" x="0" y="0" class="named"><title>1380 · 92.12%</title></rect>
 <rect width="7.45" height="12" x="342.70" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="11.92" height="12" x="350.15" y="0" class="nonmatching"><title>48 · 3.20%</title></rect>
-<rect width="9.93" height="12" x="362.07" y="0" class="todo"><title>40 · 2.67%</title></rect>
+<rect width="12.17" height="12" x="350.15" y="0" class="nonmatching"><title>49 · 3.27%</title></rect>
+<rect width="9.68" height="12" x="362.32" y="0" class="todo"><title>39 · 2.60%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">94.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1380</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">48</tspan> · <tspan class="todo">40</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1380</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">49</tspan> · <tspan class="todo">39</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="280.57" height="12" x="0" y="0" class="named"><title>547 KB · 75.42%</title></rect>
 <rect width="33.96" height="12" x="280.57" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="25" height="12" x="314.54" y="0" class="nonmatching"><title>49 KB · 6.72%</title></rect>
-<rect width="32.46" height="12" x="339.54" y="0" class="todo"><title>63 KB · 8.73%</title></rect>
+<rect width="26.24" height="12" x="314.54" y="0" class="nonmatching"><title>51 KB · 7.05%</title></rect>
+<rect width="31.22" height="12" x="340.78" y="0" class="todo"><title>61 KB · 8.39%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">84.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">547 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">49 KB</tspan> · <tspan class="todo">63 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">547 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">51 KB</tspan> · <tspan class="todo">61 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1173,7 +1173,7 @@
 <rect width="12" height="12" x="60" y="330" class="todo"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="330" class="nonmatching"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="330" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="330" class="todo"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="330" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="todo"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="todo"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
@@ -1623,7 +1623,7 @@
 <rect width="26.79" height="29.72" x="167.87" y="132.18" class="named"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
 <rect width="26.79" height="29.66" x="167.87" y="164.91" class="named"><title>0x004378b0 Inv_AddItem (2454 bytes)</title></rect>
 <rect width="26.79" height="29.54" x="167.87" y="197.57" class="named"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
-<rect width="26.79" height="29.13" x="167.87" y="230.12" class="todo"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
+<rect width="26.79" height="29.13" x="167.87" y="230.12" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
 <rect width="26.79" height="28.87" x="167.87" y="262.25" class="named"><title>0x004542a0 DoUserInput (2388 bytes)</title></rect>
 <rect width="26.79" height="28.68" x="167.87" y="294.12" class="named"><title>0x004303e0 ControlFish (2372 bytes)</title></rect>
 <rect width="26.79" height="28.24" x="167.87" y="325.80" class="nonmatching"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
