@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="10.93" height="12" x="349.40" y="0" class="nonmatching"><title>44 · 2.94%</title></rect>
-<rect width="11.67" height="12" x="360.33" y="0" class="todo"><title>47 · 3.14%</title></rect>
+<rect width="11.17" height="12" x="349.40" y="0" class="nonmatching"><title>45 · 3%</title></rect>
+<rect width="11.42" height="12" x="360.58" y="0" class="todo"><title>46 · 3.07%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">44</tspan> · <tspan class="todo">47</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">45</tspan> · <tspan class="todo">46</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="21.69" height="12" x="312.18" y="0" class="nonmatching"><title>42 KB · 5.83%</title></rect>
-<rect width="38.13" height="12" x="333.87" y="0" class="todo"><title>74 KB · 10.25%</title></rect>
+<rect width="22.54" height="12" x="312.18" y="0" class="nonmatching"><title>44 KB · 6.06%</title></rect>
+<rect width="37.28" height="12" x="334.72" y="0" class="todo"><title>73 KB · 10.02%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">42 KB</tspan> · <tspan class="todo">74 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">44 KB</tspan> · <tspan class="todo">73 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1300,7 +1300,7 @@
 <rect width="12" height="12" x="465" y="360" class="named"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="360" class="named"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="360" class="named"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="360" class="todo"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="360" class="nonmatching"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="360" class="todo"><title>0x00488260 do_detail_option (3247 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="360" class="named"><title>0x00488f30 do_sound_option (1181 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="360" class="named"><title>0x004893d0 do_compass_option (192 bytes)</title></rect>
@@ -1674,7 +1674,7 @@
 <rect width="23.89" height="22.91" x="255.35" y="272.08" class="todo"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
 <rect width="23.89" height="22.50" x="255.35" y="297.99" class="named"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="23.89" height="22.50" x="255.35" y="323.50" class="named"><title>0x004a4930 ScanLinesTDecal (1660 bytes)</title></rect>
-<rect width="23.89" height="22.45" x="255.35" y="349" class="todo"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
+<rect width="23.89" height="22.45" x="255.35" y="349" class="nonmatching"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
 <rect width="23.89" height="22.34" x="255.35" y="374.45" class="named"><title>0x00496c20 DXSetupDlgProc (1648 bytes)</title></rect>
 <rect width="23.89" height="22.20" x="255.35" y="399.78" class="nonmatching"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
 <rect width="23.89" height="22.01" x="255.35" y="424.99" class="named"><title>0x00469320 UserInput (1624 bytes)</title></rect>

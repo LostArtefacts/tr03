@@ -252,6 +252,216 @@ void do_levelselect_option(INVENTORY_ITEM *inv_item)
         inputDB &= ~(IN_DESELECT | IN_SELECT);
 }
 
+void do_passport_option(INVENTORY_ITEM *inv_item)
+{
+    sint16 page;
+    sint32 select;
+
+    T_RemovePrint(Inv_itemText[0]);
+    Inv_itemText[0] = NULL;
+    page = (inv_item->goal_frame - inv_item->open_frame) / 5;
+    if ((inv_item->goal_frame - inv_item->open_frame) % 5)
+        page = -1;
+    if (Inventory_Mode == 4 || Inventory_Mode == 3 || gameflow.loadsave_disabled)
+        inputDB &= ~(IN_LEFT | IN_RIGHT);
+    switch (page) {
+    case 0:
+        if ((CurrentLevel == 0 && Inventory_Mode != 1) || gameflow.loadsave_disabled) {
+            inputDB = IN_RIGHT;
+            break;
+        }
+        if (passport_mode == 1) {
+            SetPCRequesterSize(&Load_Game_Requester, 10, -32);
+            select = Display_Requester(&Load_Game_Requester, 1, 1);
+            if (select) {
+                if (select > 0)
+                    Inventory_ExtraData[1] = select - 1;
+                passport_mode = 0;
+            } else if (inputDB & IN_RIGHT) {
+                Remove_Requester(&Load_Game_Requester);
+                passport_mode = 0;
+            } else {
+                input = inputDB = 0;
+            }
+        } else if (passport_mode == 0) {
+            if (!SavedGames || Inventory_Mode == 3) {
+                inputDB = IN_RIGHT;
+            } else {
+                if (!passport_text1) {
+                    passport_text1 = T_Print(0, -16, 5, GF_GameStrings[4]);
+                    T_BottomAlign(passport_text1, 1);
+                    T_CentreH(passport_text1, 1);
+                }
+                T_RemovePrint(Inv_itemText[2]);
+                Inv_itemText[2] = NULL;
+                T_RemovePrint(Inv_tagText);
+                Inv_tagText = NULL;
+                T_RemovePrint(Inv_ringText);
+                Inv_ringText = NULL;
+                T_RemovePrint(Inv_itemText[0]);
+                Inv_itemText[0] = NULL;
+                GetSavedGamesList(&Load_Game_Requester);
+                SetRequesterHeading(&Load_Game_Requester, GF_GameStrings[4], 0, NULL, 0);
+                passport_mode = 1;
+                input = 0;
+                inputDB = 0;
+            }
+        }
+        break;
+    case 1:
+        if ((CurrentLevel == 0 && Inventory_Mode != 1) || gameflow.loadsave_disabled) {
+            inputDB = IN_RIGHT;
+            break;
+        }
+        if (passport_mode == 1 || passport_mode == 2) {
+            if (passport_mode == 1) {
+                SetPCRequesterSize(&Load_Game_Requester, 10, -32);
+                select = Display_Requester(&Load_Game_Requester, 1, 1);
+            } else {
+                SetPCRequesterSize(&Level_Select_Requester, 10, -32);
+                select = Display_Requester(&Level_Select_Requester, 1, 1);
+            }
+            if (select) {
+                if (select > 0)
+                    Inventory_ExtraData[1] = select - 1;
+                passport_mode = 0;
+            } else if (inputDB & (IN_LEFT | IN_RIGHT)) {
+                if (passport_mode == 1)
+                    Remove_Requester(&Load_Game_Requester);
+                else
+                    Remove_Requester(&Level_Select_Requester);
+                passport_mode = 0;
+            } else {
+                input = inputDB = 0;
+            }
+        } else if (passport_mode == 0) {
+            if (Inventory_Mode == 5) {
+                if (inv_item->anim_direction == -1)
+                    inputDB = IN_LEFT;
+                else
+                    inputDB = IN_RIGHT;
+            } else {
+                if (!passport_text1) {
+                    if (Inventory_Mode == 1 || CurrentLevel == 0)
+                        passport_text1 = T_Print(0, -16, 5, GF_GameStrings[6]);
+                    else
+                        passport_text1 = T_Print(0, -16, 5, GF_GameStrings[5]);
+                    T_BottomAlign(passport_text1, 1);
+                    T_CentreH(passport_text1, 1);
+                }
+                if (Inventory_Mode != 1 && CurrentLevel != 0) {
+                    T_RemovePrint(Inv_itemText[2]);
+                    Inv_itemText[2] = NULL;
+                    T_RemovePrint(Inv_tagText);
+                    Inv_tagText = NULL;
+                    T_RemovePrint(Inv_ringText);
+                    Inv_ringText = NULL;
+                    T_RemovePrint(Inv_itemText[0]);
+                    Inv_itemText[0] = NULL;
+                    GetSavedGamesList(&Load_Game_Requester);
+                    SetRequesterHeading(&Load_Game_Requester, GF_GameStrings[5], 0, NULL, 0);
+                    passport_mode = 1;
+                    input = 0;
+                    inputDB = 0;
+                } else if (gameflow.play_any_level) {
+                    T_RemovePrint(Inv_itemText[2]);
+                    Inv_itemText[2] = NULL;
+                    T_RemovePrint(Inv_tagText);
+                    Inv_tagText = NULL;
+                    T_RemovePrint(Inv_itemText[0]);
+                    Inv_itemText[0] = NULL;
+                    Init_Requester(&Level_Select_Requester);
+                    GetValidLevelsList(&Level_Select_Requester);
+                    SetRequesterHeading(&Level_Select_Requester, GF_GameStrings[11], 0, NULL, 0);
+                    passport_mode = 2;
+                    input = 0;
+                    inputDB = 0;
+                } else if (inputDB & IN_SELECT) {
+                    Inventory_ExtraData[1] = 1;
+                }
+            }
+        }
+        break;
+    case 2:
+        if (!passport_text1) {
+            if (Inventory_Mode == 1)
+                passport_text1 = T_Print(0, -16, 5, GF_GameStrings[10]);
+            else if (!gameflow.demoversion)
+                passport_text1 = T_Print(0, -16, 5, GF_GameStrings[8]);
+            else
+                passport_text1 = T_Print(0, -16, 5, GF_GameStrings[9]);
+            T_BottomAlign(passport_text1, 1);
+            T_CentreH(passport_text1, 1);
+        }
+        break;
+    }
+    if (inputDB & IN_LEFT) {
+        if (Inventory_Mode != 5 || SavedGames) {
+            inv_item->anim_direction = -1;
+            inv_item->goal_frame -= 5;
+            if (!SavedGames) {
+                if (inv_item->goal_frame < inv_item->open_frame + 5) {
+                    inv_item->goal_frame = inv_item->open_frame + 5;
+                } else {
+                    T_RemovePrint(passport_text1);
+                    passport_text1 = NULL;
+                }
+            } else {
+                if (inv_item->goal_frame < inv_item->open_frame) {
+                    inv_item->goal_frame = inv_item->open_frame;
+                } else {
+                    SoundEffect(115, NULL, 2);
+                    T_RemovePrint(passport_text1);
+                    passport_text1 = NULL;
+                }
+            }
+            input = 0;
+            inputDB = 0;
+        }
+    }
+    if (inputDB & IN_RIGHT) {
+        inv_item->anim_direction = 1;
+        inv_item->goal_frame += 5;
+        if (inv_item->goal_frame > inv_item->frames_total - 6) {
+            inv_item->goal_frame = inv_item->frames_total - 6;
+        } else {
+            SoundEffect(115, NULL, 2);
+            T_RemovePrint(passport_text1);
+            passport_text1 = NULL;
+        }
+        input = 0;
+        inputDB = 0;
+    }
+    if (inputDB & IN_DESELECT) {
+        if (Inventory_Mode == 5) {
+            input = 0;
+            inputDB = 0;
+        } else {
+            if (page == 2) {
+                inv_item->anim_direction = 1;
+                inv_item->goal_frame = inv_item->frames_total - 1;
+            } else {
+                inv_item->goal_frame = 0;
+                inv_item->anim_direction = -1;
+            }
+            T_RemovePrint(passport_text1);
+            passport_text1 = NULL;
+        }
+    }
+    if (inputDB & IN_SELECT) {
+        Inventory_ExtraData[0] = page;
+        if (page == 2) {
+            inv_item->anim_direction = 1;
+            inv_item->goal_frame = inv_item->frames_total - 1;
+        } else {
+            inv_item->goal_frame = 0;
+            inv_item->anim_direction = -1;
+        }
+        T_RemovePrint(passport_text1);
+        passport_text1 = NULL;
+    }
+}
+
 void do_sound_option(INVENTORY_ITEM *inv_item)
 {
     int i;
