@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="9.19" height="12" x="349.40" y="0" class="nonmatching"><title>37 · 2.47%</title></rect>
-<rect width="13.41" height="12" x="358.59" y="0" class="todo"><title>54 · 3.60%</title></rect>
+<rect width="9.44" height="12" x="349.40" y="0" class="nonmatching"><title>38 · 2.54%</title></rect>
+<rect width="13.16" height="12" x="358.84" y="0" class="todo"><title>53 · 3.54%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">37</tspan> · <tspan class="todo">54</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">38</tspan> · <tspan class="todo">53</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="19.12" height="12" x="312.18" y="0" class="nonmatching"><title>37 KB · 5.14%</title></rect>
-<rect width="40.70" height="12" x="331.30" y="0" class="todo"><title>79 KB · 10.94%</title></rect>
+<rect width="19.28" height="12" x="312.18" y="0" class="nonmatching"><title>38 KB · 5.18%</title></rect>
+<rect width="40.54" height="12" x="331.46" y="0" class="todo"><title>79 KB · 10.90%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">37 KB</tspan> · <tspan class="todo">79 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">38 KB</tspan> · <tspan class="todo">79 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -233,7 +233,7 @@
 <rect width="12" height="12" x="210" y="45" class="named"><title>0x0041ac20 GetCinematicRoom (127 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="45" class="named"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="45" class="named"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="45" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="45" class="nonmatching"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="45" class="named"><title>0x0041b1d0 ControlCinematicPlayer (199 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="45" class="named"><title>0x0041b2a0 InGameCinematicCamera (582 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="45" class="named"><title>0x0041b4f0 ClawmuteControl (1772 bytes)</title></rect>
@@ -2122,7 +2122,7 @@
 <rect width="10.05" height="10.12" x="595.07" y="173.93" class="named"><title>0x004b4335 transA (314 bytes)</title></rect>
 <rect width="10.02" height="10.12" x="608.12" y="173.93" class="named"><title>0x0041f2f0 AlignLaraPosition (313 bytes)</title></rect>
 <rect width="10.02" height="10.12" x="621.14" y="173.93" class="named"><title>0x0043d780 TestLaraSlide (313 bytes)</title></rect>
-<rect width="9.99" height="10.12" x="634.16" y="173.93" class="todo"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
+<rect width="9.99" height="10.12" x="634.16" y="173.93" class="nonmatching"><title>0x0041b090 CalculateCinematicCamera (312 bytes)</title></rect>
 <rect width="9.99" height="10.12" x="647.15" y="173.93" class="named"><title>0x0041f1b0 TestLaraPosition (312 bytes)</title></rect>
 <rect width="9.99" height="10.12" x="660.14" y="173.93" class="named"><title>0x00469010 FireSubHarpoon (312 bytes)</title></rect>
 <rect width="9.92" height="10.12" x="673.13" y="173.93" class="named"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
