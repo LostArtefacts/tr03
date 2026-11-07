@@ -48,17 +48,17 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="9.44" height="12" x="349.40" y="0" class="nonmatching"><title>38 · 2.54%</title></rect>
-<rect width="13.16" height="12" x="358.84" y="0" class="todo"><title>53 · 3.54%</title></rect>
+<rect width="9.68" height="12" x="349.40" y="0" class="nonmatching"><title>39 · 2.60%</title></rect>
+<rect width="12.91" height="12" x="359.09" y="0" class="todo"><title>52 · 3.47%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">38</tspan> · <tspan class="todo">53</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">39</tspan> · <tspan class="todo">52</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="19.28" height="12" x="312.18" y="0" class="nonmatching"><title>38 KB · 5.18%</title></rect>
-<rect width="40.54" height="12" x="331.46" y="0" class="todo"><title>79 KB · 10.90%</title></rect>
+<rect width="19.39" height="12" x="312.18" y="0" class="nonmatching"><title>38 KB · 5.21%</title></rect>
+<rect width="40.43" height="12" x="331.57" y="0" class="todo"><title>79 KB · 10.87%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">38 KB</tspan> · <tspan class="todo">79 KB</tspan></text>
@@ -1453,7 +1453,7 @@
 <rect width="12" height="12" x="510" y="405" class="named"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="405" class="named"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="405" class="named"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="405" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="405" class="nonmatching"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="405" class="decompiled"><title>0x004934b0 Func4934b0 (23 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="405" class="named"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="405" class="named"><title>0x00493530 MMXSetRenderState (689 bytes)</title></rect>
@@ -2265,7 +2265,7 @@
 <rect width="7.93" height="8.42" x="513.59" y="280.26" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.59" y="291.68" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.59" y="303.10" class="named"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
-<rect width="7.93" height="8.42" x="513.59" y="314.51" class="todo"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
+<rect width="7.93" height="8.42" x="513.59" y="314.51" class="nonmatching"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="7.93" height="8.38" x="513.59" y="325.93" class="named"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="7.93" height="8.38" x="513.59" y="337.30" class="named"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
 <rect width="7.93" height="8.33" x="513.59" y="348.68" class="named"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>

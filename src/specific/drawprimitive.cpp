@@ -4440,7 +4440,7 @@ extern long Var6ca280;
 extern long Var6ca22c;
 extern double Var6ca3a0;
 extern long Var6ca2b8;
-extern long Var6ca4d8;
+extern long Var6ca4d8[];
 extern long Var6ca224;
 extern long Var6ca2e8;
 extern long Var6ca37c;
@@ -5730,6 +5730,24 @@ void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurf, boo
         BuildXYTables();
         BuildRGBTable();
         bForceAffineMap = 0;
+    }
+}
+
+void MMXInit(void)
+{
+    long i;
+    long n;
+    float f;
+
+    Var6ca4d8[0] = 0xff800000;
+    for (i = 1; i < 4096; i++) {
+        n = (i + 0x7f000) << 11;
+        f = 1.0f / *(float *)&n;
+        Var6ca4d8[i] = (*(long *)&f & 0x7fffff) - 0x1000000;
+    }
+    if (!Var6ca4d0) {
+        Var6ca3ac = GlobalAlloc(GMEM_FIXED, (float)(((App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w >> 1) + 32) * App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h));
+        Var6ca4d0 = (unsigned char *)(((long)Var6ca3ac + 32) & ~31);
     }
 }
 }
