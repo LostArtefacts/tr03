@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="344.44" height="12" x="0" y="0" class="named"><title>1387 · 92.59%</title></rect>
-<rect width="7.45" height="12" x="344.44" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.66" height="12" x="351.89" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
-<rect width="7.45" height="12" x="364.55" y="0" class="todo"><title>30 · 2%</title></rect>
+<rect width="344.93" height="12" x="0" y="0" class="named"><title>1389 · 92.72%</title></rect>
+<rect width="7.45" height="12" x="344.93" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="12.42" height="12" x="352.38" y="0" class="nonmatching"><title>50 · 3.34%</title></rect>
+<rect width="7.20" height="12" x="364.80" y="0" class="todo"><title>29 · 1.94%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">94.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1387</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">30</tspan></text>
+<text text-anchor="end" x="552" y="7.50">94.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1389</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">50</tspan> · <tspan class="todo">29</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="282.09" height="12" x="0" y="0" class="named"><title>550 KB · 75.83%</title></rect>
-<rect width="33.96" height="12" x="282.09" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="27.16" height="12" x="316.05" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
-<rect width="28.80" height="12" x="343.20" y="0" class="todo"><title>56 KB · 7.74%</title></rect>
+<rect width="282.58" height="12" x="0" y="0" class="named"><title>551 KB · 75.96%</title></rect>
+<rect width="33.96" height="12" x="282.58" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="26.99" height="12" x="316.54" y="0" class="nonmatching"><title>53 KB · 7.26%</title></rect>
+<rect width="28.47" height="12" x="343.53" y="0" class="todo"><title>55 KB · 7.65%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">85.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">550 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">56 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">85.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">551 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">55 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -96,9 +96,9 @@
 <rect width="12" height="12" x="405" y="0" class="named"><title>0x004025c0 draw_poly_gtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="0" class="named"><title>0x00402600 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="0" class="named"><title>0x00402640 gen_x (210 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="0" class="nonmatching"><title>0x00402720 gen_xg (326 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="0" class="named"><title>0x00402720 gen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
-<rect width="12" height="12" x="480" y="0" class="todo"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
+<rect width="12" height="12" x="480" y="0" class="named"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="0" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="todo"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x004051a0 draw_poly_gtmap_persp (55 bytes)</title></rect>
@@ -1839,7 +1839,7 @@
 <rect width="14.13" height="14.92" x="369.49" y="82.92" class="named"><title>0x00445f50 FireRocket (651 bytes)</title></rect>
 <rect width="14.13" height="14.87" x="369.49" y="100.83" class="named"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
 <rect width="14.13" height="14.80" x="369.49" y="118.71" class="named"><title>0x0042b4f0 TriggerGunSmoke (646 bytes)</title></rect>
-<rect width="14.13" height="14.76" x="369.49" y="136.51" class="todo"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
+<rect width="14.13" height="14.76" x="369.49" y="136.51" class="named"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="14.13" height="14.76" x="369.49" y="154.26" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
 <rect width="14.13" height="14.67" x="369.49" y="172.02" class="named"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
 <rect width="14.13" height="14.62" x="369.49" y="189.69" class="named"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
@@ -2106,7 +2106,7 @@
 <rect width="10.58" height="10.07" x="462.93" y="359.21" class="named"><title>0x0043f720 lara_col_dash (329 bytes)</title></rect>
 <rect width="10.58" height="10.01" x="462.93" y="372.28" class="named"><title>0x0043aa90 KillItem (327 bytes)</title></rect>
 <rect width="10.58" height="10.01" x="462.93" y="385.29" class="named"><title>0x0046d1f0 TrainCollision (327 bytes)</title></rect>
-<rect width="10.58" height="9.98" x="462.93" y="398.30" class="nonmatching"><title>0x00402720 gen_xg (326 bytes)</title></rect>
+<rect width="10.58" height="9.98" x="462.93" y="398.30" class="named"><title>0x00402720 gen_xg (326 bytes)</title></rect>
 <rect width="10.58" height="9.92" x="462.93" y="411.28" class="named"><title>0x0044a1e0 InitialiseNewWeapon (324 bytes)</title></rect>
 <rect width="10.58" height="9.92" x="462.93" y="424.20" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
 <rect width="10.58" height="9.89" x="462.93" y="437.11" class="named"><title>0x00474760 ACMClose (323 bytes)</title></rect>

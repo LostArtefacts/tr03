@@ -1,4 +1,8 @@
+// cflags: /Op /Oa
 #include "../specific/standard.h"
+#include <io.h>
+#include <direct.h>
+#include <commctrl.h>
 
 extern "C" {
 
@@ -346,6 +350,95 @@ int gen_xguv(sint16 *iptr)
     return 1;
 }
 
+
+int gen_xguvpersp_fp(sint16 *iptr)
+{
+    UVGP_INFO *ptr1, *ptr2;
+    XBUF_PERSP_FP *xptr;
+    int g, g_add;
+    int x, x_add;
+    float scale;
+    float uoz, uoz_add;
+    float voz, voz_add;
+    float ooz, ooz_add;
+    int y1, y2, ydif;
+    int min_y, max_y;
+    int numcoords;
+
+    numcoords = (int)*(iptr++);
+    ptr2 = (UVGP_INFO *)iptr;
+    ptr1 = ptr2 + numcoords - 1;
+    min_y = max_y = ptr1->ys;
+    for (; numcoords > 0; numcoords--, ptr1 = ptr2, ptr2++) {
+        y1 = ptr1->ys;
+        y2 = ptr2->ys;
+        if (y1 < y2) {
+            if (y1 < min_y)
+                min_y = y1;
+            ydif = y2 - y1;
+            x = ptr1->xs;
+            x_add = ((ptr2->xs - x) << 16) / ydif;
+            x = (x << 16) + 0x0ffff;
+            g = ptr1->shade << 8;
+            scale = 1.0f / ydif;
+            g_add = ((ptr2->shade << 8) - g) / ydif;
+            uoz = ptr1->uoz;
+            uoz_add = (ptr2->uoz - uoz) * scale;
+            voz = ptr1->voz;
+            voz_add = (ptr2->voz - voz) * scale;
+            ooz = ptr1->ooz;
+            ooz_add = (ptr2->ooz - ooz) * scale;
+            xptr = ((XBUF_PERSP_FP *)xbuffer) + y1;
+            for (; y1 < y2; y1++, xptr++) {
+                x += x_add;
+                g += g_add;
+                uoz += uoz_add;
+                voz += voz_add;
+                ooz += ooz_add;
+                xptr->Xright = x;
+                xptr->Gright = g;
+                xptr->UOZright = uoz;
+                xptr->VOZright = voz;
+                xptr->OOZright = ooz;
+            }
+        } else if (y2 < y1) {
+            if (y1 > max_y)
+                max_y = y1;
+            ydif = y1 - y2;
+            x = ptr2->xs;
+            x_add = ((ptr1->xs - x) << 16) / ydif;
+            x = (x << 16) + 0x0001;
+            g = ptr2->shade << 8;
+            scale = 1.0f / ydif;
+            g_add = ((ptr1->shade << 8) - g) / ydif;
+            uoz = ptr2->uoz;
+            uoz_add = (ptr1->uoz - uoz) * scale;
+            voz = ptr2->voz;
+            voz_add = (ptr1->voz - voz) * scale;
+            ooz = ptr2->ooz;
+            ooz_add = (ptr1->ooz - ooz) * scale;
+            xptr = ((XBUF_PERSP_FP *)xbuffer) + y2;
+            for (; y2 < y1; y2++, xptr++) {
+                x += x_add;
+                g += g_add;
+                uoz += uoz_add;
+                voz += voz_add;
+                ooz += ooz_add;
+                xptr->Xleft = x;
+                xptr->Gleft = g;
+                xptr->UOZleft = uoz;
+                xptr->VOZleft = voz;
+                xptr->OOZleft = ooz;
+            }
+        }
+    }
+    if (min_y == max_y)
+        return (0);
+    xgen_ymin = min_y;
+    xgen_ymax = max_y;
+    return (1);
+}
+
 void draw_poly_gtmap_persp(sint16 *iptr)
 {
     if (gen_xguvpersp_fp(iptr + 1))
@@ -357,5 +450,13 @@ void draw_poly_wgtmap_persp(sint16 *iptr)
     if (gen_xguvpersp_fp(iptr + 1))
         wgtmap_persp16_fp(xgen_ymin, xgen_ymax, texture_page_ptrs[*iptr]);
 }
+
+
+#define SINGLE_MASK 0xffff8000
+
+extern char depthq_table[33][256];
+extern sint32 phd_scrwidth;
+extern char *phd_winptr;
+
 
 }
