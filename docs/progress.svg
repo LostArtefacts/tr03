@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="8.69" height="12" x="349.40" y="0" class="nonmatching"><title>35 · 2.34%</title></rect>
-<rect width="13.91" height="12" x="358.09" y="0" class="todo"><title>56 · 3.74%</title></rect>
+<rect width="8.94" height="12" x="349.40" y="0" class="nonmatching"><title>36 · 2.40%</title></rect>
+<rect width="13.66" height="12" x="358.34" y="0" class="todo"><title>55 · 3.67%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">35</tspan> · <tspan class="todo">56</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">36</tspan> · <tspan class="todo">55</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="18.35" height="12" x="312.18" y="0" class="nonmatching"><title>36 KB · 4.93%</title></rect>
-<rect width="41.47" height="12" x="330.53" y="0" class="todo"><title>81 KB · 11.15%</title></rect>
+<rect width="18.78" height="12" x="312.18" y="0" class="nonmatching"><title>37 KB · 5.05%</title></rect>
+<rect width="41.05" height="12" x="330.95" y="0" class="todo"><title>80 KB · 11.03%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">36 KB</tspan> · <tspan class="todo">81 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">37 KB</tspan> · <tspan class="todo">80 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -136,7 +136,7 @@
 <rect width="12" height="12" x="255" y="15" class="named"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="named"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="15" class="named"><title>0x0040ca50 XYClipper (720 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="15" class="todo"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="15" class="nonmatching"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="15" class="named"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="15" class="named"><title>0x0040d1c0 S_DrawScreenSprite2d (338 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="15" class="named"><title>0x0040d320 S_DrawScreenSprite (163 bytes)</title></rect>
@@ -1786,7 +1786,7 @@
 <rect width="16.02" height="16.90" x="543.87" y="45.23" class="named"><title>0x0042be50 TriggerGunShell (836 bytes)</title></rect>
 <rect width="15.97" height="16.90" x="562.89" y="45.23" class="named"><title>0x004b48cc wgtmapA (833 bytes)</title></rect>
 <rect width="15.93" height="16.90" x="581.86" y="45.23" class="named"><title>0x00473230 ControlWillbossPlasmaBall (831 bytes)</title></rect>
-<rect width="15.83" height="16.90" x="600.79" y="45.23" class="todo"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
+<rect width="15.83" height="16.90" x="600.79" y="45.23" class="nonmatching"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
 <rect width="15.76" height="16.90" x="619.62" y="45.23" class="named"><title>0x0041eda0 ItemPushLara (822 bytes)</title></rect>
 <rect width="15.74" height="16.90" x="638.38" y="45.23" class="named"><title>0x004855c0 HWR_DrawPolyListBF (821 bytes)</title></rect>
 <rect width="15.62" height="16.90" x="657.11" y="45.23" class="named"><title>0x00468250 GetJointAbsPosition (815 bytes)</title></rect>
