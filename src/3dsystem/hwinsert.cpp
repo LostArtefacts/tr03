@@ -1317,4 +1317,56 @@ short *HWI_InsertObjectG3_Sorted(short *pFaceInfo, long nFaces, int nSortType)
     }
     return pFaceInfo;
 }
+
+extern VERTEX_INFO v_buffer[];
+extern int phd_winwidth;
+extern int phd_winheight;
+
+int XYClipper(int number, VERTEX_INFO *input);
+void HWI_InsertPoly_Gouraud(int nPoints, float zdepth, int nR, int nG, int nB, int nDrawType);
+
+void HWI_InsertTrans8_Sorted(PHD_VBUF *buf, sint16 shade)
+{
+    float z;
+    long nPoints, nVtx;
+    char clipO, clipA;
+    int i;
+
+    nVtx = 8;
+    clipO = buf[7].clip;
+    clipO |= buf[6].clip;
+    clipO |= buf[5].clip;
+    clipO |= buf[4].clip;
+    clipO |= buf[3].clip;
+    clipO |= buf[2].clip;
+    clipO |= buf[1].clip;
+    clipO |= buf[0].clip;
+    if (clipO < 0)
+        return;
+    clipA = ((((((buf[6].clip & buf[7].clip) & buf[0].clip) & buf[1].clip) & buf[2].clip) & buf[3].clip) & buf[4].clip) & buf[5].clip;
+    if (clipA)
+        return;
+    if ((long)((buf[2].xs - buf[1].xs) * (buf->ys - buf[1].ys) - (buf[2].ys - buf[1].ys) * (buf->xs - buf[1].xs)) < 0)
+        return;
+    for (i = 0; i < nVtx; i++) {
+        v_buffer[i].x = buf[i].xs;
+        v_buffer[i].y = buf[i].ys;
+        v_buffer[i].ooz = one / (buf[i].zv - 131072);
+        v_buffer[i].vr = 0;
+        v_buffer[i].vg = 0;
+        v_buffer[i].vb = 0;
+    }
+    nPoints = nVtx;
+    if (clipO) {
+        phd_leftfloat = (float)phd_winxmin;
+        phd_topfloat = (float)phd_winymin;
+        phd_rightfloat = float(phd_winxmin + phd_winwidth);
+        phd_bottomfloat = float(phd_winymin + phd_winheight);
+        nPoints = XYClipper(nPoints, v_buffer);
+    }
+    if (nPoints) {
+        z = (((((((buf[6].zv + buf[5].zv) + buf[4].zv) + buf[3].zv) + buf[2].zv) + buf[1].zv) + buf[0].zv) + buf[7].zv) * 0.125F - 131072;
+        HWI_InsertPoly_Gouraud(nPoints, z, 0, 0, 0, 13);
+    }
+}
 }

@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="10.18" height="12" x="349.40" y="0" class="nonmatching"><title>41 · 2.74%</title></rect>
-<rect width="12.42" height="12" x="359.58" y="0" class="todo"><title>50 · 3.34%</title></rect>
+<rect width="10.43" height="12" x="349.40" y="0" class="nonmatching"><title>42 · 2.80%</title></rect>
+<rect width="12.17" height="12" x="359.83" y="0" class="todo"><title>49 · 3.27%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">41</tspan> · <tspan class="todo">50</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">42</tspan> · <tspan class="todo">49</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="19.96" height="12" x="312.18" y="0" class="nonmatching"><title>39 KB · 5.37%</title></rect>
-<rect width="39.86" height="12" x="332.14" y="0" class="todo"><title>78 KB · 10.72%</title></rect>
+<rect width="20.18" height="12" x="312.18" y="0" class="nonmatching"><title>39 KB · 5.42%</title></rect>
+<rect width="39.65" height="12" x="332.35" y="0" class="todo"><title>77 KB · 10.66%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">39 KB</tspan> · <tspan class="todo">78 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">39 KB</tspan> · <tspan class="todo">77 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -129,7 +129,7 @@
 <rect width="12" height="12" x="150" y="15" class="named"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="15" class="named"><title>0x0040a510 HWI_InsertLine_Sorted (377 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="15" class="named"><title>0x0040a690 HWI_InsertTransQuad_Sorted (437 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="15" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="15" class="nonmatching"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="15" class="named"><title>0x0040aa00 RoomZedClipper (472 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="15" class="named"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="15" class="named"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
@@ -2005,7 +2005,7 @@
 <rect width="11.69" height="11.78" x="706.03" y="131.37" class="named"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
 <rect width="11.66" height="11.78" x="720.71" y="131.37" class="named"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
 <rect width="11.63" height="11.78" x="735.37" y="131.37" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
-<rect width="11.54" height="11.84" x="434.27" y="146.15" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
+<rect width="11.54" height="11.84" x="434.27" y="146.15" class="nonmatching"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="11.54" height="11.73" x="434.27" y="160.99" class="todo"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="11.54" height="11.70" x="434.27" y="175.72" class="named"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
 <rect width="11.54" height="11.67" x="434.27" y="190.42" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
