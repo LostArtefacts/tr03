@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="332.04" height="12" x="0" y="0" class="named"><title>1359 · 90.72%</title></rect>
-<rect width="7.33" height="12" x="332.04" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.33" height="12" x="339.37" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="19.30" height="12" x="346.70" y="0" class="todo"><title>79 · 5.27%</title></rect>
+<rect width="332.28" height="12" x="0" y="0" class="named"><title>1360 · 90.79%</title></rect>
+<rect width="7.33" height="12" x="332.28" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.33" height="12" x="339.61" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="19.06" height="12" x="346.94" y="0" class="todo"><title>78 · 5.21%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">92.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1359</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">79</tspan></text>
+<text text-anchor="end" x="546" y="7.50">92.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1360</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">78</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="266.28" height="12" x="0" y="0" class="named"><title>527 KB · 72.76%</title></rect>
-<rect width="33.42" height="12" x="266.28" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.54" height="12" x="299.70" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="51.76" height="12" x="314.24" y="0" class="todo"><title>102 KB · 14.14%</title></rect>
+<rect width="266.58" height="12" x="0" y="0" class="named"><title>528 KB · 72.84%</title></rect>
+<rect width="33.42" height="12" x="266.58" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.54" height="12" x="300" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="51.46" height="12" x="314.54" y="0" class="todo"><title>102 KB · 14.06%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="24.50">81.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">527 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">102 KB</tspan></text>
+<text text-anchor="end" x="546" y="24.50">82.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">528 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">102 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -116,7 +116,7 @@
 <rect width="12" height="12" x="705" y="0" class="named"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="0" class="todo"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="0" class="todo"><title>0x004069e0 SubdivideGT4 (880 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="15" class="todo"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="15" class="named"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="15" class="named"><title>0x00406fa0 HWI_InsertGT4_Sorted (320 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="15" class="todo"><title>0x004070e0 HWI_InsertGT4_Poly (5549 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="15" class="named"><title>0x004086b0 HWI_InsertObjectGT4_Sorted (330 bytes)</title></rect>
@@ -1872,7 +1872,7 @@
 <rect width="13.42" height="14.29" x="586.79" y="82.93" class="named"><title>0x00432030 GF_LoadScriptFile (592 bytes)</title></rect>
 <rect width="13.42" height="14.29" x="603.21" y="82.93" class="named"><title>0x0045c6b0 KeyHoleCollision (592 bytes)</title></rect>
 <rect width="13.40" height="14.29" x="619.63" y="82.93" class="named"><title>0x00451730 ExplodeLondonBoss (591 bytes)</title></rect>
-<rect width="13.38" height="14.29" x="636.03" y="82.93" class="todo"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>
+<rect width="13.38" height="14.29" x="636.03" y="82.93" class="named"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>
 <rect width="13.31" height="14.29" x="652.41" y="82.93" class="named"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
 <rect width="13.31" height="14.29" x="668.71" y="82.93" class="named"><title>0x0044e950 LaraUnderWater (587 bytes)</title></rect>
 <rect width="13.28" height="14.29" x="685.02" y="82.93" class="named"><title>0x0043e4e0 LaraTestHangJump (586 bytes)</title></rect>

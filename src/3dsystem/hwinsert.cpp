@@ -202,8 +202,63 @@ void PHD_VBUF_To_D3DTLVTX(PHD_VBUF *phdV, D3DTLVERTEX *v, unsigned short *uv)
     v->specular = 0;
 }
 
+extern int phd_znear;
+extern float f_persp;
+extern float f_oneopersp;
+extern float f_centerx, f_centery;
+extern float phd_leftfloat, phd_topfloat, phd_rightfloat, phd_bottomfloat;
+
+void SubdivideEdge(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *dest);
+
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
 void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
+
+void SubdivideGT3(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level)
+{
+    PHD_VBUF v12;
+    PHD_VBUF v23;
+    PHD_VBUF v31;
+    PHDTEXTURESTRUCT tex;
+
+    if (level) {
+        tex.drawtype = pTex->drawtype;
+        tex.tpage = pTex->tpage;
+        v1->u = pTex->u1;
+        v1->v = pTex->v1;
+        v2->u = pTex->u2;
+        v2->v = pTex->v2;
+        v3->u = pTex->u3;
+        v3->v = pTex->v3;
+        SubdivideEdge(v1, v2, &v12);
+        SubdivideEdge(v2, v3, &v23);
+        SubdivideEdge(v3, v1, &v31);
+        tex.u1 = v1->u;
+        tex.v1 = v1->v;
+        tex.u2 = v12.u;
+        tex.v2 = v12.v;
+        tex.u3 = v31.u;
+        tex.v3 = v31.v;
+        SubdivideGT3(v1, &v12, &v31, &tex, nSortType, dbl, level - 1);
+        tex.u1 = v12.u;
+        tex.v1 = v12.v;
+        tex.u2 = v2->u;
+        tex.v2 = v2->v;
+        tex.u3 = v23.u;
+        tex.v3 = v23.v;
+        SubdivideGT3(&v12, v2, &v23, &tex, nSortType, dbl, level - 1);
+        tex.u1 = v31.u;
+        tex.v1 = v31.v;
+        tex.u2 = v12.u;
+        tex.v2 = v12.v;
+        tex.u3 = v23.u;
+        tex.v3 = v23.v;
+        tex.u4 = v3->u;
+        tex.v4 = v3->v;
+        SubdivideGT4(&v31, &v12, &v23, v3, &tex, nSortType, dbl, level - 1);
+    } else {
+        HWI_InsertGT3_Poly(v1, v2, v3, pTex, &pTex->u1, &pTex->u2, &pTex->u3, nSortType, dbl);
+    }
+}
 
 void HWI_InsertGT4_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl)
 {
