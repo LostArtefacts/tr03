@@ -1370,3 +1370,46 @@ void HWI_InsertTrans8_Sorted(PHD_VBUF *buf, sint16 shade)
     }
 }
 }
+
+void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
+void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
+int GETR(int rgb);
+
+void SubdivideEdge(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *dest)
+{
+    float zv;
+    sint16 r, g, b, r0, g0, b0, r1, g1, b1;
+
+    dest->xv = (v1->xv + v0->xv) * 0.5F;
+    dest->yv = (v0->yv + v1->yv) * 0.5F;
+    dest->zv = (v0->zv + v1->zv) * 0.5F;
+    if (dest->zv > phd_znear) {
+        zv = f_persp / dest->zv;
+        dest->xs = zv * dest->xv + f_centerx;
+        dest->ys = dest->yv * zv + f_centery;
+        dest->ooz = zv * f_oneopersp;
+        dest->clip = 0;
+        if (dest->xs < phd_leftfloat)
+            dest->clip++;
+        else if (dest->xs > phd_rightfloat)
+            dest->clip += 2;
+        if (dest->ys < phd_topfloat)
+            dest->clip += 4;
+        else if (dest->ys > phd_bottomfloat)
+            dest->clip += 8;
+    } else {
+        dest->clip = -128;
+    }
+    r0 = (v0->g >> 10) & 31;
+    r1 = (v1->g >> 10) & 31;
+    g0 = (v0->g >> 5) & 31;
+    g1 = (v1->g >> 5) & 31;
+    b0 = v0->g & 31;
+    b1 = v1->g & 31;
+    r = (r0 + r1) >> 1;
+    g = (g0 + g1) >> 1;
+    b = (b0 + b1) >> 1;
+    dest->g = (sint16)(r << 10 | g << 5 | b);
+    dest->u = (v0->u + v1->u) >> 1;
+    dest->v = (v0->v + v1->v) >> 1;
+}

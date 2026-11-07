@@ -46,21 +46,21 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="345.18" height="12" x="0" y="0" class="named"><title>1390 · 92.79%</title></rect>
-<rect width="7.45" height="12" x="345.18" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.42" height="12" x="352.63" y="0" class="nonmatching"><title>50 · 3.34%</title></rect>
-<rect width="6.95" height="12" x="365.05" y="0" class="todo"><title>28 · 1.87%</title></rect>
+<rect width="345.43" height="12" x="0" y="0" class="named"><title>1391 · 92.86%</title></rect>
+<rect width="7.45" height="12" x="345.43" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="12.42" height="12" x="352.88" y="0" class="nonmatching"><title>50 · 3.34%</title></rect>
+<rect width="6.70" height="12" x="365.30" y="0" class="todo"><title>27 · 1.80%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">94.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1390</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">50</tspan> · <tspan class="todo">28</tspan></text>
+<text text-anchor="end" x="552" y="7.50">94.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1391</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">50</tspan> · <tspan class="todo">27</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="284.25" height="12" x="0" y="0" class="named"><title>554 KB · 76.41%</title></rect>
-<rect width="33.96" height="12" x="284.25" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="26.99" height="12" x="318.21" y="0" class="nonmatching"><title>53 KB · 7.25%</title></rect>
-<rect width="26.80" height="12" x="345.20" y="0" class="todo"><title>52 KB · 7.20%</title></rect>
+<rect width="284.43" height="12" x="0" y="0" class="named"><title>554 KB · 76.46%</title></rect>
+<rect width="33.96" height="12" x="284.43" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="26.99" height="12" x="318.39" y="0" class="nonmatching"><title>53 KB · 7.25%</title></rect>
+<rect width="26.62" height="12" x="345.38" y="0" class="todo"><title>52 KB · 7.16%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">85.5%</text>
+<text text-anchor="end" x="552" y="24.50">85.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">554 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">52 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -114,7 +114,7 @@
 <rect width="12" height="12" x="675" y="0" class="named"><title>0x00406750 GETR (39 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="0" class="named"><title>0x00406780 GETG (48 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="0" class="named"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="0" class="todo"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="0" class="named"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="0" class="named"><title>0x004069e0 SubdivideGT4 (880 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="15" class="named"><title>0x00406d50 SubdivideGT3 (590 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="15" class="named"><title>0x00406fa0 HWI_InsertGT4_Sorted (320 bytes)</title></rect>
@@ -2079,7 +2079,7 @@
 <rect width="10.70" height="10.74" x="573.86" y="160.20" class="named"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
 <rect width="10.67" height="10.74" x="587.57" y="160.20" class="named"><title>0x00468610 SubCollision (354 bytes)</title></rect>
 <rect width="10.67" height="10.74" x="601.24" y="160.20" class="decompiled"><title>0x004955f0 Func4955f0 (354 bytes)</title></rect>
-<rect width="10.61" height="10.74" x="614.92" y="160.20" class="todo"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
+<rect width="10.61" height="10.74" x="614.92" y="160.20" class="named"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="628.53" y="160.20" class="named"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="642.15" y="160.20" class="named"><title>0x004b446f gourA (352 bytes)</title></rect>
 <rect width="10.55" height="10.74" x="655.76" y="160.20" class="named"><title>0x0041d0b0 TriggerElectricSparks_cleaner (350 bytes)</title></rect>
