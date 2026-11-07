@@ -884,6 +884,68 @@ extern int smcb;
 extern sint32 w2v_matrix[12];
 extern sint16 rcossin_tbl[];
 
+void Inv_RingLight(RING_INFO *ring, sint16 object_number)
+{
+    LightCol[0] = 0xcf0;
+    LightCol[4] = 0x680;
+    LightCol[8] = 0x000;
+
+    LightCol[1] = 0xcf0;
+    LightCol[5] = 0xcf0;
+    LightCol[9] = 0xcf0;
+
+    LightCol[2] = 0x0;
+    LightCol[6] = 0x0;
+    LightCol[10] = 0xc00;
+
+    LPos[0].x = 4096 << 2;
+    LPos[0].y = -4096 << 2;
+    LPos[0].z = 3072 << 2;
+
+    LPos[1].x = -4096 << 2;
+    LPos[1].y = -4096 << 2;
+    LPos[1].z = 3072 << 2;
+
+    LPos[2].x = 0 << 2;
+    LPos[2].y = 2048 << 2;
+    LPos[2].z = 3072 << 2;
+
+    smcr = 32;
+    smcg = 32;
+    smcb = 32;
+
+    {
+        int x, y, z;
+        sint32 *mptr;
+
+        mptr = w2v_matrix;
+
+        x = (mptr[0] * LPos[0].x + mptr[1] * LPos[0].y + mptr[2] * LPos[0].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[0].x + mptr[5] * LPos[0].y + mptr[6] * LPos[0].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[0].x + mptr[9] * LPos[0].y + mptr[10] * LPos[0].z) >> W2V_SHIFT;
+
+        LPos[0].x = x;
+        LPos[0].y = y;
+        LPos[0].z = z;
+
+        x = (mptr[0] * LPos[1].x + mptr[1] * LPos[1].y + mptr[2] * LPos[1].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[1].x + mptr[5] * LPos[1].y + mptr[6] * LPos[1].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[1].x + mptr[9] * LPos[1].y + mptr[10] * LPos[1].z) >> W2V_SHIFT;
+
+        LPos[1].x = x;
+        LPos[1].y = y;
+        LPos[1].z = z;
+
+        x = (mptr[0] * LPos[2].x + mptr[1] * LPos[2].y + mptr[2] * LPos[2].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[2].x + mptr[5] * LPos[2].y + mptr[6] * LPos[2].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[2].x + mptr[9] * LPos[2].y + mptr[10] * LPos[2].z) >> W2V_SHIFT;
+
+        LPos[2].x = x;
+        LPos[2].y = y;
+        LPos[2].z = z;
+    }
+}
+
 void Inv_GlobeLight(sint16 object_number)
 {
     if (object_number == 1) {

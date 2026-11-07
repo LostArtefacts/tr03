@@ -48,17 +48,17 @@
 <g transform="translate(130 1.50)">
 <rect width="342.70" height="12" x="0" y="0" class="named"><title>1380 · 92.12%</title></rect>
 <rect width="7.45" height="12" x="342.70" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.42" height="12" x="350.15" y="0" class="nonmatching"><title>50 · 3.34%</title></rect>
-<rect width="9.44" height="12" x="362.56" y="0" class="todo"><title>38 · 2.54%</title></rect>
+<rect width="12.66" height="12" x="350.15" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
+<rect width="9.19" height="12" x="362.81" y="0" class="todo"><title>37 · 2.47%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">94.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1380</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">50</tspan> · <tspan class="todo">38</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1380</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">37</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="280.57" height="12" x="0" y="0" class="named"><title>547 KB · 75.42%</title></rect>
 <rect width="33.96" height="12" x="280.57" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="26.95" height="12" x="314.54" y="0" class="nonmatching"><title>53 KB · 7.25%</title></rect>
-<rect width="30.51" height="12" x="341.49" y="0" class="todo"><title>59 KB · 8.20%</title></rect>
+<rect width="27.16" height="12" x="314.54" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
+<rect width="30.30" height="12" x="341.70" y="0" class="todo"><title>59 KB · 8.15%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">84.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">547 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">59 KB</tspan></text>
@@ -516,7 +516,7 @@
 <rect width="12" height="12" x="705" y="120" class="named"><title>0x00438770 RemoveInventoryText (36 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="120" class="named"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="120" class="named"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="135" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="135" class="nonmatching"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="135" class="nonmatching"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="135" class="named"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="135" class="named"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
@@ -2022,7 +2022,7 @@
 <rect width="11.54" height="11.31" x="434.27" y="350.26" class="named"><title>0x0048d2e0 CD_Init (403 bytes)</title></rect>
 <rect width="11.54" height="11.28" x="434.27" y="364.57" class="named"><title>0x00420c70 GetWaterHeight (402 bytes)</title></rect>
 <rect width="11.54" height="11.28" x="434.27" y="378.85" class="named"><title>0x00447d90 TriggerUnderwaterExplosion (402 bytes)</title></rect>
-<rect width="11.54" height="11.25" x="434.27" y="393.13" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
+<rect width="11.54" height="11.25" x="434.27" y="393.13" class="nonmatching"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
 <rect width="11.54" height="11.22" x="434.27" y="407.38" class="named"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
 <rect width="11.54" height="11.20" x="434.27" y="421.61" class="named"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
 <rect width="11.54" height="11.20" x="434.27" y="435.80" class="nonmatching"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
