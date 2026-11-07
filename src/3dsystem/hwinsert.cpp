@@ -1076,4 +1076,132 @@ void HWI_InsertFlatRect_Sorted(int nX1, int nY1, int nX2, int nY2, int nZDepth, 
         nDrawnPoints += 2;
     }
 }
+
+typedef struct phdspritestruct {
+    unsigned short tpage;
+    unsigned short offset;
+    unsigned short width;
+    unsigned short height;
+    sint16 x1;
+    sint16 y1;
+    sint16 x2;
+    sint16 y2;
+} PHDSPRITESTRUCT;
+
+extern PHDSPRITESTRUCT phdspriteinfo[];
+extern sint16 phd_winxmax;
+extern sint16 phd_winymax;
+extern int phd_zfar;
+
+void HWI_InsertClippedPoly_Textured(int nPoints, float zdepth, int nDrawType, int nTPage);
+int XYGClipper(int n, VERTEX_INFO *in);
+
+void HWI_InsertAlphaSprite_Sorted(int nX1, int nY1, int nZ1, int nShade1, int nX2, int nY2, int nZ2, int nShade2, int nX3, int nY3, int nZ3, int nShade3, int nX4, int nY4, int nZ4, int nShade4, int nSprite, int type, int dbl)
+{
+    bool tOldBlueEffect = bBlueEffect;
+    bBlueEffect = false;
+    PHDSPRITESTRUCT *pSprite;
+    float u1, v1, u2, v2;
+    VERTEX_INFO swap;
+
+    if (nSprite != -1) {
+        pSprite = phdspriteinfo + nSprite;
+        u1 = float((pSprite->offset << 8) & 0xff00);
+        v1 = float(pSprite->offset & 0xff00);
+        u2 = u1 + pSprite->width;
+        v2 = v1 + pSprite->height;
+        u1 += App.nUVAdd;
+        u2 -= App.nUVAdd;
+        v1 += App.nUVAdd;
+        v2 -= App.nUVAdd;
+    }
+    v_buffer[0].x = float(nX1);
+    v_buffer[0].y = float(nY1);
+    v_buffer[0].ooz = one / float(nZ1);
+    v_buffer[0].vr = GETR(nShade1);
+    v_buffer[0].vg = GETG(nShade1);
+    v_buffer[0].vb = ColorTable[(nShade1 & 0x1f) << 3];
+    v_buffer[1].x = float(nX2);
+    v_buffer[1].y = float(nY2);
+    v_buffer[1].ooz = one / float(nZ2);
+    v_buffer[1].vr = GETR(nShade2);
+    v_buffer[1].vg = GETG(nShade2);
+    v_buffer[1].vb = ColorTable[(nShade2 & 0x1f) << 3];
+    v_buffer[2].x = float(nX3);
+    v_buffer[2].y = float(nY3);
+    v_buffer[2].ooz = one / float(nZ3);
+    v_buffer[2].vr = GETR(nShade3);
+    v_buffer[2].vg = GETG(nShade3);
+    v_buffer[2].vb = ColorTable[(nShade3 & 0x1f) << 3];
+    v_buffer[3].x = float(nX4);
+    v_buffer[3].y = float(nY4);
+    v_buffer[3].ooz = one / float(nZ4);
+    v_buffer[3].vr = GETR(nShade4);
+    v_buffer[3].vg = GETG(nShade4);
+    v_buffer[3].vb = ColorTable[(nShade4 & 0x1f) << 3];
+    if (nSprite != -1) {
+        if (dbl == 0) {
+            v_buffer[0].u = u1 * v_buffer[0].ooz;
+            v_buffer[0].v = v1 * v_buffer[0].ooz;
+            v_buffer[1].u = u2 * v_buffer[1].ooz;
+            v_buffer[1].v = v1 * v_buffer[1].ooz;
+            v_buffer[2].u = u2 * v_buffer[2].ooz;
+            v_buffer[2].v = v2 * v_buffer[2].ooz;
+            v_buffer[3].u = u1 * v_buffer[3].ooz;
+            v_buffer[3].v = v2 * v_buffer[3].ooz;
+        } else {
+            v_buffer[0].u = u1 * v_buffer[0].ooz;
+            v_buffer[0].v = v1 * v_buffer[0].ooz;
+            v_buffer[3].u = u2 * v_buffer[3].ooz;
+            v_buffer[3].v = v1 * v_buffer[3].ooz;
+            v_buffer[2].u = u2 * v_buffer[2].ooz;
+            v_buffer[2].v = v2 * v_buffer[2].ooz;
+            v_buffer[1].u = u1 * v_buffer[1].ooz;
+            v_buffer[1].v = v2 * v_buffer[1].ooz;
+        }
+    }
+    if (nSprite == -1 && dbl && (long)((v_buffer[0].y - v_buffer[1].y) * (v_buffer[2].x - v_buffer[1].x) - (v_buffer[0].x - v_buffer[1].x) * (v_buffer[2].y - v_buffer[1].y)) < 0) {
+        swap.x = v_buffer[2].x;
+        swap.y = v_buffer[2].y;
+        swap.ooz = v_buffer[2].ooz;
+        swap.u = v_buffer[2].u;
+        swap.v = v_buffer[2].v;
+        swap.vr = v_buffer[2].vr;
+        swap.vg = v_buffer[2].vg;
+        swap.vb = v_buffer[2].vb;
+        v_buffer[2].x = v_buffer[0].x;
+        v_buffer[2].y = v_buffer[0].y;
+        v_buffer[2].ooz = v_buffer[0].ooz;
+        v_buffer[2].u = v_buffer[0].u;
+        v_buffer[2].v = v_buffer[0].v;
+        v_buffer[2].vr = v_buffer[0].vr;
+        v_buffer[2].vg = v_buffer[0].vg;
+        v_buffer[2].vb = v_buffer[0].vb;
+        v_buffer[0].x = swap.x;
+        v_buffer[0].y = swap.y;
+        v_buffer[0].ooz = swap.ooz;
+        v_buffer[0].u = swap.u;
+        v_buffer[0].v = swap.v;
+        v_buffer[0].vr = swap.vr;
+        v_buffer[0].vg = swap.vg;
+        v_buffer[0].vb = swap.vb;
+    }
+    int nPoints = 4;
+    phd_leftfloat = (float)phd_winxmin;
+    phd_rightfloat = (float)(phd_winxmin + phd_winwidth);
+    phd_topfloat = (float)phd_winymin;
+    phd_bottomfloat = (float)(phd_winymin + phd_winheight);
+    if (nSprite == -1)
+        nPoints = XYGClipper(nPoints, v_buffer);
+    else
+        nPoints = RoomXYGUVClipper(nPoints, v_buffer);
+    if (nPoints) {
+        float fZDepth = float((nZ1 + nZ2 + nZ3 + nZ4) >> 2);
+        if (nSprite == -1)
+            HWI_InsertPoly_GouraudRGB(nPoints, fZDepth, type);
+        else
+            HWI_InsertClippedPoly_Textured(nPoints, fZDepth, type, pSprite->tpage);
+    }
+    bBlueEffect = tOldBlueEffect;
+}
 }

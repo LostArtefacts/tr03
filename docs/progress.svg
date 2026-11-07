@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="340.21" height="12" x="0" y="0" class="named"><title>1370 · 91.46%</title></rect>
-<rect width="7.45" height="12" x="340.21" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.45" height="12" x="347.66" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="16.89" height="12" x="355.11" y="0" class="todo"><title>68 · 4.54%</title></rect>
+<rect width="340.46" height="12" x="0" y="0" class="named"><title>1371 · 91.52%</title></rect>
+<rect width="7.45" height="12" x="340.46" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.45" height="12" x="347.91" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="16.64" height="12" x="355.36" y="0" class="todo"><title>67 · 4.47%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1370</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">68</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1371</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">67</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="274.71" height="12" x="0" y="0" class="named"><title>535 KB · 73.85%</title></rect>
-<rect width="33.96" height="12" x="274.71" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.78" height="12" x="308.68" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="48.54" height="12" x="323.46" y="0" class="todo"><title>95 KB · 13.05%</title></rect>
+<rect width="275.49" height="12" x="0" y="0" class="named"><title>537 KB · 74.06%</title></rect>
+<rect width="33.96" height="12" x="275.49" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.78" height="12" x="309.45" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="47.77" height="12" x="324.23" y="0" class="todo"><title>93 KB · 12.84%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">83.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">535 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">95 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">83.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">537 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">93 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -132,7 +132,7 @@
 <rect width="12" height="12" x="195" y="15" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="15" class="named"><title>0x0040aa00 RoomZedClipper (472 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="15" class="named"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="15" class="todo"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="15" class="named"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="15" class="named"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="named"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="15" class="named"><title>0x0040ca50 XYClipper (720 bytes)</title></rect>
@@ -1690,7 +1690,7 @@
 <rect width="22.43" height="21.93" x="282.24" y="229.89" class="todo"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
 <rect width="22.43" height="21.89" x="282.24" y="254.82" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
 <rect width="22.43" height="21.83" x="282.24" y="279.71" class="named"><title>0x00449bb0 LaraGun (1512 bytes)</title></rect>
-<rect width="22.43" height="21.72" x="282.24" y="304.54" class="todo"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
+<rect width="22.43" height="21.72" x="282.24" y="304.54" class="named"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
 <rect width="22.43" height="21.57" x="282.24" y="329.26" class="named"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>
 <rect width="22.43" height="21.27" x="282.24" y="353.83" class="todo"><title>0x0047a4b0 DoRain (1473 bytes)</title></rect>
 <rect width="22.43" height="21.14" x="282.24" y="378.10" class="named"><title>0x00432310 GF_InterpretSequence (1464 bytes)</title></rect>
