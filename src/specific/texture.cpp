@@ -201,6 +201,39 @@ int DXTextureMakeDeviceSurface(int w, int h, LPDIRECTDRAWPALETTE palette, DXTEXT
     return index;
 }
 
+void DXTextureCleanup(int nTexture, DXTEXTURE *pTextures)
+{
+    DXTEXTURE *tex;
+
+    tex = &pTextures[nTexture];
+    if (tex->pPalette) {
+        tex->pPalette->Release();
+        tex->pPalette = 0;
+    }
+    while (1) {
+        if (tex->pSystemSurface) {
+            int nRef = tex->pSystemSurface->Release();
+
+            if (nRef == 0)
+                tex->pSystemSurface = 0;
+        } else
+            break;
+    }
+    if (tex->tex) {
+        tex->tex->nFrames = 0;
+        tex->tex->num = 0;
+        tex->tex->DXTex = 0;
+        tex->tex = 0;
+    }
+    if (tex->pData) {
+        GlobalFree(tex->pData);
+        tex->pData = 0;
+    }
+    tex->dwFlags = 0;
+    tex->nWidth = 0;
+    tex->nHeight = 0;
+}
+
 void DXClearAllTextures(DXTEXTURE *list)
 {
     int i;
