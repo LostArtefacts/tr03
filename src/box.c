@@ -1,3 +1,4 @@
+#include <process.h>
 #include <float.h>
 #include "game.h"
 
@@ -1192,4 +1193,249 @@ void GetAITarget(CREATURE_INFO *creature)
             }
         }
     }
+}
+
+int BadFloor(sint32 x, sint32 y, sint32 z, sint32 box_height, sint32 next_height, sint16 room_number, LOT_INFO *LOT);
+
+int CreatureAnimation(sint16 item_number, sint16 angle, sint16 tilt)
+{
+    sint32 radius, shift_x, shift_z, top;
+    sint32 height, box_height, next_height, ceiling;
+    sint32 x, y, z, pos_x, pos_z, dy;
+    PHD_VECTOR old;
+    ITEM_INFO *item;
+    CREATURE_INFO *creature;
+    LOT_INFO *LOT;
+    FLOOR_INFO *floor;
+    sint16 *zone, *bounds;
+    sint16 room_number;
+    sint16 next_box;
+    sint16 biff_angle;
+
+    item = &items[item_number];
+    if (item->data == NULL)
+        return 0;
+    creature = (CREATURE_INFO *)item->data;
+    LOT = &creature->LOT;
+    old.x = item->pos.x_pos;
+    old.y = item->pos.y_pos;
+    old.z = item->pos.z_pos;
+    box_height = boxes[item->box_number].height;
+    if (LOT->fly == NO_FLYING)
+        zone = ground_zone[ZONE(LOT->step)][flip_status];
+    else
+        zone = ground_zone[ZONE(1)][0];
+    if (!objects[item->object_number].water_creature) {
+        room_number = item->room_number;
+        GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        if (room_number != item->room_number)
+            ItemNewRoom(item_number, room_number);
+    }
+    AnimateItem(item);
+    if (item->status == DEACTIVATED) {
+        CreatureDie(item_number, 0);
+        return 0;
+    }
+    bounds = GetBoundsAccurate(item);
+    y = item->pos.y_pos + bounds[2];
+    room_number = item->room_number;
+    GetFloor(old.x, y, old.z, &room_number);
+    floor = GetFloor(item->pos.x_pos, y, item->pos.z_pos, &room_number);
+    height = boxes[floor->box].height;
+    if (!objects[item->object_number].non_lot) {
+        next_box = LOT->node[floor->box].exit_box;
+    } else {
+        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        height = boxes[floor->box].height;
+        next_box = floor->box;
+    }
+    if (next_box != NO_BOX)
+        next_height = boxes[next_box].height;
+    else
+        next_height = height;
+    if (floor->box == NO_BOX || (LOT->fly == NO_FLYING && zone[item->box_number] != zone[floor->box]) || box_height - height > LOT->step || box_height - height < LOT->drop) {
+        pos_x = item->pos.x_pos >> WALL_SHIFT;
+        pos_z = item->pos.z_pos >> WALL_SHIFT;
+        shift_x = old.x >> WALL_SHIFT;
+        shift_z = old.z >> WALL_SHIFT;
+        if (pos_x < shift_x)
+            item->pos.x_pos = old.x & ~(WALL_L - 1);
+        else if (pos_x > shift_x)
+            item->pos.x_pos = old.x | (WALL_L - 1);
+        if (pos_x < shift_z)
+            item->pos.z_pos = old.z & ~(WALL_L - 1);
+        else if (pos_x > shift_z)
+            item->pos.z_pos = old.z | (WALL_L - 1);
+        floor = GetFloor(item->pos.x_pos, y, item->pos.z_pos, &room_number);
+        height = boxes[floor->box].height;
+        if (!objects[item->object_number].non_lot) {
+            next_box = LOT->node[floor->box].exit_box;
+        } else {
+            floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+            height = boxes[floor->box].height;
+            next_box = floor->box;
+        }
+        if (next_box != NO_BOX)
+            next_height = boxes[next_box].height;
+        else
+            next_height = height;
+    }
+    x = item->pos.x_pos;
+    z = item->pos.z_pos;
+    pos_x = x & (WALL_L - 1);
+    pos_z = z & (WALL_L - 1);
+    radius = objects[item->object_number].radius;
+    shift_x = shift_z = 0;
+    if (pos_z < radius) {
+        if (BadFloor(x, y, z - radius, height, next_height, room_number, LOT))
+            shift_z = radius - pos_z;
+        if (pos_x < radius) {
+            if (BadFloor(x - radius, y, z, height, next_height, room_number, LOT))
+                shift_x = radius - pos_x;
+            else if (!shift_z && BadFloor(x - radius, y, z - radius, height, next_height, room_number, LOT)) {
+                if (item->pos.y_rot > -0x6000 && item->pos.y_rot < 0x2000)
+                    shift_z = radius - pos_z;
+                else
+                    shift_x = radius - pos_x;
+            }
+        } else if (pos_x > WALL_L - radius) {
+            if (BadFloor(x + radius, y, z, height, next_height, room_number, LOT))
+                shift_x = WALL_L - radius - pos_x;
+            else if (!shift_z && BadFloor(x + radius, y, z - radius, height, next_height, room_number, LOT)) {
+                if (item->pos.y_rot > -0x2000 && item->pos.y_rot < 0x6000)
+                    shift_z = radius - pos_z;
+                else
+                    shift_x = WALL_L - radius - pos_x;
+            }
+        }
+    } else if (pos_z > WALL_L - radius) {
+        if (BadFloor(x, y, z + radius, height, next_height, room_number, LOT))
+            shift_z = WALL_L - radius - pos_z;
+        if (pos_x < radius) {
+            if (BadFloor(x - radius, y, z, height, next_height, room_number, LOT))
+                shift_x = radius - pos_x;
+            else if (!shift_z && BadFloor(x - radius, y, z + radius, height, next_height, room_number, LOT)) {
+                if (item->pos.y_rot > -0x2000 && item->pos.y_rot < 0x6000)
+                    shift_x = radius - pos_x;
+                else
+                    shift_z = WALL_L - radius - pos_z;
+            }
+        } else if (pos_x > WALL_L - radius) {
+            if (BadFloor(x + radius, y, z, height, next_height, room_number, LOT))
+                shift_x = WALL_L - radius - pos_x;
+            else if (!shift_z && BadFloor(x + radius, y, z + radius, height, next_height, room_number, LOT)) {
+                if (item->pos.y_rot > -0x6000 && item->pos.y_rot < 0x2000)
+                    shift_x = WALL_L - radius - pos_x;
+                else
+                    shift_z = WALL_L - radius - pos_z;
+            }
+        }
+    } else if (pos_x < radius) {
+        if (BadFloor(x - radius, y, z, height, next_height, room_number, LOT))
+            shift_x = radius - pos_x;
+    } else if (pos_x > WALL_L - radius) {
+        if (BadFloor(x + radius, y, z, height, next_height, room_number, LOT))
+            shift_x = WALL_L - radius - pos_x;
+    }
+    item->pos.x_pos += shift_x;
+    item->pos.z_pos += shift_z;
+    if (shift_x || shift_z) {
+        floor = GetFloor(item->pos.x_pos, y, item->pos.z_pos, &room_number);
+        item->pos.y_rot += angle;
+        if (tilt)
+            CreatureTilt(item, (sint16)(tilt * 2));
+    }
+    if (item->object_number != 287 && item->speed && item->hit_points > 0)
+        biff_angle = CreatureCreature(item_number);
+    else
+        biff_angle = 0;
+    if (biff_angle) {
+        if (abs(biff_angle) < 0x800)
+            item->pos.y_rot -= biff_angle;
+        else if (biff_angle > 0)
+            item->pos.y_rot -= 0x800;
+        else
+            item->pos.y_rot += 0x800;
+        return 1;
+    }
+    if (LOT->fly != NO_FLYING) {
+        dy = creature->target.y - item->pos.y_pos;
+        if (dy > LOT->fly)
+            dy = LOT->fly;
+        else if (dy < -LOT->fly)
+            dy = -LOT->fly;
+        height = GetHeight(floor, item->pos.x_pos, y, item->pos.z_pos);
+        if (item->pos.y_pos + dy > height) {
+            if (item->pos.y_pos > height) {
+                item->pos.x_pos = old.x;
+                item->pos.z_pos = old.z;
+                dy = -LOT->fly;
+            } else {
+                dy = 0;
+                item->pos.y_pos = height;
+            }
+        } else if (!objects[item->object_number].water_creature) {
+            floor = GetFloor(item->pos.x_pos, y + STEP_L, item->pos.z_pos, &room_number);
+            if (room[room_number].flags & (UNDERWATER | 0x80))
+                dy = -LOT->fly;
+        } else {
+            ceiling = GetCeiling(floor, item->pos.x_pos, y, item->pos.z_pos);
+            if (item->object_number == 25)
+                top = STEP_L / 2;
+            else
+                top = bounds[2];
+            if (item->pos.y_pos + top + dy < ceiling) {
+                if (item->pos.y_pos + top < ceiling) {
+                    item->pos.x_pos = old.x;
+                    item->pos.z_pos = old.z;
+                    dy = LOT->fly;
+                } else {
+                    dy = 0;
+                }
+            }
+        }
+        item->pos.y_pos += dy;
+        floor = GetFloor(item->pos.x_pos, y, item->pos.z_pos, &room_number);
+        item->floor = GetHeight(floor, item->pos.x_pos, y, item->pos.z_pos);
+        angle = item->speed ? phd_atan(item->speed, -dy) : 0;
+        if (angle < -ONE_DEGREE * 20)
+            angle = -ONE_DEGREE * 20;
+        else if (angle > ONE_DEGREE * 20)
+            angle = ONE_DEGREE * 20;
+        if (angle < item->pos.x_rot - ONE_DEGREE)
+            item->pos.x_rot -= ONE_DEGREE;
+        else if (angle > item->pos.x_rot + ONE_DEGREE)
+            item->pos.x_rot += ONE_DEGREE;
+        else
+            item->pos.x_rot = angle;
+    } else {
+        floor = GetFloor(item->pos.x_pos, y, item->pos.z_pos, &room_number);
+        ceiling = GetCeiling(floor, item->pos.x_pos, y, item->pos.z_pos);
+        if (item->object_number == 287 || item->object_number == SHIVA || item->object_number == 45)
+            top = STEP_L * 3;
+        else
+            top = bounds[2];
+        if (item->pos.y_pos + top < ceiling) {
+            item->pos.x_pos = old.x;
+            item->pos.z_pos = old.z;
+            item->pos.y_pos = old.y;
+        }
+        floor = GetFloor(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, &room_number);
+        item->floor = GetHeight(floor, item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+        if (item->pos.y_pos > item->floor)
+            item->pos.y_pos = item->floor;
+        else if (item->floor - item->pos.y_pos > STEP_L / 4)
+            item->pos.y_pos += STEP_L / 4;
+        else if (item->pos.y_pos < item->floor)
+            item->pos.y_pos = item->floor;
+        item->pos.x_rot = 0;
+    }
+    if (!objects[item->object_number].water_creature) {
+        GetFloor(item->pos.x_pos, item->pos.y_pos - STEP_L * 2, item->pos.z_pos, &room_number);
+        if (room[room_number].flags & UNDERWATER)
+            item->hit_points = 0;
+    }
+    if (item->room_number != room_number)
+        ItemNewRoom(item_number, room_number);
+    return 1;
 }

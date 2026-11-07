@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="8.19" height="12" x="349.40" y="0" class="nonmatching"><title>33 · 2.20%</title></rect>
-<rect width="14.40" height="12" x="357.60" y="0" class="todo"><title>58 · 3.87%</title></rect>
+<rect width="8.44" height="12" x="349.40" y="0" class="nonmatching"><title>34 · 2.27%</title></rect>
+<rect width="14.15" height="12" x="357.85" y="0" class="todo"><title>57 · 3.81%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">33</tspan> · <tspan class="todo">58</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">34</tspan> · <tspan class="todo">57</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="276.91" height="12" x="0" y="0" class="named"><title>539 KB · 74.44%</title></rect>
-<rect width="33.96" height="12" x="276.91" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="17.54" height="12" x="310.87" y="0" class="nonmatching"><title>34 KB · 4.71%</title></rect>
-<rect width="43.59" height="12" x="328.41" y="0" class="todo"><title>85 KB · 11.72%</title></rect>
+<rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
+<rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="17.64" height="12" x="312.18" y="0" class="nonmatching"><title>34 KB · 4.74%</title></rect>
+<rect width="42.18" height="12" x="329.82" y="0" class="todo"><title>82 KB · 11.34%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">83.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">539 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">34 KB</tspan> · <tspan class="todo">85 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">83.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">34 KB</tspan> · <tspan class="todo">82 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -200,8 +200,8 @@
 <rect width="12" height="12" x="465" y="30" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="30" class="named"><title>0x00415780 BadFloor (154 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="30" class="named"><title>0x00415820 CreatureDie (275 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="30" class="todo"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="30" class="named"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="30" class="named"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="30" class="nonmatching"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="30" class="named"><title>0x004164d0 CreatureTilt (53 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="30" class="named"><title>0x00416510 CreatureJoint (81 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="30" class="named"><title>0x00416570 CreatureFloat (174 bytes)</title></rect>
@@ -1611,7 +1611,7 @@
 <rect width="31.32" height="29.05" x="133.55" y="202.46" class="named"><title>0x0049ce20 ScanLinesTFAffine (2809 bytes)</title></rect>
 <rect width="31.32" height="28.64" x="133.55" y="234.51" class="decompiled"><title>0x0049a790 Func49a790 (2769 bytes)</title></rect>
 <rect width="31.32" height="28.63" x="133.55" y="266.14" class="named"><title>0x00433810 HairControl (2768 bytes)</title></rect>
-<rect width="31.32" height="28.37" x="133.55" y="297.77" class="todo"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
+<rect width="31.32" height="28.37" x="133.55" y="297.77" class="named"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
 <rect width="31.32" height="28.37" x="133.55" y="329.14" class="todo"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="31.32" height="27.11" x="133.55" y="360.50" class="named"><title>0x00443ca0 GetLHAInt (2622 bytes)</title></rect>
 <rect width="31.32" height="27.08" x="133.55" y="390.61" class="named"><title>0x00493c70 MMXDrawTriangleP (2619 bytes)</title></rect>
@@ -2272,7 +2272,7 @@
 <rect width="7.93" height="8.33" x="513.59" y="360.01" class="named"><title>0x00449310 LaraCheckForLetGo (204 bytes)</title></rect>
 <rect width="7.93" height="8.33" x="513.59" y="371.35" class="named"><title>0x00459260 DoorControl (204 bytes)</title></rect>
 <rect width="7.93" height="8.29" x="513.59" y="382.68" class="named"><title>0x0041f0e0 TestBoundsCollide (203 bytes)</title></rect>
-<rect width="7.93" height="8.25" x="513.59" y="393.98" class="named"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
+<rect width="7.93" height="8.25" x="513.59" y="393.98" class="nonmatching"><title>0x00416400 CreatureTurn (202 bytes)</title></rect>
 <rect width="7.93" height="8.21" x="513.59" y="405.23" class="named"><title>0x0043ffd0 TestMonkeyRight (201 bytes)</title></rect>
 <rect width="7.93" height="8.21" x="513.59" y="416.44" class="named"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
 <rect width="7.93" height="8.17" x="513.59" y="427.66" class="named"><title>0x0041e560 GetNearByRooms (200 bytes)</title></rect>
