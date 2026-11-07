@@ -262,4 +262,123 @@ int DXTextureAddPal(int w, int h, unsigned char *src, DXTEXTURE *list, unsigned 
     return index;
 }
 
+
+int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, unsigned long flags)
+{
+    DXTEXTURE *tex;
+    D3DTEXTUREINFO *tinfo;
+    DDCOLORKEY ckey;
+    DDSURFACEDESC desc;
+    unsigned char *udest;
+    char *dest;
+    unsigned long col;
+    long oldTF, lw, a, r, g, b, pitch;
+    int index;
+
+    oldTF = -1;
+    if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bPalette) {
+        oldTF = App.DXConfigPtr->D3DTF;
+        App.DXConfigPtr->D3DTF = 0;
+    }
+    index = DXTextureMakeDeviceSurface(w, h, 0, list);
+    if (index < 0)
+        return -1;
+    tex = &list[index];
+    tex->dwFlags |= flags;
+    if ((bool)FAILED(DD_LockSurface(tex->pSystemSurface, desc, DDLOCK_WAIT | DDLOCK_WRITEONLY)))
+        return -1;
+    pitch = desc.lPitch;
+    dest = (char *)desc.lpSurface;
+    while (h) {
+        udest = (unsigned char *)dest;
+        lw = w;
+        while (lw) {
+            if (bpp == 8888) {
+                col = *(unsigned long *)src;
+                src += 4;
+            } else if (bpp == 888) {
+                col = *(unsigned long *)src & 0xffffff;
+                src += 3;
+            } else {
+                col = *(unsigned short *)src;
+                src += 2;
+            }
+            switch (bpp) {
+            case 8888:
+                a = 0;
+                r = (col >> 16) & 0xff;
+                g = (col >> 8) & 0xff;
+                b = col & 0xff;
+                if (r && g && b)
+                    a = 255;
+                break;
+            case 888:
+                a = 0;
+                r = (col >> 16) & 0xff;
+                g = (col >> 8) & 0xff;
+                b = col & 0xff;
+                if (r && g && b)
+                    a = 255;
+                break;
+            case 565:
+                r = (col >> 8) & 0xf8;
+                g = (col >> 3) & 0xf8;
+                b = (col << 3) & 0xf8;
+                a = 0;
+                break;
+            case 555:
+                r = (col >> 7) & 0xf8;
+                g = (col >> 2) & 0xf8;
+                b = (col << 3) & 0xf8;
+                a = (short)((short)col >> 15);
+                break;
+            }
+            if (flags == 16)
+                a = 255;
+            if (bMakeGrey) {
+                r = b;
+                g = b;
+            }
+            tinfo = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF];
+            if (tinfo->bAlpha || App.DXConfigPtr->MMX)
+                col = (r >> (8 - tinfo->rbpp) << tinfo->rshift) | (g >> (8 - tinfo->gbpp) << tinfo->gshift) | (b >> (8 - tinfo->bbpp) << tinfo->bshift) | (a >> (8 - tinfo->abpp) << tinfo->ashift);
+            else
+                col = (r >> (8 - tinfo->rbpp) << tinfo->rshift) | (g >> (8 - tinfo->gbpp) << tinfo->gshift) | (b >> (8 - tinfo->bbpp) << tinfo->bshift);
+            for (long nBits = tinfo->bpp; nBits > 0; nBits -= 8) {
+                *udest++ = (unsigned char)col;
+                col >>= 8;
+            }
+            lw--;
+        }
+        dest += pitch;
+        h--;
+    }
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+        if (App.DXConfig.MMX) {
+            tex->pData = (unsigned long *)GlobalAlloc(GMEM_FIXED, 0x55400);
+            memcpy(tex->pData, desc.lpSurface, 0x40000);
+            MMXTextureCopy(tex->pData + 0x10000, (unsigned char *)desc.lpSurface, 2);
+            MMXTextureCopy(tex->pData + 0x14000, (unsigned char *)desc.lpSurface, 4);
+            MMXTextureCopy(tex->pData + 0x15000, (unsigned char *)desc.lpSurface, 8);
+            MMXTextureCopy(tex->pData + 0x15400, (unsigned char *)desc.lpSurface, 16);
+        } else {
+            tex->pData = (unsigned long *)GlobalAlloc(GMEM_FIXED, 0x20000);
+            memcpy(tex->pData, desc.lpSurface, 0x20000);
+        }
+    }
+    if (flags == 8 && !App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bAlpha) {
+        ckey.dwColorSpaceLowValue = 0;
+        ckey.dwColorSpaceHighValue = 0;
+        tex->pSystemSurface->SetColorKey(DDCKEY_SRCBLT, &ckey);
+    }
+    DD_UnlockSurface(tex->pSystemSurface, desc);
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+        tex->pSystemSurface->Release();
+        tex->pSystemSurface = 0;
+    }
+    if (oldTF != -1)
+        App.DXConfigPtr->D3DTF = oldTF;
+    return index;
+}
+
 }
