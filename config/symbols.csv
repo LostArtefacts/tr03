@@ -1207,7 +1207,7 @@ address,size,name,symbol
 0x00484eb0,78,HWR_BeginScene,_HWR_BeginScene
 0x00484f00,6,HWR_EndScene,_HWR_EndScene
 0x00484f10,540,HWR_DrawRoutines,_HWR_DrawRoutines
-0x00485130,512,HWR_DrawRoutinesStippledAlpha,_HWR_DrawRoutinesStippledAlpha
+0x00485130,544,HWR_DrawRoutinesStippledAlpha,_HWR_DrawRoutinesStippledAlpha
 0x00485350,368,HWR_DrawRoutinesNoAlpha,_HWR_DrawRoutinesNoAlpha
 0x004854c0,256,HWR_DrawPolyList,_HWR_DrawPolyList
 0x004855c0,821,HWR_DrawPolyListBF,_HWR_DrawPolyListBF

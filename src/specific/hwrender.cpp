@@ -230,6 +230,64 @@ void HWR_DrawRoutines(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage)
     }
 }
 
+void HWR_DrawRoutinesStippledAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage)
+{
+    switch (nDrawType) {
+    case 9:
+        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_EnableAlphaBlend(0);
+        HWR_EnableColorKey(0);
+        DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        return;
+    case 10:
+        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_EnableZBuffer(1, 1);
+        HWR_EnableAlphaBlend(1);
+        HWR_EnableColorKey(1);
+        HWR_EnableColorAddition(0);
+        DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        HWR_EnableZBuffer(0, 1);
+        return;
+    case 11:
+        HWR_SetCurrentTexture(0);
+        HWR_EnableAlphaBlend(0);
+        HWR_EnableColorKey(0);
+        DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        return;
+    case 13:
+        HWR_SetCurrentTexture(0);
+        HWR_EnableAlphaBlend(1);
+        HWR_EnableColorAddition(0);
+        SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, 1);
+        DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, 0);
+        return;
+    case 16:
+        HWR_SetCurrentTexture(0);
+        HWR_EnableAlphaBlend(1);
+        HWR_EnableColorAddition(1);
+        SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, 1);
+        DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, 0);
+        return;
+    case 14:
+        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_EnableColorAddition(1);
+        HWR_EnableAlphaBlend(1);
+        HWR_EnableColorKey(1);
+        SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, 1);
+        DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, 0);
+        return;
+    case 12:
+        HWR_SetCurrentTexture(0);
+        HWR_EnableAlphaBlend(1);
+        HWR_EnableColorKey(0);
+        DrawPrimitive(D3DPT_LINELIST, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+        return;
+    }
+}
+
 void HWR_DrawRoutinesNoAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage)
 {
     switch (nDrawType) {
