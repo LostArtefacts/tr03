@@ -328,4 +328,39 @@ void S_ExitSystem(char *message)
     exit(1);
 }
 
+
+LRESULT CALLBACK WinAppProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg) {
+    case WM_CREATE:
+        ShowCursor(FALSE);
+        break;
+    case WM_CLOSE:
+        WinAppExit();
+        PostQuitMessage(0);
+        break;
+    case WM_CHAR:
+        break;
+    case WM_KEYDOWN:
+        switch (wParam) {
+        case VK_F1:
+            break;
+        }
+        break;
+    case WM_KEYUP:
+        break;
+    case WM_ACTIVATE:
+        switch (LOWORD(wParam)) {
+        case WA_ACTIVE:
+        case WA_CLICKACTIVE:
+            App.bFocus = TRUE;
+            break;
+        case WA_INACTIVE:
+            App.bFocus = FALSE;
+            break;
+        }
+    }
+    return DefWindowProc(hWnd, uMsg, wParam, lParam);
+}
+
 }
