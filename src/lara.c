@@ -3921,3 +3921,109 @@ void GetLHAInt(ITEM_INFO *item, PHD_VECTOR *vec, sint16 *frame1, sint16 *frame2,
     phd_PopMatrix();
     phd_PopMatrix();
 }
+
+void LaraHangTest(ITEM_INFO *item, COLL_INFO *coll)
+{
+    PHD_ANGLE angle;
+    sint16 *bounds;
+    int flag = 0;
+    int hdif;
+
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = NO_BAD_NEG;
+    coll->bad_ceiling = 0;
+    GetLaraCollisionInfo(item, coll);
+    if (coll->front_floor < 200)
+        flag = 1;
+    item->gravity_status = item->fallspeed = 0;
+    lara.move_angle = item->pos.y_rot;
+    angle = (uint16)(item->pos.y_rot + 0x2000) / 0x4000;
+    switch (angle) {
+    case 0:
+        item->pos.z_pos += 4;
+        break;
+    case 3:
+        item->pos.x_pos -= 4;
+        break;
+    case 2:
+        item->pos.z_pos -= 4;
+        break;
+    case 1:
+        item->pos.x_pos += 4;
+        break;
+    }
+    coll->bad_pos = NO_BAD_POS;
+    coll->bad_neg = -STEPUP_HEIGHT;
+    coll->bad_ceiling = 0;
+    GetLaraCollisionInfo(item, coll);
+    if (lara.climb_status) {
+        if (!(input & IN_ACTION) || item->hit_points <= 0) {
+            item->goal_anim_state = AS_FORWARDJUMP;
+            item->current_anim_state = AS_FORWARDJUMP;
+            item->anim_number = FALLDOWN_A;
+            item->frame_number = FALLDOWN_F;
+            item->pos.y_pos += 256;
+            item->gravity_status = 1;
+            item->speed = 2;
+            item->fallspeed = 1;
+            lara.gun_status = LG_ARMLESS;
+            return;
+        }
+        if (!LaraTestHangOnClimbWall(item, coll)) {
+            item->pos.x_pos = coll->old.x;
+            item->pos.y_pos = coll->old.y;
+            item->pos.z_pos = coll->old.z;
+            item->goal_anim_state = AS_HANG;
+            item->current_anim_state = AS_HANG;
+            item->frame_number = anims[96].frame_base + 21;
+            item->anim_number = 96;
+            return;
+        }
+        if (item->anim_number == 96 && item->frame_number == anims[96].frame_base + 21) {
+            if (LaraTestClimbStance(item, coll))
+                item->goal_anim_state = AS_CLIMBSTNC;
+        }
+        return;
+    }
+    if (!(input & IN_ACTION) || item->hit_points <= 0 || coll->front_floor > 0) {
+        item->goal_anim_state = AS_UPJUMP;
+        item->current_anim_state = AS_UPJUMP;
+        item->anim_number = STOPHANG_A;
+        item->frame_number = STOPHANG_F;
+        bounds = GetBoundsAccurate(item);
+        item->pos.y_pos += bounds[3];
+        item->pos.x_pos += coll->shift.x;
+        item->pos.z_pos += coll->shift.z;
+        item->gravity_status = 1;
+        item->speed = 2;
+        item->fallspeed = 1;
+        lara.gun_status = LG_ARMLESS;
+        return;
+    }
+    bounds = GetBoundsAccurate(item);
+    hdif = coll->front_floor - bounds[2];
+    if (ABS(coll->left_floor2 - coll->right_floor2) >= 60 || coll->mid_ceiling >= 0 || coll->coll_type != COLL_FRONT || flag
+        || coll->hit_static || hdif < -60 || hdif > 60) {
+        item->pos.x_pos = coll->old.x;
+        item->pos.y_pos = coll->old.y;
+        item->pos.z_pos = coll->old.z;
+        if (item->current_anim_state == AS_HANGLEFT || item->current_anim_state == AS_HANGRIGHT) {
+            item->goal_anim_state = AS_HANG;
+            item->current_anim_state = AS_HANG;
+            item->frame_number = anims[96].frame_base + 21;
+            item->anim_number = 96;
+        }
+        return;
+    }
+    switch (angle) {
+    case 0:
+    case 2:
+        item->pos.z_pos += coll->shift.z;
+        break;
+    case 1:
+    case 3:
+        item->pos.x_pos += coll->shift.x;
+        break;
+    }
+    item->pos.y_pos += hdif;
+}
