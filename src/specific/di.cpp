@@ -2,6 +2,7 @@
 #include "specific.h"
 #include "winmain.h"
 #include "template.h"
+#include "init_result.h"
 
 struct JOYSTICK : GENERIC_ADAPTER {
 };
@@ -92,6 +93,16 @@ void DI_FinishKeyboard(void)
 bool DI_StartJoystick(void)
 {
     return true;
+}
+
+void DI_StartKeyboard(void);
+
+void DI_Start(void)
+{
+    if (!DI_Create())
+        throw INIT_ERR_CantCreateDirectInput;
+    DI_StartKeyboard();
+    DI_StartJoystick();
 }
 
 void DI_FinishJoystick(void);

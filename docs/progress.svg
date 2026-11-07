@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="332.53" height="12" x="0" y="0" class="named"><title>1361 · 90.85%</title></rect>
-<rect width="7.33" height="12" x="332.53" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.33" height="12" x="339.86" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="18.81" height="12" x="347.19" y="0" class="todo"><title>77 · 5.14%</title></rect>
+<rect width="332.77" height="12" x="0" y="0" class="named"><title>1362 · 90.92%</title></rect>
+<rect width="7.33" height="12" x="332.77" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.33" height="12" x="340.10" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="18.57" height="12" x="347.43" y="0" class="todo"><title>76 · 5.07%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="7.50">92.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1361</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">77</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1362</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">76</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="266.68" height="12" x="0" y="0" class="named"><title>528 KB · 72.86%</title></rect>
-<rect width="33.42" height="12" x="266.68" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.54" height="12" x="300.10" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="51.36" height="12" x="314.64" y="0" class="todo"><title>102 KB · 14.03%</title></rect>
+<rect width="266.70" height="12" x="0" y="0" class="named"><title>528 KB · 72.87%</title></rect>
+<rect width="33.42" height="12" x="266.70" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.54" height="12" x="300.12" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="51.34" height="12" x="314.66" y="0" class="todo"><title>102 KB · 14.03%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">82.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">528 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">102 KB</tspan></text>
@@ -1145,7 +1145,7 @@
 <rect width="12" height="12" x="390" y="315" class="todo"><title>0x004755b0 DI_StartKeyboard (201 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="315" class="named"><title>0x00475680 DI_FinishKeyboard (41 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="315" class="named"><title>0x004756b0 DI_StartJoystick (3 bytes)</title></rect>
-<rect width="12" height="12" x="435" y="315" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
+<rect width="12" height="12" x="435" y="315" class="named"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="315" class="named"><title>0x004756f0 DI_Finish (15 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="315" class="named"><title>0x00475700 FlaggedStringCreate (31 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="315" class="named"><title>0x00475720 IncreaseScreenSize (98 bytes)</title></rect>
@@ -2832,7 +2832,7 @@
 <rect width="3.76" height="3.87" x="653.70" y="388.31" class="named"><title>0x0042f4e0 AssaultPenalty4 (45 bytes)</title></rect>
 <rect width="3.76" height="3.87" x="653.70" y="395.18" class="named"><title>0x0042f510 AssaultPenalty30 (45 bytes)</title></rect>
 <rect width="3.76" height="3.87" x="653.70" y="402.06" class="named"><title>0x00434360 FlashIt (45 bytes)</title></rect>
-<rect width="3.76" height="3.87" x="653.70" y="408.93" class="todo"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
+<rect width="3.76" height="3.87" x="653.70" y="408.93" class="named"><title>0x004756c0 DI_Start (45 bytes)</title></rect>
 <rect width="3.76" height="3.87" x="653.70" y="415.80" class="named"><title>0x00480990 DS_StopAllSamples (45 bytes)</title></rect>
 <rect width="3.76" height="3.87" x="653.70" y="422.68" class="named"><title>0x0048a2a0 S_DumpCine (45 bytes)</title></rect>
 <rect width="3.76" height="3.87" x="653.70" y="429.55" class="named"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
