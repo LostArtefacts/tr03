@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="347.17" height="12" x="0" y="0" class="named"><title>1398 · 93.32%</title></rect>
-<rect width="7.45" height="12" x="347.17" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="13.91" height="12" x="354.62" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
-<rect width="3.48" height="12" x="368.52" y="0" class="todo"><title>14 · 0.93%</title></rect>
+<rect width="347.42" height="12" x="0" y="0" class="named"><title>1399 · 93.39%</title></rect>
+<rect width="7.45" height="12" x="347.42" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="13.91" height="12" x="354.87" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
+<rect width="3.23" height="12" x="368.77" y="0" class="todo"><title>13 · 0.87%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">95.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1398</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">14</tspan></text>
+<text text-anchor="end" x="552" y="7.50">95.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1399</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">13</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="291.36" height="12" x="0" y="0" class="named"><title>568 KB · 78.32%</title></rect>
-<rect width="33.96" height="12" x="291.36" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="34.76" height="12" x="325.32" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
-<rect width="11.92" height="12" x="360.08" y="0" class="todo"><title>23 KB · 3.21%</title></rect>
+<rect width="291.83" height="12" x="0" y="0" class="named"><title>569 KB · 78.45%</title></rect>
+<rect width="33.96" height="12" x="291.83" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="34.76" height="12" x="325.79" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
+<rect width="11.46" height="12" x="360.54" y="0" class="todo"><title>22 KB · 3.08%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">87.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">568 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">23 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">87.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">569 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">22 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1378,7 +1378,7 @@
 <rect width="12" height="12" x="135" y="390" class="named"><title>0x0048d6a0 InitZTable (58 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="390" class="named"><title>0x0048d6e0 calc_object_vertices (714 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="390" class="nonmatching"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="390" class="todo"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="390" class="named"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="390" class="named"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="390" class="named"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="390" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
@@ -1762,7 +1762,7 @@
 <rect width="17.29" height="17.50" x="330.10" y="172.02" class="named"><title>0x0046b340 T_DrawThisText (934 bytes)</title></rect>
 <rect width="17.29" height="17.22" x="330.10" y="192.52" class="named"><title>0x00491060 CalculateGradientsTG (919 bytes)</title></rect>
 <rect width="17.29" height="17.11" x="330.10" y="212.74" class="named"><title>0x0042ab80 TriggerExplosionSparks (913 bytes)</title></rect>
-<rect width="17.29" height="17.07" x="330.10" y="232.84" class="todo"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
+<rect width="17.29" height="17.07" x="330.10" y="232.84" class="named"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
 <rect width="17.29" height="16.96" x="330.10" y="252.91" class="named"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
 <rect width="17.29" height="16.90" x="330.10" y="272.87" class="named"><title>0x0043a220 ShowStatsText (902 bytes)</title></rect>
 <rect width="17.29" height="16.90" x="330.10" y="292.77" class="nonmatching"><title>0x0043b730 KayakControl (902 bytes)</title></rect>

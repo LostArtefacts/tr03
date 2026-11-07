@@ -1,4 +1,7 @@
+#include <conio.h>
+#include <direct.h>
 #include <io.h>
+#include <signal.h>
 #include "standard.h"
 #include "global.h"
 #include "winmain.h"
@@ -311,6 +314,78 @@ short *calc_roomvert(short *sobjptr, int far_clip)
             dest->g = r << 10 | g << 5 | b;
         }
     }
+    return objptr;
+}
+
+extern float outsideBackgroundTop;
+extern short phd_winxmax, phd_winxmin, phd_winymin, phd_winymax;
+
+short *calc_object_verticesback(short *objptr)
+{
+    PHD_VBUF *buf;
+    float zv, fMidSort, zT;
+    long y, z, x;
+    long nVtx;
+    long zi;
+    char totalClip, clipFlag;
+    double fconv;
+
+    if (App.lpZBuffer)
+        fMidSort = 0;
+    else
+        fMidSort = float(mid_sort << 22);
+    outsideBackgroundTop = 0;
+    totalClip = -1;
+    buf = vbuf;
+    objptr++;
+    MatrixToFloat(phd_mxptr);
+    for (nVtx = *(objptr++); nVtx > 0; nVtx--, buf++, objptr += 3) {
+        x = objptr[0] << 5;
+        y = objptr[1] << 5;
+        z = objptr[2] << 5;
+        buf->xv = m00 * x + m01 * y + m02 * z + m03;
+        buf->yv = m10 * x + m11 * y + m12 * z + m13;
+        zv = m20 * x + m21 * y + m22 * z + m23;
+        buf->z = zi = FTOL(zv);
+        if (zi >= phd_znear) {
+            if (zi >= phd_zfar) {
+                buf->zv = f_zfar;
+                zv = f_persp / zv;
+                buf->xs = buf->xv * zv + f_centerx;
+                buf->ys = buf->yv * zv + f_centery;
+                buf->ooz = zv * f_oneopersp;
+            } else {
+                buf->zv = zv + fMidSort;
+                zT = ZTable[((zi >> 14) << 1)];
+                buf->xs = buf->xv * zT + f_centerx;
+                buf->ys = buf->yv * zT + f_centery;
+                buf->ooz = ZTable[((zi >> 14) << 1) + 1];
+            }
+            if (buf->ys > outsideBackgroundTop && buf->xs > 0 && buf->xs < phd_winxmax + phd_winxmin && buf->ys > 0 && buf->ys < phd_winymax + phd_winymin) {
+                outsideBackgroundTop = buf->ys;
+                if (outsideBackgroundTop > phd_winymax + phd_winymin)
+                    outsideBackgroundTop = float(phd_winymax + phd_winymin - 1);
+                if (outsideBackgroundTop < 0)
+                    outsideBackgroundTop = 0;
+            }
+            clipFlag = 0;
+            if (buf->xs < phd_leftfloat)
+                clipFlag++;
+            else if (buf->xs > phd_rightfloat)
+                clipFlag += 2;
+            if (buf->ys < phd_topfloat)
+                clipFlag += 4;
+            else if (buf->ys > phd_bottomfloat)
+                clipFlag += 8;
+        } else {
+            buf->zv = zv;
+            clipFlag = -128;
+        }
+        buf->clip = clipFlag;
+        totalClip &= clipFlag;
+    }
+    if (totalClip)
+        return 0;
     return objptr;
 }
 
