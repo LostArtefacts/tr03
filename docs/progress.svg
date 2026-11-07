@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.95" height="12" x="349.40" y="0" class="nonmatching"><title>32 · 2.14%</title></rect>
-<rect width="14.65" height="12" x="357.35" y="0" class="todo"><title>59 · 3.94%</title></rect>
+<rect width="8.19" height="12" x="349.40" y="0" class="nonmatching"><title>33 · 2.20%</title></rect>
+<rect width="14.40" height="12" x="357.60" y="0" class="todo"><title>58 · 3.87%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">32</tspan> · <tspan class="todo">59</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">33</tspan> · <tspan class="todo">58</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="276.91" height="12" x="0" y="0" class="named"><title>539 KB · 74.44%</title></rect>
 <rect width="33.96" height="12" x="276.91" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="16.56" height="12" x="310.87" y="0" class="nonmatching"><title>32 KB · 4.45%</title></rect>
-<rect width="44.56" height="12" x="327.44" y="0" class="todo"><title>87 KB · 11.98%</title></rect>
+<rect width="17.54" height="12" x="310.87" y="0" class="nonmatching"><title>34 KB · 4.71%</title></rect>
+<rect width="43.59" height="12" x="328.41" y="0" class="todo"><title>85 KB · 11.72%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">539 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">32 KB</tspan> · <tspan class="todo">87 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">539 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">34 KB</tspan> · <tspan class="todo">85 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1092,7 +1092,7 @@
 <rect width="12" height="12" x="345" y="300" class="named"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="300" class="named"><title>0x0046f130 FlameEmitter3Control (174 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="300" class="named"><title>0x0046f1e0 SideFlameDetection (387 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="300" class="todo"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="300" class="nonmatching"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="300" class="named"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="300" class="named"><title>0x0046fb30 LavaBurn (150 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="300" class="named"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>
@@ -1656,7 +1656,7 @@
 <rect width="25.37" height="25.12" x="226.97" y="232.50" class="named"><title>0x0046fd80 DinoControl (1968 bytes)</title></rect>
 <rect width="25.37" height="24.40" x="226.97" y="260.63" class="named"><title>0x004946b0 MMXDrawTriangle (1911 bytes)</title></rect>
 <rect width="25.37" height="24.36" x="226.97" y="288.02" class="named"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
-<rect width="25.37" height="24.31" x="226.97" y="315.38" class="todo"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
+<rect width="25.37" height="24.31" x="226.97" y="315.38" class="nonmatching"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="25.37" height="24.18" x="226.97" y="342.69" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
 <rect width="25.37" height="24.13" x="226.97" y="369.86" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="25.37" height="23.54" x="226.97" y="396.99" class="todo"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
