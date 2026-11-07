@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="332.28" height="12" x="0" y="0" class="named"><title>1360 · 90.79%</title></rect>
-<rect width="7.33" height="12" x="332.28" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.33" height="12" x="339.61" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="19.06" height="12" x="346.94" y="0" class="todo"><title>78 · 5.21%</title></rect>
+<rect width="332.53" height="12" x="0" y="0" class="named"><title>1361 · 90.85%</title></rect>
+<rect width="7.33" height="12" x="332.53" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.33" height="12" x="339.86" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="18.81" height="12" x="347.19" y="0" class="todo"><title>77 · 5.14%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">92.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1360</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">78</tspan></text>
+<text text-anchor="end" x="546" y="7.50">92.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1361</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">77</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="266.58" height="12" x="0" y="0" class="named"><title>528 KB · 72.84%</title></rect>
-<rect width="33.42" height="12" x="266.58" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.54" height="12" x="300" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="51.46" height="12" x="314.54" y="0" class="todo"><title>102 KB · 14.06%</title></rect>
+<rect width="266.68" height="12" x="0" y="0" class="named"><title>528 KB · 72.86%</title></rect>
+<rect width="33.42" height="12" x="266.68" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.54" height="12" x="300.10" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="51.36" height="12" x="314.64" y="0" class="todo"><title>102 KB · 14.03%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">82.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">528 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">102 KB</tspan></text>
@@ -83,7 +83,7 @@
 <rect width="12" height="12" x="210" y="0" class="nonmatching"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="0" class="named"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="0" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="0" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="0" class="named"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="0" class="named"><title>0x00402030 AlterFOV (158 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="0" class="todo"><title>0x004020d0 SetupZRange (83 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="0" class="named"><title>0x00402130 SetZNear (66 bytes)</title></rect>
@@ -2287,7 +2287,7 @@
 <rect width="7.79" height="8.19" x="600.50" y="222.82" class="named"><title>0x004908a0 BuildRGBTable (197 bytes)</title></rect>
 <rect width="7.79" height="8.19" x="611.29" y="222.82" class="named"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="7.79" height="8.19" x="622.08" y="222.82" class="named"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
-<rect width="7.75" height="8.19" x="632.86" y="222.82" class="todo"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
+<rect width="7.75" height="8.19" x="632.86" y="222.82" class="named"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
 <rect width="7.75" height="8.19" x="643.61" y="222.82" class="named"><title>0x0045b540 TargetVisible (196 bytes)</title></rect>
 <rect width="7.71" height="8.19" x="654.36" y="222.82" class="named"><title>0x00457690 AlterFloorHeight (195 bytes)</title></rect>
 <rect width="7.67" height="8.19" x="665.06" y="222.82" class="named"><title>0x0043f260 lara_as_crawlb (194 bytes)</title></rect>

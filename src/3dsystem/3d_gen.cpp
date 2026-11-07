@@ -695,4 +695,38 @@ void phd_PutPolygons(sint16 *objptr, int clipstatus)
     }
 }
 
+
+void do_quickysorty(int left, int right, sint32 buffer[][3])
+{
+    sint32 i, j;
+    sint32 compare, swap;
+
+    i = left;
+    j = right;
+    compare = buffer[(left + right) / 2][1];
+    do {
+        while (buffer[i][1] > compare && i < right)
+            ++i;
+        while (compare > buffer[j][1] && j > left)
+            --j;
+        if (i <= j) {
+            swap = buffer[i][1];
+            buffer[i][1] = buffer[j][1];
+            buffer[j][1] = swap;
+            swap = buffer[i][0];
+            buffer[i][0] = buffer[j][0];
+            buffer[j][0] = swap;
+            swap = buffer[i][2];
+            buffer[i][2] = buffer[j][2];
+            buffer[j][2] = swap;
+            i++;
+            j--;
+        }
+    } while (i <= j);
+    if (left < j)
+        do_quickysorty(left, j, buffer);
+    if (i < right)
+        do_quickysorty(i, right, buffer);
+}
+
 }
