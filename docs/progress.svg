@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="339.72" height="12" x="0" y="0" class="named"><title>1368 · 91.32%</title></rect>
-<rect width="7.45" height="12" x="339.72" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.45" height="12" x="347.17" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="17.38" height="12" x="354.62" y="0" class="todo"><title>70 · 4.67%</title></rect>
+<rect width="339.97" height="12" x="0" y="0" class="named"><title>1369 · 91.39%</title></rect>
+<rect width="7.45" height="12" x="339.97" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.45" height="12" x="347.42" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="17.13" height="12" x="354.87" y="0" class="todo"><title>69 · 4.61%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">93.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1368</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">70</tspan></text>
+<text text-anchor="end" x="552" y="7.50">93.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1369</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">69</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="273.51" height="12" x="0" y="0" class="named"><title>533 KB · 73.52%</title></rect>
-<rect width="33.96" height="12" x="273.51" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.78" height="12" x="307.47" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="49.75" height="12" x="322.25" y="0" class="todo"><title>97 KB · 13.37%</title></rect>
+<rect width="274.08" height="12" x="0" y="0" class="named"><title>534 KB · 73.68%</title></rect>
+<rect width="33.96" height="12" x="274.08" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.78" height="12" x="308.04" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="49.18" height="12" x="322.82" y="0" class="todo"><title>96 KB · 13.22%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">82.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">533 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">97 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">82.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">534 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">96 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -121,7 +121,7 @@
 <rect width="12" height="12" x="30" y="15" class="todo"><title>0x004070e0 HWI_InsertGT4_Poly (5549 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="15" class="named"><title>0x004086b0 HWI_InsertObjectGT4_Sorted (330 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="15" class="named"><title>0x00408800 HWI_InsertObjectGT3_Sorted (307 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="15" class="todo"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="15" class="named"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="15" class="todo"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="15" class="named"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="15" class="todo"><title>0x00409560 HWI_InsertObjectG3_Sorted (1602 bytes)</title></rect>
@@ -1731,7 +1731,7 @@
 <rect width="19.45" height="18.82" x="307.67" y="341.85" class="named"><title>0x00460230 AnimateQuadBike (1130 bytes)</title></rect>
 <rect width="19.45" height="18.79" x="307.67" y="363.67" class="named"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
 <rect width="19.45" height="18.70" x="307.67" y="385.45" class="named"><title>0x0043a5b0 ShowEndStatsText (1123 bytes)</title></rect>
-<rect width="19.45" height="18.59" x="307.67" y="407.16" class="todo"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
+<rect width="19.45" height="18.59" x="307.67" y="407.16" class="named"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
 <rect width="19.45" height="18.25" x="307.67" y="428.75" class="named"><title>0x004977d0 DXInitD3DDrivers (1096 bytes)</title></rect>
 <rect width="18.87" height="18.73" x="330.12" y="23.50" class="named"><title>0x0044dc00 InitialiseLaraInventory (1091 bytes)</title></rect>
 <rect width="18.81" height="18.73" x="351.99" y="23.50" class="named"><title>0x00440520 lara_as_stop (1088 bytes)</title></rect>

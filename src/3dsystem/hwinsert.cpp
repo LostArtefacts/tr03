@@ -845,4 +845,116 @@ void HWI_InsertPoly_GouraudRGB(int nPoints, float zdepth, int nDrawType)
     }
 }
 
+
+void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
+
+void HWI_InsertPoly_Gouraud(int nPoints, float zdepth, int nR, int nG, int nB, int nDrawType)
+{
+    D3DTLVERTEX *pTLV;
+    unsigned long dwAnd;
+    VERTEX_INFO *pVI;
+    int b;
+    int n, v;
+    sint32 *sort;
+    sint16 *info;
+    double fconv;
+
+    dwAnd = nDrawType == 13 ? 0x80ffffff : 0xffffffff;
+    pVI = v_buffer;
+    if (App.lpZBuffer && nDrawType != 13) {
+        b = FindBucket(0);
+        if (b == -1)
+            return;
+        for (n = 0; n < 3; n++) {
+            v = Buckets[b].cnt;
+            pVI->vr = (pVI->vr * nR) >> 8;
+            pVI->vg = (pVI->vg * nG) >> 8;
+            pVI->vb = (pVI->vb * nB) >> 8;
+            Buckets[b].Vertex[v].sx = pVI->x;
+            Buckets[b].Vertex[v].sy = pVI->y;
+            Buckets[b].Vertex[v].sz = f_a - f_boo * pVI->ooz;
+            Buckets[b].Vertex[v].rhw = pVI->ooz;
+            Buckets[b].Vertex[v].color = (0xff000000 | (pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) & dwAnd;
+            Buckets[b].Vertex[v].specular = 0;
+            pVI++;
+            Buckets[b].cnt++;
+        }
+        nDrawnPoints++;
+        nPoints -= 3;
+        pVI--;
+        for (n = nPoints; n > 0; n--) {
+            nDrawnPoints++;
+            v = Buckets[b].cnt;
+            Buckets[b].Vertex[v + 0].sx = v_buffer->x;
+            Buckets[b].Vertex[v + 0].sy = v_buffer->y;
+            Buckets[b].Vertex[v + 0].sz = f_a - f_boo * v_buffer->ooz;
+            Buckets[b].Vertex[v + 0].rhw = v_buffer->ooz;
+            Buckets[b].Vertex[v + 0].color = (0xff000000 | (v_buffer->vr << 16) | (v_buffer->vg << 8) | v_buffer->vb) & dwAnd;
+            Buckets[b].Vertex[v + 0].specular = 0;
+            Buckets[b].Vertex[v + 1].sx = pVI->x;
+            Buckets[b].Vertex[v + 1].sy = pVI->y;
+            Buckets[b].Vertex[v + 1].sz = f_a - f_boo * pVI->ooz;
+            Buckets[b].Vertex[v + 1].rhw = pVI->ooz;
+            Buckets[b].Vertex[v + 1].color = (0xff000000 | (pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) & dwAnd;
+            Buckets[b].Vertex[v + 1].specular = 0;
+            pVI++;
+            pVI->vr = (pVI->vr * nR) >> 8;
+            pVI->vg = (pVI->vg * nG) >> 8;
+            pVI->vb = (pVI->vb * nB) >> 8;
+            Buckets[b].Vertex[v + 2].sx = pVI->x;
+            Buckets[b].Vertex[v + 2].sy = pVI->y;
+            Buckets[b].Vertex[v + 2].sz = f_a - f_boo * pVI->ooz;
+            Buckets[b].Vertex[v + 2].rhw = pVI->ooz;
+            Buckets[b].Vertex[v + 2].color = (0xff000000 | (pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) & dwAnd;
+            Buckets[b].Vertex[v + 2].specular = 0;
+            Buckets[b].cnt += 3;
+        }
+    } else {
+        if (CurrentTLVertex - VertexBuffer > 9184)
+            return;
+        if (!App.lpZBuffer || !bAlphaTesting) {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf += 3;
+            info3dptrbf += 5;
+        } else if (nDrawType == 14 || nDrawType == 13 || nDrawType == 12 || nDrawType == 16) {
+            sort = sort3dptrfb;
+            info = info3dptrfb;
+            sort[2] = nPolyType;
+            surfacenumfb++;
+            sort3dptrfb += 3;
+            info3dptrfb += 5;
+        } else {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf += 3;
+            info3dptrbf += 5;
+        }
+        sort[0] = (sint32)info;
+        sort[1] = FTOL(zdepth);
+        info[0] = (sint16)nDrawType;
+        info[1] = 0;
+        info[2] = (sint16)nPoints;
+        pTLV = CurrentTLVertex;
+        *((D3DTLVERTEX **)(info + 3)) = pTLV;
+        for (n = nPoints; n--;) {
+            pTLV->sx = pVI->x;
+            pTLV->sy = pVI->y;
+            pTLV->sz = f_a - f_boo * pVI->ooz;
+            pTLV->rhw = pVI->ooz;
+            pVI->vr = (pVI->vr * nR) >> 8;
+            pVI->vg = (pVI->vg * nG) >> 8;
+            pVI->vb = (pVI->vb * nB) >> 8;
+            pTLV->color = (0xff000000 | (pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) & dwAnd;
+            pTLV->specular = 0;
+            pVI++;
+            pTLV++;
+        }
+        CurrentTLVertex = pTLV;
+    }
+}
 }
