@@ -462,6 +462,253 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
     }
 }
 
+typedef struct res_txt {
+    char res[20];
+} RES_TXT;
+
+extern TEXTSTRING *dtext[14];
+extern char available[6];
+extern int selected_res;
+extern RES_TXT resolutions[30];
+extern int selection;
+extern float GammaOption;
+bool DXSwitchVideoMode(long needed, long current, bool disableZBuffer);
+void HWR_InitState(void);
+void CloseDrawPrimitive(void);
+void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurface, bool HW);
+
+void do_detail_option(INVENTORY_ITEM *inv_item)
+{
+    int i, w, bpp, old_res;
+    char gtxt[8];
+
+    old_res = GetRenderWidth() / 2;
+    w = old_res - 115;
+    if (!dtext[0]) {
+        bpp = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].bpp;
+        for (i = 0; i < App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].nDisplayMode; i++) {
+            if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[i].bpp == bpp) {
+                sprintf(resolutions[i].res, "%dx%d", App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[i].w, App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[i].h);
+                if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[i].w == App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w && App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[i].h == App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h)
+                    selected_res = i;
+            }
+        }
+        dtext[5] = T_Print(w, -45, 0, GF_PCStrings[22]);
+        dtext[4] = T_Print(w, -25, 0, GF_PCStrings[23]);
+        dtext[3] = T_Print(w, -5, 0, GF_PCStrings[24]);
+        dtext[2] = T_Print(w, 15, 0, GF_PCStrings[25]);
+        dtext[1] = T_Print(w, 35, 0, GF_PCStrings[26]);
+        dtext[0] = T_Print(w, 55, 0, GF_PCStrings[27]);
+        dtext[6] = T_Print(0, -72, 0, " ");
+        dtext[7] = T_Print(0, -70, 0, GF_PCStrings[21]);
+        T_AddBackground(dtext[7], 236, 0, 0, 0, 48, 0, 0, 0);
+        T_AddOutline(dtext[7], 1, 4, 0, 0);
+        T_AddBackground(dtext[6], 240, 150, 0, 0, 48, 0, 0, 0);
+        T_AddOutline(dtext[6], 1, 15, 0, 0);
+        T_CentreV(dtext[0], 1);
+        T_CentreV(dtext[1], 1);
+        T_CentreV(dtext[2], 1);
+        T_CentreV(dtext[3], 1);
+        T_CentreV(dtext[4], 1);
+        T_CentreV(dtext[5], 1);
+        T_CentreH(dtext[6], 1);
+        T_CentreV(dtext[6], 1);
+        T_CentreH(dtext[7], 1);
+        T_CentreV(dtext[7], 1);
+        dtext[13] = T_Print(w + 130, -45, 0, resolutions[selected_res].res);
+        if (App.lpZBuffer)
+            dtext[12] = T_Print(w + 130, -25, 0, GF_PCStrings[17]);
+        else
+            dtext[12] = T_Print(w + 130, -25, 0, GF_PCStrings[16]);
+        if (HWConfig.nFilter == D3DFILTER_LINEAR)
+            dtext[11] = T_Print(w + 130, -5, 0, GF_PCStrings[17]);
+        else
+            dtext[11] = T_Print(w + 130, -5, 0, GF_PCStrings[16]);
+        if (HWConfig.Dither)
+            dtext[10] = T_Print(w + 130, 15, 0, GF_PCStrings[17]);
+        else
+            dtext[10] = T_Print(w + 130, 15, 0, GF_PCStrings[16]);
+        if (HWConfig.TrueAlpha)
+            dtext[9] = T_Print(w + 130, 35, 0, GF_PCStrings[16]);
+        else
+            dtext[9] = T_Print(w + 130, 35, 0, GF_PCStrings[17]);
+        available[0] = 1;
+        available[1] = 1;
+        available[2] = 1;
+        available[3] = 1;
+        available[4] = 1;
+        available[5] = 1;
+        if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+            T_ChangeText(dtext[9], GF_PCStrings[28]);
+            available[1] = 0;
+        } else {
+            T_ChangeText(dtext[12], GF_PCStrings[28]);
+            T_ChangeText(dtext[10], GF_PCStrings[28]);
+            available[4] = 0;
+            available[2] = 0;
+            if (App.DXConfigPtr->MMX) {
+                available[1] = 0;
+                T_ChangeText(dtext[9], GF_PCStrings[28]);
+            } else {
+                T_ChangeText(dtext[11], GF_PCStrings[28]);
+                available[3] = 0;
+            }
+        }
+        sprintf(gtxt, "%d", (long)GammaOption);
+        dtext[8] = T_Print(w + 130, 55, 0, gtxt);
+        T_CentreV(dtext[8], 1);
+        T_CentreV(dtext[9], 1);
+        T_CentreV(dtext[10], 1);
+        T_CentreV(dtext[11], 1);
+        T_CentreV(dtext[12], 1);
+        T_CentreV(dtext[13], 1);
+        T_AddBackground(dtext[selection + 8], (sint16)T_GetTextWidth(dtext[selection + 8]), 0, 0, 0, 48, 0, 0, 0);
+        T_AddOutline(dtext[selection + 8], 1, 4, 0, 0);
+    }
+    if ((inputDB & IN_LEFT) && selection == 5) {
+        old_res = selected_res;
+        if (selected_res > 0)
+            selected_res--;
+        if (old_res != selected_res) {
+            if (!DXSwitchVideoMode(selected_res, old_res, 0))
+                selected_res = old_res;
+            for (i = 0; i < 8; i++) {
+                T_RemovePrint(dtext[i]);
+                dtext[i] = NULL;
+            }
+            for (i = 8; i < 14; i++)
+                T_RemovePrint(dtext[i]);
+        }
+    }
+    if ((inputDB & IN_RIGHT) && selection == 5) {
+        old_res = selected_res;
+        if (selected_res < App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].nDisplayMode - 1)
+            selected_res++;
+        if (old_res != selected_res) {
+            if (!DXSwitchVideoMode(selected_res, old_res, 0))
+                selected_res = old_res;
+            for (i = 0; i < 8; i++) {
+                T_RemovePrint(dtext[i]);
+                dtext[i] = NULL;
+            }
+            for (i = 8; i < 14; i++)
+                T_RemovePrint(dtext[i]);
+        }
+    }
+    if ((inputDB & IN_RIGHT) || (inputDB & IN_LEFT)) {
+        switch (selection) {
+        case 4:
+            if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+                if (App.lpZBuffer) {
+                    App.DXConfigPtr->bZBuffer = 0;
+                    DXSwitchVideoMode(selected_res, selected_res, 0);
+                    T_ChangeText(dtext[selection + 8], GF_PCStrings[16]);
+                    App.lpZBuffer = NULL;
+                } else {
+                    App.DXConfigPtr->bZBuffer = 1;
+                    if (DXSwitchVideoMode(selected_res, selected_res, 1))
+                        T_ChangeText(dtext[selection + 8], GF_PCStrings[17]);
+                    else {
+                        App.DXConfigPtr->bZBuffer = 0;
+                        App.lpZBuffer = NULL;
+                    }
+                }
+                HWR_InitState();
+            }
+            break;
+        case 3:
+            if (HWConfig.nFilter == D3DFILTER_LINEAR) {
+                HWConfig.nFilter = D3DFILTER_NEAREST;
+                T_ChangeText(dtext[selection + 8], GF_PCStrings[16]);
+            } else {
+                HWConfig.nFilter = D3DFILTER_LINEAR;
+                T_ChangeText(dtext[selection + 8], GF_PCStrings[17]);
+            }
+            HWR_InitState();
+            break;
+        case 2:
+            if (HWConfig.Dither) {
+                T_ChangeText(dtext[selection + 8], GF_PCStrings[16]);
+                HWConfig.Dither = 0;
+            } else {
+                T_ChangeText(dtext[selection + 8], GF_PCStrings[17]);
+                HWConfig.Dither = 1;
+            }
+            HWR_InitState();
+            break;
+        case 1:
+            if (HWConfig.TrueAlpha) {
+                T_ChangeText(dtext[selection + 8], GF_PCStrings[17]);
+                HWConfig.TrueAlpha = 0;
+            } else {
+                T_ChangeText(dtext[selection + 8], GF_PCStrings[16]);
+                HWConfig.TrueAlpha = 1;
+            }
+            CloseDrawPrimitive();
+            InitDrawPrimitive(App.lpD3DDevice, App.lpBackBuffer, App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware);
+            HWR_InitState();
+            break;
+        case 0:
+            if (inputDB & IN_RIGHT)
+                GammaOption++;
+            if (inputDB & IN_LEFT)
+                GammaOption--;
+            if (GammaOption > 10)
+                GammaOption = 10;
+            if (GammaOption < 1)
+                GammaOption = 1;
+            HWR_InitState();
+            T_RemovePrint(dtext[8]);
+            sprintf(gtxt, "%d", (long)GammaOption);
+            dtext[8] = T_Print(w + 130, 55, 0, gtxt);
+            T_CentreV(dtext[8], 1);
+            break;
+        }
+        T_RemoveOutline(dtext[selection + 8]);
+        T_RemoveBackground(dtext[selection + 8]);
+        T_AddOutline(dtext[selection + 8], 1, 4, 0, 0);
+        T_AddBackground(dtext[selection + 8], (sint16)T_GetTextWidth(dtext[selection + 8]), 0, 0, 0, 48, 0, 0, 0);
+    }
+    if ((inputDB & IN_BACK) && selection > 0) {
+        T_RemoveOutline(dtext[selection + 8]);
+        T_RemoveBackground(dtext[selection + 8]);
+        selection--;
+        i = selection;
+        while (!available[selection]) {
+            selection--;
+            if (selection < 0) {
+                selection = i;
+                break;
+            }
+        }
+        T_AddOutline(dtext[selection + 8], 1, 4, 0, 0);
+        T_AddBackground(dtext[selection + 8], (sint16)T_GetTextWidth(dtext[selection + 8]), 0, 0, 0, 48, 0, 0, 0);
+    }
+    if ((inputDB & IN_FORWARD) && selection <= 4) {
+        T_RemoveOutline(dtext[selection + 8]);
+        T_RemoveBackground(dtext[selection + 8]);
+        selection++;
+        i = selection;
+        while (!available[selection]) {
+            selection++;
+            if (selection > 5) {
+                selection = i;
+                break;
+            }
+        }
+        T_AddOutline(dtext[selection + 8], 1, 4, 0, 0);
+        T_AddBackground(dtext[selection + 8], (sint16)T_GetTextWidth(dtext[selection + 8]), 0, 0, 0, 48, 0, 0, 0);
+    }
+    if (inputDB & (IN_SELECT | IN_DESELECT)) {
+        for (i = 0; i < 8; i++) {
+            T_RemovePrint(dtext[i]);
+            dtext[i] = NULL;
+        }
+        for (i = 8; i < 14; i++)
+            T_RemovePrint(dtext[i]);
+    }
+}
+
 void do_sound_option(INVENTORY_ITEM *inv_item)
 {
     int i;

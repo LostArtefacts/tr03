@@ -1234,7 +1234,7 @@ address,size,name,symbol
 0x00487750,288,do_inventory_options,_do_inventory_options
 0x00487870,872,do_levelselect_option,_do_levelselect_option
 0x00487be0,1656,do_passport_option,_do_passport_option
-0x00488260,3247,do_detail_option,_do_detail_option
+0x00488260,3268,do_detail_option,_do_detail_option
 0x00488f30,1181,do_sound_option,_do_sound_option
 0x004893d0,192,do_compass_option,_do_compass_option
 0x00489490,126,FlashConflicts,_FlashConflicts
@@ -2113,6 +2113,7 @@ address,size,name,symbol
 0x004cdc98,4,bEffectOn,_bEffectOn
 0x004cdca0,56,layout,_layout
 0x004cdcd8,,kname,_kname
+0x004ce358,4,selection,_selection
 0x004ce390,68,shadowman,_shadowman
 0x004ce708,4,Var4ce708,_Var4ce708
 0x004ce710,12,Var4ce710,_Var4ce710
@@ -2479,6 +2480,9 @@ address,size,name,symbol
 0x0069fe8c,4,smcg,_smcg
 0x0069fe90,4,smcr,_smcr
 0x0069fe98,,LPos,_LPos
+0x0069fec0,6,available,_available
+0x0069fec8,4,selected_res,_selected_res
+0x0069fed0,600,resolutions,_resolutions
 0x006a0128,4,keychange,_keychange
 0x006a012c,4,select_key,_select_key
 0x006a0130,4,iconfig,_iconfig
@@ -2489,6 +2493,7 @@ address,size,name,symbol
 0x006a01b0,4,RightArrow,_RightArrow
 0x006a01b8,4,passport_text1,_passport_text1
 0x006a01bc,4,passport_mode,_passport_mode
+0x006a01c8,56,dtext,_dtext
 0x006a0208,16,sa_text,_sa_text
 0x006a0218,8,ctrltext,_ctrltext
 0x006a0228,4096,wibble_light,_wibble_light
