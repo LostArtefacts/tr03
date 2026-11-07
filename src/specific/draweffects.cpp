@@ -1491,4 +1491,50 @@ void DrawExplosionRings(void)
         phd_PopMatrix();
     }
 }
+
+void HWI_InsertLine_Sorted(long x1, long y1, long x2, long y2, long z, long c0, long c1);
+
+void S_DrawDarts(ITEM_INFO *item)
+{
+    DISPLAYMODE *dm;
+    sint32 *mptr;
+    float zv;
+    long w, h, size;
+    sint16 x, y, z;
+    sint16 sxy[4];
+    long sz[2];
+    sint16 *p;
+    long *pz;
+    long x1, y1, x2, y2, z1;
+
+    dm = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode];
+    w = dm->w - 1;
+    h = dm->h - 1;
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    mptr = phd_mxptr;
+    z1 = mptr[11];
+    zv = f_persp / (float)z1;
+    sxy[0] = (sint16)(float)(mptr[3] * zv + f_centerx);
+    sxy[1] = (sint16)(float)(mptr[7] * zv + f_centery);
+    sz[0] = z1;
+    size = (-96 * phd_cos(item->pos.x_rot)) >> W2V_SHIFT;
+    z = (sint16)((size * phd_cos(item->pos.y_rot)) >> W2V_SHIFT);
+    x = (sint16)((size * phd_sin(item->pos.y_rot)) >> W2V_SHIFT);
+    y = (sint16)((96 * phd_sin(item->pos.x_rot)) >> W2V_SHIFT);
+    z1 = mptr[8] * x + mptr[9] * y + mptr[10] * z + mptr[11];
+    zv = f_persp / (float)z1;
+    sxy[2] = (sint16)(float)((mptr[0] * x + mptr[1] * y + mptr[2] * z + mptr[3]) * zv + f_centerx);
+    sxy[3] = (sint16)(float)((mptr[4] * x + mptr[5] * y + mptr[6] * z + mptr[7]) * zv + f_centery);
+    sz[1] = z1;
+    p = sxy;
+    pz = sz;
+    x1 = p[0];
+    y1 = p[1];
+    x2 = p[2];
+    y2 = p[3];
+    if (pz[0] > 32 && pz[1] > 32 && ClipLine(x1, y1, x2, y2, w, h))
+        HWI_InsertLine_Sorted(x1 - phd_winxmin, y1 - phd_winymin, x2 - phd_winxmin, y2 - phd_winymin, pz[0], 0, 0x783c14);
+    phd_PopMatrix();
+}
 }
