@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="9.68" height="12" x="349.40" y="0" class="nonmatching"><title>39 · 2.60%</title></rect>
-<rect width="12.91" height="12" x="359.09" y="0" class="todo"><title>52 · 3.47%</title></rect>
+<rect width="9.93" height="12" x="349.40" y="0" class="nonmatching"><title>40 · 2.67%</title></rect>
+<rect width="12.66" height="12" x="359.34" y="0" class="todo"><title>51 · 3.40%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">39</tspan> · <tspan class="todo">52</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">40</tspan> · <tspan class="todo">51</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="19.39" height="12" x="312.18" y="0" class="nonmatching"><title>38 KB · 5.21%</title></rect>
-<rect width="40.43" height="12" x="331.57" y="0" class="todo"><title>79 KB · 10.87%</title></rect>
+<rect width="19.67" height="12" x="312.18" y="0" class="nonmatching"><title>38 KB · 5.29%</title></rect>
+<rect width="40.15" height="12" x="331.85" y="0" class="todo"><title>78 KB · 10.79%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">38 KB</tspan> · <tspan class="todo">79 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">38 KB</tspan> · <tspan class="todo">78 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1332,7 +1332,7 @@
 <rect width="12" height="12" x="195" y="375" class="named"><title>0x0048acc0 ProjectPCoord (157 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="375" class="named"><title>0x0048ad60 SetPictureToFade (17 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="375" class="named"><title>0x0048ad80 ForceFadeDown (17 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="375" class="todo"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="375" class="nonmatching"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="375" class="named"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="375" class="named"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="375" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
@@ -1904,7 +1904,7 @@
 <rect width="13.78" height="12.88" x="419.89" y="100.22" class="named"><title>0x00412500 BoatAnimation (548 bytes)</title></rect>
 <rect width="13.78" height="12.88" x="436.67" y="100.22" class="named"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
 <rect width="13.75" height="12.88" x="453.45" y="100.22" class="named"><title>0x0042a680 TriggerRicochetSpark (547 bytes)</title></rect>
-<rect width="13.75" height="12.88" x="470.20" y="100.22" class="todo"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
+<rect width="13.75" height="12.88" x="470.20" y="100.22" class="nonmatching"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
 <rect width="13.73" height="12.88" x="486.96" y="100.22" class="named"><title>0x00445020 GetStaticObjects (546 bytes)</title></rect>
 <rect width="13.70" height="12.88" x="503.68" y="100.22" class="named"><title>0x00458880 FinalLevelCounter (545 bytes)</title></rect>
 <rect width="13.65" height="12.88" x="520.39" y="100.22" class="named"><title>0x0046b120 draw_border (543 bytes)</title></rect>

@@ -19,6 +19,12 @@ extern bool dontFadePicture;
 extern bool pictureCrossFaded;
 extern DXTEXTURE *TPages[32];
 extern int nTPages;
+extern sint16 phd_winxmin;
+extern sint16 phd_winymin;
+extern int phd_winwidth;
+extern int phd_winheight;
+void HWR_EnablePerspCorrect(bool enable);
+void DrawTile(int x, int y, int w, int h, int tpage, int tU, int tV, int tW, int tH, int c0, int c1, int c2, int c3, float z);
 
 void TRDrawPicture(int col, int *indices, float zpos);
 void DrawPictureAlpha(int col, int *indices, float zpos);
@@ -52,6 +58,34 @@ void SetPictureToFade(int fade)
 void ForceFadeDown(int fade)
 {
     forceFadeDown = fade;
+}
+
+void DrawPictureAlpha(int col, int *indices, float zpos)
+{
+    int x[4];
+    int y[4];
+    int i;
+    static int screenX[4] = { 0, 256, 512, 640 };
+    static int screenY[3] = { 0, 256, 480 };
+    unsigned long c;
+
+    c = col + 1;
+    col = (0xff000000 * c) | 0xffffff;
+    for (i = 0; i < 3; i++) {
+        x[i] = phd_winxmin + phd_winwidth * screenX[i] / 640;
+        y[i] = phd_winymin + phd_winheight * screenY[i] / 480;
+    }
+    x[3] = phd_winxmin + phd_winwidth * screenX[3] / 640;
+    HWR_EnableAlphaBlend(true);
+    HWR_EnablePerspCorrect(false);
+    HWR_EnableColorAddition(false);
+    DrawTile(x[0], y[0], x[1] - x[0], y[1] - y[0], indices[0], 0, 0, 256, 256, col, col, col, col, zpos);
+    DrawTile(x[1], y[0], x[2] - x[1], y[1] - y[0], indices[1], 0, 0, 256, 256, col, col, col, col, zpos);
+    DrawTile(x[2], y[0], x[3] - x[2], y[1] - y[0], indices[2], 0, 0, 128, 256, col, col, col, col, zpos);
+    DrawTile(x[0], y[1], x[1] - x[0], y[2] - y[1], indices[3], 0, 0, 256, 224, col, col, col, col, zpos);
+    DrawTile(x[1], y[1], x[2] - x[1], y[2] - y[1], indices[4], 0, 0, 256, 224, col, col, col, col, zpos);
+    DrawTile(x[2], y[1], x[3] - x[2], y[2] - y[1], indices[2], 128, 0, 128, 224, col, col, col, col, zpos);
+    HWR_EnablePerspCorrect(true);
 }
 
 void CrossFadePicture(void)
