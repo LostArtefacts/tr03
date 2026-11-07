@@ -911,3 +911,35 @@ void LondonBossControl(sint16 item_number)
     } else if (KBRings[0].on == 0 && KBRings[1].on == 0 && KBRings[2].on == 0)
         item->item_flags[0] = 0;
 }
+
+void TriggerPlasmaBall_londboss(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos, sint16 room_number, sint16 angle)
+{
+    FX_INFO *fx;
+    PHD_VECTOR p;
+    sint16 fx_number;
+    sint16 speed;
+    sint16 angles[2];
+
+    p.x = pos->x;
+    p.y = pos->y;
+    p.z = pos->z;
+    speed = (GetRandomControl() & 0x1f) + 64;
+    angles[0] = GetRandomControl() + 0x4000 + angle;
+    fx_number = CreateEffect(room_number);
+    if (fx_number != NO_ITEM) {
+        fx = &effects[fx_number];
+        fx->speed = speed;
+        fx->pos.y_rot = angles[0];
+        fx->pos.x_pos = p.x;
+        fx->pos.y_pos = p.y;
+        fx->pos.z_pos = p.z;
+        fx->pos.x_rot = 0x2000;
+        fx->object_number = 372;
+        fx->fallspeed = 0;
+        fx->flag1 = 1;
+        if (type == 2)
+            fx->flag2 = 1;
+        else
+            fx->flag2 = 0;
+    }
+}
