@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="345.68" height="12" x="0" y="0" class="named"><title>1392 · 92.92%</title></rect>
 <rect width="7.45" height="12" x="345.68" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.91" height="12" x="353.13" y="0" class="nonmatching"><title>52 · 3.47%</title></rect>
-<rect width="5.96" height="12" x="366.04" y="0" class="todo"><title>24 · 1.60%</title></rect>
+<rect width="13.16" height="12" x="353.13" y="0" class="nonmatching"><title>53 · 3.54%</title></rect>
+<rect width="5.71" height="12" x="366.29" y="0" class="todo"><title>23 · 1.54%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">94.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1392</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">52</tspan> · <tspan class="todo">24</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1392</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">53</tspan> · <tspan class="todo">23</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="284.80" height="12" x="0" y="0" class="named"><title>555 KB · 76.56%</title></rect>
 <rect width="33.96" height="12" x="284.80" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="31.77" height="12" x="318.76" y="0" class="nonmatching"><title>62 KB · 8.54%</title></rect>
-<rect width="21.47" height="12" x="350.53" y="0" class="todo"><title>42 KB · 5.77%</title></rect>
+<rect width="32.72" height="12" x="318.76" y="0" class="nonmatching"><title>64 KB · 8.79%</title></rect>
+<rect width="20.53" height="12" x="351.47" y="0" class="todo"><title>40 KB · 5.52%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">85.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">555 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">62 KB</tspan> · <tspan class="todo">42 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">555 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">64 KB</tspan> · <tspan class="todo">40 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -122,7 +122,7 @@
 <rect width="12" height="12" x="45" y="15" class="named"><title>0x004086b0 HWI_InsertObjectGT4_Sorted (330 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="15" class="named"><title>0x00408800 HWI_InsertObjectGT3_Sorted (307 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="15" class="named"><title>0x00408940 HWI_InsertPoly_Gouraud (1116 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="15" class="todo"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="15" class="nonmatching"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="15" class="named"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="15" class="named"><title>0x00409560 HWI_InsertObjectG3_Sorted (1602 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="15" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
@@ -1660,7 +1660,7 @@
 <rect width="25.37" height="24.18" x="226.96" y="342.69" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
 <rect width="25.37" height="24.13" x="226.96" y="369.86" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="25.37" height="23.54" x="226.96" y="396.99" class="todo"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
-<rect width="25.37" height="23.47" x="226.96" y="423.53" class="todo"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
+<rect width="25.37" height="23.47" x="226.96" y="423.53" class="nonmatching"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
 <rect width="23.89" height="24.93" x="255.33" y="0" class="decompiled"><title>0x00499de0 Func499de0 (1839 bytes)</title></rect>
 <rect width="23.89" height="24.62" x="255.33" y="27.93" class="named"><title>0x00489550 do_control_option (1816 bytes)</title></rect>
 <rect width="23.89" height="24.35" x="255.33" y="55.55" class="named"><title>0x004198fc CalculateCamera (1796 bytes)</title></rect>

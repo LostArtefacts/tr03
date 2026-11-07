@@ -1369,7 +1369,6 @@ void HWI_InsertTrans8_Sorted(PHD_VBUF *buf, sint16 shade)
         HWI_InsertPoly_Gouraud(nPoints, z, 0, 0, 0, 13);
     }
 }
-}
 
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
 void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
@@ -1412,4 +1411,83 @@ void SubdivideEdge(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *dest)
     dest->g = (sint16)(r << 10 | g << 5 | b);
     dest->u = (v0->u + v1->u) >> 1;
     dest->v = (v0->v + v1->v) >> 1;
+}
+
+void HWI_InsertPoly_Gouraud(int nPoints, float zdepth, int nR, int nG, int nB, int nDrawType);
+
+short *HWI_InsertObjectG4_Sorted(short *pFaceInfo, long nFaces, int nSortType)
+{
+    long nPoints;
+    unsigned char *pC;
+    float zdepth;
+
+    for (; nFaces; nFaces--, pFaceInfo += 5) {
+        PHD_VBUF *v0;
+        PHD_VBUF *v1;
+        PHD_VBUF *v2;
+        PHD_VBUF *v3;
+
+        v0 = &vbuf[pFaceInfo[0]];
+        v1 = &vbuf[pFaceInfo[1]];
+        v2 = &vbuf[pFaceInfo[2]];
+        v3 = &vbuf[pFaceInfo[3]];
+        if (outside && nPolyType != 1 && v0->zv == f_zfar && v1->zv == f_zfar && v2->zv == f_zfar && v3->zv == f_zfar && v0->ys > outsideBackgroundTop && v1->ys > outsideBackgroundTop && v2->ys > outsideBackgroundTop && v3->ys > outsideBackgroundTop)
+            continue;
+        if (v0->clip & v1->clip & v2->clip & v3->clip)
+            continue;
+        if ((v0->clip | v1->clip | v2->clip | v3->clip) < 0) {
+            if (!visible_zclip(v0, v1, v2))
+                continue;
+            POINT_INFO points[4];
+            PHD_VBUF_To_POINT_INFO(v0, &points[0]);
+            PHD_VBUF_To_POINT_INFO(v1, &points[1]);
+            PHD_VBUF_To_POINT_INFO(v2, &points[2]);
+            PHD_VBUF_To_POINT_INFO(v3, &points[3]);
+            nPoints = RoomZedClipper(4, points, v_buffer);
+            if (nPoints) {
+                phd_leftfloat = (float)phd_winxmin;
+                phd_topfloat = (float)phd_winymin;
+                phd_rightfloat = float(phd_winxmin + phd_winwidth);
+                phd_bottomfloat = float(phd_winymin + phd_winheight);
+                nPoints = XYGClipper(nPoints, v_buffer);
+            }
+        } else {
+            if ((long)((v0->ys - v1->ys) * (v2->xs - v1->xs) - (v0->xs - v1->xs) * (v2->ys - v1->ys)) < 0)
+                continue;
+            PHD_VBUF_To_VERTEX_INFO(v0, &v_buffer[0]);
+            PHD_VBUF_To_VERTEX_INFO(v1, &v_buffer[1]);
+            PHD_VBUF_To_VERTEX_INFO(v2, &v_buffer[2]);
+            PHD_VBUF_To_VERTEX_INFO(v3, &v_buffer[3]);
+            nPoints = 4;
+            if (v0->clip | v1->clip | v2->clip | v3->clip) {
+                phd_leftfloat = (float)phd_winxmin;
+                phd_topfloat = (float)phd_winymin;
+                phd_rightfloat = float(phd_winxmin + phd_winwidth);
+                phd_bottomfloat = float(phd_winymin + phd_winheight);
+                nPoints = XYGClipper(nPoints, v_buffer);
+            }
+        }
+        if (nPoints) {
+            pC = &G_GouraudPalette[(pFaceInfo[4] >> 6) & 0x3fc];
+            switch (nSortType) {
+            case 1:
+                zdepth = v0->zv;
+                if (v1->zv > zdepth)
+                    zdepth = v1->zv;
+                if (v2->zv > zdepth)
+                    zdepth = v2->zv;
+                if (v3->zv > zdepth)
+                    zdepth = v3->zv;
+                break;
+            case 0:
+                zdepth = (v0->zv + v1->zv + v2->zv + v3->zv) * 0.25f;
+                break;
+            default:
+                zdepth = 1000000000.0f;
+            }
+            HWI_InsertPoly_Gouraud(nPoints, zdepth, pC[0], pC[1], pC[2], 11);
+        }
+    }
+    return pFaceInfo;
+}
 }
