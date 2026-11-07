@@ -1710,4 +1710,113 @@ void S_DrawSplashes(void)
         rptr++;
     }
 }
+
+extern char LaserShades[];
+
+void UpdateLaserShades(void);
+void HWR_SetCurrentTexture(DWORD handle);
+void HWR_EnableZBuffer(bool tWrite, bool tCompare);
+
+void S_DrawLaserBeam(GAME_VECTOR *src, GAME_VECTOR *dest, unsigned char r, unsigned char g, unsigned char b)
+{
+    long x1, x2, y1, y2, z1, z2, r1, g1, b1, r2, g2, b2;
+    long wx, wy, wz, dx, dy, dz, lp, segments, alpha;
+    long result[3 * 200];
+    long rgbs[3 * 200];
+    long screencoords[3 * 200];
+    int sw = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    int sh = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
+
+    UpdateLaserShades();
+    dx = (src->x - dest->x);
+    dz = (src->z - dest->z);
+    dx = phd_sqrt((dx * dx) + (dz * dz));
+    segments = dx >> 9;
+    if (segments < 8)
+        segments = 8;
+    else if (segments > 32)
+        segments = 32;
+    dx = (dest->x - src->x) / segments;
+    dy = (dest->y - src->y) / segments;
+    dz = (dest->z - src->z) / segments;
+    wx = wy = wz = 0;
+    for (lp = 0; lp < segments + 1; lp++) {
+        mCalcPoint(src->x + wx, src->y + wy, src->z + wz, result);
+        ProjectPCoord(result[0], result[1], result[2], &screencoords[lp * 3], sw >> 1, sh >> 1, phd_persp);
+        wx += dx;
+        wy += dy;
+        wz += dz;
+        if (lp == 0 || lp == segments) {
+            rgbs[(lp * 3) + 0] = 0;
+            rgbs[(lp * 3) + 1] = 0;
+            rgbs[(lp * 3) + 2] = 0;
+        } else {
+            long rnd, tr, tg, tb;
+            rnd = LaserShades[lp];
+            if (r == 255)
+                tr = 32 + rnd;
+            else
+                tr = rnd >> r;
+            if (g == 255)
+                tg = 32 + rnd;
+            else
+                tg = rnd >> g;
+            if (b == 255)
+                tb = 32 + rnd;
+            else
+                tb = rnd >> b;
+            rgbs[(lp * 3) + 0] = tr;
+            rgbs[(lp * 3) + 1] = tg;
+            rgbs[(lp * 3) + 2] = tb;
+        }
+    }
+    x1 = screencoords[0];
+    y1 = screencoords[1];
+    z1 = screencoords[2];
+    r1 = rgbs[0];
+    g1 = rgbs[1];
+    b1 = rgbs[2];
+    r1 <<= 1;
+    g1 <<= 1;
+    b1 <<= 1;
+    if (r1 > 255)
+        r1 = 255;
+    if (g1 > 255)
+        g1 = 255;
+    if (b1 > 255)
+        b1 = 255;
+    HWR_SetCurrentTexture(0);
+    HWR_EnableZBuffer(true, true);
+    for (lp = 0; lp < segments; lp++) {
+        x2 = screencoords[((lp + 1) * 3) + 0];
+        y2 = screencoords[((lp + 1) * 3) + 1];
+        z2 = screencoords[((lp + 1) * 3) + 2];
+        r2 = rgbs[((lp + 1) * 3) + 0];
+        g2 = rgbs[((lp + 1) * 3) + 1];
+        b2 = rgbs[((lp + 1) * 3) + 2];
+        r2 <<= 1;
+        g2 <<= 1;
+        b2 <<= 1;
+        if (r2 > 255)
+            r2 = 255;
+        if (g2 > 255)
+            g2 = 255;
+        if (b2 > 255)
+            b2 = 255;
+        if (z1 > 32 && z2 > 32) {
+            if (ClipLine(x1, y1, x2, y2, sw, sh)) {
+                alpha = GlobalAlpha;
+                GlobalAlpha = 0xb0000000;
+                HWI_InsertLine_Sorted(x1 - phd_winxmin, y1 - phd_winymin, x2 - phd_winxmin, y2 - phd_winymin, z1 << W2V_SHIFT, r1 << 16 | g1 << 8 | b1, r2 << 16 | g2 << 8 | b2);
+                GlobalAlpha = alpha;
+            }
+        }
+        x1 = x2;
+        y1 = y2;
+        z1 = z2;
+        r1 = r2;
+        g1 = g2;
+        b1 = b2;
+    }
+}
 }

@@ -1547,7 +1547,7 @@ address,size,name,symbol
 0x004b61d0,23,??1type_info@@UAE@XZ,
 0x004b61f0,30,??_Gtype_info@@UAEPAXI@Z,
 0x004b6210,71,__CxxThrowException@8,__CxxThrowException@8
-0x004b6260,47,__chkstk,
+0x004b6260,47,__chkstk,__chkstk
 0x004b6290,25,__CIpow,
 0x004b62b2,467,Func4b62b2,
 0x004b6485,40,Func4b6485,

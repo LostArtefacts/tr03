@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="342.20" height="12" x="0" y="0" class="named"><title>1378 · 91.99%</title></rect>
-<rect width="7.45" height="12" x="342.20" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="11.42" height="12" x="349.65" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
-<rect width="10.93" height="12" x="361.07" y="0" class="todo"><title>44 · 2.94%</title></rect>
+<rect width="342.45" height="12" x="0" y="0" class="named"><title>1379 · 92.06%</title></rect>
+<rect width="7.45" height="12" x="342.45" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="11.42" height="12" x="349.90" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
+<rect width="10.68" height="12" x="361.32" y="0" class="todo"><title>43 · 2.87%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">94.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1378</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">46</tspan> · <tspan class="todo">44</tspan></text>
+<text text-anchor="end" x="552" y="7.50">94.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1379</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">46</tspan> · <tspan class="todo">43</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="279.27" height="12" x="0" y="0" class="named"><title>544 KB · 75.07%</title></rect>
-<rect width="33.96" height="12" x="279.27" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="22.92" height="12" x="313.23" y="0" class="nonmatching"><title>45 KB · 6.16%</title></rect>
-<rect width="35.85" height="12" x="336.15" y="0" class="todo"><title>70 KB · 9.64%</title></rect>
+<rect width="279.79" height="12" x="0" y="0" class="named"><title>545 KB · 75.21%</title></rect>
+<rect width="33.96" height="12" x="279.79" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="22.92" height="12" x="313.76" y="0" class="nonmatching"><title>45 KB · 6.16%</title></rect>
+<rect width="35.32" height="12" x="336.68" y="0" class="todo"><title>69 KB · 9.49%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">84.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">544 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">45 KB</tspan> · <tspan class="todo">70 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">84.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">545 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">45 KB</tspan> · <tspan class="todo">69 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1167,7 +1167,7 @@
 <rect width="12" height="12" x="720" y="315" class="todo"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="315" class="todo"><title>0x00478bf0 S_DrawLaserBolts (2332 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="330" class="named"><title>0x00479510 ClipLine (765 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="330" class="todo"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="330" class="named"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="330" class="nonmatching"><title>0x00479c20 DrawLondonBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="330" class="nonmatching"><title>0x0047a4b0 DoRain (1473 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="330" class="todo"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
@@ -1744,7 +1744,7 @@
 <rect width="18.22" height="18.73" x="502.83" y="23.50" class="named"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
 <rect width="17.96" height="18.73" x="524.06" y="23.50" class="named"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
 <rect width="17.86" height="18.73" x="545.02" y="23.50" class="named"><title>0x0042cac0 SetupSplash (1033 bytes)</title></rect>
-<rect width="17.74" height="18.73" x="565.88" y="23.50" class="todo"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
+<rect width="17.74" height="18.73" x="565.88" y="23.50" class="named"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
 <rect width="17.69" height="18.73" x="586.62" y="23.50" class="named"><title>0x00425910 ClipRoom (1023 bytes)</title></rect>
 <rect width="17.57" height="18.73" x="607.31" y="23.50" class="named"><title>0x00468c10 SubControl (1016 bytes)</title></rect>
 <rect width="17.50" height="18.73" x="627.87" y="23.50" class="named"><title>0x00473d10 WinstonControl (1012 bytes)</title></rect>
