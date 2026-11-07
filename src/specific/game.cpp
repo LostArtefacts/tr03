@@ -184,6 +184,151 @@ extern int OldPicTexIndices[5];
 extern int nLoadedPictures;
 }
 
+extern "C" sint32 LevelStats(int level_number)
+{
+    int i, world, adv;
+    int h = 0, m = 0, s = 0;
+    char buf[100];
+
+    savegame.start[level_number].timer = savegame.timer;
+    savegame.start[level_number].ammo_used = savegame.ammo_used;
+    savegame.start[level_number].ammo_hit = savegame.ammo_hit;
+    savegame.start[level_number].distance_travelled = savegame.distance_travelled;
+    savegame.start[level_number].kills = savegame.kills;
+    savegame.start[level_number].secrets_found = savegame.secrets;
+    savegame.start[level_number].health_used = savegame.health_used;
+    s = savegame.timer / 30;
+    h = s / 3600;
+    m = s / 60 % 60;
+    s = s % 60;
+    sprintf(buf, "%02d:%02d:%02d", h, m, s);
+    S_CDPlay(gameflow.stats_track, 1);
+    TempVideoAdjust(HiResFlag, 1.0);
+    FadeToPal(30, game_palette);
+    T_InitPrint();
+
+    if (!GF_PlayingFMV || CurrentLevel == 16 || CurrentLevel == 20) {
+        CreateMonoScreen();
+    } else {
+        DXTextureSetGreyScale(true);
+        LoadPicture(GF_picfilenames[GF_LoadingPic], App.lpPictureBuffer, 1);
+        FadePictureUp(32);
+        DXTextureSetGreyScale(false);
+    }
+    GF_PlayingFMV = 0;
+
+    while (input & 0x100000)
+        S_UpdateInput();
+
+    do {
+        S_InitialisePolyList(0);
+        S_UpdateInput();
+        DrawMonoScreen(48, 48, 48);
+        if (reset_flag)
+            input = 0x100000;
+        inputDB = GetDebouncedInput(input);
+        ShowStatsText(buf, 0);
+        T_DrawText();
+        S_OutputPolyList();
+        S_DumpScreen();
+    } while (!(input & 0x100000));
+
+    if (level_number != gameflow.num_levels - gameflow.num_demos - 1)
+        S_LoadLevelFile(GF_titlefilenames[0], 0, 6);
+
+    adv = 0;
+    world = Level2World(level_number);
+    if (level_number == 4) {
+        if (savegame.IndiaComplete) {
+            if (savegame.AfterIndia)
+                CurrentLevel = World2Level(savegame.AfterIndia);
+            else
+                adv = world;
+        } else {
+            savegame.IndiaComplete = 1;
+            savegame.AfterAdventureSave = 1;
+            savegame.WorldRequired = world;
+            adv = world;
+            CreateStartInfo(24);
+        }
+    } else if (level_number == 8) {
+        if (savegame.SPacificComplete) {
+            if (savegame.AfterSPacific)
+                CurrentLevel = World2Level(savegame.AfterSPacific);
+            else
+                adv = world;
+        } else {
+            savegame.SPacificComplete = 1;
+            savegame.AfterAdventureSave = 1;
+            savegame.WorldRequired = world;
+            adv = world;
+            CreateStartInfo(24);
+        }
+    } else if (level_number == 12) {
+        if (savegame.LondonComplete) {
+            if (savegame.AfterLondon)
+                CurrentLevel = World2Level(savegame.AfterLondon);
+            else
+                adv = world;
+        } else {
+            savegame.LondonComplete = 1;
+            savegame.AfterAdventureSave = 1;
+            savegame.WorldRequired = world;
+            adv = world;
+            CreateStartInfo(24);
+        }
+    } else if (level_number == 15) {
+        if (savegame.NevadaComplete) {
+            if (savegame.AfterNevada)
+                CurrentLevel = World2Level(savegame.AfterNevada);
+            else
+                adv = world;
+        } else {
+            savegame.NevadaComplete = 1;
+            savegame.AfterAdventureSave = 1;
+            savegame.WorldRequired = world;
+            adv = world;
+            CreateStartInfo(24);
+        }
+    } else if (level_number == 19 && !savegame.AntarcticaComplete) {
+        savegame.bonus_flag = 1;
+        for (i = 1; i <= gameflow.num_levels; i++)
+            ModifyStartInfo(i);
+        savegame.AntarcticaComplete = 1;
+        savegame.current_level = 1;
+        savegame.AfterAdventureSave = 0;
+    } else {
+        if (savegame.WorldRequired) {
+            if (world == 1 && savegame.IndiaComplete || world == 2 && savegame.SPacificComplete
+                || world == 3 && savegame.LondonComplete || world == 4 && savegame.NevadaComplete)
+                savegame.AfterAdventureSave = 1;
+            else
+                SortOutAdventureSave(world);
+        }
+        if (level_number == 16) {
+            Inv_RemoveItem(240);
+            Inv_RemoveItem(241);
+            Inv_RemoveItem(242);
+            Inv_RemoveItem(243);
+        }
+        savegame.current_level = level_number + 1;
+        CreateStartInfo(level_number + 1);
+    }
+
+    if (level_number == 20) {
+        savegame.bonus_flag = 1;
+        for (i = 1; i <= gameflow.num_levels; i++)
+            ModifyStartInfo(i);
+    }
+
+    if (adv)
+        return adv;
+
+    FadePictureDown(32);
+    TempVideoRemove();
+    return 0;
+}
+
 extern "C" sint32 GameStats(int level_number, int type)
 {
     unsigned char *pS;
