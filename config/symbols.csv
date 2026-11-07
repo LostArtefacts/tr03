@@ -1355,7 +1355,7 @@ address,size,name,symbol
 0x0048ffc0,225,DXCreateViewPort,_DXCreateViewPort
 0x004900b0,16,DXGetSurfaceDesc,_DXGetSurfaceDesc
 0x004900c0,72,DXSurfBlt,_DXSurfBlt
-0x00490110,752,Func490110,_Func490110
+0x00490110,751,Func490110,_Func490110
 0x00490400,755,InitDrawPrimitive,_InitDrawPrimitive
 0x00490700,119,CloseDrawPrimitive,_CloseDrawPrimitive
 0x00490780,281,BuildXYTables,_BuildXYTables

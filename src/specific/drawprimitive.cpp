@@ -5750,4 +5750,86 @@ void MMXInit(void)
         Var6ca4d0 = (unsigned char *)(((long)Var6ca3ac + 32) & ~31);
     }
 }
+
+void Func490110(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
+{
+    double fconv;
+    long x1, y1, x2, y2, dx, dy, xinc, yinc, err, step, i, xcount, ycount;
+    long r1, g1, b1, r2, g2, b2;
+    long dr1 = 0, dg1 = 0, db1 = 0;
+    long dr2 = 0, dg2 = 0, db2 = 0;
+    unsigned short *p;
+
+    x1 = FTOL(v1->sx);
+    y1 = FTOL(v1->sy);
+    r1 = RGBA_GETRED(v1->color) << 16;
+    g1 = RGBA_GETGREEN(v1->color) << 16;
+    b1 = RGBA_GETBLUE(v1->color) << 16;
+    x2 = FTOL(v2->sx);
+    y2 = FTOL(v2->sy);
+    dx = x2 - x1;
+    dy = y2 - y1;
+    r2 = RGBA_GETRED(v2->color) << 16;
+    g2 = RGBA_GETGREEN(v2->color) << 16;
+    b2 = RGBA_GETBLUE(v2->color) << 16;
+    p = Output + (YTable[y1] >> 1) + x1;
+    if (dx == 0 && dy == 0) {
+        *p = (unsigned short)((((r1 >> 19) * 64) | ((g1 >> 18) & 0x3f)) * 32 | ((b1 >> 19) & 0x1f));
+        return;
+    }
+    if (dx >= 0) {
+        xinc = 1;
+    } else {
+        dx = -dx;
+        xinc = -1;
+    }
+    if (dy >= 0) {
+        yinc = pitch;
+    } else {
+        yinc = -pitch;
+        dy = -dy;
+    }
+    xcount = dx + 1;
+    ycount = dy + 1;
+    err = 0;
+    if (dx < dy) {
+        if (ycount) {
+            dr1 = (r2 - r1) / ycount;
+            dg1 = (g2 - g1) / ycount;
+            db1 = (b2 - b1) / ycount;
+        }
+        step = (xcount << 16) / ycount;
+        for (i = 0; i < ycount; i++) {
+            *p = (unsigned short)((((r1 >> 19) * 64) | ((g1 >> 18) & 0x3f)) * 32 | ((b1 >> 19) & 0x1f));
+            p += yinc;
+            err += step;
+            r1 += dr1;
+            g1 += dg1;
+            b1 += db1;
+            if (err >= 0x10000) {
+                p += xinc;
+                err -= 0x10000;
+            }
+        }
+    } else {
+        step = (ycount << 16) / xcount;
+        if (xcount) {
+            dr2 = (r2 - r1) / xcount;
+            dg2 = (g2 - g1) / xcount;
+            db2 = (b2 - b1) / xcount;
+        }
+        for (i = 0; i < xcount; i++) {
+            *p = (unsigned short)((((r1 >> 19) * 64) | ((g1 >> 18) & 0x3f)) * 32 | ((b1 >> 19) & 0x1f));
+            p += xinc;
+            err += step;
+            r1 += dr2;
+            g1 += dg2;
+            b1 += db2;
+            if (err >= 0x10000) {
+                p += yinc;
+                err -= 0x10000;
+            }
+        }
+    }
+}
 }
