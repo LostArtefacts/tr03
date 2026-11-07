@@ -51,7 +51,7 @@ address,size,name,symbol
 0x004069e0,880,SubdivideGT4,_SubdivideGT4
 0x00406d50,590,SubdivideGT3,_SubdivideGT3
 0x00406fa0,320,HWI_InsertGT4_Sorted,_HWI_InsertGT4_Sorted
-0x004070e0,5549,HWI_InsertGT4_Poly,_HWI_InsertGT4_Poly
+0x004070e0,5580,HWI_InsertGT4_Poly,_HWI_InsertGT4_Poly
 0x004086b0,330,HWI_InsertObjectGT4_Sorted,_HWI_InsertObjectGT4_Sorted
 0x00408800,307,HWI_InsertObjectGT3_Sorted,_HWI_InsertObjectGT3_Sorted
 0x00408940,1116,HWI_InsertPoly_Gouraud,_HWI_InsertPoly_Gouraud

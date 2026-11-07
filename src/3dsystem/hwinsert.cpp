@@ -1490,4 +1490,241 @@ short *HWI_InsertObjectG4_Sorted(short *pFaceInfo, long nFaces, int nSortType)
     }
     return pFaceInfo;
 }
+
+extern DWORD TPages[];
+
+}
+
+template <class T> inline void swap(T &a, T &b)
+{
+    a ^= b;
+    b ^= a;
+    a ^= b;
+}
+
+extern "C" {
+
+inline void PHD_VBUF_To_TLVERT(PHD_VBUF *pV, D3DTLVERTEX *p)
+{
+    long r, g, b;
+    int rgb;
+
+    p->sx = pV->xs;
+    p->sy = pV->ys;
+    p->sz = f_a - f_boo * pV->ooz;
+    p->rhw = pV->ooz;
+    rgb = pV->g;
+    r = GETR(rgb);
+    g = GETG(rgb);
+    b = ColorTable[(rgb & 0x1f) << 3];
+    p->color = GlobalAlpha | (r << 16) | (g << 8) | b;
+    p->specular = 0;
+}
+
+void HWI_InsertGT3_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, unsigned short *uv1, unsigned short *uv2, unsigned short *uv3, int nSortType, unsigned short dbl);
+
+void HWI_InsertGT4_Poly(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl)
+{
+    float zdepth;
+    D3DTLVERTEX *pTLV;
+    int drawtype;
+
+    if (outside && nPolyType != 1 && v0->zv == f_zfar && v1->zv == f_zfar && v2->zv == f_zfar && v3->zv == f_zfar && v0->ys > outsideBackgroundTop && v1->ys > outsideBackgroundTop && v2->ys > outsideBackgroundTop && v3->ys > outsideBackgroundTop)
+        return;
+    if (v0->clip & v1->clip & v2->clip & v3->clip)
+        return;
+    if ((v0->clip | v1->clip | v2->clip | v3->clip) < 0) {
+        if (!dbl) {
+            if (!visible_zclip(v0, v1, v2))
+                return;
+            HWI_InsertGT3_Poly(v0, v1, v2, pTex, &pTex->u1, &pTex->u2, &pTex->u3, nSortType, 0);
+            HWI_InsertGT3_Poly(v0, v2, v3, pTex, &pTex->u1, &pTex->u3, &pTex->u4, nSortType, 0);
+        } else {
+            if (visible_zclip(v0, v1, v2)) {
+                HWI_InsertGT3_Poly(v0, v1, v2, pTex, &pTex->u1, &pTex->u2, &pTex->u3, nSortType, 0);
+                HWI_InsertGT3_Poly(v0, v2, v3, pTex, &pTex->u1, &pTex->u3, &pTex->u4, nSortType, 0);
+            }
+            swap((long &)v0, (long &)v2);
+            if (visible_zclip(v0, v1, v2)) {
+                HWI_InsertGT3_Poly(v0, v1, v2, pTex, &pTex->u3, &pTex->u2, &pTex->u1, nSortType, 0);
+                HWI_InsertGT3_Poly(v0, v2, v3, pTex, &pTex->u3, &pTex->u1, &pTex->u4, nSortType, 0);
+            }
+        }
+        return;
+    }
+    if ((long)((v2->xs - v1->xs) * (v0->ys - v1->ys) - (v0->xs - v1->xs) * (v2->ys - v1->ys)) < 0) {
+        if (dbl) {
+            swap((long &)v0, (long &)v2);
+            if (v0->clip | v1->clip | v2->clip | v3->clip) {
+                HWI_InsertGT3_Poly(v0, v1, v2, pTex, &pTex->u3, &pTex->u2, &pTex->u1, nSortType, 0);
+                HWI_InsertGT3_Poly(v0, v2, v3, pTex, &pTex->u3, &pTex->u1, &pTex->u4, nSortType, 0);
+                return;
+            }
+        } else
+            return;
+    } else
+        dbl = 0;
+    if (v0->clip | v1->clip | v2->clip | v3->clip) {
+        HWI_InsertGT3_Poly(v0, v1, v2, pTex, &pTex->u1, &pTex->u2, &pTex->u3, nSortType, dbl);
+        HWI_InsertGT3_Poly(v0, v2, v3, pTex, &pTex->u1, &pTex->u3, &pTex->u4, nSortType, dbl);
+        return;
+    }
+    drawtype = pTex->drawtype;
+    if (drawtype <= 1)
+        drawtype += 9;
+    else
+        drawtype = 14;
+    if (nPolyType == 1) {
+        if (v0->ys > outsideBackgroundTop)
+            outsideBackgroundTop = v0->ys;
+        if (v1->ys > outsideBackgroundTop)
+            outsideBackgroundTop = v1->ys;
+        if (v2->ys > outsideBackgroundTop)
+            outsideBackgroundTop = v2->ys;
+        if (v3->ys > outsideBackgroundTop)
+            outsideBackgroundTop = v3->ys;
+    }
+    if (!App.lpZBuffer || drawtype == 14 || drawtype == 10) {
+        sint32 *sort;
+        sint16 *info;
+        double fconv;
+
+        switch (nSortType) {
+        case 1:
+            zdepth = v0->zv;
+            if (v1->zv > zdepth)
+                zdepth = v1->zv;
+            if (v2->zv > zdepth)
+                zdepth = v2->zv;
+            if (v3->zv > zdepth)
+                zdepth = v3->zv;
+            break;
+        case 0:
+            zdepth = (v0->zv + v1->zv + v2->zv + v3->zv) * 0.25f;
+            break;
+        default:
+            zdepth = 1000000000.0f;
+        }
+        if (CurrentTLVertex - VertexBuffer > 9184)
+            return;
+        if (!App.lpZBuffer || !bAlphaTesting) {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf += 3;
+            info3dptrbf += 5;
+        } else if (drawtype == 14 || drawtype == 13 || drawtype == 12 || drawtype == 16) {
+            sort = sort3dptrfb;
+            info = info3dptrfb;
+            sort[2] = nPolyType;
+            surfacenumfb++;
+            sort3dptrfb += 3;
+            info3dptrfb += 5;
+        } else {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf += 3;
+            info3dptrbf += 5;
+        }
+        sort[0] = (sint32)info;
+        sort[1] = FTOL(zdepth);
+        info[0] = (sint16)drawtype;
+        info[1] = pTex->tpage;
+        info[2] = 4;
+        pTLV = CurrentTLVertex;
+        *((D3DTLVERTEX **)(info + 3)) = pTLV;
+        if (!dbl) {
+            PHD_VBUF_To_TLVERT(v0, pTLV);
+            pTLV->tu = UVTable[pTex->u1];
+            pTLV->tv = UVTable[pTex->v1];
+            pTLV++;
+            PHD_VBUF_To_TLVERT(v1, pTLV);
+            pTLV->tu = UVTable[pTex->u2];
+            pTLV->tv = UVTable[pTex->v2];
+            pTLV++;
+            PHD_VBUF_To_TLVERT(v2, pTLV);
+            pTLV->tu = UVTable[pTex->u3];
+            pTLV->tv = UVTable[pTex->v3];
+        } else {
+            PHD_VBUF_To_TLVERT(v0, pTLV);
+            pTLV->tu = UVTable[pTex->u3];
+            pTLV->tv = UVTable[pTex->v3];
+            pTLV++;
+            PHD_VBUF_To_TLVERT(v1, pTLV);
+            pTLV->tu = UVTable[pTex->u2];
+            pTLV->tv = UVTable[pTex->v2];
+            pTLV++;
+            PHD_VBUF_To_TLVERT(v2, pTLV);
+            pTLV->tu = UVTable[pTex->u1];
+            pTLV->tv = UVTable[pTex->v1];
+        }
+        pTLV++;
+        PHD_VBUF_To_TLVERT(v3, pTLV);
+        pTLV->tu = UVTable[pTex->u4];
+        pTLV->tv = UVTable[pTex->v4];
+        pTLV++;
+        CurrentTLVertex = pTLV;
+    } else {
+        int b;
+
+        b = FindBucket(TPages[pTex->tpage]);
+        if (b == -1)
+            return;
+        nDrawnPoints += 2;
+        if (!dbl) {
+            PHD_VBUF_To_TLVERT(v0, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u1];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v1];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v1, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u2];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v2];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v2, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u3];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v3];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v0, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u1];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v1];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v2, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u3];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v3];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v3, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u4];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v4];
+            Buckets[b].cnt++;
+        } else {
+            PHD_VBUF_To_TLVERT(v0, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u3];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v3];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v1, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u2];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v2];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v2, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u1];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v1];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v0, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u3];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v3];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v2, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u1];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v1];
+            Buckets[b].cnt++;
+            PHD_VBUF_To_TLVERT(v3, &Buckets[b].Vertex[Buckets[b].cnt]);
+            Buckets[b].Vertex[Buckets[b].cnt].tu = UVTable[pTex->u4];
+            Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v4];
+            Buckets[b].cnt++;
+        }
+    }
+}
 }
