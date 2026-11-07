@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="9.93" height="12" x="349.40" y="0" class="nonmatching"><title>40 · 2.67%</title></rect>
-<rect width="12.66" height="12" x="359.34" y="0" class="todo"><title>51 · 3.40%</title></rect>
+<rect width="10.18" height="12" x="349.40" y="0" class="nonmatching"><title>41 · 2.74%</title></rect>
+<rect width="12.42" height="12" x="359.58" y="0" class="todo"><title>50 · 3.34%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">40</tspan> · <tspan class="todo">51</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">41</tspan> · <tspan class="todo">50</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="19.67" height="12" x="312.18" y="0" class="nonmatching"><title>38 KB · 5.29%</title></rect>
-<rect width="40.15" height="12" x="331.85" y="0" class="todo"><title>78 KB · 10.79%</title></rect>
+<rect width="19.96" height="12" x="312.18" y="0" class="nonmatching"><title>39 KB · 5.37%</title></rect>
+<rect width="39.86" height="12" x="332.14" y="0" class="todo"><title>78 KB · 10.72%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">38 KB</tspan> · <tspan class="todo">78 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">39 KB</tspan> · <tspan class="todo">78 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1340,7 +1340,7 @@
 <rect width="12" height="12" x="315" y="375" class="named"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="375" class="named"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="375" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="375" class="todo"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="375" class="nonmatching"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="375" class="named"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="375" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="375" class="named"><title>0x0048be60 CreateMonoScreen (222 bytes)</title></rect>
@@ -1892,7 +1892,7 @@
 <rect width="13.43" height="13.68" x="386.66" y="268.42" class="named"><title>0x0042de80 ControlSmokeEmitter (567 bytes)</title></rect>
 <rect width="13.43" height="13.60" x="386.66" y="285.10" class="named"><title>0x0042d750 TriggerDartSmoke (564 bytes)</title></rect>
 <rect width="13.43" height="13.60" x="386.66" y="301.70" class="named"><title>0x00431650 TriggerFlameThrower (564 bytes)</title></rect>
-<rect width="13.43" height="13.56" x="386.66" y="318.30" class="todo"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
+<rect width="13.43" height="13.56" x="386.66" y="318.30" class="nonmatching"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
 <rect width="13.43" height="13.56" x="386.66" y="334.86" class="decompiled"><title>0x004966f0 Func4966f0 (562 bytes)</title></rect>
 <rect width="13.43" height="13.51" x="386.66" y="351.41" class="named"><title>0x004114e0 VultureControl (560 bytes)</title></rect>
 <rect width="13.43" height="13.51" x="386.66" y="367.92" class="named"><title>0x00446ba0 FireGrenade (560 bytes)</title></rect>
