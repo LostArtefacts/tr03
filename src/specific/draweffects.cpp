@@ -1819,4 +1819,164 @@ void S_DrawLaserBeam(GAME_VECTOR *src, GAME_VECTOR *dest, unsigned char r, unsig
         b1 = b2;
     }
 }
+
+extern short electricity_points[][6];
+extern unsigned char lara_meshes[];
+extern unsigned char lara_last_points[];
+extern unsigned char lara_line_counts[];
+
+void HWI_InsertLine_Sorted(long x1, long y1, long x2, long y2, long z, long c0, long c1);
+bool ClipLine(long &x1, long &y1, long &x2, long &y2, long w, long h);
+
+void LaraElectricDeath(long copy)
+{
+    PHD_VECTOR pos1, pos2;
+    BITE_INFO bite1, bite2;
+    short distances[200];
+    int dcnt;
+    short TempMesh[3];
+    short *leccy;
+    long dx, dy, dz;
+    long wx, wy, wz, tx, ty, tz, xv, yv, zv;
+    long lp, lp1;
+    long screencoords[3 * 200];
+    int sw = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    int sh = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
+
+    phd_PushMatrix();
+    phd_TranslateAbs(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos);
+    dcnt = 0;
+    for (lp = 0; lp < 14; lp++) {
+        leccy = &electricity_points[(lp * 5) & 15][0];
+        bite1.mesh_num = lara_meshes[(lp << 1)];
+        bite2.mesh_num = lara_meshes[(lp << 1) + 1];
+        pos1.y = 0;
+        if (copy) {
+            pos1.z = -48;
+            pos1.x = -48;
+        } else {
+            pos1.x = 48;
+            pos1.z = 48;
+        }
+        GetJointAbsPosition(lara_item, &pos1, bite1.mesh_num);
+        pos2.y = 0;
+        if (!lara_last_points[lp] || lp == 13) {
+            if (copy) {
+                pos2.z = -48;
+                pos2.x = -48;
+            } else {
+                pos2.z = 48;
+                pos2.x = 48;
+            }
+            if (lp == 13)
+                pos2.y = -64;
+        } else
+            pos2.x = pos2.z = 0;
+        GetJointAbsPosition(lara_item, &pos2, bite2.mesh_num);
+        pos1.x -= lara_item->pos.x_pos;
+        pos1.y -= lara_item->pos.y_pos;
+        pos1.z -= lara_item->pos.z_pos;
+        pos2.x -= lara_item->pos.x_pos;
+        pos2.y -= lara_item->pos.y_pos;
+        pos2.z -= lara_item->pos.z_pos;
+        wx = pos1.x;
+        wy = pos1.y;
+        wz = pos1.z;
+        dx = (pos2.x - pos1.x) >> 2;
+        dy = (pos2.y - pos1.y) >> 2;
+        dz = (pos2.z - pos1.z) >> 2;
+        for (lp1 = 0; lp1 < 5; lp1++) {
+            if (lp1 == 4 && !lara_last_points[lp])
+                break;
+            else if (lp1 == 4 && lara_last_points[lp]) {
+                TempMesh[0] = pos2.x;
+                TempMesh[1] = pos2.y;
+                TempMesh[2] = pos2.z;
+            } else {
+                TempMesh[0] = wx;
+                TempMesh[1] = wy;
+                TempMesh[2] = wz;
+            }
+            if (lp1 != 0 && lp1 != 4) {
+                tx = *leccy++;
+                ty = *leccy++;
+                tz = *leccy++;
+                if (copy) {
+                    TempMesh[0] -= tx >> 3;
+                    TempMesh[1] -= ty >> 3;
+                    TempMesh[2] -= tz >> 3;
+                } else {
+                    TempMesh[0] += tx >> 3;
+                    TempMesh[1] += ty >> 3;
+                    TempMesh[2] += tz >> 3;
+                }
+                leccy += 3;
+                xv = abs(tx);
+                yv = abs(ty);
+                zv = abs(tz);
+                if (yv > xv)
+                    xv = yv;
+                if (zv > xv)
+                    xv = zv;
+                distances[dcnt] = xv;
+            } else {
+                distances[dcnt] = 0;
+            }
+            sint32 *mptr;
+            mptr = phd_mxptr;
+            long x1, y1, z1;
+            x1 = (mptr[0] * TempMesh[0] + mptr[1] * TempMesh[1] + mptr[2] * TempMesh[2] + mptr[3]);
+            y1 = (mptr[4] * TempMesh[0] + mptr[5] * TempMesh[1] + mptr[6] * TempMesh[2] + mptr[7]);
+            z1 = (mptr[8] * TempMesh[0] + mptr[9] * TempMesh[1] + mptr[10] * TempMesh[2] + mptr[11]);
+            float zv = f_persp / (float)z1;
+            screencoords[(dcnt * 3) + 0] = short(float(x1 * zv + f_centerx));
+            screencoords[(dcnt * 3) + 1] = short(float(y1 * zv + f_centery));
+            screencoords[(dcnt * 3) + 2] = z1 >> W2V_SHIFT;
+            dcnt++;
+            wx += dx;
+            wy += dy;
+            wz += dz;
+        }
+    }
+    dcnt = 0;
+    for (lp = 0; lp < 6; lp++) {
+        for (lp1 = 0; lp1 < lara_line_counts[lp]; lp1++) {
+            long x1, x2, y1, y2, z1, rgb, rgb1, alpha;
+            x1 = screencoords[(dcnt * 3) + 0];
+            y1 = screencoords[(dcnt * 3) + 1];
+            x2 = screencoords[(dcnt * 3) + 3];
+            y2 = screencoords[(dcnt * 3) + 4];
+            z1 = screencoords[(dcnt * 3) + 2];
+            rgb = distances[(dcnt) + 0];
+            rgb1 = distances[(dcnt) + 1];
+            dcnt++;
+            if (z1 < 32)
+                continue;
+            if (rgb > 255) {
+                rgb = 511 - rgb;
+                if (rgb < 0)
+                    rgb = 0;
+            }
+            if (rgb1 > 255) {
+                rgb1 = 511 - rgb1;
+                if (rgb1 < 0)
+                    rgb1 = 0;
+            }
+            if (copy) {
+                rgb >>= 1;
+                rgb1 >>= 1;
+            }
+            if (ClipLine(x1, y1, x2, y2, sw, sh)) {
+                if (x1 >= 0 && x1 <= sw && y1 >= 0 && y1 <= sh && x2 >= 0 && x2 <= sw && y2 >= 0 && y2 <= sh) {
+                    alpha = GlobalAlpha;
+                    GlobalAlpha = 0x70000000;
+                    HWI_InsertLine_Sorted(x1 - phd_winxmin, y1 - phd_winymin, x2 - phd_winxmin, y2 - phd_winymin, z1 << W2V_SHIFT, rgb << 8 | rgb, rgb1 << 8 | rgb1);
+                    GlobalAlpha = alpha;
+                }
+            }
+        }
+        dcnt++;
+    }
+    phd_PopMatrix();
+}
 }

@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="342.45" height="12" x="0" y="0" class="named"><title>1379 · 92.06%</title></rect>
-<rect width="7.45" height="12" x="342.45" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="11.42" height="12" x="349.90" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
-<rect width="10.68" height="12" x="361.32" y="0" class="todo"><title>43 · 2.87%</title></rect>
+<rect width="342.70" height="12" x="0" y="0" class="named"><title>1380 · 92.12%</title></rect>
+<rect width="7.45" height="12" x="342.70" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="11.42" height="12" x="350.15" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
+<rect width="10.43" height="12" x="361.57" y="0" class="todo"><title>42 · 2.80%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">94.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1379</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">46</tspan> · <tspan class="todo">43</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1380</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">46</tspan> · <tspan class="todo">42</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="279.79" height="12" x="0" y="0" class="named"><title>545 KB · 75.21%</title></rect>
-<rect width="33.96" height="12" x="279.79" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="22.92" height="12" x="313.76" y="0" class="nonmatching"><title>45 KB · 6.16%</title></rect>
-<rect width="35.32" height="12" x="336.68" y="0" class="todo"><title>69 KB · 9.49%</title></rect>
+<rect width="280.57" height="12" x="0" y="0" class="named"><title>547 KB · 75.42%</title></rect>
+<rect width="33.96" height="12" x="280.57" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="22.92" height="12" x="314.54" y="0" class="nonmatching"><title>45 KB · 6.16%</title></rect>
+<rect width="34.54" height="12" x="337.46" y="0" class="todo"><title>67 KB · 9.29%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">84.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">545 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">45 KB</tspan> · <tspan class="todo">69 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">84.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">547 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">45 KB</tspan> · <tspan class="todo">67 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1164,7 +1164,7 @@
 <rect width="12" height="12" x="675" y="315" class="nonmatching"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="315" class="nonmatching"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="315" class="todo"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="315" class="todo"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="315" class="named"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="315" class="todo"><title>0x00478bf0 S_DrawLaserBolts (2332 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="330" class="named"><title>0x00479510 ClipLine (765 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="330" class="named"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
@@ -1687,7 +1687,7 @@
 <rect width="22.43" height="22.31" x="282.24" y="154.26" class="named"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
 <rect width="22.43" height="22.31" x="282.24" y="179.57" class="todo"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="22.43" height="22.01" x="282.24" y="204.88" class="named"><title>0x0041f750 CompyControl (1524 bytes)</title></rect>
-<rect width="22.43" height="21.93" x="282.24" y="229.89" class="todo"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
+<rect width="22.43" height="21.93" x="282.24" y="229.89" class="named"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
 <rect width="22.43" height="21.89" x="282.24" y="254.82" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
 <rect width="22.43" height="21.83" x="282.24" y="279.71" class="named"><title>0x00449bb0 LaraGun (1512 bytes)</title></rect>
 <rect width="22.43" height="21.72" x="282.24" y="304.54" class="named"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
