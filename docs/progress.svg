@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="345.68" height="12" x="0" y="0" class="named"><title>1392 · 92.92%</title></rect>
 <rect width="7.45" height="12" x="345.68" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.42" height="12" x="353.13" y="0" class="nonmatching"><title>50 · 3.34%</title></rect>
-<rect width="6.46" height="12" x="365.54" y="0" class="todo"><title>26 · 1.74%</title></rect>
+<rect width="12.66" height="12" x="353.13" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
+<rect width="6.21" height="12" x="365.79" y="0" class="todo"><title>25 · 1.67%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">94.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1392</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">50</tspan> · <tspan class="todo">26</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1392</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">25</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="284.80" height="12" x="0" y="0" class="named"><title>555 KB · 76.56%</title></rect>
 <rect width="33.96" height="12" x="284.80" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="26.99" height="12" x="318.76" y="0" class="nonmatching"><title>53 KB · 7.25%</title></rect>
-<rect width="26.26" height="12" x="345.74" y="0" class="todo"><title>51 KB · 7.06%</title></rect>
+<rect width="29.05" height="12" x="318.76" y="0" class="nonmatching"><title>57 KB · 7.81%</title></rect>
+<rect width="24.20" height="12" x="347.80" y="0" class="todo"><title>47 KB · 6.51%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">85.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">555 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">51 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">555 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">57 KB</tspan> · <tspan class="todo">47 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -99,7 +99,7 @@
 <rect width="12" height="12" x="450" y="0" class="named"><title>0x00402720 gen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402870 gen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="0" class="named"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="0" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="0" class="nonmatching"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="todo"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x004051a0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="named"><title>0x004051e0 draw_poly_wgtmap_persp (55 bytes)</title></rect>
@@ -1586,7 +1586,7 @@
 <rect width="39.26" height="36.29" x="53.67" y="231.21" class="named"><title>0x0049d920 ScanLinesTFAlphaDecalAffine (4399 bytes)</title></rect>
 <rect width="39.26" height="34.25" x="53.67" y="270.50" class="decompiled"><title>0x00498da0 Func498da0 (4153 bytes)</title></rect>
 <rect width="39.26" height="34.03" x="53.67" y="307.75" class="named"><title>0x004b0b50 ScanLinesTGDecal (4127 bytes)</title></rect>
-<rect width="39.26" height="33.05" x="53.67" y="344.78" class="todo"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
+<rect width="39.26" height="33.05" x="53.67" y="344.78" class="nonmatching"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="39.26" height="32.12" x="53.67" y="380.83" class="named"><title>0x004afc10 ScanLinesTGDecalAffine (3897 bytes)</title></rect>
 <rect width="39.26" height="31.05" x="53.67" y="415.95" class="named"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
 <rect width="34.62" height="35.08" x="95.93" y="0" class="named"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
