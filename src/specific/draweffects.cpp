@@ -1324,4 +1324,171 @@ void DoRain(void)
     phd_PopMatrix();
 }
 
+
+typedef struct {
+    sint16 x;
+    sint16 z;
+    sint32 rgb;
+} EXPLOSION_VERTS;
+
+typedef struct {
+    sint16 on;
+    sint16 life;
+    sint16 speed;
+    sint16 radius;
+    sint16 xrot;
+    sint16 zrot;
+    sint32 x;
+    sint32 y;
+    sint32 z;
+    EXPLOSION_VERTS verts[16];
+} EXPLOSION_RING;
+
+extern EXPLOSION_RING ExpRings[];
+
+void phd_RotX(sint16 rx);
+void phd_RotZ(sint16 rz);
+
+void DrawExplosionRings(void)
+{
+    DISPLAYMODE *dm;
+    EXPLOSION_RING *ring;
+    EXPLOSION_VERTS *vtx;
+    EXPLOSION_VERTS *vtx2;
+    PHDSPRITESTRUCT *sprite;
+    PHD_VBUF v[4];
+    PHD_VECTOR pos;
+    PHDTEXTURESTRUCT tex;
+    long *pZ;
+    long *pZ2;
+    short *pXY;
+    short *pXY2;
+    float zv;
+    long w, h, rad, ang, r, g, b, x, y, z;
+    long x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4, col1, col2, col3, col4;
+    long i, j, k;
+    long Z[50];
+    short XY[50];
+    long u1, u2, v1, v2;
+    dm = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode];
+    w = dm->w - 1;
+    h = dm->h - 1;
+    for (i = 0; i < 6; i++) {
+        ring = &ExpRings[i];
+        if (!ring->on)
+            continue;
+        ring->life--;
+        if (!ring->life) {
+            ring->on = 0;
+            continue;
+        }
+        phd_PushMatrix();
+        phd_TranslateAbs(ring->x, ring->y, ring->z);
+        phd_RotZ(ring->zrot << 4);
+        phd_RotX(ring->xrot << 4);
+        ring->radius += ring->speed;
+        rad = ring->radius;
+        vtx = ring->verts;
+        pXY = XY;
+        pZ = Z;
+        for (j = 0; j < 2; j++) {
+            ang = (wibble & 0x3f) << 3;
+            for (k = 0; k < 8; k++) {
+                vtx->x = short((rad * rcossin_tbl[ang << 1]) >> (12));
+                vtx->z = short((rad * rcossin_tbl[(ang << 1) + 1]) >> (12));
+                r = GetRandomDraw() & 0x1f;
+                g = (GetRandomDraw() & 0x3f) + 224;
+                b = (g >> 2) + (GetRandomDraw() & 0x3f);
+                r = (r * ring->life) >> 5;
+                g = (g * ring->life) >> 5;
+                b = (b * ring->life) >> 5;
+                vtx->rgb = r | (g << 8) | (b << 16);
+                ang = (ang + 512) & 0xfff;
+                x = vtx->x;
+                y = 0;
+                z = vtx->z;
+                pos.z = phd_mxptr[8] * x + phd_mxptr[9] * y + phd_mxptr[10] * z + phd_mxptr[11];
+                zv = f_persp / (float)pos.z;
+                pos.x = phd_mxptr[0] * x + phd_mxptr[1] * y + phd_mxptr[2] * z + phd_mxptr[3];
+                pXY[0] = (short)(pos.x * zv + f_centerx);
+                pos.y = phd_mxptr[4] * x + phd_mxptr[5] * y + phd_mxptr[6] * z + phd_mxptr[7];
+                pXY[1] = (short)(pos.y * zv + f_centery);
+                pZ[0] = pos.z;
+                vtx++;
+                pXY += 2;
+                pZ++;
+            }
+            rad >>= 1;
+        }
+        vtx = ring->verts;
+        vtx2 = &ring->verts[8];
+        pXY = XY;
+        pZ = Z;
+        pXY2 = &XY[16];
+        pZ2 = &Z[8];
+        x1 = *pXY++;
+        y1 = *pXY++;
+        z1 = *pZ++;
+        x3 = *pXY2++;
+        y3 = *pXY2++;
+        z3 = *pZ2++;
+        col1 = vtx->rgb;
+        col3 = vtx2->rgb;
+        sprite = &phdspriteinfo[objects[296].mesh_index + 4 + ((wibble >> 4) & 3)];
+        u1 = (sprite->offset << 8) & 0xff00;
+        v1 = sprite->offset & 0xff00;
+        u2 = u1 + sprite->width;
+        v2 = v1 + sprite->height;
+        u1 += App.nUVAdd;
+        u2 -= App.nUVAdd;
+        v1 += App.nUVAdd;
+        v2 -= App.nUVAdd;
+        for (j = 0; j < 8; j++) {
+            if (j != 7) {
+                x2 = *pXY++;
+                y2 = *pXY++;
+                z2 = *pZ++;
+                x4 = *pXY2++;
+                y4 = *pXY2++;
+                z4 = *pZ2++;
+                col2 = vtx->rgb;
+                col4 = vtx2->rgb;
+                vtx++;
+                vtx2++;
+            } else {
+                x2 = pXY[-16];
+                y2 = pXY[-15];
+                z2 = pZ[-8];
+                x4 = pXY2[-16];
+                y4 = pXY2[-15];
+                z4 = pZ2[-8];
+                col2 = vtx[-8].rgb;
+                col4 = vtx->rgb;
+            }
+            if (((z1 + z2 + z3 + z4) >> 2) > phd_znear && (col1 || col2 || col3 || col4) && x1 > -128 && x2 > -128 && x3 > -128 && x4 > -128 && x1 < w + 128 && x2 < w + 128 && x3 < w + 128 && x4 < w + 128 && y1 > -128 && y2 > -128 && y3 > -128 && y4 > -128 && y1 < h + 128 && y2 < h + 128 && y3 < h + 128 && y4 < h + 128) {
+                setXYZ4(v, 0, x1, y1, z1, col1, x2, y2, z2, col2, x4, y4, z4, col4, x3, y3, z3, col3);
+                tex.u1 = u1;
+                tex.u2 = u2;
+                tex.u3 = u1;
+                tex.u4 = u2;
+                tex.v1 = v1;
+                tex.v2 = v1;
+                tex.v3 = v2;
+                tex.v4 = v2;
+                tex.tpage = sprite->tpage;
+                tex.drawtype = 2;
+                HWI_InsertGT4_Sorted(&v[0], &v[1], &v[2], &v[3], &tex, 0, 1);
+            }
+            x1 = x2;
+            y1 = y2;
+            z1 = z2;
+            x3 = x4;
+            y3 = y4;
+            z3 = z4;
+            col1 = col2;
+            col3 = col4;
+        }
+        phd_PopMatrix();
+    }
+}
 }
