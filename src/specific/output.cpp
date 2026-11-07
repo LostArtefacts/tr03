@@ -14,7 +14,7 @@ extern RECT phd_WindowRect;
 extern sint16 phd_winxmin;
 extern sint16 phd_winymin;
 extern int phd_zfar;
-extern unsigned short inv_colours[17];
+extern unsigned short inv_colours[];
 extern void (*InsertFlatRect)(int x1, int y1, int x2, int y2, int zdepth, int col);
 
 typedef struct phdtexturestruct {
@@ -270,6 +270,14 @@ void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
 void phd_RotY(PHD_ANGLE ry);
 sint16 *calc_object_vertices(sint16 *objptr);
 void phd_RotY(PHD_ANGLE ry);
+
+
+void S_InsertBackPolygon(int xmin, int ymin, int xmax, int ymax, int col)
+{
+    InsertFlatRect(phd_winxmin + xmin, phd_winymin + ymin, phd_winxmin + xmax, phd_winymin + ymax, phd_zfar, inv_colours[0]);
+}
+
+void S_InitialisePolyList(int clear);
 
 void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *iptr)
 {

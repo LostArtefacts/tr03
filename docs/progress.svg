@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="339.22" height="12" x="0" y="0" class="named"><title>1366 · 91.19%</title></rect>
-<rect width="7.45" height="12" x="339.22" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.45" height="12" x="346.67" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="17.88" height="12" x="354.12" y="0" class="todo"><title>72 · 4.81%</title></rect>
+<rect width="339.47" height="12" x="0" y="0" class="named"><title>1367 · 91.26%</title></rect>
+<rect width="7.45" height="12" x="339.47" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.45" height="12" x="346.92" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="17.63" height="12" x="354.37" y="0" class="todo"><title>71 · 4.74%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">93.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1366</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">72</tspan></text>
+<text text-anchor="end" x="552" y="7.50">93.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1367</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">71</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="272.97" height="12" x="0" y="0" class="named"><title>532 KB · 73.38%</title></rect>
-<rect width="33.96" height="12" x="272.97" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.78" height="12" x="306.93" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="50.29" height="12" x="321.71" y="0" class="todo"><title>98 KB · 13.52%</title></rect>
+<rect width="273" height="12" x="0" y="0" class="named"><title>532 KB · 73.39%</title></rect>
+<rect width="33.96" height="12" x="273" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.78" height="12" x="306.97" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="50.25" height="12" x="321.75" y="0" class="todo"><title>98 KB · 13.51%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">82.5%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">532 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">98 KB</tspan></text>
@@ -1319,7 +1319,7 @@
 <rect width="12" height="12" x="0" y="375" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="375" class="named"><title>0x0048a370 S_OutputPolyList (330 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="375" class="nonmatching"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="375" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="375" class="named"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="375" class="named"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="375" class="named"><title>0x0048a9b0 S_LightRoom (68 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="375" class="named"><title>0x0048aa00 AnimateTextures (192 bytes)</title></rect>
@@ -2681,7 +2681,7 @@
 <rect width="4.60" height="4.86" x="616.87" y="364.12" class="named"><title>0x0043fe90 MonkeySwingSnap (69 bytes)</title></rect>
 <rect width="4.60" height="4.86" x="616.87" y="371.98" class="named"><title>0x0046e5f0 TrapDoorCeiling (69 bytes)</title></rect>
 <rect width="4.60" height="4.86" x="616.87" y="379.83" class="named"><title>0x00480740 DS_IsChannelPlaying (69 bytes)</title></rect>
-<rect width="4.60" height="4.86" x="616.87" y="387.69" class="todo"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
+<rect width="4.60" height="4.86" x="616.87" y="387.69" class="named"><title>0x0048a760 S_InsertBackPolygon (69 bytes)</title></rect>
 <rect width="4.60" height="4.79" x="616.87" y="395.55" class="named"><title>0x0042e270 Richochet (68 bytes)</title></rect>
 <rect width="4.60" height="4.79" x="616.87" y="403.34" class="named"><title>0x0046ea00 FallingBlockCeiling (68 bytes)</title></rect>
 <rect width="4.60" height="4.79" x="616.87" y="411.13" class="named"><title>0x00484250 GetValidLevelsList (68 bytes)</title></rect>
