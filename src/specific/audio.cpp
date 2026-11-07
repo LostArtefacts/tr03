@@ -32,7 +32,6 @@ extern WAVEFORMATEX wav_format;
 extern char source_wav_format[50];
 extern unsigned char *AllocBuffer;
 extern unsigned char *ADPCMBuffer;
-extern unsigned char *pAudioWrite;
 extern DWORD AudioBytes;
 extern DWORD acm_read;
 extern DWORD acm_total_read;
@@ -41,6 +40,7 @@ extern DWORD StreamSize;
 extern int audio_buffer_size;
 extern int CurrentNotify;
 extern int NotifySize;
+extern unsigned char *pAudioWrite;
 extern DWORD NextWriteOffset;
 extern int XATrack;
 extern int acm_volume;
@@ -66,6 +66,94 @@ BOOL CALLBACK ACMEnumCallBack(HACMDRIVERID hadid, DWORD dwInstance, DWORD fdwSup
         return TRUE;
     hACMDriverID = hadid;
     return FALSE;
+}
+
+bool ACMInit(void)
+{
+    DSBUFFERDESC desc;
+    DWORD pMetric;
+    int nEmpty;
+
+    acm_ready = false;
+    if (!App.DXConfig.sound)
+        return false;
+    if (!lpDirectSound)
+        return false;
+
+    Func48e5e0();
+    acmGetVersion();
+    acmDriverEnum(ACMEnumCallBack, 0, 0);
+    if (!hACMDriverID)
+        return false;
+    if (acmDriverOpen(&hACMDriver, hACMDriverID, 0))
+        return false;
+
+    char wadname[80] = "audio\\cdaudio.wad";
+    if (!ACMOpenFile(wadname))
+        ACMOpenFile(GetFullPath(wadname));
+
+    AllocBuffer = (unsigned char *)GlobalAlloc(GMEM_FIXED, 0x16040);
+    ADPCMBuffer = (unsigned char *)(((long)AllocBuffer + 32) & ~31);
+    ReadFile(acm_file, TrackInfos, sizeof(TrackInfos), &acm_read, 0);
+    nEmpty = 0;
+    while (!TrackInfos[nEmpty].size)
+        nEmpty++;
+    SetFilePointer(acm_file, TrackInfos[nEmpty].offset, 0, FILE_BEGIN);
+    SetFilePointer(acm_file, 20, 0, FILE_CURRENT);
+    ReadFile(acm_file, source_wav_format, 50, &acm_read, 0);
+
+    wav_format.wFormatTag = WAVE_FORMAT_PCM;
+    acmMetrics(0, ACM_METRIC_MAX_SIZE_FORMAT, &pMetric);
+    acmFormatSuggest(hACMDriver, (LPWAVEFORMATEX)source_wav_format, &wav_format, pMetric, ACM_FORMATSUGGESTF_WFORMATTAG);
+
+    memset(&desc, 0, sizeof(desc));
+    audio_buffer_size = 0x577C0;
+    NotifySize = 0x15DF0;
+    desc.dwBufferBytes = 0x577C0;
+    desc.dwSize = sizeof(DSBUFFERDESC);
+    desc.dwFlags = DSBCAPS_LOCSOFTWARE | DSBCAPS_CTRLFREQUENCY | DSBCAPS_CTRLPAN | DSBCAPS_CTRLVOLUME | DSBCAPS_CTRLPOSITIONNOTIFY | DSBCAPS_GETCURRENTPOSITION2;
+    desc.lpwfxFormat = &wav_format;
+    lpDirectSound->CreateSoundBuffer(&desc, &DSBuffer, 0);
+    DSBuffer->QueryInterface(IID_IDirectSoundNotify, (LPVOID *)&DSNotify);
+    ACMSetupNotifications();
+    acmStreamOpen(&hACMStream, hACMDriver, (LPWAVEFORMATEX)source_wav_format, &wav_format, 0, 0, 0, 0);
+    acm_ready = true;
+
+    while (DSBuffer->Lock(0, audio_buffer_size, (LPVOID *)&pAudioWrite, &AudioBytes, 0, 0, 0) != DS_OK);
+    acmStreamSize(hACMStream, 0x5800, &StreamSize, 0);
+    memset(pAudioWrite, 0, audio_buffer_size);
+
+    memset(&StreamHeaders[0], 0, sizeof(ACMSTREAMHEADER));
+    memset(&StreamHeaders[1], 0, sizeof(ACMSTREAMHEADER));
+    memset(&StreamHeaders[2], 0, sizeof(ACMSTREAMHEADER));
+    memset(&StreamHeaders[3], 0, sizeof(ACMSTREAMHEADER));
+    StreamHeaders[0].cbStruct = sizeof(ACMSTREAMHEADER);
+    StreamHeaders[0].pbSrc = ADPCMBuffer;
+    StreamHeaders[0].cbSrcLength = 0x5800;
+    StreamHeaders[0].cbDstLength = StreamSize;
+    StreamHeaders[0].pbDst = &pAudioWrite[NotifySize * 0];
+    StreamHeaders[1].cbStruct = sizeof(ACMSTREAMHEADER);
+    StreamHeaders[1].pbSrc = ADPCMBuffer;
+    StreamHeaders[1].cbSrcLength = 0x5800;
+    StreamHeaders[1].cbDstLength = StreamSize;
+    StreamHeaders[1].pbDst = &pAudioWrite[NotifySize * 1];
+    StreamHeaders[2].cbStruct = sizeof(ACMSTREAMHEADER);
+    StreamHeaders[2].pbSrc = ADPCMBuffer;
+    StreamHeaders[2].cbSrcLength = 0x5800;
+    StreamHeaders[2].cbDstLength = StreamSize;
+    StreamHeaders[2].pbDst = &pAudioWrite[NotifySize * 2];
+    StreamHeaders[3].cbStruct = sizeof(ACMSTREAMHEADER);
+    StreamHeaders[3].pbSrc = ADPCMBuffer;
+    StreamHeaders[3].cbSrcLength = 0x5800;
+    StreamHeaders[3].cbDstLength = StreamSize;
+    StreamHeaders[3].pbDst = &pAudioWrite[NotifySize * 3];
+    acmStreamPrepareHeader(hACMStream, &StreamHeaders[0], 0);
+    acmStreamPrepareHeader(hACMStream, &StreamHeaders[1], 0);
+    acmStreamPrepareHeader(hACMStream, &StreamHeaders[2], 0);
+    acmStreamPrepareHeader(hACMStream, &StreamHeaders[3], 0);
+
+    DSBuffer->Unlock(pAudioWrite, audio_buffer_size, 0, 0);
+    return true;
 }
 
 void ACMClose(void)

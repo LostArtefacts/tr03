@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="346.92" height="12" x="0" y="0" class="named"><title>1397 · 93.26%</title></rect>
-<rect width="7.45" height="12" x="346.92" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="13.16" height="12" x="354.37" y="0" class="nonmatching"><title>53 · 3.54%</title></rect>
-<rect width="4.47" height="12" x="367.53" y="0" class="todo"><title>18 · 1.20%</title></rect>
+<rect width="347.17" height="12" x="0" y="0" class="named"><title>1398 · 93.32%</title></rect>
+<rect width="7.45" height="12" x="347.17" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="13.16" height="12" x="354.62" y="0" class="nonmatching"><title>53 · 3.54%</title></rect>
+<rect width="4.22" height="12" x="367.78" y="0" class="todo"><title>17 · 1.13%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">95.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1397</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">53</tspan> · <tspan class="todo">18</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1398</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">53</tspan> · <tspan class="todo">17</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="290.82" height="12" x="0" y="0" class="named"><title>567 KB · 78.18%</title></rect>
-<rect width="33.96" height="12" x="290.82" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="32.71" height="12" x="324.77" y="0" class="nonmatching"><title>64 KB · 8.79%</title></rect>
-<rect width="14.51" height="12" x="357.49" y="0" class="todo"><title>28 KB · 3.90%</title></rect>
+<rect width="291.36" height="12" x="0" y="0" class="named"><title>568 KB · 78.32%</title></rect>
+<rect width="33.96" height="12" x="291.36" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="32.71" height="12" x="325.32" y="0" class="nonmatching"><title>64 KB · 8.79%</title></rect>
+<rect width="13.97" height="12" x="358.03" y="0" class="todo"><title>27 KB · 3.75%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">87.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">567 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">64 KB</tspan> · <tspan class="todo">28 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">87.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">568 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">64 KB</tspan> · <tspan class="todo">27 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1123,7 +1123,7 @@
 <rect width="12" height="12" x="60" y="315" class="named"><title>0x00473d10 WinstonControl (1012 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="315" class="named"><title>0x00474110 OldWinstonControl (389 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="315" class="named"><title>0x004742a0 ACMEnumCallBack (144 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="315" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="315" class="named"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="315" class="named"><title>0x00474760 ACMClose (323 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="315" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="315" class="named"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
@@ -1740,7 +1740,7 @@
 <rect width="18.49" height="18.73" x="417.08" y="23.50" class="named"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
 <rect width="18.45" height="18.73" x="438.57" y="23.50" class="named"><title>0x00455370 ExplodingDeath (1067 bytes)</title></rect>
 <rect width="18.42" height="18.73" x="460.02" y="23.50" class="named"><title>0x004607a0 UserControl (1065 bytes)</title></rect>
-<rect width="18.38" height="18.73" x="481.44" y="23.50" class="todo"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
+<rect width="18.38" height="18.73" x="481.44" y="23.50" class="named"><title>0x00474330 ACMInit (1063 bytes)</title></rect>
 <rect width="18.23" height="18.73" x="502.82" y="23.50" class="named"><title>0x00455a10 DrawMonkey (1054 bytes)</title></rect>
 <rect width="17.97" height="18.73" x="524.04" y="23.50" class="named"><title>0x00458e50 InitialiseDoor (1039 bytes)</title></rect>
 <rect width="17.86" height="18.73" x="545.01" y="23.50" class="named"><title>0x0042cac0 SetupSplash (1033 bytes)</title></rect>
