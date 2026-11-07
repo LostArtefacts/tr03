@@ -4,6 +4,7 @@
 
 #define GRAVITY 6
 #define NUM_WAKE_SPRITES 32
+#define WAKE_SPEED 4
 
 typedef struct {
     sint32 boat_turn;
@@ -749,13 +750,14 @@ int DoShift_boat(ITEM_INFO *boat, PHD_VECTOR *newer, PHD_VECTOR *old)
 
 extern sint32 wibble;
 extern uint8 WakeShade;
+extern uint8 CurrentStartWake;
 
 void TestTriggers(sint16 *data, int heavy);
 int BoatUserControl(ITEM_INFO *boat);
 void BoatAnimation(ITEM_INFO *boat, int collide);
 int DoBoatDynamics(int height, int fallspeed, int *y);
 int BoatDynamics(sint16 boat_number);
-void DoWake_boat(ITEM_INFO *item, sint32 xoff, sint32 zoff, sint16 rotate);
+void DoWake_boat(ITEM_INFO *item, sint16 xoff, sint16 zoff, sint16 rotate);
 void UpdateWakeFX_boat(void);
 void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
 int abs(int x);
@@ -980,6 +982,70 @@ void BoatControl(sint16 item_number)
 
 int TestBoundsCollide(ITEM_INFO *item, ITEM_INFO *laraitem, sint32 radius);
 int TestCollision(ITEM_INFO *item, ITEM_INFO *laraitem);
+
+void CreateBubble(PHD_3DPOS *pos, sint16 room_number, sint32 size, sint32 sizerange);
+void DoWake_boat(ITEM_INFO *item, sint16 xoff, sint16 zoff, sint16 rotate);
+void TestTriggers(sint16 *data, int heavy);
+int BoatUserControl(ITEM_INFO *boat);
+
+void DoWake_boat(ITEM_INFO *v, sint16 xoff, sint16 zoff, sint16 rotate)
+{
+    FLOOR_INFO *floor;
+    sint32 s, c, x, z, xv[2], zv[2], lp, h;
+    sint16 room_number, angle1, angle2;
+
+    if (WakePts[CurrentStartWake][rotate].life)
+        return;
+
+    c = phd_cos(v->pos.y_rot);
+    s = phd_sin(v->pos.y_rot);
+
+    x = v->pos.x_pos + (((zoff * s) + (xoff * c)) >> W2V_SHIFT);
+    z = v->pos.z_pos + (((zoff * c) - (xoff * s)) >> W2V_SHIFT);
+
+    room_number = v->room_number;
+    floor = GetFloor(x, v->pos.y_pos + 128, z, &room_number);
+    h = GetWaterHeight(x, v->pos.y_pos + 128, z, room_number);
+
+    {
+        if (v->speed < 0) {
+            if (!rotate) {
+                angle1 = v->pos.y_rot - (ONE_DEGREE * 20);
+                angle2 = v->pos.y_rot - (ONE_DEGREE * 40);
+            } else {
+                angle1 = v->pos.y_rot + (ONE_DEGREE * 20);
+                angle2 = v->pos.y_rot + (ONE_DEGREE * 40);
+            }
+        } else {
+            if (!rotate) {
+                angle1 = v->pos.y_rot - (ONE_DEGREE * 160);
+                angle2 = v->pos.y_rot - (ONE_DEGREE * 140);
+            } else {
+                angle1 = v->pos.y_rot + (ONE_DEGREE * 160);
+                angle2 = v->pos.y_rot + (ONE_DEGREE * 140);
+            }
+        }
+
+        xv[0] = (WAKE_SPEED * phd_sin(angle1)) >> W2V_SHIFT;
+        zv[0] = (WAKE_SPEED * phd_cos(angle1)) >> W2V_SHIFT;
+        xv[1] = ((WAKE_SPEED + 6) * phd_sin(angle2)) >> W2V_SHIFT;
+        zv[1] = ((WAKE_SPEED + 6) * phd_cos(angle2)) >> W2V_SHIFT;
+
+        WakePts[CurrentStartWake][rotate].y = v->pos.y_pos + 32;
+        WakePts[CurrentStartWake][rotate].life = 0x40;
+        for (lp = 0; lp < 2; lp++) {
+            WakePts[CurrentStartWake][rotate].x[lp] = x;
+            WakePts[CurrentStartWake][rotate].z[lp] = z;
+            WakePts[CurrentStartWake][rotate].xvel[lp] = xv[lp];
+            WakePts[CurrentStartWake][rotate].zvel[lp] = zv[lp];
+        }
+
+        if (rotate == 1) {
+            CurrentStartWake++;
+            CurrentStartWake &= (NUM_WAKE_SPRITES - 1);
+        }
+    }
+}
 
 int BoatCheckGeton(sint16 item_number, COLL_INFO *coll)
 {
