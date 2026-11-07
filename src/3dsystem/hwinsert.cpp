@@ -213,6 +213,68 @@ void SubdivideEdge(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *dest);
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
 void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
 
+void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level)
+{
+    PHDTEXTURESTRUCT tex;
+    PHD_VBUF v[5];
+
+    if (level) {
+        tex.drawtype = pTex->drawtype;
+        tex.tpage = pTex->tpage;
+        v1->u = pTex->u1;
+        v1->v = pTex->v1;
+        v2->u = pTex->u2;
+        v2->v = pTex->v2;
+        v3->u = pTex->u3;
+        v3->v = pTex->v3;
+        v4->u = pTex->u4;
+        v4->v = pTex->v4;
+        SubdivideEdge(v1, v2, &v[0]);
+        SubdivideEdge(v3, v4, &v[1]);
+        SubdivideEdge(v1, v4, &v[2]);
+        SubdivideEdge(v2, v3, &v[3]);
+        SubdivideEdge(v1, v3, &v[4]);
+        tex.u1 = v1->u;
+        tex.v1 = v1->v;
+        tex.u2 = v[0].u;
+        tex.v2 = v[0].v;
+        tex.u3 = v[4].u;
+        tex.v3 = v[4].v;
+        tex.u4 = v[2].u;
+        tex.v4 = v[2].v;
+        SubdivideGT4(v1, &v[0], &v[4], &v[2], &tex, nSortType, dbl, level - 1);
+        tex.u1 = v[0].u;
+        tex.v1 = v[0].v;
+        tex.u2 = v2->u;
+        tex.v2 = v2->v;
+        tex.u3 = v[3].u;
+        tex.v3 = v[3].v;
+        tex.u4 = v[4].u;
+        tex.v4 = v[4].v;
+        SubdivideGT4(&v[0], v2, &v[3], &v[4], &tex, nSortType, dbl, level - 1);
+        tex.u1 = v[4].u;
+        tex.v1 = v[4].v;
+        tex.u2 = v[3].u;
+        tex.v2 = v[3].v;
+        tex.u3 = v3->u;
+        tex.v3 = v3->v;
+        tex.u4 = v[1].u;
+        tex.v4 = v[1].v;
+        SubdivideGT4(&v[4], &v[3], v3, &v[1], &tex, nSortType, dbl, level - 1);
+        tex.u1 = v[2].u;
+        tex.v1 = v[2].v;
+        tex.u2 = v[4].u;
+        tex.v2 = v[4].v;
+        tex.u3 = v[1].u;
+        tex.v3 = v[1].v;
+        tex.u4 = v4->u;
+        tex.v4 = v4->v;
+        SubdivideGT4(&v[2], &v[4], &v[1], v4, &tex, nSortType, dbl, level - 1);
+    } else {
+        HWI_InsertGT4_Poly(v1, v2, v3, v4, pTex, nSortType, dbl);
+    }
+}
+
 void SubdivideGT3(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level)
 {
     PHD_VBUF v12;
