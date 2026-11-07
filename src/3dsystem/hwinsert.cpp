@@ -957,4 +957,123 @@ void HWI_InsertPoly_Gouraud(int nPoints, float zdepth, int nR, int nG, int nB, i
         CurrentTLVertex = pTLV;
     }
 }
+
+extern unsigned char game_palette[];
+extern int phd_winwidth;
+extern int phd_winheight;
+
+inline DWORD ColorFromRGB(int nR, int nG, int nB)
+{
+    if (bBlueEffect) {
+        nR *= 128;
+        nR >>= 8;
+        nG *= 224;
+        nG >>= 8;
+    }
+    return ((nR << 16) | (nG << 8) | nB) | GlobalAlpha;
+}
+
+void HWI_InsertFlatRect_Sorted(int nX1, int nY1, int nX2, int nY2, int nZDepth, int nColour)
+{
+    sint32 *sort;
+    sint16 *info;
+    unsigned char *pPE = game_palette + nColour * 3;
+    D3DTLVERTEX *pTLV;
+
+    if (nX2 <= nX1 || nY2 <= nY1)
+        return;
+    if (nX1 < phd_winxmin)
+        nX1 = phd_winxmin;
+    if (nY1 < phd_winymin)
+        nY1 = phd_winymin;
+    if (nX2 > phd_winxmin + phd_winwidth)
+        nX2 = phd_winxmin + phd_winwidth;
+    if (nY2 > phd_winymin + phd_winheight)
+        nX2 = phd_winymin + phd_winheight;
+    if (App.lpZBuffer == 0) {
+        if (CurrentTLVertex - VertexBuffer > 9184)
+            return;
+        sort = sort3dptrbf;
+        info = info3dptrbf;
+        sort[2] = nPolyType;
+        surfacenumbf++;
+        sort3dptrbf += 3;
+        info3dptrbf += 5;
+        sort[0] = (sint32)info;
+        sort[1] = nZDepth;
+        info[0] = 11;
+        info[1] = 0;
+        info[2] = 4;
+        pTLV = CurrentTLVertex;
+        *((D3DTLVERTEX **)(info + 3)) = pTLV;
+        pTLV[0].sx = pTLV[3].sx = float(nX1);
+        pTLV[0].sy = pTLV[1].sy = float(nY1);
+        pTLV[1].sx = pTLV[2].sx = float(nX2);
+        pTLV[3].sy = pTLV[2].sy = float(nY2);
+        pTLV[0].color = pTLV[1].color = pTLV[2].color = pTLV[3].color = ColorFromRGB(pPE[0], pPE[1], pPE[2]);
+        float fooz = one / float(nZDepth);
+        float z = f_a - fooz * f_boo;
+        pTLV[0].sz = z;
+        pTLV[1].sz = z;
+        pTLV[2].sz = z;
+        pTLV[3].sz = z;
+        pTLV[0].rhw = fooz;
+        pTLV[1].rhw = fooz;
+        pTLV[2].rhw = fooz;
+        pTLV[3].rhw = fooz;
+        pTLV[0].specular = 0;
+        pTLV[1].specular = 0;
+        pTLV[2].specular = 0;
+        pTLV[3].specular = 0;
+        CurrentTLVertex = pTLV + 4;
+    } else {
+        int b;
+        int v;
+        b = FindBucket(0);
+        if (b == -1)
+            return;
+        v = Buckets[b].cnt;
+        float fooz = one / float(nZDepth);
+        float z = f_a - fooz * f_boo;
+        Buckets[b].Vertex[v + 0].specular = 0;
+        Buckets[b].Vertex[v + 1].specular = 0;
+        Buckets[b].Vertex[v + 2].specular = 0;
+        Buckets[b].Vertex[v + 3].specular = 0;
+        Buckets[b].Vertex[v + 4].specular = 0;
+        Buckets[b].Vertex[v + 5].specular = 0;
+        Buckets[b].Vertex[v + 6].specular = 0;
+        Buckets[b].Vertex[v + 0].sx = float(nX1);
+        Buckets[b].Vertex[v + 0].sy = float(nY1);
+        Buckets[b].Vertex[v + 0].sz = z;
+        Buckets[b].Vertex[v + 0].rhw = fooz;
+        Buckets[b].Vertex[v + 0].color = ColorFromRGB(pPE[0], pPE[1], pPE[2]);
+        Buckets[b].Vertex[v + 1].sx = float(nX2);
+        Buckets[b].Vertex[v + 1].sy = float(nY1);
+        Buckets[b].Vertex[v + 1].sz = z;
+        Buckets[b].Vertex[v + 1].rhw = fooz;
+        Buckets[b].Vertex[v + 1].color = ColorFromRGB(pPE[0], pPE[1], pPE[2]);
+        Buckets[b].Vertex[v + 2].sx = float(nX2);
+        Buckets[b].Vertex[v + 2].sy = float(nY2);
+        Buckets[b].Vertex[v + 2].sz = z;
+        Buckets[b].Vertex[v + 2].rhw = fooz;
+        Buckets[b].Vertex[v + 2].color = ColorFromRGB(pPE[0], pPE[1], pPE[2]);
+        Buckets[b].Vertex[v + 3].sx = float(nX1);
+        Buckets[b].Vertex[v + 3].sy = float(nY1);
+        Buckets[b].Vertex[v + 3].sz = z;
+        Buckets[b].Vertex[v + 3].rhw = fooz;
+        Buckets[b].Vertex[v + 3].color = ColorFromRGB(pPE[0], pPE[1], pPE[2]);
+        Buckets[b].Vertex[v + 4].sx = float(nX2);
+        Buckets[b].Vertex[v + 4].sy = float(nY2);
+        Buckets[b].Vertex[v + 4].sz = z;
+        Buckets[b].Vertex[v + 4].rhw = fooz;
+        Buckets[b].Vertex[v + 4].color = ColorFromRGB(pPE[0], pPE[1], pPE[2]);
+        Buckets[b].Vertex[v + 5].sx = float(nX1);
+        Buckets[b].Vertex[v + 5].sy = float(nY2);
+        Buckets[b].Vertex[v + 5].sz = z;
+        Buckets[b].Vertex[v + 5].rhw = fooz;
+        Buckets[b].Vertex[v + 5].color = ColorFromRGB(pPE[0], pPE[1], pPE[2]);
+        Buckets[b].cnt += 6;
+        nDrawnPoints += 2;
+    }
+}
 }

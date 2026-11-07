@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="339.97" height="12" x="0" y="0" class="named"><title>1369 · 91.39%</title></rect>
-<rect width="7.45" height="12" x="339.97" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.45" height="12" x="347.42" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="17.13" height="12" x="354.87" y="0" class="todo"><title>69 · 4.61%</title></rect>
+<rect width="340.21" height="12" x="0" y="0" class="named"><title>1370 · 91.46%</title></rect>
+<rect width="7.45" height="12" x="340.21" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.45" height="12" x="347.66" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="16.89" height="12" x="355.11" y="0" class="todo"><title>68 · 4.54%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">93.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1369</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">69</tspan></text>
+<text text-anchor="end" x="552" y="7.50">93.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1370</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">68</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="274.08" height="12" x="0" y="0" class="named"><title>534 KB · 73.68%</title></rect>
-<rect width="33.96" height="12" x="274.08" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.78" height="12" x="308.04" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="49.18" height="12" x="322.82" y="0" class="todo"><title>96 KB · 13.22%</title></rect>
+<rect width="274.71" height="12" x="0" y="0" class="named"><title>535 KB · 73.85%</title></rect>
+<rect width="33.96" height="12" x="274.71" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.78" height="12" x="308.68" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="48.54" height="12" x="323.46" y="0" class="todo"><title>95 KB · 13.05%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">82.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">534 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">96 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">83.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">535 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">95 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -126,7 +126,7 @@
 <rect width="12" height="12" x="105" y="15" class="named"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="15" class="todo"><title>0x00409560 HWI_InsertObjectG3_Sorted (1602 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="15" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="15" class="todo"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="15" class="named"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="15" class="named"><title>0x0040a510 HWI_InsertLine_Sorted (377 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="15" class="named"><title>0x0040a690 HWI_InsertTransQuad_Sorted (437 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="15" class="todo"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
@@ -1713,7 +1713,7 @@
 <rect width="20.67" height="20.50" x="657.43" y="0" class="named"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
 <rect width="20.42" height="20.50" x="681.10" y="0" class="named"><title>0x00447880 AnimateShotgun (1292 bytes)</title></rect>
 <rect width="19.94" height="20.50" x="704.51" y="0" class="named"><title>0x00437380 RingNotActive (1262 bytes)</title></rect>
-<rect width="19.54" height="20.50" x="727.46" y="0" class="todo"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
+<rect width="19.54" height="20.50" x="727.46" y="0" class="named"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
 <rect width="19.45" height="20.47" x="307.67" y="23.50" class="named"><title>0x00421de0 GetCeiling (1229 bytes)</title></rect>
 <rect width="19.45" height="20.25" x="307.67" y="46.97" class="named"><title>0x00436ae0 DrawInventoryItem (1216 bytes)</title></rect>
 <rect width="19.45" height="20.25" x="307.67" y="70.22" class="named"><title>0x00467840 SoundEffect (1216 bytes)</title></rect>
