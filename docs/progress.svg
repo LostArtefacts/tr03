@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="8.44" height="12" x="349.40" y="0" class="nonmatching"><title>34 · 2.27%</title></rect>
-<rect width="14.15" height="12" x="357.85" y="0" class="todo"><title>57 · 3.81%</title></rect>
+<rect width="8.69" height="12" x="349.40" y="0" class="nonmatching"><title>35 · 2.34%</title></rect>
+<rect width="13.91" height="12" x="358.09" y="0" class="todo"><title>56 · 3.74%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">34</tspan> · <tspan class="todo">57</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">35</tspan> · <tspan class="todo">56</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="17.64" height="12" x="312.18" y="0" class="nonmatching"><title>34 KB · 4.74%</title></rect>
-<rect width="42.18" height="12" x="329.82" y="0" class="todo"><title>82 KB · 11.34%</title></rect>
+<rect width="18.35" height="12" x="312.18" y="0" class="nonmatching"><title>36 KB · 4.93%</title></rect>
+<rect width="41.47" height="12" x="330.53" y="0" class="todo"><title>81 KB · 11.15%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">34 KB</tspan> · <tspan class="todo">82 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">36 KB</tspan> · <tspan class="todo">81 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -937,7 +937,7 @@
 <rect width="12" height="12" x="270" y="255" class="named"><title>0x0045b700 GunHit (185 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="255" class="named"><title>0x0045b7c0 GunMiss (167 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="255" class="named"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="255" class="todo"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="255" class="nonmatching"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="255" class="named"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="255" class="named"><title>0x0045c400 SwitchCollision2 (263 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="255" class="named"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>
@@ -1704,7 +1704,7 @@
 <rect width="22.29" height="20.50" x="435.67" y="0" class="named"><title>0x0041a0be CameraCollisionBounds (1411 bytes)</title></rect>
 <rect width="22.28" height="20.50" x="460.96" y="0" class="named"><title>0x00448650 AnimatePistols (1410 bytes)</title></rect>
 <rect width="21.96" height="20.50" x="486.23" y="0" class="todo"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
-<rect width="21.79" height="20.50" x="511.20" y="0" class="todo"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
+<rect width="21.79" height="20.50" x="511.20" y="0" class="nonmatching"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="21.63" height="20.50" x="535.98" y="0" class="named"><title>0x00420e10 GetHeight (1369 bytes)</title></rect>
 <rect width="21.47" height="20.50" x="560.61" y="0" class="named"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="21.43" height="20.50" x="585.09" y="0" class="named"><title>0x00453ca0 MoveCart (1356 bytes)</title></rect>

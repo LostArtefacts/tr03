@@ -2020,6 +2020,9 @@ address,size,name,symbol
 0x004c78e8,16,oilred_gun,_oilred_gun
 0x004c78f8,16,oilsmg_gun,_oilsmg_gun
 0x004c7908,24,PickUpBounds,_PickUpBounds
+0x004c7920,12,PickUpPosition,_PickUpPosition
+0x004c7930,24,PickUpBoundsUW,_PickUpBoundsUW
+0x004c7948,12,PickUpPositionUW,_PickUpPositionUW
 0x004c7958,24,Switch1Bounds,_Switch1Bounds
 0x004c7970,12,SmallSwitchPosition,_SmallSwitchPosition
 0x004c7980,12,PushSwitchPosition,_PushSwitchPosition
