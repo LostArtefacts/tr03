@@ -1501,7 +1501,7 @@ address,size,name,symbol
 0x004b5cd0,24,c_dfDIKeyboard,_c_dfDIKeyboard
 0x004b5ce8,6,DirectSoundEnumerateA,_DirectSoundEnumerateA@8
 0x004b5cee,6,DirectSoundCreate,_DirectSoundCreate@12
-0x004b5cf4,6,DirectDrawEnumerateA,
+0x004b5cf4,6,DirectDrawEnumerateA,_DirectDrawEnumerateA@8
 0x004b5cfa,6,DirectDrawCreate,_DirectDrawCreate@12
 0x004b5d00,6,Player_PlayFrame,_Player_PlayFrame
 0x004b5d06,6,Movie_GetTotalFrames,_Movie_GetTotalFrames

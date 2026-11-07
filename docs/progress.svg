@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="343.19" height="12" x="0" y="0" class="named"><title>1382 · 92.26%</title></rect>
-<rect width="7.45" height="12" x="343.19" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.66" height="12" x="350.64" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
-<rect width="8.69" height="12" x="363.31" y="0" class="todo"><title>35 · 2.34%</title></rect>
+<rect width="343.44" height="12" x="0" y="0" class="named"><title>1383 · 92.32%</title></rect>
+<rect width="7.45" height="12" x="343.44" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="12.66" height="12" x="350.89" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
+<rect width="8.44" height="12" x="363.56" y="0" class="todo"><title>34 · 2.27%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">94.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1382</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">35</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1383</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">34</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="281.05" height="12" x="0" y="0" class="named"><title>548 KB · 75.55%</title></rect>
-<rect width="33.96" height="12" x="281.05" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="27.16" height="12" x="315.01" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
-<rect width="29.83" height="12" x="342.17" y="0" class="todo"><title>58 KB · 8.02%</title></rect>
+<rect width="281.20" height="12" x="0" y="0" class="named"><title>548 KB · 75.59%</title></rect>
+<rect width="33.96" height="12" x="281.20" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="27.16" height="12" x="315.17" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
+<rect width="29.68" height="12" x="342.32" y="0" class="todo"><title>58 KB · 7.98%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">84.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">548 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">58 KB</tspan></text>
@@ -1401,7 +1401,7 @@
 <rect width="12" height="12" x="480" y="390" class="named"><title>0x0048e9b0 acmStreamPrepareHeader (55 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="390" class="named"><title>0x0048e9f0 acmStreamUnprepareHeader (55 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="390" class="named"><title>0x0048ea30 ControlFusebox (376 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="390" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="390" class="named"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="390" class="named"><title>0x0048ece0 DXEnumDirectInput (251 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="390" class="named"><title>0x0048ede0 DXEnumDirectSound (245 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="390" class="named"><title>0x0048eee0 DXFreeDeviceInfo (232 bytes)</title></rect>
@@ -2135,7 +2135,7 @@
 <rect width="9.84" height="9.94" x="476.51" y="199.99" class="named"><title>0x0046af60 T_GetTextWidth (302 bytes)</title></rect>
 <rect width="9.84" height="9.77" x="476.51" y="212.93" class="named"><title>0x0042e8c0 Splash (297 bytes)</title></rect>
 <rect width="9.84" height="9.77" x="476.51" y="225.70" class="named"><title>0x00438250 Inv_InsertItem (297 bytes)</title></rect>
-<rect width="9.84" height="9.77" x="476.51" y="238.48" class="todo"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
+<rect width="9.84" height="9.77" x="476.51" y="238.48" class="named"><title>0x0048ebb0 DXGetDeviceInfo (297 bytes)</title></rect>
 <rect width="9.84" height="9.74" x="476.51" y="251.25" class="named"><title>0x00466590 GetAIPickups (296 bytes)</title></rect>
 <rect width="9.84" height="9.74" x="476.51" y="263.99" class="named"><title>0x00467e40 TestCollision (296 bytes)</title></rect>
 <rect width="9.84" height="9.58" x="476.51" y="276.73" class="named"><title>0x00415650 CreatureCreature (291 bytes)</title></rect>

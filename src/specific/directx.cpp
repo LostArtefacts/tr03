@@ -2,6 +2,7 @@
 #include "specific.h"
 #include "winmain.h"
 #include "global.h"
+#include "cpu.h"
 
 extern "C" {
 
@@ -10,6 +11,27 @@ extern LPDIRECT3D2 G_d3d;
 extern bool SoftwareRenderer;
 HRESULT CALLBACK DXEnumDirect3D(LPGUID lpGuid, LPSTR description, LPSTR name, LPD3DDEVICEDESC lpHWDesc, LPD3DDEVICEDESC lpHELDesc, LPVOID lpContext);
 HRESULT CALLBACK DXEnumDisplayModes(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext);
+
+extern HWND G_hwnd;
+extern bool MMXSupported;
+BOOL CALLBACK DXEnumDirectInput(LPCDIDEVICEINSTANCE lpDevInst, LPVOID lpContext);
+BOOL CALLBACK DXEnumDirectSound(LPGUID lpGuid, LPCSTR lpcstrDescription, LPCSTR lpcstrModule, LPVOID lpContext);
+BOOL CALLBACK DXEnumDirectDraw(GUID FAR *lpGUID, LPSTR lpDriverDescription, LPSTR lpDriverName, LPVOID lpContext);
+
+void DXGetDeviceInfo(DEVICEINFO *dd, HWND hWnd, HINSTANCE hInstance)
+{
+    LPDIRECTINPUT lpDinput;
+
+    G_hwnd = hWnd;
+    memset(dd, 0, sizeof(DEVICEINFO));
+    CPUID cpu;
+    MMXSupported = cpu.isMMX();
+    DirectDrawEnumerate(DXEnumDirectDraw, dd);
+    DirectSoundEnumerate(DXEnumDirectSound, dd);
+    DirectInputCreate(hInstance, DIRECTINPUT_VERSION, &lpDinput, 0);
+    lpDinput->EnumDevices(DIDEVTYPE_JOYSTICK, DXEnumDirectInput, dd, DIEDFL_ATTACHEDONLY);
+    lpDinput->Release();
+}
 
 BOOL CALLBACK DXEnumDirectInput(LPCDIDEVICEINSTANCE lpDevInst, LPVOID lpContext)
 {
