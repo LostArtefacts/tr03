@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="333.02" height="12" x="0" y="0" class="named"><title>1363 · 90.99%</title></rect>
-<rect width="7.33" height="12" x="333.02" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.33" height="12" x="340.35" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="18.32" height="12" x="347.68" y="0" class="todo"><title>75 · 5.01%</title></rect>
+<rect width="333.26" height="12" x="0" y="0" class="named"><title>1364 · 91.05%</title></rect>
+<rect width="7.33" height="12" x="333.26" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.33" height="12" x="340.59" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="18.08" height="12" x="347.92" y="0" class="todo"><title>74 · 4.94%</title></rect>
 </g>
-<text text-anchor="end" x="546" y="7.50">93.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1363</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">75</tspan></text>
+<text text-anchor="end" x="546" y="7.50">93.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="7"><tspan class="named">1364</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">74</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="266.81" height="12" x="0" y="0" class="named"><title>528 KB · 72.90%</title></rect>
-<rect width="33.42" height="12" x="266.81" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.54" height="12" x="300.22" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="51.24" height="12" x="314.76" y="0" class="todo"><title>101 KB · 14%</title></rect>
+<rect width="266.88" height="12" x="0" y="0" class="named"><title>528 KB · 72.92%</title></rect>
+<rect width="33.42" height="12" x="266.88" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.54" height="12" x="300.29" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="51.17" height="12" x="314.83" y="0" class="todo"><title>101 KB · 13.98%</title></rect>
 </g>
 <text text-anchor="end" x="546" y="24.50">82.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="561" y="24"><tspan class="named">528 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">101 KB</tspan></text>
@@ -1197,7 +1197,7 @@
 <rect width="12" height="12" x="420" y="330" class="named"><title>0x004809d0 DS_MakeAdapterList (156 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="330" class="named"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="330" class="named"><title>0x00480a90 DS_EnumCallback (226 bytes)</title></rect>
-<rect width="12" height="12" x="465" y="330" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
+<rect width="12" height="12" x="465" y="330" class="named"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="330" class="named"><title>0x00480c20 DS_Create (28 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="330" class="named"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="330" class="named"><title>0x00480d10 DS_Finish (16 bytes)</title></rect>
@@ -2403,7 +2403,7 @@
 <rect width="6.84" height="6.92" x="565.57" y="254.74" class="named"><title>0x0042ee00 FloodFX (146 bytes)</title></rect>
 <rect width="6.84" height="6.92" x="575.41" y="254.74" class="named"><title>0x004400a0 lara_as_monkeyswing (146 bytes)</title></rect>
 <rect width="6.79" height="6.92" x="585.24" y="254.74" class="named"><title>0x00441cf0 extra_as_sharkkill (145 bytes)</title></rect>
-<rect width="6.79" height="6.92" x="595.03" y="254.74" class="todo"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
+<rect width="6.79" height="6.92" x="595.03" y="254.74" class="named"><title>0x00480b80 DS_Start (145 bytes)</title></rect>
 <rect width="6.74" height="6.92" x="604.82" y="254.74" class="named"><title>0x00413b80 GetCollisionAnim_boat (144 bytes)</title></rect>
 <rect width="6.74" height="6.92" x="614.56" y="254.74" class="named"><title>0x004599c0 GeneralControl (144 bytes)</title></rect>
 <rect width="6.74" height="6.92" x="624.30" y="254.74" class="named"><title>0x004601a0 GetCollisionAnim_quadbike (144 bytes)</title></rect>

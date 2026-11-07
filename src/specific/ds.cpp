@@ -225,6 +225,28 @@ bool DS_EnumerateDevices(LPVOID lpContext)
     return true;
 }
 
+#include "../game.h"
+#include "init_result.h"
+
+extern int UnusedSoundStartupState;
+bool DS_Create(LPGUID lpGuid);
+bool DS_SetOutputFormat(void);
+
+void DS_Start(HWND hwnd)
+{
+    memset(DS_Buffers, 0, sizeof(DS_Buffers));
+    memset(DS_Samples, 0, sizeof(DS_Samples));
+    UnusedSoundStartupState = 0;
+    camera.mike_at_lara = 0;
+    if (DS_Create(App.DeviceInfoPtr->DSInfo[App.DXConfigPtr->DS].lpGuid)) {
+        if (!hwnd)
+            hwnd = App.WindowHandle;
+        if (DX_TRY(lpDirectSound->SetCooperativeLevel(hwnd, DSSCL_EXCLUSIVE)))
+            throw INIT_ERR_CantSetDSCooperativeLevel;
+        DS_SetOutputFormat();
+    }
+}
+
 bool DS_Create(LPGUID lpGuid)
 {
     if (DX_TRY(DirectSoundCreate(lpGuid, &lpDirectSound, 0)))
