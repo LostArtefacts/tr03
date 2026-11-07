@@ -129,7 +129,7 @@ typedef struct phdtexturestruct {
 
 extern int nPolyType;
 
-void HWI_InsertGT3_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, unsigned short *uv1, unsigned short *uv2, unsigned short *uv3, int nSortType, unsigned short dbl);
+void HWI_InsertGT3_Poly(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *v2, PHDTEXTURESTRUCT *pTex, unsigned short *uv0, unsigned short *uv1, unsigned short *uv2, int nSortType, unsigned short dbl);
 void SubdivideGT3(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
 
 void HWI_InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, unsigned short *uv1, unsigned short *uv2, unsigned short *uv3, int nSortType, unsigned short dbl)
@@ -193,18 +193,23 @@ extern int GlobalAlpha;
 extern float f_a;
 extern float f_boo;
 
-void PHD_VBUF_To_D3DTLVTX(PHD_VBUF *phdV, D3DTLVERTEX *v, unsigned short *uv)
+inline unsigned long VertexRGB(int rgb)
 {
-    long r, g, b;
+    int r, g, b;
 
+    r = GETR(rgb);
+    g = GETG(rgb);
+    b = ColorTable[(rgb & 0x1f) << 3];
+    return GlobalAlpha | (r << 16) | (g << 8) | b;
+}
+
+inline void PHD_VBUF_To_D3DTLVTX(PHD_VBUF *phdV, D3DTLVERTEX *v, unsigned short *uv)
+{
     v->sx = phdV->xs;
     v->sy = phdV->ys;
     v->sz = f_a - f_boo * phdV->ooz;
     v->rhw = phdV->ooz;
-    r = GETR(phdV->g);
-    g = GETG(phdV->g);
-    b = ColorTable[(phdV->g & 0x1f) << 3];
-    v->color = GlobalAlpha | (r << 16) | (g << 8) | b;
+    v->color = VertexRGB(phdV->g);
     v->tu = UVTable[uv[0]];
     v->tv = UVTable[uv[1]];
     v->specular = 0;
@@ -1248,6 +1253,8 @@ inline void PHD_VBUF_To_POINT_INFO(PHD_VBUF *pV, POINT_INFO *p)
 
 void HWI_InsertPoly_Gouraud(int nPoints, float zdepth, int nR, int nG, int nB, int nDrawType);
 
+void HWI_InsertTransQuad_Sorted(long x, long y, long w, long h, long z);
+
 short *HWI_InsertObjectG3_Sorted(short *pFaceInfo, long nFaces, int nSortType)
 {
     long nPoints;
@@ -1521,7 +1528,8 @@ inline void PHD_VBUF_To_TLVERT(PHD_VBUF *pV, D3DTLVERTEX *p)
     p->specular = 0;
 }
 
-void HWI_InsertGT3_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, unsigned short *uv1, unsigned short *uv2, unsigned short *uv3, int nSortType, unsigned short dbl);
+int XYGClipper(int n, VERTEX_INFO *in);
+void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
 
 void HWI_InsertGT4_Poly(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl)
 {
@@ -1725,6 +1733,190 @@ void HWI_InsertGT4_Poly(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, 
             Buckets[b].Vertex[Buckets[b].cnt].tv = UVTable[pTex->v4];
             Buckets[b].cnt++;
         }
+    }
+}
+
+inline void PHD_VBUF_To_POINT_INFO_UV(PHD_VBUF *pV, POINT_INFO *p, unsigned short *pUV)
+{
+    p->xv = pV->xv;
+    p->yv = pV->yv;
+    p->zv = pV->zv;
+    p->ooz = pV->ooz;
+    p->xs = pV->xs;
+    p->ys = pV->ys;
+    p->vr = GETR(pV->g);
+    p->vg = GETG(pV->g);
+    p->vb = ColorTable[(pV->g & 0x1f) << 3];
+    p->u = float(pUV[0]);
+    p->v = float(pUV[1]);
+}
+
+inline void PHD_VBUF_To_VERTEX_INFO_UV(PHD_VBUF *pV, VERTEX_INFO *p, unsigned short *pUV)
+{
+    p->x = pV->xs;
+    p->y = pV->ys;
+    p->ooz = pV->ooz;
+    p->u = pUV[0] * pV->ooz;
+    p->v = pUV[1] * pV->ooz;
+    p->vr = GETR(pV->g);
+    p->vg = GETG(pV->g);
+    p->vb = ColorTable[(pV->g & 0x1f) << 3];
+}
+
+int GETG(int rgb);
+
+void HWI_InsertGT3_Poly(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *v2, PHDTEXTURESTRUCT *pTex, unsigned short *uv0, unsigned short *uv1, unsigned short *uv2, int nSortType, unsigned short dbl)
+{
+    int nPoints = 0;
+    float zdepth = 0;
+    D3DTLVERTEX *pTLV = 0;
+    POINT_INFO points[3];
+    int drawtype = 0;
+
+    if (outside && nPolyType != 1 && v0->zv == f_zfar && v1->zv == f_zfar && v2->zv == f_zfar && v0->ys > outsideBackgroundTop && v1->ys > outsideBackgroundTop && v2->ys > outsideBackgroundTop)
+        return;
+    if ((v0->clip | v1->clip | v2->clip) < 0) {
+        PHD_VBUF_To_POINT_INFO_UV(v0, &points[0], uv0);
+        PHD_VBUF_To_POINT_INFO_UV(v1, &points[1], uv1);
+        PHD_VBUF_To_POINT_INFO_UV(v2, &points[2], uv2);
+        nPoints = RoomZedClipper(3, points, v_buffer);
+        if (nPoints)
+            goto doxyclip;
+        return;
+    }
+    if ((long)((v2->xs - v1->xs) * (v0->ys - v1->ys) - (v0->xs - v1->xs) * (v2->ys - v1->ys)) < 0) {
+        if (dbl) {
+            swap((long &)v1, (long &)v2);
+            swap((long &)uv1, (long &)uv2);
+        } else
+            return;
+    }
+    if (v0->clip | v1->clip | v2->clip) {
+        PHD_VBUF_To_VERTEX_INFO_UV(v0, &v_buffer[0], uv0);
+        PHD_VBUF_To_VERTEX_INFO_UV(v1, &v_buffer[1], uv1);
+        PHD_VBUF_To_VERTEX_INFO_UV(v2, &v_buffer[2], uv2);
+        nPoints = 3;
+doxyclip:
+        phd_leftfloat = (float)phd_winxmin;
+        phd_rightfloat = float(phd_winxmin + phd_winwidth);
+        phd_topfloat = (float)phd_winymin;
+        phd_bottomfloat = float(phd_winymin + phd_winheight);
+        nPoints = RoomXYGUVClipper(nPoints, v_buffer);
+        if (nPoints == 0)
+            return;
+        switch (nSortType) {
+        case 1:
+            zdepth = v0->zv;
+            if (v1->zv > zdepth)
+                zdepth = v1->zv;
+            if (v2->zv > zdepth)
+                zdepth = v2->zv;
+            break;
+        case 0:
+            zdepth = (v0->zv + v1->zv + v2->zv) * 0.33333334f;
+            break;
+        default:
+            zdepth = 1000000000.0f;
+        }
+        drawtype = pTex->drawtype;
+        if (drawtype <= 1)
+            drawtype += 9;
+        else
+            drawtype = 14;
+        if (nPolyType == 1) {
+            if (v0->ys > outsideBackgroundTop)
+                outsideBackgroundTop = v0->ys;
+            if (v1->ys > outsideBackgroundTop)
+                outsideBackgroundTop = v1->ys;
+            if (v2->ys > outsideBackgroundTop)
+                outsideBackgroundTop = v2->ys;
+        }
+        HWI_InsertClippedPoly_Textured(nPoints, zdepth, drawtype, pTex->tpage);
+        return;
+    }
+    drawtype = pTex->drawtype;
+    if (drawtype <= 1)
+        drawtype += 9;
+    else
+        drawtype = 14;
+    if (nPolyType == 1) {
+        if (v0->ys > outsideBackgroundTop)
+            outsideBackgroundTop = v0->ys;
+        if (v1->ys > outsideBackgroundTop)
+            outsideBackgroundTop = v1->ys;
+        if (v2->ys > outsideBackgroundTop)
+            outsideBackgroundTop = v2->ys;
+    }
+    if (!App.lpZBuffer || drawtype == 14 || drawtype == 10) {
+        sint32 *sort = 0;
+        sint16 *info = 0;
+        double fconv;
+
+        switch (nSortType) {
+        case 1:
+            zdepth = v0->zv;
+            if (zdepth < v1->zv)
+                zdepth = v1->zv;
+            if (zdepth < v2->zv)
+                zdepth = v2->zv;
+            break;
+        case 0:
+            zdepth = (v0->zv + v1->zv + v2->zv) * 0.33333334f;
+            break;
+        default:
+            zdepth = 1000000000.0f;
+        }
+        if (CurrentTLVertex - VertexBuffer > 9184)
+            return;
+        if (!App.lpZBuffer || !bAlphaTesting) {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf += 3;
+            info3dptrbf += 5;
+        } else if (drawtype == 14 || drawtype == 13 || drawtype == 12 || drawtype == 16) {
+            sort = sort3dptrfb;
+            info = info3dptrfb;
+            sort[2] = nPolyType;
+            surfacenumfb++;
+            sort3dptrfb += 3;
+            info3dptrfb += 5;
+        } else {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf += 3;
+            info3dptrbf += 5;
+        }
+        sort[0] = (sint32)info;
+        sort[1] = FTOL(zdepth);
+        info[0] = (sint16)drawtype;
+        info[1] = pTex->tpage;
+        info[2] = 3;
+        pTLV = CurrentTLVertex;
+        *((D3DTLVERTEX **)(info + 3)) = pTLV;
+        PHD_VBUF_To_D3DTLVTX(v0, pTLV, uv0);
+        pTLV++;
+        PHD_VBUF_To_D3DTLVTX(v1, pTLV, uv1);
+        pTLV++;
+        PHD_VBUF_To_D3DTLVTX(v2, pTLV, uv2);
+        pTLV++;
+        CurrentTLVertex = pTLV;
+    } else {
+        int b;
+
+        b = FindBucket(TPages[pTex->tpage]);
+        if (b == -1)
+            return;
+        nDrawnPoints++;
+        PHD_VBUF_To_D3DTLVTX(v0, &Buckets[b].Vertex[Buckets[b].cnt], uv0);
+        Buckets[b].cnt++;
+        PHD_VBUF_To_D3DTLVTX(v1, &Buckets[b].Vertex[Buckets[b].cnt], uv1);
+        Buckets[b].cnt++;
+        PHD_VBUF_To_D3DTLVTX(v2, &Buckets[b].Vertex[Buckets[b].cnt], uv2);
+        Buckets[b].cnt++;
     }
 }
 }
