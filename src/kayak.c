@@ -3,6 +3,7 @@
 
 #define KAYAK_DRAW_SHIFT 32
 #define NUM_WAKE_SPRITES 32
+#define WAKE_SPEED 4
 #define KAYAK_DROWN_A 25
 #define EXTRA_RAPIDSDROWN 12
 
@@ -511,6 +512,68 @@ int KayakControl(void)
     return (lara.skidoo != NO_ITEM) ? 1 : 0;
 }
 
+uint8 CurrentStartWake = 0;
+
+void AnimateItem(ITEM_INFO *item);
+
+void DoWake_kayak(ITEM_INFO *v, sint16 xoff, sint16 zoff, sint16 rotate)
+{
+    FLOOR_INFO *floor;
+    sint32 s, c, x, z, xv[2], zv[2], lp;
+    sint16 room_number, angle1, angle2;
+
+    if (WakePts[CurrentStartWake][rotate].life)
+        return;
+
+    c = phd_cos(v->pos.y_rot);
+    s = phd_sin(v->pos.y_rot);
+
+    x = v->pos.x_pos + (((zoff * s) + (xoff * c)) >> W2V_SHIFT);
+    z = v->pos.z_pos + (((zoff * c) - (xoff * s)) >> W2V_SHIFT);
+
+    room_number = v->room_number;
+    floor = GetFloor(x, v->pos.y_pos, z, &room_number);
+
+    if (GetWaterHeight(x, v->pos.y_pos, z, room_number) != NO_HEIGHT) {
+        if (v->speed < 0) {
+            if (!rotate) {
+                angle1 = v->pos.y_rot - (ONE_DEGREE * 10);
+                angle2 = v->pos.y_rot - (ONE_DEGREE * 30);
+            } else {
+                angle1 = v->pos.y_rot + (ONE_DEGREE * 10);
+                angle2 = v->pos.y_rot + (ONE_DEGREE * 30);
+            }
+        } else {
+            if (!rotate) {
+                angle1 = v->pos.y_rot - (ONE_DEGREE * 170);
+                angle2 = v->pos.y_rot - (ONE_DEGREE * 150);
+            } else {
+                angle1 = v->pos.y_rot + (ONE_DEGREE * 170);
+                angle2 = v->pos.y_rot + (ONE_DEGREE * 150);
+            }
+        }
+
+        xv[0] = (WAKE_SPEED * phd_sin(angle1)) >> W2V_SHIFT;
+        zv[0] = (WAKE_SPEED * phd_cos(angle1)) >> W2V_SHIFT;
+        xv[1] = ((WAKE_SPEED + 2) * phd_sin(angle2)) >> W2V_SHIFT;
+        zv[1] = ((WAKE_SPEED + 2) * phd_cos(angle2)) >> W2V_SHIFT;
+
+        WakePts[CurrentStartWake][rotate].y = v->pos.y_pos + KAYAK_DRAW_SHIFT;
+        WakePts[CurrentStartWake][rotate].life = 0x40;
+        for (lp = 0; lp < 2; lp++) {
+            WakePts[CurrentStartWake][rotate].x[lp] = x;
+            WakePts[CurrentStartWake][rotate].z[lp] = z;
+            WakePts[CurrentStartWake][rotate].xvel[lp] = xv[lp];
+            WakePts[CurrentStartWake][rotate].zvel[lp] = zv[lp];
+        }
+
+        if (rotate == 1) {
+            CurrentStartWake++;
+            CurrentStartWake &= (NUM_WAKE_SPRITES - 1);
+        }
+    }
+}
+
 void UpdateWakeFX_kayak(void)
 {
     int i, j;
@@ -593,7 +656,6 @@ int CanGetOut_kayak(ITEM_INFO *v, int direction)
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
 sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
 sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos);
-sint32 DoDynamics_kayak(sint32 height, sint32 fallspeed, sint32 *y);
 
 sint32 TestHeight_kayak(ITEM_INFO *v, sint32 x, sint32 z, PHD_VECTOR *pos)
 {
