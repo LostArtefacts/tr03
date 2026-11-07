@@ -1204,4 +1204,19 @@ void HWI_InsertAlphaSprite_Sorted(int nX1, int nY1, int nZ1, int nShade1, int nX
     }
     bBlueEffect = tOldBlueEffect;
 }
+
+void HWI_InsertGT3_Sorted(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, unsigned short *uv1, unsigned short *uv2, unsigned short *uv3, int nSortType, unsigned short dbl);
+
+int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3)
+{
+    float a, b, c;
+
+    a = (vn1->yv * vn3->zv) - (vn3->yv * vn1->zv);
+    b = (vn1->zv * vn3->xv) - (vn3->zv * vn1->xv);
+    c = (vn1->xv * vn3->yv) - (vn3->xv * vn1->yv);
+    if ((a * vn2->xv) + (b * vn2->yv) + (c * vn2->zv) < 0.0f)
+        return 1;
+    return 0;
+}
+
 }

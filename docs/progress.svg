@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="341.21" height="12" x="0" y="0" class="named"><title>1374 · 91.72%</title></rect>
-<rect width="7.45" height="12" x="341.21" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.45" height="12" x="348.66" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="15.89" height="12" x="356.11" y="0" class="todo"><title>64 · 4.27%</title></rect>
+<rect width="341.46" height="12" x="0" y="0" class="named"><title>1375 · 91.79%</title></rect>
+<rect width="7.45" height="12" x="341.46" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.45" height="12" x="348.91" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="15.64" height="12" x="356.36" y="0" class="todo"><title>63 · 4.21%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">93.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1374</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">64</tspan></text>
+<text text-anchor="end" x="552" y="7.50">93.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1375</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">63</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="275.98" height="12" x="0" y="0" class="named"><title>538 KB · 74.19%</title></rect>
-<rect width="33.96" height="12" x="275.98" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.78" height="12" x="309.94" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="47.28" height="12" x="324.72" y="0" class="todo"><title>92 KB · 12.71%</title></rect>
+<rect width="276.03" height="12" x="0" y="0" class="named"><title>538 KB · 74.20%</title></rect>
+<rect width="33.96" height="12" x="276.03" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.78" height="12" x="309.99" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="47.23" height="12" x="324.77" y="0" class="todo"><title>92 KB · 12.70%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.3%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">538 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">92 KB</tspan></text>
@@ -107,7 +107,7 @@
 <rect width="12" height="12" x="570" y="0" class="named"><title>0x00405250 InitBuckets (30 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="0" class="named"><title>0x00405270 FindBucket (289 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="0" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
-<rect width="12" height="12" x="615" y="0" class="todo"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
+<rect width="12" height="12" x="615" y="0" class="named"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="0" class="todo"><title>0x00405450 HWI_InsertClippedPoly_Textured (1315 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="0" class="named"><title>0x00405980 HWI_InsertGT3_Sorted (253 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="0" class="todo"><title>0x00405a80 HWI_InsertGT3_Poly (3268 bytes)</title></rect>
@@ -2524,7 +2524,7 @@
 <rect width="5.87" height="5.80" x="583.36" y="345.55" class="named"><title>0x0042f2d0 swap_meshes_with_meshswap2 (105 bytes)</title></rect>
 <rect width="5.87" height="5.80" x="583.36" y="354.35" class="named"><title>0x0043af60 AddActiveItem (105 bytes)</title></rect>
 <rect width="5.87" height="5.80" x="583.36" y="363.15" class="named"><title>0x0048d630 Sync (105 bytes)</title></rect>
-<rect width="5.87" height="5.74" x="583.36" y="371.94" class="todo"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
+<rect width="5.87" height="5.74" x="583.36" y="371.94" class="named"><title>0x004053e0 visible_zclip (104 bytes)</title></rect>
 <rect width="5.87" height="5.74" x="583.36" y="380.68" class="named"><title>0x0042e200 SoundEffects (104 bytes)</title></rect>
 <rect width="5.87" height="5.74" x="583.36" y="389.42" class="named"><title>0x004425a0 lara_col_death (104 bytes)</title></rect>
 <rect width="5.87" height="5.74" x="583.36" y="398.17" class="named"><title>0x00452f90 DisableBaddieAI (104 bytes)</title></rect>
