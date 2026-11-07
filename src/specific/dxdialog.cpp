@@ -1,6 +1,7 @@
 #include "standard.h"
 #include "specific.h"
 #include "winmain.h"
+#include "cpu.h"
 
 extern "C" {
 
@@ -249,6 +250,62 @@ BOOL CALLBACK DXSetupDlgProc(HWND dlg, UINT message, WPARAM wParam, LPARAM lPara
         break;
     }
     return 0;
+}
+
+void DXCheckMMXTechnology(HWND hwnd)
+{
+    CPUID cpu;
+    HWND version;
+    char buf[32];
+    char name[13];
+    ULONG processor, mmx;
+
+    version = GetDlgItem(hwnd, 1016);
+    cpu.get_vendor(name);
+    processor = cpu.processor();
+    mmx = cpu.isMMX();
+
+    if (!strcmp("GenuineIntel", name)) {
+        switch (processor) {
+        case 5:
+            if (mmx)
+                strcpy(buf, "Intel Pentium MMX");
+            else
+                strcpy(buf, "Intel Pentium");
+            break;
+        case 6:
+            if (mmx)
+                strcpy(buf, "Intel Pentium Pro MMX");
+            else
+                strcpy(buf, "Intel Pentium Pro");
+            break;
+        }
+    }
+
+    if (!strcmp("AuthenticAMD", name)) {
+        switch (processor) {
+        case 5:
+            strcpy(buf, "AMD K5");
+            break;
+        case 6:
+            strcpy(buf, "AMD K6");
+            break;
+        }
+    }
+
+    if (!strcmp("CyrixInstead", name)) {
+        switch (processor) {
+        case 5:
+            strcpy(buf, "Cyrix 6x86");
+            break;
+        case 6:
+            strcpy(buf, "Cyrix M2");
+            break;
+        }
+    }
+
+    SetWindowText(version, buf);
+    G_DXConfig->MMX = cpu.isMMX();
 }
 
 void DXInitDialogBox(HWND hwnd)

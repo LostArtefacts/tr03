@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="343.44" height="12" x="0" y="0" class="named"><title>1383 · 92.32%</title></rect>
-<rect width="7.45" height="12" x="343.44" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.66" height="12" x="350.89" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
-<rect width="8.44" height="12" x="363.56" y="0" class="todo"><title>34 · 2.27%</title></rect>
+<rect width="343.69" height="12" x="0" y="0" class="named"><title>1384 · 92.39%</title></rect>
+<rect width="7.45" height="12" x="343.69" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="12.66" height="12" x="351.14" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
+<rect width="8.19" height="12" x="363.81" y="0" class="todo"><title>33 · 2.20%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">94.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1383</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">34</tspan></text>
+<text text-anchor="end" x="552" y="7.50">94.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1384</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">33</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="281.20" height="12" x="0" y="0" class="named"><title>548 KB · 75.59%</title></rect>
-<rect width="33.96" height="12" x="281.20" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="27.16" height="12" x="315.17" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
-<rect width="29.68" height="12" x="342.32" y="0" class="todo"><title>58 KB · 7.98%</title></rect>
+<rect width="281.54" height="12" x="0" y="0" class="named"><title>548 KB · 75.68%</title></rect>
+<rect width="33.96" height="12" x="281.54" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="27.16" height="12" x="315.50" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
+<rect width="29.34" height="12" x="342.66" y="0" class="todo"><title>57 KB · 7.89%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">84.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">548 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">58 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">84.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">548 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">57 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1481,7 +1481,7 @@
 <rect width="12" height="12" x="180" y="420" class="named"><title>0x00496b20 MMXBlit32to24 (143 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="420" class="named"><title>0x00496bb0 DXUserDialog (97 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="420" class="named"><title>0x00496c20 DXSetupDlgProc (1648 bytes)</title></rect>
-<rect width="12" height="12" x="225" y="420" class="todo"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
+<rect width="12" height="12" x="225" y="420" class="named"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="420" class="named"><title>0x00497530 DXInitDialogBox (246 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="420" class="named"><title>0x00497630 DXInitDSAdapters (197 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="420" class="named"><title>0x00497700 DXInitJoystickAdapter (197 bytes)</title></rect>
@@ -1834,7 +1834,7 @@
 <rect width="14.62" height="14.80" x="662.39" y="65.13" class="named"><title>0x0046a960 TargetControl (668 bytes)</title></rect>
 <rect width="14.62" height="14.80" x="680.01" y="65.13" class="nonmatching"><title>0x0048a4c0 S_GetObjectBounds (668 bytes)</title></rect>
 <rect width="14.51" height="14.80" x="697.64" y="65.13" class="named"><title>0x0046c1c0 ExplodeTonyBoss (663 bytes)</title></rect>
-<rect width="14.45" height="14.80" x="715.15" y="65.13" class="todo"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
+<rect width="14.45" height="14.80" x="715.15" y="65.13" class="named"><title>0x00497290 DXCheckMMXTechnology (660 bytes)</title></rect>
 <rect width="14.40" height="14.80" x="732.60" y="65.13" class="named"><title>0x00454d10 CartToBaddieCollision (658 bytes)</title></rect>
 <rect width="14.14" height="14.92" x="369.52" y="82.93" class="named"><title>0x00445f50 FireRocket (651 bytes)</title></rect>
 <rect width="14.14" height="14.87" x="369.52" y="100.85" class="named"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
