@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
-<rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="11.42" height="12" x="349.40" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
-<rect width="11.17" height="12" x="360.83" y="0" class="todo"><title>45 · 3%</title></rect>
+<rect width="342.20" height="12" x="0" y="0" class="named"><title>1378 · 91.99%</title></rect>
+<rect width="7.45" height="12" x="342.20" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="11.42" height="12" x="349.65" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
+<rect width="10.93" height="12" x="361.07" y="0" class="todo"><title>44 · 2.94%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">46</tspan> · <tspan class="todo">45</tspan></text>
+<text text-anchor="end" x="552" y="7.50">94.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1378</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">46</tspan> · <tspan class="todo">44</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
-<rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="22.92" height="12" x="312.18" y="0" class="nonmatching"><title>45 KB · 6.16%</title></rect>
-<rect width="36.90" height="12" x="335.10" y="0" class="todo"><title>72 KB · 9.92%</title></rect>
+<rect width="279.27" height="12" x="0" y="0" class="named"><title>544 KB · 75.07%</title></rect>
+<rect width="33.96" height="12" x="279.27" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="22.92" height="12" x="313.23" y="0" class="nonmatching"><title>45 KB · 6.16%</title></rect>
+<rect width="35.85" height="12" x="336.15" y="0" class="todo"><title>70 KB · 9.64%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">45 KB</tspan> · <tspan class="todo">72 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">84.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">544 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">45 KB</tspan> · <tspan class="todo">70 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1172,7 +1172,7 @@
 <rect width="12" height="12" x="45" y="330" class="nonmatching"><title>0x0047a4b0 DoRain (1473 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="330" class="todo"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="330" class="nonmatching"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="330" class="todo"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="330" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="todo"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="todo"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
@@ -1647,7 +1647,7 @@
 <rect width="26.31" height="25.78" x="197.66" y="421.22" class="named"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
 <rect width="25.37" height="26.55" x="226.97" y="0" class="named"><title>0x0044fbc0 LizManControl (2080 bytes)</title></rect>
 <rect width="25.37" height="26.26" x="226.97" y="29.55" class="nonmatching"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
-<rect width="25.37" height="26.14" x="226.97" y="58.81" class="todo"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
+<rect width="25.37" height="26.14" x="226.97" y="58.81" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="25.37" height="26.04" x="226.97" y="87.96" class="named"><title>0x0040ff50 ArmySMGControl (2040 bytes)</title></rect>
 <rect width="25.37" height="26.04" x="226.97" y="117" class="named"><title>0x00446dd0 ControlGrenade (2040 bytes)</title></rect>
 <rect width="25.37" height="25.99" x="226.97" y="146.04" class="named"><title>0x0045aa60 OilSMGControl (2036 bytes)</title></rect>
