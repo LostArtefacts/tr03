@@ -2537,8 +2537,10 @@ address,size,name,symbol
 0x006ca0b0,8,period,_period
 0x006ca0b8,8,start_us,_start_us
 0x006ca0c0,4,start,_start
+0x006ca0f0,4,DXEnumD3DDevice,_DXEnumD3DDevice
 0x006ca0f4,4,G_hwnd,_G_hwnd
 0x006ca0f8,,G_ddraw,_G_ddraw
+0x006ca0fc,4,DXEnumSurface,_DXEnumSurface
 0x006ca100,,G_d3d,_G_d3d
 0x006ca104,1,SoftwareRenderer,_SoftwareRenderer
 0x006ca108,1,MMXSupported,_MMXSupported

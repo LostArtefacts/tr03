@@ -9,6 +9,16 @@ extern "C" {
 extern LPDIRECTDRAW2 G_ddraw;
 extern LPDIRECT3D2 G_d3d;
 extern bool SoftwareRenderer;
+extern bool MMXSupported;
+extern HWND G_hwnd;
+extern LPDIRECTDRAWSURFACE3 DXEnumSurface;
+extern LPDIRECT3DDEVICE2 DXEnumD3DDevice;
+DWORD BPPToDDBD(int bpp);
+bool DXSetCooperativeLevel(LPDIRECTDRAW2 lpDD2, HWND WindowHandle, int Flags);
+bool DXSetVideoMode(LPDIRECTDRAW2 lpDD2, int w, int h, int bpp);
+bool DXCreateSurface(LPDIRECTDRAW2 lpDD2, DDSURFACEDESC *ddsd, LPDIRECTDRAWSURFACE3 *lpSurface);
+bool DXCreateDirect3DDevice(LPDIRECT3D2 lpD3D2, GUID Guid, LPDIRECTDRAWSURFACE3 lpSurface, LPDIRECT3DDEVICE2 *lpD3DDevice2);
+HRESULT CALLBACK DXEnumTextureFormats(LPDDSURFACEDESC lpDDPixFmt, LPVOID lpContext);
 HRESULT CALLBACK DXEnumDirect3D(LPGUID lpGuid, LPSTR description, LPSTR name, LPD3DDEVICEDESC lpHWDesc, LPD3DDEVICEDESC lpHELDesc, LPVOID lpContext);
 HRESULT CALLBACK DXEnumDisplayModes(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpContext);
 
@@ -184,6 +194,143 @@ HRESULT CALLBACK DXEnumDisplayModes(LPDDSURFACEDESC lpDDSurfaceDesc, LPVOID lpCo
 
     dd->nDisplayMode++;
     return DDENUMRET_OK;
+}
+
+HRESULT CALLBACK DXEnumDirect3D(LPGUID lpGuid, LPSTR description, LPSTR name, LPD3DDEVICEDESC lpHWDesc, LPD3DDEVICEDESC lpHELDesc, LPVOID lpContext)
+{
+    DIRECTDRAWINFO *dd;
+    DDSURFACEDESC desc;
+    int i;
+
+    dd = (DIRECTDRAWINFO *)lpContext;
+
+    if (!lpHWDesc->dwFlags && lpHELDesc->dcmColorModel & D3DCOLOR_MONO)
+        return D3DENUMRET_OK;
+    if (!lpHWDesc->dwFlags && SoftwareRenderer == true)
+        return D3DENUMRET_OK;
+
+    if (!lpHWDesc->dwFlags) {
+        SoftwareRenderer = true;
+        if (!MMXSupported) {
+            strcpy(description, "Core Design RGB Hardware Card Emulation");
+            strcpy(name, "RGB Emulation");
+        } else {
+            strcpy(description, "Core Design MMX Hardware Card Emulation");
+            strcpy(name, "MMX Emulation");
+        }
+    }
+
+    if (lpHWDesc->dwFlags && !lpHWDesc->dpcTriCaps.dwTextureCaps)
+        return D3DENUMRET_OK;
+
+    if (!dd->nD3DInfo)
+        dd->D3DInfo = (DIRECT3DINFO *)malloc(sizeof(DIRECT3DINFO));
+    else
+        dd->D3DInfo = (DIRECT3DINFO *)realloc(dd->D3DInfo, (dd->nD3DInfo + 1) * sizeof(DIRECT3DINFO));
+    memset(&dd->D3DInfo[dd->nD3DInfo], 0, sizeof(DIRECT3DINFO));
+
+    if (!lpGuid) {
+        dd->D3DInfo[dd->nD3DInfo].lpGuid = 0;
+    } else {
+        dd->D3DInfo[dd->nD3DInfo].lpGuid = &dd->D3DInfo[dd->nD3DInfo].Guid;
+        dd->D3DInfo[dd->nD3DInfo].Guid = *lpGuid;
+    }
+
+    lstrcpy(dd->D3DInfo[dd->nD3DInfo].About, description);
+    lstrcpy(dd->D3DInfo[dd->nD3DInfo].Name, name);
+
+    if (lpHWDesc->dwFlags) {
+        dd->D3DInfo[dd->nD3DInfo].bHardware = true;
+        memcpy(&dd->D3DInfo[dd->nD3DInfo].DeviceDesc, lpHWDesc, sizeof(D3DDEVICEDESC));
+    } else {
+        dd->D3DInfo[dd->nD3DInfo].bHardware = false;
+        memcpy(&dd->D3DInfo[dd->nD3DInfo].DeviceDesc, lpHELDesc, sizeof(D3DDEVICEDESC));
+    }
+
+    if (dd->D3DInfo[dd->nD3DInfo].DeviceDesc.dpcTriCaps.dwShadeCaps & D3DPSHADECAPS_ALPHAFLATBLEND)
+        dd->D3DInfo[dd->nD3DInfo].bAlpha = true;
+    else
+        dd->D3DInfo[dd->nD3DInfo].bAlpha = false;
+
+    if (dd->D3DInfo[dd->nD3DInfo].DeviceDesc.dwDevCaps & D3DDEVCAPS_TEXTURENONLOCALVIDMEM)
+        dd->D3DInfo[dd->nD3DInfo].bAGP = true;
+    else
+        dd->D3DInfo[dd->nD3DInfo].bAGP = false;
+
+    if (SoftwareRenderer) {
+        for (i = 0; i < dd->nDisplayMode; i++) {
+            if (!(BPPToDDBD(dd->DisplayMode[i].bpp) & dd->D3DInfo[dd->nD3DInfo].DeviceDesc.dwDeviceRenderBitDepth))
+                continue;
+            if (MMXSupported) {
+                if (dd->DisplayMode[i].bpp == 16 || dd->DisplayMode[i].bpp == 24 || dd->DisplayMode[i].bpp == 32) {
+                    if (!dd->D3DInfo[dd->nD3DInfo].nDisplayMode)
+                        dd->D3DInfo[dd->nD3DInfo].DisplayMode = (DISPLAYMODE *)malloc(sizeof(DISPLAYMODE));
+                    else
+                        dd->D3DInfo[dd->nD3DInfo].DisplayMode = (DISPLAYMODE *)realloc(dd->D3DInfo[dd->nD3DInfo].DisplayMode, (dd->D3DInfo[dd->nD3DInfo].nDisplayMode + 1) * sizeof(DISPLAYMODE));
+                    memcpy(&dd->D3DInfo[dd->nD3DInfo].DisplayMode[dd->D3DInfo[dd->nD3DInfo].nDisplayMode], &dd->DisplayMode[i], sizeof(DISPLAYMODE));
+                    dd->D3DInfo[dd->nD3DInfo].nDisplayMode++;
+                }
+            } else if (dd->DisplayMode[i].bpp == 16) {
+                if (!dd->D3DInfo[dd->nD3DInfo].nDisplayMode)
+                    dd->D3DInfo[dd->nD3DInfo].DisplayMode = (DISPLAYMODE *)malloc(sizeof(DISPLAYMODE));
+                else
+                    dd->D3DInfo[dd->nD3DInfo].DisplayMode = (DISPLAYMODE *)realloc(dd->D3DInfo[dd->nD3DInfo].DisplayMode, (dd->D3DInfo[dd->nD3DInfo].nDisplayMode + 1) * sizeof(DISPLAYMODE));
+                memcpy(&dd->D3DInfo[dd->nD3DInfo].DisplayMode[dd->D3DInfo[dd->nD3DInfo].nDisplayMode], &dd->DisplayMode[i], sizeof(DISPLAYMODE));
+                dd->D3DInfo[dd->nD3DInfo].nDisplayMode++;
+            }
+        }
+    } else {
+        for (i = 0; i < dd->nDisplayMode; i++) {
+            if (!(BPPToDDBD(dd->DisplayMode[i].bpp) & dd->D3DInfo[dd->nD3DInfo].DeviceDesc.dwDeviceRenderBitDepth))
+                continue;
+            if (!dd->D3DInfo[dd->nD3DInfo].nDisplayMode)
+                dd->D3DInfo[dd->nD3DInfo].DisplayMode = (DISPLAYMODE *)malloc(sizeof(DISPLAYMODE));
+            else
+                dd->D3DInfo[dd->nD3DInfo].DisplayMode = (DISPLAYMODE *)realloc(dd->D3DInfo[dd->nD3DInfo].DisplayMode, (dd->D3DInfo[dd->nD3DInfo].nDisplayMode + 1) * sizeof(DISPLAYMODE));
+            memcpy(&dd->D3DInfo[dd->nD3DInfo].DisplayMode[dd->D3DInfo[dd->nD3DInfo].nDisplayMode], &dd->DisplayMode[i], sizeof(DISPLAYMODE));
+            dd->D3DInfo[dd->nD3DInfo].nDisplayMode++;
+        }
+    }
+
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    desc.dwFlags = DDSD_CAPS;
+    desc.ddsCaps.dwCaps = DDSCAPS_PRIMARYSURFACE | DDSCAPS_3DDEVICE;
+    DXEnumSurface = 0;
+    DXSetCooperativeLevel(G_ddraw, G_hwnd, DDSCL_FULLSCREEN | DDSCL_NOWINDOWCHANGES | DDSCL_EXCLUSIVE);
+    DXCreateSurface(G_ddraw, &desc, &DXEnumSurface);
+    if (DXEnumSurface) {
+        DXEnumD3DDevice = 0;
+        DXCreateDirect3DDevice(G_d3d, dd->D3DInfo[dd->nD3DInfo].Guid, DXEnumSurface, &DXEnumD3DDevice);
+        if (!DXEnumD3DDevice) {
+            if (DXEnumSurface) {
+                DXEnumSurface->Release();
+                DXEnumSurface = 0;
+            }
+            DXSetVideoMode(G_ddraw, dd->D3DInfo[dd->nD3DInfo].DisplayMode->w, dd->D3DInfo[dd->nD3DInfo].DisplayMode->h, dd->D3DInfo[dd->nD3DInfo].DisplayMode->bpp);
+            DXCreateSurface(G_ddraw, &desc, &DXEnumSurface);
+            if (DXEnumSurface)
+                DXCreateDirect3DDevice(G_d3d, dd->D3DInfo[dd->nD3DInfo].Guid, DXEnumSurface, &DXEnumD3DDevice);
+        }
+
+        if (DXEnumD3DDevice) {
+            dd->D3DInfo[dd->nD3DInfo].nTexture = 0;
+            DXEnumD3DDevice->EnumTextureFormats(DXEnumTextureFormats, &dd->D3DInfo[dd->nD3DInfo]);
+            if (DXEnumD3DDevice) {
+                DXEnumD3DDevice->Release();
+                DXEnumD3DDevice = 0;
+            }
+        }
+
+        if (DXEnumSurface) {
+            DXEnumSurface->Release();
+            DXEnumSurface = 0;
+        }
+        DXSetCooperativeLevel(G_ddraw, G_hwnd, DDSCL_NORMAL);
+    }
+
+    dd->nD3DInfo++;
+    return D3DENUMRET_OK;
 }
 
 HRESULT CALLBACK DXEnumTextureFormats(LPDDSURFACEDESC lpDDPixFmt, LPVOID lpContext)

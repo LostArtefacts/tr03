@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="346.67" height="12" x="0" y="0" class="named"><title>1396 · 93.19%</title></rect>
-<rect width="7.45" height="12" x="346.67" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="13.16" height="12" x="354.12" y="0" class="nonmatching"><title>53 · 3.54%</title></rect>
-<rect width="4.72" height="12" x="367.28" y="0" class="todo"><title>19 · 1.27%</title></rect>
+<rect width="346.92" height="12" x="0" y="0" class="named"><title>1397 · 93.26%</title></rect>
+<rect width="7.45" height="12" x="346.92" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="13.16" height="12" x="354.37" y="0" class="nonmatching"><title>53 · 3.54%</title></rect>
+<rect width="4.47" height="12" x="367.53" y="0" class="todo"><title>18 · 1.20%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">95.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1396</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">53</tspan> · <tspan class="todo">19</tspan></text>
+<text text-anchor="end" x="552" y="7.50">95.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1397</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">53</tspan> · <tspan class="todo">18</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="289.78" height="12" x="0" y="0" class="named"><title>565 KB · 77.90%</title></rect>
-<rect width="33.96" height="12" x="289.78" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="32.71" height="12" x="323.73" y="0" class="nonmatching"><title>64 KB · 8.79%</title></rect>
-<rect width="15.55" height="12" x="356.45" y="0" class="todo"><title>30 KB · 4.18%</title></rect>
+<rect width="290.82" height="12" x="0" y="0" class="named"><title>567 KB · 78.18%</title></rect>
+<rect width="33.96" height="12" x="290.82" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="32.71" height="12" x="324.77" y="0" class="nonmatching"><title>64 KB · 8.79%</title></rect>
+<rect width="14.51" height="12" x="357.49" y="0" class="todo"><title>28 KB · 3.90%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">87.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">565 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">64 KB</tspan> · <tspan class="todo">30 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">87.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">567 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">64 KB</tspan> · <tspan class="todo">28 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1408,7 +1408,7 @@
 <rect width="12" height="12" x="585" y="390" class="named"><title>0x0048efd0 DXEnumDirectDraw (496 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="390" class="named"><title>0x0048f1c0 DXBitMask2ShiftCnt (45 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="390" class="named"><title>0x0048f1f0 DXEnumDisplayModes (450 bytes)</title></rect>
-<rect width="12" height="12" x="630" y="390" class="todo"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
+<rect width="12" height="12" x="630" y="390" class="named"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="390" class="named"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="390" class="named"><title>0x0048fdb0 BPPToDDBD (136 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="390" class="named"><title>0x0048fe40 DXCreateDirectDraw (87 bytes)</title></rect>
@@ -1651,7 +1651,7 @@
 <rect width="25.37" height="26.04" x="226.97" y="87.96" class="named"><title>0x0040ff50 ArmySMGControl (2040 bytes)</title></rect>
 <rect width="25.37" height="26.04" x="226.97" y="117" class="named"><title>0x00446dd0 ControlGrenade (2040 bytes)</title></rect>
 <rect width="25.37" height="25.99" x="226.97" y="146.04" class="named"><title>0x0045aa60 OilSMGControl (2036 bytes)</title></rect>
-<rect width="25.37" height="25.90" x="226.97" y="175.03" class="todo"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
+<rect width="25.37" height="25.90" x="226.97" y="175.03" class="named"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
 <rect width="25.37" height="25.57" x="226.97" y="203.93" class="nonmatching"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="25.37" height="25.12" x="226.97" y="232.50" class="named"><title>0x0046fd80 DinoControl (1968 bytes)</title></rect>
 <rect width="25.37" height="24.40" x="226.97" y="260.63" class="named"><title>0x004946b0 MMXDrawTriangle (1911 bytes)</title></rect>
