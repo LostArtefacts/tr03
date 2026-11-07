@@ -35,7 +35,7 @@ char *UT_FindArg(char *pArg);
 bool WinDXInit(DEVICEINFO *device, DXCONFIG *config, bool createNew);
 void WinFreeDX(bool free_dd);
 void UT_InitAccurateTimer(void);
-void DXResetPalette(DXTEXTURE *tex);
+bool DXResetPalette(DXTEXTURE *tex);
 void DS_Init(void);
 bool TIME_Init(void);
 bool HWR_Init(void);

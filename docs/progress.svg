@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="343.69" height="12" x="0" y="0" class="named"><title>1384 · 92.39%</title></rect>
-<rect width="7.45" height="12" x="343.69" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="12.66" height="12" x="351.14" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
-<rect width="8.19" height="12" x="363.81" y="0" class="todo"><title>33 · 2.20%</title></rect>
+<rect width="343.94" height="12" x="0" y="0" class="named"><title>1385 · 92.46%</title></rect>
+<rect width="7.45" height="12" x="343.94" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="12.66" height="12" x="351.39" y="0" class="nonmatching"><title>51 · 3.40%</title></rect>
+<rect width="7.95" height="12" x="364.05" y="0" class="todo"><title>32 · 2.14%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">94.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1384</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">33</tspan></text>
+<text text-anchor="end" x="552" y="7.50">94.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1385</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">51</tspan> · <tspan class="todo">32</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="281.54" height="12" x="0" y="0" class="named"><title>548 KB · 75.68%</title></rect>
-<rect width="33.96" height="12" x="281.54" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="27.16" height="12" x="315.50" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
-<rect width="29.34" height="12" x="342.66" y="0" class="todo"><title>57 KB · 7.89%</title></rect>
+<rect width="281.55" height="12" x="0" y="0" class="named"><title>548 KB · 75.69%</title></rect>
+<rect width="33.96" height="12" x="281.55" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="27.16" height="12" x="315.52" y="0" class="nonmatching"><title>53 KB · 7.30%</title></rect>
+<rect width="29.32" height="12" x="342.68" y="0" class="todo"><title>57 KB · 7.88%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">84.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">548 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">53 KB</tspan> · <tspan class="todo">57 KB</tspan></text>
@@ -1519,7 +1519,7 @@
 <rect width="12" height="12" x="0" y="435" class="named"><title>0x004b1bf0 DXCreateTextureSurface (411 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="435" class="named"><title>0x004b1d90 DXCreateMaxTPages (378 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="435" class="named"><title>0x004b1f10 DXFreeTPages (152 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="435" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="435" class="named"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="435" class="named"><title>0x004b1fd0 DXTextureGetInterface (37 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="435" class="named"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="435" class="named"><title>0x004b2020 DXTextureMakeSystemSurface (154 bytes)</title></rect>
@@ -2961,7 +2961,7 @@
 <rect width="2.65" height="3.28" x="733.05" y="392.37" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="2.65" height="3.28" x="738.70" y="392.37" class="named"><title>0x00459820 BridgeFlatCeiling (27 bytes)</title></rect>
 <rect width="2.65" height="3.28" x="744.35" y="392.37" class="named"><title>0x004748e0 ACMCloseFile (27 bytes)</title></rect>
-<rect width="3.11" height="2.81" x="692.87" y="398.65" class="todo"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
+<rect width="3.11" height="2.81" x="692.87" y="398.65" class="named"><title>0x004b1fb0 DXResetPalette (27 bytes)</title></rect>
 <rect width="3.11" height="2.81" x="692.87" y="404.47" class="named"><title>0x004b2000 DXTextureFindTextureSlot (27 bytes)</title></rect>
 <rect width="3.11" height="2.71" x="692.87" y="410.28" class="named"><title>0x00475430 DI_Release (26 bytes)</title></rect>
 <rect width="3.11" height="2.71" x="692.87" y="415.98" class="named"><title>0x00480a70 DS_EnumerateDevices (26 bytes)</title></rect>

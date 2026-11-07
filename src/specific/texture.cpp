@@ -141,6 +141,15 @@ void DXFreeTPages(void)
     nTPages = 0;
 }
 
+bool DXResetPalette(DXTEXTURE * volatile tex)
+{
+    if (tex)
+        tex = 0;
+    DXPalette = 0;
+    bSetColorKey = true;
+    return true;
+}
+
 int DXTextureFindTextureSlot(DXTEXTURE *tex)
 {
     int i;
