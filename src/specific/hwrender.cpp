@@ -40,6 +40,92 @@ void HWR_EnableAlphaBlend(bool enable);
 void HWR_EnableColorKey(bool enable);
 void HWR_EnableColorAddition(bool enable);
 
+extern float GammaOption;
+extern unsigned char ColorTable[256];
+extern unsigned long GlobalAlpha;
+extern bool bAlphaTesting;
+extern void (*DrawRoutine)(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage);
+void HWR_ResetZBuffer(void);
+void HWR_ResetCurrentTexture(void);
+void HWR_ResetColorKey(void);
+void HWR_EnablePerspCorrect(bool enable);
+void HWR_DrawRoutines(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage);
+void HWR_DrawRoutinesStippledAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage);
+void HWR_DrawRoutinesNoAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage);
+
+void HWR_InitState(void)
+{
+    float g;
+    float gamma;
+    int i;
+    bool blendOne;
+
+    g = GammaOption * 0.1f;
+    g *= 4.0f;
+    gamma = 1.0f / g;
+    for (i = 0; i < 256; i++)
+        ColorTable[i] = (unsigned char)((float)pow(i / 256.0f, gamma) * 256.0f);
+
+    if (!SetRenderState)
+        return;
+
+    HWR_ResetZBuffer();
+    SetRenderState(D3DRENDERSTATE_FILLMODE, HWConfig.nFillMode);
+    SetRenderState(D3DRENDERSTATE_SHADEMODE, HWConfig.nShadeMode);
+    SetRenderState(D3DRENDERSTATE_TEXTUREMAG, HWConfig.nFilter);
+    SetRenderState(D3DRENDERSTATE_TEXTUREMIN, HWConfig.nFilter);
+    SetRenderState(D3DRENDERSTATE_DITHERENABLE, HWConfig.Dither);
+    HWR_EnablePerspCorrect(HWConfig.Perspective);
+    SetRenderState(D3DRENDERSTATE_TEXTUREADDRESS, D3DTADDRESS_CLAMP);
+    SetRenderState(D3DRENDERSTATE_TEXTUREMAPBLEND, D3DTBLEND_MODULATEALPHA);
+    SetRenderState(D3DRENDERSTATE_CULLMODE, D3DCULL_NONE);
+    SetRenderState(D3DRENDERSTATE_SRCBLEND, D3DBLEND_SRCALPHA);
+    SetRenderState(D3DRENDERSTATE_DESTBLEND, D3DBLEND_INVSRCALPHA);
+    SetRenderState(D3DRENDERSTATE_SPECULARENABLE, FALSE);
+    SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, FALSE);
+    SetRenderState(D3DRENDERSTATE_ALPHABLENDENABLE, FALSE);
+    SetRenderState(D3DRENDERSTATE_COLORKEYENABLE, FALSE);
+    HWR_ResetCurrentTexture();
+    HWR_ResetColorKey();
+
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+        GlobalAlpha = 0xff000000;
+        DrawRoutine = HWR_DrawRoutines;
+        return;
+    }
+
+    if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DeviceDesc.dpcTriCaps.dwAlphaCmpCaps & D3DPCMPCAPS_NOTEQUAL) {
+        SetRenderState(D3DRENDERSTATE_ALPHAREF, 0);
+        SetRenderState(D3DRENDERSTATE_ALPHAFUNC, D3DCMP_NOTEQUAL);
+        bAlphaTesting = true;
+    } else {
+        bAlphaTesting = false;
+    }
+
+    blendOne = true;
+    if (!(App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DeviceDesc.dpcTriCaps.dwDestBlendCaps & D3DPBLENDCAPS_ONE))
+        blendOne = false;
+    GlobalAlpha = 0xff000000;
+    if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DeviceDesc.dpcTriCaps.dwShadeCaps & D3DPSHADECAPS_ALPHAFLATSTIPPLED) {
+        if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DeviceDesc.dpcTriCaps.dwShadeCaps & D3DPSHADECAPS_ALPHAFLATBLEND) {
+            if (blendOne) {
+                DrawRoutine = HWR_DrawRoutines;
+            } else {
+                DrawRoutine = HWR_DrawRoutinesNoAlpha;
+                GlobalAlpha = 0x80000000;
+            }
+        } else {
+            DrawRoutine = HWR_DrawRoutinesStippledAlpha;
+            GlobalAlpha = 0x80000000;
+        }
+    } else if (blendOne) {
+        DrawRoutine = HWR_DrawRoutines;
+    } else {
+        DrawRoutine = HWR_DrawRoutinesNoAlpha;
+        GlobalAlpha = 0x80000000;
+    }
+}
+
 void HWR_ResetCurrentTexture(void)
 {
     HWR_SetCurrentTexture(0);
