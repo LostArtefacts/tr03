@@ -247,6 +247,108 @@ void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent)
     }
 }
 
+extern sint32 box_lines[12][2];
+extern float outsideBackgroundTop;
+void S_InsertBackPolygon(sint32 xmin, sint32 ymin, sint32 xmax, sint32 ymax, sint32 col);
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void SetRoomBounds(sint16 *objptr, int room_number, ROOM_INFO *parent);
+int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
+void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
+void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+void phd_PutPolygons(sint16 *objptr, int clip);
+void S_InsertRoom(sint16 *objptr, int outside);
+void S_LightRoom(ROOM_INFO *r);
+
+void ClipRoom(ROOM_INFO *r)
+{
+    int i, p1, p2, clip_room;
+    sint32 xv[8], yv[8], zv[8], clip[8];
+    sint32 x, y, z, *mptr;
+    sint32 min_x, min_y, max_x, max_y;
+    sint32 zdiv, znom;
+
+    xv[0] = xv[3] = xv[4] = xv[7] = WALL_L;
+    yv[0] = yv[1] = yv[2] = yv[3] = r->maxceiling - r->y;
+    zv[0] = zv[1] = zv[4] = zv[5] = WALL_L;
+    xv[1] = xv[2] = xv[5] = xv[6] = (r->y_size - 1) * WALL_L;
+    yv[4] = yv[5] = yv[6] = yv[7] = r->minfloor - r->y;
+    zv[2] = zv[3] = zv[6] = zv[7] = (r->x_size - 1) * WALL_L;
+    mptr = phd_mxptr;
+    clip_room = 0;
+    for (i = 0; i < 8; i++) {
+        x = xv[i];
+        y = yv[i];
+        z = zv[i];
+        xv[i] = (*(mptr + 0) * x) + (*(mptr + 1) * y) + (*(mptr + 2) * z) + *(mptr + 3);
+        yv[i] = (*(mptr + 4) * x) + (*(mptr + 5) * y) + (*(mptr + 6) * z) + *(mptr + 7);
+        zv[i] = (*(mptr + 8) * x) + (*(mptr + 9) * y) + (*(mptr + 10) * z) + *(mptr + 11);
+        if (zv[i] > phd_zfar)
+            clip[i] = clip_room = 1;
+        else
+            clip[i] = 0;
+    }
+    if (!clip_room)
+        return;
+    min_x = min_y = 0x10000000;
+    max_x = max_y = -0x10000000;
+    for (i = 0; i < 12; i++) {
+        p1 = box_lines[i][0];
+        p2 = box_lines[i][1];
+        if (clip[p1] ^ clip[p2]) {
+            zdiv = (zv[p2] - zv[p1]) >> W2V_SHIFT;
+            if (zdiv) {
+                znom = (phd_zfar - zv[p1]) >> W2V_SHIFT;
+                x = xv[p1] + ((((xv[p2] - xv[p1]) >> W2V_SHIFT) * znom / zdiv) << W2V_SHIFT);
+                y = yv[p1] + ((((yv[p2] - yv[p1]) >> W2V_SHIFT) * znom / zdiv) << W2V_SHIFT);
+                if (x < min_x)
+                    min_x = x;
+                if (x > max_x)
+                    max_x = x;
+                if (y < min_y)
+                    min_y = y;
+                if (y > max_y)
+                    max_y = y;
+            } else {
+                if (xv[p1] < min_x)
+                    min_x = xv[p1];
+                if (xv[p2] < min_x)
+                    min_x = xv[p2];
+                if (xv[p1] > max_x)
+                    max_x = xv[p1];
+                if (xv[p2] > max_x)
+                    max_x = xv[p2];
+                if (yv[p1] < min_y)
+                    min_y = yv[p1];
+                if (yv[p2] < min_y)
+                    min_y = yv[p2];
+                if (yv[p1] > max_y)
+                    max_y = yv[p1];
+                if (yv[p2] > max_y)
+                    max_y = yv[p2];
+            }
+        }
+    }
+    z = phd_zfar / phd_persp;
+    min_x = min_x / z + phd_centerx;
+    min_y = min_y / z + phd_centery;
+    max_x = max_x / z + phd_centerx;
+    max_y = max_y / z + phd_centery;
+    if ((min_x > phd_right) || (min_y > phd_bottom) || (max_x < phd_left) || (max_y < phd_top))
+        return;
+    if (min_x < phd_left)
+        min_x = phd_left;
+    if (min_y < phd_top)
+        min_y = phd_top;
+    if (max_x > phd_right)
+        max_x = phd_right;
+    if (max_y > phd_bottom)
+        max_y = phd_bottom;
+    if (outside)
+        S_InsertBackPolygon(min_x, (sint32)outsideBackgroundTop, max_x, max_y, 0x800000);
+    else
+        S_InsertBackPolygon(min_x, min_y, max_x, max_y, 0x800000);
+}
+
 extern sint32 phd_znear, phd_zfar;
 
 void DrawDummyItem();
