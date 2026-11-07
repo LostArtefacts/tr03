@@ -46,22 +46,22 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="339.47" height="12" x="0" y="0" class="named"><title>1367 · 91.26%</title></rect>
-<rect width="7.45" height="12" x="339.47" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="7.45" height="12" x="346.92" y="0" class="nonmatching"><title>30 · 2%</title></rect>
-<rect width="17.63" height="12" x="354.37" y="0" class="todo"><title>71 · 4.74%</title></rect>
+<rect width="339.72" height="12" x="0" y="0" class="named"><title>1368 · 91.32%</title></rect>
+<rect width="7.45" height="12" x="339.72" y="0" class="decompiled"><title>30 · 2%</title></rect>
+<rect width="7.45" height="12" x="347.17" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="17.38" height="12" x="354.62" y="0" class="todo"><title>70 · 4.67%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1367</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">71</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1368</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">30</tspan> · <tspan class="todo">70</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="273" height="12" x="0" y="0" class="named"><title>532 KB · 73.39%</title></rect>
-<rect width="33.96" height="12" x="273" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="14.78" height="12" x="306.97" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
-<rect width="50.25" height="12" x="321.75" y="0" class="todo"><title>98 KB · 13.51%</title></rect>
+<rect width="273.51" height="12" x="0" y="0" class="named"><title>533 KB · 73.52%</title></rect>
+<rect width="33.96" height="12" x="273.51" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
+<rect width="14.78" height="12" x="307.47" y="0" class="nonmatching"><title>29 KB · 3.97%</title></rect>
+<rect width="49.75" height="12" x="322.25" y="0" class="todo"><title>97 KB · 13.37%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">82.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">532 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">98 KB</tspan></text>
+<text text-anchor="end" x="552" y="24.50">82.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">533 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">29 KB</tspan> · <tspan class="todo">97 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -133,7 +133,7 @@
 <rect width="12" height="12" x="210" y="15" class="named"><title>0x0040aa00 RoomZedClipper (472 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="15" class="named"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="15" class="todo"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
-<rect width="12" height="12" x="255" y="15" class="todo"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
+<rect width="12" height="12" x="255" y="15" class="named"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="15" class="named"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="15" class="named"><title>0x0040ca50 XYClipper (720 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="15" class="todo"><title>0x0040cd20 S_DrawSprite (826 bytes)</title></rect>
@@ -1754,7 +1754,7 @@
 <rect width="17.31" height="18.73" x="709.48" y="23.50" class="named"><title>0x00474d70 ACMHandleNotifications (1001 bytes)</title></rect>
 <rect width="17.22" height="18.73" x="729.78" y="23.50" class="named"><title>0x0044d2a0 AnimateLara (996 bytes)</title></rect>
 <rect width="17.29" height="18.40" x="330.12" y="45.23" class="named"><title>0x0040eca0 ControlElectricFence (982 bytes)</title></rect>
-<rect width="17.29" height="18.36" x="330.12" y="66.63" class="todo"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
+<rect width="17.29" height="18.36" x="330.12" y="66.63" class="named"><title>0x0040bcd0 HWI_InsertPoly_GouraudRGB (980 bytes)</title></rect>
 <rect width="17.29" height="18.36" x="330.12" y="87.99" class="named"><title>0x00420590 AnimateItem (980 bytes)</title></rect>
 <rect width="17.29" height="17.99" x="330.12" y="109.35" class="named"><title>0x004737e0 WingmuteControl (960 bytes)</title></rect>
 <rect width="17.29" height="17.95" x="330.12" y="130.33" class="named"><title>0x00468850 SubDraw (958 bytes)</title></rect>
