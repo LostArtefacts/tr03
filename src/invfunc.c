@@ -875,6 +875,116 @@ void Inv_RingGetView(RING_INFO *ring, PHD_3DPOS *viewer)
     viewer->z_rot = 0;
 }
 
+extern sint32 LightCol[12];
+extern PHD_VECTOR LPos[3];
+extern sint32 GlobePointLight;
+extern int smcr;
+extern int smcg;
+extern int smcb;
+extern sint32 w2v_matrix[12];
+extern sint16 rcossin_tbl[];
+
+void Inv_GlobeLight(sint16 object_number)
+{
+    if (object_number == 1) {
+        LightCol[0] = 0x000;
+        LightCol[4] = 0x100;
+        LightCol[8] = 0xf00;
+
+        LightCol[1] = 0x000;
+        LightCol[5] = 0x100;
+        LightCol[9] = 0xf00;
+
+        LightCol[2] = 0x0;
+        LightCol[6] = 0x100;
+        LightCol[10] = 0xf00;
+    } else if ((object_number & 0x7e) == 0) {
+        LightCol[0] = 0x100;
+        LightCol[4] = 0x400;
+        LightCol[8] = 0x100;
+
+        LightCol[1] = 0x100;
+        LightCol[5] = 0x400;
+        LightCol[9] = 0x100;
+
+        LightCol[2] = 0x100;
+        LightCol[6] = 0x400;
+        LightCol[10] = 0x100;
+    } else if ((object_number == 2 && savegame.LondonComplete)
+        || (object_number == 4 && savegame.IndiaComplete)
+        || (object_number == 8 && savegame.PeruComplete)
+        || (object_number == 16 && savegame.NevadaComplete)
+        || (object_number == 32 && savegame.SPacificComplete)
+        || (object_number == 64 && savegame.AntarcticaComplete)) {
+        LightCol[0] = rcossin_tbl[GlobePointLight << 5];
+        LightCol[4] = 0;
+        LightCol[8] = 0;
+        LightCol[1] = rcossin_tbl[GlobePointLight << 5];
+        LightCol[5] = 0;
+        LightCol[9] = 0;
+        LightCol[2] = rcossin_tbl[GlobePointLight << 5];
+        LightCol[6] = 0;
+        LightCol[10] = 0;
+    } else {
+        LightCol[0] = 0;
+        LightCol[4] = rcossin_tbl[GlobePointLight << 5];
+        LightCol[8] = 0;
+        LightCol[1] = 0;
+        LightCol[5] = rcossin_tbl[GlobePointLight << 5];
+        LightCol[9] = 0;
+        LightCol[2] = 0;
+        LightCol[6] = rcossin_tbl[GlobePointLight << 5];
+        LightCol[10] = 0;
+    }
+
+    LPos[0].x = 4096;
+    LPos[0].y = -4096;
+    LPos[0].z = 3072;
+
+    LPos[1].x = -4096;
+    LPos[1].y = -4096;
+    LPos[1].z = 3072;
+
+    LPos[2].x = 0;
+    LPos[2].y = 2048;
+    LPos[2].z = 3072;
+
+    smcr = 32;
+    smcg = 32;
+    smcb = 32;
+
+    {
+        int x, y, z;
+        sint32 *mptr;
+
+        mptr = w2v_matrix;
+
+        x = (mptr[0] * LPos[0].x + mptr[1] * LPos[0].y + mptr[2] * LPos[0].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[0].x + mptr[5] * LPos[0].y + mptr[6] * LPos[0].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[0].x + mptr[9] * LPos[0].y + mptr[10] * LPos[0].z) >> W2V_SHIFT;
+
+        LPos[0].x = x;
+        LPos[0].y = y;
+        LPos[0].z = z;
+
+        x = (mptr[0] * LPos[1].x + mptr[1] * LPos[1].y + mptr[2] * LPos[1].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[1].x + mptr[5] * LPos[1].y + mptr[6] * LPos[1].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[1].x + mptr[9] * LPos[1].y + mptr[10] * LPos[1].z) >> W2V_SHIFT;
+
+        LPos[1].x = x;
+        LPos[1].y = y;
+        LPos[1].z = z;
+
+        x = (mptr[0] * LPos[2].x + mptr[1] * LPos[2].y + mptr[2] * LPos[2].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[2].x + mptr[5] * LPos[2].y + mptr[6] * LPos[2].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[2].x + mptr[9] * LPos[2].y + mptr[10] * LPos[2].z) >> W2V_SHIFT;
+
+        LPos[2].x = x;
+        LPos[2].y = y;
+        LPos[2].z = z;
+    }
+}
+
 void Inv_RingCalcAdders(RING_INFO *ring, sint16 rotation_duration)
 {
     ring->angle_adder = 0x10000 / ring->number_of_objects;

@@ -48,20 +48,20 @@
 <g transform="translate(130 1.50)">
 <rect width="341.95" height="12" x="0" y="0" class="named"><title>1377 · 91.92%</title></rect>
 <rect width="7.45" height="12" x="341.95" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="8.94" height="12" x="349.40" y="0" class="nonmatching"><title>36 · 2.40%</title></rect>
-<rect width="13.66" height="12" x="358.34" y="0" class="todo"><title>55 · 3.67%</title></rect>
+<rect width="9.19" height="12" x="349.40" y="0" class="nonmatching"><title>37 · 2.47%</title></rect>
+<rect width="13.41" height="12" x="358.59" y="0" class="todo"><title>54 · 3.60%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="7.50">93.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">36</tspan> · <tspan class="todo">55</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1377</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">37</tspan> · <tspan class="todo">54</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="278.21" height="12" x="0" y="0" class="named"><title>542 KB · 74.79%</title></rect>
 <rect width="33.96" height="12" x="278.21" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="18.78" height="12" x="312.18" y="0" class="nonmatching"><title>37 KB · 5.05%</title></rect>
-<rect width="41.05" height="12" x="330.95" y="0" class="todo"><title>80 KB · 11.03%</title></rect>
+<rect width="19.12" height="12" x="312.18" y="0" class="nonmatching"><title>37 KB · 5.14%</title></rect>
+<rect width="40.70" height="12" x="331.30" y="0" class="todo"><title>79 KB · 10.94%</title></rect>
 </g>
 <text text-anchor="end" x="552" y="24.50">83.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">37 KB</tspan> · <tspan class="todo">80 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">542 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">37 KB</tspan> · <tspan class="todo">79 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -517,7 +517,7 @@
 <rect width="12" height="12" x="720" y="120" class="named"><title>0x004387a0 Inv_RingInit (271 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="120" class="named"><title>0x004388b0 Inv_RingGetView (96 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="135" class="todo"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="135" class="todo"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="135" class="nonmatching"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="135" class="named"><title>0x00438d60 Inv_RingCalcAdders (44 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="135" class="named"><title>0x00438d90 Inv_RingDoMotions (318 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="135" class="named"><title>0x00438ed0 Inv_RingRotateLeft (47 bytes)</title></rect>
@@ -1826,7 +1826,7 @@
 <rect width="15.41" height="14.80" x="518.92" y="65.13" class="named"><title>0x0048c150 GameMain (704 bytes)</title></rect>
 <rect width="15.39" height="14.80" x="537.33" y="65.13" class="decompiled"><title>0x00491680 Func491680 (703 bytes)</title></rect>
 <rect width="15.08" height="14.80" x="555.71" y="65.13" class="named"><title>0x00493530 MMXSetRenderState (689 bytes)</title></rect>
-<rect width="14.86" height="14.80" x="573.80" y="65.13" class="todo"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
+<rect width="14.86" height="14.80" x="573.80" y="65.13" class="nonmatching"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
 <rect width="14.71" height="14.80" x="591.66" y="65.13" class="named"><title>0x0043c960 DoShift_kayak (672 bytes)</title></rect>
 <rect width="14.71" height="14.80" x="609.37" y="65.13" class="named"><title>0x004573f0 TestBlockPull (672 bytes)</title></rect>
 <rect width="14.69" height="14.80" x="627.08" y="65.13" class="named"><title>0x00444980 ControlDeathSlide (671 bytes)</title></rect>
