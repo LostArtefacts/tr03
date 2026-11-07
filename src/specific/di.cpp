@@ -80,6 +80,18 @@ int DI_ReadJoystick(int &x, int &y)
     return jinfo.dwButtons;
 }
 
+void DI_StartKeyboard(void)
+{
+    if (DX_TRY(lpDirectInput->CreateDevice(GUID_SysKeyboard, &Keyboard, 0)))
+        throw INIT_ERR_CantCreateKeyboardDevice;
+    if (DX_TRY(Keyboard->SetCooperativeLevel(App.WindowHandle, DISCL_NONEXCLUSIVE | DISCL_BACKGROUND)))
+        throw INIT_ERR_CantSetKBCooperativeLevel;
+    if (DX_TRY(Keyboard->SetDataFormat(&c_dfDIKeyboard)))
+        throw INIT_ERR_CantSetKBDataFormat;
+    if (DX_TRY(Keyboard->Acquire()))
+        throw INIT_ERR_CantAcquireKeyboard;
+}
+
 void DI_FinishKeyboard(void)
 {
     if (Keyboard)
@@ -94,8 +106,6 @@ bool DI_StartJoystick(void)
 {
     return true;
 }
-
-void DI_StartKeyboard(void);
 
 void DI_Start(void)
 {

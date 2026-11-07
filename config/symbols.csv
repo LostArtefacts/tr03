@@ -1498,6 +1498,7 @@ address,size,name,symbol
 0x004b4c5e,53,phd_sin,@phd_sin@4
 0x004b4c93,44,phd_sqrt,@phd_sqrt@4
 0x004b4cc0,6,DirectInputCreateA,_DirectInputCreateA@16
+0x004b5cd0,24,c_dfDIKeyboard,_c_dfDIKeyboard
 0x004b5ce8,6,DirectSoundEnumerateA,_DirectSoundEnumerateA@8
 0x004b5cee,6,DirectSoundCreate,_DirectSoundCreate@12
 0x004b5cf4,6,DirectDrawEnumerateA,
@@ -1862,6 +1863,7 @@ address,size,name,symbol
 0x004c31bc,4,joyGetPosEx,__imp__joyGetPosEx@8
 0x004c31c0,4,joyGetDevCapsA,__imp__joyGetDevCapsA@12
 0x004c3438,16,IID_IDirectSoundNotify,_IID_IDirectSoundNotify
+0x004c3448,16,GUID_SysKeyboard,_GUID_SysKeyboard
 0x004c3458,16,IID_IDirect3D2,_IID_IDirect3D2
 0x004c3468,16,IID_IDirectDraw2,_IID_IDirectDraw2
 0x004c3478,16,IID_IDirectDrawSurface3,_IID_IDirectDrawSurface3
