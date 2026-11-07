@@ -1172,4 +1172,156 @@ void S_DrawSparks(void)
     }
 }
 
+
+typedef struct {
+    sint32 x;
+    sint32 old_roomflags : 1;
+    sint32 stopped : 1;
+    sint32 y : 30;
+    sint32 z;
+    sint8 xv;
+    uint8 yv;
+    sint8 zv;
+    uint8 life;
+} SNOWFLAKE;
+
+static SNOWFLAKE raindrops[256];
+
+extern sint16 IsRoomOutsideNo;
+extern sint32 SmokeWindX;
+extern sint32 SmokeWindZ;
+extern PHD_VECTOR CamPos;
+extern int GlobalAlpha;
+
+sint32 IsRoomOutside(sint32 x, sint32 y, sint32 z);
+void HWI_InsertLine_Sorted(long x1, long y1, long x2, long y2, long z, long c0, long c1);
+
+int abs(int x);
+#pragma intrinsic(abs)
+
+void DoRain(void)
+{
+    SNOWFLAKE *rainptr;
+    PHD_VECTOR pos;
+    long *pZ;
+    short *pXY;
+    float zv;
+    long x, y, z, radius, lp, angle, randval, out, triggered;
+    long x1, y1, x2, y2, alpha;
+    short tx, ty, tz;
+    long Z[50];
+    short XY[50];
+
+    pXY = XY;
+    pZ = Z;
+    triggered = 0;
+    rainptr = &raindrops[0];
+    for (lp = 0; lp < 256; lp++) {
+        if (rainptr->x == 0 && triggered < 8) {
+            triggered++;
+            y = -1024 - (GetRandomDraw() & 2047);
+            radius = GetRandomDraw() & 4095;
+            angle = GetRandomDraw() & 8190;
+            x = (rcossin_tbl[angle] * radius) >> 12;
+            z = (rcossin_tbl[angle + 1] * radius) >> 12;
+            rainptr->x = lara_item->pos.x_pos + x;
+            rainptr->y = lara_item->pos.y_pos + y;
+            rainptr->z = lara_item->pos.z_pos + z;
+            if (IsRoomOutside(rainptr->x, rainptr->y, rainptr->z) < 0) {
+                rainptr->x = 0;
+                rainptr++;
+                continue;
+            }
+            rainptr->xv = (GetRandomDraw() & 7) - 4;
+            rainptr->yv = (GetRandomDraw() & 7) + 16;
+            rainptr->zv = (GetRandomDraw() & 7) - 4;
+            rainptr->life = 32 + (56 - (rainptr->yv << 1));
+        }
+        if (rainptr->x != 0) {
+            out = IsRoomOutside(rainptr->x, rainptr->y, rainptr->z);
+            if (out == -2 || room[IsRoomOutsideNo].flags & UNDERWATER) {
+                rainptr->x = 0;
+                rainptr++;
+                continue;
+            }
+            if (rainptr->life > 240 || abs(CamPos.x - rainptr->x) > 6000 || abs(CamPos.z - rainptr->z) > 6000) {
+                rainptr->x = 0;
+                rainptr++;
+                continue;
+            }
+            rainptr->x += rainptr->xv + (SmokeWindX << 2);
+            rainptr->y += rainptr->yv << 3;
+            rainptr->z += rainptr->zv + (SmokeWindZ << 2);
+            randval = GetRandomDraw();
+            if ((randval & 3) != 3) {
+                rainptr->xv += (randval & 3) - 1;
+                if (rainptr->xv < -4)
+                    rainptr->xv = -4;
+                else if (rainptr->xv > 4)
+                    rainptr->xv = 4;
+            }
+            randval = (randval >> 2) & 3;
+            if (randval != 3) {
+                rainptr->zv += randval - 1;
+                if (rainptr->zv < -4)
+                    rainptr->zv = -4;
+                else if (rainptr->zv > 4)
+                    rainptr->zv = 4;
+            }
+            rainptr->life -= 2;
+            if (rainptr->life > 240)
+                rainptr->x = 0;
+        }
+        rainptr++;
+    }
+    phd_PushMatrix();
+    phd_TranslateAbs(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos);
+    rainptr = &raindrops[0];
+    for (lp = 0; lp < 256; lp++) {
+        if (rainptr->x == 0) {
+            rainptr++;
+            continue;
+        }
+        tx = rainptr->x - (SmokeWindX << 2) - lara_item->pos.x_pos;
+        ty = rainptr->y - (rainptr->yv << 3) - lara_item->pos.y_pos;
+        tz = rainptr->z - (SmokeWindZ << 2) - lara_item->pos.z_pos;
+        pos.x = tx * phd_mxptr[0] + ty * phd_mxptr[1] + tz * phd_mxptr[2] + phd_mxptr[3];
+        pos.y = tx * phd_mxptr[4] + ty * phd_mxptr[5] + tz * phd_mxptr[6] + phd_mxptr[7];
+        pos.z = tx * phd_mxptr[8] + ty * phd_mxptr[9] + tz * phd_mxptr[10] + phd_mxptr[11];
+        zv = f_persp / (float)pos.z;
+        pXY[0] = (short)(pos.x * zv + f_centerx);
+        pXY[1] = (short)(pos.y * zv + f_centery);
+        pZ[0] = pos.z;
+        pXY += 2;
+        pZ++;
+        tx = rainptr->x - lara_item->pos.x_pos;
+        ty = rainptr->y - lara_item->pos.y_pos;
+        tz = rainptr->z - lara_item->pos.z_pos;
+        pos.x = tx * phd_mxptr[0] + ty * phd_mxptr[1] + tz * phd_mxptr[2] + phd_mxptr[3];
+        pos.y = tx * phd_mxptr[4] + ty * phd_mxptr[5] + tz * phd_mxptr[6] + phd_mxptr[7];
+        pos.z = tx * phd_mxptr[8] + ty * phd_mxptr[9] + tz * phd_mxptr[10] + phd_mxptr[11];
+        zv = f_persp / (float)pos.z;
+        pXY[0] = (short)(pos.x * zv + f_centerx);
+        pXY[1] = (short)(pos.y * zv + f_centery);
+        pZ[0] = pos.z;
+        pXY -= 2;
+        pZ--;
+        x1 = pXY[0];
+        y1 = pXY[1];
+        x2 = pXY[2];
+        y2 = pXY[3];
+        z = pZ[0];
+        rainptr++;
+        if (z < 32 || x1 < phd_winxmin || x1 > phd_winxmin + phd_winxmax || y1 < phd_winymin || y1 > phd_winymin + phd_winymax)
+            continue;
+        if (ClipLine(x1, y1, x2, y2, 0, 0)) {
+            alpha = GlobalAlpha;
+            GlobalAlpha = 0x80000000;
+            HWI_InsertLine_Sorted(x1 - phd_winxmin, y1 - phd_winymin, x2 - phd_winxmin, y2 - phd_winymin, z, 32, 0x304060);
+            GlobalAlpha = alpha;
+        }
+    }
+    phd_PopMatrix();
+}
+
 }
