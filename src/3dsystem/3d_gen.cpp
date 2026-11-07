@@ -24,8 +24,8 @@ extern int phd_persp;
 extern int phd_oopersp;
 extern int phd_winwidth;
 extern int phd_winheight;
-extern float f_zfar;
 extern float f_znear;
+extern float f_zfar;
 extern float f_persp;
 extern float f_oneopersp;
 extern float f_oneoznear;
@@ -727,6 +727,19 @@ void do_quickysorty(int left, int right, sint32 buffer[][3])
         do_quickysorty(left, j, buffer);
     if (i < right)
         do_quickysorty(i, right, buffer);
+}
+
+
+extern float f_a;
+extern float f_b;
+extern float f_boo;
+
+void SetupZRange(void)
+{
+    f_b = ((0.995f - 0.005f) * f_znear * f_zfar) / (f_znear - f_zfar);
+    f_a = 0.005f - (f_b / f_znear);
+    f_b = -f_b;
+    f_boo = f_b / one;
 }
 
 }
