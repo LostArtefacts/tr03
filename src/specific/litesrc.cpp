@@ -170,6 +170,228 @@ sint16 *calc_vertice_light(sint16 *objptr, sint16 *objptr1)
     return objptr;
 }
 
+#define SQUARE(A) ((A) * (A))
+
+extern sint32 LightCol[];
+extern PHD_VECTOR LPos[];
+extern sint32 w2v_matrix[];
+extern DYNAMIC dynamics[];
+extern int number_dynamics;
+
+sint32 __fastcall phd_sqrt(sint32 n);
+void phd_NormaliseVector(sint32 x, sint32 y, sint32 z, sint32 *dest);
+int abs(int x);
+#pragma intrinsic(abs)
+
+inline void ApplyMatrix(sint32 *mptr, PHD_VECTOR *objptr, sint32 &x, sint32 &y, sint32 &z)
+{
+    x = (mptr[0] * objptr->x + mptr[1] * objptr->y + mptr[2] * objptr->z) >> W2V_SHIFT;
+    y = (mptr[4] * objptr->x + mptr[5] * objptr->y + mptr[6] * objptr->z) >> W2V_SHIFT;
+    z = (mptr[8] * objptr->x + mptr[9] * objptr->y + mptr[10] * objptr->z) >> W2V_SHIFT;
+}
+
+void S_CalculateLight(sint32 x, sint32 y, sint32 z, sint16 room_number, ITEM_LIGHT *il)
+{
+    ROOM_INFO *r;
+    LIGHT_INFO *sl, *light, *l;
+    DYNAMIC *dl, *dl2;
+    LIGHT_INFO sunlight;
+    ITEM_LIGHT dummy;
+    PHD_VECTOR ls, lc;
+    sint32 brightest, distance, shade;
+    uint16 ambience;
+    uint8 sun;
+    int i;
+
+    sl = NULL;
+    dl2 = NULL;
+    l = NULL;
+    if (!il) {
+        il = &dummy;
+        il->init = 0;
+    }
+    LightPos[0] = LightPos[1] = LightPos[2] = LightPos[4] = LightPos[5] = LightPos[6] = LightPos[8] = LightPos[9] = LightPos[10] = 0;
+    LightCol[0] = LightCol[1] = LightCol[2] = LightCol[4] = LightCol[5] = LightCol[6] = LightCol[8] = LightCol[9] = LightCol[10] = 0;
+    LPos[0].x = LPos[0].y = LPos[0].z = 0;
+    LPos[1].x = LPos[1].y = LPos[1].z = 0;
+    LPos[2].x = LPos[2].y = LPos[2].z = 0;
+    r = &room[room_number];
+    sun = 0;
+    brightest = -1;
+    ambience = ((0x1fff - r->ambient) >> 5) + 1;
+    for (i = r->num_lights, light = r->light; i > 0; i--, light++) {
+        if (light->type) {
+            sun = 1;
+            sl = light;
+            continue;
+        }
+        lc.x = (light->x - x) >> 2;
+        lc.y = (light->y - y) >> 2;
+        lc.z = (light->z - z) >> 2;
+        distance = phd_sqrt(SQUARE(lc.x) + SQUARE(lc.y) + SQUARE(lc.z));
+        if (distance <= light->l.spot.falloff) {
+            shade = light->l.spot.intensity - light->l.spot.intensity * distance / light->l.spot.falloff;
+            ambience += (uint16)(shade >> 7);
+            if (shade > brightest) {
+                brightest = shade;
+                l = light;
+                ls.x = lc.x;
+                ls.y = lc.y;
+                ls.z = lc.z;
+            }
+        }
+    }
+    if (!sun && il->init & 1) {
+        sunlight.l.sun.nx = (sint16)il->sun.x;
+        sunlight.l.sun.ny = (sint16)il->sun.y;
+        sunlight.l.sun.nz = (sint16)il->sun.z;
+        sunlight.r = sunlight.g = sunlight.b = (0x1fff - r->ambient) >> 5;
+        sl = &sunlight;
+        sun = 1;
+    }
+    if (sun) {
+        if (il->init & 1) {
+            il->sun.x += (sl->l.sun.nx - il->sun.x) >> 3;
+            il->sun.y += (sl->l.sun.ny - il->sun.y) >> 3;
+            il->sun.z += (sl->l.sun.nz - il->sun.z) >> 3;
+            il->sunr += (sl->r - il->sunr) >> 3;
+            il->sung += (sl->g - il->sung) >> 3;
+            il->sunb += (sl->b - il->sunb) >> 3;
+        } else {
+            il->sun.x = sl->l.sun.nx;
+            il->sun.y = sl->l.sun.ny;
+            il->sun.z = sl->l.sun.nz;
+            il->sunr = sl->r;
+            il->sung = sl->g;
+            il->sunb = sl->b;
+            il->init |= 1;
+        }
+        LPos[0].x = il->sun.x;
+        LPos[0].y = il->sun.y;
+        LPos[0].z = il->sun.z;
+        LightCol[0] = il->sunr << 4;
+        LightCol[4] = il->sung << 4;
+        LightCol[8] = il->sunb << 4;
+    }
+    if (brightest == -1 && il->init & 2) {
+        brightest = 0x1fff;
+        ls.x = il->bulb.x;
+        ls.y = il->bulb.y;
+        ls.z = il->bulb.z;
+        sunlight.r = sunlight.g = sunlight.b = (0x1fff - r->ambient) >> 5;
+        l = &sunlight;
+    }
+    if (brightest != -1) {
+        phd_NormaliseVector(ls.x, ls.y, ls.z, (sint32 *)&ls);
+        if (il->init & 2) {
+            il->bulb.x += (ls.x - il->bulb.x) >> 3;
+            il->bulb.y += (ls.y - il->bulb.y) >> 3;
+            il->bulb.z += (ls.z - il->bulb.z) >> 3;
+            il->bulbr += (uint8)((((brightest * l->r) >> 13) - il->bulbr) >> 3);
+            il->bulbg += (uint8)((((brightest * l->g) >> 13) - il->bulbg) >> 3);
+            il->bulbb += (uint8)((((brightest * l->b) >> 13) - il->bulbb) >> 3);
+        } else {
+            il->bulb.x = ls.x;
+            il->bulb.y = ls.y;
+            il->bulb.z = ls.z;
+            il->bulbr = (uint8)((brightest * l->r) >> 13);
+            il->bulbg = (uint8)((brightest * l->g) >> 13);
+            il->bulbb = (uint8)((brightest * l->b) >> 13);
+            il->init |= 2;
+        }
+        LPos[1].x = il->bulb.x >> 2;
+        LPos[1].y = il->bulb.y >> 2;
+        LPos[1].z = il->bulb.z >> 2;
+        LightCol[1] = il->bulbr << 4;
+        LightCol[5] = il->bulbg << 4;
+        LightCol[9] = il->bulbb << 4;
+    }
+    brightest = -1;
+    for (i = 0; i < number_dynamics; i++) {
+        dl = &dynamics[i];
+        lc.x = dl->x - x;
+        lc.y = dl->y - y;
+        lc.z = dl->z - z;
+        if (abs(lc.x) > 0x2000 || abs(lc.y) > 0x2000 || abs(lc.z) > 0x2000)
+            continue;
+        distance = phd_sqrt(SQUARE(lc.x) + SQUARE(lc.y) + SQUARE(lc.z));
+        if (distance <= dl->falloff >> 1) {
+            shade = 0x1fff - 0x1fff * distance / (dl->falloff >> 1);
+            ambience += (uint16)(shade >> 8);
+            if (shade > brightest) {
+                brightest = shade;
+                dl2 = dl;
+                ls.x = lc.x;
+                ls.y = lc.y;
+                ls.z = lc.z;
+            }
+        }
+    }
+    if (brightest != -1) {
+        phd_NormaliseVector(ls.x, ls.y, ls.z, (sint32 *)&ls);
+        if (il->init & 4) {
+            il->dynamic.x += (ls.x - il->dynamic.x) >> 1;
+            il->dynamic.y += (ls.y - il->dynamic.y) >> 1;
+            il->dynamic.z += (ls.z - il->dynamic.z) >> 1;
+            il->dynamicr += (uint8)((((brightest * dl2->r) >> 10) - il->dynamicr) >> 1);
+            il->dynamicg += (uint8)((((brightest * dl2->g) >> 10) - il->dynamicg) >> 1);
+            il->dynamicb += (uint8)((((brightest * dl2->b) >> 10) - il->dynamicb) >> 1);
+        } else {
+            il->dynamic.x = ls.x;
+            il->dynamic.y = ls.y;
+            il->dynamic.z = ls.z;
+            il->dynamicr = (uint8)((brightest * dl2->r) >> 10);
+            il->dynamicg = (uint8)((brightest * dl2->g) >> 10);
+            il->dynamicb = (uint8)((brightest * dl2->b) >> 10);
+            il->init |= 4;
+        }
+        LPos[2].x = il->dynamic.x >> 2;
+        LPos[2].y = il->dynamic.y >> 2;
+        LPos[2].z = il->dynamic.z >> 2;
+        LightCol[2] = il->dynamicr << 4;
+        LightCol[6] = il->dynamicg << 4;
+        LightCol[10] = il->dynamicb << 4;
+    }
+    if (ambience > 255)
+        ambience = 255;
+    if (il->init & 8)
+        il->ambient += (ambience - il->ambient) >> 3;
+    else {
+        il->ambient = (uint8)ambience;
+        il->init |= 8;
+    }
+    smcr = il->ambient;
+    smcg = il->ambient;
+    smcb = il->ambient;
+    LPos[0].x <<= 2;
+    LPos[0].y <<= 2;
+    LPos[0].z <<= 2;
+    LPos[1].x <<= 2;
+    LPos[1].y <<= 2;
+    LPos[1].z <<= 2;
+    LPos[2].x <<= 2;
+    LPos[2].y <<= 2;
+    LPos[2].z <<= 2;
+    x = (LPos[0].x * w2v_matrix[0] + LPos[0].y * w2v_matrix[1] + LPos[0].z * w2v_matrix[2]) >> W2V_SHIFT;
+    y = (LPos[0].x * w2v_matrix[4] + LPos[0].y * w2v_matrix[5] + LPos[0].z * w2v_matrix[6]) >> W2V_SHIFT;
+    z = (LPos[0].x * w2v_matrix[8] + LPos[0].y * w2v_matrix[9] + LPos[0].z * w2v_matrix[10]) >> W2V_SHIFT;
+    LPos[0].x = x;
+    LPos[0].y = y;
+    LPos[0].z = z;
+    x = (LPos[1].x * w2v_matrix[0] + LPos[1].y * w2v_matrix[1] + LPos[1].z * w2v_matrix[2]) >> W2V_SHIFT;
+    y = (LPos[1].x * w2v_matrix[4] + LPos[1].y * w2v_matrix[5] + LPos[1].z * w2v_matrix[6]) >> W2V_SHIFT;
+    z = (LPos[1].x * w2v_matrix[8] + LPos[1].y * w2v_matrix[9] + LPos[1].z * w2v_matrix[10]) >> W2V_SHIFT;
+    LPos[1].x = x;
+    LPos[1].y = y;
+    LPos[1].z = z;
+    x = (LPos[2].x * w2v_matrix[0] + LPos[2].y * w2v_matrix[1] + LPos[2].z * w2v_matrix[2]) >> W2V_SHIFT;
+    y = (LPos[2].x * w2v_matrix[4] + LPos[2].y * w2v_matrix[5] + LPos[2].z * w2v_matrix[6]) >> W2V_SHIFT;
+    z = (LPos[2].x * w2v_matrix[8] + LPos[2].y * w2v_matrix[9] + LPos[2].z * w2v_matrix[10]) >> W2V_SHIFT;
+    LPos[2].x = x;
+    LPos[2].y = y;
+    LPos[2].z = z;
+}
+
 void S_CalculateStaticLight(sint16 adder)
 {
     smcr = (adder & 0x1f) << 3;

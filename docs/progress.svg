@@ -47,19 +47,19 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="401.50" height="12" x="0" y="0" class="named"><title>1432 · 95.59%</title></rect>
-<rect width="15.70" height="12" x="401.50" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
-<rect width="2.80" height="12" x="417.20" y="0" class="todo"><title>10 · 0.67%</title></rect>
+<rect width="15.98" height="12" x="401.50" y="0" class="nonmatching"><title>57 · 3.81%</title></rect>
+<rect width="2.52" height="12" x="417.48" y="0" class="todo"><title>9 · 0.60%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">95.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">10</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">57</tspan> · <tspan class="todo">9</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="370.15" height="12" x="0" y="0" class="named"><title>639 KB · 88.13%</title></rect>
-<rect width="39.24" height="12" x="370.15" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
-<rect width="10.61" height="12" x="409.39" y="0" class="todo"><title>18 KB · 2.53%</title></rect>
+<rect width="40.67" height="12" x="370.15" y="0" class="nonmatching"><title>70 KB · 9.68%</title></rect>
+<rect width="9.18" height="12" x="410.82" y="0" class="todo"><title>16 KB · 2.19%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">88.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">18 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">70 KB</tspan> · <tspan class="todo">16 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1292,7 +1292,7 @@
 <rect width="12" height="12" x="375" y="360" class="named"><title>0x00486140 Key (288 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="360" class="named"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="360" class="nonmatching"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
-<rect width="12" height="12" x="420" y="360" class="todo"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
+<rect width="12" height="12" x="420" y="360" class="nonmatching"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="360" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="360" class="nonmatching"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="360" class="named"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
@@ -1617,7 +1617,7 @@
 <rect width="26.79" height="30.29" x="167.88" y="0" class="nonmatching"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
 <rect width="26.79" height="30.01" x="167.88" y="33.29" class="named"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
 <rect width="26.79" height="29.98" x="167.88" y="66.30" class="named"><title>0x0045dc30 PunkControl (2480 bytes)</title></rect>
-<rect width="26.79" height="29.90" x="167.88" y="99.28" class="todo"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
+<rect width="26.79" height="29.90" x="167.88" y="99.28" class="nonmatching"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
 <rect width="26.79" height="29.72" x="167.88" y="132.18" class="named"><title>0x0040c0b0 XYGClipper (2459 bytes)</title></rect>
 <rect width="26.79" height="29.66" x="167.88" y="164.91" class="named"><title>0x004378b0 Inv_AddItem (2454 bytes)</title></rect>
 <rect width="26.79" height="29.54" x="167.88" y="197.57" class="named"><title>0x0044afb0 DoProperDetection (2444 bytes)</title></rect>
