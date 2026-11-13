@@ -13,6 +13,10 @@ STATIC_INITIALIZERS = [
     (0x4805D0, 47, ["specific/ds.cpp:_$E7"]),
 ]
 
+STATIC_DATA = [
+    (0x633C08, 128, ["_?path@?1??GetFullPath@@9@4PADA"]),
+]
+
 
 def link_exe(objects: list[str], exe_objects: list[str], feats: list[str]) -> None:
-    orig_layout.link(exe_objects, extra_rows=STATIC_INITIALIZERS, runtime=["libc.lib"])
+    orig_layout.link(exe_objects, extra_rows=STATIC_INITIALIZERS + STATIC_DATA, runtime=["libc.lib"])
