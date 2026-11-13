@@ -475,6 +475,9 @@ extern "C" void FadeToPal(int nFrames, unsigned char *pPal)
 #ifdef TR3_EXE
 extern "C" {
 
+int GnR = 0xC0;
+int GnG = 0xC0;
+int GnB = 0xC0;
 sint16 shadowman[30] = { 0, 0, 0, 32767, 1, 8 };
 
 }

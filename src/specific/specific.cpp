@@ -217,3 +217,14 @@ void S_CDVolume(int volume)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+char VFAW[] = "d:\\VFAW.AFP";
+char NEIR[] = "d:\\NEIR.AFP";
+char OKET[] = "d:\\OKET.AFP";
+char AWCS[] = "d:\\AWCS.AFP";
+
+}
+#endif

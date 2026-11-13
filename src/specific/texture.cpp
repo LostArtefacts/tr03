@@ -424,3 +424,11 @@ int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, uns
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+bool bSetColorKey = true;
+
+}
+#endif

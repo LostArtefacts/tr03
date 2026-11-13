@@ -539,6 +539,7 @@ extern "C" void StartGameStub1(void)
 #ifdef TR3_EXE
 extern "C" {
 
+uint32 StartLevel = 1;
 sint16 saved_levels[24] = { -1 };
 sint32 rand_1 = 0xD371F947;
 sint32 rand_2 = 0xD371F947;

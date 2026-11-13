@@ -337,3 +337,13 @@ void SWRBlit32to15(unsigned long *dest, unsigned long *src, int w)
     }
 }
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+char tga_header[18] = {
+    0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 1, 0, 1, 16, 0,
+};
+
+}
+#endif

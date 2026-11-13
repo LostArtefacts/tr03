@@ -5852,3 +5852,40 @@ extern "C" HRESULT SWEndScene(void)
     return 0;
 }
 #endif
+
+#ifdef TR3_EXE
+extern "C" {
+
+double MagicFloat = 12582912.0;
+double MagicInt = 6755399441055744.0;
+double MagicFix16 = 103079215104.0;
+double MagicFix24 = 402653184.0;
+long RoundBias = 0x3F00068E;
+long Fix16Scale = 0x47800000;
+long SubSpanLength = 0x41800000;
+long MipOffsets[40] = {
+    0, 0x40000, 0x50000, 0x54000, 0x55000, 0,
+    0x3D800000, 0x3F800000, 0x3F000000, 0x3EAAAAAB, 0x3E800000, 0x3E4CCCCD,
+    0x3E2AAAAB, 0x3E124925, 0x3E000000, 0x3DE38E39, 0x3DCCCCCD, 0x3DBA2E8C,
+    0x3DAAAAAB, 0x3D9D89D9, 0x3D924925, 0x3D888889, 0x3D800000, 0,
+    0x41800000, 0x3F800000, 0x40000000, 0x40400000, 0x40800000, 0x40A00000,
+    0x40C00000, 0x40E00000, 0x41000000, 0x41100000, 0x41200000, 0x41300000,
+    0x41400000, 0x41500000, 0x41600000, 0x41700000,
+};
+float PerspThreshold = 0.4F;
+__int64 SpansAlphaInvert = 0x00FF00FF00FF00FFi64;
+__int64 SpansColorKeyInvert = 0xFFFFFFFFFFFFFFFFi64;
+__int64 SpansColorKeyPInvert = 0xFFFFFFFFFFFFFFFFi64;
+__int64 SpansTexturedFilteredFrac = 0x000000000000FF00i64;
+__int64 SpansAdditiveFilteredFrac = 0x000000000000FF00i64;
+__int64 SpansTexturedFilteredPFrac = 0x000000000000FF00i64;
+__int64 SpansAdditiveFilteredPFrac = 0x000000000000FF00i64;
+__int64 SpansColorKeyFilteredInvert = 0x00FF00FF00FF00FFi64;
+__int64 SpansColorKeyFilteredFrac = 0x000000000000FF00i64;
+__int64 SpansColorKeyFilteredKeyMask = 0x00FF000000000000i64;
+__int64 SpansColorKeyFilteredPInvert = 0x00FF00FF00FF00FFi64;
+__int64 SpansColorKeyFilteredPFrac = 0x000000000000FF00i64;
+__int64 SpansColorKeyFilteredPKeyMask = 0x00FF000000000000i64;
+
+}
+#endif

@@ -691,6 +691,7 @@ bool HWR_Init(void)
 #ifdef TR3_EXE
 extern "C" {
 
+int LhPalette = -1;
 float GammaOption = 3.0F;
 
 }
