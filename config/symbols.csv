@@ -2338,6 +2338,7 @@ address,size,name,symbol
 0x006266d4,4,harpoon_fired,_harpoon_fired
 0x006266d8,4,uzi_left,_uzi_left
 0x006266dc,4,uzi_right,_uzi_right
+0x006266e0,,lara_coll,_lara_coll
 0x00626768,20,death_heights_londboss,_death_heights_londboss
 0x00626780,20,death_radii_londboss,_death_radii_londboss
 0x00626794,4,slots_used,_slots_used

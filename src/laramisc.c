@@ -922,3 +922,147 @@ void ControlLaraExtra(sint16 item_num)
 {
     AnimateItem(&items[item_num]);
 }
+
+#ifdef TR3_EXE
+void DrawDummyItem(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_dinokill(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_rapidsdrown(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_sharkkill(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_startanim(ITEM_INFO *item, COLL_INFO *coll);
+void extra_as_trainkill(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_back(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_climbleft(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_climbright(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_climbstnc(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_compress(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_crawl(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_crawlb(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_dash(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_deathslide(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_duck(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_fastturn(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_forwardjump(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_glide(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_monkeyswing(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_run(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_stop(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_surfback(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_surfleft(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_surfright(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_surfswim(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_surftread(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_swim(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_tread(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_turn_l(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_turn_r(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_uwdeath(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_wade(ITEM_INFO *item, COLL_INFO *coll);
+void lara_as_walk(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_all4s(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_back(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_climbdown(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_climbing(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_climbleft(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_climbright(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_climbstnc(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_compress(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_crawl(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_crawl2hang(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_crawlb(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_dash(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_dashdive(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_duck(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_fallback(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_fastback(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_fastfall(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_forwardjump(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_hang(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_hang2(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_hangturnlr(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_monkeyl(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_monkeyr(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_reach(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_roll(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_roll2(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_run(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_surfswim(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_surftread(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_upjump(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_uwdeath(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_wade(ITEM_INFO *item, COLL_INFO *coll);
+void lara_col_walk(ITEM_INFO *item, COLL_INFO *coll);
+
+COLL_INFO lara_coll;
+COLL_INFO *mycoll = &lara_coll;
+void (*lara_control_routines[])(ITEM_INFO *item, COLL_INFO *coll) = {
+    lara_as_walk, lara_as_run, lara_as_stop,
+    lara_as_forwardjump, DrawDummyItem, lara_as_fastback,
+    lara_as_turn_r, lara_as_turn_l, lara_as_death,
+    lara_as_fastfall, lara_as_hang, lara_as_reach,
+    lara_as_splat, lara_as_tread, DrawDummyItem,
+    lara_as_compress, lara_as_back, lara_as_swim,
+    lara_as_glide, lara_as_gymnast, lara_as_fastturn,
+    lara_as_stepright, lara_as_stepleft, DrawDummyItem,
+    lara_as_slide, lara_as_backjump, lara_as_rightjump,
+    lara_as_leftjump, lara_as_upjump, lara_as_fallback,
+    lara_as_hangleft, lara_as_hangright, lara_as_slideback,
+    lara_as_surftread, lara_as_surfswim, lara_as_dive,
+    lara_as_pushblock, lara_as_pushblock, lara_as_ppready,
+    lara_as_pickup, lara_as_switchon, lara_as_switchon,
+    lara_as_usekey, lara_as_usekey, lara_as_uwdeath,
+    DrawDummyItem, lara_as_special, lara_as_surfback,
+    lara_as_surfleft, lara_as_surfright, DrawDummyItem,
+    DrawDummyItem, lara_as_swandive, lara_as_fastdive,
+    lara_as_gymnast, lara_as_waterout, lara_as_climbstnc,
+    lara_as_climbing, lara_as_climbleft, lara_as_climbend,
+    lara_as_climbright, lara_as_climbdown, DrawDummyItem,
+    DrawDummyItem, DrawDummyItem, lara_as_wade,
+    lara_as_waterroll, lara_as_pickupflare, DrawDummyItem,
+    DrawDummyItem, lara_as_deathslide, lara_as_duck,
+    lara_as_duck, lara_as_dash, lara_as_dashdive,
+    lara_as_hang2, lara_as_monkeyswing, lara_as_monkeyl,
+    lara_as_monkeyr, lara_as_monkey180, lara_as_all4s,
+    lara_as_crawl, lara_as_hangturnl, lara_as_hangturnr,
+    lara_as_all4turnl, lara_as_all4turnr, lara_as_crawlb,
+    DrawDummyItem, DrawDummyItem,
+};
+void (*extra_control_routines[])(ITEM_INFO *item, COLL_INFO *coll) = {
+    extra_as_breath, DrawDummyItem, DrawDummyItem,
+    extra_as_sharkkill, extra_as_airlock, extra_as_gongbong,
+    extra_as_dinokill, DrawDummyItem, extra_as_startanim,
+    DrawDummyItem, DrawDummyItem, extra_as_trainkill,
+    extra_as_rapidsdrown,
+};
+void (*lara_collision_routines[])(ITEM_INFO *item, COLL_INFO *coll) = {
+    lara_col_walk, lara_col_run, lara_col_stop,
+    lara_col_forwardjump, lara_col_land, lara_col_fastback,
+    lara_col_turn_r, lara_col_turn_l, lara_col_death,
+    lara_col_fastfall, lara_col_hang, lara_col_reach,
+    lara_col_splat, lara_col_tread, lara_col_land,
+    lara_col_compress, lara_col_back, lara_col_swim,
+    lara_col_glide, lara_col_pushblock, lara_col_land,
+    lara_col_stepright, lara_col_stepleft, lara_col_roll2,
+    lara_col_slide, lara_col_backjump, lara_col_rightjump,
+    lara_col_leftjump, lara_col_upjump, lara_col_fallback,
+    lara_col_hangleft, lara_col_hangright, lara_col_slideback,
+    lara_col_surftread, lara_col_surfswim, lara_col_dive,
+    lara_col_pushblock, lara_col_pushblock, lara_col_pushblock,
+    lara_col_pushblock, lara_col_pushblock, lara_col_pushblock,
+    lara_col_pushblock, lara_col_pushblock, lara_col_uwdeath,
+    lara_col_roll, DrawDummyItem, lara_col_surfback,
+    lara_col_surfleft, lara_col_surfright, lara_col_pushblock,
+    lara_col_pushblock, lara_col_swandive, lara_col_fastdive,
+    lara_col_pushblock, lara_col_pushblock, lara_col_climbstnc,
+    lara_col_climbing, lara_col_climbleft, DrawDummyItem,
+    lara_col_climbright, lara_col_climbdown, DrawDummyItem,
+    DrawDummyItem, DrawDummyItem, lara_col_wade,
+    lara_col_waterroll, lara_col_pushblock, DrawDummyItem,
+    DrawDummyItem, DrawDummyItem, lara_col_duck,
+    lara_col_duck, lara_col_dash, lara_col_dashdive,
+    lara_col_hang2, lara_col_monkeyswing, lara_col_monkeyl,
+    lara_col_monkeyr, lara_col_monkey180, lara_col_all4s,
+    lara_col_crawl, lara_col_hangturnlr, lara_col_hangturnlr,
+    lara_col_all4turnl, lara_col_all4turnl, lara_col_crawlb,
+    DrawDummyItem, lara_col_crawl2hang,
+};
+#endif
