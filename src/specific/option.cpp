@@ -28,14 +28,14 @@ void DefaultConflict(void);
 extern int conflict[14];
 extern TEXTSTRING *ctext[14];
 extern TEXTSTRING *btext[14];
-extern TEXTSTRING *ctrltext[2];
+extern TEXTSTRING *ControlTextInfo[2];
 extern sint32 inputDB;
 extern int CurrentLevel;
 extern char **GF_PCStrings;
 extern TEXTSTRING *sa_text[4];
 extern sint16 item_data;
 extern sint16 Option_Music_Volume;
-extern sint16 Option_SFX_Volume;
+extern sint16 Option_SoundFX_Volume;
 extern int idelay;
 extern int idcount;
 extern INVENTORY_SPRITE is_sound_muslevel[];
@@ -721,9 +721,9 @@ void do_sound_option(INVENTORY_ITEM *inv_item)
         sa_text[0] = T_Print(0, 0, 0, string);
         T_AddBackground(sa_text[0], 168, 0, 0, 0, 8, 0, 0, 0);
         T_AddOutline(sa_text[0], 1, 4, 0, 0);
-        if (Option_SFX_Volume > 10)
-            Option_SFX_Volume = 10;
-        wsprintfA(string, "} %2d", Option_SFX_Volume);
+        if (Option_SoundFX_Volume > 10)
+            Option_SoundFX_Volume = 10;
+        wsprintfA(string, "} %2d", Option_SoundFX_Volume);
         sa_text[1] = T_Print(0, 25, 0, string);
         sa_text[2] = T_Print(0, -32, 0, " ");
         T_AddBackground(sa_text[2], 180, 85, 0, 0, 48, 0, 0, 0);
@@ -775,32 +775,32 @@ void do_sound_option(INVENTORY_ITEM *inv_item)
             SoundEffect(115, 0, 2);
         }
     } else {
-        if ((input & IN_LEFT) && Option_SFX_Volume > 0) {
+        if ((input & IN_LEFT) && Option_SoundFX_Volume > 0) {
             idelay = 1;
             idcount = 10;
-            Option_SFX_Volume--;
-            wsprintfA(string, "} %2d", Option_SFX_Volume);
+            Option_SoundFX_Volume--;
+            wsprintfA(string, "} %2d", Option_SoundFX_Volume);
             T_ChangeText(sa_text[1], string);
-            if (Option_SFX_Volume)
-                S_SoundSetMasterVolume(Option_SFX_Volume * 6 + 4);
+            if (Option_SoundFX_Volume)
+                S_SoundSetMasterVolume(Option_SoundFX_Volume * 6 + 4);
             else
                 S_SoundSetMasterVolume(0);
             SoundEffect(115, 0, 2);
-        } else if ((input & IN_RIGHT) && Option_SFX_Volume < 10) {
+        } else if ((input & IN_RIGHT) && Option_SoundFX_Volume < 10) {
             idelay = 1;
             idcount = 10;
-            Option_SFX_Volume++;
-            wsprintfA(string, "} %2d", Option_SFX_Volume);
+            Option_SoundFX_Volume++;
+            wsprintfA(string, "} %2d", Option_SoundFX_Volume);
             T_ChangeText(sa_text[1], string);
-            if (Option_SFX_Volume)
-                S_SoundSetMasterVolume(Option_SFX_Volume * 6 + 4);
+            if (Option_SoundFX_Volume)
+                S_SoundSetMasterVolume(Option_SoundFX_Volume * 6 + 4);
             else
                 S_SoundSetMasterVolume(0);
             SoundEffect(115, 0, 2);
         }
     }
-    is_sound_sfxlevel[6].param1 = Option_SFX_Volume;
-    is_sound_sfxlevellow[6].param1 = Option_SFX_Volume;
+    is_sound_sfxlevel[6].param1 = Option_SoundFX_Volume;
+    is_sound_sfxlevellow[6].param1 = Option_SoundFX_Volume;
     is_sound_muslevel[6].param1 = Option_Music_Volume;
     is_sound_muslevellow[6].param1 = Option_Music_Volume;
     if (inputDB & (IN_SELECT | IN_DESELECT)) {
@@ -878,18 +878,18 @@ void do_control_option(INVENTORY_ITEM *inv_item)
 {
     sint16 key;
 
-    if (!ctrltext[0]) {
+    if (!ControlTextInfo[0]) {
         if (iconfig)
-            ctrltext[0] = T_Print(0, -50, 0, GF_PCStrings[6]);
+            ControlTextInfo[0] = T_Print(0, -50, 0, GF_PCStrings[6]);
         else
-            ctrltext[0] = T_Print(0, -50, 0, GF_PCStrings[19]);
-        ctrltext[0]->zpos = 16;
-        T_CentreH(ctrltext[0], 1);
-        T_CentreV(ctrltext[0], 1);
+            ControlTextInfo[0] = T_Print(0, -50, 0, GF_PCStrings[19]);
+        ControlTextInfo[0]->zpos = 16;
+        T_CentreH(ControlTextInfo[0], 1);
+        T_CentreV(ControlTextInfo[0], 1);
         S_ShowControls();
         keychange = -1;
-        T_AddBackground(ctrltext[0], 0, 0, 0, 0, 48, 0, NULL, 0);
-        T_AddOutline(ctrltext[0], 1, 15, NULL, 0);
+        T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 48, 0, NULL, 0);
+        T_AddOutline(ControlTextInfo[0], 1, 15, NULL, 0);
     }
     switch (select_key) {
     case 0:
@@ -913,10 +913,10 @@ void do_control_option(INVENTORY_ITEM *inv_item)
                 T_AddOutline(ctext[keychange], 1, 15, NULL, 0);
             }
         } else if ((inputDB & IN_DESELECT) || ((inputDB & IN_SELECT) && keychange == -1)) {
-            T_RemovePrint(ctrltext[0]);
-            ctrltext[0] = NULL;
-            T_RemovePrint(ctrltext[1]);
-            ctrltext[1] = NULL;
+            T_RemovePrint(ControlTextInfo[0]);
+            ControlTextInfo[0] = NULL;
+            T_RemovePrint(ControlTextInfo[1]);
+            ControlTextInfo[1] = NULL;
             S_RemoveCtrlText();
             DefaultConflict();
             return;
@@ -932,8 +932,8 @@ void do_control_option(INVENTORY_ITEM *inv_item)
                 T_AddOutline(btext[keychange], 1, 15, NULL, 0);
             } else if (inputDB & IN_FORWARD) {
                 if (keychange == -1) {
-                    T_RemoveBackground(ctrltext[0]);
-                    T_RemoveOutline(ctrltext[0]);
+                    T_RemoveBackground(ControlTextInfo[0]);
+                    T_RemoveOutline(ControlTextInfo[0]);
                 } else {
                     ctext[keychange]->zpos = 16;
                     T_RemoveBackground(ctext[keychange]);
@@ -943,8 +943,8 @@ void do_control_option(INVENTORY_ITEM *inv_item)
                 if (keychange < -1)
                     keychange = 13;
                 if (keychange == -1) {
-                    T_AddBackground(ctrltext[0], 0, 0, 0, 0, 0, 0, NULL, 0);
-                    T_AddOutline(ctrltext[0], 1, 15, NULL, 0);
+                    T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 0, 0, NULL, 0);
+                    T_AddOutline(ControlTextInfo[0], 1, 15, NULL, 0);
                 } else {
                     ctext[keychange]->zpos = 16;
                     T_AddBackground(ctext[keychange], 0, 0, 0, 0, 0, 0, NULL, 0);
@@ -952,8 +952,8 @@ void do_control_option(INVENTORY_ITEM *inv_item)
                 }
             } else if (inputDB & IN_BACK) {
                 if (keychange == -1) {
-                    T_RemoveBackground(ctrltext[0]);
-                    T_RemoveOutline(ctrltext[0]);
+                    T_RemoveBackground(ControlTextInfo[0]);
+                    T_RemoveOutline(ControlTextInfo[0]);
                 } else {
                     ctext[keychange]->zpos = 16;
                     T_RemoveBackground(ctext[keychange]);
@@ -963,8 +963,8 @@ void do_control_option(INVENTORY_ITEM *inv_item)
                 if (keychange > 13)
                     keychange = -1;
                 if (keychange == -1) {
-                    T_AddBackground(ctrltext[0], 0, 0, 0, 0, 0, 0, NULL, 0);
-                    T_AddOutline(ctrltext[0], 1, 15, NULL, 0);
+                    T_AddBackground(ControlTextInfo[0], 0, 0, 0, 0, 0, 0, NULL, 0);
+                    T_AddOutline(ControlTextInfo[0], 1, 15, NULL, 0);
                 } else {
                     ctext[keychange]->zpos = 16;
                     T_AddBackground(ctext[keychange], 0, 0, 0, 0, 0, 0, NULL, 0);
@@ -1094,14 +1094,14 @@ void S_ShowControls(void)
         for (i = 0; i < 14; i++)
             T_CentreV(ctext[i], 1);
     }
-    ctrltext[1] = T_Print(0, -55, 0, " ");
-    T_CentreV(ctrltext[1], 1);
-    T_CentreH(ctrltext[1], 1);
-    T_AddOutline(ctrltext[1], 1, 15, NULL, 0);
+    ControlTextInfo[1] = T_Print(0, -55, 0, " ");
+    T_CentreV(ControlTextInfo[1], 1);
+    T_CentreH(ControlTextInfo[1], 1);
+    T_AddOutline(ControlTextInfo[1], 1, 15, NULL, 0);
     if (mid < 320)
-        T_AddBackground(ctrltext[1], 308, 145, 0, 0, 48, 0, NULL, 0);
+        T_AddBackground(ControlTextInfo[1], 308, 145, 0, 0, 48, 0, NULL, 0);
     else
-        T_AddBackground(ctrltext[1], 420, 150, 0, 0, 48, 0, NULL, 0);
+        T_AddBackground(ControlTextInfo[1], 420, 150, 0, 0, 48, 0, NULL, 0);
 }
 
 void S_ChangeCtrlText(void)
@@ -1111,9 +1111,9 @@ void S_ChangeCtrlText(void)
 
     if (iconfig) {
         wsprintfA(str, GF_PCStrings[6], iconfig);
-        T_ChangeText(ctrltext[0], str);
+        T_ChangeText(ControlTextInfo[0], str);
     } else {
-        T_ChangeText(ctrltext[0], GF_PCStrings[19]);
+        T_ChangeText(ControlTextInfo[0], GF_PCStrings[19]);
     }
     for (i = 0; i < 14; i++) {
         if (kname[layout[iconfig][i]])

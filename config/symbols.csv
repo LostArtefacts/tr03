@@ -1991,7 +1991,7 @@ address,size,name,symbol
 0x004c7068,56,GlobeLevelAngles,_GlobeLevelAngles
 0x004c70a0,2,Inventory_Chosen,_Inventory_Chosen
 0x004c70a4,4,Inventory_Mode,_Inventory_Mode
-0x004c70ac,2,Option_SFX_Volume,_Option_SFX_Volume
+0x004c70ac,2,Option_SoundFX_Volume,_Option_SoundFX_Volume
 0x004c70b0,2,Option_Music_Volume,_Option_Music_Volume
 0x004c70b8,42,LevelSecrets,_LevelSecrets
 0x004c7208,20,kayak_mist_zpos,_kayak_mist_zpos
@@ -2147,7 +2147,7 @@ address,size,name,symbol
 0x004cec80,8,SpansColorKeyFilteredPFrac,_SpansColorKeyFilteredPFrac
 0x004cec88,8,SpansColorKeyFilteredPKeyMask,_SpansColorKeyFilteredPKeyMask
 0x004ceec4,1,bSetColorKey,_bSetColorKey
-0x004cef68,18,tga_header,_tga_header
+0x004cef68,18,TgaHeader,_TgaHeader
 0x004cefa8,12,VFAW,_VFAW
 0x004cefb8,12,NEIR,_NEIR
 0x004cefc8,12,OKET,_OKET
@@ -2438,7 +2438,7 @@ address,size,name,symbol
 0x00633f28,4,nTInfos,_nTInfos
 0x00633f2c,4,LdwDepthQOffset,_LdwDepthQOffset
 0x00633f38,1,cd_drive,_cd_drive
-0x00633f3c,4,fmv_playing,_fmv_playing
+0x00633f3c,4,IsFmvPlaying,_IsFmvPlaying
 0x00633f40,4,MovieContext,_MovieContext
 0x00633f44,4,FmvContext,_FmvContext
 0x00633f48,4,FmvSoundContext,_FmvSoundContext
@@ -2505,13 +2505,13 @@ address,size,name,symbol
 0x006a01bc,4,passport_mode,_passport_mode
 0x006a01c8,56,dtext,_dtext
 0x006a0208,16,sa_text,_sa_text
-0x006a0218,8,ctrltext,_ctrltext
+0x006a0218,8,ControlTextInfo,_ControlTextInfo
 0x006a0228,4096,wibble_light,_wibble_light
 0x006a1228,,water_palette,_water_palette
 0x006a1828,16,light_level,_light_level
 0x006a1838,,phd_WindowRect,_phd_WindowRect
 0x006a1848,4,objbcnt,_objbcnt
-0x006a184c,4,HiResFlag,_HiResFlag
+0x006a184c,4,HiRes,_HiRes
 0x006a1850,4,aranges,_aranges
 0x006a1858,,game_palette,_game_palette
 0x006a1b58,1,GtFullScreenClearNeeded,_GtFullScreenClearNeeded

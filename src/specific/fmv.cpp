@@ -4,7 +4,7 @@
 
 extern "C" {
 
-extern int fmv_playing;
+extern int IsFmvPlaying;
 extern bool GtWindowClosed;
 extern void *MovieContext;
 extern void *FmvContext;
@@ -103,14 +103,14 @@ void WinStopFMV(bool play)
 
 int FMV_Play(char *name)
 {
-    fmv_playing = 1;
+    IsFmvPlaying = 1;
     S_CDStop();
     ShowCursor(0);
     WinFreeDX(false);
     name = (char *)GetFullPath(name);
     WinPlayFMV(name, true);
     WinStopFMV(true);
-    fmv_playing = 0;
+    IsFmvPlaying = 0;
     if (!GtWindowClosed)
         WinDXInit(&App.DeviceInfo, &App.DXConfig, false);
     ShowCursor(1);
@@ -119,7 +119,7 @@ int FMV_Play(char *name)
 
 int FMV_PlayIntro(char *name1, char *name2)
 {
-    fmv_playing = 1;
+    IsFmvPlaying = 1;
     ShowCursor(0);
     WinFreeDX(false);
     name1 = (char *)GetFullPath(name1);
@@ -128,7 +128,7 @@ int FMV_PlayIntro(char *name1, char *name2)
     name2 = (char *)GetFullPath(name2);
     WinPlayFMV(name2, true);
     WinStopFMV(true);
-    fmv_playing = 0;
+    IsFmvPlaying = 0;
     if (!GtWindowClosed)
         WinDXInit(&App.DeviceInfo, &App.DXConfig, false);
     ShowCursor(1);

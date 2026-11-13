@@ -22,7 +22,7 @@ extern INVENTORY_ITEM *inv_option_list[];
 extern INVENTORY_ITEM *inv_levelselect_list[];
 extern sint32 OpenInvOnGym;
 extern sint16 item_data;
-extern sint32 HiResFlag;
+extern sint32 HiRes;
 extern sint32 phd_left, phd_right, phd_top, phd_bottom;
 extern sint16 phd_winxmax, phd_winymax;
 
@@ -747,7 +747,7 @@ void Construct_Inventory(void)
 
     S_SetupAboveWater(0);
     if (Inventory_Mode != 1)
-        TempVideoAdjust(HiResFlag, 1.0);
+        TempVideoAdjust(HiRes, 1.0);
     phd_left = 0;
     phd_top = 0;
     phd_right = phd_winxmax;
@@ -1056,6 +1056,6 @@ sint16 GlobeLevelAngles[7][4] = {
 sint16 Inventory_Chosen = -1;
 sint32 Inventory_Mode = INV_TITLE_MODE;
 sint16 Option_Detail_Level = 255;
-sint16 Option_SFX_Volume = 165;
+sint16 Option_SoundFX_Volume = 165;
 sint16 Option_Music_Volume = 255;
 #endif

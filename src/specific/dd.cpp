@@ -57,7 +57,7 @@ void HWR_GetAllTextureHandles(void);
 extern bool GtWindowClosed;
 extern char *malloc_ptr;
 extern int SaveScreenNum;
-extern char tga_header[18];
+extern char TgaHeader[18];
 bool DD_SpinMessageLoop(bool tWait);
 void DXGetSurfaceDesc(LPDIRECTDRAWSURFACE3 lpSurface, LPDDSURFACEDESC lpDDSurfaceDesc);
 void MMXBlit32to15(void *dest, void *src, int w);
@@ -199,9 +199,9 @@ void DXSaveScreen(LPDIRECTDRAWSURFACE3 lpSurface)
     sprintf(buf, "tomb%04d.tga", SaveScreenNum++);
     file = fopen(buf, "wb");
     if (file) {
-        *(sint16 *)&tga_header[12] = (sint16)ddsd.dwWidth;
-        *(sint16 *)&tga_header[14] = (sint16)ddsd.dwHeight;
-        fwrite(tga_header, sizeof(tga_header), 1, file);
+        *(sint16 *)&TgaHeader[12] = (sint16)ddsd.dwWidth;
+        *(sint16 *)&TgaHeader[14] = (sint16)ddsd.dwHeight;
+        fwrite(TgaHeader, sizeof(TgaHeader), 1, file);
         pDest = (sint16 *)malloc_ptr;
         pSurf += ddsd.dwHeight * (ddsd.lPitch / 2);
         for (h = 0; h < ddsd.dwHeight; h++) {
@@ -341,7 +341,7 @@ void SWRBlit32to15(unsigned long *dest, unsigned long *src, int w)
 #ifdef TR3_EXE
 extern "C" {
 
-char tga_header[18] = {
+char TgaHeader[18] = {
     0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 1, 0, 1, 16, 0,
 };
 

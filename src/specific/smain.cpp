@@ -28,7 +28,7 @@ void Inv_RemoveAllItems(void);
 int S_LoadGame(LPVOID data, int size, int slot);
 sint32 TitleSequence(void);
 void InitialiseStartInfo(void);
-extern int HiResFlag;
+extern int HiRes;
 extern int game_hires;
 extern double screen_sizer;
 extern double game_sizer;
@@ -50,7 +50,7 @@ sint32 DoDemoSequence(int level_number);
 sint32 LevelCompleteSequence(int level_number);
 void S_SaveSettings(void);
 void ShutdownGame(void);
-extern sint16 Option_SFX_Volume;
+extern sint16 Option_SoundFX_Volume;
 extern sint16 Option_Music_Volume;
 extern float GammaOption;
 extern sint16 layout[2][14];
@@ -61,7 +61,7 @@ sint32 GameMain(void)
 {
     sint32 option, level_number, ok;
 
-    game_hires = HiResFlag = 0;
+    game_hires = HiRes = 0;
     game_sizer = screen_sizer = 1.0;
 
     if (!S_InitialiseSystem())
@@ -76,14 +76,14 @@ sint32 GameMain(void)
 
     S_FrontEndCheck(&savegame, sizeof(SAVEGAME_INFO));
 
-    HiResFlag = -1;
+    HiRes = -1;
     malloc_buffer = (char *)GlobalAlloc(GMEM_FIXED, 0x380000);
     if (!malloc_buffer) {
         lstrcpy(exit_message, "GameMain: could not allocate malloc_buffer");
         return 0;
     }
 
-    HiResFlag = 0;
+    HiRes = 0;
     TempVideoAdjust(1, 1.0);
 
     S_UpdateInput();
@@ -356,7 +356,7 @@ void S_SaveSettings(void)
         fprintf(file, "SOUND %d\n", App.DXConfigPtr->sound);
         fprintf(file, "JOYSTICK %d\n", App.DXConfigPtr->Joystick);
         fprintf(file, "MMX %d\n", App.DXConfigPtr->MMX);
-        fprintf(file, "SFX %d\n", Option_SFX_Volume);
+        fprintf(file, "SFX %d\n", Option_SoundFX_Volume);
         fprintf(file, "MUSIC %d\n", Option_Music_Volume);
         fprintf(file, "GAMMA %f\n", GammaOption);
         fprintf(file, "DEFKEY %d %d %d %d %d %d %d %d %d %d %d %d %d %d\n",
@@ -448,7 +448,7 @@ bool S_LoadSettings(void)
         fscanf(file, "%s", s);
         fscanf(file, "%d\n", &App.DXConfigPtr->MMX);
         fscanf(file, "%s", s);
-        fscanf(file, "%d\n", &Option_SFX_Volume);
+        fscanf(file, "%d\n", &Option_SoundFX_Volume);
         fscanf(file, "%s", s);
         fscanf(file, "%d\n", &Option_Music_Volume);
         fscanf(file, "%s", s);
@@ -486,14 +486,14 @@ bool S_LoadSettings(void)
             &layout[1][12],
             &layout[1][13]);
         S_CDVolume(25 * Option_Music_Volume + 5);
-        S_SoundSetMasterVolume(6 * Option_SFX_Volume + 4);
+        S_SoundSetMasterVolume(6 * Option_SoundFX_Volume + 4);
         fclose(file);
         return true;
     }
     Option_Music_Volume = 7;
-    Option_SFX_Volume = 10;
+    Option_SoundFX_Volume = 10;
     S_CDVolume(25 * Option_Music_Volume + 5);
-    S_SoundSetMasterVolume(6 * Option_SFX_Volume + 4);
+    S_SoundSetMasterVolume(6 * Option_SoundFX_Volume + 4);
     return false;
 }
 

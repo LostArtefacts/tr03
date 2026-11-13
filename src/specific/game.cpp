@@ -149,7 +149,7 @@ extern int GF_PlayingFMV;
 extern char **GF_picfilenames;
 extern sint16 GF_LoadingPic;
 extern char **GF_titlefilenames;
-extern int HiResFlag;
+extern int HiRes;
 extern unsigned char game_palette[768];
 void TempVideoAdjust(int hires, double sizer);
 void TempVideoRemove(void);
@@ -203,7 +203,7 @@ extern "C" sint32 LevelStats(int level_number)
     s = s % 60;
     sprintf(buf, "%02d:%02d:%02d", h, m, s);
     S_CDPlay(gameflow.stats_track, 1);
-    TempVideoAdjust(HiResFlag, 1.0);
+    TempVideoAdjust(HiRes, 1.0);
     FadeToPal(30, game_palette);
     T_InitPrint();
 
