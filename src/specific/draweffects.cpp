@@ -1980,6 +1980,170 @@ void LaraElectricDeath(long copy)
     phd_PopMatrix();
 }
 
+extern char BoltLinks[20][4];
+extern char BoltSummonLinks[8][4];
+
+void phd_PushUnitMatrix(void);
+void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
+
+void S_DrawLaserBolts(ITEM_INFO *item)
+{
+    GAME_VECTOR rad[4], sub[4];
+    short *scrxy;
+    long *scrz;
+    unsigned char *rgbs;
+    sint32 *mptr;
+    long lp, lp2, face, speed, dx, dy, dz, dx2, dy2, dz2;
+    long x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4, rgb12, rgb34, c0, c1;
+    char *linkptr;
+    float zv;
+    short TempMesh[3];
+    short tx, ty, tz;
+    short myscrxy[100];
+    long myscrz[100];
+    unsigned char myrgbs[100];
+    int sw = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    int sh = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
+
+    speed = (item->speed * phd_cos(item->pos.x_rot)) >> W2V_SHIFT;
+    dz = (speed * phd_cos(item->pos.y_rot)) >> W2V_SHIFT;
+    dx = (speed * phd_sin(item->pos.y_rot)) >> W2V_SHIFT;
+    dy = -((item->speed * phd_sin(item->pos.x_rot)) >> W2V_SHIFT);
+    scrxy = myscrxy;
+    scrz = myscrz;
+    rgbs = myrgbs;
+    phd_PushUnitMatrix();
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    TempMesh[2] = 0;
+    dx2 = (item->item_flags[2]) ? (item->item_flags[1] >> 1) : item->item_flags[1];
+    for (lp = 0; lp < 4; lp++) {
+        if (lp == 0) {
+            TempMesh[0] = -dx2;
+            TempMesh[1] = -dx2;
+        } else if (lp == 1) {
+            TempMesh[0] = dx2;
+            TempMesh[1] = -dx2;
+        } else if (lp == 2) {
+            TempMesh[0] = dx2;
+            TempMesh[1] = dx2;
+        } else {
+            TempMesh[0] = -dx2;
+            TempMesh[1] = dx2;
+        }
+        rad[lp].x = (phd_mxptr[0] * TempMesh[0] + phd_mxptr[1] * TempMesh[1]) >> W2V_SHIFT;
+        rad[lp].y = (phd_mxptr[4] * TempMesh[0] + phd_mxptr[5] * TempMesh[1]) >> W2V_SHIFT;
+        rad[lp].z = (phd_mxptr[8] * TempMesh[0] + phd_mxptr[9] * TempMesh[1]) >> W2V_SHIFT;
+        sub[lp].x = rad[lp].x >> 2;
+        sub[lp].y = rad[lp].y >> 2;
+        sub[lp].z = rad[lp].z >> 2;
+    }
+    phd_PopMatrix();
+    phd_PushMatrix();
+    phd_TranslateAbs(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos);
+    tx = item->pos.x_pos - lara_item->pos.x_pos;
+    ty = item->pos.y_pos - lara_item->pos.y_pos;
+    tz = item->pos.z_pos - lara_item->pos.z_pos;
+    x1 = (phd_mxptr[0] * tx + phd_mxptr[1] * ty + phd_mxptr[2] * tz + phd_mxptr[3]);
+    y1 = (phd_mxptr[4] * tx + phd_mxptr[5] * ty + phd_mxptr[6] * tz + phd_mxptr[7]);
+    z1 = (phd_mxptr[8] * tx + phd_mxptr[9] * ty + phd_mxptr[10] * tz + phd_mxptr[11]);
+    zv = f_persp / (float)z1;
+    scrxy[0] = short(float(x1 * zv + f_centerx));
+    scrxy[1] = short(float(y1 * zv + f_centery));
+    scrz[0] = z1;
+    scrxy += 2;
+    scrz++;
+    *rgbs++ = 128;
+    dx2 = dx << 1;
+    dy2 = dy << 1;
+    dz2 = dz << 1;
+    for (lp = 0; lp < 4; lp++) {
+        for (lp2 = 0; lp2 < 4; lp2++) {
+            tx = item->pos.x_pos - lara_item->pos.x_pos + rad[lp2].x - dx2;
+            ty = item->pos.y_pos - lara_item->pos.y_pos + rad[lp2].y - dy2;
+            tz = item->pos.z_pos - lara_item->pos.z_pos + rad[lp2].z - dz2;
+            rad[lp2].x -= sub[lp2].x;
+            rad[lp2].y -= sub[lp2].y;
+            rad[lp2].z -= sub[lp2].z;
+            x1 = (phd_mxptr[0] * tx + phd_mxptr[1] * ty + phd_mxptr[2] * tz + phd_mxptr[3]);
+            y1 = (phd_mxptr[4] * tx + phd_mxptr[5] * ty + phd_mxptr[6] * tz + phd_mxptr[7]);
+            z1 = (phd_mxptr[8] * tx + phd_mxptr[9] * ty + phd_mxptr[10] * tz + phd_mxptr[11]);
+            zv = f_persp / (float)z1;
+            scrxy[0] = short(float(x1 * zv + f_centerx));
+            scrxy[1] = short(float(y1 * zv + f_centery));
+            scrz[0] = z1;
+            scrxy += 2;
+            scrz++;
+        }
+        *rgbs++ = 64 - (lp << 4);
+        dx2 += dx;
+        dy2 += dy;
+        dz2 += dz;
+        if (lp == 0 && item->item_flags[2]) {
+            dx2 += dx << 1;
+            dy2 += dy << 1;
+            dz2 += dz << 1;
+            break;
+        }
+    }
+    tx = item->pos.x_pos - lara_item->pos.x_pos - dx2;
+    ty = item->pos.y_pos - lara_item->pos.y_pos - dy2;
+    tz = item->pos.z_pos - lara_item->pos.z_pos - dz2;
+    x1 = (phd_mxptr[0] * tx + phd_mxptr[1] * ty + phd_mxptr[2] * tz + phd_mxptr[3]);
+    y1 = (phd_mxptr[4] * tx + phd_mxptr[5] * ty + phd_mxptr[6] * tz + phd_mxptr[7]);
+    z1 = (phd_mxptr[8] * tx + phd_mxptr[9] * ty + phd_mxptr[10] * tz + phd_mxptr[11]);
+    zv = f_persp / (float)z1;
+    scrxy[0] = short(float(x1 * zv + f_centerx));
+    scrxy[1] = short(float(y1 * zv + f_centery));
+    scrz[0] = z1;
+    *rgbs++ = 0;
+    linkptr = (item->item_flags[2]) ? &BoltSummonLinks[0][0] : &BoltLinks[0][0];
+    scrxy = myscrxy;
+    scrz = myscrz;
+    rgbs = myrgbs;
+    face = 0;
+    rgb12 = *rgbs++;
+    if (item->item_flags[2])
+        rgb12 = (rgb12 * (16 - item->item_flags[3])) >> 4;
+    for (lp = 0; lp < 5; lp++) {
+        rgb34 = *rgbs++;
+        if (item->item_flags[2])
+            rgb34 = (rgb34 * (16 - item->item_flags[3])) >> 4;
+        for (lp2 = 0; lp2 < 4; lp2++) {
+            x1 = *(scrxy + (*(linkptr + (face << 2) + 1) << 1));
+            y1 = *(scrxy + (*(linkptr + (face << 2) + 1) << 1) + 1);
+            z1 = *(scrz + (*(linkptr + (face << 2) + 1)));
+            x2 = *(scrxy + (*(linkptr + (face << 2) + 0) << 1));
+            y2 = *(scrxy + (*(linkptr + (face << 2) + 0) << 1) + 1);
+            z2 = *(scrz + (*(linkptr + (face << 2) + 0)));
+            x3 = *(scrxy + (*(linkptr + (face << 2) + 3) << 1));
+            y3 = *(scrxy + (*(linkptr + (face << 2) + 3) << 1) + 1);
+            z3 = *(scrz + (*(linkptr + (face << 2) + 3)));
+            x4 = *(scrxy + (*(linkptr + (face << 2) + 2) << 1));
+            y4 = *(scrxy + (*(linkptr + (face << 2) + 2) << 1) + 1);
+            z4 = *(scrz + (*(linkptr + (face << 2) + 2)));
+            z1 = (z1 + z2 + z3 + z4) >> 2;
+            if (z1 > phd_znear + 0x3e8000 && x1 > -128 && x2 > -128 && x3 > -128 && x4 > -128 && x1 < sw + 128 && x2 < sw + 128 && x3 < sw + 128 && x4 < sw + 128 && y1 > -128 && y2 > -128 && y3 > -128 && y4 > -128 && y1 < sh + 128 && y2 < sh + 128 && y3 < sh + 128 && y4 < sh + 128) {
+                c0 = (rgb12 >> 5) << 10 | (rgb12 >> 3) << 5 | rgb12 >> 4;
+                c1 = (rgb34 >> 5) << 10 | (rgb34 >> 3) << 5 | rgb34 >> 4;
+                if (z1 < phd_znear)
+                    z1 = phd_znear;
+                if (z2 < phd_znear)
+                    z2 = phd_znear;
+                if (z3 < phd_znear)
+                    z3 = phd_znear;
+                if (z4 < phd_znear)
+                    z4 = phd_znear;
+                HWI_InsertAlphaSprite_Sorted(x1, y1, z1, c0, x2, y2, z2, c0, x4, y4, z4, c1, x3, y3, z3, c1, -1, 16, 1);
+            }
+            face++;
+        }
+        if (lp == 1 && item->item_flags[2])
+            break;
+        rgb12 = rgb34;
+    }
+    phd_PopMatrix();
+}
+
 extern short BatMesh[5][3];
 extern unsigned char BatLinks[9];
 

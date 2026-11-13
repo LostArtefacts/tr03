@@ -2091,6 +2091,8 @@ address,size,name,symbol
 0x004c805c,4,BarsWidth,_BarsWidth
 0x004c8060,30,BatMesh,_BatMesh
 0x004c8080,9,BatLinks,_BatLinks
+0x004c80c0,80,BoltLinks,_BoltLinks
+0x004c8110,32,BoltSummonLinks,_BoltSummonLinks
 0x004c8130,256,NodeOffsets,_NodeOffsets
 0x004c8230,32,SplashLinks,_SplashLinks
 0x004c8848,,rcossin_tbl,_rcossin_tbl
