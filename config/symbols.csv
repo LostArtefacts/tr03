@@ -2413,6 +2413,7 @@ address,size,name,symbol
 0x006302b0,4,game_hires,_game_hires
 0x006302b4,4,VidSizeLocked,_VidSizeLocked
 0x006302b8,4096,raindrops,_raindrops
+0x006312b8,4096,snowflakes,_snowflakes
 0x006322b8,,DS_SampleFrequencies,_DS_SampleFrequencies
 0x006326b8,12,SoundAdapterList,_SoundAdapterList
 0x006326c8,,DS_Buffers,_DS_Buffers

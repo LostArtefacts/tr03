@@ -2144,6 +2144,211 @@ void S_DrawLaserBolts(ITEM_INFO *item)
     phd_PopMatrix();
 }
 
+static SNOWFLAKE snowflakes[256];
+
+extern bool bBlueEffect;
+
+void DoSnow(void)
+{
+    DISPLAYMODE *dm;
+    SNOWFLAKE *snowptr;
+    PHDSPRITESTRUCT *pSpriteInfo;
+    PHDTEXTURESTRUCT tex;
+    PHD_VBUF v[3];
+    PHD_VECTOR pos;
+    float zv, fz;
+    long x, y, z, radius, lp, angle, size, out, third, triggered, w, h;
+    long u1, v1, u2, v2;
+    unsigned short c;
+    short tx, ty, tz;
+    long clipflag;
+    bool oldBlue;
+    short XY[100];
+
+    triggered = 0;
+    dm = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode];
+    oldBlue = bBlueEffect;
+    w = dm->w;
+    h = dm->h;
+    bBlueEffect = 0;
+    snowptr = &snowflakes[0];
+    for (lp = 0; lp < 256; lp++) {
+        if (snowptr->x == 0 && triggered < 8) {
+            triggered++;
+            y = -1024 - (GetRandomDraw() & 2047);
+            radius = GetRandomDraw() & 4095;
+            angle = GetRandomDraw() & 8190;
+            x = (rcossin_tbl[angle] * radius) >> 12;
+            z = (rcossin_tbl[angle + 1] * radius) >> 12;
+            snowptr->x = lara_item->pos.x_pos + x;
+            snowptr->y = lara_item->pos.y_pos + y;
+            snowptr->z = lara_item->pos.z_pos + z;
+            if (IsRoomOutside(snowptr->x, snowptr->y, snowptr->z) < 0) {
+                snowptr->x = 0;
+                snowptr++;
+                continue;
+            }
+            snowptr->stopped = 0;
+            snowptr->xv = (GetRandomDraw() & 7) - 4;
+            snowptr->yv = ((GetRandomDraw() % 24) + 8) << 3;
+            snowptr->zv = (GetRandomDraw() & 7) - 4;
+            snowptr->life = 32 + (64 - (snowptr->yv << 1));
+        }
+        x = snowptr->x;
+        y = snowptr->y;
+        z = snowptr->z;
+        if (!snowptr->stopped) {
+            snowptr->x += snowptr->xv;
+            snowptr->y += (snowptr->yv & (~7)) >> 2;
+            snowptr->z += snowptr->zv;
+            out = IsRoomOutside(snowptr->x, snowptr->y, snowptr->z);
+            if (out == -3) {
+                snowptr->x = 0;
+                snowptr++;
+                continue;
+            } else if (out == -2 || room[IsRoomOutsideNo].flags & UNDERWATER) {
+                snowptr->stopped = 1;
+                snowptr->x = x;
+                snowptr->y = y;
+                snowptr->z = z;
+                if (snowptr->life > 16)
+                    snowptr->life = 16;
+                if (snowptr->yv > 16)
+                    snowptr->yv -= 16;
+            }
+        }
+        if (!snowptr->life || abs(CamPos.x - snowptr->x) > 6000 || abs(CamPos.z - snowptr->z) > 6000) {
+            if (!snowptr->life) {
+                snowptr->x = 0;
+                snowptr++;
+                continue;
+            } else if (snowptr->life > 16)
+                snowptr->life = 16;
+        }
+        if (snowptr->xv < (SmokeWindX << 1))
+            snowptr->xv++;
+        else if (snowptr->xv > (SmokeWindX << 1))
+            snowptr->xv--;
+        if (snowptr->zv < (SmokeWindZ << 1))
+            snowptr->zv++;
+        else if (snowptr->zv > (SmokeWindZ << 1))
+            snowptr->zv--;
+        snowptr->life -= 2;
+        if ((snowptr->yv & 7) < 7)
+            snowptr->yv++;
+        snowptr++;
+    }
+    pSpriteInfo = &phdspriteinfo[objects[296].mesh_index + 17];
+    u1 = (pSpriteInfo->offset << 8) & 0xff00;
+    v1 = pSpriteInfo->offset & 0xff00;
+    u2 = u1 + pSpriteInfo->width - App.nUVAdd;
+    v2 = v1 + pSpriteInfo->height - App.nUVAdd;
+    u1 += App.nUVAdd;
+    v1 += App.nUVAdd;
+    phd_PushMatrix();
+    phd_TranslateAbs(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos);
+    snowptr = &snowflakes[0];
+    for (lp = 0; lp < 256; lp++) {
+        if (snowptr->x == 0) {
+            snowptr++;
+            continue;
+        }
+        tx = snowptr->x - lara_item->pos.x_pos;
+        ty = snowptr->y - lara_item->pos.y_pos;
+        tz = snowptr->z - lara_item->pos.z_pos;
+        pos.x = tx * phd_mxptr[0] + ty * phd_mxptr[1] + tz * phd_mxptr[2] + phd_mxptr[3];
+        pos.y = tx * phd_mxptr[4] + ty * phd_mxptr[5] + tz * phd_mxptr[6] + phd_mxptr[7];
+        pos.z = tx * phd_mxptr[8] + ty * phd_mxptr[9] + tz * phd_mxptr[10] + phd_mxptr[11];
+        fz = (float)pos.z;
+        zv = f_persp / fz;
+        XY[0] = (short)(pos.x * zv + f_centerx);
+        XY[1] = (short)(pos.y * zv + f_centery);
+        z = pos.z;
+        if ((z >> 16) < 32 || XY[0] < 0 || XY[0] > w || XY[1] < 0 || XY[1] > h) {
+            if ((z >> 16) < 32) {
+                if (snowptr->life > 16)
+                    snowptr->life = 16;
+            }
+            snowptr++;
+            continue;
+        }
+        x = XY[0];
+        y = XY[1];
+        size = ((snowptr->yv >> 3) * phd_persp) / (z >> 16);
+        if (size < 4)
+            size = 4;
+        else if (size > 16)
+            size = 16;
+        third = (size * 0x5556) >> 16;
+        v[0].u = u2;
+        v[0].v = v1;
+        v[1].u = u2;
+        v[1].v = v2;
+        v[2].u = u1;
+        v[2].v = v2;
+        v[0].zv = fz;
+        v[1].zv = fz;
+        v[2].zv = fz;
+        v[0].xs = (float)(x + third);
+        v[0].ys = (float)(y - (third << 1));
+        v[0].ooz = f_oneopersp * (f_persp / fz);
+        clipflag = 0;
+        if (v[0].xs < phd_winxmin)
+            clipflag++;
+        else if (v[0].xs > phd_winxmin + phd_winxmax)
+            clipflag += 2;
+        if (v[0].ys < phd_winymin)
+            clipflag += 4;
+        else if (v[0].ys > phd_winymin + phd_winymax)
+            clipflag += 8;
+        v[0].clip = clipflag;
+        v[1].xs = (float)(x + third);
+        v[1].ys = (float)(y + third);
+        v[1].ooz = v[0].ooz;
+        clipflag = 0;
+        if (v[1].xs < phd_winxmin)
+            clipflag++;
+        else if (v[1].xs > phd_winxmin + phd_winxmax)
+            clipflag += 2;
+        if (v[1].ys < phd_winymin)
+            clipflag += 4;
+        else if (v[1].ys > phd_winymin + phd_winymax)
+            clipflag += 8;
+        v[1].clip = clipflag;
+        v[2].xs = (float)(x - (third << 1));
+        v[2].ys = (float)(y + third);
+        v[2].ooz = v[0].ooz;
+        clipflag = 0;
+        if (v[2].xs < phd_winxmin)
+            clipflag++;
+        else if (v[2].xs > phd_winxmin + phd_winxmin)
+            clipflag += 2;
+        if (v[2].ys < phd_winymin)
+            clipflag += 4;
+        else if (v[2].ys > phd_winymin + phd_winymax)
+            clipflag += 8;
+        v[2].clip = clipflag;
+        tex.drawtype = 2;
+        tex.tpage = pSpriteInfo->tpage;
+        if ((snowptr->yv & 7) < 7) {
+            long fade = snowptr->yv & 7;
+            c = fade << 10 | fade << 5 | fade;
+        } else if (snowptr->life > 18)
+            c = 0x3def;
+        else {
+            unsigned short fade = snowptr->life;
+            c = fade << 10 | fade << 5 | fade;
+        }
+        v[0].g = c;
+        v[1].g = c;
+        v[2].g = c;
+        HWI_InsertGT3_Poly(&v[0], &v[1], &v[2], &tex, &v[0].u, &v[1].u, &v[2].u, 0, 0);
+        snowptr++;
+    }
+    phd_PopMatrix();
+    bBlueEffect = oldBlue;
+}
+
 extern short BatMesh[5][3];
 extern unsigned char BatLinks[9];
 

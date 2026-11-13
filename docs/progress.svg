@@ -47,19 +47,19 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="408.08" height="12" x="0" y="0" class="named"><title>1435 · 95.79%</title></rect>
-<rect width="17.06" height="12" x="408.08" y="0" class="nonmatching"><title>60 · 4.01%</title></rect>
-<rect width="0.85" height="12" x="425.15" y="0" class="todo"><title>3 · 0.20%</title></rect>
+<rect width="17.35" height="12" x="408.08" y="0" class="nonmatching"><title>61 · 4.07%</title></rect>
+<rect width="0.57" height="12" x="425.43" y="0" class="todo"><title>2 · 0.13%</title></rect>
 </g>
 <text text-anchor="end" x="606" y="7.50">95.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="7"><tspan class="named">1435</tspan> · <tspan class="nonmatching">60</tspan> · <tspan class="todo">3</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="7"><tspan class="named">1435</tspan> · <tspan class="nonmatching">61</tspan> · <tspan class="todo">2</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="377.24" height="12" x="0" y="0" class="named"><title>642 KB · 88.55%</title></rect>
-<rect width="46.17" height="12" x="377.24" y="0" class="nonmatching"><title>79 KB · 10.84%</title></rect>
-<rect width="2.59" height="12" x="423.41" y="0" class="todo"><title>4 KB · 0.61%</title></rect>
+<rect width="47.40" height="12" x="377.24" y="0" class="nonmatching"><title>81 KB · 11.13%</title></rect>
+<rect width="1.36" height="12" x="424.64" y="0" class="todo"><title>2 KB · 0.32%</title></rect>
 </g>
 <text text-anchor="end" x="606" y="24.50">88.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="24"><tspan class="named">642 KB</tspan> · <tspan class="nonmatching">79 KB</tspan> · <tspan class="todo">4 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="24"><tspan class="named">642 KB</tspan> · <tspan class="nonmatching">81 KB</tspan> · <tspan class="todo">2 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1168,7 +1168,7 @@
 <rect width="12" height="12" x="15" y="330" class="named"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="330" class="nonmatching"><title>0x00479c20 DrawLondonBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="330" class="nonmatching"><title>0x0047a4b0 DoRain (1473 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="330" class="todo"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="330" class="nonmatching"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="330" class="nonmatching"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="330" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
@@ -1641,7 +1641,7 @@
 <rect width="26.30" height="26.82" x="197.67" y="303.22" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.82" x="197.67" y="333.04" class="nonmatching"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.49" x="197.67" y="362.86" class="named"><title>0x0041743c MoveCamera (2151 bytes)</title></rect>
-<rect width="26.30" height="25.87" x="197.67" y="392.34" class="todo"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
+<rect width="26.30" height="25.87" x="197.67" y="392.34" class="nonmatching"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
 <rect width="26.30" height="25.78" x="197.67" y="421.22" class="named"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
 <rect width="25.37" height="26.55" x="226.97" y="0" class="named"><title>0x0044fbc0 LizManControl (2080 bytes)</title></rect>
 <rect width="25.37" height="26.26" x="226.97" y="29.55" class="nonmatching"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
