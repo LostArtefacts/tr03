@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="408.08" height="12" x="0" y="0" class="named"><title>1435 · 95.79%</title></rect>
-<rect width="17.35" height="12" x="408.08" y="0" class="nonmatching"><title>61 · 4.07%</title></rect>
-<rect width="0.57" height="12" x="425.43" y="0" class="todo"><title>2 · 0.13%</title></rect>
+<rect width="379.35" height="12" x="0" y="0" class="named"><title>1435 · 95.79%</title></rect>
+<rect width="16.39" height="12" x="379.35" y="0" class="nonmatching"><title>62 · 4.14%</title></rect>
+<rect width="0.26" height="12" x="395.74" y="0" class="todo"><title>1 · 0.07%</title></rect>
 </g>
-<text text-anchor="end" x="606" y="7.50">95.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="7"><tspan class="named">1435</tspan> · <tspan class="nonmatching">61</tspan> · <tspan class="todo">2</tspan></text>
+<text text-anchor="end" x="576" y="7.50">95.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="591" y="7"><tspan class="named">1435</tspan> · <tspan class="nonmatching">62</tspan> · <tspan class="todo">1</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="377.24" height="12" x="0" y="0" class="named"><title>642 KB · 88.55%</title></rect>
-<rect width="47.40" height="12" x="377.24" y="0" class="nonmatching"><title>81 KB · 11.13%</title></rect>
-<rect width="1.36" height="12" x="424.64" y="0" class="todo"><title>2 KB · 0.32%</title></rect>
+<rect width="350.68" height="12" x="0" y="0" class="named"><title>642 KB · 88.55%</title></rect>
+<rect width="45.10" height="12" x="350.68" y="0" class="nonmatching"><title>83 KB · 11.39%</title></rect>
+<rect width="0.23" height="12" x="395.77" y="0" class="todo"><title>418 bytes · 0.06%</title></rect>
 </g>
-<text text-anchor="end" x="606" y="24.50">88.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="24"><tspan class="named">642 KB</tspan> · <tspan class="nonmatching">81 KB</tspan> · <tspan class="todo">2 KB</tspan></text>
+<text text-anchor="end" x="576" y="24.50">88.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="591" y="24"><tspan class="named">642 KB</tspan> · <tspan class="nonmatching">83 KB</tspan> · <tspan class="todo">418 bytes</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1176,7 +1176,7 @@
 <rect width="12" height="12" x="135" y="330" class="nonmatching"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="nonmatching"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="nonmatching"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="330" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="330" class="nonmatching"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="330" class="nonmatching"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="330" class="named"><title>0x004804d0 InitSoundAdapterListGlobal (18 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="330" class="named"><title>0x004804f0 RegisterSoundAdapterListDestructor (14 bytes)</title></rect>
@@ -1656,7 +1656,7 @@
 <rect width="25.37" height="24.36" x="226.97" y="288.02" class="named"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
 <rect width="25.37" height="24.31" x="226.97" y="315.38" class="nonmatching"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="25.37" height="24.18" x="226.97" y="342.69" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
-<rect width="25.37" height="24.13" x="226.97" y="369.86" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
+<rect width="25.37" height="24.13" x="226.97" y="369.86" class="nonmatching"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="25.37" height="23.54" x="226.97" y="396.99" class="named"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
 <rect width="25.37" height="23.47" x="226.97" y="423.53" class="nonmatching"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
 <rect width="23.89" height="24.93" x="255.34" y="0" class="named"><title>0x00499de0 ScanLinesBlackAlpha (1839 bytes)</title></rect>

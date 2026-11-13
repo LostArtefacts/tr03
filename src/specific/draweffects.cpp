@@ -2820,6 +2820,154 @@ void DrawSummonRings(void)
     }
 }
 
+typedef struct {
+    sint32 x[2];
+    sint32 y;
+    sint32 z[2];
+    sint16 xvel[2];
+    sint16 zvel[2];
+    uint8 life;
+    uint8 pad[3];
+} WAKE_PTS;
+
+extern WAKE_PTS WakePts[32][2];
+extern uint8 CurrentStartWake;
+extern uint8 WakeShade;
+
+void S_DrawWakeFX(ITEM_INFO *v)
+{
+    WAKE_PTS *w;
+    short *scrxy;
+    long *scrz;
+    short TempMesh[3];
+    unsigned char *rgbs;
+    long lp, lp2, current;
+    long x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4, c, s, rgb12, rgb34;
+    long offsets[2][2] = {{-128, 0}, {128, 0}};
+    long *mptr;
+    long sw, sh, x, y, z;
+    float zv;
+    unsigned char myrgbs[150];
+    short myscrxy[300];
+    long myscrz[150];
+
+    sw = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    sh = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
+    phd_PushMatrix();
+    phd_TranslateAbs(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos);
+    mptr = phd_mxptr;
+    for (lp2 = 0; lp2 < 2; lp2++) {
+        scrxy = myscrxy;
+        scrz = myscrz;
+        rgbs = myrgbs;
+        c = phd_cos(v->pos.y_rot);
+        s = phd_sin(v->pos.y_rot);
+        long mx0 = mptr[0];
+        long mx1 = mptr[1];
+        long mx2 = mptr[2];
+        long mx3 = mptr[3];
+        long mx4 = mptr[4];
+        long mx5 = mptr[5];
+        long mx6 = mptr[6];
+        long mx7 = mptr[7];
+        long mx8 = mptr[8];
+        long mx9 = mptr[9];
+        long mx10 = mptr[10];
+        long mx11 = mptr[11];
+        x1 = v->pos.x_pos + (((offsets[lp2][1] * s) + (offsets[lp2][0] * c)) >> W2V_SHIFT) - lara_item->pos.x_pos;
+        y1 = v->pos.y_pos - lara_item->pos.y_pos;
+        z1 = v->pos.z_pos + (((offsets[lp2][1] * c) - (offsets[lp2][0] * s)) >> W2V_SHIFT) - lara_item->pos.z_pos;
+        TempMesh[0] = x1;
+        TempMesh[1] = y1;
+        TempMesh[2] = z1;
+        x = mx0 * TempMesh[0] + mx1 * TempMesh[1] + mx2 * TempMesh[2] + mx3;
+        y = mx4 * TempMesh[0] + mx5 * TempMesh[1] + mx6 * TempMesh[2] + mx7;
+        z = mx8 * TempMesh[0] + mx9 * TempMesh[1] + mx10 * TempMesh[2] + mx11;
+        zv = f_persp / (float)z;
+        scrxy[0] = (short)(x * zv + f_centerx);
+        scrxy[1] = (short)(y * zv + f_centery);
+        *scrz = z;
+        scrxy += 2;
+        scrz++;
+        zv = f_persp / (float)z;
+        scrxy[0] = (short)(x * zv + f_centerx);
+        scrxy[1] = (short)(y * zv + f_centery);
+        *scrz = z;
+        scrxy += 2;
+        scrz++;
+        *rgbs++ = 64;
+        current = (CurrentStartWake - 1) & 31;
+        for (lp = 0; lp < 32; lp++) {
+            w = &WakePts[current][lp2];
+            if (w->life) {
+                unsigned long lp3;
+
+                for (lp3 = 0; lp3 < 2; lp3++) {
+                    TempMesh[0] = w->x[lp3] - lara_item->pos.x_pos;
+                    TempMesh[1] = w->y - lara_item->pos.y_pos;
+                    TempMesh[2] = w->z[lp3] - lara_item->pos.z_pos;
+                    x = mx0 * TempMesh[0] + mx1 * TempMesh[1] + mx2 * TempMesh[2] + mx3;
+                    y = mx4 * TempMesh[0] + mx5 * TempMesh[1] + mx6 * TempMesh[2] + mx7;
+                    z = mx8 * TempMesh[0] + mx9 * TempMesh[1] + mx10 * TempMesh[2] + mx11;
+                    zv = f_persp / (float)z;
+                    scrxy[0] = (short)(x * zv + f_centerx);
+                    scrxy[1] = (short)(y * zv + f_centery);
+                    *scrz = z;
+                    scrxy += 2;
+                    scrz++;
+                }
+                *rgbs++ = w->life;
+            } else {
+                *scrz = -5555;
+                break;
+            }
+            current--;
+            current &= 31;
+        }
+        if (lp == 0) {
+            phd_PopMatrix();
+            return;
+        }
+        scrxy = myscrxy;
+        scrz = myscrz;
+        rgbs = myrgbs;
+        x1 = *scrxy++;
+        y1 = *scrxy++;
+        x2 = *scrxy++;
+        y2 = *scrxy++;
+        z1 = *scrz++;
+        z2 = *scrz++;
+        rgb12 = *rgbs++;
+        if (WakeShade < 16)
+            rgb12 = (rgb12 * WakeShade) >> 4;
+        for (;;) {
+            z3 = *scrz++;
+            if (z3 == -5555)
+                break;
+            x3 = *scrxy++;
+            y3 = *scrxy++;
+            x4 = *scrxy++;
+            y4 = *scrxy++;
+            z4 = *scrz++;
+            rgb34 = *rgbs++;
+            if (WakeShade < 16)
+                rgb34 = (rgb34 * WakeShade) >> 4;
+            z1 = (z1 + z2 + z3 + z4) >> 2;
+            if ((z1 >> W2V_SHIFT) > 32 && x1 > -128 && x2 > -128 && x3 > -128 && x4 > -128 && x1 < sw + 128 && x2 < sw + 128 && x3 < sw + 128 && x4 < sw + 128 && y1 > -128 && y2 > -128 && y3 > -128 && y4 > -128 && y1 < sh + 128 && y2 < sh + 128 && y3 < sh + 128 && y4 < sh + 128) {
+                HWI_InsertAlphaSprite_Sorted(x1, y1, z1, (rgb12 >> 2) << 10 | (rgb12 >> 2) << 5 | (rgb12 >> 2), x2, y2, z2, (rgb12 >> 1) << 10 | (rgb12 >> 1) << 5 | (rgb12 >> 1), x3, y3, z3, (rgb34 >> 1) << 10 | (rgb34 >> 1) << 5 | (rgb34 >> 1), x4, y4, z4, (rgb34 >> 2) << 10 | (rgb34 >> 2) << 5 | (rgb34 >> 2), -1, 16, 1);
+            }
+            x1 = x3;
+            y1 = y3;
+            z1 = z3;
+            x2 = x4;
+            y2 = y4;
+            z2 = z4;
+            rgb12 = rgb34;
+        }
+    }
+    phd_PopMatrix();
+}
+
 int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
 int LaraOnLOS(GAME_VECTOR *start, GAME_VECTOR *target);
 void TriggerElectricSparks_triboss(GAME_VECTOR *pos, sint32 shield);
