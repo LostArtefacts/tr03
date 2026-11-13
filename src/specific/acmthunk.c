@@ -247,3 +247,51 @@ MMRESULT ACMAPI acmStreamUnprepareHeader(HACMSTREAM has, LPACMSTREAMHEADER pash,
 
     return pfn(has, pash, fdwUnprepare);
 }
+
+#ifdef TR3_EXE
+HMODULE ghinstAcm = (HMODULE)-1;
+char gszAcmModuleName[] = "MSACM32.DLL";
+LPSTR gapszAcmFunctions[ACMTHUNK_MAX_FUNCTIONS] = {
+    "acmGetVersion",
+    "acmMetrics",
+    "acmDriverEnum",
+    "acmDriverDetailsW",
+    "acmDriverDetailsA",
+    "acmDriverAddW",
+    "acmDriverAddA",
+    "acmDriverRemove",
+    "acmDriverOpen",
+    "acmDriverClose",
+    "acmDriverMessage",
+    "acmDriverID",
+    "acmDriverPriority",
+    "acmFormatTagDetailsW",
+    "acmFormatTagDetailsA",
+    "acmFormatTagEnumW",
+    "acmFormatTagEnumA",
+    "acmFormatChooseW",
+    "acmFormatChooseA",
+    "acmFormatDetailsW",
+    "acmFormatDetailsA",
+    "acmFormatEnumW",
+    "acmFormatEnumA",
+    "acmFormatSuggest",
+    "acmFilterTagDetailsW",
+    "acmFilterTagDetailsA",
+    "acmFilterTagEnumW",
+    "acmFilterTagEnumA",
+    "acmFilterChooseW",
+    "acmFilterChooseA",
+    "acmFilterDetailsW",
+    "acmFilterDetailsA",
+    "acmFilterEnumW",
+    "acmFilterEnumA",
+    "acmStreamOpen",
+    "acmStreamClose",
+    "acmStreamSize",
+    "acmStreamConvert",
+    "acmStreamReset",
+    "acmStreamPrepareHeader",
+    "acmStreamUnprepareHeader",
+};
+#endif

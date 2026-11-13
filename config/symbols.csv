@@ -2096,6 +2096,7 @@ address,size,name,symbol
 0x004c8110,32,BoltSummonLinks,_BoltSummonLinks
 0x004c8130,256,NodeOffsets,_NodeOffsets
 0x004c8230,32,SplashLinks,_SplashLinks
+0x004c8250,164,LaszInitErrs,_LaszInitErrs
 0x004c8848,,rcossin_tbl,_rcossin_tbl
 0x004cc848,32,atanOctantTab,_atanOctantTab
 0x004cc868,,atanTab,_atanTab

@@ -222,3 +222,63 @@ int S_UpdateInput(void)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+int bLaraOn = 1;
+int bRoomOn = 1;
+int bObjectOn = 1;
+int bAObjectOn = 1;
+int bEffectOn = 1;
+int bDraw = 1;
+sint16 layout[2][14] = {
+    {
+        DIK_UP, DIK_DOWN, DIK_LEFT, DIK_RIGHT, DIK_PERIOD, DIK_SLASH, DIK_RSHIFT, DIK_RMENU,
+        DIK_RCONTROL, DIK_SPACE, DIK_COMMA, DIK_NUMPAD0, DIK_END, DIK_ESCAPE,
+    },
+    {
+        DIK_NUMPAD8, DIK_NUMPAD2, DIK_NUMPAD4, DIK_NUMPAD6, DIK_DECIMAL, DIK_NUMPAD1,
+        DIK_RSHIFT, DIK_RMENU, DIK_RCONTROL, DIK_SPACE, DIK_NUMPAD5, DIK_NUMPAD0, DIK_END,
+        DIK_ESCAPE,
+    },
+};
+char *kname[272] = {
+    0, "ESC", "1", "2", "3", "4", "5", "6",
+    "7", "8", "9", "0", "-", "+", "BKSP", "TAB",
+    "Q", "W", "E", "R", "T", "Y", "U", "I",
+    "O", "P", "<", ">", "RET", "CTRL", "A", "S",
+    "D", "F", "G", "H", "J", "K", "L", ";",
+    "'", "`", "SHIFT", "#", "Z", "X", "C", "V",
+    "B", "N", "M", ",", ".", "/", "SHIFT", "PADx",
+    "ALT", "SPACE", "CAPS", 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, "NMLK", 0, "PAD7",
+    "PAD8", "PAD9", "PAD-", "PAD4", "PAD5", "PAD6", "PAD+", "PAD1",
+    "PAD2", "PAD3", "PAD0", "PAD.", 0, 0, "\\", 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, "ENTER", "CTRL", 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, "SHIFT", 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, "PAD/", 0, 0,
+    "ALT", 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, "HOME",
+    "UP", "PGUP", 0, "LEFT", 0, "RIGHT", 0, "END",
+    "DOWN", "PGDN", "INS", "DEL", 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0,
+    "JOY1", "JOY2", "JOY3", "JOY4", "JOY5", "JOY6", "JOY7", "JOY8",
+    "JOY9", "JOY10", "JOY11", "JOY12", "JOY13", "JOY14", "JOY15", "JOY16",
+};
+
+}
+#endif

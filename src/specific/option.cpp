@@ -1151,3 +1151,11 @@ int GetRenderWidth(void)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+int selection = 5;
+
+}
+#endif

@@ -117,3 +117,16 @@ extern "C" void S_CopyScreenToBuffer(void)
 {
 }
 #endif
+
+#ifdef TR3_EXE
+extern "C" {
+
+double screen_sizer = 1.0;
+double game_sizer = 1.0;
+int fade_value = 0x100000;
+int fade_limit = 0x100000;
+int fade_adder = 0x8000;
+int BarsWidth = 100;
+
+}
+#endif

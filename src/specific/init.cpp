@@ -232,3 +232,68 @@ void CalculateWibbleTable(void)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+char *game_malloc_types[47] = {
+    "Temp Alloc",
+    "Texture Pages",
+    "Mesh Pointers",
+    "Meshes",
+    "Anims",
+    "Structs",
+    "Ranges",
+    "Commands",
+    "Bones",
+    "Frames",
+    "Room Textures",
+    "Room Infos",
+    "Room Mesh",
+    "Room Door",
+    "Room Floor",
+    "Room Lights",
+    "Room Static Mesh Infos",
+    "Floor Data",
+    "ITEMS!!",
+    "Cameras",
+    "Sound FX",
+    "Boxes",
+    "Overlaps",
+    "GroundZone",
+    "FlyZone",
+    "Animating Texture Ranges",
+    "Cinematic Frames",
+    "LoadDemo Buffer",
+    "SaveDemo Buffer",
+    "Cinematic Effects",
+    "Mummy Head Turn",
+    "Extra Door stuff",
+    "Effects_Array",
+    "Creature Data",
+    "Creature LOT",
+    "Sample Infos",
+    "Samples",
+    "Sample Offsets",
+    "Rolling Ball Stuff",
+    "Skidoo Stuff",
+    "Load Piccy Buffer",
+    "FMV Buffers",
+    "Polygon Buffers",
+    "Order Tables",
+    "CLUTs",
+    "Texture Infos",
+    "Sprite Infos",
+};
+unsigned char water_off[4] = {
+    4, 8, 12, 16,
+};
+sint16 water_shim[4] = {
+    31, 63, 95, 127,
+};
+sint16 water_chop[4] = {
+    16, 53, 90, 127,
+};
+
+}
+#endif

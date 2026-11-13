@@ -687,3 +687,11 @@ bool HWR_Init(void)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+float GammaOption = 3.0F;
+
+}
+#endif
