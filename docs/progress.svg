@@ -46,22 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="347.42" height="12" x="0" y="0" class="named"><title>1399 · 93.39%</title></rect>
-<rect width="7.45" height="12" x="347.42" y="0" class="decompiled"><title>30 · 2%</title></rect>
-<rect width="13.91" height="12" x="354.87" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
-<rect width="3.23" height="12" x="368.77" y="0" class="todo"><title>13 · 0.87%</title></rect>
+<rect width="400.65" height="12" x="0" y="0" class="named"><title>1429 · 95.39%</title></rect>
+<rect width="15.70" height="12" x="400.65" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
+<rect width="3.64" height="12" x="416.36" y="0" class="todo"><title>13 · 0.87%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="7.50">95.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="7"><tspan class="named">1399</tspan> · <tspan class="decompiled">30</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">13</tspan></text>
+<text text-anchor="end" x="600" y="7.50">95.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1429</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">13</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="291.83" height="12" x="0" y="0" class="named"><title>569 KB · 78.45%</title></rect>
-<rect width="33.96" height="12" x="291.83" y="0" class="decompiled"><title>66 KB · 9.13%</title></rect>
-<rect width="34.76" height="12" x="325.79" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
-<rect width="11.46" height="12" x="360.54" y="0" class="todo"><title>22 KB · 3.08%</title></rect>
+<rect width="367.83" height="12" x="0" y="0" class="named"><title>635 KB · 87.58%</title></rect>
+<rect width="39.24" height="12" x="367.83" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
+<rect width="12.93" height="12" x="407.07" y="0" class="todo"><title>22 KB · 3.08%</title></rect>
 </g>
-<text text-anchor="end" x="552" y="24.50">87.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="567" y="24"><tspan class="named">569 KB</tspan> · <tspan class="decompiled">66 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">22 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">87.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">635 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">22 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1385,8 +1383,8 @@
 <rect width="12" height="12" x="240" y="390" class="named"><title>0x0048e500 UT_FindArg (44 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="390" class="named"><title>0x0048e530 UT_OKCancelBox (59 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="390" class="named"><title>0x0048e570 UT_OKCB_DlgProc (97 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="390" class="decompiled"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
-<rect width="12" height="12" x="300" y="390" class="decompiled"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="390" class="named"><title>0x0048e5e0 acmThunkInitialize (231 bytes)</title></rect>
+<rect width="12" height="12" x="300" y="390" class="named"><title>0x0048e6d0 acmThunkTerminate (54 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="390" class="named"><title>0x0048e710 acmGetVersion (19 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="390" class="named"><title>0x0048e730 acmMetrics (52 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="390" class="named"><title>0x0048e770 acmDriverEnum (52 bytes)</title></rect>
@@ -1437,13 +1435,13 @@
 <rect width="12" height="12" x="270" y="405" class="named"><title>0x00490b40 PrepareTriangleList (88 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="405" class="nonmatching"><title>0x00490ba0 EmulateDrawPrimitive (880 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="405" class="named"><title>0x00490f10 DrawTriangleList (60 bytes)</title></rect>
-<rect width="12" height="12" x="315" y="405" class="decompiled"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
+<rect width="12" height="12" x="315" y="405" class="named"><title>0x00490f50 DrawLineList (46 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="405" class="named"><title>0x00490f80 DrawTriangleFan (71 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="405" class="named"><title>0x00490fd0 DrawTriangleStrip (71 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="405" class="decompiled"><title>0x00491020 Func491020 (64 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="405" class="named"><title>0x00491020 DrawLineStrip (64 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="405" class="named"><title>0x00491060 CalculateGradientsTG (919 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="405" class="decompiled"><title>0x00491400 Func491400 (634 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="405" class="decompiled"><title>0x00491680 Func491680 (703 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="405" class="named"><title>0x00491400 CalculateGradientsG (634 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="405" class="named"><title>0x00491680 CalculateEdgeG (703 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="405" class="named"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="405" class="named"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="405" class="named"><title>0x00491ea0 CalculateGradientsTF (511 bytes)</title></rect>
@@ -1454,7 +1452,7 @@
 <rect width="12" height="12" x="525" y="405" class="named"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="405" class="named"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="405" class="nonmatching"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
-<rect width="12" height="12" x="570" y="405" class="decompiled"><title>0x004934b0 Func4934b0 (23 bytes)</title></rect>
+<rect width="12" height="12" x="570" y="405" class="named"><title>0x004934b0 MMXClose (23 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="405" class="named"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="405" class="named"><title>0x00493530 MMXSetRenderState (689 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="405" class="named"><title>0x004937f0 MMXDrawPrimitive (304 bytes)</title></rect>
@@ -1464,18 +1462,18 @@
 <rect width="12" height="12" x="675" y="405" class="named"><title>0x00494e30 MMXDrawTriangleFog (1188 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="405" class="named"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="405" class="named"><title>0x004953b0 DrawSpansAlpha (212 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="405" class="decompiled"><title>0x00495490 Func495490 (346 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="405" class="decompiled"><title>0x004955f0 Func4955f0 (354 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="420" class="decompiled"><title>0x00495760 Func495760 (368 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="420" class="decompiled"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="420" class="decompiled"><title>0x00495a20 Func495a20 (360 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="420" class="decompiled"><title>0x00495b90 Func495b90 (341 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="420" class="decompiled"><title>0x00495cf0 Func495cf0 (478 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="420" class="decompiled"><title>0x00495ed0 Func495ed0 (483 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="420" class="decompiled"><title>0x004960c0 Func4960c0 (503 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="420" class="decompiled"><title>0x004962c0 Func4962c0 (508 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="420" class="decompiled"><title>0x004964c0 Func4964c0 (553 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="420" class="decompiled"><title>0x004966f0 Func4966f0 (562 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="405" class="named"><title>0x00495490 DrawSpansTextured (346 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="405" class="named"><title>0x004955f0 DrawSpansAdditive (354 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="420" class="named"><title>0x00495760 DrawSpansColorKey (368 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="420" class="named"><title>0x004958d0 DrawSpansTexturedP (335 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="420" class="named"><title>0x00495a20 DrawSpansColorKeyP (360 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="420" class="named"><title>0x00495b90 DrawSpansAdditiveP (341 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="420" class="named"><title>0x00495cf0 DrawSpansTexturedFiltered (478 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="420" class="named"><title>0x00495ed0 DrawSpansAdditiveFiltered (483 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="420" class="named"><title>0x004960c0 DrawSpansTexturedFilteredP (503 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="420" class="named"><title>0x004962c0 DrawSpansAdditiveFilteredP (508 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="420" class="named"><title>0x004964c0 DrawSpansColorKeyFiltered (553 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="420" class="named"><title>0x004966f0 DrawSpansColorKeyFilteredP (562 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="420" class="named"><title>0x00496930 MMXBlit32to15 (306 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="420" class="named"><title>0x00496a70 MMXBlit32to16 (170 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="420" class="named"><title>0x00496b20 MMXBlit32to24 (143 bytes)</title></rect>
@@ -1489,19 +1487,19 @@
 <rect width="12" height="12" x="300" y="420" class="named"><title>0x00497c20 DXInitVideoModes (947 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="420" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="420" class="named"><title>0x00498750 ScanLinesBlack (266 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="420" class="decompiled"><title>0x00498860 Func498860 (1338 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="420" class="decompiled"><title>0x00498da0 Func498da0 (4153 bytes)</title></rect>
-<rect width="12" height="12" x="375" y="420" class="decompiled"><title>0x00499de0 Func499de0 (1839 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="420" class="decompiled"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="420" class="decompiled"><title>0x0049a790 Func49a790 (2769 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="420" class="named"><title>0x00498860 ScanLinesG (1338 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="420" class="named"><title>0x00498da0 ScanLinesGAlpha (4153 bytes)</title></rect>
+<rect width="12" height="12" x="375" y="420" class="named"><title>0x00499de0 ScanLinesBlackAlpha (1839 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="420" class="named"><title>0x0049a510 ScanLinesBlackStipple (636 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="420" class="named"><title>0x0049a790 ScanLinesGStipple (2769 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="420" class="named"><title>0x0049b270 ScanLinesTAffine (1556 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="420" class="named"><title>0x0049b890 ScanLinesT (2244 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="420" class="named"><title>0x0049c160 ScanLinesTF (3264 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="420" class="named"><title>0x0049ce20 ScanLinesTFAffine (2809 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="420" class="named"><title>0x0049d920 ScanLinesTFAlphaDecalAffine (4399 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="420" class="decompiled"><title>0x0049ea50 Func49ea50 (5051 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="420" class="decompiled"><title>0x0049fe10 Func49fe10 (9316 bytes)</title></rect>
-<rect width="12" height="12" x="525" y="420" class="decompiled"><title>0x004a2280 Func4a2280 (8735 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="420" class="named"><title>0x0049ea50 ScanLinesTFAlphaDecal (5051 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="420" class="named"><title>0x0049fe10 ScanLinesTFStippleDecalAffine (9316 bytes)</title></rect>
+<rect width="12" height="12" x="525" y="420" class="named"><title>0x004a2280 ScanLinesTFStippleDecal (8735 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="420" class="named"><title>0x004a44a0 ScanLinesTDecalAffine (1154 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="420" class="named"><title>0x004a4930 ScanLinesTDecal (1660 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="420" class="named"><title>0x004a4fb0 ScanLinesTFDecal (3736 bytes)</title></rect>
@@ -1509,9 +1507,9 @@
 <rect width="12" height="12" x="600" y="420" class="named"><title>0x004a6b90 ScanLinesTGAffine (899 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="420" class="named"><title>0x004a6f20 ScanLinesTG (5286 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="420" class="named"><title>0x004a83d0 ScanLinesTGAlphaDecalAffine (5390 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="420" class="decompiled"><title>0x004a98e0 Func4a98e0 (5693 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="420" class="decompiled"><title>0x004aaf20 Func4aaf20 (9775 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="420" class="decompiled"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="420" class="named"><title>0x004a98e0 ScanLinesTGAlphaDecal (5693 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="420" class="named"><title>0x004aaf20 ScanLinesTGStippleDecalAffine (9775 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="420" class="named"><title>0x004ad550 ScanLinesTGStippleDecal (9915 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="420" class="named"><title>0x004afc10 ScanLinesTGDecalAffine (3897 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="420" class="named"><title>0x004b0b50 ScanLinesTGDecal (4127 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="420" class="named"><title>0x004b1b70 DXTextureSetGreyScale (10 bytes)</title></rect>
@@ -1569,12 +1567,12 @@
 <g transform="translate(0 559)">
 <text text-anchor="start" x="0" y="7.50">By function size</text>
 <g transform="translate(0 20)">
-<rect width="50.69" height="63.31" x="0" y="0" class="decompiled"><title>0x004ad550 Func4ad550 (9915 bytes)</title></rect>
-<rect width="50.69" height="62.42" x="0" y="66.31" class="decompiled"><title>0x004aaf20 Func4aaf20 (9775 bytes)</title></rect>
-<rect width="50.69" height="59.50" x="0" y="131.73" class="decompiled"><title>0x0049fe10 Func49fe10 (9316 bytes)</title></rect>
-<rect width="50.69" height="55.80" x="0" y="194.23" class="decompiled"><title>0x004a2280 Func4a2280 (8735 bytes)</title></rect>
+<rect width="50.69" height="63.31" x="0" y="0" class="named"><title>0x004ad550 ScanLinesTGStippleDecal (9915 bytes)</title></rect>
+<rect width="50.69" height="62.42" x="0" y="66.31" class="named"><title>0x004aaf20 ScanLinesTGStippleDecalAffine (9775 bytes)</title></rect>
+<rect width="50.69" height="59.50" x="0" y="131.73" class="named"><title>0x0049fe10 ScanLinesTFStippleDecalAffine (9316 bytes)</title></rect>
+<rect width="50.69" height="55.80" x="0" y="194.23" class="named"><title>0x004a2280 ScanLinesTFStippleDecal (8735 bytes)</title></rect>
 <rect width="50.69" height="39.58" x="0" y="253.04" class="named"><title>0x004265e0 DrawLara (6200 bytes)</title></rect>
-<rect width="50.69" height="36.31" x="0" y="295.61" class="decompiled"><title>0x004a98e0 Func4a98e0 (5693 bytes)</title></rect>
+<rect width="50.69" height="36.31" x="0" y="295.61" class="named"><title>0x004a98e0 ScanLinesTGAlphaDecal (5693 bytes)</title></rect>
 <rect width="50.69" height="35.98" x="0" y="334.92" class="named"><title>0x00463c30 BaddyObjects (5643 bytes)</title></rect>
 <rect width="50.69" height="35.58" x="0" y="373.90" class="named"><title>0x004070e0 HWI_InsertGT4_Poly (5580 bytes)</title></rect>
 <rect width="50.69" height="34.52" x="0" y="412.48" class="named"><title>0x00427e20 DrawLaraInt (5416 bytes)</title></rect>
@@ -1582,9 +1580,9 @@
 <rect width="39.26" height="43.84" x="53.69" y="47.45" class="nonmatching"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="39.26" height="43.60" x="53.69" y="94.29" class="named"><title>0x004a6f20 ScanLinesTG (5286 bytes)</title></rect>
 <rect width="39.26" height="42.65" x="53.69" y="140.89" class="named"><title>0x00435400 Display_Inventory (5171 bytes)</title></rect>
-<rect width="39.26" height="41.67" x="53.69" y="186.55" class="decompiled"><title>0x0049ea50 Func49ea50 (5051 bytes)</title></rect>
+<rect width="39.26" height="41.67" x="53.69" y="186.55" class="named"><title>0x0049ea50 ScanLinesTFAlphaDecal (5051 bytes)</title></rect>
 <rect width="39.26" height="36.29" x="53.69" y="231.21" class="named"><title>0x0049d920 ScanLinesTFAlphaDecalAffine (4399 bytes)</title></rect>
-<rect width="39.26" height="34.25" x="53.69" y="270.50" class="decompiled"><title>0x00498da0 Func498da0 (4153 bytes)</title></rect>
+<rect width="39.26" height="34.25" x="53.69" y="270.50" class="named"><title>0x00498da0 ScanLinesGAlpha (4153 bytes)</title></rect>
 <rect width="39.26" height="34.03" x="53.69" y="307.75" class="named"><title>0x004b0b50 ScanLinesTGDecal (4127 bytes)</title></rect>
 <rect width="39.26" height="33.05" x="53.69" y="344.78" class="nonmatching"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="39.26" height="32.12" x="53.69" y="380.83" class="named"><title>0x004afc10 ScanLinesTGDecalAffine (3897 bytes)</title></rect>
@@ -1609,7 +1607,7 @@
 <rect width="31.31" height="29.87" x="133.57" y="137.36" class="named"><title>0x004523c0 LondSecControl (2888 bytes)</title></rect>
 <rect width="31.31" height="29.23" x="133.57" y="170.23" class="named"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
 <rect width="31.31" height="29.05" x="133.57" y="202.46" class="named"><title>0x0049ce20 ScanLinesTFAffine (2809 bytes)</title></rect>
-<rect width="31.31" height="28.64" x="133.57" y="234.51" class="decompiled"><title>0x0049a790 Func49a790 (2769 bytes)</title></rect>
+<rect width="31.31" height="28.64" x="133.57" y="234.51" class="named"><title>0x0049a790 ScanLinesGStipple (2769 bytes)</title></rect>
 <rect width="31.31" height="28.63" x="133.57" y="266.14" class="named"><title>0x00433810 HairControl (2768 bytes)</title></rect>
 <rect width="31.31" height="28.37" x="133.57" y="297.77" class="named"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
 <rect width="31.31" height="28.37" x="133.57" y="329.14" class="todo"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
@@ -1661,7 +1659,7 @@
 <rect width="25.37" height="24.13" x="226.97" y="369.86" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="25.37" height="23.54" x="226.97" y="396.99" class="todo"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
 <rect width="25.37" height="23.47" x="226.97" y="423.53" class="nonmatching"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
-<rect width="23.89" height="24.93" x="255.34" y="0" class="decompiled"><title>0x00499de0 Func499de0 (1839 bytes)</title></rect>
+<rect width="23.89" height="24.93" x="255.34" y="0" class="named"><title>0x00499de0 ScanLinesBlackAlpha (1839 bytes)</title></rect>
 <rect width="23.89" height="24.62" x="255.34" y="27.93" class="named"><title>0x00489550 do_control_option (1816 bytes)</title></rect>
 <rect width="23.89" height="24.35" x="255.34" y="55.55" class="named"><title>0x004198fc CalculateCamera (1796 bytes)</title></rect>
 <rect width="23.89" height="24.35" x="255.34" y="82.90" class="named"><title>0x00467070 ShivaControl (1796 bytes)</title></rect>
@@ -1708,7 +1706,7 @@
 <rect width="21.63" height="20.50" x="535.98" y="0" class="named"><title>0x00420e10 GetHeight (1369 bytes)</title></rect>
 <rect width="21.47" height="20.50" x="560.61" y="0" class="named"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="21.43" height="20.50" x="585.08" y="0" class="named"><title>0x00453ca0 MoveCart (1356 bytes)</title></rect>
-<rect width="21.14" height="20.50" x="609.51" y="0" class="decompiled"><title>0x00498860 Func498860 (1338 bytes)</title></rect>
+<rect width="21.14" height="20.50" x="609.51" y="0" class="named"><title>0x00498860 ScanLinesG (1338 bytes)</title></rect>
 <rect width="20.78" height="20.50" x="633.65" y="0" class="todo"><title>0x00405450 HWI_InsertClippedPoly_Textured (1315 bytes)</title></rect>
 <rect width="20.67" height="20.50" x="657.43" y="0" class="named"><title>0x004133e0 BoatDynamics (1308 bytes)</title></rect>
 <rect width="20.42" height="20.50" x="681.10" y="0" class="named"><title>0x00447880 AnimateShotgun (1292 bytes)</title></rect>
@@ -1824,7 +1822,7 @@
 <rect width="15.43" height="14.80" x="482.05" y="65.12" class="named"><title>0x0042a8b0 TriggerFlareSparks (705 bytes)</title></rect>
 <rect width="15.43" height="14.80" x="500.49" y="65.12" class="named"><title>0x00484740 HWR_InitState (705 bytes)</title></rect>
 <rect width="15.41" height="14.80" x="518.92" y="65.12" class="named"><title>0x0048c150 GameMain (704 bytes)</title></rect>
-<rect width="15.39" height="14.80" x="537.33" y="65.12" class="decompiled"><title>0x00491680 Func491680 (703 bytes)</title></rect>
+<rect width="15.39" height="14.80" x="537.33" y="65.12" class="named"><title>0x00491680 CalculateEdgeG (703 bytes)</title></rect>
 <rect width="15.08" height="14.80" x="555.71" y="65.12" class="named"><title>0x00493530 MMXSetRenderState (689 bytes)</title></rect>
 <rect width="14.86" height="14.80" x="573.80" y="65.12" class="nonmatching"><title>0x00438ab0 Inv_GlobeLight (679 bytes)</title></rect>
 <rect width="14.71" height="14.80" x="591.66" y="65.12" class="named"><title>0x0043c960 DoShift_kayak (672 bytes)</title></rect>
@@ -1844,9 +1842,9 @@
 <rect width="14.13" height="14.67" x="369.53" y="172.02" class="named"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
 <rect width="14.13" height="14.62" x="369.53" y="189.68" class="named"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
 <rect width="14.13" height="14.57" x="369.53" y="207.30" class="named"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>
-<rect width="14.13" height="14.57" x="369.53" y="224.88" class="decompiled"><title>0x0049a510 Func49a510 (636 bytes)</title></rect>
+<rect width="14.13" height="14.57" x="369.53" y="224.88" class="named"><title>0x0049a510 ScanLinesBlackStipple (636 bytes)</title></rect>
 <rect width="14.13" height="14.53" x="369.53" y="242.45" class="named"><title>0x00461b50 CreateStartInfo (634 bytes)</title></rect>
-<rect width="14.13" height="14.53" x="369.53" y="259.98" class="decompiled"><title>0x00491400 Func491400 (634 bytes)</title></rect>
+<rect width="14.13" height="14.53" x="369.53" y="259.98" class="named"><title>0x00491400 CalculateGradientsG (634 bytes)</title></rect>
 <rect width="14.13" height="14.41" x="369.53" y="277.51" class="named"><title>0x00448050 undraw_pistols (629 bytes)</title></rect>
 <rect width="14.13" height="14.39" x="369.53" y="294.92" class="named"><title>0x0041ae10 UpdateLaraGuns (628 bytes)</title></rect>
 <rect width="14.13" height="14.30" x="369.53" y="312.31" class="named"><title>0x0041d290 CobraControl (624 bytes)</title></rect>
@@ -1893,13 +1891,13 @@
 <rect width="13.43" height="13.60" x="386.66" y="285.09" class="named"><title>0x0042d750 TriggerDartSmoke (564 bytes)</title></rect>
 <rect width="13.43" height="13.60" x="386.66" y="301.69" class="named"><title>0x00431650 TriggerFlameThrower (564 bytes)</title></rect>
 <rect width="13.43" height="13.56" x="386.66" y="318.30" class="nonmatching"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
-<rect width="13.43" height="13.56" x="386.66" y="334.85" class="decompiled"><title>0x004966f0 Func4966f0 (562 bytes)</title></rect>
+<rect width="13.43" height="13.56" x="386.66" y="334.85" class="named"><title>0x004966f0 DrawSpansColorKeyFilteredP (562 bytes)</title></rect>
 <rect width="13.43" height="13.51" x="386.66" y="351.41" class="named"><title>0x004114e0 VultureControl (560 bytes)</title></rect>
 <rect width="13.43" height="13.51" x="386.66" y="367.92" class="named"><title>0x00446ba0 FireGrenade (560 bytes)</title></rect>
 <rect width="13.43" height="13.46" x="386.66" y="384.43" class="named"><title>0x00474900 ACMEmulateCDPlay (558 bytes)</title></rect>
 <rect width="13.43" height="13.44" x="386.66" y="400.89" class="named"><title>0x0044a4d0 LaraGetNewTarget (557 bytes)</title></rect>
 <rect width="13.43" height="13.34" x="386.66" y="417.32" class="named"><title>0x00448e60 LaraTestClimbUpPos (553 bytes)</title></rect>
-<rect width="13.43" height="13.34" x="386.66" y="433.66" class="decompiled"><title>0x004964c0 Func4964c0 (553 bytes)</title></rect>
+<rect width="13.43" height="13.34" x="386.66" y="433.66" class="named"><title>0x004964c0 DrawSpansColorKeyFiltered (553 bytes)</title></rect>
 <rect width="13.76" height="12.92" x="403.09" y="100.20" class="named"><title>0x00456ba0 ClearMovableBlockSplitters (549 bytes)</title></rect>
 <rect width="13.74" height="12.92" x="419.85" y="100.20" class="named"><title>0x00412500 BoatAnimation (548 bytes)</title></rect>
 <rect width="13.74" height="12.92" x="436.59" y="100.20" class="named"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
@@ -1935,10 +1933,10 @@
 <rect width="12.89" height="12.94" x="403.09" y="292.93" class="named"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
 <rect width="12.89" height="12.89" x="403.09" y="308.87" class="named"><title>0x0043ac30 InitialiseItem (513 bytes)</title></rect>
 <rect width="12.89" height="12.84" x="403.09" y="324.76" class="named"><title>0x00491ea0 CalculateGradientsTF (511 bytes)</title></rect>
-<rect width="12.89" height="12.76" x="403.09" y="340.60" class="decompiled"><title>0x004962c0 Func4962c0 (508 bytes)</title></rect>
+<rect width="12.89" height="12.76" x="403.09" y="340.60" class="named"><title>0x004962c0 DrawSpansAdditiveFilteredP (508 bytes)</title></rect>
 <rect width="12.89" height="12.74" x="403.09" y="356.36" class="named"><title>0x00445560 FireShotgun (507 bytes)</title></rect>
 <rect width="12.89" height="12.71" x="403.09" y="372.10" class="named"><title>0x0042b2f0 TriggerFireSmoke (506 bytes)</title></rect>
-<rect width="12.89" height="12.64" x="403.09" y="387.81" class="decompiled"><title>0x004960c0 Func4960c0 (503 bytes)</title></rect>
+<rect width="12.89" height="12.64" x="403.09" y="387.81" class="named"><title>0x004960c0 DrawSpansTexturedFilteredP (503 bytes)</title></rect>
 <rect width="12.89" height="12.54" x="403.09" y="403.44" class="named"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
 <rect width="12.89" height="12.54" x="403.09" y="418.98" class="named"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
 <rect width="12.89" height="12.49" x="403.09" y="434.51" class="named"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
@@ -1951,13 +1949,13 @@
 <rect width="12.86" height="12.27" x="514.88" y="116.11" class="named"><title>0x00431890 TriggerFlamethrowerFlame (487 bytes)</title></rect>
 <rect width="12.86" height="12.27" x="530.74" y="116.11" class="named"><title>0x00463700 TriggerSealmuteGas (487 bytes)</title></rect>
 <rect width="12.80" height="12.27" x="546.60" y="116.11" class="named"><title>0x0044c440 FlareControl (485 bytes)</title></rect>
-<rect width="12.75" height="12.27" x="562.40" y="116.11" class="decompiled"><title>0x00495ed0 Func495ed0 (483 bytes)</title></rect>
+<rect width="12.75" height="12.27" x="562.40" y="116.11" class="named"><title>0x00495ed0 DrawSpansAdditiveFiltered (483 bytes)</title></rect>
 <rect width="12.73" height="12.27" x="578.15" y="116.11" class="named"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
 <rect width="12.73" height="12.27" x="593.88" y="116.11" class="named"><title>0x0044bd90 CreateFlare (482 bytes)</title></rect>
 <rect width="12.70" height="12.27" x="609.60" y="116.11" class="named"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="12.70" height="12.27" x="625.30" y="116.11" class="named"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="12.70" height="12.27" x="641" y="116.11" class="named"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
-<rect width="12.62" height="12.27" x="656.70" y="116.11" class="decompiled"><title>0x00495cf0 Func495cf0 (478 bytes)</title></rect>
+<rect width="12.62" height="12.27" x="656.70" y="116.11" class="named"><title>0x00495cf0 DrawSpansTexturedFiltered (478 bytes)</title></rect>
 <rect width="12.59" height="12.27" x="672.32" y="116.11" class="named"><title>0x0042fe30 TriggerFireHeadFlame (477 bytes)</title></rect>
 <rect width="12.57" height="12.27" x="687.91" y="116.11" class="named"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12.54" height="12.27" x="703.48" y="116.11" class="named"><title>0x00424830 TriggerFlamethrowerHitFlame (475 bytes)</title></rect>
@@ -2059,7 +2057,7 @@
 <rect width="11.12" height="10.72" x="448.84" y="285.71" class="named"><title>0x0041ea60 CreatureCollision (368 bytes)</title></rect>
 <rect width="11.12" height="10.72" x="448.84" y="299.44" class="named"><title>0x0044e050 LaraSurface (368 bytes)</title></rect>
 <rect width="11.12" height="10.72" x="448.84" y="313.16" class="named"><title>0x00485350 HWR_DrawRoutinesNoAlpha (368 bytes)</title></rect>
-<rect width="11.12" height="10.72" x="448.84" y="326.88" class="decompiled"><title>0x00495760 Func495760 (368 bytes)</title></rect>
+<rect width="11.12" height="10.72" x="448.84" y="326.88" class="named"><title>0x00495760 DrawSpansColorKey (368 bytes)</title></rect>
 <rect width="11.12" height="10.69" x="448.84" y="340.60" class="named"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
 <rect width="11.12" height="10.69" x="448.84" y="354.30" class="named"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
 <rect width="11.12" height="10.69" x="448.84" y="367.99" class="named"><title>0x0046d850 SpinningBlade (367 bytes)</title></rect>
@@ -2072,13 +2070,13 @@
 <rect width="10.97" height="10.74" x="476.96" y="160.20" class="named"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="10.91" height="10.74" x="490.93" y="160.20" class="nonmatching"><title>0x00412040 BoatCheckGeton (362 bytes)</title></rect>
 <rect width="10.88" height="10.74" x="504.85" y="160.20" class="named"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
-<rect width="10.85" height="10.74" x="518.73" y="160.20" class="decompiled"><title>0x00495a20 Func495a20 (360 bytes)</title></rect>
+<rect width="10.85" height="10.74" x="518.73" y="160.20" class="named"><title>0x00495a20 DrawSpansColorKeyP (360 bytes)</title></rect>
 <rect width="10.79" height="10.74" x="532.59" y="160.20" class="named"><title>0x0046edd0 DartsControl (358 bytes)</title></rect>
 <rect width="10.76" height="10.74" x="546.38" y="160.20" class="named"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="10.73" height="10.74" x="560.14" y="160.20" class="named"><title>0x00429a30 DrawGunFlash (356 bytes)</title></rect>
 <rect width="10.70" height="10.74" x="573.88" y="160.20" class="named"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
 <rect width="10.67" height="10.74" x="587.58" y="160.20" class="named"><title>0x00468610 SubCollision (354 bytes)</title></rect>
-<rect width="10.67" height="10.74" x="601.25" y="160.20" class="decompiled"><title>0x004955f0 Func4955f0 (354 bytes)</title></rect>
+<rect width="10.67" height="10.74" x="601.25" y="160.20" class="named"><title>0x004955f0 DrawSpansAdditive (354 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="614.93" y="160.20" class="named"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="628.54" y="160.20" class="named"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="642.15" y="160.20" class="named"><title>0x004b446f gourA (352 bytes)</title></rect>
@@ -2086,15 +2084,15 @@
 <rect width="10.55" height="10.74" x="669.32" y="160.20" class="named"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
 <rect width="10.52" height="10.74" x="682.87" y="160.20" class="named"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="10.49" height="10.74" x="696.39" y="160.20" class="named"><title>0x0044ee60 LaraSwimCollision (348 bytes)</title></rect>
-<rect width="10.43" height="10.74" x="709.89" y="160.20" class="decompiled"><title>0x00495490 Func495490 (346 bytes)</title></rect>
+<rect width="10.43" height="10.74" x="709.89" y="160.20" class="named"><title>0x00495490 DrawSpansTextured (346 bytes)</title></rect>
 <rect width="10.40" height="10.74" x="723.32" y="160.20" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="10.28" height="10.74" x="736.72" y="160.20" class="named"><title>0x0042c510 TriggerRocketFlame (341 bytes)</title></rect>
-<rect width="10.58" height="10.44" x="462.95" y="173.94" class="decompiled"><title>0x00495b90 Func495b90 (341 bytes)</title></rect>
+<rect width="10.58" height="10.44" x="462.95" y="173.94" class="named"><title>0x00495b90 DrawSpansAdditiveP (341 bytes)</title></rect>
 <rect width="10.58" height="10.41" x="462.95" y="187.38" class="named"><title>0x00434bf0 DrawAmmoInfo (340 bytes)</title></rect>
 <rect width="10.58" height="10.35" x="462.95" y="200.79" class="named"><title>0x0040d1c0 S_DrawScreenSprite2d (338 bytes)</title></rect>
 <rect width="10.58" height="10.29" x="462.95" y="214.14" class="named"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="10.58" height="10.26" x="462.95" y="227.42" class="named"><title>0x00440a40 lara_col_upjump (335 bytes)</title></rect>
-<rect width="10.58" height="10.26" x="462.95" y="240.68" class="decompiled"><title>0x004958d0 Func4958d0 (335 bytes)</title></rect>
+<rect width="10.58" height="10.26" x="462.95" y="240.68" class="named"><title>0x004958d0 DrawSpansTexturedP (335 bytes)</title></rect>
 <rect width="10.58" height="10.22" x="462.95" y="253.93" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="10.58" height="10.19" x="462.95" y="267.16" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="10.58" height="10.19" x="462.95" y="280.35" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
@@ -2226,7 +2224,7 @@
 <rect width="8.92" height="8.38" x="501.69" y="303.62" class="named"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="8.92" height="8.38" x="501.69" y="315" class="named"><title>0x00434ae0 DrawAirBar (231 bytes)</title></rect>
 <rect width="8.92" height="8.38" x="501.69" y="326.39" class="named"><title>0x00469cf0 DoWake_sub (231 bytes)</title></rect>
-<rect width="8.92" height="8.38" x="501.69" y="337.77" class="decompiled"><title>0x0048e5e0 Func48e5e0 (231 bytes)</title></rect>
+<rect width="8.92" height="8.38" x="501.69" y="337.77" class="named"><title>0x0048e5e0 acmThunkInitialize (231 bytes)</title></rect>
 <rect width="8.92" height="8.35" x="501.69" y="349.16" class="named"><title>0x00417210 AdjustStopperFlag (230 bytes)</title></rect>
 <rect width="8.92" height="8.24" x="501.69" y="360.50" class="named"><title>0x0043dfc0 LaraSlideEdgeJump (227 bytes)</title></rect>
 <rect width="8.92" height="8.20" x="501.69" y="371.74" class="named"><title>0x00413f00 BoatSplash (226 bytes)</title></rect>
@@ -2710,7 +2708,7 @@
 <rect width="4.66" height="4.45" x="624.48" y="339.62" class="named"><title>0x0046dd10 InitialiseRollingBall (64 bytes)</title></rect>
 <rect width="4.66" height="4.45" x="624.48" y="347.07" class="named"><title>0x00484a40 HWR_ResetZBuffer (64 bytes)</title></rect>
 <rect width="4.66" height="4.45" x="624.48" y="354.52" class="named"><title>0x00489510 DefaultConflict (64 bytes)</title></rect>
-<rect width="4.66" height="4.45" x="624.48" y="361.97" class="decompiled"><title>0x00491020 Func491020 (64 bytes)</title></rect>
+<rect width="4.66" height="4.45" x="624.48" y="361.97" class="named"><title>0x00491020 DrawLineStrip (64 bytes)</title></rect>
 <rect width="4.66" height="4.38" x="624.48" y="369.41" class="named"><title>0x00434d70 AddDisplayPickup (63 bytes)</title></rect>
 <rect width="4.66" height="4.38" x="624.48" y="376.79" class="named"><title>0x00458840 InitialiseFinalLevel (63 bytes)</title></rect>
 <rect width="4.66" height="4.38" x="624.48" y="384.17" class="named"><title>0x00459760 LiftFloor (63 bytes)</title></rect>
@@ -2767,7 +2765,7 @@
 <rect width="4.32" height="4.05" x="720.73" y="339.38" class="named"><title>0x00475240 ACMGetTrackLocation (54 bytes)</title></rect>
 <rect width="4.32" height="4.05" x="728.05" y="339.38" class="named"><title>0x00482560 build_ext (54 bytes)</title></rect>
 <rect width="4.32" height="4.05" x="735.37" y="339.38" class="named"><title>0x0048a330 S_InitialiseScreen (54 bytes)</title></rect>
-<rect width="4.32" height="4.05" x="742.68" y="339.38" class="decompiled"><title>0x0048e6d0 Func48e6d0 (54 bytes)</title></rect>
+<rect width="4.32" height="4.05" x="742.68" y="339.38" class="named"><title>0x0048e6d0 acmThunkTerminate (54 bytes)</title></rect>
 <rect width="3.89" height="4.41" x="639.54" y="346.43" class="named"><title>0x00402500 draw_poly_flat (53 bytes)</title></rect>
 <rect width="3.89" height="4.41" x="639.54" y="353.84" class="named"><title>0x00402540 draw_poly_trans (53 bytes)</title></rect>
 <rect width="3.89" height="4.41" x="639.54" y="361.25" class="named"><title>0x00402580 draw_poly_gouraud (53 bytes)</title></rect>
@@ -2826,7 +2824,7 @@
 <rect width="3.77" height="3.95" x="736.47" y="353.61" class="named"><title>0x00459ad0 ControlAnimating_1_4 (46 bytes)</title></rect>
 <rect width="3.77" height="3.95" x="743.23" y="353.61" class="named"><title>0x004748b0 ACMOpenFile (46 bytes)</title></rect>
 <rect width="3.76" height="3.96" x="653.71" y="360.56" class="named"><title>0x00480600 DS_FreeAllSamples (46 bytes)</title></rect>
-<rect width="3.76" height="3.96" x="653.71" y="367.52" class="decompiled"><title>0x00490f50 Func490f50 (46 bytes)</title></rect>
+<rect width="3.76" height="3.96" x="653.71" y="367.52" class="named"><title>0x00490f50 DrawLineList (46 bytes)</title></rect>
 <rect width="3.76" height="3.96" x="653.71" y="374.48" class="named"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
 <rect width="3.76" height="3.87" x="653.71" y="381.44" class="named"><title>0x00423970 GetDemoInput (45 bytes)</title></rect>
 <rect width="3.76" height="3.87" x="653.71" y="388.31" class="named"><title>0x0042f4e0 AssaultPenalty4 (45 bytes)</title></rect>
@@ -2982,7 +2980,7 @@
 <rect width="2.72" height="2.74" x="698.98" y="404.56" class="named"><title>0x00449240 lara_as_climbing (23 bytes)</title></rect>
 <rect width="2.72" height="2.74" x="698.98" y="410.30" class="named"><title>0x00449290 lara_as_climbdown (23 bytes)</title></rect>
 <rect width="2.72" height="2.74" x="698.98" y="416.04" class="named"><title>0x0048d210 S_SoundStopSample (23 bytes)</title></rect>
-<rect width="2.72" height="2.74" x="698.98" y="421.78" class="decompiled"><title>0x004934b0 Func4934b0 (23 bytes)</title></rect>
+<rect width="2.72" height="2.74" x="698.98" y="421.78" class="named"><title>0x004934b0 MMXClose (23 bytes)</title></rect>
 <rect width="2.72" height="2.62" x="698.98" y="427.52" class="named"><title>0x0042ece0 turn180_effect (22 bytes)</title></rect>
 <rect width="2.72" height="2.62" x="698.98" y="433.14" class="named"><title>0x0048c010 DrawMonoScreen (22 bytes)</title></rect>
 <rect width="2.72" height="2.62" x="698.98" y="438.76" class="named"><title>0x00490a00 HWSetRenderState (22 bytes)</title></rect>

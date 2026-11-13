@@ -6,7 +6,7 @@
 
 extern "C" {
 
-void Func49ea50(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesTFAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     long u, v;
@@ -693,7 +693,7 @@ void Func49ea50(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
-void Func49fe10(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesTFStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     unsigned short *pDestination;
@@ -1781,7 +1781,7 @@ void Func49fe10(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
-void Func4a2280(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesTFStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     long u, v;

@@ -56,7 +56,7 @@ void ScanLinesBlack(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLe
     }
 }
 
-void Func498860(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     unsigned short *pDestination;
@@ -221,7 +221,7 @@ void Func498860(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
 
 void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
 
-void Func498da0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     unsigned short *pDestination;
@@ -642,7 +642,7 @@ void Func498da0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
-void Func499de0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     unsigned short *pDestination;
@@ -822,7 +822,7 @@ void Func499de0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
-void Func49a510(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesBlackStipple(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     unsigned short *pDestination;
@@ -940,7 +940,7 @@ void Func49a510(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
-void Func49a790(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesGStipple(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     unsigned short *pDestination;

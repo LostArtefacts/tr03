@@ -691,7 +691,7 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
     }
 }
 
-void Func4a98e0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     long u, v;
@@ -1441,7 +1441,7 @@ void Func4a98e0(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
-void Func4aaf20(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     unsigned short *pDestination;
@@ -2646,7 +2646,7 @@ void Func4aaf20(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, 
     }
 }
 
-void Func4ad550(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
     int Width;
     long u, v;

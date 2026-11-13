@@ -10,7 +10,7 @@ extern char Var4ce710[];
 extern LPSTR Var4ce720[];
 extern FARPROC *Var6cf7f0;
 
-BOOL WINAPI Func48e5e0(void)
+BOOL WINAPI acmThunkInitialize(void)
 {
     DWORD (ACMAPI *pfnAcmGetVersion)(void);
     UINT fuErrorMode;
@@ -55,7 +55,7 @@ BOOL WINAPI Func48e5e0(void)
     return TRUE;
 }
 
-BOOL WINAPI Func48e6d0(void)
+BOOL WINAPI acmThunkTerminate(void)
 {
     if (Var6cf7f0 != NULL) {
         LocalFree((HLOCAL)Var6cf7f0);

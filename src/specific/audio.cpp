@@ -45,8 +45,8 @@ extern DWORD NextWriteOffset;
 extern int XATrack;
 extern int acm_volume;
 
-BOOL WINAPI Func48e5e0(void);
-BOOL WINAPI Func48e6d0(void);
+BOOL WINAPI acmThunkInitialize(void);
+BOOL WINAPI acmThunkTerminate(void);
 const char *GetFullPath(const char *name);
 void ACMCloseFile(void);
 bool ACMOpenFile(const char *name);
@@ -80,7 +80,7 @@ bool ACMInit(void)
     if (!lpDirectSound)
         return false;
 
-    Func48e5e0();
+    acmThunkInitialize();
     acmGetVersion();
     acmDriverEnum(ACMEnumCallBack, 0, 0);
     if (!hACMDriverID)
@@ -196,7 +196,7 @@ void ACMClose(void)
     if (DSBuffer)
         DSBuffer->Release();
     ACMCloseFile();
-    Func48e6d0();
+    acmThunkTerminate();
 }
 
 bool ACMOpenFile(const char *name)
