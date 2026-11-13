@@ -1060,7 +1060,7 @@ sint32 __fastcall phd_cos(sint32 angle)
     return phd_sin(angle + 0x4000);
 }
 
-sint32 __fastcall phd_sqrt(sint32 n)
+uint32 __fastcall phd_sqrt(uint32 n)
 {
     uint32 num, base, result, tmp;
 

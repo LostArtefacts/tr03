@@ -57,7 +57,7 @@ void phd_TranslateRel(sint32 x, sint32 y, sint32 z);
 sint32 GetWaterHeight(sint32 x, sint32 y, sint32 z, sint16 room_number);
 FLOOR_INFO *GetFloor(sint32 x, sint32 y, sint32 z, sint16 *room_number);
 sint32 GetHeight(FLOOR_INFO *floor, sint32 x, sint32 y, sint32 z);
-sint32 __fastcall phd_sqrt(sint32 n);
+uint32 __fastcall phd_sqrt(uint32 n);
 
 void HairControl(int in_cutscene)
 {

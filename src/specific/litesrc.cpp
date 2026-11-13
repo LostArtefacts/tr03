@@ -178,7 +178,7 @@ extern sint32 w2v_matrix[];
 extern DYNAMIC dynamics[];
 extern int number_dynamics;
 
-sint32 __fastcall phd_sqrt(sint32 n);
+uint32 __fastcall phd_sqrt(uint32 n);
 void phd_NormaliseVector(sint32 x, sint32 y, sint32 z, sint32 *dest);
 int abs(int x);
 #pragma intrinsic(abs)
@@ -399,7 +399,7 @@ void S_CalculateStaticLight(sint16 adder)
     smcb = (adder & 0x7c00) >> 7;
 }
 
-sint32 __fastcall phd_sqrt(sint32 n);
+uint32 __fastcall phd_sqrt(uint32 n);
 
 void S_CalculateStaticMeshLight(int x, int y, int z, int shade)
 {

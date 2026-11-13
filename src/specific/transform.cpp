@@ -152,7 +152,7 @@ typedef struct watertab {
 
 extern WATERTAB WaterTable[22][64];
 
-sint32 __fastcall phd_sqrt(sint32 n);
+uint32 __fastcall phd_sqrt(uint32 n);
 
 short *calc_roomvert(short *sobjptr, int far_clip)
 {
