@@ -5,10 +5,10 @@
 
 #define ACMTHUNK_MAX_FUNCTIONS 41
 
-extern HMODULE Var4ce708;
-extern char Var4ce710[];
-extern LPSTR Var4ce720[];
-extern FARPROC *Var6cf7f0;
+extern HMODULE ghinstAcm;
+extern char gszAcmModuleName[];
+extern LPSTR gapszAcmFunctions[];
+extern FARPROC *gpafnAcmFunctions;
 
 BOOL WINAPI acmThunkInitialize(void)
 {
@@ -17,39 +17,39 @@ BOOL WINAPI acmThunkInitialize(void)
     WORD wVersion;
     UINT u;
 
-    if (Var6cf7f0 != NULL)
+    if (gpafnAcmFunctions != NULL)
         return TRUE;
 
-    if (Var4ce708 != (HMODULE)-1)
+    if (ghinstAcm != (HMODULE)-1)
         return FALSE;
 
     fuErrorMode = SetErrorMode(SEM_NOOPENFILEERRORBOX);
-    Var4ce708 = LoadLibrary(Var4ce710);
+    ghinstAcm = LoadLibrary(gszAcmModuleName);
     SetErrorMode(fuErrorMode);
-    if (Var4ce708 < (HMODULE)HINSTANCE_ERROR) {
-        Var4ce708 = NULL;
+    if (ghinstAcm < (HMODULE)HINSTANCE_ERROR) {
+        ghinstAcm = NULL;
         return FALSE;
     }
 
-    pfnAcmGetVersion = (DWORD (ACMAPI *)(void))GetProcAddress(Var4ce708, Var4ce720[0]);
+    pfnAcmGetVersion = (DWORD (ACMAPI *)(void))GetProcAddress(ghinstAcm, gapszAcmFunctions[0]);
     if (pfnAcmGetVersion == NULL) {
-        FreeLibrary(Var4ce708);
-        Var4ce708 = NULL;
+        FreeLibrary(ghinstAcm);
+        ghinstAcm = NULL;
         return FALSE;
     }
 
-    Var6cf7f0 = (FARPROC *)LocalAlloc(LPTR, sizeof(FARPROC) * ACMTHUNK_MAX_FUNCTIONS);
-    if (Var6cf7f0 == NULL) {
-        FreeLibrary(Var4ce708);
-        Var4ce708 = NULL;
+    gpafnAcmFunctions = (FARPROC *)LocalAlloc(LPTR, sizeof(FARPROC) * ACMTHUNK_MAX_FUNCTIONS);
+    if (gpafnAcmFunctions == NULL) {
+        FreeLibrary(ghinstAcm);
+        ghinstAcm = NULL;
         return FALSE;
     }
 
-    Var6cf7f0[0] = (FARPROC)pfnAcmGetVersion;
+    gpafnAcmFunctions[0] = (FARPROC)pfnAcmGetVersion;
     wVersion = HIWORD(pfnAcmGetVersion());
     if (wVersion >= 0x0200) {
         for (u = 1; u < ACMTHUNK_MAX_FUNCTIONS; u++)
-            Var6cf7f0[u] = GetProcAddress(Var4ce708, Var4ce720[u]);
+            gpafnAcmFunctions[u] = GetProcAddress(ghinstAcm, gapszAcmFunctions[u]);
     }
 
     return TRUE;
@@ -57,11 +57,11 @@ BOOL WINAPI acmThunkInitialize(void)
 
 BOOL WINAPI acmThunkTerminate(void)
 {
-    if (Var6cf7f0 != NULL) {
-        LocalFree((HLOCAL)Var6cf7f0);
-        Var6cf7f0 = NULL;
-        FreeLibrary(Var4ce708);
-        Var4ce708 = (HMODULE)-1;
+    if (gpafnAcmFunctions != NULL) {
+        LocalFree((HLOCAL)gpafnAcmFunctions);
+        gpafnAcmFunctions = NULL;
+        FreeLibrary(ghinstAcm);
+        ghinstAcm = (HMODULE)-1;
     }
     return TRUE;
 }
@@ -70,10 +70,10 @@ DWORD ACMAPI acmGetVersion(void)
 {
     DWORD (ACMAPI *pfnAcmGetVersion)(void);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return 0;
 
-    pfnAcmGetVersion = (DWORD (ACMAPI *)(void))Var6cf7f0[0];
+    pfnAcmGetVersion = (DWORD (ACMAPI *)(void))gpafnAcmFunctions[0];
     if (pfnAcmGetVersion == NULL)
         return 0;
 
@@ -84,10 +84,10 @@ MMRESULT ACMAPI acmMetrics(HACMOBJ hao, UINT uMetric, LPVOID pMetric)
 {
     MMRESULT (ACMAPI *pfn)(HACMOBJ, UINT, LPVOID);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMOBJ, UINT, LPVOID))Var6cf7f0[1];
+    pfn = (MMRESULT (ACMAPI *)(HACMOBJ, UINT, LPVOID))gpafnAcmFunctions[1];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -98,10 +98,10 @@ MMRESULT ACMAPI acmDriverEnum(ACMDRIVERENUMCB fnCallback, DWORD dwInstance, DWOR
 {
     MMRESULT (ACMAPI *pfn)(ACMDRIVERENUMCB, DWORD, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(ACMDRIVERENUMCB, DWORD, DWORD))Var6cf7f0[2];
+    pfn = (MMRESULT (ACMAPI *)(ACMDRIVERENUMCB, DWORD, DWORD))gpafnAcmFunctions[2];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -112,10 +112,10 @@ MMRESULT ACMAPI acmDriverDetailsA(HACMDRIVERID hadid, LPACMDRIVERDETAILSA padd, 
 {
     MMRESULT (ACMAPI *pfn)(HACMDRIVERID, LPACMDRIVERDETAILSA, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMDRIVERID, LPACMDRIVERDETAILSA, DWORD))Var6cf7f0[4];
+    pfn = (MMRESULT (ACMAPI *)(HACMDRIVERID, LPACMDRIVERDETAILSA, DWORD))gpafnAcmFunctions[4];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -126,10 +126,10 @@ MMRESULT ACMAPI acmDriverOpen(LPHACMDRIVER phad, HACMDRIVERID hadid, DWORD fdwOp
 {
     MMRESULT (ACMAPI *pfn)(LPHACMDRIVER, HACMDRIVERID, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(LPHACMDRIVER, HACMDRIVERID, DWORD))Var6cf7f0[8];
+    pfn = (MMRESULT (ACMAPI *)(LPHACMDRIVER, HACMDRIVERID, DWORD))gpafnAcmFunctions[8];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -140,10 +140,10 @@ MMRESULT ACMAPI acmDriverClose(HACMDRIVER had, DWORD fdwClose)
 {
     MMRESULT (ACMAPI *pfn)(HACMDRIVER, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMDRIVER, DWORD))Var6cf7f0[9];
+    pfn = (MMRESULT (ACMAPI *)(HACMDRIVER, DWORD))gpafnAcmFunctions[9];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -154,10 +154,10 @@ MMRESULT ACMAPI acmFormatSuggest(HACMDRIVER had, LPWAVEFORMATEX pwfxSrc, LPWAVEF
 {
     MMRESULT (ACMAPI *pfn)(HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, DWORD, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, DWORD, DWORD))Var6cf7f0[23];
+    pfn = (MMRESULT (ACMAPI *)(HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, DWORD, DWORD))gpafnAcmFunctions[23];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -168,10 +168,10 @@ MMRESULT ACMAPI acmStreamOpen(LPHACMSTREAM phas, HACMDRIVER had, LPWAVEFORMATEX 
 {
     MMRESULT (ACMAPI *pfn)(LPHACMSTREAM, HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, LPWAVEFILTER, DWORD, DWORD, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(LPHACMSTREAM, HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, LPWAVEFILTER, DWORD, DWORD, DWORD))Var6cf7f0[34];
+    pfn = (MMRESULT (ACMAPI *)(LPHACMSTREAM, HACMDRIVER, LPWAVEFORMATEX, LPWAVEFORMATEX, LPWAVEFILTER, DWORD, DWORD, DWORD))gpafnAcmFunctions[34];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -182,10 +182,10 @@ MMRESULT ACMAPI acmStreamClose(HACMSTREAM has, DWORD fdwClose)
 {
     MMRESULT (ACMAPI *pfn)(HACMSTREAM, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, DWORD))Var6cf7f0[35];
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, DWORD))gpafnAcmFunctions[35];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -196,10 +196,10 @@ MMRESULT ACMAPI acmStreamSize(HACMSTREAM has, DWORD cbInput, LPDWORD pdwOutputBy
 {
     MMRESULT (ACMAPI *pfn)(HACMSTREAM, DWORD, LPDWORD, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, DWORD, LPDWORD, DWORD))Var6cf7f0[36];
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, DWORD, LPDWORD, DWORD))gpafnAcmFunctions[36];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -210,10 +210,10 @@ MMRESULT ACMAPI acmStreamConvert(HACMSTREAM has, LPACMSTREAMHEADER pash, DWORD f
 {
     MMRESULT (ACMAPI *pfn)(HACMSTREAM, LPACMSTREAMHEADER, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, LPACMSTREAMHEADER, DWORD))Var6cf7f0[37];
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, LPACMSTREAMHEADER, DWORD))gpafnAcmFunctions[37];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -224,10 +224,10 @@ MMRESULT ACMAPI acmStreamPrepareHeader(HACMSTREAM has, LPACMSTREAMHEADER pash, D
 {
     MMRESULT (ACMAPI *pfn)(HACMSTREAM, LPACMSTREAMHEADER, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, LPACMSTREAMHEADER, DWORD))Var6cf7f0[39];
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, LPACMSTREAMHEADER, DWORD))gpafnAcmFunctions[39];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 
@@ -238,10 +238,10 @@ MMRESULT ACMAPI acmStreamUnprepareHeader(HACMSTREAM has, LPACMSTREAMHEADER pash,
 {
     MMRESULT (ACMAPI *pfn)(HACMSTREAM, LPACMSTREAMHEADER, DWORD);
 
-    if (Var6cf7f0 == NULL)
+    if (gpafnAcmFunctions == NULL)
         return MMSYSERR_ERROR;
 
-    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, LPACMSTREAMHEADER, DWORD))Var6cf7f0[40];
+    pfn = (MMRESULT (ACMAPI *)(HACMSTREAM, LPACMSTREAMHEADER, DWORD))gpafnAcmFunctions[40];
     if (pfn == NULL)
         return MMSYSERR_ERROR;
 

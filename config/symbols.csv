@@ -2119,9 +2119,9 @@ address,size,name,symbol
 0x004cdcd8,,kname,_kname
 0x004ce358,4,selection,_selection
 0x004ce390,68,shadowman,_shadowman
-0x004ce708,4,Var4ce708,_Var4ce708
-0x004ce710,12,Var4ce710,_Var4ce710
-0x004ce720,164,Var4ce720,_Var4ce720
+0x004ce708,4,ghinstAcm,_ghinstAcm
+0x004ce710,12,gszAcmModuleName,_gszAcmModuleName
+0x004ce720,164,gapszAcmFunctions,_gapszAcmFunctions
 0x004ceb48,8,Var4ceb48,_Var4ceb48
 0x004ceb50,8,Var4ceb50,_Var4ceb50
 0x004ceb58,8,Var4ceb58,_Var4ceb58
@@ -2782,7 +2782,7 @@ address,size,name,symbol
 0x006cf268,1,GtWindowClosed,_GtWindowClosed
 0x006cf274,4,nReEntry,_nReEntry
 0x006cf278,4,SaveScreenNum,_SaveScreenNum
-0x006cf7f0,4,Var6cf7f0,_Var6cf7f0
+0x006cf7f0,4,gpafnAcmFunctions,_gpafnAcmFunctions
 0x006cf800,,CamPos,_CamPos
 0x006cf810,,CamRot,_CamRot
 0x006cf820,,WillBossShield,_WillBossShield
