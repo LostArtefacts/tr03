@@ -78,10 +78,10 @@ typedef struct xbuf_persp_fp {
     float OOZright;
 } XBUF_PERSP_FP;
 
-int gen_x(sint16 *iptr);
-int gen_xg(sint16 *iptr);
-int gen_xguv(sint16 *iptr);
-int gen_xguvpersp_fp(sint16 *iptr);
+int xgen_x(sint16 *iptr);
+int xgen_xg(sint16 *iptr);
+int xgen_xguv(sint16 *iptr);
+int xgen_xguvpersp_fp(sint16 *iptr);
 void gtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr);
 void wgtmap_persp16_fp(int ymin, int ymax, char *tptr);
 void flatA(void);
@@ -94,7 +94,7 @@ void draw_poly_flat(sint16 *iptr)
 {
     int colour;
 
-    if (gen_x(iptr + 1)) {
+    if (xgen_x(iptr + 1)) {
         colour = *iptr;
         __asm {
             mov eax, xgen_ymin
@@ -109,7 +109,7 @@ void draw_poly_trans(sint16 *iptr)
 {
     int colour;
 
-    if (gen_x(iptr + 1)) {
+    if (xgen_x(iptr + 1)) {
         colour = *iptr;
         __asm {
             mov eax, xgen_ymin
@@ -124,7 +124,7 @@ void draw_poly_gouraud(sint16 *iptr)
 {
     int colour;
 
-    if (gen_xg(iptr + 1)) {
+    if (xgen_xg(iptr + 1)) {
         colour = *iptr;
         __asm {
             mov eax, xgen_ymin
@@ -139,7 +139,7 @@ void draw_poly_gtmap(sint16 *iptr)
 {
     char *texture;
 
-    if (gen_xguv(iptr + 1)) {
+    if (xgen_xguv(iptr + 1)) {
         texture = texture_page_ptrs[*iptr];
         __asm {
             mov eax, xgen_ymin
@@ -154,7 +154,7 @@ void draw_poly_wgtmap(sint16 *iptr)
 {
     char *texture;
 
-    if (gen_xguv(iptr + 1)) {
+    if (xgen_xguv(iptr + 1)) {
         texture = texture_page_ptrs[*iptr];
         __asm {
             mov eax, xgen_ymin
@@ -165,7 +165,7 @@ void draw_poly_wgtmap(sint16 *iptr)
     }
 }
 
-int gen_x(sint16 *iptr)
+int xgen_x(sint16 *iptr)
 {
     X_INFO *ptr1, *ptr2;
     XBUF_X *xptr;
@@ -215,7 +215,7 @@ int gen_x(sint16 *iptr)
     return 1;
 }
 
-int gen_xg(sint16 *iptr)
+int xgen_xg(sint16 *iptr)
 {
     XG_INFO *ptr1, *ptr2;
     XBUF_XG *xptr;
@@ -274,7 +274,7 @@ int gen_xg(sint16 *iptr)
     return 1;
 }
 
-int gen_xguv(sint16 *iptr)
+int xgen_xguv(sint16 *iptr)
 {
     UVG_INFO *ptr1, *ptr2;
     XBUF_XGUV *xptr;
@@ -352,7 +352,7 @@ int gen_xguv(sint16 *iptr)
 }
 
 
-int gen_xguvpersp_fp(sint16 *iptr)
+int xgen_xguvpersp_fp(sint16 *iptr)
 {
     UVGP_INFO *ptr1, *ptr2;
     XBUF_PERSP_FP *xptr;
@@ -1117,13 +1117,13 @@ void wgtmap_persp16_fp(int ymin, int ymax, char *tptr)
 
 void draw_poly_gtmap_persp(sint16 *iptr)
 {
-    if (gen_xguvpersp_fp(iptr + 1))
+    if (xgen_xguvpersp_fp(iptr + 1))
         gtmap_persp32_fp(xgen_ymin, xgen_ymax, (unsigned char *)texture_page_ptrs[*iptr]);
 }
 
 void draw_poly_wgtmap_persp(sint16 *iptr)
 {
-    if (gen_xguvpersp_fp(iptr + 1))
+    if (xgen_xguvpersp_fp(iptr + 1))
         wgtmap_persp16_fp(xgen_ymin, xgen_ymax, texture_page_ptrs[*iptr]);
 }
 

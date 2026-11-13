@@ -28,10 +28,10 @@ address,size,name,symbol
 0x00402580,53,draw_poly_gouraud,_draw_poly_gouraud
 0x004025c0,60,draw_poly_gtmap,_draw_poly_gtmap
 0x00402600,60,draw_poly_wgtmap,_draw_poly_wgtmap
-0x00402640,210,gen_x,_gen_x
-0x00402720,326,gen_xg,_gen_xg
-0x00402870,537,gen_xguv,_gen_xguv
-0x00402a90,644,gen_xguvpersp_fp,_gen_xguvpersp_fp
+0x00402640,210,xgen_x,_xgen_x
+0x00402720,326,xgen_xg,_xgen_xg
+0x00402870,537,xgen_xguv,_xgen_xguv
+0x00402a90,644,xgen_xguvpersp_fp,_xgen_xguvpersp_fp
 0x00402d20,4008,gtmap_persp32_fp,_gtmap_persp32_fp
 0x00403cd0,5315,wgtmap_persp16_fp,_wgtmap_persp16_fp
 0x004051a0,55,draw_poly_gtmap_persp,_draw_poly_gtmap_persp
@@ -1480,7 +1480,7 @@ address,size,name,symbol
 0x004b3950,68,DD_CreateSurface,_DD_CreateSurface
 0x004b39a0,70,DD_EnsureSurfaceAvailable,_DD_EnsureSurfaceAvailable
 0x004b39f0,77,DD_ClearSurface,_DD_ClearSurface
-0x004b3a40,41,DXDoFlipWait,_DXDoFlipWait
+0x004b3a40,41,DX_DoFlipWait,_DX_DoFlipWait
 0x004b3a70,472,DXClearBuffers,_DXClearBuffers
 0x004b3c50,191,DXCheckForLostSurfaces,_DXCheckForLostSurfaces
 0x004b3d10,810,DXUpdateFrame,_DXUpdateFrame

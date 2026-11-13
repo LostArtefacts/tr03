@@ -58,7 +58,7 @@ extern bool GtFullScreenClearNeeded;
 extern int objbcnt;
 bool DXCheckForLostSurfaces(void);
 bool DD_SpinMessageLoop(bool tWait);
-void DXDoFlipWait(void);
+void DX_DoFlipWait(void);
 void HWR_BeginScene(void);
 void phd_InitPolyList(void);
 
@@ -70,7 +70,7 @@ void S_InitialisePolyList(int clear)
     if (GtFullScreenClearNeeded) {
         DXCheckForLostSurfaces();
         DD_SpinMessageLoop(false);
-        DXDoFlipWait();
+        DX_DoFlipWait();
         DXClearBuffers(3, 0);
         clear = 0;
         GtFullScreenClearNeeded = false;

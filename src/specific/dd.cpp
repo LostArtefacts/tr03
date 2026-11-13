@@ -104,7 +104,7 @@ bool DD_ClearSurface(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, DWORD dwColo
     return true;
 }
 
-void DXDoFlipWait(void)
+void DX_DoFlipWait(void)
 {
     while (App.lpFrontBuffer->GetFlipStatus(DDGFS_ISFLIPDONE) == DDERR_WASSTILLDRAWING)
         ;
