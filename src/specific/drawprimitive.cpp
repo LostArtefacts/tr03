@@ -1295,6 +1295,7 @@ void SW_SpanGT(void)
 }
 #endif
 
+#ifndef FEAT_C_ASM
 __declspec(naked) void SW_SpanG(void)
 {
     __asm {
@@ -1385,6 +1386,39 @@ __declspec(naked) void SW_SpanG(void)
         ret
     }
 }
+#else
+void SW_SpanG(void)
+{
+    SW_SPAN *s;
+    uint8 *row, *p;
+    uint16 c[4];
+    sint16 *grad;
+    sint32 n, i;
+
+    s = (SW_SPAN *)SW_SpanBuffer;
+    if (s == (SW_SPAN *)SW_SpanEnd)
+        return;
+    row = (uint8 *)SW_Surface + SW_SpanY * SW_SurfacePitch;
+    grad = (sint16 *)&SW_SpanGrad;
+    do {
+        p = row + (s->x << 2);
+        n = s->n;
+        if (n > 0) {
+            for (i = 0; i < 4; i++)
+                c[i] = s->c[i];
+            do {
+                for (i = 0; i < 4; i++) {
+                    p[i] = c[i] >> 8;
+                    c[i] += grad[i];
+                }
+                p += 4;
+            } while (--n);
+        }
+        row += SW_SurfacePitch;
+        s++;
+    } while (s != (SW_SPAN *)SW_SpanEnd);
+}
+#endif
 
 extern long SpansAdditiveMask;
 
