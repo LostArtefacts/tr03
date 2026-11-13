@@ -111,3 +111,9 @@ void S_FadeOutInventory(int fade)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" void S_CopyScreenToBuffer(void)
+{
+}
+#endif

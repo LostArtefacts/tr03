@@ -529,3 +529,9 @@ extern "C" int S_LoadGame(LPVOID data, int size, int slot)
     }
     return 0;
 }
+
+#ifdef TR3_EXE
+extern "C" void StartGameStub1(void)
+{
+}
+#endif

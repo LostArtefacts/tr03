@@ -306,3 +306,9 @@ bool DS_IsSoundEnabled(void)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" void S_SetReverbType(int reverb)
+{
+}
+#endif

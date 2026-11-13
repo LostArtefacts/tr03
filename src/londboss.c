@@ -943,3 +943,17 @@ void TriggerPlasmaBall_londboss(ITEM_INFO *item, sint32 type, PHD_VECTOR *pos, s
             fx->flag2 = 0;
     }
 }
+
+#ifdef TR3_EXE
+void LondonBossDie(sint16 item_number)
+{
+    ITEM_INFO *item;
+
+    item = &items[item_number];
+    item->collidable = 0;
+    item->hit_points = DONT_TARGET;
+    KillItem(item_number);
+    DisableBaddieAI(item_number);
+    item->flags |= ONESHOT;
+}
+#endif

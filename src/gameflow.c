@@ -834,3 +834,9 @@ void GF_ModifyInventory(int level, int type)
             GF_SecretInvItems[i] = 0;
     }
 }
+
+#ifdef TR3_EXE
+void ShowThis(char *string, int frames)
+{
+}
+#endif

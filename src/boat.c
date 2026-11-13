@@ -1103,3 +1103,22 @@ int BoatCheckGeton(sint16 item_number, COLL_INFO *coll)
 
     return geton;
 }
+
+#ifdef TR3_EXE
+void UpdateWakeFX_boat(void)
+{
+    int i, j;
+
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < NUM_WAKE_SPRITES; j++) {
+            if (WakePts[j][i].life) {
+                WakePts[j][i].life--;
+                WakePts[j][i].x[0] += WakePts[j][i].xvel[0];
+                WakePts[j][i].z[0] += WakePts[j][i].zvel[0];
+                WakePts[j][i].x[1] += WakePts[j][i].xvel[1];
+                WakePts[j][i].z[1] += WakePts[j][i].zvel[1];
+            }
+        }
+    }
+}
+#endif

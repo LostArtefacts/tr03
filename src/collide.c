@@ -1072,3 +1072,9 @@ void GetCollisionInfo(COLL_INFO *coll, sint32 xpos, sint32 ypos, sint32 zpos, si
         return;
     }
 }
+
+#ifdef TR3_EXE
+void AIPickupCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
+{
+}
+#endif

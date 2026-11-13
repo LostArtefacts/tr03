@@ -5833,3 +5833,22 @@ void DrawLineG(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
     }
 }
 }
+
+#ifdef TR3_EXE
+extern "C" void NullCalculateGradient(GRADIENT *Gradients, D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+{
+}
+
+extern "C" void NullCalculateEdge(EDGE *Edge, GRADIENT *Gradients, D3DTLVERTEX *Top, D3DTLVERTEX *Bottom, int nTop, int nBottom)
+{
+}
+
+extern "C" void NullScanLines(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
+{
+}
+
+extern "C" HRESULT SWEndScene(void)
+{
+    return 0;
+}
+#endif

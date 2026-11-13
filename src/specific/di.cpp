@@ -125,3 +125,9 @@ void DI_Finish(void)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" void DI_FinishJoystick(void)
+{
+}
+#endif

@@ -465,3 +465,9 @@ int S_GetObjectBounds(sint16 *box)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" void FadeToPal(int nFrames, unsigned char *pPal)
+{
+}
+#endif
