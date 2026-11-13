@@ -1920,6 +1920,125 @@ doxyclip:
     }
 }
 
+extern DWORD TPages[];
+
+void HWI_InsertClippedPoly_Textured(int nPoints, float zdepth, int nDrawType, int nTPage)
+{
+    double fconv;
+    VERTEX_INFO *pVI;
+    sint16 *info;
+    int n, v;
+    float newz;
+    sint32 *sort;
+    int b;
+    D3DTLVERTEX *pTLV;
+
+    pVI = v_buffer;
+    if (App.lpZBuffer && nDrawType != 14 && nDrawType != 10) {
+        b = FindBucket(TPages[nTPage]);
+        if (b == -1)
+            return;
+        for (n = 0; n < 3; n++) {
+            v = Buckets[b].cnt;
+            Buckets[b].Vertex[v].sx = pVI->x;
+            Buckets[b].Vertex[v].sy = pVI->y;
+            Buckets[b].Vertex[v].sz = f_a - f_boo * pVI->ooz;
+            Buckets[b].Vertex[v].rhw = pVI->ooz;
+            Buckets[b].Vertex[v].color = ((pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) | GlobalAlpha;
+            newz = (1.0f / 65536.0f) / pVI->ooz;
+            Buckets[b].Vertex[v].tu = newz * pVI->u;
+            Buckets[b].Vertex[v].tv = pVI->v * newz;
+            Buckets[b].Vertex[v].specular = 0;
+            pVI++;
+            Buckets[b].cnt++;
+        }
+        nDrawnPoints++;
+        nPoints -= 3;
+        --pVI;
+        n = nPoints;
+        while (n > 0) {
+            nDrawnPoints++;
+            v = Buckets[b].cnt;
+            Buckets[b].Vertex[v + 0].sx = v_buffer->x;
+            Buckets[b].Vertex[v + 0].sy = v_buffer->y;
+            Buckets[b].Vertex[v + 0].sz = f_a - f_boo * v_buffer->ooz;
+            Buckets[b].Vertex[v + 0].rhw = v_buffer->ooz;
+            Buckets[b].Vertex[v + 0].color = ((v_buffer->vr << 16) | (v_buffer->vg << 8) | v_buffer->vb) | GlobalAlpha;
+            Buckets[b].Vertex[v + 0].specular = 0;
+            newz = (1.0f / 65536.0f) / v_buffer->ooz;
+            Buckets[b].Vertex[v + 0].tu = v_buffer->u * newz;
+            Buckets[b].Vertex[v + 0].tv = v_buffer->v * newz;
+            Buckets[b].Vertex[v + 1].sx = pVI->x;
+            Buckets[b].Vertex[v + 1].sy = pVI->y;
+            Buckets[b].Vertex[v + 1].sz = f_a - f_boo * pVI->ooz;
+            Buckets[b].Vertex[v + 1].rhw = pVI->ooz;
+            Buckets[b].Vertex[v + 1].color = ((pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) | GlobalAlpha;
+            newz = (1.0f / 65536.0f) / pVI->ooz;
+            Buckets[b].Vertex[v + 1].tu = pVI->u * newz;
+            Buckets[b].Vertex[v + 1].tv = pVI->v * newz;
+            Buckets[b].Vertex[v + 1].specular = 0;
+            pVI += 1;
+            Buckets[b].Vertex[v + 2].sx = pVI->x;
+            Buckets[b].Vertex[v + 2].sy = pVI->y;
+            Buckets[b].Vertex[v + 2].sz = f_a - f_boo * pVI->ooz;
+            Buckets[b].Vertex[v + 2].rhw = pVI->ooz;
+            Buckets[b].Vertex[v + 2].color = ((pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) | GlobalAlpha;
+            newz = (1.0f / 65536.0f) / pVI->ooz;
+            Buckets[b].Vertex[v + 2].tu = pVI->u * newz;
+            Buckets[b].Vertex[2 + v].tv = pVI->v * newz;
+            Buckets[b].Vertex[v + 2].specular = 0;
+            Buckets[b].cnt += 3;
+            n--;
+        }
+    } else {
+        if (CurrentTLVertex - VertexBuffer > 9184)
+            return;
+        if (App.lpZBuffer == 0 || !bAlphaTesting) {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf += 3;
+            info3dptrbf += 5;
+        } else if (nDrawType == 14 || nDrawType == 13 || nDrawType == 12 || nDrawType == 16) {
+            sort = sort3dptrfb;
+            info = info3dptrfb;
+            sort[2] = nPolyType;
+            surfacenumfb++;
+            sort3dptrfb += 3;
+            info3dptrfb += 5;
+        } else {
+            sort = sort3dptrbf;
+            info = info3dptrbf;
+            sort[2] = nPolyType;
+            surfacenumbf++;
+            sort3dptrbf = sort3dptrbf + 3;
+            info3dptrbf += 5;
+        }
+        sort[0] = (sint32)info;
+        sort[1] = FTOL(zdepth);
+        info[0] = (sint16)nDrawType;
+        info[1] = (sint16)nTPage;
+        info[2] = (sint16)nPoints;
+        pTLV = CurrentTLVertex;
+        *((D3DTLVERTEX **)(info + 3)) = pTLV;
+        for (n = nPoints; n--;) {
+            pTLV->sx = pVI->x;
+            pTLV->sy = pVI->y;
+            pTLV->sz = f_a - f_boo * pVI->ooz;
+            pTLV->rhw = pVI->ooz;
+            pTLV->color = ((pVI->vr << 16) | (pVI->vg << 8) | pVI->vb) | GlobalAlpha;
+            pTLV->specular = 0;
+            newz = (1.0f / 65536.0f) / pVI->ooz;
+            pTLV->tu = pVI->u * newz;
+            pTLV->tv = pVI->v * newz;
+            pVI++;
+            pTLV++;
+        }
+        CurrentTLVertex = pTLV;
+    }
+}
+
 void HWI_InsertSprite_Sorted(int nZDepth, int nX1, int nY1, int nX2, int nY2, int nSprite, int nShade, int nShade1, int drawtype, int offset)
 {
     PHDSPRITESTRUCT *pSprite;
