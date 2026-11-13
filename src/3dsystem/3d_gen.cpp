@@ -1083,4 +1083,33 @@ sint32 __fastcall phd_sqrt(sint32 n)
 
 #endif
 
+#if FEAT_C_ASM
+void phd_PushMatrix(void)
+{
+    sint32 *mptr;
+    int i;
+
+    mptr = phd_mxptr;
+    for (i = 0; i < 12; i++)
+        mptr[12 + i] = mptr[i];
+    phd_mxptr = mptr + 12;
+}
+
+void phd_PushUnitMatrix(void)
+{
+    sint32 *mptr;
+
+    mptr = phd_mxptr += 12;
+    mptr[M00] = 0x4000;
+    mptr[M11] = 0x4000;
+    mptr[M22] = 0x4000;
+    mptr[M01] = 0;
+    mptr[M02] = 0;
+    mptr[M10] = 0;
+    mptr[M12] = 0;
+    mptr[M20] = 0;
+    mptr[M21] = 0;
+}
+#endif
+
 }
