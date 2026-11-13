@@ -3574,6 +3574,7 @@ extern double MagicFloat;
 extern void (*pDrawSpans)(void);
 extern long Fix16Scale;
 
+#ifndef FEAT_C_ASM
 __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     __asm {
@@ -3979,6 +3980,166 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         ret
     }
 }
+#else
+void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+{
+    D3DTLVERTEX *t, *n, *ea, *eb;
+    unsigned char *span;
+    double a, b, g, h, inv, x, y, ty, endy, r0, g0, b0;
+    float dx01, dy02, dx02, dy01, d01, d02, rdx, drdy, gdx, dgdy, bdx, dbdy, slopea, slopeb, xr, xl;
+    unsigned long sy, c, xa, xb;
+    long na, nb, edges, stepa, stepb, xi, r1, r2, r3, g1, g2, g3, b1, b2, b3;
+
+    AlphaVertex = (long)v1;
+    a = (double)v1->sx - v2->sx;
+    b = (double)v1->sy - v3->sy;
+    dx01 = SW_ToF(a);
+    dy02 = SW_ToF(b);
+    g = a * b;
+    a = (double)v1->sx - v3->sx;
+    b = (double)v1->sy - v2->sy;
+    dx02 = SW_ToF(a);
+    dy01 = SW_ToF(b);
+    g = g - a * b;
+    xr = SW_ToF(g);
+    if (*(unsigned long *)&xr & 0x80000000)
+        return;
+    inv = 1.0 / g;
+    *(D3DTLVERTEX **)&v1->sz = v2;
+    *(D3DTLVERTEX **)&v2->sz = v3;
+    *(D3DTLVERTEX **)&v3->sz = v1;
+    *(D3DTLVERTEX **)&v1->specular = v3;
+    *(D3DTLVERTEX **)&v2->specular = v1;
+    *(D3DTLVERTEX **)&v3->specular = v2;
+    t = v1;
+    sy = *(unsigned long *)&v1->sy;
+    if (sy >= *(unsigned long *)&v2->sy) {
+        sy = *(unsigned long *)&v2->sy;
+        t = v2;
+    }
+    if (sy >= *(unsigned long *)&v3->sy)
+        t = v3;
+    ea = t;
+    eb = t;
+    TriColor = v1->color;
+    c = v1->color;
+    g1 = (c & 0xff00) + 0x80;
+    b1 = ((c << 8) & 0xff00) + 0x80;
+    r1 = ((c >> 8) & 0xff00) + 0x80;
+    c = v2->color;
+    g2 = (c & 0xff00) + 0x80;
+    b2 = ((c << 8) & 0xff00) + 0x80;
+    r2 = ((c >> 8) & 0xff00) + 0x80;
+    c = v3->color;
+    g3 = (c & 0xff00) + 0x80;
+    b3 = ((c << 8) & 0xff00) + 0x80;
+    r3 = ((c >> 8) & 0xff00) + 0x80;
+
+    a = (double)r1 - r2;
+    b = (double)r1 - r3;
+    d01 = SW_ToF(a);
+    d02 = SW_ToF(b);
+    g = (a * dy02 - b * dy01) * inv;
+    ((short *)&SW_SpanGrad)[2] = SW_RoundW(g);
+    rdx = SW_ToF(g);
+    h = ((double)d02 * dx01 - (double)d01 * dx02) * inv;
+    drdy = SW_ToF(h);
+    r0 = ((double)r1 + MagicFloat) - (v1->sy * h + v1->sx * rdx);
+
+    a = (double)g1 - g2;
+    b = (double)g1 - g3;
+    d01 = SW_ToF(a);
+    d02 = SW_ToF(b);
+    g = (a * dy02 - b * dy01) * inv;
+    ((short *)&SW_SpanGrad)[1] = SW_RoundW(g);
+    gdx = SW_ToF(g);
+    h = ((double)d02 * dx01 - (double)d01 * dx02) * inv;
+    dgdy = SW_ToF(h);
+    g0 = ((double)g1 + MagicFloat) - (v1->sy * h + v1->sx * gdx);
+
+    a = (double)b1 - b2;
+    b = (double)b1 - b3;
+    d01 = SW_ToF(a);
+    d02 = SW_ToF(b);
+    g = (a * dy02 - b * dy01) * inv;
+    ((short *)&SW_SpanGrad)[0] = SW_RoundW(g);
+    bdx = SW_ToF(g);
+    h = ((double)d02 * dx01 - (double)d01 * dx02) * inv;
+    dbdy = SW_ToF(h);
+    b0 = ((double)b1 + MagicFloat) - (v1->sy * h + v1->sx * bdx);
+
+    edges = 3;
+    span = SW_SpanBuffer;
+    ty = ((double)ea->sy - SW_VF(RoundBias)) + MagicInt;
+    SW_L(ty)++;
+    SW_SpanY = SW_L(ty);
+    nb = 0;
+    na = 0;
+    xa = 0;
+    xb = 0;
+    stepa = 0;
+    stepb = 0;
+
+edge_a:
+    t = ea;
+    if (edges - 1 < 0)
+        goto done;
+    n = *(D3DTLVERTEX **)&t->sz;
+    edges--;
+    ea = n;
+    slopea = SW_ToF(((double)t->sx - n->sx) / ((double)t->sy - n->sy));
+    xr = SW_ToF(((double)SW_L(ty) - t->sy) * slopea + t->sx);
+    endy = ((double)n->sy - SW_VF(RoundBias)) + MagicInt;
+    na = SW_L(endy) - SW_L(ty) + 1;
+    if (!na)
+        goto edge_a;
+    stepa = SW_RoundL(slopea * SW_VF(Fix16Scale));
+    xa = SW_RoundL(xr * SW_VF(Fix16Scale)) + 0xffff;
+    if (nb)
+        goto spans;
+
+edge_b:
+    t = eb;
+    if (edges - 1 < 0)
+        goto done;
+    n = *(D3DTLVERTEX **)&t->specular;
+    edges--;
+    eb = n;
+    slopeb = SW_ToF(((double)t->sx - n->sx) / ((double)t->sy - n->sy));
+    xl = SW_ToF(((double)SW_L(ty) - t->sy) * slopeb + t->sx);
+    endy = ((double)n->sy - SW_VF(RoundBias)) + MagicInt;
+    nb = SW_L(endy) - SW_L(ty) + 1;
+    if (!nb)
+        goto edge_b;
+    stepb = SW_RoundL(slopeb * SW_VF(Fix16Scale));
+    xb = SW_RoundL(xl * SW_VF(Fix16Scale)) + 0xffff;
+
+spans:
+    xi = xb >> 16;
+    ((long *)span)[1] = (xa >> 16) - xi;
+    ((long *)span)[0] = xi;
+    y = (double)SW_L(ty);
+    x = (double)xi;
+    *(float *)(span + 24) = (float)((bdx * x + dbdy * y) + b0);
+    *(float *)(span + 26) = (float)((gdx * x + dgdy * y) + g0);
+    *(float *)(span + 28) = (float)((rdx * x + drdy * y) + r0);
+    span += 32;
+    SW_L(ty)++;
+    xb += stepb;
+    xa += stepa;
+    nb--;
+    na--;
+    if (!na)
+        goto edge_a;
+    if (!nb)
+        goto edge_b;
+    goto spans;
+
+done:
+    SW_SpanEnd = (long)span;
+    pDrawSpans();
+}
+#endif
 
 extern long SW_TriTDX01;
 extern long SW_TriTDY02;
