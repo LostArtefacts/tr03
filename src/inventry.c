@@ -1042,3 +1042,20 @@ void DoInventoryPicture(void)
     HWR_EnableZBuffer(0, 0);
     TRDrawPicture(0, CurPicTexIndices, f_zfar);
 }
+
+#ifdef TR3_EXE
+sint16 GlobeLevelAngles[7][4] = {
+    { -1536, -7936, 1536, 85 },
+    { 1024, -512, -256, 87 },
+    { 2560, 21248, -4096, 86 },
+    { -3328, 29440, 1024, 89 },
+    { 3072, -20992, 6400, 85 },
+    { -5120, -15360, -18688, 88 },
+    { 0, 0, 0, 0 },
+};
+sint16 Inventory_Chosen = -1;
+sint32 Inventory_Mode = INV_TITLE_MODE;
+sint16 Option_Detail_Level = 255;
+sint16 Option_SFX_Volume = 165;
+sint16 Option_Music_Volume = 255;
+#endif

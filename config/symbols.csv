@@ -2839,6 +2839,8 @@ address,size,name,symbol
 0x006d62e0,1200,Valid_Level_Strings,_Valid_Level_Strings
 0x006d67a0,,RequesterFlags2,_RequesterFlags2
 0x006d6800,,RequesterFlags1,_RequesterFlags1
+0x006d6860,1200,Save_Game_Strings2,_Save_Game_Strings2
+0x006d6d20,1200,Save_Game_Strings,_Save_Game_Strings
 0x006d71e0,34,inv_colours,_inv_colours
 0x006d7220,1200,Valid_Level_Strings2,_Valid_Level_Strings2
 0x006d76e0,,SaveGameReqFlags2,_SaveGameReqFlags2

@@ -1909,3 +1909,9 @@ void ShowEndStatsText(void)
     AddRequesterItem(&Stats_Requester, GF_GameStrings[68], 2, str, 4);
     end_stats_mode = 1;
 }
+
+#ifdef TR3_EXE
+sint16 LevelSecrets[21] = {
+    0, 6, 4, 5, 0, 3, 3, 3, 1, 5, 5, 6, 1, 3, 2, 3, 3, 3, 3, 0, 0,
+};
+#endif
