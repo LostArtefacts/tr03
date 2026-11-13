@@ -665,3 +665,21 @@ void TonyBossControl(sint16 item_number)
     CreatureJoint(item, 2, torso_y >> 1);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+sint32 TonyBossRadii[5] = {
+    200, 400, 500, 500, 475,
+};
+sint32 TonyBossHeights[5] = {
+    -1536, -1280, -832, -384, 0,
+};
+sint32 dradii_tonyboss[5] = {
+    1600, 5600, 6400, 5600, 1600,
+};
+sint32 dheights1_tonyboss[5] = {
+    -7680, -4224, -768, 2688, 6144,
+};
+sint32 dheights2_tonyboss[5] = {
+    -1536, -1152, -768, -384, 0,
+};
+#endif

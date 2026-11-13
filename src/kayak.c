@@ -1140,3 +1140,12 @@ void KayakUserInput(ITEM_INFO *v, ITEM_INFO *l, KAYAKINFO *Kayak)
             Kayak->Rot = 0;
     }
 }
+
+#ifdef TR3_EXE
+sint16 kayak_mist_zpos[10] = {
+    900, 750, 600, 450, 300, 150, 0, -150, -300, -450,
+};
+sint16 kayak_mist_xpos[10] = {
+    32, 96, 170, 220, 300, 400, 400, 300, 200, 64,
+};
+#endif

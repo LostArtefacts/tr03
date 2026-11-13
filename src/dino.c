@@ -248,3 +248,7 @@ void DinoControl(sint16 item_number)
     else
         item->collidable = 1;
 }
+
+#ifdef TR3_EXE
+BITE_INFO trex_hit = { 0, 32, 64, 13 };
+#endif

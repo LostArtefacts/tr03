@@ -329,4 +329,5 @@ BITE_INFO dog_bite = { 0, 0, 100, 3 };
 char dog_death_anims[4] = {
     20, 21, 22, 20,
 };
+BITE_INFO tiger_bite = { 19, -13, 3, 26 };
 #endif

@@ -79,7 +79,5 @@ void FlyEmitterControl(sint16 item_num)
 }
 
 #ifdef TR3_EXE
-sint16 FlyItem[3] = {
-    -1, -1, -1,
-};
+sint16 FlyItem[3] = { NO_ITEM, NO_ITEM, NO_ITEM };
 #endif

@@ -4027,3 +4027,12 @@ void LaraHangTest(ITEM_INFO *item, COLL_INFO *coll)
     }
     item->pos.y_pos += hdif;
 }
+
+#ifdef TR3_EXE
+sint16 DeathSlideBounds[12] = {
+    -256, 256, -100, 100, 256, 512, 0, 0, -4550, 4550, 0, 0,
+};
+PHD_VECTOR DeathSlidePosition = { 0, 0, 371 };
+PHD_ANGLE old_ang = 1;
+int jump_ok = 1;
+#endif

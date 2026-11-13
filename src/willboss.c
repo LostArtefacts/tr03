@@ -787,6 +787,20 @@ void WillBossControl(sint16 item_number)
 }
 
 #ifdef TR3_EXE
+sint32 dradii_willboss[5] = {
+    1600, 5600, 6400, 5600, 1600,
+};
+sint32 dheights1_willboss[5] = {
+    -7680, -4224, -768, 2688, 6144,
+};
+sint32 dheights2_willboss[5] = {
+    -1536, -1152, -768, -384, 0,
+};
+sint32 closest_ai_path = -1;
+sint32 lara_ai_path = -1;
+sint32 lara_junction = -1;
+sint32 direction = 1;
+sint32 desired_direction = 1;
 BITE_INFO willboss_bite_left = { 19, -13, 3, 20 };
 BITE_INFO willboss_bite_right = { 19, -13, 3, 23 };
 #endif

@@ -737,3 +737,33 @@ void TribeBossControl(sint16 item_number)
     } else if (tyrot == item->pos.y_rot)
         turned = 0;
 }
+
+#ifdef TR3_EXE
+sint32 TribeBossRadii[5] = {
+    200, 400, 500, 500, 475,
+};
+sint32 TribeBossHeights[5] = {
+    -1536, -1280, -832, -384, 0,
+};
+sint32 dradii_triboss[5] = {
+    1600, 5600, 6400, 5600, 1600,
+};
+sint32 dheights1_triboss[5] = {
+    -7680, -4224, -768, 2688, 6144,
+};
+sint32 dheights2_triboss[5] = {
+    -1536, -1152, -768, -384, 0,
+};
+sint32 lizman_summon_coords[2][4] = {
+    { 61952, -5376, 62976, 57344 },
+    { 61952, -5376, 52736, 40960 },
+};
+BITE_INFO tribeboss_hit[6] = {
+    { 120, 68, 136, 8 },
+    { 128, -64, 136, 8 },
+    { 8, -120, 136, 8 },
+    { -128, -64, 136, 8 },
+    { -124, 64, 136, 8 },
+    { 8, 32, 400, 8 },
+};
+#endif

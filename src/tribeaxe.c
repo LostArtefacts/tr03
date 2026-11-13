@@ -197,4 +197,19 @@ void TribeAxeControl(sint16 item_number)
 
 #ifdef TR3_EXE
 BITE_INFO tribeaxe_hit = { 0, 16, 265, 13 };
+uint8 tribeaxe_hitframes[13][3] = {
+    { 0, 0, 0 },
+    { 0, 0, 0 },
+    { 0, 0, 0 },
+    { 0, 0, 0 },
+    { 0, 0, 0 },
+    { 2, 12, 8 },
+    { 8, 9, 32 },
+    { 19, 28, 8 },
+    { 0, 0, 0 },
+    { 0, 0, 0 },
+    { 7, 14, 8 },
+    { 0, 0, 0 },
+    { 15, 19, 32 },
+};
 #endif

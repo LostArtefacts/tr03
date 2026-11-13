@@ -959,6 +959,21 @@ void LondonBossDie(sint16 item_number)
 #endif
 
 #ifdef TR3_EXE
+sint32 LondonBossRadii[5] = {
+    200, 400, 500, 500, 475,
+};
+sint32 LondonBossHeights[5] = {
+    -1536, -1280, -832, -384, 0,
+};
+sint32 dradii_londboss[5] = {
+    1600, 5600, 6400, 5600, 1600,
+};
+sint32 dheights1_londboss[5] = {
+    -7680, -4224, -768, 2688, 6144,
+};
+sint32 dheights2_londboss[5] = {
+    -1536, -1152, -768, -384, 0,
+};
 BITE_INFO londonboss_points[3] = {
     { 16, 56, 356, 10 },
     { -28, 48, 304, 10 },

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "game.h"
 
-extern sint16 HoldStates[14];
+extern sint16 HoldStates[15];
 
 int CheckForHoldingState(int state)
 {
@@ -1019,3 +1019,77 @@ void DoProperDetection(sint16 item_number, sint32 x, sint32 y, sint32 z, sint32 
     if (room_number != item->room_number)
         ItemNewRoom(item_number, room_number);
 }
+
+#ifdef TR3_EXE
+WEAPON_INFO weapons[11] = {
+    {
+        { 0, 0, 0, 0 },
+        { 0, 0, 0, 0 },
+        { 0, 0, 0, 0 },
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -60 * ONE_DEGREE, 60 * ONE_DEGREE },
+        { -170 * ONE_DEGREE, 60 * ONE_DEGREE, -80 * ONE_DEGREE, 80 * ONE_DEGREE },
+        { -60 * ONE_DEGREE, 170 * ONE_DEGREE, -80 * ONE_DEGREE, 80 * ONE_DEGREE },
+        10 * ONE_DEGREE, 8 * ONE_DEGREE, 650, 8192, 1, 9, 3, 0, 8,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -60 * ONE_DEGREE, 60 * ONE_DEGREE },
+        { -10 * ONE_DEGREE, 10 * ONE_DEGREE, -80 * ONE_DEGREE, 80 * ONE_DEGREE },
+        { 0, 0, 0, 0 },
+        10 * ONE_DEGREE, 4 * ONE_DEGREE, 650, 8192, 21, 16, 3, 0, 121,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -60 * ONE_DEGREE, 60 * ONE_DEGREE },
+        { -170 * ONE_DEGREE, 60 * ONE_DEGREE, -80 * ONE_DEGREE, 80 * ONE_DEGREE },
+        { -60 * ONE_DEGREE, 170 * ONE_DEGREE, -80 * ONE_DEGREE, 80 * ONE_DEGREE },
+        10 * ONE_DEGREE, 8 * ONE_DEGREE, 650, 8192, 1, 3, 3, 0, 43,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -55 * ONE_DEGREE, 55 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        10 * ONE_DEGREE, 0, 500, 8192, 3, 9, 3, 10, 45,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -55 * ONE_DEGREE, 55 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        10 * ONE_DEGREE, 4 * ONE_DEGREE, 500, 12288, 4, 0, 3, 16, 0,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -55 * ONE_DEGREE, 55 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        10 * ONE_DEGREE, 8 * ONE_DEGREE, 500, 8192, 30, 0, 2, 12, 77,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -55 * ONE_DEGREE, 55 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        10 * ONE_DEGREE, 8 * ONE_DEGREE, 500, 8192, 20, 0, 2, 10, 0,
+    },
+    {
+        { -60 * ONE_DEGREE, 60 * ONE_DEGREE, -65 * ONE_DEGREE, 65 * ONE_DEGREE },
+        { -20 * ONE_DEGREE, 20 * ONE_DEGREE, -75 * ONE_DEGREE, 75 * ONE_DEGREE },
+        { -80 * ONE_DEGREE, 80 * ONE_DEGREE, -75 * ONE_DEGREE, 75 * ONE_DEGREE },
+        10 * ONE_DEGREE, 8 * ONE_DEGREE, 500, 8192, 6, 0, 2, 10, 0,
+    },
+    {
+        { 0, 0, 0, 0 },
+        { 0, 0, 0, 0 },
+        { 0, 0, 0, 0 },
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+    },
+    {
+        { -30 * ONE_DEGREE, 30 * ONE_DEGREE, -55 * ONE_DEGREE, 55 * ONE_DEGREE },
+        { -30 * ONE_DEGREE, 30 * ONE_DEGREE, -55 * ONE_DEGREE, 55 * ONE_DEGREE },
+        { -30 * ONE_DEGREE, 30 * ONE_DEGREE, -55 * ONE_DEGREE, 55 * ONE_DEGREE },
+        10 * ONE_DEGREE, 8 * ONE_DEGREE, 400, 8192, 3, 0, 2, 0, 43,
+    },
+};
+sint16 HoldStates[15] = {
+    0, 2, 4, 6, 7, 16, 20, 22, 21, 65, 39, 40, 41, 71, -1,
+};
+#endif

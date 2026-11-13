@@ -404,3 +404,12 @@ void AnimatePistols(int weapon_type)
     }
     set_arm_info(&lara.left_arm, anil);
 }
+
+#ifdef TR3_EXE
+PISTOL_DEF PistolTable[4] = {
+    { 0, 0, 0, 0, 0 },
+    { 1, 4, 5, 13, 24 },
+    { 4, 7, 8, 15, 29 },
+    { 5, 4, 5, 13, 24 },
+};
+#endif

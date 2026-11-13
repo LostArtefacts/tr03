@@ -74,3 +74,7 @@ void InitialiseRaptorEmitter(sint16 item_number)
 {
     items[item_number].item_flags[0] = (item_number & 3) * 96;
 }
+
+#ifdef TR3_EXE
+sint16 RaptorItem[3] = { NO_ITEM, NO_ITEM, NO_ITEM };
+#endif
