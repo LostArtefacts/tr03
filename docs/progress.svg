@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="191.99" height="12" x="0" y="0" class="named"><title>1438 · 95.99%</title></rect>
-<rect width="8.01" height="12" x="191.99" y="0" class="nonmatching"><title>60 · 4.01%</title></rect>
+<rect width="192.12" height="12" x="0" y="0" class="named"><title>1439 · 96.06%</title></rect>
+<rect width="7.88" height="12" x="192.12" y="0" class="nonmatching"><title>59 · 3.94%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">96.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1438</tspan> · <tspan class="nonmatching">60</tspan></text>
+<text text-anchor="end" x="390" y="7.50">96.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1439</tspan> · <tspan class="nonmatching">59</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="177.36" height="12" x="0" y="0" class="named"><title>643 KB · 88.68%</title></rect>
-<rect width="22.64" height="12" x="177.36" y="0" class="nonmatching"><title>82 KB · 11.32%</title></rect>
+<rect width="177.49" height="12" x="0" y="0" class="named"><title>643 KB · 88.74%</title></rect>
+<rect width="22.51" height="12" x="177.49" y="0" class="nonmatching"><title>82 KB · 11.26%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="24.50">88.7%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">643 KB</tspan> · <tspan class="nonmatching">82 KB</tspan></text>
@@ -1575,7 +1575,7 @@
 <rect width="12" height="12" x="495" y="435" class="named"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="435" class="nonmatching"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="435" class="named"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
-<rect width="12" height="12" x="540" y="435" class="nonmatching"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
+<rect width="12" height="12" x="540" y="435" class="named"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="435" class="named"><title>0x004b4280 phd_PushMatrix (30 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="435" class="named"><title>0x004b429e phd_PushUnitMatrix (51 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="435" class="named"><title>0x004b42d4 flatA (97 bytes)</title></rect>
@@ -1994,7 +1994,7 @@
 <rect width="12.32" height="12.33" x="418.98" y="208.25" class="named"><title>0x00450620 TriggerLizmanGas (469 bytes)</title></rect>
 <rect width="12.32" height="12.31" x="418.98" y="223.58" class="named"><title>0x0046c460 TriggerTonyFlame (468 bytes)</title></rect>
 <rect width="12.32" height="12.31" x="418.98" y="238.88" class="named"><title>0x00484010 GameStats (468 bytes)</title></rect>
-<rect width="12.32" height="12.28" x="418.98" y="254.19" class="nonmatching"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
+<rect width="12.32" height="12.28" x="418.98" y="254.19" class="named"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
 <rect width="12.32" height="12.20" x="418.98" y="269.47" class="named"><title>0x00401000 phd_GenerateW2V (464 bytes)</title></rect>
 <rect width="12.32" height="12.20" x="418.98" y="284.67" class="named"><title>0x0040fcc0 Trigger51BlastFire (464 bytes)</title></rect>
 <rect width="12.32" height="12.15" x="418.98" y="299.87" class="named"><title>0x0043f430 lara_col_crawl2hang (462 bytes)</title></rect>

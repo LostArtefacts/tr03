@@ -173,62 +173,53 @@ bool DXCheckForLostSurfaces(void)
 
 void DXSaveScreen(LPDIRECTDRAWSURFACE3 lpSurface)
 {
-    FILE *file;
-    DDSURFACEDESC ddsd;
-    sint16 *pSurf;
-    sint16 *pDest;
-    unsigned long h;
-    unsigned long w;
-    unsigned long c;
-    long r;
-    long g;
-    long b;
-    char buf[16];
+    char fileName[16];
+    unsigned long y, x, pixel;
+    long red, green, blue;
+    sint16 *line, *header, *dst;
+    FILE *fp;
+    DDSURFACEDESC desc;
 
-    memset(&ddsd, 0, sizeof(ddsd));
-    ddsd.dwSize = sizeof(ddsd);
-    if (DX_TRY(lpSurface->GetSurfaceDesc(&ddsd)))
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    if (DX_TRY(lpSurface->GetSurfaceDesc(&desc)))
         return;
-
-    memset(&ddsd, 0, sizeof(ddsd));
-    ddsd.dwSize = sizeof(ddsd);
-    if (DX_TRY(DD_LockSurface(lpSurface, ddsd, DDLOCK_WAIT | DDLOCK_WRITEONLY)))
-        return;
-
-    pSurf = (sint16 *)ddsd.lpSurface;
-    sprintf(buf, "tomb%04d.tga", SaveScreenNum++);
-    file = fopen(buf, "wb");
-    if (file) {
-        *(sint16 *)&TgaHeader[12] = (sint16)ddsd.dwWidth;
-        *(sint16 *)&TgaHeader[14] = (sint16)ddsd.dwHeight;
-        fwrite(TgaHeader, sizeof(TgaHeader), 1, file);
-        pDest = (sint16 *)malloc_ptr;
-        pSurf += ddsd.dwHeight * (ddsd.lPitch / 2);
-        for (h = 0; h < ddsd.dwHeight; h++) {
-            for (w = 0; w < ddsd.dwWidth; w++) {
-                c = pSurf[w];
-                if (ddsd.ddpfPixelFormat.dwRBitMask == 0xF800) {
-                    r = (c >> 11) & 0x1F;
-                    g = (c >> 6) & 0x1F;
-                    b = c & 0x1F;
-                    *pDest++ = (sint16)((r << 10) + (g << 5) + b);
-                } else {
-                    *pDest++ = (sint16)c;
+    memset(&desc, 0, sizeof(desc));
+    desc.dwSize = sizeof(desc);
+    if (!(bool)FAILED(DD_LockSurface(lpSurface, desc, DDLOCK_WAIT | DDLOCK_WRITEONLY))) {
+        line = (sint16 *)desc.lpSurface;
+        sprintf(fileName, "tomb%04d.tga", SaveScreenNum++);
+        fp = fopen(fileName, "wb");
+        if (fp) {
+            header = (sint16 *)&TgaHeader[12];
+            *header++ = (sint16)desc.dwWidth;
+            *header = (sint16)desc.dwHeight;
+            fwrite(TgaHeader, sizeof(TgaHeader), 1, fp);
+            dst = (sint16 *)malloc_ptr;
+            line += desc.lPitch / 2 * desc.dwHeight;
+            for (y = 0; y < desc.dwHeight; y++) {
+                for (x = 0; x < desc.dwWidth; x++) {
+                    pixel = line[x];
+                    if (desc.ddpfPixelFormat.dwRBitMask == 0xF800) {
+                        red = (pixel >> 11) & 0x1F;
+                        green = (pixel >> 6) & 0x1F;
+                        blue = pixel & 0x1F;
+                        *dst++ = (sint16)((red << 10) + (green << 5) + blue);
+                    } else
+                        *dst++ = (sint16)pixel;
                 }
+                line -= desc.lPitch / 2;
             }
-            pSurf -= ddsd.lPitch / 2;
+            fwrite(malloc_ptr, desc.dwWidth * desc.dwHeight * 2, 1, fp);
+            fclose(fp);
+            ++fileName[7];
+            if (fileName[7] > '9') {
+                fileName[7] = '0';
+                ++fileName[6];
+            }
         }
-        fwrite(malloc_ptr, 2 * ddsd.dwWidth * ddsd.dwHeight, 1, file);
-        fclose(file);
-
-        buf[7]++;
-        if (buf[7] > '9') {
-            buf[7] = '0';
-            buf[6]++;
-        }
+        DD_UnlockSurface(lpSurface, desc);
     }
-
-    DD_UnlockSurface(lpSurface, ddsd);
 }
 
 bool DXUpdateFrame(bool runMessageLoop, LPRECT rect)
