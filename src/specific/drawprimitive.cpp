@@ -1077,6 +1077,53 @@ extern long SW_TexShift;
 extern long MipOffsets[];
 extern __int64 SW_SpanGrad;
 
+#if FEAT_C_ASM
+typedef struct {
+    sint32 x;
+    sint32 n;
+    sint32 tex[4];
+    uint16 c[4];
+} SW_SPAN;
+
+static sint16 SW_Lerp7(sint32 a, sint32 b, sint32 w)
+{
+    return (sint16)(a + ((sint16)((sint16)(b - a) * w) >> 7));
+}
+
+static sint16 SW_BilinearTexel(uint8 *t, sint32 i, uint32 u, uint32 v)
+{
+    sint32 wu, wv;
+    sint16 top, bot;
+
+    wu = (u >> 9) & 0x7F;
+    if (i != 3)
+        wu |= (u & 0x100) << 7;
+    wv = (v >> 9) & 0x7F;
+    top = SW_Lerp7(t[i], t[4 + i], wu);
+    bot = SW_Lerp7(t[0x400 + i], t[0x404 + i], wu);
+    return SW_Lerp7(top, bot, wv);
+}
+
+static uint8 SW_Bilinear(uint8 *t, sint32 i, uint32 u, uint32 v, uint16 c)
+{
+    return (uint16)(SW_BilinearTexel(t, i, u, v) * (c >> 8)) >> 8;
+}
+
+static void SW_BilinearAlpha(uint8 *p, uint8 *t, uint32 u, uint32 v, uint16 *c)
+{
+    sint16 l[4];
+    sint32 i, a;
+
+    for (i = 0; i < 4; i++)
+        l[i] = SW_BilinearTexel(t, i, u, v);
+    a = l[3] & 0xFF;
+    for (i = 0; i < 3; i++)
+        p[i] = (uint16)((((uint16)(l[i] * (c[i] >> 8)) >> 8) * a) + p[i] * (0xFF - a)) >> 8;
+    p[3] = (p[3] * 0xFF) >> 8;
+}
+#endif
+
+#ifndef FEAT_C_ASM
 __declspec(naked) void SW_SpanGT(void)
 {
     __asm {
@@ -1204,6 +1251,49 @@ __declspec(naked) void SW_SpanGT(void)
         ret
     }
 }
+#else
+void SW_SpanGT(void)
+{
+    SW_SPAN *s;
+    uint8 *row, *p, *t;
+    uint32 *tex;
+    uint32 u, v, mask;
+    uint16 c[4];
+    sint16 *grad;
+    sint32 n, sh, i;
+
+    s = (SW_SPAN *)SW_SpanBuffer;
+    if (s == (SW_SPAN *)SW_SpanEnd)
+        return;
+    row = (uint8 *)SW_Surface + SW_SpanY * SW_SurfacePitch;
+    sh = SW_TexShift;
+    mask = (0xFF0000 << sh) & 0xFF0000;
+    tex = (uint32 *)(SW_TextureBits + MipOffsets[sh]);
+    grad = (sint16 *)&SW_SpanGrad;
+    do {
+        p = row + (s->x << 2);
+        n = s->n;
+        if (n > 0) {
+            u = s->tex[0];
+            v = s->tex[2];
+            for (i = 0; i < 4; i++)
+                c[i] = s->c[i];
+            do {
+                t = (uint8 *)&tex[((v & mask) >> (sh * 2 + 8)) | ((u & mask) >> (sh + 16))];
+                for (i = 0; i < 4; i++) {
+                    p[i] = (t[i] * (c[i] >> 8)) >> 8;
+                    c[i] += grad[i];
+                }
+                u += SW_SpanDU;
+                v += SW_SpanDV;
+                p += 4;
+            } while (--n);
+        }
+        row += SW_SurfacePitch;
+        s++;
+    } while (s != (SW_SPAN *)SW_SpanEnd);
+}
+#endif
 
 __declspec(naked) void SW_SpanG(void)
 {
