@@ -3722,6 +3722,7 @@ extern long SpansAlphaDestHi;
 extern __int64 SpansAlphaInvert;
 extern __int64 SpansAlphaSrc;
 
+#ifndef FEAT_C_ASM
 __declspec(naked) void DrawSpansAlpha(void)
 {
     __asm {
@@ -3794,6 +3795,46 @@ __declspec(naked) void DrawSpansAlpha(void)
         ret
     }
 }
+#else
+void DrawSpansAlpha(void)
+{
+    SW_SPAN *s;
+    uint8 *row, *p;
+    uint16 c[4];
+    sint16 *grad;
+    sint32 n, i, a, na, sum;
+
+    s = (SW_SPAN *)SW_SpanBuffer;
+    if (s == (SW_SPAN *)SW_SpanEnd)
+        return;
+    row = (uint8 *)SW_Surface + SW_SpanY * SW_SurfacePitch;
+    grad = (sint16 *)&SW_SpanGrad;
+    a = ((D3DTLVERTEX *)AlphaVertex)->color >> 24;
+    na = 0xFF - a;
+    do {
+        p = row + (s->x << 2);
+        n = s->n;
+        if (n > 0) {
+            for (i = 0; i < 4; i++)
+                c[i] = s->c[i];
+            do {
+                for (i = 0; i < 4; i++) {
+                    sum = (sint16)(p[i] * na) + (sint16)((c[i] >> 8) * a);
+                    if (sum > 0x7FFF)
+                        sum = 0x7FFF;
+                    else if (sum < -0x8000)
+                        sum = -0x8000;
+                    p[i] = (uint16)sum >> 8;
+                    c[i] += grad[i];
+                }
+                p += 4;
+            } while (--n);
+        }
+        row += SW_SurfacePitch;
+        s++;
+    } while (s != (SW_SPAN *)SW_SpanEnd);
+}
+#endif
 
 extern double MagicFix16;
 extern long RoundBias;
