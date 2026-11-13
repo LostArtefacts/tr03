@@ -14,6 +14,7 @@ void ScanLinesBlack(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLe
     yline = long(Output) + YTable[pLeft->y];
 
     while (StepLeft->height--) {
+#ifndef FEAT_C_ASM
         __asm {
             mov ebx, pLeft
             mov ecx, pRight
@@ -38,6 +39,16 @@ void ScanLinesBlack(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLe
             mov [edi], ax
         done:
         }
+#else
+        {
+            unsigned short *p;
+            long n;
+
+            p = (unsigned short *)yline + pLeft->x;
+            for (n = pRight->x - pLeft->x; n > 0; n--)
+                *p++ = 0;
+        }
+#endif
         yline += bytepitch;
         StepLeft->x += StepLeft->xstep;
         StepLeft->y++;
