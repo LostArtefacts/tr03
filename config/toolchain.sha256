@@ -6,3 +6,6 @@ bf9f9c74f756fed96e13f7f9a4273495c7dde0a1fb968e3ef6d760ad6d73dfeb  .wine/drive_c/
 f8124cf4c5f0744700a4c718d79f39fa45f3781b437db4faa7d09a272ef67053  .wine/drive_c/msvc5sp3/bin/LIB.EXE
 04c892989f4cc8076ef45e033215eb7aefbdf1459cbee9b13a81f8ddb718b579  .wine/drive_c/msvc5sp3/bin/LINK.EXE
 730497a2cc447ad0ea91c52ed9aa1b9d21572f4ca37ce686937946c5a98f7f8c  .wine/drive_c/msvc5sp3/bin/MSPDB50.DLL
+f8124cf4c5f0744700a4c718d79f39fa45f3781b437db4faa7d09a272ef67053  .wine/drive_c/msvc5/bin/LIB.EXE
+279544809e6353c8e622eb88aea94e86b0258f3c4b8a976373bf4d68a41b63e1  .wine/drive_c/msvc5/bin/LINK.EXE
+06aaaca9c928bdef790259c9c30328529e10d1ec2f77da09c4ff74de7734fe69  .wine/drive_c/msvc5/bin/MSPDB50.DLL

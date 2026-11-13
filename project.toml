@@ -29,6 +29,8 @@ defines = ["TR3_EXE=1"]
 libs = ["dxguid.lib", "dinput.lib", "dsound.lib", "ddraw.lib", "winmm.lib", "user32.lib",
         "gdi32.lib", "winplay.lib", "libc.lib", "kernel32.lib"]
 import_defs = ["config/winplay.def"]  # winplay.dll's 27 imports, from the original's import table
+implib_bin = 'C:\msvc5\bin'  # VC5's first lib: the original's winplay.lib has no Rich header entry
+resource_object = true  # the original's resources come from cvtres 5.00: 8-byte aligned, no timestamp
 ldflags = ["/SUBSYSTEM:WINDOWS", "/FIXED", "/SECTION:.text,RWE"]  # as the original's: self-modifying scanlines
 
 [dll]

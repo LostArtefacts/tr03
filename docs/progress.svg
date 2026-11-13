@@ -80,11 +80,11 @@
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="75"><tspan class="named">66 KB</tspan> · <tspan class="todo">31 bytes</tspan> · 1204/1204 globals placed · 30 unmapped</text>
 <text text-anchor="start" x="0" y="92.50">Executable file</text>
 <g transform="translate(130 86.50)">
-<rect width="189.05" height="12" x="0" y="0" class="named"><title>914 KB · 94.52%</title></rect>
-<rect width="10.95" height="12" x="189.05" y="0" class="todo"><title>53 KB · 5.48%</title></rect>
+<rect width="189.27" height="12" x="0" y="0" class="named"><title>915 KB · 94.64%</title></rect>
+<rect width="10.73" height="12" x="189.27" y="0" class="todo"><title>52 KB · 5.36%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="92.50">94.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="92"><tspan class="named">914 KB</tspan> · <tspan class="todo">53 KB</tspan></text>
+<text text-anchor="end" x="390" y="92.50">94.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="92"><tspan class="named">915 KB</tspan> · <tspan class="todo">52 KB</tspan></text>
 </g>
 <g transform="translate(0 145)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
