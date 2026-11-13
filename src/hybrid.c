@@ -195,3 +195,8 @@ void HybridControl(sint16 item_number)
     CreatureJoint(item, 2, head);
     CreatureAnimation(item_number, angle, tilt);
 }
+
+#ifdef TR3_EXE
+BITE_INFO hybrid_bite_left = { 19, -13, 3, 7 };
+BITE_INFO hybrid_bite_right = { 19, -13, 3, 14 };
+#endif

@@ -878,3 +878,14 @@ int CanGetOff_sub(ITEM_INFO *v)
 
     return 1;
 }
+
+#ifdef TR3_EXE
+BITE_INFO sub_bites[6] = {
+    { 0, 0, 0, 3 },
+    { 0, 96, 256, 0 },
+    { -128, 0, -64, 1 },
+    { 0, 0, -64, 1 },
+    { 128, 0, -64, 2 },
+    { 0, 0, -64, 2 },
+};
+#endif

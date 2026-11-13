@@ -78,3 +78,7 @@ void CrocControl(sint16 item_number)
     CreatureUnderwater(item, 256);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO croc_bite = { 5, -21, 467, 9 };
+#endif

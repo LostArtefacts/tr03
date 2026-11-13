@@ -395,3 +395,7 @@ void PrisonerControl(sint16 item_number)
         CreatureAnimation(item_number, angle, 0);
     }
 }
+
+#ifdef TR3_EXE
+BITE_INFO bob_hit = { 10, 10, 11, 13 };
+#endif

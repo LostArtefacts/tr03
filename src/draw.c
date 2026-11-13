@@ -1887,3 +1887,24 @@ void DrawLaraInt(ITEM_INFO *item, sint16 *frame1, sint16 *frame2, int frac, int 
             TriggerFlareSparks(xv, yv, zv, pos.x - xv, pos.y - yv, pos.z - zv, lp >> 2, 0);
     }
 }
+
+#ifdef TR3_EXE
+BITE_INFO EnemyBites[16] = {
+    { 0, 192, 40, 13 },
+    { 0, 400, 64, 7 },
+    { 0, 300, 56, 7 },
+    { 0, 200, 106, 7 },
+    { 110, -30, -530, 2 },
+    { -110, -30, -530, 2 },
+    { 0, 300, 56, 7 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+    { 0, 0, 0, 0 },
+};
+#endif

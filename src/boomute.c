@@ -152,3 +152,7 @@ void TriggerSealmuteGas(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint
     sptr->dWidth = size >> 1;
     sptr->dHeight = size >> 1;
 }
+
+#ifdef TR3_EXE
+BITE_INFO seal_gas_boomute = { 0, 48, 140, 10 };
+#endif

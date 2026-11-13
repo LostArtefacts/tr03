@@ -316,3 +316,7 @@ void SwatControl(sint16 item_number)
     CreatureJoint(item, 2, head);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO swat_gun = { 0, 300, 64, 7 };
+#endif

@@ -128,3 +128,7 @@ void CobraControl(sint16 item_number)
     }
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO cobra_hit = { 0, 0, 0, 13 };
+#endif

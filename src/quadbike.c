@@ -1148,3 +1148,10 @@ int SkidooDynamics(ITEM_INFO *v)
     }
     return collide;
 }
+
+#ifdef TR3_EXE
+BITE_INFO quad_bites[2] = {
+    { -56, -32, -380, 0 },
+    { 56, -32, -380, 0 },
+};
+#endif

@@ -495,3 +495,7 @@ void ControlElectricFence(sint16 item_number)
     lara.electric = 1;
     lara_item->hit_points = 0;
 }
+
+#ifdef TR3_EXE
+BITE_INFO civvy_hit = { 0, 0, 0, 13 };
+#endif

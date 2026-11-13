@@ -785,3 +785,8 @@ void WillBossControl(sint16 item_number)
     angle = CreatureTurn(item, willboss->maximum_turn);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO willboss_bite_left = { 19, -13, 3, 20 };
+BITE_INFO willboss_bite_right = { 19, -13, 3, 23 };
+#endif

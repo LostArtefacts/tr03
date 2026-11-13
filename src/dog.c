@@ -323,3 +323,7 @@ void TigerControl(sint16 item_number)
     CreatureJoint(item, 0, head);
     CreatureAnimation(item_number, angle, tilt);
 }
+
+#ifdef TR3_EXE
+BITE_INFO dog_bite = { 0, 0, 100, 3 };
+#endif

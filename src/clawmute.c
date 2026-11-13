@@ -477,3 +477,8 @@ void TriggerPlasmaBallFlame_clawmute(sint16 fx_number, sint32 type, sint32 xv, s
     }
     sptr->Gravity = sptr->MaxYvel = 0;
 }
+
+#ifdef TR3_EXE
+BITE_INFO claw_bite_left = { 19, -13, 3, 7 };
+BITE_INFO claw_bite_right = { 19, -13, 3, 4 };
+#endif

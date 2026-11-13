@@ -416,3 +416,7 @@ void TriggerPunkFlame(sint16 item_number)
     sptr->dWidth = size >> 2;
     sptr->dHeight = size >> 2;
 }
+
+#ifdef TR3_EXE
+BITE_INFO punk_hit = { 16, 48, 320, 13 };
+#endif

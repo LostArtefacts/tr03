@@ -283,3 +283,7 @@ void CarcassControl(sint16 item_number)
     else
         CarcassItem = -1;
 }
+
+#ifdef TR3_EXE
+BITE_INFO compy_hit = { 0, 0, 0, 2 };
+#endif

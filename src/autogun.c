@@ -142,3 +142,8 @@ void AutogunControl(sint16 item_number)
             autogun->joint_rotation[0] += 0x8000;
     }
 }
+
+#ifdef TR3_EXE
+BITE_INFO autogun_left = { 110, -30, -530, 2 };
+BITE_INFO autogun_right = { -110, -30, -530, 2 };
+#endif

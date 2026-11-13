@@ -101,3 +101,7 @@ void MouseControl(sint16 item_number)
     CreatureJoint(item, 0, head);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO mouse_bite = { 0, 0, 57, 2 };
+#endif

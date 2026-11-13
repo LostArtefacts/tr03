@@ -202,3 +202,7 @@ void TriggerWingMuteParticles(sint16 item_number)
     sptr->dWidth = size >> 1;
     sptr->dHeight = size >> 1;
 }
+
+#ifdef TR3_EXE
+BITE_INFO wing_bite = { 0, 0, 0, 12 };
+#endif

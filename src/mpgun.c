@@ -394,3 +394,7 @@ void MPGunControl(sint16 item_number)
     CreatureJoint(item, 2, head);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO mpgun_gun = { 0, 160, 40, 13 };
+#endif

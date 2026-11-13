@@ -260,3 +260,7 @@ sint16 TriggerSealmuteGasThrower_sealmute(ITEM_INFO *item, BITE_INFO *bite, sint
     }
     return fx_number;
 }
+
+#ifdef TR3_EXE
+BITE_INFO seal_gas = { 0, 48, 140, 10 };
+#endif

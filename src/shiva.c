@@ -489,3 +489,8 @@ void ShivaDamage(ITEM_INFO *item, CREATURE_INFO *shiva, int damage)
         SoundEffect(318, &item->pos, 0);
     }
 }
+
+#ifdef TR3_EXE
+BITE_INFO shiva_left = { 0, 0, 920, 13 };
+BITE_INFO shiva_right = { 0, 0, 920, 22 };
+#endif

@@ -439,3 +439,7 @@ void TriggerPilotFlame(sint32 itemnum)
     sptr->dWidth = size;
     sptr->dHeight = size;
 }
+
+#ifdef TR3_EXE
+BITE_INFO flamer_gun = { 0, 340, 64, 7 };
+#endif

@@ -293,3 +293,7 @@ void OilSMGControl(sint16 item_number)
     CreatureJoint(item, 2, head);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO oilsmg_gun = { 0, 400, 64, 7 };
+#endif

@@ -428,3 +428,8 @@ void BatonControl(sint16 item_number)
         CreatureAnimation(item_number, angle, 0);
     }
 }
+
+#ifdef TR3_EXE
+BITE_INFO baton_hit = { 247, 10, 11, 13 };
+BITE_INFO baton_kick = { 0, 0, 100, 6 };
+#endif

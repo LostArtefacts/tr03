@@ -957,3 +957,11 @@ void LondonBossDie(sint16 item_number)
     item->flags |= ONESHOT;
 }
 #endif
+
+#ifdef TR3_EXE
+BITE_INFO londonboss_points[3] = {
+    { 16, 56, 356, 10 },
+    { -28, 48, 304, 10 },
+    { -72, 48, 356, 10 },
+};
+#endif

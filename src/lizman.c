@@ -414,3 +414,9 @@ void TriggerLizmanGas(sint32 x, sint32 y, sint32 z, sint32 xv, sint32 yv, sint32
     sptr->dWidth = size >> 1;
     sptr->dHeight = size >> 1;
 }
+
+#ifdef TR3_EXE
+BITE_INFO lizman_bite_hit = { 0, -120, 120, 10 };
+BITE_INFO lizman_swipe_hit = { 0, 0, 0, 5 };
+BITE_INFO lizman_gas = { 0, -64, 56, 9 };
+#endif

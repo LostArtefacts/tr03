@@ -293,3 +293,8 @@ void BlowpipeControl(sint16 item_number)
     CreatureJoint(item, 3, head_x);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO blow_biff_hit = { 0, 0, -200, 13 };
+BITE_INFO blow_shoot_hit = { 8, 40, -248, 13 };
+#endif

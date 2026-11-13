@@ -1365,3 +1365,12 @@ void TriggerPendulumFlame(sint16 item_number)
     sptr->dWidth = size >> 2;
     sptr->dHeight = size >> 2;
 }
+
+#ifdef TR3_EXE
+BITE_INFO teeth1a = { -23, 0, -1718, 0 };
+BITE_INFO teeth1b = { 71, 0, -1718, 1 };
+BITE_INFO teeth2a = { -23, 10, -1718, 0 };
+BITE_INFO teeth2b = { 71, 10, -1718, 1 };
+BITE_INFO teeth3a = { -23, -10, -1718, 0 };
+BITE_INFO teeth3b = { 71, -10, -1718, 1 };
+#endif

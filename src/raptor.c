@@ -233,3 +233,7 @@ void RaptorControl(sint16 item_number)
     CreatureJoint(item, 3, neck);
     CreatureAnimation(item_number, angle, tilt);
 }
+
+#ifdef TR3_EXE
+BITE_INFO raptor_bite = { 0, 66, 318, 22 };
+#endif

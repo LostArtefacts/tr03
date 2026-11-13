@@ -194,3 +194,7 @@ void TribeAxeControl(sint16 item_number)
     CreatureJoint(item, 1, head >> 1);
     CreatureAnimation(item_number, angle, 0);
 }
+
+#ifdef TR3_EXE
+BITE_INFO tribeaxe_hit = { 0, 16, 265, 13 };
+#endif

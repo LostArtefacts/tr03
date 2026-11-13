@@ -267,3 +267,7 @@ void ControlGhostGasEmitter(sint16 item_number)
     sptr->Height = sptr->sHeight = size >> 1;
     sptr->dHeight = size >> 1;
 }
+
+#ifdef TR3_EXE
+BITE_INFO diver_poon = { 17, 164, 44, 18 };
+#endif
