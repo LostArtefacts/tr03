@@ -36,79 +36,74 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
     sint16 x_rot, y_rot, z_rot;
 
     item = &items[item_num];
-    z_rot = item->pos.z_rot;
-    y_rot = item->pos.y_rot;
     x_rot = item->pos.x_rot;
+    y_rot = item->pos.y_rot;
+    z_rot = item->pos.z_rot;
     item->pos.y_rot = laraitem->pos.y_rot;
     item->pos.z_rot = 0;
 
     if (lara.water_status == LARA_ABOVEWATER || lara.water_status == LARA_WADE) {
         item->pos.x_rot = 0;
-        if (TestLaraPosition(PickUpBounds, item, laraitem)) {
-            if (laraitem->current_anim_state == AS_PICKUP) {
-                if ((laraitem->frame_number == anims[135].frame_base + 42 ||
-                     laraitem->frame_number == anims[291].frame_base + 22 ||
-                     laraitem->frame_number == anims[291].frame_base + 20) &&
-                    item->object_number != 179) {
-                    AddDisplayPickup(item->object_number);
-                    Inv_AddItem(item->object_number);
-                    if (item->object_number == 221 || item->object_number == 222 || item->object_number == 223) {
-                        if ((savegame.secrets & 1) + ((savegame.secrets & 2) >> 1) + ((savegame.secrets & 4) >> 2) >= 3)
-                            GF_ModifyInventory(CurrentLevel, 1);
-                    }
-                    item->status = INVISIBLE;
-                    if (item->object_number == 240 || item->object_number == 241 || item->object_number == 242 ||
-                        item->object_number == 243) {
-                        if (CurrentLevel != 19)
-                            level_complete = 1;
-                        else
-                            KillItem(item_num);
-                    } else
-                        RemoveDrawnItem(item_num);
-                } else {
-                    item->pos.x_rot = x_rot;
-                    item->pos.y_rot = y_rot;
-                    item->pos.z_rot = z_rot;
-                }
-                return;
-            } else if (laraitem->current_anim_state == AS_FLAREPICKUP) {
-                if (((laraitem->anim_number == 312 && laraitem->frame_number == anims[312].frame_base + 22) ||
-                     laraitem->frame_number == anims[204].frame_base + 58) &&
-                    item->object_number == 179 && lara.gun_type != LG_FLARE) {
-                    lara.request_gun_type = LG_FLARE;
-                    lara.gun_type = LG_FLARE;
-                    InitialiseNewWeapon();
-                    lara.gun_status = LG_SPECIAL;
-                    lara.flare_age = (sint32)item->data & 0x7fff;
-                    KillItem(item_num);
-                }
-                return;
-            } else if ((input & IN_ACTION) && laraitem->current_anim_state == AS_ALL4S)
-                laraitem->goal_anim_state = AS_DUCK;
-            else if ((input & IN_ACTION) && !laraitem->gravity_status &&
-                     ((laraitem->current_anim_state == AS_STOP && laraitem->anim_number == 103) ||
-                      (laraitem->current_anim_state == AS_DUCK && laraitem->anim_number == 222)) &&
-                     lara.gun_status == LG_ARMLESS && !(lara.gun_type == LG_FLARE && item->object_number == 179)) {
-                if (item->object_number == 179) {
-                    laraitem->goal_anim_state = AS_FLAREPICKUP;
-                    do {
-                        AnimateLara(laraitem);
-                    } while (laraitem->current_anim_state != AS_FLAREPICKUP);
-                } else {
-                    AlignLaraPosition(&PickUpPosition, item, laraitem);
-                    laraitem->goal_anim_state = AS_PICKUP;
-                    AnimateLara(laraitem);
-                }
-                if (lara.IsDucked)
-                    laraitem->goal_anim_state = AS_DUCK;
-                else
-                    laraitem->goal_anim_state = AS_STOP;
-                lara.gun_status = LG_HANDSBUSY;
+        if (!TestLaraPosition(PickUpBounds, item, laraitem)) {
+            item->pos.x_rot = x_rot;
+            item->pos.y_rot = y_rot;
+            item->pos.z_rot = z_rot;
+            return;
+        }
+        if (laraitem->current_anim_state == AS_PICKUP) {
+            if ((laraitem->frame_number == anims[135].frame_base + 42 || laraitem->frame_number == anims[291].frame_base + 22 || laraitem->frame_number == anims[291].frame_base + 20) && item->object_number != 179) {
+                AddDisplayPickup(item->object_number);
+                Inv_AddItem(item->object_number);
+                if ((item->object_number == 221 || item->object_number == 222 || item->object_number == 223) && (savegame.secrets & 1) + ((savegame.secrets >> 1) & 1) + ((savegame.secrets >> 2) & 1) >= 3)
+                    GF_ModifyInventory(CurrentLevel, 1);
+                item->status = INVISIBLE;
+                if (item->object_number == 240 || item->object_number == 241 || item->object_number == 242 || item->object_number == 243) {
+                    if (CurrentLevel != 19)
+                        level_complete = 1;
+                    else
+                        KillItem(item_num);
+                } else
+                    RemoveDrawnItem(item_num);
+            } else {
                 item->pos.x_rot = x_rot;
                 item->pos.y_rot = y_rot;
                 item->pos.z_rot = z_rot;
-                return;
             }
+            return;
+        }
+        if (laraitem->current_anim_state == AS_FLAREPICKUP) {
+            if (((laraitem->anim_number == 312 && laraitem->frame_number == anims[312].frame_base + 22) || laraitem->frame_number == anims[204].frame_base + 58) && item->object_number == 179 && lara.gun_type != LG_FLARE) {
+                lara.request_gun_type = LG_FLARE;
+                lara.gun_type = LG_FLARE;
+                InitialiseNewWeapon();
+                lara.gun_status = LG_SPECIAL;
+                lara.flare_age = (sint32)item->data & 0x7fff;
+                KillItem(item_num);
+            }
+            return;
+        }
+        if ((input & IN_ACTION) && laraitem->current_anim_state == AS_ALL4S) {
+            laraitem->goal_anim_state = AS_DUCK;
+        } else if ((input & IN_ACTION) && !laraitem->gravity_status && ((laraitem->current_anim_state == AS_STOP && laraitem->anim_number == 103) || (laraitem->current_anim_state == AS_DUCK && laraitem->anim_number == 222)) && lara.gun_status == LG_ARMLESS && (lara.gun_type != LG_FLARE || item->object_number != 179)) {
+            if (item->object_number == 179) {
+                laraitem->goal_anim_state = AS_FLAREPICKUP;
+                do
+                    AnimateLara(laraitem);
+                while (laraitem->current_anim_state != AS_FLAREPICKUP);
+            } else {
+                AlignLaraPosition(&PickUpPosition, item, laraitem);
+                laraitem->goal_anim_state = AS_PICKUP;
+                AnimateLara(laraitem);
+            }
+            if (lara.IsDucked)
+                laraitem->goal_anim_state = AS_DUCK;
+            else
+                laraitem->goal_anim_state = AS_STOP;
+            lara.gun_status = LG_HANDSBUSY;
+            item->pos.x_rot = x_rot;
+            item->pos.y_rot = y_rot;
+            item->pos.z_rot = z_rot;
+            return;
         }
     } else if (lara.water_status == LARA_UNDERWATER) {
         item->pos.x_rot = -25 * ONE_DEGREE;
@@ -117,17 +112,15 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
                 if (laraitem->frame_number == anims[130].frame_base + 18 && item->object_number != 179) {
                     AddDisplayPickup(item->object_number);
                     Inv_AddItem(item->object_number);
-                    if (item->object_number == 221 || item->object_number == 222 || item->object_number == 223) {
-                        if ((savegame.secrets & 1) + ((savegame.secrets & 2) >> 1) + ((savegame.secrets & 4) >> 2) >= 3)
-                            GF_ModifyInventory(CurrentLevel, 1);
-                    }
+                    if ((item->object_number == 221 || item->object_number == 222 || item->object_number == 223) && (savegame.secrets & 1) + ((savegame.secrets >> 1) & 1) + ((savegame.secrets >> 2) & 1) >= 3)
+                        GF_ModifyInventory(CurrentLevel, 1);
                     item->status = INVISIBLE;
                     RemoveDrawnItem(item_num);
                 }
                 return;
-            } else if (laraitem->current_anim_state == AS_FLAREPICKUP) {
-                if (laraitem->frame_number == anims[206].frame_base + 20 && item->object_number == 179 &&
-                    lara.gun_type != LG_FLARE) {
+            }
+            if (laraitem->current_anim_state == AS_FLAREPICKUP) {
+                if (laraitem->frame_number == anims[206].frame_base + 20 && item->object_number == 179 && lara.gun_type != LG_FLARE) {
                     lara.request_gun_type = LG_FLARE;
                     lara.gun_type = LG_FLARE;
                     InitialiseNewWeapon();
@@ -137,27 +130,27 @@ void PickUpCollision(sint16 item_num, ITEM_INFO *laraitem, COLL_INFO *coll)
                     KillItem(item_num);
                 }
                 return;
-            } else if ((input & IN_ACTION) && laraitem->current_anim_state == AS_TREAD && lara.gun_status == LG_ARMLESS &&
-                       !(lara.gun_type == LG_FLARE && item->object_number == 179)) {
-                if (!MoveLaraPosition(&PickUpPositionUW, item, laraitem))
-                    return;
-                if (item->object_number == 179) {
-                    laraitem->fallspeed = 0;
-                    laraitem->current_anim_state = AS_FLAREPICKUP;
-                    laraitem->anim_number = 206;
-                    laraitem->frame_number = anims[206].frame_base;
-                } else {
-                    laraitem->goal_anim_state = AS_PICKUP;
-                    do {
-                        AnimateLara(laraitem);
-                    } while (laraitem->current_anim_state != AS_PICKUP);
+            }
+            if ((input & IN_ACTION) && laraitem->current_anim_state == AS_TREAD && lara.gun_status == LG_ARMLESS && (lara.gun_type != LG_FLARE || item->object_number != 179)) {
+                if (MoveLaraPosition(&PickUpPositionUW, item, laraitem)) {
+                    if (item->object_number == 179) {
+                        laraitem->fallspeed = 0;
+                        laraitem->current_anim_state = AS_FLAREPICKUP;
+                        laraitem->anim_number = 206;
+                        laraitem->frame_number = anims[206].frame_base;
+                        laraitem->goal_anim_state = AS_TREAD;
+                    } else {
+                        laraitem->goal_anim_state = AS_PICKUP;
+                        do
+                            AnimateLara(laraitem);
+                        while (laraitem->current_anim_state != AS_PICKUP);
+                        laraitem->goal_anim_state = AS_TREAD;
+                    }
                 }
-                laraitem->goal_anim_state = AS_TREAD;
                 return;
             }
         }
     }
-
     item->pos.x_rot = x_rot;
     item->pos.y_rot = y_rot;
     item->pos.z_rot = z_rot;
