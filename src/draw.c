@@ -397,7 +397,7 @@ extern sint16 null_rotations[12];
 extern sint32 *bones;
 
 void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
-void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *item, int unknown);
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *item, int underwater);
 int S_GetObjectBounds(sint16 *bptr);
 void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
 void S_CalculateStaticLight(sint16 adder);
@@ -1200,7 +1200,7 @@ extern uint8 IsJointUnderwater[];
 extern sint32 *bones;
 
 void DrawLaraInt(ITEM_INFO *item, sint16 *frame1, sint16 *frame2, int frac, int rate);
-void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *item, int unknown);
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *item, int underwater);
 void CalculateObjectLightingLara(void);
 void DrawHair(void);
 void DrawGunFlash(int weapon_type, int clip);

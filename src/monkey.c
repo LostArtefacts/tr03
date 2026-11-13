@@ -17,7 +17,7 @@ void InitialiseMonkey(sint16 item_number)
 extern sint32 *bones;
 
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
-void S_PrintShadow(int size, sint16 *bptr, ITEM_INFO *item, int unknown);
+void S_PrintShadow(int size, sint16 *bptr, ITEM_INFO *item, int underwater);
 void phd_PushMatrix(void);
 void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
 void phd_TranslateRel(sint32 x, sint32 y, sint32 z);

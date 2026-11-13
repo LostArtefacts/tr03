@@ -70,7 +70,7 @@ int GetOnSub(sint16 item_number, COLL_INFO *coll)
 }
 
 int GetFrames(ITEM_INFO *item, sint16 *frmptr[], int *rate);
-void S_PrintShadow(int size, sint16 *bptr, ITEM_INFO *item, int unknown);
+void S_PrintShadow(int size, sint16 *bptr, ITEM_INFO *item, int underwater);
 void phd_PushMatrix(void);
 void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
 void phd_RotYXZ(sint16 ry, sint16 rx, sint16 rz);
