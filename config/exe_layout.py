@@ -39,4 +39,4 @@ ORIGINAL_DATA = [
 
 def link_exe(objects: list[str], exe_objects: list[str], feats: list[str]) -> None:
     orig_layout.link(exe_objects, extra_rows=STATIC_INITIALIZERS + STATIC_DATA, runtime=["libc.lib"],
-                     data_libraries=["dxguid.lib"], original_data=ORIGINAL_DATA)
+                     data_libraries=["dxguid.lib"], original_data=None if feats else ORIGINAL_DATA)
