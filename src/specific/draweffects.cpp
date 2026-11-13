@@ -2450,4 +2450,220 @@ void DrawSummonRings(void)
         phd_PopMatrix();
     }
 }
+
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+int LaraOnLOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void TriggerElectricSparks_triboss(GAME_VECTOR *pos, sint32 shield);
+
+void TriggerElectricBeam(ITEM_INFO *item, GAME_VECTOR *src, long copy)
+{
+    CREATURE_INFO *tribeboss;
+    GAME_VECTOR target;
+    short angle;
+    long lp;
+    long segments, dx, dy, dz, longest;
+    long addx, addz, addy1, addy2;
+    long wx, wy, wz;
+    short *scrxy;
+    long *scrz;
+    short TempMesh[3];
+    short *leccy;
+    long *mptr;
+    long w, h, x, y, z;
+    float zv;
+    short XY[128];
+    long Z[128];
+
+    mptr = phd_mxptr;
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
+    src->room_number = item->room_number;
+    tribeboss = (CREATURE_INFO *)item->data;
+    angle = item->pos.y_rot >> 4;
+    angle &= 4095;
+    dx = bossdata.BeamTarget.x - src->x;
+    dy = bossdata.BeamTarget.y - src->y;
+    dz = bossdata.BeamTarget.z - src->z;
+    longest = abs(dx);
+    if (abs(dy) > longest)
+        longest = abs(dy);
+    if (abs(dz) > longest)
+        longest = abs(dz);
+    if (longest < 0x5000) {
+        longest = 0x5000 / longest;
+        dx += dx * longest;
+        dy += dy * longest;
+        dz += dz * longest;
+    }
+    target.x = src->x + dx;
+    target.y = src->y + dy;
+    target.z = src->z + dz;
+    LOS(src, &target);
+    if (!lara.electric && !copy && bossdata.attack_type == 0) {
+        if (LaraOnLOS(src, &target)) {
+            lara_item->hit_points = 0;
+            lara.electric = 1;
+        }
+    }
+    TriggerElectricSparks_triboss(&target, 0);
+    dx = abs(target.x - src->x);
+    dz = abs(target.z - src->z);
+    if (dx < dz)
+        segments = dz >> 8;
+    else
+        segments = dx >> 8;
+    if (segments < 8)
+        segments = 8;
+    else if (segments > 24)
+        segments = 24;
+    dx = (target.x - src->x) / segments;
+    dy = (target.y - src->y) / segments;
+    dz = (target.z - src->z) / segments;
+    wx = src->x - item->pos.x_pos;
+    wy = src->y - item->pos.y_pos;
+    wz = src->z - item->pos.z_pos;
+    angle += 0x400;
+    angle &= 4095;
+    if (bossdata.attack_type == 1 || bossdata.attack_type == 2) {
+        addx = ((short)rcossin_tbl[angle << 1]) >> 8;
+        addz = ((short)rcossin_tbl[(angle << 1) + 1]) >> 8;
+    } else {
+        addx = ((short)rcossin_tbl[angle << 1]) >> 7;
+        addz = ((short)rcossin_tbl[(angle << 1) + 1]) >> 7;
+    }
+    addy1 = addy2 = 0;
+    scrxy = XY;
+    scrz = Z;
+    TempMesh[0] = wx;
+    TempMesh[1] = wy;
+    TempMesh[2] = wz;
+    x = mptr[0] * TempMesh[0] + mptr[1] * TempMesh[1] + mptr[2] * TempMesh[2] + mptr[3];
+    y = mptr[4] * TempMesh[0] + mptr[5] * TempMesh[1] + mptr[6] * TempMesh[2] + mptr[7];
+    z = mptr[8] * TempMesh[0] + mptr[9] * TempMesh[1] + mptr[10] * TempMesh[2] + mptr[11];
+    zv = f_persp / (float)z;
+    scrxy[0] = (short)(x * zv + f_centerx);
+    scrxy[1] = (short)(y * zv + f_centery);
+    *scrz = z;
+    *(scrxy + 2) = *scrxy;
+    *(scrxy + 3) = *(scrxy + 1);
+    *(scrz + 1) = *scrz;
+    scrxy += 4;
+    scrz += 2;
+    leccy = &electricity_points[copy << 2][0];
+    for (lp = 0; lp < segments - 1; lp++) {
+        long rx, ry, rz;
+
+        if (copy) {
+            rx = -(*leccy++);
+            ry = -(*leccy++) >> 1;
+            rz = -(*leccy++);
+        } else {
+            rx = (*leccy++);
+            ry = (*leccy++) >> 1;
+            rz = (*leccy++);
+        }
+        leccy += 3;
+        wx += dx;
+        wy += dy;
+        wz += dz;
+        addy1 += (GetRandomControl() & 31) - 16;
+        addy2 += (GetRandomControl() & 31) - 16;
+        if (addy1 < -256)
+            addy1 = -192;
+        else if (addy1 > 256)
+            addy1 = 192;
+        if (addy2 < -256)
+            addy2 = -192;
+        else if (addy2 > 256)
+            addy2 = 192;
+        TempMesh[0] = wx + addx + rx;
+        TempMesh[1] = wy + addy1 + ry;
+        TempMesh[2] = wz + addz + rz;
+        x = mptr[0] * TempMesh[0] + mptr[1] * TempMesh[1] + mptr[2] * TempMesh[2] + mptr[3];
+        y = mptr[4] * TempMesh[0] + mptr[5] * TempMesh[1] + mptr[6] * TempMesh[2] + mptr[7];
+        z = mptr[8] * TempMesh[0] + mptr[9] * TempMesh[1] + mptr[10] * TempMesh[2] + mptr[11];
+        zv = f_persp / (float)z;
+        scrxy[0] = (short)(x * zv + f_centerx);
+        scrxy[1] = (short)(y * zv + f_centery);
+        *scrz = z;
+        scrxy += 2;
+        scrz++;
+        TempMesh[0] = wx - addx + rx;
+        TempMesh[1] = wy + addy2 + ry;
+        TempMesh[2] = wz - addz + rz;
+        x = mptr[0] * TempMesh[0] + mptr[1] * TempMesh[1] + mptr[2] * TempMesh[2] + mptr[3];
+        y = mptr[4] * TempMesh[0] + mptr[5] * TempMesh[1] + mptr[6] * TempMesh[2] + mptr[7];
+        z = mptr[8] * TempMesh[0] + mptr[9] * TempMesh[1] + mptr[10] * TempMesh[2] + mptr[11];
+        zv = f_persp / (float)z;
+        scrxy[0] = (short)(x * zv + f_centerx);
+        scrxy[1] = (short)(y * zv + f_centery);
+        *scrz = z;
+        scrxy += 2;
+        scrz++;
+    }
+    TempMesh[0] = target.x - item->pos.x_pos;
+    TempMesh[1] = target.y - item->pos.y_pos;
+    TempMesh[2] = target.z - item->pos.z_pos;
+    x = mptr[0] * TempMesh[0] + mptr[1] * TempMesh[1] + mptr[2] * TempMesh[2] + mptr[3];
+    y = mptr[4] * TempMesh[0] + mptr[5] * TempMesh[1] + mptr[6] * TempMesh[2] + mptr[7];
+    z = mptr[8] * TempMesh[0] + mptr[9] * TempMesh[1] + mptr[10] * TempMesh[2] + mptr[11];
+    zv = f_persp / (float)z;
+    scrxy[0] = (short)(x * zv + f_centerx);
+    scrxy[1] = (short)(y * zv + f_centery);
+    *scrz = z;
+    *(scrxy + 2) = *scrxy;
+    *(scrxy + 3) = *(scrxy + 1);
+    *(scrz + 1) = *scrz;
+    scrxy = XY;
+    scrz = Z;
+    {
+        long x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4, rgb1, rgb2, rgb3, rgb4;
+
+        x1 = *scrxy++;
+        y1 = *scrxy++;
+        x2 = *scrxy++;
+        y2 = *scrxy++;
+        z1 = *scrz++;
+        z2 = *scrz++;
+        rgb1 = rgb2 = 0;
+        for (lp = 0; lp < segments; lp++) {
+            if (lp != segments - 1) {
+                rgb3 = (GetRandomControl() & 255) >> copy;
+                rgb4 = (GetRandomControl() & 255) >> copy;
+            } else {
+                rgb3 = rgb4 = 0;
+            }
+            x3 = *scrxy++;
+            y3 = *scrxy++;
+            x4 = *scrxy++;
+            y4 = *scrxy++;
+            z3 = *scrz++;
+            z4 = *scrz++;
+            if ((z1 + z2 + z3 + z4) >> 2 > phd_znear && (rgb1 || rgb2 || rgb3 || rgb4) && x1 > -128 && x2 > -128 && x3 > -128 && x4 > -128 && x1 < w + 128 && x2 < w + 128 && x3 < w + 128 && x4 < w + 128 && y1 > -128 && y2 > -128 && y3 > -128 && y4 > -128 && y1 < h + 128 && y2 < h + 128 && y3 < h + 128 && y4 < h + 128) {
+                long c1, c2, c3, c4;
+
+                if (bossdata.attack_type == 0) {
+                    c1 = ((((rgb1 & 0xc0) >> 1) >> 3) << 10) | ((rgb1 >> 3) << 5) | (rgb1 >> 3);
+                    c2 = ((((rgb2 & 0xc0) >> 1) >> 3) << 10) | ((rgb2 >> 3) << 5) | (rgb2 >> 3);
+                    c3 = ((((rgb3 & 0xc0) >> 1) >> 3) << 10) | ((rgb3 >> 3) << 5) | (rgb3 >> 3);
+                    c4 = ((((rgb4 & 0xc0) >> 1) >> 3) << 10) | ((rgb4 >> 3) << 5) | (rgb4 >> 3);
+                } else {
+                    c1 = ((((rgb1 & 0xc0) >> 1) >> 3) << 10) | ((rgb1 >> 3) << 5) | (((rgb1 & 0xc0) >> 1) >> 3);
+                    c2 = ((((rgb2 & 0xc0) >> 1) >> 3) << 10) | ((rgb2 >> 3) << 5) | (((rgb2 & 0xc0) >> 1) >> 3);
+                    c3 = ((((rgb3 & 0xc0) >> 1) >> 3) << 10) | ((rgb3 >> 3) << 5) | (((rgb3 & 0xc0) >> 1) >> 3);
+                    c4 = ((((rgb4 & 0xc0) >> 1) >> 3) << 10) | ((rgb4 >> 3) << 5) | (((rgb4 & 0xc0) >> 1) >> 3);
+                }
+                HWI_InsertAlphaSprite_Sorted(x1, y1, z1, c1, x2, y2, z2, c2, x4, y4, z4, c3, x3, y3, z3, c4, -1, 16, 1);
+            }
+            x1 = x3;
+            y1 = y3;
+            z1 = z3;
+            x2 = x4;
+            y2 = y4;
+            z2 = z4;
+            rgb1 = rgb3;
+            rgb2 = rgb4;
+        }
+    }
+}
 }

@@ -47,19 +47,19 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="401.50" height="12" x="0" y="0" class="named"><title>1432 · 95.59%</title></rect>
-<rect width="15.98" height="12" x="401.50" y="0" class="nonmatching"><title>57 · 3.81%</title></rect>
-<rect width="2.52" height="12" x="417.48" y="0" class="todo"><title>9 · 0.60%</title></rect>
+<rect width="16.26" height="12" x="401.50" y="0" class="nonmatching"><title>58 · 3.87%</title></rect>
+<rect width="2.24" height="12" x="417.76" y="0" class="todo"><title>8 · 0.53%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">95.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">57</tspan> · <tspan class="todo">9</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">58</tspan> · <tspan class="todo">8</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="370.15" height="12" x="0" y="0" class="named"><title>639 KB · 88.13%</title></rect>
-<rect width="40.67" height="12" x="370.15" y="0" class="nonmatching"><title>70 KB · 9.68%</title></rect>
-<rect width="9.18" height="12" x="410.82" y="0" class="todo"><title>16 KB · 2.19%</title></rect>
+<rect width="42.26" height="12" x="370.15" y="0" class="nonmatching"><title>73 KB · 10.06%</title></rect>
+<rect width="7.59" height="12" x="412.41" y="0" class="todo"><title>13 KB · 1.81%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">88.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">70 KB</tspan> · <tspan class="todo">16 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">73 KB</tspan> · <tspan class="todo">13 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1174,7 +1174,7 @@
 <rect width="12" height="12" x="105" y="330" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="todo"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
-<rect width="12" height="12" x="150" y="330" class="todo"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
+<rect width="12" height="12" x="150" y="330" class="nonmatching"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="nonmatching"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="330" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="330" class="nonmatching"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
@@ -1610,7 +1610,7 @@
 <rect width="31.31" height="28.64" x="133.57" y="234.51" class="named"><title>0x0049a790 ScanLinesGStipple (2769 bytes)</title></rect>
 <rect width="31.31" height="28.63" x="133.57" y="266.14" class="named"><title>0x00433810 HairControl (2768 bytes)</title></rect>
 <rect width="31.31" height="28.37" x="133.57" y="297.77" class="named"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
-<rect width="31.31" height="28.37" x="133.57" y="329.14" class="todo"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
+<rect width="31.31" height="28.37" x="133.57" y="329.14" class="nonmatching"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="31.31" height="27.11" x="133.57" y="360.50" class="named"><title>0x00443ca0 GetLHAInt (2622 bytes)</title></rect>
 <rect width="31.31" height="27.08" x="133.57" y="390.61" class="named"><title>0x00493c70 MMXDrawTriangleP (2619 bytes)</title></rect>
 <rect width="31.31" height="26.32" x="133.57" y="420.68" class="named"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
