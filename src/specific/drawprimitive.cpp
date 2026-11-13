@@ -4977,6 +4977,7 @@ extern double TriRightXStepP;
 extern void (*pDrawSpansFilteredP)(void);
 extern void (*pDrawSpansP)(void);
 
+#ifndef FEAT_C_ASM
 __declspec(naked) void SW_TriSetupGTP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     __asm {
@@ -5686,6 +5687,259 @@ __declspec(naked) void SW_TriSetupGTP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVER
         jmp L5
     }
 }
+#else
+void SW_TriSetupGTP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+{
+    D3DTLVERTEX *t, *n;
+    unsigned char *span;
+    double a, b, g, h, inv, d01, d02, x, y, s, uz, vz, w, u, v, du, dv;
+    unsigned long sy, c, xa, xb;
+    long na, nb, e, cnt;
+
+    SW_SetF(&TriVz3P, (double)v3->tv * v3->rhw);
+    SW_SetF(&TriUz3P, (double)v3->tu * v3->rhw);
+    SW_SetF(&TriVz2P, (double)v2->tv * v2->rhw);
+    SW_SetF(&TriUz2P, (double)v2->tu * v2->rhw);
+    SW_SetF(&SW_TriPV0, (double)v1->tv * v1->rhw);
+    SW_SetF(&SW_TriPU0, (double)v1->tu * v1->rhw);
+    a = (double)v1->sx - v2->sx;
+    b = (double)v1->sy - v3->sy;
+    SW_SetF(&SW_TriPDX01, a);
+    SW_SetF(&SW_TriPDY02, b);
+    g = a * b;
+    a = (double)v1->sx - v3->sx;
+    b = (double)v1->sy - v2->sy;
+    SW_SetF(&SW_TriPDX02, a);
+    SW_SetF(&SW_TriPDY01, b);
+    g = g - a * b;
+    SW_SetF(&SW_TriPTemp, g);
+    if (SW_TriPTemp & 0x80000000)
+        return;
+    inv = 1.0 / g;
+    *(D3DTLVERTEX **)&v1->sz = v2;
+    *(D3DTLVERTEX **)&v2->sz = v3;
+    *(D3DTLVERTEX **)&v3->sz = v1;
+    *(D3DTLVERTEX **)&v1->specular = v3;
+    *(D3DTLVERTEX **)&v2->specular = v1;
+    *(D3DTLVERTEX **)&v3->specular = v2;
+    t = v1;
+    sy = *(unsigned long *)&v1->sy;
+    if (sy >= *(unsigned long *)&v2->sy) {
+        sy = *(unsigned long *)&v2->sy;
+        t = v2;
+    }
+    if (sy >= *(unsigned long *)&v3->sy)
+        t = v3;
+    SW_TriPEdgeA = (long)t;
+    SW_TriPEdgeB = (long)t;
+    TriColor = v1->color;
+    c = v1->color;
+    SW_TriPG0 = (c & 0xff00) + 0x80;
+    SW_TriPB0 = ((c << 8) & 0xff00) + 0x80;
+    SW_TriPR0 = ((c >> 8) & 0xff00) + 0x80;
+    c = v2->color;
+    TriG2P = (c & 0xff00) + 0x80;
+    TriB2P = ((c << 8) & 0xff00) + 0x80;
+    TriR2P = ((c >> 8) & 0xff00) + 0x80;
+    c = v3->color;
+    TriG3P = (c & 0xff00) + 0x80;
+    TriB3P = ((c << 8) & 0xff00) + 0x80;
+    TriR3P = ((c >> 8) & 0xff00) + 0x80;
+
+    d01 = (double)SW_TriPR0 - TriR2P;
+    d02 = (double)SW_TriPR0 - TriR3P;
+    SW_SetF(&SW_TriPD01, d01);
+    SW_SetF(&SW_TriPD02, d02);
+    g = (d01 * SW_VF(SW_TriPDY02) - d02 * SW_VF(SW_TriPDY01)) * inv;
+    ((short *)&SW_SpanGrad)[2] = SW_RoundW(g);
+    SW_SetF(&SW_TriPRDX, g);
+    h = (SW_VF(SW_TriPD02) * SW_VF(SW_TriPDX01) - SW_VF(SW_TriPD01) * SW_VF(SW_TriPDX02)) * inv;
+    SW_SetF(&TriDrDyP, h);
+    TriR0P = ((double)SW_TriPR0 + MagicFloat) - (v1->sy * h + v1->sx * SW_VF(SW_TriPRDX));
+
+    d01 = (double)SW_TriPG0 - TriG2P;
+    d02 = (double)SW_TriPG0 - TriG3P;
+    SW_SetF(&SW_TriPD01, d01);
+    SW_SetF(&SW_TriPD02, d02);
+    g = (d01 * SW_VF(SW_TriPDY02) - d02 * SW_VF(SW_TriPDY01)) * inv;
+    ((short *)&SW_SpanGrad)[1] = SW_RoundW(g);
+    SW_SetF(&SW_TriPGDX, g);
+    h = (SW_VF(SW_TriPD02) * SW_VF(SW_TriPDX01) - SW_VF(SW_TriPD01) * SW_VF(SW_TriPDX02)) * inv;
+    SW_SetF(&TriDgDyP, h);
+    TriG0P = ((double)SW_TriPG0 + MagicFloat) - (v1->sy * h + v1->sx * SW_VF(SW_TriPGDX));
+
+    d01 = (double)SW_TriPB0 - TriB2P;
+    d02 = (double)SW_TriPB0 - TriB3P;
+    SW_SetF(&SW_TriPD01, d01);
+    SW_SetF(&SW_TriPD02, d02);
+    g = (d01 * SW_VF(SW_TriPDY02) - d02 * SW_VF(SW_TriPDY01)) * inv;
+    ((short *)&SW_SpanGrad)[0] = SW_RoundW(g);
+    SW_SetF(&SW_TriPBDX, g);
+    h = (SW_VF(SW_TriPD02) * SW_VF(SW_TriPDX01) - SW_VF(SW_TriPD01) * SW_VF(SW_TriPDX02)) * inv;
+    SW_SetF(&TriDbDyP, h);
+    TriB0P = ((double)SW_TriPB0 + MagicFloat) - (v1->sy * h + v1->sx * SW_VF(SW_TriPBDX));
+
+    d01 = (double)SW_F(SW_TriPU0) - SW_F(TriUz2P);
+    d02 = (double)SW_F(SW_TriPU0) - SW_F(TriUz3P);
+    SW_SetF(&SW_TriPD01, d01);
+    SW_SetF(&SW_TriPD02, d02);
+    g = (d01 * SW_F(SW_TriPDY02) - d02 * SW_F(SW_TriPDY01)) * inv;
+    SW_SetF(&SW_TriPUDX, g);
+    h = (SW_F(SW_TriPD02) * SW_F(SW_TriPDX01) - SW_F(SW_TriPD01) * SW_F(SW_TriPDX02)) * inv;
+    SW_SetF(&SW_TriPUDY, h);
+    SW_SetF(&TriDuzDx16P, g * SW_F(SubSpanLength));
+    SW_SetF(&TriUz0P, (double)SW_F(SW_TriPU0) - (v1->sx * SW_F(SW_TriPUDX) + v1->sy * SW_F(SW_TriPUDY)));
+    d01 = (double)SW_F(SW_TriPV0) - SW_F(TriVz2P);
+    d02 = (double)SW_F(SW_TriPV0) - SW_F(TriVz3P);
+    SW_SetF(&SW_TriPD01, d01);
+    SW_SetF(&SW_TriPD02, d02);
+    g = (d01 * SW_F(SW_TriPDY02) - d02 * SW_F(SW_TriPDY01)) * inv;
+    SW_SetF(&SW_TriPVDX, g);
+    h = (SW_F(SW_TriPD02) * SW_F(SW_TriPDX01) - SW_F(SW_TriPD01) * SW_F(SW_TriPDX02)) * inv;
+    SW_SetF(&SW_TriPVDY, h);
+    SW_SetF(&TriDvzDx16P, g * SW_F(SubSpanLength));
+    SW_SetF(&TriVz0P, (double)SW_F(SW_TriPV0) - (v1->sx * SW_F(SW_TriPVDX) + v1->sy * SW_F(SW_TriPVDY)));
+    d01 = (double)v1->rhw - v2->rhw;
+    d02 = (double)v1->rhw - v3->rhw;
+    SW_SetF(&SW_TriPD01, d01);
+    SW_SetF(&SW_TriPD02, d02);
+    g = (d01 * SW_F(SW_TriPDY02) - d02 * SW_F(SW_TriPDY01)) * inv;
+    SW_SetF(&SW_TriPWDX, g);
+    h = (SW_F(SW_TriPD02) * SW_F(SW_TriPDX01) - SW_F(SW_TriPD01) * SW_F(SW_TriPDX02)) * inv;
+    SW_SetF(&SW_TriPWDY, h);
+    SW_SetF(&TriDozDx16P, g * SW_F(SubSpanLength));
+    SW_SetF(&TriOz0P, (double)v1->rhw - (v1->sx * SW_F(SW_TriPWDX) + v1->sy * SW_F(SW_TriPWDY)));
+    a = ((double)v1->tu - v2->tu) * ((double)v1->tv - v3->tv);
+    b = ((double)v1->tu - v3->tu) * ((double)v1->tv - v2->tv);
+    SW_SetF(&SW_TriPTemp, (a - b) * inv);
+    e = ((unsigned long)(SW_TriPTemp - 0x400000) >> 23) & 0xff;
+    e = (e - 0x6f + 1) >> 1;
+    if (e < 0)
+        e = 0;
+    if ((unsigned long)e >= 4)
+        e = 4;
+    SW_TexShift = e;
+
+    t = (D3DTLVERTEX *)SW_TriPEdgeA;
+    SW_TriPEdges = 3;
+    span = SW_SpanBuffer;
+    SW_TriPY = ((double)t->sy - SW_F(RoundBias)) + MagicInt;
+    SW_L(SW_TriPY)++;
+    SW_SpanY = SW_L(SW_TriPY);
+    nb = 0;
+    na = 0;
+    xa = 0;
+    xb = 0;
+
+edge_a:
+    t = (D3DTLVERTEX *)SW_TriPEdgeA;
+    if (SW_TriPEdges - 1 < 0)
+        goto done;
+    n = *(D3DTLVERTEX **)&t->sz;
+    SW_TriPEdges--;
+    SW_TriPEdgeA = (long)n;
+    s = ((double)t->sx - n->sx) / ((double)t->sy - n->sy);
+    TriRightXStepP = s + MagicFix16;
+    SW_TriPTmp = (((double)SW_L(SW_TriPY) - t->sy) * s + t->sx) + MagicFix16;
+    xa = SW_L(SW_TriPTmp) + 0xffff;
+    SW_TriPTmp = ((double)n->sy - SW_F(RoundBias)) + MagicInt;
+    na = SW_L(SW_TriPTmp) - SW_L(SW_TriPY) + 1;
+    if (!na)
+        goto edge_a;
+    if (nb)
+        goto spans;
+
+edge_b:
+    t = (D3DTLVERTEX *)SW_TriPEdgeB;
+    if (SW_TriPEdges - 1 < 0)
+        goto done;
+    n = *(D3DTLVERTEX **)&t->specular;
+    SW_TriPEdges--;
+    SW_TriPEdgeB = (long)n;
+    s = ((double)t->sx - n->sx) / ((double)t->sy - n->sy);
+    TriLeftXStepP = s + MagicFix16;
+    SW_TriPTmp = (((double)SW_L(SW_TriPY) - t->sy) * s + t->sx) + MagicFix16;
+    xb = SW_L(SW_TriPTmp) + 0xffff;
+    SW_TriPTmp = ((double)n->sy - SW_F(RoundBias)) + MagicInt;
+    nb = SW_L(SW_TriPTmp) - SW_L(SW_TriPY) + 1;
+    if (!nb)
+        goto edge_b;
+
+spans:
+    SW_TriPTemp = xb >> 16;
+    cnt = (xa >> 16) - (xb >> 16);
+    ((long *)span)[1] = cnt;
+    ((long *)span)[0] = xb >> 16;
+    y = (double)SW_L(SW_TriPY);
+    x = (double)SW_TriPTemp;
+    *(float *)(span + 24) = (float)((SW_F(SW_TriPBDX) * x + SW_F(TriDbDyP) * y) + TriB0P);
+    SW_SetF(&SW_TriPTemp, (SW_F(SW_TriPGDX) * x + SW_F(TriDgDyP) * y) + TriG0P);
+    *(float *)(span + 28) = (float)((SW_F(SW_TriPRDX) * x + SW_F(TriDrDyP) * y) + TriR0P);
+    SW_SetF(&SW_TriPW, (SW_F(SW_TriPWDX) * x + SW_F(SW_TriPWDY) * y) + SW_F(TriOz0P));
+    uz = (SW_F(SW_TriPUDX) * x + SW_F(SW_TriPUDY) * y) + SW_F(TriUz0P);
+    vz = (SW_F(SW_TriPVDX) * x + SW_F(SW_TriPVDY) * y) + SW_F(TriVz0P);
+    SW_TriPRecip = SW_Recip(SW_TriPW);
+    u = uz * SW_F(SW_TriPRecip);
+    v = vz * SW_F(SW_TriPRecip);
+    *(unsigned short *)(span + 26) = (unsigned short)SW_TriPTemp;
+    SW_SetF(&SW_TriPU, u);
+    SW_SetF(&SW_TriPV, v);
+    w = SW_F(SW_TriPW);
+    *(double *)(span + 8) = u + MagicFix24;
+    *(double *)(span + 16) = v + MagicFix24;
+    cnt -= 16;
+    while (cnt > 0) {
+        w += SW_F(TriDozDx16P);
+        uz += SW_F(TriDuzDx16P);
+        vz += SW_F(TriDvzDx16P);
+        SW_SetF(&SW_TriPTemp, w);
+        SW_TriPRecip = SW_Recip(SW_TriPTemp);
+        u = uz * SW_F(SW_TriPRecip);
+        v = vz * SW_F(SW_TriPRecip);
+        du = u - SW_F(SW_TriPU);
+        SW_SetF(&SW_TriPU, u);
+        dv = v - SW_F(SW_TriPV);
+        SW_SetF(&SW_TriPV, v);
+        *(double *)(span + 32) = du * SW_F(MipOffsets[22]) + MagicFix24;
+        span += 8;
+        SW_TriPTmp = dv * SW_F(MipOffsets[22]) + MagicFix24;
+        *(long *)(span + 28) = SW_L(SW_TriPTmp);
+        cnt -= 16;
+    }
+    cnt &= 0xf;
+    w += SW_F(SW_TriPWDX) * SW_F(MipOffsets[24 + cnt]);
+    uz += SW_F(SW_TriPUDX) * SW_F(MipOffsets[24 + cnt]);
+    vz += SW_F(SW_TriPVDX) * SW_F(MipOffsets[24 + cnt]);
+    SW_SetF(&SW_TriPW, w);
+    SW_TriPRecip = SW_Recip(SW_TriPW);
+    du = uz * SW_F(SW_TriPRecip) - SW_F(SW_TriPU);
+    dv = vz * SW_F(SW_TriPRecip) - SW_F(SW_TriPV);
+    span += 40;
+    xb += SW_L(TriLeftXStepP);
+    xa += SW_L(TriRightXStepP);
+    SW_L(SW_TriPY)++;
+    *(double *)(span - 8) = du * SW_F(MipOffsets[6 + cnt]) + MagicFix24;
+    SW_TriPTmp = dv * SW_F(MipOffsets[6 + cnt]) + MagicFix24;
+    *(long *)(span - 4) = SW_L(SW_TriPTmp);
+    nb--;
+    na--;
+    if (!na)
+        goto edge_a;
+    if (!nb)
+        goto edge_b;
+    goto spans;
+
+done:
+    SW_SpanEnd = (long)span;
+    if (!SW_TexShift) {
+        pDrawSpansFilteredP();
+        return;
+    }
+    if (bMMXMipMap != 1)
+        SW_TexShift = 0;
+    pDrawSpansP();
+}
+#endif
 
 void MMXBlit32to16(void *dest, void *src, int w)
 {
