@@ -112,17 +112,17 @@ void S_DrawHealthBar(int percent)
 
 void S_DrawAirBar(int percent)
 {
-    int oldAlpha;
-    int w;
     int x;
+    int w;
+    int oldAlpha;
     int z;
 
     oldAlpha = GlobalAlpha;
     GlobalAlpha = 0xFF000000;
     HWR_EnableZBuffer(true, true);
     bBlueEffect = false;
-    w = BarsWidth * percent / 100;
     x = DumpWidth - BarsWidth - 10;
+    w = BarsWidth * percent / 100;
     z = phd_znear + 50;
 
     InsertLine(x - 2, 7, x + BarsWidth + 1, 7, z, 0, 0);
