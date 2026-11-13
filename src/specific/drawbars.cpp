@@ -17,17 +17,17 @@ void HWR_EnableZBuffer(bool tWrite, bool tCompare);
 
 void S_DrawDashBar(int percent)
 {
-    int oldAlpha;
-    int w;
     int x;
+    int w;
+    int oldAlpha;
     int z;
 
     oldAlpha = GlobalAlpha;
     GlobalAlpha = 0xFF000000;
     HWR_EnableZBuffer(true, true);
     bBlueEffect = false;
-    w = BarsWidth * percent / 100;
     x = DumpWidth - BarsWidth - 10;
+    w = BarsWidth * percent / 100;
     z = phd_znear + 50;
 
     InsertLine(x - 2, 19, x + BarsWidth + 1, 19, z, 0, 0);
