@@ -84,11 +84,184 @@ int xgen_xguv(sint16 *iptr);
 int xgen_xguvpersp_fp(sint16 *iptr);
 void gtmap_persp32_fp(int ymin, int ymax, unsigned char *tptr);
 void wgtmap_persp16_fp(int ymin, int ymax, char *tptr);
+#ifndef FEAT_C_ASM
 void flatA(void);
 void transA(void);
 void gourA(void);
 void gtmapA(void);
 void wgtmapA(void);
+#else
+void flatA(int ymin, int ymax, int colour);
+void transA(int ymin, int ymax, int colour);
+void gourA(int ymin, int ymax, int colour);
+void gtmapA(int ymin, int ymax, char *texture);
+void wgtmapA(int ymin, int ymax, char *texture);
+#endif
+
+#if FEAT_C_ASM
+extern char depthq_table[33][256];
+extern char gouraud_table[256][32];
+extern sint32 phd_scrwidth;
+extern char *phd_winptr;
+extern int phd_winwidth;
+
+void flatA(int ymin, int ymax, int colour)
+{
+    sint16 *xptr;
+    char *line;
+    int x, w;
+
+    if (ymax - ymin <= 0)
+        return;
+    xptr = (sint16 *)(xbuffer + ymin * 2) + 1;
+    line = phd_winptr + ymin * phd_scrwidth;
+    for (ymax -= ymin; ymax > 0; ymax--, xptr += 4, line += phd_scrwidth) {
+        x = xptr[0];
+        w = xptr[2] - x;
+        for (; w > 0; w--, x++)
+            line[x] = (char)colour;
+    }
+}
+
+void transA(int ymin, int ymax, int colour)
+{
+    sint16 *xptr;
+    unsigned char *line, *pix, *table;
+    int x, xr, w;
+
+    if (ymax - ymin <= 0 || (unsigned int)colour > 32)
+        return;
+    table = (unsigned char *)depthq_table[colour];
+    xptr = (sint16 *)(xbuffer + ymin * 2) + 1;
+    line = (unsigned char *)phd_winptr + ymin * phd_scrwidth;
+    for (ymax -= ymin; ymax > 0; ymax--, xptr += 4, line += phd_scrwidth) {
+        x = xptr[0];
+        if (x < 0)
+            x = 0;
+        xr = xptr[2];
+        if (xr > phd_winwidth)
+            xr = phd_winwidth;
+        pix = line + x;
+        for (w = xr - x; w > 0; w--, pix++)
+            *pix = table[*pix];
+    }
+}
+
+void gourA(int ymin, int ymax, int colour)
+{
+    sint32 *xptr;
+    char *line, *pix, *table;
+    int x, xr, w, g, dg;
+    sint32 hi, dhi;
+    uint32 lo, dlo, sum;
+
+    if (ymax - ymin <= 0)
+        return;
+    table = gouraud_table[0] + ((colour & 0xffff) << 5);
+    xptr = xbuffer + ymin * 4;
+    line = phd_winptr + ymin * phd_scrwidth;
+    for (ymax -= ymin; ymax > 0; ymax--, xptr += 4, line += phd_scrwidth) {
+        x = (sint16)(xptr[0] >> 16);
+        xr = (sint16)(xptr[2] >> 16);
+        if (x >= xr)
+            continue;
+        g = xptr[1];
+        dg = (xptr[3] - g) / (xr - x);
+        if (x < 0) {
+            g -= x * dg;
+            x = 0;
+        }
+        pix = line + x;
+        hi = g >> 16;
+        lo = (uint32)g << 16;
+        dhi = dg >> 16;
+        dlo = (uint32)dg << 16;
+        w = xr - x;
+        if (w <= 0) {
+            if ((uint32)pix & 1)
+                *pix = table[hi];
+            continue;
+        }
+        for (; w > 0; w--) {
+            *pix++ = table[hi];
+            sum = lo + dlo;
+            hi += dhi + (sum < lo);
+            lo = sum;
+        }
+    }
+}
+
+void gtmapA(int ymin, int ymax, char *texture)
+{
+    sint32 *xptr;
+    unsigned char *line, *pix, *tex, *table;
+    int x, xr, w;
+    sint32 g, u, v, dg, du, dv;
+
+    if (ymax - ymin <= 0)
+        return;
+    tex = (unsigned char *)texture;
+    table = (unsigned char *)depthq_table;
+    xptr = xbuffer + ymin * 8;
+    line = (unsigned char *)phd_winptr + ymin * phd_scrwidth;
+    for (ymax -= ymin; ymax > 0; ymax--, xptr += 8, line += phd_scrwidth) {
+        x = xptr[0] >> 16;
+        xr = xptr[4] >> 16;
+        if (xr <= x)
+            continue;
+        w = xr - x;
+        g = xptr[1];
+        u = xptr[2];
+        v = xptr[3];
+        dg = (xptr[5] - g) / w;
+        du = (xptr[6] - u) / w;
+        dv = (xptr[7] - v) / w;
+        for (pix = line + x; w > 0; w--) {
+            *pix++ = table[((g >> 8) & 0xff00) | tex[((v >> 8) & 0xff00) | ((u >> 16) & 0xff)]];
+            u += du;
+            v += dv;
+            g += dg;
+        }
+    }
+}
+
+void wgtmapA(int ymin, int ymax, char *texture)
+{
+    sint32 *xptr;
+    unsigned char *line, *pix, *tex, *table;
+    int x, xr, w;
+    unsigned int texel;
+    sint32 g, u, v, dg, du, dv;
+
+    if (ymax - ymin <= 0)
+        return;
+    tex = (unsigned char *)texture;
+    table = (unsigned char *)depthq_table;
+    xptr = xbuffer + ymin * 8;
+    line = (unsigned char *)phd_winptr + ymin * phd_scrwidth;
+    for (ymax -= ymin; ymax > 0; ymax--, xptr += 8, line += phd_scrwidth) {
+        x = xptr[0] >> 16;
+        xr = xptr[4] >> 16;
+        if (xr <= x)
+            continue;
+        w = xr - x;
+        g = xptr[1];
+        u = xptr[2];
+        v = xptr[3];
+        dg = (xptr[5] - g) / w;
+        du = (xptr[6] - u) / w;
+        dv = (xptr[7] - v) / w;
+        for (pix = line + x; w > 0; w--, pix++) {
+            texel = tex[((v >> 8) & 0xff00) | ((u >> 16) & 0xff)];
+            if (texel)
+                *pix = table[((g >> 8) & 0xff00) | texel];
+            u += du;
+            v += dv;
+            g += dg;
+        }
+    }
+}
+#endif
 
 void draw_poly_flat(sint16 *iptr)
 {
@@ -96,12 +269,16 @@ void draw_poly_flat(sint16 *iptr)
 
     if (xgen_x(iptr + 1)) {
         colour = *iptr;
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, colour
             call flatA
         }
+#else
+        flatA(xgen_ymin, xgen_ymax, colour);
+#endif
     }
 }
 
@@ -111,12 +288,16 @@ void draw_poly_trans(sint16 *iptr)
 
     if (xgen_x(iptr + 1)) {
         colour = *iptr;
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, colour
             call transA
         }
+#else
+        transA(xgen_ymin, xgen_ymax, colour);
+#endif
     }
 }
 
@@ -126,12 +307,16 @@ void draw_poly_gouraud(sint16 *iptr)
 
     if (xgen_xg(iptr + 1)) {
         colour = *iptr;
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, colour
             call gourA
         }
+#else
+        gourA(xgen_ymin, xgen_ymax, colour);
+#endif
     }
 }
 
@@ -141,12 +326,16 @@ void draw_poly_gtmap(sint16 *iptr)
 
     if (xgen_xguv(iptr + 1)) {
         texture = texture_page_ptrs[*iptr];
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, texture
             call gtmapA
         }
+#else
+        gtmapA(xgen_ymin, xgen_ymax, texture);
+#endif
     }
 }
 
@@ -156,12 +345,16 @@ void draw_poly_wgtmap(sint16 *iptr)
 
     if (xgen_xguv(iptr + 1)) {
         texture = texture_page_ptrs[*iptr];
+#ifndef FEAT_C_ASM
         __asm {
             mov eax, xgen_ymin
             mov edx, xgen_ymax
             mov ebx, texture
             call wgtmapA
         }
+#else
+        wgtmapA(xgen_ymin, xgen_ymax, texture);
+#endif
     }
 }
 
