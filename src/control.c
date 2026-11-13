@@ -1668,3 +1668,205 @@ sint32 IsRoomOutside(sint32 x, sint32 y, sint32 z)
         return -2;
     }
 }
+
+extern sint16 cdtrack;
+extern int reset_flag;
+extern int noinput_count;
+extern int overlay_flag;
+extern sint32 Inventory_ExtraData[8];
+extern sint16 next_item_active;
+extern sint16 item_after_projectile;
+extern sint32 SmokeCountL, SmokeCountR;
+extern sint32 SplashCount;
+extern sint32 wibble;
+extern char PoisonFlag;
+extern uint8 GotJointPos[];
+extern int health_bar_timer;
+void S_CDLoop(void);
+void CheckCheatMode(void);
+int S_UpdateInput(void);
+void GetDemoInput(void);
+sint32 Display_Inventory(sint32 inventory_mode);
+void CreateSaveGameInfo(void);
+sint32 S_SaveGame(void *data, sint32 size, sint32 slot);
+void S_SaveSettings(void);
+void ClearDynamics(void);
+void KillEverything(void);
+void AlertNearbyGuards(ITEM_INFO *item);
+void LaraControl(sint16 item_number);
+void HairControl(int in_cutscene);
+void TriggerDynamic(sint32 x, sint32 y, sint32 z, sint32 falloff, sint32 r, sint32 g, sint32 b);
+void CalculateCamera(void);
+void LaraBreath(ITEM_INFO *item);
+void UpdateSparks(void);
+void UpdateSplashes(void);
+void UpdateBats(void);
+void SoundEffects(void);
+
+static sint32 framecount;
+
+sint32 ControlPhase(sint32 nframes, sint32 demo_mode)
+{
+    int i;
+    uint32 return_val;
+    sint16 item_num, nex;
+
+    if (nframes > 10)
+        nframes = 10;
+    for (framecount += nframes; framecount > 0; framecount -= 2) {
+        if (cdtrack > 0)
+            S_CDLoop();
+        if (!gameflow.cheatmodecheck_disabled)
+            CheckCheatMode();
+        if (level_complete)
+            return 1;
+        S_UpdateInput();
+        if (reset_flag)
+            return 0x500;
+        if (demo_mode) {
+            if (input)
+                return gameflow.on_demo_interrupt;
+            GetDemoInput();
+            if (input == -1) {
+                input = 0;
+                return gameflow.on_demo_end;
+            }
+        } else if (gameflow.noinput_timeout) {
+            if (input)
+                noinput_count = 0;
+            else {
+                noinput_count++;
+                if (noinput_count > gameflow.noinput_time)
+                    return 0x400;
+            }
+        }
+        if (lara.death_count > 300 || lara.death_count > 60 && input || overlay_flag == 2) {
+            if (demo_mode)
+                return gameflow.ondeath_demo_mode;
+            if (CurrentLevel == 0)
+                return 0x500;
+            if (gameflow.ondeath_ingame)
+                return gameflow.ondeath_ingame;
+            if (overlay_flag == 2) {
+                overlay_flag = 1;
+                return_val = Display_Inventory(5);
+                if (return_val)
+                    return return_val;
+            } else
+                overlay_flag = 2;
+        }
+        if ((input & IN_OPTION || input & IN_LOAD || input & IN_SAVE || overlay_flag <= 0) && !lara.death_count && !lara.extra_anim) {
+            if (overlay_flag <= 0) {
+                if (overlay_flag == -1)
+                    return_val = Display_Inventory(4);
+                else if (overlay_flag == -2)
+                    return_val = Display_Inventory(3);
+                else
+                    return_val = Display_Inventory(0);
+                overlay_flag = 1;
+                if (return_val) {
+                    if (Inventory_ExtraData[0] == 1) {
+                        if (CurrentLevel == 0)
+                            return 1;
+                        else {
+                            CreateSaveGameInfo();
+                            S_SaveGame(&savegame, sizeof(SAVEGAME_INFO), Inventory_ExtraData[1]);
+                            S_SaveSettings();
+                        }
+                    } else
+                        return return_val;
+                }
+            } else {
+                if (!gameflow.loadsave_disabled) {
+                    if (input & IN_LOAD)
+                        overlay_flag = -1;
+                    else if (input & IN_SAVE)
+                        overlay_flag = -2;
+                    else
+                        overlay_flag = 0;
+                } else
+                    overlay_flag = 0;
+            }
+        }
+        ClearDynamics();
+        item_num = next_item_active;
+        while (item_num != NO_ITEM) {
+            nex = items[item_num].next_active;
+            if (objects[items[item_num].object_number].control)
+                (*objects[items[item_num].object_number].control)(item_num);
+            if (nex != NO_ITEM) {
+                if (items[item_num].object_number == 309 || items[item_num].object_number == 311) {
+                    if (!items[nex].active)
+                        nex = item_after_projectile;
+                }
+            }
+            item_num = nex;
+        }
+        item_num = next_fx_active;
+        while (item_num != NO_ITEM) {
+            nex = effects[item_num].next_active;
+            if (objects[effects[item_num].object_number].control)
+                (*objects[effects[item_num].object_number].control)(item_num);
+            item_num = nex;
+        }
+        {
+            FLOOR_INFO *floor;
+            sint32 height, ceiling;
+            sint16 room_number;
+
+            room_number = lara_item->room_number;
+            floor = GetFloor(lara_item->pos.x_pos, lara_item->pos.y_pos - 512, lara_item->pos.z_pos, &room_number);
+        }
+        if (KillEverythingFlag)
+            KillEverything();
+        if (SmokeCountL)
+            SmokeCountL--;
+        if (SmokeCountR)
+            SmokeCountR--;
+        if (SplashCount)
+            SplashCount--;
+        if (lara.has_fired && !(wibble & 0x7f)) {
+            AlertNearbyGuards(lara_item);
+            lara.has_fired = 0;
+        }
+        if (lara.poisoned >= 16 && !(wibble & 0xff)) {
+            if (lara.poisoned > 256)
+                lara.poisoned = 256;
+            lara_item->hit_points -= lara.poisoned >> 4;
+            PoisonFlag = 16;
+        }
+        for (i = 0; i < 15; i++)
+            GotJointPos[i] = 0;
+        lara_item->item_flags[0] = 0;
+        LaraControl(0);
+        HairControl(0);
+        if (lara.electric) {
+            if (lara.electric >= 12)
+                TriggerDynamic(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos,
+                               (GetRandomControl() & 3) + 8, 0, (GetRandomControl() & 7) + 8,
+                               (GetRandomControl() & 7) + 16);
+            else
+                TriggerDynamic(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos,
+                               25 - (lara.electric << 1) + (GetRandomControl() & 1),
+                               (16 - lara.electric) + (GetRandomControl() & 7), 32 - lara.electric, 31);
+            SoundEffect(127, &lara_item->pos, 0);
+            SoundEffect(128, &lara_item->pos, 0);
+        }
+        CalculateCamera();
+        wibble = (wibble + 4) & 0xfc;
+        if (CurrentLevel == 16 || CurrentLevel == 17)
+            LaraBreath(lara_item);
+        UpdateSparks();
+        UpdateSplashes();
+        UpdateBats();
+        SoundEffects();
+        health_bar_timer--;
+        if (CurrentLevel != 0 || assault_timer_active)
+            savegame.timer++;
+        if (assault_penalty_display_timer)
+            assault_penalty_display_timer--;
+        if (QuadbikeLapTimeDisplayTimer)
+            QuadbikeLapTimeDisplayTimer--;
+    }
+    return 0;
+}

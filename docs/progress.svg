@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="400.93" height="12" x="0" y="0" class="named"><title>1430 · 95.46%</title></rect>
-<rect width="15.70" height="12" x="400.93" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
-<rect width="3.36" height="12" x="416.64" y="0" class="todo"><title>12 · 0.80%</title></rect>
+<rect width="401.21" height="12" x="0" y="0" class="named"><title>1431 · 95.53%</title></rect>
+<rect width="15.70" height="12" x="401.21" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
+<rect width="3.08" height="12" x="416.92" y="0" class="todo"><title>11 · 0.73%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">95.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1430</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">12</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1431</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">11</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="368.89" height="12" x="0" y="0" class="named"><title>637 KB · 87.83%</title></rect>
-<rect width="39.24" height="12" x="368.89" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
-<rect width="11.87" height="12" x="408.13" y="0" class="todo"><title>20 KB · 2.83%</title></rect>
+<rect width="369.77" height="12" x="0" y="0" class="named"><title>638 KB · 88.04%</title></rect>
+<rect width="39.24" height="12" x="369.77" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
+<rect width="10.99" height="12" x="409.01" y="0" class="todo"><title>19 KB · 2.62%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">87.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">637 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">20 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">88.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">638 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">19 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -267,7 +267,7 @@
 <rect width="12" height="12" x="0" y="60" class="named"><title>0x0041f730 InitialiseCompy (24 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="60" class="named"><title>0x0041f750 CompyControl (1524 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="60" class="named"><title>0x0041fd50 CarcassControl (587 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="60" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="60" class="named"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="60" class="named"><title>0x00420590 AnimateItem (980 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="60" class="named"><title>0x00420970 GetChange (171 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="60" class="named"><title>0x00420a20 TranslateItem (95 bytes)</title></rect>
@@ -1686,7 +1686,7 @@
 <rect width="22.43" height="22.31" x="282.23" y="179.57" class="nonmatching"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="22.43" height="22.01" x="282.23" y="204.88" class="named"><title>0x0041f750 CompyControl (1524 bytes)</title></rect>
 <rect width="22.43" height="21.93" x="282.23" y="229.89" class="named"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
-<rect width="22.43" height="21.89" x="282.23" y="254.82" class="todo"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
+<rect width="22.43" height="21.89" x="282.23" y="254.82" class="named"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
 <rect width="22.43" height="21.83" x="282.23" y="279.71" class="named"><title>0x00449bb0 LaraGun (1512 bytes)</title></rect>
 <rect width="22.43" height="21.72" x="282.23" y="304.54" class="named"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
 <rect width="22.43" height="21.57" x="282.23" y="329.26" class="named"><title>0x00465240 TrapObjects (1494 bytes)</title></rect>

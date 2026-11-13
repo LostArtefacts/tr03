@@ -2256,6 +2256,7 @@ address,size,name,symbol
 0x00625f68,4,fliptimer,_fliptimer
 0x00625f6c,4,number_los_rooms,_number_los_rooms
 0x00625f70,4,game_closedown,_game_closedown
+0x00625f74,4,framecount,_framecount
 0x00625f78,4,DemoPlay,_DemoPlay
 0x00625f7c,4,demo_loaded,_demo_loaded
 0x00625f80,4,demo_level,_demo_level
