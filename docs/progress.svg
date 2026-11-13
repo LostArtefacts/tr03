@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="400.65" height="12" x="0" y="0" class="named"><title>1429 · 95.39%</title></rect>
-<rect width="15.70" height="12" x="400.65" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
-<rect width="3.64" height="12" x="416.36" y="0" class="todo"><title>13 · 0.87%</title></rect>
+<rect width="400.93" height="12" x="0" y="0" class="named"><title>1430 · 95.46%</title></rect>
+<rect width="15.70" height="12" x="400.93" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
+<rect width="3.36" height="12" x="416.64" y="0" class="todo"><title>12 · 0.80%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">95.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1429</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">13</tspan></text>
+<text text-anchor="end" x="600" y="7.50">95.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1430</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">12</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="367.83" height="12" x="0" y="0" class="named"><title>635 KB · 87.58%</title></rect>
-<rect width="39.24" height="12" x="367.83" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
-<rect width="12.93" height="12" x="407.07" y="0" class="todo"><title>22 KB · 3.08%</title></rect>
+<rect width="368.89" height="12" x="0" y="0" class="named"><title>637 KB · 87.83%</title></rect>
+<rect width="39.24" height="12" x="368.89" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
+<rect width="11.87" height="12" x="408.13" y="0" class="todo"><title>20 KB · 2.83%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">87.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">635 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">22 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">87.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">637 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">20 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -314,7 +314,7 @@
 <rect width="12" height="12" x="705" y="60" class="named"><title>0x00425590 SetRoomBounds (885 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="60" class="named"><title>0x00425910 ClipRoom (1023 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="60" class="named"><title>0x00425d10 DrawEffect (386 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="75" class="todo"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="75" class="named"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="75" class="named"><title>0x004265e0 DrawLara (6200 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="75" class="named"><title>0x00427e20 DrawLaraInt (5416 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="75" class="named"><title>0x00429350 InitInterpolate (52 bytes)</title></rect>
@@ -1657,7 +1657,7 @@
 <rect width="25.37" height="24.31" x="226.97" y="315.38" class="nonmatching"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="25.37" height="24.18" x="226.97" y="342.69" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
 <rect width="25.37" height="24.13" x="226.97" y="369.86" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
-<rect width="25.37" height="23.54" x="226.97" y="396.99" class="todo"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
+<rect width="25.37" height="23.54" x="226.97" y="396.99" class="named"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
 <rect width="25.37" height="23.47" x="226.97" y="423.53" class="nonmatching"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
 <rect width="23.89" height="24.93" x="255.34" y="0" class="named"><title>0x00499de0 ScanLinesBlackAlpha (1839 bytes)</title></rect>
 <rect width="23.89" height="24.62" x="255.34" y="27.93" class="named"><title>0x00489550 do_control_option (1816 bytes)</title></rect>

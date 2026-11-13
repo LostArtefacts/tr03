@@ -1897,6 +1897,8 @@ address,size,name,symbol
 0x004c52b0,,lara_meshes,_lara_meshes
 0x004c52d0,,lara_last_points,_lara_last_points
 0x004c52e0,,lara_line_counts,_lara_line_counts
+0x004c52e8,256,EnemyBites,_EnemyBites
+0x004c53e8,16,EnemyWeapon,_EnemyWeapon
 0x004c53f8,96,box_lines,_box_lines
 0x004c5458,32,SplashRings,_SplashRings
 0x004c5478,,effect_routines,_effect_routines

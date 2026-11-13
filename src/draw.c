@@ -391,6 +391,182 @@ void DrawEffect(sint16 fx_num)
     }
 }
 
+extern BITE_INFO EnemyBites[16];
+extern uint8 EnemyWeapon[16];
+extern sint16 null_rotations[12];
+extern sint32 *bones;
+
+void phd_TranslateAbs(sint32 x, sint32 y, sint32 z);
+void S_PrintShadow(sint16 size, sint16 *bptr, ITEM_INFO *item, int unknown);
+int S_GetObjectBounds(sint16 *bptr);
+void CalculateObjectLighting(ITEM_INFO *item, sint16 *frame);
+void S_CalculateStaticLight(sint16 adder);
+int LOS(GAME_VECTOR *start, GAME_VECTOR *target);
+void S_DrawLaserBeam(GAME_VECTOR *src, GAME_VECTOR *dest, uint8 cr, uint8 cg, uint8 cb);
+void InitInterpolate(int frac, int rate);
+void phd_PopMatrix_I(void);
+void phd_PushMatrix_I(void);
+void phd_RotY_I(sint16 ang);
+void phd_RotX_I(sint16 ang);
+void phd_RotZ_I(sint16 ang);
+void phd_TranslateRel_I(sint32 x, sint32 y, sint32 z);
+void phd_TranslateRel_ID(sint32 x, sint32 y, sint32 z, sint32 x2, sint32 y2, sint32 z2);
+void phd_RotYXZ_I(sint16 y, sint16 x, sint16 z);
+void gar_RotYXZsuperpack_I(sint16 **pprot1, sint16 **pprot2, int skip);
+void phd_PutPolygons_I(sint16 *ptr, int clip);
+
+void DrawAnimatingItem(ITEM_INFO *item)
+{
+    int clip, i, poppush;
+    OBJECT_INFO *object;
+    sint32 *bone;
+    sint16 *rotation1, *rotation2;
+    sint16 *extra_rotation;
+    sint16 **meshpp;
+    uint32 bit;
+    sint16 *frmptr[2];
+    int rate, frac;
+
+    frac = GetFrames(item, frmptr, &rate);
+    object = &objects[item->object_number];
+    if (object->shadow_size)
+        S_PrintShadow(object->shadow_size, frmptr[0], item, 0);
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    phd_RotYXZ(item->pos.y_rot, item->pos.x_rot, item->pos.z_rot);
+    if ((clip = S_GetObjectBounds(frmptr[0]))) {
+        CalculateObjectLighting(item, frmptr[0]);
+        if (item->data)
+            extra_rotation = (sint16 *)item->data;
+        else
+            extra_rotation = null_rotations;
+        meshpp = &meshes[object->mesh_index];
+        bone = bones + object->bone_index;
+        bit = 1;
+        if (!frac) {
+            phd_TranslateRel((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8));
+            rotation1 = frmptr[0] + 9;
+            gar_RotYXZsuperpack(&rotation1, 0);
+            if (bit & item->mesh_bits)
+                phd_PutPolygons(*meshpp, clip);
+            meshpp++;
+            for (i = 0; i < object->nmeshes - 1; i++, bone += 4, meshpp++) {
+                poppush = *bone;
+                if (poppush & 1)
+                    phd_PopMatrix();
+                if (poppush & 2)
+                    phd_PushMatrix();
+                phd_TranslateRel(*(bone + 1), *(bone + 2), *(bone + 3));
+                gar_RotYXZsuperpack(&rotation1, 0);
+                if (poppush & 0x1c) {
+                    if (poppush & 8)
+                        phd_RotY(*(extra_rotation++));
+                    if (poppush & 4)
+                        phd_RotX(*(extra_rotation++));
+                    if (poppush & 16)
+                        phd_RotZ(*(extra_rotation++));
+                }
+                bit <<= 1;
+                if (bit & item->mesh_bits)
+                    phd_PutPolygons(*meshpp, clip);
+                if (item->fired_weapon && i == EnemyBites[object->bite_offset].mesh_num - 1) {
+                    BITE_INFO *bi = &EnemyBites[object->bite_offset];
+                    sint16 rnd;
+
+                    rnd = GetRandomDraw();
+                    phd_PushMatrix();
+                    phd_TranslateRel(bi->x, bi->y, bi->z);
+                    if (item->object_number == 64)
+                        phd_RotYXZ(0, 32760, (rnd << 14) + (rnd >> 2) - 4096);
+                    else
+                        phd_RotYXZ(0, -16380, (rnd << 14) + (rnd >> 2) - 4096);
+                    S_DrawSprite(0x3608383f, 0, 0, 0, objects[299].mesh_index, 0, 192);
+                    S_CalculateStaticLight(600);
+                    if (EnemyWeapon[object->bite_offset] & 1)
+                        phd_PutPolygons(meshes[objects[301].mesh_index], clip);
+                    else
+                        phd_PutPolygons(meshes[objects[300].mesh_index], clip);
+                    phd_PopMatrix();
+                    item->fired_weapon--;
+                }
+                if (i == EnemyBites[object->bite_offset].mesh_num - 1 && (EnemyWeapon[object->bite_offset] & 0x80)) {
+                    BITE_INFO *bi = &EnemyBites[object->bite_offset + 1];
+                    PHD_VECTOR pos;
+                    GAME_VECTOR src, dest;
+
+                    pos.x = bi->x;
+                    pos.y = bi->y;
+                    pos.z = bi->z;
+                    GetJointAbsPosition(item, &pos, bi->mesh_num);
+                    src.x = pos.x;
+                    src.y = pos.y;
+                    src.z = pos.z;
+                    src.room_number = item->room_number;
+                    pos.x = bi->x;
+                    pos.y = bi->y << 5;
+                    pos.z = bi->z;
+                    GetJointAbsPosition(item, &pos, bi->mesh_num);
+                    dest.x = pos.x;
+                    dest.y = pos.y;
+                    dest.z = pos.z;
+                    LOS(&src, &dest);
+                    S_DrawLaserBeam(&src, &dest, 255, 2, 3);
+                }
+            }
+        } else {
+            InitInterpolate(frac, rate);
+            phd_TranslateRel_ID((sint32)*(frmptr[0] + 6), (sint32)*(frmptr[0] + 7), (sint32)*(frmptr[0] + 8),
+                                (sint32)*(frmptr[1] + 6), (sint32)*(frmptr[1] + 7), (sint32)*(frmptr[1] + 8));
+            rotation1 = frmptr[0] + 9;
+            rotation2 = frmptr[1] + 9;
+            gar_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+            if (bit & item->mesh_bits)
+                phd_PutPolygons_I(*meshpp, clip);
+            meshpp++;
+            for (i = 0; i < object->nmeshes - 1; i++, bone += 4, meshpp++) {
+                poppush = *bone;
+                if (poppush & 1)
+                    phd_PopMatrix_I();
+                if (poppush & 2)
+                    phd_PushMatrix_I();
+                phd_TranslateRel_I(*(bone + 1), *(bone + 2), *(bone + 3));
+                gar_RotYXZsuperpack_I(&rotation1, &rotation2, 0);
+                if (poppush & 0x1c) {
+                    if (poppush & 8)
+                        phd_RotY_I(*(extra_rotation++));
+                    if (poppush & 4)
+                        phd_RotX_I(*(extra_rotation++));
+                    if (poppush & 16)
+                        phd_RotZ_I(*(extra_rotation++));
+                }
+                bit <<= 1;
+                if (bit & item->mesh_bits)
+                    phd_PutPolygons_I(*meshpp, clip);
+                if (item->fired_weapon && i == EnemyBites[object->bite_offset].mesh_num - 1) {
+                    sint16 rnd = GetRandomDraw();
+                    BITE_INFO *bi = &EnemyBites[object->bite_offset];
+
+                    phd_PushMatrix_I();
+                    phd_TranslateRel_I(bi->x, bi->y, bi->z);
+                    phd_RotYXZ_I(0, -16380, (rnd << 14) + (rnd >> 2) - 4096);
+                    InterpolateMatrix();
+                    S_DrawSprite(0x3608383f, 0, 0, 0, objects[299].mesh_index, 0, 192);
+                    S_CalculateStaticLight(600);
+                    if (EnemyWeapon[object->bite_offset] & 1)
+                        phd_PutPolygons(meshes[objects[301].mesh_index], clip);
+                    else
+                        phd_PutPolygons(meshes[objects[300].mesh_index], clip);
+                    phd_PopMatrix_I();
+                    item->fired_weapon--;
+                }
+            }
+        }
+    } else if (item->clear_body && item->hit_points <= 0 && item->after_death >= 32) {
+        KillItem(item - items);
+    }
+    phd_PopMatrix();
+}
+
 void InitInterpolate(int frac, int rate)
 {
     IM_frac = frac;
