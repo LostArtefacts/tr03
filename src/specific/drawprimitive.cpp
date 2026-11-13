@@ -2766,6 +2766,7 @@ extern long SpansTexturedFilteredPV;
 extern long SpansTexturedFilteredPU;
 extern __int64 SpansTexturedFilteredPFrac;
 
+#ifndef FEAT_C_ASM
 __declspec(naked) void SW_SpanGTPBilinear(void)
 {
     __asm {
@@ -2943,6 +2944,54 @@ __declspec(naked) void SW_SpanGTPBilinear(void)
         ret
     }
 }
+#else
+void SW_SpanGTPBilinear(void)
+{
+    SW_SPAN *s;
+    uint8 *row, *p, *t;
+    sint32 *d;
+    uint32 u, v;
+    uint16 c[4];
+    sint16 *grad;
+    sint32 n, m, i;
+
+    s = (SW_SPAN *)SW_SpanBuffer;
+    if (s == (SW_SPAN *)SW_SpanEnd)
+        return;
+    row = (uint8 *)SW_Surface + SW_SpanY * SW_SurfacePitch;
+    grad = (sint16 *)&SW_SpanGrad;
+    do {
+        p = row + (s->x << 2);
+        n = s->n;
+        d = (sint32 *)(s + 1);
+        if (n > 0) {
+            u = s->tex[0];
+            v = s->tex[2];
+            for (i = 0; i < 4; i++)
+                c[i] = s->c[i];
+            do {
+                m = n > 16 ? 16 : n;
+                do {
+                    t = (uint8 *)&((uint32 *)SW_TextureBits)[((v & 0xFF0000) >> 8) | ((u & 0xFF0000) >> 16)];
+                    for (i = 0; i < 4; i++) {
+                        p[i] = SW_Bilinear(t, i, u, v, c[i]);
+                        c[i] += grad[i];
+                    }
+                    u += d[0];
+                    v += d[1];
+                    p += 4;
+                } while (--m);
+                d += 2;
+                n -= 16;
+            } while (n > 0);
+        } else {
+            d += 2;
+        }
+        row += SW_SurfacePitch;
+        s = (SW_SPAN *)d;
+    } while (s != (SW_SPAN *)SW_SpanEnd);
+}
+#endif
 
 extern long SpansAdditiveFilteredPV;
 extern long SpansAdditiveFilteredPU;
