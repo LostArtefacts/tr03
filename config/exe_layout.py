@@ -19,4 +19,5 @@ STATIC_DATA = [
 
 
 def link_exe(objects: list[str], exe_objects: list[str], feats: list[str]) -> None:
-    orig_layout.link(exe_objects, extra_rows=STATIC_INITIALIZERS + STATIC_DATA, runtime=["libc.lib"])
+    orig_layout.link(exe_objects, extra_rows=STATIC_INITIALIZERS + STATIC_DATA, runtime=["libc.lib"],
+                     data_libraries=["dxguid.lib"])
