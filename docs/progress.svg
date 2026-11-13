@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="191.72" height="12" x="0" y="0" class="named"><title>1436 · 95.86%</title></rect>
-<rect width="8.28" height="12" x="191.72" y="0" class="nonmatching"><title>62 · 4.14%</title></rect>
+<rect width="191.86" height="12" x="0" y="0" class="named"><title>1437 · 95.93%</title></rect>
+<rect width="8.14" height="12" x="191.86" y="0" class="nonmatching"><title>61 · 4.07%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">95.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1436</tspan> · <tspan class="nonmatching">62</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1437</tspan> · <tspan class="nonmatching">61</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="177.20" height="12" x="0" y="0" class="named"><title>642 KB · 88.60%</title></rect>
-<rect width="22.80" height="12" x="177.20" y="0" class="nonmatching"><title>83 KB · 11.40%</title></rect>
+<rect width="177.26" height="12" x="0" y="0" class="named"><title>642 KB · 88.63%</title></rect>
+<rect width="22.74" height="12" x="177.26" y="0" class="nonmatching"><title>82 KB · 11.37%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="24.50">88.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">642 KB</tspan> · <tspan class="nonmatching">83 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">642 KB</tspan> · <tspan class="nonmatching">82 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1550,7 +1550,7 @@
 <rect width="12" height="12" x="120" y="435" class="named"><title>0x004b2180 DXTextureCleanup (106 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="435" class="named"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="435" class="named"><title>0x004b2230 DXRestoreSurfaceIfLost (75 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="435" class="nonmatching"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="435" class="named"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="435" class="nonmatching"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="435" class="nonmatching"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="435" class="nonmatching"><title>0x004b2940 WinMain (774 bytes)</title></rect>
@@ -2236,7 +2236,7 @@
 <rect width="8.65" height="8.95" x="691.80" y="199.39" class="named"><title>0x0043efe0 lara_col_crawl (239 bytes)</title></rect>
 <rect width="8.65" height="8.95" x="703.44" y="199.39" class="named"><title>0x004493e0 LaraDoClimbLeftRight (239 bytes)</title></rect>
 <rect width="8.65" height="8.95" x="715.09" y="199.39" class="named"><title>0x0044e770 LaraTestWaterStepOut (239 bytes)</title></rect>
-<rect width="8.65" height="8.95" x="726.74" y="199.39" class="nonmatching"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
+<rect width="8.65" height="8.95" x="726.74" y="199.39" class="named"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
 <rect width="8.61" height="8.95" x="738.39" y="199.39" class="named"><title>0x00421370 RefreshCamera (238 bytes)</title></rect>
 <rect width="8.92" height="8.64" x="501.69" y="211.34" class="named"><title>0x0043b1a0 KillEffect (238 bytes)</title></rect>
 <rect width="8.92" height="8.64" x="501.69" y="222.98" class="named"><title>0x0046eb20 FallingCeiling (238 bytes)</title></rect>

@@ -278,6 +278,11 @@ void MMXTextureCopy(unsigned long *dest, unsigned char *src, unsigned long step)
 HRESULT DD_LockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd, DWORD dwFlags);
 HRESULT DD_UnlockSurface(LPDIRECTDRAWSURFACE3 lpSurface, DDSURFACEDESC &ddsd);
 
+inline bool DX_FAILED(HRESULT hr)
+{
+    return FAILED(hr);
+}
+
 int DXTextureAddPal(int w, int h, unsigned char *src, DXTEXTURE *list, unsigned long flags)
 {
     DXTEXTURE *tex;
@@ -291,7 +296,7 @@ int DXTextureAddPal(int w, int h, unsigned char *src, DXTEXTURE *list, unsigned 
         return -1;
     tex = &list[index];
     tex->dwFlags |= flags;
-    if (DX_TRY(DD_LockSurface(tex->pSystemSurface, desc, DDLOCK_WAIT | DDLOCK_WRITEONLY)))
+    if (DX_FAILED(DD_LockSurface(tex->pSystemSurface, desc, DDLOCK_WAIT | DDLOCK_WRITEONLY)))
         return -1;
     pitch = desc.lPitch;
     dest = (unsigned char *)desc.lpSurface;
