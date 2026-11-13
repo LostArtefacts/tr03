@@ -46,19 +46,19 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="407.23" height="12" x="0" y="0" class="named"><title>1432 · 95.59%</title></rect>
-<rect width="17.06" height="12" x="407.23" y="0" class="nonmatching"><title>60 · 4.01%</title></rect>
-<rect width="1.71" height="12" x="424.29" y="0" class="todo"><title>6 · 0.40%</title></rect>
+<rect width="407.52" height="12" x="0" y="0" class="named"><title>1433 · 95.66%</title></rect>
+<rect width="17.06" height="12" x="407.52" y="0" class="nonmatching"><title>60 · 4.01%</title></rect>
+<rect width="1.42" height="12" x="424.58" y="0" class="todo"><title>5 · 0.33%</title></rect>
 </g>
-<text text-anchor="end" x="606" y="7.50">95.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">60</tspan> · <tspan class="todo">6</tspan></text>
+<text text-anchor="end" x="606" y="7.50">95.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="7"><tspan class="named">1433</tspan> · <tspan class="nonmatching">60</tspan> · <tspan class="todo">5</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="375.43" height="12" x="0" y="0" class="named"><title>639 KB · 88.13%</title></rect>
-<rect width="46.17" height="12" x="375.43" y="0" class="nonmatching"><title>79 KB · 10.84%</title></rect>
-<rect width="4.40" height="12" x="421.60" y="0" class="todo"><title>7 KB · 1.03%</title></rect>
+<rect width="375.80" height="12" x="0" y="0" class="named"><title>639 KB · 88.22%</title></rect>
+<rect width="46.17" height="12" x="375.80" y="0" class="nonmatching"><title>79 KB · 10.84%</title></rect>
+<rect width="4.04" height="12" x="421.96" y="0" class="todo"><title>7 KB · 0.95%</title></rect>
 </g>
-<text text-anchor="end" x="606" y="24.50">88.1%</text>
+<text text-anchor="end" x="606" y="24.50">88.2%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">79 KB</tspan> · <tspan class="todo">7 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
@@ -1537,7 +1537,7 @@
 <rect width="12" height="12" x="300" y="435" class="named"><title>0x004b2e80 DXCreateZBuffer (250 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="435" class="named"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="435" class="named"><title>0x004b34d0 WinFrameRate (127 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="435" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="435" class="named"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="435" class="named"><title>0x004b37c0 S_ExitSystem (97 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="435" class="named"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="435" class="named"><title>0x004b3900 DD_LockSurface (46 bytes)</title></rect>
@@ -1853,7 +1853,7 @@
 <rect width="14.13" height="14.23" x="369.53" y="364.12" class="nonmatching"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
 <rect width="14.13" height="14.19" x="369.53" y="381.35" class="named"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
 <rect width="14.13" height="14.16" x="369.53" y="398.54" class="named"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
-<rect width="14.13" height="14.16" x="369.53" y="415.70" class="todo"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
+<rect width="14.13" height="14.16" x="369.53" y="415.70" class="named"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
 <rect width="14.13" height="14.14" x="369.53" y="432.86" class="named"><title>0x0044c150 undraw_flare (617 bytes)</title></rect>
 <rect width="13.97" height="14.28" x="386.66" y="82.91" class="named"><title>0x00414e50 CreatureMood (616 bytes)</title></rect>
 <rect width="13.90" height="14.28" x="403.63" y="82.91" class="named"><title>0x004531f0 InitialiseSlot (613 bytes)</title></rect>

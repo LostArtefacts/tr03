@@ -319,6 +319,74 @@ float WinFrameRate(void)
     return fps;
 }
 
+bool DXSurfBlt(LPDIRECTDRAWSURFACE3 lpSurface, LPRECT lpRect, int FillColor);
+void CloseDrawPrimitive(void);
+void HWR_GetAllTextureHandles(void);
+void HWR_SetCurrentTexture(DWORD handle);
+void setup_screen_size(void);
+extern DWORD TPages[];
+
+bool DXSwitchVideoMode(int needed, int current, bool disableZBuffer)
+{
+    unsigned long bpp;
+    bool change;
+    int nModes;
+    int i;
+
+    change = true;
+    bpp = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].bpp;
+    App.DXConfig.nVMode = needed;
+    nModes = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].nDisplayMode;
+    if (needed != current && App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].bpp != bpp) {
+        if (needed > current) {
+            while (1) {
+                if (++needed > nModes)
+                    break;
+                App.DXConfig.nVMode = needed;
+                if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].bpp == bpp)
+                    goto ok;
+            }
+            App.DXConfig.nVMode = current;
+            return false;
+        } else {
+            needed--;
+            while (1) {
+                if (needed < 0)
+                    break;
+                App.DXConfig.nVMode = needed;
+                if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].bpp == bpp)
+                    goto ok;
+                needed--;
+            }
+            App.DXConfig.nVMode = current;
+            return false;
+        }
+    }
+ok:
+    DXSurfBlt(App.lpFrontBuffer, NULL, 0);
+    for (i = 0; i < 32; i++) {
+        if (PictureTextures[i].tex)
+            PictureTextures[i].tex = NULL;
+    }
+    if (!App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware)
+        CloseDrawPrimitive();
+    WinFreeDX(false);
+    if (!WinDXInit(App.DeviceInfoPtr, App.DXConfigPtr, false)) {
+        WinFreeDX(false);
+        App.DXConfig.nVMode = current;
+        if (disableZBuffer)
+            App.DXConfigPtr->bZBuffer = 0;
+        WinDXInit(App.DeviceInfoPtr, App.DXConfigPtr, false);
+        change = false;
+    }
+    HWR_GetAllTextureHandles();
+    for (i = 0; i < nTPages; i++)
+        HWR_SetCurrentTexture(TPages[i]);
+    HWR_InitState();
+    setup_screen_size();
+    return change;
+}
+
 void S_ExitSystem(char *message)
 {
     DXSetCooperativeLevel(App.lpDD, App.WindowHandle, DDSCL_NORMAL);
