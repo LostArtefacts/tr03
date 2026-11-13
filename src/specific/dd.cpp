@@ -296,6 +296,7 @@ bool DXUpdateFrame(bool runMessageLoop, LPRECT rect)
 
 void SWRBlit32to15(unsigned long *dest, unsigned long *src, int w)
 {
+#ifndef FEAT_C_ASM
     __asm {
         mov ecx, dword ptr [w]
         mov esi, dword ptr [src]
@@ -335,6 +336,19 @@ void SWRBlit32to15(unsigned long *dest, unsigned long *src, int w)
         jne L1
         pop ebp
     }
+#else
+    unsigned long a, b, n;
+
+    n = (unsigned long)w >> 2;
+    do {
+        a = src[0];
+        b = src[1];
+        dest[0] = ((a & 0xffc0ffc0) >> 1) | (a & 0x1f001f);
+        dest[1] = ((b & 0xffc0ffc0) >> 1) | (b & 0x1f001f);
+        src += 2;
+        dest += 2;
+    } while (--n);
+#endif
 }
 }
 
