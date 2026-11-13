@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="407.52" height="12" x="0" y="0" class="named"><title>1433 · 95.66%</title></rect>
-<rect width="17.06" height="12" x="407.52" y="0" class="nonmatching"><title>60 · 4.01%</title></rect>
-<rect width="1.42" height="12" x="424.58" y="0" class="todo"><title>5 · 0.33%</title></rect>
+<rect width="407.80" height="12" x="0" y="0" class="named"><title>1434 · 95.73%</title></rect>
+<rect width="17.06" height="12" x="407.80" y="0" class="nonmatching"><title>60 · 4.01%</title></rect>
+<rect width="1.14" height="12" x="424.86" y="0" class="todo"><title>4 · 0.27%</title></rect>
 </g>
 <text text-anchor="end" x="606" y="7.50">95.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="7"><tspan class="named">1433</tspan> · <tspan class="nonmatching">60</tspan> · <tspan class="todo">5</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="7"><tspan class="named">1434</tspan> · <tspan class="nonmatching">60</tspan> · <tspan class="todo">4</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="375.80" height="12" x="0" y="0" class="named"><title>639 KB · 88.22%</title></rect>
-<rect width="46.17" height="12" x="375.80" y="0" class="nonmatching"><title>79 KB · 10.84%</title></rect>
-<rect width="4.04" height="12" x="421.96" y="0" class="todo"><title>7 KB · 0.95%</title></rect>
+<rect width="376.47" height="12" x="0" y="0" class="named"><title>641 KB · 88.37%</title></rect>
+<rect width="46.17" height="12" x="376.47" y="0" class="nonmatching"><title>79 KB · 10.84%</title></rect>
+<rect width="3.36" height="12" x="422.64" y="0" class="todo"><title>6 KB · 0.79%</title></rect>
 </g>
-<text text-anchor="end" x="606" y="24.50">88.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">79 KB</tspan> · <tspan class="todo">7 KB</tspan></text>
+<text text-anchor="end" x="606" y="24.50">88.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="621" y="24"><tspan class="named">641 KB</tspan> · <tspan class="nonmatching">79 KB</tspan> · <tspan class="todo">6 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -123,7 +123,7 @@
 <rect width="12" height="12" x="90" y="15" class="nonmatching"><title>0x00408da0 HWI_InsertObjectG4_Sorted (1839 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="15" class="named"><title>0x004094d0 PHD_VBUF_To_VERTEX_INFO (141 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="15" class="named"><title>0x00409560 HWI_InsertObjectG3_Sorted (1602 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="15" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="15" class="named"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="15" class="named"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="15" class="named"><title>0x0040a510 HWI_InsertLine_Sorted (377 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="15" class="named"><title>0x0040a690 HWI_InsertTransQuad_Sorted (437 bytes)</title></rect>
@@ -1725,7 +1725,7 @@
 <rect width="19.44" height="19.26" x="307.66" y="253.17" class="named"><title>0x004151c0 CalculateTarget (1156 bytes)</title></rect>
 <rect width="19.44" height="19.22" x="307.66" y="275.43" class="named"><title>0x004a44a0 ScanLinesTDecalAffine (1154 bytes)</title></rect>
 <rect width="19.44" height="19.11" x="307.66" y="297.65" class="named"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
-<rect width="19.44" height="19.09" x="307.66" y="319.76" class="todo"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
+<rect width="19.44" height="19.09" x="307.66" y="319.76" class="named"><title>0x00409bb0 HWI_InsertSprite_Sorted (1146 bytes)</title></rect>
 <rect width="19.44" height="18.82" x="307.66" y="341.84" class="named"><title>0x00460230 AnimateQuadBike (1130 bytes)</title></rect>
 <rect width="19.44" height="18.79" x="307.66" y="363.67" class="named"><title>0x00466990 DrawShiva (1128 bytes)</title></rect>
 <rect width="19.44" height="18.70" x="307.66" y="385.45" class="named"><title>0x0043a5b0 ShowEndStatsText (1123 bytes)</title></rect>

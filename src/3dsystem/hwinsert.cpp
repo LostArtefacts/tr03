@@ -1919,4 +1919,93 @@ doxyclip:
         Buckets[b].cnt++;
     }
 }
+
+void HWI_InsertSprite_Sorted(int nZDepth, int nX1, int nY1, int nX2, int nY2, int nSprite, int nShade, int nShade1, int drawtype, int offset)
+{
+    PHDSPRITESTRUCT *pSprite;
+    float fZDepth;
+    float ooz;
+    float fShade;
+    float fU1;
+    float fV1;
+    float fU2;
+    float fV2;
+    float fUVAdd;
+    int nPoints;
+
+    if (nX2 <= nX1 || nY2 <= nY1 || nX2 <= 0 || nY2 <= 0 || nX1 >= phd_winxmax || nY1 >= phd_winymax)
+        return;
+    nX1 += phd_winxmin;
+    nX2 += phd_winxmin;
+    nY1 += phd_winymin;
+    nY2 += phd_winymin;
+    if (nZDepth < phd_znear)
+        nZDepth = phd_znear;
+    if (nZDepth >= phd_zfar)
+        return;
+    fZDepth = float(nZDepth);
+    ooz = one / fZDepth;
+    fShade = float(nShade);
+    pSprite = phdspriteinfo + nSprite;
+    fU1 = float((pSprite->offset << 8) & 0xff00);
+    fU2 = fU1 + pSprite->width;
+    fV1 = float(pSprite->offset & 0xff00);
+    fV2 = fV1 + pSprite->height;
+    fUVAdd = float(App.nUVAdd);
+    fU1 += fUVAdd;
+    fV1 += fUVAdd;
+    fU2 -= fUVAdd;
+    fU1 *= ooz;
+    fV1 *= ooz;
+    fU2 *= ooz;
+    fV2 *= ooz;
+    v_buffer[0].x = float(nX1 + offset);
+    v_buffer[0].y = float(nY1);
+    v_buffer[0].ooz = ooz;
+    v_buffer[0].vr = GETR(nShade);
+    v_buffer[0].vg = GETG(nShade);
+    v_buffer[0].vb = ColorTable[(nShade & 0x1f) << 3];
+    v_buffer[0].u = fU1;
+    v_buffer[0].v = fV1;
+    v_buffer[1].x = float(nX2 + offset);
+    v_buffer[1].y = float(nY1);
+    v_buffer[1].ooz = ooz;
+    v_buffer[1].u = fU2;
+    v_buffer[1].v = fV1;
+    v_buffer[1].vr = GETR(nShade);
+    v_buffer[1].vg = GETG(nShade);
+    v_buffer[1].vb = ColorTable[(nShade & 0x1f) << 3];
+    if (nShade1 != -1)
+        nShade = nShade1;
+    v_buffer[2].x = float(nX2);
+    v_buffer[2].y = float(nY2);
+    v_buffer[2].ooz = ooz;
+    v_buffer[2].u = fU2;
+    v_buffer[2].v = fV2;
+    v_buffer[2].vr = GETR(nShade);
+    v_buffer[2].vg = GETG(nShade);
+    v_buffer[2].vb = ColorTable[(nShade & 0x1f) << 3];
+    v_buffer[3].x = float(nX1);
+    v_buffer[3].y = float(nY2);
+    v_buffer[3].ooz = ooz;
+    v_buffer[3].u = fU1;
+    v_buffer[3].v = fV2;
+    v_buffer[3].vr = GETR(nShade);
+    v_buffer[3].vg = GETG(nShade);
+    v_buffer[3].vb = ColorTable[(nShade & 0x1f) << 3];
+    nPoints = 4;
+    if (nX1 < phd_winxmin || nX2 > phd_winxmin + phd_winwidth || nY1 < phd_winymin || nY2 > phd_winymin + phd_winheight) {
+        phd_leftfloat = (float)phd_winxmin;
+        phd_rightfloat = (float)(phd_winxmin + phd_winwidth);
+        phd_topfloat = (float)phd_winymin;
+        phd_bottomfloat = (float)(phd_winymin + phd_winheight);
+        nPoints = RoomXYGUVClipper(nPoints, v_buffer);
+    }
+    if (nPoints) {
+        bool tOldBlueEffect = bBlueEffect;
+        bBlueEffect = false;
+        HWI_InsertClippedPoly_Textured(nPoints, fZDepth, drawtype, pSprite->tpage);
+        bBlueEffect = tOldBlueEffect;
+    }
+}
 }
