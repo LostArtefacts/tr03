@@ -1049,29 +1049,24 @@ void DoWake_boat(ITEM_INFO *v, sint16 xoff, sint16 zoff, sint16 rotate)
 
 int BoatCheckGeton(sint16 item_number, COLL_INFO *coll)
 {
-    int geton, dist;
+    int geton, dist, z1, z2;
     sint16 rot;
     ITEM_INFO *boat;
 
     if (lara.gun_status != LG_ARMLESS)
         return 0;
-
     boat = &items[item_number];
-
-    dist = ((lara_item->pos.z_pos - boat->pos.z_pos) * phd_cos(-boat->pos.y_rot)
-               - (lara_item->pos.x_pos - boat->pos.x_pos) * phd_sin(-boat->pos.y_rot))
-        >> W2V_SHIFT;
-
+    z1 = lara_item->pos.z_pos;
+    z2 = boat->pos.z_pos;
+    dist = (lara_item->pos.x_pos - boat->pos.x_pos) * phd_sin(-boat->pos.y_rot);
+    dist = ((z1 - z2) * phd_cos(-boat->pos.y_rot) - dist) >> W2V_SHIFT;
     if (dist > 512)
         return 0;
-
     rot = boat->pos.y_rot - lara_item->pos.y_rot;
-
     geton = 0;
     if (lara.water_status == LARA_SURFACE || lara.water_status == LARA_WADE) {
         if (!(input & IN_ACTION) || lara_item->gravity_status || boat->speed)
             return 0;
-
         if (rot > 0x2000 && rot < 0x6000)
             geton = 1;
         else if (rot > -0x6000 && rot < -0x2000)
@@ -1082,26 +1077,16 @@ int BoatCheckGeton(sint16 item_number, COLL_INFO *coll)
                 geton = 3;
         } else if (lara_item->fallspeed == 0) {
             if (rot > -0x6000 && rot < 0x6000) {
-                if (lara_item->pos.x_pos == boat->pos.x_pos
-                    && lara_item->pos.y_pos == boat->pos.y_pos
-                    && lara_item->pos.z_pos == boat->pos.z_pos)
+                if (lara_item->pos.x_pos == boat->pos.x_pos && lara_item->pos.y_pos == boat->pos.y_pos && z1 == z2)
                     geton = 4;
                 else
                     geton = 3;
             }
         }
     }
-
-    if (!geton)
-        return 0;
-
-    if (!TestBoundsCollide(boat, lara_item, coll->radius))
-        return 0;
-
-    if (!TestCollision(boat, lara_item))
-        return 0;
-
-    return geton;
+    if (geton && TestBoundsCollide(boat, lara_item, coll->radius))
+        return TestCollision(boat, lara_item) ? geton : 0;
+    return 0;
 }
 
 #ifdef TR3_EXE
