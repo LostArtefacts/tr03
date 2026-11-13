@@ -77,7 +77,7 @@
 <rect width="0.10" height="12" x="199.92" y="0" class="todo"><title>28 bytes · 0.04%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="75.50">100.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="75"><tspan class="named">66 KB</tspan> · <tspan class="todo">28 bytes</tspan> · 1206/1206 globals placed · 33 unmapped</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="75"><tspan class="named">66 KB</tspan> · <tspan class="todo">28 bytes</tspan> · 1142/1142 globals placed · 97 unmapped</text>
 <text text-anchor="start" x="0" y="92.50">Executable file</text>
 <g transform="translate(130 86.50)">
 <rect width="189.27" height="12" x="0" y="0" class="named"><title>915 KB · 94.64%</title></rect>
@@ -1482,21 +1482,21 @@
 <rect width="12" height="12" x="600" y="405" class="named"><title>0x00493530 MMXSetRenderState (689 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="405" class="named"><title>0x004937f0 MMXDrawPrimitive (304 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="405" class="named"><title>0x00493920 MMXDrawLine (840 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="405" class="named"><title>0x00493c70 MMXDrawTriangleP (2619 bytes)</title></rect>
-<rect width="12" height="12" x="660" y="405" class="named"><title>0x004946b0 MMXDrawTriangle (1911 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="405" class="named"><title>0x00493c70 SW_TriSetupGTP (2619 bytes)</title></rect>
+<rect width="12" height="12" x="660" y="405" class="named"><title>0x004946b0 SW_TriSetupGT (1911 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="405" class="named"><title>0x00494e30 MMXDrawTriangleFog (1188 bytes)</title></rect>
-<rect width="12" height="12" x="690" y="405" class="named"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
+<rect width="12" height="12" x="690" y="405" class="named"><title>0x004952e0 SW_SpanG (207 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="405" class="named"><title>0x004953b0 DrawSpansAlpha (212 bytes)</title></rect>
-<rect width="12" height="12" x="720" y="405" class="named"><title>0x00495490 DrawSpansTextured (346 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="405" class="named"><title>0x004955f0 DrawSpansAdditive (354 bytes)</title></rect>
-<rect width="12" height="12" x="0" y="420" class="named"><title>0x00495760 DrawSpansColorKey (368 bytes)</title></rect>
-<rect width="12" height="12" x="15" y="420" class="named"><title>0x004958d0 DrawSpansTexturedP (335 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="420" class="named"><title>0x00495a20 DrawSpansColorKeyP (360 bytes)</title></rect>
-<rect width="12" height="12" x="45" y="420" class="named"><title>0x00495b90 DrawSpansAdditiveP (341 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="420" class="named"><title>0x00495cf0 DrawSpansTexturedFiltered (478 bytes)</title></rect>
-<rect width="12" height="12" x="75" y="420" class="named"><title>0x00495ed0 DrawSpansAdditiveFiltered (483 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="420" class="named"><title>0x004960c0 DrawSpansTexturedFilteredP (503 bytes)</title></rect>
-<rect width="12" height="12" x="105" y="420" class="named"><title>0x004962c0 DrawSpansAdditiveFilteredP (508 bytes)</title></rect>
+<rect width="12" height="12" x="720" y="405" class="named"><title>0x00495490 SW_SpanGT (346 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="405" class="named"><title>0x004955f0 SW_SpanGTAdd (354 bytes)</title></rect>
+<rect width="12" height="12" x="0" y="420" class="named"><title>0x00495760 SW_SpanGTKey (368 bytes)</title></rect>
+<rect width="12" height="12" x="15" y="420" class="named"><title>0x004958d0 SW_SpanGTP (335 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="420" class="named"><title>0x00495a20 SW_SpanGTPKey (360 bytes)</title></rect>
+<rect width="12" height="12" x="45" y="420" class="named"><title>0x00495b90 SW_SpanGTPAdd (341 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="420" class="named"><title>0x00495cf0 SW_SpanGTBilinear (478 bytes)</title></rect>
+<rect width="12" height="12" x="75" y="420" class="named"><title>0x00495ed0 SW_SpanGTAddBilinear (483 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="420" class="named"><title>0x004960c0 SW_SpanGTPBilinear (503 bytes)</title></rect>
+<rect width="12" height="12" x="105" y="420" class="named"><title>0x004962c0 SW_SpanGTPAddBilinear (508 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="420" class="named"><title>0x004964c0 DrawSpansColorKeyFiltered (553 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="420" class="named"><title>0x004966f0 DrawSpansColorKeyFilteredP (562 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="420" class="named"><title>0x00496930 MMXBlit32to15 (306 bytes)</title></rect>
@@ -1637,7 +1637,7 @@
 <rect width="31.31" height="28.37" x="133.57" y="297.77" class="named"><title>0x00415940 CreatureAnimation (2743 bytes)</title></rect>
 <rect width="31.31" height="28.37" x="133.57" y="329.14" class="nonmatching"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="31.31" height="27.11" x="133.57" y="360.50" class="named"><title>0x00443ca0 GetLHAInt (2622 bytes)</title></rect>
-<rect width="31.31" height="27.08" x="133.57" y="390.61" class="named"><title>0x00493c70 MMXDrawTriangleP (2619 bytes)</title></rect>
+<rect width="31.31" height="27.08" x="133.57" y="390.61" class="named"><title>0x00493c70 SW_TriSetupGTP (2619 bytes)</title></rect>
 <rect width="31.31" height="26.32" x="133.57" y="420.68" class="named"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
 <rect width="26.79" height="30.29" x="167.88" y="0" class="nonmatching"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
 <rect width="26.79" height="30.01" x="167.88" y="33.29" class="named"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
@@ -1677,7 +1677,7 @@
 <rect width="25.37" height="25.90" x="226.97" y="175.03" class="named"><title>0x0048f3c0 DXEnumDirect3D (2029 bytes)</title></rect>
 <rect width="25.37" height="25.57" x="226.97" y="203.93" class="nonmatching"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="25.37" height="25.12" x="226.97" y="232.50" class="named"><title>0x0046fd80 DinoControl (1968 bytes)</title></rect>
-<rect width="25.37" height="24.40" x="226.97" y="260.63" class="named"><title>0x004946b0 MMXDrawTriangle (1911 bytes)</title></rect>
+<rect width="25.37" height="24.40" x="226.97" y="260.63" class="named"><title>0x004946b0 SW_TriSetupGT (1911 bytes)</title></rect>
 <rect width="25.37" height="24.36" x="226.97" y="288.02" class="named"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
 <rect width="25.37" height="24.31" x="226.97" y="315.38" class="nonmatching"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="25.37" height="24.18" x="226.97" y="342.69" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
@@ -1958,10 +1958,10 @@
 <rect width="12.89" height="12.94" x="403.09" y="292.93" class="named"><title>0x00466e00 TriggerShivaSmoke (515 bytes)</title></rect>
 <rect width="12.89" height="12.89" x="403.09" y="308.87" class="named"><title>0x0043ac30 InitialiseItem (513 bytes)</title></rect>
 <rect width="12.89" height="12.84" x="403.09" y="324.76" class="named"><title>0x00491ea0 CalculateGradientsTF (511 bytes)</title></rect>
-<rect width="12.89" height="12.76" x="403.09" y="340.60" class="named"><title>0x004962c0 DrawSpansAdditiveFilteredP (508 bytes)</title></rect>
+<rect width="12.89" height="12.76" x="403.09" y="340.60" class="named"><title>0x004962c0 SW_SpanGTPAddBilinear (508 bytes)</title></rect>
 <rect width="12.89" height="12.74" x="403.09" y="356.36" class="named"><title>0x00445560 FireShotgun (507 bytes)</title></rect>
 <rect width="12.89" height="12.71" x="403.09" y="372.10" class="named"><title>0x0042b2f0 TriggerFireSmoke (506 bytes)</title></rect>
-<rect width="12.89" height="12.64" x="403.09" y="387.81" class="named"><title>0x004960c0 DrawSpansTexturedFilteredP (503 bytes)</title></rect>
+<rect width="12.89" height="12.64" x="403.09" y="387.81" class="named"><title>0x004960c0 SW_SpanGTPBilinear (503 bytes)</title></rect>
 <rect width="12.89" height="12.54" x="403.09" y="403.44" class="named"><title>0x0048a7b0 S_PrintShadow (499 bytes)</title></rect>
 <rect width="12.89" height="12.54" x="403.09" y="418.98" class="named"><title>0x0048fbb0 DXEnumTextureFormats (499 bytes)</title></rect>
 <rect width="12.89" height="12.49" x="403.09" y="434.51" class="named"><title>0x0045e5e0 TriggerPunkFlame (497 bytes)</title></rect>
@@ -1974,13 +1974,13 @@
 <rect width="12.86" height="12.27" x="514.88" y="116.11" class="named"><title>0x00431890 TriggerFlamethrowerFlame (487 bytes)</title></rect>
 <rect width="12.86" height="12.27" x="530.74" y="116.11" class="named"><title>0x00463700 TriggerSealmuteGas (487 bytes)</title></rect>
 <rect width="12.80" height="12.27" x="546.60" y="116.11" class="named"><title>0x0044c440 FlareControl (485 bytes)</title></rect>
-<rect width="12.75" height="12.27" x="562.40" y="116.11" class="named"><title>0x00495ed0 DrawSpansAdditiveFiltered (483 bytes)</title></rect>
+<rect width="12.75" height="12.27" x="562.40" y="116.11" class="named"><title>0x00495ed0 SW_SpanGTAddBilinear (483 bytes)</title></rect>
 <rect width="12.73" height="12.27" x="578.15" y="116.11" class="named"><title>0x0041c1f0 TriggerPlasmaBallFlame_clawmute (482 bytes)</title></rect>
 <rect width="12.73" height="12.27" x="593.88" y="116.11" class="named"><title>0x0044bd90 CreateFlare (482 bytes)</title></rect>
 <rect width="12.70" height="12.27" x="609.60" y="116.11" class="named"><title>0x00420a80 GetFloor (481 bytes)</title></rect>
 <rect width="12.70" height="12.27" x="625.30" y="116.11" class="named"><title>0x00423e80 ControlGhostGasEmitter (481 bytes)</title></rect>
 <rect width="12.70" height="12.27" x="641" y="116.11" class="named"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
-<rect width="12.62" height="12.27" x="656.70" y="116.11" class="named"><title>0x00495cf0 DrawSpansTexturedFiltered (478 bytes)</title></rect>
+<rect width="12.62" height="12.27" x="656.70" y="116.11" class="named"><title>0x00495cf0 SW_SpanGTBilinear (478 bytes)</title></rect>
 <rect width="12.59" height="12.27" x="672.32" y="116.11" class="named"><title>0x0042fe30 TriggerFireHeadFlame (477 bytes)</title></rect>
 <rect width="12.57" height="12.27" x="687.91" y="116.11" class="named"><title>0x004015f0 phd_RotYXZ (476 bytes)</title></rect>
 <rect width="12.54" height="12.27" x="703.48" y="116.11" class="named"><title>0x00424830 TriggerFlamethrowerHitFlame (475 bytes)</title></rect>
@@ -2082,7 +2082,7 @@
 <rect width="11.12" height="10.72" x="448.84" y="285.71" class="named"><title>0x0041ea60 CreatureCollision (368 bytes)</title></rect>
 <rect width="11.12" height="10.72" x="448.84" y="299.44" class="named"><title>0x0044e050 LaraSurface (368 bytes)</title></rect>
 <rect width="11.12" height="10.72" x="448.84" y="313.16" class="named"><title>0x00485350 HWR_DrawRoutinesNoAlpha (368 bytes)</title></rect>
-<rect width="11.12" height="10.72" x="448.84" y="326.88" class="named"><title>0x00495760 DrawSpansColorKey (368 bytes)</title></rect>
+<rect width="11.12" height="10.72" x="448.84" y="326.88" class="named"><title>0x00495760 SW_SpanGTKey (368 bytes)</title></rect>
 <rect width="11.12" height="10.69" x="448.84" y="340.60" class="named"><title>0x0041aca0 DoCinematic (367 bytes)</title></rect>
 <rect width="11.12" height="10.69" x="448.84" y="354.30" class="named"><title>0x00456dd0 MovableBlock (367 bytes)</title></rect>
 <rect width="11.12" height="10.69" x="448.84" y="367.99" class="named"><title>0x0046d850 SpinningBlade (367 bytes)</title></rect>
@@ -2095,13 +2095,13 @@
 <rect width="10.97" height="10.74" x="476.96" y="160.20" class="named"><title>0x0042e750 ControlBubble1 (364 bytes)</title></rect>
 <rect width="10.91" height="10.74" x="490.93" y="160.20" class="nonmatching"><title>0x00412040 BoatCheckGeton (362 bytes)</title></rect>
 <rect width="10.88" height="10.74" x="504.85" y="160.20" class="named"><title>0x0046d650 ControlCeilingSpikes (361 bytes)</title></rect>
-<rect width="10.85" height="10.74" x="518.73" y="160.20" class="named"><title>0x00495a20 DrawSpansColorKeyP (360 bytes)</title></rect>
+<rect width="10.85" height="10.74" x="518.73" y="160.20" class="named"><title>0x00495a20 SW_SpanGTPKey (360 bytes)</title></rect>
 <rect width="10.79" height="10.74" x="532.59" y="160.20" class="named"><title>0x0046edd0 DartsControl (358 bytes)</title></rect>
 <rect width="10.76" height="10.74" x="546.38" y="160.20" class="named"><title>0x00484410 S_FrontEndCheck (357 bytes)</title></rect>
 <rect width="10.73" height="10.74" x="560.14" y="160.20" class="named"><title>0x00429a30 DrawGunFlash (356 bytes)</title></rect>
 <rect width="10.70" height="10.74" x="573.88" y="160.20" class="named"><title>0x00473ba0 TriggerWingMuteParticles (355 bytes)</title></rect>
 <rect width="10.67" height="10.74" x="587.58" y="160.20" class="named"><title>0x00468610 SubCollision (354 bytes)</title></rect>
-<rect width="10.67" height="10.74" x="601.25" y="160.20" class="named"><title>0x004955f0 DrawSpansAdditive (354 bytes)</title></rect>
+<rect width="10.67" height="10.74" x="601.25" y="160.20" class="named"><title>0x004955f0 SW_SpanGTAdd (354 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="614.93" y="160.20" class="named"><title>0x00406880 SubdivideEdge (352 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="628.54" y="160.20" class="named"><title>0x00429ba0 CalculateObjectLighting (352 bytes)</title></rect>
 <rect width="10.61" height="10.74" x="642.15" y="160.20" class="named"><title>0x004b446f gourA (352 bytes)</title></rect>
@@ -2109,15 +2109,15 @@
 <rect width="10.55" height="10.74" x="669.32" y="160.20" class="named"><title>0x0046e3d0 SpikeCollision (350 bytes)</title></rect>
 <rect width="10.52" height="10.74" x="682.87" y="160.20" class="named"><title>0x0040d060 ins_room_sprite (349 bytes)</title></rect>
 <rect width="10.49" height="10.74" x="696.39" y="160.20" class="named"><title>0x0044ee60 LaraSwimCollision (348 bytes)</title></rect>
-<rect width="10.43" height="10.74" x="709.89" y="160.20" class="named"><title>0x00495490 DrawSpansTextured (346 bytes)</title></rect>
+<rect width="10.43" height="10.74" x="709.89" y="160.20" class="named"><title>0x00495490 SW_SpanGT (346 bytes)</title></rect>
 <rect width="10.40" height="10.74" x="723.32" y="160.20" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="10.28" height="10.74" x="736.72" y="160.20" class="named"><title>0x0042c510 TriggerRocketFlame (341 bytes)</title></rect>
-<rect width="10.58" height="10.44" x="462.95" y="173.94" class="named"><title>0x00495b90 DrawSpansAdditiveP (341 bytes)</title></rect>
+<rect width="10.58" height="10.44" x="462.95" y="173.94" class="named"><title>0x00495b90 SW_SpanGTPAdd (341 bytes)</title></rect>
 <rect width="10.58" height="10.41" x="462.95" y="187.38" class="named"><title>0x00434bf0 DrawAmmoInfo (340 bytes)</title></rect>
 <rect width="10.58" height="10.35" x="462.95" y="200.79" class="named"><title>0x0040d1c0 S_DrawScreenSprite2d (338 bytes)</title></rect>
 <rect width="10.58" height="10.29" x="462.95" y="214.14" class="named"><title>0x0046d500 ControlSpikeWall (336 bytes)</title></rect>
 <rect width="10.58" height="10.26" x="462.95" y="227.42" class="named"><title>0x00440a40 lara_col_upjump (335 bytes)</title></rect>
-<rect width="10.58" height="10.26" x="462.95" y="240.68" class="named"><title>0x004958d0 DrawSpansTexturedP (335 bytes)</title></rect>
+<rect width="10.58" height="10.26" x="462.95" y="240.68" class="named"><title>0x004958d0 SW_SpanGTP (335 bytes)</title></rect>
 <rect width="10.58" height="10.22" x="462.95" y="253.93" class="named"><title>0x0042dba0 TriggerExplosionBubble (334 bytes)</title></rect>
 <rect width="10.58" height="10.19" x="462.95" y="267.16" class="named"><title>0x00453740 InitialiseNonLotAI (333 bytes)</title></rect>
 <rect width="10.58" height="10.19" x="462.95" y="280.35" class="named"><title>0x00453960 MineCartCollision (333 bytes)</title></rect>
@@ -2283,7 +2283,7 @@
 <rect width="7.93" height="8.54" x="513.62" y="222.83" class="named"><title>0x0044a7b0 AimWeapon (209 bytes)</title></rect>
 <rect width="7.93" height="8.54" x="513.62" y="234.37" class="named"><title>0x0044efc0 LaraTestWaterDepth (209 bytes)</title></rect>
 <rect width="7.93" height="8.50" x="513.62" y="245.90" class="named"><title>0x004b3830 DD_SpinMessageLoop (208 bytes)</title></rect>
-<rect width="7.93" height="8.46" x="513.62" y="257.40" class="named"><title>0x004952e0 DrawSpansGouraud (207 bytes)</title></rect>
+<rect width="7.93" height="8.46" x="513.62" y="257.40" class="named"><title>0x004952e0 SW_SpanG (207 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.62" y="268.85" class="named"><title>0x004067b0 PHD_VBUF_To_D3DTLVTX (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.62" y="280.27" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.62" y="291.69" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>

@@ -15,9 +15,9 @@ float WinFrameRate(void);
 extern void (*pDrawLine)(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
 extern HGLOBAL hSpanBuffer;
-extern unsigned char *SpanBuffer;
-extern unsigned long *MMXOutput;
-extern long MMXBytePitch;
+extern unsigned char *SW_SpanBuffer;
+extern unsigned long *SW_Surface;
+extern long SW_SurfacePitch;
 extern unsigned char *RGBTableRB;
 extern long *YTable;
 extern long bMMXPerspective;
@@ -649,13 +649,13 @@ void DrawLineStrip(D3DTLVERTEX *v, DWORD vcnt)
 void MMXClose(void)
 {
     GlobalFree(hSpanBuffer);
-    SpanBuffer = 0;
+    SW_SpanBuffer = 0;
 }
 
 HRESULT MMXBeginScene(void)
 {
-    MMXOutput = App.unk;
-    MMXBytePitch = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w << 2;
+    SW_Surface = App.unk;
+    SW_SurfacePitch = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w << 2;
     return 0;
 }
 
@@ -665,7 +665,7 @@ HRESULT MMXDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVer
     D3DTLVERTEX *v, *v2, *v3;
     int n;
 
-    if (!MMXOutput)
+    if (!SW_Surface)
         return 0;
     switch (dptPrimitiveType) {
     case D3DPT_TRIANGLELIST:
@@ -1067,31 +1067,31 @@ void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
     DrawScanLinesAffine(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
 }
 
-extern long SpanBufferEnd;
-extern long SpanY;
+extern long SW_SpanEnd;
+extern long SW_SpanY;
 extern long SpansTexturedMask;
-extern long SpanUStep;
-extern long SpanVStep;
-extern long MMXTextureHandle;
-extern long MMXMipLevel;
+extern long SW_SpanDU;
+extern long SW_SpanDV;
+extern long SW_TextureBits;
+extern long SW_TexShift;
 extern long MipOffsets[];
-extern __int64 SpanColorStep;
+extern __int64 SW_SpanGrad;
 
-__declspec(naked) void DrawSpansTextured(void)
+__declspec(naked) void SW_SpanGT(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je Done
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ecx, dword ptr [MMXMipLevel]
+        mov ecx, dword ptr [SW_TexShift]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
@@ -1107,9 +1107,9 @@ __declspec(naked) void DrawSpansTextured(void)
         add al, 0x10
         mov byte ptr [P6 + 2], al
         mov byte ptr [P7 + 2], al
-        mov ebx, dword ptr [SpanUStep]
-        mov eax, dword ptr [SpanVStep]
-        mov edx, dword ptr [MMXTextureHandle]
+        mov ebx, dword ptr [SW_SpanDU]
+        mov eax, dword ptr [SW_SpanDV]
+        mov edx, dword ptr [SW_TextureBits]
         add edx, dword ptr [MipOffsets + ecx * 4]
         mov dword ptr [P8 + 2], ebx
         mov dword ptr [P2 + 2], eax
@@ -1146,14 +1146,14 @@ __declspec(naked) void DrawSpansTextured(void)
         pxor mm5, mm5
     P6:
         shr ebp, 0x10
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         or edx, ebp
         movq mm0, qword ptr [esi + 0x18]
         _emit 0x0f
         _emit 0x7f
         _emit 0xc6
-        add ecx, dword ptr [SpanVStep]
-        add ebx, dword ptr [SpanUStep]
+        add ecx, dword ptr [SW_SpanDV]
+        add ebx, dword ptr [SW_SpanDU]
         _emit 0x8d
         _emit 0x64
         _emit 0x24
@@ -1192,8 +1192,8 @@ __declspec(naked) void DrawSpansTextured(void)
     NextLine:
         pop edi
         add esi, 0x20
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne LineLoop
         emms
         pop ebp
@@ -1205,19 +1205,19 @@ __declspec(naked) void DrawSpansTextured(void)
     }
 }
 
-__declspec(naked) void DrawSpansGouraud(void)
+__declspec(naked) void SW_SpanG(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L6
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
     L1:
         mov ebx, dword ptr [esi]
@@ -1228,7 +1228,7 @@ __declspec(naked) void DrawSpansGouraud(void)
         or eax, eax
         jle L5
         movq mm0, qword ptr [esi+0x18]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         test edi, 0x7
         je L2
         _emit 0x0f
@@ -1271,7 +1271,7 @@ __declspec(naked) void DrawSpansGouraud(void)
         and eax, 0x1
         je L5
     L4:
-        movq mm2, qword ptr [SpanColorStep]
+        movq mm2, qword ptr [SW_SpanGrad]
         _emit 0x0f
         _emit 0x7f
         _emit 0xc1
@@ -1280,9 +1280,9 @@ __declspec(naked) void DrawSpansGouraud(void)
         movd dword ptr [edi], mm1
     L5:
         pop edi
-        add edi, dword ptr [MMXBytePitch]
+        add edi, dword ptr [SW_SurfacePitch]
         add esi, 0x20
-        cmp dword ptr [SpanBufferEnd], esi
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         _emit 0x0f
         _emit 0x31
@@ -1298,21 +1298,21 @@ __declspec(naked) void DrawSpansGouraud(void)
 
 extern long SpansAdditiveMask;
 
-__declspec(naked) void DrawSpansAdditive(void)
+__declspec(naked) void SW_SpanGTAdd(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L13
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ecx, dword ptr [MMXMipLevel]
+        mov ecx, dword ptr [SW_TexShift]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
@@ -1328,9 +1328,9 @@ __declspec(naked) void DrawSpansAdditive(void)
         add al, 0x10
         mov byte ptr [L11 + 2], al
         mov byte ptr [L3 + 2], al
-        mov ebx, dword ptr [SpanUStep]
-        mov eax, dword ptr [SpanVStep]
-        mov edx, dword ptr [MMXTextureHandle]
+        mov ebx, dword ptr [SW_SpanDU]
+        mov eax, dword ptr [SW_SpanDV]
+        mov edx, dword ptr [SW_TextureBits]
         add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 2], ebx
         mov dword ptr [L9 + 2], eax
@@ -1358,7 +1358,7 @@ __declspec(naked) void DrawSpansAdditive(void)
         or eax, eax
         jle L12
         movq mm0, qword ptr [esi+0x18]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         push ebx
         push ecx
         push esi
@@ -1373,7 +1373,7 @@ __declspec(naked) void DrawSpansAdditive(void)
         shr edx, 0x8
     L3:
         shr ebp, 0x10
-        add ecx, dword ptr [SpanVStep]
+        add ecx, dword ptr [SW_SpanDV]
         _emit 0x8d
         _emit 0x49
         _emit 0x00
@@ -1422,9 +1422,9 @@ __declspec(naked) void DrawSpansAdditive(void)
         pop ecx
     L12:
         pop edi
-        add edi, dword ptr [MMXBytePitch]
+        add edi, dword ptr [SW_SurfacePitch]
         add esi, 0x20
-        cmp dword ptr [SpanBufferEnd], esi
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -1439,21 +1439,21 @@ __declspec(naked) void DrawSpansAdditive(void)
 extern long SpansColorKeyMask;
 extern __int64 SpansColorKeyInvert;
 
-__declspec(naked) void DrawSpansColorKey(void)
+__declspec(naked) void SW_SpanGTKey(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L12
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ecx, dword ptr [MMXMipLevel]
+        mov ecx, dword ptr [SW_TexShift]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
@@ -1469,11 +1469,11 @@ __declspec(naked) void DrawSpansColorKey(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [MMXTextureHandle]
+        mov edx, dword ptr [SW_TextureBits]
         add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L4 + 4], edx
-        mov eax, dword ptr [SpanUStep]
-        mov ebx, dword ptr [SpanVStep]
+        mov eax, dword ptr [SW_SpanDU]
+        mov ebx, dword ptr [SW_SpanDV]
         mov dword ptr [L10 + 2], eax
         mov dword ptr [L6 + 2], ebx
         _emit 0x8d
@@ -1509,14 +1509,14 @@ __declspec(naked) void DrawSpansColorKey(void)
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
         _emit 0x7f
         _emit 0xc6
-        add ecx, dword ptr [SpanVStep]
-        add ebx, dword ptr [SpanUStep]
+        add ecx, dword ptr [SW_SpanDV]
+        add ebx, dword ptr [SW_SpanDU]
         nop
     L4:
         movd mm7, dword ptr [edx*4+0x12345678]
@@ -1559,8 +1559,8 @@ __declspec(naked) void DrawSpansColorKey(void)
         jne L4
     L11:
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -1574,21 +1574,21 @@ __declspec(naked) void DrawSpansColorKey(void)
 
 extern long SpansTexturedPMask;
 
-__declspec(naked) void DrawSpansTexturedP(void)
+__declspec(naked) void SW_SpanGTP(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L11
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ecx, dword ptr [MMXMipLevel]
+        mov ecx, dword ptr [SW_TexShift]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
@@ -1604,7 +1604,7 @@ __declspec(naked) void DrawSpansTexturedP(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [MMXTextureHandle]
+        mov edx, dword ptr [SW_TextureBits]
         add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 4], edx
         _emit 0x8d
@@ -1630,7 +1630,7 @@ __declspec(naked) void DrawSpansTexturedP(void)
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
@@ -1692,8 +1692,8 @@ __declspec(naked) void DrawSpansTexturedP(void)
     L10:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -1708,21 +1708,21 @@ __declspec(naked) void DrawSpansTexturedP(void)
 extern long SpansColorKeyPMask;
 extern __int64 SpansColorKeyPInvert;
 
-__declspec(naked) void DrawSpansColorKeyP(void)
+__declspec(naked) void SW_SpanGTPKey(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L11
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ecx, dword ptr [MMXMipLevel]
+        mov ecx, dword ptr [SW_TexShift]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
@@ -1738,7 +1738,7 @@ __declspec(naked) void DrawSpansColorKeyP(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [MMXTextureHandle]
+        mov edx, dword ptr [SW_TextureBits]
         add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 4], edx
         _emit 0x8d
@@ -1764,7 +1764,7 @@ __declspec(naked) void DrawSpansColorKeyP(void)
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
@@ -1835,8 +1835,8 @@ __declspec(naked) void DrawSpansColorKeyP(void)
     L10:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -1850,21 +1850,21 @@ __declspec(naked) void DrawSpansColorKeyP(void)
 
 extern long SpansAdditivePMask;
 
-__declspec(naked) void DrawSpansAdditiveP(void)
+__declspec(naked) void SW_SpanGTPAdd(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L11
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ecx, dword ptr [MMXMipLevel]
+        mov ecx, dword ptr [SW_TexShift]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
@@ -1880,7 +1880,7 @@ __declspec(naked) void DrawSpansAdditiveP(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [MMXTextureHandle]
+        mov edx, dword ptr [SW_TextureBits]
         add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 4], edx
         pxor mm5, mm5
@@ -1904,7 +1904,7 @@ __declspec(naked) void DrawSpansAdditiveP(void)
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
@@ -1968,8 +1968,8 @@ __declspec(naked) void DrawSpansAdditiveP(void)
     L10:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -1985,23 +1985,23 @@ extern long SpansTexturedFilteredV;
 extern long SpansTexturedFilteredU;
 extern __int64 SpansTexturedFilteredFrac;
 
-__declspec(naked) void DrawSpansTexturedFiltered(void)
+__declspec(naked) void SW_SpanGTBilinear(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L9
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ebx, dword ptr [SpanUStep]
-        mov eax, dword ptr [SpanVStep]
-        mov edx, dword ptr [MMXTextureHandle]
+        mov ebx, dword ptr [SW_SpanDU]
+        mov eax, dword ptr [SW_SpanDV]
+        mov edx, dword ptr [SW_TextureBits]
         mov dword ptr [L7 + 2], ebx
         mov dword ptr [L6 + 2], eax
         mov dword ptr [L2 + 4], edx
@@ -2024,7 +2024,7 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
         jle L8
         mov ebx, dword ptr [esi+0x8]
         mov ecx, dword ptr [esi+0x10]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         movq mm0, qword ptr [esi+0x18]
         mov edx, ecx
         mov ebp, ebx
@@ -2121,8 +2121,8 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
     L8:
         pop edi
         add esi, 0x20
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -2138,23 +2138,23 @@ extern long SpansAdditiveFilteredV;
 extern long SpansAdditiveFilteredU;
 extern __int64 SpansAdditiveFilteredFrac;
 
-__declspec(naked) void DrawSpansAdditiveFiltered(void)
+__declspec(naked) void SW_SpanGTAddBilinear(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L9
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ebx, dword ptr [SpanUStep]
-        mov eax, dword ptr [SpanVStep]
-        mov edx, dword ptr [MMXTextureHandle]
+        mov ebx, dword ptr [SW_SpanDU]
+        mov eax, dword ptr [SW_SpanDV]
+        mov edx, dword ptr [SW_TextureBits]
         mov dword ptr [L7 + 2], ebx
         mov dword ptr [L6 + 2], eax
         mov dword ptr [L2 + 4], edx
@@ -2177,7 +2177,7 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
         jle L8
         mov ebx, dword ptr [esi+0x8]
         mov ecx, dword ptr [esi+0x10]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         movq mm0, qword ptr [esi+0x18]
         mov edx, ecx
         mov ebp, ebx
@@ -2276,8 +2276,8 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
     L8:
         pop edi
         add esi, 0x20
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -2293,21 +2293,21 @@ extern long SpansTexturedFilteredPV;
 extern long SpansTexturedFilteredPU;
 extern __int64 SpansTexturedFilteredPFrac;
 
-__declspec(naked) void DrawSpansTexturedFilteredP(void)
+__declspec(naked) void SW_SpanGTPBilinear(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L8
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov edx, dword ptr [MMXTextureHandle]
+        mov edx, dword ptr [SW_TextureBits]
         mov dword ptr [L3 + 4], edx
         add edx, 0x4
         mov dword ptr [L4 + 4], edx
@@ -2334,7 +2334,7 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
         jle L7
         mov ebx, dword ptr [esi-0x18]
         mov ecx, dword ptr [esi-0x10]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         movq mm0, qword ptr [esi-0x8]
         mov edx, ecx
         mov ebp, ebx
@@ -2458,8 +2458,8 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
     L7:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -2475,21 +2475,21 @@ extern long SpansAdditiveFilteredPV;
 extern long SpansAdditiveFilteredPU;
 extern __int64 SpansAdditiveFilteredPFrac;
 
-__declspec(naked) void DrawSpansAdditiveFilteredP(void)
+__declspec(naked) void SW_SpanGTPAddBilinear(void)
 {
     __asm {
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L8
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov edx, dword ptr [MMXTextureHandle]
+        mov edx, dword ptr [SW_TextureBits]
         mov dword ptr [L3 + 4], edx
         add edx, 0x4
         mov dword ptr [L4 + 4], edx
@@ -2516,7 +2516,7 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
         jle L7
         mov ebx, dword ptr [esi-0x18]
         mov ecx, dword ptr [esi-0x10]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         movq mm0, qword ptr [esi-0x8]
         mov edx, ecx
         mov ebp, ebx
@@ -2642,8 +2642,8 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
     L7:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -2667,17 +2667,17 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L10
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov ebx, dword ptr [SpanUStep]
-        mov eax, dword ptr [SpanVStep]
-        mov edx, dword ptr [MMXTextureHandle]
+        mov ebx, dword ptr [SW_SpanDU]
+        mov eax, dword ptr [SW_SpanDV]
+        mov edx, dword ptr [SW_TextureBits]
         mov dword ptr [L8 + 2], ebx
         mov dword ptr [L3 + 2], eax
         mov dword ptr [L4 + 4], edx
@@ -2700,7 +2700,7 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         jle L9
         mov ebx, dword ptr [esi+0x8]
         mov ecx, dword ptr [esi+0x10]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         movq mm0, qword ptr [esi+0x18]
         mov edx, ecx
         mov ebp, ebx
@@ -2837,8 +2837,8 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
     L9:
         add esi, 0x20
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -2862,15 +2862,15 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L9
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
-        mov edx, dword ptr [MMXTextureHandle]
+        mov edx, dword ptr [SW_TextureBits]
         mov dword ptr [L4 + 4], edx
         add edx, 0x4
         mov dword ptr [L5 + 4], edx
@@ -2897,7 +2897,7 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         jle L8
         mov ebx, dword ptr [esi-0x18]
         mov ecx, dword ptr [esi-0x10]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
         movq mm0, qword ptr [esi-0x8]
         mov edx, ecx
         mov ebp, ebx
@@ -3044,8 +3044,8 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
     L8:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [MMXBytePitch]
-        cmp dword ptr [SpanBufferEnd], esi
+        add edi, dword ptr [SW_SurfacePitch]
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -3069,13 +3069,13 @@ __declspec(naked) void DrawSpansAlpha(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [SpanBuffer]
-        cmp esi, dword ptr [SpanBufferEnd]
+        mov esi, dword ptr [SW_SpanBuffer]
+        cmp esi, dword ptr [SW_SpanEnd]
         je L4
         push ebp
-        mov edi, dword ptr [MMXOutput]
-        mov eax, dword ptr [SpanY]
-        imul eax, dword ptr [MMXBytePitch]
+        mov edi, dword ptr [SW_Surface]
+        mov eax, dword ptr [SW_SpanY]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
         mov ebx, dword ptr [AlphaVertex]
         mov eax, dword ptr [ebx+0x10]
@@ -3102,7 +3102,7 @@ __declspec(naked) void DrawSpansAlpha(void)
         or eax, eax
         jle L3
         movq mm0, qword ptr [esi+0x18]
-        movq mm1, qword ptr [SpanColorStep]
+        movq mm1, qword ptr [SW_SpanGrad]
     L2:
         movd mm6, dword ptr [edi]
         _emit 0x0f
@@ -3122,9 +3122,9 @@ __declspec(naked) void DrawSpansAlpha(void)
         jne L2
     L3:
         pop edi
-        add edi, dword ptr [MMXBytePitch]
+        add edi, dword ptr [SW_SurfacePitch]
         add esi, 0x20
-        cmp dword ptr [SpanBufferEnd], esi
+        cmp dword ptr [SW_SpanEnd], esi
         jne L1
         emms
         pop ebp
@@ -3252,7 +3252,7 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         fmul dword ptr [ebp-0x8]
         fiadd dword ptr [ebp-0x14]
         fistp dword ptr [ebp-0x44]
-        mov edi, dword ptr [MMXOutput]
+        mov edi, dword ptr [SW_Surface]
         mov eax, dword ptr [ebp-0x68]
         lea edi, [edi+eax*4]
         mov edx, dword ptr [ebp-0x60]
@@ -3274,7 +3274,7 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         packuswb mm2, mm3
         sar eax, 0x10
         push edx
-        imul eax, dword ptr [MMXBytePitch]
+        imul eax, dword ptr [SW_SurfacePitch]
         pop edx
         movd dword ptr [edi+eax*1], mm2
         add edi, 0x4
@@ -3369,9 +3369,9 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         fmul dword ptr [ebp-0x8]
         fiadd dword ptr [ebp-0x14]
         fistp dword ptr [ebp-0x44]
-        mov edi, dword ptr [MMXOutput]
+        mov edi, dword ptr [SW_Surface]
         mov eax, dword ptr [ebp-0x40]
-        imul eax, dword ptr [MMXBytePitch]
+        imul eax, dword ptr [SW_SurfacePitch]
         add edi, eax
         mov edx, dword ptr [ebp-0x38]
         sub edx, dword ptr [ebp-0x40]
@@ -3392,7 +3392,7 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         psrlw mm2, 0x8
         packuswb mm2, mm3
         movd dword ptr [edi+eax*4], mm2
-        add edi, dword ptr [MMXBytePitch]
+        add edi, dword ptr [SW_SurfacePitch]
         add ebx, ecx
         dec edx
         jge L5
@@ -3533,7 +3533,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fmul dword ptr [ebp-0x68]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep + 4]
+        fist word ptr [SW_SpanGrad + 4]
         fxch st(1)
         fsubp st(2), st
         fstp dword ptr [ebp-0x30]
@@ -3571,7 +3571,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fmul dword ptr [ebp-0x68]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep + 2]
+        fist word ptr [SW_SpanGrad + 2]
         fxch st(1)
         fsubp st(2), st
         fstp dword ptr [ebp-0x90]
@@ -3609,7 +3609,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fmul dword ptr [ebp-0x68]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep]
+        fist word ptr [SW_SpanGrad]
         fxch st(1)
         fsubp st(2), st
         fstp dword ptr [ebp-0x88]
@@ -3630,7 +3630,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         mov esi, dword ptr [ebp-0x3c]
         mov eax, 0x3
         mov dword ptr [ebp-0x84], eax
-        mov edi, dword ptr [SpanBuffer]
+        mov edi, dword ptr [SW_SpanBuffer]
         fld dword ptr [esi+0x4]
         fsub dword ptr [RoundBias]
         fadd qword ptr [MagicInt]
@@ -3638,7 +3638,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         inc dword ptr [ebp-0x70]
         mov eax, dword ptr [ebp-0x70]
         xor edx, edx
-        mov dword ptr [SpanY], eax
+        mov dword ptr [SW_SpanY], eax
         jmp L6
         mov edi, edi
         _emit 0x8d
@@ -3708,7 +3708,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         je L7
         jmp L3
     L4:
-        mov dword ptr [SpanBufferEnd], edi
+        mov dword ptr [SW_SpanEnd], edi
         call dword ptr [pDrawSpans]
         jmp L8
     L5:
@@ -3818,53 +3818,53 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
     }
 }
 
-extern long TriDx12;
-extern long TriDy13;
-extern long TriDx13;
-extern long TriDy12;
-extern long TriTemp;
-extern long TriRightVtx;
-extern long TriLeftVtx;
-extern long TriG1;
-extern long TriB1;
-extern long TriR1;
+extern long SW_TriTDX01;
+extern long SW_TriTDY02;
+extern long SW_TriTDX02;
+extern long SW_TriTDY01;
+extern long SW_TriTTemp;
+extern long SW_TriTEdgeA;
+extern long SW_TriTEdgeB;
+extern long SW_TriTG0;
+extern long SW_TriTB0;
+extern long SW_TriTR0;
 extern long TriG2;
 extern long TriB2;
 extern long TriR2;
 extern long TriG3;
 extern long TriB3;
 extern long TriR3;
-extern long TriD12;
-extern long TriD13;
-extern long TriDrDx;
+extern long SW_TriTD01;
+extern long SW_TriTD02;
+extern long SW_TriTRDX;
 extern long TriDrDy;
 extern double TriR0;
-extern long TriDgDx;
+extern long SW_TriTGDX;
 extern long TriDgDy;
 extern double TriG0;
-extern long TriDbDx;
+extern long SW_TriTBDX;
 extern long TriDbDy;
 extern double TriB0;
-extern long TriDuDx;
+extern long SW_TriTUDX;
 extern double MagicFix24;
-extern long TriDuDy;
+extern long SW_TriTUDY;
 extern double TriU0;
-extern long TriDvDx;
-extern long TriDvDy;
+extern long SW_TriTVDX;
+extern long SW_TriTVDY;
 extern double TriV0;
-extern long TriEdges;
-extern double TriY;
+extern long SW_TriTEdges;
+extern double SW_TriTY;
 extern long TriLeftXStep;
 extern long TriRightXStep;
 extern void (*pDrawSpansFiltered)(void);
 extern long bMMXMipMap;
-extern long TriRightDxDy;
+extern long SW_TriTSlopeA;
 extern long TriRightX;
-extern double TriFixTemp;
-extern long TriLeftDxDy;
+extern double SW_TriTEndY;
+extern long SW_TriTSlopeB;
 extern long TriLeftX;
 
-__declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+__declspec(naked) void SW_TriSetupGT(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     __asm {
         push edi
@@ -3878,23 +3878,23 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fld dword ptr [ebx+0x4]
         fsub dword ptr [edx+0x4]
         fxch st(1)
-        fst dword ptr [TriDx12]
+        fst dword ptr [SW_TriTDX01]
         fxch st(1)
-        fst dword ptr [TriDy13]
+        fst dword ptr [SW_TriTDY02]
         fmulp st(1), st
         fld dword ptr [ebx]
         fsub dword ptr [edx]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [ecx+0x4]
         fxch st(1)
-        fst dword ptr [TriDx13]
+        fst dword ptr [SW_TriTDX02]
         fxch st(1)
-        fst dword ptr [TriDy12]
+        fst dword ptr [SW_TriTDY01]
         fmulp st(1), st
         fsubp st(1), st
-        fst dword ptr [TriTemp]
+        fst dword ptr [SW_TriTTemp]
         fld1
-        test dword ptr [TriTemp], 0x80000000
+        test dword ptr [SW_TriTTemp], 0x80000000
         jne L9
         fdivrp st(1), st
         mov dword ptr [ebx+0x8], ecx
@@ -3914,8 +3914,8 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         jb L2
         mov esi, edx
     L2:
-        mov dword ptr [TriRightVtx], esi
-        mov dword ptr [TriLeftVtx], esi
+        mov dword ptr [SW_TriTEdgeA], esi
+        mov dword ptr [SW_TriTEdgeB], esi
         mov eax, dword ptr [ebx+0x10]
         mov dword ptr [TriColor], eax
         mov esi, dword ptr [ebx+0x10]
@@ -3929,9 +3929,9 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [TriG1], edi
-        mov dword ptr [TriB1], esi
-        mov dword ptr [TriR1], eax
+        mov dword ptr [SW_TriTG0], edi
+        mov dword ptr [SW_TriTB0], esi
+        mov dword ptr [SW_TriTR0], eax
         mov esi, dword ptr [ecx+0x10]
         mov edi, esi
         mov eax, esi
@@ -3960,7 +3960,7 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         mov dword ptr [TriG3], edi
         mov dword ptr [TriB3], esi
         mov dword ptr [TriR3], eax
-        fild dword ptr [TriR1]
+        fild dword ptr [SW_TriTR0]
         fild dword ptr [TriR2]
         fild dword ptr [TriR3]
         fxch st(1)
@@ -3968,37 +3968,37 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [TriD12]
-        fmul dword ptr [TriDy13]
+        fst dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDY02]
         fxch st(1)
-        fst dword ptr [TriD13]
-        fmul dword ptr [TriDy12]
-        fld dword ptr [TriD12]
-        fmul dword ptr [TriDx13]
+        fst dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDY01]
+        fld dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13]
-        fmul dword ptr [TriDx12]
+        fld dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDX01]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep + 4]
+        fist word ptr [SW_SpanGrad + 4]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [TriDrDx]
+        fstp dword ptr [SW_TriTRDX]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDrDx]
+        fmul dword ptr [SW_TriTRDX]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
         fstp dword ptr [TriDrDy]
-        fild dword ptr [TriR1]
+        fild dword ptr [SW_TriTR0]
         fxch st(1)
         faddp st(2), st
         fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [TriR0]
-        fild dword ptr [TriG1]
+        fild dword ptr [SW_TriTG0]
         fild dword ptr [TriG2]
         fild dword ptr [TriG3]
         fxch st(1)
@@ -4006,37 +4006,37 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [TriD12]
-        fmul dword ptr [TriDy13]
+        fst dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDY02]
         fxch st(1)
-        fst dword ptr [TriD13]
-        fmul dword ptr [TriDy12]
-        fld dword ptr [TriD12]
-        fmul dword ptr [TriDx13]
+        fst dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDY01]
+        fld dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13]
-        fmul dword ptr [TriDx12]
+        fld dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDX01]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep + 2]
+        fist word ptr [SW_SpanGrad + 2]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [TriDgDx]
+        fstp dword ptr [SW_TriTGDX]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDgDx]
+        fmul dword ptr [SW_TriTGDX]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
         fstp dword ptr [TriDgDy]
-        fild dword ptr [TriG1]
+        fild dword ptr [SW_TriTG0]
         fxch st(1)
         faddp st(2), st
         fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [TriG0]
-        fild dword ptr [TriB1]
+        fild dword ptr [SW_TriTB0]
         fild dword ptr [TriB2]
         fild dword ptr [TriB3]
         fxch st(1)
@@ -4044,31 +4044,31 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [TriD12]
-        fmul dword ptr [TriDy13]
+        fst dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDY02]
         fxch st(1)
-        fst dword ptr [TriD13]
-        fmul dword ptr [TriDy12]
-        fld dword ptr [TriD12]
-        fmul dword ptr [TriDx13]
+        fst dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDY01]
+        fld dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13]
-        fmul dword ptr [TriDx12]
+        fld dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDX01]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep]
+        fist word ptr [SW_SpanGrad]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [TriDbDx]
+        fstp dword ptr [SW_TriTBDX]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDbDx]
+        fmul dword ptr [SW_TriTBDX]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
         fstp dword ptr [TriDbDy]
-        fild dword ptr [TriB1]
+        fild dword ptr [SW_TriTB0]
         fxch st(1)
         faddp st(2), st
         fadd qword ptr [MagicFloat]
@@ -4079,37 +4079,37 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fld dword ptr [ebx+0x18]
         fsub dword ptr [edx+0x18]
         fxch st(1)
-        fst dword ptr [TriD12]
-        fmul dword ptr [TriDy13]
+        fst dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDY02]
         fxch st(1)
-        fst dword ptr [TriD13]
-        fmul dword ptr [TriDy12]
-        fld dword ptr [TriD12]
-        fmul dword ptr [TriDx13]
+        fst dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDY01]
+        fld dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13]
-        fmul dword ptr [TriDx12]
+        fld dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDX01]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [TriDuDx]
+        fst dword ptr [SW_TriTUDX]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
         fadd qword ptr [MagicFix24]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDuDx]
+        fmul dword ptr [SW_TriTUDX]
         fxch st(1)
-        fstp dword ptr [TriDuDy]
+        fstp dword ptr [SW_TriTUDY]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [TriDuDy]
+        fmul dword ptr [SW_TriTUDY]
         fld dword ptr [ebx+0x18]
         fadd qword ptr [MagicFix24]
         fxch st(3)
-        fstp qword ptr [SpanUStep]
+        fstp qword ptr [SW_SpanDU]
         faddp st(1), st
         fsubp st(1), st
         fstp qword ptr [TriU0]
@@ -4118,37 +4118,37 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fld dword ptr [ebx+0x1c]
         fsub dword ptr [edx+0x1c]
         fxch st(1)
-        fst dword ptr [TriD12]
-        fmul dword ptr [TriDy13]
+        fst dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDY02]
         fxch st(1)
-        fst dword ptr [TriD13]
-        fmul dword ptr [TriDy12]
-        fld dword ptr [TriD12]
-        fmul dword ptr [TriDx13]
+        fst dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDY01]
+        fld dword ptr [SW_TriTD01]
+        fmul dword ptr [SW_TriTDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13]
-        fmul dword ptr [TriDx12]
+        fld dword ptr [SW_TriTD02]
+        fmul dword ptr [SW_TriTDX01]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [TriDvDx]
+        fst dword ptr [SW_TriTVDX]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
         fadd qword ptr [MagicFix24]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDvDx]
+        fmul dword ptr [SW_TriTVDX]
         fxch st(1)
-        fstp dword ptr [TriDvDy]
+        fstp dword ptr [SW_TriTVDY]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [TriDvDy]
+        fmul dword ptr [SW_TriTVDY]
         fld dword ptr [ebx+0x1c]
         fadd qword ptr [MagicFix24]
         fxch st(3)
-        fstp qword ptr [SpanVStep]
+        fstp qword ptr [SW_SpanDV]
         faddp st(1), st
         fsubp st(1), st
         fstp qword ptr [TriV0]
@@ -4164,8 +4164,8 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fmulp st(1), st
         fsubp st(1), st
         fmul st, st(1)
-        fstp dword ptr [TriTemp]
-        mov eax, dword ptr [TriTemp]
+        fstp dword ptr [SW_TriTTemp]
+        mov eax, dword ptr [SW_TriTTemp]
         sub eax, 0x400000
         shr eax, 0x17
         and eax, 0xff
@@ -4181,20 +4181,20 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         mov eax, 0x4
     L4:
         ffree st(0)
-        mov dword ptr [MMXMipLevel], eax
-        mov esi, dword ptr [TriRightVtx]
+        mov dword ptr [SW_TexShift], eax
+        mov esi, dword ptr [SW_TriTEdgeA]
         fld dword ptr [esi+0x4]
         fsub dword ptr [RoundBias]
         mov eax, 0x3
-        mov edi, dword ptr [SpanBuffer]
+        mov edi, dword ptr [SW_SpanBuffer]
         xor edx, edx
-        mov dword ptr [TriEdges], eax
+        mov dword ptr [SW_TriTEdges], eax
         fadd qword ptr [MagicInt]
-        fstp qword ptr [TriY]
-        mov eax, dword ptr [TriY]
+        fstp qword ptr [SW_TriTY]
+        mov eax, dword ptr [SW_TriTY]
         inc eax
-        mov dword ptr [TriY], eax
-        mov dword ptr [SpanY], eax
+        mov dword ptr [SW_TriTY], eax
+        mov dword ptr [SW_SpanY], eax
         jmp L10
     L5:
         push ebx
@@ -4203,28 +4203,28 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         shr ebx, 0x10
         mov eax, esi
         shr eax, 0x10
-        mov dword ptr [TriTemp], ebx
+        mov dword ptr [SW_TriTTemp], ebx
         sub eax, ebx
-        fild dword ptr [TriY]
-        fild dword ptr [TriTemp]
+        fild dword ptr [SW_TriTY]
+        fild dword ptr [SW_TriTTemp]
         mov dword ptr [edi+0x4], eax
         mov dword ptr [edi], ebx
-        fld dword ptr [TriDuDx]
+        fld dword ptr [SW_TriTUDX]
         fmul st, st(1)
-        fld dword ptr [TriDuDy]
+        fld dword ptr [SW_TriTUDY]
         fmul st, st(3)
-        fld dword ptr [TriDvDx]
+        fld dword ptr [SW_TriTVDX]
         fmul st, st(3)
-        fld dword ptr [TriDvDy]
+        fld dword ptr [SW_TriTVDY]
         fmul st, st(5)
         fxch st(2)
         faddp st(3), st
-        mov eax, dword ptr [TriY]
+        mov eax, dword ptr [SW_TriTY]
         faddp st(1), st
         fxch st(1)
         fadd qword ptr [TriU0]
         fxch st(1)
-        fld dword ptr [TriDbDx]
+        fld dword ptr [SW_TriTBDX]
         fmul st, st(3)
         fxch st(1)
         fadd qword ptr [TriV0]
@@ -4235,14 +4235,14 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fxch st(2)
         fstp qword ptr [edi+0x10]
         inc eax
-        mov dword ptr [TriY], eax
-        fld dword ptr [TriDgDx]
+        mov dword ptr [SW_TriTY], eax
+        fld dword ptr [SW_TriTGDX]
         fmul st, st(3)
         fld dword ptr [TriDgDy]
         fmul st, st(5)
         fxch st(2)
         faddp st(3), st
-        fld dword ptr [TriDrDx]
+        fld dword ptr [SW_TriTRDX]
         fmul st, st(4)
         fld dword ptr [TriDrDy]
         fmul st, st(6)
@@ -4260,11 +4260,11 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fstp dword ptr [edi+0x18]
         fadd qword ptr [TriR0]
         fxch st(1)
-        fstp dword ptr [TriTemp]
+        fstp dword ptr [SW_TriTTemp]
         fxch st(1)
         faddp st(0), st
         fstp dword ptr [edi+0x1c]
-        mov eax, dword ptr [TriTemp]
+        mov eax, dword ptr [SW_TriTTemp]
         pop ebx
         mov word ptr [edi+0x1a], ax
         mov eax, dword ptr [TriLeftXStep]
@@ -4279,8 +4279,8 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         je L11
         jmp L5
     L6:
-        mov dword ptr [SpanBufferEnd], edi
-        cmp dword ptr [MMXMipLevel], 0x0
+        mov dword ptr [SW_SpanEnd], edi
+        cmp dword ptr [SW_TexShift], 0x0
         jne L7
         call dword ptr [pDrawSpansFiltered]
         pop ebx
@@ -4290,7 +4290,7 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
     L7:
         cmp dword ptr [bMMXMipMap], 0x1
         je L8
-        mov dword ptr [MMXMipLevel], 0x0
+        mov dword ptr [SW_TexShift], 0x0
     L8:
         call dword ptr [pDrawSpans]
         pop ebx
@@ -4313,78 +4313,78 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         _emit 0x00
         _emit 0x00
     L10:
-        mov esi, dword ptr [TriRightVtx]
-        mov eax, dword ptr [TriEdges]
+        mov esi, dword ptr [SW_TriTEdgeA]
+        mov eax, dword ptr [SW_TriTEdges]
         mov ecx, esi
         dec eax
         js L6
         mov ecx, dword ptr [ecx+0x8]
-        mov dword ptr [TriEdges], eax
-        mov dword ptr [TriRightVtx], ecx
+        mov dword ptr [SW_TriTEdges], eax
+        mov dword ptr [SW_TriTEdgeA], ecx
         fld dword ptr [esi]
         fsub dword ptr [ecx]
         fld dword ptr [esi+0x4]
         fsub dword ptr [ecx+0x4]
         fdivp st(1), st
-        fstp dword ptr [TriRightDxDy]
-        fild dword ptr [TriY]
+        fstp dword ptr [SW_TriTSlopeA]
+        fild dword ptr [SW_TriTY]
         fsub dword ptr [esi+0x4]
-        fmul dword ptr [TriRightDxDy]
+        fmul dword ptr [SW_TriTSlopeA]
         fadd dword ptr [esi]
         fstp dword ptr [TriRightX]
         fld dword ptr [ecx+0x4]
         fsub dword ptr [RoundBias]
         fadd qword ptr [MagicInt]
-        fstp qword ptr [TriFixTemp]
-        mov ecx, dword ptr [TriFixTemp]
+        fstp qword ptr [SW_TriTEndY]
+        mov ecx, dword ptr [SW_TriTEndY]
         inc ecx
-        sub ecx, dword ptr [TriY]
+        sub ecx, dword ptr [SW_TriTY]
         je L10
-        fld dword ptr [TriRightDxDy]
+        fld dword ptr [SW_TriTSlopeA]
         fmul dword ptr [Fix16Scale]
         fistp dword ptr [TriRightXStep]
         fld dword ptr [TriRightX]
         fmul dword ptr [Fix16Scale]
-        fistp dword ptr [TriTemp]
-        mov esi, dword ptr [TriTemp]
+        fistp dword ptr [SW_TriTTemp]
+        mov esi, dword ptr [SW_TriTTemp]
         add esi, 0xffff
         test edx, edx
         jne L12
     L11:
-        mov edx, dword ptr [TriLeftVtx]
-        mov eax, dword ptr [TriEdges]
+        mov edx, dword ptr [SW_TriTEdgeB]
+        mov eax, dword ptr [SW_TriTEdges]
         mov ebx, edx
         dec eax
         js L6
         mov ebx, dword ptr [ebx+0x14]
-        mov dword ptr [TriEdges], eax
-        mov dword ptr [TriLeftVtx], ebx
+        mov dword ptr [SW_TriTEdges], eax
+        mov dword ptr [SW_TriTEdgeB], ebx
         fld dword ptr [edx]
         fsub dword ptr [ebx]
         fld dword ptr [edx+0x4]
         fsub dword ptr [ebx+0x4]
         fdivp st(1), st
-        fstp dword ptr [TriLeftDxDy]
-        fild dword ptr [TriY]
+        fstp dword ptr [SW_TriTSlopeB]
+        fild dword ptr [SW_TriTY]
         fsub dword ptr [edx+0x4]
-        fmul dword ptr [TriLeftDxDy]
+        fmul dword ptr [SW_TriTSlopeB]
         fadd dword ptr [edx]
         fstp dword ptr [TriLeftX]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [RoundBias]
         fadd qword ptr [MagicInt]
-        fstp qword ptr [TriFixTemp]
-        mov edx, dword ptr [TriFixTemp]
+        fstp qword ptr [SW_TriTEndY]
+        mov edx, dword ptr [SW_TriTEndY]
         inc edx
-        sub edx, dword ptr [TriY]
+        sub edx, dword ptr [SW_TriTY]
         je L11
-        fld dword ptr [TriLeftDxDy]
+        fld dword ptr [SW_TriTSlopeB]
         fmul dword ptr [Fix16Scale]
         fistp dword ptr [TriLeftXStep]
         fld dword ptr [TriLeftX]
         fmul dword ptr [Fix16Scale]
-        fistp dword ptr [TriTemp]
-        mov ebx, dword ptr [TriTemp]
+        fistp dword ptr [SW_TriTTemp]
+        mov ebx, dword ptr [SW_TriTTemp]
         add ebx, 0xffff
     L12:
         jmp L5
@@ -4395,62 +4395,62 @@ extern long TriVz3P;
 extern long TriUz3P;
 extern long TriVz2P;
 extern long TriUz2P;
-extern long TriVz1P;
-extern long TriUz1P;
-extern long TriDx12P;
-extern long TriDy13P;
-extern long TriDx13P;
-extern long TriDy12P;
-extern long TriTempP;
-extern long TriRightVtxP;
-extern long TriLeftVtxP;
-extern long TriG1P;
-extern long TriB1P;
-extern long TriR1P;
+extern long SW_TriPV0;
+extern long SW_TriPU0;
+extern long SW_TriPDX01;
+extern long SW_TriPDY02;
+extern long SW_TriPDX02;
+extern long SW_TriPDY01;
+extern long SW_TriPTemp;
+extern long SW_TriPEdgeA;
+extern long SW_TriPEdgeB;
+extern long SW_TriPG0;
+extern long SW_TriPB0;
+extern long SW_TriPR0;
 extern long TriG2P;
 extern long TriB2P;
 extern long TriR2P;
 extern long TriG3P;
 extern long TriB3P;
 extern long TriR3P;
-extern long TriD12P;
-extern long TriD13P;
-extern long TriDrDxP;
+extern long SW_TriPD01;
+extern long SW_TriPD02;
+extern long SW_TriPRDX;
 extern long TriDrDyP;
 extern double TriR0P;
-extern long TriDgDxP;
+extern long SW_TriPGDX;
 extern long TriDgDyP;
 extern double TriG0P;
-extern long TriDbDxP;
+extern long SW_TriPBDX;
 extern long TriDbDyP;
 extern double TriB0P;
-extern long TriDuzDxP;
+extern long SW_TriPUDX;
 extern long SubSpanLength;
-extern long TriDuzDyP;
+extern long SW_TriPUDY;
 extern long TriDuzDx16P;
 extern long TriUz0P;
-extern long TriDvzDxP;
-extern long TriDvzDyP;
+extern long SW_TriPVDX;
+extern long SW_TriPVDY;
 extern long TriDvzDx16P;
 extern long TriVz0P;
-extern long TriDozDxP;
-extern long TriDozDyP;
+extern long SW_TriPWDX;
+extern long SW_TriPWDY;
 extern long TriDozDx16P;
 extern long TriOz0P;
-extern long TriEdgesP;
-extern double TriYP;
-extern long TriOzP;
+extern long SW_TriPEdges;
+extern double SW_TriPY;
+extern long SW_TriPW;
 extern long RecipTable[];
-extern long TriZP;
-extern long TriLastUP;
-extern long TriLastVP;
-extern double TriFixTempP;
+extern long SW_TriPRecip;
+extern long SW_TriPU;
+extern long SW_TriPV;
+extern double SW_TriPTmp;
 extern double TriLeftXStepP;
 extern double TriRightXStepP;
 extern void (*pDrawSpansFilteredP)(void);
 extern void (*pDrawSpansP)(void);
 
-__declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
+__declspec(naked) void SW_TriSetupGTP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
     __asm {
         push edi
@@ -4475,30 +4475,30 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fstp dword ptr [TriUz3P]
         fstp dword ptr [TriVz2P]
         fstp dword ptr [TriUz2P]
-        fstp dword ptr [TriVz1P]
-        fstp dword ptr [TriUz1P]
+        fstp dword ptr [SW_TriPV0]
+        fstp dword ptr [SW_TriPU0]
         fld dword ptr [ebx]
         fsub dword ptr [ecx]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [edx+0x4]
         fxch st(1)
-        fst dword ptr [TriDx12P]
+        fst dword ptr [SW_TriPDX01]
         fxch st(1)
-        fst dword ptr [TriDy13P]
+        fst dword ptr [SW_TriPDY02]
         fmulp st(1), st
         fld dword ptr [ebx]
         fsub dword ptr [edx]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [ecx+0x4]
         fxch st(1)
-        fst dword ptr [TriDx13P]
+        fst dword ptr [SW_TriPDX02]
         fxch st(1)
-        fst dword ptr [TriDy12P]
+        fst dword ptr [SW_TriPDY01]
         fmulp st(1), st
         fsubp st(1), st
-        fst dword ptr [TriTempP]
+        fst dword ptr [SW_TriPTemp]
         fld1
-        test dword ptr [TriTempP], 0x80000000
+        test dword ptr [SW_TriPTemp], 0x80000000
         jne L11
         fdivrp st(1), st
         mov dword ptr [ebx+0x8], ecx
@@ -4518,8 +4518,8 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         jb L2
         mov esi, edx
     L2:
-        mov dword ptr [TriRightVtxP], esi
-        mov dword ptr [TriLeftVtxP], esi
+        mov dword ptr [SW_TriPEdgeA], esi
+        mov dword ptr [SW_TriPEdgeB], esi
         mov eax, dword ptr [ebx+0x10]
         mov dword ptr [TriColor], eax
         mov esi, dword ptr [ebx+0x10]
@@ -4533,9 +4533,9 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [TriG1P], edi
-        mov dword ptr [TriB1P], esi
-        mov dword ptr [TriR1P], eax
+        mov dword ptr [SW_TriPG0], edi
+        mov dword ptr [SW_TriPB0], esi
+        mov dword ptr [SW_TriPR0], eax
         mov esi, dword ptr [ecx+0x10]
         mov edi, esi
         mov eax, esi
@@ -4564,7 +4564,7 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         mov dword ptr [TriG3P], edi
         mov dword ptr [TriB3P], esi
         mov dword ptr [TriR3P], eax
-        fild dword ptr [TriR1P]
+        fild dword ptr [SW_TriPR0]
         fild dword ptr [TriR2P]
         fild dword ptr [TriR3P]
         fxch st(1)
@@ -4572,37 +4572,37 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [TriD12P]
-        fmul dword ptr [TriDy13P]
+        fst dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDY02]
         fxch st(1)
-        fst dword ptr [TriD13P]
-        fmul dword ptr [TriDy12P]
-        fld dword ptr [TriD12P]
-        fmul dword ptr [TriDx13P]
+        fst dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDY01]
+        fld dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13P]
-        fmul dword ptr [TriDx12P]
+        fld dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDX01]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep + 4]
+        fist word ptr [SW_SpanGrad + 4]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [TriDrDxP]
+        fstp dword ptr [SW_TriPRDX]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDrDxP]
+        fmul dword ptr [SW_TriPRDX]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
         fstp dword ptr [TriDrDyP]
-        fild dword ptr [TriR1P]
+        fild dword ptr [SW_TriPR0]
         fxch st(1)
         faddp st(2), st
         fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [TriR0P]
-        fild dword ptr [TriG1P]
+        fild dword ptr [SW_TriPG0]
         fild dword ptr [TriG2P]
         fild dword ptr [TriG3P]
         fxch st(1)
@@ -4610,37 +4610,37 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [TriD12P]
-        fmul dword ptr [TriDy13P]
+        fst dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDY02]
         fxch st(1)
-        fst dword ptr [TriD13P]
-        fmul dword ptr [TriDy12P]
-        fld dword ptr [TriD12P]
-        fmul dword ptr [TriDx13P]
+        fst dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDY01]
+        fld dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13P]
-        fmul dword ptr [TriDx12P]
+        fld dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDX01]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep + 2]
+        fist word ptr [SW_SpanGrad + 2]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [TriDgDxP]
+        fstp dword ptr [SW_TriPGDX]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDgDxP]
+        fmul dword ptr [SW_TriPGDX]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
         fstp dword ptr [TriDgDyP]
-        fild dword ptr [TriG1P]
+        fild dword ptr [SW_TriPG0]
         fxch st(1)
         faddp st(2), st
         fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [TriG0P]
-        fild dword ptr [TriB1P]
+        fild dword ptr [SW_TriPB0]
         fild dword ptr [TriB2P]
         fild dword ptr [TriB3P]
         fxch st(1)
@@ -4648,107 +4648,107 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [TriD12P]
-        fmul dword ptr [TriDy13P]
+        fst dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDY02]
         fxch st(1)
-        fst dword ptr [TriD13P]
-        fmul dword ptr [TriDy12P]
-        fld dword ptr [TriD12P]
-        fmul dword ptr [TriDx13P]
+        fst dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDY01]
+        fld dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13P]
-        fmul dword ptr [TriDx12P]
+        fld dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDX01]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [SpanColorStep]
+        fist word ptr [SW_SpanGrad]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [TriDbDxP]
+        fstp dword ptr [SW_TriPBDX]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDbDxP]
+        fmul dword ptr [SW_TriPBDX]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
         fstp dword ptr [TriDbDyP]
-        fild dword ptr [TriB1P]
+        fild dword ptr [SW_TriPB0]
         fxch st(1)
         faddp st(2), st
         fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [TriB0P]
-        fld dword ptr [TriUz1P]
+        fld dword ptr [SW_TriPU0]
         fsub dword ptr [TriUz2P]
-        fld dword ptr [TriUz1P]
+        fld dword ptr [SW_TriPU0]
         fsub dword ptr [TriUz3P]
         fxch st(1)
-        fst dword ptr [TriD12P]
-        fmul dword ptr [TriDy13P]
+        fst dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDY02]
         fxch st(1)
-        fst dword ptr [TriD13P]
-        fmul dword ptr [TriDy12P]
-        fld dword ptr [TriD12P]
-        fmul dword ptr [TriDx13P]
+        fst dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDY01]
+        fld dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13P]
-        fmul dword ptr [TriDx12P]
+        fld dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDX01]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [TriDuzDxP]
+        fst dword ptr [SW_TriPUDX]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
         fmul dword ptr [SubSpanLength]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDuzDxP]
+        fmul dword ptr [SW_TriPUDX]
         fxch st(1)
-        fstp dword ptr [TriDuzDyP]
+        fstp dword ptr [SW_TriPUDY]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [TriDuzDyP]
-        fld dword ptr [TriUz1P]
+        fmul dword ptr [SW_TriPUDY]
+        fld dword ptr [SW_TriPU0]
         fxch st(3)
         fstp dword ptr [TriDuzDx16P]
         faddp st(1), st
         fsubp st(1), st
         fstp dword ptr [TriUz0P]
-        fld dword ptr [TriVz1P]
+        fld dword ptr [SW_TriPV0]
         fsub dword ptr [TriVz2P]
-        fld dword ptr [TriVz1P]
+        fld dword ptr [SW_TriPV0]
         fsub dword ptr [TriVz3P]
         fxch st(1)
-        fst dword ptr [TriD12P]
-        fmul dword ptr [TriDy13P]
+        fst dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDY02]
         fxch st(1)
-        fst dword ptr [TriD13P]
-        fmul dword ptr [TriDy12P]
-        fld dword ptr [TriD12P]
-        fmul dword ptr [TriDx13P]
+        fst dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDY01]
+        fld dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13P]
-        fmul dword ptr [TriDx12P]
+        fld dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDX01]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [TriDvzDxP]
+        fst dword ptr [SW_TriPVDX]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
         fmul dword ptr [SubSpanLength]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDvzDxP]
+        fmul dword ptr [SW_TriPVDX]
         fxch st(1)
-        fstp dword ptr [TriDvzDyP]
+        fstp dword ptr [SW_TriPVDY]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [TriDvzDyP]
-        fld dword ptr [TriVz1P]
+        fmul dword ptr [SW_TriPVDY]
+        fld dword ptr [SW_TriPV0]
         fxch st(3)
         fstp dword ptr [TriDvzDx16P]
         faddp st(1), st
@@ -4759,33 +4759,33 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fld dword ptr [ebx+0xc]
         fsub dword ptr [edx+0xc]
         fxch st(1)
-        fst dword ptr [TriD12P]
-        fmul dword ptr [TriDy13P]
+        fst dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDY02]
         fxch st(1)
-        fst dword ptr [TriD13P]
-        fmul dword ptr [TriDy12P]
-        fld dword ptr [TriD12P]
-        fmul dword ptr [TriDx13P]
+        fst dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDY01]
+        fld dword ptr [SW_TriPD01]
+        fmul dword ptr [SW_TriPDX02]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [TriD13P]
-        fmul dword ptr [TriDx12P]
+        fld dword ptr [SW_TriPD02]
+        fmul dword ptr [SW_TriPDX01]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [TriDozDxP]
+        fst dword ptr [SW_TriPWDX]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
         fmul dword ptr [SubSpanLength]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [TriDozDxP]
+        fmul dword ptr [SW_TriPWDX]
         fxch st(1)
-        fstp dword ptr [TriDozDyP]
+        fstp dword ptr [SW_TriPWDY]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [TriDozDyP]
+        fmul dword ptr [SW_TriPWDY]
         fld dword ptr [ebx+0xc]
         fxch st(3)
         fstp dword ptr [TriDozDx16P]
@@ -4804,8 +4804,8 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fmulp st(1), st
         fsubp st(1), st
         fmul st, st(1)
-        fstp dword ptr [TriTempP]
-        mov eax, dword ptr [TriTempP]
+        fstp dword ptr [SW_TriPTemp]
+        mov eax, dword ptr [SW_TriPTemp]
         sub eax, 0x400000
         shr eax, 0x17
         and eax, 0xff
@@ -4820,20 +4820,20 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         jb L4
         mov eax, 0x4
     L4:
-        mov dword ptr [MMXMipLevel], eax
+        mov dword ptr [SW_TexShift], eax
         faddp st(0), st
-        mov esi, dword ptr [TriRightVtxP]
+        mov esi, dword ptr [SW_TriPEdgeA]
         mov eax, 0x3
-        mov dword ptr [TriEdgesP], eax
-        mov edi, dword ptr [SpanBuffer]
+        mov dword ptr [SW_TriPEdges], eax
+        mov edi, dword ptr [SW_SpanBuffer]
         fld dword ptr [esi+0x4]
         fsub dword ptr [RoundBias]
         fadd qword ptr [MagicInt]
-        fstp qword ptr [TriYP]
-        inc dword ptr [TriYP]
-        mov eax, dword ptr [TriYP]
+        fstp qword ptr [SW_TriPY]
+        inc dword ptr [SW_TriPY]
+        mov eax, dword ptr [SW_TriPY]
         xor edx, edx
-        mov dword ptr [SpanY], eax
+        mov dword ptr [SW_SpanY], eax
         jmp L12
         nop
         _emit 0x8d
@@ -4850,24 +4850,24 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         mov eax, esi
         mov ecx, dword ptr [edi]
         shr eax, 0x10
-        mov dword ptr [TriTempP], ebx
+        mov dword ptr [SW_TriPTemp], ebx
         sub eax, ebx
         mov ecx, dword ptr [edi]
-        fild dword ptr [TriYP]
-        fild dword ptr [TriTempP]
+        fild dword ptr [SW_TriPY]
+        fild dword ptr [SW_TriPTemp]
         mov dword ptr [edi+0x4], eax
         mov dword ptr [edi], ebx
-        fld dword ptr [TriDbDxP]
+        fld dword ptr [SW_TriPBDX]
         fmul st, st(1)
         fld dword ptr [TriDbDyP]
         fmul st, st(3)
-        fld dword ptr [TriDgDxP]
+        fld dword ptr [SW_TriPGDX]
         fmul st, st(3)
         fld dword ptr [TriDgDyP]
         fmul st, st(5)
         fxch st(2)
         faddp st(3), st
-        fld dword ptr [TriDrDxP]
+        fld dword ptr [SW_TriPRDX]
         fmul st, st(4)
         fld dword ptr [TriDrDyP]
         fmul st, st(6)
@@ -4879,35 +4879,35 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         faddp st(1), st
         fxch st(1)
         fadd qword ptr [TriG0P]
-        fld dword ptr [TriDozDxP]
+        fld dword ptr [SW_TriPWDX]
         fmul st, st(4)
         fxch st(3)
         fstp dword ptr [edi+0x18]
         fxch st(1)
         fadd qword ptr [TriR0P]
         fxch st(1)
-        fstp dword ptr [TriTempP]
-        fld dword ptr [TriDozDyP]
+        fstp dword ptr [SW_TriPTemp]
+        fld dword ptr [SW_TriPWDY]
         fmul st, st(4)
         fxch st(1)
         fstp dword ptr [edi+0x1c]
-        fld dword ptr [TriDuzDxP]
+        fld dword ptr [SW_TriPUDX]
         fmul st, st(3)
         fxch st(2)
         faddp st(1), st
-        fld dword ptr [TriDuzDyP]
+        fld dword ptr [SW_TriPUDY]
         fmul st, st(4)
         fxch st(1)
         fadd dword ptr [TriOz0P]
-        fld dword ptr [TriDvzDxP]
+        fld dword ptr [SW_TriPVDX]
         fmul st, st(4)
         fxch st(2)
         faddp st(3), st
-        fld dword ptr [TriDvzDyP]
+        fld dword ptr [SW_TriPVDY]
         fmul st, st(5)
         fxch st(1)
-        fstp dword ptr [TriOzP]
-        mov ebx, dword ptr [TriOzP]
+        fstp dword ptr [SW_TriPW]
+        mov ebx, dword ptr [SW_TriPW]
         mov ecx, ebx
         shr ebx, 0x9
         xor ecx, 0x7f800000
@@ -4918,25 +4918,25 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fadd dword ptr [TriUz0P]
         mov ebx, dword ptr [ebx+RecipTable]
         add ecx, ebx
-        mov dword ptr [TriZP], ecx
+        mov dword ptr [SW_TriPRecip], ecx
         fld st(0)
-        fmul dword ptr [TriZP]
+        fmul dword ptr [SW_TriPRecip]
         fxch st(2)
         fadd dword ptr [TriVz0P]
         fxch st(4)
         faddp st(0), st
         fxch st(2)
         faddp st(0), st
-        mov ecx, dword ptr [TriTempP]
+        mov ecx, dword ptr [SW_TriPTemp]
         mov word ptr [edi+0x1a], cx
         fld st(2)
-        fmul dword ptr [TriZP]
+        fmul dword ptr [SW_TriPRecip]
         fxch st(1)
-        fst dword ptr [TriLastUP]
+        fst dword ptr [SW_TriPU]
         fadd qword ptr [MagicFix24]
         fxch st(1)
-        fst dword ptr [TriLastVP]
-        fld dword ptr [TriOzP]
+        fst dword ptr [SW_TriPV]
+        fld dword ptr [SW_TriPW]
         fxch st(1)
         fadd qword ptr [MagicFix24]
         fxch st(2)
@@ -4953,8 +4953,8 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fxch st(2)
         fadd dword ptr [TriDvzDx16P]
         fxch st(2)
-        fst dword ptr [TriTempP]
-        mov ebx, dword ptr [TriTempP]
+        fst dword ptr [SW_TriPTemp]
+        mov ebx, dword ptr [SW_TriPTemp]
         mov ecx, ebx
         shr ebx, 0x9
         xor ecx, 0x7f800000
@@ -4963,23 +4963,23 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fld st(1)
         mov ebx, dword ptr [ebx+RecipTable]
         add ecx, ebx
-        mov dword ptr [TriZP], ecx
-        fmul dword ptr [TriZP]
+        mov dword ptr [SW_TriPRecip], ecx
+        fmul dword ptr [SW_TriPRecip]
         fld st(3)
-        fmul dword ptr [TriZP]
+        fmul dword ptr [SW_TriPRecip]
         fxch st(1)
         fld st(0)
-        fsub dword ptr [TriLastUP]
+        fsub dword ptr [SW_TriPU]
         fxch st(1)
-        fstp dword ptr [TriLastUP]
+        fstp dword ptr [SW_TriPU]
         fmul dword ptr [MipOffsets + 88]
         fxch st(1)
         fld st(0)
-        fsub dword ptr [TriLastVP]
+        fsub dword ptr [SW_TriPV]
         fxch st(2)
         fadd qword ptr [MagicFix24]
         fxch st(1)
-        fstp dword ptr [TriLastVP]
+        fstp dword ptr [SW_TriPV]
         fxch st(1)
         fmul dword ptr [MipOffsets + 88]
         fxch st(1)
@@ -4987,23 +4987,23 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fadd qword ptr [MagicFix24]
         add edi, 0x8
         sub eax, 0x10
-        fstp qword ptr [TriFixTempP]
-        mov ebx, dword ptr [TriFixTempP]
+        fstp qword ptr [SW_TriPTmp]
+        mov ebx, dword ptr [SW_TriPTmp]
         mov dword ptr [edi+0x1c], ebx
         jg L6
     L7:
         and eax, 0xf
-        fld dword ptr [TriDozDxP]
+        fld dword ptr [SW_TriPWDX]
         fmul dword ptr [eax*4+MipOffsets + 96]
-        fld dword ptr [TriDuzDxP]
+        fld dword ptr [SW_TriPUDX]
         fmul dword ptr [eax*4+MipOffsets + 96]
         fxch st(1)
         faddp st(2), st
-        fld dword ptr [TriDvzDxP]
+        fld dword ptr [SW_TriPVDX]
         fmul dword ptr [eax*4+MipOffsets + 96]
         fxch st(2)
-        fstp dword ptr [TriOzP]
-        mov ebx, dword ptr [TriOzP]
+        fstp dword ptr [SW_TriPW]
+        mov ebx, dword ptr [SW_TriPW]
         mov ecx, ebx
         faddp st(2), st
         shr ebx, 0x9
@@ -5013,44 +5013,44 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         faddp st(2), st
         mov ebx, dword ptr [ebx+RecipTable]
         add ecx, ebx
-        mov dword ptr [TriZP], ecx
-        fmul dword ptr [TriZP]
+        mov dword ptr [SW_TriPRecip], ecx
+        fmul dword ptr [SW_TriPRecip]
         fld dword ptr [eax*4+MipOffsets + 24]
         fxch st(1)
-        fsub dword ptr [TriLastUP]
+        fsub dword ptr [SW_TriPU]
         fxch st(2)
-        fmul dword ptr [TriZP]
+        fmul dword ptr [SW_TriPRecip]
         add edi, 0x28
         mov eax, dword ptr [TriLeftXStepP]
         mov ecx, dword ptr [TriRightXStepP]
         pop ebx
-        fsub dword ptr [TriLastVP]
+        fsub dword ptr [SW_TriPV]
         fxch st(2)
         fmul st, st(1)
         add ebx, eax
-        mov eax, dword ptr [TriYP]
+        mov eax, dword ptr [SW_TriPY]
         add esi, ecx
         inc eax
         fadd qword ptr [MagicFix24]
         fxch st(2)
         fmulp st(1), st
-        mov dword ptr [TriYP], eax
+        mov dword ptr [SW_TriPY], eax
         pop ecx
         dec edx
         dec ecx
         fadd qword ptr [MagicFix24]
         fxch st(1)
         fstp qword ptr [edi-0x8]
-        fstp qword ptr [TriFixTempP]
-        mov eax, dword ptr [TriFixTempP]
+        fstp qword ptr [SW_TriPTmp]
+        mov eax, dword ptr [SW_TriPTmp]
         mov dword ptr [edi-0x4], eax
         je L12
         test edx, edx
         je L13
         jmp L5
     L8:
-        mov dword ptr [SpanBufferEnd], edi
-        cmp dword ptr [MMXMipLevel], 0x0
+        mov dword ptr [SW_SpanEnd], edi
+        cmp dword ptr [SW_TexShift], 0x0
         jne L9
         call dword ptr [pDrawSpansFilteredP]
         pop ebx
@@ -5060,7 +5060,7 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
     L9:
         cmp dword ptr [bMMXMipMap], 0x1
         je L10
-        mov dword ptr [MMXMipLevel], 0x0
+        mov dword ptr [SW_TexShift], 0x0
     L10:
         call dword ptr [pDrawSpansP]
         pop ebx
@@ -5088,14 +5088,14 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         _emit 0x00
         _emit 0x00
     L12:
-        mov esi, dword ptr [TriRightVtxP]
-        mov eax, dword ptr [TriEdgesP]
+        mov esi, dword ptr [SW_TriPEdgeA]
+        mov eax, dword ptr [SW_TriPEdges]
         mov ecx, esi
         dec eax
         js L8
         mov ecx, dword ptr [ecx+0x8]
-        mov dword ptr [TriEdgesP], eax
-        mov dword ptr [TriRightVtxP], ecx
+        mov dword ptr [SW_TriPEdges], eax
+        mov dword ptr [SW_TriPEdgeA], ecx
         fld dword ptr [esi]
         fsub dword ptr [ecx]
         fld dword ptr [esi+0x4]
@@ -5104,33 +5104,33 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fld st(0)
         fadd qword ptr [MagicFix16]
         fstp qword ptr [TriRightXStepP]
-        fild dword ptr [TriYP]
+        fild dword ptr [SW_TriPY]
         fsub dword ptr [esi+0x4]
         fmulp st(1), st
         fadd dword ptr [esi]
         fadd qword ptr [MagicFix16]
-        fstp qword ptr [TriFixTempP]
+        fstp qword ptr [SW_TriPTmp]
         fld dword ptr [ecx+0x4]
         fsub dword ptr [RoundBias]
-        mov esi, dword ptr [TriFixTempP]
+        mov esi, dword ptr [SW_TriPTmp]
         fadd qword ptr [MagicInt]
-        fstp qword ptr [TriFixTempP]
-        mov ecx, dword ptr [TriFixTempP]
+        fstp qword ptr [SW_TriPTmp]
+        mov ecx, dword ptr [SW_TriPTmp]
         add esi, 0xffff
-        sub ecx, dword ptr [TriYP]
+        sub ecx, dword ptr [SW_TriPY]
         inc ecx
         je L12
         test edx, edx
         jne L14
     L13:
-        mov edx, dword ptr [TriLeftVtxP]
-        mov eax, dword ptr [TriEdgesP]
+        mov edx, dword ptr [SW_TriPEdgeB]
+        mov eax, dword ptr [SW_TriPEdges]
         mov ebx, edx
         dec eax
         js L8
         mov ebx, dword ptr [ebx+0x14]
-        mov dword ptr [TriEdgesP], eax
-        mov dword ptr [TriLeftVtxP], ebx
+        mov dword ptr [SW_TriPEdges], eax
+        mov dword ptr [SW_TriPEdgeB], ebx
         fld dword ptr [edx]
         fsub dword ptr [ebx]
         fld dword ptr [edx+0x4]
@@ -5139,20 +5139,20 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fld st(0)
         fadd qword ptr [MagicFix16]
         fstp qword ptr [TriLeftXStepP]
-        fild dword ptr [TriYP]
+        fild dword ptr [SW_TriPY]
         fsub dword ptr [edx+0x4]
         fmulp st(1), st
         fadd dword ptr [edx]
         fadd qword ptr [MagicFix16]
-        fstp qword ptr [TriFixTempP]
+        fstp qword ptr [SW_TriPTmp]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [RoundBias]
-        mov ebx, dword ptr [TriFixTempP]
+        mov ebx, dword ptr [SW_TriPTmp]
         fadd qword ptr [MagicInt]
         add ebx, 0xffff
-        fstp qword ptr [TriFixTempP]
-        mov edx, dword ptr [TriFixTempP]
-        sub edx, dword ptr [TriYP]
+        fstp qword ptr [SW_TriPTmp]
+        mov edx, dword ptr [SW_TriPTmp]
+        sub edx, dword ptr [SW_TriPY]
         inc edx
         je L13
     L14:
@@ -5429,62 +5429,62 @@ HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderSt
         bMMXPerspective = dwRenderState;
         break;
     case D3DRENDERSTATE_TEXTUREHANDLE:
-        MMXTextureHandle = dwRenderState;
+        SW_TextureBits = dwRenderState;
         break;
     }
-    if (bMMXDestBlendAlpha && bMMXAlphaBlend && !MMXTextureHandle) {
+    if (bMMXDestBlendAlpha && bMMXAlphaBlend && !SW_TextureBits) {
         pMMXDrawTriangleP = MMXDrawTriangleFog;
         pDrawSpansP = DrawSpansAlpha;
         pMMXDrawTriangle = MMXDrawTriangleFog;
         pDrawSpans = DrawSpansAlpha;
         return D3D_OK;
     }
-    if (!bMMXDestBlendOne && bMMXColorKey && MMXTextureHandle && bMMXAlphaBlend) {
-        pMMXDrawTriangleP = MMXDrawTriangleP;
-        pDrawSpansP = DrawSpansColorKeyP;
-        pMMXDrawTriangle = MMXDrawTriangle;
-        pDrawSpans = DrawSpansColorKey;
+    if (!bMMXDestBlendOne && bMMXColorKey && SW_TextureBits && bMMXAlphaBlend) {
+        pMMXDrawTriangleP = SW_TriSetupGTP;
+        pDrawSpansP = SW_SpanGTPKey;
+        pMMXDrawTriangle = SW_TriSetupGT;
+        pDrawSpans = SW_SpanGTKey;
         if (bMMXBilinear) {
             pDrawSpansFiltered = DrawSpansColorKeyFiltered;
             pDrawSpansFilteredP = DrawSpansColorKeyFilteredP;
         } else {
-            pDrawSpansFiltered = DrawSpansColorKey;
-            pDrawSpansFilteredP = DrawSpansColorKeyP;
+            pDrawSpansFiltered = SW_SpanGTKey;
+            pDrawSpansFilteredP = SW_SpanGTPKey;
         }
         return D3D_OK;
     }
-    if (MMXTextureHandle && bMMXAlphaBlend && bMMXDestBlendOne) {
-        pMMXDrawTriangleP = MMXDrawTriangleP;
-        pDrawSpansP = DrawSpansAdditiveP;
-        pMMXDrawTriangle = MMXDrawTriangle;
-        pDrawSpans = DrawSpansAdditive;
+    if (SW_TextureBits && bMMXAlphaBlend && bMMXDestBlendOne) {
+        pMMXDrawTriangleP = SW_TriSetupGTP;
+        pDrawSpansP = SW_SpanGTPAdd;
+        pMMXDrawTriangle = SW_TriSetupGT;
+        pDrawSpans = SW_SpanGTAdd;
         if (bMMXBilinear) {
-            pDrawSpansFiltered = DrawSpansAdditiveFiltered;
-            pDrawSpansFilteredP = DrawSpansAdditiveFilteredP;
+            pDrawSpansFiltered = SW_SpanGTAddBilinear;
+            pDrawSpansFilteredP = SW_SpanGTPAddBilinear;
         } else {
-            pDrawSpansFiltered = DrawSpansAdditive;
-            pDrawSpansFilteredP = DrawSpansAdditiveP;
+            pDrawSpansFiltered = SW_SpanGTAdd;
+            pDrawSpansFilteredP = SW_SpanGTPAdd;
         }
         return D3D_OK;
     }
-    if (MMXTextureHandle) {
-        pMMXDrawTriangleP = MMXDrawTriangleP;
-        pDrawSpansP = DrawSpansTexturedP;
-        pMMXDrawTriangle = MMXDrawTriangle;
-        pDrawSpans = DrawSpansTextured;
+    if (SW_TextureBits) {
+        pMMXDrawTriangleP = SW_TriSetupGTP;
+        pDrawSpansP = SW_SpanGTP;
+        pMMXDrawTriangle = SW_TriSetupGT;
+        pDrawSpans = SW_SpanGT;
         if (bMMXBilinear) {
-            pDrawSpansFiltered = DrawSpansTexturedFiltered;
-            pDrawSpansFilteredP = DrawSpansTexturedFilteredP;
+            pDrawSpansFiltered = SW_SpanGTBilinear;
+            pDrawSpansFilteredP = SW_SpanGTPBilinear;
         } else {
-            pDrawSpansFiltered = DrawSpansTextured;
-            pDrawSpansFilteredP = DrawSpansTexturedP;
+            pDrawSpansFiltered = SW_SpanGT;
+            pDrawSpansFilteredP = SW_SpanGTP;
         }
         return D3D_OK;
     }
     pMMXDrawTriangleP = MMXDrawTriangleFog;
-    pDrawSpansP = DrawSpansGouraud;
+    pDrawSpansP = SW_SpanG;
     pMMXDrawTriangle = MMXDrawTriangleFog;
-    pDrawSpans = DrawSpansGouraud;
+    pDrawSpans = SW_SpanG;
     return D3D_OK;
 }
 
@@ -5745,9 +5745,9 @@ void MMXInit(void)
         f = 1.0f / *(float *)&n;
         RecipTable[i] = (*(long *)&f & 0x7fffff) - 0x1000000;
     }
-    if (!SpanBuffer) {
+    if (!SW_SpanBuffer) {
         hSpanBuffer = GlobalAlloc(GMEM_FIXED, (float)(((App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w >> 1) + 32) * App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h));
-        SpanBuffer = (unsigned char *)(((long)hSpanBuffer + 32) & ~31);
+        SW_SpanBuffer = (unsigned char *)(((long)hSpanBuffer + 32) & ~31);
     }
 }
 
