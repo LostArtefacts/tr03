@@ -5624,7 +5624,7 @@ extern long lpTexture;
 extern int bForceAffineMap;
 void MMXInit(void);
 HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
-void Func490110(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
+void DrawLineG(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 void ScanLinesTAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
 void ScanLinesTDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
 void ScanLinesT(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
@@ -5703,7 +5703,7 @@ void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurf, boo
         pScanLinesTFAlphaDecalAffine = ScanLinesTFAlphaDecalAffine;
         pScanLinesTGAlphaDecal = ScanLinesTGAlphaDecal;
         pScanLinesTGAlphaDecalAffine = ScanLinesTGAlphaDecalAffine;
-        pDrawLine = Func490110;
+        pDrawLine = DrawLineG;
         if (HWConfig.TrueAlpha) {
             pScanLinesBlackAlpha = ScanLinesBlackStipple;
             pScanLinesGAlpha = ScanLinesGStipple;
@@ -5751,7 +5751,7 @@ void MMXInit(void)
     }
 }
 
-void Func490110(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
+void DrawLineG(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
 {
     double fconv;
     long x1, y1, x2, y2, dx, dy, xinc, yinc, err, step, i, xcount, ycount;

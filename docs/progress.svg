@@ -1420,7 +1420,7 @@
 <rect width="12" height="12" x="45" y="405" class="named"><title>0x0048ffc0 DXCreateViewPort (225 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="405" class="named"><title>0x004900b0 DXGetSurfaceDesc (16 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="405" class="named"><title>0x004900c0 DXSurfBlt (72 bytes)</title></rect>
-<rect width="12" height="12" x="90" y="405" class="nonmatching"><title>0x00490110 Func490110 (751 bytes)</title></rect>
+<rect width="12" height="12" x="90" y="405" class="nonmatching"><title>0x00490110 DrawLineG (751 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="405" class="named"><title>0x00490400 InitDrawPrimitive (755 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="405" class="named"><title>0x00490700 CloseDrawPrimitive (119 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="405" class="named"><title>0x00490780 BuildXYTables (281 bytes)</title></rect>
@@ -1805,7 +1805,7 @@
 <rect width="16.14" height="15.19" x="350.39" y="252.17" class="named"><title>0x00483170 WinPlayFMV (757 bytes)</title></rect>
 <rect width="16.14" height="15.15" x="350.39" y="270.36" class="named"><title>0x00490400 InitDrawPrimitive (755 bytes)</title></rect>
 <rect width="16.14" height="15.11" x="350.39" y="288.51" class="named"><title>0x0045eb20 QuadBikeDraw (753 bytes)</title></rect>
-<rect width="16.14" height="15.07" x="350.39" y="306.62" class="nonmatching"><title>0x00490110 Func490110 (751 bytes)</title></rect>
+<rect width="16.14" height="15.07" x="350.39" y="306.62" class="nonmatching"><title>0x00490110 DrawLineG (751 bytes)</title></rect>
 <rect width="16.14" height="15.01" x="350.39" y="324.69" class="named"><title>0x00422700 xLOS (748 bytes)</title></rect>
 <rect width="16.14" height="15.01" x="350.39" y="342.70" class="named"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="16.14" height="14.99" x="350.39" y="360.71" class="named"><title>0x00422410 zLOS (747 bytes)</title></rect>
