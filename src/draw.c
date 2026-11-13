@@ -1889,6 +1889,16 @@ void DrawLaraInt(ITEM_INFO *item, sint16 *frame1, sint16 *frame2, int frac, int 
 }
 
 #ifdef TR3_EXE
+uint8 lara_meshes[28] = {
+    0, 1, 1, 2, 2, 3, 0, 4, 4, 5, 5, 6, 0, 7,
+    7, 8, 8, 9, 9, 10, 7, 11, 11, 12, 12, 13, 7, 14,
+};
+uint8 lara_last_points[14] = {
+    0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1,
+};
+uint8 lara_line_counts[6] = {
+    12, 12, 4, 12, 12, 4,
+};
 BITE_INFO EnemyBites[16] = {
     { 0, 192, 40, 13 },
     { 0, 400, 64, 7 },
@@ -1906,5 +1916,22 @@ BITE_INFO EnemyBites[16] = {
     { 0, 0, 0, 0 },
     { 0, 0, 0, 0 },
     { 0, 0, 0, 0 },
+};
+uint8 EnemyWeapon[16] = {
+    0, 1, 129, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+sint32 box_lines[12][2] = {
+    { 0, 1 },
+    { 1, 2 },
+    { 2, 3 },
+    { 3, 0 },
+    { 4, 5 },
+    { 5, 6 },
+    { 6, 7 },
+    { 7, 4 },
+    { 0, 4 },
+    { 1, 5 },
+    { 2, 6 },
+    { 3, 7 },
 };
 #endif

@@ -1870,3 +1870,9 @@ sint32 ControlPhase(sint32 nframes, sint32 demo_mode)
     }
     return 0;
 }
+
+#ifdef TR3_EXE
+sint16 cdtrack = -1;
+int animation_rate = 32768;
+int flipeffect = -1;
+#endif

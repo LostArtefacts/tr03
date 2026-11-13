@@ -326,4 +326,7 @@ void TigerControl(sint16 item_number)
 
 #ifdef TR3_EXE
 BITE_INFO dog_bite = { 0, 0, 100, 3 };
+char dog_death_anims[4] = {
+    20, 21, 22, 20,
+};
 #endif

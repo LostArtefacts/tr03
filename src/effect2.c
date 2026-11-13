@@ -2221,3 +2221,16 @@ void ControlColouredLights(sint16 item_number)
         TriggerDynamic(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos, 24, cols[itemnum][0], cols[itemnum][1], cols[itemnum][2]);
     }
 }
+
+#ifdef TR3_EXE
+sint16 SplashRings[8][2] = {
+    { 0, -24 },
+    { 17, -17 },
+    { 24, 0 },
+    { 17, 17 },
+    { 0, 24 },
+    { -17, 17 },
+    { -24, 0 },
+    { -17, -17 },
+};
+#endif

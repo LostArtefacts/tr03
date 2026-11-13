@@ -77,3 +77,9 @@ void FlyEmitterControl(sint16 item_num)
     ItemNewRoom(FlyItem[fly_num], item->room_number);
     EnableBaddieAI(FlyItem[fly_num], 1);
 }
+
+#ifdef TR3_EXE
+sint16 FlyItem[3] = {
+    -1, -1, -1,
+};
+#endif

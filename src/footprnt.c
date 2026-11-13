@@ -44,3 +44,9 @@ void AddFootprint(ITEM_INFO *item)
         FootPrintNum = (FootPrintNum + 1) & 31;
     }
 }
+
+#ifdef TR3_EXE
+char footsounds[14] = {
+    0, 5, 3, 2, 1, 9, 9, 4, 6, 9, 3, 9, 4, 6,
+};
+#endif

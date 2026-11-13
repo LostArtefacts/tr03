@@ -377,3 +377,45 @@ void ControlFish(sint16 item_number)
         fptr++;
     }
 }
+
+#ifdef TR3_EXE
+uint8 jungle_fish_ranges[1][3] = {
+    { 8, 20, 3 },
+};
+uint8 temple_fish_ranges[3][3] = {
+    { 4, 4, 2 },
+    { 4, 16, 2 },
+    { 4, 28, 4 },
+};
+uint8 quadchase_fish_ranges[8][3] = {
+    { 4, 12, 1 },
+    { 0, 12, 2 },
+    { 8, 4, 2 },
+    { 4, 8, 1 },
+    { 4, 16, 2 },
+    { 4, 24, 1 },
+    { 12, 4, 1 },
+    { 16, 4, 1 },
+};
+uint8 house_fish_ranges[7][3] = {
+    { 4, 4, 1 },
+    { 16, 8, 2 },
+    { 24, 8, 2 },
+    { 8, 16, 2 },
+    { 8, 12, 1 },
+    { 20, 8, 2 },
+    { 16, 8, 1 },
+};
+uint8 shore_fish_ranges[3][3] = {
+    { 12, 12, 6 },
+    { 12, 20, 6 },
+    { 20, 4, 8 },
+};
+uint8 crash_fish_ranges[1][3] = {
+    { 20, 4, 6 },
+};
+uint8 rapids_fish_ranges[2][3] = {
+    { 16, 16, 8 },
+    { 4, 8, 5 },
+};
+#endif

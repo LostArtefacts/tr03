@@ -434,3 +434,8 @@ void SetCutsceneTrack(int track)
 {
     cutscene_track = track;
 }
+
+#ifdef TR3_EXE
+int cutscene_play = -1;
+sint32 cine_delay = 32768;
+#endif

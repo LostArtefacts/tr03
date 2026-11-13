@@ -222,3 +222,11 @@ int XYGClipper(int n, VERTEX_INFO *in)
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+float one = 33554432.0F;
+
+}
+#endif

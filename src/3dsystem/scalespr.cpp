@@ -229,3 +229,22 @@ void S_DrawScreenSprite(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 sc
 }
 
 }
+
+#ifdef TR3_EXE
+extern "C" {
+
+unsigned long TextLight[14] = {
+    0xFFFFFF, 0xB0B0, 0xA0A0A0, 0x6060FF,
+    0xFF8080, 0x4080C0, 0x64D1B6, 0xC0FFC0,
+    0xFFFFFF, 0xFF00FF, 0xFF00FF, 0xFF00FF,
+    0xFF00FF, 0,
+};
+unsigned long TextDark[14] = {
+    0x808080, 0x5050, 0x181818, 0x18,
+    0x180000, 0x1040, 0x1320B6, 0xC0FFC0,
+    0xFFFFFF, 0x3F003F, 0x3F003F, 0x3F003F,
+    0x3F003F, 0,
+};
+
+}
+#endif

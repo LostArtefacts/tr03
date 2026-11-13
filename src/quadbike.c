@@ -699,7 +699,7 @@ int UserControl(ITEM_INFO *v, sint32 height, int *pitch)
     return drive;
 }
 
-extern BITE_INFO quad_bites[2];
+extern BITE_INFO quad_bites[6];
 static uint8 ExhaustStart;
 
 int SkidooDynamics(ITEM_INFO *v);
@@ -1150,8 +1150,12 @@ int SkidooDynamics(ITEM_INFO *v)
 }
 
 #ifdef TR3_EXE
-BITE_INFO quad_bites[2] = {
+BITE_INFO quad_bites[6] = {
     { -56, -32, -380, 0 },
     { 56, -32, -380, 0 },
+    { -8, 180, -48, 3 },
+    { 8, 180, -48, 4 },
+    { 90, 180, -32, 6 },
+    { -90, 180, -32, 7 },
 };
 #endif
