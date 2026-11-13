@@ -46,20 +46,20 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="401.21" height="12" x="0" y="0" class="named"><title>1431 · 95.53%</title></rect>
-<rect width="15.70" height="12" x="401.21" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
-<rect width="3.08" height="12" x="416.92" y="0" class="todo"><title>11 · 0.73%</title></rect>
+<rect width="401.50" height="12" x="0" y="0" class="named"><title>1432 · 95.59%</title></rect>
+<rect width="15.70" height="12" x="401.50" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
+<rect width="2.80" height="12" x="417.20" y="0" class="todo"><title>10 · 0.67%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="7.50">95.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1431</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">11</tspan></text>
+<text text-anchor="end" x="600" y="7.50">95.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">56</tspan> · <tspan class="todo">10</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="369.77" height="12" x="0" y="0" class="named"><title>638 KB · 88.04%</title></rect>
-<rect width="39.24" height="12" x="369.77" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
-<rect width="10.99" height="12" x="409.01" y="0" class="todo"><title>19 KB · 2.62%</title></rect>
+<rect width="370.15" height="12" x="0" y="0" class="named"><title>639 KB · 88.13%</title></rect>
+<rect width="39.24" height="12" x="370.15" y="0" class="nonmatching"><title>68 KB · 9.34%</title></rect>
+<rect width="10.61" height="12" x="409.39" y="0" class="todo"><title>18 KB · 2.53%</title></rect>
 </g>
-<text text-anchor="end" x="600" y="24.50">88.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">638 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">19 KB</tspan></text>
+<text text-anchor="end" x="600" y="24.50">88.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">68 KB</tspan> · <tspan class="todo">18 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1337,7 +1337,7 @@
 <rect width="12" height="12" x="300" y="375" class="nonmatching"><title>0x0048b270 MemBlt (142 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="375" class="named"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="375" class="named"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
-<rect width="12" height="12" x="345" y="375" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
+<rect width="12" height="12" x="345" y="375" class="named"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="375" class="nonmatching"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="375" class="named"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="375" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
@@ -1838,7 +1838,7 @@
 <rect width="14.13" height="14.87" x="369.53" y="100.83" class="named"><title>0x0045c170 SwitchCollision (649 bytes)</title></rect>
 <rect width="14.13" height="14.80" x="369.53" y="118.70" class="named"><title>0x0042b4f0 TriggerGunSmoke (646 bytes)</title></rect>
 <rect width="14.13" height="14.76" x="369.53" y="136.50" class="named"><title>0x00402a90 gen_xguvpersp_fp (644 bytes)</title></rect>
-<rect width="14.13" height="14.76" x="369.53" y="154.26" class="todo"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
+<rect width="14.13" height="14.76" x="369.53" y="154.26" class="named"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
 <rect width="14.13" height="14.67" x="369.53" y="172.02" class="named"><title>0x00448be0 LaraTestClimb (640 bytes)</title></rect>
 <rect width="14.13" height="14.62" x="369.53" y="189.68" class="named"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
 <rect width="14.13" height="14.57" x="369.53" y="207.30" class="named"><title>0x00413900 DoShift_boat (636 bytes)</title></rect>

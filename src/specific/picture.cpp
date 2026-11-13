@@ -49,6 +49,9 @@ void DXCreateMaxTPages(int create);
 const char *GetFullPath(const char *name);
 void DXBitMask2ShiftCnt(unsigned long mask, unsigned char *shift, unsigned char *cnt);
 int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, unsigned long flags);
+extern float one;
+extern HRESULT (*SetRenderState)(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
+extern HRESULT (*DrawPrimitive)(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVertexType, LPVOID lpvVertices, DWORD dwVertexCount, DWORD dwFlags);
 
 void SetPictureToFade(int fade)
 {
@@ -252,6 +255,73 @@ void ConvertSurfaceToTextures16Bit(LPDIRECTDRAWSURFACE3 surf)
     surf->Unlock(0);
     pIndices[4] = DXTextureAdd(256, 256, (unsigned char *)dest, PictureTextures, bitcnt, 16);
     free(dest);
+}
+
+void DrawTile(int x, int y, int w, int h, int tpage, int tU, int tV, int tW, int tH, int c0, int c1, int c2, int c3, float z)
+{
+    D3DTLVERTEX v[4];
+    float fX1;
+    float fY1;
+    float fX2;
+    float fY2;
+    float fU1;
+    float fV1;
+    float fU2;
+    float fV2;
+    float fZ;
+    float fRHW;
+
+    fX1 = float(x);
+    fY1 = float(y);
+    fX2 = float(x + w);
+    fY2 = float(y + h);
+    fU1 = float(tU) * (1.0f / 256.0f);
+    fV1 = float(tV) * (1.0f / 256.0f);
+    fU2 = float(tU + tW) * (1.0f / 256.0f);
+    fV2 = float(tV + tH) * (1.0f / 256.0f);
+    fZ = 0.995f;
+    fRHW = one / z;
+    v[0].sx = fX1;
+    v[0].sy = fY1;
+    v[0].sz = fZ;
+    v[0].rhw = fRHW;
+    v[0].color = c0;
+    v[0].specular = 0;
+    v[0].tu = fU1;
+    v[0].tv = fV1;
+    v[1].sx = fX2;
+    v[1].sy = fY1;
+    v[1].sz = fZ;
+    v[1].rhw = fRHW;
+    v[1].color = c1;
+    v[1].specular = 0;
+    v[1].tu = fU2;
+    v[1].tv = fV1;
+    v[3].sx = fX1;
+    v[3].sy = fY2;
+    v[3].sz = fZ;
+    v[3].rhw = fRHW;
+    v[3].color = c2;
+    v[3].specular = 0;
+    v[3].tu = fU1;
+    v[3].tv = fV2;
+    v[2].sx = fX2;
+    v[2].sy = fY2;
+    v[2].sz = fZ;
+    v[2].rhw = fRHW;
+    v[2].color = c3;
+    v[2].specular = 0;
+    v[2].tu = fU2;
+    v[2].tv = fV2;
+    HWR_SetCurrentTexture(&PictureTextures[tpage]);
+    HWR_EnableColorKey(false);
+    HWR_EnableColorAddition(false);
+    HWR_EnableZBuffer(false, false);
+    SetRenderState(D3DRENDERSTATE_TEXTUREMAG, D3DFILTER_NEAREST);
+    SetRenderState(D3DRENDERSTATE_TEXTUREMIN, D3DFILTER_NEAREST);
+    DrawPrimitive(D3DPT_TRIANGLEFAN, D3DVT_TLVERTEX, v, 4, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
+    SetRenderState(D3DRENDERSTATE_TEXTUREMAG, HWConfig.nFilter);
+    SetRenderState(D3DRENDERSTATE_TEXTUREMIN, HWConfig.nFilter);
 }
 
 void TRDrawPicture(int col, int *indices, float zpos)
