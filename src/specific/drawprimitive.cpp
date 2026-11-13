@@ -1982,6 +1982,7 @@ void SW_SpanGTP(void)
 extern long SpansColorKeyPMask;
 extern __int64 SpansColorKeyPInvert;
 
+#ifndef FEAT_C_ASM
 __declspec(naked) void SW_SpanGTPKey(void)
 {
     __asm {
@@ -2121,6 +2122,63 @@ __declspec(naked) void SW_SpanGTPKey(void)
         ret
     }
 }
+#else
+void SW_SpanGTPKey(void)
+{
+    SW_SPAN *s;
+    uint8 *row, *p, *t;
+    uint32 *tex;
+    sint32 *d;
+    uint32 u, v, mask, idx;
+    uint16 c[4];
+    sint16 *grad;
+    sint32 n, m, sh, i;
+
+    s = (SW_SPAN *)SW_SpanBuffer;
+    if (s == (SW_SPAN *)SW_SpanEnd)
+        return;
+    row = (uint8 *)SW_Surface + SW_SpanY * SW_SurfacePitch;
+    sh = SW_TexShift;
+    mask = (0xFF0000 << sh) & 0xFF0000;
+    tex = (uint32 *)(SW_TextureBits + MipOffsets[sh]);
+    grad = (sint16 *)&SW_SpanGrad;
+    do {
+        p = row + (s->x << 2);
+        n = s->n;
+        d = (sint32 *)(s + 1);
+        if (n > 0) {
+            u = s->tex[0];
+            v = s->tex[2];
+            for (i = 0; i < 4; i++)
+                c[i] = s->c[i];
+            idx = ((v & mask) >> (sh * 2 + 8)) | ((u & mask) >> (sh + 16));
+            u += d[0];
+            v += d[1];
+            do {
+                m = n > 16 ? 16 : n;
+                do {
+                    t = (uint8 *)&tex[idx];
+                    for (i = 0; i < 4; i++) {
+                        if (*(uint32 *)t)
+                            p[i] = (t[i] * (c[i] >> 8)) >> 8;
+                        c[i] += grad[i];
+                    }
+                    idx = ((v & mask) >> (sh * 2 + 8)) | ((u & mask) >> (sh + 16));
+                    u += d[0];
+                    v += d[1];
+                    p += 4;
+                } while (--m);
+                d += 2;
+                n -= 16;
+            } while (n > 0);
+        } else {
+            d += 2;
+        }
+        row += SW_SurfacePitch;
+        s = (SW_SPAN *)d;
+    } while (s != (SW_SPAN *)SW_SpanEnd);
+}
+#endif
 
 extern long SpansAdditivePMask;
 
