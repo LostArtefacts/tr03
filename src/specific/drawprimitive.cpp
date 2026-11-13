@@ -14,16 +14,16 @@ extern LPDIRECT3DDEVICE2 D3DDev;
 float WinFrameRate(void);
 extern void (*pDrawLine)(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
-extern HGLOBAL Var6ca3ac;
-extern unsigned char *Var6ca4d0;
-extern unsigned long *Var6ca2d0;
-extern long Var6ca20c;
+extern HGLOBAL hSpanBuffer;
+extern unsigned char *SpanBuffer;
+extern unsigned long *MMXOutput;
+extern long MMXBytePitch;
 extern unsigned char *RGBTableRB;
 extern long *YTable;
-extern long Var6ce4e4;
-extern float Var4cec20;
-extern void (*Var6ca408)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
-extern void (*Var6ca24c)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern long bMMXPerspective;
+extern float PerspThreshold;
+extern void (*pMMXDrawTriangleP)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
+extern void (*pMMXDrawTriangle)(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
 void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 extern LPDIRECTDRAWSURFACE3 lpSurface;
 extern float *WidthTable;
@@ -648,14 +648,14 @@ void DrawLineStrip(D3DTLVERTEX *v, DWORD vcnt)
 
 void MMXClose(void)
 {
-    GlobalFree(Var6ca3ac);
-    Var6ca4d0 = 0;
+    GlobalFree(hSpanBuffer);
+    SpanBuffer = 0;
 }
 
 HRESULT MMXBeginScene(void)
 {
-    Var6ca2d0 = App.unk;
-    Var6ca20c = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w << 2;
+    MMXOutput = App.unk;
+    MMXBytePitch = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w << 2;
     return 0;
 }
 
@@ -665,17 +665,17 @@ HRESULT MMXDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVer
     D3DTLVERTEX *v, *v2, *v3;
     int n;
 
-    if (!Var6ca2d0)
+    if (!MMXOutput)
         return 0;
     switch (dptPrimitiveType) {
     case D3DPT_TRIANGLELIST:
         v = (D3DTLVERTEX *)lpvVertices;
         n = dwVertexCount;
         do {
-            if (Var6ce4e4 && v->rhw > Var4cec20)
-                Var6ca408(v, v + 1, v + 2);
+            if (bMMXPerspective && v->rhw > PerspThreshold)
+                pMMXDrawTriangleP(v, v + 1, v + 2);
             else
-                Var6ca24c(v, v + 1, v + 2);
+                pMMXDrawTriangle(v, v + 1, v + 2);
             n -= 3;
             v += 3;
         } while (n > 0);
@@ -686,10 +686,10 @@ HRESULT MMXDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVer
         v3 = v + 2;
         n = dwVertexCount;
         do {
-            if (Var6ce4e4 && v->rhw > Var4cec20)
-                Var6ca408(v, v2, v3);
+            if (bMMXPerspective && v->rhw > PerspThreshold)
+                pMMXDrawTriangleP(v, v2, v3);
             else
-                Var6ca24c(v, v2, v3);
+                pMMXDrawTriangle(v, v2, v3);
             v2++;
             v3++;
             n--;
@@ -1067,15 +1067,15 @@ void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
     DrawScanLinesAffine(&Gradients, pLeft, pRight, &MiddleToBottom, &TopToBottom);
 }
 
-extern long Var6ca248;
-extern long Var6ca460;
-extern long Var6ca2c8;
-extern long Var6ca4c8;
-extern long Var6ca2b0;
-extern long Var6ce4d8;
-extern long Var6ce4e0;
-extern long Var4ceb80[];
-extern __int64 Var6ca338;
+extern long SpanBufferEnd;
+extern long SpanY;
+extern long SpansTexturedMask;
+extern long SpanUStep;
+extern long SpanVStep;
+extern long MMXTextureHandle;
+extern long MMXMipLevel;
+extern long MipOffsets[];
+extern __int64 SpanColorStep;
 
 __declspec(naked) void DrawSpansTextured(void)
 {
@@ -1083,19 +1083,19 @@ __declspec(naked) void DrawSpansTextured(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je Done
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ecx, dword ptr [Var6ce4e0]
+        mov ecx, dword ptr [MMXMipLevel]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
-        mov dword ptr [Var6ca2c8], eax
+        mov dword ptr [SpansTexturedMask], eax
         mov dword ptr [P1 + 2], eax
         mov dword ptr [P4 + 2], eax
         mov al, cl
@@ -1107,10 +1107,10 @@ __declspec(naked) void DrawSpansTextured(void)
         add al, 0x10
         mov byte ptr [P6 + 2], al
         mov byte ptr [P7 + 2], al
-        mov ebx, dword ptr [Var6ca4c8]
-        mov eax, dword ptr [Var6ca2b0]
-        mov edx, dword ptr [Var6ce4d8]
-        add edx, dword ptr [Var4ceb80 + ecx * 4]
+        mov ebx, dword ptr [SpanUStep]
+        mov eax, dword ptr [SpanVStep]
+        mov edx, dword ptr [MMXTextureHandle]
+        add edx, dword ptr [MipOffsets + ecx * 4]
         mov dword ptr [P8 + 2], ebx
         mov dword ptr [P2 + 2], eax
         mov dword ptr [P0 + 4], edx
@@ -1139,21 +1139,21 @@ __declspec(naked) void DrawSpansTextured(void)
         mov ecx, dword ptr [esi + 0x10]
         mov edx, ecx
         mov ebp, ebx
-        and edx, dword ptr [Var6ca2c8]
-        and ebp, dword ptr [Var6ca2c8]
+        and edx, dword ptr [SpansTexturedMask]
+        and ebp, dword ptr [SpansTexturedMask]
     P5:
         shr edx, 8
         pxor mm5, mm5
     P6:
         shr ebp, 0x10
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         or edx, ebp
         movq mm0, qword ptr [esi + 0x18]
         _emit 0x0f
         _emit 0x7f
         _emit 0xc6
-        add ecx, dword ptr [Var6ca2b0]
-        add ebx, dword ptr [Var6ca4c8]
+        add ecx, dword ptr [SpanVStep]
+        add ebx, dword ptr [SpanUStep]
         _emit 0x8d
         _emit 0x64
         _emit 0x24
@@ -1192,8 +1192,8 @@ __declspec(naked) void DrawSpansTextured(void)
     NextLine:
         pop edi
         add esi, 0x20
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne LineLoop
         emms
         pop ebp
@@ -1211,13 +1211,13 @@ __declspec(naked) void DrawSpansGouraud(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L6
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
     L1:
         mov ebx, dword ptr [esi]
@@ -1228,7 +1228,7 @@ __declspec(naked) void DrawSpansGouraud(void)
         or eax, eax
         jle L5
         movq mm0, qword ptr [esi+0x18]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         test edi, 0x7
         je L2
         _emit 0x0f
@@ -1271,7 +1271,7 @@ __declspec(naked) void DrawSpansGouraud(void)
         and eax, 0x1
         je L5
     L4:
-        movq mm2, qword ptr [Var6ca338]
+        movq mm2, qword ptr [SpanColorStep]
         _emit 0x0f
         _emit 0x7f
         _emit 0xc1
@@ -1280,9 +1280,9 @@ __declspec(naked) void DrawSpansGouraud(void)
         movd dword ptr [edi], mm1
     L5:
         pop edi
-        add edi, dword ptr [Var6ca20c]
+        add edi, dword ptr [MMXBytePitch]
         add esi, 0x20
-        cmp dword ptr [Var6ca248], esi
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         _emit 0x0f
         _emit 0x31
@@ -1296,7 +1296,7 @@ __declspec(naked) void DrawSpansGouraud(void)
     }
 }
 
-extern long Var6ca300;
+extern long SpansAdditiveMask;
 
 __declspec(naked) void DrawSpansAdditive(void)
 {
@@ -1304,19 +1304,19 @@ __declspec(naked) void DrawSpansAdditive(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L13
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ecx, dword ptr [Var6ce4e0]
+        mov ecx, dword ptr [MMXMipLevel]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
-        mov dword ptr [Var6ca300], eax
+        mov dword ptr [SpansAdditiveMask], eax
         mov dword ptr [L7 + 2], eax
         mov dword ptr [L8 + 2], eax
         mov al, cl
@@ -1328,10 +1328,10 @@ __declspec(naked) void DrawSpansAdditive(void)
         add al, 0x10
         mov byte ptr [L11 + 2], al
         mov byte ptr [L3 + 2], al
-        mov ebx, dword ptr [Var6ca4c8]
-        mov eax, dword ptr [Var6ca2b0]
-        mov edx, dword ptr [Var6ce4d8]
-        add edx, dword ptr [ecx*4+Var4ceb80]
+        mov ebx, dword ptr [SpanUStep]
+        mov eax, dword ptr [SpanVStep]
+        mov edx, dword ptr [MMXTextureHandle]
+        add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 2], ebx
         mov dword ptr [L9 + 2], eax
         mov dword ptr [L6 + 4], edx
@@ -1358,7 +1358,7 @@ __declspec(naked) void DrawSpansAdditive(void)
         or eax, eax
         jle L12
         movq mm0, qword ptr [esi+0x18]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         push ebx
         push ecx
         push esi
@@ -1366,14 +1366,14 @@ __declspec(naked) void DrawSpansAdditive(void)
         mov ecx, dword ptr [esi+0x10]
         mov edx, ecx
         mov ebp, ebx
-        and edx, dword ptr [Var6ca300]
-        and ebp, dword ptr [Var6ca300]
+        and edx, dword ptr [SpansAdditiveMask]
+        and ebp, dword ptr [SpansAdditiveMask]
         pxor mm5, mm5
     L2:
         shr edx, 0x8
     L3:
         shr ebp, 0x10
-        add ecx, dword ptr [Var6ca2b0]
+        add ecx, dword ptr [SpanVStep]
         _emit 0x8d
         _emit 0x49
         _emit 0x00
@@ -1422,9 +1422,9 @@ __declspec(naked) void DrawSpansAdditive(void)
         pop ecx
     L12:
         pop edi
-        add edi, dword ptr [Var6ca20c]
+        add edi, dword ptr [MMXBytePitch]
         add esi, 0x20
-        cmp dword ptr [Var6ca248], esi
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -1436,8 +1436,8 @@ __declspec(naked) void DrawSpansAdditive(void)
     }
 }
 
-extern long Var6ca394;
-extern __int64 Var4cec30;
+extern long SpansColorKeyMask;
+extern __int64 SpansColorKeyInvert;
 
 __declspec(naked) void DrawSpansColorKey(void)
 {
@@ -1445,19 +1445,19 @@ __declspec(naked) void DrawSpansColorKey(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L12
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ecx, dword ptr [Var6ce4e0]
+        mov ecx, dword ptr [MMXMipLevel]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
-        mov dword ptr [Var6ca394], eax
+        mov dword ptr [SpansColorKeyMask], eax
         mov dword ptr [L5 + 2], eax
         mov dword ptr [L8 + 2], eax
         mov al, cl
@@ -1469,11 +1469,11 @@ __declspec(naked) void DrawSpansColorKey(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [Var6ce4d8]
-        add edx, dword ptr [ecx*4+Var4ceb80]
+        mov edx, dword ptr [MMXTextureHandle]
+        add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L4 + 4], edx
-        mov eax, dword ptr [Var6ca4c8]
-        mov ebx, dword ptr [Var6ca2b0]
+        mov eax, dword ptr [SpanUStep]
+        mov ebx, dword ptr [SpanVStep]
         mov dword ptr [L10 + 2], eax
         mov dword ptr [L6 + 2], ebx
         _emit 0x8d
@@ -1502,21 +1502,21 @@ __declspec(naked) void DrawSpansColorKey(void)
         mov ecx, dword ptr [esi-0x10]
         mov edx, ecx
         mov ebp, ebx
-        and edx, dword ptr [Var6ca394]
-        and ebp, dword ptr [Var6ca394]
+        and edx, dword ptr [SpansColorKeyMask]
+        and ebp, dword ptr [SpansColorKeyMask]
     L2:
         shr edx, 0x8
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
         _emit 0x7f
         _emit 0xc6
-        add ecx, dword ptr [Var6ca2b0]
-        add ebx, dword ptr [Var6ca4c8]
+        add ecx, dword ptr [SpanVStep]
+        add ebx, dword ptr [SpanUStep]
         nop
     L4:
         movd mm7, dword ptr [edx*4+0x12345678]
@@ -1531,7 +1531,7 @@ __declspec(naked) void DrawSpansColorKey(void)
         pmullw mm7, mm6
         movq mm6, qword ptr [edi]
         pand mm6, mm4
-        pxor mm4, qword ptr [Var4cec30]
+        pxor mm4, qword ptr [SpansColorKeyInvert]
     L5:
         and edx, 0xff0000
     L6:
@@ -1559,8 +1559,8 @@ __declspec(naked) void DrawSpansColorKey(void)
         jne L4
     L11:
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -1572,7 +1572,7 @@ __declspec(naked) void DrawSpansColorKey(void)
     }
 }
 
-extern long Var6ca228;
+extern long SpansTexturedPMask;
 
 __declspec(naked) void DrawSpansTexturedP(void)
 {
@@ -1580,19 +1580,19 @@ __declspec(naked) void DrawSpansTexturedP(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L11
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ecx, dword ptr [Var6ce4e0]
+        mov ecx, dword ptr [MMXMipLevel]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
-        mov dword ptr [Var6ca228], eax
+        mov dword ptr [SpansTexturedPMask], eax
         mov dword ptr [L6 + 2], eax
         mov dword ptr [L8 + 2], eax
         mov al, cl
@@ -1604,8 +1604,8 @@ __declspec(naked) void DrawSpansTexturedP(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [Var6ce4d8]
-        add edx, dword ptr [ecx*4+Var4ceb80]
+        mov edx, dword ptr [MMXTextureHandle]
+        add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 4], edx
         _emit 0x8d
         _emit 0x64
@@ -1623,14 +1623,14 @@ __declspec(naked) void DrawSpansTexturedP(void)
         mov ecx, dword ptr [esi-0x10]
         mov edx, ecx
         mov ebp, ebx
-        and edx, dword ptr [Var6ca228]
-        and ebp, dword ptr [Var6ca228]
+        and edx, dword ptr [SpansTexturedPMask]
+        and ebp, dword ptr [SpansTexturedPMask]
     L2:
         shr edx, 0x8
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
@@ -1692,8 +1692,8 @@ __declspec(naked) void DrawSpansTexturedP(void)
     L10:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -1705,8 +1705,8 @@ __declspec(naked) void DrawSpansTexturedP(void)
     }
 }
 
-extern long Var6ca28c;
-extern __int64 Var4cec38;
+extern long SpansColorKeyPMask;
+extern __int64 SpansColorKeyPInvert;
 
 __declspec(naked) void DrawSpansColorKeyP(void)
 {
@@ -1714,19 +1714,19 @@ __declspec(naked) void DrawSpansColorKeyP(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L11
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ecx, dword ptr [Var6ce4e0]
+        mov ecx, dword ptr [MMXMipLevel]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
-        mov dword ptr [Var6ca28c], eax
+        mov dword ptr [SpansColorKeyPMask], eax
         mov dword ptr [L6 + 2], eax
         mov dword ptr [L8 + 2], eax
         mov al, cl
@@ -1738,8 +1738,8 @@ __declspec(naked) void DrawSpansColorKeyP(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [Var6ce4d8]
-        add edx, dword ptr [ecx*4+Var4ceb80]
+        mov edx, dword ptr [MMXTextureHandle]
+        add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 4], edx
         _emit 0x8d
         _emit 0x64
@@ -1757,14 +1757,14 @@ __declspec(naked) void DrawSpansColorKeyP(void)
         mov ecx, dword ptr [esi-0x10]
         mov edx, ecx
         mov ebp, ebx
-        and edx, dword ptr [Var6ca28c]
-        and ebp, dword ptr [Var6ca28c]
+        and edx, dword ptr [SpansColorKeyPMask]
+        and ebp, dword ptr [SpansColorKeyPMask]
     L2:
         shr edx, 0x8
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
@@ -1805,7 +1805,7 @@ __declspec(naked) void DrawSpansColorKeyP(void)
         movq mm6, qword ptr [edi]
         pcmpeqd mm4, mm5
         pand mm6, mm4
-        pxor mm4, qword ptr [Var4cec38]
+        pxor mm4, qword ptr [SpansColorKeyPInvert]
     L7:
         shr edx, 0x8
     L8:
@@ -1835,8 +1835,8 @@ __declspec(naked) void DrawSpansColorKeyP(void)
     L10:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -1848,7 +1848,7 @@ __declspec(naked) void DrawSpansColorKeyP(void)
     }
 }
 
-extern long Var6ca2f8;
+extern long SpansAdditivePMask;
 
 __declspec(naked) void DrawSpansAdditiveP(void)
 {
@@ -1856,19 +1856,19 @@ __declspec(naked) void DrawSpansAdditiveP(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L11
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ecx, dword ptr [Var6ce4e0]
+        mov ecx, dword ptr [MMXMipLevel]
         mov eax, 0xff0000
         shl eax, cl
         and eax, 0xff0000
-        mov dword ptr [Var6ca2f8], eax
+        mov dword ptr [SpansAdditivePMask], eax
         mov dword ptr [L6 + 2], eax
         mov dword ptr [L8 + 2], eax
         mov al, cl
@@ -1880,8 +1880,8 @@ __declspec(naked) void DrawSpansAdditiveP(void)
         add al, 0x10
         mov byte ptr [L3 + 2], al
         mov byte ptr [L9 + 2], al
-        mov edx, dword ptr [Var6ce4d8]
-        add edx, dword ptr [ecx*4+Var4ceb80]
+        mov edx, dword ptr [MMXTextureHandle]
+        add edx, dword ptr [ecx*4+MipOffsets]
         mov dword ptr [L5 + 4], edx
         pxor mm5, mm5
         nop
@@ -1897,14 +1897,14 @@ __declspec(naked) void DrawSpansAdditiveP(void)
         mov ecx, dword ptr [esi-0x10]
         mov edx, ecx
         mov ebp, ebx
-        and edx, dword ptr [Var6ca2f8]
-        and ebp, dword ptr [Var6ca2f8]
+        and edx, dword ptr [SpansAdditivePMask]
+        and ebp, dword ptr [SpansAdditivePMask]
     L2:
         shr edx, 0x8
         pxor mm5, mm5
     L3:
         shr ebp, 0x10
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         or edx, ebp
         movq mm0, qword ptr [esi-0x8]
         _emit 0x0f
@@ -1968,8 +1968,8 @@ __declspec(naked) void DrawSpansAdditiveP(void)
     L10:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -1981,9 +1981,9 @@ __declspec(naked) void DrawSpansAdditiveP(void)
     }
 }
 
-extern long Var6ca43c;
-extern long Var6ca2bc;
-extern __int64 Var4cec40;
+extern long SpansTexturedFilteredV;
+extern long SpansTexturedFilteredU;
+extern __int64 SpansTexturedFilteredFrac;
 
 __declspec(naked) void DrawSpansTexturedFiltered(void)
 {
@@ -1991,17 +1991,17 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L9
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ebx, dword ptr [Var6ca4c8]
-        mov eax, dword ptr [Var6ca2b0]
-        mov edx, dword ptr [Var6ce4d8]
+        mov ebx, dword ptr [SpanUStep]
+        mov eax, dword ptr [SpanVStep]
+        mov edx, dword ptr [MMXTextureHandle]
         mov dword ptr [L7 + 2], ebx
         mov dword ptr [L6 + 2], eax
         mov dword ptr [L2 + 4], edx
@@ -2024,15 +2024,15 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
         jle L8
         mov ebx, dword ptr [esi+0x8]
         mov ecx, dword ptr [esi+0x10]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         movq mm0, qword ptr [esi+0x18]
         mov edx, ecx
         mov ebp, ebx
-        mov dword ptr [Var6ca43c], edx
-        mov dword ptr [Var6ca2bc], ebp
-        movd mm2, dword ptr [Var6ca2bc]
+        mov dword ptr [SpansTexturedFilteredV], edx
+        mov dword ptr [SpansTexturedFilteredU], ebp
+        movd mm2, dword ptr [SpansTexturedFilteredU]
         and edx, 0xff0000
-        pand mm2, qword ptr [Var4cec40]
+        pand mm2, qword ptr [SpansTexturedFilteredFrac]
         _emit 0x0f
         _emit 0x7f
         _emit 0xd3
@@ -2067,8 +2067,8 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
     L6:
         add ecx, 0x12345678
         pmullw mm3, mm2
-        movd mm2, dword ptr [Var6ca43c]
-        pand mm2, qword ptr [Var4cec40]
+        movd mm2, dword ptr [SpansTexturedFilteredV]
+        pand mm2, qword ptr [SpansTexturedFilteredFrac]
         psraw mm4, 0x7
         psrlq mm2, 0x9
         psraw mm3, 0x7
@@ -2090,9 +2090,9 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
         por mm2, mm3
         mov ebp, ebx
         pmullw mm6, mm2
-        mov dword ptr [Var6ca43c], edx
-        mov dword ptr [Var6ca2bc], ebp
-        movd mm2, dword ptr [Var6ca2bc]
+        mov dword ptr [SpansTexturedFilteredV], edx
+        mov dword ptr [SpansTexturedFilteredU], ebp
+        movd mm2, dword ptr [SpansTexturedFilteredU]
         psraw mm6, 0x7
         and edx, 0xff0000
         paddw mm7, mm6
@@ -2100,7 +2100,7 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
         _emit 0x7f
         _emit 0xc6
         psrlw mm6, 0x8
-        pand mm2, qword ptr [Var4cec40]
+        pand mm2, qword ptr [SpansTexturedFilteredFrac]
         pmullw mm7, mm6
         _emit 0x0f
         _emit 0x7f
@@ -2121,8 +2121,8 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
     L8:
         pop edi
         add esi, 0x20
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -2134,9 +2134,9 @@ __declspec(naked) void DrawSpansTexturedFiltered(void)
     }
 }
 
-extern long Var6ca2fc;
-extern long Var6ca4ac;
-extern __int64 Var4cec48;
+extern long SpansAdditiveFilteredV;
+extern long SpansAdditiveFilteredU;
+extern __int64 SpansAdditiveFilteredFrac;
 
 __declspec(naked) void DrawSpansAdditiveFiltered(void)
 {
@@ -2144,17 +2144,17 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L9
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ebx, dword ptr [Var6ca4c8]
-        mov eax, dword ptr [Var6ca2b0]
-        mov edx, dword ptr [Var6ce4d8]
+        mov ebx, dword ptr [SpanUStep]
+        mov eax, dword ptr [SpanVStep]
+        mov edx, dword ptr [MMXTextureHandle]
         mov dword ptr [L7 + 2], ebx
         mov dword ptr [L6 + 2], eax
         mov dword ptr [L2 + 4], edx
@@ -2177,15 +2177,15 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
         jle L8
         mov ebx, dword ptr [esi+0x8]
         mov ecx, dword ptr [esi+0x10]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         movq mm0, qword ptr [esi+0x18]
         mov edx, ecx
         mov ebp, ebx
-        mov dword ptr [Var6ca2fc], edx
-        mov dword ptr [Var6ca4ac], ebp
-        movd mm2, dword ptr [Var6ca4ac]
+        mov dword ptr [SpansAdditiveFilteredV], edx
+        mov dword ptr [SpansAdditiveFilteredU], ebp
+        movd mm2, dword ptr [SpansAdditiveFilteredU]
         and edx, 0xff0000
-        pand mm2, qword ptr [Var4cec48]
+        pand mm2, qword ptr [SpansAdditiveFilteredFrac]
         _emit 0x0f
         _emit 0x7f
         _emit 0xd3
@@ -2220,8 +2220,8 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
     L6:
         add ecx, 0x12345678
         pmullw mm3, mm2
-        movd mm2, dword ptr [Var6ca2fc]
-        pand mm2, qword ptr [Var4cec48]
+        movd mm2, dword ptr [SpansAdditiveFilteredV]
+        pand mm2, qword ptr [SpansAdditiveFilteredFrac]
         psraw mm4, 0x7
         psrlq mm2, 0x9
         psraw mm3, 0x7
@@ -2243,9 +2243,9 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
         por mm2, mm3
         mov ebp, ebx
         pmullw mm6, mm2
-        mov dword ptr [Var6ca2fc], edx
-        mov dword ptr [Var6ca4ac], ebp
-        movd mm2, dword ptr [Var6ca4ac]
+        mov dword ptr [SpansAdditiveFilteredV], edx
+        mov dword ptr [SpansAdditiveFilteredU], ebp
+        movd mm2, dword ptr [SpansAdditiveFilteredU]
         psraw mm6, 0x7
         and edx, 0xff0000
         paddw mm7, mm6
@@ -2253,7 +2253,7 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
         _emit 0x7f
         _emit 0xc6
         psrlw mm6, 0x8
-        pand mm2, qword ptr [Var4cec48]
+        pand mm2, qword ptr [SpansAdditiveFilteredFrac]
         pmullw mm7, mm6
         _emit 0x0f
         _emit 0x7f
@@ -2276,8 +2276,8 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
     L8:
         pop edi
         add esi, 0x20
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -2289,9 +2289,9 @@ __declspec(naked) void DrawSpansAdditiveFiltered(void)
     }
 }
 
-extern long Var6ca398;
-extern long Var6ca3f0;
-extern __int64 Var4cec50;
+extern long SpansTexturedFilteredPV;
+extern long SpansTexturedFilteredPU;
+extern __int64 SpansTexturedFilteredPFrac;
 
 __declspec(naked) void DrawSpansTexturedFilteredP(void)
 {
@@ -2299,15 +2299,15 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L8
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov edx, dword ptr [Var6ce4d8]
+        mov edx, dword ptr [MMXTextureHandle]
         mov dword ptr [L3 + 4], edx
         add edx, 0x4
         mov dword ptr [L4 + 4], edx
@@ -2334,15 +2334,15 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
         jle L7
         mov ebx, dword ptr [esi-0x18]
         mov ecx, dword ptr [esi-0x10]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         movq mm0, qword ptr [esi-0x8]
         mov edx, ecx
         mov ebp, ebx
-        mov dword ptr [Var6ca398], edx
-        mov dword ptr [Var6ca3f0], ebp
-        movd mm2, dword ptr [Var6ca3f0]
+        mov dword ptr [SpansTexturedFilteredPV], edx
+        mov dword ptr [SpansTexturedFilteredPU], ebp
+        movd mm2, dword ptr [SpansTexturedFilteredPU]
         and edx, 0xff0000
-        pand mm2, qword ptr [Var4cec50]
+        pand mm2, qword ptr [SpansTexturedFilteredPFrac]
         _emit 0x0f
         _emit 0x7f
         _emit 0xd3
@@ -2400,8 +2400,8 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
         psubw mm3, mm6
         add ecx, dword ptr [esi+0x4]
         pmullw mm3, mm2
-        movd mm2, dword ptr [Var6ca398]
-        pand mm2, qword ptr [Var4cec50]
+        movd mm2, dword ptr [SpansTexturedFilteredPV]
+        pand mm2, qword ptr [SpansTexturedFilteredPFrac]
         psraw mm4, 0x7
         psrlq mm2, 0x9
         psraw mm3, 0x7
@@ -2422,9 +2422,9 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
         por mm2, mm3
         mov ebp, ebx
         pmullw mm6, mm2
-        mov dword ptr [Var6ca398], edx
-        mov dword ptr [Var6ca3f0], ebp
-        movd mm2, dword ptr [Var6ca3f0]
+        mov dword ptr [SpansTexturedFilteredPV], edx
+        mov dword ptr [SpansTexturedFilteredPU], ebp
+        movd mm2, dword ptr [SpansTexturedFilteredPU]
         psraw mm6, 0x7
         and edx, 0xff0000
         paddw mm7, mm6
@@ -2432,7 +2432,7 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
         _emit 0x7f
         _emit 0xc6
         psrlw mm6, 0x8
-        pand mm2, qword ptr [Var4cec50]
+        pand mm2, qword ptr [SpansTexturedFilteredPFrac]
         pmullw mm7, mm6
         _emit 0x0f
         _emit 0x7f
@@ -2458,8 +2458,8 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
     L7:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -2471,9 +2471,9 @@ __declspec(naked) void DrawSpansTexturedFilteredP(void)
     }
 }
 
-extern long Var6ca214;
-extern long Var6ca428;
-extern __int64 Var4cec58;
+extern long SpansAdditiveFilteredPV;
+extern long SpansAdditiveFilteredPU;
+extern __int64 SpansAdditiveFilteredPFrac;
 
 __declspec(naked) void DrawSpansAdditiveFilteredP(void)
 {
@@ -2481,15 +2481,15 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L8
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov edx, dword ptr [Var6ce4d8]
+        mov edx, dword ptr [MMXTextureHandle]
         mov dword ptr [L3 + 4], edx
         add edx, 0x4
         mov dword ptr [L4 + 4], edx
@@ -2516,15 +2516,15 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
         jle L7
         mov ebx, dword ptr [esi-0x18]
         mov ecx, dword ptr [esi-0x10]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         movq mm0, qword ptr [esi-0x8]
         mov edx, ecx
         mov ebp, ebx
-        mov dword ptr [Var6ca214], edx
-        mov dword ptr [Var6ca428], ebp
-        movd mm2, dword ptr [Var6ca428]
+        mov dword ptr [SpansAdditiveFilteredPV], edx
+        mov dword ptr [SpansAdditiveFilteredPU], ebp
+        movd mm2, dword ptr [SpansAdditiveFilteredPU]
         and edx, 0xff0000
-        pand mm2, qword ptr [Var4cec58]
+        pand mm2, qword ptr [SpansAdditiveFilteredPFrac]
         _emit 0x0f
         _emit 0x7f
         _emit 0xd3
@@ -2582,8 +2582,8 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
         psubw mm3, mm6
         add ecx, dword ptr [esi+0x4]
         pmullw mm3, mm2
-        movd mm2, dword ptr [Var6ca214]
-        pand mm2, qword ptr [Var4cec58]
+        movd mm2, dword ptr [SpansAdditiveFilteredPV]
+        pand mm2, qword ptr [SpansAdditiveFilteredPFrac]
         psraw mm4, 0x7
         psrlq mm2, 0x9
         psraw mm3, 0x7
@@ -2604,9 +2604,9 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
         por mm2, mm3
         mov ebp, ebx
         pmullw mm6, mm2
-        mov dword ptr [Var6ca214], edx
-        mov dword ptr [Var6ca428], ebp
-        movd mm2, dword ptr [Var6ca428]
+        mov dword ptr [SpansAdditiveFilteredPV], edx
+        mov dword ptr [SpansAdditiveFilteredPU], ebp
+        movd mm2, dword ptr [SpansAdditiveFilteredPU]
         psraw mm6, 0x7
         and edx, 0xff0000
         paddw mm7, mm6
@@ -2614,7 +2614,7 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
         _emit 0x7f
         _emit 0xc6
         psrlw mm6, 0x8
-        pand mm2, qword ptr [Var4cec58]
+        pand mm2, qword ptr [SpansAdditiveFilteredPFrac]
         pmullw mm7, mm6
         _emit 0x0f
         _emit 0x7f
@@ -2642,8 +2642,8 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
     L7:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -2655,11 +2655,11 @@ __declspec(naked) void DrawSpansAdditiveFilteredP(void)
     }
 }
 
-extern long Var6ca3f4;
-extern long Var6ca268;
-extern __int64 Var4cec68;
-extern __int64 Var4cec70;
-extern __int64 Var4cec60;
+extern long SpansColorKeyFilteredV;
+extern long SpansColorKeyFilteredU;
+extern __int64 SpansColorKeyFilteredFrac;
+extern __int64 SpansColorKeyFilteredKeyMask;
+extern __int64 SpansColorKeyFilteredInvert;
 
 __declspec(naked) void DrawSpansColorKeyFiltered(void)
 {
@@ -2667,17 +2667,17 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L10
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ebx, dword ptr [Var6ca4c8]
-        mov eax, dword ptr [Var6ca2b0]
-        mov edx, dword ptr [Var6ce4d8]
+        mov ebx, dword ptr [SpanUStep]
+        mov eax, dword ptr [SpanVStep]
+        mov edx, dword ptr [MMXTextureHandle]
         mov dword ptr [L8 + 2], ebx
         mov dword ptr [L3 + 2], eax
         mov dword ptr [L4 + 4], edx
@@ -2700,19 +2700,19 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         jle L9
         mov ebx, dword ptr [esi+0x8]
         mov ecx, dword ptr [esi+0x10]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         movq mm0, qword ptr [esi+0x18]
         mov edx, ecx
         mov ebp, ebx
-        mov dword ptr [Var6ca3f4], edx
-        mov dword ptr [Var6ca268], ebp
+        mov dword ptr [SpansColorKeyFilteredV], edx
+        mov dword ptr [SpansColorKeyFilteredU], ebp
         and edx, 0xff0000
         and ebp, 0xff0000
         shr edx, 0x8
         shr ebp, 0x10
         or edx, ebp
-        movd mm2, dword ptr [Var6ca268]
-        pand mm2, qword ptr [Var4cec68]
+        movd mm2, dword ptr [SpansColorKeyFilteredU]
+        pand mm2, qword ptr [SpansColorKeyFilteredFrac]
         _emit 0x0f
         _emit 0x7f
         _emit 0xd3
@@ -2758,8 +2758,8 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         psubw mm3, mm6
         pmullw mm4, mm2
         pmullw mm3, mm2
-        movd mm2, dword ptr [Var6ca3f4]
-        pand mm2, qword ptr [Var4cec68]
+        movd mm2, dword ptr [SpansColorKeyFilteredV]
+        pand mm2, qword ptr [SpansColorKeyFilteredFrac]
         psraw mm4, 0x7
         psrlq mm2, 0x9
         psraw mm3, 0x7
@@ -2781,8 +2781,8 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         por mm2, mm3
         mov ebp, ebx
         pmullw mm6, mm2
-        mov dword ptr [Var6ca3f4], edx
-        mov dword ptr [Var6ca268], ebp
+        mov dword ptr [SpansColorKeyFilteredV], edx
+        mov dword ptr [SpansColorKeyFilteredU], ebp
         and edx, 0xff0000
         shr edx, 0x8
         and ebp, 0xff0000
@@ -2796,7 +2796,7 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         _emit 0x7f
         _emit 0xfa
         psrlw mm6, 0x8
-        pand mm2, qword ptr [Var4cec70]
+        pand mm2, qword ptr [SpansColorKeyFilteredKeyMask]
         pmullw mm7, mm6
         _emit 0x0f
         _emit 0x7f
@@ -2813,10 +2813,10 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
         por mm4, mm2
         psrlw mm7, 0x8
         pmullw mm7, mm4
-        pxor mm4, qword ptr [Var4cec60]
-        movd mm2, dword ptr [Var6ca268]
+        pxor mm4, qword ptr [SpansColorKeyFilteredInvert]
+        movd mm2, dword ptr [SpansColorKeyFilteredU]
         pmullw mm6, mm4
-        pand mm2, qword ptr [Var4cec68]
+        pand mm2, qword ptr [SpansColorKeyFilteredFrac]
         or edx, ebp
         _emit 0x0f
         _emit 0x7f
@@ -2837,8 +2837,8 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
     L9:
         add esi, 0x20
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -2850,11 +2850,11 @@ __declspec(naked) void DrawSpansColorKeyFiltered(void)
     }
 }
 
-extern long Var6ca318;
-extern long Var6ca450;
-extern __int64 Var4cec80;
-extern __int64 Var4cec88;
-extern __int64 Var4cec78;
+extern long SpansColorKeyFilteredPV;
+extern long SpansColorKeyFilteredPU;
+extern __int64 SpansColorKeyFilteredPFrac;
+extern __int64 SpansColorKeyFilteredPKeyMask;
+extern __int64 SpansColorKeyFilteredPInvert;
 
 __declspec(naked) void DrawSpansColorKeyFilteredP(void)
 {
@@ -2862,15 +2862,15 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L9
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov edx, dword ptr [Var6ce4d8]
+        mov edx, dword ptr [MMXTextureHandle]
         mov dword ptr [L4 + 4], edx
         add edx, 0x4
         mov dword ptr [L5 + 4], edx
@@ -2897,19 +2897,19 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         jle L8
         mov ebx, dword ptr [esi-0x18]
         mov ecx, dword ptr [esi-0x10]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
         movq mm0, qword ptr [esi-0x8]
         mov edx, ecx
         mov ebp, ebx
-        mov dword ptr [Var6ca318], edx
-        mov dword ptr [Var6ca450], ebp
+        mov dword ptr [SpansColorKeyFilteredPV], edx
+        mov dword ptr [SpansColorKeyFilteredPU], ebp
         and edx, 0xff0000
         and ebp, 0xff0000
         shr edx, 0x8
         shr ebp, 0x10
         or edx, ebp
-        movd mm2, dword ptr [Var6ca450]
-        pand mm2, qword ptr [Var4cec80]
+        movd mm2, dword ptr [SpansColorKeyFilteredPU]
+        pand mm2, qword ptr [SpansColorKeyFilteredPFrac]
         _emit 0x0f
         _emit 0x7f
         _emit 0xd3
@@ -2961,8 +2961,8 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         psubw mm3, mm6
         pmullw mm4, mm2
         pmullw mm3, mm2
-        movd mm2, dword ptr [Var6ca318]
-        pand mm2, qword ptr [Var4cec80]
+        movd mm2, dword ptr [SpansColorKeyFilteredPV]
+        pand mm2, qword ptr [SpansColorKeyFilteredPFrac]
         psraw mm4, 0x7
         psrlq mm2, 0x9
         psraw mm3, 0x7
@@ -2983,8 +2983,8 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         por mm2, mm3
         mov ebp, ebx
         pmullw mm6, mm2
-        mov dword ptr [Var6ca318], edx
-        mov dword ptr [Var6ca450], ebp
+        mov dword ptr [SpansColorKeyFilteredPV], edx
+        mov dword ptr [SpansColorKeyFilteredPU], ebp
         and edx, 0xff0000
         shr edx, 0x8
         and ebp, 0xff0000
@@ -2998,7 +2998,7 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         _emit 0x7f
         _emit 0xfa
         psrlw mm6, 0x8
-        pand mm2, qword ptr [Var4cec88]
+        pand mm2, qword ptr [SpansColorKeyFilteredPKeyMask]
         pmullw mm7, mm6
         _emit 0x0f
         _emit 0x7f
@@ -3015,10 +3015,10 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
         por mm4, mm2
         psrlw mm7, 0x8
         pmullw mm7, mm4
-        pxor mm4, qword ptr [Var4cec78]
-        movd mm2, dword ptr [Var6ca450]
+        pxor mm4, qword ptr [SpansColorKeyFilteredPInvert]
+        movd mm2, dword ptr [SpansColorKeyFilteredPU]
         pmullw mm6, mm4
-        pand mm2, qword ptr [Var4cec80]
+        pand mm2, qword ptr [SpansColorKeyFilteredPFrac]
         or edx, ebp
         _emit 0x0f
         _emit 0x7f
@@ -3044,8 +3044,8 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
     L8:
         add esi, 0x8
         pop edi
-        add edi, dword ptr [Var6ca20c]
-        cmp dword ptr [Var6ca248], esi
+        add edi, dword ptr [MMXBytePitch]
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -3057,11 +3057,11 @@ __declspec(naked) void DrawSpansColorKeyFilteredP(void)
     }
 }
 
-extern long Var6ca314;
-extern long Var6ca240;
-extern long Var6ca244;
-extern __int64 Var4cec28;
-extern __int64 Var6ca458;
+extern long AlphaVertex;
+extern long SpansAlphaDest;
+extern long SpansAlphaDestHi;
+extern __int64 SpansAlphaInvert;
+extern __int64 SpansAlphaSrc;
 
 __declspec(naked) void DrawSpansAlpha(void)
 {
@@ -3069,15 +3069,15 @@ __declspec(naked) void DrawSpansAlpha(void)
         push ebx
         push esi
         push edi
-        mov esi, dword ptr [Var6ca4d0]
-        cmp esi, dword ptr [Var6ca248]
+        mov esi, dword ptr [SpanBuffer]
+        cmp esi, dword ptr [SpanBufferEnd]
         je L4
         push ebp
-        mov edi, dword ptr [Var6ca2d0]
-        mov eax, dword ptr [Var6ca460]
-        imul eax, dword ptr [Var6ca20c]
+        mov edi, dword ptr [MMXOutput]
+        mov eax, dword ptr [SpanY]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
-        mov ebx, dword ptr [Var6ca314]
+        mov ebx, dword ptr [AlphaVertex]
         mov eax, dword ptr [ebx+0x10]
         and eax, 0xff000000
         xor eax, 0xff000000
@@ -3085,14 +3085,14 @@ __declspec(naked) void DrawSpansAlpha(void)
         shr eax, 0x8
         shr ecx, 0x18
         or eax, ecx
-        mov dword ptr [Var6ca240], eax
-        mov dword ptr [Var6ca244], eax
-        movq mm0, qword ptr [Var6ca240]
-        pxor mm0, qword ptr [Var4cec28]
-        movq qword ptr [Var6ca458], mm0
+        mov dword ptr [SpansAlphaDest], eax
+        mov dword ptr [SpansAlphaDestHi], eax
+        movq mm0, qword ptr [SpansAlphaDest]
+        pxor mm0, qword ptr [SpansAlphaInvert]
+        movq qword ptr [SpansAlphaSrc], mm0
         pxor mm4, mm4
-        movq mm5, qword ptr [Var6ca240]
-        movq mm7, qword ptr [Var6ca458]
+        movq mm5, qword ptr [SpansAlphaDest]
+        movq mm7, qword ptr [SpansAlphaSrc]
     L1:
         mov ebx, dword ptr [esi]
         mov eax, dword ptr [esi+0x4]
@@ -3102,7 +3102,7 @@ __declspec(naked) void DrawSpansAlpha(void)
         or eax, eax
         jle L3
         movq mm0, qword ptr [esi+0x18]
-        movq mm1, qword ptr [Var6ca338]
+        movq mm1, qword ptr [SpanColorStep]
     L2:
         movd mm6, dword ptr [edi]
         _emit 0x0f
@@ -3122,9 +3122,9 @@ __declspec(naked) void DrawSpansAlpha(void)
         jne L2
     L3:
         pop edi
-        add edi, dword ptr [Var6ca20c]
+        add edi, dword ptr [MMXBytePitch]
         add esi, 0x20
-        cmp dword ptr [Var6ca248], esi
+        cmp dword ptr [SpanBufferEnd], esi
         jne L1
         emms
         pop ebp
@@ -3136,9 +3136,9 @@ __declspec(naked) void DrawSpansAlpha(void)
     }
 }
 
-extern double Var4ceb58;
-extern long Var4ceb6c;
-extern double Var4ceb50;
+extern double MagicFix16;
+extern long RoundBias;
+extern double MagicInt;
 
 __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
 {
@@ -3204,23 +3204,23 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         fld dword ptr [ebp-0x2c]
         fmul dword ptr [ebp-0x10]
         fst dword ptr [ebp-0xc]
-        fadd qword ptr [Var4ceb58]
+        fadd qword ptr [MagicFix16]
         fstp qword ptr [ebp-0x70]
         fld dword ptr [ecx]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
         fstp qword ptr [ebp-0x68]
         inc dword ptr [ebp-0x68]
         fld dword ptr [ebx]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
         fstp qword ptr [ebp-0x60]
         inc dword ptr [ebp-0x60]
         fild dword ptr [ebp-0x68]
         fsub dword ptr [ecx]
         fmul dword ptr [ebp-0xc]
         fadd dword ptr [ecx+0x4]
-        fadd qword ptr [Var4ceb58]
+        fadd qword ptr [MagicFix16]
         fstp qword ptr [ebp-0x58]
         fild dword ptr [ebp-0x24]
         fisub dword ptr [ebp-0x18]
@@ -3252,7 +3252,7 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         fmul dword ptr [ebp-0x8]
         fiadd dword ptr [ebp-0x14]
         fistp dword ptr [ebp-0x44]
-        mov edi, dword ptr [Var6ca2d0]
+        mov edi, dword ptr [MMXOutput]
         mov eax, dword ptr [ebp-0x68]
         lea edi, [edi+eax*4]
         mov edx, dword ptr [ebp-0x60]
@@ -3274,7 +3274,7 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         packuswb mm2, mm3
         sar eax, 0x10
         push edx
-        imul eax, dword ptr [Var6ca20c]
+        imul eax, dword ptr [MMXBytePitch]
         pop edx
         movd dword ptr [edi+eax*1], mm2
         add edi, 0x4
@@ -3324,19 +3324,19 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         fld dword ptr [ebp-0x30]
         fmul dword ptr [ebp-0x10]
         fst dword ptr [ebp-0xc]
-        fadd qword ptr [Var4ceb58]
+        fadd qword ptr [MagicFix16]
         fstp qword ptr [ebp-0x70]
         fld dword ptr [ecx]
-        fadd qword ptr [Var4ceb58]
+        fadd qword ptr [MagicFix16]
         fstp qword ptr [ebp-0x58]
         fld dword ptr [ecx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
         fstp qword ptr [ebp-0x40]
         inc dword ptr [ebp-0x40]
         fld dword ptr [ebx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
         fstp qword ptr [ebp-0x38]
         inc dword ptr [ebp-0x38]
         fild dword ptr [ebp-0x24]
@@ -3369,9 +3369,9 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         fmul dword ptr [ebp-0x8]
         fiadd dword ptr [ebp-0x14]
         fistp dword ptr [ebp-0x44]
-        mov edi, dword ptr [Var6ca2d0]
+        mov edi, dword ptr [MMXOutput]
         mov eax, dword ptr [ebp-0x40]
-        imul eax, dword ptr [Var6ca20c]
+        imul eax, dword ptr [MMXBytePitch]
         add edi, eax
         mov edx, dword ptr [ebp-0x38]
         sub edx, dword ptr [ebp-0x40]
@@ -3392,7 +3392,7 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         psrlw mm2, 0x8
         packuswb mm2, mm3
         movd dword ptr [edi+eax*4], mm2
-        add edi, dword ptr [Var6ca20c]
+        add edi, dword ptr [MMXBytePitch]
         add ebx, ecx
         dec edx
         jge L5
@@ -3407,10 +3407,10 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
     }
 }
 
-extern long Var6ca474;
-extern double Var4ceb48;
-extern void (*Var6ca310)(void);
-extern long Var4ceb70;
+extern long TriColor;
+extern double MagicFloat;
+extern void (*pDrawSpans)(void);
+extern long Fix16Scale;
 
 __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
@@ -3424,7 +3424,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         mov ebx, dword ptr [ebp+0x8]
         mov ecx, dword ptr [ebp+0xc]
         mov edx, dword ptr [ebp+0x10]
-        mov dword ptr [Var6ca314], ebx
+        mov dword ptr [AlphaVertex], ebx
         fld dword ptr [ebx]
         fsub dword ptr [ecx]
         fld dword ptr [ebx+0x4]
@@ -3469,7 +3469,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         mov dword ptr [ebp-0x3c], esi
         mov dword ptr [ebp-0x1c], esi
         mov eax, dword ptr [ebx+0x10]
-        mov dword ptr [Var6ca474], eax
+        mov dword ptr [TriColor], eax
         mov esi, dword ptr [ebx+0x10]
         mov edi, esi
         mov eax, esi
@@ -3533,7 +3533,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fmul dword ptr [ebp-0x68]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338 + 4]
+        fist word ptr [SpanColorStep + 4]
         fxch st(1)
         fsubp st(2), st
         fstp dword ptr [ebp-0x30]
@@ -3547,7 +3547,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fild dword ptr [ebp-0x8]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [ebp-0x58]
         fild dword ptr [ebp-0x2c]
@@ -3571,7 +3571,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fmul dword ptr [ebp-0x68]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338 + 2]
+        fist word ptr [SpanColorStep + 2]
         fxch st(1)
         fsubp st(2), st
         fstp dword ptr [ebp-0x90]
@@ -3585,7 +3585,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fild dword ptr [ebp-0x2c]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [ebp-0x24]
         fild dword ptr [ebp-0xa4]
@@ -3609,7 +3609,7 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fmul dword ptr [ebp-0x68]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338]
+        fist word ptr [SpanColorStep]
         fxch st(1)
         fsubp st(2), st
         fstp dword ptr [ebp-0x88]
@@ -3623,22 +3623,22 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fild dword ptr [ebp-0xa4]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
         fstp qword ptr [ebp-0x7c]
         faddp st(0), st
         mov esi, dword ptr [ebp-0x3c]
         mov eax, 0x3
         mov dword ptr [ebp-0x84], eax
-        mov edi, dword ptr [Var6ca4d0]
+        mov edi, dword ptr [SpanBuffer]
         fld dword ptr [esi+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
         fstp qword ptr [ebp-0x70]
         inc dword ptr [ebp-0x70]
         mov eax, dword ptr [ebp-0x70]
         xor edx, edx
-        mov dword ptr [Var6ca460], eax
+        mov dword ptr [SpanY], eax
         jmp L6
         mov edi, edi
         _emit 0x8d
@@ -3708,8 +3708,8 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         je L7
         jmp L3
     L4:
-        mov dword ptr [Var6ca248], edi
-        call dword ptr [Var6ca310]
+        mov dword ptr [SpanBufferEnd], edi
+        call dword ptr [pDrawSpans]
         jmp L8
     L5:
         faddp st(0), st
@@ -3749,18 +3749,18 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fadd dword ptr [esi]
         fstp dword ptr [ebp-0x5c]
         fld dword ptr [ecx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
         fstp qword ptr [ebp-0x44]
         mov ecx, dword ptr [ebp-0x44]
         sub ecx, dword ptr [ebp-0x70]
         inc ecx
         je L6
         fld dword ptr [ebp-0xc]
-        fmul dword ptr [Var4ceb70]
+        fmul dword ptr [Fix16Scale]
         fistp dword ptr [ebp-0x74]
         fld dword ptr [ebp-0x5c]
-        fmul dword ptr [Var4ceb70]
+        fmul dword ptr [Fix16Scale]
         fistp dword ptr [ebp-0x64]
         mov esi, dword ptr [ebp-0x64]
         add esi, 0xffff
@@ -3792,18 +3792,18 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
         fadd dword ptr [edx]
         fstp dword ptr [ebp-0xa0]
         fld dword ptr [ebx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
         fstp qword ptr [ebp-0x44]
         mov edx, dword ptr [ebp-0x44]
         sub edx, dword ptr [ebp-0x70]
         inc edx
         je L7
         fld dword ptr [ebp-0x60]
-        fmul dword ptr [Var4ceb70]
+        fmul dword ptr [Fix16Scale]
         fistp dword ptr [ebp-0x10]
         fld dword ptr [ebp-0xa0]
-        fmul dword ptr [Var4ceb70]
+        fmul dword ptr [Fix16Scale]
         fistp dword ptr [ebp-0x64]
         mov ebx, dword ptr [ebp-0x64]
         add ebx, 0xffff
@@ -3818,51 +3818,51 @@ __declspec(naked) void MMXDrawTriangleFog(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DT
     }
 }
 
-extern long Var6ca254;
-extern long Var6ca498;
-extern long Var6ca354;
-extern long Var6ca3d8;
-extern long Var6ca40c;
-extern long Var6ca438;
-extern long Var6ca400;
-extern long Var6ca230;
-extern long Var6ca3b8;
-extern long Var6ca434;
-extern long Var6ca3ec;
-extern long Var6ca4b0;
-extern long Var6ca208;
-extern long Var6ca378;
-extern long Var6ca368;
-extern long Var6ca31c;
-extern long Var6ca480;
-extern long Var6ca218;
-extern long Var6ca234;
-extern long Var6ca25c;
-extern double Var6ca410;
-extern long Var6ca440;
-extern long Var6ca2a4;
-extern double Var6ca298;
-extern long Var6ca2c0;
-extern long Var6ca250;
-extern double Var6ca278;
-extern long Var6ca47c;
-extern double Var4ceb60;
-extern long Var6ca430;
-extern double Var6ca388;
-extern long Var6ca4c4;
-extern long Var6ca490;
-extern double Var6ca340;
-extern long Var6ca2e4;
-extern double Var6ca308;
-extern long Var6ca3a8;
-extern long Var6ca274;
-extern void (*Var6ca3f8)(void);
-extern long Var6ce4dc;
-extern long Var6ca390;
-extern long Var6ca3e8;
-extern double Var6ca3e0;
-extern long Var6ca260;
-extern long Var6ca328;
+extern long TriDx12;
+extern long TriDy13;
+extern long TriDx13;
+extern long TriDy12;
+extern long TriTemp;
+extern long TriRightVtx;
+extern long TriLeftVtx;
+extern long TriG1;
+extern long TriB1;
+extern long TriR1;
+extern long TriG2;
+extern long TriB2;
+extern long TriR2;
+extern long TriG3;
+extern long TriB3;
+extern long TriR3;
+extern long TriD12;
+extern long TriD13;
+extern long TriDrDx;
+extern long TriDrDy;
+extern double TriR0;
+extern long TriDgDx;
+extern long TriDgDy;
+extern double TriG0;
+extern long TriDbDx;
+extern long TriDbDy;
+extern double TriB0;
+extern long TriDuDx;
+extern double MagicFix24;
+extern long TriDuDy;
+extern double TriU0;
+extern long TriDvDx;
+extern long TriDvDy;
+extern double TriV0;
+extern long TriEdges;
+extern double TriY;
+extern long TriLeftXStep;
+extern long TriRightXStep;
+extern void (*pDrawSpansFiltered)(void);
+extern long bMMXMipMap;
+extern long TriRightDxDy;
+extern long TriRightX;
+extern double TriFixTemp;
+extern long TriLeftDxDy;
+extern long TriLeftX;
 
 __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
@@ -3878,23 +3878,23 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fld dword ptr [ebx+0x4]
         fsub dword ptr [edx+0x4]
         fxch st(1)
-        fst dword ptr [Var6ca254]
+        fst dword ptr [TriDx12]
         fxch st(1)
-        fst dword ptr [Var6ca498]
+        fst dword ptr [TriDy13]
         fmulp st(1), st
         fld dword ptr [ebx]
         fsub dword ptr [edx]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [ecx+0x4]
         fxch st(1)
-        fst dword ptr [Var6ca354]
+        fst dword ptr [TriDx13]
         fxch st(1)
-        fst dword ptr [Var6ca3d8]
+        fst dword ptr [TriDy12]
         fmulp st(1), st
         fsubp st(1), st
-        fst dword ptr [Var6ca40c]
+        fst dword ptr [TriTemp]
         fld1
-        test dword ptr [Var6ca40c], 0x80000000
+        test dword ptr [TriTemp], 0x80000000
         jne L9
         fdivrp st(1), st
         mov dword ptr [ebx+0x8], ecx
@@ -3914,10 +3914,10 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         jb L2
         mov esi, edx
     L2:
-        mov dword ptr [Var6ca438], esi
-        mov dword ptr [Var6ca400], esi
+        mov dword ptr [TriRightVtx], esi
+        mov dword ptr [TriLeftVtx], esi
         mov eax, dword ptr [ebx+0x10]
-        mov dword ptr [Var6ca474], eax
+        mov dword ptr [TriColor], eax
         mov esi, dword ptr [ebx+0x10]
         mov edi, esi
         mov eax, esi
@@ -3929,9 +3929,9 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [Var6ca230], edi
-        mov dword ptr [Var6ca3b8], esi
-        mov dword ptr [Var6ca434], eax
+        mov dword ptr [TriG1], edi
+        mov dword ptr [TriB1], esi
+        mov dword ptr [TriR1], eax
         mov esi, dword ptr [ecx+0x10]
         mov edi, esi
         mov eax, esi
@@ -3943,9 +3943,9 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [Var6ca3ec], edi
-        mov dword ptr [Var6ca4b0], esi
-        mov dword ptr [Var6ca208], eax
+        mov dword ptr [TriG2], edi
+        mov dword ptr [TriB2], esi
+        mov dword ptr [TriR2], eax
         mov esi, dword ptr [edx+0x10]
         mov edi, esi
         mov eax, esi
@@ -3957,201 +3957,201 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [Var6ca378], edi
-        mov dword ptr [Var6ca368], esi
-        mov dword ptr [Var6ca31c], eax
-        fild dword ptr [Var6ca434]
-        fild dword ptr [Var6ca208]
-        fild dword ptr [Var6ca31c]
+        mov dword ptr [TriG3], edi
+        mov dword ptr [TriB3], esi
+        mov dword ptr [TriR3], eax
+        fild dword ptr [TriR1]
+        fild dword ptr [TriR2]
+        fild dword ptr [TriR3]
         fxch st(1)
         fsubr st, st(2)
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca498]
+        fst dword ptr [TriD12]
+        fmul dword ptr [TriDy13]
         fxch st(1)
-        fst dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca3d8]
-        fld dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca354]
+        fst dword ptr [TriD13]
+        fmul dword ptr [TriDy12]
+        fld dword ptr [TriD12]
+        fmul dword ptr [TriDx13]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca254]
+        fld dword ptr [TriD13]
+        fmul dword ptr [TriDx12]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338 + 4]
+        fist word ptr [SpanColorStep + 4]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [Var6ca234]
+        fstp dword ptr [TriDrDx]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca234]
+        fmul dword ptr [TriDrDx]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
-        fstp dword ptr [Var6ca25c]
-        fild dword ptr [Var6ca434]
+        fstp dword ptr [TriDrDy]
+        fild dword ptr [TriR1]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
-        fstp qword ptr [Var6ca410]
-        fild dword ptr [Var6ca230]
-        fild dword ptr [Var6ca3ec]
-        fild dword ptr [Var6ca378]
+        fstp qword ptr [TriR0]
+        fild dword ptr [TriG1]
+        fild dword ptr [TriG2]
+        fild dword ptr [TriG3]
         fxch st(1)
         fsubr st, st(2)
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca498]
+        fst dword ptr [TriD12]
+        fmul dword ptr [TriDy13]
         fxch st(1)
-        fst dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca3d8]
-        fld dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca354]
+        fst dword ptr [TriD13]
+        fmul dword ptr [TriDy12]
+        fld dword ptr [TriD12]
+        fmul dword ptr [TriDx13]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca254]
+        fld dword ptr [TriD13]
+        fmul dword ptr [TriDx12]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338 + 2]
+        fist word ptr [SpanColorStep + 2]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [Var6ca440]
+        fstp dword ptr [TriDgDx]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca440]
+        fmul dword ptr [TriDgDx]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
-        fstp dword ptr [Var6ca2a4]
-        fild dword ptr [Var6ca230]
+        fstp dword ptr [TriDgDy]
+        fild dword ptr [TriG1]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
-        fstp qword ptr [Var6ca298]
-        fild dword ptr [Var6ca3b8]
-        fild dword ptr [Var6ca4b0]
-        fild dword ptr [Var6ca368]
+        fstp qword ptr [TriG0]
+        fild dword ptr [TriB1]
+        fild dword ptr [TriB2]
+        fild dword ptr [TriB3]
         fxch st(1)
         fsubr st, st(2)
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca498]
+        fst dword ptr [TriD12]
+        fmul dword ptr [TriDy13]
         fxch st(1)
-        fst dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca3d8]
-        fld dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca354]
+        fst dword ptr [TriD13]
+        fmul dword ptr [TriDy12]
+        fld dword ptr [TriD12]
+        fmul dword ptr [TriDx13]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca254]
+        fld dword ptr [TriD13]
+        fmul dword ptr [TriDx12]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338]
+        fist word ptr [SpanColorStep]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [Var6ca2c0]
+        fstp dword ptr [TriDbDx]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca2c0]
+        fmul dword ptr [TriDbDx]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
-        fstp dword ptr [Var6ca250]
-        fild dword ptr [Var6ca3b8]
+        fstp dword ptr [TriDbDy]
+        fild dword ptr [TriB1]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
-        fstp qword ptr [Var6ca278]
+        fstp qword ptr [TriB0]
         fld dword ptr [ebx+0x18]
         fsub dword ptr [ecx+0x18]
         fld dword ptr [ebx+0x18]
         fsub dword ptr [edx+0x18]
         fxch st(1)
-        fst dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca498]
+        fst dword ptr [TriD12]
+        fmul dword ptr [TriDy13]
         fxch st(1)
-        fst dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca3d8]
-        fld dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca354]
+        fst dword ptr [TriD13]
+        fmul dword ptr [TriDy12]
+        fld dword ptr [TriD12]
+        fmul dword ptr [TriDx13]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca254]
+        fld dword ptr [TriD13]
+        fmul dword ptr [TriDx12]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [Var6ca47c]
+        fst dword ptr [TriDuDx]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca47c]
+        fmul dword ptr [TriDuDx]
         fxch st(1)
-        fstp dword ptr [Var6ca430]
+        fstp dword ptr [TriDuDy]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [Var6ca430]
+        fmul dword ptr [TriDuDy]
         fld dword ptr [ebx+0x18]
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(3)
-        fstp qword ptr [Var6ca4c8]
+        fstp qword ptr [SpanUStep]
         faddp st(1), st
         fsubp st(1), st
-        fstp qword ptr [Var6ca388]
+        fstp qword ptr [TriU0]
         fld dword ptr [ebx+0x1c]
         fsub dword ptr [ecx+0x1c]
         fld dword ptr [ebx+0x1c]
         fsub dword ptr [edx+0x1c]
         fxch st(1)
-        fst dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca498]
+        fst dword ptr [TriD12]
+        fmul dword ptr [TriDy13]
         fxch st(1)
-        fst dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca3d8]
-        fld dword ptr [Var6ca480]
-        fmul dword ptr [Var6ca354]
+        fst dword ptr [TriD13]
+        fmul dword ptr [TriDy12]
+        fld dword ptr [TriD12]
+        fmul dword ptr [TriDx13]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca218]
-        fmul dword ptr [Var6ca254]
+        fld dword ptr [TriD13]
+        fmul dword ptr [TriDx12]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [Var6ca4c4]
+        fst dword ptr [TriDvDx]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca4c4]
+        fmul dword ptr [TriDvDx]
         fxch st(1)
-        fstp dword ptr [Var6ca490]
+        fstp dword ptr [TriDvDy]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [Var6ca490]
+        fmul dword ptr [TriDvDy]
         fld dword ptr [ebx+0x1c]
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(3)
-        fstp qword ptr [Var6ca2b0]
+        fstp qword ptr [SpanVStep]
         faddp st(1), st
         fsubp st(1), st
-        fstp qword ptr [Var6ca340]
+        fstp qword ptr [TriV0]
         fld dword ptr [ebx+0x18]
         fsub dword ptr [ecx+0x18]
         fld dword ptr [ebx+0x1c]
@@ -4164,8 +4164,8 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         fmulp st(1), st
         fsubp st(1), st
         fmul st, st(1)
-        fstp dword ptr [Var6ca40c]
-        mov eax, dword ptr [Var6ca40c]
+        fstp dword ptr [TriTemp]
+        mov eax, dword ptr [TriTemp]
         sub eax, 0x400000
         shr eax, 0x17
         and eax, 0xff
@@ -4181,20 +4181,20 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         mov eax, 0x4
     L4:
         ffree st(0)
-        mov dword ptr [Var6ce4e0], eax
-        mov esi, dword ptr [Var6ca438]
+        mov dword ptr [MMXMipLevel], eax
+        mov esi, dword ptr [TriRightVtx]
         fld dword ptr [esi+0x4]
-        fsub dword ptr [Var4ceb6c]
+        fsub dword ptr [RoundBias]
         mov eax, 0x3
-        mov edi, dword ptr [Var6ca4d0]
+        mov edi, dword ptr [SpanBuffer]
         xor edx, edx
-        mov dword ptr [Var6ca2e4], eax
-        fadd qword ptr [Var4ceb50]
-        fstp qword ptr [Var6ca308]
-        mov eax, dword ptr [Var6ca308]
+        mov dword ptr [TriEdges], eax
+        fadd qword ptr [MagicInt]
+        fstp qword ptr [TriY]
+        mov eax, dword ptr [TriY]
         inc eax
-        mov dword ptr [Var6ca308], eax
-        mov dword ptr [Var6ca460], eax
+        mov dword ptr [TriY], eax
+        mov dword ptr [SpanY], eax
         jmp L10
     L5:
         push ebx
@@ -4203,74 +4203,74 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         shr ebx, 0x10
         mov eax, esi
         shr eax, 0x10
-        mov dword ptr [Var6ca40c], ebx
+        mov dword ptr [TriTemp], ebx
         sub eax, ebx
-        fild dword ptr [Var6ca308]
-        fild dword ptr [Var6ca40c]
+        fild dword ptr [TriY]
+        fild dword ptr [TriTemp]
         mov dword ptr [edi+0x4], eax
         mov dword ptr [edi], ebx
-        fld dword ptr [Var6ca47c]
+        fld dword ptr [TriDuDx]
         fmul st, st(1)
-        fld dword ptr [Var6ca430]
+        fld dword ptr [TriDuDy]
         fmul st, st(3)
-        fld dword ptr [Var6ca4c4]
+        fld dword ptr [TriDvDx]
         fmul st, st(3)
-        fld dword ptr [Var6ca490]
+        fld dword ptr [TriDvDy]
         fmul st, st(5)
         fxch st(2)
         faddp st(3), st
-        mov eax, dword ptr [Var6ca308]
+        mov eax, dword ptr [TriY]
         faddp st(1), st
         fxch st(1)
-        fadd qword ptr [Var6ca388]
+        fadd qword ptr [TriU0]
         fxch st(1)
-        fld dword ptr [Var6ca2c0]
+        fld dword ptr [TriDbDx]
         fmul st, st(3)
         fxch st(1)
-        fadd qword ptr [Var6ca340]
+        fadd qword ptr [TriV0]
         fxch st(2)
         fstp qword ptr [edi+0x8]
-        fld dword ptr [Var6ca250]
+        fld dword ptr [TriDbDy]
         fmul st, st(4)
         fxch st(2)
         fstp qword ptr [edi+0x10]
         inc eax
-        mov dword ptr [Var6ca308], eax
-        fld dword ptr [Var6ca440]
+        mov dword ptr [TriY], eax
+        fld dword ptr [TriDgDx]
         fmul st, st(3)
-        fld dword ptr [Var6ca2a4]
+        fld dword ptr [TriDgDy]
         fmul st, st(5)
         fxch st(2)
         faddp st(3), st
-        fld dword ptr [Var6ca234]
+        fld dword ptr [TriDrDx]
         fmul st, st(4)
-        fld dword ptr [Var6ca25c]
+        fld dword ptr [TriDrDy]
         fmul st, st(6)
         fxch st(2)
         faddp st(3), st
         fxch st(3)
-        fadd qword ptr [Var6ca278]
+        fadd qword ptr [TriB0]
         fxch st(3)
         faddp st(1), st
         fxch st(1)
-        fadd qword ptr [Var6ca298]
+        fadd qword ptr [TriG0]
         fxch st(3)
         faddp st(0), st
         fxch st(1)
         fstp dword ptr [edi+0x18]
-        fadd qword ptr [Var6ca410]
+        fadd qword ptr [TriR0]
         fxch st(1)
-        fstp dword ptr [Var6ca40c]
+        fstp dword ptr [TriTemp]
         fxch st(1)
         faddp st(0), st
         fstp dword ptr [edi+0x1c]
-        mov eax, dword ptr [Var6ca40c]
+        mov eax, dword ptr [TriTemp]
         pop ebx
         mov word ptr [edi+0x1a], ax
-        mov eax, dword ptr [Var6ca3a8]
+        mov eax, dword ptr [TriLeftXStep]
         add edi, 0x20
         add ebx, eax
-        mov eax, dword ptr [Var6ca274]
+        mov eax, dword ptr [TriRightXStep]
         add esi, eax
         dec edx
         dec ecx
@@ -4279,20 +4279,20 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         je L11
         jmp L5
     L6:
-        mov dword ptr [Var6ca248], edi
-        cmp dword ptr [Var6ce4e0], 0x0
+        mov dword ptr [SpanBufferEnd], edi
+        cmp dword ptr [MMXMipLevel], 0x0
         jne L7
-        call dword ptr [Var6ca3f8]
+        call dword ptr [pDrawSpansFiltered]
         pop ebx
         pop esi
         pop edi
         ret
     L7:
-        cmp dword ptr [Var6ce4dc], 0x1
+        cmp dword ptr [bMMXMipMap], 0x1
         je L8
-        mov dword ptr [Var6ce4e0], 0x0
+        mov dword ptr [MMXMipLevel], 0x0
     L8:
-        call dword ptr [Var6ca310]
+        call dword ptr [pDrawSpans]
         pop ebx
         pop esi
         pop edi
@@ -4313,142 +4313,142 @@ __declspec(naked) void MMXDrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVE
         _emit 0x00
         _emit 0x00
     L10:
-        mov esi, dword ptr [Var6ca438]
-        mov eax, dword ptr [Var6ca2e4]
+        mov esi, dword ptr [TriRightVtx]
+        mov eax, dword ptr [TriEdges]
         mov ecx, esi
         dec eax
         js L6
         mov ecx, dword ptr [ecx+0x8]
-        mov dword ptr [Var6ca2e4], eax
-        mov dword ptr [Var6ca438], ecx
+        mov dword ptr [TriEdges], eax
+        mov dword ptr [TriRightVtx], ecx
         fld dword ptr [esi]
         fsub dword ptr [ecx]
         fld dword ptr [esi+0x4]
         fsub dword ptr [ecx+0x4]
         fdivp st(1), st
-        fstp dword ptr [Var6ca390]
-        fild dword ptr [Var6ca308]
+        fstp dword ptr [TriRightDxDy]
+        fild dword ptr [TriY]
         fsub dword ptr [esi+0x4]
-        fmul dword ptr [Var6ca390]
+        fmul dword ptr [TriRightDxDy]
         fadd dword ptr [esi]
-        fstp dword ptr [Var6ca3e8]
+        fstp dword ptr [TriRightX]
         fld dword ptr [ecx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
-        fstp qword ptr [Var6ca3e0]
-        mov ecx, dword ptr [Var6ca3e0]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
+        fstp qword ptr [TriFixTemp]
+        mov ecx, dword ptr [TriFixTemp]
         inc ecx
-        sub ecx, dword ptr [Var6ca308]
+        sub ecx, dword ptr [TriY]
         je L10
-        fld dword ptr [Var6ca390]
-        fmul dword ptr [Var4ceb70]
-        fistp dword ptr [Var6ca274]
-        fld dword ptr [Var6ca3e8]
-        fmul dword ptr [Var4ceb70]
-        fistp dword ptr [Var6ca40c]
-        mov esi, dword ptr [Var6ca40c]
+        fld dword ptr [TriRightDxDy]
+        fmul dword ptr [Fix16Scale]
+        fistp dword ptr [TriRightXStep]
+        fld dword ptr [TriRightX]
+        fmul dword ptr [Fix16Scale]
+        fistp dword ptr [TriTemp]
+        mov esi, dword ptr [TriTemp]
         add esi, 0xffff
         test edx, edx
         jne L12
     L11:
-        mov edx, dword ptr [Var6ca400]
-        mov eax, dword ptr [Var6ca2e4]
+        mov edx, dword ptr [TriLeftVtx]
+        mov eax, dword ptr [TriEdges]
         mov ebx, edx
         dec eax
         js L6
         mov ebx, dword ptr [ebx+0x14]
-        mov dword ptr [Var6ca2e4], eax
-        mov dword ptr [Var6ca400], ebx
+        mov dword ptr [TriEdges], eax
+        mov dword ptr [TriLeftVtx], ebx
         fld dword ptr [edx]
         fsub dword ptr [ebx]
         fld dword ptr [edx+0x4]
         fsub dword ptr [ebx+0x4]
         fdivp st(1), st
-        fstp dword ptr [Var6ca260]
-        fild dword ptr [Var6ca308]
+        fstp dword ptr [TriLeftDxDy]
+        fild dword ptr [TriY]
         fsub dword ptr [edx+0x4]
-        fmul dword ptr [Var6ca260]
+        fmul dword ptr [TriLeftDxDy]
         fadd dword ptr [edx]
-        fstp dword ptr [Var6ca328]
+        fstp dword ptr [TriLeftX]
         fld dword ptr [ebx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
-        fstp qword ptr [Var6ca3e0]
-        mov edx, dword ptr [Var6ca3e0]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
+        fstp qword ptr [TriFixTemp]
+        mov edx, dword ptr [TriFixTemp]
         inc edx
-        sub edx, dword ptr [Var6ca308]
+        sub edx, dword ptr [TriY]
         je L11
-        fld dword ptr [Var6ca260]
-        fmul dword ptr [Var4ceb70]
-        fistp dword ptr [Var6ca3a8]
-        fld dword ptr [Var6ca328]
-        fmul dword ptr [Var4ceb70]
-        fistp dword ptr [Var6ca40c]
-        mov ebx, dword ptr [Var6ca40c]
+        fld dword ptr [TriLeftDxDy]
+        fmul dword ptr [Fix16Scale]
+        fistp dword ptr [TriLeftXStep]
+        fld dword ptr [TriLeftX]
+        fmul dword ptr [Fix16Scale]
+        fistp dword ptr [TriTemp]
+        mov ebx, dword ptr [TriTemp]
         add ebx, 0xffff
     L12:
         jmp L5
     }
 }
 
-extern long Var6ca380;
-extern long Var6ca2a0;
-extern long Var6ca32c;
-extern long Var6ca2e0;
-extern long Var6ca4b8;
-extern long Var6ca2cc;
-extern long Var6ca42c;
-extern long Var6ca3c8;
-extern long Var6ca374;
-extern long Var6ca324;
-extern long Var6ca304;
-extern long Var6ca290;
-extern long Var6ca4c0;
-extern long Var6ca330;
-extern long Var6ca494;
-extern long Var6ca26c;
-extern long Var6ca4a4;
-extern long Var6ca204;
-extern long Var6ca454;
-extern long Var6ca49c;
-extern long Var6ca3dc;
-extern long Var6ca404;
-extern long Var6ca36c;
-extern long Var6ca284;
-extern long Var6ca258;
-extern long Var6ca4a0;
-extern double Var6ca3d0;
-extern long Var6ca200;
-extern long Var6ca370;
-extern double Var6ca3c0;
-extern long Var6ca220;
-extern long Var6ca320;
-extern double Var6ca360;
-extern long Var6ca4bc;
-extern long Var4ceb74;
-extern long Var6ca264;
-extern long Var6ca44c;
-extern long Var6ca2ac;
-extern long Var6ca21c;
-extern long Var6ca358;
-extern long Var6ca3b4;
-extern long Var6ca39c;
-extern long Var6ca4b4;
-extern long Var6ca238;
-extern long Var6ca288;
-extern long Var6ca280;
-extern long Var6ca22c;
-extern double Var6ca3a0;
-extern long Var6ca2b8;
-extern long Var6ca4d8[];
-extern long Var6ca224;
-extern long Var6ca2e8;
-extern long Var6ca37c;
-extern double Var6ca468;
-extern double Var6ca488;
-extern double Var6ca420;
-extern void (*Var6ca210)(void);
-extern void (*Var6ca4a8)(void);
+extern long TriVz3P;
+extern long TriUz3P;
+extern long TriVz2P;
+extern long TriUz2P;
+extern long TriVz1P;
+extern long TriUz1P;
+extern long TriDx12P;
+extern long TriDy13P;
+extern long TriDx13P;
+extern long TriDy12P;
+extern long TriTempP;
+extern long TriRightVtxP;
+extern long TriLeftVtxP;
+extern long TriG1P;
+extern long TriB1P;
+extern long TriR1P;
+extern long TriG2P;
+extern long TriB2P;
+extern long TriR2P;
+extern long TriG3P;
+extern long TriB3P;
+extern long TriR3P;
+extern long TriD12P;
+extern long TriD13P;
+extern long TriDrDxP;
+extern long TriDrDyP;
+extern double TriR0P;
+extern long TriDgDxP;
+extern long TriDgDyP;
+extern double TriG0P;
+extern long TriDbDxP;
+extern long TriDbDyP;
+extern double TriB0P;
+extern long TriDuzDxP;
+extern long SubSpanLength;
+extern long TriDuzDyP;
+extern long TriDuzDx16P;
+extern long TriUz0P;
+extern long TriDvzDxP;
+extern long TriDvzDyP;
+extern long TriDvzDx16P;
+extern long TriVz0P;
+extern long TriDozDxP;
+extern long TriDozDyP;
+extern long TriDozDx16P;
+extern long TriOz0P;
+extern long TriEdgesP;
+extern double TriYP;
+extern long TriOzP;
+extern long RecipTable[];
+extern long TriZP;
+extern long TriLastUP;
+extern long TriLastVP;
+extern double TriFixTempP;
+extern double TriLeftXStepP;
+extern double TriRightXStepP;
+extern void (*pDrawSpansFilteredP)(void);
+extern void (*pDrawSpansP)(void);
 
 __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3)
 {
@@ -4471,34 +4471,34 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fmul dword ptr [edx+0xc]
         fld dword ptr [edx+0x1c]
         fmul dword ptr [edx+0xc]
-        fstp dword ptr [Var6ca380]
-        fstp dword ptr [Var6ca2a0]
-        fstp dword ptr [Var6ca32c]
-        fstp dword ptr [Var6ca2e0]
-        fstp dword ptr [Var6ca4b8]
-        fstp dword ptr [Var6ca2cc]
+        fstp dword ptr [TriVz3P]
+        fstp dword ptr [TriUz3P]
+        fstp dword ptr [TriVz2P]
+        fstp dword ptr [TriUz2P]
+        fstp dword ptr [TriVz1P]
+        fstp dword ptr [TriUz1P]
         fld dword ptr [ebx]
         fsub dword ptr [ecx]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [edx+0x4]
         fxch st(1)
-        fst dword ptr [Var6ca42c]
+        fst dword ptr [TriDx12P]
         fxch st(1)
-        fst dword ptr [Var6ca3c8]
+        fst dword ptr [TriDy13P]
         fmulp st(1), st
         fld dword ptr [ebx]
         fsub dword ptr [edx]
         fld dword ptr [ebx+0x4]
         fsub dword ptr [ecx+0x4]
         fxch st(1)
-        fst dword ptr [Var6ca374]
+        fst dword ptr [TriDx13P]
         fxch st(1)
-        fst dword ptr [Var6ca324]
+        fst dword ptr [TriDy12P]
         fmulp st(1), st
         fsubp st(1), st
-        fst dword ptr [Var6ca304]
+        fst dword ptr [TriTempP]
         fld1
-        test dword ptr [Var6ca304], 0x80000000
+        test dword ptr [TriTempP], 0x80000000
         jne L11
         fdivrp st(1), st
         mov dword ptr [ebx+0x8], ecx
@@ -4518,10 +4518,10 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         jb L2
         mov esi, edx
     L2:
-        mov dword ptr [Var6ca290], esi
-        mov dword ptr [Var6ca4c0], esi
+        mov dword ptr [TriRightVtxP], esi
+        mov dword ptr [TriLeftVtxP], esi
         mov eax, dword ptr [ebx+0x10]
-        mov dword ptr [Var6ca474], eax
+        mov dword ptr [TriColor], eax
         mov esi, dword ptr [ebx+0x10]
         mov edi, esi
         mov eax, esi
@@ -4533,9 +4533,9 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [Var6ca330], edi
-        mov dword ptr [Var6ca494], esi
-        mov dword ptr [Var6ca26c], eax
+        mov dword ptr [TriG1P], edi
+        mov dword ptr [TriB1P], esi
+        mov dword ptr [TriR1P], eax
         mov esi, dword ptr [ecx+0x10]
         mov edi, esi
         mov eax, esi
@@ -4547,9 +4547,9 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [Var6ca4a4], edi
-        mov dword ptr [Var6ca204], esi
-        mov dword ptr [Var6ca454], eax
+        mov dword ptr [TriG2P], edi
+        mov dword ptr [TriB2P], esi
+        mov dword ptr [TriR2P], eax
         mov esi, dword ptr [edx+0x10]
         mov edi, esi
         mov eax, esi
@@ -4561,237 +4561,237 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         add edi, 0x80
         add esi, 0x80
         add eax, 0x80
-        mov dword ptr [Var6ca49c], edi
-        mov dword ptr [Var6ca3dc], esi
-        mov dword ptr [Var6ca404], eax
-        fild dword ptr [Var6ca26c]
-        fild dword ptr [Var6ca454]
-        fild dword ptr [Var6ca404]
+        mov dword ptr [TriG3P], edi
+        mov dword ptr [TriB3P], esi
+        mov dword ptr [TriR3P], eax
+        fild dword ptr [TriR1P]
+        fild dword ptr [TriR2P]
+        fild dword ptr [TriR3P]
         fxch st(1)
         fsubr st, st(2)
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca3c8]
+        fst dword ptr [TriD12P]
+        fmul dword ptr [TriDy13P]
         fxch st(1)
-        fst dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca324]
-        fld dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca374]
+        fst dword ptr [TriD13P]
+        fmul dword ptr [TriDy12P]
+        fld dword ptr [TriD12P]
+        fmul dword ptr [TriDx13P]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca42c]
+        fld dword ptr [TriD13P]
+        fmul dword ptr [TriDx12P]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338 + 4]
+        fist word ptr [SpanColorStep + 4]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [Var6ca258]
+        fstp dword ptr [TriDrDxP]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca258]
+        fmul dword ptr [TriDrDxP]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
-        fstp dword ptr [Var6ca4a0]
-        fild dword ptr [Var6ca26c]
+        fstp dword ptr [TriDrDyP]
+        fild dword ptr [TriR1P]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
-        fstp qword ptr [Var6ca3d0]
-        fild dword ptr [Var6ca330]
-        fild dword ptr [Var6ca4a4]
-        fild dword ptr [Var6ca49c]
+        fstp qword ptr [TriR0P]
+        fild dword ptr [TriG1P]
+        fild dword ptr [TriG2P]
+        fild dword ptr [TriG3P]
         fxch st(1)
         fsubr st, st(2)
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca3c8]
+        fst dword ptr [TriD12P]
+        fmul dword ptr [TriDy13P]
         fxch st(1)
-        fst dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca324]
-        fld dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca374]
+        fst dword ptr [TriD13P]
+        fmul dword ptr [TriDy12P]
+        fld dword ptr [TriD12P]
+        fmul dword ptr [TriDx13P]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca42c]
+        fld dword ptr [TriD13P]
+        fmul dword ptr [TriDx12P]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338 + 2]
+        fist word ptr [SpanColorStep + 2]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [Var6ca200]
+        fstp dword ptr [TriDgDxP]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca200]
+        fmul dword ptr [TriDgDxP]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
-        fstp dword ptr [Var6ca370]
-        fild dword ptr [Var6ca330]
+        fstp dword ptr [TriDgDyP]
+        fild dword ptr [TriG1P]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
-        fstp qword ptr [Var6ca3c0]
-        fild dword ptr [Var6ca494]
-        fild dword ptr [Var6ca204]
-        fild dword ptr [Var6ca3dc]
+        fstp qword ptr [TriG0P]
+        fild dword ptr [TriB1P]
+        fild dword ptr [TriB2P]
+        fild dword ptr [TriB3P]
         fxch st(1)
         fsubr st, st(2)
         fxch st(2)
         fsubrp st(1), st
         fxch st(1)
-        fst dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca3c8]
+        fst dword ptr [TriD12P]
+        fmul dword ptr [TriDy13P]
         fxch st(1)
-        fst dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca324]
-        fld dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca374]
+        fst dword ptr [TriD13P]
+        fmul dword ptr [TriDy12P]
+        fld dword ptr [TriD12P]
+        fmul dword ptr [TriDx13P]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca42c]
+        fld dword ptr [TriD13P]
+        fmul dword ptr [TriDx12P]
         fxch st(2)
         fmul st, st(3)
-        fist word ptr [Var6ca338]
+        fist word ptr [SpanColorStep]
         fxch st(1)
         fsubp st(2), st
-        fstp dword ptr [Var6ca220]
+        fstp dword ptr [TriDbDxP]
         fmul st, st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca220]
+        fmul dword ptr [TriDbDxP]
         fld dword ptr [ebx+0x4]
         fmul st, st(2)
         fxch st(2)
-        fstp dword ptr [Var6ca320]
-        fild dword ptr [Var6ca494]
+        fstp dword ptr [TriDbDyP]
+        fild dword ptr [TriB1P]
         fxch st(1)
         faddp st(2), st
-        fadd qword ptr [Var4ceb48]
+        fadd qword ptr [MagicFloat]
         fsubrp st(1), st
-        fstp qword ptr [Var6ca360]
-        fld dword ptr [Var6ca2cc]
-        fsub dword ptr [Var6ca2e0]
-        fld dword ptr [Var6ca2cc]
-        fsub dword ptr [Var6ca2a0]
+        fstp qword ptr [TriB0P]
+        fld dword ptr [TriUz1P]
+        fsub dword ptr [TriUz2P]
+        fld dword ptr [TriUz1P]
+        fsub dword ptr [TriUz3P]
         fxch st(1)
-        fst dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca3c8]
+        fst dword ptr [TriD12P]
+        fmul dword ptr [TriDy13P]
         fxch st(1)
-        fst dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca324]
-        fld dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca374]
+        fst dword ptr [TriD13P]
+        fmul dword ptr [TriDy12P]
+        fld dword ptr [TriD12P]
+        fmul dword ptr [TriDx13P]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca42c]
+        fld dword ptr [TriD13P]
+        fmul dword ptr [TriDx12P]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [Var6ca4bc]
+        fst dword ptr [TriDuzDxP]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
-        fmul dword ptr [Var4ceb74]
+        fmul dword ptr [SubSpanLength]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca4bc]
+        fmul dword ptr [TriDuzDxP]
         fxch st(1)
-        fstp dword ptr [Var6ca264]
+        fstp dword ptr [TriDuzDyP]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [Var6ca264]
-        fld dword ptr [Var6ca2cc]
+        fmul dword ptr [TriDuzDyP]
+        fld dword ptr [TriUz1P]
         fxch st(3)
-        fstp dword ptr [Var6ca44c]
+        fstp dword ptr [TriDuzDx16P]
         faddp st(1), st
         fsubp st(1), st
-        fstp dword ptr [Var6ca2ac]
-        fld dword ptr [Var6ca4b8]
-        fsub dword ptr [Var6ca32c]
-        fld dword ptr [Var6ca4b8]
-        fsub dword ptr [Var6ca380]
+        fstp dword ptr [TriUz0P]
+        fld dword ptr [TriVz1P]
+        fsub dword ptr [TriVz2P]
+        fld dword ptr [TriVz1P]
+        fsub dword ptr [TriVz3P]
         fxch st(1)
-        fst dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca3c8]
+        fst dword ptr [TriD12P]
+        fmul dword ptr [TriDy13P]
         fxch st(1)
-        fst dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca324]
-        fld dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca374]
+        fst dword ptr [TriD13P]
+        fmul dword ptr [TriDy12P]
+        fld dword ptr [TriD12P]
+        fmul dword ptr [TriDx13P]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca42c]
+        fld dword ptr [TriD13P]
+        fmul dword ptr [TriDx12P]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [Var6ca21c]
+        fst dword ptr [TriDvzDxP]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
-        fmul dword ptr [Var4ceb74]
+        fmul dword ptr [SubSpanLength]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca21c]
+        fmul dword ptr [TriDvzDxP]
         fxch st(1)
-        fstp dword ptr [Var6ca358]
+        fstp dword ptr [TriDvzDyP]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [Var6ca358]
-        fld dword ptr [Var6ca4b8]
+        fmul dword ptr [TriDvzDyP]
+        fld dword ptr [TriVz1P]
         fxch st(3)
-        fstp dword ptr [Var6ca3b4]
+        fstp dword ptr [TriDvzDx16P]
         faddp st(1), st
         fsubp st(1), st
-        fstp dword ptr [Var6ca39c]
+        fstp dword ptr [TriVz0P]
         fld dword ptr [ebx+0xc]
         fsub dword ptr [ecx+0xc]
         fld dword ptr [ebx+0xc]
         fsub dword ptr [edx+0xc]
         fxch st(1)
-        fst dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca3c8]
+        fst dword ptr [TriD12P]
+        fmul dword ptr [TriDy13P]
         fxch st(1)
-        fst dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca324]
-        fld dword ptr [Var6ca36c]
-        fmul dword ptr [Var6ca374]
+        fst dword ptr [TriD13P]
+        fmul dword ptr [TriDy12P]
+        fld dword ptr [TriD12P]
+        fmul dword ptr [TriDx13P]
         fxch st(1)
         fsubp st(2), st
-        fld dword ptr [Var6ca284]
-        fmul dword ptr [Var6ca42c]
+        fld dword ptr [TriD13P]
+        fmul dword ptr [TriDx12P]
         fxch st(2)
         fmul st, st(3)
         fxch st(1)
         fsubp st(2), st
-        fst dword ptr [Var6ca4b4]
+        fst dword ptr [TriDozDxP]
         fxch st(1)
         fmul st, st(2)
         fxch st(1)
-        fmul dword ptr [Var4ceb74]
+        fmul dword ptr [SubSpanLength]
         fxch st(1)
         fld dword ptr [ebx]
-        fmul dword ptr [Var6ca4b4]
+        fmul dword ptr [TriDozDxP]
         fxch st(1)
-        fstp dword ptr [Var6ca238]
+        fstp dword ptr [TriDozDyP]
         fld dword ptr [ebx+0x4]
-        fmul dword ptr [Var6ca238]
+        fmul dword ptr [TriDozDyP]
         fld dword ptr [ebx+0xc]
         fxch st(3)
-        fstp dword ptr [Var6ca288]
+        fstp dword ptr [TriDozDx16P]
         faddp st(1), st
         fsubp st(1), st
-        fstp dword ptr [Var6ca280]
+        fstp dword ptr [TriOz0P]
         fld dword ptr [ebx+0x18]
         fsub dword ptr [ecx+0x18]
         fld dword ptr [ebx+0x1c]
@@ -4804,8 +4804,8 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         fmulp st(1), st
         fsubp st(1), st
         fmul st, st(1)
-        fstp dword ptr [Var6ca304]
-        mov eax, dword ptr [Var6ca304]
+        fstp dword ptr [TriTempP]
+        mov eax, dword ptr [TriTempP]
         sub eax, 0x400000
         shr eax, 0x17
         and eax, 0xff
@@ -4820,20 +4820,20 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         jb L4
         mov eax, 0x4
     L4:
-        mov dword ptr [Var6ce4e0], eax
+        mov dword ptr [MMXMipLevel], eax
         faddp st(0), st
-        mov esi, dword ptr [Var6ca290]
+        mov esi, dword ptr [TriRightVtxP]
         mov eax, 0x3
-        mov dword ptr [Var6ca22c], eax
-        mov edi, dword ptr [Var6ca4d0]
+        mov dword ptr [TriEdgesP], eax
+        mov edi, dword ptr [SpanBuffer]
         fld dword ptr [esi+0x4]
-        fsub dword ptr [Var4ceb6c]
-        fadd qword ptr [Var4ceb50]
-        fstp qword ptr [Var6ca3a0]
-        inc dword ptr [Var6ca3a0]
-        mov eax, dword ptr [Var6ca3a0]
+        fsub dword ptr [RoundBias]
+        fadd qword ptr [MagicInt]
+        fstp qword ptr [TriYP]
+        inc dword ptr [TriYP]
+        mov eax, dword ptr [TriYP]
         xor edx, edx
-        mov dword ptr [Var6ca460], eax
+        mov dword ptr [SpanY], eax
         jmp L12
         nop
         _emit 0x8d
@@ -4850,64 +4850,64 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         mov eax, esi
         mov ecx, dword ptr [edi]
         shr eax, 0x10
-        mov dword ptr [Var6ca304], ebx
+        mov dword ptr [TriTempP], ebx
         sub eax, ebx
         mov ecx, dword ptr [edi]
-        fild dword ptr [Var6ca3a0]
-        fild dword ptr [Var6ca304]
+        fild dword ptr [TriYP]
+        fild dword ptr [TriTempP]
         mov dword ptr [edi+0x4], eax
         mov dword ptr [edi], ebx
-        fld dword ptr [Var6ca220]
+        fld dword ptr [TriDbDxP]
         fmul st, st(1)
-        fld dword ptr [Var6ca320]
+        fld dword ptr [TriDbDyP]
         fmul st, st(3)
-        fld dword ptr [Var6ca200]
+        fld dword ptr [TriDgDxP]
         fmul st, st(3)
-        fld dword ptr [Var6ca370]
+        fld dword ptr [TriDgDyP]
         fmul st, st(5)
         fxch st(2)
         faddp st(3), st
-        fld dword ptr [Var6ca258]
+        fld dword ptr [TriDrDxP]
         fmul st, st(4)
-        fld dword ptr [Var6ca4a0]
+        fld dword ptr [TriDrDyP]
         fmul st, st(6)
         fxch st(2)
         faddp st(3), st
         fxch st(3)
-        fadd qword ptr [Var6ca360]
+        fadd qword ptr [TriB0P]
         fxch st(3)
         faddp st(1), st
         fxch st(1)
-        fadd qword ptr [Var6ca3c0]
-        fld dword ptr [Var6ca4b4]
+        fadd qword ptr [TriG0P]
+        fld dword ptr [TriDozDxP]
         fmul st, st(4)
         fxch st(3)
         fstp dword ptr [edi+0x18]
         fxch st(1)
-        fadd qword ptr [Var6ca3d0]
+        fadd qword ptr [TriR0P]
         fxch st(1)
-        fstp dword ptr [Var6ca304]
-        fld dword ptr [Var6ca238]
+        fstp dword ptr [TriTempP]
+        fld dword ptr [TriDozDyP]
         fmul st, st(4)
         fxch st(1)
         fstp dword ptr [edi+0x1c]
-        fld dword ptr [Var6ca4bc]
+        fld dword ptr [TriDuzDxP]
         fmul st, st(3)
         fxch st(2)
         faddp st(1), st
-        fld dword ptr [Var6ca264]
+        fld dword ptr [TriDuzDyP]
         fmul st, st(4)
         fxch st(1)
-        fadd dword ptr [Var6ca280]
-        fld dword ptr [Var6ca21c]
+        fadd dword ptr [TriOz0P]
+        fld dword ptr [TriDvzDxP]
         fmul st, st(4)
         fxch st(2)
         faddp st(3), st
-        fld dword ptr [Var6ca358]
+        fld dword ptr [TriDvzDyP]
         fmul st, st(5)
         fxch st(1)
-        fstp dword ptr [Var6ca2b8]
-        mov ebx, dword ptr [Var6ca2b8]
+        fstp dword ptr [TriOzP]
+        mov ebx, dword ptr [TriOzP]
         mov ecx, ebx
         shr ebx, 0x9
         xor ecx, 0x7f800000
@@ -4915,30 +4915,30 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         and ecx, 0xff800000
         faddp st(1), st
         fxch st(1)
-        fadd dword ptr [Var6ca2ac]
-        mov ebx, dword ptr [ebx+Var6ca4d8]
+        fadd dword ptr [TriUz0P]
+        mov ebx, dword ptr [ebx+RecipTable]
         add ecx, ebx
-        mov dword ptr [Var6ca224], ecx
+        mov dword ptr [TriZP], ecx
         fld st(0)
-        fmul dword ptr [Var6ca224]
+        fmul dword ptr [TriZP]
         fxch st(2)
-        fadd dword ptr [Var6ca39c]
+        fadd dword ptr [TriVz0P]
         fxch st(4)
         faddp st(0), st
         fxch st(2)
         faddp st(0), st
-        mov ecx, dword ptr [Var6ca304]
+        mov ecx, dword ptr [TriTempP]
         mov word ptr [edi+0x1a], cx
         fld st(2)
-        fmul dword ptr [Var6ca224]
+        fmul dword ptr [TriZP]
         fxch st(1)
-        fst dword ptr [Var6ca2e8]
-        fadd qword ptr [Var4ceb60]
+        fst dword ptr [TriLastUP]
+        fadd qword ptr [MagicFix24]
         fxch st(1)
-        fst dword ptr [Var6ca37c]
-        fld dword ptr [Var6ca2b8]
+        fst dword ptr [TriLastVP]
+        fld dword ptr [TriOzP]
         fxch st(1)
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(2)
         fstp qword ptr [edi+0x8]
         fxch st(1)
@@ -4946,64 +4946,64 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         sub eax, 0x10
         jle L7
     L6:
-        fadd dword ptr [Var6ca288]
+        fadd dword ptr [TriDozDx16P]
         fxch st(1)
-        fadd dword ptr [Var6ca44c]
+        fadd dword ptr [TriDuzDx16P]
         fxch st(1)
         fxch st(2)
-        fadd dword ptr [Var6ca3b4]
+        fadd dword ptr [TriDvzDx16P]
         fxch st(2)
-        fst dword ptr [Var6ca304]
-        mov ebx, dword ptr [Var6ca304]
+        fst dword ptr [TriTempP]
+        mov ebx, dword ptr [TriTempP]
         mov ecx, ebx
         shr ebx, 0x9
         xor ecx, 0x7f800000
         and ebx, 0x3ffc
         and ecx, 0xff800000
         fld st(1)
-        mov ebx, dword ptr [ebx+Var6ca4d8]
+        mov ebx, dword ptr [ebx+RecipTable]
         add ecx, ebx
-        mov dword ptr [Var6ca224], ecx
-        fmul dword ptr [Var6ca224]
+        mov dword ptr [TriZP], ecx
+        fmul dword ptr [TriZP]
         fld st(3)
-        fmul dword ptr [Var6ca224]
+        fmul dword ptr [TriZP]
         fxch st(1)
         fld st(0)
-        fsub dword ptr [Var6ca2e8]
+        fsub dword ptr [TriLastUP]
         fxch st(1)
-        fstp dword ptr [Var6ca2e8]
-        fmul dword ptr [Var4ceb80 + 88]
+        fstp dword ptr [TriLastUP]
+        fmul dword ptr [MipOffsets + 88]
         fxch st(1)
         fld st(0)
-        fsub dword ptr [Var6ca37c]
+        fsub dword ptr [TriLastVP]
         fxch st(2)
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(1)
-        fstp dword ptr [Var6ca37c]
+        fstp dword ptr [TriLastVP]
         fxch st(1)
-        fmul dword ptr [Var4ceb80 + 88]
+        fmul dword ptr [MipOffsets + 88]
         fxch st(1)
         fstp qword ptr [edi+0x20]
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         add edi, 0x8
         sub eax, 0x10
-        fstp qword ptr [Var6ca468]
-        mov ebx, dword ptr [Var6ca468]
+        fstp qword ptr [TriFixTempP]
+        mov ebx, dword ptr [TriFixTempP]
         mov dword ptr [edi+0x1c], ebx
         jg L6
     L7:
         and eax, 0xf
-        fld dword ptr [Var6ca4b4]
-        fmul dword ptr [eax*4+Var4ceb80 + 96]
-        fld dword ptr [Var6ca4bc]
-        fmul dword ptr [eax*4+Var4ceb80 + 96]
+        fld dword ptr [TriDozDxP]
+        fmul dword ptr [eax*4+MipOffsets + 96]
+        fld dword ptr [TriDuzDxP]
+        fmul dword ptr [eax*4+MipOffsets + 96]
         fxch st(1)
         faddp st(2), st
-        fld dword ptr [Var6ca21c]
-        fmul dword ptr [eax*4+Var4ceb80 + 96]
+        fld dword ptr [TriDvzDxP]
+        fmul dword ptr [eax*4+MipOffsets + 96]
         fxch st(2)
-        fstp dword ptr [Var6ca2b8]
-        mov ebx, dword ptr [Var6ca2b8]
+        fstp dword ptr [TriOzP]
+        mov ebx, dword ptr [TriOzP]
         mov ecx, ebx
         faddp st(2), st
         shr ebx, 0x9
@@ -5011,58 +5011,58 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         and ebx, 0x3ffc
         and ecx, 0xff800000
         faddp st(2), st
-        mov ebx, dword ptr [ebx+Var6ca4d8]
+        mov ebx, dword ptr [ebx+RecipTable]
         add ecx, ebx
-        mov dword ptr [Var6ca224], ecx
-        fmul dword ptr [Var6ca224]
-        fld dword ptr [eax*4+Var4ceb80 + 24]
+        mov dword ptr [TriZP], ecx
+        fmul dword ptr [TriZP]
+        fld dword ptr [eax*4+MipOffsets + 24]
         fxch st(1)
-        fsub dword ptr [Var6ca2e8]
+        fsub dword ptr [TriLastUP]
         fxch st(2)
-        fmul dword ptr [Var6ca224]
+        fmul dword ptr [TriZP]
         add edi, 0x28
-        mov eax, dword ptr [Var6ca488]
-        mov ecx, dword ptr [Var6ca420]
+        mov eax, dword ptr [TriLeftXStepP]
+        mov ecx, dword ptr [TriRightXStepP]
         pop ebx
-        fsub dword ptr [Var6ca37c]
+        fsub dword ptr [TriLastVP]
         fxch st(2)
         fmul st, st(1)
         add ebx, eax
-        mov eax, dword ptr [Var6ca3a0]
+        mov eax, dword ptr [TriYP]
         add esi, ecx
         inc eax
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(2)
         fmulp st(1), st
-        mov dword ptr [Var6ca3a0], eax
+        mov dword ptr [TriYP], eax
         pop ecx
         dec edx
         dec ecx
-        fadd qword ptr [Var4ceb60]
+        fadd qword ptr [MagicFix24]
         fxch st(1)
         fstp qword ptr [edi-0x8]
-        fstp qword ptr [Var6ca468]
-        mov eax, dword ptr [Var6ca468]
+        fstp qword ptr [TriFixTempP]
+        mov eax, dword ptr [TriFixTempP]
         mov dword ptr [edi-0x4], eax
         je L12
         test edx, edx
         je L13
         jmp L5
     L8:
-        mov dword ptr [Var6ca248], edi
-        cmp dword ptr [Var6ce4e0], 0x0
+        mov dword ptr [SpanBufferEnd], edi
+        cmp dword ptr [MMXMipLevel], 0x0
         jne L9
-        call dword ptr [Var6ca210]
+        call dword ptr [pDrawSpansFilteredP]
         pop ebx
         pop esi
         pop edi
         ret
     L9:
-        cmp dword ptr [Var6ce4dc], 0x1
+        cmp dword ptr [bMMXMipMap], 0x1
         je L10
-        mov dword ptr [Var6ce4e0], 0x0
+        mov dword ptr [MMXMipLevel], 0x0
     L10:
-        call dword ptr [Var6ca4a8]
+        call dword ptr [pDrawSpansP]
         pop ebx
         pop esi
         pop edi
@@ -5088,71 +5088,71 @@ __declspec(naked) void MMXDrawTriangleP(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLV
         _emit 0x00
         _emit 0x00
     L12:
-        mov esi, dword ptr [Var6ca290]
-        mov eax, dword ptr [Var6ca22c]
+        mov esi, dword ptr [TriRightVtxP]
+        mov eax, dword ptr [TriEdgesP]
         mov ecx, esi
         dec eax
         js L8
         mov ecx, dword ptr [ecx+0x8]
-        mov dword ptr [Var6ca22c], eax
-        mov dword ptr [Var6ca290], ecx
+        mov dword ptr [TriEdgesP], eax
+        mov dword ptr [TriRightVtxP], ecx
         fld dword ptr [esi]
         fsub dword ptr [ecx]
         fld dword ptr [esi+0x4]
         fsub dword ptr [ecx+0x4]
         fdivp st(1), st
         fld st(0)
-        fadd qword ptr [Var4ceb58]
-        fstp qword ptr [Var6ca420]
-        fild dword ptr [Var6ca3a0]
+        fadd qword ptr [MagicFix16]
+        fstp qword ptr [TriRightXStepP]
+        fild dword ptr [TriYP]
         fsub dword ptr [esi+0x4]
         fmulp st(1), st
         fadd dword ptr [esi]
-        fadd qword ptr [Var4ceb58]
-        fstp qword ptr [Var6ca468]
+        fadd qword ptr [MagicFix16]
+        fstp qword ptr [TriFixTempP]
         fld dword ptr [ecx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        mov esi, dword ptr [Var6ca468]
-        fadd qword ptr [Var4ceb50]
-        fstp qword ptr [Var6ca468]
-        mov ecx, dword ptr [Var6ca468]
+        fsub dword ptr [RoundBias]
+        mov esi, dword ptr [TriFixTempP]
+        fadd qword ptr [MagicInt]
+        fstp qword ptr [TriFixTempP]
+        mov ecx, dword ptr [TriFixTempP]
         add esi, 0xffff
-        sub ecx, dword ptr [Var6ca3a0]
+        sub ecx, dword ptr [TriYP]
         inc ecx
         je L12
         test edx, edx
         jne L14
     L13:
-        mov edx, dword ptr [Var6ca4c0]
-        mov eax, dword ptr [Var6ca22c]
+        mov edx, dword ptr [TriLeftVtxP]
+        mov eax, dword ptr [TriEdgesP]
         mov ebx, edx
         dec eax
         js L8
         mov ebx, dword ptr [ebx+0x14]
-        mov dword ptr [Var6ca22c], eax
-        mov dword ptr [Var6ca4c0], ebx
+        mov dword ptr [TriEdgesP], eax
+        mov dword ptr [TriLeftVtxP], ebx
         fld dword ptr [edx]
         fsub dword ptr [ebx]
         fld dword ptr [edx+0x4]
         fsub dword ptr [ebx+0x4]
         fdivp st(1), st
         fld st(0)
-        fadd qword ptr [Var4ceb58]
-        fstp qword ptr [Var6ca488]
-        fild dword ptr [Var6ca3a0]
+        fadd qword ptr [MagicFix16]
+        fstp qword ptr [TriLeftXStepP]
+        fild dword ptr [TriYP]
         fsub dword ptr [edx+0x4]
         fmulp st(1), st
         fadd dword ptr [edx]
-        fadd qword ptr [Var4ceb58]
-        fstp qword ptr [Var6ca468]
+        fadd qword ptr [MagicFix16]
+        fstp qword ptr [TriFixTempP]
         fld dword ptr [ebx+0x4]
-        fsub dword ptr [Var4ceb6c]
-        mov ebx, dword ptr [Var6ca468]
-        fadd qword ptr [Var4ceb50]
+        fsub dword ptr [RoundBias]
+        mov ebx, dword ptr [TriFixTempP]
+        fadd qword ptr [MagicInt]
         add ebx, 0xffff
-        fstp qword ptr [Var6ca468]
-        mov edx, dword ptr [Var6ca468]
-        sub edx, dword ptr [Var6ca3a0]
+        fstp qword ptr [TriFixTempP]
+        mov edx, dword ptr [TriFixTempP]
+        sub edx, dword ptr [TriYP]
         inc edx
         je L13
     L14:
@@ -5386,105 +5386,105 @@ void MMXBlit32to15(void *dest, void *src, int w)
     }
 }
 
-extern long Var6ce4e8;
-extern long Var6ce4f0;
-extern long Var6ce4f4;
-extern long Var6ce4f8;
-extern long Var6ce500;
+extern long bMMXAlphaBlend;
+extern long bMMXColorKey;
+extern long bMMXDestBlendOne;
+extern long bMMXDestBlendAlpha;
+extern long bMMXBilinear;
 
 HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState)
 {
     switch (dwRenderStateType) {
     case D3DRENDERSTATE_COLORKEYENABLE:
-        Var6ce4f0 = dwRenderState;
+        bMMXColorKey = dwRenderState;
         break;
     case D3DRENDERSTATE_TEXTUREMIN:
         if (dwRenderState == D3DFILTER_LINEAR || dwRenderState == D3DFILTER_NEAREST)
-            Var6ce4dc = 0;
+            bMMXMipMap = 0;
         else
-            Var6ce4dc = 1;
+            bMMXMipMap = 1;
         break;
     case D3DRENDERSTATE_TEXTUREMAG:
         if (dwRenderState == D3DFILTER_LINEAR || dwRenderState == D3DFILTER_MIPLINEAR)
-            Var6ce500 = 1;
+            bMMXBilinear = 1;
         else
-            Var6ce500 = 0;
+            bMMXBilinear = 0;
         break;
     case D3DRENDERSTATE_DESTBLEND:
         if (dwRenderState == D3DBLEND_ONE) {
-            Var6ce4f4 = 1;
-            Var6ce4f8 = 0;
+            bMMXDestBlendOne = 1;
+            bMMXDestBlendAlpha = 0;
         } else if (dwRenderState == D3DBLEND_SRCALPHA || dwRenderState == D3DBLEND_INVSRCALPHA) {
-            Var6ce4f4 = 0;
-            Var6ce4f8 = 1;
+            bMMXDestBlendOne = 0;
+            bMMXDestBlendAlpha = 1;
         } else {
-            Var6ce4f4 = 0;
-            Var6ce4f8 = 0;
+            bMMXDestBlendOne = 0;
+            bMMXDestBlendAlpha = 0;
         }
         break;
     case D3DRENDERSTATE_ALPHABLENDENABLE:
-        Var6ce4e8 = dwRenderState == TRUE;
+        bMMXAlphaBlend = dwRenderState == TRUE;
         break;
     case D3DRENDERSTATE_TEXTUREPERSPECTIVE:
-        Var6ce4e4 = dwRenderState;
+        bMMXPerspective = dwRenderState;
         break;
     case D3DRENDERSTATE_TEXTUREHANDLE:
-        Var6ce4d8 = dwRenderState;
+        MMXTextureHandle = dwRenderState;
         break;
     }
-    if (Var6ce4f8 && Var6ce4e8 && !Var6ce4d8) {
-        Var6ca408 = MMXDrawTriangleFog;
-        Var6ca4a8 = DrawSpansAlpha;
-        Var6ca24c = MMXDrawTriangleFog;
-        Var6ca310 = DrawSpansAlpha;
+    if (bMMXDestBlendAlpha && bMMXAlphaBlend && !MMXTextureHandle) {
+        pMMXDrawTriangleP = MMXDrawTriangleFog;
+        pDrawSpansP = DrawSpansAlpha;
+        pMMXDrawTriangle = MMXDrawTriangleFog;
+        pDrawSpans = DrawSpansAlpha;
         return D3D_OK;
     }
-    if (!Var6ce4f4 && Var6ce4f0 && Var6ce4d8 && Var6ce4e8) {
-        Var6ca408 = MMXDrawTriangleP;
-        Var6ca4a8 = DrawSpansColorKeyP;
-        Var6ca24c = MMXDrawTriangle;
-        Var6ca310 = DrawSpansColorKey;
-        if (Var6ce500) {
-            Var6ca3f8 = DrawSpansColorKeyFiltered;
-            Var6ca210 = DrawSpansColorKeyFilteredP;
+    if (!bMMXDestBlendOne && bMMXColorKey && MMXTextureHandle && bMMXAlphaBlend) {
+        pMMXDrawTriangleP = MMXDrawTriangleP;
+        pDrawSpansP = DrawSpansColorKeyP;
+        pMMXDrawTriangle = MMXDrawTriangle;
+        pDrawSpans = DrawSpansColorKey;
+        if (bMMXBilinear) {
+            pDrawSpansFiltered = DrawSpansColorKeyFiltered;
+            pDrawSpansFilteredP = DrawSpansColorKeyFilteredP;
         } else {
-            Var6ca3f8 = DrawSpansColorKey;
-            Var6ca210 = DrawSpansColorKeyP;
+            pDrawSpansFiltered = DrawSpansColorKey;
+            pDrawSpansFilteredP = DrawSpansColorKeyP;
         }
         return D3D_OK;
     }
-    if (Var6ce4d8 && Var6ce4e8 && Var6ce4f4) {
-        Var6ca408 = MMXDrawTriangleP;
-        Var6ca4a8 = DrawSpansAdditiveP;
-        Var6ca24c = MMXDrawTriangle;
-        Var6ca310 = DrawSpansAdditive;
-        if (Var6ce500) {
-            Var6ca3f8 = DrawSpansAdditiveFiltered;
-            Var6ca210 = DrawSpansAdditiveFilteredP;
+    if (MMXTextureHandle && bMMXAlphaBlend && bMMXDestBlendOne) {
+        pMMXDrawTriangleP = MMXDrawTriangleP;
+        pDrawSpansP = DrawSpansAdditiveP;
+        pMMXDrawTriangle = MMXDrawTriangle;
+        pDrawSpans = DrawSpansAdditive;
+        if (bMMXBilinear) {
+            pDrawSpansFiltered = DrawSpansAdditiveFiltered;
+            pDrawSpansFilteredP = DrawSpansAdditiveFilteredP;
         } else {
-            Var6ca3f8 = DrawSpansAdditive;
-            Var6ca210 = DrawSpansAdditiveP;
+            pDrawSpansFiltered = DrawSpansAdditive;
+            pDrawSpansFilteredP = DrawSpansAdditiveP;
         }
         return D3D_OK;
     }
-    if (Var6ce4d8) {
-        Var6ca408 = MMXDrawTriangleP;
-        Var6ca4a8 = DrawSpansTexturedP;
-        Var6ca24c = MMXDrawTriangle;
-        Var6ca310 = DrawSpansTextured;
-        if (Var6ce500) {
-            Var6ca3f8 = DrawSpansTexturedFiltered;
-            Var6ca210 = DrawSpansTexturedFilteredP;
+    if (MMXTextureHandle) {
+        pMMXDrawTriangleP = MMXDrawTriangleP;
+        pDrawSpansP = DrawSpansTexturedP;
+        pMMXDrawTriangle = MMXDrawTriangle;
+        pDrawSpans = DrawSpansTextured;
+        if (bMMXBilinear) {
+            pDrawSpansFiltered = DrawSpansTexturedFiltered;
+            pDrawSpansFilteredP = DrawSpansTexturedFilteredP;
         } else {
-            Var6ca3f8 = DrawSpansTextured;
-            Var6ca210 = DrawSpansTexturedP;
+            pDrawSpansFiltered = DrawSpansTextured;
+            pDrawSpansFilteredP = DrawSpansTexturedP;
         }
         return D3D_OK;
     }
-    Var6ca408 = MMXDrawTriangleFog;
-    Var6ca4a8 = DrawSpansGouraud;
-    Var6ca24c = MMXDrawTriangleFog;
-    Var6ca310 = DrawSpansGouraud;
+    pMMXDrawTriangleP = MMXDrawTriangleFog;
+    pDrawSpansP = DrawSpansGouraud;
+    pMMXDrawTriangle = MMXDrawTriangleFog;
+    pDrawSpans = DrawSpansGouraud;
     return D3D_OK;
 }
 
@@ -5739,15 +5739,15 @@ void MMXInit(void)
     long n;
     float f;
 
-    Var6ca4d8[0] = 0xff800000;
+    RecipTable[0] = 0xff800000;
     for (i = 1; i < 4096; i++) {
         n = (i + 0x7f000) << 11;
         f = 1.0f / *(float *)&n;
-        Var6ca4d8[i] = (*(long *)&f & 0x7fffff) - 0x1000000;
+        RecipTable[i] = (*(long *)&f & 0x7fffff) - 0x1000000;
     }
-    if (!Var6ca4d0) {
-        Var6ca3ac = GlobalAlloc(GMEM_FIXED, (float)(((App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w >> 1) + 32) * App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h));
-        Var6ca4d0 = (unsigned char *)(((long)Var6ca3ac + 32) & ~31);
+    if (!SpanBuffer) {
+        hSpanBuffer = GlobalAlloc(GMEM_FIXED, (float)(((App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w >> 1) + 32) * App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h));
+        SpanBuffer = (unsigned char *)(((long)hSpanBuffer + 32) & ~31);
     }
 }
 
