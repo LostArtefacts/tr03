@@ -3140,6 +3140,55 @@ extern double MagicFix16;
 extern long RoundBias;
 extern double MagicInt;
 
+#if FEAT_C_ASM
+extern long RecipTable[];
+
+#define SW_F(x) (*(float *)&(x))
+#define SW_VF(x) (*(volatile float *)&(x))
+#define SW_L(x) (*(long *)&(x))
+
+static long SW_RoundL(double d)
+{
+    double t;
+
+    if (d >= -2147483648.5 && d < 2147483647.5) {
+        t = d + 6755399441055744.0;
+        return *(long *)&t;
+    }
+    return 0x80000000;
+}
+
+static short SW_RoundW(double d)
+{
+    double t;
+
+    if (d >= -32768.5 && d < 32767.5) {
+        t = d + 6755399441055744.0;
+        return *(short *)&t;
+    }
+    return -32768;
+}
+
+static void SW_SetF(long *p, double d)
+{
+    *(float *)p = (float)d;
+}
+
+static float SW_ToF(double d)
+{
+    float f;
+
+    SW_SetF((long *)&f, d);
+    return f;
+}
+
+static long SW_Recip(long w)
+{
+    return ((w ^ 0x7f800000) & 0xff800000) + RecipTable[((unsigned long)w >> 11) & 0xfff];
+}
+#endif
+
+#ifndef FEAT_C_ASM
 __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
 {
     __asm {
@@ -3406,6 +3455,119 @@ __declspec(naked) void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
         ret
     }
 }
+#else
+void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2)
+{
+    D3DTLVERTEX *a, *b, *t;
+    unsigned char *p;
+    double d, mag;
+    float dx, dy, inv, slope, gg, gr;
+    unsigned long ca, cb, w[4], s[4];
+    long ba, ga, ra, bb, gg2, rb, i0, i1, n, pos, step, ds[3], st[3];
+
+    a = v1;
+    b = v2;
+    dx = SW_ToF((double)a->sx - b->sx);
+    dy = SW_ToF((double)a->sy - b->sy);
+    if ((*(unsigned long *)&dx & 0x7fffffff) >= (*(unsigned long *)&dy & 0x7fffffff)) {
+        if (*(long *)&dx < 0) {
+            *(unsigned long *)&dx ^= 0x80000000;
+            *(unsigned long *)&dy ^= 0x80000000;
+            t = a;
+            a = b;
+            b = t;
+        }
+        inv = SW_ToF(1.0 / dx);
+    } else {
+        if (*(long *)&dy < 0) {
+            *(unsigned long *)&dx ^= 0x80000000;
+            *(unsigned long *)&dy ^= 0x80000000;
+            t = a;
+            a = b;
+            b = t;
+        }
+        inv = SW_ToF(1.0 / dy);
+    }
+    ca = a->color;
+    ga = (ca & 0xff00) + 0x80;
+    ba = ((ca << 8) & 0xff00) + 0x80;
+    ra = ((ca >> 8) & 0xff00) + 0x80;
+    cb = b->color;
+    gg2 = (cb & 0xff00) + 0x80;
+    bb = ((cb << 8) & 0xff00) + 0x80;
+    rb = ((cb >> 8) & 0xff00) + 0x80;
+    if ((*(unsigned long *)&dx & 0x7fffffff) >= (*(unsigned long *)&dy & 0x7fffffff)) {
+        d = (double)dy * inv;
+        slope = SW_ToF(d);
+        d = d + MagicFix16;
+        step = SW_L(d);
+        d = ((double)b->sx - SW_VF(RoundBias)) + MagicInt;
+        i0 = SW_L(d) + 1;
+        d = ((double)a->sx - SW_VF(RoundBias)) + MagicInt;
+        i1 = SW_L(d) + 1;
+        mag = (double)i0 - b->sx;
+        d = (mag * slope + b->sy) + MagicFix16;
+        pos = SW_L(d);
+    } else {
+        d = (double)dx * inv;
+        slope = SW_ToF(d);
+        d = d + MagicFix16;
+        step = SW_L(d);
+        d = (double)b->sx + MagicFix16;
+        pos = SW_L(d);
+        d = ((double)b->sy - SW_VF(RoundBias)) + MagicInt;
+        i0 = SW_L(d) + 1;
+        d = ((double)a->sy - SW_VF(RoundBias)) + MagicInt;
+        i1 = SW_L(d) + 1;
+        mag = (double)i0 - b->sy;
+    }
+    d = ((double)ba - bb) * inv;
+    ds[0] = SW_RoundL(d);
+    st[0] = SW_RoundL(mag * *(float *)&v2 + bb);
+    d = ((double)ga - gg2) * inv;
+    gg = SW_ToF(d);
+    ds[1] = SW_RoundL(d);
+    st[1] = SW_RoundL(mag * gg + gg2);
+    d = ((double)ra - rb) * inv;
+    gr = SW_ToF(d);
+    ds[2] = SW_RoundL(d);
+    st[2] = SW_RoundL(mag * gr + rb);
+    s[0] = ds[0] & 0xffff;
+    s[1] = ds[1] & 0xffff;
+    s[2] = ds[2] & 0xffff;
+    s[3] = (unsigned long)ds[2] >> 16;
+    w[0] = st[0] & 0xffff;
+    w[1] = st[1] & 0xffff;
+    w[2] = st[2] & 0xffff;
+    w[3] = (unsigned long)st[2] >> 16;
+    n = i1 - i0 - 1;
+    if (n <= 0)
+        return;
+    if ((*(unsigned long *)&dx & 0x7fffffff) >= (*(unsigned long *)&dy & 0x7fffffff)) {
+        p = (unsigned char *)SW_Surface + i0 * 4;
+        do {
+            *(unsigned long *)(p + (pos >> 16) * SW_SurfacePitch) = (w[0] >> 8) | (w[1] >> 8) << 8 | (w[2] >> 8) << 16 | (w[3] >> 8) << 24;
+            w[0] = (w[0] + s[0]) & 0xffff;
+            w[1] = (w[1] + s[1]) & 0xffff;
+            w[2] = (w[2] + s[2]) & 0xffff;
+            w[3] = (w[3] + s[3]) & 0xffff;
+            p += 4;
+            pos += step;
+        } while (--n >= 0);
+    } else {
+        p = (unsigned char *)SW_Surface + i0 * SW_SurfacePitch;
+        do {
+            *(unsigned long *)(p + ((unsigned long)pos >> 16) * 4) = (w[0] >> 8) | (w[1] >> 8) << 8 | (w[2] >> 8) << 16 | (w[3] >> 8) << 24;
+            w[0] = (w[0] + s[0]) & 0xffff;
+            w[1] = (w[1] + s[1]) & 0xffff;
+            w[2] = (w[2] + s[2]) & 0xffff;
+            w[3] = (w[3] + s[3]) & 0xffff;
+            p += SW_SurfacePitch;
+            pos += step;
+        } while (--n >= 0);
+    }
+}
+#endif
 
 extern long TriColor;
 extern double MagicFloat;
