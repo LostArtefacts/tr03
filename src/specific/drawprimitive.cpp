@@ -12,13 +12,13 @@ extern "C" {
 extern LPDIRECT3DDEVICE2 D3DDev;
 
 float WinFrameRate(void);
-extern void (*Var6ca198)(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
+extern void (*pDrawLine)(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 void DrawTriangle(D3DTLVERTEX *v1, D3DTLVERTEX *v2, D3DTLVERTEX *v3);
 extern HGLOBAL Var6ca3ac;
 extern unsigned char *Var6ca4d0;
 extern unsigned long *Var6ca2d0;
 extern long Var6ca20c;
-extern unsigned char *Var6ca12c;
+extern unsigned char *RGBTableRB;
 extern long *YTable;
 extern long Var6ce4e4;
 extern float Var4cec20;
@@ -28,8 +28,8 @@ void MMXDrawLine(D3DTLVERTEX *v1, D3DTLVERTEX *v2);
 extern LPDIRECTDRAWSURFACE3 lpSurface;
 extern float *WidthTable;
 extern long *WidthTablef;
-extern unsigned char *Var6ca1a8;
-extern unsigned char *Var6ca1f0;
+extern unsigned char *RGBTableG;
+extern unsigned char *RGBTableAlpha;
 
 #define MAGICNUM float((1 << 26) * ((1 << 26) * 1.5))
 #define FTOLFIX(x) ((fconv = x + MAGICNUM / 65536.0), *(int *)(&fconv))
@@ -429,9 +429,9 @@ void CloseDrawPrimitive(void)
     free(YTable);
     free(WidthTable);
     free(WidthTablef);
-    free(Var6ca12c);
-    free(Var6ca1a8);
-    free(Var6ca1f0);
+    free(RGBTableRB);
+    free(RGBTableG);
+    free(RGBTableAlpha);
 }
 
 void BuildXYTables(void)
@@ -458,18 +458,18 @@ void BuildRGBTable(void)
 {
     unsigned int i, j;
 
-    Var6ca12c = (unsigned char *)malloc(0x800);
-    Var6ca1a8 = (unsigned char *)malloc(0x800);
-    Var6ca1f0 = (unsigned char *)malloc(0x2000);
+    RGBTableRB = (unsigned char *)malloc(0x800);
+    RGBTableG = (unsigned char *)malloc(0x800);
+    RGBTableAlpha = (unsigned char *)malloc(0x2000);
     for (i = 0; i < 64; i++) {
         for (j = 0; j < 32; j++) {
-            Var6ca12c[i + j * 64] = (unsigned char)((i * j) >> 6);
-            Var6ca1a8[i + j * 64] = (unsigned char)((i * j) >> 5);
+            RGBTableRB[i + j * 64] = (unsigned char)((i * j) >> 6);
+            RGBTableG[i + j * 64] = (unsigned char)((i * j) >> 5);
         }
     }
     for (i = 0; i < 32; i++) {
         for (j = 0; j < 256; j++)
-            Var6ca1f0[i * 256 + j] = (unsigned char)(i * (j / 256.0f));
+            RGBTableAlpha[i * 256 + j] = (unsigned char)(i * (j / 256.0f));
     }
 }
 
@@ -501,9 +501,9 @@ HRESULT HWSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderSta
     return D3DDev->SetRenderState(dwRenderStateType, dwRenderState);
 }
 
-extern long Var6ca1f8;
-extern long Var6ca1f4;
-extern long Var6ca1fc;
+extern long bColorKey;
+extern long bAlphaBlend;
+extern long bSrcBlendOne;
 extern int bForceAffineMap;
 extern long tpitch;
 extern unsigned short *TextureHandle;
@@ -512,13 +512,13 @@ HRESULT SWSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderSta
 {
     switch (dwRenderStateType) {
     case D3DRENDERSTATE_COLORKEYENABLE:
-        Var6ca1f8 = dwRenderState;
+        bColorKey = dwRenderState;
         return D3D_OK;
     case D3DRENDERSTATE_ALPHABLENDENABLE:
-        Var6ca1f4 = dwRenderState;
+        bAlphaBlend = dwRenderState;
         return D3D_OK;
     case D3DRENDERSTATE_SRCBLEND:
-        Var6ca1fc = dwRenderState == D3DBLEND_ONE;
+        bSrcBlendOne = dwRenderState == D3DBLEND_ONE;
         return D3D_OK;
     case D3DRENDERSTATE_TEXTUREPERSPECTIVE:
         bForceAffineMap = dwRenderState == 0;
@@ -580,7 +580,7 @@ void DrawLineList(D3DTLVERTEX *v, DWORD vcnt)
         v++;
         v2 = v;
         v++;
-        Var6ca198(v1, v2);
+        pDrawLine(v1, v2);
     }
 }
 
@@ -635,13 +635,13 @@ void DrawLineStrip(D3DTLVERTEX *v, DWORD vcnt)
     v++;
     v2 = v;
     v++;
-    Var6ca198(v1, v2);
+    pDrawLine(v1, v2);
     vcnt -= 2;
     for (n = vcnt; n > 0; n--) {
         v1 = v2;
         v2 = v;
         v++;
-        Var6ca198(v1, v2);
+        pDrawLine(v1, v2);
     }
 }
 
@@ -5488,23 +5488,23 @@ HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderSt
     return D3D_OK;
 }
 
-extern void (*Var6ca150)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca154)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca158)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca15c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca160)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca164)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca168)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca16c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca170)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca174)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca178)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca17c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca180)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca184)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca188)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca18c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca190)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTGAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTGDecalAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTGAlphaDecalAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTGAlphaDecal)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTG)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTGDecal)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesBlack)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTF)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTFAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTFDecal)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTFDecalAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTFAlphaDecalAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTFAlphaDecal)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesG)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesGAlpha)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesBlackAlpha)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesNull)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
 
 HRESULT EmulateDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dvtVertexType, LPVOID lpvVertices, DWORD dwVertexCount, DWORD dwFlags)
 {
@@ -5513,85 +5513,85 @@ HRESULT EmulateDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dv
     memset(&ddsd, 0, sizeof(ddsd));
     PrepareTriangleList((LPD3DTLVERTEX)lpvVertices, dwVertexCount);
     if (TextureHandle != NULL) {
-        DrawScanLines = Var6ca160;
+        DrawScanLines = pScanLinesTG;
         CalcGradientsPersp = CalculateGradientsTG;
         CalcEdgePersp = CalculateEdgeTG;
-        DrawScanLinesAffine = Var6ca150;
+        DrawScanLinesAffine = pScanLinesTGAffine;
         CalcGradientsAffine = CalculateGradientsTGA;
         CalcEdgeAffine = CalculateEdgeTGA;
-        DrawScanLinesBlack = Var6ca168;
+        DrawScanLinesBlack = pScanLinesBlack;
         CalcGradientsBlack = NullCalculateGradient;
         CalcEdgeBlack = CalculateEdgeBlack;
-        DrawScanLinesFlat = Var6ca16c;
+        DrawScanLinesFlat = pScanLinesTF;
         CalcGradientsFlat = CalculateGradientsTF;
         CalcEdgeFlat = CalculateEdgeT;
-        DrawScanLinesFlatAffine = Var6ca170;
+        DrawScanLinesFlatAffine = pScanLinesTFAffine;
         CalcGradientsFlatAffine = CalculateGradientsTFA;
         CalcEdgeFlatAffine = CalculateEdgeTA;
-        if (Var6ca1f8) {
-            DrawScanLines = Var6ca164;
+        if (bColorKey) {
+            DrawScanLines = pScanLinesTGDecal;
             CalcGradientsPersp = CalculateGradientsTG;
             CalcEdgePersp = CalculateEdgeTG;
-            DrawScanLinesAffine = Var6ca154;
+            DrawScanLinesAffine = pScanLinesTGDecalAffine;
             CalcGradientsAffine = CalculateGradientsTGA;
             CalcEdgeAffine = CalculateEdgeTGA;
-            DrawScanLinesBlack = Var6ca154;
+            DrawScanLinesBlack = pScanLinesTGDecalAffine;
             CalcGradientsBlack = CalculateGradientsTGA;
             CalcEdgeBlack = CalculateEdgeTGA;
-            DrawScanLinesFlatAffine = Var6ca178;
+            DrawScanLinesFlatAffine = pScanLinesTFDecalAffine;
             CalcGradientsFlatAffine = CalculateGradientsTFA;
             CalcEdgeFlatAffine = CalculateEdgeTA;
-            DrawScanLinesFlat = Var6ca174;
+            DrawScanLinesFlat = pScanLinesTFDecal;
             CalcGradientsFlat = CalculateGradientsTF;
             CalcEdgeFlat = CalculateEdgeT;
         }
-        if (Var6ca1f4 && Var6ca1fc) {
-            DrawScanLines = Var6ca15c;
+        if (bAlphaBlend && bSrcBlendOne) {
+            DrawScanLines = pScanLinesTGAlphaDecal;
             CalcGradientsPersp = CalculateGradientsTG;
             CalcEdgePersp = CalculateEdgeTG;
-            DrawScanLinesAffine = Var6ca158;
+            DrawScanLinesAffine = pScanLinesTGAlphaDecalAffine;
             CalcGradientsAffine = CalculateGradientsTGA;
             CalcEdgeAffine = CalculateEdgeTGA;
-            DrawScanLinesBlack = Var6ca190;
+            DrawScanLinesBlack = pScanLinesNull;
             CalcGradientsBlack = NullCalculateGradient;
             CalcEdgeBlack = NullCalculateEdge;
-            DrawScanLinesFlatAffine = Var6ca17c;
+            DrawScanLinesFlatAffine = pScanLinesTFAlphaDecalAffine;
             CalcGradientsFlatAffine = CalculateGradientsTFA;
             CalcEdgeFlatAffine = CalculateEdgeTA;
-            DrawScanLinesFlat = Var6ca180;
+            DrawScanLinesFlat = pScanLinesTFAlphaDecal;
             CalcGradientsFlat = CalculateGradientsTF;
             CalcEdgeFlat = CalculateEdgeT;
         }
     } else {
-        DrawScanLines = Var6ca184;
+        DrawScanLines = pScanLinesG;
         CalcGradientsPersp = CalculateGradientsG;
         CalcEdgePersp = CalculateEdgeG;
-        DrawScanLinesAffine = Var6ca184;
+        DrawScanLinesAffine = pScanLinesG;
         CalcGradientsAffine = CalculateGradientsG;
         CalcEdgeAffine = CalculateEdgeG;
-        DrawScanLinesBlack = Var6ca168;
+        DrawScanLinesBlack = pScanLinesBlack;
         CalcGradientsBlack = NullCalculateGradient;
         CalcEdgeBlack = CalculateEdgeBlack;
-        DrawScanLinesFlat = Var6ca184;
+        DrawScanLinesFlat = pScanLinesG;
         CalcGradientsFlat = CalculateGradientsG;
         CalcEdgeFlat = CalculateEdgeG;
-        DrawScanLinesFlatAffine = Var6ca184;
+        DrawScanLinesFlatAffine = pScanLinesG;
         CalcGradientsFlatAffine = CalculateGradientsG;
         CalcEdgeFlatAffine = CalculateEdgeG;
-        if (Var6ca1f4) {
-            DrawScanLines = Var6ca188;
+        if (bAlphaBlend) {
+            DrawScanLines = pScanLinesGAlpha;
             CalcGradientsPersp = CalculateGradientsG;
             CalcEdgePersp = CalculateEdgeG;
-            DrawScanLinesAffine = Var6ca188;
+            DrawScanLinesAffine = pScanLinesGAlpha;
             CalcGradientsAffine = CalculateGradientsG;
             CalcEdgeAffine = CalculateEdgeG;
-            DrawScanLinesBlack = Var6ca18c;
+            DrawScanLinesBlack = pScanLinesBlackAlpha;
             CalcGradientsBlack = CalculateGradientsG;
             CalcEdgeBlack = CalculateEdgeG;
-            DrawScanLinesFlat = Var6ca188;
+            DrawScanLinesFlat = pScanLinesGAlpha;
             CalcGradientsFlat = CalculateGradientsG;
             CalcEdgeFlat = CalculateEdgeG;
-            DrawScanLinesFlatAffine = Var6ca188;
+            DrawScanLinesFlatAffine = pScanLinesGAlpha;
             CalcGradientsFlatAffine = CalculateGradientsG;
             CalcEdgeFlatAffine = CalculateEdgeG;
         }
@@ -5616,11 +5616,11 @@ HRESULT EmulateDrawPrimitive(D3DPRIMITIVETYPE dptPrimitiveType, D3DVERTEXTYPE dv
     return D3D_OK;
 }
 
-extern void (*Var6ca140)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca144)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca148)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern void (*Var6ca14c)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
-extern long Var6ca1d8;
+extern void (*pScanLinesTAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTDecalAffine)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesT)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern void (*pScanLinesTDecal)(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight);
+extern long lpTexture;
 extern int bForceAffineMap;
 void MMXInit(void);
 HRESULT MMXSetRenderState(D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState);
@@ -5654,7 +5654,7 @@ void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurf, boo
     int i;
 
     D3DDev = lpD3D;
-    Var6ca1d8 = 0;
+    lpTexture = 0;
     if (HW) {
         DrawPrimitive = HWDrawPrimitive;
         BeginScene = HWBeginScene;
@@ -5674,12 +5674,12 @@ void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurf, boo
         BeginScene = SWBeginScene;
         EndScene = SWEndScene;
         SetRenderState = SWSetRenderState;
-        Var6ca140 = ScanLinesTAffine;
-        Var6ca144 = ScanLinesTDecalAffine;
-        Var6ca148 = ScanLinesT;
-        Var6ca14c = ScanLinesTDecal;
-        Var6ca168 = ScanLinesBlack;
-        Var6ca190 = NullScanLines;
+        pScanLinesTAffine = ScanLinesTAffine;
+        pScanLinesTDecalAffine = ScanLinesTDecalAffine;
+        pScanLinesT = ScanLinesT;
+        pScanLinesTDecal = ScanLinesTDecal;
+        pScanLinesBlack = ScanLinesBlack;
+        pScanLinesNull = NullScanLines;
         for (i = 0; i < App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].nTexture; i++) {
             if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[i].rbpp == 5
                 && App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[i].gbpp == 6
@@ -5688,29 +5688,29 @@ void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurf, boo
                 break;
             }
         }
-        Var6ca160 = ScanLinesTG;
-        Var6ca150 = ScanLinesTGAffine;
-        Var6ca16c = ScanLinesTF;
-        Var6ca170 = ScanLinesTFAffine;
-        Var6ca154 = ScanLinesTGDecalAffine;
-        Var6ca164 = ScanLinesTGDecal;
-        Var6ca174 = ScanLinesTFDecal;
-        Var6ca178 = ScanLinesTFDecalAffine;
-        Var6ca184 = ScanLinesG;
-        Var6ca188 = ScanLinesGAlpha;
-        Var6ca18c = ScanLinesBlackAlpha;
-        Var6ca180 = ScanLinesTFAlphaDecal;
-        Var6ca17c = ScanLinesTFAlphaDecalAffine;
-        Var6ca15c = ScanLinesTGAlphaDecal;
-        Var6ca158 = ScanLinesTGAlphaDecalAffine;
-        Var6ca198 = Func490110;
+        pScanLinesTG = ScanLinesTG;
+        pScanLinesTGAffine = ScanLinesTGAffine;
+        pScanLinesTF = ScanLinesTF;
+        pScanLinesTFAffine = ScanLinesTFAffine;
+        pScanLinesTGDecalAffine = ScanLinesTGDecalAffine;
+        pScanLinesTGDecal = ScanLinesTGDecal;
+        pScanLinesTFDecal = ScanLinesTFDecal;
+        pScanLinesTFDecalAffine = ScanLinesTFDecalAffine;
+        pScanLinesG = ScanLinesG;
+        pScanLinesGAlpha = ScanLinesGAlpha;
+        pScanLinesBlackAlpha = ScanLinesBlackAlpha;
+        pScanLinesTFAlphaDecal = ScanLinesTFAlphaDecal;
+        pScanLinesTFAlphaDecalAffine = ScanLinesTFAlphaDecalAffine;
+        pScanLinesTGAlphaDecal = ScanLinesTGAlphaDecal;
+        pScanLinesTGAlphaDecalAffine = ScanLinesTGAlphaDecalAffine;
+        pDrawLine = Func490110;
         if (HWConfig.TrueAlpha) {
-            Var6ca18c = ScanLinesBlackStipple;
-            Var6ca188 = ScanLinesGStipple;
-            Var6ca17c = ScanLinesTFStippleDecalAffine;
-            Var6ca180 = ScanLinesTFStippleDecal;
-            Var6ca158 = ScanLinesTGStippleDecalAffine;
-            Var6ca15c = ScanLinesTGStippleDecal;
+            pScanLinesBlackAlpha = ScanLinesBlackStipple;
+            pScanLinesGAlpha = ScanLinesGStipple;
+            pScanLinesTFAlphaDecalAffine = ScanLinesTFStippleDecalAffine;
+            pScanLinesTFAlphaDecal = ScanLinesTFStippleDecal;
+            pScanLinesTGAlphaDecalAffine = ScanLinesTGStippleDecalAffine;
+            pScanLinesTGAlphaDecal = ScanLinesTGStippleDecal;
         }
         DrawScanLines = ScanLinesTG;
         CalcGradientsPersp = CalculateGradientsTG;
@@ -5718,7 +5718,7 @@ void InitDrawPrimitive(LPDIRECT3DDEVICE2 lpD3D, LPDIRECTDRAWSURFACE3 lpSurf, boo
         DrawScanLinesAffine = ScanLinesTGAffine;
         CalcGradientsAffine = CalculateGradientsTGA;
         CalcEdgeAffine = CalculateEdgeTGA;
-        DrawScanLinesBlack = Var6ca168;
+        DrawScanLinesBlack = pScanLinesBlack;
         CalcGradientsBlack = NullCalculateGradient;
         CalcEdgeBlack = CalculateEdgeBlack;
         DrawScanLinesFlat = ScanLinesTF;

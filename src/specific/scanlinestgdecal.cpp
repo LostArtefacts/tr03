@@ -43,10 +43,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 0) = out;
                     }
                     u += du;
@@ -59,10 +59,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 1) = out;
                     }
                     u += du;
@@ -75,10 +75,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 2) = out;
                     }
                     u += du;
@@ -91,10 +91,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 3) = out;
                     }
                     u += du;
@@ -107,10 +107,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 4) = out;
                     }
                     u += du;
@@ -123,10 +123,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 5) = out;
                     }
                     u += du;
@@ -139,10 +139,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 6) = out;
                     }
                     u += du;
@@ -155,10 +155,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 7) = out;
                     }
                     u += du;
@@ -171,10 +171,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 8) = out;
                     }
                     u += du;
@@ -187,10 +187,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 9) = out;
                     }
                     u += du;
@@ -203,10 +203,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 10) = out;
                     }
                     u += du;
@@ -219,10 +219,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 11) = out;
                     }
                     u += du;
@@ -235,10 +235,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 12) = out;
                     }
                     u += du;
@@ -251,10 +251,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 13) = out;
                     }
                     u += du;
@@ -267,10 +267,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 14) = out;
                     }
                     u += du;
@@ -283,10 +283,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 15) = out;
                     }
                     u += du;
@@ -302,10 +302,10 @@ void ScanLinesTGDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 0) = out;
                     }
                     u += du;
@@ -434,10 +434,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 0) = out;
                     }
                     u += du;
@@ -450,10 +450,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 1) = out;
                     }
                     u += du;
@@ -466,10 +466,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 2) = out;
                     }
                     u += du;
@@ -482,10 +482,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 3) = out;
                     }
                     u += du;
@@ -498,10 +498,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 4) = out;
                     }
                     u += du;
@@ -514,10 +514,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 5) = out;
                     }
                     u += du;
@@ -530,10 +530,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 6) = out;
                     }
                     u += du;
@@ -546,10 +546,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 7) = out;
                     }
                     u += du;
@@ -562,10 +562,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 8) = out;
                     }
                     u += du;
@@ -578,10 +578,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 9) = out;
                     }
                     u += du;
@@ -594,10 +594,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 10) = out;
                     }
                     u += du;
@@ -610,10 +610,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 11) = out;
                     }
                     u += du;
@@ -626,10 +626,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 12) = out;
                     }
                     u += du;
@@ -642,10 +642,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 13) = out;
                     }
                     u += du;
@@ -658,10 +658,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 14) = out;
                     }
                     u += du;
@@ -674,10 +674,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                     unsigned short out;
                     texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                     if (texel != 0) {
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 15) = out;
                     }
                     u += du;
@@ -714,10 +714,10 @@ void ScanLinesTGDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Step
                         unsigned short out;
                         texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
                         if (texel != 0) {
-                            out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                            out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                            out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                            out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                             out <<= 5;
-                            out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                            out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                             *(pDestination + 0) = out;
                         }
                         u += du;

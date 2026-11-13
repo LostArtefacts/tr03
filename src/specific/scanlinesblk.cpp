@@ -5,7 +5,7 @@
 
 extern "C" {
 
-extern unsigned char *Var6ca1f0;
+extern unsigned char *RGBTableAlpha;
 
 void ScanLinesBlack(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft, EDGE *StepRight)
 {
@@ -256,9 +256,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -277,9 +277,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -298,9 +298,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -319,9 +319,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -340,9 +340,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -361,9 +361,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -382,9 +382,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -403,9 +403,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -424,9 +424,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -445,9 +445,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -466,9 +466,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -487,9 +487,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -508,9 +508,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -529,9 +529,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -550,9 +550,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -571,9 +571,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -595,9 +595,9 @@ void ScanLinesGAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepL
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    ro = *(Var6ca1f0 + tr + a) + (redleft >> 19);
-                    go = *(Var6ca1f0 + tg + a) + (greenleft >> 19);
-                    bo = *(Var6ca1f0 + tb + a) + (blueleft >> 19);
+                    ro = *(RGBTableAlpha + tr + a) + (redleft >> 19);
+                    go = *(RGBTableAlpha + tg + a) + (greenleft >> 19);
+                    bo = *(RGBTableAlpha + tb + a) + (blueleft >> 19);
                     if (ro > 31)
                         ro = 31;
                     if (go > 31)
@@ -668,7 +668,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 0) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 0) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -676,7 +676,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 1) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 1) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -684,7 +684,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 2) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 2) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -692,7 +692,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 3) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 3) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -700,7 +700,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 4) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 4) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -708,7 +708,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 5) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 5) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -716,7 +716,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 6) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 6) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -724,7 +724,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 7) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 7) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -732,7 +732,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 8) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 8) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -740,7 +740,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 9) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 9) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -748,7 +748,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 10) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 10) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -756,7 +756,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 11) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 11) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -764,7 +764,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 12) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 12) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -772,7 +772,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 13) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 13) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -780,7 +780,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 14) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 14) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 {
                     unsigned short pix, tr, tg, tb;
@@ -788,7 +788,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 15) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 15) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 pDestination += 16;
             }
@@ -799,7 +799,7 @@ void ScanLinesBlackAlpha(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *S
                     tr = (pix >> 3) & 0x1f00;
                     tg = (pix & 0x7c0) << 2;
                     tb = (pix & 0x1f) << 8;
-                    *(pDestination + 0) = ((*(Var6ca1f0 + tr + a) << 5 | *(Var6ca1f0 + tg + a)) << 6) | *(Var6ca1f0 + tb + a);
+                    *(pDestination + 0) = ((*(RGBTableAlpha + tr + a) << 5 | *(RGBTableAlpha + tg + a)) << 6) | *(RGBTableAlpha + tb + a);
                 }
                 pDestination++;
             }

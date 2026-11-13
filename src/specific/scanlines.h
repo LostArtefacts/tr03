@@ -14,8 +14,8 @@ extern long bytepitch;
 extern long *YTable;
 extern float *WidthTable;
 extern long *WidthTablef;
-extern unsigned char *Var6ca12c;
-extern unsigned char *Var6ca1a8;
+extern unsigned char *RGBTableRB;
+extern unsigned char *RGBTableG;
 
 }
 

@@ -23,10 +23,10 @@ void ScanLinesTGAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *Ste
     db = pLeft->bxtraf;
     __asm {
         mov esi, dword ptr [TextureHandle]
-        mov eax, [Var6ca12c]
+        mov eax, [RGBTableRB]
         mov dword ptr [P4 + 2], eax
         mov dword ptr [P6 + 3], eax
-        mov eax, [Var6ca1a8]
+        mov eax, [RGBTableG]
         mov dword ptr [P5 + 3], eax
         mov dword ptr [P1 + 4], esi
         mov eax, dword ptr [pLeft]
@@ -245,17 +245,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -301,17 +301,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -357,17 +357,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -413,17 +413,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -469,17 +469,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -525,17 +525,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -581,17 +581,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -637,17 +637,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -693,17 +693,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -749,17 +749,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -805,17 +805,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -861,17 +861,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -917,17 +917,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -973,17 +973,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -1029,17 +1029,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -1085,17 +1085,17 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     sar eax, 18
                     mov ebx, ecx
                     shr ecx, 5
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     and ecx, 0x7c0
                     add ebp, edx
                     movzx edx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca1a8]
+                    mov ebp, [RGBTableG]
                     shl edx, 11
                     mov ecx, ebx
                     and ecx, 0x7c0
                     add ebp, eax
                     movzx ecx, byte ptr [ebp + ecx]
-                    mov ebp, [Var6ca12c]
+                    mov ebp, [RGBTableRB]
                     shl ecx, 5
                     and ebx, 0x1f
                     sar esi, 18
@@ -1154,10 +1154,10 @@ void ScanLinesTG(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE *StepLeft,
                     {
                         unsigned long out;
                         texel = *(TextureHandle + ((v >> 8) & 0xffffff00) + (u >> 16));
-                        out = *(Var6ca1a8 + (texel & 0x7c0) + (greenleft >> 18));
-                        out |= *(Var6ca12c + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
+                        out = *(RGBTableG + (texel & 0x7c0) + (greenleft >> 18));
+                        out |= *(RGBTableRB + ((texel >> 5) & 0x7c0) + (redleft >> 18)) << 6;
                         out <<= 5;
-                        out |= *(Var6ca12c + ((texel & 0x1f) << 6) + (blueleft >> 18));
+                        out |= *(RGBTableRB + ((texel & 0x1f) << 6) + (blueleft >> 18));
                         *(pDestination + 0) = (unsigned short)out;
                         u += du;
                         v += dv;

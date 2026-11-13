@@ -49,11 +49,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -85,11 +85,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -121,11 +121,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -157,11 +157,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -193,11 +193,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -229,11 +229,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -265,11 +265,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -301,11 +301,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -337,11 +337,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -373,11 +373,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -409,11 +409,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -445,11 +445,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -481,11 +481,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -517,11 +517,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -553,11 +553,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -589,11 +589,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -628,11 +628,11 @@ void ScanLinesTGAlphaDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight,
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -773,11 +773,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -809,11 +809,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -845,11 +845,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -881,11 +881,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -917,11 +917,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -953,11 +953,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -989,11 +989,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1025,11 +1025,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1061,11 +1061,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1097,11 +1097,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1133,11 +1133,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1169,11 +1169,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1205,11 +1205,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1241,11 +1241,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1277,11 +1277,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1313,11 +1313,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                         tr = (texel >> 5) & 0x7c0;
                         tg = texel & 0x7c0;
                         tb = (texel & 0x1f) << 6;
-                        ro = *(Var6ca12c + tr + (redleft >> 18));
+                        ro = *(RGBTableRB + tr + (redleft >> 18));
                         ro += ar;
-                        go = *(Var6ca12c + tg + (greenleft >> 18));
+                        go = *(RGBTableRB + tg + (greenleft >> 18));
                         go += ag;
-                        bo = *(Var6ca12c + tb + (blueleft >> 18));
+                        bo = *(RGBTableRB + tb + (blueleft >> 18));
                         bo += ab;
                         if (ro > 31)
                             ro = 31;
@@ -1373,11 +1373,11 @@ void ScanLinesTGAlphaDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDGE 
                             tr = (texel >> 5) & 0x7c0;
                             tg = texel & 0x7c0;
                             tb = (texel & 0x1f) << 6;
-                            ro = *(Var6ca12c + tr + (redleft >> 18));
+                            ro = *(RGBTableRB + tr + (redleft >> 18));
                             ro += ar;
-                            go = *(Var6ca12c + tg + (greenleft >> 18));
+                            go = *(RGBTableRB + tg + (greenleft >> 18));
                             go += ag;
-                            bo = *(Var6ca12c + tb + (blueleft >> 18));
+                            bo = *(RGBTableRB + tb + (blueleft >> 18));
                             bo += ab;
                             if (ro > 31)
                                 ro = 31;
@@ -1482,11 +1482,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1515,11 +1515,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1548,11 +1548,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1581,11 +1581,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1614,11 +1614,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1647,11 +1647,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1680,11 +1680,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1713,11 +1713,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1746,11 +1746,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1779,11 +1779,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1812,11 +1812,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1845,11 +1845,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1878,11 +1878,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1911,11 +1911,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1944,11 +1944,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -1977,11 +1977,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2011,11 +2011,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2044,11 +2044,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2077,11 +2077,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2110,11 +2110,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2143,11 +2143,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2176,11 +2176,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2209,11 +2209,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2242,11 +2242,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2275,11 +2275,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2308,11 +2308,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2341,11 +2341,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2374,11 +2374,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2407,11 +2407,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2440,11 +2440,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2473,11 +2473,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2506,11 +2506,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2544,11 +2544,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2581,11 +2581,11 @@ void ScanLinesTGStippleDecalAffine(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRigh
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2725,11 +2725,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2758,11 +2758,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2791,11 +2791,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2824,11 +2824,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2857,11 +2857,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2890,11 +2890,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2923,11 +2923,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2956,11 +2956,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -2989,11 +2989,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3022,11 +3022,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3055,11 +3055,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3088,11 +3088,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3121,11 +3121,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3154,11 +3154,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3187,11 +3187,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3220,11 +3220,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3254,11 +3254,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3287,11 +3287,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3320,11 +3320,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3353,11 +3353,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3386,11 +3386,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3419,11 +3419,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3452,11 +3452,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3485,11 +3485,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3518,11 +3518,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3551,11 +3551,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3584,11 +3584,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3617,11 +3617,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3650,11 +3650,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3683,11 +3683,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3716,11 +3716,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3749,11 +3749,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                 tr = (texel >> 5) & 0x7c0;
                                 tg = texel & 0x7c0;
                                 tb = (texel & 0x1f) << 6;
-                                ro = *(Var6ca12c + tr + (redleft >> 18));
+                                ro = *(RGBTableRB + tr + (redleft >> 18));
                                 ro += redleft >> 20;
-                                go = *(Var6ca12c + tg + (greenleft >> 18));
+                                go = *(RGBTableRB + tg + (greenleft >> 18));
                                 go += greenleft >> 20;
-                                bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                bo = *(RGBTableRB + tb + (blueleft >> 18));
                                 bo += blueleft >> 20;
                                 if (ro > 31)
                                     ro = 31;
@@ -3808,11 +3808,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                     tr = (texel >> 5) & 0x7c0;
                                     tg = texel & 0x7c0;
                                     tb = (texel & 0x1f) << 6;
-                                    ro = *(Var6ca12c + tr + (redleft >> 18));
+                                    ro = *(RGBTableRB + tr + (redleft >> 18));
                                     ro += redleft >> 20;
-                                    go = *(Var6ca12c + tg + (greenleft >> 18));
+                                    go = *(RGBTableRB + tg + (greenleft >> 18));
                                     go += greenleft >> 20;
-                                    bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                    bo = *(RGBTableRB + tb + (blueleft >> 18));
                                     bo += blueleft >> 20;
                                     if (ro > 31)
                                         ro = 31;
@@ -3845,11 +3845,11 @@ void ScanLinesTGStippleDecal(GRADIENT *Gradients, EDGE *pLeft, EDGE *pRight, EDG
                                     tr = (texel >> 5) & 0x7c0;
                                     tg = texel & 0x7c0;
                                     tb = (texel & 0x1f) << 6;
-                                    ro = *(Var6ca12c + tr + (redleft >> 18));
+                                    ro = *(RGBTableRB + tr + (redleft >> 18));
                                     ro += redleft >> 20;
-                                    go = *(Var6ca12c + tg + (greenleft >> 18));
+                                    go = *(RGBTableRB + tg + (greenleft >> 18));
                                     go += greenleft >> 20;
-                                    bo = *(Var6ca12c + tb + (blueleft >> 18));
+                                    bo = *(RGBTableRB + tb + (blueleft >> 18));
                                     bo += blueleft >> 20;
                                     if (ro > 31)
                                         ro = 31;
