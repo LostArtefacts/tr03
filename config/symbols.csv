@@ -2460,6 +2460,7 @@ address,size,name,symbol
 0x00634124,1,GtPerspCorrectEnabled,_GtPerspCorrectEnabled
 0x00634128,1,GtFilterEnabled,_GtFilterEnabled
 0x0063412c,1,GtAlphaBlendEnabled,_GtAlphaBlendEnabled
+0x00634130,4,GhCurTextureHandle,_GhCurTextureHandle
 0x00634134,1,GtColorKeyEnabled,_GtColorKeyEnabled
 0x00634138,4,malloc_size,_malloc_size
 0x0063413c,4,TLVertexBuffer,_TLVertexBuffer

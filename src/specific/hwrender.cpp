@@ -20,6 +20,7 @@ extern bool GtPerspCorrectEnabled;
 extern bool GtFilterEnabled;
 extern bool GtAlphaBlendEnabled;
 extern bool GtColorKeyEnabled;
+extern DWORD GhCurTextureHandle;
 
 void HWR_InitState(void);
 void InitBuckets(void);
@@ -35,7 +36,9 @@ void DXTextureCleanup(int nTexture, DXTEXTURE *pTextures);
 DXTEXTURE *DXRestoreSurfaceIfLost(int nTexture, DXTEXTURE *pTextures);
 
 extern DXTEXTURE *TPages[32];
-void HWR_SetCurrentTexture(DWORD handle);
+extern TEXTURE Textures[];
+LPDIRECT3DTEXTURE2 DXTextureGetInterface(LPDIRECTDRAWSURFACE3 lpSurface);
+void HWR_SetCurrentTexture(DXTEXTURE *tex);
 void HWR_EnableAlphaBlend(bool enable);
 void HWR_EnableColorKey(bool enable);
 void HWR_EnableColorAddition(bool enable);
@@ -210,6 +213,68 @@ void HWR_EnableAlphaBlend(bool enable)
     }
 }
 
+void HWR_SetCurrentTexture(DXTEXTURE *tex)
+{
+    TEXTURE *tdata;
+    TEXTURE *temp;
+    D3DTEXTUREHANDLE handle;
+    unsigned long n;
+    unsigned long d;
+    int i;
+
+    handle = 0;
+    if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].bHardware) {
+        if (!nTPages)
+            return;
+        if (tex) {
+            for (i = 0; i < nTPages; i++) {
+                if (Textures[i].DXTex == tex) {
+                    handle = Textures[i].handle;
+                    Textures[i].nFrames = App.nFrames;
+                    break;
+                }
+            }
+            if (!handle) {
+                n = 0;
+                tdata = (TEXTURE *)tex;
+                for (i = 0; i < nTPages; i++) {
+                    temp = &Textures[i];
+                    if (!temp->DXTex && tex->bpp == temp->bpp) {
+                        tdata = &Textures[i];
+                        break;
+                    }
+                    d = App.nFrames - temp->nFrames;
+                    if (d >= n && tex->bpp == temp->bpp) {
+                        n = d;
+                        tdata = temp;
+                    }
+                }
+                handle = tdata->handle;
+                if (!n)
+                    SetRenderState(D3DRENDERSTATE_FLUSHBATCH, 0);
+                if (tdata->pSurf->IsLost() == DDERR_SURFACELOST)
+                    tdata->pSurf->Restore();
+                if (tex->pSystemSurface) {
+                    if (tdata->pTexture->Load(DXTextureGetInterface(tex->pSystemSurface)) != D3D_OK)
+                        tdata->pTexture->Load(DXTextureGetInterface(tex->pSystemSurface));
+                }
+                tdata->DXTex = tex;
+                tdata->nFrames = App.nFrames;
+                tex->tex = tdata;
+            }
+        }
+    } else {
+        if (!tex)
+            SetRenderState(D3DRENDERSTATE_TEXTUREHANDLE, 0);
+        else
+            SetRenderState(D3DRENDERSTATE_TEXTUREHANDLE, (unsigned long)tex->pData);
+    }
+    if (handle != GhCurTextureHandle) {
+        SetRenderState(D3DRENDERSTATE_TEXTUREHANDLE, handle);
+        GhCurTextureHandle = handle;
+    }
+}
+
 void HWR_EnableColorKey(bool enable)
 {
     if (enable) {
@@ -268,11 +333,11 @@ void HWR_DrawRoutines(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage)
     case 9:
         HWR_EnableAlphaBlend(0);
         HWR_EnableColorKey(0);
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
         return;
     case 10:
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableZBuffer(1, 1);
         HWR_EnableColorKey(1);
         HWR_EnableAlphaBlend(1);
@@ -300,7 +365,7 @@ void HWR_DrawRoutines(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPage)
         return;
     case 14:
         HWR_EnableZBuffer(0, 1);
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableColorAddition(1);
         HWR_EnableAlphaBlend(1);
         HWR_EnableColorKey(1);
@@ -320,13 +385,13 @@ void HWR_DrawRoutinesStippledAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, in
 {
     switch (nDrawType) {
     case 9:
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableAlphaBlend(0);
         HWR_EnableColorKey(0);
         DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
         return;
     case 10:
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableZBuffer(1, 1);
         HWR_EnableAlphaBlend(1);
         HWR_EnableColorKey(1);
@@ -357,7 +422,7 @@ void HWR_DrawRoutinesStippledAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, in
         SetRenderState(D3DRENDERSTATE_STIPPLEDALPHA, 0);
         return;
     case 14:
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableColorAddition(1);
         HWR_EnableAlphaBlend(1);
         HWR_EnableColorKey(1);
@@ -378,13 +443,13 @@ void HWR_DrawRoutinesNoAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPag
 {
     switch (nDrawType) {
     case 9:
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableAlphaBlend(0);
         HWR_EnableColorKey(0);
         DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
         break;
     case 10:
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableAlphaBlend(1);
         HWR_EnableColorKey(1);
         DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
@@ -401,7 +466,7 @@ void HWR_DrawRoutinesNoAlpha(int nVtx, D3DTLVERTEX *vtx, int nDrawType, int TPag
         DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
         break;
     case 14:
-        HWR_SetCurrentTexture((DWORD)TPages[TPage]);
+        HWR_SetCurrentTexture(TPages[TPage]);
         HWR_EnableAlphaBlend(1);
         HWR_EnableColorKey(1);
         DrawPrimitive(dpPrimitiveType, D3DVT_TLVERTEX, vtx, nVtx, D3DDP_DONOTCLIP | D3DDP_DONOTUPDATEEXTENTS);
@@ -573,7 +638,7 @@ void HWR_LoadTexturePages(int nPages, unsigned char *src, unsigned char *palette
     }
     HWR_GetAllTextureHandles();
     for (i = 0; i < nTPages; i++)
-        HWR_SetCurrentTexture((DWORD)TPages[i]);
+        HWR_SetCurrentTexture(TPages[i]);
 }
 
 void HWR_FreeTexturePages(void)
