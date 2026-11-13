@@ -47,19 +47,19 @@
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
 <rect width="401.50" height="12" x="0" y="0" class="named"><title>1432 · 95.59%</title></rect>
-<rect width="16.26" height="12" x="401.50" y="0" class="nonmatching"><title>58 · 3.87%</title></rect>
-<rect width="2.24" height="12" x="417.76" y="0" class="todo"><title>8 · 0.53%</title></rect>
+<rect width="16.54" height="12" x="401.50" y="0" class="nonmatching"><title>59 · 3.94%</title></rect>
+<rect width="1.96" height="12" x="418.04" y="0" class="todo"><title>7 · 0.47%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="7.50">95.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">58</tspan> · <tspan class="todo">8</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="7"><tspan class="named">1432</tspan> · <tspan class="nonmatching">59</tspan> · <tspan class="todo">7</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
 <rect width="370.15" height="12" x="0" y="0" class="named"><title>639 KB · 88.13%</title></rect>
-<rect width="42.26" height="12" x="370.15" y="0" class="nonmatching"><title>73 KB · 10.06%</title></rect>
-<rect width="7.59" height="12" x="412.41" y="0" class="todo"><title>13 KB · 1.81%</title></rect>
+<rect width="44.16" height="12" x="370.15" y="0" class="nonmatching"><title>76 KB · 10.52%</title></rect>
+<rect width="5.69" height="12" x="414.31" y="0" class="todo"><title>10 KB · 1.35%</title></rect>
 </g>
 <text text-anchor="end" x="600" y="24.50">88.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">73 KB</tspan> · <tspan class="todo">13 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="615" y="24"><tspan class="named">639 KB</tspan> · <tspan class="nonmatching">76 KB</tspan> · <tspan class="todo">10 KB</tspan></text>
 </g>
 <g transform="translate(0 77)">
 <text text-anchor="start" x="0" y="7.50">By function order</text>
@@ -1173,7 +1173,7 @@
 <rect width="12" height="12" x="90" y="330" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
 <rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
-<rect width="12" height="12" x="135" y="330" class="todo"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
+<rect width="12" height="12" x="135" y="330" class="nonmatching"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="nonmatching"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="nonmatching"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="330" class="todo"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
@@ -1594,7 +1594,7 @@
 <rect width="34.62" height="31.31" x="95.95" y="147.85" class="named"><title>0x00455e30 MonkeyControl (3348 bytes)</title></rect>
 <rect width="34.62" height="31.09" x="95.95" y="182.16" class="named"><title>0x0040d650 BatonControl (3324 bytes)</title></rect>
 <rect width="34.62" height="30.77" x="95.95" y="216.25" class="nonmatching"><title>0x00472000 WillBossControl (3290 bytes)</title></rect>
-<rect width="34.62" height="30.67" x="95.95" y="250.02" class="todo"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
+<rect width="34.62" height="30.67" x="95.95" y="250.02" class="nonmatching"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="34.62" height="30.56" x="95.95" y="283.69" class="named"><title>0x00405a80 HWI_InsertGT3_Poly (3268 bytes)</title></rect>
 <rect width="34.62" height="30.56" x="95.95" y="317.26" class="named"><title>0x00488260 do_detail_option (3268 bytes)</title></rect>
 <rect width="34.62" height="30.52" x="95.95" y="350.82" class="named"><title>0x0049c160 ScanLinesTF (3264 bytes)</title></rect>

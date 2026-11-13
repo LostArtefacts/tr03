@@ -2666,4 +2666,312 @@ void TriggerElectricBeam(ITEM_INFO *item, GAME_VECTOR *src, long copy)
         }
     }
 }
+
+extern BITE_INFO tribeboss_hit[];
+extern PHD_VECTOR TrigDynamics[3];
+extern char lizard_man_active;
+void TriggerLizardMan(void);
+void TriggerSummonSmoke(sint32 x, sint32 y, sint32 z);
+
+void TriggerTribeBossHeadElectricity(ITEM_INFO *item, long copy)
+{
+    PHD_VECTOR pos, pos1, pos2;
+    BITE_INFO *bite1, *bite2;
+    GAME_VECTOR src;
+    short *scrxy;
+    long *scrz;
+    short *distances;
+    short TempMesh[3];
+    short *leccy;
+    long dx, dy, dz;
+    long wx, wy, wz, tx, ty, tz, xv, yv, zv;
+    long lp, lp1, cnt;
+    long shadeval;
+    long *mptr;
+    long w, h;
+    float fzv;
+    short XY[128];
+    short dists[128];
+    long Z[128];
+
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
+    dx = lara_item->pos.x_pos - item->pos.x_pos;
+    dz = lara_item->pos.z_pos - item->pos.z_pos;
+    if (dx < -0x4800 || dx > 0x4800 || dz < -0x4800 || dz > 0x4800)
+        return;
+    shadeval = 64 + ((rcossin_tbl[wibble << 5] >> 6) >> 1);
+    phd_PushMatrix();
+    phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
+    mptr = phd_mxptr;
+    scrxy = XY;
+    scrz = Z;
+    distances = dists;
+    leccy = &electricity_points[0][0];
+    for (lp = 0; lp < 4; lp++) {
+        bite1 = &tribeboss_hit[lp];
+        bite2 = &tribeboss_hit[lp + 1];
+        pos1.x = bite1->x;
+        pos1.y = bite1->y;
+        pos1.z = bite1->z;
+        GetJointAbsPosition(item, &pos1, bite1->mesh_num);
+        pos2.x = bite2->x;
+        pos2.y = bite2->y;
+        pos2.z = bite2->z;
+        GetJointAbsPosition(item, &pos2, bite2->mesh_num);
+        if (lp == 2) {
+            TrigDynamics[0].x = pos1.x;
+            TrigDynamics[0].y = pos1.y;
+            TrigDynamics[0].z = pos1.z;
+        }
+        pos1.x -= item->pos.x_pos;
+        pos1.y -= item->pos.y_pos;
+        pos1.z -= item->pos.z_pos;
+        pos2.x -= item->pos.x_pos;
+        pos2.y -= item->pos.y_pos;
+        pos2.z -= item->pos.z_pos;
+        wx = pos1.x;
+        wy = pos1.y;
+        wz = pos1.z;
+        dx = (pos2.x - pos1.x) >> 2;
+        dy = (pos2.y - pos1.y) >> 2;
+        dz = (pos2.z - pos1.z) >> 2;
+        for (lp1 = 0; lp1 < 5; lp1++) {
+            if (lp1 == 4 && lp != 3)
+                break;
+            else if (lp1 == 4 && lp == 3) {
+                TempMesh[0] = pos2.x;
+                TempMesh[1] = pos2.y;
+                TempMesh[2] = pos2.z;
+            } else {
+                TempMesh[0] = wx;
+                TempMesh[1] = wy;
+                TempMesh[2] = wz;
+            }
+            if (lp1 != 0 && lp1 != 4) {
+                tx = *leccy++;
+                ty = *leccy++;
+                tz = *leccy++;
+                if (copy) {
+                    TempMesh[0] -= tx >> 3;
+                    TempMesh[1] -= ty >> 3;
+                    TempMesh[2] -= tz >> 3;
+                } else {
+                    TempMesh[0] += tx >> 3;
+                    TempMesh[1] += ty >> 3;
+                    TempMesh[2] += tz >> 3;
+                }
+                leccy += 3;
+                xv = abs(tx);
+                yv = abs(ty);
+                zv = abs(tz);
+                if (yv > xv)
+                    xv = yv;
+                if (zv > xv)
+                    xv = zv;
+                *distances++ = xv;
+            } else
+                *distances++ = 0;
+            pos.x = mptr[0] * TempMesh[0] + mptr[1] * TempMesh[1] + mptr[2] * TempMesh[2] + mptr[3];
+            pos.y = mptr[4] * TempMesh[0] + mptr[5] * TempMesh[1] + mptr[6] * TempMesh[2] + mptr[7];
+            pos.z = mptr[8] * TempMesh[0] + mptr[9] * TempMesh[1] + mptr[10] * TempMesh[2] + mptr[11];
+            fzv = f_persp / (float)pos.z;
+            scrxy[0] = (short)(pos.x * fzv + f_centerx);
+            scrxy[1] = (short)(pos.y * fzv + f_centery);
+            *scrz = pos.z;
+            wx += dx;
+            wy += dy;
+            wz += dz;
+            scrxy += 2;
+            scrz++;
+        }
+    }
+    leccy = &electricity_points[16][0];
+    cnt = 0;
+    if (bossdata.attack_count && !bossdata.death_count && bossdata.attack_type == 0) {
+        for (lp = 0; lp < 5; lp++) {
+            bite1 = &tribeboss_hit[lp];
+            bite2 = &tribeboss_hit[5];
+            pos1.x = bite1->x;
+            pos1.y = bite1->y;
+            pos1.z = bite1->z;
+            GetJointAbsPosition(item, &pos1, bite1->mesh_num);
+            pos2.x = bite2->x;
+            pos2.y = bite2->y;
+            pos2.z = bite2->z;
+            GetJointAbsPosition(item, &pos2, bite2->mesh_num);
+            pos1.x -= item->pos.x_pos;
+            pos1.y -= item->pos.y_pos;
+            pos1.z -= item->pos.z_pos;
+            pos2.x -= item->pos.x_pos;
+            pos2.y -= item->pos.y_pos;
+            pos2.z -= item->pos.z_pos;
+            wx = pos1.x;
+            wy = pos1.y;
+            wz = pos1.z;
+            dx = (pos2.x - pos1.x) >> 2;
+            dy = (pos2.y - pos1.y) >> 2;
+            dz = (pos2.z - pos1.z) >> 2;
+            for (lp1 = 0; lp1 < 5; lp1++) {
+                if (lp1 == 4) {
+                    TempMesh[0] = pos2.x;
+                    TempMesh[1] = pos2.y;
+                    TempMesh[2] = pos2.z;
+                    if (lp == 4) {
+                        src.x = pos2.x + item->pos.x_pos;
+                        src.y = pos2.y + item->pos.y_pos;
+                        src.z = pos2.z + item->pos.z_pos;
+                        if (bossdata.attack_count >= 64 && bossdata.attack_count <= 128) {
+                            TrigDynamics[2].x = src.x;
+                            TrigDynamics[2].y = src.y;
+                            TrigDynamics[2].z = src.z;
+                        }
+                    }
+                } else {
+                    TempMesh[0] = wx;
+                    TempMesh[1] = wy;
+                    TempMesh[2] = wz;
+                }
+                if (lp1 != 0 && lp1 != 4) {
+                    cnt++;
+                    if (cnt > 15) {
+                        leccy = &electricity_points[0][0];
+                        cnt = 0;
+                    }
+                    if (copy) {
+                        TempMesh[0] -= (tx = *leccy++) >> 4;
+                        TempMesh[1] -= (ty = *leccy++) >> 4;
+                    } else {
+                        TempMesh[0] += (tx = *leccy++) >> 4;
+                        TempMesh[1] += (ty = *leccy++) >> 4;
+                    }
+                    leccy += 4;
+                    xv = abs(tx);
+                    yv = abs(ty);
+                    if (yv > xv)
+                        xv = yv;
+                    *distances++ = xv;
+                } else
+                    *distances++ = 0;
+                pos.x = mptr[0] * TempMesh[0] + mptr[1] * TempMesh[1] + mptr[2] * TempMesh[2] + mptr[3];
+                pos.y = mptr[4] * TempMesh[0] + mptr[5] * TempMesh[1] + mptr[6] * TempMesh[2] + mptr[7];
+                pos.z = mptr[8] * TempMesh[0] + mptr[9] * TempMesh[1] + mptr[10] * TempMesh[2] + mptr[11];
+                fzv = f_persp / (float)pos.z;
+                scrxy[0] = (short)(pos.x * fzv + f_centerx);
+                scrxy[1] = (short)(pos.y * fzv + f_centery);
+                *scrz = pos.z;
+                wx += dx;
+                wy += dy;
+                wz += dz;
+                scrxy += 2;
+                scrz++;
+            }
+        }
+    }
+    scrxy = XY;
+    scrz = Z;
+    distances = dists;
+    for (lp = 0; lp < 16; lp++) {
+        long x1, x2, y1, y2, z1, rgb, rgb1, alpha;
+
+        x1 = *scrxy++;
+        y1 = *scrxy++;
+        x2 = *scrxy;
+        y2 = *(scrxy + 1);
+        z1 = *scrz++;
+        rgb = *distances++;
+        rgb1 = *distances;
+        if (z1 < phd_znear)
+            continue;
+        if (rgb > 255) {
+            rgb = 511 - rgb;
+            if (rgb < 0)
+                rgb = 0;
+        }
+        if (rgb1 > 255) {
+            rgb1 = 511 - rgb1;
+            if (rgb1 < 0)
+                rgb1 = 0;
+        }
+        if (copy) {
+            rgb >>= 1;
+            rgb1 >>= 1;
+        }
+        rgb = (rgb * shadeval) >> 6;
+        rgb1 = (rgb1 * shadeval) >> 6;
+        if (ClipLine(x1, y1, x2, y2, w, h) && x1 >= 0 && x1 <= w && y1 >= 0 && y1 <= h && x2 >= 0 && x2 <= w && y2 >= 0 && y2 <= h) {
+            alpha = GlobalAlpha;
+            GlobalAlpha = 0x70000000;
+            HWI_InsertLine_Sorted(x1 - phd_winxmin, y1 - phd_winymin, x2 - phd_winxmin, y2 - phd_winymin, z1, rgb | (rgb << 8), rgb1 | (rgb1 << 8));
+            GlobalAlpha = alpha;
+        }
+    }
+    if (bossdata.attack_count && !bossdata.death_count && bossdata.attack_type == 0) {
+        for (lp = 0; lp < 5; lp++) {
+            scrxy += 2;
+            scrz++;
+            distances++;
+            for (lp1 = 0; lp1 < 4; lp1++) {
+                long x1, x2, y1, y2, z1, rgb, rgb1, alpha;
+
+                x1 = *scrxy++;
+                y1 = *scrxy++;
+                x2 = *scrxy;
+                y2 = *(scrxy + 1);
+                z1 = *scrz++;
+                rgb = *distances++;
+                rgb1 = *distances;
+                if (z1 < phd_znear)
+                    continue;
+                if (rgb > 255) {
+                    rgb = 511 - rgb;
+                    if (rgb < 0)
+                        rgb = 0;
+                }
+                if (rgb1 > 255) {
+                    rgb1 = 511 - rgb1;
+                    if (rgb1 < 0)
+                        rgb1 = 0;
+                }
+                if (copy) {
+                    rgb >>= 1;
+                    rgb1 >>= 1;
+                }
+                if (bossdata.attack_count < 64) {
+                    rgb = (rgb * bossdata.attack_count) >> 6;
+                    rgb1 = (rgb1 * bossdata.attack_count) >> 6;
+                }
+                if (ClipLine(x1, y1, x2, y2, w, h) && x1 >= 0 && x1 <= w && y1 >= 0 && y1 <= h && x2 >= 0 && x2 <= w && y2 >= 0 && y2 <= h) {
+                    alpha = GlobalAlpha;
+                    GlobalAlpha = 0x70000000;
+                    HWI_InsertLine_Sorted(x1 - phd_winxmin, y1 - phd_winymin, x2 - phd_winxmin, y2 - phd_winymin, z1, rgb | (rgb << 8), rgb1 | (rgb1 << 8));
+                    GlobalAlpha = alpha;
+                }
+            }
+        }
+    }
+    if (bossdata.attack_count && !bossdata.death_count && (bossdata.attack_type == 1 || bossdata.attack_type == 2)) {
+        pos1.x = 0;
+        pos1.y = 0;
+        pos1.z = 0;
+        GetJointAbsPosition(item, &pos1, 14);
+        src.x = pos1.x;
+        src.y = pos1.y;
+        src.z = pos1.z;
+        if (bossdata.attack_count >= 64 && bossdata.attack_count <= 128) {
+            TrigDynamics[2].x = src.x;
+            TrigDynamics[2].y = src.y;
+            TrigDynamics[2].z = src.z;
+        }
+        if (bossdata.attack_count >= 64 && bossdata.attack_count <= 96) {
+            if (bossdata.attack_count > 90 && !lizard_man_active)
+                TriggerLizardMan();
+            TriggerElectricBeam(item, &src, copy);
+            for (lp = 0; lp < 3; lp++)
+                TriggerSummonSmoke(bossdata.BeamTarget.x, bossdata.BeamTarget.y, bossdata.BeamTarget.z);
+        }
+    } else if (bossdata.attack_count > 64 && !bossdata.death_count && bossdata.attack_type == 0)
+        TriggerElectricBeam(item, &src, copy);
+    phd_PopMatrix();
+}
 }
