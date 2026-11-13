@@ -836,6 +836,17 @@ void GF_ModifyInventory(int level, int type)
 }
 
 #ifdef TR3_EXE
+sint16 GF_NumSecrets = 3;
+sint16 GF_CDtracks[16] = { 2 };
+sint16 GF_Cutscene_Orientation = 0x4000;
+sint16 GF_LoadingPic = -1;
+sint32 cutscene_track = 1;
+sint16 FirstFMV[3] = {
+    3, 1, 9,
+};
+#endif
+
+#ifdef TR3_EXE
 void ShowThis(char *string, int frames)
 {
 }

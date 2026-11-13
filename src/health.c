@@ -360,3 +360,7 @@ void DrawModeInfo(void)
         LpModeTS = NULL;
     }
 }
+
+#ifdef TR3_EXE
+int overlay_flag = 1;
+#endif

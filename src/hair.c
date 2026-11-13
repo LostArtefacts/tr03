@@ -352,3 +352,8 @@ void DrawHair(void)
         phd_PopMatrix();
     }
 }
+
+#ifdef TR3_EXE
+sint32 wind_angle = 2048;
+sint32 dwind_angle = 2048;
+#endif

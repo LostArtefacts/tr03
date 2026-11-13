@@ -1917,6 +1917,7 @@ address,size,name,symbol
 0x004c5618,,GF_Cutscene_Orientation,_GF_Cutscene_Orientation
 0x004c561c,2,GF_LoadingPic,_GF_LoadingPic
 0x004c5620,4,cutscene_track,_cutscene_track
+0x004c5670,120,GF_inv_types,_GF_inv_types
 0x004c582c,4,wind_angle,_wind_angle
 0x004c5830,4,dwind_angle,_dwind_angle
 0x004c5834,4,overlay_flag,_overlay_flag
