@@ -327,33 +327,7 @@ void DrawTile(int x, int y, int w, int h, int tpage, int tU, int tV, int tW, int
     SetRenderState(D3DRENDERSTATE_TEXTUREMIN, HWConfig.nFilter);
 }
 
-void TRDrawPicture(int col, int *indices, float zpos)
-{
-    int x[4];
-    int y[4];
-    int i;
-    static int screenX[4] = { 0, 256, 512, 640 };
-    static int screenY[3] = { 0, 256, 480 };
-    unsigned long c;
 
-    c = 255 - col;
-    col = (c << 8) | (c << 16) | c | 0xff000000;
-    for (i = 0; i < 3; i++) {
-        x[i] = phd_winxmin + phd_winwidth * screenX[i] / 640;
-        y[i] = phd_winymin + phd_winheight * screenY[i] / 480;
-    }
-    x[3] = phd_winxmin + phd_winwidth * screenX[3] / 640;
-    HWR_EnableAlphaBlend(false);
-    HWR_EnablePerspCorrect(false);
-    HWR_EnableColorAddition(false);
-    DrawTile(x[0], y[0], x[1] - x[0], y[1] - y[0], indices[0], 0, 0, 256, 256, col, col, col, col, zpos);
-    DrawTile(x[1], y[0], x[2] - x[1], y[1] - y[0], indices[1], 0, 0, 256, 256, col, col, col, col, zpos);
-    DrawTile(x[2], y[0], x[3] - x[2], y[1] - y[0], indices[2], 0, 0, 128, 256, col, col, col, col, zpos);
-    DrawTile(x[0], y[1], x[1] - x[0], y[2] - y[1], indices[3], 0, 0, 256, 224, col, col, col, col, zpos);
-    DrawTile(x[1], y[1], x[2] - x[1], y[2] - y[1], indices[4], 0, 0, 256, 224, col, col, col, col, zpos);
-    DrawTile(x[2], y[1], x[3] - x[2], y[2] - y[1], indices[2], 128, 0, 128, 224, col, col, col, col, zpos);
-    HWR_EnablePerspCorrect(true);
-}
 
 void FadePictureUp(int steps)
 {
@@ -487,5 +461,37 @@ void S_FadePicture(void)
         FreePictureTextures(CurPicTexIndices);
     }
 }
+
+void TRDrawPicture(int col, int *indices, float zpos)
+{
+    int x[4];
+    int y[4];
+    int i;
+    static int screenX[4] = { 0, 256, 512, 640 };
+    int width;
+    static int screenY[3] = { 0, 256, 480 };
+    unsigned int c;
+
+    c = 255 - col;
+    col = (c * 256) | (c * 65536) | c | 0xff000000;
+    width = phd_winwidth;
+    for (i = 0; i < 3; i++) {
+        x[i] = phd_winxmin + width * screenX[i] / 640;
+        y[i] = phd_winymin + phd_winheight * screenY[i] / 480;
+    }
+    x[3] = phd_winxmin + width * screenX[3] / 640;
+    HWR_EnableAlphaBlend(false);
+    HWR_EnablePerspCorrect(false);
+    HWR_EnableColorAddition(false);
+    DrawTile(x[0], y[0], x[1] - x[0], y[1] - y[0], indices[0], 0, 0, 256, 256, col, col, col, col, zpos);
+    DrawTile(x[1], y[0], x[2] - x[1], y[1] - y[0], indices[1], 0, 0, 256, 256, col, col, col, col, zpos);
+    DrawTile(x[2], y[0], x[3] - x[2], y[1] - y[0], indices[2], 0, 0, 128, 256, col, col, col, col, zpos);
+    DrawTile(x[0], y[1], x[1] - x[0], y[2] - y[1], indices[3], 0, 0, 256, 224, col, col, col, col, zpos);
+    DrawTile(x[1], y[1], x[2] - x[1], y[2] - y[1], indices[4], 0, 0, 256, 224, col, col, col, col, zpos);
+    DrawTile(x[2], y[1], x[3] - x[2], y[2] - y[1], indices[2], 128, 0, 128, 224, col, col, col, col, zpos);
+    HWR_EnablePerspCorrect(true);
+}
+
+
 
 }

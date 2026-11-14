@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="193.72" height="12" x="0" y="0" class="named"><title>1451 · 96.86%</title></rect>
-<rect width="6.28" height="12" x="193.72" y="0" class="nonmatching"><title>47 · 3.14%</title></rect>
+<rect width="193.86" height="12" x="0" y="0" class="named"><title>1452 · 96.93%</title></rect>
+<rect width="6.14" height="12" x="193.86" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">96.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1451</tspan> · <tspan class="nonmatching">47</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1452</tspan> · <tspan class="nonmatching">46</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="179.47" height="12" x="0" y="0" class="named"><title>650 KB · 89.73%</title></rect>
-<rect width="20.53" height="12" x="179.47" y="0" class="nonmatching"><title>74 KB · 10.27%</title></rect>
+<rect width="179.62" height="12" x="0" y="0" class="named"><title>651 KB · 89.81%</title></rect>
+<rect width="20.38" height="12" x="179.62" y="0" class="nonmatching"><title>74 KB · 10.19%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">89.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">650 KB</tspan> · <tspan class="nonmatching">74 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">89.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">651 KB</tspan> · <tspan class="nonmatching">74 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1363,7 +1363,7 @@
 <rect width="12" height="12" x="315" y="375" class="named"><title>0x0048b300 ConvertSurfaceToTextures (104 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="375" class="named"><title>0x0048b370 ConvertSurfaceToTextures16Bit (1069 bytes)</title></rect>
 <rect width="12" height="12" x="345" y="375" class="named"><title>0x0048b7a0 DrawTile (644 bytes)</title></rect>
-<rect width="12" height="12" x="360" y="375" class="nonmatching"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
+<rect width="12" height="12" x="360" y="375" class="named"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="375" class="named"><title>0x0048bc70 FadePictureUp (157 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="375" class="named"><title>0x0048bd10 FadePictureDown (324 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="375" class="named"><title>0x0048be60 CreateMonoScreen (222 bytes)</title></rect>
@@ -1915,7 +1915,7 @@
 <rect width="13.43" height="13.68" x="386.66" y="268.41" class="named"><title>0x0042de80 ControlSmokeEmitter (567 bytes)</title></rect>
 <rect width="13.43" height="13.60" x="386.66" y="285.09" class="named"><title>0x0042d750 TriggerDartSmoke (564 bytes)</title></rect>
 <rect width="13.43" height="13.60" x="386.66" y="301.69" class="named"><title>0x00431650 TriggerFlameThrower (564 bytes)</title></rect>
-<rect width="13.43" height="13.56" x="386.66" y="318.30" class="nonmatching"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
+<rect width="13.43" height="13.56" x="386.66" y="318.30" class="named"><title>0x0048ba30 TRDrawPicture (562 bytes)</title></rect>
 <rect width="13.43" height="13.56" x="386.66" y="334.85" class="named"><title>0x004966f0 DrawSpansColorKeyFilteredP (562 bytes)</title></rect>
 <rect width="13.43" height="13.51" x="386.66" y="351.41" class="named"><title>0x004114e0 VultureControl (560 bytes)</title></rect>
 <rect width="13.43" height="13.51" x="386.66" y="367.92" class="named"><title>0x00446ba0 FireGrenade (560 bytes)</title></rect>
