@@ -4,7 +4,6 @@ _WinMain@16,0x004B2940,src/specific/winmain.cpp,774,774,2,7,same size,"Target re
 _EmulateDrawPrimitive,0x00490BA0,src/specific/drawprimitive.cpp,880,880,2,4,same size,Only two independent stack argument loads appear in opposite order.
 _wgtmap_persp16_fp,0x00403CD0,src/3dsystem/3d_out.cpp,5315,5315,2,6,same size,One x87 multiplication loads its operands in opposite order.
 _AdjustTextureUVs,0x00481360,src/specific/file.cpp,110,110,3,5,same size,"Original LEA EBP,[EAX] versus MOV EBP,EAX; byte-load/pointer-increment scheduling also differs."
-_DXTextureNewPalette,0x004B1B80,src/specific/texture.cpp,112,112,4,4,same size,Three byte loads reordered; remaining instructions match.
 _gtmap_persp32_fp,0x00402D20,src/3dsystem/3d_out.cpp,4008,4008,5,21,same size,Two x87 multiplications reverse load order; one FLD is scheduled earlier.
 _TestHeight_minecart,0x004541F0,src/minecart.c,168,168,8,132,same size,
 _CreatureTurn,0x00416400,src/box.c,202,202,8,18,same size,Two return paths choose different temporaries and store/return instruction order.

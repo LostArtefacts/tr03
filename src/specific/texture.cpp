@@ -29,19 +29,6 @@ LPDIRECT3DTEXTURE2 DXTextureGetInterface(LPDIRECTDRAWSURFACE3 lpSurface)
     return lpTexture;
 }
 
-HRESULT DXTextureNewPalette(unsigned char *pPal)
-{
-    DWORD adwPal[256];
-    int nEntry;
-
-    if (DXPalette) {
-        DXPalette->Release();
-        DXPalette = 0;
-    }
-    for (nEntry = 0; nEntry < 256; ++nEntry, pPal += 3)
-        adwPal[nEntry] = RGB(pPal[0], pPal[1], pPal[2]);
-    return App.lpDD->CreatePalette(DDPCAPS_8BIT | DDPCAPS_ALLOW256, (PALETTEENTRY *)adwPal, &DXPalette, 0);
-}
 
 bool DXCreateTextureSurface(TEXTURE *tex, LPDDPIXELFORMAT ddpf)
 {
@@ -428,6 +415,21 @@ int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, uns
         App.DXConfigPtr->D3DTF = oldTF;
     return index;
 }
+
+HRESULT DXTextureNewPalette(unsigned char *pPal)
+{
+    DWORD adwPal[256];
+    int nEntry;
+
+    if (DXPalette) {
+        DXPalette->Release();
+        DXPalette = 0;
+    }
+    for (nEntry = 0; nEntry < 256; ++nEntry, pPal += 3)
+        adwPal[nEntry] = RGB(pPal[0], pPal[1], pPal[2]);
+    return App.lpDD->CreatePalette(DDPCAPS_8BIT | DDPCAPS_ALLOW256, (PALETTEENTRY *)adwPal, &DXPalette, 0);
+}
+
 
 }
 
