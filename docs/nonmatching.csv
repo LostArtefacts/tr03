@@ -10,7 +10,6 @@ _Display_Requester,0x00439370,src/invfunc.c,2057,2057,8,8,same size,
 _HWI_InsertObjectG4_Sorted,0x00408DA0,src/3dsystem/hwinsert.cpp,1839,1839,9,10,same size,
 _S_DrawScreenFBox,0x00483770,src/specific/frontend.cpp,61,61,10,23,same size,Coordinate calculations agree after accounting for stack pushes; temporary registers and push scheduling differ.
 _WillBossControl,0x00472000,src/willboss.c,3290,3290,10,10,same size,
-_DrawPictureAlpha,0x0048ADA0,src/specific/picture.cpp,547,549,14,376,size differs,
 _S_DrawFish,0x004775C0,src/specific/draweffects.cpp,1638,1638,16,103,same size,
 _S_CalculateStaticMeshLight,0x00487590,src/specific/litesrc.cpp,399,399,18,102,same size,
 _MMXInit,0x004933E0,src/specific/drawprimitive.cpp,206,206,20,172,same size,

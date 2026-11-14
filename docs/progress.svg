@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="193.46" height="12" x="0" y="0" class="named"><title>1449 · 96.73%</title></rect>
-<rect width="6.54" height="12" x="193.46" y="0" class="nonmatching"><title>49 · 3.27%</title></rect>
+<rect width="193.59" height="12" x="0" y="0" class="named"><title>1450 · 96.80%</title></rect>
+<rect width="6.41" height="12" x="193.59" y="0" class="nonmatching"><title>48 · 3.20%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">96.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1449</tspan> · <tspan class="nonmatching">49</tspan></text>
+<text text-anchor="end" x="390" y="7.50">96.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1450</tspan> · <tspan class="nonmatching">48</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="178.75" height="12" x="0" y="0" class="named"><title>648 KB · 89.37%</title></rect>
-<rect width="21.25" height="12" x="178.75" y="0" class="nonmatching"><title>77 KB · 10.63%</title></rect>
+<rect width="178.90" height="12" x="0" y="0" class="named"><title>648 KB · 89.45%</title></rect>
+<rect width="21.10" height="12" x="178.90" y="0" class="nonmatching"><title>76 KB · 10.55%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="24.50">89.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">648 KB</tspan> · <tspan class="nonmatching">77 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">648 KB</tspan> · <tspan class="nonmatching">76 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1355,7 +1355,7 @@
 <rect width="12" height="12" x="195" y="375" class="named"><title>0x0048acc0 ProjectPCoord (157 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="375" class="named"><title>0x0048ad60 SetPictureToFade (17 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="375" class="named"><title>0x0048ad80 ForceFadeDown (17 bytes)</title></rect>
-<rect width="12" height="12" x="240" y="375" class="nonmatching"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
+<rect width="12" height="12" x="240" y="375" class="named"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="375" class="named"><title>0x0048afd0 CrossFadePicture (254 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="375" class="named"><title>0x0048b0d0 LoadPicture (184 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="375" class="named"><title>0x0048b190 FreePictureTextures (224 bytes)</title></rect>
@@ -1927,7 +1927,7 @@
 <rect width="13.74" height="12.92" x="419.85" y="100.20" class="named"><title>0x00412500 BoatAnimation (548 bytes)</title></rect>
 <rect width="13.74" height="12.92" x="436.59" y="100.20" class="named"><title>0x00491c70 CalculateEdgeT (548 bytes)</title></rect>
 <rect width="13.71" height="12.92" x="453.33" y="100.20" class="named"><title>0x0042a680 TriggerRicochetSpark (547 bytes)</title></rect>
-<rect width="13.71" height="12.92" x="470.04" y="100.20" class="nonmatching"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
+<rect width="13.71" height="12.92" x="470.04" y="100.20" class="named"><title>0x0048ada0 DrawPictureAlpha (547 bytes)</title></rect>
 <rect width="13.69" height="12.92" x="486.75" y="100.20" class="named"><title>0x00445020 GetStaticObjects (546 bytes)</title></rect>
 <rect width="13.66" height="12.92" x="503.44" y="100.20" class="named"><title>0x00458880 FinalLevelCounter (545 bytes)</title></rect>
 <rect width="13.64" height="12.92" x="520.11" y="100.20" class="named"><title>0x00485130 HWR_DrawRoutinesStippledAlpha (544 bytes)</title></rect>
