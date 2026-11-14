@@ -4,11 +4,13 @@ import sys
 import random
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 import compare
+import coff
 import permute
 
 
@@ -118,6 +120,36 @@ class OperandIdentityTests(unittest.TestCase):
     def test_branch_displacement_changes_do_not_change_shapes(self) -> None:
         ours, original = self.shapes('7505c3', '7508c3')
         self.assertEqual(ours, original)
+
+
+class DebugFunctionExtentTests(unittest.TestCase):
+    def compiled(self, symbols: list[coff.Symbol], code: bytes) -> list[tuple[Any, ...]]:
+        obj = SimpleNamespace(
+            symbols=symbols,
+            sections=[coff.Section('.text', code, [], coff.CODE)],
+            externals=lambda: [s for s in symbols if s.storage == coff.CLASS_EXTERNAL],
+        )
+        addresses = {'_f': (0x480000, 3), '_next': (0x480010, 1)}
+        with patch('compare.build.sources', return_value=[('src/f.cpp', 'f.obj')]), \
+                patch('compare.coff.Object', return_value=obj):
+            return list(compare.compiled_functions(addresses))
+
+    def test_debug_records_do_not_truncate_machine_code(self) -> None:
+        symbols = [coff.Symbol('_f', 0, 1, 2),
+                   coff.Symbol('.bf', 0, 1, 101),
+                   coff.Symbol('.lf', 1, 1, 101),
+                   coff.Symbol('.ef', 2, 1, 101),
+                   coff.Symbol('case', 1, 1, 6),
+                   coff.Symbol('_next', 16, 1, 2)]
+        rows = self.compiled(symbols, bytes.fromhex('31c0c3') + bytes([0x90]) * 13 + b'\xc3')
+        self.assertEqual([(r[0], r[1]) for r in rows], [('_f', bytes.fromhex('31c0c3')), ('_next', b'\xc3')])
+
+    def test_static_jump_table_still_ends_function(self) -> None:
+        symbols = [coff.Symbol('_f', 0, 1, 2),
+                   coff.Symbol('.lf', 1, 1, 101),
+                   coff.Symbol('table', 3, 1, 3)]
+        rows = self.compiled(symbols, bytes.fromhex('31c0c3') + bytes(8))
+        self.assertEqual(rows[0][1], bytes.fromhex('31c0c3'))
 
 
 if __name__ == '__main__':
