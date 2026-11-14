@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="193.99" height="12" x="0" y="0" class="named"><title>1453 · 97%</title></rect>
-<rect width="6.01" height="12" x="193.99" y="0" class="nonmatching"><title>45 · 3%</title></rect>
+<rect width="194.13" height="12" x="0" y="0" class="named"><title>1454 · 97.06%</title></rect>
+<rect width="5.87" height="12" x="194.13" y="0" class="nonmatching"><title>44 · 2.94%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">97.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1453</tspan> · <tspan class="nonmatching">45</tspan></text>
+<text text-anchor="end" x="390" y="7.50">97.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1454</tspan> · <tspan class="nonmatching">44</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="179.73" height="12" x="0" y="0" class="named"><title>651 KB · 89.87%</title></rect>
-<rect width="20.27" height="12" x="179.73" y="0" class="nonmatching"><title>73 KB · 10.13%</title></rect>
+<rect width="179.75" height="12" x="0" y="0" class="named"><title>651 KB · 89.87%</title></rect>
+<rect width="20.25" height="12" x="179.75" y="0" class="nonmatching"><title>73 KB · 10.13%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="24.50">89.9%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">651 KB</tspan> · <tspan class="nonmatching">73 KB</tspan></text>
@@ -1258,7 +1258,7 @@
 <rect width="12" height="12" x="240" y="345" class="named"><title>0x004835e0 S_COLOUR (35 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="345" class="named"><title>0x00483610 S_DrawScreenLine (57 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="345" class="named"><title>0x00483650 S_DrawScreenBox (278 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="345" class="nonmatching"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="345" class="named"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="345" class="named"><title>0x004837b0 S_FinishInventory (15 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="345" class="named"><title>0x004837c0 DrawDummyItem (1 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="345" class="named"><title>0x004837d0 S_Wait (87 bytes)</title></rect>
@@ -2745,7 +2745,7 @@
 <rect width="4.66" height="4.31" x="624.48" y="428.22" class="named"><title>0x0048e860 acmFormatSuggest (62 bytes)</title></rect>
 <rect width="4.66" height="4.24" x="624.48" y="435.53" class="named"><title>0x004053a0 DrawBuckets (61 bytes)</title></rect>
 <rect width="4.66" height="4.24" x="624.48" y="442.76" class="named"><title>0x004295a0 gar_RotYXZsuperpack_I (61 bytes)</title></rect>
-<rect width="4.40" height="4.49" x="632.14" y="332.18" class="nonmatching"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
+<rect width="4.40" height="4.49" x="632.14" y="332.18" class="named"><title>0x00483770 S_DrawScreenFBox (61 bytes)</title></rect>
 <rect width="4.40" height="4.41" x="632.14" y="339.67" class="named"><title>0x004025c0 draw_poly_gtmap (60 bytes)</title></rect>
 <rect width="4.40" height="4.41" x="632.14" y="347.08" class="named"><title>0x00402600 draw_poly_wgtmap (60 bytes)</title></rect>
 <rect width="4.40" height="4.41" x="632.14" y="354.49" class="named"><title>0x0042f450 AssaultStart (60 bytes)</title></rect>

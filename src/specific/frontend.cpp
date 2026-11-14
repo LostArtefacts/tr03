@@ -41,11 +41,6 @@ void S_DrawScreenBox(int sx, int sy, int z, int w, int h, int col, unsigned shor
     S_DrawScreenLine(sx - 1, sy + h + 1, z, w + 1, 0, 31, 0, flags);
 }
 
-void S_DrawScreenFBox(int sx, int sy, int z, int w, int h, int col, unsigned short *grdptr, unsigned short flags)
-{
-    InsertTransQuad(sx + phd_winxmin, sy + phd_winymin, w + 1, h + 1, phd_znear + 0x50000);
-}
-
 void S_FinishInventory(void)
 {
     if (Inventory_Mode != 1)
