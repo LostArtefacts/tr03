@@ -753,7 +753,6 @@ void HWI_InsertTransQuad_Sorted(long x, long y, long w, long h, long z)
     CurrentTLVertex = v + 4;
 }
 
-
 void HWI_InsertPoly_GouraudRGB(int nPoints, float zdepth, int nDrawType)
 {
     D3DTLVERTEX *pTLV;
@@ -849,7 +848,6 @@ void HWI_InsertPoly_GouraudRGB(int nPoints, float zdepth, int nDrawType)
         CurrentTLVertex = pTLV;
     }
 }
-
 
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
 
@@ -1226,7 +1224,6 @@ int visible_zclip(PHD_VBUF *vn1, PHD_VBUF *vn2, PHD_VBUF *vn3)
 }
 #pragma auto_inline(on)
 
-
 extern int outside;
 extern float outsideBackgroundTop;
 extern float f_zfar;
@@ -1332,93 +1329,9 @@ extern int phd_winheight;
 int XYClipper(int number, VERTEX_INFO *input);
 void HWI_InsertPoly_Gouraud(int nPoints, float zdepth, int nR, int nG, int nB, int nDrawType);
 
-void HWI_InsertTrans8_Sorted(PHD_VBUF *buf, sint16 shade)
-{
-    float z;
-    long nPoints, nVtx;
-    char clipO, clipA;
-    int i;
-
-    nVtx = 8;
-    clipO = buf[7].clip;
-    clipO |= buf[6].clip;
-    clipO |= buf[5].clip;
-    clipO |= buf[4].clip;
-    clipO |= buf[3].clip;
-    clipO |= buf[2].clip;
-    clipO |= buf[1].clip;
-    clipO |= buf[0].clip;
-    if (clipO < 0)
-        return;
-    clipA = ((((((buf[6].clip & buf[7].clip) & buf[0].clip) & buf[1].clip) & buf[2].clip) & buf[3].clip) & buf[4].clip) & buf[5].clip;
-    if (clipA)
-        return;
-    if ((long)((buf[2].xs - buf[1].xs) * (buf->ys - buf[1].ys) - (buf[2].ys - buf[1].ys) * (buf->xs - buf[1].xs)) < 0)
-        return;
-    for (i = 0; i < nVtx; i++) {
-        v_buffer[i].x = buf[i].xs;
-        v_buffer[i].y = buf[i].ys;
-        v_buffer[i].ooz = one / (buf[i].zv - 131072);
-        v_buffer[i].vr = 0;
-        v_buffer[i].vg = 0;
-        v_buffer[i].vb = 0;
-    }
-    nPoints = nVtx;
-    if (clipO) {
-        phd_leftfloat = (float)phd_winxmin;
-        phd_topfloat = (float)phd_winymin;
-        phd_rightfloat = float(phd_winxmin + phd_winwidth);
-        phd_bottomfloat = float(phd_winymin + phd_winheight);
-        nPoints = XYClipper(nPoints, v_buffer);
-    }
-    if (nPoints) {
-        z = (((((((buf[6].zv + buf[5].zv) + buf[4].zv) + buf[3].zv) + buf[2].zv) + buf[1].zv) + buf[0].zv) + buf[7].zv) * 0.125F - 131072;
-        HWI_InsertPoly_Gouraud(nPoints, z, 0, 0, 0, 13);
-    }
-}
-
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
 void SubdivideGT4(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl, int level);
 int GETR(int rgb);
-
-void SubdivideEdge(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *dest)
-{
-    float zv;
-    sint16 r, g, b, r0, g0, b0, r1, g1, b1;
-
-    dest->xv = (v1->xv + v0->xv) * 0.5F;
-    dest->yv = (v0->yv + v1->yv) * 0.5F;
-    dest->zv = (v0->zv + v1->zv) * 0.5F;
-    if (dest->zv > phd_znear) {
-        zv = f_persp / dest->zv;
-        dest->xs = zv * dest->xv + f_centerx;
-        dest->ys = dest->yv * zv + f_centery;
-        dest->ooz = zv * f_oneopersp;
-        dest->clip = 0;
-        if (dest->xs < phd_leftfloat)
-            dest->clip++;
-        else if (dest->xs > phd_rightfloat)
-            dest->clip += 2;
-        if (dest->ys < phd_topfloat)
-            dest->clip += 4;
-        else if (dest->ys > phd_bottomfloat)
-            dest->clip += 8;
-    } else {
-        dest->clip = -128;
-    }
-    r0 = (v0->g >> 10) & 31;
-    r1 = (v1->g >> 10) & 31;
-    g0 = (v0->g >> 5) & 31;
-    g1 = (v1->g >> 5) & 31;
-    b0 = v0->g & 31;
-    b1 = v1->g & 31;
-    r = (r0 + r1) >> 1;
-    g = (g0 + g1) >> 1;
-    b = (b0 + b1) >> 1;
-    dest->g = (sint16)(r << 10 | g << 5 | b);
-    dest->u = (v0->u + v1->u) >> 1;
-    dest->v = (v0->v + v1->v) >> 1;
-}
 
 void HWI_InsertPoly_Gouraud(int nPoints, float zdepth, int nR, int nG, int nB, int nDrawType);
 
@@ -1511,6 +1424,45 @@ template <class T> inline void swap(T &a, T &b)
 
 extern "C" {
 
+void SubdivideEdge(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *dest)
+{
+    float zv;
+    sint16 r, g, b, r0, g0, b0, r1, g1, b1;
+
+    dest->xv = (v1->xv + v0->xv) * 0.5F;
+    dest->yv = (v0->yv + v1->yv) * 0.5F;
+    dest->zv = (v0->zv + v1->zv) * 0.5F;
+    if (dest->zv > phd_znear) {
+        zv = f_persp / dest->zv;
+        dest->xs = zv * dest->xv + f_centerx;
+        dest->ys = dest->yv * zv + f_centery;
+        dest->ooz = zv * f_oneopersp;
+        dest->clip = 0;
+        if (dest->xs < phd_leftfloat)
+            dest->clip++;
+        else if (dest->xs > phd_rightfloat)
+            dest->clip += 2;
+        if (dest->ys < phd_topfloat)
+            dest->clip += 4;
+        else if (dest->ys > phd_bottomfloat)
+            dest->clip += 8;
+    } else {
+        dest->clip = -128;
+    }
+    r0 = (v0->g >> 10) & 31;
+    r1 = (v1->g >> 10) & 31;
+    g0 = (v0->g >> 5) & 31;
+    g1 = (v1->g >> 5) & 31;
+    b0 = v0->g & 31;
+    b1 = v1->g & 31;
+    r = (r0 + r1) >> 1;
+    g = (g0 + g1) >> 1;
+    b = (b0 + b1) >> 1;
+    dest->g = (sint16)(r << 10 | g << 5 | b);
+    dest->u = (v0->u + v1->u) >> 1;
+    dest->v = (v0->v + v1->v) >> 1;
+}
+
 inline void PHD_VBUF_To_TLVERT(PHD_VBUF *pV, D3DTLVERTEX *p)
 {
     long r, g, b;
@@ -1530,6 +1482,44 @@ inline void PHD_VBUF_To_TLVERT(PHD_VBUF *pV, D3DTLVERTEX *p)
 
 int XYGClipper(int n, VERTEX_INFO *in);
 void HWI_InsertGT4_Poly(PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHD_VBUF *v4, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl);
+
+void HWI_InsertTrans8_Sorted(PHD_VBUF *buf, sint16 shade)
+{
+    float z;
+    long nPoints, nVtx;
+    char clipO, clipA;
+    int i;
+
+    nVtx = 8;
+    clipO = buf[0].clip | buf[1].clip | buf[2].clip | buf[3].clip | buf[4].clip | buf[5].clip | buf[6].clip | buf[7].clip;
+    if (clipO < 0)
+        return;
+    clipA = buf[0].clip & buf[1].clip & buf[2].clip & buf[3].clip & buf[4].clip & buf[5].clip & buf[6].clip & buf[7].clip;
+    if (clipA)
+        return;
+    if ((long)((buf[2].xs - buf[1].xs) * (buf->ys - buf[1].ys) - (buf[2].ys - buf[1].ys) * (buf->xs - buf[1].xs)) < 0)
+        return;
+    for (i = 0; i < nVtx; i++) {
+        v_buffer[i].x = buf[i].xs;
+        v_buffer[i].y = buf[i].ys;
+        v_buffer[i].ooz = one / (buf[i].zv - 131072);
+        v_buffer[i].vr = 0;
+        v_buffer[i].vg = 0;
+        v_buffer[i].vb = 0;
+    }
+    nPoints = nVtx;
+    if (clipO) {
+        phd_leftfloat = (float)phd_winxmin;
+        phd_topfloat = (float)phd_winymin;
+        phd_rightfloat = float(phd_winxmin + phd_winwidth);
+        phd_bottomfloat = float(phd_winymin + phd_winheight);
+        nPoints = XYClipper(nPoints, v_buffer);
+    }
+    if (nPoints) {
+        z = (((((((buf[5].zv + buf[6].zv) + buf[4].zv) + buf[3].zv) + buf[2].zv) + buf[1].zv) + buf[0].zv) + buf[7].zv) * 0.125F - 131072;
+        HWI_InsertPoly_Gouraud(nPoints, z, 0, 0, 0, 13);
+    }
+}
 
 void HWI_InsertGT4_Poly(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl)
 {

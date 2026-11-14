@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="194.53" height="12" x="0" y="0" class="named"><title>1457 · 97.26%</title></rect>
-<rect width="5.47" height="12" x="194.53" y="0" class="nonmatching"><title>41 · 2.74%</title></rect>
+<rect width="194.66" height="12" x="0" y="0" class="named"><title>1458 · 97.33%</title></rect>
+<rect width="5.34" height="12" x="194.66" y="0" class="nonmatching"><title>40 · 2.67%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">97.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1457</tspan> · <tspan class="nonmatching">41</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1458</tspan> · <tspan class="nonmatching">40</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="181.55" height="12" x="0" y="0" class="named"><title>658 KB · 90.77%</title></rect>
-<rect width="18.45" height="12" x="181.55" y="0" class="nonmatching"><title>67 KB · 9.23%</title></rect>
+<rect width="181.67" height="12" x="0" y="0" class="named"><title>658 KB · 90.83%</title></rect>
+<rect width="18.33" height="12" x="181.67" y="0" class="nonmatching"><title>66 KB · 9.17%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="24.50">90.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">658 KB</tspan> · <tspan class="nonmatching">67 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">658 KB</tspan> · <tspan class="nonmatching">66 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -152,7 +152,7 @@
 <rect width="12" height="12" x="150" y="15" class="named"><title>0x0040a030 HWI_InsertFlatRect_Sorted (1237 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="15" class="named"><title>0x0040a510 HWI_InsertLine_Sorted (377 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="15" class="named"><title>0x0040a690 HWI_InsertTransQuad_Sorted (437 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="15" class="nonmatching"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="15" class="named"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="15" class="named"><title>0x0040aa00 RoomZedClipper (472 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="15" class="named"><title>0x0040abe0 RoomXYGUVClipper (2826 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="15" class="named"><title>0x0040b6f0 HWI_InsertAlphaSprite_Sorted (1504 bytes)</title></rect>
@@ -2028,7 +2028,7 @@
 <rect width="11.68" height="11.78" x="706.03" y="131.38" class="named"><title>0x00452090 TriggerPlasmaBallFlame_londboss (425 bytes)</title></rect>
 <rect width="11.66" height="11.78" x="720.71" y="131.38" class="named"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
 <rect width="11.63" height="11.78" x="735.37" y="131.38" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
-<rect width="11.54" height="11.84" x="434.30" y="146.16" class="nonmatching"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
+<rect width="11.54" height="11.84" x="434.30" y="146.16" class="named"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
 <rect width="11.54" height="11.73" x="434.30" y="161" class="nonmatching"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="11.54" height="11.70" x="434.30" y="175.73" class="named"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
 <rect width="11.54" height="11.67" x="434.30" y="190.43" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
