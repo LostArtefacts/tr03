@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="194.66" height="12" x="0" y="0" class="named"><title>1458 · 97.33%</title></rect>
-<rect width="5.34" height="12" x="194.66" y="0" class="nonmatching"><title>40 · 2.67%</title></rect>
+<rect width="194.79" height="12" x="0" y="0" class="named"><title>1459 · 97.40%</title></rect>
+<rect width="5.21" height="12" x="194.79" y="0" class="nonmatching"><title>39 · 2.60%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">97.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1458</tspan> · <tspan class="nonmatching">40</tspan></text>
+<text text-anchor="end" x="390" y="7.50">97.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1459</tspan> · <tspan class="nonmatching">39</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="181.67" height="12" x="0" y="0" class="named"><title>658 KB · 90.83%</title></rect>
-<rect width="18.33" height="12" x="181.67" y="0" class="nonmatching"><title>66 KB · 9.17%</title></rect>
+<rect width="182.09" height="12" x="0" y="0" class="named"><title>660 KB · 91.05%</title></rect>
+<rect width="17.91" height="12" x="182.09" y="0" class="nonmatching"><title>65 KB · 8.95%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">90.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">658 KB</tspan> · <tspan class="nonmatching">66 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">91.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">660 KB</tspan> · <tspan class="nonmatching">65 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1182,7 +1182,7 @@
 <rect width="12" height="12" x="600" y="315" class="named"><title>0x00475c70 S_DrawHealthBar (748 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="315" class="named"><title>0x00475f60 S_DrawAirBar (604 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="315" class="named"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="315" class="nonmatching"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="315" class="named"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="315" class="nonmatching"><title>0x00476a30 S_DrawDarts (609 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="315" class="nonmatching"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="315" class="named"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
@@ -1708,7 +1708,7 @@
 <rect width="22.43" height="22.47" x="282.23" y="103.34" class="named"><title>0x0049b270 ScanLinesTAffine (1556 bytes)</title></rect>
 <rect width="22.43" height="22.45" x="282.23" y="128.81" class="named"><title>0x00462ea0 SealmuteControl (1555 bytes)</title></rect>
 <rect width="22.43" height="22.31" x="282.23" y="154.26" class="named"><title>0x0040f4e0 ControlArea51Rocket (1545 bytes)</title></rect>
-<rect width="22.43" height="22.31" x="282.23" y="179.57" class="nonmatching"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
+<rect width="22.43" height="22.31" x="282.23" y="179.57" class="named"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="22.43" height="22.01" x="282.23" y="204.88" class="named"><title>0x0041f750 CompyControl (1524 bytes)</title></rect>
 <rect width="22.43" height="21.93" x="282.23" y="229.89" class="named"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
 <rect width="22.43" height="21.89" x="282.23" y="254.82" class="named"><title>0x0041ffa0 ControlPhase (1516 bytes)</title></rect>
