@@ -26,6 +26,8 @@ extern sint32 *phd_mxptr;
 
 void AlterFOV(sint16 fov);
 
+#ifndef PHD_3DPOS_H
+#define PHD_3DPOS_H
 typedef struct phd_3dpos {
     sint32 x_pos;
     sint32 y_pos;
@@ -34,5 +36,6 @@ typedef struct phd_3dpos {
     PHD_ANGLE y_rot;
     PHD_ANGLE z_rot;
 } PHD_3DPOS;
+#endif
 
 #endif

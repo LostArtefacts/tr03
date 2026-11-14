@@ -24,7 +24,6 @@ _HWR_SetCurrentTexture,0x00484C30,src/specific/hwrender.cpp,418,416,60,267,size 
 _DXUpdateFrame,0x004B3D10,src/specific/dd.cpp,810,810,63,778,same size,
 _S_DrawBat,0x00476420,src/specific/draweffects.cpp,1545,1520,64,1195,size differs,
 _LevelStats,0x00483B60,src/specific/game.cpp,1077,1072,68,863,size differs,
-_S_DrawSprite,0x0040CD20,src/3dsystem/scalespr.cpp,826,828,81,615,size differs,
 _S_DrawDarts,0x00476A30,src/specific/draweffects.cpp,609,608,91,285,size differs,
 _calc_roomvert,0x0048D9B0,src/specific/transform.cpp,1690,1707,91,1184,size differs,
 _DXTextureAdd,0x004B23D0,src/specific/texture.cpp,1390,1390,110,977,same size,

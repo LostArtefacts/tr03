@@ -2,7 +2,7 @@
 
 extern "C" {
 
-#include "../3dglodef.h"
+#include "../types.h"
 
 typedef struct phdspritestruct {
     unsigned short tpage;
@@ -19,8 +19,6 @@ extern PHDSPRITESTRUCT phdspriteinfo[];
 extern int phd_winwidth;
 extern int phd_winheight;
 extern int phd_znear;
-extern unsigned long TextLight[14];
-extern unsigned long TextDark[14];
 extern void (*InsertSprite)(int zdepth, int x1, int y1, int x2, int y2, int nSprite, int shade, int shade1, int nDrawType, int offset);
 
 typedef struct phd_vbuf {
@@ -57,17 +55,20 @@ extern sint32 phd_left, phd_right, phd_top, phd_bottom;
 #define M23 11
 
 extern sint32 w2v_matrix[12];
+extern unsigned long TextLight[14];
+extern unsigned long TextDark[14];
+
 extern sint32 phd_viewdist;
 extern sint32 phd_zfar;
 extern int distanceFogValue;
 
-void S_DrawScreenSprite2d(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
-void S_DrawScreenSprite(sint32 sx, sint32 sy, sint32 z, sint32 scaleH, sint32 scaleV, sint16 sprnum, sint16 shade, uint16 flags);
 sint16 *ins_room_sprite(sint16 *objptr, int num);
 extern void (*InsertSprite)(int zdepth, int x1, int y1, int x2, int y2, int nSprite, int shade, int shade1, int nDrawType, int offset);
 
 void S_DrawSprite(uint32 dwFlags, sint32 nX, sint32 nY, sint32 nZ, sint16 nSprite, sint16 nShade, sint16 nScale);
-int phd_TranslateRel(sint32 x, sint32 y, sint32 z);
+
+#include "../3dpos.h"
+#include "../3dglodef.h"
 void phd_RotYXZ(PHD_ANGLE ry, PHD_ANGLE rx, PHD_ANGLE rz);
 
 void S_DrawSprite(uint32 dwFlags, sint32 nX, sint32 nY, sint32 nZ, sint16 nSprite, sint16 nShade, sint16 nScale)
