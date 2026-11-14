@@ -403,23 +403,25 @@ uint32 __fastcall phd_sqrt(uint32 n);
 
 void S_CalculateStaticMeshLight(int x, int y, int z, int shade)
 {
-    DYNAMIC *dl;
-    int dx;
-    int dy;
-    int dz;
-    int dist;
-    int falloff;
-    int i;
-    sint16 r;
-    sint16 g;
     sint16 b;
+    sint16 r;
+    uint16 *radius;
+    int dz;
+    DYNAMIC *dl;
+    sint16 g;
+    int dy;
+    int i;
+    int dx;
+    int falloff;
+    int dist;
 
-    r = 0;
-    g = 0;
     b = 0;
+    g = 0;
+    r = 0;
 
     for (i = 0; i < number_dynamics; i++) {
-        dl = &dynamics[i];
+        radius = &dynamics[i].falloff;
+        dl = (DYNAMIC *)((char *)radius - FIELD_OFFSET(DYNAMIC, falloff));
         dx = x - dl->x;
         dy = y - dl->y;
         dz = z - dl->z;
@@ -427,11 +429,11 @@ void S_CalculateStaticMeshLight(int x, int y, int z, int shade)
             continue;
 
         dist = phd_sqrt(dx * dx + dy * dy + dz * dz);
-        falloff = dl->falloff >> 1;
+        falloff = *radius >> 1;
         if (dist <= falloff) {
             falloff = 0x1FFF - 0x1FFF * dist / falloff;
-            r += (sint16)((falloff * dl->r) >> 10);
-            g += (sint16)((falloff * dl->g) >> 10);
+            r = r + (sint16)((falloff * dl->r) >> 10);
+            g += (sint16)((dl->g * falloff) >> 10);
             b += (sint16)((falloff * dl->b) >> 10);
         }
     }

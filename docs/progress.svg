@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="193.86" height="12" x="0" y="0" class="named"><title>1452 · 96.93%</title></rect>
-<rect width="6.14" height="12" x="193.86" y="0" class="nonmatching"><title>46 · 3.07%</title></rect>
+<rect width="193.99" height="12" x="0" y="0" class="named"><title>1453 · 97%</title></rect>
+<rect width="6.01" height="12" x="193.99" y="0" class="nonmatching"><title>45 · 3%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">96.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1452</tspan> · <tspan class="nonmatching">46</tspan></text>
+<text text-anchor="end" x="390" y="7.50">97.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1453</tspan> · <tspan class="nonmatching">45</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="179.62" height="12" x="0" y="0" class="named"><title>651 KB · 89.81%</title></rect>
-<rect width="20.38" height="12" x="179.62" y="0" class="nonmatching"><title>74 KB · 10.19%</title></rect>
+<rect width="179.73" height="12" x="0" y="0" class="named"><title>651 KB · 89.87%</title></rect>
+<rect width="20.27" height="12" x="179.73" y="0" class="nonmatching"><title>73 KB · 10.13%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">89.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">651 KB</tspan> · <tspan class="nonmatching">74 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">89.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">651 KB</tspan> · <tspan class="nonmatching">73 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1319,7 +1319,7 @@
 <rect width="12" height="12" x="405" y="360" class="nonmatching"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="360" class="nonmatching"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="360" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
-<rect width="12" height="12" x="450" y="360" class="nonmatching"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
+<rect width="12" height="12" x="450" y="360" class="named"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="360" class="named"><title>0x00487720 do_pickup_option (33 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="360" class="named"><title>0x00487750 do_inventory_options (288 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="360" class="named"><title>0x00487870 do_levelselect_option (872 bytes)</title></rect>
@@ -2048,7 +2048,7 @@
 <rect width="11.54" height="11.25" x="434.30" y="393.13" class="named"><title>0x00438910 Inv_RingLight (401 bytes)</title></rect>
 <rect width="11.54" height="11.22" x="434.30" y="407.38" class="named"><title>0x00458660 EarthQuake (400 bytes)</title></rect>
 <rect width="11.54" height="11.20" x="434.30" y="421.61" class="named"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
-<rect width="11.54" height="11.20" x="434.30" y="435.80" class="nonmatching"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
+<rect width="11.54" height="11.20" x="434.30" y="435.80" class="named"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
 <rect width="11.62" height="11.04" x="448.84" y="146.16" class="named"><title>0x0041e8d0 LaraBaddieCollision (396 bytes)</title></rect>
 <rect width="11.59" height="11.04" x="463.45" y="146.16" class="named"><title>0x0041f430 MoveLaraPosition (395 bytes)</title></rect>
 <rect width="11.59" height="11.04" x="478.04" y="146.16" class="named"><title>0x00431a80 TriggerPilotFlame (395 bytes)</title></rect>
