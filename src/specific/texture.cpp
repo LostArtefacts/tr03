@@ -262,15 +262,16 @@ DXTEXTURE *DXRestoreSurfaceIfLost(int index, DXTEXTURE *list)
 
 void MMXTextureCopy(unsigned long *dest, unsigned char *src, unsigned long step)
 {
-    long x, y;
     long add;
+    long x, y;
 
     y = 0;
     add = step << 10;
-    for (; y < 256; y += step) {
+    while (y < 256) {
         for (x = 0; x < 256; x += step)
             *dest++ = ((unsigned long *)src)[x];
-        src += add;
+        y += step;
+        src = src + add;
     }
 }
 

@@ -1,0 +1,56 @@
+function,address,source,original_bytes,compiled_bytes,changed_disassembly_lines,changed_bytes,category,notes
+_GetFullPath,0x004825A0,src/specific/file.cpp,38,38,2,2,same size,"Target format is %s, source format includes drive letter. Target has NOP instead of push ecx and cleans 12 rather than 16 stack bytes; binary patch changes behavior."
+_WinMain@16,0x004B2940,src/specific/winmain.cpp,774,774,2,7,same size,"Target replaces CD_Init call with MOV EAX,1, skipping CD initialization; also CMP EAX,EBX versus TEST EAX,EAX. Binary patch changes behavior."
+_EmulateDrawPrimitive,0x00490BA0,src/specific/drawprimitive.cpp,880,880,2,4,same size,Only two independent stack argument loads appear in opposite order.
+_wgtmap_persp16_fp,0x00403CD0,src/3dsystem/3d_out.cpp,5315,5315,2,6,same size,One x87 multiplication loads its operands in opposite order.
+_AdjustTextureUVs,0x00481360,src/specific/file.cpp,110,110,3,5,same size,"Original LEA EBP,[EAX] versus MOV EBP,EAX; byte-load/pointer-increment scheduling also differs."
+_DXTextureNewPalette,0x004B1B80,src/specific/texture.cpp,112,112,4,4,same size,Three byte loads reordered; remaining instructions match.
+_gtmap_persp32_fp,0x00402D20,src/3dsystem/3d_out.cpp,4008,4008,5,21,same size,Two x87 multiplications reverse load order; one FLD is scheduled earlier.
+_TestHeight_minecart,0x004541F0,src/minecart.c,168,168,8,132,same size,
+_CreatureTurn,0x00416400,src/box.c,202,202,8,18,same size,Two return paths choose different temporaries and store/return instruction order.
+_Display_Requester,0x00439370,src/invfunc.c,2057,2057,8,8,same size,
+_HWI_InsertObjectG4_Sorted,0x00408DA0,src/3dsystem/hwinsert.cpp,1839,1839,9,10,same size,
+_S_DrawScreenFBox,0x00483770,src/specific/frontend.cpp,61,61,10,23,same size,Coordinate calculations agree after accounting for stack pushes; temporary registers and push scheduling differ.
+_WillBossControl,0x00472000,src/willboss.c,3290,3290,10,10,same size,
+_MemBlt,0x0048B270,src/specific/picture.cpp,142,142,12,88,same size,
+_DrawPictureAlpha,0x0048ADA0,src/specific/picture.cpp,547,549,14,376,size differs,
+_S_DrawFish,0x004775C0,src/specific/draweffects.cpp,1638,1638,16,103,same size,
+_S_CalculateStaticMeshLight,0x00487590,src/specific/litesrc.cpp,399,399,18,102,same size,
+_MMXInit,0x004933E0,src/specific/drawprimitive.cpp,206,206,20,172,same size,
+_TRDrawPicture,0x0048BA30,src/specific/picture.cpp,562,560,25,499,size differs,
+_S_GetObjectBounds,0x0048A4C0,src/specific/output.cpp,668,668,25,77,same size,
+_S_InsertBackground,0x00401D20,src/3dsystem/3d_gen.cpp,415,415,30,157,same size,
+_HWI_InsertTrans8_Sorted,0x0040A850,src/3dsystem/hwinsert.cpp,422,422,31,82,same size,
+_KayakControl,0x0043B730,src/kayak.c,902,902,37,69,same size,
+_HWR_SetCurrentTexture,0x00484C30,src/specific/hwrender.cpp,418,416,60,267,size differs,
+_DXUpdateFrame,0x004B3D10,src/specific/dd.cpp,810,810,63,778,same size,
+_S_DrawBat,0x00476420,src/specific/draweffects.cpp,1545,1520,64,1195,size differs,
+_LevelStats,0x00483B60,src/specific/game.cpp,1077,1072,68,863,size differs,
+_S_DrawSprite,0x0040CD20,src/3dsystem/scalespr.cpp,826,828,81,615,size differs,
+_S_DrawDarts,0x00476A30,src/specific/draweffects.cpp,609,608,91,285,size differs,
+_calc_roomvert,0x0048D9B0,src/specific/transform.cpp,1690,1707,91,1184,size differs,
+_DXTextureAdd,0x004B23D0,src/specific/texture.cpp,1390,1390,110,977,same size,
+_PickUpCollision,0x0045BC00,src/pickup.c,1379,1383,111,1202,size differs,
+_Inv_GlobeLight,0x00438AB0,src/invfunc.c,679,672,130,244,size differs,
+_S_DrawSparks,0x0047B2C0,src/specific/draweffects.cpp,2003,2038,132,1849,size differs,
+_LaraWaterCurrent,0x0044F310,src/laraswim.c,621,621,133,434,same size,
+_calc_vertice_light,0x004866E0,src/specific/litesrc.cpp,1212,1213,144,876,size differs,
+_Inv_RingLight,0x00438910,src/invfunc.c,401,384,147,337,size differs,
+_TriggerTribeBossHeadElectricity,0x0047D4A0,src/specific/draweffects.cpp,3280,3284,152,1566,size differs,
+_ScanLinesTFDecalAffine,0x004A5E50,src/specific/scanlinestfdecal.cpp,3392,3392,161,941,same size,
+_DrawLineG,0x00490110,src/specific/drawprimitive.cpp,751,751,216,634,same size,
+_FlameControl,0x0046F370,src/traps.c,1904,1856,227,1083,size differs,
+_S_CalculateLight,0x00486BA0,src/specific/litesrc.cpp,2474,2525,248,1578,size differs,
+_DoSnow,0x0047AA80,src/specific/draweffects.cpp,2101,2096,276,1127,size differs,
+_DrawLondonBossShield,0x00479C20,src/specific/draweffects.cpp,2178,2176,321,1927,size differs,
+_DrawTonyBossShield,0x0047CC10,src/specific/draweffects.cpp,2178,2176,326,1936,size differs,
+_DrawWillBossShield,0x0047FC30,src/specific/draweffects.cpp,2178,2176,330,1930,size differs,
+_DrawTribeBossShield,0x0047EC30,src/specific/draweffects.cpp,2187,2187,333,1939,same size,
+_DoRain,0x0047A4B0,src/specific/draweffects.cpp,1473,1526,372,1384,size differs,
+_S_DrawWakeFX,0x0047F4C0,src/specific/draweffects.cpp,1890,1856,416,1654,size differs,
+_do_passport_option,0x00487BE0,src/specific/option.cpp,1656,1656,420,998,same size,
+_S_DrawLaserBolts,0x00478BF0,src/specific/draweffects.cpp,2332,2320,462,2118,size differs,
+_DrawSummonRings,0x0047C2A0,src/specific/draweffects.cpp,2410,2384,565,2092,size differs,
+_TriggerElectricBeam,0x0047E170,src/specific/draweffects.cpp,2743,2836,697,2627,size differs,
+_DrawKnockBackRings,0x00477C30,src/specific/draweffects.cpp,2506,2432,703,2119,size differs,
+_DrawExplosionRings,0x00476CA0,src/specific/draweffects.cpp,2336,2240,733,2036,size differs,

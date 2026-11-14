@@ -46,15 +46,15 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="192.52" height="12" x="0" y="0" class="named"><title>1442 · 96.26%</title></rect>
-<rect width="7.48" height="12" x="192.52" y="0" class="nonmatching"><title>56 · 3.74%</title></rect>
+<rect width="192.66" height="12" x="0" y="0" class="named"><title>1443 · 96.33%</title></rect>
+<rect width="7.34" height="12" x="192.66" y="0" class="nonmatching"><title>55 · 3.67%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">96.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1442</tspan> · <tspan class="nonmatching">56</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1443</tspan> · <tspan class="nonmatching">55</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="178.07" height="12" x="0" y="0" class="named"><title>645 KB · 89.04%</title></rect>
-<rect width="21.93" height="12" x="178.07" y="0" class="nonmatching"><title>79 KB · 10.96%</title></rect>
+<rect width="178.10" height="12" x="0" y="0" class="named"><title>645 KB · 89.05%</title></rect>
+<rect width="21.90" height="12" x="178.10" y="0" class="nonmatching"><title>79 KB · 10.95%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="24.50">89.0%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">645 KB</tspan> · <tspan class="nonmatching">79 KB</tspan></text>
@@ -1551,7 +1551,7 @@
 <rect width="12" height="12" x="135" y="435" class="named"><title>0x004b21f0 DXClearAllTextures (52 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="435" class="named"><title>0x004b2230 DXRestoreSurfaceIfLost (75 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="435" class="named"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
-<rect width="12" height="12" x="180" y="435" class="nonmatching"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
+<rect width="12" height="12" x="180" y="435" class="named"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="435" class="nonmatching"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="435" class="nonmatching"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="435" class="named"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
@@ -2599,7 +2599,7 @@
 <rect width="5.56" height="5.36" x="592.25" y="333.89" class="named"><title>0x0041ebd0 ObjectCollision (92 bytes)</title></rect>
 <rect width="5.56" height="5.36" x="592.25" y="342.25" class="named"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="5.56" height="5.36" x="592.25" y="350.61" class="named"><title>0x0046e590 TrapDoorFloor (92 bytes)</title></rect>
-<rect width="5.56" height="5.36" x="592.25" y="358.97" class="nonmatching"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
+<rect width="5.56" height="5.36" x="592.25" y="358.97" class="named"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
 <rect width="5.56" height="5.36" x="592.25" y="367.33" class="named"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
 <rect width="5.56" height="5.30" x="592.25" y="375.69" class="named"><title>0x0041a890 DrawPhaseCinematic (91 bytes)</title></rect>
 <rect width="5.56" height="5.30" x="592.25" y="383.99" class="named"><title>0x0043b330 ClearBodyBag (91 bytes)</title></rect>
