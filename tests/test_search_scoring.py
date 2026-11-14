@@ -60,6 +60,14 @@ class SearchScoringTests(unittest.TestCase):
     def test_exact_comparison_matches(self) -> None:
         self.assertEqual(self.score(('_f', True, self.original, bytes(3), self.original, [])), 0)
 
+    def test_uncomparable_candidate_is_rejected(self) -> None:
+        with patch.object(self.scorer, 'compile', return_value='unused.obj'), \
+                patch.object(self.scorer, 'results', side_effect=ValueError('negative count')), \
+                patch('permute.os.remove') as remove:
+            self.assertIsNone(self.scorer.score(('', '', '')))
+        self.assertIn('negative count', self.scorer.why)
+        remove.assert_called_once_with('unused.obj')
+
     def test_breaking_a_previous_match_still_has_a_penalty(self) -> None:
         self.scorer.matched = {'_kept'}
         self.assertEqual(self.score(('_f', True, self.original, bytes(3), self.original, [])), 1000)
