@@ -1292,6 +1292,7 @@ int strcmp(const char *s1, const char *s2);
 
 sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
 {
+    unsigned short offset;
     int n;
     int linesheight = req->vis_lines * req->line_height + 10;
     int lineoneoff = req->ypos - linesheight;
@@ -1444,8 +1445,9 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
     }
     if (inputDB & IN_BACK) {
         if (req->noselector) {
-            req->line_oldoffset = req->line_offset;
-            if (req->line_offset + req->vis_lines < req->items) {
+            offset = req->line_offset;
+            req->line_oldoffset = offset;
+            if (offset + req->vis_lines < req->items) {
                 req->line_offset++;
                 SoundEffect(115, NULL, 0x4000004);
             }
@@ -1454,8 +1456,9 @@ sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds)
                 req->selected++;
                 SoundEffect(115, NULL, 0x4000004);
             }
-            req->line_oldoffset = req->line_offset;
-            if (req->selected > req->line_offset + req->vis_lines - 1)
+            offset = req->line_offset;
+            req->line_oldoffset = offset;
+            if (req->selected > offset + req->vis_lines - 1)
                 req->line_offset++;
         }
     } else if (inputDB & IN_FORWARD) {

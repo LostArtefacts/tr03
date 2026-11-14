@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="193.59" height="12" x="0" y="0" class="named"><title>1450 · 96.80%</title></rect>
-<rect width="6.41" height="12" x="193.59" y="0" class="nonmatching"><title>48 · 3.20%</title></rect>
+<rect width="193.72" height="12" x="0" y="0" class="named"><title>1451 · 96.86%</title></rect>
+<rect width="6.28" height="12" x="193.72" y="0" class="nonmatching"><title>47 · 3.14%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">96.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1450</tspan> · <tspan class="nonmatching">48</tspan></text>
+<text text-anchor="end" x="390" y="7.50">96.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1451</tspan> · <tspan class="nonmatching">47</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="178.90" height="12" x="0" y="0" class="named"><title>648 KB · 89.45%</title></rect>
-<rect width="21.10" height="12" x="178.90" y="0" class="nonmatching"><title>76 KB · 10.55%</title></rect>
+<rect width="179.47" height="12" x="0" y="0" class="named"><title>650 KB · 89.73%</title></rect>
+<rect width="20.53" height="12" x="179.47" y="0" class="nonmatching"><title>74 KB · 10.27%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">89.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">648 KB</tspan> · <tspan class="nonmatching">76 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">89.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">650 KB</tspan> · <tspan class="nonmatching">74 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -558,7 +558,7 @@
 <rect width="12" height="12" x="240" y="135" class="named"><title>0x00439290 ReqItemCentreAlign (27 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="135" class="named"><title>0x004392b0 ReqItemLeftalign (84 bytes)</title></rect>
 <rect width="12" height="12" x="270" y="135" class="named"><title>0x00439310 ReqItemRightalign (86 bytes)</title></rect>
-<rect width="12" height="12" x="285" y="135" class="nonmatching"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
+<rect width="12" height="12" x="285" y="135" class="named"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="135" class="named"><title>0x00439b80 SetRequesterHeading (170 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="135" class="named"><title>0x00439c30 RemoveAllReqItems (19 bytes)</title></rect>
 <rect width="12" height="12" x="330" y="135" class="named"><title>0x00439c50 ChangeRequesterItem (192 bytes)</title></rect>
@@ -1669,7 +1669,7 @@
 <rect width="26.30" height="25.87" x="197.67" y="392.34" class="nonmatching"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
 <rect width="26.30" height="25.78" x="197.67" y="421.22" class="named"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
 <rect width="25.37" height="26.55" x="226.97" y="0" class="named"><title>0x0044fbc0 LizManControl (2080 bytes)</title></rect>
-<rect width="25.37" height="26.26" x="226.97" y="29.55" class="nonmatching"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
+<rect width="25.37" height="26.26" x="226.97" y="29.55" class="named"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>
 <rect width="25.37" height="26.14" x="226.97" y="58.81" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="25.37" height="26.04" x="226.97" y="87.96" class="named"><title>0x0040ff50 ArmySMGControl (2040 bytes)</title></rect>
 <rect width="25.37" height="26.04" x="226.97" y="117" class="named"><title>0x00446dd0 ControlGrenade (2040 bytes)</title></rect>
