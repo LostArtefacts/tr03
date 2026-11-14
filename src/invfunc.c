@@ -104,19 +104,19 @@ void RingIsNotOpen(RING_INFO *ring)
 
 extern char **GF_Puzzle1Strings;
 extern char **GF_Puzzle2Strings;
+extern char **GF_Key4Strings;
 extern char **GF_Puzzle3Strings;
-extern char **GF_Puzzle4Strings;
 extern char **GF_Pickup1Strings;
 extern char **GF_Pickup2Strings;
 extern char **GF_Key1Strings;
 extern char **GF_Key2Strings;
 extern char **GF_Key3Strings;
-extern char **GF_Key4Strings;
 extern uint32 CurrentLevel;
 extern int health_bar_timer;
 int FlashIt(void);
 void DrawHealthBar(int flash_state);
 int Inv_RequestItem(int item_num);
+extern char **GF_Puzzle4Strings;
 __declspec(dllimport) int __cdecl wsprintfA(char *, const char *, ...);
 
 void RingNotActive(INVENTORY_ITEM *inv_item)
@@ -278,6 +278,7 @@ extern sint16 inv_keys_qtys[];
 int Inv_GetItemOption(int item_num);
 
 extern INVENTORY_ITEM icompass_option;
+extern INVENTORY_ITEM icon1_option;
 extern INVENTORY_ITEM igun_option;
 extern INVENTORY_ITEM iflare_option;
 extern INVENTORY_ITEM ishotgun_option;
@@ -306,7 +307,6 @@ extern INVENTORY_ITEM ikey1_option;
 extern INVENTORY_ITEM ikey2_option;
 extern INVENTORY_ITEM ikey3_option;
 extern INVENTORY_ITEM ikey4_option;
-extern INVENTORY_ITEM icon1_option;
 extern INVENTORY_ITEM icon2_option;
 extern INVENTORY_ITEM icon3_option;
 extern INVENTORY_ITEM icon4_option;
@@ -875,14 +875,14 @@ void Inv_RingGetView(RING_INFO *ring, PHD_3DPOS *viewer)
     viewer->z_rot = 0;
 }
 
-extern sint32 LightCol[12];
 extern PHD_VECTOR LPos[3];
+extern sint32 w2v_matrix[12];
 extern sint32 GlobePointLight;
 extern int smcr;
 extern int smcg;
-extern int smcb;
-extern sint32 w2v_matrix[12];
+extern sint32 LightCol[12];
 extern sint16 rcossin_tbl[];
+extern int smcb;
 
 void Inv_RingLight(RING_INFO *ring, sint16 object_number)
 {
@@ -972,7 +972,7 @@ void Inv_GlobeLight(sint16 object_number)
         LightCol[2] = 0x100;
         LightCol[6] = 0x400;
         LightCol[10] = 0x100;
-    } else if ((object_number == 2 && savegame.LondonComplete)
+    } else if ((2 == object_number && savegame.LondonComplete)
         || (object_number == 4 && savegame.IndiaComplete)
         || (object_number == 8 && savegame.PeruComplete)
         || (object_number == 16 && savegame.NevadaComplete)
@@ -1034,8 +1034,8 @@ void Inv_GlobeLight(sint16 object_number)
         z = (mptr[8] * LPos[1].x + mptr[9] * LPos[1].y + mptr[10] * LPos[1].z) >> W2V_SHIFT;
 
         LPos[1].x = x;
-        LPos[1].y = y;
         LPos[1].z = z;
+        LPos[1].y = y;
 
         x = (mptr[0] * LPos[2].x + mptr[1] * LPos[2].y + mptr[2] * LPos[2].z) >> W2V_SHIFT;
         y = (mptr[4] * LPos[2].x + mptr[5] * LPos[2].y + mptr[6] * LPos[2].z) >> W2V_SHIFT;
@@ -1332,13 +1332,13 @@ void ReqItemRightalign(REQUEST_INFO *req, TEXTSTRING *txt)
     }
 }
 
+extern GOURAUD_OUTLINE req_sel_gour2;
 extern GOURAUD_FILL req_bgnd_gour1;
 extern GOURAUD_OUTLINE req_bgnd_gour2;
+extern TEXTSTRING *passport_text1;
 extern GOURAUD_FILL req_main_gour1;
 extern GOURAUD_OUTLINE req_main_gour2;
-extern GOURAUD_OUTLINE req_sel_gour2;
 extern GOURAUD_FILL req_unsel_gour1;
-extern TEXTSTRING *passport_text1;
 extern char **GF_PCStrings;
 extern int inputDB;
 int strncmp(const char *s1, const char *s2, unsigned int n);
@@ -1669,10 +1669,10 @@ int AddQuadbikeTime(uint32 time)
 
 extern REQUEST_INFO Stats_Requester;
 extern char Valid_Level_Strings[24][50];
-extern char Valid_Level_Strings2[24][50];
 extern char **GF_Level_Names;
 extern uint32 CurrentLevel;
 extern sint16 LevelSecrets[];
+extern char Valid_Level_Strings2[24][50];
 extern int inputDB;
 sint32 Display_Requester(REQUEST_INFO *req, int des, int backgrounds);
 
