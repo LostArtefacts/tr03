@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import random
 import unittest
 from pathlib import Path
 from typing import Any
@@ -71,6 +72,28 @@ class SearchScoringTests(unittest.TestCase):
     def test_breaking_a_previous_match_still_has_a_penalty(self) -> None:
         self.scorer.matched = {'_kept'}
         self.assertEqual(self.score(('_f', True, self.original, bytes(3), self.original, [])), 1000)
+
+
+class StrengthFormTests(unittest.TestCase):
+    def test_does_not_change_float_multiplication(self) -> None:
+        body = 'float f(float value) { return (value * 256); }'
+        self.assertIsNone(permute.strength_form(body, random.Random(0)))
+
+    def test_preserves_shift_operand_grouping(self) -> None:
+        body = 'int f(int a, int b) { return (a + b << 2); }'
+        self.assertIsNone(permute.strength_form(body, random.Random(0)))
+        grouped = 'int f(int a, int b) { return a + (b << 2); }'
+        self.assertEqual(permute.strength_form(grouped, random.Random(0)),
+                         'int f(int a, int b) { return a + (b * 4); }')
+        indexed = 'int f(int i) { return (dynamic[i].falloff << 1); }'
+        self.assertEqual(permute.strength_form(indexed, random.Random(0)),
+                         'int f(int i) { return (dynamic[i].falloff * 2); }')
+
+    def test_reverses_only_integer_power_of_two_products(self) -> None:
+        body = 'int f(int value) { return (value * 256); }'
+        self.assertEqual(permute.strength_form(body, random.Random(0)),
+                         'int f(int value) { return (value << 8); }')
+        self.assertIsNone(permute.strength_form(body.replace('256', '255'), random.Random(0)))
 
 
 if __name__ == '__main__':
