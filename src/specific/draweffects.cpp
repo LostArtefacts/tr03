@@ -176,10 +176,6 @@ void S_DrawFish(ITEM_INFO *item)
     long x1, x2, x3, y1, y2, y3, z1, z2, z3;
     FISH_INFO *fptr;
     PHDSPRITESTRUCT *pSpriteInfo;
-    PHD_VBUF v[3];
-    PHDTEXTURESTRUCT Tex;
-    int clipflag;
-    int rgb;
     int sw, sh;
     int clipx, clipy;
 
@@ -255,6 +251,10 @@ void S_DrawFish(ITEM_INFO *item)
         z1 <<= W2V_SHIFT;
         z2 <<= W2V_SHIFT;
         z3 <<= W2V_SHIFT;
+        PHD_VBUF v[3];
+        PHDTEXTURESTRUCT Tex;
+        int clipflag;
+        int rgb;
         rgb = 80 + angle;
         rgb = (rgb >> 3) << 10 | (rgb >> 3) << 5 | (rgb >> 3);
         clipflag = 0;
