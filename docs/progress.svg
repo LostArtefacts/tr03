@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="194.26" height="12" x="0" y="0" class="named"><title>1455 · 97.13%</title></rect>
-<rect width="5.74" height="12" x="194.26" y="0" class="nonmatching"><title>43 · 2.87%</title></rect>
+<rect width="194.39" height="12" x="0" y="0" class="named"><title>1456 · 97.20%</title></rect>
+<rect width="5.61" height="12" x="194.39" y="0" class="nonmatching"><title>42 · 2.80%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">97.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1455</tspan> · <tspan class="nonmatching">43</tspan></text>
+<text text-anchor="end" x="390" y="7.50">97.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1456</tspan> · <tspan class="nonmatching">42</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="179.99" height="12" x="0" y="0" class="named"><title>652 KB · 90%</title></rect>
-<rect width="20.01" height="12" x="179.99" y="0" class="nonmatching"><title>73 KB · 10%</title></rect>
+<rect width="181.10" height="12" x="0" y="0" class="named"><title>656 KB · 90.55%</title></rect>
+<rect width="18.90" height="12" x="181.10" y="0" class="nonmatching"><title>69 KB · 9.45%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">90.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">652 KB</tspan> · <tspan class="nonmatching">73 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">90.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">656 KB</tspan> · <tspan class="nonmatching">69 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -122,7 +122,7 @@
 <rect width="12" height="12" x="450" y="0" class="named"><title>0x00402720 xgen_xg (326 bytes)</title></rect>
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402870 xgen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="0" class="named"><title>0x00402a90 xgen_xguvpersp_fp (644 bytes)</title></rect>
-<rect width="12" height="12" x="495" y="0" class="nonmatching"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
+<rect width="12" height="12" x="495" y="0" class="named"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="12" height="12" x="510" y="0" class="nonmatching"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x004051a0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="named"><title>0x004051e0 draw_poly_wgtmap_persp (55 bytes)</title></rect>
@@ -1609,7 +1609,7 @@
 <rect width="39.26" height="36.29" x="53.69" y="231.21" class="named"><title>0x0049d920 ScanLinesTFAlphaDecalAffine (4399 bytes)</title></rect>
 <rect width="39.26" height="34.25" x="53.69" y="270.50" class="named"><title>0x00498da0 ScanLinesGAlpha (4153 bytes)</title></rect>
 <rect width="39.26" height="34.03" x="53.69" y="307.75" class="named"><title>0x004b0b50 ScanLinesTGDecal (4127 bytes)</title></rect>
-<rect width="39.26" height="33.05" x="53.69" y="344.78" class="nonmatching"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
+<rect width="39.26" height="33.05" x="53.69" y="344.78" class="named"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
 <rect width="39.26" height="32.12" x="53.69" y="380.83" class="named"><title>0x004afc10 ScanLinesTGDecalAffine (3897 bytes)</title></rect>
 <rect width="39.26" height="31.05" x="53.69" y="415.95" class="named"><title>0x004328d0 GF_ModifyInventory (3768 bytes)</title></rect>
 <rect width="34.62" height="35.08" x="95.95" y="0" class="named"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
