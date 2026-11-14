@@ -884,67 +884,94 @@ extern sint32 LightCol[12];
 extern sint16 rcossin_tbl[];
 extern int smcb;
 
-void Inv_RingLight(RING_INFO *ring, sint16 object_number)
+
+
+
+
+void Inv_RingCalcAdders(RING_INFO *ring, sint16 rotation_duration)
 {
-    LightCol[0] = 0xcf0;
-    LightCol[4] = 0x680;
-    LightCol[8] = 0x000;
+    ring->angle_adder = 0x10000 / ring->number_of_objects;
+    ring->rot_adderL = ring->angle_adder / rotation_duration;
+    ring->rot_adderR = -ring->rot_adderL;
+}
 
-    LightCol[1] = 0xcf0;
-    LightCol[5] = 0xcf0;
-    LightCol[9] = 0xcf0;
+void Inv_RingDoMotions(RING_INFO *ring)
+{
+    INVENTORY_ITEM *inv_item;
+    IMOTION_INFO *imo;
 
-    LightCol[2] = 0x0;
-    LightCol[6] = 0x0;
-    LightCol[10] = 0xc00;
+    imo = ring->imo;
+    if (imo->count) {
+        ring->radius += imo->radius_rate;
+        ring->camerapos.y_pos += imo->camera_yrate;
+        ring->ringpos.y_rot += imo->rotate_rate;
+        ring->camera_pitch += imo->camera_pitch_rate;
+        inv_item = *(ring->list + ring->current_object);
+        inv_item->pt_xrot += imo->item_ptxrot_rate;
+        inv_item->x_rot += imo->item_xrot_rate;
+        inv_item->ytrans += imo->item_ytrans_rate;
+        inv_item->ztrans += imo->item_ztrans_rate;
 
-    LPos[0].x = 4096 << 2;
-    LPos[0].y = -4096 << 2;
-    LPos[0].z = 3072 << 2;
+        imo->count--;
+        if (!imo->count) {
+            imo->status = imo->status_target;
+            if (imo->radius_rate) {
+                imo->radius_rate = 0;
+                ring->radius = imo->radius_target;
+            }
+            if (imo->camera_yrate) {
+                imo->camera_yrate = 0;
+                ring->camerapos.y_pos = imo->camera_ytarget;
+            }
+            if (imo->rotate_rate) {
+                imo->rotate_rate = 0;
+                ring->ringpos.y_rot = imo->rotate_target;
+            }
+            if (imo->item_ptxrot_rate) {
+                imo->item_ptxrot_rate = 0;
+                inv_item->pt_xrot = imo->item_ptxrot_target;
+            }
+            if (imo->item_xrot_rate) {
+                imo->item_xrot_rate = 0;
+                inv_item->x_rot = imo->item_xrot_target;
+            }
+            if (imo->item_ytrans_rate) {
+                imo->item_ytrans_rate = 0;
+                inv_item->ytrans = imo->item_ytrans_target;
+            }
+            if (imo->item_ztrans_rate) {
+                imo->item_ztrans_rate = 0;
+                inv_item->ztrans = imo->item_ztrans_target;
+            }
+            if (imo->camera_pitch_rate) {
+                imo->camera_pitch_rate = 0;
+                ring->camera_pitch = imo->camera_pitch_target;
+            }
+        }
+    }
 
-    LPos[1].x = -4096 << 2;
-    LPos[1].y = -4096 << 2;
-    LPos[1].z = 3072 << 2;
-
-    LPos[2].x = 0 << 2;
-    LPos[2].y = 2048 << 2;
-    LPos[2].z = 3072 << 2;
-
-    smcr = 32;
-    smcg = 32;
-    smcb = 32;
-
-    {
-        int x, y, z;
-        sint32 *mptr;
-
-        mptr = w2v_matrix;
-
-        x = (mptr[0] * LPos[0].x + mptr[1] * LPos[0].y + mptr[2] * LPos[0].z) >> W2V_SHIFT;
-        y = (mptr[4] * LPos[0].x + mptr[5] * LPos[0].y + mptr[6] * LPos[0].z) >> W2V_SHIFT;
-        z = (mptr[8] * LPos[0].x + mptr[9] * LPos[0].y + mptr[10] * LPos[0].z) >> W2V_SHIFT;
-
-        LPos[0].x = x;
-        LPos[0].y = y;
-        LPos[0].z = z;
-
-        x = (mptr[0] * LPos[1].x + mptr[1] * LPos[1].y + mptr[2] * LPos[1].z) >> W2V_SHIFT;
-        y = (mptr[4] * LPos[1].x + mptr[5] * LPos[1].y + mptr[6] * LPos[1].z) >> W2V_SHIFT;
-        z = (mptr[8] * LPos[1].x + mptr[9] * LPos[1].y + mptr[10] * LPos[1].z) >> W2V_SHIFT;
-
-        LPos[1].x = x;
-        LPos[1].y = y;
-        LPos[1].z = z;
-
-        x = (mptr[0] * LPos[2].x + mptr[1] * LPos[2].y + mptr[2] * LPos[2].z) >> W2V_SHIFT;
-        y = (mptr[4] * LPos[2].x + mptr[5] * LPos[2].y + mptr[6] * LPos[2].z) >> W2V_SHIFT;
-        z = (mptr[8] * LPos[2].x + mptr[9] * LPos[2].y + mptr[10] * LPos[2].z) >> W2V_SHIFT;
-
-        LPos[2].x = x;
-        LPos[2].y = y;
-        LPos[2].z = z;
+    if (ring->rotating) {
+        ring->ringpos.y_rot += ring->rot_adder;
+        ring->rot_count--;
+        if (ring->rot_count == 0) {
+            ring->current_object = ring->target_object;
+            ring->ringpos.y_rot = 0xc000 - ring->current_object * ring->angle_adder;
+            ring->rotating = 0;
+        }
     }
 }
+
+void Inv_RingRotateLeft(RING_INFO *ring)
+{
+    ring->rotating = 1;
+    ring->target_object = ring->current_object - 1;
+    if (ring->target_object < 0)
+        ring->target_object = ring->number_of_objects - 1;
+    ring->rot_count = ROTATE_DURATION;
+    ring->rot_adder = ring->rot_adderL;
+}
+
+
 
 void Inv_GlobeLight(sint16 object_number)
 {
@@ -1045,89 +1072,6 @@ void Inv_GlobeLight(sint16 object_number)
         LPos[2].y = y;
         LPos[2].z = z;
     }
-}
-
-void Inv_RingCalcAdders(RING_INFO *ring, sint16 rotation_duration)
-{
-    ring->angle_adder = 0x10000 / ring->number_of_objects;
-    ring->rot_adderL = ring->angle_adder / rotation_duration;
-    ring->rot_adderR = -ring->rot_adderL;
-}
-
-void Inv_RingDoMotions(RING_INFO *ring)
-{
-    INVENTORY_ITEM *inv_item;
-    IMOTION_INFO *imo;
-
-    imo = ring->imo;
-    if (imo->count) {
-        ring->radius += imo->radius_rate;
-        ring->camerapos.y_pos += imo->camera_yrate;
-        ring->ringpos.y_rot += imo->rotate_rate;
-        ring->camera_pitch += imo->camera_pitch_rate;
-        inv_item = *(ring->list + ring->current_object);
-        inv_item->pt_xrot += imo->item_ptxrot_rate;
-        inv_item->x_rot += imo->item_xrot_rate;
-        inv_item->ytrans += imo->item_ytrans_rate;
-        inv_item->ztrans += imo->item_ztrans_rate;
-
-        imo->count--;
-        if (!imo->count) {
-            imo->status = imo->status_target;
-            if (imo->radius_rate) {
-                imo->radius_rate = 0;
-                ring->radius = imo->radius_target;
-            }
-            if (imo->camera_yrate) {
-                imo->camera_yrate = 0;
-                ring->camerapos.y_pos = imo->camera_ytarget;
-            }
-            if (imo->rotate_rate) {
-                imo->rotate_rate = 0;
-                ring->ringpos.y_rot = imo->rotate_target;
-            }
-            if (imo->item_ptxrot_rate) {
-                imo->item_ptxrot_rate = 0;
-                inv_item->pt_xrot = imo->item_ptxrot_target;
-            }
-            if (imo->item_xrot_rate) {
-                imo->item_xrot_rate = 0;
-                inv_item->x_rot = imo->item_xrot_target;
-            }
-            if (imo->item_ytrans_rate) {
-                imo->item_ytrans_rate = 0;
-                inv_item->ytrans = imo->item_ytrans_target;
-            }
-            if (imo->item_ztrans_rate) {
-                imo->item_ztrans_rate = 0;
-                inv_item->ztrans = imo->item_ztrans_target;
-            }
-            if (imo->camera_pitch_rate) {
-                imo->camera_pitch_rate = 0;
-                ring->camera_pitch = imo->camera_pitch_target;
-            }
-        }
-    }
-
-    if (ring->rotating) {
-        ring->ringpos.y_rot += ring->rot_adder;
-        ring->rot_count--;
-        if (ring->rot_count == 0) {
-            ring->current_object = ring->target_object;
-            ring->ringpos.y_rot = 0xc000 - ring->current_object * ring->angle_adder;
-            ring->rotating = 0;
-        }
-    }
-}
-
-void Inv_RingRotateLeft(RING_INFO *ring)
-{
-    ring->rotating = 1;
-    ring->target_object = ring->current_object - 1;
-    if (ring->target_object < 0)
-        ring->target_object = ring->number_of_objects - 1;
-    ring->rot_count = ROTATE_DURATION;
-    ring->rot_adder = ring->rot_adderL;
 }
 
 void Inv_RingRotateRight(RING_INFO *ring)
@@ -1768,6 +1712,70 @@ void ShowGymStatsText(char *time_str, int type)
 }
 
 static int stats_mode;
+
+
+
+void Inv_RingLight(RING_INFO *ring, sint16 object_number)
+{
+    LightCol[0] = 0xcf0;
+    LightCol[4] = 0x680;
+    LightCol[8] = 0x000;
+
+    LightCol[1] = 0xcf0;
+    LightCol[5] = 0xcf0;
+    LightCol[9] = 0xcf0;
+
+    LightCol[2] = 0x0;
+    LightCol[6] = 0x0;
+    LightCol[10] = 0xc00;
+
+    LPos[0].x = 4096 << 2;
+    LPos[0].y = -4096 << 2;
+    LPos[0].z = 3072 << 2;
+
+    LPos[1].x = -4096 << 2;
+    LPos[1].y = -4096 << 2;
+    LPos[1].z = 3072 << 2;
+
+    LPos[2].x = 0 << 2;
+    LPos[2].y = 2048 << 2;
+    LPos[2].z = 3072 << 2;
+
+    smcr = 32;
+    smcg = 32;
+    smcb = 32;
+
+    {
+        int x, y, z;
+        sint32 *mptr;
+
+        mptr = w2v_matrix;
+
+        x = (mptr[0] * LPos[0].x + mptr[1] * LPos[0].y + mptr[2] * LPos[0].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[0].x + mptr[5] * LPos[0].y + mptr[6] * LPos[0].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[0].x + mptr[9] * LPos[0].y + mptr[10] * LPos[0].z) >> W2V_SHIFT;
+
+        LPos[0].x = x;
+        LPos[0].y = y;
+        LPos[0].z = z;
+
+        x = (mptr[0] * LPos[1].x + mptr[1] * LPos[1].y + mptr[2] * LPos[1].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[1].x + mptr[5] * LPos[1].y + mptr[6] * LPos[1].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[1].x + mptr[9] * LPos[1].y + mptr[10] * LPos[1].z) >> W2V_SHIFT;
+
+        LPos[1].x = x;
+        LPos[1].y = y;
+        LPos[1].z = z;
+
+        x = (mptr[0] * LPos[2].x + mptr[1] * LPos[2].y + mptr[2] * LPos[2].z) >> W2V_SHIFT;
+        y = (mptr[4] * LPos[2].x + mptr[5] * LPos[2].y + mptr[6] * LPos[2].z) >> W2V_SHIFT;
+        z = (mptr[8] * LPos[2].x + mptr[9] * LPos[2].y + mptr[10] * LPos[2].z) >> W2V_SHIFT;
+
+        LPos[2].x = x;
+        LPos[2].y = y;
+        LPos[2].z = z;
+    }
+}
 
 void ShowStatsText(char *time_str, int type)
 {
