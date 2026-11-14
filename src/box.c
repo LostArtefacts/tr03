@@ -168,6 +168,36 @@ int StalkBox(ITEM_INFO *item, ITEM_INFO *enemy, sint16 box_number)
     return 1;
 }
 
+
+
+sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn)
+{
+    sint32 x, z, range;
+    sint16 angle;
+    CREATURE_INFO *creature;
+
+    if (item->data == NULL)
+        return 0;
+    if (maximum_turn == 0)
+        return 0;
+
+    creature = (CREATURE_INFO *)item->data;
+    z = creature->target.z - item->pos.z_pos;
+    x = creature->target.x - item->pos.x_pos;
+    angle = phd_atan(z, x) - item->pos.y_rot;
+    range = (item->speed << 14) / maximum_turn;
+    if ((angle > 0x4000 || angle < -0x4000) && x * x + z * z < range * range)
+        maximum_turn >>= 1;
+
+    if (angle > maximum_turn)
+        angle = maximum_turn;
+    else if (angle < -maximum_turn)
+        angle = -maximum_turn;
+
+    item->pos.y_rot += angle;
+    return angle;
+}
+
 int CreatureCreature(sint16 item_number)
 {
     sint16 link, angle;
@@ -267,33 +297,7 @@ void CreatureDie(sint16 item_number, int explode)
     }
 }
 
-sint16 CreatureTurn(ITEM_INFO *item, sint16 maximum_turn)
-{
-    sint32 x, z, range;
-    sint16 angle;
-    CREATURE_INFO *creature;
 
-    if (item->data == NULL)
-        return 0;
-    if (maximum_turn == 0)
-        return 0;
-
-    creature = (CREATURE_INFO *)item->data;
-    z = creature->target.z - item->pos.z_pos;
-    x = creature->target.x - item->pos.x_pos;
-    angle = phd_atan(z, x) - item->pos.y_rot;
-    range = (item->speed << 14) / maximum_turn;
-    if ((angle > 0x4000 || angle < -0x4000) && x * x + z * z < range * range)
-        maximum_turn >>= 1;
-
-    if (angle > maximum_turn)
-        angle = maximum_turn;
-    else if (angle < -maximum_turn)
-        angle = -maximum_turn;
-
-    item->pos.y_rot += angle;
-    return angle;
-}
 
 void GetCreatureMood(ITEM_INFO *item, AI_INFO *info, int violent)
 {
