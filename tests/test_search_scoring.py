@@ -96,5 +96,29 @@ class StrengthFormTests(unittest.TestCase):
         self.assertIsNone(permute.strength_form(body.replace('256', '255'), random.Random(0)))
 
 
+class OperandIdentityTests(unittest.TestCase):
+    def shapes(self, ours: str, original: str) -> tuple[list[str], list[str]]:
+        return permute.comparison_shapes(compare.disasm(bytes.fromhex(ours), 0x480000),
+                                         compare.disasm(bytes.fromhex(original), 0x480000),
+                                         0x400000, 0x700000)
+
+    def test_distinct_array_elements_remain_distinct(self) -> None:
+        ours, original = self.shapes('a304006000c3', 'a300006000c3')
+        self.assertNotEqual(ours, original)
+        self.assertIn('0x600004', ours[0])
+
+    def test_unknown_data_addresses_still_match(self) -> None:
+        ours, original = self.shapes('a1eeeeeeeec3', 'a100006000c3')
+        self.assertEqual(ours, original)
+
+    def test_known_call_targets_remain_distinct(self) -> None:
+        ours, original = self.shapes('e8fbff0000c3', 'e8fbff0100c3')
+        self.assertNotEqual(ours, original)
+
+    def test_branch_displacement_changes_do_not_change_shapes(self) -> None:
+        ours, original = self.shapes('7505c3', '7508c3')
+        self.assertEqual(ours, original)
+
+
 if __name__ == '__main__':
     unittest.main()
