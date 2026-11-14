@@ -171,10 +171,10 @@ void MemBlt(char *dest, int x, int y, int w, int h, int sz, char *source, int x2
 
     stride = desc.ddpfPixelFormat.dwRGBBitCount >> 3;
     dest += stride * (x + y * sz);
-    source += y2 * desc.lPitch + x2 * stride;
+    source += y2 * desc.lPitch + x2 * (desc.ddpfPixelFormat.dwRGBBitCount >> 3);
     while (h--) {
-        memcpy(dest, source, w * stride);
-        dest += sz * stride;
+        memcpy(dest, source, w * (desc.ddpfPixelFormat.dwRGBBitCount >> 3));
+        dest += sz * (desc.ddpfPixelFormat.dwRGBBitCount >> 3);
         source += desc.lPitch;
     }
 }
