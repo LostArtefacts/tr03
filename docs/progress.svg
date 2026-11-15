@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="195.33" height="12" x="0" y="0" class="named"><title>1463 · 97.66%</title></rect>
-<rect width="4.67" height="12" x="195.33" y="0" class="nonmatching"><title>35 · 2.34%</title></rect>
+<rect width="195.46" height="12" x="0" y="0" class="named"><title>1464 · 97.73%</title></rect>
+<rect width="4.54" height="12" x="195.46" y="0" class="nonmatching"><title>34 · 2.27%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">97.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1463</tspan> · <tspan class="nonmatching">35</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1464</tspan> · <tspan class="nonmatching">34</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="184.33" height="12" x="0" y="0" class="named"><title>668 KB · 92.16%</title></rect>
-<rect width="15.67" height="12" x="184.33" y="0" class="nonmatching"><title>57 KB · 7.84%</title></rect>
+<rect width="184.93" height="12" x="0" y="0" class="named"><title>670 KB · 92.46%</title></rect>
+<rect width="15.07" height="12" x="184.93" y="0" class="nonmatching"><title>55 KB · 7.54%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">92.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">668 KB</tspan> · <tspan class="nonmatching">57 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">92.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">670 KB</tspan> · <tspan class="nonmatching">55 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1200,7 +1200,7 @@
 <rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="nonmatching"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="nonmatching"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="330" class="nonmatching"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="330" class="named"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="330" class="nonmatching"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="330" class="nonmatching"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="330" class="named"><title>0x004804d0 InitSoundAdapterListGlobal (18 bytes)</title></rect>
@@ -1661,7 +1661,7 @@
 <rect width="26.30" height="27.19" x="197.67" y="153.08" class="named"><title>0x00430db0 FlamerControl (2208 bytes)</title></rect>
 <rect width="26.30" height="27.11" x="197.67" y="183.27" class="named"><title>0x00412820 BoatControl (2202 bytes)</title></rect>
 <rect width="26.30" height="27.09" x="197.67" y="213.38" class="named"><title>0x0043cc00 KayakUserInput (2200 bytes)</title></rect>
-<rect width="26.30" height="26.93" x="197.67" y="243.47" class="nonmatching"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
+<rect width="26.30" height="26.93" x="197.67" y="243.47" class="named"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="26.30" height="26.82" x="197.67" y="273.40" class="named"><title>0x00479c20 DrawLondonBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.82" x="197.67" y="303.22" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.82" x="197.67" y="333.04" class="nonmatching"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>

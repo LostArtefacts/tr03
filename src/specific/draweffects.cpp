@@ -695,27 +695,22 @@ void DrawTonyBossShield(ITEM_INFO *item)
 
 void DrawTribeBossShield(ITEM_INFO *item)
 {
-    DISPLAYMODE *dm;
     SHIELD_POINTS *s0;
     SHIELD_POINTS *s1;
     PHDSPRITESTRUCT *sprite;
-    PHD_VBUF v[4];
-    PHDTEXTURESTRUCT tex;
     long *pZ0;
     long *pZ1;
     short *pXY0;
     short *pXY1;
     float zv;
-    long w, h, r, g, b, rgb;
+    long w, h;
     long i, j;
-    short x, y, z;
     long x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, c1, c2, c3, c4;
     long Z[150];
     long u1, v1, u2, v2;
     short XY[150];
-    dm = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode];
-    w = dm->w - 1;
-    h = dm->h - 1;
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
     phd_PushMatrix();
     phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
     pXY0 = XY;
@@ -723,9 +718,13 @@ void DrawTribeBossShield(ITEM_INFO *item)
     shield_active = 0;
     s0 = &TribeBossShield[0];
     for (i = 0; i < 40; i++) {
-        x = s0->x;
-        y = s0->y;
-        z = s0->z;
+        long result[3];
+        short TempMesh[3];
+        long r, g, b, rgb;
+
+        TempMesh[0] = s0->x;
+        TempMesh[1] = s0->y;
+        TempMesh[2] = s0->z;
         if (i >= 8 && i <= 31) {
             rgb = s0->rgb;
             r = rgb & 0xff;
@@ -745,21 +744,23 @@ void DrawTribeBossShield(ITEM_INFO *item)
             }
         }
         s0++;
-        z1 = x * phd_mxptr[8] + y * phd_mxptr[9] + z * phd_mxptr[10] + phd_mxptr[11];
-        zv = f_persp / (float)z1;
-        x1 = x * phd_mxptr[0] + y * phd_mxptr[1] + z * phd_mxptr[2] + phd_mxptr[3];
-        pXY0[0] = (short)(x1 * zv + f_centerx);
-        y1 = x * phd_mxptr[4] + y * phd_mxptr[5] + z * phd_mxptr[6] + phd_mxptr[7];
-        pXY0[1] = (short)(y1 * zv + f_centery);
-        *pZ0++ = z1;
+        const sint32 *matrix = phd_mxptr;
+        const sint32 &zrow2 = matrix[10];
+        result[0] = TempMesh[0] * matrix[0] + TempMesh[1] * matrix[1] + TempMesh[2] * matrix[2] + matrix[3];
+        result[2] = TempMesh[0] * matrix[8] + TempMesh[1] * matrix[9] + TempMesh[2] * zrow2 + matrix[11];
+        result[1] = TempMesh[0] * matrix[4] + TempMesh[1] * matrix[5] + TempMesh[2] * matrix[6] + matrix[7];
+        zv = f_persp / (float)result[2];
+        pXY0[0] = (short)(result[0] * zv + f_centerx);
+        pXY0[1] = (short)(result[1] * zv + f_centery);
+        *pZ0++ = result[2];
         pXY0 += 2;
     }
+    s0 = &TribeBossShield[0];
+    s1 = &TribeBossShield[8];
     pXY0 = &XY[0];
     pZ0 = &Z[0];
     pXY1 = &XY[16];
     pZ1 = &Z[8];
-    s0 = &TribeBossShield[0];
-    s1 = &TribeBossShield[8];
     for (i = 0; i < 4; i++) {
         x1 = *pXY0++;
         y1 = *pXY0++;
@@ -803,15 +804,17 @@ void DrawTribeBossShield(ITEM_INFO *item)
                 c4 = s1->rgb;
             }
             if ((z1 + z2 + z3 + z4) >> 2 > phd_znear && (c1 || c2 || c3 || c4) && x1 > -128 && x2 > -128 && x3 > -128 && x4 > -128 && x1 < w + 128 && x2 < w + 128 && x3 < w + 128 && x4 < w + 128 && y1 > -128 && y2 > -128 && y3 > -128 && y4 > -128 && y1 < h + 128 && y2 < h + 128 && y3 < h + 128 && y4 < h + 128) {
+                PHD_VBUF v[4];
+                PHDTEXTURESTRUCT tex;
                 setXYZ4(v, 0, x1, y1, z1, c1, x2, y2, z2, c2, x4, y4, z4, c4, x3, y3, z3, c3);
                 tex.u1 = u1;
+                tex.v1 = v1;
                 tex.u2 = u2;
                 tex.u3 = u2;
                 tex.u4 = u1;
-                tex.v1 = v1;
+                tex.v4 = v2;
                 tex.v2 = v1;
                 tex.v3 = v2;
-                tex.v4 = v2;
                 tex.tpage = sprite->tpage;
                 tex.drawtype = 2;
                 HWI_InsertGT4_Sorted(&v[0], &v[1], &v[2], &v[3], &tex, 0, 1);
