@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="194.79" height="12" x="0" y="0" class="named"><title>1459 · 97.40%</title></rect>
-<rect width="5.21" height="12" x="194.79" y="0" class="nonmatching"><title>39 · 2.60%</title></rect>
+<rect width="194.93" height="12" x="0" y="0" class="named"><title>1460 · 97.46%</title></rect>
+<rect width="5.07" height="12" x="194.93" y="0" class="nonmatching"><title>38 · 2.54%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">97.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1459</tspan> · <tspan class="nonmatching">39</tspan></text>
+<text text-anchor="end" x="390" y="7.50">97.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1460</tspan> · <tspan class="nonmatching">38</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="182.09" height="12" x="0" y="0" class="named"><title>660 KB · 91.05%</title></rect>
-<rect width="17.91" height="12" x="182.09" y="0" class="nonmatching"><title>65 KB · 8.95%</title></rect>
+<rect width="182.62" height="12" x="0" y="0" class="named"><title>662 KB · 91.31%</title></rect>
+<rect width="17.38" height="12" x="182.62" y="0" class="nonmatching"><title>63 KB · 8.69%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">91.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">660 KB</tspan> · <tspan class="nonmatching">65 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">91.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">662 KB</tspan> · <tspan class="nonmatching">63 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1115,7 +1115,7 @@
 <rect width="12" height="12" x="345" y="300" class="named"><title>0x0046f090 FlameEmitter2Control (156 bytes)</title></rect>
 <rect width="12" height="12" x="360" y="300" class="named"><title>0x0046f130 FlameEmitter3Control (174 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="300" class="named"><title>0x0046f1e0 SideFlameDetection (387 bytes)</title></rect>
-<rect width="12" height="12" x="390" y="300" class="nonmatching"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
+<rect width="12" height="12" x="390" y="300" class="named"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="12" height="12" x="405" y="300" class="named"><title>0x0046fae0 LaraBurn (73 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="300" class="named"><title>0x0046fb30 LavaBurn (150 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="300" class="named"><title>0x0046fbd0 TriggerPendulumFlame (428 bytes)</title></rect>
@@ -1679,7 +1679,7 @@
 <rect width="25.37" height="25.12" x="226.97" y="232.50" class="named"><title>0x0046fd80 DinoControl (1968 bytes)</title></rect>
 <rect width="25.37" height="24.40" x="226.97" y="260.63" class="named"><title>0x004946b0 SW_TriSetupGT (1911 bytes)</title></rect>
 <rect width="25.37" height="24.36" x="226.97" y="288.02" class="named"><title>0x00470b70 TribeBossControl (1908 bytes)</title></rect>
-<rect width="25.37" height="24.31" x="226.97" y="315.38" class="nonmatching"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
+<rect width="25.37" height="24.31" x="226.97" y="315.38" class="named"><title>0x0046f370 FlameControl (1904 bytes)</title></rect>
 <rect width="25.37" height="24.18" x="226.97" y="342.69" class="named"><title>0x00497fe0 DXInitTextures (1894 bytes)</title></rect>
 <rect width="25.37" height="24.13" x="226.97" y="369.86" class="nonmatching"><title>0x0047f4c0 S_DrawWakeFX (1890 bytes)</title></rect>
 <rect width="25.37" height="23.54" x="226.97" y="396.99" class="named"><title>0x00425ea0 DrawAnimatingItem (1844 bytes)</title></rect>
