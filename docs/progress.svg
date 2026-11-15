@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.33" height="12" x="0" y="0" class="named"><title>1478 · 98.66%</title></rect>
-<rect width="2.67" height="12" x="197.33" y="0" class="nonmatching"><title>20 · 1.34%</title></rect>
+<rect width="197.46" height="12" x="0" y="0" class="named"><title>1479 · 98.73%</title></rect>
+<rect width="2.54" height="12" x="197.46" y="0" class="nonmatching"><title>19 · 1.27%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">98.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1478</tspan> · <tspan class="nonmatching">20</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1479</tspan> · <tspan class="nonmatching">19</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.16" height="12" x="0" y="0" class="named"><title>693 KB · 95.58%</title></rect>
-<rect width="8.84" height="12" x="191.16" y="0" class="nonmatching"><title>32 KB · 4.42%</title></rect>
+<rect width="191.49" height="12" x="0" y="0" class="named"><title>694 KB · 95.75%</title></rect>
+<rect width="8.51" height="12" x="191.49" y="0" class="nonmatching"><title>31 KB · 4.25%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">95.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">693 KB</tspan> · <tspan class="nonmatching">32 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">95.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">694 KB</tspan> · <tspan class="nonmatching">31 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1316,7 +1316,7 @@
 <rect width="12" height="12" x="360" y="360" class="named"><title>0x00486050 CalculateWibbleTable (232 bytes)</title></rect>
 <rect width="12" height="12" x="375" y="360" class="named"><title>0x00486140 Key (288 bytes)</title></rect>
 <rect width="12" height="12" x="390" y="360" class="named"><title>0x00486260 S_UpdateInput (1147 bytes)</title></rect>
-<rect width="12" height="12" x="405" y="360" class="nonmatching"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
+<rect width="12" height="12" x="405" y="360" class="named"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
 <rect width="12" height="12" x="420" y="360" class="nonmatching"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
 <rect width="12" height="12" x="435" y="360" class="named"><title>0x00487550 S_CalculateStaticLight (50 bytes)</title></rect>
 <rect width="12" height="12" x="450" y="360" class="named"><title>0x00487590 S_CalculateStaticMeshLight (399 bytes)</title></rect>
@@ -1741,7 +1741,7 @@
 <rect width="19.44" height="20.25" x="307.66" y="46.97" class="named"><title>0x00436ae0 DrawInventoryItem (1216 bytes)</title></rect>
 <rect width="19.44" height="20.25" x="307.66" y="70.22" class="named"><title>0x00467840 SoundEffect (1216 bytes)</title></rect>
 <rect width="19.44" height="20.22" x="307.66" y="93.47" class="named"><title>0x004813d0 LoadObjects (1214 bytes)</title></rect>
-<rect width="19.44" height="20.19" x="307.66" y="116.69" class="nonmatching"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
+<rect width="19.44" height="20.19" x="307.66" y="116.69" class="named"><title>0x004866e0 calc_vertice_light (1212 bytes)</title></rect>
 <rect width="19.44" height="19.79" x="307.66" y="139.88" class="named"><title>0x00494e30 MMXDrawTriangleFog (1188 bytes)</title></rect>
 <rect width="19.44" height="19.74" x="307.66" y="162.67" class="named"><title>0x0048cbf0 S_LoadSettings (1185 bytes)</title></rect>
 <rect width="19.44" height="19.69" x="307.66" y="185.41" class="named"><title>0x0046c860 ControlTonyFireBall (1182 bytes)</title></rect>

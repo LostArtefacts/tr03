@@ -1,3 +1,15 @@
+extern "C" {
+#include "../3dglodef.h"
+extern sint32 LightCol[12];
+inline void ApplyTransposeMatrix(sint32 *mptr, PHD_VECTOR *objptr, sint32 &x, sint32 &y, sint32 &z)
+{
+    x = (mptr[0] * objptr->x + mptr[4] * objptr->y + mptr[8] * objptr->z) >> W2V_SHIFT;
+    y = (mptr[1] * objptr->x + mptr[5] * objptr->y + mptr[9] * objptr->z) >> W2V_SHIFT;
+    z = (mptr[2] * objptr->x + mptr[6] * objptr->y + mptr[10] * objptr->z) >> W2V_SHIFT;
+}
+
+}
+
 #include "standard.h"
 #include "specific.h"
 #include "drawprimitive.h"
@@ -6,10 +18,12 @@ extern "C" {
 
 #include "../game.h"
 
+extern PHD_VECTOR LPos[3];
 extern int smcr;
 extern int smcg;
 extern int smcb;
 
+extern sint32 LightPos[12];
 typedef struct phd_vbuf {
     float xv;
     float yv;
@@ -27,17 +41,8 @@ typedef struct phd_vbuf {
 } PHD_VBUF;
 
 extern PHD_VBUF vbuf[1500];
-extern sint32 LightPos[12];
-extern sint32 LightCol[12];
-extern PHD_VECTOR LPos[3];
 extern int distanceFogValue;
 
-inline void ApplyTransposeMatrix(sint32 *mptr, PHD_VECTOR *objptr, sint32 &x, sint32 &y, sint32 &z)
-{
-    x = (mptr[0] * objptr->x + mptr[4] * objptr->y + mptr[8] * objptr->z) >> W2V_SHIFT;
-    y = (mptr[1] * objptr->x + mptr[5] * objptr->y + mptr[9] * objptr->z) >> W2V_SHIFT;
-    z = (mptr[2] * objptr->x + mptr[6] * objptr->y + mptr[10] * objptr->z) >> W2V_SHIFT;
-}
 
 sint16 *calc_vertice_light(sint16 *objptr, sint16 *objptr1)
 {
@@ -54,11 +59,30 @@ sint16 *calc_vertice_light(sint16 *objptr, sint16 *objptr1)
     dest = &vbuf[0];
     numvert = (int)*(objptr++);
     if (numvert > 0) {
+        float light0;
+        float light1;
+        float light2;
+        float light5;
+        float light6;
+        float light4;
+        float light10;
+        float light8;
+        float light9;
         mptr = phd_mxptr;
         ApplyTransposeMatrix(mptr, &LPos[0], LightPos[0], LightPos[1], LightPos[2]);
         ApplyTransposeMatrix(mptr, &LPos[1], LightPos[4], LightPos[5], LightPos[6]);
         ApplyTransposeMatrix(mptr, &LPos[2], LightPos[8], LightPos[9], LightPos[10]);
-        fade = distanceFogValue << W2V_SHIFT;
+        light0 = float(LightPos[0]);
+        light2 = float(LightPos[2]);
+        light1 = float(LightPos[1]);
+        light4 = float(LightPos[4]);
+        light6 = float(LightPos[6]);
+        light5 = float(LightPos[5]);
+        light8 = float(LightPos[8]);
+        light10 = float(LightPos[10]);
+        light9 = float(LightPos[9]);
+        fade = distanceFogValue;
+        fade <<= W2V_SHIFT;
         for (; numvert > 0; numvert--, dest++, objptr += 3) {
             sint32 sdot;
             sint32 odot;
@@ -74,11 +98,11 @@ sint16 *calc_vertice_light(sint16 *objptr, sint16 *objptr1)
             float fodot;
             float fddot;
 
-            fsdot = (v1 * float(LightPos[0])) + (v2 * float(LightPos[1])) + (v3 * float(LightPos[2]));
+            fsdot = (v1 * light0) + (v2 * light1) + (v3 * light2);
             sdot = FTOL(fsdot);
-            fodot = (v1 * float(LightPos[4])) + (v2 * float(LightPos[5])) + (v3 * float(LightPos[6]));
+            fodot = (v1 * light4) + (v2 * light5) + (v3 * light6);
             odot = FTOL(fodot);
-            fddot = (v1 * float(LightPos[8])) + (v2 * float(LightPos[9])) + (v3 * float(LightPos[10]));
+            fddot = (v1 * light8) + (v2 * light9) + (v3 * light10);
             ddot = FTOL(fddot);
             sdot >>= 16;
             odot >>= 16;
@@ -403,12 +427,12 @@ uint32 __fastcall phd_sqrt(uint32 n);
 
 void S_CalculateStaticMeshLight(int x, int y, int z, int shade)
 {
-    sint16 b;
     sint16 r;
+    sint16 g;
     uint16 *radius;
     int dz;
     DYNAMIC *dl;
-    sint16 g;
+    sint16 b;
     int dy;
     int i;
     int dx;
