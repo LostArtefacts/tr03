@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.13" height="12" x="0" y="0" class="named"><title>1469 · 98.06%</title></rect>
-<rect width="3.87" height="12" x="196.13" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
+<rect width="196.26" height="12" x="0" y="0" class="named"><title>1470 · 98.13%</title></rect>
+<rect width="3.74" height="12" x="196.26" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">98.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1469</tspan> · <tspan class="nonmatching">29</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1470</tspan> · <tspan class="nonmatching">28</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.91" height="12" x="0" y="0" class="named"><title>681 KB · 93.95%</title></rect>
-<rect width="12.09" height="12" x="187.91" y="0" class="nonmatching"><title>44 KB · 6.05%</title></rect>
+<rect width="188.60" height="12" x="0" y="0" class="named"><title>684 KB · 94.30%</title></rect>
+<rect width="11.40" height="12" x="188.60" y="0" class="nonmatching"><title>41 KB · 5.70%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">94.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">681 KB</tspan> · <tspan class="nonmatching">44 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">94.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">684 KB</tspan> · <tspan class="nonmatching">41 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1186,7 +1186,7 @@
 <rect width="12" height="12" x="660" y="315" class="nonmatching"><title>0x00476a30 S_DrawDarts (609 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="315" class="named"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="315" class="named"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
-<rect width="12" height="12" x="705" y="315" class="nonmatching"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
+<rect width="12" height="12" x="705" y="315" class="named"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="315" class="named"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
 <rect width="12" height="12" x="735" y="315" class="nonmatching"><title>0x00478bf0 S_DrawLaserBolts (2332 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="330" class="named"><title>0x00479510 ClipLine (765 bytes)</title></rect>
@@ -1639,7 +1639,7 @@
 <rect width="31.31" height="27.11" x="133.57" y="360.50" class="named"><title>0x00443ca0 GetLHAInt (2622 bytes)</title></rect>
 <rect width="31.31" height="27.08" x="133.57" y="390.61" class="named"><title>0x00493c70 SW_TriSetupGTP (2619 bytes)</title></rect>
 <rect width="31.31" height="26.32" x="133.57" y="420.68" class="named"><title>0x004623f0 ExtractSaveGameInfo (2546 bytes)</title></rect>
-<rect width="26.79" height="30.29" x="167.88" y="0" class="nonmatching"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
+<rect width="26.79" height="30.29" x="167.88" y="0" class="named"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
 <rect width="26.79" height="30.01" x="167.88" y="33.29" class="named"><title>0x004461e0 ControlRocket (2483 bytes)</title></rect>
 <rect width="26.79" height="29.98" x="167.88" y="66.30" class="named"><title>0x0045dc30 PunkControl (2480 bytes)</title></rect>
 <rect width="26.79" height="29.90" x="167.88" y="99.28" class="nonmatching"><title>0x00486ba0 S_CalculateLight (2474 bytes)</title></rect>
