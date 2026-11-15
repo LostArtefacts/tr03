@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.80" height="12" x="0" y="0" class="named"><title>1474 · 98.40%</title></rect>
-<rect width="3.20" height="12" x="196.80" y="0" class="nonmatching"><title>24 · 1.60%</title></rect>
+<rect width="196.93" height="12" x="0" y="0" class="named"><title>1475 · 98.46%</title></rect>
+<rect width="3.07" height="12" x="196.93" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1474</tspan> · <tspan class="nonmatching">24</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1475</tspan> · <tspan class="nonmatching">23</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.64" height="12" x="0" y="0" class="named"><title>687 KB · 94.82%</title></rect>
-<rect width="10.36" height="12" x="189.64" y="0" class="nonmatching"><title>38 KB · 5.18%</title></rect>
+<rect width="189.67" height="12" x="0" y="0" class="named"><title>687 KB · 94.83%</title></rect>
+<rect width="10.33" height="12" x="189.67" y="0" class="nonmatching"><title>37 KB · 5.17%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="24.50">94.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">687 KB</tspan> · <tspan class="nonmatching">38 KB</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">687 KB</tspan> · <tspan class="nonmatching">37 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1229,7 +1229,7 @@
 <rect width="12" height="12" x="555" y="330" class="named"><title>0x00480d50 MyReadFile (73 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="330" class="named"><title>0x00480da0 LoadTexturePages (449 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="330" class="named"><title>0x00480f70 LoadRooms (1008 bytes)</title></rect>
-<rect width="12" height="12" x="600" y="330" class="nonmatching"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
+<rect width="12" height="12" x="600" y="330" class="named"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="330" class="named"><title>0x004813d0 LoadObjects (1214 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="330" class="named"><title>0x00481890 LoadSprites (310 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="330" class="named"><title>0x004819d0 LoadItems (481 bytes)</title></rect>
@@ -2532,7 +2532,7 @@
 <rect width="5.75" height="6.24" x="574.62" y="376.65" class="named"><title>0x0042f110 ControlClockChimes (111 bytes)</title></rect>
 <rect width="5.75" height="6.24" x="574.62" y="385.90" class="named"><title>0x0048e490 UT_CenterWindow (111 bytes)</title></rect>
 <rect width="5.75" height="6.19" x="574.62" y="395.14" class="named"><title>0x0042e2c0 DoBloodSplat (110 bytes)</title></rect>
-<rect width="5.75" height="6.19" x="574.62" y="404.33" class="nonmatching"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
+<rect width="5.75" height="6.19" x="574.62" y="404.33" class="named"><title>0x00481360 AdjustTextureUVs (110 bytes)</title></rect>
 <rect width="5.75" height="6.19" x="574.62" y="413.52" class="named"><title>0x00485a10 HWR_GetAllTextureHandles (110 bytes)</title></rect>
 <rect width="5.75" height="6.13" x="574.62" y="422.71" class="named"><title>0x00463bc0 InitialiseObjects (109 bytes)</title></rect>
 <rect width="5.75" height="6.08" x="574.62" y="431.84" class="named"><title>0x0043b130 CreateEffect (108 bytes)</title></rect>

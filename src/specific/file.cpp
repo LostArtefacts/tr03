@@ -342,24 +342,30 @@ void AdjustTextureUVs(bool reset)
     sint16 *uv;
     int num;
     unsigned char flag;
-    unsigned int i;
+    int i;
     unsigned char *pFlag;
     int j;
+    int count;
+    PHDTEXTURESTRUCT *texture;
 
     if (reset)
         App.nUVAdd = 0;
     num = 256 - App.nUVAdd;
     pFlag = TexturesUVFlag;
-    for (i = 0; i != nTInfos; i++) {
-        uv = (sint16 *)&phdtextinfo[i].u1;
+    texture = phdtextinfo;
+    count = *(volatile int *)&nTInfos;
+    for (i = count; i--;) {
+        uv = (sint16 *)&texture->u1;
         flag = *pFlag++;
         for (j = 0; j < 8; j++) {
             if (flag & 1)
-                uv[j] -= (sint16)num;
+                *uv -= (sint16)num;
             else
-                uv[j] += (sint16)num;
+                *uv += (sint16)num;
             flag >>= 1;
+            uv++;
         }
+        texture++;
     }
     App.nUVAdd += num;
 }
