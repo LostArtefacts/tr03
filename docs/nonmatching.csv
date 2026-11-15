@@ -4,7 +4,6 @@ _WinMain@16,0x004B2940,src/specific/winmain.cpp,774,774,2,7,same size,"Target re
 _wgtmap_persp16_fp,0x00403CD0,src/3dsystem/3d_out.cpp,5315,5315,2,6,same size,One x87 multiplication loads its operands in opposite order.
 _TestHeight_minecart,0x004541F0,src/minecart.c,168,168,8,132,same size,
 _HWI_InsertObjectG4_Sorted,0x00408DA0,src/3dsystem/hwinsert.cpp,1839,1839,9,10,same size,
-_WillBossControl,0x00472000,src/willboss.c,3290,3290,10,10,same size,
 _MMXInit,0x004933E0,src/specific/drawprimitive.cpp,206,206,20,172,same size,
 _S_InsertBackground,0x00401D20,src/3dsystem/3d_gen.cpp,415,415,30,157,same size,
 _HWR_SetCurrentTexture,0x00484C30,src/specific/hwrender.cpp,418,416,40,266,size differs,

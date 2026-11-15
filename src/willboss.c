@@ -438,6 +438,7 @@ void WillBossControl(sint16 item_number)
     ITEM_INFO *item;
     CREATURE_INFO *willboss;
     sint16 angle, head, tilt, i, linknum, pathnum, juncnum, old_closest, pathdiff, lara_alive, in_fire_zone;
+    sint16 lara_old_closest;
     AI_INFO info;
     sint32 distance, best_distance, best_junc_distance, will2junc_distance, x, z;
 
@@ -524,8 +525,8 @@ void WillBossControl(sint16 item_number)
     }
 
     best_distance = 0x7fffffff;
-    old_closest = lara_ai_path;
-    for (i = old_closest - 1; i < old_closest + 2; i++) {
+    lara_old_closest = lara_ai_path;
+    for (i = lara_old_closest - 1; i < lara_old_closest + 2; i++) {
         if (i < 0)
             pathnum = i + 16;
         else if (i > 15)

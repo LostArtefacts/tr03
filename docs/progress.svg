@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.06" height="12" x="0" y="0" class="named"><title>1476 · 98.53%</title></rect>
-<rect width="2.94" height="12" x="197.06" y="0" class="nonmatching"><title>22 · 1.47%</title></rect>
+<rect width="197.20" height="12" x="0" y="0" class="named"><title>1477 · 98.60%</title></rect>
+<rect width="2.80" height="12" x="197.20" y="0" class="nonmatching"><title>21 · 1.40%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1476</tspan> · <tspan class="nonmatching">22</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1477</tspan> · <tspan class="nonmatching">21</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="190.14" height="12" x="0" y="0" class="named"><title>689 KB · 95.07%</title></rect>
-<rect width="9.86" height="12" x="190.14" y="0" class="nonmatching"><title>36 KB · 4.93%</title></rect>
+<rect width="191.04" height="12" x="0" y="0" class="named"><title>692 KB · 95.52%</title></rect>
+<rect width="8.96" height="12" x="191.04" y="0" class="nonmatching"><title>32 KB · 4.48%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">95.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">689 KB</tspan> · <tspan class="nonmatching">36 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">95.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">692 KB</tspan> · <tspan class="nonmatching">32 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1132,7 +1132,7 @@
 <rect width="12" height="12" x="600" y="300" class="named"><title>0x00471bd0 ExplodeTribeBoss (598 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="300" class="named"><title>0x00471e30 TriggerSummonSmoke (381 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="300" class="named"><title>0x00471fb0 FindLizardManItemNumber (74 bytes)</title></rect>
-<rect width="12" height="12" x="645" y="300" class="nonmatching"><title>0x00472000 WillBossControl (3290 bytes)</title></rect>
+<rect width="12" height="12" x="645" y="300" class="named"><title>0x00472000 WillBossControl (3290 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="300" class="named"><title>0x00472ce0 S_DrawWillBoss (58 bytes)</title></rect>
 <rect width="12" height="12" x="675" y="300" class="named"><title>0x00472d20 InitialiseWillBoss (53 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="300" class="named"><title>0x00472d60 ExplodeWillBoss (638 bytes)</title></rect>
@@ -1618,7 +1618,7 @@
 <rect width="34.62" height="31.73" x="95.95" y="113.12" class="named"><title>0x004a5e50 ScanLinesTFDecalAffine (3392 bytes)</title></rect>
 <rect width="34.62" height="31.31" x="95.95" y="147.85" class="named"><title>0x00455e30 MonkeyControl (3348 bytes)</title></rect>
 <rect width="34.62" height="31.09" x="95.95" y="182.16" class="named"><title>0x0040d650 BatonControl (3324 bytes)</title></rect>
-<rect width="34.62" height="30.77" x="95.95" y="216.25" class="nonmatching"><title>0x00472000 WillBossControl (3290 bytes)</title></rect>
+<rect width="34.62" height="30.77" x="95.95" y="216.25" class="named"><title>0x00472000 WillBossControl (3290 bytes)</title></rect>
 <rect width="34.62" height="30.67" x="95.95" y="250.02" class="nonmatching"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="34.62" height="30.56" x="95.95" y="283.69" class="named"><title>0x00405a80 HWI_InsertGT3_Poly (3268 bytes)</title></rect>
 <rect width="34.62" height="30.56" x="95.95" y="317.26" class="named"><title>0x00488260 do_detail_option (3268 bytes)</title></rect>
