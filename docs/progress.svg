@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.40" height="12" x="0" y="0" class="named"><title>1471 · 98.20%</title></rect>
-<rect width="3.60" height="12" x="196.40" y="0" class="nonmatching"><title>27 · 1.80%</title></rect>
+<rect width="196.53" height="12" x="0" y="0" class="named"><title>1472 · 98.26%</title></rect>
+<rect width="3.47" height="12" x="196.53" y="0" class="nonmatching"><title>26 · 1.74%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.2%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1471</tspan> · <tspan class="nonmatching">27</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.3%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1472</tspan> · <tspan class="nonmatching">26</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.82" height="12" x="0" y="0" class="named"><title>684 KB · 94.41%</title></rect>
-<rect width="11.18" height="12" x="188.82" y="0" class="nonmatching"><title>41 KB · 5.59%</title></rect>
+<rect width="189.21" height="12" x="0" y="0" class="named"><title>686 KB · 94.60%</title></rect>
+<rect width="10.79" height="12" x="189.21" y="0" class="nonmatching"><title>39 KB · 5.40%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">94.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">684 KB</tspan> · <tspan class="nonmatching">41 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">94.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">686 KB</tspan> · <tspan class="nonmatching">39 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1552,7 +1552,7 @@
 <rect width="12" height="12" x="150" y="435" class="named"><title>0x004b2230 DXRestoreSurfaceIfLost (75 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="435" class="named"><title>0x004b2280 DXTextureAddPal (239 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="435" class="named"><title>0x004b2370 MMXTextureCopy (92 bytes)</title></rect>
-<rect width="12" height="12" x="195" y="435" class="nonmatching"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
+<rect width="12" height="12" x="195" y="435" class="named"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="435" class="nonmatching"><title>0x004b2940 WinMain (774 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="435" class="named"><title>0x004b2c50 WinAppExit (16 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="435" class="named"><title>0x004b2c60 WinFreeDX (223 bytes)</title></rect>
@@ -1726,7 +1726,7 @@
 <rect width="22.31" height="20.50" x="410.35" y="0" class="named"><title>0x0044a890 FireWeapon (1412 bytes)</title></rect>
 <rect width="22.29" height="20.50" x="435.66" y="0" class="named"><title>0x0041a0be CameraCollisionBounds (1411 bytes)</title></rect>
 <rect width="22.28" height="20.50" x="460.95" y="0" class="named"><title>0x00448650 AnimatePistols (1410 bytes)</title></rect>
-<rect width="21.96" height="20.50" x="486.23" y="0" class="nonmatching"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
+<rect width="21.96" height="20.50" x="486.23" y="0" class="named"><title>0x004b23d0 DXTextureAdd (1390 bytes)</title></rect>
 <rect width="21.79" height="20.50" x="511.19" y="0" class="nonmatching"><title>0x0045bc00 PickUpCollision (1379 bytes)</title></rect>
 <rect width="21.63" height="20.50" x="535.98" y="0" class="named"><title>0x00420e10 GetHeight (1369 bytes)</title></rect>
 <rect width="21.47" height="20.50" x="560.61" y="0" class="named"><title>0x004b2f80 WinDXInit (1359 bytes)</title></rect>

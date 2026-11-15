@@ -14,7 +14,6 @@ _HWR_SetCurrentTexture,0x00484C30,src/specific/hwrender.cpp,418,416,40,266,size 
 _LevelStats,0x00483B60,src/specific/game.cpp,1077,1072,68,863,size differs,
 _calc_roomvert,0x0048D9B0,src/specific/transform.cpp,1690,1707,91,1184,size differs,
 _S_DrawDarts,0x00476A30,src/specific/draweffects.cpp,609,608,92,294,size differs,
-_DXTextureAdd,0x004B23D0,src/specific/texture.cpp,1390,1390,110,977,same size,
 _PickUpCollision,0x0045BC00,src/pickup.c,1379,1383,111,1202,size differs,
 _TriggerTribeBossHeadElectricity,0x0047D4A0,src/specific/draweffects.cpp,3280,3284,137,1575,size differs,
 _calc_vertice_light,0x004866E0,src/specific/litesrc.cpp,1212,1213,144,876,size differs,

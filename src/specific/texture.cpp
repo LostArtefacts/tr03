@@ -302,13 +302,13 @@ int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, uns
 {
     DXTEXTURE *tex;
     D3DTEXTUREINFO *tinfo;
-    DDCOLORKEY ckey;
+    int index;
     DDSURFACEDESC desc;
     unsigned char *udest;
     char *dest;
     unsigned long col;
-    long oldTF, lw, a, r, g, b, pitch;
-    int index;
+    long oldTF, lw, r, g, b, pitch;
+    unsigned long a;
 
     oldTF = -1;
     if (App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bPalette) {
@@ -362,10 +362,10 @@ int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, uns
                 a = 0;
                 break;
             case 555:
+                a = (short)((short)col >> 15);
                 r = (col >> 7) & 0xf8;
                 g = (col >> 2) & 0xf8;
                 b = (col << 3) & 0xf8;
-                a = (short)((short)col >> 15);
                 break;
             }
             if (flags == 16)
@@ -376,9 +376,9 @@ int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, uns
             }
             tinfo = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF];
             if (tinfo->bAlpha || App.DXConfigPtr->MMX)
-                col = (r >> (8 - tinfo->rbpp) << tinfo->rshift) | (g >> (8 - tinfo->gbpp) << tinfo->gshift) | (b >> (8 - tinfo->bbpp) << tinfo->bshift) | (a >> (8 - tinfo->abpp) << tinfo->ashift);
+                col = ((unsigned long)r >> (8 - tinfo->rbpp) << tinfo->rshift) | ((unsigned long)g >> (8 - tinfo->gbpp) << tinfo->gshift) | ((unsigned long)b >> (8 - tinfo->bbpp) << tinfo->bshift) | ((unsigned long)a >> (8 - tinfo->abpp) << tinfo->ashift);
             else
-                col = (r >> (8 - tinfo->rbpp) << tinfo->rshift) | (g >> (8 - tinfo->gbpp) << tinfo->gshift) | (b >> (8 - tinfo->bbpp) << tinfo->bshift);
+                col = ((unsigned long)r >> (8 - tinfo->rbpp) << tinfo->rshift) | ((unsigned long)g >> (8 - tinfo->gbpp) << tinfo->gshift) | ((unsigned long)b >> (8 - tinfo->bbpp) << tinfo->bshift);
             for (long nBits = tinfo->bpp; nBits > 0; nBits -= 8) {
                 *udest++ = (unsigned char)col;
                 col >>= 8;
@@ -402,6 +402,7 @@ int DXTextureAdd(int w, int h, unsigned char *src, DXTEXTURE *list, int bpp, uns
         }
     }
     if (flags == 8 && !App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].Texture[App.DXConfigPtr->D3DTF].bAlpha) {
+        DDCOLORKEY ckey;
         ckey.dwColorSpaceLowValue = 0;
         ckey.dwColorSpaceHighValue = 0;
         tex->pSystemSurface->SetColorKey(DDCKEY_SRCBLT, &ckey);
