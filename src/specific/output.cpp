@@ -389,9 +389,9 @@ extern int outside;
 
 int S_GetObjectBounds(sint16 *box)
 {
-    sint32 *v;
     sint32 vtx[8][3];
-    sint32 xmin, xmax, ymin, ymax, zmin, zmax, nZ, x, y, z;
+    sint32 *v;
+    sint32 xmax, xmin, zmax, ymax, y, x, z, nZ, zmin, ymin;
     int i;
 
     if (phd_mxptr[11] >= phd_zfar && !outside)
@@ -427,10 +427,10 @@ int S_GetObjectBounds(sint16 *box)
     vtx[7][0] = xmin;
     vtx[7][1] = ymax;
     vtx[7][2] = zmax;
-    xmin = 0x3fffffff;
-    xmax = -0x3fffffff;
     ymin = 0x3fffffff;
+    xmin = 0x3fffffff;
     ymax = -0x3fffffff;
+    xmax = -0x3fffffff;
     v = &vtx[0][0];
     nZ = 0;
     for (i = 0; i < 8; i++) {
@@ -438,7 +438,7 @@ int S_GetObjectBounds(sint16 *box)
         if (z > phd_znear && z < phd_zfar) {
             z /= phd_persp;
             nZ++;
-            x = (phd_mxptr[1] * v[1] + phd_mxptr[2] * v[2] + phd_mxptr[0] * v[0] + phd_mxptr[3]) / z;
+            x = (phd_mxptr[1] * v[1] + phd_mxptr[2] * v[2] + *(volatile sint32 *)(phd_mxptr + 0) * v[0] + phd_mxptr[3]) / z;
             if (x < xmin)
                 xmin = x;
             if (x > xmax)
@@ -452,7 +452,7 @@ int S_GetObjectBounds(sint16 *box)
         v += 3;
     }
     xmin += phd_centerx;
-    xmax += phd_centerx;
+    xmax = xmax + phd_centerx;
     ymin += phd_centery;
     ymax += phd_centery;
     if (nZ < 8 && outside > 0)
