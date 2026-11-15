@@ -126,7 +126,7 @@ typedef struct winapp {
     volatile char bFocus;
     long nRenderMode;
     long nUVAdd;
-    volatile unsigned long nFrames;
+    unsigned long nFrames;
     float fps;
 } WINAPP;
 

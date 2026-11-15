@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.26" height="12" x="0" y="0" class="named"><title>1470 · 98.13%</title></rect>
-<rect width="3.74" height="12" x="196.26" y="0" class="nonmatching"><title>28 · 1.87%</title></rect>
+<rect width="196.40" height="12" x="0" y="0" class="named"><title>1471 · 98.20%</title></rect>
+<rect width="3.60" height="12" x="196.40" y="0" class="nonmatching"><title>27 · 1.80%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1470</tspan> · <tspan class="nonmatching">28</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.2%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1471</tspan> · <tspan class="nonmatching">27</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="188.60" height="12" x="0" y="0" class="named"><title>684 KB · 94.30%</title></rect>
-<rect width="11.40" height="12" x="188.60" y="0" class="nonmatching"><title>41 KB · 5.70%</title></rect>
+<rect width="188.82" height="12" x="0" y="0" class="named"><title>684 KB · 94.41%</title></rect>
+<rect width="11.18" height="12" x="188.82" y="0" class="nonmatching"><title>41 KB · 5.59%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">94.3%</text>
+<text text-anchor="end" x="390" y="24.50">94.4%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">684 KB</tspan> · <tspan class="nonmatching">41 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
@@ -1573,7 +1573,7 @@
 <rect width="12" height="12" x="465" y="435" class="named"><title>0x004b3a40 DX_DoFlipWait (41 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="435" class="named"><title>0x004b3a70 DXClearBuffers (472 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="435" class="named"><title>0x004b3c50 DXCheckForLostSurfaces (191 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="435" class="nonmatching"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="435" class="named"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="435" class="named"><title>0x004b4040 SWRBlit32to15 (92 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="435" class="named"><title>0x004b40a0 DXSaveScreen (467 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="435" class="named"><title>0x004b4280 phd_PushMatrix (30 bytes)</title></rect>
@@ -1817,7 +1817,7 @@
 <rect width="15.56" height="16.89" x="694.33" y="45.22" class="named"><title>0x0044d8d0 InitialiseLara (812 bytes)</title></rect>
 <rect width="15.56" height="16.89" x="712.89" y="45.22" class="named"><title>0x00491940 CalculateEdgeTG (812 bytes)</title></rect>
 <rect width="15.54" height="16.89" x="731.46" y="45.22" class="named"><title>0x0048c8c0 S_SaveSettings (811 bytes)</title></rect>
-<rect width="16.14" height="16.26" x="350.39" y="65.12" class="nonmatching"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
+<rect width="16.14" height="16.26" x="350.39" y="65.12" class="named"><title>0x004b3d10 DXUpdateFrame (810 bytes)</title></rect>
 <rect width="16.14" height="16.06" x="350.39" y="84.37" class="named"><title>0x0043e1c0 LaraHangTest (800 bytes)</title></rect>
 <rect width="16.14" height="15.79" x="350.39" y="103.43" class="named"><title>0x004250a0 PrintObjects (787 bytes)</title></rect>
 <rect width="16.14" height="15.75" x="350.39" y="122.22" class="named"><title>0x0041bed0 ControlClawmutePlasmaBall (785 bytes)</title></rect>

@@ -233,15 +233,15 @@ bool DXUpdateFrame(bool runMessageLoop, LPRECT rect)
 
     App.nFrames++;
     DXCheckForLostSurfaces();
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
     d3dinfo = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D];
-    w = d3dinfo->DisplayMode[App.DXConfigPtr->nVMode].w;
 
     if (d3dinfo->bHardware) {
         App.lpFrontBuffer->Flip(0, DDFLIP_WAIT);
     } else {
         memset(&desc, 0, sizeof(desc));
-        memset(&backDesc, 0, sizeof(backDesc));
         desc.dwSize = sizeof(desc);
+        memset(&backDesc, 0, sizeof(backDesc));
         backDesc.dwSize = sizeof(backDesc);
         DXGetSurfaceDesc(App.lpBackBuffer, &backDesc);
         (backDesc.ddsCaps.dwCaps & DDSCAPS_VIDEOMEMORY ? App.lpBackBuffer : App.lpFrontBuffer)->Lock(0, &desc, DDLOCK_WAIT | DDLOCK_NOSYSLOCK, 0);
@@ -263,11 +263,11 @@ bool DXUpdateFrame(bool runMessageLoop, LPRECT rect)
             }
         } else {
             if (desc.ddpfPixelFormat.dwGBitMask == 0x3E0) {
-                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += 2 * w)
-                    SWRBlit32to15((unsigned long *)((unsigned char *)desc.lpSurface + desc.lPitch * i), (unsigned long *)((unsigned char *)App.unk + n), w);
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += w)
+                    SWRBlit32to15((unsigned long *)((unsigned char *)desc.lpSurface + desc.lPitch * i), (unsigned long *)((unsigned short *)App.unk + n), w);
             } else {
-                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += 2 * w)
-                    memcpy((unsigned char *)desc.lpSurface + desc.lPitch * i, (unsigned char *)App.unk + n, 2 * w);
+                for (i = 0, n = 0; i < (int)desc.dwHeight; i++, n += w)
+                    memcpy((unsigned char *)desc.lpSurface + desc.lPitch * i, (unsigned short *)App.unk + n, 2 * w);
             }
         }
 
