@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="195.06" height="12" x="0" y="0" class="named"><title>1461 · 97.53%</title></rect>
-<rect width="4.94" height="12" x="195.06" y="0" class="nonmatching"><title>37 · 2.47%</title></rect>
+<rect width="195.19" height="12" x="0" y="0" class="named"><title>1462 · 97.60%</title></rect>
+<rect width="4.81" height="12" x="195.19" y="0" class="nonmatching"><title>36 · 2.40%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">97.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1461</tspan> · <tspan class="nonmatching">37</tspan></text>
+<text text-anchor="end" x="390" y="7.50">97.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1462</tspan> · <tspan class="nonmatching">36</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="182.79" height="12" x="0" y="0" class="named"><title>662 KB · 91.39%</title></rect>
-<rect width="17.21" height="12" x="182.79" y="0" class="nonmatching"><title>62 KB · 8.61%</title></rect>
+<rect width="183.72" height="12" x="0" y="0" class="named"><title>666 KB · 91.86%</title></rect>
+<rect width="16.28" height="12" x="183.72" y="0" class="nonmatching"><title>59 KB · 8.14%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">91.4%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">662 KB</tspan> · <tspan class="nonmatching">62 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">91.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">666 KB</tspan> · <tspan class="nonmatching">59 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1528,7 +1528,7 @@
 <rect width="12" height="12" x="540" y="420" class="named"><title>0x004a44a0 ScanLinesTDecalAffine (1154 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="420" class="named"><title>0x004a4930 ScanLinesTDecal (1660 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="420" class="named"><title>0x004a4fb0 ScanLinesTFDecal (3736 bytes)</title></rect>
-<rect width="12" height="12" x="585" y="420" class="nonmatching"><title>0x004a5e50 ScanLinesTFDecalAffine (3392 bytes)</title></rect>
+<rect width="12" height="12" x="585" y="420" class="named"><title>0x004a5e50 ScanLinesTFDecalAffine (3392 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="420" class="named"><title>0x004a6b90 ScanLinesTGAffine (899 bytes)</title></rect>
 <rect width="12" height="12" x="615" y="420" class="named"><title>0x004a6f20 ScanLinesTG (5286 bytes)</title></rect>
 <rect width="12" height="12" x="630" y="420" class="named"><title>0x004a83d0 ScanLinesTGAlphaDecalAffine (5390 bytes)</title></rect>
@@ -1615,7 +1615,7 @@
 <rect width="34.62" height="35.08" x="95.95" y="0" class="named"><title>0x00418a56 LookCamera (3750 bytes)</title></rect>
 <rect width="34.62" height="34.95" x="95.95" y="38.08" class="named"><title>0x004a4fb0 ScanLinesTFDecal (3736 bytes)</title></rect>
 <rect width="34.62" height="34.09" x="95.95" y="76.03" class="named"><title>0x00450800 LondonBossControl (3644 bytes)</title></rect>
-<rect width="34.62" height="31.73" x="95.95" y="113.12" class="nonmatching"><title>0x004a5e50 ScanLinesTFDecalAffine (3392 bytes)</title></rect>
+<rect width="34.62" height="31.73" x="95.95" y="113.12" class="named"><title>0x004a5e50 ScanLinesTFDecalAffine (3392 bytes)</title></rect>
 <rect width="34.62" height="31.31" x="95.95" y="147.85" class="named"><title>0x00455e30 MonkeyControl (3348 bytes)</title></rect>
 <rect width="34.62" height="31.09" x="95.95" y="182.16" class="named"><title>0x0040d650 BatonControl (3324 bytes)</title></rect>
 <rect width="34.62" height="30.77" x="95.95" y="216.25" class="nonmatching"><title>0x00472000 WillBossControl (3290 bytes)</title></rect>
