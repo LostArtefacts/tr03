@@ -1351,9 +1351,7 @@ short *HWI_InsertObjectG4_Sorted(short *pFaceInfo, long nFaces, int nSortType)
         v1 = &vbuf[pFaceInfo[1]];
         v2 = &vbuf[pFaceInfo[2]];
         v3 = &vbuf[pFaceInfo[3]];
-        if (outside && nPolyType != 1 && v0->zv == f_zfar && v1->zv == f_zfar && v2->zv == f_zfar && v3->zv == f_zfar && v0->ys > outsideBackgroundTop && v1->ys > outsideBackgroundTop && v2->ys > outsideBackgroundTop && v3->ys > outsideBackgroundTop)
-            continue;
-        if (v0->clip & v1->clip & v2->clip & v3->clip)
+        if ((outside && nPolyType != 1 && v0->zv == f_zfar && v1->zv == f_zfar && v2->zv == f_zfar && v3->zv == f_zfar && v0->ys > outsideBackgroundTop && v1->ys > outsideBackgroundTop && v2->ys > outsideBackgroundTop && v3->ys > outsideBackgroundTop) || (v0->clip & v1->clip & v2->clip & v3->clip))
             continue;
         if ((v0->clip | v1->clip | v2->clip | v3->clip) < 0) {
             if (!visible_zclip(v0, v1, v2))
@@ -1372,7 +1370,7 @@ short *HWI_InsertObjectG4_Sorted(short *pFaceInfo, long nFaces, int nSortType)
                 nPoints = XYGClipper(nPoints, v_buffer);
             }
         } else {
-            if ((long)((v0->ys - v1->ys) * (v2->xs - v1->xs) - (v0->xs - v1->xs) * (v2->ys - v1->ys)) < 0)
+            if ((long)((v0->ys - v1->ys) * (v2->xs - v1->xs) - (*(volatile float *)&v0->xs - v1->xs) * (v2->ys - v1->ys)) < 0)
                 continue;
             PHD_VBUF_To_VERTEX_INFO(v0, &v_buffer[0]);
             PHD_VBUF_To_VERTEX_INFO(v1, &v_buffer[1]);
@@ -1400,7 +1398,7 @@ short *HWI_InsertObjectG4_Sorted(short *pFaceInfo, long nFaces, int nSortType)
                     zdepth = v3->zv;
                 break;
             case 0:
-                zdepth = (v0->zv + v1->zv + v2->zv + v3->zv) * 0.25f;
+                zdepth = ((float)((double)v3->zv + v0->zv) + v1->zv + v2->zv) * 0.25f;
                 break;
             default:
                 zdepth = 1000000000.0f;
@@ -1520,6 +1518,9 @@ void HWI_InsertTrans8_Sorted(PHD_VBUF *buf, sint16 shade)
         HWI_InsertPoly_Gouraud(nPoints, z, 0, 0, 0, 13);
     }
 }
+
+inline void PHD_VBUF_To_POINT_INFO_UV(PHD_VBUF *pV, POINT_INFO *p, unsigned short *pUV);
+inline void PHD_VBUF_To_VERTEX_INFO_UV(PHD_VBUF *pV, VERTEX_INFO *p, unsigned short *pUV);
 
 void HWI_InsertGT4_Poly(PHD_VBUF *v0, PHD_VBUF *v1, PHD_VBUF *v2, PHD_VBUF *v3, PHDTEXTURESTRUCT *pTex, int nSortType, unsigned short dbl)
 {

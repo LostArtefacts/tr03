@@ -2,7 +2,6 @@ function,address,source,original_bytes,compiled_bytes,changed_disassembly_lines,
 _GetFullPath,0x004825A0,src/specific/file.cpp,38,38,2,2,same size,"Target format is %s, source format includes drive letter. Target has NOP instead of push ecx and cleans 12 rather than 16 stack bytes; binary patch changes behavior."
 _WinMain@16,0x004B2940,src/specific/winmain.cpp,774,774,2,7,same size,"Target replaces CD_Init call with MOV EAX,1, skipping CD initialization; also CMP EAX,EBX versus TEST EAX,EAX. Binary patch changes behavior."
 _TestHeight_minecart,0x004541F0,src/minecart.c,168,168,8,132,same size,
-_HWI_InsertObjectG4_Sorted,0x00408DA0,src/3dsystem/hwinsert.cpp,1839,1839,9,10,same size,
 _LevelStats,0x00483B60,src/specific/game.cpp,1077,1072,68,863,size differs,
 _S_DrawDarts,0x00476A30,src/specific/draweffects.cpp,609,608,92,294,size differs,
 _PickUpCollision,0x0045BC00,src/pickup.c,1379,1383,111,1202,size differs,
