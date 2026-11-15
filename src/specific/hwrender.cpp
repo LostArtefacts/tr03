@@ -219,7 +219,6 @@ void HWR_SetCurrentTexture(DXTEXTURE *tex)
     TEXTURE *temp;
     D3DTEXTUREHANDLE handle;
     unsigned long n;
-    unsigned long d;
     int i;
 
     handle = 0;
@@ -236,16 +235,14 @@ void HWR_SetCurrentTexture(DXTEXTURE *tex)
             }
             if (!handle) {
                 n = 0;
-                tdata = (TEXTURE *)tex;
                 for (i = 0; i < nTPages; i++) {
                     temp = &Textures[i];
                     if (!temp->DXTex && tex->bpp == temp->bpp) {
                         tdata = &Textures[i];
                         break;
                     }
-                    d = App.nFrames - temp->nFrames;
-                    if (d >= n && tex->bpp == temp->bpp) {
-                        n = d;
+                    if (App.nFrames - temp->nFrames >= n && tex->bpp == temp->bpp) {
+                        n = App.nFrames - temp->nFrames;
                         tdata = temp;
                     }
                 }

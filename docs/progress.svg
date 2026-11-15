@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.20" height="12" x="0" y="0" class="named"><title>1477 · 98.60%</title></rect>
-<rect width="2.80" height="12" x="197.20" y="0" class="nonmatching"><title>21 · 1.40%</title></rect>
+<rect width="197.33" height="12" x="0" y="0" class="named"><title>1478 · 98.66%</title></rect>
+<rect width="2.67" height="12" x="197.33" y="0" class="nonmatching"><title>20 · 1.34%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1477</tspan> · <tspan class="nonmatching">21</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1478</tspan> · <tspan class="nonmatching">20</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.04" height="12" x="0" y="0" class="named"><title>692 KB · 95.52%</title></rect>
-<rect width="8.96" height="12" x="191.04" y="0" class="nonmatching"><title>32 KB · 4.48%</title></rect>
+<rect width="191.16" height="12" x="0" y="0" class="named"><title>693 KB · 95.58%</title></rect>
+<rect width="8.84" height="12" x="191.16" y="0" class="nonmatching"><title>32 KB · 4.42%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">95.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">692 KB</tspan> · <tspan class="nonmatching">32 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">95.6%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">693 KB</tspan> · <tspan class="nonmatching">32 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1291,7 +1291,7 @@
 <rect width="12" height="12" x="735" y="345" class="named"><title>0x00484ae0 HWR_EnablePerspCorrect (136 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="360" class="named"><title>0x00484b70 HWR_EnableFilter (121 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="360" class="named"><title>0x00484bf0 HWR_EnableAlphaBlend (63 bytes)</title></rect>
-<rect width="12" height="12" x="30" y="360" class="nonmatching"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
+<rect width="12" height="12" x="30" y="360" class="named"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="360" class="named"><title>0x00484de0 HWR_EnableColorKey (63 bytes)</title></rect>
 <rect width="12" height="12" x="60" y="360" class="named"><title>0x00484e20 HWR_EnableZBuffer (130 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="360" class="named"><title>0x00484eb0 HWR_BeginScene (78 bytes)</title></rect>
@@ -2029,7 +2029,7 @@
 <rect width="11.66" height="11.78" x="720.71" y="131.38" class="named"><title>0x0045e830 QuadBikeCollision (424 bytes)</title></rect>
 <rect width="11.63" height="11.78" x="735.37" y="131.38" class="named"><title>0x00441f90 lara_col_walk (423 bytes)</title></rect>
 <rect width="11.54" height="11.84" x="434.30" y="146.16" class="named"><title>0x0040a850 HWI_InsertTrans8_Sorted (422 bytes)</title></rect>
-<rect width="11.54" height="11.73" x="434.30" y="161" class="nonmatching"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
+<rect width="11.54" height="11.73" x="434.30" y="161" class="named"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="11.54" height="11.70" x="434.30" y="175.73" class="named"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
 <rect width="11.54" height="11.67" x="434.30" y="190.43" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
 <rect width="11.54" height="11.65" x="434.30" y="205.10" class="nonmatching"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
