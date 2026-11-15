@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.73" height="12" x="0" y="0" class="named"><title>1481 · 98.87%</title></rect>
-<rect width="2.27" height="12" x="197.73" y="0" class="nonmatching"><title>17 · 1.13%</title></rect>
+<rect width="197.86" height="12" x="0" y="0" class="named"><title>1482 · 98.93%</title></rect>
+<rect width="2.14" height="12" x="197.86" y="0" class="nonmatching"><title>16 · 1.07%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">98.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1481</tspan> · <tspan class="nonmatching">17</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1482</tspan> · <tspan class="nonmatching">16</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="193.02" height="12" x="0" y="0" class="named"><title>700 KB · 96.51%</title></rect>
-<rect width="6.98" height="12" x="193.02" y="0" class="nonmatching"><title>25 KB · 3.49%</title></rect>
+<rect width="193.13" height="12" x="0" y="0" class="named"><title>700 KB · 96.57%</title></rect>
+<rect width="6.87" height="12" x="193.13" y="0" class="nonmatching"><title>25 KB · 3.43%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">96.5%</text>
+<text text-anchor="end" x="390" y="24.50">96.6%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">700 KB</tspan> · <tspan class="nonmatching">25 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
@@ -103,7 +103,7 @@
 <rect width="12" height="12" x="165" y="0" class="named"><title>0x00401af0 phd_PutPolygons (247 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="0" class="named"><title>0x00401bf0 S_InsertRoom (231 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="0" class="named"><title>0x00401ce0 calc_back_light (50 bytes)</title></rect>
-<rect width="12" height="12" x="210" y="0" class="nonmatching"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
+<rect width="12" height="12" x="210" y="0" class="named"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="12" height="12" x="225" y="0" class="named"><title>0x00401ec0 phd_InitPolyList (82 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="0" class="named"><title>0x00401f20 phd_SortPolyList (54 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="0" class="named"><title>0x00401f60 do_quickysorty (196 bytes)</title></rect>
@@ -2032,7 +2032,7 @@
 <rect width="11.54" height="11.73" x="434.30" y="161" class="named"><title>0x00484c30 HWR_SetCurrentTexture (418 bytes)</title></rect>
 <rect width="11.54" height="11.70" x="434.30" y="175.73" class="named"><title>0x0042ced0 UpdateSplashes (417 bytes)</title></rect>
 <rect width="11.54" height="11.67" x="434.30" y="190.43" class="named"><title>0x0046e6f0 Pendulum (416 bytes)</title></rect>
-<rect width="11.54" height="11.65" x="434.30" y="205.10" class="nonmatching"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
+<rect width="11.54" height="11.65" x="434.30" y="205.10" class="named"><title>0x00401d20 S_InsertBackground (415 bytes)</title></rect>
 <rect width="11.54" height="11.65" x="434.30" y="219.75" class="named"><title>0x00402360 draw_poly_line (415 bytes)</title></rect>
 <rect width="11.54" height="11.59" x="434.30" y="234.39" class="named"><title>0x00449890 lara_col_climbdown (413 bytes)</title></rect>
 <rect width="11.54" height="11.59" x="434.30" y="248.98" class="named"><title>0x0045c510 DetonatorCollision (413 bytes)</title></rect>

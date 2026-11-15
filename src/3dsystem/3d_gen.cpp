@@ -1,4 +1,8 @@
 #include "../specific/standard.h"
+extern "C" {
+#include "../types.h"
+extern sint32 phd_right;
+}
 
 extern "C" {
 
@@ -19,7 +23,6 @@ extern "C" {
 
 extern sint32 w2v_matrix[12];
 extern int phd_zfar;
-extern int phd_znear;
 extern int phd_persp;
 extern int phd_oopersp;
 extern int phd_winwidth;
@@ -132,20 +135,17 @@ void phd_SortPolyList(int number, sint32 buffer[][3])
 
 void AlterFOV(PHD_ANGLE fov)
 {
-    float fAspect;
-    float fDesiredAspect;
-
     fov /= 2;
     phd_persp = ((phd_winwidth / 2) * phd_cos(fov)) / phd_sin(fov);
     phd_oopersp = sint32(one) / phd_persp;
     f_persp = float(phd_persp);
     f_oneopersp = one / f_persp;
     f_perspoznear = f_persp / f_znear;
-    fAspect = float(phd_winwidth) / float(phd_winheight);
-    fDesiredAspect = 4.0f / 3.0f;
-    LfAspectCorrection = fDesiredAspect / fAspect;
+    LfAspectCorrection = (4.0f / 3.0f) / (float(phd_winwidth) / float(phd_winheight));
     InitZTable();
 }
+
+extern int phd_znear;
 
 void SetZNear(int nNewZNear)
 {
@@ -169,7 +169,7 @@ extern sint16 phd_winxmin;
 extern sint16 phd_winymin;
 extern sint16 phd_winxmax;
 extern sint16 phd_winymax;
-extern sint32 phd_left, phd_right, phd_top, phd_bottom;
+extern sint32 phd_left, phd_top, phd_bottom;
 extern sint32 phd_centerx, phd_centery;
 extern int phd_scrwidth;
 extern int phd_scrheight;
@@ -346,7 +346,7 @@ void S_InsertBackPolygon(int x1, int y1, int x2, int y2, int col);
 void S_InsertBackground(sint16 *objptr)
 {
     sint16 *triPtr;
-    int nTris;
+    sint16 nTris;
 
     nPolyType = 1;
     phd_leftfloat = float(phd_winxmin + phd_left);
@@ -366,14 +366,14 @@ void S_InsertBackground(sint16 *objptr)
         objptr = InsertObjectG4(objptr + 1, objptr[0], 2);
 
         if (bFixSkyColour) {
-            nTris = *objptr - 16;
+            nTris = *objptr;
             if (CurrentLevel != 19)
                 triPtr = objptr + 65;
             else
                 triPtr = objptr + 1;
 
-            for (; nTris > 0; nTris--) {
-                triPtr[3] = BlackGouraudIndex << 8;
+            for (int i = 0; i < nTris - 16; i++) {
+                triPtr[3] = (unsigned __int64)BlackGouraudIndex * 256;
                 triPtr += 4;
             }
             bFixSkyColour = false;
@@ -430,8 +430,11 @@ sint16 *calc_roomvert(sint16 *objptr, int far_clip);
 
 void phd_RotY(PHD_ANGLE ry)
 {
-    sint32 sy, cy, r0, r1;
+    sint32 sy;
     sint32 *mptr;
+    sint32 cy;
+    sint32 r0;
+    sint32 r1;
 
     if (ry) {
         mptr = phd_mxptr;
