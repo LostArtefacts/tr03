@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="195.73" height="12" x="0" y="0" class="named"><title>1466 · 97.86%</title></rect>
-<rect width="4.27" height="12" x="195.73" y="0" class="nonmatching"><title>32 · 2.14%</title></rect>
+<rect width="195.86" height="12" x="0" y="0" class="named"><title>1467 · 97.93%</title></rect>
+<rect width="4.14" height="12" x="195.86" y="0" class="nonmatching"><title>31 · 2.07%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">97.9%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1466</tspan> · <tspan class="nonmatching">32</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1467</tspan> · <tspan class="nonmatching">31</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="186.13" height="12" x="0" y="0" class="named"><title>675 KB · 93.07%</title></rect>
-<rect width="13.87" height="12" x="186.13" y="0" class="nonmatching"><title>50 KB · 6.93%</title></rect>
+<rect width="186.71" height="12" x="0" y="0" class="named"><title>677 KB · 93.36%</title></rect>
+<rect width="13.29" height="12" x="186.71" y="0" class="nonmatching"><title>48 KB · 6.64%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">93.1%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">675 KB</tspan> · <tspan class="nonmatching">50 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">93.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">677 KB</tspan> · <tspan class="nonmatching">48 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1193,7 +1193,7 @@
 <rect width="12" height="12" x="15" y="330" class="named"><title>0x00479810 S_DrawLaserBeam (1026 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="330" class="named"><title>0x00479c20 DrawLondonBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="45" y="330" class="nonmatching"><title>0x0047a4b0 DoRain (1473 bytes)</title></rect>
-<rect width="12" height="12" x="60" y="330" class="nonmatching"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
+<rect width="12" height="12" x="60" y="330" class="named"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
 <rect width="12" height="12" x="75" y="330" class="nonmatching"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="330" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
@@ -1666,7 +1666,7 @@
 <rect width="26.30" height="26.82" x="197.67" y="303.22" class="named"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.82" x="197.67" y="333.04" class="named"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.49" x="197.67" y="362.86" class="named"><title>0x0041743c MoveCamera (2151 bytes)</title></rect>
-<rect width="26.30" height="25.87" x="197.67" y="392.34" class="nonmatching"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
+<rect width="26.30" height="25.87" x="197.67" y="392.34" class="named"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
 <rect width="26.30" height="25.78" x="197.67" y="421.22" class="named"><title>0x0045f780 SkidooDynamics (2094 bytes)</title></rect>
 <rect width="25.37" height="26.55" x="226.97" y="0" class="named"><title>0x0044fbc0 LizManControl (2080 bytes)</title></rect>
 <rect width="25.37" height="26.26" x="226.97" y="29.55" class="named"><title>0x00439370 Display_Requester (2057 bytes)</title></rect>

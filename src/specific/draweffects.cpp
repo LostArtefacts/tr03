@@ -2177,26 +2177,20 @@ extern bool bBlueEffect;
 
 void DoSnow(void)
 {
-    DISPLAYMODE *dm;
     SNOWFLAKE *snowptr;
     PHDSPRITESTRUCT *pSpriteInfo;
-    PHDTEXTURESTRUCT tex;
-    PHD_VBUF v[3];
-    PHD_VECTOR pos;
     float zv, fz;
     long x, y, z, radius, lp, angle, size, out, third, triggered, w, h;
     long u1, v1, u2, v2;
     unsigned short c;
-    short tx, ty, tz;
     long clipflag;
     bool oldBlue;
     short XY[100];
 
     triggered = 0;
-    dm = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode];
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
     oldBlue = bBlueEffect;
-    w = dm->w;
-    h = dm->h;
     bBlueEffect = 0;
     snowptr = &snowflakes[0];
     for (lp = 0; lp < 256; lp++) {
@@ -2268,29 +2262,35 @@ void DoSnow(void)
     pSpriteInfo = &phdspriteinfo[objects[296].mesh_index + 17];
     u1 = (pSpriteInfo->offset << 8) & 0xff00;
     v1 = pSpriteInfo->offset & 0xff00;
-    u2 = u1 + pSpriteInfo->width - App.nUVAdd;
-    v2 = v1 + pSpriteInfo->height - App.nUVAdd;
+    u2 = u1 + pSpriteInfo->width;
+    v2 = v1 + pSpriteInfo->height;
     u1 += App.nUVAdd;
+    u2 -= App.nUVAdd;
     v1 += App.nUVAdd;
+    v2 -= App.nUVAdd;
     phd_PushMatrix();
     phd_TranslateAbs(lara_item->pos.x_pos, lara_item->pos.y_pos, lara_item->pos.z_pos);
+    sint32 * matrix = phd_mxptr;
     snowptr = &snowflakes[0];
     for (lp = 0; lp < 256; lp++) {
         if (snowptr->x == 0) {
             snowptr++;
             continue;
         }
-        tx = snowptr->x - lara_item->pos.x_pos;
-        ty = snowptr->y - lara_item->pos.y_pos;
-        tz = snowptr->z - lara_item->pos.z_pos;
-        pos.x = tx * phd_mxptr[0] + ty * phd_mxptr[1] + tz * phd_mxptr[2] + phd_mxptr[3];
-        pos.y = tx * phd_mxptr[4] + ty * phd_mxptr[5] + tz * phd_mxptr[6] + phd_mxptr[7];
-        pos.z = tx * phd_mxptr[8] + ty * phd_mxptr[9] + tz * phd_mxptr[10] + phd_mxptr[11];
-        fz = (float)pos.z;
+        short tx = snowptr->x - lara_item->pos.x_pos;
+        short ty = snowptr->y - lara_item->pos.y_pos;
+        short tz = snowptr->z - lara_item->pos.z_pos;
+        const sint32 &m01 = matrix[1];
+        const sint32 &m20 = matrix[8];
+        long result[3];
+        result[2] = tx * m20 + ty * matrix[9] + tz * matrix[10] + matrix[11];
+        result[0] = tx * matrix[0] + ty * m01 + tz * matrix[2] + matrix[3];
+        result[1] = tx * matrix[4] + ty * matrix[5] + tz * matrix[6] + matrix[7];
+        fz = (float)result[2];
         zv = f_persp / fz;
-        XY[0] = (short)(pos.x * zv + f_centerx);
-        XY[1] = (short)(pos.y * zv + f_centery);
-        z = pos.z;
+        XY[0] = (short)(result[0] * zv + f_centerx);
+        XY[1] = (short)(result[1] * zv + f_centery);
+        z = result[2];
         if ((z >> 16) < 32 || XY[0] < 0 || XY[0] > w || XY[1] < 0 || XY[1] > h) {
             if ((z >> 16) < 32) {
                 if (snowptr->life > 16)
@@ -2307,6 +2307,8 @@ void DoSnow(void)
         else if (size > 16)
             size = 16;
         third = (size * 0x5556) >> 16;
+        PHDTEXTURESTRUCT tex;
+        PHD_VBUF v[3];
         v[0].u = u2;
         v[0].v = v1;
         v[1].u = u2;
