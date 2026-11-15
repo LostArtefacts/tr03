@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="195.99" height="12" x="0" y="0" class="named"><title>1468 · 98%</title></rect>
-<rect width="4.01" height="12" x="195.99" y="0" class="nonmatching"><title>30 · 2%</title></rect>
+<rect width="196.13" height="12" x="0" y="0" class="named"><title>1469 · 98.06%</title></rect>
+<rect width="3.87" height="12" x="196.13" y="0" class="nonmatching"><title>29 · 1.94%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.0%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1468</tspan> · <tspan class="nonmatching">30</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1469</tspan> · <tspan class="nonmatching">29</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="187.26" height="12" x="0" y="0" class="named"><title>679 KB · 93.63%</title></rect>
-<rect width="12.74" height="12" x="187.26" y="0" class="nonmatching"><title>46 KB · 6.37%</title></rect>
+<rect width="187.91" height="12" x="0" y="0" class="named"><title>681 KB · 93.95%</title></rect>
+<rect width="12.09" height="12" x="187.91" y="0" class="nonmatching"><title>44 KB · 6.05%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">93.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">679 KB</tspan> · <tspan class="nonmatching">46 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">94.0%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">681 KB</tspan> · <tspan class="nonmatching">44 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1184,7 +1184,7 @@
 <rect width="12" height="12" x="630" y="315" class="named"><title>0x004761c0 S_DrawColdBar (599 bytes)</title></rect>
 <rect width="12" height="12" x="645" y="315" class="named"><title>0x00476420 S_DrawBat (1545 bytes)</title></rect>
 <rect width="12" height="12" x="660" y="315" class="nonmatching"><title>0x00476a30 S_DrawDarts (609 bytes)</title></rect>
-<rect width="12" height="12" x="675" y="315" class="nonmatching"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
+<rect width="12" height="12" x="675" y="315" class="named"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
 <rect width="12" height="12" x="690" y="315" class="named"><title>0x004775c0 S_DrawFish (1638 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="315" class="nonmatching"><title>0x00477c30 DrawKnockBackRings (2506 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="315" class="named"><title>0x00478600 LaraElectricDeath (1519 bytes)</title></rect>
@@ -1649,7 +1649,7 @@
 <rect width="26.79" height="29.13" x="167.88" y="230.12" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
 <rect width="26.79" height="28.87" x="167.88" y="262.25" class="named"><title>0x004542a0 DoUserInput (2388 bytes)</title></rect>
 <rect width="26.79" height="28.68" x="167.88" y="294.12" class="named"><title>0x004303e0 ControlFish (2372 bytes)</title></rect>
-<rect width="26.79" height="28.24" x="167.88" y="325.80" class="nonmatching"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
+<rect width="26.79" height="28.24" x="167.88" y="325.80" class="named"><title>0x00476ca0 DrawExplosionRings (2336 bytes)</title></rect>
 <rect width="26.79" height="28.19" x="167.88" y="357.04" class="nonmatching"><title>0x00478bf0 S_DrawLaserBolts (2332 bytes)</title></rect>
 <rect width="26.79" height="28.15" x="167.88" y="388.24" class="named"><title>0x00421460 TestTriggers (2328 bytes)</title></rect>
 <rect width="26.79" height="27.62" x="167.88" y="419.38" class="named"><title>0x0040e3b0 CivvyControl (2284 bytes)</title></rect>

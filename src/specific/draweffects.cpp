@@ -972,10 +972,8 @@ void DrawWillBossShield(ITEM_INFO *item)
     phd_PopMatrix();
 }
 
-extern int distanceFogValue;
 extern sint32 phd_zfar;
 
-void S_DrawSparks(void);
 
 
 
@@ -1157,28 +1155,23 @@ void phd_RotZ(sint16 rz);
 
 void DrawExplosionRings(void)
 {
-    DISPLAYMODE *dm;
     EXPLOSION_RING *ring;
     EXPLOSION_VERTS *vtx;
     EXPLOSION_VERTS *vtx2;
     PHDSPRITESTRUCT *sprite;
-    PHD_VBUF v[4];
-    PHD_VECTOR pos;
-    PHDTEXTURESTRUCT tex;
     long *pZ;
     long *pZ2;
     short *pXY;
     short *pXY2;
     float zv;
-    long w, h, rad, ang, r, g, b, x, y, z;
+    long w, h, rad, ang;
     long x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4, col1, col2, col3, col4;
     long i, j, k;
     long Z[50];
     short XY[50];
     long u1, u2, v1, v2;
-    dm = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode];
-    w = dm->w - 1;
-    h = dm->h - 1;
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
     for (i = 0; i < 6; i++) {
         ring = &ExpRings[i];
         if (!ring->on)
@@ -1192,14 +1185,16 @@ void DrawExplosionRings(void)
         phd_TranslateAbs(ring->x, ring->y, ring->z);
         phd_RotZ(ring->zrot << 4);
         phd_RotX(ring->xrot << 4);
+        const sint32 *matrix = phd_mxptr;
         ring->radius += ring->speed;
-        rad = ring->radius;
         vtx = ring->verts;
+        rad = ring->radius;
         pXY = XY;
         pZ = Z;
         for (j = 0; j < 2; j++) {
             ang = (wibble & 0x3f) << 3;
             for (k = 0; k < 8; k++) {
+                long r, g, b;
                 vtx->x = short((rad * rcossin_tbl[ang << 1]) >> (12));
                 vtx->z = short((rad * rcossin_tbl[(ang << 1) + 1]) >> (12));
                 r = GetRandomDraw() & 0x1f;
@@ -1208,20 +1203,20 @@ void DrawExplosionRings(void)
                 r = (r * ring->life) >> 5;
                 g = (g * ring->life) >> 5;
                 b = (b * ring->life) >> 5;
-                vtx->rgb = r | (g << 8) | (b << 16);
+                vtx->rgb = r | (b << 8) | (g << 16);
                 ang = (ang + 512) & 0xfff;
-                x = vtx->x;
-                y = 0;
-                z = vtx->z;
-                pos.z = phd_mxptr[8] * x + phd_mxptr[9] * y + phd_mxptr[10] * z + phd_mxptr[11];
-                zv = f_persp / (float)pos.z;
-                pos.x = phd_mxptr[0] * x + phd_mxptr[1] * y + phd_mxptr[2] * z + phd_mxptr[3];
-                pXY[0] = (short)(pos.x * zv + f_centerx);
-                pos.y = phd_mxptr[4] * x + phd_mxptr[5] * y + phd_mxptr[6] * z + phd_mxptr[7];
-                pXY[1] = (short)(pos.y * zv + f_centery);
-                pZ[0] = pos.z;
-                vtx++;
+                struct { short x, y, z; } TempMesh = {vtx->x, 0, vtx->z};
+                long result[3] = {
+                    matrix[0] * TempMesh.x + matrix[1] * TempMesh.y + matrix[2] * TempMesh.z + matrix[3],
+                    matrix[4] * TempMesh.x + matrix[5] * TempMesh.y + matrix[6] * TempMesh.z + matrix[7],
+                    matrix[8] * TempMesh.x + matrix[9] * TempMesh.y + matrix[10] * TempMesh.z + matrix[11]
+                };
+                zv = f_persp / (float)result[2];
+                pXY[0] = (short)(result[0] * zv + f_centerx);
+                pXY[1] = (short)(result[1] * zv + f_centery);
+                pZ[0] = result[2];
                 pXY += 2;
+                vtx++;
                 pZ++;
             }
             rad >>= 1;
@@ -1240,6 +1235,8 @@ void DrawExplosionRings(void)
         z3 = *pZ2++;
         col1 = vtx->rgb;
         col3 = vtx2->rgb;
+        vtx2++;
+        vtx++;
         sprite = &phdspriteinfo[objects[296].mesh_index + 4 + ((wibble >> 4) & 3)];
         u1 = (sprite->offset << 8) & 0xff00;
         v1 = sprite->offset & 0xff00;
@@ -1272,12 +1269,14 @@ void DrawExplosionRings(void)
                 col4 = vtx->rgb;
             }
             if (((z1 + z2 + z3 + z4) >> 2) > phd_znear && (col1 || col2 || col3 || col4) && x1 > -128 && x2 > -128 && x3 > -128 && x4 > -128 && x1 < w + 128 && x2 < w + 128 && x3 < w + 128 && x4 < w + 128 && y1 > -128 && y2 > -128 && y3 > -128 && y4 > -128 && y1 < h + 128 && y2 < h + 128 && y3 < h + 128 && y4 < h + 128) {
+                PHD_VBUF v[4];
+                PHDTEXTURESTRUCT tex;
                 setXYZ4(v, 0, x1, y1, z1, col1, x2, y2, z2, col2, x4, y4, z4, col4, x3, y3, z3, col3);
                 tex.u1 = u1;
-                tex.u2 = u2;
-                tex.u3 = u1;
-                tex.u4 = u2;
                 tex.v1 = v1;
+                tex.u2 = u2;
+                tex.u4 = u2;
+                tex.u3 = u1;
                 tex.v2 = v1;
                 tex.v3 = v2;
                 tex.v4 = v2;
@@ -1298,7 +1297,6 @@ void DrawExplosionRings(void)
     }
 }
 
-void HWI_InsertLine_Sorted(long x1, long y1, long x2, long y2, long z, long c0, long c1);
 
 void S_DrawDarts(ITEM_INFO *item)
 {
@@ -1462,7 +1460,6 @@ extern unsigned char lara_meshes[];
 extern unsigned char lara_last_points[];
 extern unsigned char lara_line_counts[];
 
-void HWI_InsertLine_Sorted(long x1, long y1, long x2, long y2, long z, long c0, long c1);
 bool ClipLine(long &x1, long &y1, long &x2, long &y2, long w, long h);
 
 void S_DrawSplashes(void)
@@ -2061,15 +2058,16 @@ void DoSnow(void)
             snowptr++;
             continue;
         }
-        short tx = snowptr->x - lara_item->pos.x_pos;
-        short ty = snowptr->y - lara_item->pos.y_pos;
-        short tz = snowptr->z - lara_item->pos.z_pos;
-        const sint32 &m01 = matrix[1];
-        const sint32 &m20 = matrix[8];
-        long result[3];
-        result[2] = tx * m20 + ty * matrix[9] + tz * matrix[10] + matrix[11];
-        result[0] = tx * matrix[0] + ty * m01 + tz * matrix[2] + matrix[3];
-        result[1] = tx * matrix[4] + ty * matrix[5] + tz * matrix[6] + matrix[7];
+        struct { short x, y, z; } point = {snowptr->x - lara_item->pos.x_pos, snowptr->y - lara_item->pos.y_pos, snowptr->z - lara_item->pos.z_pos};
+        const sint32 (&row0)[4] = *(const sint32 (*)[4])&matrix[0];
+        const sint32 (&row1)[4] = *(const sint32 (*)[4])&matrix[4];
+        const sint32 (&row2)[4] = *(const sint32 (*)[4])&matrix[8];
+        const sint32 (&row1ZT)[2] = *(const sint32 (*)[2])&matrix[6];
+        long result[3] = {
+            point.x * row0[0] + point.y * row0[1] + point.z * row0[2] + row0[3],
+            point.x * row1[0] + point.y * row1[1] + point.z * row1ZT[0] + row1ZT[1],
+            point.x * row2[0] + point.y * row2[1] + point.z * row2[2] + row2[3]
+        };
         fz = (float)result[2];
         zv = f_persp / fz;
         XY[0] = (short)(result[0] * zv + f_centerx);
@@ -2165,7 +2163,6 @@ void DoSnow(void)
 extern short BatMesh[5][3];
 extern unsigned char BatLinks[9];
 
-void phd_RotY(sint16 ry);
 
 extern EXPLOSION_RING KBRings[];
 
