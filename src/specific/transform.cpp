@@ -48,7 +48,7 @@ extern int phd_znear, phd_zfar;
 extern float f_zfar;
 extern float f_centerx, f_centery;
 extern float phd_leftfloat, phd_topfloat, phd_rightfloat, phd_bottomfloat;
-extern float m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23;
+extern float m00, m02, m03, m01, m10, m11, m13, m22, m20, m21, m12, m23;
 
 #define MAGICNUM float((1 << 26) * ((1 << 26) * 1.5))
 #define FTOL(x) ((fconv = (x) + (MAGICNUM)), *(int *)(&fconv))
@@ -154,6 +154,11 @@ extern WATERTAB WaterTable[22][64];
 
 uint32 __fastcall phd_sqrt(uint32 n);
 
+inline WATERTAB *RoomWaterEntry(int column, ROOM_INFO *waterRoom)
+{
+    return &WaterTable[waterRoom->MeshEffect][column];
+}
+
 short *calc_roomvert(short *sobjptr, int far_clip)
 {
     PHD_VBUF *dest;
@@ -164,6 +169,7 @@ short *calc_roomvert(short *sobjptr, int far_clip)
     float zv;
     float zv2;
     long z;
+    int fogz;
     int dist;
     unsigned long mod;
     int x1, y1, z1;
@@ -228,8 +234,8 @@ short *calc_roomvert(short *sobjptr, int far_clip)
             int off;
             off = ((objptr[0] + this_room->x) >> 6) + ((objptr[1] + this_room->y) >> 6) + ((objptr[2] + this_room->z) >> 7);
             off = off & 0xfc;
-            if (objptr[4] & (1 << 13)) {
-                dest->yv += float(WaterTable[this_room->MeshEffect][((WaterTable[this_room->MeshEffect][off & 63].random + (wibble >> 2)) & 63)].choppy << 14);
+            if ((uint16)objptr[4] & (1 << 13)) {
+                dest->yv += float((*RoomWaterEntry((((WaterTable[this_room->MeshEffect][off & 63].random + (wibble >> 2)) & 63)), this_room)).choppy << 14);
                 int r, g, b;
                 int shade;
                 r = ((dest->g >> 10) & 0x1f);
@@ -255,7 +261,7 @@ short *calc_roomvert(short *sobjptr, int far_clip)
             }
             dest->xs = zv2 * dest->xv + f_centerx;
             dest->ys = zv2 * dest->yv + f_centery;
-            if (objptr[4] & (1 << 14)) {
+            if ((uint16)objptr[4] & (1 << 14)) {
                 int r, g, b;
                 int shade;
                 r = ((dest->g >> 10) & 0x1f);
@@ -296,15 +302,16 @@ short *calc_roomvert(short *sobjptr, int far_clip)
         if (z > distanceFogValue << 14) {
             int r, g, b;
             int v;
-            if (z > farz << 14)
-                z = farz << 14;
+            fogz = z;
+            if (fogz > farz << 14)
+                fogz = farz << 14;
             r = ((dest->g >> 10) & 0x1f) << 3;
             g = ((dest->g >> 5) & 0x1f) << 3;
             b = (dest->g & 0x1f) << 3;
             r += 7;
             g += 7;
             b += 7;
-            v = 2048 - ((z - (distanceFogValue << 14)) >> 16);
+            v = 2048 - ((fogz - (distanceFogValue << 14)) >> 16);
             r *= v;
             g *= v;
             b *= v;
@@ -317,76 +324,7 @@ short *calc_roomvert(short *sobjptr, int far_clip)
     return objptr;
 }
 
-extern float outsideBackgroundTop;
-extern short phd_winxmax, phd_winxmin, phd_winymin, phd_winymax;
 
-short *calc_object_verticesback(short *objptr)
-{
-    PHD_VBUF *buf;
-    float zv, fMidSort, zT;
-    long y, z, x;
-    long nVtx;
-    long zi;
-    char totalClip, clipFlag;
-    double fconv;
 
-    if (App.lpZBuffer)
-        fMidSort = 0;
-    else
-        fMidSort = float(mid_sort << 22);
-    outsideBackgroundTop = 0;
-    totalClip = -1;
-    buf = vbuf;
-    objptr++;
-    MatrixToFloat(phd_mxptr);
-    for (nVtx = *(objptr++); nVtx > 0; nVtx--, buf++, objptr += 3) {
-        x = objptr[0] << 5;
-        y = objptr[1] << 5;
-        z = objptr[2] << 5;
-        buf->xv = m00 * x + m01 * y + m02 * z + m03;
-        buf->yv = m10 * x + m11 * y + m12 * z + m13;
-        zv = m20 * x + m21 * y + m22 * z + m23;
-        buf->z = zi = FTOL(zv);
-        if (zi >= phd_znear) {
-            if (zi >= phd_zfar) {
-                buf->zv = f_zfar;
-                zv = f_persp / zv;
-                buf->xs = buf->xv * zv + f_centerx;
-                buf->ys = buf->yv * zv + f_centery;
-                buf->ooz = zv * f_oneopersp;
-            } else {
-                buf->zv = zv + fMidSort;
-                zT = ZTable[((zi >> 14) << 1)];
-                buf->xs = buf->xv * zT + f_centerx;
-                buf->ys = buf->yv * zT + f_centery;
-                buf->ooz = ZTable[((zi >> 14) << 1) + 1];
-            }
-            if (buf->ys > outsideBackgroundTop && buf->xs > 0 && buf->xs < phd_winxmax + phd_winxmin && buf->ys > 0 && buf->ys < phd_winymax + phd_winymin) {
-                outsideBackgroundTop = buf->ys;
-                if (outsideBackgroundTop > phd_winymax + phd_winymin)
-                    outsideBackgroundTop = float(phd_winymax + phd_winymin - 1);
-                if (outsideBackgroundTop < 0)
-                    outsideBackgroundTop = 0;
-            }
-            clipFlag = 0;
-            if (buf->xs < phd_leftfloat)
-                clipFlag++;
-            else if (buf->xs > phd_rightfloat)
-                clipFlag += 2;
-            if (buf->ys < phd_topfloat)
-                clipFlag += 4;
-            else if (buf->ys > phd_bottomfloat)
-                clipFlag += 8;
-        } else {
-            buf->zv = zv;
-            clipFlag = -128;
-        }
-        buf->clip = clipFlag;
-        totalClip &= clipFlag;
-    }
-    if (totalClip)
-        return 0;
-    return objptr;
-}
 
 }

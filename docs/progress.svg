@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.93" height="12" x="0" y="0" class="named"><title>1475 · 98.46%</title></rect>
-<rect width="3.07" height="12" x="196.93" y="0" class="nonmatching"><title>23 · 1.54%</title></rect>
+<rect width="197.06" height="12" x="0" y="0" class="named"><title>1476 · 98.53%</title></rect>
+<rect width="2.94" height="12" x="197.06" y="0" class="nonmatching"><title>22 · 1.47%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">98.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1475</tspan> · <tspan class="nonmatching">23</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1476</tspan> · <tspan class="nonmatching">22</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.67" height="12" x="0" y="0" class="named"><title>687 KB · 94.83%</title></rect>
-<rect width="10.33" height="12" x="189.67" y="0" class="nonmatching"><title>37 KB · 5.17%</title></rect>
+<rect width="190.14" height="12" x="0" y="0" class="named"><title>689 KB · 95.07%</title></rect>
+<rect width="9.86" height="12" x="190.14" y="0" class="nonmatching"><title>36 KB · 4.93%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">94.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">687 KB</tspan> · <tspan class="nonmatching">37 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">95.1%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">689 KB</tspan> · <tspan class="nonmatching">36 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1400,7 +1400,7 @@
 <rect width="12" height="12" x="120" y="390" class="named"><title>0x0048d630 Sync (105 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="390" class="named"><title>0x0048d6a0 InitZTable (58 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="390" class="named"><title>0x0048d6e0 calc_object_vertices (714 bytes)</title></rect>
-<rect width="12" height="12" x="165" y="390" class="nonmatching"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
+<rect width="12" height="12" x="165" y="390" class="named"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
 <rect width="12" height="12" x="180" y="390" class="named"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
 <rect width="12" height="12" x="195" y="390" class="named"><title>0x0048e3e0 UT_InitAccurateTimer (96 bytes)</title></rect>
 <rect width="12" height="12" x="210" y="390" class="named"><title>0x0048e440 UT_GetAccurateTimer (78 bytes)</title></rect>
@@ -1694,7 +1694,7 @@
 <rect width="23.89" height="24.02" x="255.34" y="192.07" class="named"><title>0x0041b4f0 ClawmuteControl (1772 bytes)</title></rect>
 <rect width="23.89" height="23.66" x="255.34" y="219.10" class="named"><title>0x00482a90 S_LoadGameFlow (1745 bytes)</title></rect>
 <rect width="23.89" height="23.33" x="255.34" y="245.75" class="named"><title>0x00417ca3 ChaseCamera (1721 bytes)</title></rect>
-<rect width="23.89" height="22.91" x="255.34" y="272.08" class="nonmatching"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
+<rect width="23.89" height="22.91" x="255.34" y="272.08" class="named"><title>0x0048d9b0 calc_roomvert (1690 bytes)</title></rect>
 <rect width="23.89" height="22.50" x="255.34" y="297.99" class="named"><title>0x0043bf40 KayakToBackground (1660 bytes)</title></rect>
 <rect width="23.89" height="22.50" x="255.34" y="323.50" class="named"><title>0x004a4930 ScanLinesTDecal (1660 bytes)</title></rect>
 <rect width="23.89" height="22.45" x="255.34" y="349" class="nonmatching"><title>0x00487be0 do_passport_option (1656 bytes)</title></rect>
