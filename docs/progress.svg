@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="195.46" height="12" x="0" y="0" class="named"><title>1464 · 97.73%</title></rect>
-<rect width="4.54" height="12" x="195.46" y="0" class="nonmatching"><title>34 · 2.27%</title></rect>
+<rect width="195.59" height="12" x="0" y="0" class="named"><title>1465 · 97.80%</title></rect>
+<rect width="4.41" height="12" x="195.59" y="0" class="nonmatching"><title>33 · 2.20%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">97.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1464</tspan> · <tspan class="nonmatching">34</tspan></text>
+<text text-anchor="end" x="390" y="7.50">97.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1465</tspan> · <tspan class="nonmatching">33</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="184.93" height="12" x="0" y="0" class="named"><title>670 KB · 92.46%</title></rect>
-<rect width="15.07" height="12" x="184.93" y="0" class="nonmatching"><title>55 KB · 7.54%</title></rect>
+<rect width="185.53" height="12" x="0" y="0" class="named"><title>672 KB · 92.76%</title></rect>
+<rect width="14.47" height="12" x="185.53" y="0" class="nonmatching"><title>52 KB · 7.24%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">92.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">670 KB</tspan> · <tspan class="nonmatching">55 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">92.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">672 KB</tspan> · <tspan class="nonmatching">52 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -1197,7 +1197,7 @@
 <rect width="12" height="12" x="75" y="330" class="nonmatching"><title>0x0047b2c0 S_DrawSparks (2003 bytes)</title></rect>
 <rect width="12" height="12" x="90" y="330" class="named"><title>0x0047baa0 S_DrawSplashes (2048 bytes)</title></rect>
 <rect width="12" height="12" x="105" y="330" class="nonmatching"><title>0x0047c2a0 DrawSummonRings (2410 bytes)</title></rect>
-<rect width="12" height="12" x="120" y="330" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
+<rect width="12" height="12" x="120" y="330" class="named"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="12" height="12" x="135" y="330" class="nonmatching"><title>0x0047d4a0 TriggerTribeBossHeadElectricity (3280 bytes)</title></rect>
 <rect width="12" height="12" x="150" y="330" class="nonmatching"><title>0x0047e170 TriggerElectricBeam (2743 bytes)</title></rect>
 <rect width="12" height="12" x="165" y="330" class="named"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
@@ -1663,7 +1663,7 @@
 <rect width="26.30" height="27.09" x="197.67" y="213.38" class="named"><title>0x0043cc00 KayakUserInput (2200 bytes)</title></rect>
 <rect width="26.30" height="26.93" x="197.67" y="243.47" class="named"><title>0x0047ec30 DrawTribeBossShield (2187 bytes)</title></rect>
 <rect width="26.30" height="26.82" x="197.67" y="273.40" class="named"><title>0x00479c20 DrawLondonBossShield (2178 bytes)</title></rect>
-<rect width="26.30" height="26.82" x="197.67" y="303.22" class="nonmatching"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
+<rect width="26.30" height="26.82" x="197.67" y="303.22" class="named"><title>0x0047cc10 DrawTonyBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.82" x="197.67" y="333.04" class="nonmatching"><title>0x0047fc30 DrawWillBossShield (2178 bytes)</title></rect>
 <rect width="26.30" height="26.49" x="197.67" y="362.86" class="named"><title>0x0041743c MoveCamera (2151 bytes)</title></rect>
 <rect width="26.30" height="25.87" x="197.67" y="392.34" class="nonmatching"><title>0x0047aa80 DoSnow (2101 bytes)</title></rect>
