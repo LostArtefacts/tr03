@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="196.53" height="12" x="0" y="0" class="named"><title>1472 · 98.26%</title></rect>
-<rect width="3.47" height="12" x="196.53" y="0" class="nonmatching"><title>26 · 1.74%</title></rect>
+<rect width="196.66" height="12" x="0" y="0" class="named"><title>1473 · 98.33%</title></rect>
+<rect width="3.34" height="12" x="196.66" y="0" class="nonmatching"><title>25 · 1.67%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">98.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1472</tspan> · <tspan class="nonmatching">26</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1473</tspan> · <tspan class="nonmatching">25</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="189.21" height="12" x="0" y="0" class="named"><title>686 KB · 94.60%</title></rect>
-<rect width="10.79" height="12" x="189.21" y="0" class="nonmatching"><title>39 KB · 5.40%</title></rect>
+<rect width="189.46" height="12" x="0" y="0" class="named"><title>687 KB · 94.73%</title></rect>
+<rect width="10.54" height="12" x="189.46" y="0" class="nonmatching"><title>38 KB · 5.27%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">94.6%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">686 KB</tspan> · <tspan class="nonmatching">39 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">94.7%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">687 KB</tspan> · <tspan class="nonmatching">38 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -588,7 +588,7 @@
 <rect width="12" height="12" x="690" y="135" class="named"><title>0x0043b490 KayakDraw (38 bytes)</title></rect>
 <rect width="12" height="12" x="705" y="135" class="named"><title>0x0043b4c0 KayakCollision (345 bytes)</title></rect>
 <rect width="12" height="12" x="720" y="135" class="named"><title>0x0043b620 GetInKayak (264 bytes)</title></rect>
-<rect width="12" height="12" x="735" y="135" class="nonmatching"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
+<rect width="12" height="12" x="735" y="135" class="named"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="12" height="12" x="0" y="150" class="named"><title>0x0043bac0 DoWake_kayak (470 bytes)</title></rect>
 <rect width="12" height="12" x="15" y="150" class="named"><title>0x0043bca0 UpdateWakeFX_kayak (92 bytes)</title></rect>
 <rect width="12" height="12" x="30" y="150" class="named"><title>0x0043bd00 KayakSplash (225 bytes)</title></rect>
@@ -1788,7 +1788,7 @@
 <rect width="17.29" height="17.07" x="330.10" y="232.84" class="named"><title>0x0048e050 calc_object_verticesback (911 bytes)</title></rect>
 <rect width="17.29" height="16.96" x="330.10" y="252.91" class="named"><title>0x0046dd50 RollingBallControl (905 bytes)</title></rect>
 <rect width="17.29" height="16.90" x="330.10" y="272.87" class="named"><title>0x0043a220 ShowStatsText (902 bytes)</title></rect>
-<rect width="17.29" height="16.90" x="330.10" y="292.77" class="nonmatching"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
+<rect width="17.29" height="16.90" x="330.10" y="292.77" class="named"><title>0x0043b730 KayakControl (902 bytes)</title></rect>
 <rect width="17.29" height="16.86" x="330.10" y="312.67" class="named"><title>0x0045b870 ShotLara (900 bytes)</title></rect>
 <rect width="17.29" height="16.84" x="330.10" y="332.53" class="named"><title>0x004a6b90 ScanLinesTGAffine (899 bytes)</title></rect>
 <rect width="17.29" height="16.62" x="330.10" y="352.38" class="named"><title>0x00424c60 DrawRooms (887 bytes)</title></rect>
