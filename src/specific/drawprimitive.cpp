@@ -7109,15 +7109,19 @@ void MMXInit(void)
     long i;
     long n;
     float f;
+    long width;
+    long height;
 
     RecipTable[0] = 0xff800000;
     for (i = 1; i < 4096; i++) {
-        n = (i + 0x7f000) << 11;
+        n = (unsigned __int64)(i + 0x7f000) << 11;
         f = 1.0f / *(float *)&n;
         RecipTable[i] = (*(long *)&f & 0x7fffff) - 0x1000000;
     }
     if (!SW_SpanBuffer) {
-        hSpanBuffer = GlobalAlloc(GMEM_FIXED, (float)(((App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w >> 1) + 32) * App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h));
+        width = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+        height = (*(volatile long *)&App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h);
+        hSpanBuffer = GlobalAlloc(GMEM_FIXED, (float)(((width >> 1) + 32) * height));
         SW_SpanBuffer = (unsigned char *)(((long)hSpanBuffer + 32) & ~31);
     }
 }

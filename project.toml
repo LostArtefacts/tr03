@@ -56,4 +56,4 @@ progress = true  # every commit redraws docs/progress.svg
 compare = true  # every compiled function matches the original
 one_function = true  # one newly matching function per commit
 no_comments = true  # no comments, tabs or CRs in src/
-allow_diff = ["TestHeight_minecart", "GetFullPath", "S_InsertBackground", "WinMain", "DoRain", "PickUpCollision", "MMXInit", "S_DrawDarts", "do_passport_option", "DrawLineG", "DrawSummonRings", "wgtmap_persp16_fp", "HWI_InsertObjectG4_Sorted", "LevelStats", "S_CalculateLight", "TriggerElectricBeam", "TriggerTribeBossHeadElectricity", "S_DrawLaserBolts", "S_DrawWakeFX"]  # logically equivalent, registers or term order differ
+allow_diff = ["TestHeight_minecart", "GetFullPath", "S_InsertBackground", "WinMain", "DoRain", "PickUpCollision", "S_DrawDarts", "do_passport_option", "DrawLineG", "DrawSummonRings", "wgtmap_persp16_fp", "HWI_InsertObjectG4_Sorted", "LevelStats", "S_CalculateLight", "TriggerElectricBeam", "TriggerTribeBossHeadElectricity", "S_DrawLaserBolts", "S_DrawWakeFX"]  # logically equivalent, registers or term order differ

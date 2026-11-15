@@ -46,17 +46,17 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.46" height="12" x="0" y="0" class="named"><title>1479 · 98.73%</title></rect>
-<rect width="2.54" height="12" x="197.46" y="0" class="nonmatching"><title>19 · 1.27%</title></rect>
+<rect width="197.60" height="12" x="0" y="0" class="named"><title>1480 · 98.80%</title></rect>
+<rect width="2.40" height="12" x="197.60" y="0" class="nonmatching"><title>18 · 1.20%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.7%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1479</tspan> · <tspan class="nonmatching">19</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.8%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1480</tspan> · <tspan class="nonmatching">18</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.49" height="12" x="0" y="0" class="named"><title>694 KB · 95.75%</title></rect>
-<rect width="8.51" height="12" x="191.49" y="0" class="nonmatching"><title>31 KB · 4.25%</title></rect>
+<rect width="191.55" height="12" x="0" y="0" class="named"><title>694 KB · 95.78%</title></rect>
+<rect width="8.45" height="12" x="191.55" y="0" class="nonmatching"><title>31 KB · 4.22%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">95.7%</text>
+<text text-anchor="end" x="390" y="24.50">95.8%</text>
 <text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">694 KB</tspan> · <tspan class="nonmatching">31 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
@@ -1476,7 +1476,7 @@
 <rect width="12" height="12" x="510" y="405" class="named"><title>0x00492620 CalculateGradientsTGA (841 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="405" class="named"><title>0x00492970 CalculateEdgeTGA (862 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="405" class="named"><title>0x00492cd0 DrawTriangle (1794 bytes)</title></rect>
-<rect width="12" height="12" x="555" y="405" class="nonmatching"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
+<rect width="12" height="12" x="555" y="405" class="named"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="12" height="12" x="570" y="405" class="named"><title>0x004934b0 MMXClose (23 bytes)</title></rect>
 <rect width="12" height="12" x="585" y="405" class="named"><title>0x004934d0 MMXBeginScene (90 bytes)</title></rect>
 <rect width="12" height="12" x="600" y="405" class="named"><title>0x00493530 MMXSetRenderState (689 bytes)</title></rect>
@@ -2288,7 +2288,7 @@
 <rect width="7.93" height="8.42" x="513.62" y="280.27" class="named"><title>0x0043ef10 lara_as_crawl (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.62" y="291.69" class="named"><title>0x0045f3c0 QuadbikeExplode (206 bytes)</title></rect>
 <rect width="7.93" height="8.42" x="513.62" y="303.10" class="named"><title>0x00480c40 DS_SetOutputFormat (206 bytes)</title></rect>
-<rect width="7.93" height="8.42" x="513.62" y="314.52" class="nonmatching"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
+<rect width="7.93" height="8.42" x="513.62" y="314.52" class="named"><title>0x004933e0 MMXInit (206 bytes)</title></rect>
 <rect width="7.93" height="8.37" x="513.62" y="325.93" class="named"><title>0x004238a0 LoadLaraDemoPos (205 bytes)</title></rect>
 <rect width="7.93" height="8.37" x="513.62" y="337.31" class="named"><title>0x0043fee0 TestMonkeyLeft (205 bytes)</title></rect>
 <rect width="7.93" height="8.33" x="513.62" y="348.68" class="named"><title>0x00442f00 lara_col_roll2 (204 bytes)</title></rect>
