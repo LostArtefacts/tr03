@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="197.60" height="12" x="0" y="0" class="named"><title>1480 · 98.80%</title></rect>
-<rect width="2.40" height="12" x="197.60" y="0" class="nonmatching"><title>18 · 1.20%</title></rect>
+<rect width="197.73" height="12" x="0" y="0" class="named"><title>1481 · 98.87%</title></rect>
+<rect width="2.27" height="12" x="197.73" y="0" class="nonmatching"><title>17 · 1.13%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="7.50">98.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1480</tspan> · <tspan class="nonmatching">18</tspan></text>
+<text text-anchor="end" x="390" y="7.50">98.9%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1481</tspan> · <tspan class="nonmatching">17</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="191.55" height="12" x="0" y="0" class="named"><title>694 KB · 95.78%</title></rect>
-<rect width="8.45" height="12" x="191.55" y="0" class="nonmatching"><title>31 KB · 4.22%</title></rect>
+<rect width="193.02" height="12" x="0" y="0" class="named"><title>700 KB · 96.51%</title></rect>
+<rect width="6.98" height="12" x="193.02" y="0" class="nonmatching"><title>25 KB · 3.49%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">95.8%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">694 KB</tspan> · <tspan class="nonmatching">31 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">96.5%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">700 KB</tspan> · <tspan class="nonmatching">25 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -123,7 +123,7 @@
 <rect width="12" height="12" x="465" y="0" class="named"><title>0x00402870 xgen_xguv (537 bytes)</title></rect>
 <rect width="12" height="12" x="480" y="0" class="named"><title>0x00402a90 xgen_xguvpersp_fp (644 bytes)</title></rect>
 <rect width="12" height="12" x="495" y="0" class="named"><title>0x00402d20 gtmap_persp32_fp (4008 bytes)</title></rect>
-<rect width="12" height="12" x="510" y="0" class="nonmatching"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
+<rect width="12" height="12" x="510" y="0" class="named"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="12" height="12" x="525" y="0" class="named"><title>0x004051a0 draw_poly_gtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="540" y="0" class="named"><title>0x004051e0 draw_poly_wgtmap_persp (55 bytes)</title></rect>
 <rect width="12" height="12" x="555" y="0" class="named"><title>0x00405220 InitUVTable (48 bytes)</title></rect>
@@ -1602,7 +1602,7 @@
 <rect width="50.69" height="35.58" x="0" y="373.90" class="named"><title>0x004070e0 HWI_InsertGT4_Poly (5580 bytes)</title></rect>
 <rect width="50.69" height="34.52" x="0" y="412.48" class="named"><title>0x00427e20 DrawLaraInt (5416 bytes)</title></rect>
 <rect width="39.26" height="44.45" x="53.69" y="0" class="named"><title>0x004a83d0 ScanLinesTGAlphaDecalAffine (5390 bytes)</title></rect>
-<rect width="39.26" height="43.84" x="53.69" y="47.45" class="nonmatching"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
+<rect width="39.26" height="43.84" x="53.69" y="47.45" class="named"><title>0x00403cd0 wgtmap_persp16_fp (5315 bytes)</title></rect>
 <rect width="39.26" height="43.60" x="53.69" y="94.29" class="named"><title>0x004a6f20 ScanLinesTG (5286 bytes)</title></rect>
 <rect width="39.26" height="42.65" x="53.69" y="140.89" class="named"><title>0x00435400 Display_Inventory (5171 bytes)</title></rect>
 <rect width="39.26" height="41.67" x="53.69" y="186.55" class="named"><title>0x0049ea50 ScanLinesTFAlphaDecal (5051 bytes)</title></rect>

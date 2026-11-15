@@ -934,7 +934,7 @@ void wgtmap_persp16_fp(int ymin, int ymax, char *tptr)
             if (x) {
                 scale = 256.0f / dataptr->OOZright;
                 start_u = end_u;
-                end_u = (int)(dataptr->UOZright * scale);
+                end_u = (int)((*(float *)((unsigned long)((unsigned __int64)((unsigned long)dataptr + FIELD_OFFSET(XBUF_PERSP_FP, UOZright))))) * scale);
                 add_u = (end_u - start_u) / x;
                 start_v = end_v;
                 end_v = (int)(dataptr->VOZright * scale);
