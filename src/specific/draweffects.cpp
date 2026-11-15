@@ -411,36 +411,35 @@ bool ClipLine(long &x1, long &y1, long &x2, long &y2, long w, long h)
 
 void DrawLondonBossShield(ITEM_INFO *item)
 {
-    DISPLAYMODE *dm;
     SHIELD_POINTS *s0;
     SHIELD_POINTS *s1;
     PHDSPRITESTRUCT *sprite;
-    PHD_VBUF v[4];
-    PHDTEXTURESTRUCT tex;
     long *pZ0;
     long *pZ1;
     short *pXY0;
     short *pXY1;
     float zv;
-    long w, h, r, g, b, rgb;
+    long w, h;
     long i, j;
-    short x, y, z;
     long x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, c1, c2, c3, c4;
     long Z[150];
     long u1, v1, u2, v2;
     short XY[150];
-    dm = &App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode];
-    w = dm->w - 1;
-    h = dm->h - 1;
+    w = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w - 1;
+    h = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h - 1;
     phd_PushMatrix();
     phd_TranslateAbs(item->pos.x_pos, item->pos.y_pos, item->pos.z_pos);
     pXY0 = XY;
     pZ0 = Z;
     s0 = &LondonBossShield[0];
     for (i = 0; i < 40; i++) {
-        x = s0->x;
-        y = s0->y;
-        z = s0->z;
+        long result[3];
+        short TempMesh[3];
+        long r, g, b, rgb;
+
+        TempMesh[0] = s0->x;
+        TempMesh[1] = s0->y;
+        TempMesh[2] = s0->z;
         if (i >= 8 && i <= 31) {
             rgb = s0->rgb;
             r = rgb & 0xff;
@@ -460,21 +459,34 @@ void DrawLondonBossShield(ITEM_INFO *item)
             }
         }
         s0++;
-        z1 = x * phd_mxptr[8] + y * phd_mxptr[9] + z * phd_mxptr[10] + phd_mxptr[11];
-        zv = f_persp / (float)z1;
-        x1 = x * phd_mxptr[0] + y * phd_mxptr[1] + z * phd_mxptr[2] + phd_mxptr[3];
-        pXY0[0] = (short)(x1 * zv + f_centerx);
-        y1 = x * phd_mxptr[4] + y * phd_mxptr[5] + z * phd_mxptr[6] + phd_mxptr[7];
-        pXY0[1] = (short)(y1 * zv + f_centery);
-        *pZ0++ = z1;
+        const sint32 *matrix = phd_mxptr;
+        const sint32 &m03 = matrix[3];
+        const sint32 &m00 = matrix[0];
+        const sint32 &m01 = matrix[1];
+        const sint32 &m02 = matrix[2];
+        const sint32 &m13 = matrix[7];
+        const sint32 &m10 = matrix[4];
+        const sint32 &m11 = matrix[5];
+        const sint32 &m12 = matrix[6];
+        const sint32 &m23 = matrix[11];
+        const sint32 &m20 = matrix[8];
+        const sint32 &m21 = matrix[9];
+        const sint32 &m22 = matrix[10];
+        result[1] = TempMesh[0] * m10 + TempMesh[1] * m11 + TempMesh[2] * m12 + m13;
+        result[0] = TempMesh[0] * m00 + TempMesh[1] * m01 + TempMesh[2] * m02 + m03;
+        result[2] = TempMesh[0] * m20 + TempMesh[1] * m21 + TempMesh[2] * m22 + m23;
+        zv = f_persp / (float)result[2];
+        pXY0[0] = (short)(result[0] * zv + f_centerx);
+        pXY0[1] = (short)(result[1] * zv + f_centery);
+        *pZ0++ = result[2];
         pXY0 += 2;
     }
+    s0 = &LondonBossShield[0];
+    s1 = &LondonBossShield[8];
     pXY0 = &XY[0];
     pZ0 = &Z[0];
     pXY1 = &XY[16];
     pZ1 = &Z[8];
-    s0 = &LondonBossShield[0];
-    s1 = &LondonBossShield[8];
     for (i = 0; i < 4; i++) {
         x1 = *pXY0++;
         y1 = *pXY0++;
@@ -518,15 +530,17 @@ void DrawLondonBossShield(ITEM_INFO *item)
                 c4 = s1->rgb;
             }
             if ((z1 + z2 + z3 + z4) >> 2 > phd_znear && (c1 || c2 || c3 || c4) && x1 > -128 && x2 > -128 && x3 > -128 && x4 > -128 && x1 < w + 128 && x2 < w + 128 && x3 < w + 128 && x4 < w + 128 && y1 > -128 && y2 > -128 && y3 > -128 && y4 > -128 && y1 < h + 128 && y2 < h + 128 && y3 < h + 128 && y4 < h + 128) {
+                PHD_VBUF v[4];
+                PHDTEXTURESTRUCT tex;
                 setXYZ4(v, 0, x1, y1, z1, c1, x2, y2, z2, c2, x4, y4, z4, c4, x3, y3, z3, c3);
                 tex.u1 = u1;
+                tex.v1 = v1;
                 tex.u2 = u2;
                 tex.u3 = u2;
                 tex.u4 = u1;
-                tex.v1 = v1;
+                tex.v4 = v2;
                 tex.v2 = v1;
                 tex.v3 = v2;
-                tex.v4 = v2;
                 tex.tpage = sprite->tpage;
                 tex.drawtype = 2;
                 HWI_InsertGT4_Sorted(&v[0], &v[1], &v[2], &v[3], &tex, 0, 1);
@@ -1542,175 +1556,6 @@ extern unsigned char SplashLinks[];
 
 void HWI_InsertAlphaSprite_Sorted(long x1, long y1, long z1, long shade1, long x2, long y2, long z2, long shade2, long x3, long y3, long z3, long shade3, long x4, long y4, long z4, long shade4, long nSprite, long nDrawtype, long double_sided);
 
-void S_DrawSplashes(void)
-{
-    RIPPLE_STRUCT *rptr;
-    SPLASH_STRUCT *sptr;
-    SPLASH_VERTS *svptr;
-    long *result;
-    long *scrpoints;
-    unsigned char *pptr;
-    long lp, vlp, olp;
-    long wx, wy, wz, linkadd;
-    long x1, x2, x3, x4, y1, y2, y3, y4;
-    long z1, z2, z3, z4;
-    long mscrpoints[48 * 4];
-    long mresult[3];
-    int nSprite;
-    int sw = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
-    int sh = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
-
-    sptr = &splashes[0];
-    for (lp = 0; lp < 4; lp++) {
-        if ((sptr->flags & 1) == 0) {
-            sptr++;
-            continue;
-        }
-        svptr = &sptr->sv[0];
-        scrpoints = (long *)&mscrpoints;
-        result = (long *)&mresult;
-        for (vlp = 0; vlp < 48; vlp++) {
-            wx = (svptr->wx >> 4) + sptr->x;
-            wy = svptr->wy + sptr->y;
-            wz = (svptr->wz >> 4) + sptr->z;
-            mCalcPoint(wx, wy, wz, result);
-            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
-            scrpoints += 4;
-            svptr++;
-        }
-        scrpoints = (long *)&mscrpoints;
-        for (olp = 0; olp < 3; olp++) {
-            if (olp == 2 || (olp == 0 && (sptr->flags & 4)) || (olp == 1 && (sptr->flags & 8)))
-                nSprite = objects[296].mesh_index + 4 + ((wibble >> 4) & 3);
-            else
-                nSprite = objects[296].mesh_index + 8;
-            pptr = &SplashLinks[0];
-            linkadd = olp << 6;
-            for (vlp = 0; vlp < 8; vlp++) {
-                x1 = scrpoints[(*pptr) + linkadd];
-                y1 = scrpoints[(*pptr) + 1 + linkadd];
-                z1 = scrpoints[(*pptr++) + 2 + linkadd];
-                x2 = scrpoints[(*pptr) + linkadd];
-                y2 = scrpoints[(*pptr) + 1 + linkadd];
-                z2 = scrpoints[(*pptr++) + 2 + linkadd];
-                x3 = scrpoints[(*pptr) + linkadd];
-                y3 = scrpoints[(*pptr) + 1 + linkadd];
-                z3 = scrpoints[(*pptr++) + 2 + linkadd];
-                x4 = scrpoints[(*pptr) + linkadd];
-                y4 = scrpoints[(*pptr) + 1 + linkadd];
-                z4 = scrpoints[(*pptr++) + 2 + linkadd];
-                if ((x1 < 0 && x2 < 0 && x3 < 0 && x4 < 0) || (x1 >= sw && x2 >= sw && x3 >= sw && x4 >= sw) || (y1 < 0 && y2 < 0 && y3 < 0 && y4 < 0) || (y1 >= sh && y2 >= sh && y3 >= sh && y4 >= sh)) {
-                    continue;
-                }
-                z1 <<= W2V_SHIFT;
-                if (z1 < phd_znear || z1 > phd_zfar)
-                    continue;
-                z2 <<= W2V_SHIFT;
-                if (z2 < phd_znear || z2 > phd_zfar)
-                    continue;
-                z3 <<= W2V_SHIFT;
-                if (z3 < phd_znear || z3 > phd_zfar)
-                    continue;
-                z4 <<= W2V_SHIFT;
-                if (z4 < phd_znear || z4 > phd_zfar)
-                    continue;
-                int a, b;
-                a = (sptr->life >> 2);
-                b = (sptr->life >> 2) - (sptr->life >> 4);
-                int nShade1 = a << 10 | a << 5 | a;
-                int nShade2 = b << 10 | b << 5 | b;
-                if ((((x3 - x2) * (y1 - y2)) - ((x1 - x2) * (y3 - y2))) < 0)
-                    HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade1, x3, y3, z3, nShade2, x4, y4, z4, nShade2, x2, y2, z2, nShade1, nSprite, 14, 1);
-                else
-                    HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade1, x2, y2, z2, nShade1, x4, y4, z4, nShade2, x3, y3, z3, nShade2, nSprite, 14, 0);
-            }
-        }
-        sptr++;
-    }
-    result = (long *)&mresult;
-    rptr = &ripples[0];
-    for (lp = 0; lp < 16; lp++) {
-        if (rptr->flags & 1) {
-            long size = rptr->size << 2;
-            nSprite = objects[296].mesh_index + 9;
-            scrpoints = (long *)&mscrpoints;
-            mCalcPoint(rptr->x - size, rptr->y, rptr->z - size, result);
-            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
-            scrpoints += 3;
-            mCalcPoint(rptr->x + size, rptr->y, rptr->z - size, result);
-            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
-            scrpoints += 3;
-            mCalcPoint(rptr->x - size, rptr->y, rptr->z + size, result);
-            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
-            scrpoints += 3;
-            mCalcPoint(rptr->x + size, rptr->y, rptr->z + size, result);
-            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
-            scrpoints -= 9;
-            x1 = *scrpoints++;
-            y1 = *scrpoints++;
-            z1 = *scrpoints++;
-            x2 = *scrpoints++;
-            y2 = *scrpoints++;
-            z2 = *scrpoints++;
-            x3 = *scrpoints++;
-            y3 = *scrpoints++;
-            z3 = *scrpoints++;
-            x4 = *scrpoints++;
-            y4 = *scrpoints++;
-            z4 = *scrpoints;
-            if ((x1 < 0 && x2 < 0 && x3 < 0 && x4 < 0) || (x1 >= sw && x2 >= sw && x3 >= sw && x4 >= sw) || (y1 < 0 && y2 < 0 && y3 < 0 && y4 < 0) || (y1 >= sh && y2 >= sh && y3 >= sh && y4 >= sh)) {
-                rptr++;
-                continue;
-            }
-            z1 <<= W2V_SHIFT;
-            if (z1 < phd_znear || z1 > phd_zfar) {
-                rptr++;
-                continue;
-            }
-            z2 <<= W2V_SHIFT;
-            if (z2 < phd_znear || z2 > phd_zfar) {
-                rptr++;
-                continue;
-            }
-            z3 <<= W2V_SHIFT;
-            if (z3 < phd_znear || z3 > phd_zfar) {
-                rptr++;
-                continue;
-            }
-            z4 <<= W2V_SHIFT;
-            if (z4 < phd_znear || z4 > phd_zfar) {
-                rptr++;
-                continue;
-            }
-            int nShade = 0;
-            if (rptr->flags & 0x10) {
-                if (rptr->flags & 0x20) {
-                    nSprite = objects[296].mesh_index;
-                    if (rptr->init)
-                        nShade = (rptr->init >> 1) << 10;
-                    else
-                        nShade = (rptr->life >> 1) << 10;
-                } else {
-                    if (rptr->init)
-                        nShade = (rptr->init >> 2) << 10 | (rptr->init >> 2) << 5 | rptr->init >> 2;
-                    else
-                        nShade = (rptr->life >> 2) << 10 | (rptr->life >> 2) << 5 | rptr->life >> 2;
-                }
-            } else {
-                if (rptr->init)
-                    nShade = (rptr->init >> 1) << 10 | (rptr->init >> 1) << 5 | rptr->init >> 1;
-                else
-                    nShade = (rptr->life >> 1) << 10 | (rptr->life >> 1) << 5 | rptr->life >> 1;
-            }
-            if ((((x3 - x2) * (y1 - y2)) - ((x1 - x2) * (y3 - y2))) < 0)
-                HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade, x3, y3, z3, nShade, x4, y4, z4, nShade, x2, y2, z2, nShade, nSprite, 14, 1);
-            else
-                HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade, x2, y2, z2, nShade, x4, y4, z4, nShade, x3, y3, z3, nShade, nSprite, 14, 0);
-        }
-        rptr++;
-    }
-}
-
 extern char LaserShades[];
 
 void UpdateLaserShades(void);
@@ -2682,6 +2527,175 @@ typedef struct {
 extern WAKE_PTS WakePts[32][2];
 extern uint8 CurrentStartWake;
 extern uint8 WakeShade;
+
+void S_DrawSplashes(void)
+{
+    RIPPLE_STRUCT *rptr;
+    SPLASH_STRUCT *sptr;
+    SPLASH_VERTS *svptr;
+    long *result;
+    long *scrpoints;
+    unsigned char *pptr;
+    long lp, vlp, olp;
+    long wx, wy, wz, linkadd;
+    long x1, x2, x3, x4, y1, y2, y3, y4;
+    long z1, z2, z3, z4;
+    long mscrpoints[48 * 4];
+    long mresult[3];
+    int nSprite;
+    int sw = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].w;
+    int sh = App.DeviceInfoPtr->DDInfo[App.DXConfigPtr->nDD].D3DInfo[App.DXConfigPtr->nD3D].DisplayMode[App.DXConfigPtr->nVMode].h;
+
+    sptr = &splashes[0];
+    for (lp = 0; lp < 4; lp++) {
+        if ((sptr->flags & 1) == 0) {
+            sptr++;
+            continue;
+        }
+        svptr = &sptr->sv[0];
+        scrpoints = (long *)&mscrpoints;
+        result = (long *)&mresult;
+        for (vlp = 0; vlp < 48; vlp++) {
+            wx = (svptr->wx >> 4) + sptr->x;
+            wy = svptr->wy + sptr->y;
+            wz = (svptr->wz >> 4) + sptr->z;
+            mCalcPoint(wx, wy, wz, result);
+            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
+            scrpoints += 4;
+            svptr++;
+        }
+        scrpoints = (long *)&mscrpoints;
+        for (olp = 0; olp < 3; olp++) {
+            if (olp == 2 || (olp == 0 && (sptr->flags & 4)) || (olp == 1 && (sptr->flags & 8)))
+                nSprite = objects[296].mesh_index + 4 + ((wibble >> 4) & 3);
+            else
+                nSprite = objects[296].mesh_index + 8;
+            pptr = &SplashLinks[0];
+            linkadd = olp << 6;
+            for (vlp = 0; vlp < 8; vlp++) {
+                x1 = scrpoints[(*pptr) + linkadd];
+                y1 = scrpoints[(*pptr) + 1 + linkadd];
+                z1 = scrpoints[(*pptr++) + 2 + linkadd];
+                x2 = scrpoints[(*pptr) + linkadd];
+                y2 = scrpoints[(*pptr) + 1 + linkadd];
+                z2 = scrpoints[(*pptr++) + 2 + linkadd];
+                x3 = scrpoints[(*pptr) + linkadd];
+                y3 = scrpoints[(*pptr) + 1 + linkadd];
+                z3 = scrpoints[(*pptr++) + 2 + linkadd];
+                x4 = scrpoints[(*pptr) + linkadd];
+                y4 = scrpoints[(*pptr) + 1 + linkadd];
+                z4 = scrpoints[(*pptr++) + 2 + linkadd];
+                if ((x1 < 0 && x2 < 0 && x3 < 0 && x4 < 0) || (x1 >= sw && x2 >= sw && x3 >= sw && x4 >= sw) || (y1 < 0 && y2 < 0 && y3 < 0 && y4 < 0) || (y1 >= sh && y2 >= sh && y3 >= sh && y4 >= sh)) {
+                    continue;
+                }
+                z1 <<= W2V_SHIFT;
+                if (z1 < phd_znear || z1 > phd_zfar)
+                    continue;
+                z2 <<= W2V_SHIFT;
+                if (z2 < phd_znear || z2 > phd_zfar)
+                    continue;
+                z3 <<= W2V_SHIFT;
+                if (z3 < phd_znear || z3 > phd_zfar)
+                    continue;
+                z4 <<= W2V_SHIFT;
+                if (z4 < phd_znear || z4 > phd_zfar)
+                    continue;
+                int a, b;
+                a = (sptr->life >> 2);
+                b = (sptr->life >> 2) - (sptr->life >> 4);
+                int nShade1 = a << 10 | a << 5 | a;
+                int nShade2 = b << 10 | b << 5 | b;
+                if ((((x3 - x2) * (y1 - y2)) - ((x1 - x2) * (y3 - y2))) < 0)
+                    HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade1, x3, y3, z3, nShade2, x4, y4, z4, nShade2, x2, y2, z2, nShade1, nSprite, 14, 1);
+                else
+                    HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade1, x2, y2, z2, nShade1, x4, y4, z4, nShade2, x3, y3, z3, nShade2, nSprite, 14, 0);
+            }
+        }
+        sptr++;
+    }
+    result = (long *)&mresult;
+    rptr = &ripples[0];
+    for (lp = 0; lp < 16; lp++) {
+        if (rptr->flags & 1) {
+            long size = rptr->size << 2;
+            nSprite = objects[296].mesh_index + 9;
+            scrpoints = (long *)&mscrpoints;
+            mCalcPoint(rptr->x - size, rptr->y, rptr->z - size, result);
+            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
+            scrpoints += 3;
+            mCalcPoint(rptr->x + size, rptr->y, rptr->z - size, result);
+            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
+            scrpoints += 3;
+            mCalcPoint(rptr->x - size, rptr->y, rptr->z + size, result);
+            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
+            scrpoints += 3;
+            mCalcPoint(rptr->x + size, rptr->y, rptr->z + size, result);
+            ProjectPCoord(result[0], result[1], result[2], scrpoints, sw >> 1, sh >> 1, phd_persp);
+            scrpoints -= 9;
+            x1 = *scrpoints++;
+            y1 = *scrpoints++;
+            z1 = *scrpoints++;
+            x2 = *scrpoints++;
+            y2 = *scrpoints++;
+            z2 = *scrpoints++;
+            x3 = *scrpoints++;
+            y3 = *scrpoints++;
+            z3 = *scrpoints++;
+            x4 = *scrpoints++;
+            y4 = *scrpoints++;
+            z4 = *scrpoints;
+            if ((x1 < 0 && x2 < 0 && x3 < 0 && x4 < 0) || (x1 >= sw && x2 >= sw && x3 >= sw && x4 >= sw) || (y1 < 0 && y2 < 0 && y3 < 0 && y4 < 0) || (y1 >= sh && y2 >= sh && y3 >= sh && y4 >= sh)) {
+                rptr++;
+                continue;
+            }
+            z1 <<= W2V_SHIFT;
+            if (z1 < phd_znear || z1 > phd_zfar) {
+                rptr++;
+                continue;
+            }
+            z2 <<= W2V_SHIFT;
+            if (z2 < phd_znear || z2 > phd_zfar) {
+                rptr++;
+                continue;
+            }
+            z3 <<= W2V_SHIFT;
+            if (z3 < phd_znear || z3 > phd_zfar) {
+                rptr++;
+                continue;
+            }
+            z4 <<= W2V_SHIFT;
+            if (z4 < phd_znear || z4 > phd_zfar) {
+                rptr++;
+                continue;
+            }
+            int nShade = 0;
+            if (rptr->flags & 0x10) {
+                if (rptr->flags & 0x20) {
+                    nSprite = objects[296].mesh_index;
+                    if (rptr->init)
+                        nShade = (rptr->init >> 1) << 10;
+                    else
+                        nShade = (rptr->life >> 1) << 10;
+                } else {
+                    if (rptr->init)
+                        nShade = (rptr->init >> 2) << 10 | (rptr->init >> 2) << 5 | rptr->init >> 2;
+                    else
+                        nShade = (rptr->life >> 2) << 10 | (rptr->life >> 2) << 5 | rptr->life >> 2;
+                }
+            } else {
+                if (rptr->init)
+                    nShade = (rptr->init >> 1) << 10 | (rptr->init >> 1) << 5 | rptr->init >> 1;
+                else
+                    nShade = (rptr->life >> 1) << 10 | (rptr->life >> 1) << 5 | rptr->life >> 1;
+            }
+            if ((((x3 - x2) * (y1 - y2)) - ((x1 - x2) * (y3 - y2))) < 0)
+                HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade, x3, y3, z3, nShade, x4, y4, z4, nShade, x2, y2, z2, nShade, nSprite, 14, 1);
+            else
+                HWI_InsertAlphaSprite_Sorted(x1, y1, z1, nShade, x2, y2, z2, nShade, x4, y4, z4, nShade, x3, y3, z3, nShade, nSprite, 14, 0);
+        }
+        rptr++;
+    }
+}
 
 void S_DrawWakeFX(ITEM_INFO *v)
 {
