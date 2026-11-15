@@ -18,7 +18,6 @@ _calc_roomvert,0x0048D9B0,src/specific/transform.cpp,1690,1707,91,1184,size diff
 _DXTextureAdd,0x004B23D0,src/specific/texture.cpp,1390,1390,110,977,same size,
 _PickUpCollision,0x0045BC00,src/pickup.c,1379,1383,111,1202,size differs,
 _S_DrawSparks,0x0047B2C0,src/specific/draweffects.cpp,2003,2038,132,1849,size differs,
-_LaraWaterCurrent,0x0044F310,src/laraswim.c,621,621,133,434,same size,
 _calc_vertice_light,0x004866E0,src/specific/litesrc.cpp,1212,1213,144,876,size differs,
 _TriggerTribeBossHeadElectricity,0x0047D4A0,src/specific/draweffects.cpp,3280,3284,156,1583,size differs,
 _ScanLinesTFDecalAffine,0x004A5E50,src/specific/scanlinestfdecal.cpp,3392,3392,161,941,same size,

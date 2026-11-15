@@ -418,74 +418,83 @@ int abs(int x);
 
 void LaraWaterCurrent(COLL_INFO *coll)
 {
+    PHD_VECTOR target;
     ITEM_INFO *item;
-    OBJECT_VECTOR *sink;
-    sint32 angle, speed, shifter, absvel;
 
     item = lara_item;
 
     if (!lara.current_active) {
+        long shifter, absvel;
+
         absvel = abs(lara.current_xvel);
-        if (absvel > 16) {
+        if (absvel > 16)
             shifter = 4;
-        } else if (absvel > 8) {
+        else if (absvel > 8)
             shifter = 3;
-        } else {
+        else
             shifter = 2;
-        }
+
         lara.current_xvel -= lara.current_xvel >> shifter;
-        if (abs(lara.current_xvel) < 4) {
+        if (abs(lara.current_xvel) < 4)
             lara.current_xvel = 0;
-        }
 
         absvel = abs(lara.current_zvel);
-        if (absvel > 16) {
+        if (absvel > 16)
             shifter = 4;
-        } else if (absvel > 8) {
+        else if (absvel > 8)
             shifter = 3;
-        } else {
+        else
             shifter = 2;
-        }
-        lara.current_zvel -= lara.current_zvel >> shifter;
-        if (abs(lara.current_zvel) < 4) {
-            lara.current_zvel = 0;
-        }
 
-        if (!lara.current_xvel && !lara.current_zvel) {
+        lara.current_zvel -= lara.current_zvel >> shifter;
+        if (abs(lara.current_zvel) < 4)
+            lara.current_zvel = 0;
+
+        if (lara.current_xvel == 0 && lara.current_zvel == 0)
             return;
-        }
     } else {
-        sink = &camera.fixed[lara.current_active - 1];
-        speed = sink->data;
-        angle = ((mGetAngle(sink->x, sink->z, item->pos.x_pos, item->pos.z_pos) - 0x4000) >> 4) & 0xfff;
-        lara.current_xvel += (sint16)((((speed * rcossin_tbl[2 * angle]) >> 2) - lara.current_xvel) >> 4);
-        lara.current_zvel += (sint16)((((speed * rcossin_tbl[2 * angle + 1]) >> 2) - lara.current_zvel) >> 4);
-        item->pos.y_pos += (sink->y - item->pos.y_pos) >> 4;
+        long angle, dx, dz, speed, sinkval;
+
+        sinkval = lara.current_active - 1;
+        target.x = camera.fixed[sinkval].x;
+        target.y = camera.fixed[sinkval].y;
+        target.z = camera.fixed[sinkval].z;
+        angle = ((mGetAngle(target.x, target.z, lara_item->pos.x_pos, lara_item->pos.z_pos) - 0x4000) >> 4) & 4095;
+
+        speed = camera.fixed[sinkval].data;
+        dx = (rcossin_tbl[angle << 1] * speed) >> 2;
+        dz = (rcossin_tbl[(angle << 1) + 1] * speed) >> 2;
+
+        lara.current_xvel += (dx - lara.current_xvel) >> 4;
+        lara.current_zvel += (dz - lara.current_zvel) >> 4;
+        lara_item->pos.y_pos += (target.y - lara_item->pos.y_pos) >> 4;
     }
 
     item->pos.x_pos += lara.current_xvel >> 8;
     item->pos.z_pos += lara.current_zvel >> 8;
+
     lara.current_active = 0;
 
-    coll->facing = phd_atan(item->pos.z_pos - coll->old.z, item->pos.x_pos - coll->old.x);
-    GetCollisionInfo(coll, item->pos.x_pos, item->pos.y_pos + 200, item->pos.z_pos, item->room_number, 400);
+    coll->facing = phd_atan(
+        (item->pos.z_pos - coll->old.z), (item->pos.x_pos - coll->old.x));
+    GetCollisionInfo(
+        coll, item->pos.x_pos, item->pos.y_pos + 200, item->pos.z_pos,
+        item->room_number, 400);
     if (coll->coll_type == COLL_FRONT) {
-        if (item->pos.x_rot > 35 * ONE_DEGREE) {
+        if (item->pos.x_rot > 35 * ONE_DEGREE)
             item->pos.x_rot += 2 * ONE_DEGREE;
-        } else if (item->pos.x_rot < -35 * ONE_DEGREE) {
+        else if (item->pos.x_rot < -35 * ONE_DEGREE)
             item->pos.x_rot -= 2 * ONE_DEGREE;
-        } else {
+        else
             item->fallspeed = 0;
-        }
-    } else if (coll->coll_type == COLL_TOP) {
+    } else if (coll->coll_type == COLL_TOP)
         item->pos.x_rot -= 2 * ONE_DEGREE;
-    } else if (coll->coll_type == COLL_TOPFRONT) {
+    else if (coll->coll_type == COLL_TOPFRONT)
         item->fallspeed = 0;
-    } else if (coll->coll_type == COLL_LEFT) {
+    else if (coll->coll_type == COLL_LEFT)
         item->pos.y_rot += 5 * ONE_DEGREE;
-    } else if (coll->coll_type == COLL_RIGHT) {
+    else if (coll->coll_type == COLL_RIGHT)
         item->pos.y_rot -= 5 * ONE_DEGREE;
-    }
 
     if (coll->mid_floor < 0) {
         item->pos.y_pos += coll->mid_floor;

@@ -46,18 +46,18 @@
 <g transform="translate(0 30)">
 <text text-anchor="start" x="0" y="7.50">Game functions</text>
 <g transform="translate(130 1.50)">
-<rect width="194.93" height="12" x="0" y="0" class="named"><title>1460 · 97.46%</title></rect>
-<rect width="5.07" height="12" x="194.93" y="0" class="nonmatching"><title>38 · 2.54%</title></rect>
+<rect width="195.06" height="12" x="0" y="0" class="named"><title>1461 · 97.53%</title></rect>
+<rect width="4.94" height="12" x="195.06" y="0" class="nonmatching"><title>37 · 2.47%</title></rect>
 </g>
 <text text-anchor="end" x="390" y="7.50">97.5%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1460</tspan> · <tspan class="nonmatching">38</tspan></text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="7"><tspan class="named">1461</tspan> · <tspan class="nonmatching">37</tspan></text>
 <text text-anchor="start" x="0" y="24.50">Game code</text>
 <g transform="translate(130 18.50)">
-<rect width="182.62" height="12" x="0" y="0" class="named"><title>662 KB · 91.31%</title></rect>
-<rect width="17.38" height="12" x="182.62" y="0" class="nonmatching"><title>63 KB · 8.69%</title></rect>
+<rect width="182.79" height="12" x="0" y="0" class="named"><title>662 KB · 91.39%</title></rect>
+<rect width="17.21" height="12" x="182.79" y="0" class="nonmatching"><title>62 KB · 8.61%</title></rect>
 </g>
-<text text-anchor="end" x="390" y="24.50">91.3%</text>
-<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">662 KB</tspan> · <tspan class="nonmatching">63 KB</tspan></text>
+<text text-anchor="end" x="390" y="24.50">91.4%</text>
+<text class="todo" style="font-size: 12px; " text-anchor="start" x="405" y="24"><tspan class="named">662 KB</tspan> · <tspan class="nonmatching">62 KB</tspan></text>
 <text text-anchor="start" x="0" y="41.50">Library code</text>
 <g transform="translate(130 35.50)">
 <rect width="200" height="12" x="0" y="0" class="named"><title>41 KB · 100%</title></rect>
@@ -857,7 +857,7 @@
 <rect width="12" height="12" x="225" y="225" class="named"><title>0x0044f100 lara_col_uwdeath (91 bytes)</title></rect>
 <rect width="12" height="12" x="240" y="225" class="named"><title>0x0044f160 lara_col_waterroll (19 bytes)</title></rect>
 <rect width="12" height="12" x="255" y="225" class="named"><title>0x0044f180 GetWaterDepth (399 bytes)</title></rect>
-<rect width="12" height="12" x="270" y="225" class="nonmatching"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
+<rect width="12" height="12" x="270" y="225" class="named"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
 <rect width="12" height="12" x="285" y="225" class="named"><title>0x0044f580 LaraOnLOS (531 bytes)</title></rect>
 <rect width="12" height="12" x="300" y="225" class="named"><title>0x0044f7a0 UpdateLaserShades (99 bytes)</title></rect>
 <rect width="12" height="12" x="315" y="225" class="named"><title>0x0044f810 LaserControl (31 bytes)</title></rect>
@@ -1875,7 +1875,7 @@
 <rect width="14.13" height="14.30" x="369.53" y="312.31" class="named"><title>0x0041d290 CobraControl (624 bytes)</title></rect>
 <rect width="14.13" height="14.28" x="369.53" y="329.61" class="named"><title>0x00475a00 S_DrawDashBar (623 bytes)</title></rect>
 <rect width="14.13" height="14.23" x="369.53" y="346.89" class="named"><title>0x004296c0 InterpolateMatrix (621 bytes)</title></rect>
-<rect width="14.13" height="14.23" x="369.53" y="364.12" class="nonmatching"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
+<rect width="14.13" height="14.23" x="369.53" y="364.12" class="named"><title>0x0044f310 LaraWaterCurrent (621 bytes)</title></rect>
 <rect width="14.13" height="14.19" x="369.53" y="381.35" class="named"><title>0x00460da0 RaptorEmitterControl (619 bytes)</title></rect>
 <rect width="14.13" height="14.16" x="369.53" y="398.54" class="named"><title>0x00469a80 SubEffects (618 bytes)</title></rect>
 <rect width="14.13" height="14.16" x="369.53" y="415.70" class="named"><title>0x004b3550 DXSwitchVideoMode (618 bytes)</title></rect>
