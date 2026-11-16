@@ -256,17 +256,25 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
 {
     sint16 page;
     sint32 select;
+    long frameDifference;
 
     T_RemovePrint(Inv_itemText[0]);
     Inv_itemText[0] = NULL;
-    page = (inv_item->goal_frame - inv_item->open_frame) / 5;
-    if ((inv_item->goal_frame - inv_item->open_frame) % 5)
+    frameDifference = (inv_item->goal_frame - ((const volatile INVENTORY_ITEM *)inv_item)->open_frame);
+    page = frameDifference / 5;
+    if (frameDifference % 5)
         page = -1;
     if (Inventory_Mode == 4 || Inventory_Mode == 3 || gameflow.loadsave_disabled)
         inputDB &= ~(IN_LEFT | IN_RIGHT);
     switch (page) {
     case 0:
-        if ((CurrentLevel == 0 && Inventory_Mode != 1) || gameflow.loadsave_disabled) {
+        if (CurrentLevel == 0) {
+            if (Inventory_Mode != 1) {
+                inputDB = IN_RIGHT;
+                break;
+            }
+        }
+        if (gameflow.loadsave_disabled) {
             inputDB = IN_RIGHT;
             break;
         }
@@ -309,7 +317,13 @@ void do_passport_option(INVENTORY_ITEM *inv_item)
         }
         break;
     case 1:
-        if ((CurrentLevel == 0 && Inventory_Mode != 1) || gameflow.loadsave_disabled) {
+        if (CurrentLevel == 0) {
+            if (Inventory_Mode != 1) {
+                inputDB = IN_RIGHT;
+                break;
+            }
+        }
+        if (gameflow.loadsave_disabled) {
             inputDB = IN_RIGHT;
             break;
         }

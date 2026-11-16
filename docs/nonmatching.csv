@@ -8,7 +8,6 @@ _TriggerTribeBossHeadElectricity,0x0047D4A0,src/specific/draweffects.cpp,3280,32
 _DrawLineG,0x00490110,src/specific/drawprimitive.cpp,751,751,189,634,same size,
 _DoRain,0x0047A4B0,src/specific/draweffects.cpp,1473,1514,388,1402,size differs,
 _S_DrawWakeFX,0x0047F4C0,src/specific/draweffects.cpp,1890,1856,398,1663,size differs,
-_do_passport_option,0x00487BE0,src/specific/option.cpp,1656,1656,420,998,same size,
 _DrawSummonRings,0x0047C2A0,src/specific/draweffects.cpp,2410,2384,558,2092,size differs,
 _S_DrawLaserBolts,0x00478BF0,src/specific/draweffects.cpp,2332,2320,576,2084,size differs,
 _TriggerElectricBeam,0x0047E170,src/specific/draweffects.cpp,2743,2844,751,2289,size differs,
