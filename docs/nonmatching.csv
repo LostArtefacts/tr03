@@ -7,7 +7,6 @@ _S_DrawDarts,0x00476A30,src/specific/draweffects.cpp,609,608,92,294,size differs
 _PickUpCollision,0x0045BC00,src/pickup.c,1379,1383,111,1202,size differs,
 _TriggerTribeBossHeadElectricity,0x0047D4A0,src/specific/draweffects.cpp,3280,3284,137,1575,size differs,
 _DrawLineG,0x00490110,src/specific/drawprimitive.cpp,751,751,189,634,same size,
-_S_CalculateLight,0x00486BA0,src/specific/litesrc.cpp,2474,2525,248,1578,size differs,
 _DoRain,0x0047A4B0,src/specific/draweffects.cpp,1473,1514,388,1402,size differs,
 _S_DrawWakeFX,0x0047F4C0,src/specific/draweffects.cpp,1890,1856,398,1663,size differs,
 _do_passport_option,0x00487BE0,src/specific/option.cpp,1656,1656,420,998,same size,
