@@ -349,7 +349,8 @@ void AnimateItem(ITEM_INFO *item);
 
 sint32 TestHeight_minecart(ITEM_INFO *v, sint32 x, sint32 z)
 {
-    sint32 s, c;
+    sint32 c;
+    sint32 s;
     PHD_VECTOR pos;
     FLOOR_INFO *floor;
     sint16 room_number;
@@ -358,8 +359,11 @@ sint32 TestHeight_minecart(ITEM_INFO *v, sint32 x, sint32 z)
     s = phd_sin(v->pos.y_rot);
 
     pos.x = v->pos.x_pos + ((x * c + z * s) >> W2V_SHIFT);
+    pos.z = c;
+    c = s;
+    s = pos.z;
     pos.y = v->pos.y_pos - (z * phd_sin(v->pos.x_rot) >> W2V_SHIFT) + (x * phd_sin(v->pos.z_rot) >> W2V_SHIFT);
-    pos.z = v->pos.z_pos + ((z * c - x * s) >> W2V_SHIFT);
+    pos.z = v->pos.z_pos + ((z * s - x * c) >> W2V_SHIFT);
 
     room_number = v->room_number;
     floor = GetFloor(pos.x, pos.y, pos.z, &room_number);
