@@ -2335,7 +2335,7 @@ address,size,name,symbol
 0x006266c0,,WakeShade,_WakeShade
 0x006266c4,1,kayak_mist_cnt,_kayak_mist_cnt
 0x006266c8,4,health_bar_timer,_health_bar_timer
-0x006266cc,4,FuckYou,_FuckYou
+0x006266cc,4,rifle_x_rot_offset,_rifle_x_rot_offset
 0x006266d0,4,m16_firing,_m16_firing
 0x006266d4,4,harpoon_fired,_harpoon_fired
 0x006266d8,4,uzi_left,_uzi_left

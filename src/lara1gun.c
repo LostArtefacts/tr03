@@ -62,7 +62,7 @@ void AnimatePistols(int weapon_type);
 void AnimateShotgun(int weapon_type);
 void GetLaraHandAbsPosition(PHD_VECTOR *vec, int hand);
 
-extern sint32 FuckYou;
+extern sint32 rifle_x_rot_offset;
 
 void RifleHandler(int weapon_type)
 {
@@ -82,8 +82,8 @@ void RifleHandler(int weapon_type)
         if (camera.old_type != LOOK_CAMERA)
             lara.head_x_rot = lara.head_y_rot = 0;
     }
-    lara.torso_x_rot += FuckYou;
-    lara.left_arm.x_rot += FuckYou;
+    lara.torso_x_rot += rifle_x_rot_offset;
+    lara.left_arm.x_rot += rifle_x_rot_offset;
     if (weapon_type == LG_MAGNUMS)
         AnimatePistols(weapon_type);
     else
